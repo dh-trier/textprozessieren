@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":76,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Der Spielplatz - Lamilein - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="_u3O9IORmfZ8CD13ABEFqO5hgMmlbrBxsfWS2FVwye6AXRVbc-curEPTVgxEFFKFnEYdUaBZ8kFaQcUtLu8wIQ"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="MzGVhrnKTwwrfyngRVJxfPrBNf2e_dCtMwu-1Da_DVFNgU4pSbz4VhSkQpsBVyZRiOaoZZvKkp3Yv-khTSD0ng"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: katekyou &quot;alternate universe&quot; sort:&gt;words</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/27684752/chapters/67749986">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/27684752/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/27684752/Der%20Spielplatz.azw3?updated_at=1608578514">AZW3</a></li>
+          <li><a href="/downloads/27684752/Der%20Spielplatz.epub?updated_at=1608578514">EPUB</a></li>
+          <li><a href="/downloads/27684752/Der%20Spielplatz.mobi?updated_at=1608578514">MOBI</a></li>
+          <li><a href="/downloads/27684752/Der%20Spielplatz.pdf?updated_at=1608578514">PDF</a></li>
+          <li><a href="/downloads/27684752/Der%20Spielplatz.html?updated_at=1608578514">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Draco%20Malfoy*s*Harry%20Potter/works">Draco Malfoy/Harry Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li><li><a class="tag" href="/tags/Lucius%20Malfoy/works">Lucius Malfoy</a></li><li><a class="tag" href="/tags/Dursley%20Family%20(Harry%20Potter)/works">Dursley Family (Harry Potter)</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Minerva%20McGonagall/works">Minerva McGonagall</a></li><li><a class="tag" href="/tags/Blaise%20Zabini/works">Blaise Zabini</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Violence/works">Violence</a></li><li><a class="tag" href="/tags/Hurt*s*Comfort/works">Hurt/Comfort</a></li><li><a class="tag" href="/tags/Emotional%20Hurt*s*Comfort/works">Emotional Hurt/Comfort</a></li><li><a class="tag" href="/tags/Fluff%20and%20Angst/works">Fluff and Angst</a></li><li><a class="tag" href="/tags/Past%20Child%20Abuse/works">Past Child Abuse</a></li><li><a class="tag" href="/tags/Child%20Harry/works">Child Harry</a></li><li><a class="tag" href="/tags/Child%20Draco%20Malfoy/works">Child Draco Malfoy</a></li><li><a class="tag" href="/tags/Eventual%20Fluff/works">Eventual Fluff</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-11-23</dd><dt class="status">Completed:</dt><dd class="status">2020-12-21</dd><dt class="words">Words:</dt><dd class="words">15830</dd><dt class="chapters">Chapters:</dt><dd class="chapters">7/7</dd><dt class="kudos">Kudos:</dt><dd class="kudos">17</dd><dt class="hits">Hits:</dt><dd class="hits">266</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Der Spielplatz
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Lamilein/pseuds/Lamilein">Lamilein</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Dumbledores neueste Idee die Häuser endlich zusammenzuführen.... eine Art Kino der Erinnerungen.<br/>Kindheitserinnerungen der Schüler, die für die jeweilige Person etwas tief greifendes, etwas wichtiges darstellten und trotzdem einfach aus dem Leben gegriffen wurden.</p><p>Was, wenn der Zauber nun die Erinnerungen eines gewissen schwarzhaarigen Gryffindors und eines platinblonden Slytherins anzapfen würde... und was wenn Dinge in ihnen zum Vorschein kommen würden, die lange im verborgenen geblieben waren.</p><p>Und was wenn es genau das braucht, um alles zum Guten zu wenden...</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Wieder ein älteres Werk von mir. Etwa 2014 beendet glaube ich...<br/>Ich wollte es trotzdem gerne auch auf dieser Seite veröffentlichen und hoffe die Geschichte gefällt euch. ^_^</p><p>Die Warnung steht nicht ohne Grund da, es ist schon alles recht explizit.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/67749986">Chapter 1</a>: ~ Den äußeren Schein bewahren~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>1. Kapitel<br/>
+~ Den äußeren Schein bewahren…~</p><p>Schon wieder hatte ihn sein Vater einfach auf einer Bank vor einem Laden abgesetzt und hatte ihn allein betreten. Wieder einmal sollte er einfach warten und wieder einmal würde er folgen. Das Wort seines Vaters war Gesetz… schon immer gewesen…<br/>
+Und er gehorchte…<br/>
+Immer…</p><p>So saß der kleine, blonde, sechsjährige Junge also allein auf der langen, weiß gestrichenen Parkbank, ganz in der Nähe eines Geschäftes in dem ein älterer, ebenfalls blonder, aristokratisch wirkender Mann vor nicht allzu langer Zeit verschwunden war.<br/>
+Der gesamte Tag war schon in einem ähnlichem Muster verlaufen. Immer wieder hatten sie Geschäfte betreten und dort irgendwelche langweiligen Leute getroffen, die über irgendwelche langweiligen Dinge gesprochen hatten. Oder sein Vater hatte ihn erst gar nicht mit hinein genommen und draußen irgendwo abgesetzt, mit dem klaren Befehl zu warten… es sollte seine Geduld fördern.</p><p>Wenigstens das Mittagessen hatten sie zusammen verbracht, auch wenn er wieder einmal nicht das bekommen hatte, was er sich eigentlich gewünscht hatte. Er hatte einen einfachen Teller Nudeln gewollt und danach noch zum Nachtisch ein Eis, so wie das Kind am Nachbartisch.<br/>
+Immer wieder hatte er neidische Blicke hinüber geworfen. Das Mädchen hatte scheinbar riesigen Spaß mit seinen Eltern…</p><p>Sein Blick wanderte zurück zu seinem Vater, der mit undurchsichtiger Miene begann zu essen. Fast ein wenig verzweifelt wanderten die Augen des jungen Blonden vor sich auf den Teller.<br/>
+Wie sollte er denn jetzt diesen blöden Krebs, oder was auch immer das war, essen? Er blickte wieder zu seinem Vater auf, doch wurde von diesem wie gewöhnlich ignoriert. Aber er hatte doch Hunger… schließlich hatte er seitdem Frühstück nichts mehr in den Magen bekommen und so versuchte er sein Glück mit dem Messer, natürlich extrem vorsichtig, um sich nicht vollzukleckern. </p><p>Doch schon bald musste er einsehen, dass er so nicht weiter kam. Sein Vater schien sein Problem nicht einmal zu bemerken, was ihn, ohne dass er es wirklich wollte, traurig stimmte.<br/>
+“Vater?”, erhob sich das leise Stimmchen und ein recht kühler, desinteressierter Blick traf den Kleinen. “Ich weiß nicht, wie ich den Krebs aufbekommen soll.” Bittend blickte er in die Augen seines Vaters.<br/>
+“Es ist ein Hummer.”, war alles, was er als Antwort erhielt. Eine Weile noch wartete der Jüngere auf eine weitere Reaktion, doch als diese ausblieb, kratzte er ein weiteres Mal seinen Mut zusammen.<br/>
+“Kannst du mir bitte helfen den Hummer aufzumachen?”, wieder wandten sich ihm die kalten, grauen Augen zu, die jedoch eisiger schimmerten als zuvor. Das blonde Kind sank weiter in sich zusammen. Er wusste, müsste der Schein nicht unter allen Umständen gewahrt werden, hätte er für diese Bitte nicht nur einen solchen Blick geschickt bekommen…<br/>
+“Ich denke ich habe doch keinen Hunger mehr.”, nuschelte er leise vor sich hin und kurz darauf hatten sie das Restaurant verlassen… der Kleinere noch immer mit knurrendem Magen.</p><p> </p><p>Jetzt, zwei Stunden später, hatte sich sein Hunger natürlich in kleinster Weise gemildert, doch er schwieg und beschäftigte sich selbst seit einer Weile damit, die Kinder auf dem Spielplatz vor ihm zu beobachten.<br/>
+Der Spielplatz an sich war nicht besonders groß und es gab nur zwei Schaukeln, eine Rutsche, eine Wippe und so ein komisches Kreiselding, bei dem ihm schon beim hinschauen ganz schwummrig im Bauch wurde.<br/>
+Im Moment spielten gerade zwei Mädchen und drei Jungen auf oder an den Geräten. Einige spielten miteinander, andere zogen es vor ihre Eltern mit zum Spielen zu bewegen.</p><p>Sehnsüchtig wanderten hellgrau schimmernde Augen über das Geschehen. Kurz erschrak er sich, als er sah, wie eines der Kinder mit seiner hellen Hose mitten in den feuchten Sand fiel und über und über mit Dreck bedeckt, weinend wieder aufstand. Die Eltern rannten schnell auf ihrem Nachwuchs zu und der kleine Blonde war sich eigentlich sicher, dass nun eine Bestrafung folgen musste. Doch mehr als überrascht musste er mit ansehen, wie die Mutter des Kindes es einfach in den Arm nahm und tröstete. </p><p>Etwas, das er nicht kannte…<br/>
+Er hatte nie weinen dürfen… schon gar nicht in der Öffentlichkeit. Das war völlig undenkbar… einfach unakzeptabel.<br/>
+Er wusste nicht mehr, wie lange es her war, dass seine Mutter ihn umarmt hatte. Er hatte immer nur die Hauselfen und Haushälterinnen um sich und so konnte er es nur wagen abends, wenn er allein in seinem Bett lag einige Tränen fließen zu lassen.<br/>
+Er konnte einfach nicht verstehen, warum seine Eltern ihn nicht genau so lieb haben konnten, wie die der anderen Kinder.<br/>
+Hatte er irgendetwas falsch gemacht? Aber er hörte doch immer auf das, was ihm seine Eltern sagten. Er versuchte immer sein Bestes, die Aufgaben, die er gestellt bekam, so gut er es konnte zu erfüllen. Er wusste nicht, was er sonst noch tun sollte?</p><p>Wie es schien würde sein Vater dieses Mal wieder länger brauchen und er hörte, wie schon wieder sein Magen anfing zu knurren. Essensentzug, war eine der Strafen, die man nicht bei ihm anwand. Würde es zu oft zu einer solchen Strafe kommen, könnte es ja jemand bemerken und der Anschein musste um jeden Preis aufrecht erhalten werden.<br/>
+Er wurde je nach Vergehen anders bestraft. Früher war es nur Stubenarrest oder Abschreiben von Regeln. Oh ja… er musste schon mit vier Jahren schreiben lernen. Denn es konnte schließlich nicht sein, dass ein Malfoy schlechter war, als die anderen Sechsjährigen in der ersten Klasse, in die er nun kommen würde. Auch Rechnen hatte man ihm schon teilweise beigebracht und natürlich beherrschte er auch schon einige leichte Zauber.<br/>
+Doch in letzter Zeit hatten sich die Strafen und das Strafmaß verändert. Nun, wo er in die Schule kam, begann man mit der richtigen Ausbildung in sämtlichen Richtungen. Normale Schule, Geschichte, Wirtschaft, Finanzwesen, Politik, Zauberei mit allem was dazu gehörte.</p><p>Er verstand vieles nicht und er wollte vieles auch noch gar nicht wissen. Doch dass er das angesprochen hatte, war sein erster Fehler gewesen.<br/>
+Der Schmerzfluch hatte ihn völlig unvorbereitet getroffen und er war aufschreiend in die Knie gegangen. Es war zwar nicht der Cruciatus- Fluch aber dennoch, das schrecklichste, was er je erlebt hatte.<br/>
+Sein ganzer Körper brannte, von innen, von außen und er konnte nicht das geringste dagegen tun. Er versuchte die Tränen mit aller Macht zurückzuhalten, denn nichts hasste sein Vater mehr als Schwäche, doch er versagte jämmerlich und Sturzbäche an Tränen rannen ihm über das Gesicht.<br/>
+Nach wenigen Sekunden löste sein Vater den Fluch wieder und er rollte sich einfach auf dem Boden zu einer zitternden, kleinen Kugel zusammen und versuchte den nachhallenden Schmerz zu verdrängen, sein Aufschluchzen zu unterdrücken, um nicht wieder die Aufmerksamkeit seines Vaters auf sich zu ziehen.</p><p>Es gelang ihm nicht, denn sein Vater zog ihn grob auf die Beine. Eine große Hand umschloss den schmalen Oberarm des blonden Kindes. Derb wurde der kleine Körper hin und her geschüttelt, während ihm eine eisige Stimme weitere Nadeln in sein so junges Herz bohrte.<br/>
+Er verstand kaum die Worte, die gesprochen wurden, viel zu groß war noch der Schmerz. Seine Beine wollten ihn nicht mehr tragen und drohten unter ihm wegzuknicken. Seine Haut brannte, als würde sie noch immer in Flammen stehen und vor seinen Augen begannen schwarze Punkte zu tanzen.<br/>
+Ein kalter Schwall von Emotionen, die vor Ignoranz, Abscheu, Verachtung, nur so trieften, schwappte über ihn hinweg. Ohne auch nur ein Wort verstehen zu müssen, traf ihn der Widerwille und die pure Ablehnung seines Vaters, ließ ihn vollends zusammensacken.<br/>
+Seine Beine gaben nach und sein Vater ließ endlich von ihm ab. Er fiel hart zu Boden und rührte sich nicht mehr. Nur ein nicht enden wollendes Zittern hatte sich seines Körpers bemächtigt.<br/>
+Sein Bewusstsein schwankte zwischen träumen und wachen… er wusste nicht wie lange er so gelegen hatte, oder wie er letztendlich in sein Bett gekommen war…</p><p>Er hatte sich nie mehr beschwert…<br/>
+Er hatte versucht zu lernen, was man ihm beibrachte, doch es war ihm trotz allem nicht möglich, immer alles sofort zu behalten. Auch er vergaß einige Dinge und so kam er noch einige Male in den Genuss dieses Fluches.<br/>
+Vielleicht wäre es nicht so schlimm, wenn ihn seine Privatlehrer einsetzen würden, doch immer war es sein Vater, der ihn bestrafte. Immer musste er diesen eisigen, ignoranten, völlig desinteressierten Blick auf sich fühlen, der die Wirkung des Fluches auch auf sein Innerstes übertrug.<br/>
+Sollte ein Vater nicht sein Kind lieben?<br/>
+Sollte er sich nicht freuen, wenn es etwas neues gelernt hatte? Eine neue Fähigkeit erwarb?<br/>
+Sollte ein Vater nicht auch verzeihen können?</p><p>Eine kleine Träne rollte über das blasse Gesicht des alleine auf einer Bank sitzenden Kindes… ungesehen…</p><p> </p><p>…………………….</p><p>Die Halle war mucksmäuschenstill. Niemand hatte auch nur vermutet, dass Dracos Kindheit so verlaufen war. Alle waren immer der Meinung gewesen, Draco wäre einfach nur ein verwöhntes Kind, was von seinen Eltern immer alles bekommen hatte, was es wollte.<br/>
+Unerwartet und ungeahnt schmerzhaft wurden sie nun eines besseren belehrt. Denn sie hatten gesehen und gehört, dass diese Vorstellung alles andere als richtig gewesen war.</p><p>Dumbledores neueste Idee die Häuser endlich zusammenzuführen, schien in irgendeiner verrückten Art und Weise, etwas zu bewirken. Jeden Tag zum Abendessen sorgte ein extra zu diesem Zweck geschaffener Zauber, seit einem Monat dafür, dass eine Art kleiner Film an der Kopfseite der Halle ablief. Wie auf einer überdimensionalen Kinoleinwand.<br/>
+Das besondere an diesen Filmen war ihr Inhalt und ihre Sichtweise, denn die Leinwand spiegelte Erinnerungen bestimmter Schüler wieder. Kindheitserinnerungen im Alter von fünf bis sechs Jahren, die für die jeweilige Person etwas tief greifendes, etwas wichtiges darstellten und trotzdem einfach aus dem Leben gegriffen waren.</p><p>Per Zufall wurde eine Person pro Abend von den Zauber ausgewählt und erfasst. Für alle anderen Schüler herrschte eine Anwesenheitspflicht, die jedoch eigentlich nicht nötig gewesen wäre.<br/>
+Es war viel zu interessant etwas neues über seine Mitschüler herausfinden zu können und auch noch gewisser Maßen live dabei zu sein, denn das besondere an den Vorstellungen war, dass man nicht nur die gesprochenen Sequenzen hören konnte, sondern auch, was die Person, von der die Erinnerung stammte, zu diesem Augenblick gedacht hatte.</p><p>Bis zum heutigen Tag, waren die Erinnerungen, die man betrachtet hatte alle gemischt aus verschiedenen Häusern gekommen und meistens besonders lustige Erlebnisse gewesen.<br/>
+Meist von Geburtstagen, Familienfesten, Weihnachten, Ausflügen mit den Eltern und Freunden, gemeinsame Abendessen oder ähnliche Ereignisse. Es gab natürlich auch einige Peinlichkeiten zu sehen, sodass oftmals die ganze Halle vor Lachen fast am Boden lag, während der Betreffende sich fast in Grund und Boden schämte.<br/>
+Nach einigen Minuten jedoch fielen auch sie mit in das Gekicher ein und überwanden die erste Zurückhaltung.</p><p>Der heutige Tag war anders gewesen…<br/>
+Noch immer waren alle geschockt von dem, was sie sahen und immer wieder warf man Blicke quer durch die Halle auf Draco, der mit zusammengebissenen Zähnen auf der Bank saß und auf seinen Teller starrte. Er kam hier ja nicht weg, denn es griff die Anwesenheitspflicht.<br/>
+Seine Hände waren zu Fäusten geballt und verkrampft. Er spürte die brennenden Blicke auf sich und wollte einfach nur verschwinden… nur raus hier… und weit, weit weg…<br/>
+Er wollte nicht mehr angestarrt werden und so hob er das Gesicht und schickte selbst einige eisige Blicke um sich… wenigstens das schien noch zu wirken…<br/>
+Nur ein Paar Augen blieb weiterhin auf ihn geheftet… smaragdgrüne Augen, die ihn anders als die Anderen betrachteten. In ihnen stand eine merkwürdige Mischung aus Unglaube, Leere und Mitgefühl, die Draco nicht verstand. Warum ausgerechnet Mitgefühl?…<br/>
+Ihre Blicke hingen ineinander und irgendetwas schien zu geschehen… irgendeine Erinnerung schien langsam zu erwachen…</p><p>Ein Raunen ging durch die Halle, als sich das Bild auf der Leinwand wandelte. Auch der Goldjunge Gryffindors und der Eisprinz Slyherins wandten nun den Blick nach vorne und der Schwarzhaarige schrak zusammen…</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/67834085">Chapter 2</a>: ~ Dinge, die man anders nicht kennt…~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Nun ist Harry dran...</p>
+          </blockquote>
+        </div>
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>2. Kapitel<br/>~ Dinge, die man anders nicht kennt…~</p><p> </p><p>Wieder einmal lag er in der Dunkelheit seines Schrankes und war mehr als froh darüber. Hier hatte er seine Ruhe, niemand schrie ihn an, niemand gab ihm Aufgaben, die für einen, noch nicht mal sechsjährigen, nicht zu schaffen waren und niemand schlug ihn. <br/>Hier fühlte er sich sicher…</p><p>Eine zarte Hand fuhr über einen bloßen Oberarm, der über und über mit blauen Flecken übersäht war. Hätte er doch bloß den Teller nicht fallen gelassen… Was war er auch für ein Idiot. Konnte nicht mal die leichtesten Aufgaben ohne einen Fehler ausführen. Hätte er besser aufgepasst wäre das sicher auch nicht passiert. <br/>Er hatte seine Strafe verdient und trotzdem tat es immer noch so lange noch weh…<br/>Sein Blick fiel auf einen alten geflickten Wecker, dessen Glas im Laufe der Zeit bestimmt schon drei mal gesprungen war. Halb sechs. Er sollte sich langsam fertig machen. </p><p>Etwas schwerfällig, wegen der Verletzungen, aber doch routiniert zog sich der kleine Junge in dem schmalen Schrank unter der Treppe um. Leise öffnete er die Tür und schob sich in den Flur. Die viel zu großen, dreckigen und alten Klamotten hingen schlabberig an ihm hinunter, als er schnell und fast lautlos ins Bad huschte und sich dann wie jeden Morgen auf den Weg in die Küche machte.<br/>Erst als er sich einen schweren Stuhl heran schob, um den Herd und die Schränke zu erreichen, wurde einem bewusst, dass dieses Kind für sein Alter viel zu klein war. Doch der Kleine schien in allem was er tat, sehr geübt zu sein. </p><p>Zuerst deckte er den Tisch für drei Personen, dann machte er sich daran, seine täglichen Aufgaben abzuarbeiten. Er brachte den Müll raus, fegte und wischte die Küche, putzte das Bad und begann im Wohnzimmer für Ordnung zu sorgen, was mit Abstand am längsten dauerte. <br/>Gestern Abend hatte Dudley seinen Geburtstag gefeiert, natürlich war er, nachdem er bei den Vorbereitungen mitgeholfen hatte und dabei den Teller fallen ließ, nach seiner obligatorischen Tracht Prügel, in seinem Schrank eingesperrt worden und hatte dem Gelächter und dem Spaß zuhören dürfen, während er versuchte seine schmerzenden Knochen zu ignorieren.</p><p>Nun jedenfalls war das Zimmer kaum von einem Schweinestall zu unterscheiden und der kleine Schwarzhaarige war sich sicher, dass der verschmierte Kuchen auf dem Boden, sicher nicht durch Zufall oder aus Versehen dort hin gelangt war.<br/>Schicksalsergeben machte er sich an die Arbeit, sammelte den Müll zusammen, verschnürte ihn in großen Säcken, wischte den Tisch ab und machte sich schließlich daran den Teppich zu reinigen, was sich als äußerst schwierig herausstellte. Denn Schokokuchenflecke auf einem weißen, langhaarigen Teppich waren sicher alles andere als leicht herauszubekommen. Er versuchte es mit allen Mitteln die er kannte, oder sich selbst entwickelt hatte, doch nichts wollte helfen.</p><p>Die Zeit verrann rasch und als der Junge abermals auf die Uhr blickte, zuckte er erschrocken zusammen. Es war bereits halb neun und er hatte noch nicht mal mit dem Essenkochen begonnen. Hecktisch räumte er die Putzsachen bei Seite und hoffe, dass man den Fleck noch nicht entdecken würde, sodass ihm später noch etwas Zeit blieb, um ihn zu entfernen.<br/>Schnell hatte er alles zum Kochen zusammengesucht und machte sich daran die Pfannen zu erwärmen bis das Öl in ihnen heiß genug war. In der Zwischenzeit schnitt er das Brot mit der Brotschneidemaschine und verteilte es sauber und ordentlich in einem kleinen Körbchen, welches er auf den Tisch stellte.</p><p>Er hörte Schritte im oberen Geschoss und das Klappern der Türen. Verdammt, er war viel zu spät dran.</p><p>Dann hatten endlich die Pfannen die richtige Temperatur und er legte in die eine die Schinkenscheiben und in die andere schlug er die Eier. Jetzt musste er aufpassen und genau im richtigen Moment wenden, sie durften auf keinem Fall verlaufen oder anbacken und auch der Schinken musste genau richtig gebräunt sein.<br/>Schnell stellte er sich die drei Teller bereit, um sofort die fertigen Speisen auf ihnen zu verteilen, dann ging alles Schlag auf Schlag. <br/>Zuerst waren die Eier fertig und schnell verteilt. Seiner Meinung nach, waren sie gelungen, doch dieses Urteil sollte er lieber seiner Familie überlassen. <br/>Wieder waren deutlich Schritte zu hören, die sich auf den Weg die Treppe hinab begaben. <br/>Schnell verteilte der Junge den Schinken und griff nach dem ersten Teller, den er schnell zum Tisch brachte. Flink lief er zurück und schnappte sich auch den zweiten. Dann ging die Tür auf und der Kleine schrak zusammen. <br/>Nein…</p><p>Schnell überflogen kleine, zusammengekniffenen Augen den Tisch, der wie immer perfekt gedeckt war, bis sein Blick auf dem noch leeren Platz für den Teller seiner Frau hängen blieb. Ein kurzes Grinsen zeigte sich auf seinem Gesicht, ehe es sich zu einer wütenden Maske verzog. <br/>Der Junge wurde sichtlich blass und wich ängstlich zurück. Schnell schnappte er sich den letzten Teller und stellte ihn sofort auf den Tisch, doch er wusste, dass ihm das nun nichts mehr nutzen würde.</p><p>“Ich… Onkel Vernon… es…”<br/>“Das ist also deine Art Dankbarkeit zu zeigen? Wir haben dich bei uns aufgenommen, als deine dreckigen Eltern diesen Autounfall hatten. Wir haben dir ein Dach über deinen Kopf gegeben und du isst unser Essen. Wir nahmen die Last auf uns einen Freak hier in unserem Haus leben zu haben. UND SO DANKST DU ES UNS??? Du schaffst es nicht mal die wenigen Aufgaben zu erfüllen, die wir dir geben und glaubst, dass WIR DIR DAS SO DURCHGEHEN LASSEN??”<br/>Sein Gesicht wurde vor Wut rot und er drängte den kleinen, zitternden Jungen immer mehr in die Ecke der Küchenzeile. </p><p>Der Kleine hatte seine grünen, ängstlichen Augen gesenkt, wollte den Hass nicht sehen, der ihm entgegengebracht wurde. Wollte nicht sehen müssen, was nun auf ihn zukam.<br/>Der erste Schlag mit der flachen Hand traf ihn hart im Gesicht und warf ihn zu Boden. Die Tränen flossen… er konnte sie nicht aufhalten, denn immer wieder hagelten neue Beleidigungen, Demütigungen und Vorwürfe auf ihn ein. <br/>Dann traf ihn der erste Tritt in die Seite und er rollte sich zu einem Ball zusammen, versuchte sein Gesicht und seinen Bauch zu schützen. Beine Arme und sein Rücken begannen zu brennen, als immer neue Tritte auf sie einprasselten.<br/>Er wusste es wäre zwecklos irgendetwas zu sagen um seinen Onkel zu beruhigen, denn wenn er einmal wütend um sich schlug, war das sinnlos.</p><p>Er versuchte seine Gedanken woanders hinzulenken, weg von der Gewalt, die ihm hier angetan wurde, von Menschen, die ihn doch eigentlich schützen sollten. <br/>Doch dieses Mal schien ihm das nicht zu gelingen. Die Tritte und Schläge taten schon ungemein weh, dich die Worte verursachten einen ähnlichen, tiefer sitzenden Schmerz, ließ die Verzweiflung, Angst, und Machtlosigkeit, die er sonst still in sich verschloss, wieder aufflammen und verursachten immer neue Ströme von Tränen.</p><p>“Vernon, würdest du bitte mit dem Lärm aufhören. Ich habe Migräne und würde jetzt gerne endlich in Ruhe essen.”<br/>Auch wenn die Absicht seiner Tante keineswegs freundlicher Natur und Absicht war, so dankte das Schluchzende Kind ihr doch in irgendeiner Weise, als die erneuten Tritte ausblieben und das Geschrei verstummte.<br/>“In Ordnung Petunia. Ich musste nur dieser Missgeburt mal wieder eine Lektion erteilen. Los beweg dich Freak!…”<br/>Hart zog ihn eine fleischige Hand mit einem Ruck nach oben und ließ ihn schmerzhaft aufstöhnen. “… Ab in den Schrank und keinen Mucks!!” </p><p>Erbarmungslos wurde er in den Schrank auf die harte Matratze geschupst und die Tür hinter ihm zugeschlagen und verriegelt.<br/>Schwerfällig rollte er sich auf seiner Schlafstelle zusammen und nur ein leises Wimmern verließ seine Lippen.<br/>Warum?<br/>Warum taten sie das? Was hatte er denn getan? Hatte er etwas getan? Nun er schaffte es offensichtlich nicht, seine Aufgaben zu erledigen. Aber das tat doch Dudley auch nicht, er musste nie irgendetwas machen.<br/>Allerdings war Dudley ja auch kein elternloser Freak wie er. Vielleicht brauchte er das deshalb nicht.<br/>Sie hatten schon Recht mit dem, was sie sagten. Er hatte die Bestrafung verdient. Doch warum taten die Worte dann immer so weh? Warum konnte er einfach nicht aufhören zu hoffen? Zu hoffen darauf, dass die Dursleys ihn auch einmal behandeln würden, als wäre er kein dreckiger Abschaum, als würden sie ihn wenigstens ein klein wenig mögen.<br/>Doch tief im Inneren wusste er doch schon, dass er vergebens wartete…</p><p>Leise weinte er sich, noch immer am ganzen Leib zitternd, in den Schlaf…</p><p> </p><p>Ein lautes Pochen weckte ihn schlagartig, ließ ihn hochschnellen und heftig die Luft einziehen, als er sich des Schmerzes bewusst wurde, der ihn sofort gefangen nahm.<br/>“Mach, dass du dich anziehst. Du gehst Einkaufen. Und ein bisschen plötzlich, ich hab nicht den ganzen Tag Zeit!”, ertönte die schrille Stimme seiner Tante vor der Tür, bevor das Geräusch des Türriegels ertönte.<br/>So schnell wie nur irgend möglich begann sich der Kleine also umzuziehen und schlüpfte in seine etwas besseren und vor allem langärmlichen Sachen, bevor er sich aus dem Schrank schob, darauf bedacht ruckartige Bewegungen zu vermeiden.</p><p>“Na endlich. Hier ist der Einkaufzettel und hier das Geld. Es ist wie immer abgezählt, also wag es nicht etwas zu verlieren!! Hier der Fahrschein für den Bus und jetzt mach, dass du wegkommst!!!”<br/>Und er gehorchte auf Wort. Nahm die Tasche von seiner Tante entgegen und den Busfahrschein an sich. Ohne ein weiteres Wort war er aus der Türe und machte sich auf den Weg. <br/>Sein Körper schmerzte höllisch, doch er hatte eh keine Wahl und so verzog er nur, wenn er besonders schmerzhaft auftrat das Gesicht und versuchte an etwas anderes zu denken.</p><p> </p><p>Das Bild verschwamm und man erblickte den kleinen Schwarzhaarigen an der Supermarktkasse wieder. </p><p>Er war ziemlich gut gelaunt, denn alles was auf seiner Liste stand, hatte er auch bekommen. <br/>Oh ja… er konnte schon Lesen, auch wenn er noch nicht in der Schule war… nur durfte das auf keinen Fall irgendjemand erfahren. Tante Petunia glaubte noch immer, dass er eine Mitarbeiterin des Ladens um Hilfe bat, um den Einkauf zu erledigen.</p><p>Schnell bezahlte er die verdutzte Verkäuferin, die wohl neu hier war… er hatte sie jedenfalls noch nie hier gesehen. Dann packte er den Einkauf sorgfältig in die Einkaufstasche, die schweren Dinge zuerst, dann die leichten und zerbrechlichen Dinge. <br/>Er hatte einmal den Fehler gemacht die Eier nach unten zu legen. Auf eine Wiederholung der Strafe konnte er wirklich verzichten.</p><p>Unter bewundernden, aber auch verwunderten Blicken verließ er den Supermarkt und machte sich auf seinen Rückweg und schon jetzt konnte er erahnen, dass er Probleme bekommen würde. <br/>Die Tasche wog dieses Mal ungewöhnlich schwer und seine Verletzungen waren noch frisch, sodass er schnell spürte, wie seine Energie zur Neige ging und seine Arme, wie Beine zu zittern begannen. <br/>Er hatte heute auch noch nichts zu Essen… nicht ganz ungewöhnlich, aber schlecht, wenn er sich körperlich so anstrengen musste. <br/>Die Hälfte des Weges zu Haltestelle hatte er bereits zurückgelegt, als seine Kräfte endgültig versagten. Er schleppte sich gerade an einem gepflegten Park, bestehend aus seiner großen Grünfläche, mit einem hübschen Teich und einem kleinen Spielplatz vorbei, als ihm eine weiße Bank ins Auge stach. Er musste unbedingt eine kurze Pause machen…</p><p> </p><p>……………………..</p><p> </p><p>Die Stimmung in der Großen Halle schien unmöglich zu beschreiben. Geschockt und ungläubig blickte man entweder auf die Leinwand oder auf Harry. Dieser machte jedoch nicht den Anschein überhaupt noch anwesend zu sein. Er reagierte auf nichts, saß einfach nur stumm da, die zitternden Hände zu Fäusten geballt, um das bisschen Kontrolle, das ihm geblieben war zu behalten.<br/>Er wollte… musste hier weg.<br/>Er hatte all das… seine Vergangenheit und auch seine Gegenwart so lange geheim halten können… warum musste nun das noch geschehen. Es fehlte doch nicht mehr viel und er wäre von der Schule gegangen… frei gewesen… ohne das irgendjemand je davon erfahren hätte.<br/>Er wollte nicht hören, wie seine Freunde versuchten zu ihm durchzudringen, mit ihm zu reden und ihm Vorwürfe machten, warum er denn nie etwas gesagt hatte…</p><p>Das war der Moment, in dem in Draco die Wut hoch kochte. Warum er so extrem reagierte, wollte er im Moment gar nicht wissen, doch er konnte einfach nicht verstehen, warum diese dämlichen Gryffindors Harry nun auch noch Vorhaltungen machten.<br/>Ohne auch nur irgendeinen Gedanken an die Folgen zu verschwenden, sprang Draco von der Bank auf und zog somit viele verwunderte Blicke auf sich.<br/>Auch Harry schien mitzubekommen, dass etwas um ihn passierte. Das Erste, was er wieder aktiv wahrnahm, war ein vor Wut schnaubender Draco, der direkt auf den Gryffindortisch zukam.<br/>Und Harry machte sich klein…<br/>Er senkte einfach den Blick und fragte sich, wann er aus diesem schrecklichen Albtraum endlich wieder erwachen würde. Was wollte Draco denn nun. Ihn auslachen? Ihn anschreien?…<br/>Er wollte hier weg…</p><p>“Was glaubt ihr, was ihr da gerade tut? Müsst ihr jetzt auch noch an ihm rumkritisieren? Ihr seht doch dass es ihm grad nicht gut geht. Und so was schimpft sich seine Freunde. Ich glaub jetzt reicht es aber langsam.”<br/>Noch immer hatte er sich nicht wirklich beruhigt, doch der erste Frust war vorerst verraucht. <br/>Weasley und Granger waren wohl für den Moment sprachlos und auch die anderen Schüler hielten ihn nicht auf, als er einfach nach Harrys bebender Hand griff und ihn widerstandslos vom Tisch wegzog. Immer in Richtung Flügeltüren. <br/>Das Kribbeln zwischen ihren Händen wurde immer stärker und ein erneutes Raunen fuhr durch die Menge. Draco verstärkte den Druck um Harrys Hand und eine tief vergrabene, längst vergessen geglaubte Erinnerung fand ihren Weg zurück an die Oberfläche.</p><p>Und wieder verschwamm das Bild und die gedankliche Stimme des jungen Draco ertönte abermals.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/67956157">Chapter 3</a>: ~Wollen und gewollt werden~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Das Aufeinandertreffen...</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/27684752#chapter_3_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>3.Kapitel<br/>~ Wollen und gewollt werden…~</p><p>Ich würde auch gerne mal auf einen Spielplatz gehen und so eine Rutsche hinabrutschen oder Schaukeln. Ob es ein schönes Gefühl war?… wie fliegen??</p><p>So in seine Überlegungen verstrickt bemerkte er das kleine, schwarzhaarige Kind erst, als es sich neben ihm auf die Bank hinaufzog. Eine schwere Tasche stand noch neben ihm auf dem Boden.<br/>Auch Harry bemerkte zunächst den blonden Jungen nicht. Er war viel zu geschafft und völlig darauf konzentriert auf die Parkbank zu klettern.<br/>Erst als er sich völlig fertig und noch immer schwer atmend, zurücklehnte und eine Bewegung neben sich wahrnahm, blickte er erschrocken nach rechts. </p><p>Selbst durch seine oft zusammengeflickte Brille erkannte er die elegante, sauber gekleidete Gestalt Dracos. Die Haare gepflegt und ordentlich zurückgekämmt, wobei nur einige Strähnen sich aus dem Verbund gelöst hatten und ihm leicht ins Gesicht hingen. <br/>Das sauber gebügelte weiße Hemd und die graue Stoffhose mit Bügelfalte umschmeichelten die grazile Jungengestalt und Harry schaffte es nicht seinen Blick abzuwenden. Dieser Junge war das völlige Gegenteil zu ihm und so fuhren seine Augen unaufhaltsam zum Gesicht des Blonden.<br/>Und diese Augen erst… diese einzigartige Mischung aus dem silbrigen grau und dem leichten hellblau nahm ihm völlig gefangen…</p><p>Und da war er nicht der Einzige.<br/>Auch Draco war zu dem Schluss gekommen, dass dieser schwarzhaarige Junge, mit der abgetragenen, alten und nicht zueinander passenden Kleidung sein komplettes Gegenstück darstellte. <br/>Und obwohl er wusste, dass sein Vater eine solche unwürdige Gesellschaft, wie er es immer zu sagen pflegte, nicht gutheißen würde, hatte dieser kleine, etwas schwächlich wirkende Junge etwas an sich, was ihn fesselte. Vielleicht waren es diese völlig verstrubbelten, schwarzen Harre oder die unglaublich smaragdgrünen Augen, die trotz der alten Brille ihre Intensität nicht zu verlieren schienen. <br/>Aber egal was es war… dieses Etwas, brachte ihn dazu ihn anzusprechen…</p><p>“Hallo. Mein Name ist Draco Malfoy.”, stellte er sich förmlich vor, wie man es ihm beigebracht hatte und streckte dem noch immer etwas verschrecktem Harry seine Hand entgegen. <br/>Dieser war von dieser Geste völlig überrumpelt, denn noch nie hatte ihn jemand so angesprochen. Und als keine weitere Reaktion kam, erhob der Blonde abermals seine vornehme Stimme.<br/>“Dürfte ich auch deinen Namen erfahren?”<br/>Harry schien wieder einiger Maßen zu sich zu kommen und ergriff die Hand.<br/>“Harry. Mein… mein Name ist Harry.”, brachte er schüchtern hervor.</p><p>Und so begann ein kleines Gespräch. Draco war froh, dass er etwas gefunden hatte, was ihn interessierte und von der Warterei ablenkte und Harry war froh, dass sich überhaupt jemand mit ihm abgab und dann auch noch mit ihm redete. Außerdem fanden sich Beide gegenseitig ungemein faszinierend.</p><p>Nach einiger Zeit kamen sie irgendwie auf den Spielplatz zu sprechen und Dracos Blick wurde etwas trauriger.<br/>“Ich würde auch gerne mal auf so einem Spielplatz spielen, aber ich darf nicht. Weißt du wie das ist, wenn man schaukelt? Ist es wie fliegen?? Ich würde es so gerne mal ausprobieren…” und auch Harry wandte seinen Blick zu besagter Schaukel.<br/>“Ich weiß es auch nicht. Ich bin noch nie geschaukelt und hab immer nur zugeschaut, wenn ich durfte…”</p><p>Und in die darauf folgende Stille hinein, wurde eine Idee geboren und alle Vorsicht und Angst das erste mal in ihrem Leben über Bord geworfen. <br/>Sollten sie es wagen??<br/>Sie wandten ihre Gesichter einander zu. Ihre Blicke sprachen Bände und zeitgleich breitete sich ein einvernehmendes Lächeln auf ihren Lippen aus, wie es nur Kinder trugen, wenn sich praktisch stumm Unterhielten. <br/>Ohne Worte zu brauchen, rutschten Beide zeitgleich von der erhöhten Bank und Harry dachte gerade noch daran den Beutel mit einem Einkauf mitzunehmen, als sie sich auf den Weg machten und einmal taten was sie wollten, ohne an die Konsequenzen zu denken…</p><p>Säuberlich stellte Harry seinen Einkauf noch unter einem nahe gelegenen Baum ab und dann machten sich beide neugierig auf Entdeckungstour. <br/>Der erste und wohl auch wichtigste Punkt war die Schaukel, die glücklicher Weise gerade frei geworden war. <br/>Draco, der nun doch etwas ängstlich und unentschlossen vor der großen Konstruktion stand wusste für einen Moment nicht weiter.<br/>“Komm setz’ dich auf die Schaukel und ich schubs dich an.”, gab ein fröhlich lächelnder Harry den letzten Anstoß. <br/>Draco tat wie ihm geheißen und platzierte sich auf der schwarzen Sitzfläche. Seine langgliedrigen Finger umschlossen fest die Kette, denn ein wenig mulmig war ihm schon zu mute.<br/>Dann stand Harry auch schon hinter ihm und gab ihm den ersten Anschub. Zuerst passierte nicht viel, denn Harry war schließlich nicht der Kräftigste, aber je öfter er einen neuen Impuls lieferte, desto höher begann die Schaukel zu schwingen. <br/>Dann kam Harry nicht mehr heran und so lief er vorsichtig um die Schaukel herum und sah Draco zu.</p><p>“Du musst irgendwie mit den Beinen vor und zurück schwingen, dann behältst du deinen Schwung.”, versuchte der Schwarzhaarige zu helfen.<br/>Der Blonde beherzigte den Rat und hatte schnell den Dreh raus. Er schaukelte immer höher und war sich nun sicher, dass auch Fliegen nicht schöner sein konnte. <br/>Die Luft brachte seine Haare völlig durcheinander, wehte sie ihm ins Gesicht und ein überglückliches Lachen erklang. Seine Augen funkelten in ungeahnter Intensität und sein Blick traf Harry, der ihn nicht minder glücklich betrachtete.<br/>Er befand es jedoch für unfair, dass nur er dieses Gefühl erleben sollte und so drosselte er seinen Schwung, versuchte sogar einen Gegenschwung, sodass er vor dem verdutzten Schwarzhaarigen wieder zum Stehen kam.</p><p>“Was ist? Hat es dir nicht gefallen? Oder hast du dir weh getan?”, sprudelte es schnell aus Harrys Mund, doch Draco winkte schnell ab. Da die andere Schaukel neben ihm auch bereits frei war, schob der den schmalen Jungen zu ihr.<br/>“Ich finde, du solltest das auch einmal probieren. Es ist wirklich wunderschön. Komm setz dich!”, wies er auffordernd an. <br/>Fröhlich lächelnd versuchte Harry den Schaukelsitz zu erreichen, doch er war einfach zu klein und den Versuch draufzuhüpfen musste er bereits nach dem ersten schmerzlichen Versuch aufgeben. Sein Körper heilte schließlich nicht innerhalb einer halben Stunde…</p><p>Draco sah das Problem schnell und so versuchte er es, indem er ihn hochhob, doch als der Kleinere daraufhin schmerzhaft aufwimmerte, ließ er ihn schnell wieder los.<br/>“Was ist? Hast du dir weh getan?”<br/>Nun war es der Blonde, der das kleinere Kind, welches ein wenig schwer atmete, besorgt musterte. “Nein, nein… ist schon in Ordnung. Es ist nicht deine Schuld gewesen.” <br/>“Bist du verletzt?”, fragte Draco jedoch nach. Harry schlug die Augen nieder “Nein. Es ist nichts.”  Er hoffte der Blonde würde es dabei belassen, denn er wollte nicht, dass er herausfand, wie ihn seine Verwandten bestraften. <br/>Er wollte nicht, dass auch er wusste, dass er ein Freak war… <br/>Er wollte nicht wieder allein gelassen werden…</p><p>Doch Draco ließ sich nicht täuschen. “Ich glaube dir nicht.” <br/>Kaum hatte er es ausgesprochen, hatte er den Pullover des Jüngeren auch schon ein wenig hinaufgeschoben und somit einige der blau-grün schimmernden Haut freigelegt, noch ehe Harry reagieren konnte.<br/>Erst dann stolperte der erschrocken zurück und kauerte sich in der Ecke des- aus Holz gefertigten- Rutschenaufbaus zusammen, überzeugt, dass Draco ihn nun ebenfalls beschimpfen würde und ihn dann allein hier sitzen ließ.</p><p>Doch Draco brauchte nur einen Moment, um zu begreifen, was er gerade herausgefunden hatte. <br/>Auch Harry hatte man weh getan… <br/>Nicht so wie ihm, doch der eigentliche Unterschied war wohl, dass seine Schmerzen, keine sichtbaren Beweise hinterließen.<br/>Langsam näherte er sich der bebenden Gestalt und ließ sich vor ihr auf die Knie fallen. Dass seine Hose dabei dreckig wurde, war ihm nicht einmal bewusst. Er war völlig auf das andere  Kind konzentriert und so sah er auch, wie das Zittern sich verstärkte, doch er ließ sich davon nicht beirren. <br/>Er wusste, wie es war, nicht getröstet zu werden und er konnte sich auch vorstellen, das Harry sicher auch nie Trost bekommen hatte. <br/>Nun wollte er ihm diesen Trost spenden…</p><p>Ohne weiteres Zögern, zog der Blonde den Schwarzhaarigen Jungen zu sich und umarmte ihn liebevoll. Kurz war der Kleinere noch, in Erwartung von Schlägen, zusammengezuckt, doch dann begann er langsam, sich zu entspannen. <br/>Vorsichtig zog Draco Harry näher zu sich, sodass er halb auf dessen Schoß zu sitzen kam. Sachte begann nun auch Harry die Umarmung zu erwidern und schloss seine dünnen Ärmchen um den deutlich kräftigeren Jungenkörper.<br/>Er spürte, wie eine sanfte Hand, leicht über seinen Rücke fuhr und ihm langsam half, seinen Herzschlag zu normalisieren, ohne ihm dabei wehzutun. Er entgegnete diese Geste, indem er versuchte sie zu kopieren und schüchtern wanderten nun auch seine Finger über das blütenweiße Hemd.<br/>Sie wussten nicht, wie lange sie so gesessen hatten, bis sie schließlich beschlossen, die wenige Zeit, die ihnen blieb, zu nutzen.</p><p>“Komm. Wir versuchen es noch einmal. Ich hab noch eine Idee.”<br/>Harry, der zunächst wieder etwas das Gesicht verzogen hatte, blickte nun fragend zu dem Älteren auf. Der zögerte nicht weiter und kniete sich direkt vor die Schaukel. Harry war zwar noch immer unsicher, doch er schritt auf Draco zu. <br/>“Klettre einfach auf mich drauf. Dann schaffst du es auch auf den Sitz.”, doch Harry blickte auf das weiße Hemd und dann auf seine dreckigen Schuhe. Kurzentschlossen zog der Kleinere selbige aus und krabbelte dann äußerst vorsichtig über den Rücken des Blonden auf den Schaukelsitz. <br/>Draco war überrascht. Er hatte mit etwas mehr Gewicht gerechnet, doch er würde sich sicher nicht beschweren und so stand er wieder auf. Noch in der Bewegung putzte er sich die Hosenbeine so weit es ging sauber. Doch er sah schnell, dass das nicht allzu viel brachte. <br/>Er ignorierte es… er wusste, er konnte jetzt ohnehin nichts mehr daran ändern.</p><p>Schnell trat er hinter den Schwarzhaarigen, der sich sichtbar ängstlich mit seinen kleinen Händen an der massiven Kette festhielt.<br/>“Keine Angst. Es ist ein wunderschönes Gefühl.”, grinste Draco ihm beruhigend entgegen und gab ihm den ersten Anschwung.<br/>“Ah…”, erschrak sich der Kleinere kurz. <br/>“Ganz ruhig. Es passiert nichts.” <br/>Und Harry fasste sich schnell wieder, als er spürte, dass Draco recht hatte. Nun strich der Wind auch durch sein Gesicht und strich ihm durch seine- ohnehin in alle Richtung abstehenden- Haare. Wie auch Draco schon zuvor, entwich auch ihm ein freudiges Lachen. Seine smaragdgrünen, vor überschwänglicher Begeisterung hell leuchtenden, glücklich glitzernden Augen, funkelten Draco- der vor ihn getreten war- entgegen.</p><p>Dann versuchte auch Harry selbst Schwung zu erzeugen, doch schnell musste er das aufgeben, denn sein Körper schmerzte wieder und seine Kraft ließ auch zu wünschen übrig. So genoss er einfach die Gefühle, die ihn durchströmten und ließ sich Ausschaukeln. Selbst als Draco ihm wieder Schwung geben wollte, hielt er ihn auf. So sah auch dieser, dass Harry langsam die Kraft ausging.<br/>Als die Schaukel schließlich zur Ruhe gekommen war, half der Blonde dem immer noch glücklich Lächelnden zurück auf den sandigen Boden.</p><p>“Und was wollen wir jetzt machen?”, fragte Draco schließlich nach. “Ich weiß nicht… Auf was hast du Lust?”, gab Harry dem Blonden den Vortritt. <br/>“Du bist noch immer ziemlich geschafft, nicht wahr? Dann machen wir eine Pause. Wollen wir uns an den Teich setzen?”<br/>“Hm. Danke...”, freute sich Harry, dass Draco sein Problem erkannt hatte und der blonde Junge schnappte sich schnell die Schuhe und die Hand des Kleineren. Glücklich erwiderte der den leichten Druck um seine Finger. Man hatte ihn noch nie so an die Hand genommen. <br/>Das Gefühl was ihn durchströmte war so unbeschreiblich glücksselig. Er konnte kaum glauben, wie schnell er zu diesem, ihm völlig fremden Kind, Vertrauen gefasst hatte.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_3_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Sie sind sooo süß oder?</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/68162887">Chapter 4</a>: ~Kurzes Glück~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Ein bisschen Magie...</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/27684752#chapter_4_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>4. Kapitel<br/>~ Kurzes Glück…~</p><p>Draco suchte einen trockenen Stein, der ein wenig versteckt hinter den Büschen in einer Art Minibucht am Ufer lag. Nachdem sich der Blonde gesetzt hatte, nahm auch Harry vorsichtig neben ihm platz. Nach kurzem Zögern entschloss er sich noch etwas weiter nach vorne zu rutschen, was Draco fragend betrachtete.<br/>“Was hast du vor?”<br/>“Ich will nur meine Füße waschen bevor ich meine Schuhe wieder anziehe, denn die sind immer noch voller Sand.”</p><p>Eine Weile beobachtete der Blonde Harry nur dabei. Der Pullover war etwas nach oben verrutscht, als der Kleinere sich vorbeugte und so hatte man wieder freie Sicht auf die bleiche Haut, die an zu vielen Stellen blau-grün und lila verfärbt war. So kam es, dass er seine Neugier nicht mehr weiter zügeln konnte. <br/>Er wusste nicht, ob es richtig war, was er nun tun würde, denn es war auch sehr gut möglich, dass er damit alles kaputt machte.<br/>“Wer hat dir so weh getan?”</p><p>Die Beine, die zuvor noch spielerisch hin und her schwangen, verharrten in ihrer Position. Harry blickte starr hinaus auf den See. Automatisch richtete er seine Kleidung und verdeckte somit die mehr als eindeutigen Spuren der körperlichen Misshandlung. Er brachte es nicht über sich in die silbergrauen Augen zu blicken, denn jetzt würde sicherlich bald alles vorbei sein. <br/>Und doch war er der Meinung, dass Draco es verdient hatte, die Wahrheit zu erfahren. Er wollte ihn nicht anlügen oder weiter im Unklaren lassen.</p><p>“Meine Verwandten.”, erhob er leise flüsternd das Wort. “Mein Onkel Vernon er… ich mache so vieles falsch, weißt du… und da muss er mich eben bestrafen… Ich will es ja alles richtig machen, aber es passiert einfach…”, versuchte er sich verzweifelt zu rechtfertigen. Trotz allem wollte er doch seinen einzigen Spielkameraden, den er je hatte, nicht verlieren.<br/>Doch wider Erwarten kamen keine bösen Beschimpfungen, keine Bestätigung…<br/>“Aber was ist mit deinen Eltern? Die sind doch nicht damit einverstanden, oder?” Schließlich bestrafte ihn sein Vater auch selbst, aber er glaubte doch, dass das nicht die Regel war.<br/>“Meine Eltern sind tot. Schon lange… ich kann mich nicht mal mehr an sie erinnern. Tante Petunia sagt es wäre ein Autounfall gewesen. Nur irgendwie erinnere ich mich immer wieder an so ein merkwürdig grünes Licht. Ich träume oft davon… und… es macht mir Angst…”</p><p>“Oh… das tut mir leid.” Und Draco war wirklich ziemlich getroffen. Auch wenn seine Eltern ihn nicht unbedingt liebten, waren sie dennoch seine Eltern. Es gab da trotz allem etwas, was sie verband, auch wenn sein Vater wohl eine andere Auffassung von diesem Band hatte, als er.<br/>“Aber eigentlich dürfen dich doch deine Verwandten gar nicht schlagen. Das ist nicht erlaubt. Du machst doch nichts absichtlich kaputt oder??” <br/>Nun das konnte er sich wirklich gar nicht vorstellen. Dieser kleine Junge, war ein Unschuldsengel, wie er noch nie eines getroffen hatte. Er war nicht einmal frech, wie es kleine Jungen manchmal eben waren. Er war immer höflich und zuvorkommend. Er konnte sich schon freuen, wenn andere sich freuten und war glücklich, wenn er ihn glücklich machen konnte. Wie eben vorhin beim Schaukeln.</p><p>“Nein. Es passiert aus Versehen, oder ich bin nicht schnell genug mit meinen Aufgaben. Und manchmal passieren merkwürdige Dinge um mich herum…”<br/>“Merkwürdige Dinge?”<br/>Draco wurde hellhörig… Das kam ihm doch irgendwie bekannt vor…<br/>Harry fuhr schon wieder zusammen, als würde er Schläge erwarten. Das hatte er gar nicht sagen wollen… Jetzt würde rauskommen, was für ein Freak er wirklich war.</p><p>“Wann passieren diese Dinge? Und was passiert?”<br/>Harry entspannte sich etwas. Das klang eigentlich nur interessiert und ein wenig aufgeregt… da war kein drohender Unterton zu erkennen…<br/>“Naja… wenn ich Angst habe vor allem. Früher ist das immer einfach so passiert aber naja… mittlerweile…”</p><p>War es möglich? Konnte es tatsächlich sein, dass Harry ein Zauberer war, wie er selbst und nichts davon wusste? er hatte vor kurzem darüber gelesen, dass es Kinder gab, die nicht in der Zauberwelt aufwuchsen und bei denen sich genau diese- naja… Symptome zeigten. Nur eines machte ihn stutzig.<br/>“Was ist denn mittlerweile?”<br/>Draco wurde schon ganz hibbelig.<br/>“Ich hab gelernt es ein bisschen zu kontrollieren…”, murmelte der kleine Schwarzhaarige leise in sich hinein, doch Draco hatte es verstanden.<br/>“Zu kontrollieren? Was kannst du? Kannst du es mir zeigen?”</p><p>Endlich traute sich Harry wieder zurückzublicken und strahlend graue Augen sahen Vorfreudig in die seinen. Sollte er wirklich…..?<br/>Langsam richtete er seine Hand zur Wasseroberfläche und konzentrierte sich. Draco konnte das alles nur gespannt und staunend beobachten. Harry hatte ja nicht einmal einen Zauberstab… und trotzdem begann sich langsam das Wasser unter seiner Handfläche aufzuwölben. Stück für Stück entzog sich ein etwa orangengroßer Wasserball der Erdanziehungskraft und stieg aus dem See empor direkt über Harrys Handfläche, die jetzt nach oben zeigte.</p><p>Draco rutschte noch etwas näher. “Du kannst ja wirklich zaubern…”, flüsterte er andächtig “… und das sogar ohne Zauberstab…”<br/>Der Kleine blickte überrascht neben sich. “Du findest das nicht schlimm? Ich meine… ich bin ein Freak… so was ist doch nicht normal und außerdem gibt es doch keine Zauberei…”<br/>Doch Draco hatte nur ein glückliches Lächeln für ihn übrig. “Natürlich gibt es Zauberei, oder wie erklärst du das, was du da gerade machst?” <br/>Harry stutzte. “Aber Onkel Vernon hat doch… ich meine… er sagt immer Zauberei gibt es nicht…”, wurde er gegen Ende immer leiser. </p><p>Draco zögerte nur einen winzigen Moment, dann hatte er sich entschieden. “Es gibt Magie wirklich. Du bist kein Freak oder so etwas… du bist ein Zauberer… und… du bist nicht der Einzige.”<br/>Überrascht wurde er aus großen, grünen Augen angesehen. “Die magische Welt existiert neben der Nichtmagischen. Sie ist geheim, sodass Menschen, die nicht eingeweiht sind, nie etwas von dieser Welt erfahren…”</p><p>“Woher weißt du das alles?”, wurde Harry nun doch langsam skeptisch. Für einen Scherz, war Draco viel zu ernst. <br/>“Ich komme aus dieser Welt. Ich bin auch ein Zauberer… ich trage auch Magie in mir. Aber ehrlich gesagt, kann ich- im Gegensatz zu dir- keine Stablose Magie anwenden.”, gab der Blonde bewundernd zu.<br/>“Wirklich??? Ich meine… du bist auch so… wie ich???”, wollte sich Harry noch einmal vergewissern. Ein Nicken bestätigte ihm noch einmal seine Fragen und dann war er nicht mehr zu halten. Endlich gab es jemanden, mit dem er über all die merkwürdigen Dinge reden, die um ihn und mit ihm passierten, all die Dinge die er sich nie erklären konnte, die ihm nie beantwortet wurden…</p><p>So saßen sie lange beisammen auf dem Stein und Draco genoss es, selber einmal das Wissen zu lehren, welches er selbst unter einigen Schmerzen erworben hatte. Und er tat es gerne… vor allem für Harry. <br/>Schon allein, wenn er dessen Gesicht betrachten konnte, welches glücklich nach außen strahlte… die wissbegierigen, so ausdrucksstarken Augen, in denen immer wieder neue Fragen auftauchten… Es war so schön, endlich mit jemanden einfach frei über alles reden zu können…</p><p>Etliche Minuten später, war Harrys Flut an Fragen langsam zu einem schmalen Bachlauf geworden und Draco nahm die Gelegenheit beim Schopfe.<br/>“Denkst du, du kannst mir auch das beibringen, was du mit dem Wasser gemacht hast??”<br/>“Ich weiß nicht. Wollen wir es versuchen?”<br/>“Oh, ja…”</p><p>So wurde Harry zum ersten mal in seinem Leben Lehrer. Und er war ein guter Lehrer. Geduldig erklärte er Draco was er tat, berichtigte ihn, ohne irgendeine weitere Erwiderung und beschrieb, was er selbst fühlte, wenn er zauberte.<br/>Es brauchte eine lange Zeit, bis Draco die Magie in sich erfühlen und so auch ohne Zauberstab nutzen konnte. Dann bemerkte man schnell, Dracos Auffassungsgabe, denn alles weitere klappte wesentlich schneller.</p><p>Zwar war Dracos Wasserkugel nur etwa so groß wie eine Kiwi, aber auch sie schwebte schließlich über seiner Handfläche.<br/>“Das ist ja Wahnsinn…”, war der einzige Kommentar, den Draco in seiner Konzentration aufbringen konnte. Und Harry kicherte leise, als er das leuchtende Gesicht des Blonden betrachtete, der sich gar nicht satt sehen konnte, so fasziniert war er von seinem eigenen Erfolg.<br/>Auch Harry ließ nun erneut eine Wasserkugel aus dem See heraufsteigen und Beide begannen etwas zu experimentieren, wie es Kinder eben tun, wenn sie etwas Neues entdecken. <br/>Sie ließen die Kugeln aufeinander prallen und nahmen erstaunt wahr, dass sie sich dadurch nicht vermischten. Draco kam auf die Idee einen Stein auf die Kugel zu werfen und zu sehen, ob der hindurch fallen würde oder nicht. Harry wollte das ganze mit Sand ausprobieren und immer wieder kamen neue Einfälle hinzu.</p><p>So in ihrem Entdeckertrieb völlig vertieft, bemerkte keiner von ihnen die kalten, eisblauen Augen, die sich an ihre kleinen Gestalten hefteten…</p><p>Freudig kicherte Draco, als er Harrys vergebliche Versuche betrachtete, den Stein doch noch in die Wasserkugel zu bekommen. Denn immer wenn der Stein die Oberfläche berührte, glitt er an selbiger einfach ab und wurde nicht einmal nass. Das konzentrierte Gesicht des Kleinen sah auch einfach zu süß aus…</p><p> </p><p>Ein Schatten fiel von hinten auf sie und erschrocken löste sich Dracos Zauber. Alarmiert drehte der Blonde Junge sich um und Harry zuckte so stark zusammen, dass er vom Stein abrutschte und mit einem schmerzhaften Aufkeuchen zu Boden fiel.<br/>Draco erblasset merklich und obwohl er Harry im ersten Moment zur Hilfe eilen wollte, konnte er sich in seinem Schock nicht einmal bewegen.<br/>“Draco Lucius Malfoy. Hast du auch nur die geringste Entschuldigung für dein ungehorsames und völlig unstandesgemäßes Verhalten?”, erklang die schneidende Stimme seines Vaters und ließ ihm den kalten Schweiß ausbrechen. Er wusste, egal was er sagen würde, es hätte alles sowieso keinen Sinn…</p><p>Harry blickte mit Schrecken auf den langhaarigen, blonden Mann, der auf Draco zugeschritten kam. Eine eisige Gänsehaut lief ihm den Rücken hinab, denn er wusste nur zu gut, wie sich Wut anfühlte und was passierte, wenn diese Wut auf jemanden gerichtet wurde.<br/>Dracos Kopf sank einfach kraftlos hinab. Was sollte er auch groß tun. Er hatte nicht die geringste Chance auch nur irgendetwas gegen seinen Vater zu unternehmen. Er konnte sich ihm nicht entgegenstellen… nicht einmal in seinen Träumen. <br/>Er hatte sich bereits damit abgefunden die Bestrafung zu akzeptieren… die Stunden, die er dafür mit Harry hatte verbringen dürfen, waren es ihm wert gewesen.</p><p>Ein nur zu bekanntes Zittern breitete sich in Harry aus. Er wollte doch Draco nicht wehtun, oder? Das war doch sein Vater? Und ein Vater tat doch seinem Kind nicht weh… oder?<br/>“Du weißt, was dein Ungehorsam für einen Strafe verlangt???”, fragte Dracos Vater in beunruhigend leisem und doch nachdrücklichem Tonfall nach und Draco sank noch weiter in sich zusammen. <br/>Er mochte sich damit abgefunden haben, doch das hieß noch lange nicht, dass er sich darauf freute… er hatte Angst… unglaubliche Angst… wie jedes mal… Er hasste diese Schmerzen…<br/>Gerade setzte er zu seiner Antwort an auf welche sein Vater immer noch ungeduldig wartete, als auf einmal eine Stimme hinter ihm sich zu Wort meldete. <br/>Er erstarrte…</p><p>“Es ist nicht Dracos Schuld gewesen!! Es war alles meine Schuld! Es war meine Idee und ich hab ihn auch zu allem überredet!! Sei dürfen ihn nicht deswegen bestrafen! Er hat nichts Falsches getan!!!”, erklang Harrys verzweifelte Stimme von Boden hinauf. Noch ziemlich unter Schmerzen richtete er sich auf und schob sich nach und nach vor Draco.<br/>Dieser war von dieser Reaktion noch immer ziemlich überrumpelt, denn nie hätte er mit solch einer Reaktion seitens Harry gerechnet. Er hätte verstanden, wenn der Kleinere weggerannt wäre, oder sich wenigstens still verhalten würde. Aber niemals hätte er geglaubt, dass er ihn verteidigen würde… nein… sogar alle Schuld auf sich nahm. <br/>Das durfte er nicht tun! Er hatte doch keine Ahnung wozu sein Vater fähig war, was er ihm alles antun konnte. Und doch konnte er nicht vermeiden, dass sich ein warmes Gefühl in seiner Brust ausbreitete.</p><p>“Nun Draco?? Hast du auch etwas dazu zu sagen??”<br/>Und Draco nahm sich zusammen. Um sich irgendwie zu beruhigen, atmete er tief ein…<br/>“Es stimmt nicht! Es ist nicht nur seine Schuld. Ich hätte ja nicht mitgehen müssen und außerdem war es auch meine Idee.”<br/>“Aber Draco… ich… es macht mir nichts aus…”, versuchte der Kleinere noch immer Draco aus der Schusslinie zu bekommen. Es war ihm egal, ob er dafür bestraft werden würde… er war es gewohnt und sowieso im Moment verletzt. Da würden einige Verletzungen mehr oder weniger nicht allzu viel ausmachen. Er wollte nicht, dass seinem ersten und einzigen Freund irgendetwas geschah…<br/>Grüne, ängstliche Augen wandten sich wieder den hellgrauen zu, die ihn ihrerseits jedoch bittend anblickten.<br/>“Es ist gut Harry. Danke.”<br/>“Aber…”<br/>“Ich denke du solltest jetzt lieber nach Hause gehen…”, gab er dem Schwarzhaarigen sanft zu verstehen und tatsächlich gab Harry den Widerstand auf. Er konnte diesem flehenden Blick nichts entgegenbringen…</p><p>Er ließ die Schultern hängen und wollte sich, wenn auch noch immer zögerlich, gerade auf den Weg machen, als ihn abermals eine schnarrende Stimme zurückhielt.<br/>“Du glaubst doch nicht wirklich, dass ich ihn einfach so gehen lasse, Draco?”<br/>Nun lagen mit einem Mal zwei überraschte und nicht minder verängstigte Blicke auf der imposanten Gestalt des Malfoy- Oberhauptes. Doch dieser hatte nur ein kühles, herabwürdigendes Verziehen der Mundwinkel für Beide übrig.</p><p>“Aber das… Wieso… er hat nichts mit alledem zu tun Vater…”<br/>“So? Meinst du? Wie war sein Name noch gleich??? Harry…”, fragte er mit lauerndem Unterton nach und bewegte sich zeitgleich, blitzschnell auf den Schwarzhaarigen zu, sodass keines der Kinder schnell genug hätte reagieren können.<br/>Erst als eine große Hand nach Harrys Oberarm griff, ihn ruckartig zu sich heran zog und zeitgleich einige Haare mit einem versilberten Stab aus der Stirn strich, konnte der Schwarzhaarige ein kurzes Wimmern nicht unterdrücken. Der plötzlich einsetzende Schmerz, der noch von seinen alten Verletzungen herrührte, kam einfach zu unerwartet.</p><p>“Na wer sagt es denn… Harry Potter…”, stellte der Ältere zufrieden mit sich selbst fest. <br/>Draco japste auf. Wer kannte diesen Namen denn schon nicht? Ein jedes Kind in der Zauberwelt hatte von ihm gehört und kannte seine Geschichte. So auch er…<br/>Dann sackte eine weitere Erkenntnis in seine Gedanken ein… <br/>Er hatte mit Harry Potter gespielt… <br/>Harry Potter war kein verwöhntes, verhätscheltes Kleinkind, welches alles bekam, was es sich wünschte. <br/>Harry Potter und wird schwer misshandelt und war verletzt…<br/>Harry Potter war ihm ähnlicher als er je angenommen hatte…<br/>… und trotz alledem wollte er seinen Harry, wie er ihn hier kennen gelernt hatte, auf keinen Fall gehen lassen…<br/>…doch…<br/>Jetzt hatte sein Vater, wie schon immer in seinem Leben, die alleinige Macht und er wusste nur zu genau, dass er noch nie gut auf den Helden der Zauberwelt zu sprechen gewesen war… das war so überhaupt nicht gut…</p><p>“Was… wieso…”, kämpfte sich die flache, unsichere Stimme des Kleinsten durch die Gedanken des jungen Malfoy. “Woher… woher kennen sie meinen Namen…?”<br/>Draco wurde heiß… Harry wusste nichts von seiner Berühmtheit?? Natürlich, er wusste ja nicht einmal etwas von der Zauberwelt…<br/>“Ahh… er weiß es nicht??”, verdammt… sein Vater hatte wieder einmal seine Gedanken Gelesen, ohne, dass er das geringste davon gemerkt hatte…<br/>“Tja, ich denke das macht die Sache sogar noch amüsanter.” und Dracos Augen wurden panisch…</p><p>Laute Stimmen unterbrachen die Gedanken aller, denn eine große Gruppe Menschen, wohl eine Hochzeitsgesellschaft, bahnte sich ihren Weg durch den Park.<br/>Die kurze Ablenkung seines Vaters nutzte Draco und fasste blitzschnell Harrys Hand. Dann begann er zu laufen und zog den, noch immer verdutzten Schwarzhaarigen hinter sich her. <br/>Sie kamen nicht weit… doch immerhin kamen sie weit genug in die Nähe den Menschenmassen, sodass sie dadurch einen gewissen Schutz bekamen.<br/>“Harry du musst verschwinden! Sofort! Lauf los!”, war alles was Draco ihm noch zurief, ehe er Harry von sich weg schubste und Lucius sie beide erreicht hatte.<br/>Harry hatte die angsterfüllten Augen des Blonden sehr wohl gesehen und beschloss, dass es besser war Dracos verzweifelter Bitte zu folgen.<br/>Er rannte weiter und ließ seinen Freund hinter sich zurück, denn dessen Vater hielt den Jungen am Arm fest. Das wütende Funkeln in seinen Augen ließ schlimmes vermuten…<br/>“So entkommst du mir nicht…!! AMNESIA!!!”</p><p>Der blaue Strahl traf Harry im Rücken, er stolperte und blieb einige Momente reglos liegen, ehe er sich verwirrt aufrappelte und sich dann ängstlich umsah. Sein Blick blieb nur für wenige Sekunden an Draco hängen, ehe er sein Gesicht wieder senkte und seine Tasche, welche noch immer am Baum angelehnt war, angestrengt anhob. Schwerfällig machte er sich auf seinen noch recht weiten Nachhauseweg…</p><p> </p><p>Lucius kümmerte sich innerhalb weniger Sekunden um die Erinnerungen der anderen Anwesenden und zog dann seinen Sohn mit festem Griff am Oberarm hinter sich her.<br/>Tränen schwammen in Draco Augen. Er konnte den Blick einfach nicht von Harry nehmen. Er wollte nicht daran denken, was nun auf ihn zukam… doch wenigstens ging es Harry nun gut…<br/>Schließlich verschwand die zierliche Gestalt aus seinem Blickfeld und er musste sich wieder der Wirklichkeit stellen.<br/>Sie verschwanden  in einer dunklen Seitengasse und Lucius zog den kleinen Blonden ruckartig zu sich. Ein leises ‘Plop’ ertönte und hinterließ dann eine drückende Leere.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_4_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Was als nächstes kommt, kann man wohl ahnen...</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/68487962">Chapter 5</a>: ~Konsequenzen~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Ich denke der Titel spricht für sich...<br/>Und wir kommen zurück ins Hier und Jetzt... Wie werden alle Beteiligten nun reagieren?</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Achtung! <br/>Die Warnung VIOLENCE wurde nicht umsonst ausgewählt... es wird schon recht grafisch... <br/>Wenn es Bedarf nach einer zensierten Variante gibt werde ich eine erstellen, dann bitte einfach nachfragen^^</p><p>Aber auch HURT/COMFORT hat in diesem Kapitel seine deutliche Berechtigung.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>5. Kapitel<br/>~ Konsequenzen…~</p><p>In der Eingangshalle des prunkvollen Manors, welches die Malfoys ihr Zuhause nennen durften, tauchten sie wieder auf.<br/>Noch immer hielt Draco der Schraubstockartige Griff seines Vaters, als dieser ihn hinter sich her schleifte. Und der Kleine bekam es mit der Angst zu tun, denn er wurde nicht wie sonst in das Arbeitszimmer seines Vaters gebracht, wo er für gewöhnlich sämtliche Strafen erhielt. Dieses mal lenkte das Malfoy- Oberhaupt seine Schritte in die Kerker hinab.<br/>Draco begann sich zu wehren… seine Gedanken überschlugen sich und bildeten ein Wirrwarr aus ureigener Furcht und tief sitzender Angst, gepaart mit dem erdrückenden Gefühl der Machtlosigkeit. <br/>Doch der Junge hatte nicht die geringste Chance…<br/>Brutal wurde er auf den kalten Steinboden am Ende des langen feuchten Ganges geschubst und kauerte sich dort verängstigt zusammen…</p><p> </p><p>Das Bild verschwamm…</p><p> </p><p>Völlig erschöpft schleppte sich Harry die letzten Meter durch den Vorgarten, ehe er endlich die Tür erreichte. Noch immer wunderte er sich, wie es auf einmal so spät sein konnte… es war, als hätte er einen Blackout…<br/>Doch er wusste, dass ihm seine Familie das niemals glauben würde…<br/>Kaum hatte er die metallene Klinke der Tür runtergedrückt, wurde selbige auch schon  mit Wucht aufgerissen, sodass der Kleine über die große Einkaufstasche stolperte und mit dem Kopf voran auf dem Boden landete.<br/>Sofort wurde sie hinter ihm auch wieder zugeschlagen. Schließlich wollte die Nachbarschaft nichts von dem Folgenden mitbekommen…</p><p>“Wo bist du verdammt noch mal gewesen? Was glaubst du eigentlich wer du bist, du widerlicher Freak? Was erlaubst du dir eigentlich? Wie kannst du es wagen…??????”<br/>Er kam gar nicht zu Wort, denn das Zetern seiner Tante ließ überhaupt keine Möglichkeit auf irgendeine Entschuldigung oder Erklärung.<br/>Sein Kopf begann zu dröhnen… er war wohl doch gerade ziemlich heftig aufgekommen….<br/>Warum hatte er nur die ganze Zeit das Bild eines blonden kleinen Jungen vor sich… und warum wollte es einfach nicht scharf werden… es entglitt ihm, kaum dass er glaubte, sich erinnern zu können…</p><p>Ein lautes Poltern riss ihn aus seinen Gedanken, denn Vernon kam mit zornesrotem Gesicht den schmalen Gang entlang auf ihn zu. Auch er begann ihn nun anzuschreien und Harry kauerte sich zusammen…. Was sollte er auch sonst tun…. <br/>Er hatte Angst… Angst vor neuen Schmerzen…</p><p>----------------------------</p><p>In der Halle herrschte Totenstille nur unterbrochen von vereinzelten Schluchzern…</p><p>Doch niemand konnte den Blick von der Leinwand wenden, als die Bilder nun immer wieder zwischen den Schauplätzen wechselten. Sie sahen wie der kleine Harry immer stärker zu zittern begann und Draco die Tränen von den Wangen liefen, doch sie konnten sich nicht abwenden…<br/>Keiner konnte weghören, als die verzweifelten Gedanken der Kinder um Hilfe flehten und ihre Stimmen immer wieder um Verzeihung baten.<br/>Keiner konnte die schmerverzerrten Schreie aus ihrem Köpfen ausblenden, als Lucius begann Draco zu verfluchen und Vernon immer heftiger mit dem Gürtel auf Harry einprügelte.<br/>Niemand wollte wahrhaben, dass so etwas tatsächlich geschehen war…</p><p>Das laute Schnalzen des toten Leders, welches auf die zarte, nackte Haut traf, ließ sie alle innerlich erbeben…<br/>Doch Vernon schien selbst das viele Blut, das von Harrys mittlerweile nackten Rücken hinabtropfte und bereits eine große Lache auf dem Flurboden bildete, noch nicht genug zu sein… Harrys Schreie waren bereits zu einem Wimmern übergegangen, denn zu mehr reichte seine Kraft nicht mehr aus. Er konnte sich nicht mehr rühren und ständig wurde ihm schwarz vor Augen.<br/>Doch seinem Onkel reichte das nicht und so griff er zum ersten… aber sicher nicht zum letzen Male nach einem seiner Golfschläger…</p><p> </p><p>Draco lag in sich zusammen gekrümmt auf dem kalten Steinboden und versuchte verzweifelt seine Atmung zu beruhigen. Immer wieder kam ihm der Hustenreiz hoch und jedes Mal spuckte er mehr Blut.<br/>Ihm war so schrecklich kalt… und der Schwindel nahm immer mehr zu. Seine Arme und Beine zuckten bereits unkontrolliert, doch sein Vater hörte noch immer nicht auf.<br/>Flach atmend wagte er einen kurzen Blick nach oben und sah in das kalte Gesicht seines Erzeugers…<br/>Wieder hob der den Zauberstab um das erste…, aber gewiss nicht das letzte Mal einen der Unverzeihlichen gegen seinen Sohn zu sprechen…</p><p> </p><p>Das harte Metall traf Harry mit voller Wucht in die Seite und ein erschreckend lautes Knacken erreichte Harrys Ohren, als mit einem Male ein unglaublicher Schmerz in seinem Inneren explodierte und ihm die Luft zum Atmen nahm. In einem hoffnungslosem Kampf rang er sich selbst einen Atemzug ab, ehe ihn erneut der Schläger traf und seinen Arm nun ebenfalls brechen ließ…</p><p> </p><p>“CRUCIO!!!”, war das Letzte, was Draco hörte, ehe die Welt  in einem gewaltigen Strudel aus gleißendem Schmerz verschwand und ihn mit sich in die Tiefe riss.<br/>Glühende Nadeln durchbohrten seinen gemarterten Körper, ließen ihn wieder aufschreien. Sein Inneres schien zu verbrennen und kein Gedanke hätte noch bestehen können, denn dieser allumfassende, unumgängliche Schmerz fegte jegliche Geisteshandlung einfach fort.<br/>Er spürte wie sein Körper versagte, wie seine Atmung aussetzte und seine Muskeln erschlafften…</p><p> </p><p>Dann endlich kamen keine neuen Schmerzen mehr hinzu und beide Kinder glitten endlich in die erlösende Ohnmacht…<br/>Unbemerkt veränderte Lucius noch die Erinnerungen von Draco ehe er seinen Sohn einfach in der eisigen, dunklen Kälte zurückließ und ihm den Rücken zukehrte.</p><p> </p><p>Der Bildschirm wurde schwarz…</p><p> </p><p>Harry klammerte sich an Draco und Draco an Harry, als könnten sie sich so gegenseitig Kraft geben. Harry war nicht mehr in der Lage seine Emotionen noch irgendwie zu unterdrücken. Er weinte einfach… er weinte, wie er es als Kind nicht gedurft hatte und auch Draco liefen die Tränen über die blassen Wangen.<br/>gefangen in ihren Erinnerungen, nahmen sie für einige Zeit nichts mehr um sich herum war. <br/>Nicht das entsetzte Starren… <br/>Nicht das leise Weinen einiger Mädchen…<br/>Nicht das leise Stammeln der Lehrer, die nun versuchten Alle zu beruhigen… <br/>Alles was sie dachten, was sie fühlten konzentrierte sich einzig und allein auf die Person, mit der sie diese ganzen Erinnerung wieder teilten. Diese grauenvolle, und doch auch schöne Erinnerung von einander. </p><p>Einige Lehrer, unter ihnen die Professoren Snape, McGonnagal, Sprout und natürlich Dumbledore kamen auf sie zu. Doch Draco bemerkte sie früh und schützend zog er Harry fester an sich. <br/>Langsam wich er zurück. Das war das Letzte, was er jetzt wollte…. Fragen beantworten. Das wollte er Harry und sich nicht antun.<br/>Sie verschwanden zusammen aus der Halle. Harry ließ sich einfach mitziehen.</p><p>Snape bemerkte als Erster, was in seinen beiden Schülern vorgehen musste und so hielt er die anderen Lehrer auf. Es wäre wohl besser, wenn Beide sich etwas beruhigen konnten… Später würde er dann in Ruhe mit ihnen reden… es war wohl oder übel nötig…</p><p>Draco brachte Harry indessen zum See hinab. Erst dort drosselte er seine Schritte und erlaubte sich selbst wieder zu Atem zu kommen. <br/>Stille kehrte ein… keine wirklich unangenehme Stille, denn Harry schien noch immer nicht wirklich in der Lage seine aufgewühlten Gedanken zu ordnen. Noch immer krallten sich seine Finger ins glatt gebügelte Hemd des Blonden. Das alles kam einfach zu plötzlich, es war einfach zu viel… zu viel, um es so schnell verarbeiten zu können…<br/>Auch Draco ging es da nicht viel anders, doch reagierte er auf eine andere Art und Weise…. Auch bei ihm saß der Schock tief, doch vorerst hatte er ihn weit zurückgedrängt um für Harry da sein zu können. Um ihn halten zu können, wie er es früher schon einmal getan hatte…</p><p>Er hatte nie geglaubt, sich Harry so nah fühlen zu können und verstand endlich die unglaubliche Anziehungskraft zwischen ihnen. Diese Anziehung, die innerlich schon so lange vorhanden war, das seltsame und unerklärliche Gefühl der Verbundenheit, mit denen sie nicht hatten umgehen können. Seit dem Tag in der Winkelgasse, als das erste Mal dieses unbekannte Gefühl in ihm aufgestiegen war… dieses Gefühl der Faszination… der Zusammengehörigkeit…<br/>Sie hatten damals nicht miteinander gekonnt, doch noch viel weniger ohne einander…</p><p>Er begann sanft durch Harrys Haare zu streicheln, unwissend, was er sonst tun sollte. Was sollte er sagen…? Es gab nichts zu sagen…<br/>Was sollte er tun… außer Harry die Nähe zu geben, nach der er sich sehnte?<br/>So schwieg er…</p><p>Wie lange sie so standen, wussten sie nicht, doch irgendwann zog es Draco vor, sich auf einem großen Stein direkt am Ufer niederzulassen. Natürlich hielt ihn das nicht davon ab, Harry weiterhin im Arm zu halten, denn er zog ihn sich einfach auf den Schoß, was diesen erstmals wieder zu einer Reaktion animierte.<br/>Er wurde rot… fürchterlich rot und er hoffte, dass Draco es nicht bemerken würde…</p><p>So wie die Dämmerung langsam voranschritt, hatten sich auch seine Gedanken und Gefühle wieder etwas beruhigt. Auch die angenehme Nähe des Blonden hatte ihr übriges getan. <br/>Natürlich war es schwer, dass nun alles wieder hochgekommen war, was er so lange verdrängt hatte. Die Demütigungen, die Angst, die Schmerzen… seelisch und körperlich… doch er hatte davor damit leben können und er würde es auch jetzt können… <br/>So zumindest die Theorie…. </p><p>Das Problem an der Sache war, dass nun auch alle Anderen bescheid wussten und er aus diesem Grunde wohl kaum wieder einfach alles verdrängen konnte. Sie würden ihn immer daran erinnern, ihn ausfragen, ihn bedrängen… selbst wenn sie es gut meinten…<br/>Andererseits hatte er nun auch Draco… so hoffte er zumindest… und was die Reaktion des Malfoysprosses anging, ließ ihn durchaus hoffen, dass sie nicht wieder zu ihrer Feindschaft zurückkehren würden. Es passte einfach nicht mehr zu dem Draco, an den er sich nun wieder erinnern konnte.</p><p>Vertrauensvoll ließ er sich zurück gegen die Brust des Blonden sinken und erinnerte sich, dass er das ja schon einmal getan hatte… damals auf dem Spielplatz… als er das erste mal in seinem Leben Trost empfangen hatte. Wie auch jetzt…</p><p>Auch Dracos Gedanken drehten sich um exakt dasselbe, denn auch er wollte Harry um keinen Preis der Welt wieder hergeben. Auch er hatte sich ja nicht mehr erinnern können, da sein Vater auch ihm die Erinnerungen genommen hatte, doch nun kamen all die Gefühle dieses einen Tages wieder in ihm hoch… Zudem wurde er nun zugegebener Maßen neugierig…<br/>Langsam streckte er seine Hand auf das Wasser zu und konzentrierte sich.</p><p>Harry bemerkte die Magie, die auf einmal in Draco aufwallte und löste sich überrascht etwas aus dessen Armen. Erstaunt blickte er auf die Wasserkugel, die sich gerade von der Seeoberfläche trennte und auf Dracos Hand zuflog, nur um in ihr zum Stehen zu kommen…<br/>“Ich kann es tatsächlich noch…”, freute sich der Slytherin, wie damals, als er es das erste Mal geschafft hatte den Zauber auszuführen. Harry konnte nicht anders als daraufhin zu grinsen, denn obwohl das alles so völlig unwirklich schien, fühlte er sich so unglaublich wohl. Es fühlte sich endlich wieder richtig an.<br/>Zu gerne ließ er sich von der aufkommenden kindlichen Freude anstecken und so flog nun auch seinerseits eine Kugel aus Seewasser in seine Hand. Sie waren beide größer als damals…</p><p>Verschwörerisch grinsten sich Beide an, doch dann blieben ihre Augen aneinander hängen.<br/>Was früher nur die Neugier und ein gewisses Maß an Faszination in Beiden geweckt hatte, setzte nun eine ganz andere Welle an Emotionen frei…<br/>Wärme breitete sich in ihnen aus, ein unglaublich intensives Kribbeln zog durch ihre Körper, als sie sich der schieren Nähe ihrer Körper bewusst wurden. Und Beide wussten, was es bedeutete.</p><p>Schon länger hatten sie sich innerlich eingestanden auf das gleiche Geschlecht zu stehen und, auch wenn sie es noch vor einer Woche nicht zugegeben hätten, eine gewisse Vorliebe für den Typ des jeweils anderen entwickelt. <br/>Nun kam das alles mit einem Mal hoch. Und das mit einer Heftigkeit, die sie erzittern ließ… Ihre Hormone liefen Amok.</p><p>Noch immer waren sie in den Seelenspiegeln des Anderen gefangen, während sich eine gesunde Röte auf ihren Wangen abzeichnete. Die Zauber, welche sie noch immer unbewusst ausgeführt hatten, waren mit einem mal vergessen und das Wasser fiel platschend hinab. <br/>Dieses Geräusch weckte sie auch aus ihrer Versunkenheit und machte nun einer gewissen Verlegenheit platz. Außerdem waren ihre Hosen jetzt klitschnass…</p><p>“Ich denke wir sollten lieber reingehen. Es wird langsam ziemlich kalt.”, merkte Draco nun lächelnd an und sie erhoben sich gemeinsam von ihrem Sitzplatz.<br/>“Ich will nicht zurück zu den Anderen.”, flüsterte der Gryffindor mutlos in die kalte Nachtluft. “Sie werden Fragen stellen…”<br/>Die Unsicherheit kehrte zurück und Harrys Hand schloss sich wieder fester um die Dracos. “Wir schaffen das schon. Irgendwie…”, konnte Draco auch seine Unsicherheit nicht ganz aus seiner Stimme verbannen. </p><p>Sanft zog er Harry zu sich, umarmte ihn noch einmal haltgebend, strich ihm beruhigend über den Rücken. Dann jedoch lösten sie sich voneinander und steuerten zurück aufs Schloss zu. <br/>Die in der Dunkelheit hell erleuchteten Fenster, welche eigentlich wohl ein Gefühl der Behaglichkeit und Wärme ausstrahlen sollten, hatten eher eine beängstigende Wirkung auf Harry und seine Schritte wurden merklich immer langsamer. <br/>Draco zögerte nicht und griff wieder nach Harrys Hand, er drückte fest zu und streichelte beruhigend über dessen Handrücken. Sie mussten da jetzt durch… sie konnten sich nicht ewig verstecken, nicht ewig vor der Realität fliehen… auch wenn sie es noch so gerne wollten.</p><p>Auch Draco hatte Schwierigkeiten sein Schritttempo beizubehalten und nicht einfach umzukehren, doch er blieb weiterhin stark… für Harry… für sich selbst…</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/68769810">Chapter 6</a>: ~Reaktionen~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Comfort... Comfort... Comfort...</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Vorletzte Runde...</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>6. Kapitel<br/>~ Reaktionen….~</p><p>Langsam erklommen sie die letzten Stufen zum Eingangsportal und durchquerten die großen Flügeltüren. Dann war es jedoch vorbei mit der Ruhe und Zweisamkeit. Nur ein Gedanke war etwas tröstlich… wenigstens waren die Schüler schon weg.<br/>So sahen sie sich also nur den Lehrern gegenüber, die scheinbar hier auf sie gewartet hatten. </p><p>Zunächst herrschte Stille, doch dann trat Dumbledore langsam auf sie zu.<br/>“Nun Kinder… wir haben heute ein Menge erfahren, von dem nur wenig erfreulich war…”<br/>Dracos Gesicht erstarrte wieder zu seiner eisigen Maske und Harry begann abermals zu zittern. Der Blonde bemerkte dies natürlich und zog, im Angesicht der sichtlich überraschten Lehrer, den Gryffindor enger zu sich in die Arme. Doch Dumbledore ließ sich nicht weiter beirren.<br/>“In Anbetracht der nun eröffneten schwerwiegenden Tatsachen müssen noch einige wichtige Fragen geklärt werden.” und Draco glaubte er hörte nicht recht. Der Direktor sprach doch tatsächlich mit ihnen, als wären sie Angeklagte in irgendeinem Gerichtsprozess. <br/>Während Harry auf diese Art der Anklage reagierte, indem er sich immer fester an Draco klammerte, wurde dieser immer wütender. Sie waren hier doch nicht die Schuldigen!! Zusätzlich trug Harrys verängstigte Reaktion keinesfalls zur Besserung seines Gemütszustandes bei und so schwelte die Wut weiter in Dracos Innerem.</p><p>“Zunächst einmal… Wieso haben sie niemandem etwas gesagt? Das ist ziemlich unverantwortlich von ihnen gewesen…”<br/>Das reichte!! Etwas in Draco legte sich um, kochte über und setzte einen puren, ungefilterten Schwall seiner Magie frei. Die Fensterscheiben vibrierten bedrohlich und das Feuer der Fackeln gewann an Intensität, flackerte hektisch und zauberte ein beängstigendes Schattenspiel an die Wände. <br/>Doch ehe etwas schwerwiegenderes passieren konnte, hörte er eilige Schritte, die schnell auf sie und die geschockten Lehrer zukamen.<br/>Die beiden Schüler kannten diese Schritte gut, doch selten hatte man sie in dieser Eile vernommen. Seine Wut dämmte sich ein…</p><p>“Was tun sie denn hier Direktor? Ich hatte doch Ihnen gegenüber bereits angemerkt, dass es besser wäre, alles erst einmal zur Ruhe kommen zu lassen. Außerdem ist es schon ziemlich spät und die Beiden gehören in ihre Schlafsäle!”<br/>Selten war Harry so froh gewesen die Stimme seines Zaubertränkelehrers zu hören und auch Draco war verdammt beruhigt über das Auftauchen seines Hausvorstandes. Wer weiß, was sonst noch passiert wäre…</p><p>“Nun Severus, es gibt eben einige Dinge, die unbedingt geklärt werden müssen und keinen Aufschub dulden…”, doch er wurde ziemlich harsch unterbrochen. <br/>“Das wird auch noch bis zum Morgen, wenn nicht gar länger warten können. Schließlich haben wir bis jetzt auch nichts von der ganzen Sache gewusst, da werden ein paar Tage mehr oder weniger auch nichts mehr dran ändern können.”<br/>Selten hatten sie Professor Snape so aufgebracht gesehen. Etwas dass für ihn so völlig untypisch schien, das Harry nicht anders konnte, als ihn bewundernd anzublicken. Es trauten sich ja auch nicht viele, sich so direkt gegen den Direktor zu stellen.</p><p>Dieser musste sich gerade, aufgrund der unleugbaren Logik des Gesagten, erst einmal geschlagen geben. <br/>“Gut, dann klären wir die Fragen später. Nun Mr. Potter, dann wünsche ich, dass sie sofort ihren Schlafsaal aufsuchen. Das gilt auch für sie Mr. Malfoy.”, blickte der Älteste streng auf sie hinab, fest überzeugt, dass dieser Aufforderung sofort folge geleistet wurde.<br/>“Nein.”, begehrte Harry jedoch unerwartet auf. “Nein. Ich will nicht in den Gryffindorturm. Ich will nicht zu den Anderen. Ich will keine Fragen mehr beantworten! Ich will nicht zu ihnen…” Dann versagte seine Stimme und er kuschelte sich wieder schutzsuchend an Draco fest, der diese Gefühle durchaus verstehen konnte.</p><p>“Aber das geht nicht!”, mischte sich nun auch McGonnagal ein. “Er muss zurück in den Gryffindorturm!”<br/>Doch nun blieb auch Draco nicht weiter stumm. “Sie werden ihn nicht dazu zwingen! Ich verstehe, warum er nicht zurück will. Ich würde es auch nicht wollen. Seine Freunde und alle, werden ihn doch sofort ausfragen und überhaupt nicht zur Ruhe kommen lassen. Gryffindors sind eben so…. In Slytherin gibt es wenigstens etwas wie Privatsphäre und man wird nicht sofort mit Fragen überhäuft. Natürlich werden Fragen kommen, aber sie werden damit warten, bis ich… bis wir bereit dafür sind!”, machte der Blonde seinen Standpunkt klar.<br/>“Dem stimme ich zu!”, kam es ohne Umschweife vom Hauslehrer letztgenannten Hauses zurück.<br/>“Ich denke, es wäre besser für Mr. Potter und Mr. Malfoy, wenn sie zusammen die erste Zeit in Slytherin verbringen.”, versuchte er Draco etwas Rückhalt zu spenden.</p><p>Doch sofort begehrten auch die anderen Lehrer auf und eine hitzige Diskussion entstand. Sie wurde immer weniger sachlich, immer sinnloser und immer lauter.</p><p>Harry wurde dies zuviel. All das heute hatte ihn schon völlig überfordert. Seinen Geist, seine Seele und auch seinen Körper. Er hasste es, wenn solch ein Streit zu laut wurde, die Stimmen sich zu einem einzigem, bedrohlichem Gewirr wurden, sich langsam immer tiefer in ihn hineinbohrten. Eine schwarze tobende Masse, die sich langsam um sein Herz klammerte und zudrückte.<br/>Zu oft hatte er so etwas erlebt und jedes Mal war sämtliche Wut sämtliche Aggression auf ihn projiziert worden. Zu oft hatte er die Verletzungen über sich ergehen lassen müssen, zu oft… um zu vergessen…</p><p>Seine Finger verkrampften sich in Dracos Hemd und er versteckte seinen Kopf in dessen Halsbeuge. Sein Atem ging hektischer, der kalte Schweiß brach ihm aus und seine Beine gaben langsam unter ihm nach. Die Schwärze vor seinen Augen wurde größer und Harry wurde panisch… er bekam keine Luft mehr… er atmete immer schneller immer flacher… die Angst begann ihn zu lähmen. Es wurde kalt in ihm…</p><p>“Harry!!”<br/>Dracos angstvoller Ausruf brachte die Lehrer wohl endlich wieder zur Besinnung und Snape war der Erste, der auf ihn zueilte, als der Blonde sich langsam mit dem Schwarzhaarigen in seinen Armen auf den Boden sinken ließ.<br/>Schnell erfasste der ehemalige Spion die Situation und erkannte die Panikattacke in der Harry gefangen schien. Geübt gab er Anweisungen.<br/>“Er hat Panik Draco. Er hyperventiliert. Du musst versuchen ihn irgendwie zu beruhigen! Rede mit ihm! Er muss ruhiger atmen.”<br/>Draco gehorchte.</p><p>“Harry? Hey Harry, hörst du mich? Es ist alles gut, ja? Es ist doch alles gut… niemand wird dir wehtun…”, sprach er mit sanfter Stimme auf ihn ein und streichelte ihm dabei unablässig über den zitternden Rücken. Erstaunt und ziemlich fassungslos konnten die Erwachsenen die Augen nicht von ihnen abwenden. Den Blick nicht von den Schülern lösen, die so eine lange Zeit Feinde gewesen waren und nun so unglaublich vertraut schienen.<br/>“Shhh… es ist gut… du bist hier sicher… shhh ich bin ja da… niemand tut dir weh… niemand wird dich mehr verletzen… das lasse ich nicht zu… hörst du?? Das werde ich nicht zulassen…!”<br/>Niemand hatte Draco jemals so emotional gesehen, so unsagbar sanft…</p><p>Der Blonde spürte, wie das hektische Atmen an seinem Hals sich etwas beruhigte, die völlig verkrampften, bereits weiß schimmernden Finger, sich etwas lockerten und das Zittern etwas an Intensität verlor.<br/>“Es ist alles in Ordnung… hörst du? Es ist alles ruhig… niemand schreit… niemand wird dich verletzen… niemand… ok? Shhh… ganz ruhig…” <br/>Liebevoll hielt er Harry fest in seinen Armen und schaukelte sanft hin und her, was den Schwarzhaarigen schließlich endgültig aus seinen Schock löste.</p><p>Mit tränennassem Gesicht blickte Harry in die weichen, grauen Augen seines Gegenübers und die Verkrampfung seiner Hände verschwand endlich zur Gänze. “Niemand ist böse?”, flüsterte er leise in diese absolute Stille hinein und alle hatten verstanden. <br/>Sie konnten Harry jetzt auf keinen Fall wie den Siebzehnjährigen behandeln, der er war. Im Moment war er nicht viel mehr als ein verängstigtes Kind. Ein Kind, welches nun unbedingt die Nähe einer vertrauten Person… eines Freundes… eines Mitfühlenden brauchte. Er brauchte Draco…</p><p>Noch ehe der Blonde jedoch zu einer Antwort ansetzen konnte, nahm Snape die Sache in die Hand.<br/>“Nein. Niemand ist dir böse und niemand will dir etwas tun. Du kannst vorerst bei Draco bleiben, wenn du das möchtest. Allerdings müsstest du dafür mit in Slytherin übernachten…”, nahm er die Entscheidung des Schulleiters einfach in seine Hand. Es war ihm egal, ob das eventuell noch Konsequenzen haben könnte, er wusste nur, dass die Beiden endlich die Ruhe brauchten, die sie so dringend benötigten.<br/>Er sah Draco nur zu genau an, wie auch ihn das alles sehr zu schaffen machte, wie auch sein Körper nach einer Pause, nach Entspannung schrie.<br/>“Ich will bei Draco bleiben.”, antwortete Harry sofort und ohne ein geringstes Zögern.<br/>“Gut. Dann bringe ich euch mal hinunter und sorge dafür, dass ihr heil in Dracos Zimmer ankommt.”</p><p>Und genau das tat er…</p><p>Kurz kam noch die Frage nach dem Schlafplatz auf und dass die Zwei wohl kaum in einem Bett schlafen konnten. Doch Snape wedelte nur lässig mit dem Zauberstab. “Wozu gibt es Magie??” und so ließen sie die noch immer sprachlosen Lehrer hinter sich zurück. </p><p>Bald waren sie in Gemeinschaftsraum Slytherins angekommen.<br/>Draco und Snape hatte recht behalten. Niemand hielt sich noch großartig im Gemeinschaftsraum auf und niemand rannte sofort auf sie zu um sie mit Fragen zu überschütten. Zwar waren die Blicke auch nicht gerade angenehm, doch sie wurden nicht angestarrt, wie eine Zirkusattraktion.<br/>Harry hielt sich noch immer an Dracos Arm fest und versuchte ruhig zu bleiben. Noch so eine Panikattacke konnte er nicht gebrauchen.</p><p>Sie hatten bereits das Ende der Treppe zu den Schlafsälen erreicht, als doch noch eine Person auf sie zukam. Blaise Zabini, seines Zeichen bester Freund von Draco, doch ein einziges stummes Schütteln seines Kopfes genügte um Blaise zu zeigen, dass nun der falsche Moment für jegliche Fragen war. Ein kurzes Nicken folgte und der Slytherin trat beiseite, um sie durchzulassen.<br/>Snape öffnete noch ihre Tür und ließ beide eintreten, bevor er nach einem leisen “Gute Nacht” schließlich ebenfalls verschwand.</p><p>Draco spürte schnell, wie die Anspannung von Harry abfiel und auch sein Arm wieder freigegeben wurde. Ein schnelles Wedeln seines Zauberstabes genügte und die Tür war verschlossen. Zusätzlich würden auch keine Geräusche mehr nach außen dringen können. So hatten sie absolute Ruhe und mussten auch nicht darauf achten, das etwas ihrer Gespräche oder auch Gefühlsausbrüche nach außen gelangen könnte.</p><p>Behutsam dirigierte Draco nun Harry zu seinem Bett, ließ ihn platz nehmen, ehe er auf seinen Schrank zuschritt und kurz in ihm wühlte. Schnell hatte er das gesuchte gefunden und reichte Harry seinen seidenen und- wen wundert es- grünen Schlafanzug.<br/>“Du kannst gerne das Bad benutzen. Wir Siebtklässler besitzen alle ein eigenes Kleines, gleich hinter der Tür hier.”, zeigte er auf die zweite Türe im Raum.<br/>Harry schenkte ihm ein leichtes Lächeln, ehe er dem Vorschlag folgte.</p><p>Knappe fünf Minuten später hatte er das Bad wieder verlassen und stand kurz überrascht und unentschlossen im Zimmer. Auch Draco hatte sich schon umgezogen und saß bereits in seinem Bett. Neben ihm hatte ein weiteres Bett seinen Platz gefunden und Harry war froh darum.<br/>Natürlich erinnerte er sich wieder an alles und so, aber gleich zusammen in einem Bett zu schlafen erschien ihm etwas übereilt. Allerdings würde die Nähe des Blonden ihn auch im gewissen Maße beruhigen. Er hoffte es würde alles gut gehen…</p><p>Draco hätte zwar gerne mit Harry zusammen in seinem Bett geschlafen, aber er wollte den Kleinen jetzt nicht auch noch in Verlegenheit bringen. So hatte er eben ein weiteres Bett neben seines gezaubert, in welchem es sich Harry nun bequem machte.</p><p>Befangenheit machte sich für einen Moment bei ihnen breit, doch Draco durchbrach die kurze Stille schnell, ehe es ihnen unangenehm werden konnte. <br/>“Soll ich das Licht schon ausmachen, oder wollen wir noch etwas reden?”<br/>“Beides… wenn es dir nichts ausmacht… Im Dunklen redet es sich leichter… denke ich…”<br/>Da war sie wieder… seine Unsicherheit. Kaum war der direkte Körperkontakt weg, kamen die Ängste und Zweifel dieses Tages wieder in ihm hoch und erneut machte sich Anspannung in ihm bemerkbar.<br/>Dann erlosch das Licht und Beide ließen sich nach hinten fallen. Sofort begann Draco zu sprechen. Von allem, was ihn heute beschäftigt hatte, was er gefühlt hatte, was er nun fühlte…<br/>Harry hörte aufmerksam zu und entspannte sich wieder. Draco ging es also wie ihm… er war aufgewühlt und wusste nicht, was er denken sollte, wusste nicht, wie es nun weiterging…<br/>Nach und nach taute der Schwarzhaarige auf und beteiligte sich aktiv in ihrem Gespräch. Lange tauschten sie sich aus… im Schutze der Dunkelheit, die ihnen half frei heraus zu sprechen.</p><p>Nach und nach machte sich jedoch auch ihre Müdigkeit wieder bemerkbar und Draco beschloss, dass es für heute genug war.<br/>“Vielleicht sollten wir langsam schlafen…”, er wandte einen schnellen Zeitzauber an und rote Zahlen schwebten vor ihm in der Luft. “… Es ist bereits kurz nach Zwei…”<br/>“Hmm…”, war alles was er noch zurückbekam. Doch das reichte ihm.<br/>“Dann gute Nacht. Schlaf schön!”, flüsterte er schon beinahe und erntete ein gemurmeltes “Gute Nacht!” von Harry, dann herrschte endgültig Ruhe und die Anstrengungen des Tages forderten ihre Opfer.<br/>Schnell waren Beide in die Traumwelt entschwunden.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27684752/chapters/69157923">Chapter 7</a>: ~Neue Wege~
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Zum Abschluss noch ein wenig Fluff hier und da ...</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Hier also der letzte Teil... man könnte es wohl als verfrühtes Weihnachten bezeichnen ^_^</p><p>Viel Spaß !!!</p></blockquote>
+            <p>
+            (See the end of the chapter for  <a href="/works/27684752#chapter_7_endnotes">more notes</a>.)
+            </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>7.Kapitel<br/>~ Neue Wege…~</p><p>Er erzitterte und kauerte sich noch weiter zusammen, hatte nicht einmal mehr die Kraft seine Arme zur Verteidigung zu erheben. Er flehte, bettelte wimmerte, weinte… doch es hörte nicht auf. Die Schläge prasselten weiter auf ihn ein.<br/>Sein Zeitgefühl war verschwunden. Er hatte nicht die geringste Ahnung, wie lange das nun schon so ging. Er hoffte nur, dass seinem Onkel bald die Luft ausging und er so von ihm ablassen musste. Sonst würde er den morgigen Tag wohl nicht mehr erleben…<br/>Doch es hörte nicht auf…<br/>Seine Sinne schwanden. Sein Blut bildete eine große Lache um ihn herum und viele seiner Knochen waren gebrochen. Seine Atmung wies bereits einige Aussetzer auf und Schwärze breitete sich vor seinen Augen aus. <br/>Warum wehrte er sich denn noch? <br/>Warum konnte er sich nicht einfach in die Stille einer Ohnmacht fallen lassen?<br/>Vielleicht weil er wusste, dass er dann vermutlich nicht mehr aufwachen würde?</p><p>Aber…<br/>Wäre das so schlimm? Was hatte er zu verlieren? Wer würde ihn vermissen…?<br/>Er kannte die Antwort… <br/>Niemand… Er hatte niemanden… noch nie gehabt… Niemand würde nach ihm suchen. Niemand hatte sich je Sorgen um ihn gemacht. Selbst in der Schule hatte man ihn allenfalls geduldet…<br/>Er sollte einfach sterben… was hielt ihn noch hier?<br/>Was hielt ihn in dieser Welt, die ihn so hasste?</p><p>Ein unscharfes Schema entstand vor seinen geschlossenen, vor Schmerz zusammengekniffenen Augenliedern. Ein kleiner Junge… mit blonden, glänzenden Haaren… in sauberer, gepflegter Kleidung…<br/>Warum nahmen ihn diese unglaublichen blau- silbrig schimmernden Augen so gefangen? Wer war das? Warum sah er ihn immer wieder? Warum ließ er ihn nicht los? Was verband ihn mit diesem Kind? Er konnte sich nicht erinnern ihm je begegnet zu sein… Aber wieso war er dann immer wieder so präsent in seinem Kopf? Warum verband er so viele Gefühle mit ihm? Warum wollte er für ihn weiterleben… obwohl er ihn nicht einmal kannte?</p><p>Das Schwindelgefühl nahm zu… seine Augen verweigerten ihren Dienst… er konnte sie einfach nicht mehr öffnen… Seine Muskeln erschlafften und die Schläger versiegten.</p><p> </p><p>Draco wurde von einem leisen Wimmern aus seinem unruhigen Schlaf gerissen. Schnell merkte er, wie Harry sich unruhig in seinem Bett hin und her warf, immer wieder wimmerte, oder sogar leise unterdrückt aufschrie.<br/>“Harry?”<br/>Keine Reaktion…<br/>Er stand auf, die Bettwärme verschwand aus seinen Gliedern. Schnell überwand er den kurzen Abstand zwischen ihren Betten, hob die heruntergefallene Zudecke auf und ließ sich dann Auf den Rand der Matratze nieder.<br/>Schweiß stand auf Harrys Stirn und er warf seinen Kopf gequält von einer auf die andere Seite. Draco berührte ihn an der Schulter, begann ihn vorsichtig zu schütteln. <br/>“Harry? Wach auf… komm schon… es ist nur ein Traum.”  Als noch immer nichts geschah, griff er fester zu, denn Harrys Atem wurde immer hektischer… immer angestrengter, seine Hände verkrallten sich ins Bettlaken und Dracos Sorgen steigerten sich.<br/>“Harry wach auf!!”<br/>Und endlich reagierte der Schwarzhaarige. Zittrig schreckte er auf, krallte sich in Dracos Arm fest und begann dann hemmungslos zu schluchzen.<br/>“Shhh… ist doch gut… es war nur ein Traum… nur ein Traum…..”, wisperte der Blonde leise in Harrys Ohr. Doch Harry beruhigte sich nur langsam… es war so real gewesen…</p><p>Sanft legte Draco den Kleineren zurück in sein Kissen, doch Harry krallte sich daraufhin noch heftiger in Dracos Schlafanzug. Sein Blick wurde panisch.<br/>“Nicht gehen…”, verzweifelt versuchte er Draco näher zu sich zu ziehen. “…bitte…”<br/>“Ist doch gut… ich bleibe. Ist ja gut…” Schnell ließ er sich neben ihn sinken und zog die Decke über sie Beide. Harry kuschelte sich eng an ihn, klammerte sich noch immer an den Schutz versprechenden Körper neben ihm. Draco begann zärtlich über den bebenden Rücken zu streicheln und flüsterte weiter beruhigenden Worte.</p><p>Langsam kehrte die Müdigkeit in ihre Glieder zurück und ihre Gedanken wurden ruhiger, bis sie ganz verschwanden und beide wieder einschliefen…</p><p>Das Gespräch am nächsten Morgen verlief besser als gedacht. Zwar fielen beide einige Male in eine Art Flashback, doch glücklicher Weise war Snape dabei, der das Gespräch etwas kontrollierte und darauf achtete, dass ihnen nicht zu schwer zugesetzt wurde.<br/>Zu Beginn hatten sie noch nebeneinander auf zwei Stühlen gesessen, doch als Harry wieder zu zittern begann und die erste Träne über sein Gesicht lief, zog Draco ihn einfach kurzerhand auf seinen Schoß und umschloss ihn haltgebend mit seinen Armen.<br/>Es war für Beide nicht leicht, die doch ziemlich unangenehmen Fragen zu beantworten, doch sie hielten durch…<br/>Und endlich wurden sie entlassen…</p><p>Vor dem Wasserspeier wurden sie jedoch noch einmal kurz von Professor Snape aufgehalten. “Mr. Potter, Mr. Malfoy!” <br/>Sie blieben stehen und drehten sich etwas überrascht zu ihrem Zaubertränkelehrer um.<br/>“Ich hätte da noch eine Bitte an Sie, oder sehen sie es eher als einen Vorschlag.”, er hielt kurz inne. <br/>“Ich würde ihnen gerne helfen das Alles endlich zu verarbeiten. Sie können nicht immer nur verdrängen. Das ist nicht gut für Sie.”, wieder beobachtete er für einen Moment die Reaktion des Gesagten, dann fuhr er fort. <br/>“Deshalb biete ich ihnen an, dass sich mich vielleicht einmal besuchen, damit wir reden können. Natürlich muss das nicht sofort sein… Sie bleiben ja noch einen Weile in Slytherin nehme ich an. <br/>Beruhigen sie sich erst einmal richtig und dann denken sie über mein Angebot nach…”<br/>Zwar waren Harry und Draco noch Beide sehr unsicher und hatten wenig Lust Alles noch einmal zu durchleben, doch innerlich wussten sie, dass ihr Professor recht hatte. Sie mussten damit abschließen.<br/>“Danke Professor. Wir denken darüber nach.”, gab Draco schließlich versöhnlich zur Antwort. Snape nickte zufrieden und drehte sich in seiner gewohnten Eleganz, die seinen Umhang so perfekt fliegen ließ, um und verschwand in die andere Richtung.</p><p>So vergingen die Tage…<br/>Sie schliefen weiterhin zusammen in einem Bett, sie aßen zusammen, sie gingen zusammen zum Unterricht. Bei seinen Freunden hielt es Harry nie lange aus. Sie waren einfach zu hastig zu ungestüm… er konnte damit gerade überhaupt nicht umgehen. <br/>Der Trubel um sie legte sich lange nicht, doch Harry und Draco lernten, das Gerede der Anderen einfach zu ignorieren. Der einzige Schüler mit dem sich auch Harry traute zu reden, war zu seiner Überraschung Blaise. <br/>Er hatte sich schnell mit ihm angefreundet, nachdem Draco sie einander vorgestellt hatte. Sie redeten nie viel über die Vergangenheit und das gab Harry ein gewisses Maß an Selbstsicherheit zurück. Es tat ihm zwar leid um seine alten Freunde, doch wenn die einfach nicht begreifen wollten, dass er nicht über das Erlebte sprechen würde, hatten sie sich diese Sache selbst zuzuschreiben.</p><p>Sie sprachen viel miteinander, ohne das jemand anwesend war. Sie tauschten Erinnerungen aus und trösteten einander so über das Erlebte hinweg.<br/>Später nahmen sie dann das Angebot ihres Zaubertränkeprofessors an. <br/>Langsam… sehr langsam schafften sie es auch mit ihm, offen über alles zu sprechen. Oft hörte er einfach nur zu, ließ sie einfach reden, weinen, trauern über die Kindheit, die sie nie gehabt hatten. <br/>Erst am Ende gab er manchmal eine kleine Bewertung des Treffens ab, fasste offensichtliches zusammen oder wenn es gar zu schlimm wurde, schloss er sie sogar in seine Arme.</p><p>Als dies zum ersten Mal geschehen war, wusste keiner der Beiden so recht, wie er reagieren sollte. Nie hatte sie ein Erwachsener einfach in die Arme genommen um ihn  zu trösten oder zu beruhigen. Ihre Gefühle wirbelten durcheinander, doch nach und nach begannen sie zu entspannen und das Gefühl der Sicherheit einfach zu genießen…<br/>Von da an, hatte der Lehrer ihr vollstes Vertrauen in allen Dingen…</p><p>Die  Zeit verging schnell und so kam es, dass Dumbledore Harry wieder zurück in den Gryffindorturm stecken wollte. Was diesem natürlich rein gar nicht recht war. Er hatte sich schon so daran gewöhnt bei Draco zu schlafen, sich an seinen warmen Körper zu kuscheln und in seinen Armen wieder aufzuwachen, dass er nicht glaubte überhaupt noch ohne ihn schlafen zu können.<br/>Natürlich erzählten sie Professor Snape von ihrem Dilemma, der nach der kurzen Aufzählung der Gründe, die Harry und Draco hervorbrachten, innerlich ein wenig grinste. <br/>Natürlich bemerkte er, wie sich zwischen den Beiden etwas entwickelte, immer stärker wurde… er glaubte, dass es nicht mehr lange dauerte, bis sie es sich selbst eingestanden.<br/>Doch natürlich musste er sich nun erst einmal dem neu entstandenen Problem widmen.</p><p>“Tja… leichter wäre die Sachen, wenn Sie nach Slytherin wechseln könnten…”, überlegte er laut. <br/>“Was meinen Sie mit wechseln?”, spitzte Harry die Ohren. Er hörte davon zum ersten Mal.<br/>“Naja, manche Schüler haben bei der Auswahl im ersten Jahr die Wahl zwischen zwei verschiedenen Häusern. Ihnen ist es dann erlaubt auch zwischen den Häusern zu wechseln aus nachvollziehbaren Gründen natürlich…”<br/>Ein strahlendes Lächeln breitete sich auf Harrys Gesicht aus, was die beiden Anderen ziemlich irritierte. “Na dann ist das Problem doch gelöst!!”, freute sich der Schwarzhaarige.<br/>“Wie gelöst?”, fragte Draco sichtlich verwirrt nach.<br/>“Na ich wechsele nach Slytherin. Ich hatte im nämlich die Wahl zwischen Slytherin und Gryffindor!”</p><p>Und damit war es besiegelt.<br/>Zwar waren einige Lehrer mit der Entscheidung Harrys weniger zufrieden… allen voran Dumbledore und McGonnagal… doch auch sie konnten nicht verhindern, dass Harry offiziell ein Hausschüler Slytherins wurde.</p><p>Die Schule war schockiert…<br/>Doch weder Harry noch Draco störte das. <br/>Dann hatten sie sich endlich gefunden… Es hatte eben gefunkt. Sie hatten es sich endlich gestanden. Ihre Faszination hatte sich komplett in tiefe Liebe gewandelt. Es war, als wären sie schon immer füreinander bestimmt gewesen… <br/>Jede Situation bewies ihnen das auf neue Art und Weise. Sie halfen sich, ergänzten sich, konnten einander immer wieder beruhigen.<br/>Sie konnten sich das geben, was ihnen niemand sonst hätte geben können…<br/>Geborgenheit, Ruhe, Sicherheit und die Gewissheit endlich angekommen zu sein…</p><p>Sie versuchten gar nicht erst die Veränderung in ihrer Beziehung zueinander zu verbergen. Sie lebten sie einfach aus und ließen sich nicht stören von einigen abschätzigen Bemerkungen oder sogar völlige Ablehnung. Sie hatten einander… und auch Blaise und Snape, sowie einige andere Slytherins und auch Gryffindors freuten sich mit ihnen. Das reichte völlig.<br/>Langsam näherte sich Harry auch wieder den Gryffindors, wie auch seinen Freunden an. Sie schienen endlich zu begreifen, dass es Harry so, wie es im Moment war, am Besten ging. <br/>Sie würden nie erfahren, dass Professor Snape an dieser Veränderung nicht ganz unschuldig war…, denn er hatte dem Haus der Löwen mal ordentlich ins Gewissen geredet… auf seine Art und Weise… Und wie es schien hatten einige verstanden…</p><p>So kehrte der Alltag zurück zu ihnen.<br/>Sie lernten für den Abschluss, trafen sich mit Freunden oder genossen glücklich ihre Beziehung. Sie hatten endlich ihr Glück gefunden…</p><p>Es war ein sonniger Tag, als sie gemeinsam mit einigen Freunden am See saßen und einfach entspannten. Die Prüfungen waren geschrieben und bald würden sie Hogwarts verlassen. <br/>Nun zumindest einige von ihnen…<br/>Gerade hatten Harry und Draco ihren Freunden eröffnet, dass sie Beide bereits angeboten bekommen hatten, in ihrer Schule zu bleiben. Harry als Lehrer für Verteidigung und Draco als Lehrer für Zauberkunst, da Professor Flitwick die Gelegenheit nutzte endlich in seinen verdienten Ruhestand zu gehen.<br/>“Was?? Im ernst??” Blaise sah sie, fast wie auch alle anderen, mit großen Augen an.<br/>“Ja. Wir wissen es auch noch nicht so lange… immerhin hat Dumbledore uns erst vor einer Woche gefragt und wir mussten selbst erst einmal darüber nachdenken.”, versuchte sich Harry zu rechtfertigen.</p><p>“Boah, das ist so gemein. Ihr habt ja noch nicht einmal euer Zeugnis in der Hand und schon einen Job an der Angel…”, warf nun auch Ron ein.<br/>Tja… wo er recht hatte, hatte er recht. Doch das hielt Draco nicht davon ab, die Situation wie ein Slytherin, der er nun einmal war, auszunutzen.<br/>“Tja Weasley. Manche Zaubererfamilien sind eben besser als andere…”<br/>Doch nur kurz schaffte er es seinen extrem hochmütigen Gesichtsausdruck beizubehalten, dann prustete er einfach los. Rons Gesicht war ja auch zum schießen. Schließlich fielen die anderen nun auch in das Gelächter mit ein.<br/>Alle erinnerten sich bei der Aussage Dracos natürlich an das erste Jahr und allen wurden die unglaublichen Veränderungen bewusst, die seitdem um sie herum geschehen waren.<br/>Und sie waren froh darum…</p><p>Langsam kühlten sich die Gemüter wieder ein wenig ab und Harry schmiss sich einfach auf Draco, drückte ihn in das weiche Graß.<br/>“Du sollst doch keine gemeinen Sachen zu meinen Freunden sagen… Draco… dafür muss ich dich wohl oder übel bestrafen…” Und damit küsste er seinen Freund nieder. Der hatte nicht die geringste Chance sich zu wehren… nicht dass er es gewollt hätte… aber es sollte ja mal erwähnt werden. Schnell vertiefte sich der Kuss, wurde leidenschaftlicher und Hitze stieg unleugbar in ihren Körpern hoch. Das Kribbeln wurde stärker, sammelte sich in ihrer Lendengegend. <br/>Zärtlich beendete Harry den Kuss, denn er wollte ungern, dass sie hier draußen noch Probleme in den unteren Regionen bekamen… das musste nun nicht unbedingt sein… vor all ihren Freunden.<br/>Beide blickten sich noch für einen Moment verliebt in die Augen und waren sich sicher, dass dieser Kuss heute Abend in ihrem Zimmer noch fortgesetzt werden würde. Tja, so etwas passierte ihnen reichlich oft, sodass ihre Beherrschung oft gefragt war. Und das, obwohl sie nun schon eine ziemlich lange Zeit zusammen waren. Es hatte sich nicht viel geändert und sie begehrten einander, wie am ersten Tag.</p><p>Draco setzte sich, mit Harry im Arm wieder auf, streichelte ihm noch einmal durch die verstrubbelten, schwarzen Haare, küsste ihn sanft auf die und begann dann den Nacken des Kleineren zu kraulen.<br/>“Bleibst du eigentlich in Malfoy- Manor, Draco? Ich meine nach der Schule…”, fand Blaise seine Stimme wieder, nachdem er die beiden Turteltäubchen mit glücklichem Blick beobachtet hatte.<br/>“Nein. Auf keinen Fall!”, verdüsterte sich der Blick Dracos. “Ich will nicht dahin zurück. Es ist nie wirklich mein zu Hause gewesen…”<br/>Bedrücktes Schweigen breitete sich aus, denn alle mussten gezwungener Weise an das Gleiche denken. Harry wollte diese Gedanken unter keinen Umständen weiter wachsen lassen.<br/>“Ich hab ihm angeboten bei mir zu wohnen.” Und tatsächlich. Dracos Blick hellte sich wieder auf und auch die angespannte Stimmung lockerte sich wieder auf.<br/>“Wir werden erst einmal im alten Black- Haus wohnen müssen, aber wir können das Haus meiner Eltern nach und nach wieder aufbauen und dann dort einziehen. Das sollte kein allzu großes Problem werden.”, erklärte Harry fröhlich ihre Pläne für die Zukunft und Draco ergänzte nicht weniger gut aufgelegt.<br/>“Aber die meiste Zeit werden wir sowieso auf Hogwarts verbringen, denn wir haben vor Dumbledores Angebot anzunehmen.”</p><p>Und wieder brach eine heftige Diskussion aus, wie gemein doch das Leben war, unterbrochen von einigen Glückwunschbekundungen, Küssen, kleinkriegerischen Auseinandersetzungen und einigen Lachanfällen.</p><p>So alberten also eine kleine Gruppe von Schüler der Abschlussklasse, zu denen sowohl Gryffindors als auch Slytherins gehörten wie Erstklässler am Ufer des Sees, beobachten von einigen Lehrern, die das ganze mit einem lachenden und einem weinenden Auge betrachteten.<br/>Dieser Jahrgang war wohl allen sehr ans Herz gewachsen…</p><p>Man hatte viel erlebt, schwierige Situationen gemeistert, hatte sich über die ständigen Kabbeleien zwischen den Häusern aufgeregt  und ganz besonders den Kämpfen von Harry und Draco in den Gängen und natürlich auf dem Quidditschfeld beigewohnt. Immer wieder hatte man gegen Voldemort gekämpft  und dann endlich, unter Einsatz aller Kräfte gesiegt. Die Zauberwelt wurde endlich von ihrem großen Schrecken befreit.<br/>Dunkle, unerwartete und grausame Geheimnisse waren aufgedeckt worden. Geheimnisse, von denen niemals jemand etwas geahnt hatte…<br/>Feindschaften wurden beendet und Freundschaften geschlossen.<br/>Masken waren endlich gefallen und Liebe, die so verzweifelt gesucht worden war, wurde gefunden.<br/>Man hatte Höhen und Tiefen gleichermaßen mit diesen Schülern geteilt, war mit ihnen durch Feuer und Eis gegangen, hatte gelitten oder gelacht gleichermaßen. Nicht Wenige fühlten sich auf besondere Art und Weise mit ihnen verbunden…</p><p>Niemand wusste, was die Zukunft bringen würde, doch alle waren sich sicher… es konnte mit diesen herangewachsenen jungen Erwachsenen keinesfalls langweilig werden. <br/>Vielleicht würden sie einige nie wieder sehen, wer wusste das schon. Wer wusste wohin sie ihr Lebensweg treiben würde? Wohin es sie in die Welt zog… ihnen stand doch nun alles offen… das Leben wartete…<br/>Nur Harry und Draco würden sie auf jeden Fall bald wieder sehen, worüber Viele ungemein glücklich waren. Mittlerweile konnte man sich kaum ein Leben ohne sie in Hogwarts vorstellen…</p><p>Doch die Lehrer hatten gelernt loszulassen. Egal wie schwer es ihnen jedes Mal fiel… egal ob es dieses Mal besonders schwer schien… Sie konnten sich wenigstens einer Sache gewiss sein… Eine Sache würde sie immer mit ihren Schülern verbinden…</p><p>Denn sie waren zu einem wichtigen und unauslöschlichem Teil in deren Leben geworden…<br/>Hatten vieles gelernt und gelehrt, schulisch und menschlich, körperlich und geistig…<br/>Sie waren zu dem geworden, was sie nun ausmachte…</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_7_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>So... es ist vollbracht.<br/>Ich hoffe es hat euch gefallen ^__^<br/>Vielleicht liest man sich mal wieder...</p><p>Bis dann... bleibt gesund und munter !!</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="eO6Iq5OBYtNM5XdxFOLEowkS74vES0v_MfSgpQWuK7sGXlMEY_fViXM-HApQ55OOezVyE8F8Cc_aQPdQfjHSdA"/>
+          <input value="27684752" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/MsSpaceey">MsSpaceey</a>, <a href="/users/TheStoryTeller_with_an_Eyepatch">TheStoryTeller_with_an_Eyepatch</a>, and <a href="/users/Shemuggi">Shemuggi</a>
+             as well as 
+          14 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_27684752">
+  <form class="new_comment" id="comment_for_27684752" action="/works/27684752/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="L2NODOOvxwX-x8oRFNZnbhD9I87BBcYyzZewV0ye8XdR05WjE9lwX8EcoWpQ0zBDYtq-VsQyhAImI-eiNwEIuA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_27684752">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_27684752" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_27684752=new LiveValidation('comment_name_for_27684752',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_27684752.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_27684752">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_27684752" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_27684752=new LiveValidation('comment_email_for_27684752',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_27684752.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_27684752" class="landmark">Comment</label>
+        <textarea id="comment_content_for_27684752" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_27684752" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_27684752_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_27684752">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_27684752=new LiveValidation('comment_content_for_27684752',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_27684752.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_27684752.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_27684752" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/27684752/hit_count.json")})</script>
+
+
+  </body>
+</html>

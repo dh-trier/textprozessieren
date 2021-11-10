@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":95,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Requiem - Glasschmetterling - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="7gJRYXqwpt1pEoOSKS5mAs8eDw0wwwFdYFt1--R36XpQTeOKVMMFC88edIUYRfNcoFtohiWK4jjJWY4PvDVrGw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="d3NQJP5jGdzF2SP-30sx_vlWJ7vWEav--KGjeYDWmN7JPOLP0BC6CmPV1OnuIKSglhNAMMNYSJtRo1iN2JQavw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/1125152/chapters/2268136">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/1125152/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/1125152/Requiem.azw3?updated_at=1414850896">AZW3</a></li>
+          <li><a href="/downloads/1125152/Requiem.epub?updated_at=1414850896">EPUB</a></li>
+          <li><a href="/downloads/1125152/Requiem.mobi?updated_at=1414850896">MOBI</a></li>
+          <li><a href="/downloads/1125152/Requiem.pdf?updated_at=1414850896">PDF</a></li>
+          <li><a href="/downloads/1125152/Requiem.html?updated_at=1414850896">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Draco%20Malfoy/works">Hermione Granger/Draco Malfoy</a></li><li><a class="tag" href="/tags/Hermione%20Granger*s*Ron%20Weasley/works">Hermione Granger/Ron Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Crime/works">Crime</a></li><li><a class="tag" href="/tags/Romance/works">Romance</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><span class="position">Part 1 of the <a href="/series/169796">Requiem</a> series</span><span class="divider"> </span><a class="next" href="/works/2547500">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2014-01-07</dd><dt class="status">Completed:</dt><dd class="status">2014-01-31</dd><dt class="words">Words:</dt><dd class="words">16644</dd><dt class="chapters">Chapters:</dt><dd class="chapters">8/8</dd><dt class="kudos">Kudos:</dt><dd class="kudos">10</dd><dt class="hits">Hits:</dt><dd class="hits">361</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Requiem
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Glasschmetterling/pseuds/Glasschmetterling">Glasschmetterling</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Der Mord an einem kleinen Mädchen zwingt Hermine Weasley dazu, nach Paris zu reisen, um einem widerstrebenden Draco Malfoy Informationen über die möglichen Täter zu entlocken und ihn zu einer Zusammenarbeit zu überreden.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2268136">Chapter 1</a>: Prolog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 1: Attacke</strong>
+</p><p>Fast automatisch zog sie den Kopf ein und vergrub die Hände tiefer in den Taschen ihres Mantels, als sich die Türen des U-Bahn-Zuges öffneten und sie in die klirrende Winterluft hinaustrat. Nach der schwülen Hitze des Abteils schlug die Kälte auf sie ein und sie schüttelte sich leicht, während sie sich vom Strom der Menschen aus der Métrostation tragen ließ.</p><p>Nachdenklich stapfte sie die Treppe empor und blickte sich um, hier und da konnte sie knirschende Reste einer dünnen Schneedecke erkennen, die sich im Februarfrost erhalten hatten, doch die rastlosen Füße der Pariser hatten die weiße Pracht von den meisten Straßen und Wegen vertrieben. Für einen Moment orientierte sie sich und warf einen schnellen Blick auf den kleinen Plan, den man ihr gegeben hatte, dann nickte sie langsam und nahm die letzten Stufen, wandte sich um und steuerte auf eine kleine, unauffällige Seitengasse zu. Die Häuser schienen sich hier dicht aneinanderzuschmiegen, doch obwohl sie alle fein säuberlich renoviert worden waren, konnte auch der beiläufigste Passant die Patina von Alter und Würde nicht ignorieren, und sie lächelte leicht. Dem britischen Zaubereiministerium war ganz offensichtlich jeder Trick recht, um sich einen besseren Stand in Frankreich zu verschaffen.</p><p>Dumpf hörte sie das Glucksen der Wellen hinter der Häuserzeile, die Seine umgab die Île de la Cité und nur entfernt konnte sie sich vorstellen, was die Räumlichkeiten hier, im mittelalterlichen Kern von Paris, das Zaubereiministerium jedes Jahr kosteten. Kingsley Shacklebolt schien sich wirklich Mühe zu geben, den angeknacksten Ruf Großbritanniens in der Welt wiederherzustellen, allerdings schien auch heute, zwanzig Jahre nach dem Sturz Voldemorts, ein dunkler Schatten über den internationalen Beziehungen des Landes zu liegen... ein Schatten, den sie im Büro für magische Strafverfolgung zwar nicht hautnah mitbekam, aber doch unterschwellig bemerkte, auf internationalen Tagungen, während Auslandsreisen... sie schüttelte den Kopf.</p><p>Wenn Kingsley schon dabei war, sich gut mit Frankreich zu stellen, könnte er natürlich auch den Botschafter austauschen, aber der war... eine ganz andere Geschichte. Und eine Geschichte, wegen der sie hier war.</p><p>Langsam legte sie den Kopf nach hinten, blickte an der schmucken Fassade des schmalen Hauses nach oben und lächelte leicht, die Dunkelheit brach bereits herein und aus den Fenstern glomm Licht, erhellte gemeinsam mit den eisernen Straßenlaternen das glitzernde Schild an der Fassade. „Perot, Perot et Maigre, Cabinet d'Advocat“ stand darauf und sie lächelte leicht, die Kanzlei hatte noch nie einen Fall bearbeitet... denn sie existierte nicht.</p><p>Vorsichtig blickte sie sich um, die Muggel, die den Hauseingang, in dem sie stand, passierten, bemerkten sie nicht und vorsichtig zog sie ihren Zauberstab, tippte mit der Spitze auf den Knopf der Tür und sie sprang lautlos auf. Lächelnd trat Hermine ein und blickte sich um, Fackeln erleuchteten den Gang, der mit einem roten Teppich ausgelegt war und ein Pförtner in Livree betrachtete sie gelangweilt von seinem Tisch aus, während sie die wenigen Meter überbrückte.</p><p>„Madame?“</p><p>Der Mann blickte zu ihr auf und sie lächelte so gewinnend, wie sie in diesem Augenblick vermochte. „Ich würde gerne den Botschafter sprechen.“</p><p>„Haben Sie einen Termin?“</p><p>Wahrheitsgemäß schüttelte sie den Kopf und der Gesichtsausdruck des Pförtners verdüsterte sich augenblicklich. „Nun... ich fürchte, dann werden Sie bis morgen warten müssen, Madame...“</p><p>„Weasley“, ergänzte sie lächelnd, doch ließ sie den Frost durchblicken, den sie sich während ihrer Arbeit für das Ministerium angeeignet hatte. „Hermine Weasley, Abteilung für magische Strafverfolgung.“</p><p>Der Mann hob leicht die Augenbrauen, ließ sich seine Überraschung aber nicht deutlicher anmerken, bevor er langsam den Kopf schüttelte. „Auch wenn Sie... nein, besonders wenn Sie dienstlich hier sind, sollten Sie sich einen Termin geben lassen, Madame. Der Botschafter schätzt es gar nicht, außerhalb seiner Bürozeiten gestört zu werden.“</p><p>Entschlossen unterdrückte sie ein Seufzen, mit Sturheit schien sie bei dem Mann nicht weiterzukommen und ihre Gedanken rasten, bis sich ein leichtes Lächeln auf ihre Lippen schlich. „Aber er ist noch hier... es brennt Licht in seinem Fenster.“ Sie beugte sich vor, betrachtete den Pförtner eindringlich, wie einen der Verdächtigen, die sie im Laufe der Jahre nur allzu oft befragt hatte. „Und da dachte ich mir, ich könnte auf einen Sprung hereinkommen... immerhin fängt die Tagung, für die ich hier bin, erst Montag an und wir waren doch gemeinsam in Hogwarts...“</p><p>Der Mann hob zwar die Augenbrauen, griff aber nach dem kleinen Block, der auf seinem Tresen lag, er schien ein Memo für den Botschafter zu schreiben und Hermine richtete sich langsam auf, konnte aber trotzdem nicht verhindern, dass sie leicht mit den Füßen auf und ab wippte, während der kleine Papierflieger sich auf den Weg zur Treppe machte.</p><p>Sie hatte nicht gelogen – langjährige Erfahrung mit der magischen Öffentlichkeit und ihre Arbeit vor Gericht hatten ihr beigebracht, das niemals und unter keinen Umständen zu tun – aber der Pförtner hatte die Information, die sie ihm gegeben hatte, absichtlich falsch interpretiert... natürlich war sie mit seinem Vorgesetzten gemeinsam zur Schule gegangen, aber der Schluss, dass sie befreundet gewesen waren, war so falsch, wie er nur sein konnte. Und der Mann, der ein Stockwerk über ihr in seinem Büro saß, wusste das genauso gut wie sie selbst, und würde hoffentlich die richtigen Schlüsse aus dieser Tatsache ziehen. Denn bevor sie zu einem gemütlichen Plausch zum Feierabend und einem Glas Wein vorbeikam, fror die Hölle zu.</p><p>„Der Botschafter wird Sie nun empfangen.“ Der Mann hinter dem Tresen rang sich sogar ein Lächeln ab, dass sein Vorgesetzter sie für wert erachtete, mit ihm sprechen zu dürfen, schien sie in seiner begrenzen Weltsicht einige Stockwerke nach oben katapultiert zu haben und er wies auf die Treppe, den Weg, den schon das Memo genommen hatte.</p><p>„Danke.“</p><p>Nachdenklich nickte sie, nahm Stufe um Stufe, der eigentlich schmale Aufgang wirkte durch die vielen Spiegel an den Wänden breiter und prächtiger, der Eindruck wurde noch verstärkt von den goldenen Kerzenhaltern und Ornamenten an der Wand und Hermine lächelte leicht. Dem Ministerium war wirklich nichts zu teuer.</p><p>Der Anschein von Luxus und Dekadenz setzte sich auch im ersten Stock, den sie nun erreicht hatte, fort, ihre Schuhe versanken fast in dem flauschigen, roten Teppich und für einen Moment blickte sie sich um, orientierte sich, dann nickte sie und steuerte auf eine glänzende, weiße Tür rechts neben ihr zu. Als sie den Namen auf dem Schild an der Wand daneben bemerkte, musste sie lächeln, wer hätte damals, nach dem Sturz Voldemorts gedacht, dass dieser Mann jemals für das Zaubereiministerium arbeiten würde... und doch hatte er es irgendwie geschafft.</p><p>Langsam, fast zögerlich pochte sie an das lackierte Holz, der Ton verklang und für einen Moment herrschte Stille, bis die Tür lautlos und wie von selbst aufschwang und den Blick auf das elegant eingerichtete Büro freigab... und auf den Zauberer hinter dem Schreibtisch.</p><p>Nachdenklich betrachtete sie ihn, während er sich fast widerwillig, wie es ihr erschien, erhob, um sie zu begrüßen. Die silbernen Strähnen in seinem zurückweichenden, blonden Haar waren mehr geworden seit ihrer letzten Begegnung, die Jahre hatten die Ähnlichkeit seiner Züge mit denen seines Vater nur noch deutlicher herausgestrichen, und doch konnte sie noch immer dieses Funkeln in seinen Augen erkennen, das sie an den Jungen erinnerte, den sie vor so langer Zeit kennengelernt hatte.</p><p>„Mr Malfoy.“</p><p>„Mrs Weasley.“ Seine Stimme klang kühl, während er sie betrachtete, sie vermeinte, einen Hauch der Verachtung, die er immer für Ron und seine Familie empfunden hatte, in seinem Tonfall zu erkennen, doch der Moment verging und der Botschafter des magischen Englands in Frankreich lächelte leicht. „Was führt Sie zu mir?“</p><p>Sie schwieg für einen Augenblick, bevor er um den Schreibtisch herumkam und seinen Charme wirken ließ – oder es zumindest versuchte. „Aber ich vergesse meine Pflichten als Gastgeber... möchten Sie Tee? Kaffee?“</p><p>Er nahm ihr ihren Mantel ab, sie spürte, wie sein Blick über die elegante Muggelkleidung, die sie trug, wanderte, kurz glaubte sie, Abscheu auf seinem Gesicht erkennen zu können, doch sofort lächelte er wieder jovial. Fast ein wenig zu hastig führte er sie zu dem kleinen Tisch, der neben dem Kamin, in dem ein warmes Feuer loderte, stand, und bot ihr einen der bequemen Stühle an, während sie ein Lächeln unterdrücken musste. Malfoy dachte, sie wäre wegen ihm hier... und das konnte sie leidlich ausnutzen, wenn sie denn nur wollte. „Setzen Sie sich.“</p><p>Langsam nahm sie Platz und beobachtete aus dem Augenwinkel, wie er ihren Mantel zu dem Kleiderständer in der Ecke des Raumes schweben ließ, bevor er sich ihr wieder zuwandte. „Was möchten Sie trinken?“</p><p>„Tee, bitte.“</p><p>Ein erneuter Schlenker seines Zauberstabes und ein Tablett erschien auf dem kleinen Tisch, mit einer dampfenden Tasse und einem langstieligen Weinglas, die schwere, dunkelrote Flüssigkeit schien für einen Augenblick zu schwappen, bevor sie sich wieder beruhigte und Malfoy ihr gegenüber Platz nahm. Für einen Moment breitete sich Schweigen zwischen ihnen aus, während Hermine ihre noch immer kalten Finger am Tee wärmte und er einen prüfenden Schluck nahm, bevor sich sein Gesicht zufrieden entspannte. „Nun... was kann ich für Sie tun? Denn dass Sie hier sind, um gemütlich mit mir zu plaudern, als alte Schulfreundin, wie Sie Fréderic weisgemacht haben, kaufe ich Ihnen nicht ab...“</p><p>Sie lehnte sich langsam in ihrem Stuhl zurück, musterte Malfoy eindringlich. „Felice Nott wurde ermordet.“</p><p>Das Erschrecken auf seinem Gesicht schien echt zu sein, als er zusammenzuckte und sie anstarrte, der Wein in seinem Glas schwappte bedrohlich. „Die Tochter von Theodore Nott?“</p><p>Langsam nickte sie, und Malfoy sank zurück in seinen Stuhl. „Was ist passiert?“</p><p>Hermine schloss für einen Moment die Augen, versuchte, das verzerrte, gequälte Gesicht des Mädchens aus ihrem Geist zu verbannen, doch es gelang ihr nicht und leise seufzte sie auf, versuchte nicht einmal, die Informationen zurückzuhalten. „Sie war allein mit der Hauselfe der Familie... ihre Eltern und ihre Schwester waren zum Lunch bei Freunden, aber sie konnte nicht mitkommen, weil sie krank war...“ Sie schwieg, so viele Tote und Verletzte hatte sie gesehen, sowohl während des Krieges als auch durch ihre Arbeit für das Ministerium, doch der Anblick dieses Mädchens hatte sie tiefer getroffen, als sie sich eigentlich eingestehen wollte, doch dann nahm sie sich zusammen. „Sie lag auf ihrem Zimmer und schlief, als die Täter sich Zugang zum Haus verschafften, sie mit dem Cruciatus-Fluch folterten und schließlich mit einem Avada Kedavra ermordeten. Die Hauselfe scheint für sie gekämpft zu haben, denn wir fanden sie gefesselt, geknebelt und mit einer großen Platzwunde an der Stirn neben dem toten Mädchen... sie konnte allerdings noch nicht befragt werden.“</p><p>Malfoy beugte sich vor, das Entsetzen über den Tod von Felice schien sich mit seiner Neugier die Waage zu halten, doch ganz offensichtlich gebot der Takt, zuerst auf den ersten Punkt einzugehen – was er auch sogleich tat. „Merlin... ich dachte, sie wäre schon in Hogwarts.“</p><p>Langsam schüttelte Hermine den Kopf. „Nein... sie hätte erst im September angefangen, gemeinsam mit Hugo und Lily.“</p><p>Für einen Moment oder zwei schwiegen sie beide, starrten in die Ferne, doch dann nahm Malfoy einen tiefen Schluck aus seinem Weinglas und musterte sie über den Rand hinweg eindringlich. „Nun, Mrs Weasley, die Frage, die ich mir nun stelle, ist... warum sind Sie damit zu mir gekommen? Und wieso untersuchen Sie den Fall und nicht einer der Auroren, der eigentlich dafür zuständig wäre?“</p><p>Hermine schüttelte den Kopf, was immer sie von Malfoy gehalten hatte und noch immer hielt, eine gewisse Intelligenz und ein gutes Gespür für die Dinge, die hinter der Fassade lagen, konnte sie ihm nicht absprechen... auch wenn sie ihn in diesem Moment dafür verfluchte. „Ich untersuche den Fall nicht“, entgegnete sie distanziert und nippte steif an ihrem Tee. „Ich bin für die Tagung zur internationalen Rechtszusammenarbeit, die am Montag im französischen Zaubereiministerium abgehalten wird, hier, und dachte, Sie wollten lieber persönlich über die Angelegenheit informiert werden, als es morgen aus der Zeitung zu erfahren.“</p><p>Die Art und Weise, wie er sie betrachtete, zeigte, dass er ihr nicht glaubte – und damit hatte er Recht, denn wieder hatte sie nur einen Funken Wahrheit ausgesprochen und den größten Teil ungesagt gelassen; Malfoy lächelte trocken. „Wer ermittelt dann?“</p><p>„Julius Donalds und sein Team haben den Fall turnusmäßig übernommen.“ Für einen Augenblick glaubte sie, ein verächtliches Funkeln in seinen Augen zu sehen, doch er hatte sich schnell wieder unter Kontrolle und betrachtete sie neugierig. „Natürlich.“ Ob da Sarkasmus in seiner Stimme war, konnte sie beim besten Willen nicht sagen. „Allerdings erklärt das nicht, wieso Sie noch hier sitzen und nicht bereits das Weite gesucht haben – und behaupten Sie jetzt nicht, dass Sie meine Fähigkeiten als Gesellschafter zu schätzen wissen.“</p><p>Hermine seufzte auf, wenn dieser Besuch irgendeinen Sinn oder Zweck erfüllen sollte, dann musste sie ihm wohl oder übel etwas verraten... was auch immer er mit dieser Information auch anfangen würde. „Über dem Haus der Notts schwebte das Dunkle Mal, als die Auroren eintrafen.“</p><p>Malfoy sog zischend die Luft ein und starrte sie an, die Überraschung – und auch die unterschwellige Angst – in seinem Blick wirkten echt, doch er war ein zu guter Schauspieler, als dass sie sich dessen wirklich hätte sicher sein können. „Und Sie denken, ich hätte etwas damit zu tun?“</p><p>Für einen Augenblick oder zwei ließ sie seine Vermutung im Raum hängen, dann schüttelte sie begütigend den Kopf und Malfoy entspannte sich sichtlich auf seinem Stuhl. „Nein... allerdings glaube ich, dass Sie vielleicht etwas darüber wissen könnten...“</p><p>„Das tue ich nicht.“ Die plötzliche, kalte Wut in seiner Stimme überraschte sie und sie beugte sich vor, musterte ihn interessiert, während sich ein Gedanke in ihren Kopf schlich, der ihr bis jetzt nicht gekommen war.</p><p>Langsam stahl sich ein Lächeln auf ihr Gesicht. „Auch wenn Sie es nicht tun... die Anzahl der ehemaligen Todesser auf freiem Fuß ist nicht besonders groß, und ich denke, wenn Sie sich ein wenig unter Ihren alten Freunden umhören würden, würde es Ihnen sicher nicht schwer fallen, etwas über die Hintergründe des Mordes zu erfahren...“</p><p>Malfoy starrte sie an und sie konnte nicht leugnen, dass der Ausdruck der Fassungslosigkeit auf seinem Gesicht ihm auf eine gewisse Art und Weise... stand. Eine Art und Weise, die sicherlich mit den Demütigungen durch den arroganten Jungen, der er einst gewesen war, zu tun hatte. „Immerhin arbeiten Sie ebenfalls für das Ministerium... und wenn das noch nicht als Motivation genügt, dann sollten Sie sich Folgendes überlegen, Mr Malfoy: Entweder Sie haben etwas mit dem Mord an Felice Nott zu tun – dann ist das gut für Sie, zumindest solange, bis wir Sie erwischen. Wenn Sie allerdings keine Verbindung zu den Tätern haben und es sich wirklich um Todesser handelt, dann dürfen Sie einmal raten, wer auf ihrer Abschussliste an oberster Stelle stehen wird.“</p><p>Derselbe Gedanke, der auch ihr durch den Kopf geschossen war, schien auch dem Botschafter gekommen zu sein, das zeigte sein Blick deutlich, und mit einem leichten Lächeln erhob sie sich. „Harry Potter hat Lord Voldemort getötet – aber Sie haben ihn verraten, Mr Malfoy. Und Sie wissen genau, welches Verbrechen in den Augen eines Todessers schwerer wiegt...“ Für einen Moment schwieg sie, blickte auf ihn herab, dann nickte sie leicht und nahm mit einem Zauberstabschlenker ihren Mantel vom Kleiderständer, wandte sich der Tür zu. „Ich wünsche Ihnen noch einen guten Abend, Botschafter.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2277574">Chapter 2</a>: Konter
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 2: Konter</strong>
+</p><p>Sie war zynisch geworden.</p><p>Mittlerweile wagte sie sogar, sich selbst einzugestehen, was Ron ihr seit Jahren an den Kopf warf, wenn sie sich wieder einmal über irgendeine Kleinigkeit zerstritten hatten – die Arbeit im Ministerium zehrte an ihren Kräften, verschluckte langsam aber sicher, Stück für Stück die optimistische junge Frau, die sie einst gewesen war. Zu viele Todesser hatte sie freikommen sehen, zu viele aussichtslose Prozesse geführt, zu viele korrupte Ministeriumsangestellte bloßgestellt, als dass sie noch an das Gute in der Welt – ob der der Muggel oder der magischen – glauben konnte.</p><p>So sehr Kingsley Shacklebolt, der amtierende Zaubereiminister, die Verwaltung auch reformiert hatte, noch immer war alles den Zwängen der Politik unterworfen, selbst die Fälle, die sie in der Abteilung für magische Strafverfolgung bearbeitete... und im Moment hatte sie das Gefühl, dass alles nur schlimmer wurde, aber nicht besser. Besonders jetzt.</p><p>Nachdenklich ließ sie sich nach hinten in die Decken fallen, starrte abwesend auf die hohe Decke der teuren Suite, das <em>Hôtel Magique</em> war nicht zu vergleichen mit dem Tropfenden Kessel in London, sondern erinnerte sie in seinen Ausmaßen eher an Hogwarts... nur war hier alles viel luxuriöser. Obwohl sie nun schon seit Jahren zu den verschiedenen Kongressen und Tagungen der magischen Gemeinschaft reiste, hatte sie sich doch nicht an den teilweise beträchtlichen Reichtum, der von den Hexen und Zauberern gerne zur Schau gestellt wurde, gewöhnt... aber ein Gutes hatte die Angelegenheit doch, wie sie abwesend bemerkte, während sie die Augen schloss. Die Betten waren weich und bequem... was sie leidlich auszunutzen gedachte, bevor morgen früh der brasilianische Zaubereiminister über die Vorzüge des französischen Rechtssystems referieren würde.</p><p>Der Mann wusste genau, wie man jene Körperstellen, die nie die Sonne sahen, am Besten erkundete und schien fest entschlossen, durch große Mengen an Schleim – und wohl auch beträchtliche Summen an Schmiergeld – die Unterstützung der französischen Zaubereiregierung für seine Reform der magischen Strafverfolgung zu gewinnen... was eigentlich kein schlechtes Anliegen war. Hermine fragte sich nur, wieso auch alle anderen Kongressteilnehmer seine Lobeshymnen ertragen mussten, immerhin könnte sie mit der Zeit auch etwas Nützlicheres anfangen, beispielsweise...</p><p>Das Schrillen der Türglocke riss sie aus ihren Gedanken und sie richtete sich hastig auf, blickte sich überrascht um, eigentlich hatte sie nicht mit Besuch gerechnet, aber in der magischen Welt konnte man nie wissen und vielleicht war Ron auf einen Kurzbesuch nach Paris appariert... sie überbrückte die wenigen Schritte zur Tür und drückte die Klinke hinunter... und es war nicht Ron, der auf dem Gang des Hotels stand.</p><p>„Malfoy.“</p><p>„Mrs Weasley.“ Seine grauen Augen musterten sie nachdenklich und er blickte an ihr herab, sie trug noch immer die formelle, elegante Kleidung des abendlichen Empfangs für die Kongressteilnehmer, der Stoff wirkte aber wegen ihres Ausflugs in die weichen Kissen ein wenig zerknittert und abwesend versuchte sie, die Falten glatt zu streichen.</p><p>„Was kann ich für Sie tun, Mr Malfoy?“ Nun, als die Überraschung über sein plötzliches Auftauchen nachließ, gelang es ihr auch, sich auf ihre Manieren zu besinnen und ein Lächeln auf ihre Lippen zu zaubern. „Möchten Sie hereinkommen?“</p><p>Abrupt schüttelte er den Kopf. „Das wäre wohl doch ein wenig zu... auffällig.“</p><p>„Auffällig?“</p><p>Sie hob die Augenbrauen, doch er schien nicht gewillt oder nicht in der Lage zu sein, ihre Frage zu beantworten, sondern lächelte nur. „Ich würde stattdessen vorschlagen, Sie ziehen sich um und kommen mit.“</p><p>Für einen Moment oder zwei starrte Hermine ihn an und der aberwitzige Gedanke, dass er sie jetzt auf ein Todessertreffen mitnehmen würde, schoss ihr durch den Kopf, doch sie verwarf ihn hastig – das würde er nie tun. Oder doch? „Und... wohin?“</p><p>Malfoy lächelte dünn, der kurze Schreck, den er ihr eingejagt hatte, schien auf ihrem Gesicht abzulesen zu sein. „Nur in eine Bar, Mrs Weasley... nur in eine Bar.“</p><p>„Eine Bar?“</p><p>„Ja. Eine Bar. Ein Ort, wo Hexen und Zauberer sich treffen, um sich zu amüsieren.“ Sie war sich bewusst gewesen, dass ihre Frage nicht besonders intelligent klang, doch hinter Malfoys schneidendem Tonfall schien mehr zu stecken – vielleicht eine Retourkutsche für die Szene in der Botschaft, wo sie ihn nicht besonders gut hatte dastehen lassen?</p><p>„Ich <em>weiß</em>, was eine Bar ist, aber danke für die Erklärung.“ Für einen Moment oder zwei funkelte sie ihn an, dann nickte sie langsam. Immerhin machte er keine Anstalten, von der Tür zu ihrem Hotelzimmer zu verschwinden... und sie bezweifelte, dass es ihm mehr Spaß machen würde als ihr, gemeinsam mit ihr auszugehen, also musste er einen guten Grund dafür haben. „Wir treffen uns in der Lobby.“</p><p> </p><p>Zehn Minuten später durchquerte sie an der Seite von Draco Malfoy die Eingangshalle des Hotels, durch die großen Flügeltüren konnte sie einen Blick auf die Avenue des Champs-Élysées erhaschen, doch er führte sie zu einem kleinen Seitenausgang und die Kälte der Februarnacht schlug ihnen entgegen, als sie in den Hof traten. Er schien nur angelegt worden sein, um den Gästen des Hauses ein ungestörtes Apparieren zu ermöglichen, doch hatten einige von ihnen wohl auch eine andere Verwendungsmöglichkeit gefunden – das deutete zumindest das junge Paar an, das hastig hinter einer Hecke verschwand, als Hermine mit Malfoy die Ruhe störte.</p><p>Sie schnaubte leise, doch ihr Begleiter warf ihr nur einen Blick zu, den sie irgendwo zwischen belustigt und hinterhältig einordnete, wobei sie die zweite Gefühlsregung nicht wirklich deuten konnte, aber das beunruhigende Gefühl hatte, dass sich das bald ändern würde.</p><p>„Kommen Sie.“ Überrascht blickte sie ihn an, er bot ihr seinen Arm an und nach kurzem Zögern hakte sie sich ein, ganz offensichtlich wollte er, dass sie mit ihm apparierte und sie würde ihn ja nach einem Augenblick wieder los sein.</p><p>Das vertraute Ziehen machte sich in ihrem Körper bemerkbar und als sie nach einem Moment die Augen öffnete, stand sie vor einem elegant aussehenden Nachtclub, der sich offensichtlich in einer Seitengasse von Montmartre befand, denn über den Häusern konnte sie das charakteristische weiße Dach der Basilika Sacré-Cœur entdecken. Unschlüssig blickte sie sich um, gedämpfte Musik drang aus dem Gebäude vor ihr und auf Malfoys Gesicht hatte sich ein freundliches Lächeln breit gemacht, das ein Fremder wohl auch auf den zweiten Blick nicht als falsch entlarvt hätte. Nun erst fiel ihr auf, dass sie sich noch immer bei ihm eingehakt hatte und langsam versuchte sie, ihren Arm wegzuziehen, doch seine Hand hielt sie fest und er beugte sich zu ihrem Ohr hinab. „Nicht. Sie bekommen Ihre Erklärung, sobald wir einen Tisch gefunden haben.“</p><p>Für einen Augenblick funkelte sie ihn an und er lächelte leicht. „Und bis dahin versuchen Sie bitte, nicht so auszusehen, als würden Sie mir im nächsten Moment die Augen auskratzen. Amüsieren Sie sich.“</p><p>„Das ist einfacher gesagt als getan – immerhin stehen Sie neben mir, Mr. Malfoy.“ Der Frost wich nicht aus ihrer Stimme, doch es gelang ihr wenigstens, ein dünnes Grinsen auf ihre Lippen zu zaubern.</p><p>„Glauben Sie mir, Mrs Weasley – das ist eine Empfindung, die ganz auf Gegenseitigkeit beruht.“</p><p>Gemeinsam traten sie durch die Tür in den Club ein und schon nach einem Augenblick bereute sie, sich das verzauberte Schild über dem Eingang nicht genauer angesehen zu haben, denn dann hätte sie vielleicht noch eine Möglichkeit gehabt, zu widersprechen. Das Etablissement erinnerte sie ein wenig an Madam Puddifoot's in Hogsmeade... allerdings mit Niveau und auf eine Kundschaft ausgerichtet, die eindeutig sehr viel Wert auf Diskretion legte.</p><p>An den Wänden konnte sie kleine Separées erkennen, die von schweren, roten Vorhängen vom Barraum getrennt wurden, an der Theke standen turtelnde Pärchen und sie warf einen strengen Blick zu ihrem Begleiter, als ein Kellner in schwarzem Anzug sie ansprach. „Guten Abend, Mr Malfoy.“ Für einen Moment fühlte sie sich von dem Mann gemustert, dann lächelte er leicht. „Sie haben reserviert, nicht wahr?“</p><p>Malfoy nickte nur huldvoll, während der Angestellte sie zu einer der Ecken führte und die lange, weiße Kerze auf dem Tisch mit einem Zauberstabschnippen anzündete. „Was möchten Sie trinken?“</p><p>Hermine warf einen schicksalsergebenen Blick zu Malfoy, dann lächelte sie leicht. „Eine Margarita, bitte.“</p><p>„Einen doppelten Jack Daniels.“</p><p>Der Mann verschwand und zog den Vorhang hinter ihnen zu, was den freundlichen Ausdruck von Hermines Gesicht wischte. „<em>Was</em>, bei Merlin, soll das?“</p><p>Malfoy lächelte leicht und überheblich, ein Ausdruck, den sie auch nach zwanzig Jahren nicht vergessen hatte. „Sie können ruhig brüllen, Mrs Weasley – die Nischen sind schallgedämpft und gegen Abhörzauber gesichert. Was übrigens auch der Sinn unserer... Verabredung hier ist.“</p><p>Resigniert ließ sie sich nach hinten sinken und betrachtete Malfoy über die beiden Gläser hinweg, die mit einem leisen Plopp auf dem Tisch zwischen ihnen auftauchten. „Sie hätten mich fragen können, bevor Sie mich in ein... Etablissement schleppen, dessen einziger Zweck es anscheinend ist, reichen Zauberern zu ermöglichen, mit ihren Affären auszugehen... und in dem Sie offensichtlich Stammgast sind.“</p><p>Malfoy schien nicht gewillt, auf den unterschwelligen Vorwurf in ihren Worten einzugehen, sondern nahm einen Schluck von seinem Whiskey. „Wären Sie dann mitgekommen?“</p><p>Sie musste zugeben, diese Frage konnte sie nur mit einem lauten, entschiedenen „Nein“, beantworten, doch während sie noch mit sich selbst rang, ob sie das vor Malfoy zugeben sollte, beugte er sich ein wenig nach vorne und lächelte leicht. „Sie sind vielleicht nicht auf den Gedanken gekommen, Mrs Weasley, aber nicht alle Hexen und Zauberer, die uns hier sehen, werden so leicht zu täuschen sein wie Fréderic in der Botschaft. Früher oder später wird man herausfinden, dass die Geschichte mit den alten Schulfreunden ungefähr so realistisch ist wie die Vorstellung, dass der Dunkle Lord seine Anhänger zu Tee, Kuchen und gemütlichem Beisammensein einlädt... und daher wollte ich uns so früh wie möglich mit einer Ausrede ausstatten, die alle Nachfragen und genaueren Untersuchungen verbietet.“</p><p>Für einen Moment oder zwei starrte sie ihn an, während die Ungeheuerlichkeit der Schlussfolgerung aus diesen Worten langsam in ihr Gehirn sickerte, doch dann brach die Fassungslosigkeit aus ihr heraus. „Was?“</p><p>Ron würde sie umbringen, und es würde ihm egal sein, dass sie für eine Ermittlung des Ministeriums <em>so getan</em> hatte, als ob sie eine Affäre mit Malfoy hätte... es würde ihm vollkommen egal sein. Und auch sie selbst konnte sich weitaus angenehmere Beschäftigungen vorstellen, als mit Malfoy angeblich turtelnd in einer Bar zu sitzen... beispielsweise dem brasilianischen Zaubereiminister zuzuhören, während er seinem französischen Kollegen in den Arsch kroch.</p><p>„Das meinen Sie nicht ernst. Das <em>können</em> Sie nicht ernst meinen.“</p><p>Malfoy betrachtete sie aus kühlen, grauen Augen. „Was ich ernst meinen kann und was nicht, ist ganz alleine meine Sache, Mrs Weasley. Aber Sie sollten eines bedenken... ich riskiere mein Leben... und Sie nur Ihren guten Ruf.“</p><p>„Ich bezweifle, dass Sie hier sind, um an mein Gewissen zu appellieren, Mr Malfoy.“ Sie gab seinen Blick mit genauso viel Frost zurück, klar spürte sie, dass sein Verhalten nicht nur den Zweck erfüllen sollte, den er dafür vorschob, sondern auch eine Retourkutsche sein sollte für ihr Gespräch in der Botschaft... aber was hätte sie von einem Slytherin anderes erwarten sollen?</p><p>Trotzdem wusste sie nicht, was sie von seiner Entscheidung – denn ein Angebot konnte man es schon fast nicht mehr nennen – halten sollte, der anfängliche Impuls, vom Fleck weg abzulehnen, war ebenso schnell verschwunden, wie er gekommen war. Flüchtig fragte sie sich, was aus der jungen Frau geworden war, die Draco Malfoy für viel weniger geohrfeigt hatte, doch sie vermutete, dass sie irgendwo in dem Sumpf, den das Zaubereiministerium noch immer darstellte, versunken war.</p><p>Das Schweigen zwischen ihnen breitete sich aus, der Mann auf der anderen Seite des Tisches betrachtete sie nur stumm, wollte wohl herausfinden, was sie dachte, doch schließlich seufzte er auf und schüttelte langsam den Kopf. „Sie wollen mit mir zusammenarbeiten, Mrs Weasley. Das war Ihre Idee, nicht meine... also sollten Sie vielleicht ehrlich zu mir sein, dann kann ich das auch tun.“</p><p>Sie sah ihn an und schüttelte leicht den Kopf, sie konnte nicht leugnen, dass er Recht hatte, auch wenn es sie wurmte, das es ihm offensichtlich besser gelang als ihr selbst, die alte, tief verwurzelte Feindschaft zwischen ihnen zu überwinden. „Was wollen Sie wissen?“</p><p>„Nun... für den Anfang könnten Sie mir erklären, was, bei Merlin, Sie eigentlich hier machen. Donalds hat den Fall übernommen und meine Kontakte haben mir diese Information bestätigt... also sollte eigentlich einer seiner Mitarbeiter hier sein und nicht eine Frau, die eigentlich nur dafür zuständig ist, Anklage zu erheben.“</p><p>Hermine schüttelte den Kopf und ignorierte die Geringschätzung für ihren Beruf, die er durch seine Worte zum Ausdruck brachte. „Donalds ermittelt, ja. Aber der Mann findet gerade mal seinen eigenen Arsch, wenn er seine ganze Abteilung dafür einsetzt und einen Ortungszauber benutzt – denken Sie wirklich, er könnte einen Mörder fangen?“</p><p>Malfoy hob die Augenbrauen und lächelte leicht, die Bitterkeit und die Verachtung in ihrer eigenen Stimme hatten sie selbst überrascht, was musste dann erst dieser Mann von ihr halten?</p><p>„Warum hat er den Fall dann bekommen?“</p><p>„Die Öffentlichkeit weiß nicht, dass das Dunkle Mal eine Rolle bei dem Mord gespielt hat und wir wollten den Eindruck aufrecht erhalten, dass der Fall absolute Routine ist... Sie können sich ja vorstellen, was für einen Aufstand die mögliche Rückkehr der Todesser in Großbritannien auslösen würde... und was für eine Hexenjagd.“ Sie betrachtete ihn und Malfoy starrte in die Tiefen seines Glases, ihr letzter Hinweis hatte ihn offensichtlich nachdenklich gemacht, wusste er doch, wie viel Wahrheit dieser Satz enthielt. Die Frage, was die Zauberwelt mit den ehemaligen Unterstützern Voldemorts machen sollte, war noch immer ein heiß diskutiertes Thema und es hatte viel Widerstand gegen die Tatsache gegeben, dass man vielen von ihnen vergeben hatte... unter anderem auch Draco Malfoy.</p><p>Für einen Augenblick wirkte er unbehaglich und rutschte auf seinem Stuhl hin und her, dann blickte er auf und nickte langsam. „Ich hab mit einigen meiner ehemaligen... Kollegen gesprochen. Sie wissen nichts von den Morden und in dieser Hinsicht bin ich geneigt, ihnen zu glauben – kaum jemand von denen, die nicht in Askaban sitzen, würden ihre Freiheit und ihr Vermögen durch eine so... dumme, so unnötige Aktion riskieren. Ich würde eher auf einige jüngere Hexen und Zauberer tippen, die nicht wissen, was sie tun...“</p><p>Hermine schnaubte und bedachte ihn mit einem Blick, der hätte töten können. „Natürlich – ein Dumme-Jungen-Streich, selbstverständlich... nur dass besagte dumme Jungen Unverzeichliche Flüche verwendet haben, das Dunkle Mal beschwören können und ein Kind getötet haben.“</p><p>„Sie wissen, was ich meine.“</p><p>„Weiß ich das?“ Nachdenklich hob sie die Augenbrauen und betrachtete ihn für einen Moment - überrascht bemerkte sie, dass er nickte. „Ja.“</p><p>Er schwieg, fixierte sie mit einem harten Blick aus ihren grauen Augen. „Was auch immer Sie von mir denken mögen – und dass Sie versuchen, mir meine Worte im Mund umzudrehen, um mich zu einem Verdächtigen zu machen, spricht in dieser Hinsicht Bände – auch mir tut es leid, dass Theos Tochter tot ist. Und auch ich will den Hurensohn finden, der sie ermordet hat. Aber anscheinend fällt es ihnen schwer, das zu glauben...“</p><p>Langsam erhob er sich von seinem Stuhl, stürzte den letzten Schluck Whiskey hinunter und trat an den Vorhang, während sie sich des Gefühls eines Déjà-Vus mit umgekehrten Vorzeichen nicht erwehren konnte. „Ich wünsche ihnen einen guten Abend, Mrs Weasley.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2295840">Chapter 3</a>: Szenerie
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 3: Szenerie</strong>
+</p><p>Dass am nächsten Morgen ein Strauß roter Rosen vor der Tür ihrer Suite stand, als sie sich auf den Weg in den Konferenzsaal machen wollte, überraschte sie nur für einen Augenblick, dann schüttelte sie nachdenklich den Kopf und ließ ihn mit der Vase, die wohl ein aufmerksamer Mitarbeiter des Hotels bereitgestellt hatte, im Vorzimmer verschwinden. Malfoy war ein Slytherin – wenn er etwas für richtig hielt, dann tat er es... was auch immer alle Anderen dazu sagten. Auch oder gerade dann, wenn es besagte Andere betraf.</p><p>Sie schüttelte den Kopf und verdrängte die Angelegenheit aus ihren Gedanken, und tatsächlich war es ihr gelungen, sich auf die Vorträge und Diskussionen der Konferenzteilnehmer zu konzentrieren... bis sie nach einem langen Abeitstag in ihr Hotelzimmer zurückkehren wollte und erneut ein Blumenbouquet vor ihrer Tür vorfand. Langsam schüttelte sie den Kopf, während sie es misstrauisch betrachtete, Malfoy schien recherchiert zu haben – wenn man dieses Wort dafür verwenden konnte – denn irgendwie hatte er herausgefunden, dass ihre Lieblingsblumen Lilien waren.</p><p>Sie konnte sich kaum vorstellen, wer ihm das verraten hatte, Ron war es sicher nicht gewesen – denn immerhin hatte sie noch nicht gehört, dass Malfoy mit einer gebrochenen Nase ins St. Mungos eingeliefert worden war – aber sonst... sie zuckte mit den Schultern. Im Moment gab es definitiv wichtigere Fragen, zum Beispiel, wer ein kleines Mädchen grausam gefoltert und getötet hatte... oder was sie mit Malfoy anstellen würde, wenn sie das herausgefunden und damit Zeit für andere Dinge hatte.</p><p>Langsam blickte sie sich um, der Großteil der Konferenzteilnehmer war schon auf seine Zimmer zurückgekehrt und sehr viele von ihnen mussten den Strauß vor ihrer Tür gesehen haben... wie dieser verdammte... Slytherin sicherlich beabsichtigt hatte. Mit einem leisen Seufzen griff sie nach den Blumen und öffnete die Tür ihres Zimmers mit einer Zauberstabberührung, schob sich und ihre Tasche durch den Spalt und lehnte sich gegen das kühle Holz, starrte in ihre Suite hinein, über die die Dunkelheit mittlerweile hereingebrochen war. Nur einige Lichter von der Straße her beleuchteten sie, doch sie konnte das Rauschen der Autos nicht hören, ein Umstand, der ihr schon bei ihrem Eintreffen aufgefallen war. Magie schien die Geräusche zu dämpfen und vage fragte sie sich, mit welchem Zauber das geschah, doch verwarf den Gedanken sofort wieder, denn die Karte, die in dem Strauß steckte, erregte ihre Aufmerksamkeit.</p><p>Ein leichter Parfumduft ging von ihr aus und sie schüttelte den Kopf, Malfoy ließ wirklich keine Gelegenheit aus... dass er ihr damit allerdings vor allem auf die Nerven ging, konnte er sich wohl nicht vorstellen. Wobei... selbst das war möglich, immerhin war er ein Slytherin, und auch wenn sie nun mehr als in ihrer Schulzeit – und definitiv mehr als ihr Mann – bereit war zuzugeben, dass dieses Haus nicht alle schlechten Eigenschaften, die man sich nur vorstellen konnte, in sich vereinte, kam sie trotzdem nicht umhin, jedem seiner Mitglieder mit einem gewissen Misstrauen zu begegnen.</p><p>Langsam schüttelte sie den Kopf und starrte auf das Kärtchen zwischen ihren Fingern, die letzten Worte in der Bar, die er an sie gerichtet hatte, verschwanden nicht aus ihren Gedanken, sondern beschäftigten sie noch immer, hatten sie am Abend zuvor nicht einschlafen lassen und sich während der Vorträge des Tages in ihren Geist gedrängt. Er hatte Recht... so ungern sie das auch zugab, er hatte Recht, was ihre Unterstellungen anging – und auch wenn sie eigentlich unvoreingenommen sein sollte, sie würde Malfoy mit Freuden Handschellen anlegen, wenn er ihr einen Grund dazu liefern würde. Eine Närrin aus ihr zu machen reichte dafür leider noch nicht, auch wenn sie es mit viel Glück vielleicht als Beamtenbeleidigung hinstellen konnte...</p><p>Mehr um sich von ihren düsteren Gedanken abzulenken als aus wirklichem Interesse öffnete sie das kleine Billet und überflog die beiden Worte, die darauf standen und offenbar hastig hingekritzelt worden waren. „Hotelbar, Mitternacht.“</p><p>Hermine hob die Augenbrauen und schloss das Kärtchen, steckte es zurück in die Blumen, doch sobald sie es losgelassen hatte, zerfiel es zu feinem Staub, der auf den grauen Teppichboden des Flures rieselte. Ihre Überraschung hielt sich in Grenzen, während ihrer Arbeit für das Ministerium hatte sie einige Dokumente gesehen, die so geheim waren, dass es den Unsäglichen wohl am liebsten gewesen wäre, wenn sie sie <em>vor</em> dem Lesen vernichtet hätte... aber dass Malfoy solche Geheimhaltungsmaßnahmen für nötig hielt, überraschte sie doch. Nachdenklich betrachtete sie die feinen Körner, von denen sich einige auf ihren Schuhen gesammelt hatten, wahrscheinlich hätte jeder andere außer ihr auf dem Kärtchen eine höchst romantische Aufschrift gelesen, vielleicht ein kleines Gedicht... denn sonst hätte er den Blumenstrauß niemals auf dem Gang stehen lassen.</p><p>Vage fragte sie sich, was er eigentlich von ihr wollte, sie konnte die Hoffnung nicht ganz unterdrücken, dass er etwas über den Mord herausgefunden hatte und deshalb zu ihr kam... aber es war genauso gut möglich, dass er sie einfach nur ärgern wollte und deswegen...</p><p>Das energische Pochen an der Fensterscheibe schreckte sie auf und sie hastete ins Schlafzimmer, die Eule, die draußen in der Kälte saß, sah ausgesprochen zerzaust und erschöpft aus, doch trotzdem konnte Hermine sie als einen der Eilkuriere des Ministeriums identifizieren, die für die dringendsten Nachrichten eingesetzt wurden. Hastig öffnete sie ihr und das Tier flog herein, die Wärme schien ihm zu gefallen und erschöpft streckte es sein Bein aus, an dem ein dünner Briefumschlag befestigt war.</p><p>Mit zittrigen Fingern griff Hermine danach, das kalte Gefühl, das sich in ihrem Magen ausgebreitet hatte, ließ sie wünschen, zu zögern – doch das konnte sie sich nicht erlauben... dieser Brief war dringend. Vorsichtig öffnete sie den Umschlag und überflog die wenigen Zeilen, vage spürte sie, wie sie auf das Bett sank und ihr Unbehagen dem Schock wich. Schon wieder war jemand gestorben... und sie hatte es nicht verhindert.</p><p>Wütend zerknüllte sie das Papier, der kleine Sohn von Blaise Zabini, gerade erst vier Jahre alt, war tot, ermordet auf dieselbe Art und Weise wie die Tochter von Theodore Nott und sie biss sich auf die Lippe, bis sie Blut schmeckte. Auch sie hatte Kinder, und auch wenn sie keinen der Slytherins besonders gemocht hatte, so trieb ihr allein der Gedanke, Rose oder Hugo zu verlieren, die Tränen in die Augen... und sie wusste, konnte sich vorstellen, was die Familien empfinden mussten.</p><p>Langsam schüttelte sie den Kopf, ließ sich nach hinten fallen und verdrängte die eine Tatsache, die sich beständig in ihr Bewusstsein zu schleichen versuchte, so gut sie konnte... dass sie nämlich den Tod dieses Jungen hätte verhindern können, wenn sie und Malfoy nur schneller gewesen wären in ihren Bemühungen, den Mörder zu fassen.</p><p>Malfoy... bei dem Gedanken an ihn schreckte sie auf, höchstwahrscheinlich wusste er noch nicht, was mit dem Sohn seines Schulkollegen geschehen war und das bedeutete, dass ihr die zweifelhafte Ehre zufallen würde, ihm davon zu erzählen. Nun... sie seufzte auf, wenn sie wirklich ehrlich zu sich selbst war, dann fand sie diese Ehre vielleicht gar nicht so zweifelhaft, wie sie sich einreden wollte... denn eigentlich war sie sehr, sehr neugierig auf seine Reaktion, fragte sich, ob der kalte Slytherin ein wenig mehr Gefühl zeigen würde als nach dem Tod von Felice Nott.</p><p>Die Überraschung über sein Benehmen in der Botschaft hatte sich erst später eingestellt, nachdem sie gegangen war, immerhin war Theodore Nott einer seiner Schulkollegen gewesen und obwohl er nicht besonders eng mit Draco Malfoy befreundet gewesen war, so wäre ihr ein klein wenig mehr Betroffenheit doch natürlicher vorgekommen. Immerhin hätte sie selbst ebenfalls geschockt reagiert, wenn sie erfahren hätte, dass das Kind von Dean Thomas oder Lavender Brown gestorben wäre...</p><p>Langsam schüttelte Hermine den Kopf, vielleicht hatte er bereits zuvor von dem Mord erfahren, doch das warf wiederum die Frage auf, warum er ihr nicht davon erzählt hatte und ob sie ihm überhaupt vertrauen konnte. Allerdings hatte sie in diesem Punkt wahrscheinlich nicht die Wahl, nach allem, was sie bis jetzt wusste, brauchte sie Malfoy, um in dieser Ermittlung irgendwie weiterzukommen... brauchte seine Detailkenntnis, seine Kontakte. Und selbst wenn er schuldig war... sie konnte ihn besser beobachten, wenn er mit ihr zusammenarbeitete.</p><p>Die Stunden verrannen nur langsam und Hermine gelang es kaum, still sitzen zu bleiben, schritt rastlos über den Teppichboden ihrer Suite, während sie wartete. Der erste Brief, den sie vom Zaubereiministerium erhalten hatte, hatte eine Note enthalten, dass eine weitere Eule unterwegs war, die ihr weitere Informationen und eine Erinnerung vom Tatort bringen würde, damit sie sich selbst ein Bild machen konnte, allerdings hatten die wenigen Zeilen, die Kingsley Shacklebolt ihr geschickt hatte, sie bereits darauf vorbereitet, dass der Anblick, der sie erwartete, nicht besonders angenehm sein würde.</p><p>Andrew Zabini war auf ähnliche Art und Weise gefoltert worden wie Felice Nott... nur dass sein Tod nicht so schnell gewesen war wie der des Mädchens. Allein bei dem Gedanken an das, was Kingsley ihr angedeutet hatte, kamen ihr Zweifel, ob es wirklich eine besonders gute Idee sein würde, sich die Erinnerung anzusehen... Zweifel, die sie noch immer beschäftigten, als ein leises Pochen an der Fensterscheibe die Ankunft des Paketes ankündigte.</p><p>Vorsichtig öffnete sie und ließ den großen Uhu herein, das Paket, das er trug, schien ein beträchtliches Gewicht zu haben und hastig nahm sie es dem Tier ab, streichelte ihm zum Dank über die Federn, um sich für einen Moment von dem abzulenken, was sie erwartete, dann nickte sie. Sie hatte bereits ein paar Zeilen für Kingsley vorbereitet, die sie der Eule mitgab, bevor sie durchs Fenster verschwand, sich auf den Rückweg nach England machte und nicht mehr sah, wie Hermine das Denkarium auspackte.</p><p>Es war kleiner und leichter als jenes von Dumbledore, zumindest soweit sie das nach Harrys Erzählungen beurteilen konnte, doch ebenso schmucklos und im Besitz des Ministeriums, um seinen Mitarbeitern detailgetreue Eindrücke von Situationen und Orten zukommen zu lassen. Es wurde regelmäßig geleert, diente nicht als Sammelbecken für Erinnerungen, und so sah Hermine den grauen, steinernen Grund der Schale, den sie für einen Moment betrachtete, bis sie nach der kleinen Phiole griff, die der Uhu ebenfalls gebracht hatte.</p><p>Silberne Erinnerungen, nicht Gas und nicht Flüssigkeit, wirbelten darin umher, schienen vor Gedanken zu sprühen und sie entfernte den Korken, goss sie in das Denkarium, wo sie sich ausbreiteten und verteilten. Hermine verbat sich energisch jedes Zögern, beugte sich nach vorne, bis ihr Gesicht die Flüssigkeit berührte, und spürte, wie sie mit einem Ruck nach vorne gezogen wurde.</p><p> </p><p>Das erste, was sie sah, als sie die Augen wieder öffnete, war der breite Rücken von Kingsley Shacklebolt, unter dessen Füßen die Dielen des Ganges quietschten, während er auf die Treppe in den ersten Stock zusteuerte. Für einen Moment war sie überrascht, ihn zu sehen, und vergaß fast, ihm zu folgen, doch dann hastete sie ihm hinterher, die Stufen hinauf – natürlich war der Zaubereiminister hier, ein Fall, der solch direkte Bezüge zu Todessern aufwies, war selbstverständlich von höchster Wichtigkeit.</p><p>Auch die Erinnerung war von ihm, denn in dem Moment, als sie aufgetaucht war, hatte sie niemand anderen gesehen, doch nun, da sie im Obergeschoß angekommen war, entdeckte sie Ministeriumsangestellte und Auroren in so gut wie jedem der Zimmer, die dort ihre Zelte aufgeschlagen hatten. Einige von ihnen waren eifrig damit beschäftigt, jedes Detail mit Kameras zu fotografieren, die Hermine nur als ausgesprochen altmodisch einstufen konnte, andere sprachen bereits auf dem Flur Zauber, um Fingerabdrücke, Blut und Reste von Magie aufzuspüren und den Tatort so auf Spuren abzusuchen.</p><p>Sie hörte, wie Kingsley einige von ihnen begrüßte und sprach ihm im Geiste ihre Anerkennung aus, weil es ihm sogar gelungen war, Julius Donalds ein halbwegs freundliches Lächeln zuzuwerfen. Der massige Auror wirkte auf sie ein wenig so wie ein Pfau, der gerade ein Rad schlug – protzig und sonst nichts – während er seine Untergebenen beobachtete, und Hermine fragte sich ernsthaft, wie er es zum Teamleiter geschafft hatte, wenn man ihn mit seinen qualifizierteren Kollegen wie John Merrick verglich. Aber diese Frage konnte sie sich für später aufheben, wenn sie Zeit dafür hatte, denn Kingsley steuerte zielsicher den Raum des Hauses an, auf den sich die hektische Betriebsamkeit der Hexen und Zauberer konzentrierte und der folglich der eigentliche Tatort sein musste.</p><p>Der Zaubereiminister scheuchte eine der Aurorinnen beiseite und betrat den Raum, und auch Hermine quetschte sich hastig durch die so entstandene Lücke, für einen Moment von diesem Problem so abgelenkt, dass der Schock über den Zustand des Kinderzimmers zwar verspätet, aber dadurch nur mit noch größerer Wucht auf sie einschlug.</p><p>Es gab keine Leiche.</p><p>Für einen Augenblick oder zwei sah sie sich noch danach um, überlegte, ob man das tote Kind vielleicht schon weggebracht hatte, dann suchte sich das Blut an Wänden und Decke gewaltsam einen Weg in ihr Bewusstsein. Ihre Augen weiteten sich erschrocken und sie spürte, wie ihr Blick durch den Raum zuckte, unbewusst auf der Suche nach Details, die sie eigentlich gar nicht kennen wollte.</p><p>Nach allem, was sie sah, war das Kind im wahrsten Sinne des Wortes zerstückelt worden, hastig wandte sie den Blick ab, als sie eine kleine Hand entdeckte, die neben einem braunen Teddybären zu liegen gekommen war und stützte sich an der Wand ab.</p><p>Auch Kingsley sah fahl aus, blasser, als sie ihn jemals gesehen hatte, und der Ausdruck von Betroffenheit in seinen Augen berührte sie, als er sich abwandte und auf Donalds zutrat. „Waren die Eltern schon hier?“</p><p>Der Auror schüttelte den Kopf, im Gegensatz zu seinem Vorgesetzten schien der Tatort ihn nicht besonders aus der Ruhe zu bringen, was Hermine allerdings nicht besonders lange überraschte... der Mann hatte zu wenig Fantasie, um sich vorzustellen, wer zu einer solchen Tat fähig sein konnte oder welches Leid der Tod von Andrew über die Familie bringen würde – ein Mangel, der für einen Ermittler allerdings ausgesprochen kontraproduktiv war. „Nein... sie haben nur das Dunkle Mal entdeckt und sofort das Ministerium verständigt. Im Moment sitzen sie im Wohnzimmer und werden von einer Medihexe betreut, ich wollte nicht, dass sie wichtige Hinweise zerstören, wenn sie den Tatort betreten.“</p><p>Kingsley schüttelte den Kopf. „Auch wenn Sie fertig sind... sorgen Sie dafür, dass sie nicht hierher kommen, bevor die Leiche...“, er unterbrach sich für einen Moment, schien nach einem besseren Ausdruck zu suchen, doch offensichtlich fehlten ihm die Worte, „... die Leiche nicht weggebracht und das Zimmer gereinigt worden ist.“</p><p>Donalds hob die Augenbrauen. „Aber der Vater... er hat darauf bestanden...“</p><p>„Ignorieren Sie, worauf er besteht, Julius – bei allen anderen können Sie das doch ausgezeichnet, nicht wahr?“ Der beißende Tonfall des Zaubereiministers überraschte Hermine, normalerweise gelang es ihm, die Höflichkeit in Person zu sein, doch dieser Fall schien nicht nur an ihren eigenen Nerven zu zerren, sondern auch an seinen, doch glücklicherweise war Donalds nicht der Mann, eine Beleidigung zu verstehen, wenn er sie hörte.</p><p>„Wie Sie wünschen, Minister.“</p><p>Kingsley nickte langsam, offenbar für den Moment zufriedengestellt. „Haben Sie schon etwas gefunden?“</p><p>„Nein. Allerdings führt mich der <em>modus operandi</em> zu der Vermutung, dass für diesen Mord dieselben Täter wie für den an Felice Nott verantwortlich sind.“ Donalds Tonfall wirkte, als ob er für diese Feststellung den Nobelpreis erwartete, und Hermine konnte sich eines Kopfschüttels nicht erwehren, während der Zaubereiminister die Arroganz mit einer bewundernswerten Gelassenheit ertrug.</p><p>„Und welches Motiv können Sie sich dafür vorstellen?“</p><p>„Eigennutz“, erklärte Donalds und ließ es dabei klingen, als ob er das Konzept gerade erfunden hätte, was Hermine ein genervtes Seufzen eintlockte – als ob nicht so gut wie jeder Mord in gewisser Weise auf Eigennutz zurückzuführen wäre.</p><p>Auch Kingsley schien ähnlicher Meinung zu sein, denn er wirkte, als ob er den Auror am liebsten zwischen den Wänden des Flurs hin und her geklatscht hätte, sich aber gerade noch beherrschen konnte, bevor er sich langsam abwandte und den Raum verließ.</p><p>Im selben Augenblick löste sich auch das Zimmer auf, und Hermine schreckte auf, als sie das laute, energische Klopfen an der Tür ihrer Suite schlussendlich wahrnahm.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2305461">Chapter 4</a>: Theorie
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 4: Theorie</strong>
+</p><p>Für einen Moment spürte sie die Desorientierung, das Gespräch zwischen Donalds und Kingsley hatte ihr erlaubt, sich auf die Worte zu konzentrieren, doch die Umgebung, das Blut, der Geruch, all das war trotzdem auf sie eingeströmt, gemeinsam hatten sie ihre Wirkung entfaltet und ließen ihre Knie und Finger mehr zittern, als ihr eigentlich lieb war.</p><p>Sie schloss die Augen, doch das machte es nicht besser, ließ nur die Bilder, die sie gesehen hatte, klarer und deutlicher zu Tage treten, bis sie hochschreckte, als wieder jemand an die Tür pochte. Fern spürte sie, wie ihr Herz bis zum Hals schlug, ein distanzierter Teil ihres Selbst fand es merkwürdig, dass der Schrecken erst jetzt einsetzte, nachdem sie die Szenerie verlassen hatte, dass die Erinnerung sie mehr quälte als die eigentliche Erfahrung, während sie sich langsam der Tür näherte.</p><p>Sie hatte keine Vorstellung davon, wer es sein könnte, vielleicht einer ihrer Kongresskollegen, doch konnte sie sich nicht erinnern, einen von ihnen eingeladen zu haben und langsam griff sie nach der Klinke, drückte sie hinunter und schreckte zurück, als sie Draco Malfoys blasses Gesicht sah, der sie mit einem Ausdruck in den Augen anblickte, der irgendwo zwischen wütend und besorgt schwankte. „Was machen Sie hier?“</p><p>Sie spürte, wie er sie intensiv musterte und ihr Unbehagen dabei wuchs, sein Blick huschte über ihr Gesicht. „Geht es Ihnen gut?“</p><p>Unruhig fuhr sie sich mit den Fingern durch die Haare, zerzauste sie noch mehr, zwar bemerkte sie, dass das keine Antwort auf ihre Frage war, doch sie wusste kaum selbst, was sie ihm entgegnen sollte, so zitterten ihre Knie, so stark tobte ein Sturm widersprüchlicher Gefühle in ihrem Inneren. „Ich... ja, ich bin in Ordnung.“</p><p>Malfoy hob die Augenbrauen. „Sie sehen nicht so aus.“</p><p>Fast ein wenig ratlos zuckte Hermine mit den Schultern, sie hatte nicht in den Spiegel im Vorraum ihrer Suite gesehen und bereute es nun, konnte den Wahrheitsgehalt seiner Aussage kaum beurteilen, doch bevor sie etwas entgegnen konnte, sprach er weiter. „Außerdem ist es schon halb Eins... und als Sie nicht in der Bar aufgetaucht sind, dachte ich mir, ich sehe in Ihrem Zimmer nach.“</p><p>„Schon so spät?“, murmelte sie und warf einen schnellen Blick auf ihre Armbanduhr, er hatte Recht, sie musste mehr Zeit in der Erinnerung verbracht haben, als sie eigentlich gedacht hatte, denn es war wirklich bereits nach Mitternacht. Fast ein wenig ratlos sah sie zu Malfoy auf, die unerwartete Geste der Sorge überraschte sie – allerdings nur kurz, denn wenn ihr etwas geschehen wäre, konnte das ausgesprochen unangenehme Auswirkungen für den Botschafter haben. Resigniert zuckte sie mit den Schultern – bevor Malfoy eine gute Tat beging, fror die Hölle zu. „Wenn Sie schon hier sind, können Sie hereinkommen auch...“</p><p>Achselzuckend trat sie zur Seite und beobachtete, wie er eintrat, seine beiden Blumensträuße standen noch immer auf der Kommode und sie bemerkte, wie sein Blick kurz zu ihnen huschte, nur um sich gleich darauf der restlichen Einrichtung der Suite zuzuwenden, während Hermine die Tür schloss. „Nett... das Zaubereiministerium lässt sich seine Kongresse etwas kosten...“</p><p>Sie zog es vor, nicht auf diese Bemerkung einzugehen, und führte ihn weiter bis in den Aufenthaltsraum ihrer Suite, die hohen Fenster gewährten einen interessanten Ausblick auf die Bäume, die die Avenue des Champs-Élysées säumten, und die Lichter der Straßenlaternen und Autos blitzten durch sie hindurch.</p><p>Doch seine Aufmerksamkeit wurde von der offenen Tür zu ihrem Schlafzimmer angezogen, auf dem großen, breiten Bett lag noch immer das Denkarium und es war vollkommen unmöglich, dass er es nicht bemerkt hatte, das zeigte sein interessierter Gesichtsausdruck. Hermine schloss die Tür und verfluchte sich für ihre Unaufmerksamkeit.</p><p>„Möchten Sie etwas trinken?“</p><p>Er schüttelte langsam den Kopf, während sie auf die kleine, gemütliche Sitzecke wies. „Dann nehmen Sie doch Platz.“</p><p>Er setzte sich und betrachtete sie aufmerksam, während sie spürte, wie das Schweigen zwischen ihnen langsam unangenehm wurde und sie gleichzeitig seinen Blick suchte und vermied. Sie wusste nicht, ob sie wollte, dass er fragte, immerhin würde es ihr eine Gelegenheit geben, ihm vom Tod Andrew Zabinis zu erzählen... allerdings würde sie auch nicht umhin kommen, ihm zu erklären, warum sie das so... aus der Bahn warf. Eigentlich hatte sie nicht damit gerechnet, dass ihm irgend etwas an ihr auffallen würde, doch trotzdem war es passiert... und wenn sie genauer darüber nachdachte, kam ihr diese Verhaltensweise auch logisch vor. Wenn man die Schwächen seiner Mitmenschen sah, konnte man sie immerhin besser ausnutzen.</p><p>„Was ist passiert?“, fragte er schließlich, als die Stille zwischen ihnen schwer auf dem Raum zu lasten begann und Hermine blickte auf, hatte sich aber noch immer nicht entschieden, was sie antworten sollte. „Ich meine...“, fuhr er fort und sie spürte, wie sein Blick sich auf sie heftete, „... Sie sehen aus, als hätten Sie den Grimm gesehen und sind weiß wie ein Bettlaken... und Sie wollen mir erklären, dass nichts geschehen ist?“</p><p>„Ich glaube nicht an den Grimm“, entgegnete Hermine matt, doch selbst ihr war klar, dass das nur ein sinnloser Ablenkungsversuch war. „Und außerdem habe ich soeben erfahren, dass erneut ein Mord geschehen ist... an Andrew Zabini.“</p><p>Malfoy hob die Augenbrauen. „Der Sohn von Blaise, nehme ich an.“</p><p>Sie nickte langsam und er lehnte sich in seinem Stuhl zurück, schien nachzudenken, denn sie konnte fast sehen, wie die Schlussfolgerungen in seinen grauen Augen aufblitzten. „Das erklärt nicht, warum Ihr Gesicht dieselbe Farbe hat wie die Wand hinter Ihnen, Mrs Weasley.“</p><p>„Ich... ich habe den Tatort gesehen, in einer Erinnerung – und der Junge ist nicht einfach getötet worden... sondern zerstückelt. Sie werden grausamer...“</p><p>„Sie denken, dass die Täter identisch sind?“</p><p>Hermine seufzte leise auf. „Wir fanden Spuren eines Cruciatus, als wir das Kinderzimmer auf Reste von Magie absuchten und wieder schwebte das Dunkle Mal über dem Haus... Täterbeschreibung haben wir in diesem Fall natürlich keine, einige der Nachbarn haben zwar Gestalten in dunklen Umhängen gesehen – aber das trifft auf jede Familie im Reiseumhang zu, fürchte ich. Allerdings konnte mittlerweile die Hauselfe der Notts befragt werden und ihre Aussage passt zu der Todessertheorie... sie sagte, die Angreifer hätten Masken und Kapuzen getragen.“</p><p>„Das sagt nicht besonders viel aus, würde ich sagen. Jeder Besucher eines Maskenballes trägt eine...“ Der sarkastische Tonfall in Malfoys Stimme überraschte sie, genauso wie das schräge Lächeln auf seinen Lippen. „Was mich eher vermuten lässt, dass Ihre Theorie stimmt, ist die Parallelität bei der Opferwahl.“</p><p>„Ja... es sind Kinder von... Slytherins“, entgegnete sie zögernd, doch das scharfe, bittere Auflachen ihres Gegenübers ließ sie fast schmerzhaft hochschrecken. „Das war es nicht, was Sie sagen wollten, nicht wahr?“</p><p>Hermine hob die Augenbrauen, versuchte vorzugeben, dass sie nicht wusste, was er meinte, obwohl ihr selbst fast schon schmerzhaft klar war, dass das Wort, das ihr auf den Lippen gelegen hatte, nicht Slytherins gewesen war... sondern Todesser. „Verzeihung?“</p><p>„Machen Sie wenigstens sich selbst nichts vor, wenn Sie schon glauben, dass Sie mich täuschen können.“ Malfoy schüttelte den Kopf. „Allerdings hat Ihre politische Korrektheit Sie in diesem Fall der Wahrheit nähergebracht... denn das Auffällige an den Kindern ist nicht, dass ihre Eltern Todesser <em>waren</em>... sondern dass sie es nicht waren.“</p><p>„Was meinen Sie?“</p><p>„Sowohl Blaise Zabini als auch Theodore Nott haben sich immer die größte Mühe gegeben, sich so weit vom Dunklen Lord zu distanzieren, wie es ihnen gerade noch möglich war, ohne Repressalien befürchten zu müssen... was besonders bei Theo wegen seines Vaters eine sehr delikate Angelegenheit war.“</p><p>„Und weiter?“ Sie konnte nicht verbergen, dass es ihr nicht besonders gefiel, ausgerechnet von Draco Malfoy einen Vortrag über zwischenmenschliche Beziehungen gehalten zu bekommen, und ihre Ungeduld schimmerte in ihren Worten durch. Besonders die Tatsache, dass er wirklich wusste, was er tat, behagte ihr daran nicht, auch wenn es ihr schwer fiel, sich das einzugestehen... er hatte sich verändert in den Jahren, die sie ihn nicht gesehen hatte, war zu mehr geworden als dem blonden Jungen mit dem frechen Mundwerk, den sie gekannt hatte.</p><p>„Wenn Sie Recht haben mit Ihrer Theorie, dass ehemalige Todesser hinter den Morden stecken, dann scheint es, als ob sie sich genau jene Familien ausgesucht haben, die sich vom Dunklen Lord abgewandt haben... oder ihm nie gefolgt sind.“</p><p>In seiner Stimme schwang etwas mit, das sie nicht ganz identifizieren konnte, vielleicht Gereiztheit über ihren eigenen, fast quengelnden Tonfall, bis Malfoy sich langsam in seinem Stuhl zurücklehnte und zu Boden starrte. Sie schwieg, nicht aus Rücksicht, wie sie es sich gerne weiß gemacht hätte, sondern aus Überraschung darüber, dass seine übliche Arroganz für einen Augenblick verschwunden war und tiefe Sorge seine Züge überschattete.</p><p>„Und weil diese Feiglinge sich Kinder aussuchen, die nichts für das können, was ihre Eltern getan haben, werden sie früher oder später auch meinen Sohn finden, wenn wir sie nicht endlich überführen können.“ Seine Stimme erschreckte sie fast, die Angst, die seine Worte ein wenig zittern ließ, erinnerte sie an ihre eigenen Kinder, daran, was sie fühlen würde, wenn eines von ihnen in Gefahr wäre, und fast ein wenig verwirrt blickte sie auf – Malfoy musste Scorpius wirklich lieben, auch wenn sie ihm eine so... menschliche Gefühlsregung kaum zugetraut hätte nach allem, was sie von ihm gesehen hatte.</p><p>„Wir werden sie erwischen.“ Sie klang sanft, sanfter, als sie sich selbst in einem Gespräch mit Draco Malfoy zugetraut hätte, und er blickte auf, lächelte leicht und fast ein wenig bitter. „Natürlich werden Sie das... aber wie viele Kinder müssen noch sterben bis dahin?“</p><p>Hermine schüttelte den Kopf. „Hoffentlich keines... aber wenn wir weiter auf der Stelle treten und außer der Tatsache, dass es möglicherweise ehemalige Todesser sind, die diese Morde begangen haben, nichts herausfinden... dann habe ich nicht besonders viel Hoffnung.“</p><p>Malfoy nickte leicht. „Deswegen bin ich eigentlich zu Ihnen gekommen... ich denke... nein, ich hoffe vielmehr, dass ich etwas gefunden habe.“</p><p>„Was?“ Sie spürte, wie die Worte sie förmlich aus ihrem Sessel zogen und starrte den Botschafter an, auf dessen Lippen sich trotz allem ein leichtes Lächeln schlich.</p><p>„Ich bin heute Abend nach England appariert, um mit einigen ehemaligen Todessern zu sprechen – auch wenn sie es nicht besonders gern sehen, wenn sie an ihre Vergangenheit erinnert werden – und sie beteuerten einhellig, dass sie nichts darüber wissen... aber Amycus Carrow vielleicht schon.“</p><p>Hermine hob die Brauen. „Und das haben sie Ihnen gesagt – einfach so?“</p><p>„Jemand, der sich dem Dunklen Lord anschließt, hat die Loyalität nicht unbedingt erfunden“, entgegnete Malfoy trocken und lehnte sich zurück. „Die Meisten, mit denen ich gesprochen habe, waren so sehr damit beschäftigt, ihren eigenen Arsch zu retten, dass sie sich nicht besonders um alle anderen gekümmert haben.“</p><p>Nur mühsam konnte sie sich verbeißen, zu erwähnen, dass der Mann, der ihr gegenüber saß, höchstwahrscheinlich genau dasselbe getan hätte, wäre er in dieser Situation gewesen. „Aber Carrow steht nun unter Hausarrest, nachdem er aus Askaban entlassen wurde... er kann den Kindern kaum etwas getan haben.“</p><p>Langsam, fast zögerlich zuckte Malfoy mit den Schultern. „Wie ich gesagt habe – ich hoffe mehr, dass es eine Spur ist, als dass ich es wirklich glaube... aber ich denke, es könnte sich auszahlen, mit Amycus zu sprechen.“</p><p>„Und wieso kommen Sie damit zu mir?“ Hermine betrachtete ihn eindringlich über den Tisch hinweg, sie spürte langsam, wie die Müdigkeit Besitz von ihr ergriff, die Erfahrungen des Tages ihren Tribut forderten. „Eigentlich ist es doch Ihre Aufgabe, zu recherchieren?“</p><p>Malfoy lächelte leicht. „Ja. Allerdings steht Carrow unter Hausarrest mit Besuchsbeschränkung... nur seine Familie darf zu ihm, und einem ehemaligen Todesserkollegen wie mir würden die Auroren, die das Haus bewachen, niemals Zugang gewähren. Bei Ihnen sieht die Sache allerdings anders aus... immerhin arbeiten Sie für die Abteilung für magische Strafverfolgung.“</p><p>„Sie denken also, es ist Zeit für einen Ausflug nach England?“ Hermine konnte die Zweifel nicht ganz aus ihrer Stimme verbannen, sie war sich ganz und gar nicht sicher, ob Carrow wirklich etwas mit der Angelegenheit zu tun hatte – allerdings konnte es auf der anderen Seite auch nicht schaden, sich mit ihm zu unterhalten. Immerhin war der Hauch einer Idee besser als gar keine Spur, und sie hatte absolut keine anderen Ansätze, die sie verfolgen konnte, denn sie saß auf dieser Tagung fest... und musste sich wohl oder übel auf Malfoy und Donalds verlassen. Und bei dieser Sachlage zog sie Malfoy auf jeden Fall vor – immerhin verspürte sie bei ihm nicht bei jeder Begegnung den Wunsch, seinen Kopf gegen die nächste Wand zu schlagen, in der Hoffnung, eine Neuanordnung seiner beiden Gehirnzellen würde eine Verbesserung bewirken.</p><p>„Ja... kann die Konferenz Sie für einen Vormittag entbehren?“ Der Botschafter betrachtete sie nachdenklich, so als ob er ahnen würde, in welche unbehagliche Richtung ihre Gedanken im Moment gingen, und sie rang sich ein schräges Lächeln ab. „Ich verzichte auf jeden Fall mit Freuden... der brasilianische Zaubereiminister treibt mich langsam in den Wahnsinn.“</p><p>Er schwieg, betrachtete sie auf diese nachdenkliche Art, die sie mittlerweile so gut kannte und von der sie sich niemals ganz sicher war, was sie zu bedeuten hatte, dann erhob er sich langsam, fast unschlüssig aus seinem Sessel. „Ich... ich hole Sie morgen früh ab, Mrs Weasley.“</p><p>„Ja... gute Nacht.“ Still begleitete sie ihn zur Tür.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2321678">Chapter 5</a>: Gespräch
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 5: Gespräch</strong>
+</p><p>Noch immer spürte sie die bleierne Müdigkeit, die sie schon den ganzen Morgen lang erfasst hatte, als sie gemeinsam mit Draco Malfoy über den schmalen Vorgartenweg hin zu dem kleinen Haus schritt. Der Kies knirschte unter ihren Füßen, doch sie nahm das Geräusch nur distanziert wahr, genauso wie ihr an diesem Morgen alles merkwürdig gedämpft vorkam, entfernt, fürchterlich weit weg und doch für ihren Geschmack viel zu nahe.</p><p>Sie hatte nicht geschlafen in dieser Nacht, zu nahe waren ihr die Bilder aus dem Denkarium gegangen, zu schnell hatten sie sich in ihren Geist geschoben, sobald sie die Augen schloss und das Licht ausmachte. Schließlich war sie in den Morgenstunden zum leisen Gedudel des magischen Radios eingedöst, nur um wenige Minuten später bereits von ihrem Wecker aus dem Schlaf gerissen zu werden... und nun war sie hier.</p><p>Malfoy hatte nichts gesagt, wofür sie ihm auf einer unterschwelligen Ebene sogar dankbar war, doch das kam nicht in ihrem Verhalten zum Ausdruck – unausgeschlafen war sie immer unausstehlich, und sie fürchtete, dass er im Moment die ganze Wucht ihrer schlechten Laune abbekam. Besonders, weil der Kaffee im <em>Hôtel Magique</em> einfach nur grauenvoll war und ihre Lebensgeister sich nicht einmal im Schlaf drehten, wenn sie einen halben Liter davon in sich hineinkippte.</p><p>Malfoy hielt ihr die helle Holztür des Hauses auf und sie trat in den Flur, nur am Rande bemerkte sie, wie er ihr folgte und ihr den Mantel abnahm. Der Raum wirkte merkwürdig... normal und vage fragte sie sich, ob sie hier nicht irgendein Anzeichen dafür entdecken könnte, dass der Mann, der hier lebte, Freude daran hatte, andere Menschen zu quälen.</p><p>Aber sie entdeckte nur gerahmte Fotos an den Wänden, Carrows Sohn winkte ihr aus ihnen entgegen, manchmal gemeinsam mit seiner Frau, manchmal ohne sie, und als sie weiterging, konnte sie einige Bilder von seiner Enkelin entdecken, mal mit ihrer Eule oder auf ihrem ersten Besen, dann wieder bei ihrem Abschluss auf Hogwarts. Hermine schüttelte den Kopf. Sie arbeitete lange genug für das Ministerium, um zu wissen, dass nicht jeder Verbrecher so aussah – und warum sollte dasselbe nicht auch für sein Haus gelten?</p><p>Eine pummelige Aurorin kam aus der Küche, ihren Zauberstab in der Hand, und schob sich lächelnd eine Strähne ihres blonden Haares hinter die Ohren. „Mrs Weasley, Ma'am, Mr Malfoy – Mr Carrow wartet im Wohnzimmer auf Sie. Gehen Sie ruhig schon hinein, ich komme dann nach.“</p><p>Die Frau wies auf die Tür und gleich darauf schrillte ein Teekessel, was sie veranlasste, in die Küche zu wuseln; Malfoy hob die Augenbrauen und blickte zu ihr, doch sie winkte nur unwirsch ab und trat in den angrenzenden Raum.</p><p>Das Feuer im Kamin loderte hell und Amycus Carrow saß in dem großen Lehnstuhl daneben, Hermine nickte ihm langsam zu, um ihren ohnehin schon pochenden Kopf nicht zu sehr zu belasten, und wollte schon zu einem der Sessel treten, als sie Malfoys Starre neben sich mehr spürte als dass sie sie sah. So unauffällig wie möglich wandte sie sich ihm zu, der Ausdruck von Fassungslosigkeit auf seinem Gesicht musste selbst ihrem Verdächtigen aufgefallen sein und sie stieß ihm den Ellbogen in die Rippen. „Reißen Sie sich zusammen!“ Ihre Stimme war ein bloßes Zischen, doch der Mann neben ihr reagierte darauf und rang sich sogar ein Lächeln ab, während er gemeinsam mit ihr Platz nahm.</p><p>„Mrs Weasley...“ Carrows Stimme klang brüchiger, als sie sie in Erinnerung hatte, doch seine dunklen, eingefallenen Augen musterten sie klar, wenn auch nicht mit der alten, bösartigen Schärfe, die einst in ihnen gesteckt hatte. „Und Malfoy... was für eine nette Überraschung.“</p><p>Von der einstigen Massigkeit des Mannes war nicht viel geblieben und wie er in seinem Stuhl saß, wirkte er bedeutend älter, als er wirklich war, seine dünnen Finger hatten sich um eine Teetasse geschlungen und sein weißer Haarschopf wirkte ausgedünnt. „Starr mich nicht so an, Malfoy – auch wenn die Dementoren nicht mehr hier sind, ist Askaban kein angenehmer Ort. Und wenn du nicht so geschickt darin wärst, dich aus allem herauszuwinden, hättest du das am eigenen Leib erfahren... aber jetzt sitzt du hier mit einer Beamtin des Ministeriums. Reichtum richtet eben doch alles.“</p><p>Er entgegnete nichts, doch Hermine, die ihm einen schnellen Blick zuwarf, bemerkte, dass ein wütendes Funkeln in seine Augen trat – was auf jeden Fall besser war als dieser fassungslose Ausdruck. „Wir sind wegen den Morden an Felice Nott und Andrew Zabini hier, Mr Carrow.“</p><p>Er lachte trocken, ein Geräusch, das schnell in ein schweres Husten überging, und in Hermine regte sich der Wunsch, ihm zu helfen, bis sie sich ins Gedächtnis rief, wer ihr gegenübersaß. „Sehen Sie mich an. Ich habe vielleicht früher gemordet – jetzt tue ich es definitiv nicht mehr.“</p><p>„Man muss nicht selbst den Zauberstab erheben, um jemanden zu töten“, entgegnete Malfoy frostig und fixierte Carrow mit einem Blick, den Hermine noch nie bei ihm gesehen hatte, der aber Wut sehr, sehr nahe zu kommen schien.</p><p>„Natürlich muss man das nicht... aber ich stehe hier unter Hausarrest, jeder meiner Kontakte mit der Zaubererwelt wird überwacht, und nur mein Sohn und seine Familie dürfen mich besuchen... wie sollte ich irgendjemandem den Auftrag geben, Morde zu begehen?“ Carrow hustete erneut, er schien sich in Rage geredet zu haben und seine Stimme war immer eindringlicher, immer zischender geworden, während er sprach. Hermine antwortete nicht und warf Malfoy, der den Eindruck machte, etwas entgegnen zu wollen, einen scharfen, warnenden Blick zu, der ihn überraschenderweise sogar wirklich innehalten ließ.</p><p>Carrow sank in seinen Stuhl zurück. „Abgesehen davon... warum sollte ich das tun? Warum sollte ich Kinder töten?“</p><p>„Aus Rache?“ Malfoy hatte ausgesprochen, was sie dachte, doch Carrow schüttelte nur langsam, fast bedächtig den Kopf. „Ich bin ein alter Mann... ich fühle mich so, auch wenn der Kalender vielleicht etwas anderes sagt... und ich hatte viel Zeit, mit dem, was geschehen ist und was ich getan habe, abzuschließen. Sie sind ebenfalls froh, nicht mehr für einen Todesser gehalten zu werden, Malfoy – gestehen Sie mir dasselbe zu... auch wenn Sie vielleicht einen weniger hohen Preis für diese Errungenschaft gezahlt haben.“</p><p>„Sie haben abgeschlossen, Mr Carrow – Ihre Schwester hat das allerdings nicht“, wandte Hermine nach kurzem Schweigen ein, da Malfoy keine Anstalten machte, etwas zu erwidern, sondern abwesend in die tanzenden Flammen des Kamins starrte.</p><p>Carrow nickte langsam. „Ja... Alecto war der Sache des Dunklen Lords immer stärker zugetan als ich... und wäre niemals bereit, ihren Ansichten abzuschwören, um aus Askaban entlassen zu werden – auch wenn ich gehört habe, dass das Ministerium ein entsprechendes Angebot gemacht hat.“</p><p>„Die Abteilung für magische Strafverfolgung hat ihr zum selben Zeitpunkt wie Ihnen eine Amnestie angeboten, die sie allerdings kategorisch abgelehnt hat“, bestätigte Hermine knapp und Carrow seufzte langsam auf.</p><p>„Wenn ich ehrlich bin, dann überlege ich manchmal, ob es nicht besser gewesen wäre...“, wisperte der alte Mann und Malfoy blickte abrupt auf, fixierte ihn eindringlich. „Was meinen Sie?“</p><p>„Das Angebot ausgeschlagen zu haben... immerhin würde Asoria mich dann vielleicht noch besuchen.“</p><p>„Asoria?“ Hermine hob die Brauen.</p><p>„Meine Enkeltochter... sie hat mich und Alecto früher in Askaban besucht, zuerst als kleines Mädchen mit ihren Eltern, danach auch alleine, vielleicht der einzige Lichtblick, den ich in dieser Zeit hatte... ich hatte die Amnestie zum Teil auch angenommen, um sie öfter zu sehen... aber sie kommt nicht. Seit zwei Jahren bin ich hier, und sie kommt einfach nicht...“</p><p>Trotz des dumpfen, pochenden Schmerzes in ihrem Kopf spürte Hermine, wie alle Alarmglocken in ihrem geschulten Geist ansprangen, und ein schneller Blick zu Malfoy zeigte ihr, dass es bei ihm nicht anders aussah. „Wie alt ist sie?“ Hermine versuchte, die plötzliche Aufregung, die sie erfasst hatte, so gut wie möglich zu verbergen, und konzentrierte sich auf ihre Müdigkeit, so gut sie es vermochte.</p><p>„Asoria?“ Carrow wirkte überrascht, stellte sie mit einem stummen Fluch fest, und sie bemühte sich, ein wenig zu lächeln. „Ja... wir haben sie auf den Bildern im Flur gesehen, und ich bin eben neugierig, was Kinder angeht. Das Los einer Mutter, fürchte ich.“</p><p>Der Mann wirkte beruhigt, auch wenn sie sich dessen nicht ganz sicher sein konnte, immerhin war er ein Todesser gewesen, eine Bezeichnung, die Verstellungskünste definitiv mit einschloss. „Oh... sie müsste jetzt achtzehn sein, hat im letzten Jahr Hogwarts abgeschlossen.“</p><p>Hermine lächelte so gewinnend, wie sie eben vermochte, während Eis sich in ihrem Magen ausbreitete. „Nun... dann bleibt mir wohl nicht mehr übrig, als Ihnen für Ihre Zusammenarbeit zu danken, Mr Carrow.“</p><p>Der alte Mann schüttelte den Kopf und fixierte sie mit einem durchdringenden Blick. „Als ob mir eine wirkliche Wahl geblieben wäre. Mrs Weasley, Mr Malfoy.“</p><p>Sein Tonfall war eindeutig, und Hermine floh fast aus dem Wohnzimmer hinaus in den Flur, wo sie fast mit der blonden Aurorin zusammenstieß, die ein Teetablett vor sich hertrug. „Sie gehen schon? Bleiben Sie nicht noch ein wenig?“</p><p>Sie schüttelte den Kopf, erklärte, sie müsste dringend zurück zu ihrer Tagung in Paris zurück und zog Malfoy mit sich bis hinaus auf die Straße, wo er das quietschende Gartentor hinter sich schloss. Gemeinsam apparierten sie zurück ins Hotel, ohne noch ein Wort zu verlieren, und der Weg von dem kleinen Hof hinauf in ihr Zimmer kam ihr vor wie eine kleine Ewigkeit.</p><p>Erst als sie auf zwei Sesseln in der kleinen Sitzecke ihrer Suite Platz nahmen, erlaubte sie sich, erschöpft aufzuseufzen. „Sie hatten Recht.“</p><p>„Was?“ Malfoy blickte auf, offensichtlich überrascht von diesem Eingeständnis, und Hermine ließ sich nach hinten sinken, starrte nachdenklich die verzierte Decke des Zimmers an. „Sie hatten Recht mit ihrer Spur zu Carrow... auch wenn nicht genau auf die Art und Weise, die Sie vermutet haben.“</p><p>„Dass ich das einmal von Ihnen hören würde, hätte ich nie gedacht.“ Er lächelte leicht, doch zu ihrer Überraschung lag keine Verachtung in seinem Tonfall... nur ehrliche Amüsiertheit. „Aber Asoria scheint mir ein heißer Tipp zu sein... wir sollten mit ihr sprechen, bevor ihr Großvater auf die Idee kommt, sie zu warnen.“</p><p>Hermine nickte langsam. „Was ist mit Alecto? Sollten wir nicht auch sie befragen?“</p><p>„Ich weiß nicht, ob das besonders... erfolgreich wäre“, entgegnete Malfoy nachdenklich und starrte auf die leichte Spiegelung in der Glasplatte des Tisches. „Sie hat sich nie besonders kooperativ erwiesen, was das Ministerium anging – und mir würde sie wohl eher an die Gurgel springen, als mit mir zu sprechen. Ich denke, es ist besser, wir halten uns an Asoria.“</p><p>„Wissen sie etwas über sie, abgesehen davon, dass sie die Enkeltochter von Amycus Carrow ist?“ Nachdenklich betrachtete sie Malfoy, seine Instinkte, was Todesser anging, waren offensichtlich besser als die ihren – ein Faktum, das nicht weiter verwunderlich war – und die Feststellung entlockte ihr ein sarkastisches Lächeln.</p><p>Malfoy schüttelte langsam den Kopf. „Ich habe nicht gehört, dass sie auf Hogwarts besonders aufgefallen wäre... aber mein Interesse für die Schule war vielleicht nicht ganz so groß, wie es hätte sein sollen, bevor Scorpius in die erste Klasse kam.“</p><p>„Dann schreibe ich an Kingsley... das Ministerium kann sicher herausfinden, was sie im Moment macht und wo sie wohnt.“</p><p>Das Klopfen am Fenster ließ Hermine herumfahren und bevor sie noch dazu kam, zu überlegen, von wem der Brief sein konnte, hatte sie schon das Fenster geöffnet und die Eule hereingelassen. Sie war ein Ministeriumstier, und hastig griff sie nach dem kleinen, zusammengerollten Stück Pergament, das an ihrem Fuß befestigt war.</p><p>
+  <em>Hermine,</em>
+</p><p>
+  <em>dein Besuch bei Amycus Carrow ist offenbar öffentlich geworden, denn mich haben einige Anfragen von verschiedenen Zeitungen erreicht. Allerdings ist die Neugier der Presse nicht nur in diesem Punkt geweckt, sondern auch, was dich und Draco Malfoy angeht... bereite dich darauf vor, dass die Abendausgabe des Tagespropheten weder für dich noch für ihn besonders angenehm sein wird. </em>
+</p><p>
+  <em>Ich weiß nicht, ob eure Nachforschungen schon irgendeine Spur geliefert haben – Donalds hat auf jeden Fall keine – aber ich bitte dich, dich zumindest für die nächsten Tage zurückzuhalten. Das politische Parkett ist glatt, national wie international, und dieser Fall weist genug Brisanz auf, um solche Dimensionen zu erreichen. </em>
+</p><p>
+  <em>Pass auf dich auf.</em>
+</p><p>
+  <em>Kingsley</em>
+</p><p>Abrupt stieß Hermine die Luft aus, von der sie gar nicht gemerkt hatte, dass sie sie angehalten hatte, und ließ sich zurück auf ihren Stuhl sinken.</p><p>„Was ist?“ Malfoy betrachtete sie mit hochgezogenen Augenbrauen, doch sie seufzte nur leise auf und reichte ihm den kurzen Brief. „Lesen Sie selbst.“</p><p>Sie war selbst zu aufgewühlt, um ihn zu beobachten, doch während sein Blick über die Zeilen flog, schien er in sich zusammenzusinken, bis er schließlich so niedergeschlagen aussah, wie sie sich fühlte, und langsam den Kopf schüttelte. „Und was machen wir jetzt?“</p><p>„Wenn ich das wüsste...“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2332776">Chapter 6</a>: Entdeckung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 6: Entdeckung</strong>
+</p><p>Die Stille in der Suite war dicht, fast greifbar, während Hermine Weasley nachdenklich in ihre Kaffeetasse starrte und noch immer versuchte, ihre Enttäuschung zu verarbeiten. Nach all der Arbeit, all der Anstrengung, die sie in die Ermittlungen in diesem Fall gesteckt hatte, hatte Kingsley sie zurückgepfiffen... einfach so, weil er die politischen Auswirkungen ihrer Handlungen fürchtete. Als ob sie nicht selbst gut genug wusste, auf welch glattem und dünnem Eis sie sich mit ihrer Arbeit im Ministerium bewegte... und auch Malfoy schien sich dieser Tatsache bewusst zu sein, denn immerhin war er es gewesen, der den Gedanken mit ihrer Tarnung aufgeworfen hatte. Auch wenn ihnen diese Geschichte nun vielleicht auf den Kopf fallen würde.</p><p>Nachdenklich betrachtete sie den Mann, der ihr gegenüber saß und in so wenigen Tagen von einem Feind zu einem zumindest widerstrebenden Verbündeten geworden war... schneller, als sie jemals erwartet hätte. Und nun war er geblieben... in stummem Einverständnis warteten sie gemeinsam auf Nachricht aus Großbritannien, denn Hermine hatte die Eule, die Kingsleys Brief gebracht hatte, mit einem Hinweis auf Asoria Carrow zurückgeschickt.</p><p>„Denkst du, sie werden sie finden?“ Malfoys Stimme klang rau von der langen Stille, und Hermine blickte überrascht auf, zögerte kurz. „Ich weiß es nicht. Es kommt ganz darauf an, wer der Presse gesteckt hat, dass wir bei Carrow waren, und wie schnell sich diese Information verbreitet... und ich kann von hier aus nichts darüber herausfinden, ich müsste...“ Sie verstummte und schnaubte leise, nahm einen Schluck von ihrem kalt gewordenen Kaffee. „Tut mir leid... aber es macht mich einfach wahnsinnig, hier zu sitzen und nichts tun zu können.“</p><p>Malfoy winkte mit einem leichten Lächeln ab. „Damit sind Sie nicht allein...“</p><p>„Eine weitere Eigenschaft, die Slytherin und Gryffindor gemeinsam haben, würde ich sagen.“ Sogar sie selbst hörte, dass ihre Stimme fast ein wenig überrascht klang, doch er schüttelte nur den Kopf und grinste. „In Slytherin ist man nicht nur tückisch... sondern auch loyal, was die wahren Freunde angeht. Und die Familie.“</p><p>Der kleine Anflug von Amüsement war sofort wieder aus seinem Verhalten verschwunden, wahrscheinlich hatte ihn die Bemerkung an seinen Sohn erinnert, der gerade in Hogwarts war – und damit in Sicherheit. Sicherheit... ein kleiner Gedanke schob sich nach vorne, etwas, das in einem Brief von Rose gestanden war, doch sie bekam es einfach nicht zu fassen und...</p><p>Ein lautes Klopfen an der Tür riss sie aus ihren Gedanken und sie schreckte auf, vielleicht war es ein Auror des Ministeriums, der ihnen Nachricht brachte? Auch Malfoy schien ratlos, das drückte sein Blick deutlich aus, doch noch ehe sie sich überhaupt erhoben hatte, um zur Tür zu gehen, platzte Ron in ihr Zimmer und stürzte auf sie zu. „Hermine!“</p><p>„Ron.“ Sie spürte, wie sich trotz der ernsten Situation, trotz all ihrer Sorgen ein Lächeln auf ihre Lippen schlich, das allerdings sofort wieder von seinem ernsten, verwirrten Gesichtsausdruck verschluckt wurde. „Was ist passiert? Was machst du hier?“</p><p>„Ich...“ Unschlüssig sah er sich um, eine Geste, die sie schon so oft bei ihm gesehen hatte – und die seinen Blick auf Malfoy fallen ließ, der noch immer an dem kleinen Tisch saß und sich seinem Gesichtsausdruck nach zu urteilen brennend für seine Kaffeetasse interessierte.</p><p>„Es stimmt also.“ In Rons Stimme lag eine Kälte, die sie frösteln ließ, und ratlos sah sie zu ihrem Mann, dessen Augen sich nicht entscheiden konnten, ob sie nun sie oder Malfoy finster anstarren sollten. „Ich hab es ja schon lange geahnt, aber dass es ausgerechnet <em>er</em> sein soll... ich hätte dir mehr Geschmack zugetraut, Hermine.“</p><p>„Ron?“ Sie hob fragend die Augenbrauen, doch er schüttelte nur den Kopf. „Und es von einem Journalisten des Tagespropheten zu erfahren, der mich fragt, ob ich von der Affäre meiner Frau mit dem britischen Botschafter in Frankreich wüsste... wie konntest du das tun? Wie konntest du nur... ich hab mich schon gefragt, wieso du so oft zu Tagungen und Kongressen fährst... aber das... das ist...“</p><p>Ihm schien es die Sprache verschlagen zu haben, doch auch sie selbst fühlte sich wie erstarrt, und sie musste sich zwingen, die kurze Pause in seinem Monolog zu nutzen. „Ron.“</p><p>„Was?“ Wo er zuvor Malfoy angestarrt hatte, wandte er sich nun ihr zu, und das mit einer plötzlichen Wut, die sie fast erschreckte. „Willst du mir jetzt sagen, dass es nicht so ist, wie ich denke? Dass es anders ist, als es aussieht?“</p><p>„Ja.“ Sie spürte, wie ihr eigener Tonfall schärfer wurde, wie seine gänzlich unverdienten Anschuldigungen den letzten Rest von Temperament in ihr wachriefen, den ihre Arbeit im Ministerium noch übrig gelassen hatte. „Ja, eigentlich wollte ich das. Und entschuldigen wollte ich mich auch, weil ich so wenig Zeit für dich und die Kinder habe. Aber da du so offensichtlich nicht daran interessiert bist, die Wahrheit zu erfahren, sondern am liebsten irgendeinem Schmierfink wie Rita Kimmkorn glaubst, ohne mich auch nur zu <em>fragen</em>, ob das auch stimmt, kann ich das wohl gleich sein lassen. Ist ja nur etwas, das deine Frau sagt – nicht zu vergleichen mit der Autorität des geschriebenen Worts im Tagespropheten. Oder im Klitterer!“</p><p>Sie hatte kaum wahrgenommen, wie ihre Stimme mit jedem ihrer Sätze lauter und lauter geworden war, bis sie schließlich richtiggehend gebrüllt hatte – und Ron sie nur noch wütender anstarrte als zuvor. „Du willst mir also erklären, dass Malfoy zum gemütlichen Kaffeeklatsch hier bei dir in <em>deinem</em> Zimmer ist?“</p><p>„Ja, natürlich. Und nachdem wir ausgetrunken haben, fallen wir übereinander her – das ist es doch, was du sagen möchtest.“ Kalter Sarkasmus mischte sich mit ihrer Wut, und sie spürte, wie sie kaum stillhalten konnte vor Zorn, wie sie sich zwingen musste, nicht irgend etwas zu tun, das sie später bereuen würde. „Die Wahrheit ist, wir warten auf eine Nachricht aus dem Ministerium – und das kannst du jetzt glauben oder nicht, oder du fragst Kingsley.“</p><p>Ron starrte sie an, für einen Augenblick, zwei, drei, die sich in die Länge zogen, und sie vermeinte bereits, so etwas wie Zweifel hinter der Maske seines Zorns zu sehen, als er sich abrupt abwandte und das Zimmer so schnell verließ, wie er gekommen war.</p><p>Gemeinsam mit Ron verschwand auch Hermines Wut, ebenso abrupt, wie sie gekommen war, und erschöpft ließ sie sich auf ihren Stuhl zurücksinken – sie hatte nicht gemerkt, dass sie aufgestanden war. Malfoy hatte mittlerweile aufgegeben, so zu tun, als wäre er vollkommen unbeteiligt, und blickte sie mit einem Ausdruck an, den sie nicht deuten konnte, mit einem Funkeln in den grauen Augen, das sie verwirrte. Doch die ersten Tränen sammelten sich bereits, suchten nach einem Weg nach draußen, und hastig vergrub sie ihr Gesicht in den Händen... das fehlte noch, dass er sie weinen sah.</p><p>Angestrengt bemühte sie sich, ihr Schluchzen zu unterdrücken, doch das Geräusch drang zwischen ihren Fingern hervor, schien in ihrer eigenen, stumpfen Wahrnehmung klar und deutlich in dem stillen Raum widerzuhallen, und sie schüttelte langsam den Kopf. So lange hatte sie nicht geweint... und jetzt passierte es wieder, ausgerechnet vor dem Mann, der schuld an der ganzen verdammten Situation war.</p><p>Sie wusste nicht, wie lange sie dort gesessen hatte, doch schließlich begannen ihre Tränen langsam zu versiegen und Ruhe breitete sich in dem Zimmer aus... eine Ruhe, die allerdings sofort von leisen Worten unterbrochen wurde. „Es tut mir leid.“</p><p>Schnell blickte Hermine auf, zu überrascht, um daran zu denken, wie ihr Gesicht aussehen könnte, und erhaschte Malfoy dabei, wie er schuldbewusst in seine leere Kaffeetasse starrte.</p><p>„Ich...“, er sah sie an, musterte sie für einen Moment und schüttelte dann den Kopf, „Meine eigene Ehe ist so zerrüttet, dass ich nicht daran gedacht habe, was unsere... nein, was meine Idee mit der Ihren anstellen könnte.“</p><p>Hermine seufzte leise auf und wischte sich die letzten Tränen aus den Wimpern, eigentlich wollte sie gar nicht wissen, wie sie im Moment aussah und war dankbar, dass Malfoy kein Wort darüber verloren hatte. „Ich... ist schon gut.“ Sie klang noch immer schwach und erstickt.</p><p>„Soll ich Ihnen einen Tee...?“</p><p>Sie setzte schon an, den Kopf zu schütteln, nur um plötzlich innezuhalten, als ihr bewusst wurde, was dieser merkwürdige Ausdruck in seinen Augen zeigte – er fühlte sich hilflos, war wohl nicht oft in die Verlegenheit gekommen, eine weinende Frau trösten zu sollen, und mit der Ohnmacht vermischte sich die Wut über eben diese. Hermine lächelte ein wenig. „Das wäre nett, ja.“</p><p>Sein Zauberstab wirbelte durch die Luft, einen Augenblick später stand eine dampfende Tasse vor ihr, frisch aus der Küche im Keller des Hotels, und sie lächelte fast ein wenig abwesend – der Zimmerservice war in der magischen Welt eindeutig besser als jener, den sie aus ihrer Kindheit kannte. „Danke.“</p><p>„Soll ich... soll ich gehen?“ Malfoy bedachte sie mit einem Blick, so als ob sie jeden Moment explodieren konnte, und sie spürte, wie seine Reaktion sie gegen ihren Willen ein wenig amüsierte – er wirkte vollkommen ahnungslos, etwas, das sie bei ihm eindeutig genoss. Trotzdem schüttelte sie nachdenklich den Kopf. „Wir haben noch immer nichts von Kingsley gehört, und deswegen sind Sie doch eigentlich hier, oder?“</p><p>Er nickte abwesend, und sie nahm einen ersten Schluck aus ihrer Teetasse, die Wärme durchströmte sie und sie schlang die Finger darum, um die Kälte aus ihrer Seele zu vertreiben. Sie wusste nicht, was in Ron gefahren war, doch wenn sie sich an seine Worte zurückerinnerte, dann wurde sie das dumpfe Gefühl nicht los, dass es hier um mehr ging als die Tatsache, dass er sie gemeinsam mit Malfoy an einem Tisch angetroffen hatte. Paris schien nur der letzte Tropfen gewesen zu sein, der das Fass zum Überlaufen brachte, doch das eigentliche Problem lag wohl viel tiefer... Hermine schüttelte langsam den Kopf.</p><p>Auch wenn sie sie manchmal fast in den Wahnsinn trieb, liebte sie doch ihre Arbeit im Ministerium, mochte das Gefühl, etwas Gutes tun zu können, die Zauberwelt zum Besseren zu verändern – und sie hatte gedacht, dass sie sich jetzt, wo Rose bereits in Hogwarts war und Hugo ihr in einem halben Jahr folgen würde, wieder mehr ihren Aufgaben widmen konnte... doch anscheinend hatte Ron ein Problem mit diesem Gedanken.</p><p>Eigentlich hatte sie gedacht, dieses Thema schon längst geklärt zu haben, denn dass sie nicht wie Rons Mutter zu Hause bleiben würde, während ihr Mann arbeitete, hatte für sie immer festgestanden... wieso hatte sie denn ihren Abschluss in Hogwarts mit Bestnoten bestanden, wenn nicht, um etwas zu bewegen? Aber er... er schien doch andere Ansichten zu haben, als sie gedacht hätte, und leise seufzte sie und griff nach ihrer Tasse.</p><p>Wenn er sich wieder beruhigt hatte, musste sie mit ihm reden, doch sie kannte ihn gut genug, um zu wissen, dass das noch einige Zeit dauern würde, und bis dahin war es besser, ihre Nerven im Zaum zu halten und sich auf den Fall zu konzentrieren, an dem sie gerade arbeitete. Nachdenklich nahm sie einen Schluck, vielleicht hätte sie doch nach Kakao fragen sollen, immerhin hatte Dumbledore ihn sozusagen als Allheilmittel angesehen, damals, als sie noch in Hogwarts...</p><p>Sie erstarrte mitten in der Bewegung, während ihre Gedanken jenen Pfad einschlugen, der ihnen zuvor durch Rons Auftauchen verwehrt geblieben war. „Verdammt.“</p><p>Malfoy blickte auf, offensichtlich überrascht und vielleicht auch erschrocken von der plötzlichen Angst, die sie erfüllte und die sich auch auf ihrem Gesicht abzeichnen musste, doch sie winkte hastig ab und rannte in ihr Schlafzimmer. Zwischen den Büchern auf ihrem Nachtkästchen lagen auch einige Briefe, die sie von ihrer Familie erhalten hatte, und fahrig griff sie nach dem zusammengefalteten Blatt, das mit Roses ordentlicher, rundlicher Mädchenhandschrift beschrieben war.</p><p>„Was ist?“ Ihr Gast beobachtete sie in augenscheinlicher Verwirrung, doch sie ließ sich nur zurück auf ihren Stuhl sinken, während sie den Brief mit zitternden Fingern auffaltete. „Mir ist gerade ein sehr, sehr unangenehmer Gedanke gekommen...“</p><p>„Welcher?“ Anstatt zu antworten, überflog sie die Zeilen, bis sie zu jener Information gelangte, die sie vor allem interessierte, und zuckte zusammen.</p><p>„Wer auch immer diese Morde begangen hat, ob es nun Carrow ist oder nicht, sie haben sich bis jetzt an Kinder gehalten, die noch nicht in Hogwarts waren... aber was ist, wenn sie nur auf eine Gelegenheit warten, Schüler anzugreifen?“</p><p>Malfoy zog die Augenbrauen hoch. „Der Gedanke ist mir auch schon gekommen, aber warum sind Sie deswegen in heller Aufregung?“</p><p>„Heute ist Samstag.“ Sie warf einen letzten Blick auf den Brief, das Papier hatte unter ihrem festen Griff bereits gelitten, und erschöpft blickte sie auf. „Hogsmeade-Samstag.“</p><p>„Bei Merlin... und Scorpius ist...“</p><p>„... im Dorf, wie alle anderen. Wo ihn niemand beschützt.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2349988">Chapter 7</a>: Suche
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Requiem – Kapitel 7: Suche</strong>
+</p><p>„Verdammt.“ Malfoys Stimme klang fast mild, der Schock hatte ihn wohl noch nicht in vollem Ausmaß getroffen, und abwesend starrte er auf das kleine Kaffeetischchen, schien nicht wirklich zu realisieren, was Hermine ihm gerade gesagt hatte.</p><p>Sie war schon dabei, ihre Hand auszustrecken, um ihn zu packen und hochzuziehen, als ein Klopfen an der Fensterscheibe sie innehalten ließ und sie sich hastig umwandte. Eine Eule des Ministeriums schwebte vor der Scheibe und sie hastete hinüber, ließ sie herein und riss ihr den Brief vom Bein, ohne das Tier eines weiteren Blickes zu würdigen. Gehetzt überflog sie die Zeilen und unterdrückte einen Fluch, schickte dann die Eule weg – Briefe waren nun eindeutig zu langsam.</p><p>„Kommen Sie.“ Hermine mochte den Unterton von kalter Angst nicht, der sich in ihre Stimme geschlichen hatte, während sie las, und bemühte sich, ihre Ungeduld zu bezähmen, während sie auf Malfoy hinuntersah.</p><p>„Was stand drin?“ Die unnatürliche Ruhe seines Tonfalls behagte ihr gar nicht, aber sie zwang sich, zu antworten, seinen fragenden Blick zu erwidern. „Dass die Auroren Asoria Carrow nicht in ihrer Studentenwohnung in Edinburgh gefunden haben und ihre Mitbewohnerin sagt, sie wollte 'in Hogsmeade etwas erledigen – gemeinsam mit ihren Freunden'.“</p><p>Er schloss für einen Moment die Augen, schien die Gewissheit – oder das, was Gewissheit in ihrer Situation am nächsten kam – in sich aufzusaugen, nur um einen Moment später aufzuspringen. „Dann müssen wir nach Hogsmeade.“</p><p>Hermine hatte gerade noch Zeit, nach ihrem Umhang zu greifen, bevor sie Malfoy hinterherhastete, er rannte, als wäre der Dunkle Lord hinter ihm her und an den Biegungen des Treppenhauses verlor sie ihn aus den Augen, hörte nur noch das klackende Echo seiner Schritte, dem sie folgte. Erst in dem kleinen Hof erreichte sie ihn, sie spürte, wie ihre Seite stach und für einen Moment verfluchte sie, jegliche sportliche Betätigung so sträflich vernachlässigt zu haben, bis der Botschafter nach ihrem Arm griff. „Kommen Sie.“</p><p>Er klang nicht einmal ein wenig außer Atem, doch sie hatte kaum Zeit, darüber nachzudenken, als sie auch schon spürte, wie ihr Körper zusammengepresst wurde, fester als sonst durch die lange Strecke, und sie apparierten.</p><p>Das ploppende Geräusch, als sie auf der Hauptstraße von Hogsmeade auftauchten, war eindeutig lauter als sonst und Hermine griff hastig nach ihrem Zauberstab. „Expecto Patronum“, murmelte sie leise und ihr silberner Otter brach aus der Spitze hervor, sprang schneller als jedes wirkliche Tier über die Felder davon, und für einen Moment folgte sie ihm mit den Augen, bevor sie sich abwandte und ihre Aufmerksamkeit auf ihre Umgebung richtete.</p><p>„Wen haben Sie benachrichtigt?“ Malfoy gönnte ihr keinen Blick, während er sprach, sondern schien sich zu bemühen, in den Schülermassen in ihren schwarzen Umhängen den weißblonden Haarschopf seines Sohnes auszumachen, und auch Hermine schloss sich seinem Beispiel an. „Harry“, entgegnete sie abwesend. „Das Gerede über Asorias Freunde macht mir ein wenig Sorgen – wir könnten Verstärkung aus dem Aurorenbüro benötigen.“</p><p>Er nickte knapp, wenn auch ein wenig widerwillig, und begann, sich einen Weg durch die Kinder und Jugendlichen zu bahnen, die die Straßen des Dorfes säumten, die allerdings so mit sich selbst beschäftigt schienen, dass zwei absolut durchschnittlich aussehende Erwachsene in Umhängen keine weitere Aufmerksamkeit erregten, wofür Hermine ausgesprochen dankbar war. „Haben Sie eine Vorstellung, wo Scorpius sein könnte? Irgendwelche Lieblingsgeschäfte...?“</p><p>Malfoy schüttelte langsam den Kopf. „Sehe ich aus wie ein Vater, der besonders viel über...“</p><p>„Mum!“</p><p>Hermine zuckte zusammen, als sie ihre Tochter Rose auf sich zufliegen sah, das Mädchen lachte und warf sich in ihre Arme, während sie für einen Augenblick nicht wusste, was sie tun sollte, bevor sie sie fast erschrocken an sich drückte. „Rose... was machst du hier?“</p><p>„Ich bin in Hogsmeade, Mum – wie alle anderen Drittklässler, die etwas auf sich halten. Albus muss sich auch hier irgendwo herumtreiben...“ Suchend sah sie sich um, doch Hermine packte sie am Arm und hielt sie fest, ein wenig zu unsanft, wie sie vermutete. „Rose... weißt du, wo Scorpius Malfoy ist?“</p><p>„Scorpius? Wieso möchtest du wissen, was der macht...“ Ihre Tochter sah sie mit einem verwirrten Blick an, bis Draco Malfoy in ihr Gesichtsfeld glitt und die Verwirrung sich zu Fassungslosigkeit steigerte. „Und was macht er...?“</p><p>„Erklär ich dir später, Liebling. Hast du ihn jetzt gesehen oder nicht?“</p><p>Rose kniff die Augen zusammen, doch plötzlich hellte sich ihr Gesicht auf und sie nickte. „Ja... er ging mit irgend so einem älteren Mädchen, vielleicht aus der Siebten, 'rüber zur Heulenden Hütte. Ich hab mir nicht viel dabei gedacht, immerhin kennt sein Dad einen Haufen Leute... was ist den passiert, Mum?“</p><p>Hermine hörte die letzten Worte nicht einmal mehr, denn sie musste sich bemühen, mit Malfoy Schritt zu halten, der schon vor ihr losgestürmt war, in Richtung des Ortsrandes, die Angst um seinen Sohn schien ihm zusätzliche Kraft zu verleihen, etwas, das sie nachvollziehen konnte. „Hey! Hey, Malfoy!“</p><p>Er hielt für einen Moment inne, was es Hermine erlaubte, die letzten Meter des kleinen Hügels, auf dem die Heulende Hütte stand, zu ihm hochzuhasten. „Was ist?“</p><p>„Wir sollten auf... Verstärkung warten...“, keuchte sie, doch im nächsten Augenblick drang ein gellender Schrei aus dem Gebäude, der die vernagelten Fenster erzittern ließ, und Hermine zog ihren Zauberstab. „Vergessen Sie die Verstärkung.“</p><p>Die Tür der Hütte war verbarrikadiert, doch Malfoy schwang seinen Zauberstab und zersplittertes Holz flog mit einem lauten Krachen davon, Hermine spürte, wie die Späne auf ihren Rücken hinunterregneten, als sie sich durch die so geschaffene Öffnung duckte.</p><p>Die Luft in der Hütte war muffig und abgestanden, schien sich regelrecht in ihre Lungen zu fressen, während sie versuchte, durch den Staub, den die kleine Explosion aufgewirbelt hatte, irgend etwas zu erkennen. Mehr spürte sie, als dass sie sah, wie Malfoy dicht hinter ihr folgte – genauso, wie sie den Angriff mehr instinktiv vorausahnte, als dass sie wirklich etwas bemerkt hätte.</p><p>„Avada Kedavra!“ Hermine warf sich zu Boden, zog Malfoy mit sich, sie hörte, wie der Fluch in der Wand über ihr einschlug und große Stücke aus der Backsteinmauer riss, Putz von der Decke rieselte auf sie herab und sie musste husten.</p><p>„Avad-“</p><p>„Stupor!“ Der Fluch kam von Malfoy, war in die Dunkelheit des Durchgangs gezielt, der hinunter in den Geheimgang zur Peitschenden Weide führte, und ein dumpfes Poltern, das Geräusch eines menschlichen Körpers, der zu Boden schlug, zeigte ihr, dass er getroffen hatte. Sofort erhob sie sich aus ihrer geduckten Position, spürte, wie kleine Mauerreste und Staub von ihrem Umhang rieselten, während sie sich in den Flur warf, ein ungezielter Fluch vom oberen Treppenabsatz rauschte an ihr vorbei, bevor sie wieder in Deckung ging.</p><p>Der Angreifer, den Malfoy aufgehalten hatte, war jung, er trug eine Schuluniform von Hogwarts mit einem Slytherin-Abzeichen und einen Augenblick später begriff Hermine, dass es noch einen anderen Grund gab, warum Asoria Carrow ein Hogsmeadewochenende für ihren Angriff ausgewählt hatte. Trotzdem nahm sie sich die Zeit, ihn zu fesseln, bevor sie sich umwandte – Malfoy war verschwunden.</p><p>Polternde Schritte auf der Treppe zeigten ihr, dass er nach oben gestürmt war, und sie beeilte sich, ihm zu folgen, heisere Schreie drangen von oben herauf. Doch wenigstens schienen die Entführer durch ihren Angriff so weit abgelenkt, dass sie Scorpius nicht mehr folterten, denn es waren keine der gellenden Schreie mehr zu hören, die ihr zuvor so tief ins Mark gedrungen waren.</p><p>„Malfoy!“</p><p>Sie konnte seine schweren Schritte nicht mehr auf der Treppe hören und bezwang den Drang, inne zu halten und ihren keuchenden Atem und das Stechen in ihrer Brust zu beruhigen, hastete weiter, doch im nächsten Augenblick polterte ein Körper – sie wusste nicht, ob lebendig oder tot – die Stufen hinab. Rein instinktiv presste sie sich an die Wand, ließ zu, dass er an ihr vorbeifiel, und hörte das scharfe Geräusch von brechenden Knochen, während sie weiter nach oben hastete. Sie hatte keine Zeit. „Malfoy!“</p><p>Fast automatisch wurden ihre Schritte in das kleine, abgewohnte Schlafzimmer getragen, in dem sie damals Sirius Black gegenübergestanden hatte, doch sie verdrängte das Gefühl des Déjà-Vus, verdrängte die Erinnerung, verdrängte die schwarzen Punkte, die vor ihren Augen tanzten und sich jeden Augenblick zu großen Flecken auszuweiten drohten, und konzentrierte sich auf die Situation.</p><p>Scorpius Malfoy hing schlaff in den Armen einer jungen Hexe, deren Ähnlichkeit mit Alecto Carrow so unmissverständlich war, dass sie sie sofort als Asoria erkannte, und die ihn wie einen Schutzschild vor sich hielt. Zwei weitere Komplizen standen hinter ihr, halb in der Deckung, die sie bot, ein Mädchen, das ebenfalls eine Hogwartsuniform trug, und ein Zauberer, vielleicht ein Student. Doch ihre Gesichtsausdrücke waren identisch, abweisend, fatalistisch, und Hermine brauchte all ihre Selbstbeherrschung, um Malfoy anzusehen, der vor ihr stand, den Zauberstab auf Asorias Kopf gerichtet.</p><p>Wut funkelte in seinen grauen Augen, unbändige Wut, wo sie gedacht hatte, seinen Zorn zu kennen, und er zitterte – nicht vor Angst, sondern aus Rage. „Lass ihn gehen.“</p><p>„Warum sollte ich?“ Asoria klang fast unnatürlich ruhig, so als würde sie mit einem Lehrer sprechen, der sie gerade auf ein kleines Missgeschick hinwies, und Hermine stieß sich von dem Türrahmen ab, an den sie sich gelehnt hatte, und machte einen Schritt auf sie zu. „Weil die Auroren unterwegs sind, ihr hier nicht mehr rauskommt – macht es nicht noch schlimmer, als es ohnehin schon ist.“</p><p>Scorpius stöhnte leise, seine Lider flatterten, und Asoria packte ihn fester, zog ihn am Hemdkragen hoch. „Für den Dunklen Lord zu sterben ist die höchste Ehre.“</p><p>„Voldemort ist tot.“ Hermines Stimme klang kalt und endgültig, doch die junge Hexe zischte wütend auf.</p><p>„Wag es nicht, seinen Namen auszusprechen. Er wird kommen... er wird kommen und uns in seine Reihen aufnehmen, wie er damals zurückgekehrt ist, um jene zu strafen, die sich von ihm abwandten, und diejenigen zu preisen, die seine Erwartungen erfüllten.“ Die Spitze ihres Zauberstabes zitterte, während sie auf Scorpius' Kehle wies, den Jungen vor sich hielt wie den Garant ihrer Sicherheit, während sich ein leises Ploppen in Hermines Geist schlich.</p><p>Auroren – die Auroren waren hier, Harry hatte auf ihren Aufruf reagiert, und sie spürte, wie Erleichterung sie durchströmte, als die Gestsalten in den schwarzen Umhängen in den Raum strömten, aus dem Augenwinkel konnte sie sogar Harrys zerstrubbelten Haarschopf erkennen. Alles würde gut werden. „Wir haben Verstärkung bekommen... lass den Zauberstab fallen und ergib dich, Asoria. Es wird alles gut werden, glaub mir...“</p><p>Ihre Stimme klang sanft und weich, und für einen Moment schien das Mädchen wirklich darüber nachzudenken, was sie gesagt hatte... allerdings nur für einen Moment. „Avada Kedavra!“</p><p>„Protego!“ Hermines Zauberstab war hochgeschossen, bevor sie einen bewussten Gedanken fassen konnte, und der grüne Blitz prallte wirkungslos von dem Schutzschild ab, den sie um sich und Malfoy geschaffen hatte, während sie ihn gleichzeitig zu Boden riss. Das Himmelbett ging in Flammen auf und das kleine Schlafzimmer wurde zu einem Durcheinander aus Schreien und Flüchen, während sie sich zu Boden drückte und Malfoy festhielt, so gut sie es vermochte.</p><p>Doch schließlich entglitt er ihrem Griff, während die Auroren gerade damit beschäftigt waren, Asoria und ihre beiden Komplizen zu fesseln, und stürzte sich fast auf seinen Sohn, zog ihn in seine Arme und hielt ihn fest. „Scorpius.“ Seine Stimme war nur ein heiseres Flüstern, während er vorsichtig durch die Haares des Jungen strich, seinen Puls fühlte. „Einen Heiler! Wir brauchen einen Heiler!“</p><p>Eine junge Frau mit einem Koffer mit dem Symbol des Aeskulapsstabs auf der Seite drängte sich nach vorne, und Hermine, die sich mittlerweile aufgerappelt hatte, blieb nichts anderes übrig, als Malfoy vorsichtig, aber entschieden von seinem Sohn wegzuziehen. „Es ist gut... ihm ist nichts passiert... es ist gut“, wisperte sie leise, doch er schüttelte langsam den Kopf und richtete sich auf, schien seine gewohnte Selbstbeherrschung wiedergefunden zu haben. „Sie hat auf mich gezielt... nicht auf ihn.“</p><p>Für einen Moment war Hermine verwirrt, doch dann nickte sie langsam und lächelte ein wenig. „Nun... ich schätze, dann sollten Sie wenigstens einmal im Leben dankbar sein für Ihr Talent, sich alle Welt zum Feind zu machen, Mr Malfoy.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1125152/chapters/2362521">Chapter 8</a>: Epilog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Epilog</strong>
+</p><p>„Hier sind Sie.“ Überrascht blickte Hermine Weasley von der Aussicht auf die Avenue des Champs-Élysées, die sich von der Dachterrasse ihres Hotels bot, auf, und entdeckte Draco Malfoy, der in der Tür stand und sie für einen Moment nachdenklich betrachtete, bevor er auf sie zuging. Das Rauschen der Autos und des Stadtlebens drang nur gedämpft zu ihnen hinauf auf das Dach, und Hermine lächelte und blickte hinüber zum Tour Eiffel, der sich mit seiner Beleuchtung wie ein Mahnmal in den dunklen Februarhimmel reckte, bevor sie ihren Blick über die Dächer und hinüber zum Arc de Triomphe wandern ließ. „Es ist schön hier draußen... so still.“</p><p>Malfoy lächelte leicht, lehnte sich neben ihr an die steinerne Brüstung und schwieg, starrte hinaus auf die Stadt, die sich langsam zur Ruhe legte. „Ich hatte nicht damit gerechnet, dass Sie noch in Paris sind, immerhin haben Sie keinen Grund mehr, so zu tun, als ob Sie zu dieser Tagung müssten...“</p><p>Hermine seufzte leise. „Ich dachte, es wäre besser, noch ein wenig von zu Hause wegzubleiben, bis Ron sich beruhigt hat – er kann ziemlich nachtragend sein, fürchte ich.“</p><p>Er entgegnete nichts darauf, und das einzige, was sie hörte, waren die Geräusche der nächtlichen Stadt, die sie umspülten. „Wie geht es Scorpius?“, fragte sie, um die Stille zu brechen, die ihr langsam unangenehm zu werden begann.</p><p>„Er wird wieder... ich war eben noch in St. Mungos, und die Heiler sagen, er ist ein zäher Junge und wird keine Folgeschäden davontragen... und ich werde besser auf ihn aufpassen.“</p><p>„Jetzt, wo Sie gemerkt haben, wie schnell Sie ihn verlieren könnten?“, warf sie sanft ein, und Malfoy seufzte auf. „Ja... so ungefähr. Ich habe ihn sträflich vernachlässigt, weil ich meiner Frau aus dem Weg gehen wollte...“ Für einen Moment hielt er inne, dann nickte er langsam. „Aber jetzt ist sie im Krankenhaus und sitzt an seinem Bett.“</p><p>„Astoria? So heißt sie doch, oder?“ Hermine wandte sich halb ihm zu, musterte ihn mit einer Neugier, die sich noch steigerte, als sie das Päckchen entdeckte, das er unruhig zwischen seinen Fingern drehte.</p><p>„Ja... sie verbringt den größten Teil ihrer Zeit bei meinen Eltern auf Malfoy Manor – wahrscheinlich, um mich nicht sehen zu müssen.“</p><p>Hermine lächelte leicht. „Vor ungefähr einer Woche hätte ich diese Einstellung wirklich sehr verständlich gefunden... aber Sie sind wirklich nicht so schlimm, wie ich Sie in Erinnerung hatte.“</p><p>„'Nicht so schlimm, wie ich Sie in Erinnerung hatte'“, wiederholte er grinsend. „Ich glaube, das ist das, was aus Ihrem Mund einem Kompliment am nächsten kommt.“</p><p>Zu ihrer eigenen Überraschung bemerkte sie plötzlich, dass sie lachte. „Nun, Mr Malfoy, ich will gar nicht wissen, was Sie sonst noch für Vorstellungen über mich haben.“</p><p>Er grinste ebenfalls matt, bevor er tief Luft holte und seine Courage zu sammeln schien. „Ich halte Sie für eine bemerkenswerte, mutige und intelligente Frau, der ich nicht nur mein Leben, sondern auch das meines Sohnes schulde, und dafür möchte ich mich bei Ihnen von ganzem Herzen bedanken.“</p><p>Hermine spürte, wie ihre Augenbrauen sich hoben, sie hatte mit allem gerechnet, aber nicht mit dieser Antwort, und konnte nicht verhindern, dass sie begann, rot zu werden. „Ich... das war mein Job, mehr nicht.“</p><p>Entschlossen schüttelte Malfoy den Kopf. „Ihr Job ist es, dafür zu sorgen, dass Leute wie Asoria Carrow hinter Gittern bleiben – nicht, sich unter Flüchen hindurchzuducken, um sie dorthin zu bringen.“</p><p>„Dann... danke.“</p><p>„Und das wollte ich Ihnen ebenfalls geben.“ Er reichte ihr das Paket, und sie war so überrascht, dass sie es bereits in der Hand hatte, als der Gedanke in ihren Kopf schoss, dass sie es doch eigentlich ablehnen sollte. „Was ist das?“</p><p>„Ein Buch, für Ihre Tochter, Rose – immerhin hätten wir ohne sie Scorpius vielleicht nicht rechtzeitig gefunden.“</p><p>Hermine lächelte leicht. „Ich bin sicher, sie wird sich freuen.“</p><p>„Das hoffe ich.“ Malfoy machte den Eindruck, als ob er gehen wollte, sich aber nicht so recht dazu entschließen konnte, und lehnte sich wieder neben ihr an die Brüstung, starrte unruhig in die Straßen der Stadt hinab. Nun war es an Hermine, das Päckchen unruhig in den Händen zu drehen, sie hatte das Gefühl, dass etwas unausgesprochen blieb, das er eigentlich sagen wollte, und sah ihn schließlich an. „Was ist?“</p><p>Seine grauen Augen schienen zu zögern, während er sie betrachtete, fast konnte sie die Zweifel greifen, die in seinem Blick lagen, bis er sie abschüttelte, einen nach dem anderen, was sie merkwürdig gefangen hielt, es ihr nicht erlaubte, sich abzuwenden. Vorsichtig, fast als ob sie zerbrechlich wie Porzellan wäre, streckten seine Finger sich aus, strichen eine widerspenstige Strähne aus ihrem Gesicht, und sie ahnte – spürte – wusste, dass sie sich abwenden sollte und konnte es doch nicht. Selbst als er sich nach vorne beugte und ihr einen Kuss auf die Lippen hauchte, wusste sie nicht, was sie tun sollte, fühlte sich wie erstarrt, abgesehen von dem kleinen Lächeln, das sich auf ihre Züge schlich und das sie selbst nicht so ganz einordnen konnte – oder wollte.</p><p>„Gute Nacht, Mrs Weasley.“ Er wandte sich ab, flüchtete fast zurück ins Hotel und hatte schon die Tür zum Treppenhaus hinter sich geschlossen, als es ihr gelang, zu antworten. „Gute Nacht, Mr Malfoy.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><span class="position">Part 1 of the <a href="/series/169796">Requiem</a> series</span><span class="divider"> </span><a class="next" href="/works/2547500">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="DAPNohpMpIO-laUlI33sH6pvHAKJbF611iV1WhU9ELOyTH9JND8HVRiZUjISFnlBxSp7iZwlvdB_J46uTX-S0g"/>
+          <input value="1125152" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/gingerbred">gingerbred</a> and <a href="/users/KeyzerSozer">KeyzerSozer</a>
+             as well as 
+          8 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_1125152">
+  <form class="new_comment" id="comment_for_1125152" action="/works/1125152/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="el2mKqH0Pw8F1QvamAcJdacO6YO7qF0HoJ-ezT0KiTvEEhTBj4ec2aPZ_M2pbJwryEuOCK7hvmIJnWU5ZUgLWg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_1125152">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_1125152" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_1125152=new LiveValidation('comment_name_for_1125152',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_1125152.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_1125152">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_1125152" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_1125152=new LiveValidation('comment_email_for_1125152',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_1125152.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_1125152" class="landmark">Comment</label>
+        <textarea id="comment_content_for_1125152" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_1125152" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_1125152_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_1125152">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_1125152=new LiveValidation('comment_content_for_1125152',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_1125152.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_1125152.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_1125152" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/1125152/hit_count.json")})</script>
+
+
+  </body>
+</html>

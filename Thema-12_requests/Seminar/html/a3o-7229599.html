@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":86,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Ein Stalker wie kein anderer - GrimLear - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="MkdMtYHRplJfLuP1Rz_rQHQmOEKJMe8QN2Yb46elsWC4ztbZYaU7uaU8l1pup8DnxtXIUjQTbgsgK4ZsDZnC-w"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="vw9eDTq6RmGCqGYwAuTzGTbJYCjaVDuWBWdOn1cLokw1hsRh2s7bini6Ep8rfNi-hDqQOGd2uo0SKtMQ_TfR1w"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: words:100</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/7229599/chapters/16410946">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/7229599/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/7229599/Ein%20Stalker%20wie%20kein.azw3?updated_at=1466756418">AZW3</a></li>
+          <li><a href="/downloads/7229599/Ein%20Stalker%20wie%20kein.epub?updated_at=1466756418">EPUB</a></li>
+          <li><a href="/downloads/7229599/Ein%20Stalker%20wie%20kein.mobi?updated_at=1466756418">MOBI</a></li>
+          <li><a href="/downloads/7229599/Ein%20Stalker%20wie%20kein.pdf?updated_at=1466756418">PDF</a></li>
+          <li><a href="/downloads/7229599/Ein%20Stalker%20wie%20kein.html?updated_at=1466756418">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/James%20Potter*s*Lily%20Evans%20Potter/works">James Potter/Lily Evans Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lily%20Evans%20Potter/works">Lily Evans Potter</a></li><li><a class="tag" href="/tags/James%20Potter/works">James Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lily*s*James%20-%20Freeform/works">Lily/James - Freeform</a></li><li><a class="tag" href="/tags/Marauders&#39;%20Era/works">Marauders&#39; Era</a></li><li><a class="tag" href="/tags/1977/works">1977</a></li><li><a class="tag" href="/tags/7th%20year/works">7th year</a></li><li><a class="tag" href="/tags/Comedy/works">Comedy</a></li><li><a class="tag" href="/tags/Romance/works">Romance</a></li><li><a class="tag" href="/tags/date/works">date</a></li><li><a class="tag" href="/tags/POV%20Lily%20Evans%20Potter/works">POV Lily Evans Potter</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><span class="position">Part 1 of the <a href="/series/494689">Ein Stalker wie kein anderer</a> series</span><span class="divider"> </span><a class="next" href="/works/7289911">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-06-17</dd><dt class="status">Completed:</dt><dd class="status">2016-06-24</dd><dt class="words">Words:</dt><dd class="words">13235</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="kudos">Kudos:</dt><dd class="kudos">2</dd><dt class="hits">Hits:</dt><dd class="hits">106</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Ein Stalker wie kein anderer
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/GrimLear/pseuds/GrimLear">GrimLear</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>„Ich könnte dich jetzt küssen, Evans.“ Schock. „Aber ich will nicht.“ Erleichterung. „Ich küsse keine Kinder.“ Das hatte er jetzt nicht gesagt! Ein Date mit Potter. James Potter. Wie habe ich das verdient? Mal ganz ehrlich, Merlin, du hast doch gewürfelt, oder?</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Dieser Song hat mich während der Story begleitet. Vielleicht gefällt er euch ja ...? ;) https://www.youtube.com/watch?v=qOW4rdEPk40<br/>Sparks Fly - Cover by Landon Austin (original by Taylor Swift)</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/7229599/chapters/16410946">Chapter 1</a>: "Geh mit mir aus, Evans."
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>1977</p><p>Ein Tag wie jeder andere. Genau, und er begann auch wie jeder andere. Mit denselben Worten, mit denselben Beteiligten und mit demselben Ausgang wie immer.<br/>
+„He, Evans … Gehst du mit mir aus?“<br/>
+„Nein.“<br/>
+„Wieso nicht?“<br/>
+„Weil ich es nicht nötig habe, mich auf das Niveau von jemandem hinabzubegeben, der unschuldigen Erstklässlern Frösche in die Roben zaubert.“<br/>
+Tja, dachte ich zumindest. Aber vielleicht sollten wir noch kurz vor Beginn dieses Tages anfangen, nämlich heute Morgen, als ich friedlich in meinem Bett lag. Okay, vielleicht war es nicht mein Bett, sondern der Fußboden, aber auch die schmerzende Haltung (stellt es euch lieber nicht bildlich vor) und der Abdruck auf meiner Wange gehörten zu jedem normalen Tag in Hogwarts.<br/>
+Ich liebte Hogwarts. Es war der wundervollste Ort, an dem ich je aufwachen durfte. Es war mehr Zuhause, als das Haus, in dem ich mit meiner Familie lebte. Denn hier hatte ich meine Bücher über die faszinierende Magie dieser Welt, meine Professoren, meinen Zauberstab, meine Freunde und – ja, lassen wir diesen überzogenen Kitsch mit mir durchgehen, nur ausnahmsweise – vor allem mich selbst. Denn all das machte mich zu mir selbst.<br/>
+Der harte, kalte Holzboden in meinem Schlafsaal, auf welchem ich in diesem Moment noch schläfrig vor mich hin sabberte, das weiche, von roten Vorhängen umgebene Plumeau, auf dem sich mein linkes Bein, die eine Hälfte meiner Hüfte und meine rechte Hand noch befanden, und selbstverständlich der fein säuberlich eingeräumte Kleiderschrank. Das alles gehörte zu mir, wenn ich hier war.<br/>
+Zuhause war das anders, dort versuchte ich, mich immer wieder anzupassen. Ich bemühte mich wirklich, meine Schwester nicht unglücklich zu machen und mich normal zu benehmen (so normal wie eben möglich, wenn einem morgens eine Eule die Post brachte und sich ein allmorgendliches Rennen mit dem Briefträger und dem Mops der Nachbarn lieferte). Aber genauso wollte ich meinen Eltern und ihr von meinen Erlebnissen in Hogwarts berichten. Von Slughorns nervigen Klubtreffen oder Professor McGonagalls brillanten Vorführungen im Unterricht oder den neuen Süßigkeiten im Honigtopf, die immer saurer wurden, umso länger man auf ihnen herumkaute (und, dass neulich Frank Longbottom deshalb fast die Zunge abgefallen wäre). Aber das war nicht so leicht, wenn man von Petunia dabei angestarrt wurde, als wäre man ein Bergtroll.<br/>
+Nein, Hogwarts war vermutlich der einzige Ort, an dem ich ich selbst sein konnte. Zumindest soweit ich selbst, wie ich das eben sein konnte in einer Schule, in der einen alle als vertrauenswürdige, pflichtbewusste Schulsprecherin, ehemalige Vertrauensschülerin, Klassenbeste in Zaubertränke, ehrgeizige Schülerin mit Bestnoten und strenge Spielverderberin kannten. Aber wenigstens musste ich den Muggel-Teil meiner Selbst nicht unterdrücken.<br/>
+„Lily“, hörte ich eine zaghafte Stimme, dessen Besitzerin irgendwo neben mir stehen musste.<br/>
+Ich gab ein grunzendes, unzufriedenes Geräusch von mir, das nicht für die Ohren von Personen bestimmt war, welche nicht schon seit mindestens sechs Jahren mit meinen Schlafgewohnheiten vertraut waren, und drehte mich dann von der Stimme weg.<br/>
+„Lily“, sagte Alice erneut und tippte vorsichtig gegen meine Schulter. „Dein Wäger … ähm, das Muggelgerät hat wieder nicht funktioniert. Es ist schon halb acht.“<br/>
+„Lass mich in Ruhe, Alice … ich bin noch … in der Aufwachphase …“, nuschelte ich gähnend, während ich noch darauf wartete, dass ihre Worte bei mir ankamen. Und dann … „Was heißt das, mein Wecker hat nicht funktioniert?!“ Mein gehetzter Blick schnellte zu meinem roten Wecker, wie alles in diesem Raum, und ich schrie panisch auf, noch während ich aus meiner seltsamen Position gänzlich auf den Boden plumpste und mich aus dem Bettlaken herauskämpfte. „Bei Godric, das darf doch nicht wahr sein! Verdammte Muggelabwehr!“<br/>
+Damit stürzte ich schimpfend ins Bad.<br/>
+Tja, so sah mein nicht ganz so geregelter Morgen aus. Dazu sollte ich wohl sagen, dass ich, Lily Evans, als die oben schon erwähnte sehr pflichtbewusste, ein Vorbild darstellende Schulsprecherin Lily Evans, darauf Wert legte, pünktlich zum Frühstück zu erscheinen. Auch, wenn das hieß, an einem Samstag, genau wie unter der Woche, um sieben aus dem Bett zu kommen, mich fertig zu machen und gestriegelt und ordentlich zurechtgemacht, gehüllt in eine dezente Wolke von Shampoo, in der Großen Halle zu erscheinen, um dort mein allmorgendliches Müsli einzunehmen.<br/>
+Ja, so unordentlich und faul ich bei meiner Familie war, kaum war ich wieder in Hogwarts, konnte man damit rechnen, dass ich genauso wie heute jeden Morgen verbrachte, die Tage dann mit lernen und an den Wochenenden in Hogsmeade, im Gemeinschaftsraum oder auf den Ländereien (auch eine Lily Evans hat Freizeit) und meine Abende dann vor dem Kamin in einem Sessel mit einem guten Buch oder Alice und Frank, wie sie neben mir ein Zaubererschachturnier der Weltklasse austrugen. Und dann ging ich punktgenau um zehn nach oben in den Schlafsaal und hatte um elf so weit alles erledigt. Zum Beispiel, noch einmal kurz in die Bücher für die Unterrichtsfächer des nächsten Tages zu blicken oder meine Schuluniform ordentlich zurechtzulegen.<br/>
+„Ich werde mich heute wohl nach einem magischen Wecker umsehen müssen. Anfangs hat er ja noch funktioniert, und wie, aber seit Dumbledore letztes Jahr die Schutz- und Abwehrzauber gestärkt hat …“, sagte ich zu Alice, die an der Treppe auf mich gewartet hatte. Sie war eine Frühaufsteherin und deshalb die Einzige, die mit meinen Ritualen kein Problem hatte – im Gegensatz zu den anderen Mädchen des Schlafsaales, die sich regelmäßig murrend und grummelnd beschwerten.<br/>
+„Ach Lily, das ist doch nicht so schlimm, oder? Außerdem wolltest du doch eh noch einige Sachen besorgen“, antwortete sie fröhlich und schob sich die blonden Haare hinters Ohr.<br/>
+„Ja, du hast ja Recht“, stimmte ich zu und plaudernd liefen wir auch den Rest des Weges bis in die Große Halle, wo wir uns an den fast noch leeren Gryffindortisch gesellten. Einige Jüngere saßen bereits da, besonders die aus dem dritten Jahrgang, dessen Schüler heute das erste Mal nach Hogsmeade durften und die sich aufgeregt und lärmend miteinander unterhielten.<br/>
+Ich ließ ausnahmsweise Nachsicht walten und goss mir ein Glas Orangensaft ein, während ich mich nach dem Joghurt umsah, den ich etwas weiter weg neben einer Schüssel mit gebratenem Schinken entdeckte. Gerade wollte ich mich aufsetzen und meinen Arm danach ausstrecken, als sich eine Hand um die kleine Schale schloss und sie aus meinem Radius zog.<br/>
+Ich sah auf und wollte schon fragen, ob ich den Joghurt danach bekommen könnte, als ich in die vertrauten braunen Augen blickte, die hinter der runden Brille versteckt schalkhaft funkelten.<br/>
+„Potter …“, knurrte ich mit zu Schlitzen verengten Augen.<br/>
+„Guten Morgen auch, Lily Liebling“, flötete er gut gelaunt und zog MEINEN Joghurt zu sich heran, während er sich mir gegenüber auf die Bank fallen ließ. Sein Kumpel Sirius Black, auch genannt Mister-morgens-nicht-ansprechbar-meine-Gehirnzellen-sind-mir-schon-wieder-abhanden-gekommen, plumpste daneben, Remus Lupin, auch genannt mein einziger Sonnenschein in der Gruppe der Vollpfosten – pardon, Rumtreiber –, auf die andere Seite.<br/>
+„Erstens, Potter, nenn mich nicht Lily Liebling, wenn du nicht einen Kopf kürzer gemacht werden willst. Und das wäre ja schade, da du ja nur einen hast … Und zweitens ist heute mein Müslitag und das weißt du. Du schnappst dir schon alle restlichen Tage der Woche den Joghurt, aber heute ist MEIN Müslitag!“ Um alles noch etwas bedrohlicher und im Lily-ist-sauer-Modus rüberzubringen, verschränkte ich die Arme vor der Brust, starrte ihn ins nächste Jahrhundert und zog gaaaaaaanz langsam die Du-solltest-jetzt-lieber-auf-mich-hören-sonst-willst-du-den-morgigen-Tag-sicher-nicht-erleben-Augenbraue nach oben.<br/>
+„Ich wusste ja gar nicht, dass du einen festen Müslitag hast …“, meinte er gespielt verwundert und fuhr sich durch die Haare. So ein arroganter Wichtigtuer.<br/>
+„Ach so …“ Innerlich brodelnd, aber stolz auf meine lässige Miene, legte ich einen Finger nachdenklich an meine Unterlippe. „Deshalb haben wir also jeden Samstag diese Diskussion. Ich hatte mich schon gefragt, ob du vielleicht an Amnesie leidest. Und jetzt stellt sich heraus“, ich beugte mich süßlich lächelnd vor, „ich hatte mal wieder Recht!“<br/>
+Damit schnappte ich mir triumphierend den Joghurt aus seinen Händen und machte es mir zu eigen, dass Potter zu fasziniert von meinen Lippen gewesen zu sein schien, um noch groß auf meine Handlungen zu achten. 100 Punkte Lily, 0 Punkte Potter.<br/>
+Potter blinzelte jetzt überrascht, doch dann schlich sich ein Grinsen auf sein Gesicht. Das Potter-Grinsen. Mir schwante Übles. „Ah, sagt mal, wo habt ihr eigentlich Peter gelassen?“, fragte Alice währenddessen, die uns, genau wie Sirius und Remus, inzwischen gar keine Aufmerksamkeit mehr schenkte. Um genau zu sein taten sie alle das nicht mehr seit sieben Jahren, es war ja auch immer das Gleiche.<br/>
+„Der hat sich gestern bei dem Festmahl so überfressen, dass wir ihn heute Morgen zu Madame Pomfrey bringen mussten“, erklärte Remus nüchtern und biss in sein mit Käse und Tomaten belegtes Brötchen.<br/>
+Den Rest bekam ich nicht mehr mit, denn Potter beobachtete mich wie eine Katze, die schnurrend darauf wartete, dass ihr Opfer die nächste Bewegung in Richtung des sicheren Todes machte. Okay, Potter schnurrte nicht. Obwohl … bei dem Lärmpegel um uns herum konnte ich das nicht sagen, zuzutrauen wäre es ihm jedenfalls.<br/>
+Ich beschloss, mich nicht aus der Ruhe bringen zu lassen, und füllte mir etwas Joghurt ab, bevor ich mich betont locker am Tisch umsah. Wo waren denn die …?<br/>
+„Potter, denkst du nicht, du hast die Obstschale jetzt lange genug abgekuschelt?“, fragte ich genervt, wandte mich seufzend zu ihm und beäugte skeptisch das Bild des jungen Gryffindors mit den extra zerzausten Haaren (ich hasste diese Haare), der die Schale, in der sich Birnen, Kiwis und andere Früchte tummelten, deutlich auf seine Seite des Tisches gezogen hatte und seine Arme markierend daneben abstützte, als wollte er sie vor allem Unheil dieser Welt beschützen. Also mir.<br/>
+„He, Evans …“, schnurrte er jetzt träge (SCHNURRTE!!) und in diesem Moment sah ich praktisch den Katzenschwanz hinter ihm, wie er langsam und erwartungsvoll durch die Luft peitschte. „Gehst du mit mir aus?“<br/>
+Ich schnaubte. „Nein.“<br/>
+„Wieso nicht?“, wollte er quengelig wissen. Oh ja, das war ja auch so schwer zu beantworten. Ich hätte ihm jetzt tausend Dinge aufzählen können, aber da ich wusste, dass er mich heute vermutlich eh noch einmal fragen würde (oder auch tausendmal), sah ich keinen großen Sinn darin. Er kapierte es ja doch nicht.<br/>
+„Weil ich es nicht nötig habe, mich auf das Niveau von jemandem hinunterzubegeben, der unschuldigen Erstklässlern Frösche in die Roben zaubert.“<br/>
+„Das waren Slytherins, das zählt nicht“, tat er ab und legte den Kopf leicht schief, den er auf seinem Handballen aufgestützt hatte.<br/>
+„Pff“, machte ich nur missbilligend und griff nach der Obstschale, die er aber geschickt außer Reichweite schob.<br/>
+„Geh mit mir aus, Evans.“<br/>
+„Nein!“, fauchte ich und warf mich nach vorne, das angepeilte Ziel war allerdings schon wieder verschwunden. Mit einem Knurren zückte ich meinen Zauberstab. „Accio Obstschale!“ Ich sah schon, wie sie auf mich zuschwebte, da wechselte sie plötzlich die Richtung.<br/>
+„Accio Obstschale“, kam es da nämlich von Potter, wodurch sie direkt in der Mitte des Tisches Halt machte, nicht wissend, wessen Zauber sie nun gehorchen sollte. „Du könntest wenigstens Bitte sagen.“<br/>
+„Diese Schale gehörte ja wohl nicht dir, ich muss nicht Bitte sagen.“<br/>
+„Man nennt es Manieren, Evans.“<br/>
+„Man nennt es Belästigung, Potter.“<br/>
+Eine Weile starrten wir uns einfach nur an, ich wütend, er amüsiert, doch schließlich piepste eine Stimme neben uns: „Ähm, i-ich wollte … k-kann ich bitte mal?“<br/>
+Wir beide wirbelten herum und entdeckten einen Viertklässler, der bis über beide Ohren rot geworden war und verlegen an die Decke starrte. Ich nickte schnell und übergab dem Viertklässler freundlich lächelnd die Obstschale. „Kannst du sie dann auch zurückbringen? Ich bräuchte die noch.“<br/>
+„Kl-Klar“, stammelte er und machte, dass er davonkam.<br/>
+„Potter“, schnappte ich, in meiner besten Professor-McGonagalls-strenger-Blick-Imitation, „du machst kleinen Kindern Angst.“<br/>
+„Also erstens fürchte ich, dass du ihnen viel mehr Angst machst, und zweitens solltest du dir vielleicht eine Scheibe von denen abschneiden. Er hatte Manieren. Er hat Bitte gesagt.“<br/>
+Kurz konnte ich nur die Zähne aufeinander beißen und tief Luft holen. Er war so ein … ARSCH. Ein gemeiner, arroganter, hinterlistiger, nerviger, blöder Mistkerl-Idioten-Scheiß-Arsch. „Du nervst, Potter“, sagte ich dann bloß erhaben.<br/>
+„Hast du gehört, Krone, du nervst“, wiederholte Sirius belustigt und klopfte ihm auf den Rücken. Offenbar war er jetzt ansprechbar. „Nimm es nicht zu schwer, wenn Evans schon die Beleidigungen runterstuft, dann kann es gar nicht mehr so schlimm sein. Es gibt sicher noch … ähm, ganz tief … sehhhhhr tief in ihr drin … Hoffnung für dich.“<br/>
+„Oh bitte, Black, das sind keine Beleidigungen, es sind Tatsachen. Und Potter: Da ist rein gar nichts, das mit dir zu tun hat, außer das Gefühl, dass ich kotzen muss, sobald ich dich sehe.“<br/>
+„Autsch, Krone … Dein Schatz ist so charmant wie immer …“, kicherte Sirius, was ich mit einem finsteren Blick würdigte. Ich hatte immer noch nichts gefrühstückt! Und an wem lag das? An Mister-Obst-und-Joghurt-Kidnapper-Potter.<br/>
+„Hat sie eigentlich eine Lizenz für diesen Todesblick?“, kam es wieder von Black.<br/>
+„Wenn, dann Lily“, sagte Alice überzeugt und sah mich aufmunternd an. „Dein Frühstück kommt sicher gleich wieder, keine Sorge.“<br/>
+„Aber es dauert so lange …“, schmollte ich und überlegte, ob ich Potter strangulieren oder aus einem Fenster werfen sollte. Einem sehhhhhhhhhr hohen Fenster.<br/>
+Doch tatsächlich „kam“ mein Frühstück kurz darauf wieder, sogar auf zwei Beinen und mit einem dankbaren, verlegenen Lächeln, dann machte der Viertklässler sich aus dem Staub und ich konnte mir endlich mit meinem Zauberstab mein Obst kleinschneiden und ein Müsli-Joghurt-Obst-Wunder der Spitzenklasse genießen, währenddessen Alice irgendwann zu ihrer Verabredung mit Frank verschwand und mich mit den drei Rumtreibern alleinließ, die ich allerdings, bis auf Sonnenschein Remus, nicht beachtete. Danach war ich beruhigt und hätte vermutlich sogar freundlicherweise über die Strangulation von Potter hinweggesehen, wenn er mich nicht die ganze verdammte Zeit über angestarrt hätte.<br/>
+Schließlich wurde es mir doch zu viel und ich beschloss, dass es jetzt in Ordnung war, ihn wieder zu beachten. „Potter, hab ich etwas im Gesicht?“<br/>
+„Nein.“<br/>
+„Wieso starrst du dann so?“<br/>
+„Geh mit mir aus.“<br/>
+„Nein.“<br/>
+„WIESO NICHT? Ich verstehe nicht, wieso du nicht mit mir ausgehst. Das macht mich wahnsinnig.“<br/>
+„Tja, du könntest einmal das tun, was die meisten Menschen tun oder zumindest tun sollten, und nachdenken.“<br/>
+„Kannst du es mir nicht einfach erklären? Du weißt doch sonst alles.“<br/>
+Merlin, der Junge trieb MICH in den Wahnsinn. Hallo, St. Mungos, ihr habt hier einen Patienten übersehen! „Du nervst, Potter. Schon wieder. Und das machst du jetzt seit ich dich kenne. Da hast du deine Antwort.“<br/>
+Damit erhob ich mich und stolzierte aus der Halle. Blöd nur, dass ich heute wohl keine Ruhe mehr bekommen sollte, denn die Schritte hinter mir waren schwer zu ignorieren.<br/>
+Ich seufzte und wandte mich mit vor der Brust verschränkten Armen zu ihm um. „Was willst du denn noch?“<br/>
+Potter hatte die Hände in die Hosentaschen gesteckt – wir beide trugen heute unsere Freizeitkleidung, immerhin war Wochenende – und sah mich stirnrunzelnd an. „Komm schon, Lily, du willst doch eigentlich mit mir ausgehen.“<br/>
+„Wie kommst du bitte darauf? Ich habe jetzt schon so oft Nein gesagt, langsam müsstest selbst du die Bedeutung dieses Wortes verstanden haben. Und wenn nicht, dann sieh endlich in ein Wörterbuch. Den Duden gibt es sogar online.“<br/>
+„Bitte?“ Er schien verwirrt.<br/>
+„Egal, vergiss es.“<br/>
+Potter nickte irritiert und hatte wohl entschieden, den letzten Teil unser „Unterhaltung“ auszublenden. „Ja, wie auch immer. Ich meine, du kennst mich ja nicht einmal.“<br/>
+„Glaub ich nicht“, versetzte ich knapp, denn ich hielt es stark für die Untertreibung des Jahrhunderts. „Ich meine, ich lebe jetzt schon einige Zeit in diesem Schloss und das bedauerlicherweise mit dir jeden Tag vor der Nase. Und dass du mich mindestens einmal am Tag ansprichst und zur Weißglut nervst, das sagt mir, dass ich mir zumindest ein bisschen einbilden kann, dich einschätzen zu können, Potter.“<br/>
+Das stimmte wirklich. Ich könnte ein richtiges Potter-Buch schreiben. Alle Begriffe, die Sie mit James Potter garantiert in Verbindung bringen werden!<br/>
+Eine Kurzfassung: Er war nervig. Er amüsierte sich mit seinen Freunden auf Kosten anderer – und eines seiner übelsten Verbrechen: Er hatte meinen Sonnenschein Remus da mit hineingezogen! Obwohl Remus ja eigentlich alt genug war, selbst zu entscheiden, hatte ich ihn schon ziemlich oft versucht zu überreden, diese Nervensägen in den Wind zu schießen (vergebens!). Aber wir waren bei Potter, dem Arsch. Er war hinterlistig, stolz, kindisch, eitel, eingebildet und arrogant. Ein richtiger Wichtigtuer.<br/>
+Gut, er war ganz intelligent und hatte ziemlich gute Noten (für die er nie lernte!) und Quidditch war wohl das Einzige, was er wirklich ernsthaft in seinem Leben tat. Nun, wenn er nicht gerade einen auf Spiderman machte (den Film hatte er vermutlich nie gesehen) und sich mitten in einem Spiel kopfüber von seinem Besen baumeln ließ, um mich zu fragen, ob ich mit ihm ausgehen würde, noch während ein Treiber einen Klatscher auf ihn lenkte. Dem er natürlich auswich. Er war ja der große Sankt Potter, huh huh, guckt mal, wie toll er ist … Bla bla. Und schon waren meine guten Einfälle über ihn verschwunden.<br/>
+„Dann geh doch mit mir aus!“, sagte er jetzt und trat einen Schritt auf mich zu, womit ich sofort wieder in der Realität war, beim jetzigen Potter. Der mir gerade gewaltig auf die Nerven ging. Immer noch!<br/>
+„Nein?!“, keifte ich und hoffte, dass er jetzt Ruhe gab, wenn ich mich umdrehen und davoneilen würde. Das mit dem Davoneilen sollte sich schwierig gestalten, denn er kam mir nach, ohne mit der Wimper zu zucken, und passte sich meinem Schritttempo an, bei dem mein Atem schon jetzt unregelmäßig ging, während er ruhig neben mir her schlenderte. Wo gingen wir eigentlich hin? Nun ja, auch egal, Hauptsache weg von ihm! Grr.<br/>
+„Wieso nicht?“<br/>
+„Das hatten wir heute schon zu oft.“<br/>
+„Ich kapiers nur nicht, Evans.“<br/>
+„Vorhin hast du behauptet, dass ich eigentlich mit dir ausgehen wollen würde, aber sieh mal, Potter“, ich stoppte auf der Stelle und drehte mich zu ihm, „dann kam dein kluger Kommentar, der in dem Sinne lautete, dass ich dich ja gar nicht kennen würde. Wieso sollte ich aber mit dir ausgehen wollen, wenn ich dich nicht kenne? Aber da ich dich ja kenne, habe ich ehrlich gesagt keinerlei Bedürfnis mit dir auszugehen. Könntest du das also akzeptieren und mich endlich in Ruhe lassen?“<br/>
+Potter hatte ebenfalls angehalten und musterte mich scharf. Dann sah ich, wie seine Schultern leicht zusammensackten und er seine Augen angestrengt schloss. „Gut.“<br/>
+„Was? Echt jetzt?!“ Hoffnungsvoll blickte ich zu ihm auf. Ich hätte wissen müssen, dass das nicht alles war. Ich redete hier immerhin von James Potter. Ich Idiotin.<br/>
+„Geh mit mir aus und gib mir eine Chance, dass ich dir zeigen kann, wer ich wirklich bin. Und dann werde ich dich in Ruhe lassen, außer, du wünschst es dir anders.“<br/>
+Einen Augenblick musterte ich ihn. Er hob seine Lider und sah mich zögernd an. Wow, James Potter zögernd. Nein, fast schon ängstlich. Heute müsste eigentlich mein Tag sein. Aber seit dem Joghurt-Kidnapping war er gelaufen.<br/>
+„Nein.“<br/>
+„Wie bitte?“<br/>
+„Ich sagte Nein. Du würdest doch eh nur eine Show abziehen und so tun, als ob. Darauf habe ich wirklich keine Lust, da habe ich besseres mit meiner Zeit anzufangen.“<br/>
+„Ich habe davon gesprochen, dass du mich kennenlernen sollst, wie ich wirklich bin. Ich bezweifle nämlich, dass du mich so gut kennst, dass du es auch so meinen darfst.“<br/>
+„Tja, vielen Dank auch! Ich verzichte.“ Ich reckte das Kinn zickig etwas in die Höhe und marschierte davon. Ich war schon einige Meter gekommen (was wirklich ein Erfolg heute war, immerhin hatte ich dieses Mal keinen Verfolger), da hörte ich seine samtene, katzenartige Stimme hinter mir.<br/>
+„Ich wette, du hast nur Angst, dass du nicht Recht behältst. Du hast Angst, dass du mich nett finden könntest. Das ist ziemlich kindisch, Evans.“<br/>
+Hatte er gerade kindisch gesagt? „Ich bin nicht KINDISCH!“, schrie ich entrüstet und fegte auf ihn zu, wie eine Furie, noch ehe ich ihn am Kragen packte und schwer atmend zu mir herunterzog. „Kapiert?!“<br/>
+Seine Mundwinkel zuckten und plötzlich spürte ich seine eine Hand im Nacken, die andere auf der Hüfte. Moment, was genau tat er da eigentlich? „Ich könnte dich jetzt küssen, Evans.“ Schock. „Aber ich will nicht.“ Erleichterung. „Ich küsse keine Kinder.“ Das hatte er jetzt nicht gesagt!<br/>
+„Nur gut, dass ich auch nicht von dir geküsst werden will!“, spie ich. Hatte er mir gerade schon wieder die Kontrolle entzogen? Dieser … ARGH.<br/>
+„Ich wette dagegen.“<br/>
+„Meinetwegen.“<br/>
+„Tja, ist aber schwer zu wetten, wenn du es mich nicht beweisen lässt. Geh mit mir aus.“<br/>
+„Das ist doch hoffentlich das letzte Angebot, oder?“, fragte ich zuckersüß und ignorierte die Tatsache, dass er eine Antwort wollte.<br/>
+„Geh mit mir aus“, sagte er einfach.<br/>
+„Nein.“<br/>
+„Geh mit mir aus, Evans.“<br/>
+„NEIN.“<br/>
+„Geh mit mir aus, Lily.“<br/>
+„Ich … jetzt nervst du wirklich!“<br/>
+„Geh mit mir aus.“ Ich schwieg und hoffte einfach, dass er mich bald loslassen würde. Er roch nämlich ganz gut. Nach irgendetwas Undefinierbarem, einer Wunderspülung. Er benutzte bestimmt Spülung, so weich wie seine Haare … Ah, stopp. Stopp, stopp, stopp. Nicht weiterdenken, Lily. „Geh mit mir aus, Lily“, wisperte er noch einmal.<br/>
+Ich kniff die Lippen zusammen. Ausnahmsweise sah er mir direkt in die Augen. Konnte er nicht wieder weggucken? Er hatte nun einmal sehr durchdringende Augen! „Gib zu, dass ich nicht kindisch bin!“, verlangte ich in einem letzten, rettenden Versuch.<br/>
+„Das bist du, solange du nicht mit mir ausgehst.“<br/>
+Ich sah zur Seite. Ich konnte diesem Blick nicht mehr standhalten. „Ich will aber nicht.“<br/>
+„Geh mit mir aus, Lily. Bitte.“<br/>
+„Ich … das ist doch total bescheuert. Ich meine, wegen einer Wette mit dir auszugehen. Du kannst doch nicht einfach behaupten, dass ich kindisch bin …“<br/>
+„Lily.“<br/>
+„Also …“, murmelte ich. Ah, verdammt, ein Fehler. Seine Augen hatten meine wiedergefunden und hielten sie jetzt ganz schön in Schach. Im Schachmatt um genau zu sein. „Ähm … gut. Dann gehe ich halt mit dir aus. Aber ich werde diese Wette garantiert gewinnen, Potter. Ich bin immerhin nicht kindisch, pff …“<br/>
+Jetzt erst sah ich wieder auf und was ich vorfand, ließ die Welt kurz stillstehen. Freude, so massig, wie hunderte Ozeane zusammen, schien sich in seinem Gesicht, seinen Augen, einfach überall um ihn herum auszubreiten. Er ließ mich behutsam los und strahlte dabei ein Lächeln, das ganz klein war, nur ein Heben der Mundwinkel, aber es sagte mehr, als jedes Potter-Grinsen bisher zusammen.<br/>
+„Gut …“, murmelte er leise.<br/>
+Hatte ich schon erwähnt, dass ich in diesem Moment gerne Selbstjustiz gegen mich erheben würde? Nein? Dann würde ich jetzt das Messer suchen gehen. Oder einen Galgen. Oh, oder einen bereitwilligen Mörder, dann würde ich vielleicht doch noch ins Paradies kommen.<br/>
+Obwohl, nach einer Einwilligung zu einem Date mit James Potter? Wohl kaum …<br/>
+Merlin hilf.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/7229599/chapters/16431853">Chapter 2</a>: "Du bist immer hübsch."
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>So, es geht los mit Lilys und James' kleinem Date ... Gespannt? ;)</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Ich hatte ihm gesagt, dass ich nicht heute mit ihm gehen würde. Darauf hatte er gesagt, dass das nur eine billige Ausrede wäre und ich ein Feigling. Darauf hatte ich IHM mal etwas von billigen Ausreden und Feiglingen erzählt. Und nach einer heftigen Diskussion war ich zu dem Schluss gekommen, dass, wenn ich nicht die nächste Woche noch von ihm genervt werden wollte, ich vielleicht wirklich heute mit ihm auf dieses Date gehen sollte.<br/>
+Also sagte ich ihm höflich und bestimmt (okay, ich brüllte ihn an …), dass er um zwölf auf mich am Eingangsportal warten sollte und ich bis dahin meine Ruhe zum Lernen bräuchte. Das war nur halb gelogen, denn ich ging tatsächlich in die Bibliothek, lernte bis zum Gehtnichtmehr und bis ich wirklich losmusste, wenn ich mir nicht seine Kommentare darüber anhören wollte, dass „Unsere Schulsprecherin wohl doch nicht so pünktlich sei.“ Pah. Ich hörte ihn wirklich schon in meinem Kopf.<br/>
+Aber dazu kam es ja erst, nachdem ich zum Gryffindorturm hochgestapft war, mir mein Geld zusammengesucht, mich NICHT umgezogen hatte (nicht für den!) und dann einen kurzen Panikanfall niedergekämpft hatte. Ich hatte ja immerhin noch … Zeit …<br/>
+Lieber nicht darüber nachdenken, wie wenig Zeit … argh!<br/>
+Also, danach ging ich jedenfalls in die Bibliothek, wie gesagt, war aber eine halbe Stunde zu früh mit allen Aufgaben fertig, die ich hätte erledigen können (in dem Fall kein Grund zur Freude) und machte mich dann auf den Weg zu … schlotter … IHM. Nennen wir ihn doch für heute James Ich-überrede-die-Mädchen-zu-einem-Date-des-Schreckens Potter.<br/>
+Dieser Arsch. Wie hatte mir das passieren können? Er hatte mir was in mein Wunder-Müsli gekippt, ganz bestimmt.<br/>
+„Evans, da bist du ja!“, sagte er erfreut und lächelte. Ah, jetzt war er von Katze auf Hund umgestiegen. Toll.<br/>
+„Juhu“, sagte ich sarkastisch und musterte ihn kritisch. „Wieso hast du dich denn umgezogen?“<br/>
+Er sah jetzt etwas gepflegter aus. Seinen schmuddeliger Pullover von heute Morgen hatte er gegen einen neuer aussehenderen, dunkelroten eingetauscht und die verwaschenen Jeans waren ebenfalls gewechselt worden, nämlich gegen dunkelgraue. Ach ja, und seine Haare hatte er versucht zu bändigen. Unnötig, sie standen genauso kreuz und quer in alle Himmelsrichtungen ab, wie sonst auch, nur, dass sie jetzt etwas platt und angegriffen wirkten. Es störte mich. Also wenn, dann lieber wie frisch aus dem Bett gestiegen.<br/>
+„Na ja …“<br/>
+„Ach was, es ist doch nur ein Date“, meinte ich genervt (schon jetzt …) und marschierte an ihm vorbei nach draußen, um mich auf den Weg nach Hogsmeade zu machen.<br/>
+„Aber es ist immerhin ein Date mit dir“, hörte ich ihn noch leise flüstern, bevor er sich mir anschloss und neben mir herging. Ich sah zur Seite, sodass er mein gerötetes Gesicht nicht sehen konnte. Nicht vergessen, Lily, alles nur Show.<br/>
+„Also, was hast du dir überlegt? Was machen wir heute?“, seufzte ich und sah nun fragend zu ihm auf (natürlich erst, als ich mir WIRKLICH sicher war, dass mein Gesicht wieder normal wirkte!). Es war ein netter Tag, die Mittagssonne schien friedlich über uns, kündigte aber schon die kälteren Jahreszeiten durch den kalten Wind und die weniger werdenden Vogelstimmen an.<br/>
+„Ich dachte, wir essen erst einmal etwas und machen dann, worauf wir Lust haben“, meinte er selbstbewusst und musterte mich von der Seite. „Du bist hübsch heute.“<br/>
+„B-Bitte?“, fragte ich, schockiert über das plötzliche Kompliment. Nein, aus, Wangen, nicht wieder rot werden! „Ich hab ja nicht einmal etwas gemacht.“<br/>
+„Du bist immer hübsch“, erklärte er schlicht und sah wieder geradeaus.<br/>
+„Ach so. Danke … oder so.“<br/>
+Danach schwiegen wir. Wieso hatte er das auch sagen müssen? Das war doch überhaupt nicht passend. Aber gut, wenn er das jetzt hatte machen müssen, dann konnte ich genauso gut das Schweigen ausnutzen und genießen. Indem ich mir Gedanken über ihn machte … Was stimmte nicht mit mir, ich seltsame Idiotin? Also wirklich. Das war doch nervig. Wie er so ruhig neben mir herlief und sich überhaupt nicht an dem Schweigen zu stören schien, wie er mir einfach an den Kopf geknallt hatte, dass ich „immer hübsch“ aussah. Das sagte man doch nicht einfach so! Er musste definitiv noch einmal einen Kurs im Komplimentemachen belegen. Also wirklich. Ah, das dachte ich jetzt zum zweiten Mal. Nicht gut.<br/>
+Wieso war ich gerade eigentlich so aufgewühlt?<br/>
+„Alles in Ordnung, Lily?“ Lily?<br/>
+„Ja, wieso sollte es nicht?“, brummte ich und krallte meine Finger in meine kleine Tasche, in der ich mein Portemonnaie und den üblichen Mädchenkram verstaut hatte, den ich nicht dabei hatte. Den Lily-Mädchenkram aber. Hieß ausgefranste Federn, ausgetrocknete Tintenfässchen, Sonnencreme (ich war nun einmal rothaarig), Taschentücher und andere Kleinigkeiten, die sich im Laufe der Zeit angesammelt hatten. Ich glaube, ich hatte sogar eine Sicherheitsnadel und zwei Euros vom letzten Frankreichurlaub dabei.<br/>
+„Ich habe nur nachfragen wollen. Sag mal, was möchtest du denn essen?“<br/>
+„Essen? Keine Ahnung, such du aus.“ Wir waren inzwischen im Dorf angekommen und ich duckte mich schnell etwas hinter ihn, damit mich bloß nicht zu viele Schüler sehen konnten. Merlin, wurde ich gerade angestarrt? Ja, die meisten Schüler wussten immerhin, dass das Schulsprecherpaar, also wir, uns nicht leiden konnten. Yeah, das würde sicher einige Gerüchte geben, super.<br/>
+„Vielleicht irgendwohin, wo es nicht so voll ist?“, fragte er zweifelnd und warf mir einen interessierten Blick zu, wie ich versuchte, Jessica Finnigan mit meinem düsteren Gesichtsausdruck krepieren zu lassen. Ja, offenbar hatte Mister Oberschlau das Starren auch bemerkt. Trotzdem war ich überrascht, das war nämlich ausnahmsweise echt umsichtig von ihm.<br/>
+„Nein, schon in Ordnung“, knurrte ich und warf den unverhohlensten „Schaulustigen“ böse Blicke zu. Sie könnten wenigstens etwas dezenter starren, wenn sie schon starrten. „Lass uns einfach etwas essen. Ich hab Hunger.“ Und als ich das sagte, merkte ich, dass es stimmte. Mein Magen meldete sich wirklich langsam.<br/>
+„Gut“, erwiderte er überrascht und schritt auf einen etwas kleineren Laden ohne Schaufenster zu. Ohne Schaufenster? Der Kerl war heute echt zu umsichtig. Ich war immerhin kein Feigling und versteckte mich in einem Restaurant vor meinen Mitschülern. Aber vielleicht wäre es für mein Image ja auch nicht so gut, wenn ich jetzt mit ihm gesehen wurde – aufgrund einer Wette, die eine Schulsprecherin mit Niveau nie eingehen sollte. Argh … vielleicht doch lieber das ohne Schaufenster!<br/>
+„Kommst du jetzt?“<br/>
+„Wie?! Ja ja, hetz doch nicht so!“, nuschelte ich und schlüpfte schnell an ihm vorbei – an ihm und seiner gentlemanliken Geste, die Tür aufzuhalten.<br/>
+Das Restaurant war tatsächlich nicht allzu voll. Ich entdeckte einige Hufflepuffschüler, die sich zusammengesetzt hatten und jetzt kurz miteinander tuschelten, doch sonst sah ich nur Dorfbewohner. Oh, und Professor Flitwick, der uns begrüßend winkte.<br/>
+Potter und ich nickten ihm mit ähnlich schiefen Gesichtsausdrücken zu und sahen uns schnell im Raum um. Es standen hier und da kleinere und größere Tische für verschiedene Gruppenanzahlen und es roch angenehm nach italienischem Essen – Pasta, Knoblauch und frisch gebackenes Brot. Eine kleinere Kellnerin mit einer fast genauso dunkelroten Haarmähne, wie ich, kam auf uns zu und bot uns einen Tisch für zwei an.<br/>
+Erleichtert ließen wir uns an eben diesen fallen (einer ganz hinten, wunderbar hinter einer großen Grünpflanze versteckt) und duckten uns etwas zu auffällig hinter die Speisekarten, die uns die Kellnerin noch hinstreckte, nachdem sie es zuerst vergessen hatte.<br/>
+„Was nimmst du?“, fragte er da plötzlich, immer noch von der Karte verdeckt.<br/>
+„Irgendetwas mit … Nudeln, denke ich.“<br/>
+„Nimmst du einen Salat?“<br/>
+„Nein.“<br/>
+„Ah, gut.“<br/>
+„Was, „ah, gut“?“, äffte ich ihn nach und legte seufzend die Auswahl beiseite. Ich wusste sowieso schon, was ich wollte. Ich nahm immer das Gleiche bei Italienern, weil ich einfach wusste, dass es überall schmeckte.<br/>
+„Ich habe lediglich versucht, Konversation zu betreiben“, sagte er lächelnd und lugte über den oberen Rand seiner Karte. Merlin, das sollte er gefälligst lassen – das sah nämlich ziemlich süß aus … Moment mal, SÜSS?<br/>
+„Oh“, machte ich und starrte bemüht neutral an die Wand hinter ihm. Die sehr hübsche, gelbe Wand. Ohne irgendetwas Interessantes an sich. Doofe Wand. Wen versuchte ich hier zu überzeugen?<br/>
+„Ähm, s-seid ihr schon fertig?“, ertönte da die leise, zögerliche Stimme der Kellnerin von eben.<br/>
+Wir sahen auf und Potter nickte. Erwartungsvoll schaute er zu mir. Scheiß Manieren. „Ich hätte gern die Nummer 18, ohne die frischen Kräuter, bitte. Und einen Kürbissaft.“<br/>
+„Nummer 18 und einen K-Kürbissaft“, wiederholte die Kellnerin leise, die sich ihrem Schild nach als Jenny auswies. „U-Und Sie?“<br/>
+„Bitte die Nummer 15 und das gleiche Getränk, wie meine Begleitung“, bestellte Potter mit seinem charmantesten Ich-kriege-sie-alle-Lächeln und reichte Jenny die beiden Karten. Ihre dunkelbraunen Augen wurden groß und mit schwingenden Locken hastete sie davon, wobei sie fast über ihre eigenen Füße stolperte.<br/>
+„Wow, das war echt typisch Potter. Die Arme.“ Mitleidig guckte ich ihr nach.<br/>
+„Ach was, sie kennt mich. Jenny ist wirklich nett, nur etwas schüchtern.“<br/>
+Mein Kopf schoss herum. „Ach ja? Kurzum, du schleppst all deine Dates hierher.“<br/>
+Potter räusperte sich verlegen und wand sich unter meinen durchdringenden, stechenden Augen. „Jaaa, manchmal“, antwortete er schließlich und fuhr sich unruhig durch die Haare. Tja, so hatte er sich das hier wohl nicht vorgestellt!<br/>
+„Oh Potter, kein Grund im Erdboden versinken zu wollen. Nur ein weiterer Grund, wieso ich bisher nicht mit dir ausgegangen bin, aber damit hatte ich ja wohl heute zu rechnen“, spottete ich und drängte den kurzen Stich in meiner Brust mental gewaltsam zurück.<br/>
+Er riss die Augen auf und wollte schon darauf antworten, da hörten wir die Glocke über dem Eingang bimmeln. Oh nein, schoss es mir durch den Kopf. An der Tür standen Severus Snape, Michael Flint und die beiden Idioten Avery und Wilkes.<br/>
+„Potter“, sagte ich, doch er nickte bereits und beobachtete die vier Slytherins wachsam.<br/>
+Ich hoffte jetzt nur, dass sie uns nicht entdecken würden. Potter hasste Severus – ich meine Snape. Verdammt, ich versuchte mich bereits seit über einem Jahr daran, in ihm nicht mehr meinen früheren besten Freund zu sehen, aber das war schwer. Nun ja, es fiel mir in den Momenten leichter, in denen er mich als „Schlammblut“ bezeichnete … Ich biss mir auf die Lippe.<br/>
+Aber natürlich meinte es das Schicksal nicht gut mit mir.<br/>
+„Potter! Na sieh mal einer an, hast wohl mal wieder ein Mädchen abgeschleppt, was?“, hörte ich Flint hinter mir grölen. Konnte der nicht sein Maul halten und sich ausnahmsweise mal zivilisiert und nicht wie ein dahergelaufener Schwachmat benehmen?<br/>
+Doch natürlich konnte er das nicht. Und natürlich hielt er es auch noch für nötig, mit seinem Gefolge an unseren Tisch zu treten und uns hämisch zu mustern. Bis er mich erkannte.<br/>
+„Evans!“, rief er aus und betrachtete mich, als wäre ich vor ihm aus dem Nichts aufgetaucht. „Du mit Potter? Wie hat er denn das geschafft?“ Anzüglich wackelte er mit den Augenbrauen. Idiot.<br/>
+Ich beachtete ihn nicht und ließ meinen Blick zu Severus – Snape! – wandern, der mich so feindselig beäugte, wie eine Schlange. Ehrlich, ich hätte mich nicht gewundert, wenn er gleich angefangen hätte zu zischeln und eine Schlangenzunge aus seinem Mund hervorgeschnellt wäre.<br/>
+„Das geht dich gar nichts an, Flint“, erwiderte ich nun höhnisch und musterte sie der Reihe nach abfällig. „Und ich wäre wirklich froh, wenn ihr jetzt verschwinden könntet. Wenn Potter mir schon ein Date aufgezwungen hat, dann möchte ich es bitte auch nur mit ihm verbringen müssen und nicht auch noch durch eure Anwesenheit genervt werden, schönen Dank auch.“ Kühl verschränkte ich die Arme vor der Brust.<br/>
+„Du …“, knurrte Flint und beugte sich vor, eine Faust bedrohlich auf dem Tisch abgestützt.<br/>
+Doch er kam nicht weiter. Potter war aufgestanden und hatte ihn am Rücken von mir weggezogen. Flints drei Kumpanen funkelten ihn gehässig an, doch er achtete nicht auf sie. „Ich denke, das reicht, was meinst du, Michael? Wenn du das nächste Quidditchspiel noch erleben willst, würde ich lieber schnell gehen. Professor Flitwick scheint sich schon Sorgen zu machen, wir sollten ihm winken. Hallo, Professor!“ Ungläubig beobachtete ich, wie der sonst so vom Hinzuziehen von Lehrern abgeneigte Gryffindor seinem Zauberkunstlehrer fröhlich zuwinkte und Flint grinsend auf die Schulter klopfte, als wären sie gute Freunde.<br/>
+„Ist ja schon gut“, schnauzte Flint und entzog sich seinem Griff. „Wir gehen ja.“<br/>
+„Schönen Tag noch und bis heute Abend“, flötete Potter und ließ sich grinsend in seinen Stuhl fallen, während die Slytherins Richtung Ausgang abzogen. „Und, was meinst du?“ Er wandte sich mir zu. „Ein Dessert klingt doch gut, oder?“<br/>
+Ein kleines Lächeln huschte über mein Gesicht, von dem ich hoffte, dass er es nicht sah. „Vielleicht.“</p><p>ooooo</p><p>Die Eingangsglocke bimmelte wieder, als wir das Restaurant verließen. Das Essen über hatten wir größtenteils geschwiegen und uns nur immer mal wieder ausgetauscht, mit Floskeln wie „Das ist lecker!“ oder „Kannst du mir mal das Salz reichen?“, eben so etwas. Jetzt war ich allerdings froh, dass wir draußen waren und das Restaurant hinter uns ließen. Noch mehr Essensgerüche hätte ich jetzt nicht ausgehalten, ich war so satt, wie normalerweise nur nach einem Hogwartsfestessen.<br/>
+„Gibt es etwas, das du jetzt machen möchtest?“, fragte Potter lächelnd. Ehrlich, er lächelte schon, seit wir die Slytherins vorhin vertrieben hatten. Ich hatte gedacht, dass es spätestens beim Hauptgang wieder verschwinden würde, aber das war nicht der Fall gewesen.<br/>
+„Na ja, ich muss noch einige Sachen für den Unterricht besorgen. Und einen Wecker, meiner ist mir heute Morgen kaputt gegangen.“<br/>
+Potter schien ungewöhnlich ausgeglichen und nickte schulterzuckend. „Gut, was brauchst du?“<br/>
+Ich kramte in meiner Tasche und suchte die Liste, die ich jetzt schon einige Zeit mit mir herumschleppte, darauf wartend, dass ich bald mal zu Einkäufen kommen würde. Ah, da war sie ja. „Äh...“, sagte ich und überflog sie kurz. „Ich brauche offenbar einen Vorrat an Tintenfässchen, eine neue Schreibfeder, den eben erwähnten magischen Wecker und frische Eulenkekse.“<br/>
+„Dann sollten wir zuerst zu Derwisch und Banges, um deinen Wecker zu kaufen, und dann in Schreiberlings Federladen. Die Eulenkekse solltest du in der Winkelgasse bestellen.“<br/>
+„Ja, stimmt wohl“, sagte ich beeindruckt über seine schnelle Sortierung der Sachlage und ging voran, auf Derwisch und Banges zu, das tatsächlich näher lag, als das Schreibwarengeschäft. Potter hatte also auch organisatorische Qualitäten.<br/>
+Es war ein größeres Geschäft, das vollgestellt war mit magischen Gerätschaften, wodurch der Raum deutlich kleiner wirkte, als er eigentlich war. Drinnen war es stickig und das durch die schmalen Fenster scheinende Sonnenlicht, zeigte die bei jeder Bewegung aufwirbelnden Staubwogen.<br/>
+Sofort wuselte aus einem Berg von sich seltsam insektenartig bewegenden Zinnfiguren ein hochgewachsener, bärtiger Mann auf uns zu und begrüßte uns mit tiefer Stimme. „Was kann ich für Sie tun, Miss Evans? Mr Potter?“<br/>
+Ich lächelte ihm freundlich zu. Ich war vor Jahren einmal hier gewesen, auch wegen meines Weckers, und war erstaunt, dass er mich noch wiedererkannte. „Ich suche eine Uhr, die ich in Hogwarts benutzen kann, die aber eine nicht magische Weckfunktion hat.“<br/>
+Der Verkäufer – ich glaube, bei ihm handelte es sich um Mr Banges – legte nachdenklich die Stirn in Falten und den Zeigefinger an die Schläfe, als müsste er sich an etwas erinnern. „Ja, Miss Evans, Ihre Schwester wäre wohl nicht sehr begeistert über eine Celestina-Warbeck-Uhr.“ Damit verschwand er hinter einem wuchtigen Regal und ließ mich erstaunt zurück.<br/>
+„Kennt er dich so gut?“, wollte Potter neugierig wissen.<br/>
+„Nein“, sagte ich verblüfft. Das war ja unheimlich. Aber vielleicht hatte er ja auch nur ein paar meiner Freundinnen belauscht, wie sie sich über mich und meine Schwester unterhielten. Das konnte schon sein, da Petunia mich erst im sechsten Jahr am Bahnsteig angebrüllt hatte, ich solle bloß nicht wiederkommen, wobei natürlich ganz Hogwarts sofort davon Kenntnis erlangte, dass meine Schwester und ich uns offenbar auf den Tod nicht ausstehen konnten und sie etwas gegen Zauberer und Hexen hatte. Was wiederum auf ihre dramatischen letzten Worte „Du Freak!“ zu schließen war.<br/>
+Ich zog eine Grimasse. „Toll …“, murmelte ich und strich mir einige aus meinem Zopf gelöste, rote Haarsträhnen aus dem Gesicht, während ich dem Verkäufer hinterherstapfte. Ich wollte hier auch nicht herumstehen, wie die letzte Idiotin. Potter folgte mir daraufhin, folgsam wie ein Hund.<br/>
+„So, was halten Sie hiervon?“, tauchte Mr Banges plötzlich vor mir auf, worauf ich einen erschrockenen Satz nach hinten machte. Ich stolperte über ein am Boden liegendes Spickoskop und strauchelte, doch hatte ich das Glück – oder wie immer man es nennen wollte –, dass Potter hinter mir stand und den strahlenden Ritter markierte, als er mich auffing. Das zweite Mal an diesem Tag stieg mir sein Duft in die Nase und wieder konnte ich nicht genau bestimmen, worum es sich handelte.<br/>
+„Alles in Ordnung?“, fragte er überrascht an meinem Ohr, wobei sein Atem meinen ungeschützten Nacken traf. Ein Schauder überlief mich und überstürzt machte ich mich von ihm los.<br/>
+„Ja, sicher“, murmelte ich schnell und versuchte, meinen Herzschlag zu ignorieren, der ungewöhnlich dumpf in meiner Brust schlug.<br/>
+Der Verkäufer stand immer noch vor uns, nur zeigte sein Gesicht sich jetzt äußerst amüsiert. „Hier“, meinte er dezent lächelnd und hielt mir eine dunkelrote Holzuhr entgegen, nicht größer als eine Konservendose, auf der sich goldfarbene Rankenmusterungen befanden und zwei ebenfalls goldfarbene Vögel im Wind miteinander tanzten. Und das meine ich ehrlich: Die aufgemalten Bilder der beiden Vögel bewegten ihre kleinen Flügel und sich selbst, als würden sie wirklich fliegen. Sie schwebten umeinander herum, in einem nicht enden wollenden Tanz gefangen.<br/>
+„Oh“, machte ich fasziniert. „Darf ich?“<br/>
+„Sicher, hier.“ Er reichte mir die Uhr, über die ich neugierig mit den Fingerspitzen strich. Die Vögel wichen elegant meinen Bewegungen aus, als wollten sie nicht von mir gestört werden. „Wenn Sie mit ihrem Zauberstab auf die Uhr deuten und die Zeit angeben, zu der Sie geweckt werden wollen, dann können Sie sicher gehen, dass die beiden Sie wecken, Miss Evans. Wollen Sie es mal hören?“<br/>
+„Ja, gerne!“, sagte ich gespannt und spürte, wie auch Potter sich hinter mir interessiert vorbeugte.<br/>
+Mr Banges grinste und richtete seinen Zauberstab auf die Uhr. „Na los, singt für die beiden.“ Sofort ertönten die zwitschernden Stimmchen zweier Vögel. Sie klangen ein bisschen, als würden sie eine Melodie singen, doch es war eine mir nicht bekannte.<br/>
+„Ich nehme sie“, sagte ich begeistert.<br/>
+„Gut. Das macht vier Galleonen und zwei Sickel.“<br/>
+Ich nickte und kramte schon in meiner Tasche, da hielt mich Potter am Handgelenk fest. Genervt sah ich zu ihm auf. Normalerweise hätte ich mich jetzt losgemacht, aber ich beschloss, dass ich heute mal nett sein durfte. Also fragte ich möglichst ruhig: „Was ist denn?“<br/>
+„Lass mich das bezahlen.“<br/>
+„Hä, nein? Wieso solltest du?!“<br/>
+„Ich durfte vorhin im Restaurant schon nicht bezahlen“, sagte er bittend, fast schon quengelig.<br/>
+„Falsch, du durftest dein eigenes Essen zahlen“, schmunzelte ich. Stimmt, ich hatte ihn guten Gewissens vorhin niederdebattiert und mein Essen mit meinem Geld bezahlt. Und nein, es lag NICHT daran, dass ich Potter nichts schuldig bleiben wollte. Ganz bestimmt nicht!<br/>
+„Evans …“, sagte er leise und zog mich an meinem Handgelenk näher zu sich, das er immer noch mit seiner großen Hand umschlossen hielt. „Lass mich bezahlen.“<br/>
+Oh, nicht schon wieder die Nummer. „Nein, Potter. Wir sind nicht mehr im Mittelalter, du musst mir meine Sachen nicht kaufen, nur, weil ich das Mädchen bin.“<br/>
+„Und wenn ich dir sage, dass es nicht daran liegt, dass du das Mädchen bist, sondern daran, dass du das Mädchen bist?“<br/>
+Ich wurde rot. „Das ist widersprüchlich.“<br/>
+„Nein, es geht um die Betonung“, erklärte er klugscheißerisch und lächelte mich charmant an.<br/>
+Ich kniff die Lippen zusammen und guckte finster drein. „Ich werde dich nicht bezahlen lassen.“<br/>
+„Dasselbe gilt für mich.“<br/>
+„Dann haben wir ein Problem.“<br/>
+„Haben wir wohl.“<br/>
+Das Starrduell dauerte noch etwas länger, bis sich Mr Banges hinter uns räusperte. „Es ist mir eigentlich ziemlich egal, wer zahlt, aber da ist gerade Kundschaft gekommen, also wollen Sie jetzt zahlen oder das noch länger ausdiskutieren?“<br/>
+Ich stöhnte entnervt auf. „Wir teilen uns den Betrag“, lenkte ich knurrend ein. Ich hatte wirklich keine Lust, den ganzen Tag hier zu stehen. Damit war Potter, Mister-ärgern-wir-Evans-bis-zum-Ende-des-Tages-ins-Grab, halbwegs zufrieden und so konnten wir fünf Minuten später Derwisch und Banges verlassen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/7229599/chapters/16518376">Chapter 3</a>: "Das Mädchen, das ich liebe ..."
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Beleidigt stampfte ich, ohne groß auf ihn zu achten, Richtung Schreiberlings Federladen und er dackelte mir natürlich hinterher.<br/>Diesen Einkauf erledigten wir wieder schweigend und schließlich standen wir, mit einer geschrumpften Uhr und ebenso geschrumpften, neuen Tintenfässchen und einer dunkelblauen Pfaunfeder in meiner Tasche, auf der Hauptstraße in Hogsmeade.<br/>„Was wollen wir jetzt machen, Potter?“, fragte ich lustlos und ließ mich dazu herab, Potter aus gereizt verengten Augen herausfordernd anzublicken.<br/>Er musterte mich kurz, dann schnaubte er genervt. Moment, ER war genervt? ICH war genervt, bei Godrics rotgold geringelten Weihnachtssocken! „Das ist doch albern“, brummte er, griff (schon wieder!) nach meinem Handgelenk und zog mich hinter sich her, ohne auf meine gekeiften und wütenden Proteste zu achten.<br/>„Potter, was machst du da?!“ Doch er ignorierte mich. „Potter, ich habe wirklich keine Lust, als dein persönlicher Skandal-Handlanger zu dienen, also könntest du loslassen?!“ Keine Reaktion. „Potter!“ Immer noch nicht. „POTTER!“ Also jetzt hatte ich die Schnauze auch voll.<br/>Ich stemmte die Fersen in den Boden und damit auch gegen ihn, sodass er vor Überraschung anhielt (ein Hoch auf meine standfesten Sneakers!). Das nutzte ich aus, um meinen Arm wieder in meine Gewalt zu bringen und ihn sauer anzublitzen. „Was, in Merlins Namen, sollte das, Potter?“, sagte ich betont langsam und schnalzte mit der Zunge.<br/>Er zuckte nur die Achseln und drehte sich weg, um weiter den Hügel hinaufzustapfen. Das Dorf hatten wir von mir unbemerkt hinter uns gelassen (ah, okay, es gab noch Hoffnungen, was die Skandal-Handlangerin anging) und befanden uns offenbar auf dem Weg zur Heulenden Hütte. Super, ein einsamer Ort, genau das, wo ich schon immer mit Potter hinwollte.<br/>Doch wir waren ja auf einem Date. Das sollte man wohl beachten.<br/>Ich folgte ihm. Als wir oben angekommen waren, konnten wir die Hütte in einiger Entfernung sehen. Potter hatte sich auf einer Bank davor niedergelassen, auf der rechten Seite. Also setzte ich mich auf die linke Seite. Okay, es war die linke Außenkante, ist ja schon gut.<br/>„Was machen wir hier, Potter?“, meinte ich schließlich.<br/>„Wir werden uns jetzt mal unterhalten.“<br/>„Wieso das?“<br/>„Musst du immer alles hinterfragen? Wir sind auf einem Date, da unterhält man sich für gewöhnlich. Oder was hast du mit Snape gemacht, wenn ihr ausgegangen seid?“<br/>Ich schnappte nach Luft. „Snape und ich sind nicht ausgegangen! Wir waren Freunde, falls dir der Begriff etwas sagt, Potter.“<br/>„Aha“, kam es nur wenig lapidar von ihm. Ich warf ihm einen Blick zu. Potter wirkte nicht überzeugt. Die Nachmittagssonne strahlte auf uns herab und tauchte sein dunkles Haar ins Licht, wodurch seine grimmige Miene allerdings nicht fröhlicher wurde.<br/>„Weißt du“, machte ich weiter und wandte mich abrupt ab, „es ist schwer vorstellbar, besonders für dich, aber Mädchen und Jungen können auch einfach befreundet sein, ohne, dass sie übereinander herfallen. Aber davon verstehst du ja nichts.“<br/>„Ich bin auch mit einigen Mädchen befreundet. Ich glaube nur einfach nicht, dass Snape das auch so sieht. Oder zumindest so gesehen hat.“<br/>„Du glaubst also, dass Snape an mir interessiert war? Woher willst du das wissen, du kennst ihn doch überhaupt nicht“, sagte ich kritisch.<br/>Er lachte belustigt. „So etwas“, er drehte seinen Kopf zu mir, „kann man auch wissen, ohne jemanden zu kennen.“<br/>„Tja, aber ich kenne ihn und ich weiß, dass er nicht an mir interessiert war.“<br/>„Wenn du das meinst.“<br/>„Mir gefällt dieser Unterton nicht.“<br/>Potter grinste spöttisch und aus den Augenwinkeln sah ich, wie er die Lider schloss und sein nun wieder entspanntes Gesicht in die Sonne hielt. Sofort musste auch ich lächeln. Vielleicht, weil ich erleichtert war, dass er jetzt wieder der lockere Potter war, anstatt der düstere Grummel von eben.<br/>„Siehst du, es ist gar nicht so schlimm, dich mit mir zu unterhalten. Hast du deine Meinung jetzt geändert?“<br/>Ich erstarrte überrascht und blinzelte. „Wie kommst du darauf, dass ich kein Problem damit habe, dass ich mich mit dir unterhalten muss?“<br/>„Na ja, du hättest den Tag über auch einfach schweigen können. Oder mich ignorieren. Oder verfluchen. Glaub mir, Lily, ich hatte ihn mir schlimmer vorgestellt.“<br/>„Ah. Toll, dass du mich für eine Furie ohne Ehre und Würde hältst.“<br/>„Das meinte ich nicht.“ Feixend öffnete er seine Lider wieder und fixierte mich, als wolle er mich nicht mehr aus den Augen lassen.<br/>„Nun ja, offenbar hast du nicht damit gerechnet, dass ich unsere Wette ernst nehme.“<br/>„Doch, schon. Du machst alles so ernsthaft, wie die meisten Menschen es nie tun würden. Das ist eine gute Eigenschaft von dir. Aber trotzdem wollte ich es auch nicht für selbstverständlich nehmen, dass du dieses Date ernst nimmst. Das hättest du ja nicht gemusst, zumindest nicht wirklich. Aber ich bin froh, dass du mich schließlich doch noch die Uhr für dich hast bezahlen lassen. Oder zumindest die linke Hälfte.“<br/>„Wieso die Linke?“, wollte ich neugierig wissen und kickte mit einem Fuß einen Stein weg. Er rollte nur etwas plump in ein Erdloch. Ein fauler Stein.<br/>„Weil ich jetzt Lust darauf hatte, die Linke zu nehmen.“<br/>„Du bist wirklich nervig. Das ist doch nicht rational.“<br/>„Ja, das ist nie etwas auf dieser Welt vollkommen.“<br/>Ich stöhnte. „Können wir über etwas anderes reden?“<br/>„Worüber willst du denn reden?“<br/>„Das ist die dümmste Gegenfrage, die man bei so etwas stellen kann!“<br/>„Komm schon, Evans, was willst du für ein Gesprächsthema?“<br/>Fieberhaft suchte ich in meinem Kopf, fand ihn aber ausnahmsweise völlig ideenlos vor. Mein Blick schweifte zu ihm und ich zog die Knie neben mich auf die Bank. „Na gut, erzähl mir etwas von dir, Potter. Das willst du doch, oder?“<br/>„Wie kommst du darauf?“<br/>„Na ja, das macht man doch auf Dates, oder? Man labert den anderen mit seinem Lebenslauf voll und erwartet, dass er das interessant findet. Findet er es wirklich interessant, hat man schon einmal Verabredung eins gut hinter sich gebracht. Aber du bist doch der Experte, das solltest du wissen.“<br/>Potter schüttelte verzweifelt den Kopf. „Es gibt doch dafür kein Regelbuch. Aber wenn es das ist, was du willst … Wo soll ich anfangen?“<br/>„Bei dir.“<br/>„Okay. Mein Name ist James Charlus Potter. Ich bin am 27. März 1960 in meinem Elternhaus geboren worden. Meine Eltern sind Auroren, meine Mutter heißt Dorea, mein Vater Charlus, ich wurde nach ihm benannt. Meine besten Freunde sind Sirius, Remus und Peter. Ich spiele Quidditch als Jäger und fange mir ständig Ärger ein. Ich mag kein Zaubertränke. Oh, und ich habe einen Kater namens Rudolph und eine Hündin namens Berta, kann den Kater aber nicht nach Hogwarts mitnehmen, weil er und Berta unzertrennlich sind …“<br/>Ich betrachtete das selige Lächeln auf seinen Lippen mit Überraschung. „Du hast einen Kater, eine Hündin und eine Eule?“<br/>„Meine Eltern sind reinblütig, sie haben einiges von ihren Eltern geerbt. Und sie verdienen auch nicht so schlecht, wie alle Auroren sich immer beschweren.“<br/>„Nein, das meinte ich nicht. Ich bin nur überrascht, dass du so … äh …“<br/>„... tierbegeistert bist?“, hakte er nach.<br/>„Na ja, schon. Bisher hast du immer gesagt, dass Eulen die einzigen Tiere sind, die Nutzen haben.“<br/>„Das stimmt ja auch.“<br/>„Stimmt … Erzähl weiter“, forderte ich ihn schmunzelnd auf und wartete aufmerksam, dass er weitersprach. Ich war wirklich neugierig, immerhin hatte man nicht jeden Tag die Gelegenheit, James Potter dabei zuzuhören, wie er über sich selbst sprach. Nein, früher hätte ich wohl tatsächlich spöttisch angemerkt, dass man das jede Minute hatte, aber so war Potter nicht. Oder zumindest nicht mehr, das war mir schon in den letzten Jahren aufgefallen. Gewissermaßen war auch James Potter erwachsener geworden. Nicht erwachsen, aber erwachsener.<br/>„In Wahrheit lerne ich für die Abschlussprüfungen wie ein Verrückter“, erzählte er jetzt. „Das treibt Sirius jedes Jahr zur Weißglut.“<br/>„Wirklich?!“ Ich hatte mich schon gewundert, wieso er immer so gute Noten schrieb. Black hingegen würde mir auch in Zukunft für immer ein Rätsel bleiben.<br/>„Jaha!“, lachte er schief. „Auch ich lerne. Okay, zugegeben, am Anfang ist mir das alles in den Schoß gefallen, aber irgendwann habe ich dann angefangen zu lernen, weil ich … also, ich wollte nicht abrutschten“, sagte er schnell. Ich konnte das Gefühl nicht abschütteln, dass er etwas anderes hatte sagen wollen. „Aber dann habe ich auch noch in unserem fünften Schuljahr beschlossen, dass ich Auror werden möchte. Seitdem arbeite ich wirklich hart für meine Noten.“<br/>„Du möchtest Auror werden? Wie deine Eltern?“ Erstaunt hob ich die Augenbrauen. Ich hätte Potter nicht für den sentimentalen Typ gehalten.<br/>„Ja. Aber nicht, weil sie Auroren sind, sondern weil ich die Zukunft ungern dem Ministerium überlasse. Ich möchte selbst etwas dazu beitragen und die Zaubererwelt unterstützen. Ich wünschte, ich könnte jetzt schon dort draußen sein und gegen diese Todesser kämpfen. Ich verstehe einfach nicht, wie man etwas gegen Menschen haben kann, nur, weil sie nicht ganz so sind, wie wir.“<br/>Beeindruckt stimmte ich ihm leise zu und fuhr dann fort: „Es ist erstaunlich, dass du so genau weißt, was du willst. Ich wusste noch nie, was ich tun will. Oder wer ich sein will. Weder in der Muggelwelt noch in den letzten Jahren.“<br/>„Ich bin mir sicher, dass du es herausfinden wirst. Du bist Lily Evans, ich habe dich nichts tun sehen, was du nicht auch erreicht und gemeistert hättest. Du wirst großartig sein“, meinte er leise und mit so einem Vertrauen, dass ich das Gefühl hatte, dass er tatsächlich die Wahrheit sprach.<br/>„Potter?“<br/>„Hm?“ Konzentriert runzelte er die Stirn, während der seichte Wind ihm einige längere Haarsträhnen in die Augen wehte.<br/>„Danke“, sagte ich ebenso kaum vernehmlich, wie er vorhin. Ich sah das Lächeln nicht, das seinen Mund gefangen nahm, doch ich wusste, dass es da war.<br/>„Evans?“<br/>„Hm?“<br/>„Es gibt da noch etwas Wichtiges über mich, das du wissen solltest. Das Mädchen …“, hier machte er eine zögernde Pause, doch dann lehnte er sich zu mir und sah mich von unten her an. „Das Mädchen, das ich liebe, heißt Lily Evans.“<br/>Ich riss die Augen auf und starrte sekundenlang, wenn nicht länger, in seine. Der Wind kam jetzt aus seiner Richtung, trug wieder den Geruch dieser Wunderspülung heran und ließ mein Herz flattern, als wolle es, genau, wie seine dunklen und meine langen Haare, vom Wind getragen werden. Ich merkte, wie mir die Röte in die Wangen schoss.<br/>Abrupt sprang ich auf. „Wollen wir zurück zum Schloss gehen?“<br/>„Ich...“, machte er, doch da war ich schon losmarschiert und Potter hatte keine andere Wahl, als mir zu folgen.<br/>„Evans?“, keuchte er, als er mich eingeholt hatte.<br/>„Ja?“, fragte (piepste) ich. Verdammt! Stimme, geh jetzt sofort eine Oktave nach unten!<br/>„Halt einmal an, ja?“<br/>„Wieso denn?“<br/>„Evans“, sagte er entschlossen und stellte sich mir in den Weg.<br/>Verwirrt sah ich zu ihm auf, achtete aber darauf, ihm nicht direkt in die Augen zu sehen. „Das Mädchen, das ich liebe, heißt Lily Evans.“ … „... das ich liebe …“ … Oh Merlin, wer sagte denn etwas, wie das, einfach mal so? Das war garantiert nicht das gewesen, was ich hatte hören wollen.<br/>Potter fuhr sich verlegen durch die Haare. „Tut mir leid, das mit eben, meine ich. Das hätte ich dir nicht so ins Gesicht knallen dürfen. Vergiss es einfach wieder.“<br/>Ich nickte schnell. „K-Kein Problem.“ Und schon begann ich, Lily Evans, das Mädchen, das er liebte, es zu verdrängen … Oder auch nicht. ARGH! Das hätte er auch wirklich für sich behalten können! Jetzt würde ich die ganze Zeit daran denken müssen, dass er der erste Typ war, der mir gesagt hatte, dass er mich liebte, obwohl er es ja nicht einmal ernst meinte. Verdammter Potter, da hatte ich gerade begonnen, ihn zu mögen …<br/>WARTE, WAS?! Potter mögen? Echt jetzt? Oh Lily, wenn dieses Date vorbei ist, dann wirst du nie wieder in einen fünf Meter Radius von James Potter kommen!<br/>„Gut“, hörte ich ihn hinter mir sagen, in einem etwas steifen, verwirrten Tonfall, bei dem ich das Gefühl hatte, dass mir das Herz brechen sollte. Nicht, dass es das nicht schon tat, aber ich meine so richtig. Mit physischen Schmerzen und Schimpf und Schande. Stattdessen sorgte für Schimpf und Schande nur mein persönlicher Jiminy, der aber so überfordert war, dass er mir nicht einmal mit Argumenten kommen konnte, wieso ich ein schlechtes Gewissen hatte oder was ich denn falsch gemacht hatte.<br/>Was war nur los mit mir? Okay, Evans, schalt jetzt wieder dein Hirn an und atme tief durch. Herz, halt die Klappe da unten. Gewissen, du auch. Ohne Beweise keine Klage.<br/>Wir machten uns also gemeinsam auf den Weg zurück, zuerst durchs Dorf und dann den Pfad zum Schloss hinauf. Ich war nur froh, dass wir in der Menge ebenfalls zurückkehrender Schüler nicht groß beachtet wurden. Einige warfen uns zwar neugierige oder irritierte (oder auch fuchsteufelswilde) Blicke zu, aber im Großen und Ganzen hatten wir echt Glück. Glück im Unglück, denn er schwieg und ich schwieg auch. Unangenehm. Sehr unangenehm.<br/>Genauso stumm gingen wir dann durch das Schloss, überquerten den Hinterhof und die Brücke und kamen irgendwann in der Eingangshalle an. Ich wollte schon durch das Portal verschwinden, da machte mir Potter natürlich einen Strich durch die Rechnung.<br/>„Warte einen Moment“, bat er mich hastig und nahm zur Sicherheit mein Handgelenk (das dritte Mal heute!), um mich etwas abseits zu ziehen, während die Schülermenge weiter ihrem Abendessen entgegenstrebte. Ich hatte ebenfalls Hunger und wollte nur noch in die Große Halle laufen, mich neben Alice setzen, mir ihre Erzählungen von ihrem Date mit Frank anhören und irgendetwas mit Kartoffeln in mich hineinschaufeln (wieso auch immer ausgerechnet Kartoffeln). Und die Rumtreiber, besonders Potter, könnte ich dann einfach vergessen.<br/>„Hör mal, Lily, du weißt, was ich gesagt habe. Dass ich dich, nach heute, in Ruhe lassen werde. Also brauche ich jetzt deine Antwort. Habe ich eine Chance bei dir oder …?“ Er ließ den Rest des Satzes in der Luft hängen, als wollte er ihn nicht aussprechen und selbst in den Raum stellen. Ich blickte ihm bewusst nicht ins Gesicht, ich wollte nicht meine Befürchtung bestätigt wissen, dass er jetzt diesen ernsten, entrückten Ausdruck hatte. Allein die Möglichkeit machte mich ganz … wirr.<br/>Und das sollte ich besser nicht sein, immerhin würde ich ihm jetzt sagen, dass ich …<br/>MOMENT! Was tat Potter da gerade? Wie, schon wieder?!<br/>Seine Hand lag in meinem Nacken, die andere an meiner Wange, fast, wie gestern. Sein Gesicht kam näher – seine Lippen kamen näher! Merlin … dieser Duft … Meine Augen schlossen sich langsam und …<br/>„Tut mir leid“, keuchte er gegen meine Lippen und richtete sich mit abgewandtem Blick wieder auf. „Das hätte ich nicht tun sollen.“<br/>… Ah, okay. BITTE WAS? War das sein Ernst?! Da war ich wortwörtlich nur noch Millimeter davon entfernt gewesen, zu erfahren, ob die Gerüchte über James Potters begnadete Kusskünste berechtigt waren, und was tat er? „Oh, Lily, die Moral hat mich gerade noch einmal angesprochen und mir geraten, dass das keine gute Idee wäre. Sorry.“<br/>Aber es war besser so. Auch, wenn alles in mir gerade protestierte und ihn am liebsten gaaaaaaanz nah zu mir gezerrt hätte, um ihn zu Tode zu knutschen. Oder etwas Dezenteres. Aber das alles war nur mein unvernünftiger Teil, der von meinen Hormonen gerade vollkommen vereinnahmt war. Es war albern.<br/>Es war ja nicht so, dass ich Potter wirklich küssen wollte. Nicht James Potter. Nicht ich, Lily Evans. Ich war die Letzte, die ihn küssen wollte.<br/>Ich wollte gerade etwas Lässiges erwidern, irgendetwas von „Ja, schon klar.“ oder so sagen, so tun, als würde mein Körper gerade nicht das Bedürfnis verspüren, sich ihm an den Hals werfen, da rief jemand meinen Namen.<br/>„Lily!“, rief Alice und winkte, auf der Stelle auf und ab hüpfend, damit ich sie bloß nicht übersah. Als sie bemerkte, dass die halbe Eingangshalle auf sie aufmerksam geworden war, kämpfte sie sich mit rot glühenden Wangen zu mir durch und schien sich am liebsten in ein Erdloch verkriechen zu wollen. „Hallo“, flüsterte sie verlegen und duckte sich leicht hinter mich. Sie sah zu Potter. „Hallo, James. Ähm, wollen wir essen gehen, Lily?“<br/>„In Ordnung“, meinte ich und war selbst überrascht, dass meine Stimme ganz neutral klang.<br/>„Lily …“<br/>„Tschüss, Potter“, sagte ich schnell, packte die irritierte Alice und verschwand mit ihr in der Großen Halle. Davon, dass Potter sich an die Wand lehnte und mit der Faust dagegen schlug, bekam ich nichts mit.<br/>Ich drehte mich nicht mehr um.</p><p>ooooo</p><p>Eine Woche später war es immer noch ruhig. Buchstäblich ruhig.<br/>Potter hatte Wort gehalten.<br/>Er kam nicht mehr zu mir, um mich zu nerven. Er fragte nicht mehr, ob ich mit ihm ausgehen würde, weder im Dialog, noch, wenn wir kurz auch nur den gleichen Hof überquerten. Auch aß er mir meinen Joghurt nicht mehr weg, sogar an den Wochentagen, an denen eigentlich seine Joghurt-Tage waren. Und er sah mich nicht mehr an. Keine lästigen Blicke, wenn ich an ihm vorbeiging, kein endloses, sinnloses Starren, wenn ich im Gemeinschaftsraum saß und lernte, und kein Austauschen von Mimiken, wenn er etwas lustig fand und sehen wollte, ob ich auch der Meinung war.<br/>Rein gar nichts. Funkstille. Finite.<br/>Und ich … tja, ich sollte es genießen, oder? Das tat ich auch. Also, okay, ich versuchte es. Es war auch eigentlich, mal ganz prinzipiell betrachtet, nicht sonderlich schwer, nur … manchmal wanderten meine Gedanken halt zu ihm. Okay, ja, und dann starrte ich ihn an. Natürlich ganz unauffällig, ich war ja kein verknalltes Schaf, wie eines dieser Mädchen, die praktisch nichts anderes im Kopf hatten, als James Potter.<br/>Argh, ich wurde verrückt. Und, zugegeben, ich dachte ständig an ihn. Nur das mit dem Starren, das hatte ich besser unter Kontrolle, als er vorher. Ich sah nur alle zwei Minuten zu ihm.<br/>Aber mir ging dieser Fast-Kuss nicht mehr aus dem Kopf. Noch jetzt lief ich zum Teil rot an und dampfte praktisch – und das mitten im Verwandlungsunterricht bei McGonagall. Nur, weil ich mich an diese Banalität zurückerinnerte. Das war ja wohl mal überhaupt nicht fair. Ich sollte mich freuen, Luftsprünge vollführen und meine Jugend genießen, jetzt, da mein persönlicher Stalker endlich aufgegeben hatte und krampfhaft Löcher in die Luft starrte, anstatt in meinen Hinterkopf.<br/>Aber ich war nicht glücklich. Ich konnte es einfach nicht. Es ging nicht. Nicht, ohne dass ich an ihn denken musste und daran, was er zu mir gesagt hatte.<br/>„Geh mit mir aus, Evans.“ „Ich könnte dich jetzt küssen, Evans.“ „Lily.“ „Lily. Bitte.“ „Du bist immer hübsch.“ „Ein Dessert klingt doch gut, oder?“ „Evans … Lass mich das bezahlen.“ „Wir werden uns jetzt mal unterhalten.“ „Das Mädchen, das ich liebe, heißt Lily Evans.“<br/>Seht ihr? Er ging einfach nicht mehr aus meinem Kopf raus. Und das störte mich ungemein! Dieser Arsch, er hatte sich ohne zu fragen in meine Gedanken festgezaubert.<br/>„Das Mädchen, das ich liebe, heißt Lily Evans.“ Aber das war ja eine Lüge. Es musste eine Lüge sein. Immerhin war James Potter ein Arsch. Ein Arsch, der nur mit den Herzen von Mädchen spielte und kein Problem damit hatte, die feste Freundin in den Wind zu schießen und direkt am nächsten Tag mit einer anderen auszugehen. Und er war der Arsch, der unschuldigen Drittklässlerinnen ihren ersten Kuss raubte.<br/>Wenn ich an diesen Kuss dachte, dann wurde ich wieder so richtig schön sauer. Ja, es war in der dritten Klasse gewesen, als James Potter mich mitten im Zaubertränkeunterricht, ausgerechnet vor SLUGHORN, vor meinem Lieblingslehrer, geküsst hatte, nur, weil Arsch² Black gesagt hatte, dass er sich das nicht trauen würde. Und dieser Oberarsch überhaupt hatte mir meinen ersten Kuss gestohlen! Und das in einem so unromantischen Sinne, dass jetzt noch das ganze Schloss davon sprechen konnte, lachend und amüsiert. Natürlich, die waren ja auch nicht geküsst worden. Vor der versammelten dritten Klasse plus Lehrer.<br/>Obwohl ich zugeben musste, dass er damals schon ziemlich gut geküsst hatte. Die Küsse, die ich danach erlebt hatte, waren alle nicht so gut gewesen – ganz schön erbärmlich, wenn ich mal so darüber nachdachte. Immerhin war er da gerade mal dreizehn gewesen.<br/>„Lily? Lil-y …! Deine Feder tropft …“<br/>„Hä? Was ist los?“, fragte ich verwirrt und sah auf.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/7229599/chapters/16554535">Chapter 4</a>: "Evans. Was genau versuchst du mir zu sagen?"
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Ich saß im Gemeinschaftsraum auf dem Boden (oder eher auf einem gemütlichen, dunkelroten Kissen), gebeugt über einen der niedrigen Couchtische, auf dem ich meine Hausaufgaben für Verteidigung gegen die dunklen Künste ausgebreitet hatte.<br/>
+„Deine Feder, Lily. Die Tinte tropft auf deinen Aufsatz“, sagte Alice besorgt. Sie saß Frank gegenüber, mit dem sie gerade eine neue Partie Schach begonnen hatte.<br/>
+„Ah … oh!“, machte ich hektisch und stellte die Feder eilig zurück ins Tintenfässchen. „Danke.“<br/>
+„Schon in Ordnung.“<br/>
+„Warst du wieder in Gedanken?“, wollte Frank wissen und sah mich aus seinen freundlichen, dunklen Augen an. Sie waren nicht so schön dunkel, wie Potters … Aber sie hatten auch etwas, so einen netten Stich ins- Was überlegte ich hier eigentlich?<br/>
+„Äh, ja“, gab ich zu und starrte wieder auf die Tabelle, die ich eigentlich in fünf Minuten ausgefüllt hätte. Hätte, wenn ich nicht schon seit zwanzig Minuten an einen gewissen bebrillten Wuschelkopf denken müsste, der nur einige Sessel entfernt Zaubererschnippschnapp mit Remus und Peter spielte, während Black sich auf der Couch daneben ausgestreckt hatte.<br/>
+Alice und Frank wechselten einen Blick. Alice hatte ich zwar von meinem „Date“ mit Potter erzählt, aber außer „Ich war heute mit Potter aus.“ hatte ich nichts gesagt. Vielleicht nur noch so etwas, wie „Das war eine Wette. Jetzt habe ich endlich Ruhe vor ihm.“ Aber da hatte sie mich mit so einem skeptischen, besorgten Ausdruck in den Augen angesehen. Da hatte ich ihr lieber nichts mehr erzählt und fröhlich meine Kartoffeln gemampft.<br/>
+„Lily?“, sagte Alice und ließ sich mit einem Kissen und einer Decke neben mich plumpsen.<br/>
+„Was ist denn? Wo hast du Frank gelassen?“<br/>
+„Er … äh, ihm ist noch eingefallen, dass er etwas … erledigen … muss.“ Aha. Eine Ausrede. Dass ich noch einmal erleben würde, dass sie ihren kostbaren Frank wegen mir wegschickte. Der Hammer.<br/>
+„Hör mal, Lily“, fing sie an, „ich weiß wirklich nicht, was zwischen dir und James passiert ist, aber was ich jetzt sehe, ist, dass er versucht, dich nicht mehr zu belästigen und ich bin mir ziemlich sicher, dass es deine Schuld ist. Ich möchte gar nicht wissen, was du wieder angestellt hast, aber es macht dich offenbar nicht glücklich. Im Gegenteil.“<br/>
+„Wie kommst du darauf, dass es meine Schuld ist und wieso sollte ich nicht glücklich sein?“, protestierte ich empört. „Das ist Schwachsinn, ich bin total glücklich.“<br/>
+„Ja, total“, sagte sie sarkastisch, was sie normalerweise nie war. „Und komm schon, wenn etwas passiert ist, das James dazu gebracht hat, dich aufzugeben, dann kannst das nur du gewesen sein. Außer dir hätte ihn niemand dazu bringen können.“<br/>
+„Quatsch.“<br/>
+Alice seufzte. „Du solltest mit ihm reden, wenn dir etwas nicht passt, anstatt ihn völlig zum Verzweifeln zu bringen.“<br/>
+„Ich habe ihn doch nicht zum Verzweifeln gebracht!“ Alice' Blick sagte alles. „Okay, vielleicht ein bisschen. Aber er … er …“ Ich brachte es nicht über die Lippen. Also tat ich, was man in so einer Situation nur tun konnte: Ich ließ meine Stirn auf die Tischplatte fallen und stöhnte laut und genervt auf. „Er hat gesagt, dass er in mich verliebt ist“, nuschelte ich zwischen meinen Haaren, die mir offen wie ein Vorhang über die Schultern fielen.<br/>
+„Ehrlich?!“, fragte sie begeistert.<br/>
+„Wieso findest du das jetzt toll?“<br/>
+„Na, das ist doch super! Das bedeutet, dass all deine Sorgen wegen der anderen Mädchen und seinen zweifelhaften Taten unbegründet sind!“<br/>
+„Alice, du bist echt naiv. Glaubst du wirklich, dass er in solch einer Situation die Wahrheit sagt? Es ging ihm doch nur darum, mich zu ködern, um mich auf seine Liste zu setzen. Und ich habe echt keine Lust, von ihm verarscht und dann abgeschossen zu werden.“ Ich sah zu meiner Freundin auf, die aussah, als wollte sie im nächsten Moment aus einem Fenster springen oder sich zumindest dreimal mit der Hand vor die Stirn schlagen.<br/>
+„Lily!“, sagte sie fest und entschlossen und packte meine Schultern mit ihren kleinen Händen. „Hat dir schon einmal jemand gesagt, dass du echt klug bist, aber abgesehen von Büchern und Zaubertränken und Verwandlungen und dem ganzen Mist keinerlei Ahnung hast? Und dass dein Verstand ständig aussetzt, wenn es um James Potter geht? Das ist doch nicht zu fassen! Lily, er hat seit einem halben Jahr keine Freundin mehr und alle davor hat er höchstens zwei Wochen über gehabt. Das einzige Mädchen, mit dem er in letzter Zeit ausgegangen ist, bist du. Und du bist auch die Einzige, um die er jahrelang herumgeschlichen ist und der er zusätzlich gesagt hat, dass er sie liebt! Was willst du dir noch beweisen lassen?“<br/>
+Kurz starrte ich Alice nur geschockt an, bevor ich langsam ein Stück von ihr wegrückte. Das sonst so stille Mädchen machte mir Angst, jetzt, wo sie plötzlich so energisch war. Professor McGonagall wäre stolz auf sie. „Alice“, sagte ich gedämpft, „sieh mal, ich meine … es ist doch Potter. Ich kann doch jetzt nicht einfach meine Meinung ändern und …“<br/>
+„Wovor hast du Angst, Lily?“<br/>
+„Ich hab keine Angst!“<br/>
+„Dann ist doch alles bestens. Geh zu ihm rüber, schnapp ihn dir und sag ihm, was du fühlst. Und dann knutschst du ihn um den Verstand!“ Euphorisch warf sie die Arme in die Luft, wobei sich einige traumatisiert guckende Erstklässler zu ihr drehten. Ehrlich, es ging doch nur ums Knutschen … Okay, mir kroch die Röte auch im Hals hoch.<br/>
+„Aber es ist ja nicht so, als wäre ich in ihn verliebt oder so“, warf ich etwas leiser ein.<br/>
+Sie zog kritisch die Augenbrauen hoch. „Das willst du mir jetzt nicht ehrlich erzählen, oder?“<br/>
+„Doch!“ Verärgert musterte ich sie. „Wie kommst du überhaupt darauf?“<br/>
+„Merlin, das sieht jedes Kleinkind. Und jetzt gehe ich, das wird mir zu blöd.“ Wie aus dem Nichts war Frank plötzlich wieder aufgetaucht, bei dem Alice sich eingeschnappt einhakte, nicht, ohne mir noch einmal zuzunicken, als müsste ich die Welt retten, und dann aus dem Portraitloch der Fetten Dame verschwand.<br/>
+„Godrics wallende Mähne, das Mädchen dreht durch …“, murmelte ich und ließ mich nach hinten fallen, sodass ich nicht mehr saß, sondern an die Decke des Gemeinschaftsraum starren konnte und praktisch völlig vom Couchtisch verdeckt wurde.<br/>
+Sie redete doch Unsinn. Ich war doch nicht in James verliebt. Pff, ich doch nich- James? Hatte ich gerade James gedacht? Ah, doch nur, weil Alice ihn so genannt hatte.<br/>
+Nicht. Es war, weil ich den Klang seines Namens mochte. Weil ich den Klang seiner Stimme mochte. Weil ich ihn besonders mochte, wenn er dieses Wort mit L am Anfang aussprach (und nein, nicht Löffel, sondern Lily!). Weil ich ihn, James, mochte.<br/>
+Merlin, wollte ich das hier echt noch leugnen? Ich mochte James Potter. Ich liebte James Potter. So richtig.<br/>
+Er hatte Recht gehabt. Ich hatte mir vorgespielt, dass ich ihn kennen würde, dabei hatte ich die ganze Zeit nur alles Schlechte an ihm sehen wollen. Den Jungen, der albern und kindisch und nervig war und sich über andere lustig machte, den elfjährigen James Potter eben, wie ich ihn kennengelernt hatte. Aber dabei hatte ich ganz übersehen, dass er zuvorkommend, besorgt, ernsthaft, freundlich, vertrauenswürdig und humorvoll war. Dass er meine Launen mit Ausgeglichenheit ertrug und höflich und manierlich war und sich darum bemühte, einen guten Eindruck zu machen, wie es jeder Mensch machte. Ich hatte ihn wirklich zu Unrecht verurteilt, ein Bild von ihm verurteilt, das ich mit meiner eigenen Verdrängung geschaffen und aufrecht erhalten hatte, wie einen Vorhang.<br/>
+Und was sollte ich jetzt mit dieser Information anfangen? Ich konnte ja schlecht das machen, was Alice gesagt hatte, das ich tun sollte. Obwohl, aus der Perspektive jedes anderen Mädchens betrachtet, wäre das das einzig Logische. Ich meine: So etwas tat eine Lily Evans doch nicht! Ich konnte doch nicht … nicht … nein, ganz bestimmt nicht. Es musste einen anderen Weg geben. Das wäre so endlos peinlich, vermutlich könnte ich es überhaupt nicht aussprechen und würde erst in Ohnmacht fallen, nur, um mein Gestammel hinauszuzögern …<br/>
+Ah, also war ich ein Feigling. Ich schnellte hoch und saß wieder kerzengerade am Tisch. Ich glaube, den Erstklässlern am Tisch neben mir machte ich ganz schön Angst. Sie starrten mich an, als wäre ich Petunia mit ihrer gruselig grünen Gesichtsmaske. „Argh!“, rief ich aus und raufte mir die Haare. So kam ich doch zu keiner Lösung! Verdammt, ich sollte jetzt einfach mein Gehirn ausschalten, zu ihm gehen und ihm ein saftiges „Ich liebe dich!“ entgegenpfeffern! „Da hast du es, Idiot!“ So in der Art.<br/>
+Ich sprang auf und … stolperte über den Couchtisch. Natürlich, eine Lily Evans überwand auf dem Weg zu einem Liebesgeständnis jegliche Materie! Sicher doch.<br/>
+„Lily!“, hörte ich einige Stimmen panisch ausrufen. Aber ich hörte nur seine Stimme, wie er plötzlich direkt neben mir meinen Namen sagte.<br/>
+„Alles in Ordnung, Lily?“ Hehe, das hatte er schon einmal gefragt … Oh, mein Kopf tat vielleicht weh. Könnte daran liegen, dass ich direkt auf die Tischkante geprallt war. Wurde mir gerade schwarz vor Augen?<br/>
+„Oh Scheiße, Krone, ist das Blut?! Das ist eine Menge!“<br/>
+„Tatze, guck nicht so fasziniert, die Situation ist ernst“, warnte Remus scharf. „Wir müssen sie auf die Krankenstation bringen.“<br/>
+„Nicht nötig“, nuschelte ich.<br/>
+„Red keinen Unsinn“, hörte ich James sagen und merkte, wie er mir die Haare aus dem Gesicht strich. Ich sah in seine Augen und musste sofort grinsen. Er hatte echt schöne Augen. So … braun.<br/>
+„Und Peter gleich mit, der ist gerade wegen des ganzen Blutes in Ohnmacht gefallen … Wurmschwanz? He, Alter, hörst du mich noch? Oh der Gute, ich wette, er hat gerade eine Nahtoderfahrung …!“<br/>
+„Sirius, reiß dich zusammen“, rief James genervt über die Schulter. Dann sah er wieder auf mich hinab, lächelte zögerlich und reichte mir die Hand. Er zog mich hoch und stütze mein schwankendes, unsicheres Selbst.<br/>
+Wie ich anschließend in den Krankenflügel kam, weiß ich auch nicht mehr. Nur, dass ich jetzt in einem der Krankenbetten lag, mit drönendem Schädel und dem Zielobjekt meiner Intention direkt vor der Nase. So richtig vor der Nase, er wickelte nämlich gerade einen Verband um meinen Kopf, den Madame Pomfrey nicht gewagt hatte, mit einem Zauber einfach zu heilen, weil es eine zu kleine Verletzung war, um das Risiko des notwendigen Heilzaubers einzugehen.<br/>
+„Au“, nörgelte ich, als er den Verband etwas zu fest zog.<br/>
+„'tschuldige.“ Eine Minute später richtete er sich auf und sagte: „Fertig. Das sollte vorerst halten.“<br/>
+„Danke …“<br/>
+Er räusperte sich und sah zur Seite. „Gerne. Hör mal, du solltest wirklich besser aufpassen. Du spielst kein Quidditch und trotzdem landest du hier öfter als ich. Öfter als Remus und Peter zusammen. Und das immer nur wegen so Kleinigkeiten wie Holzsplittern und abgerutschten Messern.“<br/>
+„Das nennst du Kleinigkeiten? Ich bin mir ziemlich sicher, dass du noch nie einen fetten Splitter in deinem Allerwertesten stecken hattest!“ Erst, nachdem ich es ausgesprochen hatte, wurde mir klar, dass ich diesen Sturz wohl nicht ganz so unbeschadet überstanden hatte, wie gedacht. Ich hatte gerade „Allerwertester“ in seiner Anwesenheit gesagt. Und hier ging es auch noch um MEINEN Allerwertesten! Merlin …<br/>
+„Ja …“, gab er jetzt etwas lahm von sich, in dem Versuch, die Peinlichkeit der Situation auszumerzen. „Ähm, jedenfalls wollte ich dich bitten, dass du … pass einfach etwas auf dich auf.“<br/>
+„Ich bin halt ungeschickt. Das mache ich ja nicht zum Spaß …“, grummelte ich.<br/>
+„Dann mach das, worum ich dich gebeten habe, nur so zum Spaß.“<br/>
+„Gut.“<br/>
+„Gut.“<br/>
+Peinlich … Ach ja, aber es wäre auch doof, wenn er jetzt gehen würde, zumindest, wenn ich seine unruhigen Blicke Richtung Tür richtig interpretierte. Nun, Peter im Bett neben mir könnte ja auch jeden Moment aufwachen, also sollte ich vielleicht in die Hufe kommen. Das wäre der perfekte Moment, um …<br/>
+Oh Gott, das konnte ich nicht … Merlin, ich weiß nicht, wie lange ich nicht mehr „Oh Gott“ gedacht hatte, aber wenn ich das jetzt getan hatte, dann stand es wohl sehr ernst um mich und meinen Verstand. Nicht gut …<br/>
+„Hör mal, James … Ich wollte noch einmal mit dir sprechen, weißt du, wegen … also … äh …“ Sein Kopf war bei der Erwähnung seines Vornamens bereits hochgefahren, jetzt sah er aus, als wüsste er nicht, was er tun sollte. Überhaupt nicht. Man konnte seinen Zustand als ziemlich konfus beschreiben. Was sollte ich noch einmal Alice nach jetzt machen? Und sagen? Oh, ich hatte vergessen, dass hier noch eine ziemlich konfus war. Aber Alice hätte ja auch einen Zettel schreiben können!<br/>
+Richtig. Zu ihm rübergehen brauchte ich nicht mehr. Er war schon hier. Dann sollte ich ihn knutschen. Äh, nein, ich sollte ihn mir schnappen und ihm sagen, was ich fühlte. Wow, das mit dem Rübergehen war wohl der leichte Teil gewesen …<br/>
+„James …“ Ich holte tief Luft und ließ meinen Blick durch den Raum wandern, bis ich ihn zwang, bei ihm stehen zu bleiben. „Ich muss dir etwas sagen. Also … eher beichten.“<br/>
+„Schon gut, ich weiß, dass du deine Ruhe willst.“ Er nickte resigniert und erhob sich, noch während er sich wegdrehte. „Ich habe es dir ja versprochen.“<br/>
+„Nein, das wollte ich eigentlich nicht sagen …“<br/>
+Er hatte mir nicht zugehört. Offenbar war er so auf den Ausgang fixiert, dass er nur noch schnell sagte: „Ich geh dann jetzt auch. Du solltest dich ausruhen.“<br/>
+Da wurde ja der Gnom im Garten verrückt! Hier saß ich und wollte gerade meinen Mut zusammenkratzen, um ihm zu sagen, dass ich … also, ihr wisst schon, und da haute er einfach ab! Nicht mit mir, Freundchen!<br/>
+Dieses Mal war also dann ich diejenige, die ihn am Handgelenk packte – nachdem ich ächzend vorgehechtet war, soweit ich eben in meiner Position konnte, und ihn erreicht hatte. Meine Decke segelte zu Boden, doch das war mir jetzt auch egal. Glücklicherweise trug ich ja noch meine Schuluniform von vorhin.<br/>
+„Lily? Ich meine Evans.“ Verwirrt sah er mich an.<br/>
+Ich seufzte. „Stelle ich mich echt so blöd an, dass du nicht kapierst, dass ich gerade versuche, dir etwas zu sagen?“<br/>
+„Ich weiß nicht ganz, was du meinst. Geht es dir auch wirklich gut? Du siehst angeschlagen aus. Und ein bisschen fiebrig.“ Er trat vor und legte seine Stirn an meine. „Also Fieber hast du nicht …“, meinte er nachdenklich. Als er merkte, was er da tat und wie nah er gekommen war, wollte er hastig zurückweichen. „Tut mir l-“ Meine Hand war immer noch um sein Handgelenk geklammert. Ich ließ ihn nicht los und so blieb er genau da, wo er war. Ich sah zu ihm auf.<br/>
+„James, das ist echt wichtig. Also … weißt du … neulich, als du mich … fast geküsst hättest, da … wollte ich eigentlich gar nicht, dass du aufhörst. Ich hätte vermutlich überhaupt kein Problem damit gehabt, wenn du mich geküsst hättest. Um genau zu sein hätte ich das wahrscheinlich sogar ziemlich gut gefunden, immerhin küsst du ja offenbar nicht schlecht, zumindest den Gerüchten nach – aber da lag auch der Knackpunkt. Bis heute musste ich öfter an dich denken, okay, öfter als öfter. Aber ich war mir halt nicht sicher, ob du es ernst meinst, eigentlich habe ich das ziemlich bezweifelt. Aber dann hat Alice mit heute gesagt, dass ich Schwachsinn rede und denke und dann habe ich diese Anweisung bekommen, nach der ich genau das machen soll, was ich bisher gemacht habe. Also natürlich nicht genau das, der Teil mit dem Blut und dass das alles hier im Krankenflügel stattfinden soll, war wirklich nicht geplant, aber so ungefähr habe ich bisher alles … äh … jetzt habe ich irgendwie den Faden verloren.“<br/>
+James schwieg. Merlin, ich hatte ihn gerade zu Tode geplappert. Vorsichtig zupfte ich an seinem Ärmel. Er starrte mich aus seinen dunkelbraunen Augen an, in denen ich in meinem verwirrten Zustand momentan rein gar nichts erkennen konnte. Sinnbildlich gesprochen, tatsächlich konnte ich mich sogar selbst sehr gut in seinen Augen spiegeln und … äh, aber darum ging es hier ja nicht.<br/>
+„Evans.“ Oh, wir waren wieder bei den Nachnamen … Aber egal, er hatte sich gerade zu mir auf das weiße Bett fallen lassen, sodass ich jetzt vor ihm hockte, wie ein Häufchen Verwirrung und Hilflosigkeit. „Was genau versuchst du mir zu sagen?“<br/>
+Ja, was war das doch gleich? Ach ja, ich wollte- „Ich liebe dich.“<br/>
+Oh, hatte ich das laut gesagt? Ich riss verblüfft meine Augen auf, wobei ich peripher die Befürchtung hegte, sie könnten jeden Moment herausfallen. Seine saßen noch drinnen, was mich allerdings wunderte. Er machte Augen, groß wie Untertassen. Hübsche Untertassen.<br/>
+„Evans, ich hoffe, du weißt, was du sagst.“<br/>
+„Ich, also, eine Gehirnerschütterung habe ich nicht. Das eben wollte ich wirklich sagen … chrm, ja …“<br/>
+Einen Moment musterten wir uns fragend. James nickte langsam. „Okay.“ Damit überbrückte er die Distanz zwischen uns, schob mir mit einer raschen, geschickten Bewegung der einen Hand die heute ausnahmsweise chaotischen Haare aus dem Gesicht und legte seine Lippen auf meine.<br/>
+Ah. So fühlte sich das also an. Erde an Lilys Herz, SOS! Du darfst wieder schlagen.<br/>
+Und dann küssten wir uns. Bis er sich von mir löste, um Luft zu holen. Ärgerliche, blöde Luft. Die war doch überflüssig. Ich zog ihn wieder zu mir und küsste ihn erneut, legte meine Arme um seinen Nacken und zog ihn so nah zu mir, wie es nur ging.<br/>
+James Brille war verrutscht. Als wir den Kuss wieder unterbrachen, völlig außer Atem, musste ich bei seinem zerknautschten Anblick lachen. „Du siehst schrecklich aus.“<br/>
+„Sagte das hübscheste Mädchen der Welt mit dem blutigen Verband um den Kopf.“<br/>
+Die Röte kroch wieder geschwind wie nichts in mein Gesicht. „Äh …“<br/>
+Er rollte mit den Augen. „Ich liebe dich, Evans.“<br/>
+„Äh … Ich dich … auch … ähm …“, stammelte ich.<br/>
+„Ich liebe dich, Evans.“<br/>
+„Ja, das sagtest du …“<br/>
+„Ich liebe dich, Lily.“<br/>
+„Ja, ist ja gut, ich habe es jetzt verstanden!“, rief ich peinlich berührt aus und presste ihm eine Hand auf den Mund. Diese Masche von ihm würde sich wohl nie ändern … Er würde wohl immer ein Stalker bleiben. Mein Stalker.<br/>
+Er schob meine Hand zur Seite. „Ich liebe dich, Evans“, sagte er noch einmal und küsste mich wieder. Und immer wieder. Und wieder …<br/>
+„Evans, geh mit mir aus …“, hauchte er und zupfte neckend an den roten Haarsträhnen, die mir wieder über die Schulter gefallen waren. „Ich habe zwar versprochen, das nie wieder zu sagen … aber wir hatten einen Aber in unserem Vertrag.“<br/>
+„Ich find Abers okay.“<br/>
+Hatte ich erwähnt, dass er wirklich echt extrem gut küsste?</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><span class="position">Part 1 of the <a href="/series/494689">Ein Stalker wie kein anderer</a> series</span><span class="divider"> </span><a class="next" href="/works/7289911">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="8jT3Qbtpjr9LcI0KSaxYDIqHMnJiibkefC9o8NItT6d4vW0tWx0TVLFi-aVgNHOrOHTCYt-rOAVrYvV_eBE8PA"/>
+          <input value="7229599" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          2 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_7229599">
+  <form class="new_comment" id="comment_for_7229599" action="/works/7229599/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="_cMtNBD5JpdaqYBvJ5lrvl9RAWxIjsInO2JCmD-HCLp3SrdY8I27fKC79MAOAUAZ7aLxfPWsQzwsL98Xlbt7IQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_7229599">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_7229599" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_7229599=new LiveValidation('comment_name_for_7229599',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_7229599.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_7229599">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_7229599" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_7229599=new LiveValidation('comment_email_for_7229599',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_7229599.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_7229599" class="landmark">Comment</label>
+        <textarea id="comment_content_for_7229599" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_7229599" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_7229599_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_7229599">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_7229599=new LiveValidation('comment_content_for_7229599',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_7229599.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_7229599.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_7229599" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/7229599/hit_count.json")})</script>
+
+
+  </body>
+</html>

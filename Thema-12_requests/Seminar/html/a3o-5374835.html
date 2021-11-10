@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":165,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Ein Totentanz - Black_Zora - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="EUlwFmFfwiU_mM7lODPKQ5Xh3BMNiLSMW1KyPEkuqESeT2-cTKs_oEn5CFAg8qHZHvuWIdX1iB5QoAS3ZE_ilQ"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="DVQMZxL07g6kC5PZMdHgv6Q6pgB1O2PAwB9zVklj4aSCUhPtPwATi9JqVWwpEIslLyDsMq1GX1LL7cXdZAKrdQ"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: buffy gen teen AND &quot;no archive warnings apply&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/5374835/chapters/12413498">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/5374835/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/5374835/Ein%20Totentanz.azw3?updated_at=1469222600">AZW3</a></li>
+          <li><a href="/downloads/5374835/Ein%20Totentanz.epub?updated_at=1469222600">EPUB</a></li>
+          <li><a href="/downloads/5374835/Ein%20Totentanz.mobi?updated_at=1469222600">MOBI</a></li>
+          <li><a href="/downloads/5374835/Ein%20Totentanz.pdf?updated_at=1469222600">PDF</a></li>
+          <li><a href="/downloads/5374835/Ein%20Totentanz.html?updated_at=1469222600">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warnings</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li><li><a class="tag" href="/tags/Major%20Character%20Death/works">Major Character Death</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Voldemort/works">Voldemort</a></li><li><a class="tag" href="/tags/Lucius%20Malfoy/works">Lucius Malfoy</a></li><li><a class="tag" href="/tags/Original%20Female%20Character(s)/works">Original Female Character(s)</a></li><li><a class="tag" href="/tags/Original%20Male%20Character(s)/works">Original Male Character(s)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Death%20Eaters/works">Death Eaters</a></li><li><a class="tag" href="/tags/Execution/works">Execution</a></li><li><a class="tag" href="/tags/Torture/works">Torture</a></li><li><a class="tag" href="/tags/Past%20Torture/works">Past Torture</a></li><li><a class="tag" href="/tags/Past%20Rape*s*Non-con/works">Past Rape/Non-con</a></li><li><a class="tag" href="/tags/Dark/works">Dark</a></li><li><a class="tag" href="/tags/Death%20Rituals/works">Death Rituals</a></li><li><a class="tag" href="/tags/Only%20OCs%20die/works">Only OCs die</a></li><li><a class="tag" href="/tags/Philosophy/works">Philosophy</a></li><li><a class="tag" href="/tags/Angst%20and%20Hurt*s*Comfort/works">Angst and Hurt/Comfort</a></li><li><a class="tag" href="/tags/Unhealthy%20Coping%20Mechanisms/works">Unhealthy Coping Mechanisms</a></li><li><a class="tag" href="/tags/Book%205:%20Harry%20Potter%20and%20the%20Order%20of%20the%20Phoenix/works">Book 5: Harry Potter and the Order of the Phoenix</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><span class="position">Part 1 of the <a href="/series/365396">Totentanz</a> series</span><span class="divider"> </span><a class="next" href="/works/5375081">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2015-12-07</dd><dt class="status">Completed:</dt><dd class="status">2015-12-07</dd><dt class="words">Words:</dt><dd class="words">19250</dd><dt class="chapters">Chapters:</dt><dd class="chapters">5/5</dd><dt class="kudos">Kudos:</dt><dd class="kudos">10</dd><dt class="hits">Hits:</dt><dd class="hits">152</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Ein Totentanz
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Black_Zora/pseuds/Black_Zora">Black_Zora</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Heiler und Henker – ein Widerspruch? Nicht für Severus Snape. Verfolgt von den Geistern seiner Opfer, erinnert er sich an vier Morde an ehemaligen Schülern, die er tötete, um sie zu schützen ...</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Disclaimer für diese Geschichte: Die Welt von Harry Potter gehört J. K. Rowling. Alle Rechte verbleiben bei ihren Inhabern.</p><p>In Band sechs zeigt sich mehrmals, dass Severus ein äußerst talentierter Heiler ist. In „Schattenprinz" habe ich ihm im Auftrag des Dunklen Lords eine diesbezügliche Ausbildung angedeihen lassen. Schon lange habe ich mich gefragt, was er wohl tun würde, wenn er als Todesser gezwungen wäre, (ehemalige) Schüler zu foltern oder zu töten. Er arbeitet ja gleichzeitig als Lehrer, manchmal auch als Heiler – und als Killer. Wie geht er mit diesen Widersprüchen um? Sind es überhaupt Widersprüche für ihn? Oder genießt er diese Situationen sogar?</p><p>Im Umgang mit seinen Opfern kann er die Maske fallen lassen. Denn keines von ihnen wird mehr verraten können, wer sich in Wahrheit dahinter verbirgt ...</p><p>Warnung: Dies ist keine nette Geschichte. Sie ist wirklich „dark". Es geht um Mord, Folter und Vergewaltigung, und ganz allgemein um menschliche Abgründe.</p><p>Ein ganz großes Dankeschön an meine Beta Fanny Jute sowie an Yllana und Mrs Lucia Malfoy, ohne die „Ein Totentanz" nie das Licht des Internets erblickt hätte. ;-)</p><p>kukushka hat „Ein Totentanz" ins Russische übersetzt. Bei Interesse bekommt ihr den Link von mir. Herzlichen Dank, kukushka, für deine Mühe!</p><p>„Ein Totentanz" wurde zuerst 2007 auf meinen Accounts auf Fanfiction.Net und fanfiktion.de veröffentlicht.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/5374835/chapters/12413498">Chapter 1</a>: Prolog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>SSSSSSS</p><p>
+  <em>And his eyes have all the seeming of a demon's that is dreaming;</em>
+</p><p>
+  <em>And the lamplight o'er him streaming throws his shadow on the floor.</em>
+</p><p>
+  <em>And my soul from out that shadow that lies floating on the floor</em>
+</p><p>
+  <em>Shall be lifted – Nevermore!</em>
+</p><p>
+  <em>(Edgar Allan Poe, The Raven)</em>
+</p><p>SSSSSSS</p><p>Er hatte darum gebeten.</p><p>Er hatte <em>um sie</em> gebeten.</p><p>Es war seine Schuld. Und es war nur natürlich, dass sie ihn jetzt bedrängten.</p><p><em>Aber ich habe es für euch getan! Für euch! Warum versteht das denn keiner?!, </em>wollte er schreien.</p><p>Er schrie nicht, aber sie hörten ihn trotzdem. Und blieben stumm. Anklagend umringten sie ihn, kalte, bleiche Schatten. Nicht bedrohlich, aber unendlich traurig.</p><p><em>Erinnere dich!,</em> forderten sie lautlos. <em>Erinnere dich!</em></p><p>
+  <em>Aber das tue ich ja. Die ganze Zeit. An jedem einzelnen Tag meines „Lebens". </em>
+</p><p>Sie waren immer da. Immer.</p><p><em>Erinnere dich!, </em>befahlen sie stumm.</p><p>Und er tat es. Wieder und wieder. An jedem einzelnen Tag seines „Lebens".</p><p>SSSSSSS</p><p>„<em>Was gibt es, Severus?" Die Stimme des Dunklen Lords war kaum mehr als ein Raunen.</em></p><p>„<em>Verzeiht, mein Lord", flüsterte Severus und verneigte sich tief. „Es gibt gewisse Gerüchte ... Vermutungen ..."</em></p><p>„<em>Nun?" Unmerklich lauter, leicht gereizt. Gefährlich.</em></p><p>„<em>Verzeiht, mein Lord", wiederholte Severus leise.</em></p><p>Ruhig bleiben. Nicht einschüchtern lassen. Er spielt nur.</p><p>
+  <em>„Es heißt, Ihr wolltet mit gewissen Verrätern abrechnen ... Und mit ihren Familien."</em>
+</p><p>„<em>Und?" Ein Hauch von Interesse.</em></p><p>„<em>Ich hörte Namen, mein Lord. Namen, unter denen auch die einiger ehemaliger Schüler von mir waren."</em></p><p>„<em>Das heißt?" Wacher jetzt, wachsamer.</em></p><p>„<em>Mein Lord, ist es mir gestattet, eine Bitte an Euch zu richten?"</em></p><p>
+  <em>Ein zischendes Lachen. „Gewiss, Severus, gewiss." Die Reptilienaugen aus rotem Eis bohrten sich in seine Seele. „Sprich."</em>
+</p><p>„<em>Ich möchte Euch bitten ... Wenn Ihr ehemalige Schüler von mir töten lassen wollt ..."</em></p><p>
+  <em>Der Dunkle Lord lehnte sich auf seinem Thron nach vorne. Seine Stimme hatte den tändelnden Ton verloren, klang nun scharf, ungeduldig. „Zur Sache, Severus, zur Sache. Du bist doch sonst nicht um Worte verlegen."</em>
+</p><p>
+  <em>Severus straffte sich innerlich.</em>
+</p><p>Sag es. Jetzt<em>. </em></p><p>
+  <em>„Lasst mich den Henker für sie sein, Herr."</em>
+</p><p>„<em>Was?!" Ehrliche Verblüffung. „Warum?" </em></p><p>
+  <em>Severus spürte, wie sein Geist betastet wurde. Lange Spinnenfinger schoben sich bis in sein Unterbewusstsein, suchten, prüften.</em>
+</p><p>„<em>Mitleid, Severus? Bei </em>dir<em>?" Der Dunkle Lord legte den Kopf schief und sah ihn fragend an, nicht bedrohlich diesmal, sondern schlicht neugierig.</em></p><p>„<em>Ich weiß, mein Lord, dass Ihr Mitleid nicht schätzt, aber ..." Severus holte tief Luft. „Aber ich habe dreizehn Jahre lang als Lehrer in Hogwarts gearbeitet. Der Unterricht hat mir nicht immer Freude bereitet, und meinen Schülern sicher auch nicht ..." </em></p><p>
+  <em>Er gestattete sich ein fast unsichtbares Lächeln. Sein Herr erspähte es dennoch, fing es auf und gab es zurück, mit seinem schmalen, lippenlosen Mund.</em>
+</p><p>„<em>Du magst sie, diese Kinder, Severus?" Das Lächeln wurde eine Winzigkeit breiter. „Das hätte ich nicht von dir gedacht." </em></p><p>Er wird es mir nie erlauben. Nie.</p><p>„<em>Oh doch, Severus, das werde ich." </em></p><p>
+  <em>Jetzt lächelte der Dunkle Lord wirklich. Und ohne jede Spur von Boshaftigkeit.</em>
+</p><p>Dass er noch so lächeln kann nach all dem, was er getan hat. Erstaunlich. Ich kann es nicht mehr.</p><p>„<em>Schau, Severus, die meisten deiner Kinder haben mir nichts getan. Wenn sie jetzt sterben müssen, dann ist das die Schuld ihrer Eltern. Und selbst diejenigen deiner Schüler, die mir Schaden zugefügt haben, taten es aus Dummheit, aus Unerfahrenheit. Ihre Schuld ist nicht zu</em> <em>vergleichen mit der meiner altgedienten, ungetreuen Todesser,</em> die mich dreizehn Jahre lang im Stich gelassen haben."</p><p>
+  <em>Severus erschauerte unwillkürlich.</em>
+</p><p>Verräter. Verräter, wir allesamt.</p><p>„<em>Ich bin nicht grausam, Severus, das weißt du." </em></p><p>So? Tatsächlich?</p><p>„<em>Ich quäle niemanden ohne Grund. Sie werden sterben, deine Kinder, aber sie sollen nicht leiden vorher. Sie gehören dir."</em></p><p>
+  <em>Severus war einen Moment sprachlos vor Überraschung. Doch er fasste sich rasch und verbeugte sich respektvoll. </em>
+</p><p>
+  <em>„Ich danke Euch, mein Lord. Ich danke Euch."</em>
+</p><p>SSSSSSS</p><p>
+  <strong>Dialog I</strong>
+</p><p>SSSSSSS</p><p>
+  <em>Gedankt habe ich ihm dafür. Gedankt! Ich Idiot. Er wusste es besser als ich. Er wusste, dass ihr mich nie mehr loslassen würdet.</em>
+</p><p>
+  <em>Erinnere dich, Severus ...</em>
+</p><p>
+  <em>Geht weg! Ich will nicht!</em>
+</p><p>
+  <em>Erinnere dich.</em>
+</p><p>
+  <em>Nein!</em>
+</p><p>
+  <em>Du bist es uns schuldig. Wenigstens das.</em>
+</p><p>Wenigstens<em> das! Ihr fordert mehr, als ich geben kann.</em></p><p>
+  <em>Du bist es uns schuldig, Severus!</em>
+</p><p><em>Du bist es </em>mir<em> schuldig, Severus.</em></p><p>
+  <em>Bist du das, Danyel?</em>
+</p><p>
+  <em>Ja.</em>
+</p><p>
+  <em>Es tut mir leid, Danyel. Es tut mir so unendlich leid.</em>
+</p><p>
+  <em>Wirst du dich jetzt erinnern?</em>
+</p><p>
+  <em>Ja ...</em>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/5374835/chapters/12413621">Chapter 2</a>: Danyel - Niemand ist ohne Schuld
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>SSSSSSS</p><p>„<em>Vielleicht verreckt er im Wald", sagte Erkki.</em></p><p>„<em>Mag sein. Das ist mir egal. Im Wald stirbt es sich leichter."</em></p><p>
+  <em>(Siegfried Lenz, Es waren Habichte in der Luft)</em>
+</p><p>SSSSSSS</p><p>Severus stand am Waldrand und lauschte den Geräuschen der Sommernacht. Der Himmel war sternenklar, und es ging ein leichter, angenehmer Wind.</p><p>
+  <em>Eine schöne Nacht.</em>
+</p><p>Severus befand sich auf einer kleinen Waldlichtung, vielleicht zwanzig Meter im Durchmesser. Der Boden war bedeckt mit weiß blühenden Schierlingsdolden, rosa leuchtendem Fingerhut, hohem Gras und Farnkraut. Mädesüß verströmte seinen betörenden Duft. Ein Käuzchen ließ seinen gedämpften Schrei hören, ein dunkler, klagender Laut. Der Wind strich raschelnd durch das sommergelbe Gras und brachte das Laub der Buchen und Eichen ringsum zum Flüstern.</p><p>
+  <em>Ein schöner Ort.</em>
+</p><p>‚<em>Im Wald stirbt es sich leichter.' </em></p><p>Severus wusste nicht mehr, wo er diesen Satz gehört oder gelesen hatte, aber er war überzeugt, dass er zutraf.</p><p>Er liebte den Wald. Besonders im Sommer, aber auch zu jeder anderen Jahreszeit. Wenn er die Wahl hatte, kam er hierher, um zu töten, brachte seine Opfer auf eben diese versteckte Waldlichtung. Das hatte er schon während der ersten Herrschaft des Dunklen Lords so gehalten. Er hoffte, dass die Todgeweihten diese Geste zu schätzen wussten.</p><p>Er selbst fühlte sich vollkommen beschützt, sobald er seinen Fuß in den Wald setzte. Die Bäume sogen jede Angst, jede Sorge in sich auf und ließen ihn gelassen und ruhig werden. Die Natur rückte die Verhältnisse zurecht. Sie setzte die kleinen, unwichtigen menschlichen Probleme in den großen Zusammenhang des ewigen Kreislaufs aus Werden und Vergehen, und löste sie in der Stille des Waldes zu Nichts auf.</p><p>Was war denn das menschliche Leben? Ein ununterbrochener Wechsel aus Langeweile und künstlicher Aufregung, vielen Sorgen und kurzen Freuden, zahlreichen Schmerzen und flüchtigen Momenten des Glücks. Hätten die Menschen nicht eine so unermesslich große Angst vor dem Unbekannten gehabt, die sie zwang, sich trotz aller Widrigkeiten an ihr armseliges kleines Leben zu klammern, wäre der Tod ihnen wohl weit weniger schrecklich vorgekommen als eben dieses Leben.</p><p>Nun, sie hatten Angst, so gut wie alle, und der junge Mann, der jetzt zitternd und mit gesenktem Kopf vor Severus im Gras kniete, machte da keine Ausnahme. Sein Blick irrte panisch über die Szenerie, von der schwarzen Gestalt des Todessers vor ihm über die blühende Wiese im Mondlicht zu der finsteren Mauer der Bäume und wieder zurück zu Severus. Der Name des Mannes war Danyel, und Danyel hatte eine recht genaue Vorstellung von dem, was ihn erwartete.</p><p>Severus war gekommen, um zu töten. Aber er hatte es damit nicht eilig. Nicht, dass er den Jungen etwa quälen wollte. Das Gegenteil war der Fall. Er wollte Danyel Zeit geben, sich zu beruhigen.</p><p>Danyel war ein Todesser. Allerdings noch nicht lange, sein Eintritt in den Dunklen Orden lag kaum zwei Monate zurück. Er gehörte zu einem ganzen Trupp junger Slytherins, die gerade eben oder doch erst vor wenigen Jahren die Schule beendet und sich direkt nach Cedric Diggorys Tod dem Dunklen Lord angeschlossen hatten.</p><p><em>Danke, Albus, dass du seine Wiederauferstehung herausposaunt hast, </em>dachte Severus ironisch.</p><p>Was Danyel betraf: Wie viele junge Leute während der ersten Herrschaft des mächtigen Schwarzmagiers war er aus Abenteuerlust und Rebellion gegen die etablierte Zauberergesellschaft zum Dunklen Lord gestoßen – verlockt von der Aussicht auf Macht und Einfluss, angezogen von der rassistischen Ideologie des Ordens, fasziniert von der dunklen Seite der Magie.</p><p>Doch der anfänglichen Euphorie war bald Ernüchterung gefolgt, und die Ernüchterung war zunehmend von Abscheu und Entsetzen abgelöst worden, als der Junge erkannte, mit wem und was er sich da eingelassen hatte. Die Erfüllung seiner Aufträge fiel ihm schwer, Foltern und Morden ekelten ihn an, und schon nach wenigen Wochen hatte er versucht, zur anderen Seite überzulaufen.</p><p>Potentielle Überläufer und Verräter hatte es früher öfter gegeben, vor allem bei sehr jungen Todessern. Aber Severus wusste nur von äußerst wenigen Fällen, in denen ein geplanter Verrat tatsächlich ausgeführt worden war. Keiner der Überläufer hatte seine Tat lange überlebt. Wo immer der Dunkle Lord auch nur einen Hauch von Verrat witterte, war er sofort mit einem Urteil bei der Hand – üblicherweise mit dem Todesurteil, daran hatte sich nichts geändert. Er war nach seinem Sturz und seiner Wiederauferstehung eher noch misstrauischer geworden. Es hatte ihn noch nie geschert, ob er vielleicht den einen oder anderen wieder auf seine Seite hätte ziehen können. Er hatte genug Zulauf. Lieber opferte er einen Menschen zu viel als einen zu wenig.</p><p>Danyel war der Erste, den Severus nach der Wiederauferstehung seines Herrn töten würde. Er hatte den Dunklen Lord gebeten, das Henkersamt übernehmen zu dürfen, falls ehemalige Schüler von ihm hingerichtet werden sollten. Er wollte auf keinen Fall, dass seine Slytherins vor ihrem Tod noch die sadistischen Quälereien von Leuten wie Macnair oder Greyback durchzustehen hatten, und er hoffte, dass seine vertraute Gegenwart ihnen das Sterben etwas erleichtern würde.</p><p>Er fühlte eine starke Verpflichtung gegenüber all seinen gegenwärtigen und ehemaligen Schülern. Selbst um Gryffindors würde er sich kümmern, falls sie in die Hände des Dunklen Lords geraten sollten.</p><p>Severus sah auf den jungen Mann zu seinen Füßen herunter. „Eine schöne Nacht", sagte er sanft.</p><p>Beim Klang seiner Stimme zuckte Danyel erschrocken zusammen. Er hob den Kopf und sah Severus verunsichert an.</p><p>Danyel hatte blaugraue Augen, ein längliches, hübsches Gesicht und kurze schwarze Locken. Er war ein attraktiver junger Mann, schlank und sportlich, und gerade erst achtzehn Jahre alt. Severus hatte ihn als eifrigen und intelligenten Schüler in Erinnerung, in Zaubertränke leider eher durchschnittlich, dafür ein guter Jäger im Slytherin-Quidditch-Team und recht beliebt bei seinen Hausgenossen. Seit Danyels Eintritt in den Dunklen Orden hatte er ihn nur zwei- oder dreimal gesehen – die Ausbildung der Novizen war nicht seine Sache, sie fiel in Lucius' Aufgabenbereich. Severus' Part war es, die Versager zu beseitigen.</p><p>Danyels Gesicht glomm im Mondlicht wie von einem geheimnisvollen weißen Feuer erleuchtet. Er zitterte heftig und in seinen Augen flackerte es nervös. Obwohl er nicht gefesselt war und Severus ihm nichts dergleichen befohlen hatte, kniete er in seinen schwarzen Todesserroben, die Hände wie zum Gebet ineinander verschränkt.</p><p>
+  <em>Ein Sünder, der auf Absolution hofft. Auf Vergebung. Eine Vergebung, die ich ihm nicht gewähren kann.</em>
+</p><p>Da war immer noch ein Funke Hoffnung in den angstgeweiteten Augen, Hoffnung, dass man ihn nur erschrecken, ihn einschüchtern wollte, eine Scheinhinrichtung, um ihn auf seinen Platz zu verweisen.</p><p>„Ich bin kein Verräter", flüsterte Danyel heiser. „Du musst mir glauben. <em>Bitte.</em> Ich würde unsern Herrn niemals verraten."</p><p>Severus seufzte leise. Er ging zwei Schritte auf Danyel zu und ließ sich vor ihm auf ein Knie sinken.</p><p>„Wir wissen beide, dass das eine Lüge ist, Danyel", sagte er ruhig, indem er dem Jungen gerade in die Augen sah.</p><p>Danyel hielt seinem Blick keine fünf Sekunden stand, dann ließ er geschlagen den Kopf sinken. „Es tut mir leid", murmelte er hastig. „Wirklich! Ich ... ich werde das wieder gut machen, ganz bestimmt. Ich werde jeden Auftrag ausführen, den unser Lord mir übergibt. Ich schwöre es!" Seine Stimme war immer drängender geworden, und nun sah er seinen Henker furchtsam flehend an.</p><p>Severus schüttelte den Kopf und entgegnete leise: „Das Urteil über dich ist bereits gefällt. Es liegt nicht in meiner Macht, es zu ändern."</p><p>Der bittende, hoffnungsvolle Blick wandelte sich, als Danyel quälend langsam begriff, dass er keine Chance hatte, dass er wirklich und wahrhaftig sterben würde. Nicht irgendwann in ferner Zukunft, sondern <em>jetzt</em>, hier auf dieser Waldlichtung, in dieser stillen, verhöhnend friedlichen Sommernacht. Erst in diesem Moment schien ihm vollkommen klar zu werden, dass der schwarz gekleidete Mann vor ihm nicht als sein Hauslehrer hier stand, der ihn für irgendeinen harmlosen Schülerstreich mit Punktabzug oder Nachsitzen bestrafen würde, sondern dass er in der Tat vor seinem Henker kniete.</p><p>Severus beobachtete den Jungen scharf. Als er sicher war, dass Danyel die Wahrheit begriffen hatte, dass die Angst auf seinem Gesicht nun wirkliche Todesangst war, streckte er die Hände aus und fasste den Verurteilten sanft bei den Schultern. „Da ist nichts, wovor du dich fürchten müsstest", sagte er mit fester Stimme.</p><p>Danyel blickte ihn ungläubig an. „Du wirst mich <em>töten!</em>", keuchte er. „Und <em>davor</em> soll ich keine Angst haben?!"</p><p>Severus verstärkte seinen Griff und erwiderte den verstörten Blick des Jungen mit zwingender Gelassenheit. „Der Tod trägt keinen Schrecken in sich. Es ist das Unbekannte, das dir Angst macht, nichts weiter."</p><p>Danyel schluckte mühsam. „Ich ... ich habe sie sterben sehen. Es war schrecklich", sagte er gepresst.</p><p>„Wen hast du sterben sehen?"</p><p>„Muggel, zwei ... Ich war bei einer ... einer Aktion dabei ... Zwei Hinrichtungen ... Es war schrecklich!"</p><p>Severus schnaubte verächtlich. „Das kann ich mir wohl denken. Aber du hast gewusst, was dich erwartete, als du dich dem Dunklen Lord angeschlossen hast! Jeder weiß, dass das Töten dazu gehört."</p><p>Danyel schüttelte heftig den Kopf. „Ja, natürlich wusste ich das, aber ... aber es ist ganz anders, als ich gedacht hatte." Er zögerte, und sah rasch zu Severus auf. „Ich dachte, es wäre irgendwie ... irgendwie was Heroisches, Großartiges ... Ich dachte, ich würde mich gut fühlen dabei. Töten für das große Ziel ... für eine erneuerte, eine gereinigte und bessere Welt ... Aber ... aber es war einfach nur schmutzig und grausam und ... abstoßend." Er hatte den Kopf wieder gesenkt. Seine Schultern zuckten. „Es war widerlich. Ich will sowas nie wieder sehen müssen!"</p><p>Severus presste die Lippen aufeinander. „Du willst es nie wieder <em>sehen</em> müssen? Und was ist mit dir selbst? Du willst mir doch nicht erzählen, dass du nicht mitgemacht hast? Dass du dich aus allem rausgehalten hast?", fragte er hart.</p><p>Er ließ den Jungen los und erhob sich. Er würde Danyel nicht erlauben, als Opfer zu sterben, im Gefühl moralischer Überlegenheit über ihn, seinen Mörder.</p><p>Ein heftiger Schauer überlief den Körper des jungen Mannes. „Ich habe immer nur getan, was man mir befohlen hat. Nie mehr", sagte er leise. „Ich hatte keine Wahl."</p><p>„Jeder hat eine Wahl. Immer", entgegnete Severus kalt. „Du hast deine Wahl getroffen, als du in den Dunklen Orden eingetreten bist. Du wusstest, was auf dich zukam, was von dir verlangt werden würde. Und du hättest dich verweigern können bei dieser ... <em>Aktion.</em> Dein Leben gegen das eines anderen Menschen. Du hast es schlicht vorgezogen, zu töten statt zu sterben. Du hast entschieden, wie die meisten an deiner Stelle entschieden hätten. Aber du bist kein Opfer. Genauso wenig, wie ich eines bin."</p><p>Danyel hob den Kopf und sah ihn irritiert an. „Aber ... Du tust das hier doch nicht freiwillig, oder? Ich meine, mich zu ..." Er verstummte hilflos.</p><p>„Du irrst dich, Danyel", erwiderte Severus ruhig. „Ich stehe vollkommen freiwillig vor dir. Ich habe mir meine Aufgabe selbst ausgesucht. Es war meine eigene Entscheidung, zu den Todessern zu gehen, und ich bin bereit, alle daraus entstehenden Konsequenzen zu tragen. Ich weiß, dass ich mich in den Augen der meisten Menschen schuldig gemacht habe und das auch weiterhin tue, jeden Tag aufs Neue, aber ich teile ihre Ansichten nicht. Mich plagen weder Zweifel noch Schuldgefühle."</p><p>Danyel starrte ihn an. „Aber ... Du musst doch irgendwas fühlen, wenn du tötest ... Vielleicht ... nicht immer Schuldgefühle, aber manchmal ... Ich meine ... Die Todesser bringen doch sogar Kinder um!"</p><p>„Niemand ist ohne Schuld", sagte Severus leise.</p><p>„Was?"</p><p>„Ich sagte: Niemand ist ohne Schuld." Er schwieg einen Moment, ehe er mit fester Stimme fortfuhr: „Alle Menschen, überhaupt alle Lebewesen, sind in erster Linie egoistisch und nur auf ihren eigenen Vorteil bedacht. Die Menschen erfinden Götter und Gesetze, um ihre Selbstsucht so weit im Zaum zu halten, dass sie sich nicht gegenseitig ausrotten. Sie reden von Moral und Ethik, geben ihren Gemeinschaften Gebote und Verbote ... Aber hinter der ganzen Fassade ist nichts ... absolut nichts. Nur purer, unverfälschter Egoismus. Im Grunde schert sich niemand um das Wohl seines ‚Nächsten'. Niemand interessiert sich ernsthaft dafür, wie es <em>mir</em> geht. Warum sollte ich mich dann um das Schicksal der anderen bekümmern? Niemand ist ohne Schuld – und jeder verdient den Tod."</p><p>Severus machte wieder eine kurze Pause. Dann setzte er mit Nachdruck hinzu: „Deshalb bin ich hier. Der Dunkle Lord zerreißt die Schleier der Täuschung und zeigt uns, was die Welt wirklich regiert: Egoismus, Gewalt und Gleichgültigkeit. Er ist die einzige ehrliche Macht in dieser Zeit der Lügen und des Selbstbetruges."</p><p>Danyel schluckte. „Das glaubst du? Wirklich?"</p><p>„Sicher. Sieh dich doch nur in diesem Wald um: ein steter Kreislauf von Werden und Vergehen. Wenn ein Baum fällt, wächst der nächste nach. Wenn ein Reh stirbt, nimmt ein anderes seinen Platz ein. Das Individuum ist vollkommen bedeutungslos. Sein Leiden interessiert niemanden. Da ist kein Gott ... schon gar kein guter."</p><p>Der Junge sah ihn unsicher an. „Aber ... Wie kannst du leben mit dieser Überzeugung? Das ist doch entsetzlich! Ich meine ... das hieße ja, dass man ganz alleine ist, dass letztlich niemand sich für einen interessiert ... dass das Leben einem komplett gleichgültig gegenüber steht, absolut kalt."</p><p>„Ja."</p><p>„Aber – wie hältst du das aus?"</p><p>Ein Lächeln trat auf Severus' Lippen und wanderte weiter bis in seine Augen. „Die Einsamkeit, die Kälte, die Bedeutungslosigkeit des Einzelnen sind nur die eine Seite der Medaille. Die andere Seite ist das Aufgehobensein des Einzelnen in dieser großen Gleichgültigkeit. Du bist nicht wichtig – und das macht dich frei. Frei von allen Bindungen, frei von allen Ängsten. Auch frei von der Furcht vor dem Tod."</p><p>SSSSSSS</p><p>Eine Windböe strich über die Lichtung. Gras und Blätter raunten leise. Wie eine zärtliche Berührung streichelte die warme Sommerluft über ihre Gesichter, fuhr durch ihr Haar.</p><p>Danyel stand langsam auf und sah sich um.</p><p>Fahlweiß wiegten sich die Blütendolden von Schierling und Mädesüß im Mondlicht. Nachtfalter flatterten lautlos über sie hinweg. Der Wind war wie ein Atemhauch, der den gesamten Wald umfasste.</p><p>Ja, der Wald atmete. Danyel spürte, wie dieser Atem auch ihn mit einschloss, durch ihn hindurchging und eins wurde mit seinem eigenen Atem. Er spürte sein Herz schlagen und fühlte, dass auch der Wald einen Herzschlag hatte, mit dem der seine sich verband.</p><p>Schwarz und still standen die Bäume um ihre Lichtung. Kleingetier raschelte durch Gras und Gebüsch. Ein Vogel taumelte durch die Nacht, ein kleiner schwarzer Fleck, der mit den Schatten der Bäume verschmolz. Die Luft war von einem satten, süßlichen Geruch nach Erde, Pflanzen und Verwesung erfüllt.</p><p>Danyel heftete seinen Blick auf die schwarze Gestalt vor ihm. Der Wind spielte mit Severus' Haaren und bauschte seinen Umhang.</p><p>Der Atem des Waldes schloss auch seinen Mörder mit ein. Er gehörte dazu wie die Bäume, das Gras und der Mond, wie der Duft von Mädesüß und Farnkraut, wie das Rascheln der Blätter.</p><p>Und da verging die Angst, löste sich auf im Herzschlag des Waldes, wurde fortgetragen vom Wind und aufgesogen von den Wurzeln der Gräser.</p><p>Es war eine schöne Nacht und ein schöner Ort.</p><p>Danyel war bereit.</p><p>SSSSSSS</p><p>Severus stand ruhig im Mondlicht und wartete. Er tastete nach seinem Dolch. Kein Avada Kedavra, kein Gift für Verräter, lautete der Befehl des Dunklen Lords. Sie sollten ihren Tod spüren, und sie sollten auf entehrende Weise sterben, sterben auf Muggelart.</p><p>Severus' Finger glitten über kalten scharfen Stahl, während sein Blick unverwandt auf Danyel gerichtet blieb. Dabei lauschte er auf die Geräusche des Waldes, sog seinen Duft ein, nahm die Sommernacht völlig in sich auf.</p><p>Er spürte, wie der Zauber des Ortes seine Wirkung entfaltete. Der Junge war aufgestanden und begann, mit der Nacht zu verschmelzen, ein Teil des Waldes zu werden wie Severus selbst.</p><p>Als Severus erkannte, dass Danyel bereit war, trat er auf ihn zu, sah ihm in die Augen und fragte leise: „Verstehst du jetzt?"</p><p>Danyel nickte.</p><p>Wortlos trat Severus hinter ihn und zog den jungen Mann in eine harte Umarmung. Danyel hatte aufgehört zu zittern, er atmete ruhig und tief.</p><p>Severus legte ihm die linke Hand auf die Brust und spürte den gleichmäßigen Herzschlag. Er zog seinen Dolch und setzte die Spitze direkt auf die Stelle, an der das Pulsieren des Lebens am stärksten war. Danyel erschauerte und ließ sich schwer gegen ihn sinken. Dann stieß Severus zu.</p><p>SSSSSSS</p><p>Danyel schnappte verblüfft nach Luft, als das kalte Metall seine Haut durchschnitt und in seinen Körper drang. Im ersten Moment war er so überrascht, dass er keinen Schmerz spürte, doch dann packte eine eisige Hand sein Herz und drückte erbarmungslos zu.</p><p>Er stöhnte auf und fühlte, wie seine Beine unter ihm einknickten, als hätte er plötzlich keine Knochen mehr im Leib. Doch er fiel nicht zu Boden, er wurde sicher gehalten, spürte die Wärme des fremden Körpers in seinem Rücken und die seines eigenen Blutes auf Brust und Bauch.</p><p>Ein heißes Kribbeln jagte von seinen Zehenspitzen aus durch seinen Leib, und als es seinen Kopf erreichte, wurde ihm plötzlich schwindelig. Gleichzeitig durchflutete ihn eine Welle der Panik.</p><p>Der Atem des Mannes hinter ihm klang wie Sturm in seinen Ohren und brannte wie Feuer auf seiner Haut, während der Wind auf seinem Gesicht eisig kalt war. Die fahle Lichtung verschwamm vor seinen Augen zu konturlosen, wabernden Flecken. Der Geruch seines Blutes stieg ihm scharf in die Nase und bildete eine betäubende Mischung mit dem Duft des sommerlichen Waldes. Er spürte den Dolch, einen eisigen Fremdkörper in seinem Herzen, das sich schmerzhaft um den kalten Stahl krampfte.</p><p>Doch da war immer noch die warme Hand auf seiner Brust, die das tödliche Werkzeug hielt, und eine sanfte Stimme flüsterte ihm ins Ohr: „Ganz ruhig, Danyel. Es ist gleich vorbei."</p><p>Wie auf ein Stichwort verschwand der Schmerz. Statt dessen machte sich eine frostige Kälte in ihm breit, die von Füßen und Fingerspitzen ausgehend durch seinen Körper kroch, um sich mit dem Eis der Klinge in seinem Herzen zu vereinen.</p><p>Er spürte Beine und Arme nicht mehr. Das Bild vor seinen Augen verschwand plötzlich und wich der Schwärze. Er fühlte, wie der Mann, der ihn hielt, vorsichtig in die Knie ging und sich mit ihm in den Armen zu Boden sinken ließ.</p><p>„Hörst du sie? Die Stimme des Waldes?"</p><p>Ja, er hörte sie. Ein überirdisches Brausen und Tosen, schrecklich und schön zugleich. Die Kälte hatte jetzt fast sein Herz erreicht. Das Einzige, was er außer ihr noch wahrnahm, waren die überlauten Geräusche des Waldes und das Rauschen des Blutes in seinen Ohren.</p><p>Dann war die Kälte plötzlich fort und er fiel, fiel immer tiefer, hinein in die warme, wabernde Schwärze.</p><p>SSSSSSS</p><p>Eine Weile blieb Severus mit dem toten Danyel im Schoß sitzen. Dann stand er auf und zog seinen Zauberstab.</p><p>„<em>Transfigure</em>!"</p><p>Ein blaues Licht umhüllte die Leiche – dann war sie verschwunden.</p><p>Severus bückte sich und hob einen glänzend schwarzen Kieselstein auf. Einen Moment lang betrachtete er ihn, dann ließ er ihn in seine Tasche gleiten.</p><p>Er drehte sich um und verschwand rasch zwischen den Bäumen, mit deren Schatten er verschmolz.</p><p>SSSSSSS</p><p>
+  <strong>Dialog II</strong>
+</p><p>
+  <em>Geh weg, Jery.</em>
+</p><p>
+  <em>Möchtest du nicht an mich denken?</em>
+</p><p>
+  <em>Nein.</em>
+</p><p>
+  <em>Was habe ich denn Schlimmes getan?</em>
+</p><p>
+  <em>Geh weg. Bitte.</em>
+</p><p>
+  <em>Hast du sie vergessen, jene Nacht im Herbst?</em>
+</p><p>
+  <em>Wie könnte ich?</em>
+</p><p>
+  <em>Aber du willst sie nicht zurückrufen.</em>
+</p><p>
+  <em>Nein. Nein!</em>
+</p><p>
+  <em>Aber ich lebe in ihr, Severus. Ich bin in jener Nacht gefangen, gefangen für die Ewigkeit.</em>
+</p><p>
+  <em>Geh weg! Geh zu Lucius.</em>
+</p><p>
+  <em>Vielleicht. Vielleicht später. – Du willst dich nicht erinnern, Severus?</em>
+</p><p>
+  <em>Nein ...</em>
+</p><p>
+  <em>Dann werde ich es für dich tun.</em>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/5374835/chapters/12413675">Chapter 3</a>: Jeremiah - Schwarze Engel
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Ich fürchte, dieses Kapitel erfordert noch einmal eine gesonderte Warnung. Eine meiner Betas findet es schlicht „krank". Also: „Jeremiah" enthält eine graphische, ritualisierte Folterszene und ist allgemein eher unerfreulich.</p></blockquote>
+            <p>
+            (See the end of the chapter for  <a href="/works/5374835/chapters/12413675#chapter_3_endnotes">more notes</a>.)
+            </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>SSSSSSS</p><p>
+  <em>Was sind wir Menschen doch? Ein Wohnhauß grimmer Schmertzen,</em>
+</p><p>
+  <em>Ein Ball des falschen Glücks, ein Irrlicht dieser Zeit.</em>
+</p><p>
+  <em>Ein Schauplatz herber Angst, besetzt mit scharffem Leid,</em>
+</p><p>
+  <em>Ein bald verschmeltzter Schnee und abgebrante Kertzen.</em>
+</p><p>
+  <em>(Andreas Gryphius, Menschliches Elende)</em>
+</p><p>SSSSSSS</p><p>„Haben wir dich endlich erwischt, du Schwein!"</p><p>Obwohl erst halb wach, riss Jeremiah instinktiv die Arme vors Gesicht, ehe ein Stiefel ihn traf. Ein Knirschen ertönte, und ein weißroter Blitz jagte von seinem Handgelenk aus durch seinen Körper. Das Geräusch blieb in seinem Kopf hängen, Splittern von morschem Holz, knallend zerberstende Schieferplatten.</p><p>Er wurde gepackt, über Gras und Gestrüpp geschleift, Dornen und Steine rissen ihm die Haut auf, Grün und Braun wirbelten an ihm vorüber.</p><p>Dann wurde er brutal hochgerissen und wieder zu Boden geworfen. Der harte Aufprall presste ihm die Luft aus den Lungen. Ein neuer Blitz schoss durch seine Nervenbahnen, in seinen Kopf und hinter seine Augen, als ihn ein zweiter Tritt in den Magen traf. Sekundenlang brodelte Hitze in seinem Bauch, formte sich zu einer feurigen Hand, die seinen Magen zusammenpresste. Jery schmeckte Säure und Metall, als er sich keuchend erbrach. Hitze, Übelkeit und Schmerz verzerrten und verfälschten das Bild vor seinen Augen, doch er sah deutlich die roten Schlieren, die das Erbrochene durchzogen. Dann krampfte sein Magen sich erneut zusammen, wieder und wieder, bis er schließlich nur noch Blut und Magensäure ausspuckte.</p><p>Stöhnend ließ Jery sich wieder zu Boden sinken. Sein rechtes Handgelenk pochte und fühlte sich an, als würde jemand immer wieder ein Messer zwischen den Knochen herumdrehen. In der Bauchgegend hatte sich ein dumpfer Schmerz ausgebreitet, der langsam tiefer sickerte. Magen und Speiseröhre brannten, als hätte er Sand hochgewürgt. Benommen fragte er sich, warum sie nicht weiter traten, warum es so merkwürdig still um ihn herum war.</p><p>Vorsichtig öffnete er die Augen, nur ein ganz kleines bisschen, so dass er seine Angreifer gerade eben erkennen konnte. Zwei Männer standen vor ihm, starrten finster auf ihn herab. Die Schatten, die über seinen Körper auf den Waldweg fielen, sagten ihm, dass noch zwei weitere Personen in seinem Rücken standen.</p><p><em>Vier gegen einen</em>, dachte er bitter. <em>Und das gegen einen Schwächling wie mich.</em></p><p>Die beiden, die in seinem Blickfeld standen, trugen Jeans beziehungsweise Arbeitshosen und kurzärmelige Hemden, dazu schwere Armeestiefel. Kannte er sie? Das Bild verschwamm wieder vor seinen Augen. Angestrengt blinzelnd versuchte er, die Männer zu identifizieren.</p><p>„Er ist wach!", verkündete eine seidige, kultiviert klingende Stimme.</p><p>Der Schotter unter seinem Körper wurde kochend heiss, dann arktisch kalt und löste sich endlich ganz auf, als sich unter Jery ein bodenloses Loch auftat – sein direkter Weg zur Hölle.</p><p>Er öffnete die Augen ganz und fixierte den Sprecher. Die wechselnden Schatten, die die windbewegten Bäume auf das Gesicht des Mannes warfen, hatten ein sofortiges Erkennen verhindert. Aber die unangenehm vertraute Stimme, zusammen mit dem silbrigen Schimmer, den das Sonnenlicht auf den hellen Haaren tanzen ließ, löschte jeden Zweifel aus.</p><p>
+  <em>Lucius Malfoy.</em>
+</p><p>Er hatte sein langes Haar im Nacken zusammengebunden, sonst hätte Jery ihn längst erkannt.</p><p>Der Mann neben Lucius war muskulös und untersetzt gebaut. In seinem rot und schwarz karierten Hemd und seinen Arbeitshosen wirkte er wie ein Waldarbeiter. Sein Gesicht war bärtig und lag im Schatten. Doch dann lachte er, ein sattes, fast obszön klingendes Grunzen.</p><p>Etwas in Jerys Bauch zerfaserte und wurde weich wie ein Schwamm.</p><p>
+  <em>Dolohow.</em>
+</p><p>Ein Schatten fiel auf Jerys Gesicht. Jemand beugte sich von hinten über ihn. Er drehte den Kopf – und sah direkt in zwei obsidianschwarze Augen, die ihn eisig anfunkelten.</p><p>
+  <em>Severus. – Lucius, Dolohow, Severus. Oh nein. Scheiße ...</em>
+</p><p>Severus erwiderte seinen entsetzten Blick mit einem verächtlichen Zucken um die Mundwinkel. Dann packte er Jerys Arm und zog das gebrochene Handgelenk zu sich. Er war nicht sanft dabei, und Jery schnappte nach Luft, als das glühende Messer sich wieder zwischen seine zertrümmerten Knochen bohrte. Severus fixierte mit einem Knie Jerys Oberarm auf dessen Seite, packte ihn mit der linken Hand gnadenlos fest am Unterarm, ehe er mit der rechten die gebrochenen Knochen betastete. Eine weißglühende Lanze aus Schmerz bohrte sich in Jerys Handgelenk. Er brüllte.</p><p>Sofort legte sich eine Hand über seinen Mund und erstickte den Aufschrei. „Halt's Maul!", zischte eine raue, gepresst klingende Stimme, und durch die Schlieren, die der Schmerz vor seine Augen getrieben hatte, erkannte Jery das ungewohnt bleiche Gesicht Jim Averys.</p><p>Endlich ließ Severus seinen Arm los, so abrupt, dass ein schmerzhafter Ruck durch sein Handgelenk ging. Jery stöhnte, und der Griff über seinem Mund verstärkte sich.</p><p>„Splitterbruch", diagnostizierte Severus verärgert. „<em>Wirklich toll</em>, Dolohow."</p><p>Dolohow zuckte die Achseln. „Ob er jetzt oder später kaputtgeht, ist doch egal, oder?", knurrte er zurück. „Und wenn nicht: Heil ihn doch einfach."</p><p>
+  <em>Jetzt oder später?! Kaputtgeht?! Später?! Merlin, warum töten sie mich nicht einfach jetzt?! Bitte, bringt mich doch einfach um ...</em>
+</p><p>„Ich habe es dir schon hundertmal gesagt", entgegnete Severus gereizt, „keine Magie heute. In diesem Wald wimmelt es nur so von Auroren, die alle hinter unserem Freund Jeremiah her sind. Jeder noch so kleine Zauber kann uns verraten ... Nein, hier müssen wir ein bisschen ... primitiver vorgehen. – Nimm deine Hand weg, Jim", befahl er leise. Dann zog er einen Streifen Stoff hervor, dazu ein sauberes Taschentuch und beugte sich über Jerys Kopf.</p><p>„Mund auf!", kommandierte Severus und stopfte ihm das zusammengeknüllte Taschentuch hinein. Avery hob Jerys Kopf an und Severus knebelte ihn mit dem langen Stoffstreifen.</p><p>In Sekundenschnelle war alle Feuchtigkeit in seinem Mund aufgesaugt und eine irrationale Erstickungsangst überfiel ihn. Eben noch war mit seiner Nase alles in Ordnung gewesen, er hatte sich überhaupt keine Gedanken darüber gemacht, ob durch sie genug Luft in seine Lungen strömte. Doch plötzlich schien viel zu wenig Sauerstoff in seinen Körper zu gelangen. Jery geriet in Panik und kämpfte gegen den Knebel an, versuchte, ihn mit der unverletzten Linken aus seinem Mund zu reißen.</p><p>Sofort wurde sein Arm gepackt, so fest, dass er ihn keinen Zentimeter mehr bewegen konnte. Hätte die Panik den Schmerz nicht überdeckt, hätte es sicher verdammt weh getan. So aber war die Angst alles beherrschend, verschluckte den Schmerz wie den Verstand, als Jery sich verzweifelt wand und krümmte, um den Knebel loszuwerden. Plötzlich ein lautes Klatschen – ein harter Schlag hatte ihn ins Gesicht getroffen, dann noch einer.</p><p>„Reiß dich zusammen, Jery! Du erstickst nicht! Hast du mich verstanden? <em>Du erstickst nicht!",</em> drang eine wütende Stimme durch den Nebel in seinem Kopf.</p><p>Ein weiterer Schlag traf seine Wange. Der Nebel löste sich auf und er sah, dass Severus ihn mit einer Mischung aus Ärger und Abscheu anstarrte.</p><p>„Du kannst sehr gut allein durch die Nase atmen, okay?!", zischte Severus.</p><p>Jery nickte mühsam. Die Panik ebbte ab und ließ ein flaues, flüssiges Gefühl in seiner Magengegend zurück.</p><p>„Wie ich sehe, bist du wieder bei uns." Severus musterte ihn durchdringend. „Sehr schön." Seine Stimme klang angespannt, doch sein Gesicht war ausdruckslos, starr wie eine Maske.</p><p>„Dann hör' mir jetzt genau zu, Jeremiah Cunningfield. Du bist desertiert. Du wolltest dich mit dem Feind verbrüdern. Auf beides steht der Tod. Normalerweise wäre die Angelegenheit hier für dich beendet. Ich würde dich einfach an Ort und Stelle ins Jenseits schicken. Aber es gab in letzter Zeit entschieden zu viele Versuche in Richtung Flucht und Verrat. Daher hat der Dunkle Lord dir die ... <em>Ehre</em> erteilt, als abschreckendes Beispiel für potentielle Nachahmer zu dienen. Du wirst vor dem versammelten Dunklen Orden für deine Taten büßen. Das ist alles. – Los, auf die Beine mit ihm."</p><p>Jery wurde grob unter den Armen gepackt und auf die Füße gestellt.</p><p>In seinem Geist jagten sich alptraumhafte Schreckensvorstellungen. Verdammt, er hatte damit gerechnet, dass sie ihn töten würden, falls sie ihn erwischten. Er war bereit gewesen, dieses Risiko einzugehen. Aber das ...</p><p>
+  <em>Ein abschreckendes Beispiel? Oh Merlin ... </em>
+</p><p>Jerys Beine waren so qualligweich, dass er nicht richtig gehen konnte. Nachdem er ein paar Meter zwischen Avery und Dolohow dahingestolpert war, packte Dolohow ihn mit einem ärgerlichen Grunzen an den Armen und warf sich den jungen Mann wie einen Sack Mehl über die Schulter. Dabei nahm er keinerlei Rücksicht auf dessen Verletzungen, fasste ihn sogar um das gebrochene Handgelenk. Wieder raste eine Welle der Pein durch Jerys Körper, und diesmal löschte sie gnädigerweise sein Bewusstsein aus.</p><p>SSSSSSS</p><p>Jery kam wieder zu sich, als ein Schwall eisig kalten Wassers seinen Körper traf. Erschrocken riss er die Augen auf. Avery stand breitbeinig über ihm, barfuß, mit hochgekrempelten Hosenbeinen, in den Händen einen Eimer, den er offensichtlich soeben über ihm ausgekippt hatte.</p><p>„Er ist wach", sagte Avery leise, diesmal in seiner üblichen sanften, volltönenden Bassstimme. Wut und Aggression waren aus ihr verschwunden, ersetzt durch etwas, das fast wie Mitgefühl klang.</p><p>Avery war im Grunde ein freundlicher Mensch, aber wenn Lucius dabei war ... Lucius hatte derzeit den höchsten Rang im Orden inne, und in seiner Gegenwart bemühte sich jeder, das Idealbild eines Todessers zu bieten.</p><p>Rasche, quatschende Schritte ertönten, und Severus erschien in Jerys Blickfeld. Avery trat zur Seite und verschwand hinter Jerys Rücken. Der Tränkemeister trug immer noch Muggelkleidung, enge schwarze Jeans und ein schwarzes T-Shirt. Auch er hatte bloße Füße und die Hosen bis über die Knie nach oben geschoben. Jery stellte irritiert fest, dass sie sich in einer Art flachem Becken befanden, nicht tiefer als dreißig oder vierzig Zentimeter und zur Hälfte mit ziemlich kaltem Wasser gefüllt.</p><p>„Was ist das hier?!", fragte er alarmiert.</p><p>Severus sah mit einem deutlich missvergnügten Gesichtsausdruck auf ihn herab. „Eine Reinigungszeremonie", erwiderte er knapp.</p><p>„Eine <em>was</em>?!"</p><p>„<em>Eine Reinigungszeremonie.</em>"</p><p>Severus ging neben ihm in die Hocke und fischte ein weißes Tuch aus dem flachen Wasser. Jery setzte sich auf und stellte überrascht fest, dass er völlig nackt war. Dann bemerkte er, dass die Schmerzen in Bauch und Handgelenk verschwunden waren. Verblüfft hob er den rechten Arm und bewegte vorsichtig die Hand. Sie war vollkommen in Ordnung.</p><p>„Ihr habt mich geheilt!"</p><p>Severus neigte bestätigend den Kopf. Doch auf seinen Lippen lag ein bitteres Lächeln. „Freu dich nicht zu früh. Der Brauch schreibt vor, dass das Opfer unverletzt sein muss, ehe das Ritual beginnt. – Und jetzt leg dich wieder hin."</p><p><em>Ritual?! Was für ein Ritual?!</em>, dachte Jery nervös.</p><p>Eine Hand legte sich mit leichtem Druck auf seine Schulter und er ließ sich gehorsam ins kalte Wasser zurücksinken. Severus fuhr ihm mit dem Tuch über Brust und Bauch. Jery bekämpfte den Impuls, die Hände des Tränkemeisters wegzustoßen. Zumindest tat Severus ihm nicht weh, und das war in der gegenwärtigen Situation wohl das Beste, was er erwarten konnte.</p><p>Allmählich sickerte die Kälte durch Jerys Haut tiefer in seinen Körper. Die Angst kroch auf frostigen Fingern in seine Seele.</p><p>„Severus", sagte er bittend. „Was habt ihr mit mir vor?!"</p><p>Stumm fuhr der Angesprochene fort, Wasser über Jerys Körper zu verteilen.</p><p>„Severus, <em>bitte</em>!" Ein unterdrücktes Schluchzen bebte in Jerys Aufforderung mit.</p><p>Severus ließ die Hand mit dem Tuch sinken und sah Jery ins Gesicht. „Der Dunkle Lord hat etwas Besonderes für dich ausgewählt", sagte er leise, indem er Jerys Blick einfing. „Ein altes keltisches Ritual zur Bestrafung von Deserteuren und Klanverrätern. Es wurde ursprünglich von Druiden durchgeführt und hat den Sinn, die Seele des Verräters zu reinigen, ehe er in die andere Welt hinübergeht. Der ganze Klan ist durch seine Schande verletzt und beschmutzt worden. Also nimmt jedes Klanmitglied an der Bestrafung teil. Die Druiden leiten das Ritual und haben vor allem die Aufgabe, die Seele des Verurteilten zu begleiten. Er muss die ganze Zeremonie hindurch bei Bewusstsein und Verstand bleiben. Wenn sein Blut ihn reingewaschen hat und die Götter bereit sind, ihn ins Totenreich aufzunehmen, lassen die Druiden seine Seele frei. Sie töten ihn."</p><p>Die nachtschwarzen Augen bannten Jery und sandten eisige Dolche durch sein Herz.</p><p>„Merlin!", hauchte er angstvoll. „<em>Der ganze Klan </em>... Heißt das, jedes einzelne Ordensmitglied nimmt an meiner Bestrafung teil?!"</p><p>Severus nickte stumm.</p><p>„Wie groß ist der Orden?!" Als rangniederes Mitglied kannte Jery nur wenige andere Todesser und hatte kaum eine Vorstellung von Struktur und Größe der Organisation.</p><p>„Er umfasst derzeit exakt siebenundfünfzig Personen – dich nicht eingerechnet."</p><p>„Merlin!"</p><p>„Ein kleiner Klan", bemerkte Severus trocken. „Eher eine Großfamilie."</p><p>„Severus!", flehte Jery<em>. „Was werdet ihr mit mir machen?!"</em></p><p>Severus sah ihn lange an. Der Ausdruck in seinen Augen ließ Jerys Seele gefrieren. Der Blick war nicht verächtlich oder feindselig, aber er war schrecklich endgültig.</p><p>Jery sah seinen Tod in Severus' Augen.</p><p>„Ich werde dich nicht anlügen", begann Severus schließlich leise. „Ich denke, es ist nur fair, wenn du weißt, was auf dich zukommt. Ich hege keinen persönlichen Groll gegen dich, und mir liegt nichts an dieser ... <em>Zeremonie</em>." Er ließ einen abschätzigen Blick über das Wasserbecken schweifen. „Es ist ein blutiges und schmerzhaftes Ritual. Aber die Aufgabe von Lucius und mir" –</p><p>„Lucius? Lucius und du?!"</p><p>
+  <em>Besser hätte ich es ja gar nicht treffen können – die talentiertesten Folterer, die der Dunkle Lord jemals in seinen Diensten hatte.</em>
+</p><p>„Ja. Er stammt aus einer uralten gallischen Priesterdynastie, ich bin über die Linie meiner Mutter mit einer bedeutenden britisch-keltischen Druidenfamilie verbunden. Daher erschien es dem Dunklen Lord angemessen, uns für diese Aufgabe auszuwählen. Wir werden dich durch die Zeremonie begleiten – und zwar so, dass du wach und ansprechbar bleibst. Es gehört nämlich zu einem gelungenen Ritual, dass das Opfer mitspielen muss."</p><p>Severus' Lippen kräuselten sich verächtlich. Doch als er Jerys offenkundiges Entsetzen wahrnahm, schenkte er ihm ein dünnes, beruhigendes Lächeln, das, ungewöhnlich genug, auch seine Augen erreichte.</p><p>Als er weitersprach, klang seine Stimme sanft, fast warm. „Ganz egal, was ich persönlich von dieser Sache halte, ich verspreche dir eines: Du wirst keine Sekunde allein sein. Was auch immer man deinem Körper zufügt, wir werden deine Seele schützen. – Ich werde es versuchen, besser gesagt. Und ich hoffe, dass Lucius mich dabei unterstützen wird."</p><p>„Merlin, Severus!", keuchte Jery schockiert. „Glaubst du ... glaubst du an das, was du ... was du da erzählst?! An den Kram mit der Seele?!"</p><p>Die Panik hatte ihn so fest im Griff, dass er kaum sprechen konnte. Er fühlte brennende Tränen aufsteigen. Sein Körper war durch das eisige Wasser so taub geworden, dass er ihn kaum mehr spürte, er nahm nur die Kälte wahr, die selbst seine Knochen gefrieren ließ. Angst und Unterkühlung ließen ihn so heftig beben, dass seine Zähne klappernd aufeinanderschlugen.</p><p>„Dieses Ritual ist durchaus ernst zu nehmen", entgegnete Severus ruhig. „Abgesehen von den äußerst realen physischen Konsequenzen, die es für dich haben wird, hat das Ganze auch eine metaphysische Ebene. Es findet tatsächlich ein Kontakt zwischen den beiden Welten statt. Wenn die Zeremonie korrekt durchgeführt wird" –</p><p>Ein Knarren ertönte, vermutlich von Türangeln verursacht, und Severus brach ab.</p><p>Jery hörte eilige Schritte, dann: „Severus, ich habe deine Robe mitgebracht."</p><p>
+  <em>Lucius Malfoy.</em>
+</p><p>Severus erhob sich, und Lucius trat in Jerys Blickfeld. Er war ganz in Weiß gekleidet. Sein hellblondes Haar strömte ihm wie Wasser über die Schultern. In den eisgrauen Augen stand ein Ausdruck, den Jery nie zuvor bei ihm gesehen hatte. Vor Folterungen oder Hinrichtungen war Lucius gewöhnlich freudig erregt. Jetzt aber sah er ernst und würdevoll aus, machte einen in sich gekehrten und konzentrierten Eindruck.</p><p>„Ich übernehme hier", sagte Lucius gedämpft. „Mach du dich fertig."</p><p>Severus nickte stumm, ergriff die Robe – eine <em>weiße </em>Robe, wie Jery verblüfft feststellte – und verschwand aus Jerys Blickfeld. Wieder ein Knarren, dann ein Klicken, als die Tür ins Schloss fiel.</p><p>Jery sah furchtsam zu Lucius auf. Der für seine Kälte und Grausamkeit verschrieene Todesser war wirklich der Letzte, dem er in die Hände geraten wollte.</p><p>„Jim?"</p><p>Schritte ertönten, dann stand Avery neben Lucius.</p><p>„Hol' ihn da raus und zieh ihn an."</p><p>Avery trat in das Becken, bückte sich und streckte Jery beide Hände entgegen. Jery ignorierte das Hilfsangebot und versuchte, alleine auf die Füße zu kommen. Doch sein Körper gehorchte ihm nicht mehr. Seine Glieder waren starr vor Kälte.</p><p>„Du bist jetzt stark unterkühlt, und das wirkt sich natürlich auch auf deine Beweglichkeit aus. Vor allem aber lässt es dein Blut langsamer fließen, so dass du nicht so schnell an deinen Verletzungen sterben wirst." Lucius' Stimme klang ungewohnt freundlich, und auf seinen Lippen lag ein seltsam zufriedenes Lächeln, ein scharfer und irgendwie surrealer Kontrast zu seinen erschreckenden Worten. Der Todesser schien sich in seiner Rolle als Druide ausgesprochen wohl zu fühlen.</p><p>Zitternd vor Furcht und Kälte akzeptierte Jery die helfenden Hände Averys und ließ sich von ihm auf die Füße ziehen. Am Rand des flachen Wasserbeckens nahm Lucius ihn in Empfang, packte ihn unter den Achseln und hob ihn gemeinsam mit Avery über die hohe Stufe.</p><p>Jerys Beine knickten weg und er sackte schwer gegen Lucius, durchnässte die makellos weiße Robe. Normalerweise wäre das ausreichend gewesen für ein <em>Crucio, </em>doch an diesem Tag schien alles anders zu sein. Lucius zog ihn hoch und stützte seinen zitternden Körper, während Avery Jery gründlich abtrocknete. Dann wurde ihm ein kratzendes, aber warmes weißes Wollgewand über den Kopf gestreift.</p><p>„Damit du nicht zu sehr auskühlst. Schließlich sollst du nicht vor der Zeit sterben", sagte Lucius.</p><p>
+  <em>Das erklärt dann auch seine Fürsorglichkeit ...</em>
+</p><p>„Bei der Zeremonie wirst du allerdings nackt sein."</p><p><em>Nackt. </em>Jery schauderte. <em>Nackt vor dem ganzen Dunklen Orden. Nackt vor dem Dunklen Lord. Nackt, wenn sie mich bestrafen. Nackt, wenn sie mich quälen. Nackt, wenn sie mich töten.</em></p><p>Er zitterte noch heftiger. Lucius verschwamm vor seinen Augen.</p><p>„Komm."</p><p>Wieder wurde er am Arm gepackt und energisch vorwärts geschoben, dann abrupt herumgedreht. Seine Beine stießen rückwärts gegen etwas Festes.</p><p>„Setz dich."</p><p>Steif und unsicher ließ Jery sich niedersinken. Eine hölzerne Bank, stellte er fest. Es tat gut, zu sitzen.</p><p>Lucius ließ sich neben ihm nieder. Merlin, er hatte wirklich Angst vor Lucius. Es war eine wilde, unkontrollierbare Angst, die tief in seinen Körper eingeschrieben war und ihn heftig vor dem Todesser zurückweichen ließ.</p><p>„Ganz ruhig. Ich tu dir nichts ..."</p><p>Ein Arm legte sich um Jerys Rücken, dann zog Lucius sein schwach widerstrebendes Opfer zu sich. Jery hatte keine Kraft, sich ernsthaft gegen ihn zu wehren. Außerdem wagte er es nicht, Lucius' Zorn zu provozieren.</p><p>„Ich bin hier, um dir zu helfen, dich zu führen." Lucius' Stimme klang aufrichtig.</p><p>Jery spürte einen dicken Kloß in seinem Hals. Er sehnte sich plötzlich nach Nähe, nach Trost. Lucius' Worte taten ihm wohl, seine Berührung beruhigte ihn. Erneut spürte er Tränen in seine Augen steigen. Seine Schultern fingen zu zucken an.</p><p>„Ist gut ... ist ja gut ..."</p><p>Lucius strich ihm behutsam über den Rücken.</p><p>Flüchtig schoss es Jery durch den Kopf, dass Lucius einen Sohn hatte, dreizehn oder vierzehn Jahre alt, wenn er sich richtig erinnerte. Jery selbst war dreiundzwanzig, Lucius Anfang vierzig, er hätte also durchaus sein Vater sein können. Verzweifelt versuchte Jery, ihn als Vater zu sehen, phantasierte sich selbst in die Rolle eines verängstigten Kindes hinein – ein Zustand, von dem er im Moment nicht sehr weit entfernt war. Ein Teil der Anspannung löste sich und er brach in heftiges Schluchzen aus, sank weinend gegen Lucius' Schulter. Dieser ließ es zu, bis Jery etwas ruhiger geworden war, dann schob er den jungen Mann sanft, aber bestimmt von sich.</p><p>Aufgeschreckt durch ein unerwartetes Geräusch, hob Jery den Kopf. Eine weiß gekleidete Gestalt betrat den Raum. Severus. Er schloss sorgsam die Tür hinter sich und kam zu ihnen herüber.</p><p>Jery erkannte ihn kaum wieder, obwohl doch nur die Farbe seiner Robe sich verändert hatte. Oder? Vielleicht war es doch mehr als das. Severus sah ernst und beherrscht aus, aber er verströmte nicht die übliche Bedrohlichkeit, als er sich neben Jery auf die Bank setzte.</p><p>Jery hatte sich wieder aufgerichtet und musterte den Tränkemeister mit einer Mischung aus Furcht und Misstrauen.</p><p>In einer besänftigenden Geste legte Severus ihm eine Hand auf die Schulter.</p><p>„Es ist alles in Ordnung, Jery. Ich bin hier, um dich zu schützen."</p><p>Noch nie hatte Jery sich so sehr gewünscht, einem Menschen glauben zu können.</p><p>Da kauerte er nun zwischen den beiden weiß gekleideten Todessern, gestützt und getröstet von den Männern, die ihn an Folter und Tod überantworten würden. Etwas in ihm fand die Situation so grotesk, dass es fast schon zum Lachen war, aber dieses Etwas war sehr klein und schwach im Vergleich zu der riesenhaften Angst, die fast sein gesamtes Bewusstsein ausfüllte.</p><p>„Wir werden gleich zusammen hier herausgehen", sagte Severus ruhig. „Was du da draußen sehen und erleben wirst, wird dir Angst machen. Was wir mit dir machen werden, wird dir sehr weh tun. Aber wir werden dich niemals alleine lassen, keine Sekunde lang."</p><p>In Jerys Kopf wirbelten Gedanken und Gefühle so rasend schnell durcheinander, dass er nichts davon festhalten und betrachten konnte. Seine Haut prickelte, und er fror furchtbar. Wie eisiges Blei quälte sich das Blut durch seine Adern. Die Welt verschwamm vor seinen Sinnen, und eine bodenlose Tiefe tat sich zu seinen Füßen auf, bereit, ihn zu verschlingen. Die Angst streckte ihre kalten Klauen nach ihm aus ...</p><p>Da erhoben sich Severus und Lucius wie auf ein geheimes Zeichen. Sie zogen Jery mit sich in die Höhe und weiter, weiter, schweigend, unerbittlich, auf die Tür zu, durch die Tür hindurch, hinaus auf einen matt erleuchteten, höhlenartigen Gang. Dann weiter, immer weiter, durch den kalten, düsteren, erdigen Tunnel. Baumwurzeln drängten von allen Seiten auf sie zu. Kleine Tiere flohen lautlos vor ihren Füßen.</p><p>Jery kam der Weg entsetzlich lang vor, er dehnte sich bis in die schwarze Unendlichkeit. Sie würden in alle Ewigkeit durch diesen Gang laufen ...</p><p>Und dann öffnete sich hinter der nächsten Biegung der weite Nachthimmel für ihn.</p><p>SSSSSSS</p><p>Zitternd stand Jery in der Mitte einer weiten, fast kreisrunden Waldlichtung. Er war nackt, wie Lucius es ihm angekündigt hatte. Über ihm breitete eine hohe Esche ihre Zweige in die tiefblaue Herbstnacht. Rings um den freien Platz standen mächtige alte Eichen, knorrige, verwachsene Baumwesen, die wachsam ihre Wurzeln und Zweige in ihre Richtung neigten. Fackeln steckten überall im Erdreich. Wie ein Schwarm übergroßer Raben lauerte mehr als ein halbes Hundert Todesser in einem Zirkel um die Lichtung herum.</p><p><em>Genau siebenundfünfzig. Mich nicht eingeschlossen, </em>dachte Jery, und alles an ihm fror entsetzlich.</p><p>Rechts von ihm stand Lucius, links Severus. Vor ihm stand der Dunkle Lord.</p><p>„Jeremiah Cunningfield", ertönte die grausame Stimme, die er so sehr hasste und fürchtete, „du hast unsere Gemeinschaft in böser Absicht verlassen. Du warst willens und bereit, uns zu verraten und uns schweren Schaden zuzufügen. Darum verurteile ich, Lord Voldemort, als Oberhaupt dieser Gemeinschaft, dich zum Vielfachen Tod. – Tut eure Pflicht, Priester."</p><p>Lucius und Severus drängten Jery rückwärts an den Stamm der Esche. Magische Seile schlangen sich um seine Körper, pressten seine Arme starr und nutzlos an seine Seiten. Nur den Kopf konnte er noch frei bewegen.</p><p>Ein Nebel der Unwirklichkeit hatte sich über Jery gesenkt. Mit großen Augen sah er auf die Szenerie, und sie erschien ihm wie ein Gemälde, eine großartige Kulisse. Das tanzende Fackellicht erhellte nur kleine Raumkugeln und ließ den Rest der Lichtung in noch tieferem Mitternachtsblau verschwimmen. Von Zeit zu Zeit ging ein Windstoß durch die Bäume und brachte die Blätter zum Singen. Von Zeit zu Zeit ging eine Bewegung durch den schwarzen Kreis, der sich um die Lichtung zog, und ließ die Wartenden raunen – wie in Antwort auf den Atem des Waldes, der sie umgab.</p><p>Eine Hand fasste seine linke Schulter. Auf seiner anderen Seite blitzte es auf.</p><p>Rasch wandte Jery seinen Kopf zu dem kalten Licht. Lucius hatte einen prachtvoll verzierten Dolch gezogen. Der Griff war mit Ornamenten aus Silber belegt, schwarze und durchscheinend blaue Steine wurden von Schlangen umwunden, die im unruhigen Licht der Fackeln fast lebendig wirkten.</p><p>„Möge dein Blut dich von deinem Verrat reinigen. Möge dein Blut uns von deiner Schande befreien." Lucius' Stimme hallte über die Lichtung, als er einen Schritt auf Jery zu trat und den Dolch auf sein Brustbein richtete.</p><p>Die Zeit stand still. Der Wald hielt den Atem an.</p><p>Dann senkte Lucius die Spitze der Klinge und begann zu schneiden.</p><p>Nichts hatte Jery auf diesen wütenden Schmerz vorbereitet. Lucius fügte ihm nicht einfach nur einen Schnitt zu, er schien ein regelrechtes Muster in seine Haut zu zeichnen. Brennende Linien wurden gezogen, die durch die Grenze zwischen Ich und Welt drangen und die Bande trügerischer Sicherheit durchtrennten. Jery keuchte gequält, und der Druck von Severus' Hand verstärkte sich.</p><p>Dann trat Lucius zurück und reichte Severus den Dolch.</p><p>Jery atmete erleichtert auf.</p><p>Doch schon stand Severus vor ihm, während Lucius' Hand sich nun fest um seinen rechten Oberarm schloss.</p><p>„Möge dein Blut dich von deinem Verrat reinigen. Möge dein Blut uns von deiner Schande befreien."</p><p>Diesmal wurde der Dolch auf seinen Oberbauch gesenkt. Severus schnitt rascher als sein Vorgänger, und durch den blendenden Schmerz hindurch erkannte Jery, dass er tatsächlich <em>bezeichnet</em> wurde. Es war ein umgedrehtes Pentagramm, das Severus mit schnellen und sicheren Schnitten in seine Haut schrieb.</p><p>Anschließend kam der erste Todesser aus dem Kreis zu ihnen geschritten und neigte grüßend den Kopf vor Jery. Stumm reichte Severus der vermummten Gestalt den Dolch, den diese auf Jerys linker Brust ansetzte.</p><p>Severus und Lucius standen nun wieder zu seinen Seiten, hielten ihn an den Schultern und sprachen leise und beruhigend auf ihn ein, während das Ritual seinen Gang nahm.</p><p>Der Todesser sprach die formellen Worte der Bestrafung und schlitzte ein schwungvolles Vav in den zuckenden Körper. Erneut neigte er seinen Kopf vor Jery, dann drehte er sich um, schritt zurück auf einen Platz und übergab die Klinge dem Nächsten im Kreis.</p><p>Und so ging es weiter, stundenlang.</p><p>Anfangs hatte Jery gehofft, er könnte sich vielleicht an den Schmerz gewöhnen, würde ihn mit der Zeit schon allein aus Erschöpfung und Abstumpfung schwächer empfinden. Er hatte sich geirrt. Es wurde nicht besser, sondern schlimmer.</p><p>Bald bebte er vor jeder herannahenden Gestalt zurück und wand sich so heftig unter der Klinge, dass seine beiden Wächter ihn mit einem Lähmzauber ruhig stellen mussten, um den ordnungsgemäßen Fortgang der Zeremonie zu sichern. Doch sie belegten ihn nicht mit dem <em>Silencio, </em>und bald hatte er sich heiser geschrieen und gefleht.</p><p>Jery bettelte jede der vermummten und maskierten Gestalten an, die zu ihm traten, um ihm neue Qualen zuzufügen. Erst flehte er um Gnade, um Beendigung des Rituals. Doch bald bettelte er nur noch um den Tod. Schließlich war er überhaupt nicht mehr in der Lage, verständliche Worte zu formen.</p><p>Der Schmerz war überall. Jeder Zentimeter seiner Haut war zerschnitten. Unzählige wütende, bösartige kleine Feuer brannten entlang der Wunden. Sein Kopf brummte und toste, rote Nebel ballten sich vor seinen Augen zusammen.</p><p>Höhnisch klangen die Worte des Rituals in seinen Ohren:</p><p>
+  <em>Blut ... Verrat ... reinigen ... Blut ... Schande ... befreien ... </em>
+</p><p>
+  <em>Blut ... Verrat ... Blut ... Schande ...</em>
+</p><p>
+  <em>Blut ... Verrat ...</em>
+</p><p>
+  <em>Blut ... Blut ... Blut ...</em>
+</p><p>Seine Vorderseite glitschte von Blut. Zwar waren die einzelnen Wunden nur klein und oberflächlich, insgesamt aber waren es unzählige Schnitte. Rot und warm rann es seine Beine herab, tropfte in das herbstgelbe Gras und wurde von der schwarzen Erde zu seinen Füßen gierig aufgesogen.</p><p>Jery weinte. Es war ein Weinen ohne Tränen, ein heiseres, verzweifeltes Schluchzen. Seine letzten Tränen waren längst versiegt, als die Seile für einen kurzen Moment gelöst wurden.</p><p>Seine Wächter waren nicht länger weiß, als sie ihn umgedreht und mit dem Gesicht zum Stamm erneut festgebunden hatten. Sein Blut befleckte ihre Roben, klebte an ihren Händen und besudelte ihre Gesichter.</p><p>Lucius und Severus hatten ihn keine Minute losgelassen, seit die Zeremonie begonnen hatte, und sie hatten nicht aufgehört, leise zu ihm zu sprechen. Diese Nacht war unsagbar schrecklich für Jery, aber sie wäre ohne die beruhigende Präsenz der beiden „Priester" noch weit entsetzlicher gewesen. Trotz all der Qual und der Angst bedeutete ihre Gegenwart einen gewissen Trost.</p><p>Und als im Augenblick seiner kurzen Befreiung eine überwältigende, irrationale Hoffnung über Jery hereinbrach, nur um Sekunden später von einer Verzweiflungssturmflut hinweggefegt zu werden, da begann Lucius, für ihn zu singen. Er sang leise, einlullende Kinderlieder, während Severus Jery eine Hand auf den Hinterkopf legte und ihm beruhigend durchs Haar strich.</p><p>Stunde um Stunde wurden sein Rücken, seine Arme, sein Gesäß, seine Beine in Fetzen geschnitten, tropfte das Blut an ihm herunter, sammelte sich zu kleinen Rinnsalen und schlängelte sich träge ins nunmehr rote Gras hinab. Doch während sein Körper zu Grunde ging und sein Geist nichts anderes mehr wahrnahm als Schock und Schmerz, weilte ein Teil seines Selbst an einem völlig anderen, sicheren Ort, einem Ort, an dem ihm nichts geschehen konnte, wo Berührungen zärtlich und Worte freundlich waren. Ein Kindertraum in Kinderliederkleidern, geboren aus einer weichen Stimme in seinem Ohr und einer sanften Hand in seinem Haar.</p><p>SSSSSSS</p><p>Irgendwann, als es im Osten bereits hell wurde und ein schwefelgelber Streif am Horizont den Morgen malte, wurden die Seile durchtrennt, und Jery sackte am Stamm der träumenden Esche zusammen.</p><p>Zwei in Blut getauchte Gestalten knieten zu seinen Seiten. Auch er selbst war in einen Scharlachumhang gehüllt. Der Schmerz erfüllte ihn so vollkommen, dass kaum noch Platz für die hohe Stimme und die roten Augen war, die vor ihm durch die verwischende Nacht trieben.</p><p>„Jeremiah Cunningfield, du hast unsere Gemeinschaft in böser Absicht verlassen. Du warst willens und bereit, uns zu verraten und uns schweren Schaden zuzufügen. Darum hast du durch mein Urteil von unserer Hand den Vielfachen Tod erlitten. – Vollendet eure Pflicht, Priester."</p><p>Durch den blutigen Nebel schwebte eine große Gestalt. Blasses Morgenlicht schimmerte auf fast weißem Haar. Die Gestalt schien zu schrumpfen, streckte eine Hand nach Jery aus und legte sie wie segnend auf seinen Kopf.</p><p>„Dein Blut hat dich von deinem Verrat gereinigt."</p><p>Eine zweite Gestalt glitt in seinen verschwommenen Blick. Klare schwarze Augen blitzten durch die Schlieren in seine Seele hinab, als die Gestalt sich vor ihm auf die Knie sinken ließ.</p><p>Für einen Moment sah Jery die beiden Männer ganz deutlich, und etwas in seinem unendlich erschöpften Geist raunte ihm zwei Namen zu: <em>Lucius. Severus. </em></p><p>Eine zweite Hand senkte sich behutsam auf seinen Kopf.</p><p>„Dein Blut hat dich von deiner Schande befreit."</p><p>Dann sprachen sie beide, und es war fast ein Gesang: „Ihr Götter der Totenwelt, wir senden zu euch Jeremiah Cunningfield. Er hat für seinen Verrat bezahlt und für seine Schande gebüßt. Nehmt ihn in Ehren bei euch auf."</p><p>Zwei Hände stützten seinen zerschnittenen Rücken. Zwei Hände legten sich über blitzendes Silber und perlende Steine, über frisches und getrocknetes Blut.</p><p>Ein letztes Mal bebte Jery unter der Berührung der Klinge, die seine Haut durchschnitt, doch diesmal glitt sie tiefer, viel tiefer, bis sie sein Herz erreichte und durchbohrte und der Besitzer des Herzens erstaunt und erschrocken die Augen aufriss, als sein Blick mit einem Mal völlig klar wurde, so klar wie noch nie in seinem dreiundzwanzigjährigen Leben.</p><p>Er sah den Himmel und die verblassenden Sterne, den schwarzen Schattenriss der Zweige über ihm. Er hörte das Flüstern der Blätter und den stürmenden Atem der Männer, die gemeinsam die Klinge in sein Herz gestoßen hatten. Er roch die satte Erde, das erstarrende Blut. Er schmeckte bitteres Metall und eisige Angst. Er fühlte das glitschige Gras und den kalten Morgenwind.</p><p>Alles war so klar und wirklich und deutlich wie nie zuvor.</p><p>Und dann wurde alles eins, Auge und Ohr und Nase und Zunge und Haut, ja, sogar seine zerschnittene, zerfetzte Haut, und alles explodierte in einem einzigen weißen Licht.</p><p>Jeremiah breitete seine Arme aus und sein Herz, und fiel und flog in das Licht und die Schwärze hinein.</p><p>SSSSSSS</p><p>
+  <strong>Dialog III</strong>
+</p><p>SSSSSSS</p><p>
+  <em>Fiona ...</em>
+</p><p>
+  <em>Hallo.</em>
+</p><p>
+  <em>Du auch? Warum bist du hier? Ich habe dir doch geholfen ... so gut ich konnte.</em>
+</p><p>
+  <em>Ich weiß. Aber ich wollte nicht sterben. Leben wollte ich, Severus, leben.</em>
+</p><p>
+  <em>Du hast gesagt, der Tod sei der Sinn des Lebens.</em>
+</p><p>
+  <em>Ich habe mich getäuscht. Der Sinn des Lebens ist das Leben selbst.</em>
+</p><p><em>Vielleicht haben </em>wir<em> uns getäuscht. Ja ...</em></p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_3_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Die „falsche" Rechtschreibung im Gryphius-Gedicht ist Absicht, sie entspricht dem barocken Original.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/5374835/chapters/12413972">Chapter 4</a>: Fiona - Winterwald
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>SSSSSSS</p><p>
+  <em>Claudio: Wenn einer träumt, so kann ein Übermaß</em>
+</p><p>
+  <em>Geträumten Fühlens ihn erwachen machen,</em>
+</p><p>
+  <em>So wach ich jetzt, im Fühlensübermaß</em>
+</p><p>
+  <em>Vom Lebenstraum wohl auf im Todeswachen.</em>
+</p><p>
+  <em>(Hugo von Hofmannsthal, Der Tor und der Tod)</em>
+</p><p>SSSSSSS</p><p>Fiona rannte.</p><p>Zurückschnellende Zweige peitschten ihre Schneelast in ihr Gesicht, Brombeerranken rissen ihre bloßen Beine auf. Der Schnee war harsch gefroren, mit eisigen Klingen zerschnitt er ihre nackten Füße. Die Spur, die sie auf der weißen Fläche hinterließ, schimmerte rot. Doch Fiona spürte nichts von dem Schmerz, spürte nicht die grimmige Kälte, die gierig an ihrem nur unzureichend bekleideten Körper leckte. Das Einzige, was sie fühlte, war eine grenzenlose Panik, die sich in ihr und um sie herum zusammenballte wie die grauen Schneewolken über dem nächtlichen Wald.</p><p>Sie hörte ihre Stimmen, ihr wildes Lachen – ein Wolfsrudel auf der Jagd. Das Rudel hatte Blut geleckt, und jetzt wollte es mehr davon.</p><p>Ihr war klar, dass die Männer diese Jagd genossen.</p><p>Noch vor wenigen Stunden waren sie ihre Gefährten, ihre Kameraden gewesen. Bis zu jenem verhängnisvollen Augenblick, in dem sie sich zum ersten Mal in ihrem Leben entschieden gegen die Regeln einer Gruppe, zu der sie sich zugehörig fühlte, gewendet hatte. Bis zu dem Moment, in dem sie aus ihrem Rausch aus Blut und Mord aufgewacht war und sich geweigert hatte, diesen einen speziellen Menschen zu foltern. Es war ihr nicht ums Foltern und Töten an sich gegangen, sie hatte kein Bekehrungserlebnis gehabt und sich nicht zur menschenliebenden Pazifistin gewandelt, aber sie hatte diesen einen Menschen erkannt und ihn nicht mit dem <em>Cruciatus</em> belegt, sondern ihn mit dem <em>Avada-Kedavra</em>-Fluch vor den Grausamkeiten ihrer Gefährten gerettet.</p><p>Und nun rannte sie um ihr Leben.</p><p>SSSSSSS</p><p>Der Schnee fiel, lautlos, gleichmäßig, dicht wie ein weißer Vorhang. Jedes Geräusch verstummte, wurde aufgesogen von dem blendenden Weiß. Die Welt verschwamm, versank in der unaufhörlichen sanften Abwärtsbewegung.</p><p>Eine schwarze Gestalt glitt geräuschlos durch das wirbelnde Weiß, suchend, witternd. Sie erstarrte mitten in der Bewegung und beugte sich prüfend über den frisch gefallenen Schnee. Vorsichtig pustete sie die oberste Flockenschicht beiseite. Ein Fußabdruck kam zum Vorschein, ein rot gesprenkelter Schatten, dann ein zweiter. Die Gestalt zog einen Stab aus ihrem Umhang und richtete ihn auf einen der Abdrücke.</p><p>„<em>Illuminos</em>!", raunte sie.</p><p>Eine Spur wurde sichtbar, ein schwach leuchtender Pfad, der gerade über das Feld und hinein in den Schutz des stillen Winterwaldes führte. Den Stab wachsam erhoben, folgte die Gestalt dem gelbgrünen Band. Hinter ihr verblasste das Licht, und der Schnee deckte die beiden Spuren wieder zu.</p><p>Dann tauchte die Gestalt in den Wald ein. Hier war die Stille noch dichter, so dicht, dass sie eine fast körperliche Qualität hatte, eine schwere Wolke, die über den Bäumen lag und eine stumme Warnung enthielt. Eine Warnung, sich fernzuhalten von diesem Wald, wenn man kein Teil von ihm war.</p><p>Auch Severus Snape spürte diese Warnung, doch er beachtete sie nicht. Er <em>war</em> ein Teil dieses Waldes und hatte nichts von ihm zu befürchten. Anders als das Mädchen, dem er auf der Spur war. Sie war fremd hier und konnte sich glücklich schätzen, wenn er sie vor den anderen Waldbewohnern fand.</p><p>Weit konnte sie in ihrem Zustand nicht gekommen sein.</p><p>Severus wünschte, der Dunkle Lord hätte ihn nicht so lange aufgehalten, nachdem die anderen Todesser sie hatten laufen lassen. Rodolphus hatte ihren Herrn mittels eines Zwei-Wege-Spiegels über die Gehorsamsverweigerung der jungen Frau informiert. Daraufhin hatte der Dunkle Lord der Gruppe, zu der Fiona gehörte, freie Hand in ihrer Bestrafung erteilt – mit der einzigen Bedingung, dass sie am Leben bleiben sollte, bis Severus sich um sie „kümmern" konnte. Dann hatte er seelenruhig ein ausgiebiges Gespräch mit seinem Tränkemeister begonnen, das sich thematisch von Severus' neuesten magischen Kreationen bis zu aktuellem Klatsch und Tratsch über Minister Fudge erstreckte.</p><p>Währenddessen hatten sich Rodolphus, Rabastan, Dolohow und Patrick nach Herzenslust an Fiona ausgetobt. Und wenn Severus sie nicht bald fand, würde sie entweder erfroren oder von den namenlosen Wesen dieses Waldes zerrissen worden sein.</p><p>SSSSSSS</p><p>Fiona drängte sich keuchend an den schützenden Felsen. Der Stein war kalt, eisig geradezu, und diese Kälte ging ihr durch und durch. Jetzt, wo sie keine Kraft mehr zum Rennen hatte, jetzt, wo sie langsam wieder zu denken anfing, sank auch das Adrenalin in ihrem Körper ab, und alle unangenehmen Gefühle wurden wieder freigesetzt.</p><p>Zitternd zog sie ihre Robe enger um die Schultern. Umhang, Schuhe, Strümpfe und Hosen hatten sie ihr weggenommen. Die Kälte drang ihr bis auf die Knochen. Ihre Hände und Füße begannen bereits, taub zu werden. In ihr dagegen wütete ein Feuer der Pein.</p><p>Sie verfluchte die Männer, die sie so zugerichtet hatten, die sie hier in diesem Wald sterben lassen wollten. Antonin. Rabastan. Rodolphus. Paddy.</p><p>
+  <em>Sogar Paddy.</em>
+</p><p>Die Erinnerung jagte eine Hitzewelle durch ihren Körper, brodelnde Glut, gemischt aus Scham und Hass.</p><p>Es war einfach nicht fair. Sie war ein Mitglied des Dunklen Ordens, genau wie die anderen auch. Es gab ein ungeschriebenes Gesetz, das besagte, dass sich verdammt noch mal kein Todesser an einem anderen zu vergreifen hatte, es sei denn auf ausdrücklichen Befehl des Dunklen Lords. Sie hatte eine Regel verletzt, gut, sie war bereit gewesen, das Urteil ihres Herrn klaglos zu akzeptieren. Aber von ihren eigenen Gefährten ohne ein Wort der Vorwarnung, ohne eine Chance, sich zu verteidigen, misshandelt und – sie würgte beim Gedanken an das Geschehene – <em>vergewaltigt </em>zu werden, war schockierend, ekelhaft und erniedrigend gewesen. Die vier Männer hatten sich nicht die geringste Zurückhaltung auferlegt, und ihr Unterleib schien noch immer in Flammen zu stehen.</p><p><em>So fühlt es sich also an, </em>dachte Fiona bitter.</p><p>Während ihrer Ausbildung hatte sie gelernt, Vergewaltigungen und andere sexuell konnotierte Quälereien als reguläres Element von Folter und Demütigung der Gefangenen hinzunehmen. Sie war auch kaum die Art von Frau, die ihre Kameraden als attraktiv oder erregend empfanden. Mit der Zeit hatte sie das Gefühl gehabt, als ein asexuelles Wesen angesehen zu werden, das sich zwar nur in begrenztem Umfang an diesen „Männerspielen" beteiligen konnte, dessen Gegenwart dabei aber irgendwie selbstverständlich war. Manchmal hatte sie sich auch auf bissige Art über die gewalttätige Demonstration von Männlichkeit und Potenz lustig gemacht, die ihre Kameraden ihr da boten.</p><p>Nun, foltern und töten konnte sie ebensogut wie die Männer. Das hatten diese schnell erkannt, und sie zollten ihr dafür neidlose Anerkennung.</p><p>Nach einem halben Jahr hatte Fiona das Gefühl gehabt, gut in ihre neue Aufgabe hineingewachsen zu sein. Sie war nur wenige Wochen nach der Wiederauferstehung des Dunklen Lords in den Orden eingetreten. Ebenso wie Danyel.</p><p>Danyel, der bereits tot war.</p><p>
+  <em>Nicht daran denken.</em>
+</p><p>Ebenso wie Jery, der versucht hatte, zu desertieren, und der dafür in einem grausamen Ritual zu Tode gefoltert worden war.</p><p>
+  <em>Und ich habe mitgemacht. Ich fand es gerecht, damals. Da wusste ich noch nicht, was es heißt, wirkliche Schmerzen zu haben. Schmerzen ... und Todesangst.</em>
+</p><p>Ebenso wie Paddy, mit dem sie eine langjährige Freundschaft verband.</p><p><em>Verbunden </em>hat, korrigierte sie sich zornig.</p><p>Nach zwei Monaten gemeinsamer Arbeit mit Rabastan und Rodolphus Lestrange, die erst Anfang des Jahres aus Askaban entkommen waren, hatte sich etwas entwickelt, was man unter anderen Umständen wohl als gute kollegiale Arbeitsbeziehung bezeichnet hätte. Und Dolohow – nun ja, sie waren miteinander klar gekommen. Irgendwie. Inzwischen hatte sie sogar seinen makabren und schlüpfrigen Humor zu schätzen gelernt.</p><p>
+  <em>Und dann das ...</em>
+</p><p>Von einer Minute zur anderen ein völliger Umschwung im Verhalten der vier Männer, ohne Vorwarnung von freundlichen „Kollegen" zu blutgierigen Raubtieren. Natürlich waren sie auch vorher schon gewalttätig und grausam gewesen, aber nicht ihr gegenüber. Nie hätte sie gedacht, dass diese vernichtenden Aggressionen einmal gegen sie gerichtet sein könnten.</p><p>Fiona stöhnte unterdrückt und presste beide Hände auf ihren schmerzenden Bauch. Mehrere Tritte Rabastans in Magen und Unterleib hatten dafür gesorgt, dass sie sich selbst auf ihrer Flucht noch zweimal hatte erbrechen müssen.</p><p>Sie fragte sich, warum die vier noch nicht vor ihr standen. Ihre Spur war sicher kinderleicht zu verfolgen gewesen. Wahrscheinlich lauerten sie irgendwo in der Nähe und hatten sie längst entdeckt.</p><p>Die Männer spielten mit ihrer Angst.</p><p>Sie konnte nur hoffen, dass sie ihr die Gnade eines schnellen Todes erweisen würden. Sie würde Paddy bitten ... – Nein, nicht Paddy. Er hatte nicht genug Autorität in der Gruppe. Sie war sicher, dass er vorhin nur mitgemacht hatte, um sich vor den älteren Männern zu beweisen. Nein, besser Rodolphus. Und Rabastan. Sie hatten ihren Spaß gehabt, sie würden sich ihrer Bitte nicht verweigern. Hoffentlich. Vielleicht. Wenn sie demütig genug vorgebracht wurde ...</p><p>Ein paar Tritte würde sie wohl noch einstecken müssen, aber dann ... <em>Avada Kedavra.</em></p><p>Nun, immer noch besser, als hier zu erfrieren.</p><p>Mühsam stemmte sie sich in die Höhe, um ihren Mördern entgegenzutreten.</p><p>SSSSSSS</p><p>Severus erstarrte und lauschte.</p><p>Der Schnee fiel immernoch in dicken Flocken. Es war schwierig, in diesem Geräusche und Bilder verschlingenden Weiß ein anderes Lebewesen auszumachen. Aber er war sich beinah sicher ...</p><p>Und dann sah er sie. Sie war kaum zehn Meter von ihm entfernt, tauchte soeben mit dem Rücken zu ihm hinter einem schneebedeckten Felsbrocken auf. Die junge Frau bemerkte ihn nicht, kämpfte sich langsam und steif in die Höhe, ihre Aufmerksamkeit offenbar völlig in Anspruch genommen von ihrem schmerzenden Körper.</p><p>„Hallo, Fiona."</p><p>Sie fuhr heftig zusammen.</p><p>Dann drehte sie sich zu ihm, zögernd, widerwillig. Das kinnlange, aschblonde Haar fiel ihr in blutverklebten Strähnen ins Gesicht. Ihre Lippen waren aufgeplatzt und geschwollen, ihre linke Wange von einem tiefen Kratzer verunziert. Ein Fausthieb hatte ihr rechtes Auge zuschwellen lassen.</p><p>Sie strich sich mit einer resignierten Geste das Haar aus dem zerschlagenen Gesicht. Ein wässrigblaues Auge sah ihn an, traurig, enttäuscht.</p><p>„Bist du das, Rabastan?", fragte sie gedämpft. „Und – wo sind die anderen?"</p><p>Severus streifte die Kapuze zurück.</p><p>Sie starrte ihn überrascht an. Dann erkannte sie ihn, und ein schwaches Lächeln huschte über ihr Gesicht.</p><p>„Sie sind ... du bist das", sagte sie, und in ihrer rauen Stimme schwang Erleichterung mit.</p><p>Auch Severus lächelte, dünn und gezwungen. Es war erst anderthalb Jahre her, dass Fiona Hogwarts verlassen hatte, und so selten, wie sie ihren ehemaligen Lehrer unter den anderen Todessern getroffen hatte, ging ihr das Du nicht leicht über die Lippen.</p><p>„Morgana, ich bin froh, dass du es bist. Ich hatte mit Rabastan oder Antonin gerechnet."</p><p>Er hob eine Augenbraue. „Du kennst meine Aufgabe, oder?"</p><p>Ein Schatten löschte das blasse Lächeln aus. „Ja", erwiderte sie knapp.</p><p>„Keine Angst?" Auch seine zweite Braue wanderte in die Höhe.</p><p>„Doch." Sie presste die Lippen zusammen und starrte ihn angespannt an.</p><p>Severus steckte den Zauberstab weg und zog seinen Winterumhang von den Schultern. Er hielt ihn ihr einladend hin, ausgebreitet zwischen seinen Händen. Fiona musste nur kommen und ihn sich umlegen lassen.</p><p>Zögernd sah sie erst auf den Umhang, fröstelnd, verlangend, dann prüfend und misstrauisch in sein Gesicht. Schließlich setzte sie sich linkisch und humpelnd in Bewegung. Als sie hinter dem Felsen hervortrat und er das Blut sah, das sie auf dem Schnee hinterließ, ihre zerschnittenen, blaugefrorenen Füße, die roten Hände, die verkrampft auf dem schmerzenden Unterleib lagen, machte Severus in Gedanken vier dicke Minuszeichen hinter die Namen Patrick O'Hara, Antonin Dolohow, Rabastan und Rodolphus Lestrange auf seiner persönlichen Abschussliste. Vielleicht würde er mit einem kleinen Brechmittel im abendlichen Butterbier anfangen ...</p><p>Fionas eines offenes Auge ließ keine Sekunde von ihm ab, als sie schwankend die wenigen Meter durch den Schnee stapfte. Ein letzter, misstrauischer Blick bohrte sich in seine Augen, ehe sie ihm den Rücken zudrehte, damit er ihr das Kleidungsstück umlegen konnte. Behutsam ließ er den schweren Umhang auf ihre Schultern gleiten. Dann beugte er sich über sie, um die Brosche, die den Stoff zusammenhielt, zu schließen.</p><p>Ihr Atem stockte. Sie erstarrte unter seinen Händen.</p><p>„Ich tue dir nichts", sagte er ruhig und schloss rasch die schlangenförmige Silberbrosche. Danach richtete er sich sofort wieder auf und zog die Hände zurück.</p><p>Fiona atmete hörbar aus, blieb aber stehen, wo sie war, und blickte sich nicht um.</p><p>SSSSSSS</p><p><em>Warum tust du's nicht einfach jetzt?,</em> dachte Fiona müde.<em> Jetzt ist mir warm, die Angst hält sich in Grenzen und die Schmerzen, nun ja, die wäre ich gerne los. Insgesamt sind das hier bestimmt die besten fünf Minuten dieses beschissenen Tages, und es wäre schön, wenn wir ihn hiermit beenden könnten. </em></p><p>Dennoch konnte sie ein heftiges Zittern nicht unterdrücken.</p><p>„Du brauchst keine Angst vor mir zu haben. Ich werde dir nicht weh tun", sagte eine leise Stimme in ihrem Rücken.</p><p>Langsam drehte Fiona sich zu Severus um.</p><p>„Aber dir muss furchtbar kalt sein."</p><p>Plötzlich hielt er seinen Zauberstab in der Hand und richtete ihn auf ihre Brust.</p><p>Fiona kniff die Augen zu und hielt den Atem an. Jetzt war es also so weit. Jetzt ...</p><p>Dann fühlte sie ein sanftes Prickeln, und eine angenehme Wärme breitete sich in ihrem Körper aus.</p><p>
+  <em>Wenn das der Tod ist, dann fühlt er sich gut an.</em>
+</p><p>„Du kannst die Augen wieder aufmachen", klang es trocken an ihr Ohr. „Das war nur ein Wärmezauber."</p><p><em>Nicht der Tod. Das ist</em> nicht<em> gut. </em></p><p>Widerwillig öffnete sie ihr nicht zugeschwollenes Auge und starrte ihren ehemaligen Lehrer feindselig an.</p><p>„Warum tust du uns beiden nicht den Gefallen und beendest es hier und jetzt?", knurrte sie.</p><p>Das Warten machte sie nervös. Der Wärmezauber, den er über sie gesprochen hatte, taute ihre halb erfrorenen Zehen und Finger wieder auf und ließ alle Schmerzen zu neuer Wut erwachen. Sie spürte, wie das Blut zwischen ihren Beinen erneut zu fließen begann und krümmte sich unter einer Welle frisch erwachter Pein. Stöhnend knickte sie zusammen – und wurde aufgefangen, ehe sie den Boden berührte.</p><p>„Es tut mir leid. Daran hatte ich nicht gedacht."</p><p>Ein Arm schob sich unter ihre Achseln, ein zweiter unter ihre Kniekehlen, dann wurde sie hochgehoben.</p><p><em>Morgana, wo schleppt er mich bloß hin – und wozu</em><em>?, </em>dachte sie frustriert.</p><p>Dann umfingen sie die wirbelnde Schwärze und der Druck der Disapparation.</p><p>SSSSSSS</p><p><em>Auf den Zentimeter genau</em>, dachte Severus zufrieden, als er mit Fiona in den Armen in seinem Wohnzimmer apparierte und seine Last Sekunden später auf das Sofa gleiten ließ.</p><p>Ein hellblaues Auge starrte ihn anklagend an. Ihr Mund war zu einem dünnen Strich zusammengepresst.</p><p>„Was hast du mit mir vor, verdammt noch mal?!", zischte sie wütend. „Willst du auch noch deinen Spaß mit mir haben?! Zu kälteempfindlich, um es draußen zu treiben?!"</p><p>„<em>Sicher nicht</em>." Severus ärgerte sich über die Unterstellung, auch wenn sie aus Fionas Sicht naheliegend war. „So etwas würde ich niemals tun!", sagte er mit leichter Schärfe in der Stimme. „<em>Niemals,</em> hast du verstanden?"</p><p>„Warum schleppst du mich dann mit dir rum wie ein Kind sein neues Spielzeug?!", fauchte sie ihn an.</p><p>Das saß.</p><p>Spielzeug. Ja. Im Grunde war sie für ihn ebenso ein Spielzeug, wie sie es für die anderen gewesen war. Auch wenn er ein anderes Spiel mit ihr spielte.</p><p>Alle waren sie Spielzeug für ihn. Sein ganzes Leben war ein grausames, zynisches Spiel.</p><p>„Puppen reden nicht. <em>Silencio</em>", sagte er kalt. Er hatte sie nicht in sein Haus gebracht, um mit ihr zu streiten. „So lange, bis du dich beruhigt hast. Und rühr' dich nicht vom Fleck."</p><p>Dann drehte er sich brüsk um und ging zur Tür hinaus.</p><p>SSSSSSS</p><p>Zornig starrte Fiona an die Decke. Morgana, was war das nun wieder!</p><p>Offenbar war die allgemeine Einschätzung, dass es sich bei den Todessern um einen Haufen Verrückter handelte, doch nicht so falsch.</p><p>Wenn sie nicht solche Schmerzen gehabt hätte, wenn sie sich nicht so furchtbar schwach gefühlt hätte, sie wäre keine Minute auf diesem verfluchten Sofa liegen geblieben. Sie hätte verdammt noch mal versucht, zu entkommen. Aber so ...</p><p>Erschöpft ließ sie ihren Blick durch das Zimmer schweifen. Es sah fast wie eine Bibliothek aus. Bücherregale bis zur Decke. Dazu das Sofa, zwei Sessel, ein niedriger Tisch – das war die ganze Einrichtung. Alles wirkte verwohnt und abgenutzt.</p><p>Im Hinausgehen hatte Severus ein Feuer im Kamin entzündet, das jetzt knackend und prasselnd den Raum erwärmte. Nicht, dass ihr kalt gewesen wäre. Der Wärmezauber hielt immer noch an, und sie war nach wie vor in den dicken schwarzen Wollumhang ihres ehemaligen Lehrers gehüllt.</p><p>Ihr Gesicht verzog sich zu einem schmerzlichen Grinsen. Er würde das Ding wohl gründlich reinigen müssen. Sie spürte, wie das Blut aus ihrem Unterleib die Wolle durchweichte.</p><p>Vom Sofa aus konnte sie aus dem Fenster sehen. Es schneite noch immer. Die Schneeflocken tanzten im Licht der Straßenlaternen.</p><p>
+  <em>Straßenlaternen? – Muggel! Ich bin hier irgendwo in einer Muggelsiedlung! Morgana, wenn es mir gelingt, hier rauszuschleichen ... </em>
+</p><p>Sie raffte den Umhang vor ihrer Brust zusammen und stemmte sich in die Höhe.</p><p>Verflucht, tat das weh! Ein glühendes Messer bohrte sich zwischen ihre Beine, und ein atemberaubender Schmerz schoss ihre Wirbelsäule hoch. Sie unterdrückte den Schrei mit Mühe, würgte ihn ab zu einem gequälten Wimmern.</p><p>
+  <em>Ich muss hier raus! Kriechend, wenn es nicht anders geht ...</em>
+</p><p>Mit angehaltenem Atem ließ Fiona sich langsam vom Sofa auf den Boden gleiten. Holz, registrierte ihr schmerzbenebeltes Hirn. Alte Dielen.</p><p>Sie nahm all ihre Willenskraft zusammen, konzentrierte sich ganz auf die nächste Bewegung. Mit zusammengebissenen Zähnen zwang sie ihren protestierenden Körper auf Hände und Knie, zwang sich, auf allen vieren zu kriechen, während ihr graue Nebelfetzen die Sicht nahmen und der Schmerz immer neue, brennende Attacken gegen ihren Unterleib ritt.</p><p>Morgana, wo war die Tür? Wo war die verfluchte Tür?</p><p>Sie quälte sich ein Stück weiter, stieß mit dem Kopf an etwas Weiches, Nachgiebiges und hob den Blick. Aber sie konnte nicht erkennen, was es war, ein wirbelnder grauer Schneesturm tobte vor ihren Augen. Vorsichtig richtete sie sich auf den Knien auf und tastete mit einer Hand durch die wabernde Finsternis, traf auf etwas Warmes, Lebendiges – eine fremde Hand schloss sich fest um ihre tastenden Finger.</p><p>Fiona schrie lautlos auf. Er hatte sie.</p><p>
+  <em>Oh, das darf doch nicht war sein! Verdammt, ich bin nicht mal fünf Meter weit gekommen ... Verflucht noch mal! </em>
+</p><p>Angst, Schmerz und Enttäuschung legten sich wie Blei auf ihre Brust und nahmen ihr den Atem.</p><p>
+  <em>Morgana, nein! Ich werde nicht vor ihm heulen! Nein! </em>
+</p><p>Aber sie hatte einfach keine Kraft mehr. Unaufhaltsam quollen die Tränen aus ihren Augen. Und endlich brach sie in ein stummes, zorniges Schluchzen aus.</p><p>SSSSSSS</p><p>
+  <em>Sie weint. Großartig.</em>
+</p><p>Severus stellte den dampfenden Becher auf dem Couchtisch ab, ohne die zitternde Hand der jungen Frau loszulassen.</p><p>Nun, an weinende Frauen war er gewöhnt. An weinende Menschen, um präzise zu sein. In Extremsituationen machte das Geschlecht keinen großen Unterschied. Wie oft war er schon unter Tränen angefleht worden. Angefleht, nicht zu töten – oder zu töten, je nachdem. Und wie oft hatte er dieses Flehen ignoriert, verzweifelte Bitten abgeschmettert.</p><p>Tränen würden ihr nicht helfen. Genauso wenig wie Fluchtversuche.</p><p>Mit einem Schwung seines Zauberstabes nahm er den <em>Silencio</em> von ihr. Dann ging er vor Fiona in die Hocke und sah in ihr zerschlagenes Gesicht.</p><p>Sie zuckte heftig vor ihm zurück.</p><p>„Mach es dir nicht so schwer."</p><p>Ihr Blick war verschleiert, unfokussiert, und das nicht von den Tränen allein.</p><p>
+  <em>Schock, Schmerz, Blutverlust ... </em>
+</p><p>„Hier." Er griff nach dem Becher und hielt ihn an ihre Lippen. „Trink. Das wird dir helfen."</p><p>Ihre Lippen zitterten, doch statt den Mund zu öffnen, wich sie ein Stück vor seiner Hand zurück. Ein Stöhnen entrang sich ihrer Kehle, und sein Blick fiel auf die dünne Spur von Blutstropfen, die sie auf dem Fußboden hinterlassen hatte.</p><p>„Du blutest. Du solltest dich nicht so anstrengen. – Komm, trink."</p><p>Wieder hob er den Becher an ihren Mund. Wieder wich sie zurück.</p><p>„Willst du mich vergiften?", presste sie hervor.</p><p>„Nein", entgegnete er ruhig. „Das ist gegen die Schmerzen. Wie du dich vielleicht noch erinnern wirst, stammen die meisten von Madame Pomfreys Heiltränken aus meinen Kesseln. – Trink."</p><p>Widerstrebend öffnete sie den Mund und würgte das Gebräu hinunter.</p><p>„Gut. Und jetzt lass dir wieder aufs Sofa helfen."</p><p>Er ergriff Fiona unter den Armen und zog hoch. Schwankend setzte sie einen Fuß vor den anderen und ließ sich schließlich erleichtert in die Polster sinken. Severus umfasste ihre Knöchel und hob vorsichtig ihre Beine aufs Sofa. Erschöpft streckte sie sich auf dem Rücken aus und schloss die Augen. Severus beugte sich über sie und begann, ihre Robe aufzuknöpfen.</p><p>Fiona riss entsetzt die Augen auf. „Was machst du da?!", keuchte sie alarmiert.</p><p>„Ich sehe nach deinen Verletzungen."</p><p>„Nein!" Panisch presste sie die Schenkel zusammen. Gleichzeitig versuchte sie, ihre Kleidung seinem Griff zu entwinden.</p><p>„Fiona", sagte er ruhig und sah ihr fest in das nicht zugeschwollene Auge. „Ich bin nicht nur der Tränkemeister des Dunklen Lords, sondern auch sein Heiler. Lass mich dir helfen."</p><p>„Warum?" Ihre Stimme bebte – Angst, Wut, Zweifel.</p><p>„Ich war fünfzehn Jahre lang vor allem eines – Lehrer. Du bist nicht die Erste und sicher nicht die Letzte von meinen ehemaligen Schülern, die ich in den Tod geleiten soll. Auch wenn ich vielleicht kein besonders beliebter Lehrer war, und auch wenn ich nicht immer gerne unterrichtet habe, entwickelt man mit der Zeit eine gewisse Bindung, besonders gebenüber den Schülern des eigenen Hauses. Ich war dein Hauslehrer. Ich habe mir geschworen, dass ich keinen meiner ehemaligen Schüler in Angst und Schmerz sterben lassen werde, sofern es in meiner Macht liegt, das zu verhindern. Bitte erlaube mir, dir zu helfen."</p><p>Einen Moment lang zögerte sie, dann nickte sie langsam.</p><p>„Und falls es dir irgendwie hilft", setzte Severus hinzu, „du bist nicht das erste Vergewaltigungsopfer, das ich vor mir habe."</p><p>„Es fühlt sich etwas anders an, wenn es einem selbst passiert, weißt du!", zischte sie zwischen zusammengebissenen Zähnen, während er behutsam ihre Schenkel auseinander schob.</p><p>„Ich verfüge über ein lebhaftes Vorstellungsvermögen. – Nicht bewegen jetzt."</p><p>Severus richtete seinen Zauberstab auf ihren Unterleib und sprach mehrmals dieselben lateinischen Worte, an die Fiona sich vage von einer von Madame Pomfreys Behandlungen her zu erinnern glaubte.</p><p>„Tut es noch weh?", fragte er dann.</p><p>„Ein bisschen", erwiderte sie leise.</p><p>Er wiederholte den Spruch. „Und jetzt?"</p><p>„Nein ... nein, ich glaube nicht." Sie setzte sich auf, zögerte kurz. „Danke", sagte sie dann.</p><p>„Keine Ursache."</p><p>Severus richtete den Zauberstab auf ihr Gesicht und heilte das malträtierte Auge, die aufgeplatzten Lippen und die anderen Spuren, die ihre Kameraden hinterlassen hatten.</p><p>Jetzt waren es zwei blassblaue Augen, die ihn durchdringend anstarrten.</p><p>SSSSSSS</p><p>Fiona sah in die schwarzen Augen, die körperlos vor ihr im Raum zu schweben schienen. Wie in ihrer Schulzeit hatte sie plötzlich das Gefühl, in zwei dunkle Tunnel zu blicken, die ins Nichts führten.</p><p>Viele Todesser hatten seltsame Augen – hart, grausam, resigniert oder traurig. Viele ihrer Opfer hatten seltsame Augen – so voll Qual, Panik, Hass und Verzweiflung, dass sie kaum wiederzuerkennen waren.</p><p>Aber noch nie waren ihr solche Augen wie diese begegnet. Schwarze Löcher, in denen man sich verlor. Als Schülerin hatte sie stets so rasch wie möglich den Blick abgewendet. Doch diesmal hielten Severus' Augen sie fest, zwangen sie, den Kontakt aufrechtzuerhalten.</p><p>„Morgana, was ist bloß mit deinen Augen passiert?", hauchte sie zwischen Faszination und Entsetzen. „Du trägst den Tod in deinen Augen."</p><p>Severus blinzelte irritiert. Der Bann war gebrochen.</p><p>Er ließ sich in einen der Sessel sinken und starrte nachdenklich ins Feuer.</p><p>„Den Tod – mag sein, ja", sagte er schleppend. „Ich habe so viele Menschen hinabgestoßen in die ewige Dunkelheit ... Der Tod ist mein ständiger Begleiter, mein Lehrmeister – gut möglich, dass er mir sein Siegel in die Augen gebrannt hat wie der Dunkle Lord das Mal in meinen Arm." Er strich leicht über das schwarze Brandzeichen auf seiner Haut. „Ich habe mich dem Tod schon immer verbundener gefühlt als dem Leben. Das Leben ist sinnlos. Letztlich wird alles wieder zu Erde und Asche."</p><p>„Der Tod ist der Sinn des Lebens", flüsterte Fiona.</p><p>Er sah rasch auf. Ihre Blicke trafen sich.</p><p>„Ja", erwiderte er leise. „Der Tod ist der Sinn, das Ziel. Aber das ist nicht alles. Man kann sich dem Tod hingeben, sich in ihn hineinfallen lassen. Er ist die absolute Sicherheit, die einzige Sicherheit, die wir haben. Egal, ob man den Tod gibt oder nimmt, man kann sich in ihn einhüllen wie in eine schwarze Decke."</p><p>Ein Glimmen trat in seine Augen. Sie waren nicht länger leer. Ein schwarzes Feuer brannte in ihnen und gierte nach neuer Nahrung.</p><p>Fiona lächelte verkrampft. „Wir scheinen ja zwei verwandte Seelen zu sein. Wie schade, dass wir das nicht rechtzeitig erkannt haben." Ihre Stimme klang ungewohnt schrill in ihren Ohren.</p><p>Severus nickte knapp, entließ sie aber nicht aus seinem Blick. Seine Augen sagten ihr, dass es Zeit war.</p><p>Sie versuchte, die Angst hinunterzuwürgen, doch es gelang ihr nur teilweise.</p><p>„Severus, trotz alledem ... Ich ... ich habe Angst."</p><p>In den schwarzen Augen war keine Regung zu erkennen.</p><p>Fiona schluckte mühsam.</p><p>„Severus, ich weiß, es ist nicht deine Art, aber ... Würdest du ... würdest du mich in den Arm nehmen, wenn ich ... während ich ..." Ihre Stimme erstarb.</p><p>„Morgana, ich schäme mich für meine Feigheit!", brach es plötzlich wütend aus ihr heraus, als ihr Körper zu beben anfing und ihr wieder Tränen in die Augen stiegen. „Es tut mir leid. Schätze, ich sollte mich endlich mit der Realität abfinden. Man stirbt in der Regel allein, oder?", stieß sie schluchzend hervor.</p><p>
+  <em>Allein. Allein in der Dunkelheit. Ohne weiche Decke. Ohne schützende Arme. Allein beim ewigen Fall in die Nacht. </em>
+</p><p>Doch dann war da plötzlich eine Hand auf ihrer Schulter, zwei Hände. Severus war lautlos hinter sie getreten.</p><p>„Du bist nicht allein", sagte er ruhig. „Du brauchst dich nicht zu fürchten. Ich werde dich festhalten."</p><p>Er ließ sich neben sie aufs Sofa gleiten, legte vorsichtig einen Arm um ihre Schultern. Einen Moment zögerte sie noch, dann ließ sie sich gegen ihn sinken, in die warme und tröstende Umarmung hinein. Seine Arme schlossen sich fest um ihren zitternden Körper, zogen sie an seine Brust. Fiona weinte, fürchtete sich und fühlte sich doch auf seltsame Weise geborgen dabei. Beschützt. Sicher.</p><p>Sie schloss die Augen und ließ sich fallen.</p><p>SSSSSSS</p><p>Severus wiegte Fiona wie ein kleines Kind, summte eine leise und raue Melodie dazu.</p><p>Nach einer Weile löste er einen seiner Arme und zog den Dolch aus seinem Gürtel. Doch er wartete noch, legte den Arm wieder um sie, die Waffe in der Hand. Fiona weinte und schmiegte sich an ihn.</p><p>Severus verachtete sich dafür, dass er ihre Nähe genoss, die Nähe eines Menschen, der ihm komplett ausgeliefert war. Doch dies war seine einzige Chance, anderen Menschen nahezukommen, und er würde sie nicht ungenutzt verstreichen lassen. Auch er brauchte Wärme und Nähe, und wenn er sie nur auf diese Weise bekommen konnte, dann war es eben so.</p><p>Fionas Weinen verebbte allmählich. Severus fühlte ihren Atem an seinem Hals, ihren Herzschlag an seiner Brust.</p><p>„Bereit?", fragte er leise, und spürte, wie sie nickte.</p><p>Mit der linken Hand fixierte er ihren Kopf. Die Rechte mit dem Dolch legte er an ihren Hals.</p><p>Ihr Atem beschleunigte sich.</p><p>"Schhhh ...", machte Severus.</p><p>Dann schnitt er Fiona mit einer raschen Bewegung die Kehle durch.</p><p>Sie zuckte und gab ein röchelndes Geräusch von sich. Severus hielt ihren Kopf, während ihr Blut seine Kleidung durchweichte. Der Schnitt hatte nicht nur die Luftröhre, sondern auch die Halsschlagadern durchtrennt und somit die Versorgung des Gehirns unterbrochen. Sie war bewusstlos, ehe der Schmerz sie erreichen konnte. Nach einigen Minuten setzten auch Atmung und Herzschlag aus.</p><p>Doch Severus blieb sitzen, bis das Feuer im Kamin heruntergebrannt war. Dann erst schob er Fiona behutsam von seinem Schoß und erhob sich. Er zog seinen Zauberstab, sprach erst mehrere Reinigungszauber, die ihn, die Tote und das Sofa vom vergossenen Blut befreiten, dann den Verwandlungsspruch.</p><p>Fiona verschwand. An ihrer Stelle lag ein kantiger, ockerfarbener kleiner Stein auf dem Sofa. Severus nahm ihn in die Hand und betrachtete ihn nachdenklich, ließ seine Fingerspitzen sacht über die raue Oberfläche gleiten. Endlich trat er zum Kaminsims hinüber, schob einen glatten schwarzen Kiesel und einen unregelmäßigen geformten, rötlich gefleckten Stein auseinander. Er legte Fiona in ihrer neuen Gestalt zwischen die beiden.</p><p>Dann ging er in die Küche, um Tee aufzusetzen.</p><p>SSSSSSS</p><p>
+  <strong>Dialog IV</strong>
+</p><p>SSSSSSS</p><p>
+  <em>Hallo, Severus.</em>
+</p><p>
+  <em>Hallo, Tom.</em>
+</p><p>
+  <em>Du brauchst dich nicht an mich zu erinnern, wenn es dir weh tut, Severus.</em>
+</p><p>
+  <em>An dich werde ich mich immer erinnern.</em>
+</p><p>
+  <em>Immer?</em>
+</p><p>
+  <em>Immer.</em>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/5374835/chapters/12414017">Chapter 5</a>: Thomas - Herz aus Eis
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>SSSSSSS</p><p>
+  <em>Lacroix: Und Collot schrie wie besessen, man müsse die Masken abreißen.</em>
+</p><p>
+  <em>Danton: Da werden die Gesichter mitgehen.</em>
+</p><p>
+  <em>(Georg Büchner, Dantons Tod)</em>
+</p><p>SSSSSSS</p><p>Schlecht gelaunt eilte Severus Snape die Treppen zu den Kerkern seines Herrn hinab. Was würde er diesmal vorfinden? Er hasste es, wenn er seine ehemaligen Schüler erst von den Steinen zusammenkratzen musste, ehe er sich seiner eigentlichen Aufgabe widmen konnte.</p><p>Wie hieß der Junge noch? John? Tom?</p><p>
+  <em>Thomas. Tom.</em>
+</p><p>Es war Jiroslav Mayfairs Sohn, zu dem sein Herr ihn diesmal gesandt hatte. Jiroslav würde das hart treffen. Er liebte seine drei Kinder sehr.</p><p>
+  <em>Nun, nichts zu machen.</em>
+</p><p>Mayfair war selbst schuld daran, dass die Dinge sich auf diese Weise entwickelt hatten.</p><p>
+  <em>Hätte er seinen Stolz und seinen Geltungsdrang besser im Zaum gehalten ...</em>
+</p><p>Severus' Stiefelabsätze knallten auf den hohen unregelmäßigen Stufen, als er die letzte Treppe hinabsprang. Er war wütend, und ein bisschen Lärm zu machen tat ihm gut.</p><p>Als er diese Aufgabe übernommen hatte, war es in der Hoffnung geschehen, er könnte dadurch seinen ehemaligen Schülern Leid ersparen.</p><p>
+  <em>Von wegen.</em>
+</p><p>Severus schauderte, als er flüchtig an Jery dachte, an das, was er ihm auf Befehl des Dunklen Lords hatte antun müssen.</p><p>Nichts konnte er verhindern, gar nichts. Er konnte nur trösten, lindern, das war alles.</p><p>Dann stand er auf einem dunklen Gang vor einer Reihe von alten Holztüren. Es war so feucht hier unten, dass sie von Kolonien winziger Pilze besiedelt waren, die ein interessantes Farbspektrum von braungrau bis giftig orange boten. Einige wenige Fackeln blakten matt und trüb vor sich hin, sandten Kreise blassgelben Lichts in die Finsternis.</p><p>Severus zückte seinen Zauberstab. „<em>Lumos</em>!"</p><p>Er wollte wenigstens sehen, wohin er trat.</p><p>Auf seinem Weg durch den Korridor kickte er zwei tote Ratten beiseite und zermalmte fast eine gigantische Spinne, die gleichgültig mitten im Weg hockte. Im letzten Moment stockte er und stieg über das lauernde Tier hinweg.</p><p>Zehn Meter weiter stieß er auf die richtige Tür. Seine Tür. Sie war mit einem Totenschädel gekennzeichnet, der giftig grün aus der matt glimmenden Pilzschicht leuchtete. Keine Schlange, dafür zwei gekreuzte Knochen.</p><p><em>Hübsch symbolisch</em>, dachte Severus grimmig.</p><p>Er atmete tief durch, tippte die Tür mit dem Zauberstab an und ließ sie lautlos aufschwingen.</p><p>Die Zelle war stockdunkel, so dass er als Erstes den <em>Lumos</em>-Zauber verstärkte. Weißblaues Licht erhellte jeden Winkel des kleinen Raumes und erfasste gnadenlos die magere, blasse Gestalt, die sich in der hintersten Ecke an die Wand presste. Nackt, wie Severus mit steigendem Ärger feststellte. Die Augen des Jungen wirkten unnatürlich groß, als er gebannt auf den Todesser starrte, der soeben die barmherzige Finsternis zerstört hatte.</p><p>Tom Mayfair, achtzehn Jahre alt, ein verstörtes Kind, die Beine an den bloßen Leib gezogen, die Arme um die Knie geschlungen. Mausgraues kurzes Haar, schlammbraune Augen, ein bleiches, pickeliges Gesicht, unansehnlich, unauffällig, einer von den mittelmäßigen, unwichtigen Menschen, die man kaum wahrnimmt und sofort wieder vergisst. Er hatte diesen Jungen bis vor kurzem unterrichtet, sieben Jahre lang, und trotzdem konnte Severus sich kaum an ihn erinnern.</p><p>Er schloss die Tür hinter sich und ersetzte den <em>Lumos</em>-Zauber durch ein permanentes, wärmeres Licht, das die Zelle auf freundlichere Art erhellte.</p><p>„Tom. Ich bin gekommen, um dir zu helfen. Ich werde dir nicht weh tun. Hab' keine Angst", sagte er sanft.</p><p>Der Junge nickte ruckartig, mechanisch – er hatte einen Befehl gehört, keine beruhigenden Worte. Einem Befehl musste man gehorchen, so gut man eben konnte.</p><p>Severus verfluchte in Gedanken die beiden Personen, die sich zuletzt mit Tom „beschäftigt" hatten: Dolohow und Macnair. Es war nur zu klar, was sie, zusätzlich zu den allgemein üblichen Quälereien, mit dem Jungen angestellt hatten. Kein Wunder, dass er danach verstummt und erstarrt war. Abgesehen von der Angst tat ihm wahrscheinlich alles weh. Und er schämte sich augenscheinlich so sehr, dass er wohl am liebsten in der Wand verschwunden wäre.</p><p>„Tom, du bist nicht der Erste, dem das passiert ist. Du kannst nichts dafür, also muss es dir auch nicht peinlich sein."</p><p>Er machte drei Schritte auf Tom zu und streckte die Hand nach ihm aus. Der Junge zuckte sofort zurück, so heftig, dass er mit dem Kopf gegen die Steine schlug. Severus blieb stehen und ließ die Hand wieder sinken.</p><p>„Ich tue dir nichts. <em>Niemand</em> wird dir mehr weh tun."</p><p>Vorsichtig, ganz langsam, näherte er sich dem Gefangenen. Tom starrte ihn furchtsam an, offenbar gelähmt vor Angst, gab aber keinen Laut von sich.</p><p>Severus ließ sich vor ihm auf ein Knie sinken und sah ihm fest in die Augen. „Du hast Schmerzen. Ich möchte dir helfen. Okay?"</p><p>Tom nickte schwach, mied dabei seinen Blick.</p><p>Severus streckte erneut die Hand aus und berührte ihn vorsichtig am Arm. Er musste dem Jungen <em>zeigen</em>, dass er ihm nicht weh tun würde, dass seine Berührungen keine Gefahr bedeuteten. Worte drangen nicht richtig zu ihm durch.</p><p>Tom begann zu zittern, als er ihn anfasste, versuchte aber nicht, seiner Hand auszuweichen. Wobei das nicht unbedingt ein Vertrauensbeweis war. Wahrscheinlich hatte es Schläge gehagelt, sobald er versucht hatte, sich Dolohow und Macnair zu entziehen.</p><p>Plötzlich begann der Junge, heftig zu husten. Der Husten schüttelte seinen dürren, weißen Leib wie eine fremde Macht, die heimtückisch seinen Körper gekapert hatte und ihn nun auseinanderreißen wollte. Zwischen dem Husten keuchte und würgte er, und dann begann er, zähen gelben Schleim zu spucken.</p><p><em>Lungenentzündung</em>, stellte Severus fest. <em>Böse Lungenentzündung.</em></p><p>Er war fast eine Woche nicht zum Dunklen Lord gerufen worden. Gut möglich, dass der Junge schon seit Tagen in diesem feuchten, eiskalten Loch lag. Nackt, schmerzgepeinigt und verängstigt, sehr wahrscheinlich auch halb verhungert und verdurstet, in absoluter Finsternis. Und ohne zu wissen, ob jemals wieder ein Mensch die Tür zu seiner Zelle öffnen würde.</p><p><em>Ich bringe sie um, </em>dachte Severus voll Abscheu. <em>Alle beide. </em></p><p>Er zog ein sauberes Taschentuch hervor und wischte Tom behutsam den ausgehusteten Schleim von Gesicht und Brust. Der Junge war erschöpft zur Seite gesackt, die Augen fest geschlossen.</p><p>Severus ließ mit einem Schlenker seines Zauberstabes ein Glas Wasser erscheinen, fasste Tom an den Schultern und lehnte ihn aufrecht gegen die Wand.</p><p>Kein Protest, keine Gegenwehr.</p><p>
+  <em>Ausgelaugt. Gebrochen.</em>
+</p><p>Sacht strich Severus dem Jungen über die Wange. „Trink einen Schluck Wasser. Das wird dir gut tun."</p><p>Toms Lider flatterten. Als er die Augen aufschlug, war sein Blick starr ins Leere gerichtet. Severus hielt ihm das Glas an die Lippen, und Tom leerte es langsam, mühevoll. Sein Blick wurde dabei klarer, der Ausdruck seiner Augen wacher und intelligenter.</p><p>
+  <em>Wahrscheinlich total ausgetrocknet. </em>
+</p><p>Prüfend nahm Severus die Haut an Toms Unterarm zwischen die Finger. Sie war schlaff und faltig.</p><p>Jetzt endlich erwiderte Tom seinen Blick, immer noch furchtsam, aber deutlich beherrschter und verständiger.</p><p>Severus bemühte sich, ein beruhigendes Lächeln auf sein starres Gesicht zu zaubern, was ihm offensichtlich gelang: Der Junge erwiderte das Lächeln. Sehr unsicher, zittrig, aber er erwiderte es.</p><p>„Hallo, Tom. Schön, dass du wieder da bist", sagte Severus mit einem Anflug von Ironie. „Ich nehme an, du kennst mich noch?"</p><p>Tom nickte stumm.</p><p>„Sprechen kannst du, oder?"</p><p>Offenbar interpretierte Tom die Frage als Vorwurf, als Vorspiel zu einer Bestrafung, und kroch wie ein geprügelter Hund in sich zusammen. „Ja, Sir", flüsterte er. Seine Stimme klang heiser. In seinen Augen flackerte es panisch.</p><p>„Du musst mich nicht mit Sir anreden", sagte Severus, sehr sanft und leise. „Wir sind nicht mehr in Hogwarts. – Leider", fügte er nach einer kurzen Pause hinzu. „Hier bin ich einfach Severus für dich, ja?"</p><p>Nicken. Immer noch gespannte Wachsamkeit.</p><p>„Schau, Tom, ich will dir nichts vormachen. Ich bin nicht hier, um dich zu retten. Aber ich werde tun, was ich kann, um deine Schmerzen zu lindern und dir die Angst zu nehmen."</p><p>Der Junge wurde noch eine Spur bleicher. Doch er wirkte gefasst. „Ich weiß ...", brachte er mit rauer Stimme hervor. „Ich weiß, dass mir keiner mehr helfen kann. Sie haben's mir gleich gesagt. Sie haben gesagt, sie wollen noch ein bisschen ... noch ein bisschen <em>Spaß</em> mit mir haben, ehe sie meine ... meine <em>Überreste</em> meiner Mutter auf den Komposthaufen kippen."</p><p>Severus verhinderte erfolgreich ein Entgleisen seiner Gesichtszüge, doch seine Gedanken waren schon wieder bei Dolohow und Macnair und den Dingen, die er gerne mit ihnen anstellen würde.</p><p>„Mein Vater ... Er war die ganze Zeit dabei; er hat alles gesehen. Aber ... aber er hat kein Wort gesagt. Nicht ein Mal! Er hat nicht versucht, mir zu helfen. Er stand einfach nur da und hat zugesehen, wie sie ... wie sie es ..." Die Worte waren geradezu aus ihm hervorgesprudelt, drängelnd, sich überstürzend, doch jetzt stockte Tom, als wäre er an eine unüberwindbare Barriere gestoßen. „Sie haben ... sie ..."</p><p>„Ist schon gut, Tom", sagte Severus in beruhigendem Tonfall. „Ich weiß, was sie mit dir gemacht haben." Nach einer kurzen Pause fügte er hinzu: „Und ich bin mir sicher, dass sie deinen Vater dazu gezwungen haben."</p><p>Der Blick des Jungen war schmerzerfüllt.</p><p>„<em>Absolut sicher. </em>Wahrscheinlich haben sie ihm gedroht, dich umzubringen, wenn er eingreift." Severus sah, dass Tom ihm verzweifelt gern glauben wollte. Aber ...</p><p>„Aber er wusste, dass sie mich töten würden! Er war doch dabei, als sie's gesagt haben! Dann war's doch egal, ob er versucht, mir zu helfen. Er hätte es doch nicht schlimmer machen können für mich!" Toms Augen füllten sich mit Tränen.</p><p>Severus hatte bis jetzt auf intensiveren Körperkontakt verzichtet, um den Jungen nicht in Panik zu versetzen. Aber nun zog er Tom in seine Arme, in der Hoffnung, dass der Junge dies nicht als erneuten Übergriff empfinden würde.</p><p>Toms Körper versteifte sich. Rasch nahm Severus seinen Umhang ab und breitete ihn über den Jungen. Vielleicht würde Tom sich darunter sicherer und weniger verletzlich fühlen. Tatsächlich spürte er kurz darauf, wie sich der Körper des Jungen zumindest etwas entspannte.</p><p>Severus holte tief Luft. „Auch wenn du es vielleicht nicht glauben kannst", sagte er mit fester Stimme, „es hätte schlimmer werden können für dich. Weit schlimmer, wenn dein Vater sich eingemischt hätte. Dein Vater hätte dir geholfen, wenn er nicht solche Angst gehabt hätte, dir durch sein Eingreifen noch mehr zu schaden. Ganz sicher."</p><p>Tom schniefte leise.<em><br/></em></p><p>„Tom, hör zu. Ich möchte mich um deine Verletzungen kümmern. Dazu muss ich dich aufdecken und anfassen, okay?"</p><p>Tom nickte verkrampft.</p><p>Severus schlug den Umhang zurück. „Steh auf, bitte."</p><p>Tom erhob sich zögernd. Severus stellte sich vor ihn. Als Erstes sprach er einen Reinigungszauber, damit er die Wunden nicht unter dem Dreck der Kerkerhaft suchen musste, und einen Wärmezauber, damit der Junge nicht länger fror. Dann ließ er seine Hände behutsam über Toms Körper wandern. Ihm war klar, dass die Untersuchung für den Jungen unangenehm sein würde, aber es gab keine andere Möglichkeit.</p><p>
+  <em>Es sei denn, du willst ihn sofort töten ... </em>
+</p><p>Aber eben das wollte Severus nicht. Sein ehemaliger Schüler sollte nicht im Gedanken an Folter, Vergewaltigung und Erniedrigung durch die Todesser sterben, nicht im Gefühl völligen Verlassenseins durch seinen Vater, mit der eiskalten Furcht im Herzen, die ihm die Tage seiner Haft in diesem dunklen, dreckigen Loch in die Seele geätzt hatten. Severus würde ihm etwas Besseres geben, etwas, woran Tom sich in den letzten Minuten seines Lebens festhalten konnte.</p><p>Doch zunächst musste er Art und Grad der Verletzungen feststellen.</p><p>Er fing mit dem Kopf an und arbeitete sich von dort aus nach unten. Eine frische Platzwunde am Hinterkopf, da wo Tom vorhin im verzweifelten Versuch, vor ihm zurückzuweichen, gegen die Wand geprallt war. Ein paar Beulen und Schürfwunden. Würgemale am Hals. Ein gequetschter Kehlkopf. Kein Wunder, dass seine Stimme merkwürdig klang. Die rechte Schulter war offenbar ausgekugelt gewesen und wieder eingerenkt worden. An der linken Hand zwei gebrochene Finger. Hämatome, Prellungen, Quetschungen überall. Zwei gebrochene Rippen – erstaunlich, dass Tom so ruhig geblieben war, als Severus ihn in den Arm genommen hatte. Eine weitere Rippe angebrochen.</p><p>Der Junge hielt den Atem an, als Severus' Hände unaufhaltsam tiefer wanderten, er vor Tom auf die Knie sank.</p><p>„Ist gut. Ich bin ganz vorsichtig."</p><p>Obwohl Angst vor Schmerzen wahrscheinlich nicht der Grund für Toms Anspannung war, oder zumindest nicht der einzige.</p><p>Severus fuhr mit der Untersuchung fort.</p><p>Risse im Bauchfell, die sicher weh taten, aber keinen weiteren Schaden angerichtet hatten.</p><p>„Haben sie dich in den Unterleib getreten?"</p><p>Nervöses Nicken.</p><p>„Dolohow?"</p><p>„Ja."</p><p>Typisch. Brachialgewalt war Antonins Spezialität. Severus hätte gar nicht hinsehen müssen. Er wusste auch so, wie es weiter unten aussehen würde. Tom war nicht das erste Opfer Dolohows, das er zu Gesicht bekam.</p><p>Severus war nicht nur Meister der Zaubertränke, Magier der subtilen und effizienten Folter und Henker im Namen seines Herrn, er wurde auch häufig als Heiler herangezogen. Hauptsächlich für verletzte Todesser, aber auch für Gefangene. Wobei es bei Letzteren meist darum ging, sie noch ein bisschen länger am Leben zu erhalten – gegen ihren Willen.</p><p>Severus wandte seine Aufmerksamkeit wieder Toms Körper zu.</p><p>Die üblichen Quetschungen am Geschlecht. Hämatome an den Beinen. Ein Haarriss im rechten Schienbeinknochen.</p><p>Soweit die Vorderseite.</p><p>„Dreh dich um, bitte."</p><p>Tom kam der Aufforderung so zögernd nach, als müsse er seinen Körper durch zähen Sirup bewegen.</p><p>Kratzspuren und Bisswunden im Nacken. Hämatome an den Schultern, auf dem Rücken. Wieder die gebrochenen Rippen. Nicht zu vergessen die Lungenentzündung, Austrocknung und Nahrungsmangel. Und dann sein Hintern. Wie erwartet. Sie hatten ihn buchstäblich zerfetzt.</p><p>„Okay, das war's schon."</p><p>Severus breitete seinen Umhang auf den Steinen aus – nicht ohne vorher einen Reinigungszauber über den Boden gesprochen zu haben.</p><p>„Leg dich auf den Bauch, bitte."</p><p>Tom sah ihn furchtsam an.</p><p>Severus schüttelte nur den Kopf. Der Junge zögerte noch einen Moment, doch dann ließ er sich auf dem Umhang nieder und streckte sich auf dem Bauch aus.</p><p>„Ich benutze die Hände, nicht den Zauberstab, da du im Grunde am ganzen Körper Verletzungen hast", erklärte Severus. „Da brauche ich die Heilenergie nicht so genau zu fokussieren. Atme tief und ruhig und versuch, dich etwas zu entspannen. Es tut nicht weh."</p><p>Severus schloss die Augen und konzentrierte sich auf seinen Kopf, seinen Scheitel. Er öffnete sich, machte einen Weg frei für die fremde Kraft, die er nutzen wollte. Ein violettes Licht trat durch seine Schädeldecke, flutete seinen Körper und sammelte sich in seinen Händen. Er spürte, wie sie immer wärmer wurden und vor Energie zu vibrieren begannen.</p><p>Schließlich öffnete er die Augen und legte die Hände auf Toms Hinterkopf. Er spürte und sah, wie das Licht prickelnd aus seinen Fingerspitzen quoll, hörte, wie die Energie sich sirrend wie ein Sommermückenschwarm auf den anderen übertrug.</p><p>Sacht strich er über den Körper des Jungen, verharrte, wo er eine Störung wahrnahm, und ließ das violette Strahlen so lange auf jeder einzelnen Verletzung ruhen, bis er fühlte, dass die Stelle mit Heilenergie gesättigt war. Dabei murmelte er Beschwörungsformeln, ein monotoner Singsang, der den Kontakt zur Quelle des Lichts aufrecht erhielt.</p><p>Schon nach kurzer Zeit hatte Tom sich völlig entspannt. Die Berührung wanderte tiefer, über seinen Rücken, verharrte lange auf seinem malträtierten Hintern, erreichte seine Beine.</p><p>„Dreh dich um", hauchte Severus. Seine Stimme klang verändert, war warm, fast liebevoll.</p><p>Tom rollte sich auf den Rücken, und Severus machte auf seiner Vorderseite weiter. Der Körper des Jungen war nun fast völlig in ein schillerndes, violettes Licht gehüllt wie in eine Decke.</p><p>Lange ließ Severus seine Hände über den entzündeten Lungenflügeln liegen. Das Violett wurde tiefer und dichter und sank in Toms Körper hinab wie eine Tintenwolke, die sich über die entzündeten Lungenbläschen legte. Weiter wanderten Licht und Hände über Bauch und Unterleib, Geschlecht und Beine.</p><p>Severus war ganz von dem fremden Glühen erfüllt. Das heilende Leuchten war in ihm und schien durch seine Haut nach außen zu wabern. Es lag über Tom wie ein schützendes Gewand.</p><p>Severus legte die Handflächen aneinander und verneigte sich in Richtung seines Patienten, der mit offenen Augen, aber wie in tiefer Trance ausgestreckt am Boden lag. Dann breitete Severus die Arme aus, spreizte die Finger und ließ das Licht zurück in die Atmosphäre fließen. Spinnwebfeine Strahlen tanzten aus seinen Fingerkuppen, erfüllten den Kerker mit ihrem heilsamen Feuer und versickerten zwischen den Steinen.</p><p>Dann war es vorbei. Erschöpft, aber von tiefer Zufriedenheit erfüllt, ließ Severus sich zu Boden sinken, streckte sich aus und spürte dem letzten verglimmenden Prickeln in seinen Fingerspitzen hinterher. Nach ein paar Minuten seufzte er tief und stemmte sich auf die Füße, um nach dem Jungen zu sehen.</p><p>„Tom?", fragte er leise und freundlich.</p><p>„Ja?", murmelte Tom verschlafen.</p><p>„Ich wollte nur sicher gehen, dass du nicht weggeschwebt bist."</p><p>Ein breites, völlig entspanntes Lächeln lag auf Toms Gesicht.</p><p>Träge zog Severus seinen Zauberstab. Eine Matratze und ein Stapel Decken materialisierten in der Zelle.</p><p>„Komm, sonst tut dir nachher alles weh von den Steinen."</p><p>Severus wickelte Tom in seinen Umhang, hob ihn vorsichtig hoch, legte ihn auf die Matratze und deckte ihn sorgfältig zu. Der Junge grunzte protestierend, als er hochgehoben wurde, und schlief ein, kaum dass sein Körper die weiche Unterlage berührt hatte.</p><p>Lächelnd zog Severus sich eine Decke heran, streckte sich neben Tom aus und zog den Jungen in eine freundschaftliche Umarmung.</p><p>Dann schlief er ebenfalls ein.</p><p>SSSSSSS</p><p>„Severus?"</p><p>„Hmmm?"</p><p>Eine Hand berührte ihn zaghaft an der Wange, strich ihm das Haar aus der Stirn.</p><p>„Was ist passiert, bevor wir eingeschlafen sind?", fragte eine brüchige Jungmänner-Stimme.</p><p>Severus war mit einem Schlag hellwach. Er richtete sich auf den Ellenbogen auf und sah den Sprecher an. Neben ihm saß ein magerer, pickeliger Junge, gehüllt in einen schwarzen Wollumhang, und starrte ihn verunsichert an.</p><p>
+  <em>Tom.</em>
+</p><p>„Nichts", erwiderte Severus wahrheitsgemäß.</p><p>„Ich ... fühle mich so eigenartig."</p><p>„Ich hoffe, du fühlst dich gut. Ich habe eine Menge Energie in deine Heilung investiert. Erinnerst du dich nicht?"</p><p>„Nicht richtig. Da war ein violettes Licht ... Wärme ... Du hast mich <em>angefasst </em>..."</p><p>Severus' Mundwinkel zuckten amüsiert, als er beobachtete, wie Tom die Röte ins Gesicht stieg.</p><p>
+  <em>Du meine Güte.</em>
+</p><p>„Es gibt mehr als nur eine Art, jemanden anzufassen", versicherte er mit mildem Spott in der Stimme. „Meine Absichten dabei waren durchaus ehrenhaft. Und nur, weil wir auf derselben Matratze geschlafen haben, heißt das noch lange nicht, dass wir auch <em>miteinander</em> geschlafen haben."</p><p>Er lachte leise, als Tom noch eine Spur röter wurde. Ein grünes Jüngelchen, wirklich.</p><p>
+  <em>Ein grünes Jüngelchen, ja. Bis vor ein paar Tagen zwei deiner Kollegen ihren „Spaß" mit ihm hatten. </em>
+</p><p>Severus wurde schlagartig ernst. Er hatte kein Recht, sich über Tom lustig zu machen.</p><p>„Wie fühlst du dich sonst? Abgesehen von eigenartig, meine ich?"</p><p>Tom zögerte einen Moment. „Hungrig", sagte er dann mit einem fragilen Lächeln.</p><p>„Hungrig ist gut. Warte mal ..."</p><p>Severus arbeitete sich aus den Decken heraus und angelte nach seinem Zauberstab.</p><p>
+  <em>Wie leichtsinnig.</em>
+</p><p>Tom hätte ihm den Stab jederzeit abnehmen und ihn beispielsweise in eine Kröte verwandeln können. Oder Schlimmeres.</p><p>Es schien sich grundsätzlich in beunruhigendem Maße auf Severus' Wachsamkeit und Selbstkontrolle auszuwirken, wenn er intensiven Gebrauch von seinen Heilkräften machte.</p><p>Mit einem reumütigen Seufzen schwang er seinen Zauberstab, um Frühstück aus der Küche herabzubeschwören. Ein beladenes Tablett erschien in der Luft.</p><p>„Ich fürchte, für dich ist Diät angesagt. Etwas anderes als Brei und Brühe wird dein Körper kaum bei sich behalten, nachdem du tagelang nichts gegessen hast."</p><p>Er ließ das Tablett zu Boden sinken. Zwei Becher Kräutertee, zwei Tassen Brühe, zwei Schalen Haferschleim.</p><p>„Sag mal, Tom", fragte Severus beiläufig, während er etwas lustlos seinen pappgrauen Haferschleim löffelte, „irre ich mich, oder hat dein Vater vor seinem – nun, nennen wir es einmal <em>eigenmächtiges Handeln</em> ... vor seinem eigenmächtigen Handeln also, tatsächlich beim Dunklen Lord um deine Aufnahme in den Orden ersucht?"</p><p>Tom ließ die Tasse mit Brühe sinken und nickte unglücklich.</p><p>
+  <em>Jiroslav Mayfair, du bist noch dümmer, als ich immer gedacht habe.</em>
+</p><p>Der Rest des Essens verlief schweigsam.</p><p>Severus dachte nicht zum ersten Mal über die Unvernunft vieler Eltern nach. Eltern, die ihre unbegabten Sprösslinge unbedingt bis zum U.T.Z. durchpeitschen wollten. Eltern, die darauf bestanden, dass ihre Kinder einmal „etwas Besseres" werden sollten, auch wenn diese überhaupt kein Interesse daran hatten. Eltern, Väter vor allem, die ihre Söhne und, seltener, Töchter auf Biegen und Brechen zu ihren Nachfolgern formen wollten, sie aus Dummheit und Ehrgeiz vor den Thron des Dunklen Lords schleppten, auch wenn es sich bei ihren Kindern keineswegs um geborene Todesser handelte.</p><p>Väter wie Jiroslav Mayfair.</p><p>Oder wie Tobias Snape. Auch wenn Severus' Vater als Muggel ihn natürlich nicht direkt dem Dunklen Lord übergeben hatte, hatte er indirekt seinen Anteil an Severus' Eintritt in den Orden gehabt.</p><p>
+  <em>Den Löwenanteil. </em>
+</p><p>Doch auch andere hatten fleißig daran gearbeitet, Severus in die Dunkelheit zu treiben. So lange, bis er schließlich geglaubt hatte, keine Wahl mehr zu haben, und sich den Todessern angeschlossen hatte. Nun trug er seit zwanzig Jahren eine Maske, die mittlerweile so fest mit ihm verwachsen war, dass sie erst zu seinem zweiten, dann zu seinem bevorzugten ersten Gesicht geworden war. Er wusste kaum noch, wo sie aufhörte und er selbst begann.</p><p>Der andere Severus Snape, der Heiler, der warmherzige, mitfühlende Mann, der er auch sein konnte, war immer weiter zurückgedrängt worden, bis er sich schließlich nur noch stundenweise hinter verschlossenen Türen zeigen durfte – und nur vor denen, die dem Tod geweiht waren. Nur vor Menschen, die nach der Begegnung mit dieser Seite seiner Persönlichkeit keinen mehr treffen würden, dem sie von dem merkwürdigen Wesen unter dem eisigen schwarzen Panzer erzählen konnten.</p><p>Gedankenverloren strich Severus über seinen linken Unterarm.</p><p>Es würde ihm nicht leicht fallen, Tom zu töten, nach all der Mühe, die er in seine Wiederherstellung investiert hatte. Wenn niemand Severus auf die Finger sah, dann entglitten ihm die Dinge manchmal. Er hätte den Jungen schon vor Stunden töten sollen, denn natürlich wurde es mit jeder gemeinsam verbrachten Minute schwerer.</p><p>Tom war wirklich ein Pechvogel. Die Schuld lag einzig und allein bei seinem Vater. Jiroslav hatte versagt, nicht Tom. Sein Vater hatte die Mitgliedschaft im Orden für seine eigenen Zwecke genutzt, hatte den Dunklen Lord systematisch hintergangen. Eine Zeit lang hatte dieser sich das angesehen, Jiroslav die ein oder andere eigentlich unmissverständliche Warnung zukommen lassen, und sich schließlich für eine besonders grausame Art der Disziplinierung entschieden. Statt seinen ignoranten Gefolgsmann direkt zu bestrafen, hatte er dessen Sohn entführen lassen und diesen an Jiroslavs Stelle zu Folter und Tod verurteilt. Tom hatte nicht um seiner eigenen Fehler willen leiden müssen, sondern damit sein Vater litt. Jiroslav, hilflos zum Schweigen und Zusehen verdammt. Sein Sohn war für ihn unfreiwillig durch die Hölle gegangen.</p><p>Während der letzten Stunden hatte Severus versucht, ein bisschen von dem wiedergutzumachen, was die anderen Todesser Tom angetan hatten. Er fühlte sich verantwortlich für <em>jeden</em> ehemaligen Schüler, nicht nur für die Slytherins, auch wenn all die Ravenclaws, Hufflepuffs und Gryffindors das sicher nicht vermutet hätten.</p><p>Aber jetzt war die Zeit gekommen, zu der er seinen Auftrag erfüllen musste.</p><p>„Tom", sagte Severus ernst. „Wir machen jetzt einen kleinen Ausflug, okay?"</p><p>Er sah den Jungen nicht an, verwandelte rasch eine dunkelblaue Decke in eine ebenso gefärbte Robe, die Tom nach Augenmaß ungefähr passen musste. „Zieh das an, bitte."</p><p>Tom gehorchte. Stumm gab er Severus den Umhang zurück und schlüpfte in die Kleider. „Passt", sagte er mit brüchiger Stimme. „Hübsche Farbe."</p><p>Rasch ließ Severus Matratze, Decken und Tablett verschwinden.</p><p>Der Junge machte einen etwas wackligen Eindruck, deshalb ergriff Severus ihn am Arm und führte ihn schweigend zur Tür.</p><p>„Wo gehen wir hin?", fragte Tom. Seine Stimme machte einen kleinen Hüpfer nach oben.</p><p>„Raus aus dem Schloss. In den Wald."</p><p>Die Tür schwang lautlos auf, und Severus drängte den Jungen mit sanfter Gewalt auf den Gang hinaus. Er konnte nur hoffen, dass –</p><p>„Ah, Severus, hier unten treibst du dich also rum", dröhnte eine wohl vertraute, ölige Stimme in seinem Rücken.</p><p>Tom erstarrte und stemmte die Füße in den Boden.</p><p>„Noch immer mit unserem kleinen Zuckerärschchen zu Gange? Mensch, schick hast du ihn gemacht ... Bist du etwa die ganze Nacht da drin gewesen? So viel Ausdauer hätte ich dir" –</p><p>„Antonin!", zischte Severus, ohne sich umzudrehen. Seine Stimme bebte vor Abscheu. „Fass noch <em>einmal</em> einen meiner ehemaligen Schüler so hart an, tu noch <em>einmal</em> auch nur einen Handschlag mehr, als der Dunkle Lord dir befohlen hat, und ich <em>schwöre</em> dir, du wachst eines Nachts in deinem Bett auf, weil ich dich mit deinen eigenen Geschlechtsteilen ersticke."</p><p>Er drehte sich betont langsam zu Dolohow um. „Haben wir uns verstanden, Antonin?"</p><p>Dolohows Gesicht hatte eine ungesunde Färbung angenommen. „Vollkommen!", fauchte er zurück. „Ich werde unserm Lord melden, dass du deine Nächte lieber mit Knäblein vertändelst, als für ihn Tränke zu brauen. Ich werde" –</p><p>
+  <em>„Silencio!"</em>
+</p><p>Hinter dem Schweigezauber lag so viel Wut, dass Dolohow krachend gegen die Wand geschleudert wurde.</p><p>„Halt dein dreckiges Maul! Mach' Meldung, wenn du willst, und ich werde dir einen Trank verabreichen, dass dir die Eingeweide zu den Ohren rausquellen! – Komm, Tom. Raus hier", fügte er freundlich hinzu.</p><p>Tom starrte ihn mit einer Mischung aus Faszination und Furcht an. Er ließ sich widerstandslos durch die Gänge führen, treppauf, treppab.</p><p>Schließlich standen sie vor einer schmalen Tür mit einer schimmernden blauschwarzen Oberfläche, auf der ständig sich wandelnde Zeichen ineinander flossen. Severus intonierte einen speziellen Öffnungszauber. Nach einem Moment schwang die Tür lautlos nach innen auf.</p><p>„Der Apparationsraum", erklärte Severus. „Der einzige Ort im Schloss unseres Herrn, von dem aus man durch einen Kanal im magischen Schutznetz disapparieren kann. – Komm."</p><p>Kaum das die Tür hinter ihnen ins Schloss gefallen war, waren sie auch schon verschwunden.</p><p>SSSSSSS</p><p>„Frühling", sagte Severus lächelnd, als Tom sich verblüfft auf der kleinen Waldlichtung umsah, in deren Mitte sie soeben erschienen waren.</p><p>Die Bäume trugen erst spärlich Laub, das in der milden Morgensonne magisch leuchtete. Unter den Bäumen zogen sich dichte Blütenteppiche von weißen Buschwindröschen und strahlend gelbem Scharbockskraut durch die Blättermatten des vergangenen Jahres. Auf der Lichtung drängte junges Gras und Kraut durch das braungelbe Gestrüpp. Die Himbeersträucher schmückten sich mit zartgrünem und silbergrauem Blattwerk. Blassgelbe Himmelsschlüssel prangten in dichten Büscheln auf der Wiese. Ein kleiner Bachlauf verschwand unter der goldgelben Pracht der Sumpfdotterblumen. Die dornigen Schlehensträucher blühten weiß und sandten einen betäubenden Duftstrom in den blassblauen Frühlingshimmel. Schmetterlinge taumelten wie zum Leben erwachte Blumen über die Wiese. Ein Klangteppich von Vogelrufen lag über dem Wald, explodierende Lebensfreude, Beginn eines neuen Jahreskreises.</p><p>„Wow!", sagte Tom überwältigt. „Ich vergesse jeden Winter wieder, wie schön der Frühling ist."</p><p>Severus lachte leise, zustimmend.</p><p>„Wahnsinn. Als ich das letzte Mal im Wald war, lag noch Schnee ..."</p><p>Einladend deutete Severus auf einen umgestürzten Baumstamm, und Tom ließ sich auf das sonnenwarme Holz sinken.</p><p>„Wo sind wir hier?", fragte er, den Blick auf die farbenprächtige Szenerie gerichtet.</p><p>„Irgendwo in England. Weit weg vom Dunklen Lord", sagte Severus lächelnd.</p><p>„Kommst du oft her?"</p><p>„So oft ich kann."</p><p>„Bringst du häufiger jemanden mit?"</p><p>„Nur die, die hier sterben werden."</p><p>Tom drehte langsam den Kopf und sah ihn an. Es war weniger Furcht als Neugierde, die sich in seinen braunen Augen spiegelte. Jetzt, in der warmen Frühlingssonne, wirkten sie auch nicht mehr schlammig und trüb, sondern strahlten in der Farbe regennasser Fichtenzapfen. Das mausgraue Haar glühte mit einem silbrigen Schimmer. Der Junge machte einen entspannten, fast vergnügten Eindruck, wie Severus zwischen Erstaunen und Befriedigung feststellte.</p><p>„Weißt du," flüsterte Tom, „das hier ist es, was ich mir eigentlich gewünscht habe. Ich hab' immer davon geträumt, von zu Hause abzuhauen und im Wald zu leben. Schon seit ich zwölf war oder so. Später hat sich der Traum dann verwandelt ..."</p><p>Er sah Severus nachdenklich an. „Seit ich wusste, dass mein Vater mich als Todesser sehen wollte, habe ich mir gewünscht, im Wald zu sterben. – Danke, dass du diesen Ort mit mir teilst. Danke, dass ich hier sterben darf, Severus."</p><p>Nervös tastete Severus in seiner Robe herum. Toms Worte schnürten ihm die Kehle zu.</p><p>Er mochte diesen Jungen. Er mochte ihn mit jeder Minute mehr. Tom Mayfair, so durchschnittlich, wie ein junger Mensch nur sein konnte, von langweiligem, unattraktivem Äußeren, von mittelmäßiger Intelligenz und Begabung, unauffälliger Schüler, unglückseliger Todesser-Nachwuchs, hatte ihm sein Herz aus Eis gestohlen.</p><p>Severus' suchende Finger schlossen sich um kaltes Glas. Widerwillig zog er ein kleines Fläschchen aus dem Umhang. Prüfend hielt er es ins Licht. Der Trank leuchtete in zartem Lila.</p><p>„Was ist das?", fragte Tom freundlich interessiert. Ein Hauch von Furcht schwang unter der Fröhlichkeit mit.</p><p>„Erinnerst du dich noch an den Trank, den ihr zur Vorbereitung auf die Z.A.G.-Prüfungen brauen solltet? Der so grauenvoll schief gegangen ist? Ich nehme jedenfalls an, dass er auch bei euch schief gegangen ist; bisher ist es noch jedes Mal in einer Katastrophe geendet, wenn ich ihn in einer fünften Klasse habe brauen lassen. Ich meine den Schlaftrank – den ‚Trank der lebenden Toten'."</p><p>Tom grinste schief. „Ach, <em>der ...</em> Ich glaube, den musste ich aus meinem Kessel raushämmern ..."</p><p>Severus lächelte dünn. „Der hier ist ... perfekt."</p><p>Er hielt das Gefäß wieder ins Licht und schwenkte es leicht, so dass der Inhalt wirbelte und funkelte, als wäre ein Sonnenstrahl in dem Fläschchen gefangen.</p><p>„Verbesserte Rezeptur ... Sehr stark natürlich. Wer den trinkt, wacht nie wieder auf."</p><p>Der Junge schnitt eine Grimasse und starrte wie hypnotisiert auf das leuchtende Gebräu.</p><p>„Fünf Minuten", sagte Severus freundlich. „Fünf Minuten, in denen du immer müder wirst, bis die Welt dir entgleitet und du von deinen Träumen in die Dunkelheit getragen wirst. Nach fünfzehn Minuten hört dein Herz auf zu schlagen. – Das ist das beste Angebot, das ich dir machen kann", setzte er entschuldigend hinzu.</p><p>Tom streckte zögernd die Hand aus, die Augen starr auf das Fläschchen geheftet. Dann huschte sein Blick zu Severus hinüber. „Fängst du mich auf, wenn ich falle?" Es war eine Kinderstimme, dünn und unsicher.</p><p>„Ich lasse dich überhaupt gar nicht erst los", entgegnete Severus mit einem schmerzlichen Lächeln und zog Tom in seine Arme.</p><p>„Die ganze Zeit nicht?", fragte Tom.</p><p>„Die ganze Zeit nicht", versprach Severus ernst.</p><p>Tom öffnete die Hand. Severus entkorkte das Fläschchen und gab es ihm. Mit zitterden Fingern führte Tom es zum Mund. Ein letztes Mal warf er einen zweifelnden Blick auf Severus, der sich zu einem aufmunternden Lächeln zwang. Dann kippte Tom den Trank hinunter.</p><p>„Schmeckt nicht schlecht", stellte er überrascht fest.</p><p>„Keiner meiner Tränke schmeckt schlecht. Es sei denn, sie sind für jemanden gedacht, den ich nicht leiden kann."</p><p>
+  <em>Für einen gewissen Werwolf, zum Beispiel. </em>
+</p><p>Ein Beben lief durch den mageren Körper in seinen Armen, als Toms Muskeln sich nach und nach entspannten.</p><p>„Mmm, fühlt sich gut an. Fast so gut wie deine Hände auf meinem Körper."</p><p>Severus lachte ungläubig auf. „Du hast es nicht vergessen!"</p><p>„Nein", murmelte Tom träge. „Ich habe gelogen ... Weil es mir peinlich war ... Weil es mir gefallen hat, von dir berührt zu werden ... Jetzt ist es egal ... jetzt ... Ich mag dich, Severus ... ich mag dich wirklich sehr ..."</p><p>Severus würgte es in der Kehle.</p><p>„Vielleicht", flüsterte Tom schläfrig, „liebe ich dich sogar ... Ja, ich glaube, ich liebe dich ... Ich liebe dich, Severus ..."</p><p>Severus stieß einen ungläubigen Laut aus, irgendwo zwischen Entsetzensschrei und Schluchzen.</p><p>„Nein!", stieß er heiser hervor.</p><p>„Doch, Severus, doch. Ich liebe dich", murmelte Tom lächelnd.</p><p>Severus biss sich auf die Zunge, bis er Blut schmeckte. Dann beugte er sich vor und küsste den Jungen auf die Stirn.</p><p>„Schlaf jetzt, Tom", hauchte er. „Schlaf."</p><p>Toms Lider flatterten, dann senkten sie sich ganz. Ein leichtes Lächeln blieb, als seine Atemzüge seltener und tiefer wurden. Er schlief.</p><p>Vorsichtig strich Severus über das bleiche Gesicht, das kurze, strubblige Haar. Dann küsste er Tom sanft auf den leicht geöffneten Mund.</p><p>Er hielt ihn fest, so fest wie er konnte, ohne dem Schlafenden weh zu tun. Er spürte den immer schwächer werdenden Herzschlag, die in immer größeren Abständen erfolgenden Atemzüge.</p><p>Die Sonne wärmte seine fahle Haut, der Wind zupfte spielerisch an seinem Haar, die Vögel trällerten geradezu aufdringlich laut und der Blütenduft bahnte sich fast brutal den Weg in seine Nase. Aber Severus wollte nichts riechen, nichts hören, nichts fühlen, nichts außer diesem mageren, sterbenden Körper, den er verzweifelt umklammert hielt.</p><p>SSSSSSS</p><p>Er hielt Tom noch fest, lange nachdem dessen Herz zu schlagen aufgehört hatte, Stunden nachdem der Junge seinen letzten Atemzug getan hatte.</p><p>Die Nacht brach herein. Andere Vögel erhoben ihre Stimmen. Kälte kroch durch seine Kleider, stieg aus dem feuchten Gras in seine Füße, seine Beine, seinen ganzen Körper hinauf. Er spürte sie nicht.</p><p>Erst als der Junge in seinen Armen vollkommen kalt und steif war, löste sich seine eigene Erstarrung. Ungelenk lockerte er den Griff seiner schmerzenden Arme und zwang sich schwankend auf die Füße. Sanft ließ er den leblosen Körper zu Boden gleiten. Er sank neben Tom ins feuchte Gras und schlug die Hände vors Gesicht. So verharrte er, minutenlang.</p><p>Dann ließ er langsam die Hände sinken und sah auf den toten, wie gefrorenen Körper herab. Severus beugte sich über das bizarr lächelnde Gesicht und küsste die starren Lippen.</p><p>„Ich liebe dich", flüsterte er rau.</p><p>Er sprang hoch und riss den Zauberstab aus seiner Robe.</p><p>„ICH LIEBE DICH!", schrie er verzweifelt.</p><p>Ein Kaninchen schoss erschrocken aus dem Gebüsch. Der Rest des Waldes blieb ungerührt.</p><p>
+  <em>„Transfigure!" </em>
+</p><p>Das blaue Licht umhüllte den bleichen Jungen und hob ihn für einen Sekundenbruchteil in die Luft. Dann war er verschwunden.</p><p>Severus fiel auf die Knie und tastete hektisch im Gras umher. Schließlich fand er einen kleinen, glatten Stein, etwa taubeneigroß.</p><p>„<em>Lumos</em>!", murmelte er mit erstickter Stimme und hielt den Stein ins Licht. Er war mausgrau mit einem silbrigen Glanz und kleinen Sprenkeln, die die Farbe von regennassen Fichtenzapfen hatten. Severus strich sacht mit dem Zeigefinger über die glatte Oberfläche. Dann schloss er die Hand um den Stein und ließ ihn in die Tasche gleiten.</p><p>„Ich liebe dich", flüsterte er heiser, ehe er verstört von der nachtfahlen Lichtung floh.</p><p>SSSSSSS</p><p>
+  <strong>Epilog</strong>
+</p><p>SSSSSSS</p><p>
+  <em>Ihr seid ja immernoch hier.</em>
+</p><p>
+  <em>Sollen wir gehen?</em>
+</p><p>
+  <em>Nein! Nein ... Bleibt. Bitte.</em>
+</p><p>
+  <em>Du möchtest nicht allein sein?</em>
+</p><p>
+  <em>Ich war immer allein. Jetzt bin ich es nicht mehr.</em>
+</p><p>
+  <em>Ja.</em>
+</p><p>
+  <em>Werdet ihr bleiben?</em>
+</p><p>
+  <em>Ja.</em>
+</p><p>
+  <em>Für immer?</em>
+</p><p>
+  <em>Für immer.</em>
+</p><p>SSSSSSS</p><p>
+  <em>Till the slow sea rise and the sheer cliff crumble,</em>
+</p><p>
+  <em>Till terrace and meadow the deep gulfs drink,</em>
+</p><p>
+  <em>Till the strength of the waves of high tides humble</em>
+</p><p>
+  <em>The fields that lessen, the rocks that shrink,</em>
+</p><p>
+  <em>Here now in his triumph where all things falter,</em>
+</p><p>
+  <em>Stretched out on the spoils that his own hand spread,</em>
+</p><p>
+  <em>As a god self-slain on his own strange altar,</em>
+</p><p>
+  <em>Death lies dead.</em>
+</p><p>
+  <em>(Algernon Charles Swinburne, A Forsaken Garden)</em>
+</p><p>SSSSSSS</p><p>
+  <strong>Ende.</strong>
+</p><p>SSSSSSS<em><br/></em></p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><span class="position">Part 1 of the <a href="/series/365396">Totentanz</a> series</span><span class="divider"> </span><a class="next" href="/works/5375081">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="Wcy7TRjyEedJgkM5aCWC6iBqULDL9pOHwKdKH-GMIz7WyqTHNQbsYj_jhYxw5Olwq3AaghOLrxXLVfyUzO1p7w"/>
+          <input value="5374835" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Maxyxpumpkinpie">Maxyxpumpkinpie</a>
+             as well as 
+          9 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_5374835">
+  <form class="new_comment" id="comment_for_5374835" action="/works/5374835/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="ww-eJ3F1JuAfj6Y2EuzZhfoIijPhDCXWZYze7jGA4AtMCYGtXIHbZWnuYIMKLbIfcRLAATlxGURufmhlHOGq2g"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_5374835">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_5374835" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_5374835=new LiveValidation('comment_name_for_5374835',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_5374835.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_5374835">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_5374835" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_5374835=new LiveValidation('comment_email_for_5374835',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_5374835.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_5374835" class="landmark">Comment</label>
+        <textarea id="comment_content_for_5374835" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_5374835" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_5374835_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_5374835">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_5374835=new LiveValidation('comment_content_for_5374835',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_5374835.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_5374835.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_5374835" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/5374835/hit_count.json")})</script>
+
+
+  </body>
+</html>

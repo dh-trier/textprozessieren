@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":85,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        (Im)Perfect - Rodo - Harry Potter - Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="ounWZ1nspTDepzE5viiSgvws-jxYDus4hVEG4NBdgPyvajQYJUn_GkSvxNKpu2pInmK-ec73ODvyqcOJ6gB93g"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="nmpjQjLobQZhcGAG6KdQyRow0-b4ZZ6B7i1a4gO_Ne6T6YE9Tk03LPt4le3_NKgDeH6Xo26cTYKZ1Z-LOeLIzA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: hetalia f/f sort:kudos</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/27103/chapters/35345">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=27103">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/27103/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/27103/ImPerfect.azw3?updated_at=1519146645">AZW3</a></li>
+          <li><a href="/downloads/27103/ImPerfect.epub?updated_at=1519146645">EPUB</a></li>
+          <li><a href="/downloads/27103/ImPerfect.mobi?updated_at=1519146645">MOBI</a></li>
+          <li><a href="/downloads/27103/ImPerfect.pdf?updated_at=1519146645">PDF</a></li>
+          <li><a href="/downloads/27103/ImPerfect.html?updated_at=1519146645">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Underage/works">Underage</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20Rowling/works">Harry Potter - Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lucius%20Malfoy*s*Sirius%20Black/works">Lucius Malfoy/Sirius Black</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lucius%20Malfoy/works">Lucius Malfoy</a></li><li><a class="tag" href="/tags/Sirius%20Black/works">Sirius Black</a></li><li><a class="tag" href="/tags/Narzissa%20Malfoy/works">Narzissa Malfoy</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Canonical%20Character%20Death/works">Canonical Character Death</a></li><li><a class="tag" href="/tags/Deutsch%20%7C%20German/works">Deutsch | German</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2007-07-30</dd><dt class="status">Completed:</dt><dd class="status">2008-07-15</dd><dt class="words">Words:</dt><dd class="words">13988</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="comments">Comments:</dt><dd class="comments">4</dd><dt class="kudos">Kudos:</dt><dd class="kudos">10</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/27103/bookmarks">3</a></dd><dt class="hits">Hits:</dt><dd class="hits">352</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      (Im)Perfect
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Rodo/pseuds/Rodo">Rodo</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Lucius Malfoy ist perfekt. Vor ihm liegt ein Leben voller Erfolg und Glück. Doch dann tritt ein Junge in sein Leben, der alles ändert.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Die Ähnlichkeiten mit Toyo Malloys Geschichte <a href="http://www.fanfiction.net/s/2424061/1/Die_wertvollste_Erinnerung">Die wertvollste Erinnerung</a> in diesem Kapitel sind nicht beabsichtigt. Betagelesen von <a href="http://archiveofourown.org/users/sevil/pseuds/sevil">sevil</a>.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27103/chapters/35345">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es gab kaum etwas, das Lucius Malfoy so wichtig war wie Perfektion. Und weil er alles verachtete, was nicht perfekt war, gab es auch nichts in seiner Nähe, das in irgendeiner Art und Weise mangelhaft war. Angefangen bei seiner Erscheinung. Lucius’ Haare waren lang, blond und immer zu einem makellosen Pferdeschwanz gebunden. Kein einziges Haar tanzte jemals aus der Reihe. Alle hatten die richtige Länge, den richtigen weißblonden Ton, und nicht einmal Quidditch löste sie auch nur einen Millimeter aus ihrem Band. Trotzdem hatte Lucius Quidditch nie viel abgewinnen kömnen. Böse Zungen behaupteten es läge daran, dass er nicht besser als alle anderen spielte. Er war noch nicht einmal in die Hausmannschaft aufgenommen worden. Doch ihm machte das nicht viel aus, denn Quidditch war sowieso ein Sport, den jemand seines Ranges von der Tribüne aus genoss.</p><p>Natürlich war auch alles andere an Lucius perfekt. Seine aristokratische Nase und die eisblauen Augen mit dem Hauch von Grau, die immer, aber auch wirklich immer Überlegenheit ausstrahlten. Die Roben, die seinen makellosen Körper umhüllten, saßen tadellos, waren sauber, niemals zerknittert und sie passten farblich immer zum Anlass und zum Blumenarrangement auf dem Tisch.</p><p>Doch nicht nur Lucius selbst war perfekt. Er hatte auch perfekte Schulnoten und würde Ende des Jahres perfekte ZAG-Ergebnisse bekommen. Genau wie seine perfekten Freunde. Die hatten alle den richtigen Hintergrund. Sie waren selbstverständlich reinblütig und hielten nicht viel von Schlamm- und Halbblütern. Es muss natütlich nicht extra erwähnt werden, dass sie allesamt Slytherins waren. Mit Nicht-Slytherins zu verkehren war für einen Malfoy nicht akzeptabel, das hatte Lucius’ Vater ihm schon eingebläut, als er noch gar nicht wusste, was ein Slytherin überhaupt war. Genau wie die Perfektion. Ein Malfoy war dafür prädestiniert. Es war also auch nicht weiter verwunderlich, dass Lucius einer der Favoriten seines Hauslehrers war. Zwar waren auch einige Schlammblüter im Slug-Club, wie die Lieblinge von Professor Slughorn genannt wurden, aber das glich sich dadurch wieder aus, dass er viele andere Reinblüter mit großartiger Zukunft kennen lernte. Man konnte schließlich nie früh genug damit anfangen, an seiner eigenen Zukunft zu arbeiten.</p><p>Neben seinen perfekten Freunden hatte Lucius auch eine perfekte Verlobte. Narzissa und er waren einander versprochen worden, als Lucius gerade fünf und Narzissa vier Jahre alt gewesen waren. Eine Allianz zwischen den beiden mächtigsten reinblütigen Familien, den Malfoys und den Blacks, wie es sie schon seit Generationen nicht mehr gegeben hatte. Narzissa hatte sich nicht nur in Bezug auf ihre Familie als Glücksgriff herausgestellt. Sie war auch in jeder anderen Beziehung perfekt. Besonders freute Lucius sich natürlich über ihr blondes Haar. Schließlich sollten aus seinen Kindern auch perfekte Malfoys werden. Und wer wenn nicht er war in jeder Hinsicht das Ideal eines perfekten Malfoys? Außerdem war Narzissa nicht ganz so widerspenstig wie ihre Schwester Bellatrix. Das würde sein Leben mit ihr um einiges angenehmer machen.</p><p>Lucius ging gerade den Flur zur Bibliothek entlang, in Gedanken bei seinem Wiederholungsplan fü die ZAGs, als jemand in ihn hineinrannte und ihn alles andere als elegant auf seinem Hintern landen ließ. Der Übeltäter selbst landete auf Lucius’ Beinen und presste seine Kniescheiben so aus ihren Fassungen, dass ein äußerst unangenehmer Schmerz seine Beine hochschoss. Lucius wollte ihn gerade in Grund und Boden schimpfen, doch ein Paar verschmitzt funkelnder grauer Augen ließen die Worte in seinem Hals gefrieren. Das engelsgleiche Geschöpf richtete sich grazil wieder auf und joggte leichtfüßig zu seinen Freunden, die kichernd etwas abseits standen. Ihm fiel erst auf, dass er wie hypnotisiert auf seinen schwarzhaarigen Engel gestarrt hatte, als der schon im nächsten Korridor verschwunden war. Er hatte ihm immer wieder lachende Blicke üer die Schulter zugeworfen, die sein Herz in einem anderen Takt schlagen ließen. Lucius war noch nicht einmal aufgefallen, dass der Engel sich gar nicht entschuldigt hatte.</p><p>Wie betäubt richtete er sich auf und klopfte sich den Staub vom Schulumhang. Immer noch im siebten Himmel wandelnd betrat er die Bibliothek, in der erst die entsetzten und amüsierten Blicke seiner Mitschüler ihn wieder in die Realität zurückholten. Einige Drittklässler verkniffen sich das Lachen oder flüsterten erregt untereinander. Nicht einmal Madam Pince warf ihnen die üblichen mahnenden Blicke zu, sondern starrte ihn an wie ein Buch, das sie in einem der Regale gefunden hatte und das sie noch nie in ihrem Leben gesehen hatte. Verwirrt machte Lucius sich auf den Weg zurück in seinen Schlafsaal, gefolgt von verstohlenem Kichern. Warum wollte er noch gleich in die Bibliothek?</p><p>Ihm fiel zwar wieder ein, dass er dort für die ZAG-Prüfung in Verwandlung hatte lernen wollen, aber ihm war jede Lust darauf vergangen. Das würde ihm zwar auch nicht helfen die Verwandlung von etwas Belebtem in etwas Unbelebtes besser zu verstehen, doch das war ihm für einen Moment ziemlich egal. Genauso wie die ZAGs. Wenn er ehrlich war, war das die meiste Zeit der Fall, ob sein Vater das nun wollte oder nicht. Und für einen kurzen Moment der Rebellion war sogar sein Vater ihm absolut egal. Es gab schließlich wichtigeres in seinem Leben. Die schwarzhaarige Schönheit von vorhin, zum Beispiel.</p><p>Im Gemeinschaftsraum der Slytherins schließlich traf er auf Goyle, einen Jungen, der ein Jahr jünger war als er und der ihn abgöttisch verehrte. Lucius fühlte sich von seinem Verhalten im Allgemeinen geschmeichelt, auch wenn er manchmal wie eine Klette an ihm hing. Es gab schließlich nichts, das er mehr liebte als Bewunderung. Wenn sie ihm entgegengebracht wurde, versteht sich. Jetzt sah Goyle ihn allerdings nicht bewundernd, sondern verwundert an.</p><p>„Lucius …“</p><p>„Was denn?“, blaffte er zurück. Er hatte wirklich Besseres zu tun, als sich mit der kleinen Nervensäge zu beschäftigen.</p><p>„Ähm, deine Haare“, stammelte Goyle.</p><p>„Was soll mit denen sein?“</p><p>„Nichts, nicht wirklich.“</p><p>Mit einem bösen Blick, der Goyle fast die Tränen in die Augen trieb, stolzierte Lucius zum Schlafsaal der Fünftklässler, wo er sich schon auf sein Bett werfen wollte, als sein Blick auf seine Reflektion im Spiegel fiel.</p><p>Seine Haare waren nicht mehr wie üblich blond, sondern schreiend pink. Im ersten Moment war er wütend über sich selbst und seine Unachtsamkeit. Einem Malfoy sollte so etwas eigentlich nicht passieren. Und wer bitte schön würde auf die Idee kommen, seine Haare ausgerechnet pink zu färben? Warum nicht wenigstens schwarz? Oder rot, sogar das war besser, auch wenn es unangenehme Assoziationen mit dem Namen Weasley hervorrief. Aber trotzdem, dieser Anschlag minderte seine Faszination für den Jungen nicht im Geringsten. Im Gegenteil. Ein scheinbar unstillbares Verlangen kroch in ihm hoch und drohte ihn zu ersticken. Eine Mischung aus Wut und etwas, das er nicht verstand und schon gar nicht benennen konnte. Sogar seine Haare vergaß er für einen Moment. Wenn auch nur fü einen kurzen.</p><center>*</center>Von da an verbrachte Lucius jede freie Minute damit, seinen Engel zu beobachten. Nicht, dass die ZAGs und die täglichen Ermahnungen seines Vater ihm viele davon ließen. Es rächte sich nun, dass er den jüngeren Kindern nie viel Aufmerksamkeit geschenkt hatte. So war dann auch sein Haus das erste, was er herausfand. Nicht weiter verwunderlich, schließlich musste er nur beim Frühstück den Blick über die Haustische streifen lassen. Lucius war mehr als enttäuscht gewesen, als er den Engel nicht am Slytherin-Tisch fand. Auch wenn es bei genauerer Betrachtung nicht gerade verwunderlich war. Kein Slytherin hätte die Frechheit besessen, seine Haare derart zu verunstalten und sich auch noch dabei erwischen zu lassen. Trotzdem, ein Hufflepuff konnte er nicht sein. Es war ein gutes Stück Magie gewesen, dass auf seine Haare verwendet worden war, wie er widerstrebend zugeben musste. Es hatte ihn Stunden gekostet, bis sie wieder ihre ursprüngliche Farbe hatten. Sein Engel war also nicht dumm. Ein Grinsen huschte über sein Gesicht. Auf keinen Fall ein Hufflepuff. Aber ein Ravenclaw? Nein, eher nicht.<p>Er entdeckte den Jungen schließlich wirklich am Gryffindor-Tisch. Angewidert verzog er das Gesicht. Hoffentlich war er keiner dieser elenden Schlammblüter, die dieses Haus wie Ungeziefer infizierten und seinen Ruf verschlechterten. Doch nicht einmal die Tatsache, dass der Junge ein Gryffindor war, machte ihn weniger perfekt. Solange er nur kein Schlammblut war. Alles andere konnte man irgendwie tolerieren. Außer einem Hufflepuff vielleicht.</p><p>In den folgenden Tagen fand er heraus, dass der Junge wohl ein Drittklässler war. Die Gruppe von drei anderen Jungen, die ihn immer und überall umgab, unterhielt sich eines Montagmorgens über den Unterricht in Pflege magischer Geschöpfe. Und für Viert- oder gar Fünftklässler waren sie alle noch zu jung.</p><p>Sein Engel war außerdem nie ohne seinen besten Freund anzutreffen, einen Jungen mit wirren schwarzen Haaren und einer Brille. Die beiden steckten pausenlos die Köpfe zusammen und flüsterten. Lucius meinte sogar, den anderen Jungen zu erkennen. Potter oder so ähnlich. Er war Jäger im Quidditchteam von Gryffindor, und seine Familie war relativ berühmt, obwohl sie eine der schlammblutfreundlichen Reinblüterfamilien war. Aber solange Slytherin nicht spielte, hatte Lucius Quidditch noch nie viel Beachtung geschenkt. So war ihm auch Potter aufgefallen. Seine Mannschaft hatte es doch tatsächlich geschafft, das Team von Slytherin in diesem Jahr zu besiegen. Lucius hatte sich noch Tage später darüber aufgeregt, und das sogar, obwohl ihm Quidditch nicht wirklich gefiel. Aber welcher Slytherin ärgerte sich nicht darüber, gegen den Erzfeind verloren zu haben?</p><p>Außer Potter waren noch zwei braunhaarige Jungen fast immer mit seinem Engel zusammen. Der eine war auffällig dünn und ernst, der andere etwas zu pummelig, und zu viert spielten sie ihren Mitschülern und Lehrern immer wieder äußerst fantasievolle und gute Streiche. So dachte man jedenfalls, wenn man nicht gerade ihr Opfer war, wie zum Beispiel ein Drittklässler aus Slytherin namens Snape, der mindestens ein Mal pro Woche unter ihren Ideen zu leiden hatte. Lucius kannte den Namen nur deshalb, weil er und Nott sich gerne über ihn lustig machten. Seine Mutter war die letzte einer Reihe von mächtigen Reinblütern gewesen, doch ihre Familie hatte wenn schon nicht an Prestige so doch an Vermögen verloren, und sie hatte dann zum Entsetzten aller einen Muggel geheiratet. Außerdem war der Junge einfach ein zu leichtes Ziel.</p><p>Bei einem Abendessen Anfang Juni setzte sich Narzissa zu ihm und folgte seinem Blick, der wie immer fast magisch an seinem Engel klebte. Ihre Miene wurde sauer. Eine ihrer schlechten Angewohnheiten, und so erregte sie Lucius Aufmerksamkeit.</p><p>„Waren sie verantwortlich für deine … ungewöhnliche Frisur vor ein paar Wochen?“</p><p>Mit größter Mühe konnte er verhindern, dass ihm das Blut in die Wangen stieg. Vor Zorn natülich. Sie war die erste außer Goyle, die es gewagt hatte, ihn offen darauf anzusprechen. Manchmal nahm sie sich wirklich zu viel heraus, nur weil sie seine Verlobte war. Doch die Wut über ihr anmaßendes Benehmen wich langsam seiner immer präsenten Neugier. Vielleicht wusste sie ja etwas über den Jungen. Frauen sollten schließlich besser in solchen Dingen sein. Narzissa schien seinen emotionalen Tumult jedoch nicht zu bemerken und redete nach einer vieldeutigen Pause weiter.</p><p>„Ich kann es kaum glauben. Sein Benehmen wird immer schlimmer. Wenn das so weiter geht, wird Tante Walburga ihn mit Sicherheit von der Schule nehmen.“</p><p>„Wen?“ Lucius hob fragend eine Augenbraue. Narzissa quittierte das mit einem Das-solltest-du-doch-wissen-Blick.</p><p>„Meinen Cousin Sirius natürlich. Den Sohn von Onkel Orion. Kaum zu glauben, ausgerechnet er ist der Erbe des Hauses Black! Ständig ist er in Schwierigkeiten. Mindestens eine Eule pro Woche. Aber was kann man auch anderes von ihm erwarten. Er ist schließlich ein Gryffindor.“</p><p>Es erstaunte ihn wirklich jedes Mal, wie Narzissa das Wort mit einer derartigen Verachtung aussprechen konnte. Nicht einmal Lucius konnte das so gut. Und ihm würde das Naserümpfen wahrscheinlich auch nicht so gut stehen wie ihr.</p><p>Narzissa fuhr fort, üer Sirius’ Bruder Regulus zu reden, der dieses Jahr nach Hogwarts kommen sollte. Offenbar war sein Engel das schwarze Schaf der Familie Black. Doch Lucius konnte in ihm nichts anderes als die Verkörperung von Schönheit und Perfektion sehen. Eine Herausforderung. Genau das würde er werden. Er würde sich dagegen sträuben, aber Lucius würde am Ende gewinnen. Der Junge würde ihm gehören. Sein rebellischer Geist würde zwar etwas hinderlich sein, aber am Ende würde das den Erfolg nur noch versüßen. Er war ganz einfach in die falsche Gesellschaft geraten. Noch war nichts zu spät. Ein Diamant blieb ein Diamant, bis jemand sich die Mühe machte, einen Brillianten aus ihm zu schleifen.</p><p>„Worüber hast du eben mit Narzissa gesprochen?“, fragte Nott nach dem Abendessen, als sie im Slytherin-Gemeinschaftsraum am Feuer saßen und sich mit ihren Astronomiehausaufgaben beschäftigten.</p><p>„Nichts, bloß über ihren Cousin“, antwortete Lucius.</p><p>„Der, der in Gryffindor gelandet ist?“</p><p>„Genau der“, murmelte Lucius. Er wollte sich eigentlich lieber nicht unterhalten. Die Umlaufbahn des Merkurs im Vergleich zur Venus bereitete ihm immer noch Kopfzerbrechen. Wenn er seinen Vater doch nur dazu bringen könnte, ihm eines dieser wunderbaren Modelle zu kaufen. Aber, wie sein Vater immer so schön sagte: „Erst muss man sich anstrengen, dann hat man es sich verdient, sich die Arbeit leichter zu machen.“</p><p>„Seine Eltern können einem wirklich leid tun. Der älteste Sohn und dann so eine Enttäuschung. Wusstest du, dass einer seiner Freunde noch nicht einmal ein Reinblüter sein soll?“</p><p>Damit hatte Nott Lucius’ Aufmerksamkeit erlangt. „Welcher denn?“</p><p>„Der mit den braunen Haaren. Potter ist ja auch ein Blutsverräter. Hätten die beiden sich nur nicht angefreundet. Ich habe gehört, dass es Potters Schuld ist, dass Black ein Gryffindor ist.“</p><p>„Wie denn das?“</p><p>„Also, Abigail Wilton, du weißt schon, die Schwester von Charlotte, meinte, dass Potter im Hogwartsexpress Snape einen Streich gespielt hätte, bevor sie das erste Mal in Hogwarts angekommen sind. Und dadurch hätte er Black so sehr beeindruckt, dass der sich den Rest der Fahrt nur noch mit ihm unterhalten hätte.“</p><p>Lucius nickte nur und wandte sich wieder seinen Hausaufgaben zu. Auch wenn er sich nicht so wirklich auf sie konzentrieren konnte. Es erstaunte ihn wirklich sehr, dass Nott so viel über seine Mitschüler wusste. Lucius würde sich wohl oder übel auch anstrengen müssen. Er hatte das bisher viel zu sehr vernachlässigt, dabei würde er später so viel wie möglich über seine Freunde und Feinde wissen müssen. Und wie sollte man auch sonst etwas über sie erfahren.</p><p>Das hieß aber noch lange nicht, dass er den Gerüchten glaubte, sie Nott so kritiklos nachplapperte. Eher im Gegenteil. Jeder wusste doch, dass der Sprechende Hut seine Entscheidung nicht danach fällte, wen man im Zug nach Hogwarts getroffen hatten. Und Charlotte, Notts Verlobte, redete sowieso die meiste Zeit nur Unsinn. Trotzdem machte es ihn neugierig. Was war so gryffindor an seinem Engel?</p><center>*</center>Es war das erste Mal, dass Lucius sich nicht auf die Sommerferien gefreut hatte. Und wenn seine Eltern auch nur etwas mehr als das absolut notwendige Maß an Aufmerksamkeit für ihn aufgebracht häten, dann wäre ihnen seine schlechte Laune auch aufgefallen. So aber verbrachte er so viel Zeit wie möglich auf seinem Zimmer und sehnte sich nach Sirius. Oder nach Nott. Oder sogar nach Narzissa. Eigentlich war ihm absolut egal wer oder was es war, der ihn ablenken würde. Sommerferien auf Malfoy-Manor waren nämlich alles andere als spannend. Sein Vater dachte vielleicht er würde lernen, und deswegen sagte er bei den gemeinsamen Mahlzeiten nichts. Lucius sollte es recht sein. Sein Trübsinn wurde nur kurzzeitig von seinen ZAG-Ergebnissen unterbrochen, die selbstverständlich großartig waren. Sein Vater schaffte es trotzdem nicht, sich ernsthaft für ihn zu freuen. Etwas anderes hatte Lucius auch nicht wirklich erwartet.<p>„An deiner Note in Verwandlung musst du noch arbeiten. Nur ein ‚Erwartungen übertroffen‘. Das kannst du doch besser.“</p><p>Lucius nickte abwesend, während er versuchte, den Stich zu ignorieren, den diese Worte ihm versetzten. Egal wie sehr er sich anstrengte, sein Vater würde wohl nie etwas Positives über ihn zu sagen haben. Alles, was er zu hören bekam, waren Sätze wie „Streng dich mehr an“ oder „Arbeite mehr“, irgendwelche unpersönlichen Worte eben, die er vermutlich auch seinen Angestellten sagte. Vielleicht war Lucius für ihn auch nicht mehr als das. Aber eines Tages würde er der Herr über Malfoy-Manor sein. Dann würden sich all die Mühen gelohnt haben.</p><p>„Lucius, am Sonntag gibt es bei den Blacks eine kleine Feier angesichts der Einschulung ihres Jüngsten. Du wirst dich von deinen Büchern losreißen und hingehen. Immerhin bist du als Narzissas Verlobter fast ein Mitglied der Familie“, fügte sein Vater noch hinzu. Und Lucius’ Stimmung wurde besser und besser.</p><p>Die Feier langweilte und frustrierte Lucius dann aber, trotz seiner Erwartungen. Nicht nur, dass dem eigentlichen Anlass kaum wirkliche Aufmerksamkeit zukam (obwohl er sich das nicht besonders gewünscht hatte), sein Engel war auch immer von anderen, hauptsächlich kleineren Kindern umgeben. Sirius langweilte sich sichtlich und bekam dafür immer wieder mahnende Blicke seiner Mutter zugeworfen, die er nur mit einem Grinsen beantwortete, was der strengen Frau merkbar sauer aufstieß.</p><p>Lucius selbst war dazu gezwungen, den Abend hauptsächlich mit Narzissa und ihrer Schwester zu verbringen. Jedem fiel dabei unangenehm auf, dass sie sich das erste Mal in dieser Konstellation die Zeit vertreiben mussten. Früher hatte ihnen Andromeda, Narzissas älteste Schwester, anstelle von Bella Gesellschaft geleistet. Lucius hatte sie immer gemocht, wenigstens konnte sie sich selbst einigermaßen kontrollieren und Konversation führen, doch Andromeda hatte letzten Winter ein Schlammblut geheiratet. Ein <em>Schlammblut</em>! Er konnte es immer noch nicht verstehen. Er hatte sie immer als eine gute Tochter eingeschätzt, auch wenn er rückblickend den gleichen Glanz in ihren Augen entdecken konnte, der in denen von Sirius leuchtete.</p><p>Außerdem gab es absolut keine Möglichkeit für Lucius, seinem Engel näherzukommen. Bei dieser Gelegenheit bemerkte er auch, dass er sich einen Plan hätte zurechtlegen sollen. Wie war er auch nur auf die Idee gekommen, dass es absolut einfach sein würde, in Sirius’ Nähe zu gelangen?</p><p>„Wir sollten langsam mal zum Tisch hinübergehen, das Essen fängt bald an“, mahnte Bella.</p><p>Lucius atmete erleichtert auf, als er es nach dem Abendessen endlich geschafft hatte, dem unangenehmen Schweigen zwischen ihm und Narzissa und Bellas zum Scheitern verurteilten Versuchen von Konversation zu entkommen und sich in der Bibliothek zu verschanzen. Doch trotzdem war das nicht unbedingt ein Segen, wurde ihm ohne jede Art von Ablenkung leider auch viel zu schnell langweilig. Rettung boten die Bücher, die in den langen Regalen vor sich hin staubten. Hatten die Blacks keinen Hauself, der sich um so etwas kümmerte? Wenigstens war die Bibliothek gut ausgestattet, wie ihm ein Blick auf die unzähligen Buchrücken verriet. Die Sammlung an schwarzmagischer Literatur konnte es durchaus mit der von Malfoy Manor aufnehmen.</p><p>Das Zufallen der Tür und ein tiefer Seufzer rissen ihn aus seinen Gedanken. Sein Herz schlug schneller und aus unerfindlichen Gründen fühlte er sich, als hätte man ihn ertappt. Malfoys wurden nicht ertappt. Doch um die Ecke wanderten weder Narzissa noch ihre dumme Schwester, sondern ein schwarzhaariger Junge. Die Haare fielen ihm ins Gesicht und sein Gang war beschwingter als sonst. Lucius musste es wissen. Er hatte Wochen damit verbracht, jedes einzelne Detail seines Wesens zu studieren. Wie verzaubert konnte er nicht anders, als die verführerische Gestalt anzustarren. Erst da blickte Sirius auf und bemerkte ihn. Die wunderschönen Augen weiteten sich vor Überraschung, aber als er ihn erkannte, kehrte das verschmitze Funkeln zurück. Mit Schwung setzte Sirius sich auf einen der Tische und musterte Lucius von oben bis unten, und fast schien es, als amüsierte sein Anblick ihn. Lucius hingegen blieb mit dem Blick an Sirius’ Mund hängen. Die perfekten Lippen verzogen sich zu einem Grinsen.</p><p>„Lucius Malfoy … Warum beobachtest du mich ständig?“ Die Stimme seines Engels war melodisch und angenehm tief, samtig, ein wenig wie das Schnurren einer Katze. Verzweifelt rang er um eine Antwort, doch wie fasste man in Worte, dass man von jemandem besessen war, ohne sich dabei komplett lächerlich vorzukommen? Jetzt, wo er vor ihm stand, fehlten Lucius jedenfalls die Worte, von denen er so oft geträumt hatte, und er fühlte sich hilflos. Und wütend. Wütend auf sich selbst, denn ein Malfoy sollte nicht hilflos vor einem Vierzehnjährigen stehen. Und wühend auf Sirius, der die Macht hatte ihn vor sich und allen anderen lächerlich zu machen.</p><p>„Ist das immer noch wegen dem Streich? Das kann doch nicht sein. Nein, es ist bestimmt was anderes. So wie du dich benimmst, könnte man fast meinen, du wärst in mich verschossen“, schnurrte Sirius amüsiert. Alles an ihm strahlte Selbstsicherheit aus. Lucius riss sich zusammen. Es konnte doch nicht sein, dass er sich so vor einem halben Kind blamierte.</p><p>„Und wenn es so wäre?“, entgegnete er, immer noch steifer als eigentlich beabsichtig. Um seine gespielte Selbstsicherheit zu untermauern ging er ein paar Schritte auf ihn zu und stemmte die Hände links und rechts neben ihn auf den Tisch. Diesen Kampf würde er nicht verlieren. Nicht gegen ein Vierzehnjährigen.</p><p>„Du spinnst doch Malfoy!“, presste Sirius nervös hervor, und Lucius merkte, wie seine gespielte Selbstsicherheit zu einer echten wurde. Sirius’ Augen flatterten nervös umher. Mit jeder Sekunde spürte Lucius, wie er an Kontrolle gewann, und nie zuvor hatte sie so berauschend auf ihn gewirkt.</p><p>„Wohl kaum“, raunte er.</p><p>„Du bist das wunderschönste Wesen, das ich je gesehen habe“, flüsterte er in Sirius’ Ohr und ließ dabei den Atem über seinen Nacken streifen. Jetzt, wo die Macht durch seine Adern rauschte, vergaß er alle Folgen, die sein Handeln vielleicht haben könnte. Er hörte nur den keuchenden Atem, der wie Musik in seinen Ohren widerhallte.</p><p>„Lächerlich“, schnaubte Sirius zynisch. Hörbar unsicher und leicht verletzt. Er weckte in Lucius den Wunsch, ihn in die Arme zu nehmen und nie wieder gehen zu lassen, ihm süße Nichtigkeiten ins Ohr zu flüstern und ihn zu küssen, bis ihm nichts anderes übrig blieb, als ihm zu glauben. Was hatte dieses fragile Wesen nur dazu gebracht, sich so zu verhalten, einerseits wie ein scheues Reh und andererseits wie ein verletztes Kätzchen?</p><p>„Ganz und gar nicht“, summte er. Mit der rechten Hand strich er sanft das Haar aus dem jungenhaften Gesicht. Die alabasterfarbene Haut war so weich unter seinen Fingerspitzen, dass er ein entzücktes Seufzen nicht unterdrücken konnte.</p><p>„Ganz und gar nicht. Du bist perfekt“, murmelte er geistesabwesend. Die Hand wanderte in den Nacken, wo er einen rasenden Herzschlag spürte, und packte zu.</p><p>Kurzentschlossen drückte Lucius seine Lippen auf die einladend geröteten von Sirius. Im Nachhinein hätte Lucius gerne behauptet, dass alles wie in Zeitlupe geschah, doch dem war nicht so. Der Kuss war ungeschickt und Lucius war zu aufgeregt, um ihn perfekt zu machen, doch das störte ihn in dem Moment nicht. Sirius’ Lippen jagten heiß-kalte Schauer durch seinen Körper und weckten einen nie zuvor gekannten Hunger in ihm. Um noch mehr zu bekommen, ohne zu wissen wovon er eigentlich mehr wollte, lehnte er sich vor, bis er Sirius’ Rücken auf den Tisch gepresst hatte.</p><p>Ungeduldig fummelte er an Sirius’ widerspenstigem Umhang, während seine Lippen dessen Kinn und Hals hinunterwanderten. Es dauerte viel zu lange, bis endlich alle Knöpfe aufgegeben hatten und er mit den Händen über die entblößte Brust streichen konnte, deren Haut ihm noch viel weicher vorkam als … Er stöhnte und konnte nicht anders, als allen Göttern für dieses wunderbare Kunstwerk zu danken.</p><p>Ein schmerzerfülltes Wimmern weckte ihn aus seiner lustumnebelten Trance und veranlasste ihn, sich aufzurichten und den Blick über seinen Liebsten wandern zu lassen. Sirius hatte die Augen zusammengekniffen und die Hände um die Tischkante gekrallt. Angst hatte seinen ganzen Körper versteifen lassen und Lucius dämmerte, dass Sirius seine Küsse und Liebkosungen nicht erwidert hatte. Mit seinem Verstand schlichen sich Schuldgefühle in sein Bewusstsein, und er wollte am liebsten seinen Kopf gegen die Tischplatte schlagen und seinen Engel um Verzeihung anbetteln. Aber Malfoys bettelten nicht, und zumindest ein kläglicher Rest seines Stolzes hatte den Ansturm der Leidenschaft überstanden.</p><p>Unterdrückt stöhnend richtete Sirius sich wieder auf und versuchte, sich mit seiner offenen Robe zu bedecken, doch diese Bewegung lenkte Lucius’ Aufmerksamkeit nur auf die hässlichen Blutergüsse, die den sonst so makellosen Oberkörper befleckten. Entsetzt schlug Lucius Sirius’ zitternde Hände beiseite, sodass er das ganze Ausmaß der Verletzungen erfassen konnte. Einige der Flecken glühten blutrot, andere schimmerten leicht grünlich, und einige waren schon fast verblasst. Wut brannte in ihm auf. Wer auch immer das getan hatte, würde—</p><p>„Wer?“, presste er erstickt hervor.</p><p>„Mein Vater“, antwortete Sirius bitter, mit einer Stimme, die fast so hasserfüllt war wie Lucius eigene. Wieder begann er damit, seine Roben zuzuknöpfen.</p><p>Doch er kam nicht weit. Stürmisch zog Lucius ihn in seine Arme, sodass beide nach hinten stolperten und auf dem Boden landeten, Lucius mit Büchern im Rücken, die auf seiner Robe garantiert Staubflecken hinterließen, und Sirius auf seinem Schoß. Lucius wollte ihn einfach nur halten und nie wieder loslassen, während er seinen gesamten Hass auf den Mann richtete, der sich wohl irgendwo ein paar Stockwerke weiter unten mit seinen Gästen bestens amüsierte.</p><p>Sirius kämpfte zunächst gegen die Umarmung, doch er gab auf, sobald er merkte, dass er Lucius noch lange nicht gewachsen war.</p><p>„Déjà-vu“, murmelte Lucius schließlich unvermittelt.</p><p>Sirius lachte schwach. „Ich fand, dass die pinken Haare dir ausgezeichnet standen.“</p><p>Lucius konnte nicht anders, als in das Lachen einzustimmen, auch wenn er seine blonden Haare beileibe lieber mochte. Er konnte es sich selber nicht so recht erklären. Als er den Blick wieder hob, sah er direkt in Sirius’ Augen, die ihn unsicher musterten. Eine Weile saßen sie einfach nur so da und starrten einander an, fast so, als sähen sie sich zum ersten Mal, bis Sirius sich schließlich vorbeugte und seine Lippen langsam auf Lucius’ legte. Der Kuss war kaum mehr als der Geist einer Berührung, aber Lucius musste zugeben, dass Sirius’ offenbar talentierter war als er. Zumindest was das Küssen anging. Er war einfach perfekt. Seine Lippen kräuselten sich zu einem Lächeln.</p><p>Nach dem Kuss kuschelte Sirius sich gegen Lucius’ Brust, und Lucius war damit zufrieden, seinen Engel einfach nur zu halten und die einschläfernde Wärme zu genießen, die von ihm ausging.</p><p>„Es ist spät“, nuschelte Sirius irgendwann schlaftrunken. Lucius nickte nur. Seufzend krabbelte Sirius aus der Umarmung und richtete sich auf.</p><p>„Bis September“, sagte er.</p><p>„Bis September“, wiederholte Lucius schwach, mit einem seligen Grinsen, als Sirius schon längst verschwunden war.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27103/chapters/35346">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Lucius fühlte sich, als wäre er wieder ein Erstklässler, der zum ersten Mal nach Hogwarts kam, als sein Blick durch das Fenster der Kutsche auf die dunklen Türme vor dem fast ebenso dunklen Himmel fiel. Er hatte schon im Zug kaum stillsitzen können vor Aufregung, und obwohl er nach Sirius Ausschau gehalten hatte, hatte er ihn bisher noch nicht gesehen. Jetzt waren es nur noch Minuten, und seine Nervosität steigerte sich ins Unermessliche. Einerseits konnte er es nicht erwarten, ihn wiederzusehen, und andererseits fürchtete er nichts mehr als eben das. Nicht einmal seinen Vater. Was, wenn Sirius es sich anders überlegt hatte? Oder wenn er sich mit seinen Freunden über ihn lustig machte? Bei diesem Gedanken loderte Wut in ihm auf. Wie konnte er nur so dumm sein? Doch bald wich sie wieder der ängstlichen Erwartung, die ihn seit Tagen beherrschte.</p><p>Zusammen mit Narzissa trat er durch das Tor zur Großen Halle, aber während die meisten Schühler mit mehr oder weniger begeisterter Miene das Schauspiel der schwebenden Kerzen und Geister vor dem Nachthimmel betrachteten, hatte Lucius nur Augen für einen Jungen, der am Gryffindor-Tisch angeregt mit seinen Freunden plauderte. Sein Herz blieb fast stehen, als Sirius seinen Kopf wandte und ihn angrinste. Er muss den Blick gespürt haben, dachte Lucius verblüfft, und er hoffte, dass er nicht rot wurde. Das wäre mehr als peinlich.</p><p>Narzissa zog ihn ungeduldig und unsanft am Arm in Richtung Slytherin-Tisch, sodass er sich am liebsten losgerissen hätte. Nur das Wissen, dass der Abend für ihn dann noch anstrengender werden würde, hielt ihn davon ab. Er hoffte bloß, dass sie ihn den Rest des Abends in Ruhe lassen würde. Aus irgendeinem Grund schien ihn ihre Anwesenheit innerlich zu erdrücken. Ein merkwürdiges Gefühl, das ihn irritierte, denn eigentlich mochte er sie. Auch wenn er sich für einen Moment nichts sehnlicher wünschte, als sie zu verhexen. Er wusste zwar, dass er sie nie lieben würde, aber er schätzte ihre ruhige, kontrollierte Art. Trotzdem befreite Lucius seinen Arm unsanft aus ihrem Griff, sobald sie sich gesetzt hatten. Ein Blick zur Seite verriet ihm, dass sein Verhalten sie verwirrte, aber das war ihm in dem Moment ziemlich egal.</p><p>Narzissa war schon den ganzen Abend etwas angespannt gewesen, und als eine Reihe nervöser Erstklässler in die Große Halle stolperte und die Hallendecke bestaunte, wurde ihm auch klar wieso. Ihr kleiner Cousin Regulus stand unsicher zwischen den Jungen und Mädchen, die ihn größtenteils um einige Zentimeter überragten. Er war ein ziemlich kleiner und schmächtiger Junge, der im Gegenteil zu den anderen nicht auf die Decke sondern auf den Gryffindor-Tisch schielte. Sein Bruder Sirius starrte ihn nur ausdruckslos an und jeder, der den beiden auch nur etwas Aufmerksamkeit schenkte (Was ungefähr die Hälfte der Gryffindors und Slytherins taten) sah deutlich, dass die beiden sich alles andere als mochten.</p><p>Als Regulus sich schließlich doch von den Gryffindors abwandte und Narzissa am Slytherin-Tisch sah, lächelte sie leicht und der Junge beruhigte sich. Lucius fühlte sich seltsam berührt von dieser Seite Narzissas, die selten freundlich zu anderen war. Sein Vater hätte ein solches Verhalten in der Öffentlichkeit mit Sicherheit missbilligt und von Lucius erwartet, dass er das ebenfalls tat, aber in letzter Zeit hatte Lucius begonnen, mehr und mehr an den Ansichten seines Vaters zu zweifeln. Was sollte denn so falsch daran sein, hin und wieder nett zu jemandem zu sein? Man musste sich ja nicht gleich wie ein Hufflepuff aufführen und alle Menschen umarmen.</p><p>Der Sprechende Hut hatte inzwischen sein neuestes albernes Lied beendet und Professor Slughorn hatte sich mit seiner Namensliste neben den Stuhl gestellt. Er atmete einmal tief ein und aus (wobei sein Walrossbart leicht flatterte) und begann damit, einen nach dem anderen aufzurufen. Regulus Black war als vierter an der Reihe, und er zuckte merklich zusammen bevor er eilig zu dem Stuhl vor dem Lehrertisch stolperte. Narzissa versteinerte regelrecht und Lucius fiel auf, wie sie ihre Lippen vor Anspannung zusammenpresste, die Augen immer noch starr auf ihren Cousin gerichtet.</p><p>Doch ihre Sorge sollte sich als unbegründet entlarven. Kaum hatte der Hut den Kopf des Jungen berührt, da rief er schon „SLYTHERIN“ und Regulus lief strahlend und unter tosendem Applaus (er war der erste neue Slytherin) zu seinem neuen Haustisch. Narzissa atmete erleichtert aus und lächelte leicht, bevor sie sich wieder zusammenriss und zu der kühlen Schönheit wurde, an die Lucius gewöhnt war.</p><p>Neugierig blickte Lucius wieder zu Sirius, der seinen Bruder noch kurz mit demselben ausdrucklosen Blick bedachte, bevor er dem neuen Gryffindormädchen lauter applaudierte, als irgendjemand sonst an seinem Tisch. Dabei stieß er fast gegen seinen Nebenmann, einen Fünftklässler, der sich in letzter Sekunde duckte und ihn entnervt anstarrte.</p><p>Wie wollten sie sich eigentlich treffen? Lucius würde niemals in aller Öffentlichkeit mit seinem Schwarm reden können, und die einzige anderer Art der Kommunikation, die einigermaßen diskret wäre, wären die Schuleulen. Sie würden sehr vorsichtig sein müssen. Nicht auszudenken, wenn man ihn mit einem Gryffindor in Verbindung brächte. Er hoffte nur, Sirius würde keine Probleme machen. Aber schlussendlich würde er es schon verstehen. Jeder Junge, der in einer reinblütigen Familie aufwuchs, hatte von Kindesbeinen an eingetrichtert bekommen, dass eine Beziehung zu einem Mann die größte Schande war, die man seiner Familie bereiten konnte. Zumindest, wenn sie öffentlich wurde.</p><p>Lucius rief sich wieder die Geschichte von seinem Großonkel Mordekai ins Gedächtnis, der im zarten Alter von fünfzehn Jahren mit seinem Hauslehrer erwischt worden war. Wäre Lucius’ Urgroßvater dabei nicht in Begleitung einiger Freunde gewesen, hätte es für Mordekai wohl vergleichsweise glimpflich geendet und für den Lehrer mit dem Tod. So aber wurde das Ganze zum größten Skandal des Jahrzehnts, Mordekai wurde in die Muggelwelt verbannt und sein Bruder, Lucius’ Großvater, zum Erben der Familie ernannt.</p><p>Das Portrait von Lucius’ Urgroßvater wetterte heute noch gegen seinen Sohn, wenn man sich dem Flügel von Malfoy-Manor näherte, in den es gehängt worden war. Ursprünglich hatte es nahe der Eingangshalle gehangen, doch da der Mann sich einfach nicht beherrschen konnte und jedem jungen Malfoy misstrauisch hinterherspionierte, hatte Lucius’ Vater ihn in die dunkelste Ecke des Hauses verbannt. Lucius hatte einmal das Pech gehabt, ihm an einem seiner schlechteren Tage über den Weg zu laufen und so hatte er sich zwanzig Minuten lang die (offenbar berechtigten) Verdächtigungen seines Urgroßvaters anhösen müssen.</p><p>Lucius verstand den Mann nicht so wirklich. Es interessierte doch niemanden was er tat, solange niemand dahinter kommen würde. Und er war schließlich ein Slytherin, bisher hatte er es noch immer geschafft, eine reine Weste zu behalten. Er war sogar Vertrauensschüler geworden, und das, obwohl er einmal den Imperius-Fluch an der Katze des Hausmeisters ausprobiert hatte. An irgendetwas musste man schließlich üben und es war ja nicht so, als ob ihr das Bad im See wirklich geschadet hätte. Also würde ihn auch niemand mit einem anderen Jungen erwischen.</p><p><br/></p><p>Am nächsten Morgen stand Lucius so früh auf, dass er den Gemeinschaftsraum verlassen vorfand. Eilig kritzelte er eine Nachricht auf ein Stück Pergament und machte sich auf den Weg zur Eulerei. Auch die Gänge lagen noch wie ausgestorben da und die morgendliche Kälte drang durch seine Roben. In der Eulerei selbst war es wie immer erstaunlich ruhig, trotz der vielen Vögel, die auf ihren Stangen vor sich hindösten oder ihr Gefieder putzten. Der Boden war voller Kot und Gewölle, sodass Lucius angewidert das Gesicht verzog. Er war seit Jahren nicht mehr hier gewesen und hatte vergessen, wie ausgesprochen dreckig es war. Willkürlich weckte er eine der Eulen, die protestierend schuhuhte, die Prozedur aber über sich ergehen ließ. Sobald das Pergament hastig und nicht gerade rücksichtsvoll am Bein der Eule festgebunden war, plusterte sie sich eingeschnappt auf und flog durch das Fenster in die Morgendämmerung. Lucius beeilte sich, zurück in den Gemeinschaftsraum zu gelangen, bevor man seine Abwesenheit bemerkte. Nur leider war Goyle offenbar ein Frühaufsteher. Der Junge lief ihm auch immer in den unpassendsten Augenblicken über den Weg.</p><p>„Guten Morgen Lucius. Wo warst du denn so früh?“</p><p>Merlin, manchmal würde Lucius Goyle wirklich gerne ein Fluch auf den Hals hexen. „Ich hatte Lust auf einen Morgenspaziergang. Was bleibt einem auch sonst, wenn man zu Notts wohltönendem Geschnarche aufwacht?“, sagte er gelangweilt. Nott schnarchte nicht, aber woher sollte Goyle das auch wissen?</p><p>„Oh, sag mal, hast du mein Zaubertrankbuch gesehen? Ich hab gestern Abend noch ein bisschen drin gelesen und weiß nicht mehr, wo ich es gelassen hab.“</p><p>Lucius musterte den Jungen interessiert. Goyle war alles andere als eine Intelligenzbestie, es war also ziemlich ungewöhnlich, dass er freiwillig ein Buch in den Hand nahm, bevor der Unterricht überhaupt angefangen hatte. Nun ja, vielleicht hatte sein Vater das auch gemerkt und ihn dazu angehalten, sich einmal etwas mehr anzustrengen. Oder er hatte sich eins von diesen Büchern gekauft, die voll mit den Bildern nackter Frauen waren, und zur Sicherheit den Einband gewechselt. Das war wohl wahrscheinlicher.</p><p>„Ist es das, das auf dem Sessel da am Kamin liegt?“, fragte Lucius.</p><p>Goyle drehte sich um und seine Augen leuchteten auf, als er es sah. „Ja, danke Lucius.“</p><p>Goyle griff es sich so schnell er konnte und rannte zurück zu seinem Schlafsaal.</p><p>Lucius grinste. Definitiv kein Zaubertrankbuch.</p><center>*</center><p>Lucius war wütend. Wirklich wütend. Es waren zwei Wochen vergangen, seit er seinen Brief abgeschickt hatte. Zwei viel zu lange Wochen. Und immer noch hatte er nichts von Sirius gehört. Im Gegenteil, der Junge hatte sogar die Frechheit besessen ihn zu ignorieren. Nach den Blicken am ersten Abend hatte er so getan, als würde Lucius nicht einmal existieren. Seitdem war Lucius’ Laune so schlecht, dass er jedem Gryffindor, der ihm über den Weg lief, Punkte abzog. Sogar die jüngeren Slytherins fürchteten ihn inzwischen, und seine Freunde und Narzissa mieden ihn wo es nur ging, nachdem er sie vier Tage in Folge wegen Kleinigkeiten zusammengestaucht hatte.</p><p>Um nicht noch mehr Unheil anzurichten, hatte Lucius sich in einem alten Zauberkunstklassenzimmer verschanzt, das schon seit Jahren keinen Hauselfen mehr gesehen hatte. Nachdem er ein paar Stühle zertrümmert hatte, fühlte er sich schon um Welten besser.</p><p>„Incendio.“</p><p>Noch Besser.</p><p>„So kann man natürlich auch renovieren.“</p><p>Lucius fuhr herum. Sirius stand lässig in der Tür, gerade so, als wäre nichts gewesen. Dabei hatte er ihn gerade zwei Wochen eiskalt ignoriert. Und Lucius fiel zu seinem eigenen Missfallen nichts Besseres ein, als ihn mit offenem Mund anzustarren.</p><p>Leise kichernd schloss Sirius die Tür hinter sich. „Schön hast du’s hier. Ein bisschen verstaubt vielleicht, aber das kann man ja ändern, meinst du nicht auch?“ Zur Betonung strich er mit dem Finger über den Lehrertisch und hinterließ eine glänzende braune Spur im Staub.</p><p>„Was willst du hier?“, brachte Lucius gerade noch keuchend heraus, während er sich mit aller Mühe zurückhalten musste, um nicht über Sirius herzufallen. Ob aus Wut oder etwas anderem war ihm selber nicht ganz klar und er fühlte sich unbehaglich.</p><p>„Du wolltest mich doch treffen, oder nicht?“, antwortete Sirius keck.</p><p>„Und warum hast du mir dann nicht einfach eine Eule geschickt?“</p><p>„Ich habe keine. Und ich dachte, ich sollte vielleicht etwas unauffälliger sein. James hat sich ganz schön gewundert, als ich eine Eule bekommen habe. Normalerweise kriege ich allerhöchstens einen Heuler, nachdem ich Mist gebaut habe.“</p><p>„Und du bist mir gefolgt, um mich allein zu erwischen?“</p><p>„So in etwa.“ Er zuckte mit den Schultern. „Heute konnte ich mich loseisen weil James bei Slughorn nachsitzen muss und Remus irgendeine Vertrauensschülerbesprechung oder so was hat.“ Sirius rollte mit den Augen. „Peter stellt zum Glück nicht so viele Fragen. Sonst wäre ich wahrscheinlich noch später gekommen.“</p><p>Erstaunlicherweise besaß Lucius gerade noch die Geistesgegenwart, die immer noch flackernden Stuhlreste zu löschen, bevor er zu Sirius hinüberhastete und ihn stürmisch küsste. Oh, wie er diese Lippen doch vermisst hatte! Jedes Mal, wenn er sie berührte, fühlte sich sein Kopf wie leergefegt an und seine Brust wollte vor Glück überschäumen. Gefühle, die er nicht einmal benennen konnte, rasten durch seine Venen, als Sirius seinem Ansturm endlich nachgab und den Mund öffnete. Sein Engel schmeckte nach Schokolade, und obwohl Lucius eigentlich keine Schokolade mochte, kam es ihm in diesem Moment wie das wunderbarste Aroma der Welt vor. Er konnte einfach nicht genug davon bekommen und versuchte, sich noch enger an den schlanken Körper zu schmiegen, doch in diesem Moment schob Sirius ihn sanft von sich. „Einen Moment“, keuchte er, und zog den Zauberstab.</p><p>„Was hast du vor?“, fragte Lucius, erstaunt darüber, dass er selbst vollkommen außer Atem war.</p><p>„Du hast doch schon mit dem Renovieren angefangen. Ich dachte, wir könnten es uns etwas gemütlicher machen.“</p><p>„Scourgify.“ Mit einem Wisch seines Zauberstabes ließ Sirius den Staub von den Möbeln verschwinden. Irgendwie überraschte es Lucius, dass man Zaubersprüche sogar für so etwas benutzen konnte, und er fragte sich, wo Sirius das wohl gelernt hatte, und warum. Lucius hatte noch nie in seinem Leben Magie fürs Putzen verwendet, vor allem, weil Hauselfen das doch so viel besser konnten. Sirius murmelte noch etwas von „Fehlt nur noch …“, bevor er Stühle und Tische in die Mitte des Raumes fliegen ließ und sie fast mühelos in ein großes, breites Sofa mit braunem Bezug verwandelte. Doch offenbar war er noch nicht so ganz zufrieden, denn er musterte seine Schöpfung mit Argwohn. Schließlich zuckte er mit den Schultern und warf sich spielerisch auf die Polster.</p><p>„Ich wollte es eigentlich rot machen“, grinste er, „aber ich schätze die Farbe der Stühle war einfach ein bisschen zu hartnäckig.“ Ein verschmitztes Grinsen von Sirius brachte Lucius auf eine Idee, die für ihn sonst mehr als untypisch war, doch er konnte sich einfach nicht zurückhalten. Sirius sah einfach viel zu verlockend aus. Also stürzte Lucius sich auf ihn und warf ihn rücklings aufs Sofa. Dann schossen Lucius’ Finger in einer blitzschnellen Bewegung unter Sirius’ Hemd und kitzelten seinen Bauch durch. Sirius hysterisches Lachen füllte den Raum, und Lucius konnte nicht anders, als selber in das Lachen einzustimmen, auch wenn es nicht unbedingt dem Ideal eines würdevollen Malfoy entsprach. Er hatte sich selten so befreit gefühlt wie in diesem Moment, bis er endlich erschöpft auf Sirius zusammenbrach.</p><p>„Geh runter! Du bist zu schwer“, lachte Sirius.</p><p>„Hier ist es aber gemütlich.“</p><p>Schweigen.</p><p>„Ich hab dich noch nie lachen gehört oder gesehen.“</p><p>Lucius hob den Kopf und blickte in die wunderschönen ernsten Augen, die ihn bis in den Schlaf verfolgten.</p><p>„Ich habe dich sehr oft lachen gesehen.“</p><p>„Das wird daran liegen, dass ich sehr viel lache.“</p><p>„Vermutlich.“</p><p>„Oder daran, dass du mich in den letzten paar Monaten kaum aus den Augen gelassen hast.“ Anstatt zu antworten brachte Lucius ihn einfach mit einem Kuss zum Schweigen. Dieser Kuss unterschied sich von all den vorangegangenen vor allem dadurch, dass er nicht von Eile geprägt war. Im Gegenteil, die Zeit schien sich in die Länge zu ziehen und Lucius bemühte sich, jede Kleinigkeit in sein Gedächtnis einzubrennen. Wie Sirius’ Mund sich anfühlte, und wie er sich anhörte, wenn er diese entspannten Seufzer von sich gab, die Lucius vorher noch nie gehört hatte. Wie Arme sich um seinen Hals schlangen, um ihn noch näher an den warmen Körper zu pressen. Sirius’ Schnurren, als Lucius sich schließlich an ihn kuschelte und seinen Nacken kraulte. Das Verlangen, das er bei diesen doch so simplen Geräuschen spürte, verängstigte ihn, so wie es ihn gleichzeitig faszinierte. Die Vorstellung von dem, was er sich ersehnte, zeigte sich ihm nur als schemenhafte Vision, während ein anderer Teil seiner selbst sich fast schon fürchtete, Sirius zu berühren, diesen unschuldigen Engel, der nichts von dem ahnte, was in ihm vorging. Die Sehnsucht zerfraß ihn langsam, auch wenn er sie nicht wirklich begreifen konnte. Er wusste nur eins, es würde ihn zerstören, zu lange ohne Sirius zu sein.</p><p>„Wann können wir uns wieder treffen?“, fragte er matt.</p><p>Sirius überlegte und kaute dabei auf seiner Unterlippe, eine Angewohntheit, in die Lucius sich sofort verliebt hatte. Sein Kätzchen war einfach zu niedlich. „Samstagnachmittag? James hat Quidditch und Remus wollte Peter Nachhilfe geben. Die beiden wollen mich eh nie dabei haben, weil sie meinen, ich würde sie zu sehr ablenken.“</p><p>Lucius gab vor, sich die Sache zu überlegen, bevor er zusagte. Selbst wenn er bereits etwas vorgehabt hätte, er hätte es abgesagt.</p><p>„Wieder hier?“</p><p>Sirius nickte. „Wo es hier doch schon so gemütlich ist.“</p><p>Mit einem langen Kuss verabschiedeten sie sich.</p><center>*</center><p>Von da an trafen sie sich etwa einmal die Woche, meistens am Samstag, in dem alten Zauberkunstklassenzimmer. Sirius machte es dabei unglaublichen Spaß das Zimmer mehr und mehr umzudekorieren. Lucius hatte dabei seinen Spaß daran, ihn zu beobachten, wie er mit leuchtenden Augen Dinge durch den Raum fliegen ließ und ihre Form so lange änderte, bis sie ihm gefiel. Dabei legte er eine furchterregende Vorliebe für flauschige Dinge an den Tag. Auf Lucius’ Frage hin sagte er nur, dass es doch so viel bequemer wäre. Insgeheim stimmte Lucius ihm zu, aber er würde es niemals wagen, das auch laut auszusprechen.</p><p>Die meiste Zeit verbrachten sie küssend oder fummelnd auf dem Sofa, doch aufgrund einer unausgesprochenen Vereinbarung blieb das alles vergleichsweise unschuldig, sehr zu Lucius’ Missfallen. Sein Verlangen nach Sirius’ Körper stieg jedes Mal, wenn der sich mit nacktem Oberkörper auf dem Sofa räkelte. Jetzt, wo die Blutergüsse verblasst waren, erinnerte er ihn noch mehr an eine Katze. Oder an einen Hund, wenn man beobachtete, wie seine treue Ader zum Vorschein kam, besonders, wenn er von seinen Freunden sprach. Manchmal meinte Lucius fast, ihn mit dem Schwanz wedeln zu sehen, wenn er das Zimmer betrat (Lucius war meist so ungeduldig, dass er viel zu früh kam).</p><p>Doch all das fand Lucius nur nach und nach heraus. Sie redeten zwar viel, aber hauptsächlich über Belanglosigkeiten. Trotzdem, für Lucius war Sirius immer noch der wichtigste Gesprächspartner, und die Plaudereien mit Nott oder Narzissa zogen an ihm vorbei. Dabei war es zum größten Teil Sirius der redete. Er beschwerte sich über die Lehrer, oder erzählte von den neuesten Streichen, die er und seine Freunde ausgeheckt hatten. Und Lucius machte seine spitzen Bemerkungen dazu.</p><p>Es kam ihm nur wie zwei oder drei Wochen vor, doch es war schon Dezember, als er durch den tiefen Schnee nach Hogsmeade stapfte. Mürrisch biss er die Zähne zusammen. Er hatte es zwar geschafft, Narzissa abzuschütteln, doch leider nur mit der Begründung, dass er ihr noch etwas zu Weihnachten kaufen müsse. Das stimmte leider auch, aber Lucius hasste Weihnachtseinkäufe. Vor allem deshalb, weil er sich einfach nicht vor ihnen drücken konnte. Also trottete er seufzend in das Schmuckgeschäft von Hogsmeade, um eine sündhaft teure Kette oder Ohrringe zu kaufen. Wie jedes Jahr.</p><p>Gelangweilt musterte er die Auslagen. Eigentlich hatte er sich nie besonders viel aus Schmuck gemacht, also schätzte er, es wäre am besten, sich etwas Teueres auszusuchen. Aus dem Bauch heraus entschied er sich für eine nette goldene Kette mit einem Diamantanhänger. Er wollte gerade bezahlen, als sein Blick auf einen kleinen Anhänger fiel. Längst nicht so teuer wie das Geschenk für Narzissa, aber Lucius konnte nicht anders, als sie für seinen Engel zu kaufen. Sirius. Er musste lächeln, denn der Anhänger stellte einen silbernen Stern dar, und in der Mitte saß ein winziger Diamant.</p><p>„Na, hast du ein Weihnachtsgeschenk für Narzissa gekauft?“, fragte Nott, als Lucius gerade zufrieden aus dem Schmuckgeschäft stapfte und sich seinen Schal um den Hals wickelte.</p><p>Lucius nickte.</p><p>„Du Glücklicher, ich muss mich auch immer noch um ein Geschenk für Charlotte kümmern. Irgendwelche Ideen?“</p><p>„Ist doch egal, solange es teuer ist und glitzert.“</p><p>„So einfach ist das nun auch wieder nicht. Das braucht schon seine Zeit. Ich wünschte nur mein Vater hätte nicht mit mir reden wollen, dann hätte ich mich auch noch hier umschauen können.“</p><p>„Warum fragst du nicht wieder deine Mutter, die hat doch Charlottes Geschenk letztes Jahr ausgesucht?“</p><p>„Ja, aber meine Eltern sind im Moment ziemlich beschäftigt. Meine große Schwester soll bald heiraten und sie hat diesen Mann als Verlobten … na ja, meine Eltern sind alles andere als begeistert.“</p><p>„Wieso denn das? Er ist doch nicht etwa ein Schlammblut, oder?“</p><p>„Nein, das ist es nicht. Er ist ein Reinblüter, sonst hätten sie der Verlobung doch niemals zugestimmt. Sein kleiner Bruder ist das Problem. Er ist wohl … na ja, du weißt schon, anders herum“, Nott wurde rot um die Nase und Lucius war sich ziemlich sicher, dass es nicht an der beißenden Käute lag, „Das wäre ja auch nicht das Problem, wenn er sich nicht mit seinem Freund zusammengetan hätte und in die Muggelwelt abgehauen wäre. Und Dorian, das ist der Verlobte meiner Schwester, hat immer noch Kontakt zu ihm. Er besteht darauf, dass er wenigstens zur Hochzeit kommen darf.“</p><p>Lucius schwieg. Das war wirklich dumm von ihm. Von allen dreien, um genau zu sein. Wäre Lucius in der Position von Notts Eltern, er hätte der Verlobung wahrscheinlich schon längst gelöst. Oder wenigstens solange die Hochzeitsvorbereitungen ausgesetzt, bis der Bräutigam wieder zur Vernunft gekommen wäre. Unweigerlich musste er wieder an Sirius denken, und an das Geschenk für ihn, das in seiner Tasche plötzlich doppelt so schwer zu sein schien. Er würde sich wirklich vorsehen müssen, dass er nicht auch so anhänglich wurde und auf eine derart dumme Idee kam.</p><p><br/></p><p>„Fährst du über Weihnachten nach Hause?“, fragte Sirius gähnend, während er das Kinn auf Lucius’ nacktem Brustkorb abstützte.</p><p>„Nein. Und du?“</p><p>Sirius lachte bitter. „Nach Hause? Nein danke. Die will ich so wenig wie möglich sehen. Am liebsten würde ich ja mit zu James. Seine Eltern sind richtig nett. Aber dazu müssten mir meine Eltern eine Erlaubnis geben. Also wieder ein einsames Weihnachten im Gryffindorturm.“</p><p>„Fahren die anderen denn alle nach Hause?“</p><p>„James und Peter auf jeden Fall. Und Remus muss dieses Mal auch. Seine Mutter ist mal wieder krank.“</p><p>„Sie ist öfter krank, oder?“</p><p>Sirius warf ihm einen merkwürdigen Blick zu, dann nickte er. „Hmm, kaum zu glauben. Du scheinst mir ja wirklich zuzuhören. Und ich dachte du tust nur so und wartest darauf, mich ruhig zu stellen.“</p><p>„Oh, das natürlich auch“, murmelte Lucius, während er seine Hand durch Sirius’ Haare und an seinem Nacken entlangfahren ließ. Er verdrehte genussvoll die Augen, als Sirius sich ihr entgegenschmiegte und dabei sanft stöhnte. Ohne großen Widerstand ließ er sich von Lucius hinunterziehen und die Hitze, die sich zwischen ihren beiden Körpern entwickelte, schoss durch ihn hindurch und brannte bis in Lucius’ Fingerspitzen.</p><p>Wie von selbst fuhren sie über die samtene Haut, die ihnen unendlich begehrenswert erschien, und Lucius stellte verwundert fest, dass sein Körper wie aus eigenem Antrieb handelte, bevor er seinem Verlangen nachgab und das Gefühl von Sirius’ Körper, den angespannten Sehnen und Muskeln genoss. Sirius’ Miene, mit seinen geschlossenen Augen und dem konzentrierten Gesichtsausdruck, spornte Lucius nur dazu an, den entblößten Rücken weiter zu erfühlen. Von seinen schweißnassen Händen aus schoss die Lust durch seinen Körper und stöhnend bäumte er sich seinem Liebhaber entgegen, während seine Häde ihn nur noch näher an seinen Körper pressten. Sirius presste sein Gesicht schließlich stöhnend an Lucius’ Schulter, und wieder drückte er ihn mit all seiner Kraft näher an sich heran, so intensiv sehnte er sich danach, jeden Zentimeter von Sirius’Haut zu berühren, ihn so nahe an sich zu haben wie nur irgend möglich.</p><p>Sirius schien ähnlich zu fühlen, denn auch er klammerte sich wie verzweifelt an Lucius, während seine Hüften sich rhythmisch gegen Lucius’ bewegten. Lucius konnte nicht mehr denken, nur noch fühlen, wie seine Begierde sich in einem feurigen Crescendo bis zur Erfülung steigerte und er sich selbst in einem Chaos von Gefühlen und Sinneseindrücken und Sirius verlor. Minuten später klammerten sie sich immer noch aneinander, auch wenn das Bedürfnis nach der Nähe des Anderen nicht mehr ganz so stark war. Lucius lauschte einfach Sirius’ Keuchen, genoss es in vollen Zügen, und er bemerkte erst spät, dass auch er außer Atem und durchgeschwitzt war. Seine Haare mussten furchtbar zerzaust sein, dachte er matt, und doch interessierte es ihn nicht wirklich. Ihm war nur wohlig warm und sein Körper hatte sich so sehr entspannt, wie es ihm schon seit Jahren nicht mehr möglich gewesen war.</p><p>Als Sirius endlich den Kopf hob und ihn ansah, zierte ein verlegenes Lächeln seine Lippen, und Lucius wurde warm ums Herz, ohne, dass er es sich wirklich erklären konnte. Er wusste nur, dass er das, was gerade zwischen ihnen vorgefallen war, so unglaublich genossen hatte, dass er es kaum erwarten konnte, es zu wiederholen. Beim nächsten Mal nur ohne seine Hosen, die unangenehm klebrig feucht waren, und in denen er sich erst aus dem Zimmer herauswagte, nachdem Sirius sie sauber gezaubert hatte.</p><center>*</center><p>Zu seinem Glück stellte Lucius fest, dass auch er über Weihnachten alleine in seinem Schlafsaal war. Endlich. Er hasste es zutiefst, sich ein Zimmer mit den anderen zu teilen. Keine Privatsphäre. Aber nun hatte er das Zimmer für sich und es fiel niemandem auf, dass er am vorherigen Abend noch in die Eulerei hinaufgestiegen war, mit zwei Paketen und nicht einem. Das für Narzissa hatte er natürlich seine eigene Eule ausliefern lassen, für den Fall, dass sie irgendwem auffallen würde. Das Paket für Sirius hatte er einer der Schuleulen anvertraut, die ihn aus irgendeinem Grund nicht zu mögen schien und zwei Mal nach seiner Hand pickte.</p><p>Als er am Weihnachtsmorgen die Große Halle betrat, stellte er fest, dass noch zwei Slytherins (ein Siebtklässler namens Doyle und ein Drittklässler), zwei Gryffindors und vier Ravenclaws geblieben waren. Neun Schüler also im Ganzen. Und darum schien Dumbledore die Haustische beiseite geschoben und den Lehrertisch zum Gemeinschaftstisch umfunktioniert zu haben. Hurra. Der einzige freie Platz war der dem Schulleiter gegenüber und neben dem Erstklässler aus Gryffindor, der außer Sirius geblieben war. Der Junge zitterte bei seinem Anblick verängstigt, und das machte es schon fast erträglich, dem alten Irren gegenüberzusitzen.</p><p>Das Fest an Weihnachten wurde wie erwartet peinlich/amüsant. Lucius war schon lange aus den albernen Kindereien herausgewachsen. Trotzdem wurde er genötigt, an einem der Knallbonbons zu ziehen, nur um danach mit einem rosa Damenhut konfrontiert zu werden. Aufsetzen wollte er sich die Monstrosität allerdings trotz Dumbledores Überredungsversuchen nicht. Stattdessen drückte er ihn dem verängstigten Gryffindor auf den Kopf. Immerhin war er so noch zu etwas zu gebrauchen.</p><p>Der Junge flüchtete dann auch als erster vom Tisch. Die Kleinen zu verschrecken machte Lucius doch immer wieder Spaß, und da hieß es noch, Gryffindors wären so mutig. Bisher war ihm noch kein Beispiel dafür eingefallen, außer Sirius natürlich. Lucius selbst stand erst auf, als Sirius schon gegangen war, doch anstatt den Weg hinunter in die Kerker zu nehmen, stieg er die Treppen zum Gryffindorturm hinauf.</p><p>Er wurde nicht enttäuscht. Sirius hatte in einem Korridor auf ihn gewartet.</p><p>„Danke für das Geschenk, auch wenn ich beim besten Willen nicht weiß, was ich mit einem Anhänger soll.“</p><p>„Ich weiß es klingt albern, aber er hat mich einfach so an dich erinnert. Ein leuchtender Stern. Genau das richtige für jemanden mit deinem Namen, findest du nicht?“</p><p>„Ich hatte nicht mit so was gerechnet. Deshalb habe ich dir nichts besorgt. ’Tschuldigung.“</p><p>„Hmm … ich hätte da schon eine Idee …“</p><p>„Wollen wir in meinen Schlafsaal gehen?“ Sirius blickte ihn aus großen, leicht unsicheren Augen an, und wieder fühlte sich Lucius bizarr an einen Hund erinnert, der sein Herrchen anblickte und auf ein Kommando wartete. Ohne groß zu zögern schnappte er seine Hand. „Nein. Ich habe eine bessere Idee.“</p><p>„Und die wäre?“, fragte Sirius, während Lucius ihn zielstrebig durch die Korridore zerrte.</p><p>„Das Vertrauensschülerbad.“</p><p>„Stimmt, die Idee ist besser.“</p><p>Lucius hielt inne. „Woher willst du das denn wissen?“</p><p>Sirius grinste nur. „Ich habe meine Quellen.“</p><p>Lucius war sich nicht wirklich sicher, ob er wissen wollte, wer genau sich hinter den „Quellen“ verbarg. Das Grinsen allein sprach Bände, und es brachte Lucius dazu sich zu fragen, was Sirius wohl noch alles wusste. Viel zu viel wahrscheinlich.</p><p><br/></p><p>Im Bad angekommen drehte Sirius zielsicher ein paar Hähne auf und wandte sich kurz um, um Lucius ein kokettes Lächeln zuzuwerfen, bevor er sich langsam auszog. Unter der Robe trug er einfach nur ein Hemd und eine Hose (beides in schwarz), doch trotzdem wirkte er alles andere als gewöhnlich. Die Schlichtheit hob die sonst versteckte Eleganz in seinen Bewegungen nur noch mehr hervor. Nur langsam schälte Sirius seinen schlaksigen Körper aus seiner Kleidung, bis er nur noch in einer blau-weiß-gestreiften Unterhose dastand. Doch auch die landete nach einem für ihn untypischen unsicheren Blick auf dem hellen Fliesenfußboden.</p><p>Lucius fand es niedlich und erregend zugleich wie Sirius so plötzlich zögerte und wie das Blut in seinen Kopf schoss. Schüchtern drehte er sich schließlich um und kletterte fast ein wenig unbeholfen in die Wanne. Lucius seufzte enttäuscht, als sich auch der letzte Teil der langen Beine seinen Blicken entzog. Eilig entledigte er sich nun selbst seiner Kleidung und fast stolperte er dabei ganz unelegant über seine Hose. Wenigstens entspannte das Sirius sichtlich, der nun wieder grinste, auch wenn dieses Grinsen auf Lucius eher den gegenteiligen Effekt hatte.</p><p>Um seinen Patzer zu überspielen stieg er so schnell wie möglich in das warme Wasser und lenke Sirius äußerst effektiv mit seinen Lippen ab. Die heißen Küsse wurden schnell drängender und Lucius drückte Sirius’ Körper mit seinem gegen den Beckenrand. Und damit natürlich auch näher an sich. Als er spontan in Sirius’ Schulter biss und Fingernägel sich fast schmerzhaft in seinem Rücken verkrallten, verlor Lucius endgültig den letzten Rest an Selbstkontrolle und ließ seiner Leidenschaft freien Lauf. Kurzentschlossen packte er Sirius’ Hüfte und drückte ihn an sich, spürte, wie Sirius langsam seine Beine spreizte und sie hinter seinem Rücken verschränkte. Nur verschwommen nahm er den Ausdruck in seinen Augen war, der ihn aufforderte und ermutigte, während er ihn zur selben Zeit bat, vorsichtig zu sein. Und schließlich wandelte sich die Ahnung von dem, was zwischen ihnen möglich war, in Gewissheit. Die Wärme und Erregung, die ihn einhüllten, und Sirius’ Stöhnen würde er nie wieder vergessen, genauso wie das unglaubliche Glücksgefühl, das ihn erfüllte, während er eins mit seinem Engel wurde, und das erst in den frühen Morgenstunden langsam abklang.</p><center>*</center><p>Und so wurden die Weihnachtsferien in Lucius sechstem Schuljahr zur schönsten Zeit in seinem Leben. Er verbrachte jede freie Minute mit Sirius, meistens in ihrem Unterschlupf in dem verlassenen Klassenzimmer, und dabei überraschte es ihn schon irgendwie, wie gut sie miteinander auskamen. Sirius lenkte ihn zwar von den Hausaufgaben ab, zumindest solange er nicht selber welche machte, doch sie schafften es sogar, sich einfach nur aneinanderzukuscheln und in angenehmes Schweigen zu verfallen. In diesen Moment fuhr Lucius oft gedankenverloren durch Sirius’ Haare oder kraulte ihn.</p><p>Absurderweise bedeuteten diese Momente ihm sogar mehr als der Sex, und das überraschte ihn sogar noch mehr. Er hätte nie gedacht, dass es für ihn jemals etwas Besseres geben könnte, aber andererseits waren alle Momente mit Sirius mehr als perfekt für ihn, da waren ihre Unterschiede kaum zu bemerken.</p><p>Als die anderen schließlich aus den Ferien zurückkamen, mussten er und Sirius ihre heimlichen Treffen wieder auf ein oder zwei Mal in der Woche beschränken, und es tat Lucius regelrecht körperlich weh, so lange von seinem Liebling getrennt zu sein. Doch gerade die Trennung ließ ihre wenigen Treffen umso leidenschaftlicher werden. Es war, als würden sie in diesen Stunden mit aller Macht versuchen, miteinander zu verschmelzen, nur um am Ende enttäuscht festzustellen, dass ihre Mühe vergebens war. Es zerriss ihm jedes Mal das Herz wenn sie sich trennten, und er fragte sich, wie er die Sommerferien überleben sollte.</p><p>Den letzten Monat konnte Lucius kaum an etwas anderes denken als die Sommerferien und die Einsamkeit, die sie mit sich bringen würden. Mit seinen melancholischen Gedanken steckte er auch Sirius an, der den zwei Monaten fern von Hogwarts genauso sehr entgegenzufiebern schien wie er selbst. Doch Sirius erwartete einfach nur dasselbe wie jedes Jahr, so furchtbar es auch sein mochte. Lucius wusste, dass das auf ihn nicht zutraf. Er war inzwischen siebzehn. Ein Erwachsener. Und das bedeutete, dass er sich langsam seinen Pflichten als erwachsener Malfoy stellen musste. Ihm blieb nur noch ein Schuljahr, und das würde er damit verbringen, sich auf seine Zukunft vorzubereiten.</p><p>Als Lucius am Bahnhof in London einen letzten Blick auf Sirius’ Haarschopf warf, bevor er seinem Vater auf den Muggelbahnsteig folgte, schmerzte sein Herz, als habe er ihn für immer verloren, obwohl er wusste, dass das nur eine alberne Gefühlsduselei war.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27103/chapters/35347">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war eine warme Sommernacht, etwa Mitte der Ferien, als Abraxas Malfoy seinen Sohn das erste Mal zu einem Treffen der Todesser mitnahm. Lucius war nervös und neugierig, und er schämte sich dafür, dass er sich benahm wie ein kleiner Junge bei seinem ersten Quidditchspiel. Sein Vater strafte sein Verhalten jedoch nur mit einem Blick, der in etwa „Nicht in der Öffentlichkeit“ sagte. Lucius nickte kaum merklich. Er wusste schließlich, wie er sich in der Öffentlichkeit zu benehmen hatte. Dann setzte er seine schwarze Kapuze auf und folgte seinem Vater, der ihn zum Treffpunkt apparierte.</p><p>Der Treffpunkt, den der Dunkle Lord gewählt hatte, war ein im Mondlicht silbern glänzender Strand irgendwo in Schottland. Die Todesser, die bereits da waren, standen in kleinen Grüppchen zusammen und plauderten, und Lucius erkannte einige ihrer Stimmen, trotz der Kapuzen, die alle trugen. Nott war da, zusammen mit seinem Vater. Beide unterhielten sich mit zwei anderen Zauberern, die Lucius nicht erkannte. Die Stimmung war wie auf einem Sommerfest, dachte er, doch die freudige Erwartung, die seinen Körper durchzog, strafte diese Annahme Lügen. Genauso wie die dunklen Umhänge und Kapuzen, die kaum einen der Anwesenden täuschte.</p><p>Als der Dunkle Lord schließlich erschien, schlug die Stimmung abrupt um. Alle fielen auf die Knie, sogar Lucius’ Vater, der sonst jegliche Art der Ehrerbietung gegenüber anderen verabscheute. Lucius verstand nicht recht, was an diesem Mann so erstaunlich sein sollte, obwohl er großartige Ideen hatte, das konnte wohl nur ein Schlammblut bestreiten. Und dann begann er zu reden.</p><p>Im Nachhinein konnte Lucius sich nicht mehr genau erinnern, was der Dunkle Lord erzählt hatte, aber das, woran er sich noch erinnerte, erweckte in Lucius eine Leidenschaft, die ihn an das erinnerte, was fühlte, wenn er an Sirius dachte. Lucius verstand, warum sein Vater sich dem Dunklen Lord unterordnete. Und er zögerte nicht, als er ihn und seinen Vater zu sich rief, um mit ihnen zu reden. Lucius hätte sich am liebsten gleich den Todessern angeschlossen und das Dunkle Mal auf seinem Arm gespürt, doch der Dunkle Lord winkte ab, als wäre Lucius noch ein Kind.</p><p>„Noch ein Jahr, Lucius, dann kannst du wieder zu mir kommen und um die Aufnahme in unsere kleine Gemeinschaft bitten. Noch ist es nicht an der Zeit, sich gegen die Ungerechtigkeit in dieser Gesellschaft aufzulehnen. Genieß dein letztes Schuljahr, der Ernst des Lebens beginnt früh genug. Ach, was würde ich nur dafür geben, die Zeit zurückdrehen zu können“, sagte der Lord, und Lucius konnte nicht anders, als zustimmend zu nicken.</p><p>Als sie den Versammlungsort verließen und nahe von Malfoy Manor die Kapuzen vom Kopf nahmen, nickte Abraxas Malfoy seinem Sohn anerkennend zu, und Lucius’ Brust platzte fast vor Stolz und Glück. Endlich hatte er es geschafft, von seinem Vater gelobt zu werden, zwar nicht in Worten, aber dieses kleine Nicken hatte ihm genügt.</p><p><br/></p><p>Das wohlige Gefühl in seinem Bauch, das Lucius noch am nächsten Morgen spürte, verflog jedoch, sobald sein Vater ihn über den Rand des Tagespropheten hinweg ansprach.</p><p>„Lucius, ich denke es wird Zeit, dass du dich etwas mehr mit deiner Verlobten beschäftigst“, mit diesen Worten riss Abraxas Malfoy seinen Sohn aus seinen Tagträumen, die sich wieder einmal um Sirius drehten. Lucius traute noch einen Sekundenbruchteil den Gedanken hinterher, die zur Abwechslung nicht von schmerzvoller Sehnsucht erfüllt waren. Wüsste er, um was, oder genauer gesagt, um wen sich Lucius’ Gedanken drehten, er würde ihn wahrscheinlich mit dem Cruciatus-Fluch belegen, ob das nun ein Leben in Askaban bedeutete oder nicht. Doch zum Glück für Lucius ahnte sein überaus fürsorglicher Vater nicht im Entferntesten, was in ihm vorging. Dieser Gedanke ließ Lucius einerseits Stolz auf seine eigenen Fähigkeiten spüren, und andererseits keimte wieder der Wunsch nach mehr Beachtung durch seinen Vater in ihm auf.</p><p>„Narzissa wird im November siebzehn, und sowohl ich als auch Cygnus denken, dass es das Beste wäre, wenn ihr in den Weihnachtsferien heiratet“, fuhr er fort.</p><p>„Aber Vater!“, empörte sich Lucius. „Wir gehen doch noch zur Schule, hat das nicht noch ein bisschen Zeit?“</p><p>„Unsinn Junge. Heutzutage mögen unsere Traditionen ja immer mehr von diesem schlammblütigen Muggelmüll aufgeweicht werden, aber ich werde mich diesen Muggels nicht beugen. Und du wirst das auch nicht. Zu meiner Zeit war es gang und gäbe, dass man heiratete, sobald man siebzehn war. Bei deiner Mutter und mir war das auch nicht anders.“ Und damit war die Sache geklärt. Zumindest für Abraxas. Doch Lucius wusste, wann er nicht mehr zu protestieren hatte. Außerdem war es seit langem das erste Mal, dass sein Vater von seiner Mutter gesprochen hatte. Sie war einige Jahre zuvor gestorben. Lucius vermisste sie, doch er hatte seit ihrem Tod mit keinem Menschen mehr über sie geredet. Malfoys trauerten nicht, zumindest Abraxas tat es nicht, und Lucius wagte nicht, sich anders zu verhalten. Seine Eltern hatten jung geheiratet, eine arrangierte Ehe, wie seine eigene es sein würde.</p><p>Zum ersten Mal zog sich bei dem Gedanken an eine Hochzeit mit Narzissa sein Magen zusammen und mit absoluter Bestimmtheit wusste er, dass das nicht das war, was er wollte. Und das überraschte und irritierte ihn. Narzissa … es war nicht so, dass er sie nicht mochte, aber ihre Heirat war bisher immer kaum mehr als ein unwirklicher Schatten gewesen, den die Zukunft auf sein Leben warf. Jetzt, wo tatsächlich ein Datum feststand, bekam er wohl einfach kalte Füße. Das würde es wohl sein. Doch immer wieder schlichen seine Gedanken zu Sirius. Verärgert schob er sie beiseite. An Sirius wollte er jetzt wirklich nicht denken. Als er wieder in seinem Zimmer war, fiel sein Blick fiel auf den Brief, den er gerade schrieb. An Sirius, selbstverständlich. Und wieder kämpfte er mit dieser unerklärlichen Wut, die ihn bei dem Gedanken an seine Zukunft immer öfter erfasste, und die sich von Mal zu Mal schwerer zurückdrängen ließ. Wie im Reflex fegte seine Hand das Pergament vom Schreibtisch. Erst, als sich der Teppich mit grüner Tinte voll saugte, verflog sie abrupt. Zurückblieb nur Reue, auch nachdem ein hastiges „Scourgify“ die Tintenflecken beseitigt hatte.</p><center>*</center><p>„Du heiratest also“, stellte Sirius verletzt fest. Lucius stöhnte innerlich auf. Er hatte gehofft ihr erstes Wiedersehen nach den Ferien (die er hauptsächlich mit Narzissa hatte verbringen müssen) mit etwas Erfreulicherem zu verbringen. Und jetzt stand Sirius vor ihm und blickte ihn an wie ein getretener Hund. Zur Antwort zuckte er mit den Schultern.</p><p>„Es ist nicht so, als ob das eine Neuigkeit wäre. Wir sind schließlich schon seit Jahren verlobt.“ Sirius wich seinem Blick aus und sah betreten zu Boden. „Was hast du denn erwartet?“</p><p>Jetzt war es an Sirius, mit den Schultern zu zucken. „Ich weiß auch nicht. Dass wir etwas mehr Zeit hätten vielleicht.“</p><p>„Zeit? Die haben wir doch immer noch. Die Sache mit Narzissa hat nicht den geringsten Einfluss auf das, was zwischen uns ist.“</p><p>„Ach ja?“</p><p>Lucius wurde wütend, auf wen wusste er selbst nicht. Auf seinen Vater, sich selbst, Narzissa? Doch keiner von ihnen war da. Nur Sirius stand ihm gegenüber. „Natürlich. Ich tue einfach nur das, was jeder verantwortungsbewusste Reinblüter tut. Ich muss schließlich Kinder haben, sonst übernehmen die Schlammblüter am Ende noch das Ministerium. Das wäre das Ende der Magie! Du solltest dir auch langsam Gedanken über eine Verlobte machen.“</p><p>Sirius schnaubte. „Ich werde mit Sicherheit nicht heiraten“, spuckte er arrogant heraus.</p><p>Lucius starrte ihn nur ungläubig an. „Das kannst du nicht ernst meinen. Was würde deine Familie von dir denken?“</p><p>„Ist mir doch egal. Ich hau sowieso so schnell wie möglich von Zuhause ab. Das ganze Reinblütergeschwätz kann doch kein Mensch ertragen!“</p><p>„Reinblütergeschwätz?!“</p><p>„Reinblütergeschwätz! Dieser ganze Unsinn von Kindern und Slytherin und wie furchtbar überlegen wir doch alle sind, während jeder sehen kann, wie komplett irre alle sind.“</p><p>„Das ist kein Unsinn! Oder willst du etwa behaupten, dass auch nur einer dieser Schlammblüter es verdient hätte, Hogwarts zu besuchen? Dieser Abschaum verdreckt unser Blut und zerstört unsere Kultur!“</p><p>Sirius sah ihn enttäuscht und wütend zugleich an, während Lucius auffiel, wie schwer sie beide atmeten. Ein Teil von ihm war verärgert darüber, dass er sich so hatte gehen lassen und dass er Sirius angeschrieen hatte, doch ein anderer Teil redete beständig auf ihn ein, dass er nun einmal zurechtgewiesen werden musste. Er war ja fast noch ein Kind. Und so wie bisher konnte es ja wohl kaum weitergehen. Irgendwann musste er schließlich mit diesem pubertären Unsinn aufhören, den die Gryffindors ihm eingetrichtert hatten.</p><p>Gespannt wartete Lucius darauf, dass Sirius ihm widersprach, ihn anschrie oder verhexte, aber nichts dergleichen geschah. Sirius stand einfach da, die Fäuste verkrampft, die Augen zu Schlitzen verengt und glühend vor Wut, wie Lucius sie nie zuvor gesehen hatte. Sie starrten sich einfach an und die Stille drückte auf seine Lungen, während Magie durch den Raum knisterte.</p><p>Abrupt fuhr Sirius herum und rannte zur Tür heraus. Lucius war zu perplex, blieb einfach stehen, bis auch in ihm die Wut, die zwischenzeitlich abgekühlt war, vom kleinen nagenden Gefühl zu einer alles überragenden Rage wurde. Die Zweitklässler aus Ravenclaw, die ihm (nun Schulsprecher) im Flur über den Weg liefen, würden ihn wohl für den Rest des Schuljahres nicht mal mehr mit einem Auge schief ansehen.</p><p>Es dauerte ganze zwei Tage, bis er sich wieder beruhigt hatte und Verzweiflung die Wut niedergekämpft hatte. Er wollte Sirius nicht verlieren, er konnte es einfach nicht. Sirius war seine Leidenschaft, sein Glück, seine Seele. Ohne ihn wäre er kaum mehr als ein Schatten seiner selbst. Schließlich schrieb er ihm einen Brief und bat ihn ihm zu verzeihen. Dabei kam er der Bettelei so nah wie kein Malfoy vor ihm. Er hoffte inständig, dass Sirius auf seine Bitte um ein Treffen eingehen würde.</p><p>Den ganzen Abend wartete er, bis schließlich ein Waldkauz zu ihm in den Nordturm hinaufflatterte. Er hatte so lange dort gewartet, dass sogar die Portraits an den Wänden schon miteinander tuschelten und ihm verstohlene Blicke zuwarfen. Der Brief war kurz und auf die Rückseite seines eigenen gekritzelt. Sirius’ unsauberes Gekrakel war wie immer kaum zu entziffern.</p><p><i>Keine Zeit. Habe was mit J. und P. vor.</i></p><p><i>S.</i></p><p>Verbittert und enttäuscht zerknitterte er den Brief in der Faust. Sirius strafte ihn jetzt also mit Nichtachtung. Was hatte er nur getan, dass er das verdient hatte? Und vor allem: Wie konnte er Sirius dazu bringen, den Streit zu vergessen?</p><center>*</center><p>Die nächsten Wochen verbrachte Lucius zum größten Teil mit Narzissa, so sehr er sich auch dagegen sträubte. Sie wollte jedes Detail der Hochzeit mit ihm besprechen: die Farbe der Roben, die des Tortengusses, oder die des Tischtuchs. Und dabei schnatterte sie die ganze Zeit darüber, dass sie eigentlich lieber im Frühling geheiratet hätte, aber dass trotzdem alles so perfekt wie möglich werden würde. Lucius nickte einfach alles entnervt ab. Er wollte so oder so nicht heiraten, da war es auch egal wie alles aussah und wer alles zusah. Sein Vater würde sowieso jeden schlimmen Fauxpas verhindern ohne dabei auf Narzissa zu hören. Und außerdem hatte er im Moment wirklich wichtigere Probleme. Sirius und die Vorbereitung auf die UTZ-Prüfungen zum Beispiel. Letztere nutzte er, um sich von der Wut und der Verzweiflung abzulenken, die er abwechselnd für Sirius empfand.</p><p>Der hingegen warf ihm immer wieder heimlich Blicke zu, doch ansonsten steckte er entweder die Köpfe mit seinen Freunden zusammen oder er war so müde, dass sein Kopf fast ins Porridge plumpste. Wahrscheinlich heckten sie noch bis spät in die Nacht ihre Streiche aus. Ein Blick zur Linken verriet ihm jedoch, dass ihr Lieblingsopfer, Severus Snape, dabei erstaunlich unbeschadet zu bleiben schien. Vielleicht hatte er ja endlich ein Rückgrat entwickelt, auch wenn Lucius es bezweifelte. Möglicherweise gab es einfach nur ein neues, interessanteres Opfer. Es verletzte ihn auf jeden Fall, dass alberne Streiche mit seinen Freunden Sirius offensichtlich mehr bedeuteten als Lucius.</p><p>Auf die Briefe, die er Sirius schickte, erhielt er immer wieder dieselben Antworten. Keine Zeit. Mit den anderen beschäftigt. Dabei war er sich inzwischen nicht einmal mehr fürs Betteln zu schade. Langsam aber sicher frustrierte Sirius ihn, und wenn er nicht bald nachgeben würde, würde Lucius lieber aufgeben als sich noch weiter wie ein liebeskranker Vollidiot zu benehmen.</p><center>*</center><p>Eines Sonntagnachmittags Ende Oktober schließlich flatterte eine Schleiereule in den Slytheringemeinschaftsraum und landete auf dem Tisch vor Lucius. Der beäugte nur misstrauisch den Zettel am Bein des Vogels. Das Tier starrte standhaft zurück und streckte auffordernd das Bein aus, während es den Kopf schief legte. Die Gelenkigkeit von Eulen wurde offenbar stark unterschätzt. Trotzdem mochte Lucius das arrogante Biest nicht und er war froh, als sie endlich davon schwebte, natürlich erst, nachdem sie ihre Botschaft losgeworden war.</p><p>Auf dem Pergamentfetzen stand nicht viel. Aber es reichte aus, um Lucius Herz ganz andere Töne anstimmen zu lassen:</p><p><i>Nach dem Abendessen. S.</i></p><p>Seine Gedanken hasteten in die verschiedensten Richtungen. Er legte sich Entschuldigungen für Narzissa zurecht, die schon angekündigt hatte, mit ihm über irgendein unsinniges (und uninteressantes) Thema reden zu wollen. Er hoffte ernsthaft, dass sie während ihrer Ehe dazu übergehen würden, die zwei Stunden, die sie sich in der Woche wohl sehen würden müssen, schweigend zu verbringen. Aber die anderen Gedankenstränge hatten sich in Sirius verbissen, und in das, was er mit ihm machen würde.</p><p>So war Lucius auch wieder einmal viel zu früh in dem alten Klassenzimmer, in dem immer noch die verwandelte Couch stand. Und sobald er sich gesetzt hatte, keimten Zweifel in ihm auf, ob denn alles so gut ausgehen würde wie er hoffte, oder ob Sirius seine Freunde mitbringen würde um sich über ihn lustig zu machen. Oder hatte er ihm doch verziehen? Wollte er ihn einfach endgültig loswerden?</p><p>Das Klicken der Tür ließ seinen Kopf hochschnellen. Sirius hatte sich von innen gegen die Tür gelehnt und lächelte ihn nun unsicher an.</p><p>„Hi. Tut mir leid, dass es so lange gedauert hat, aber ich war wirklich beschäftigt.“</p><p>Jetzt, wo es soweit war, war Lucius’ Kopf wie leergefegt. Wirklich, nur Sirius hatte diese Wirkung auf ihn. Kein anderer brachte ihn dazu, sich hilflos wie ein kleiner Junge zu fühlen, nicht einmal sein Vater. Er wollte ihn am liebsten in die Arme nehmen und nie wieder loslassen, doch gleichzeitig fürchtete er sich zu sehr davor, wieder weggestoßen zu werden.</p><p>Und wie immer in solchen Situationen rettete Sirius ihn. Er fiel ihm einfach um den Hals und vergrub seinen Kopf in Lucius’ Schulter. Das weckte auch ihn wieder aus seiner unfreiwilligen Starre. Noch zögernd begann Lucius, die Umarmung zu erwidern und drückte ihn leicht an sich.</p><p>„Was habt ihr denn gemacht?“, fragte er, nachdem sein Gehirn endlich mit seinem Körper aufgeholt hatte.</p><p>„Ist ein Geheimnis“, seufzte Sirius.</p><p>„Ach ja?“</p><p>„Ja.“</p><p>„Ist es verboten?“ Sirius hob den Kopf und sah ihm in die Augen. Wieder konnte Lucius dieses schelmische Funkeln aufblitzen sehen, das ihm sagte, dass es <i>natürlich</i> verboten war. Nur dieses Mal bereitete ihm Sirius’ Risikofreude irgendwie Unbehagen. Irgendwann würde er sich damit in Schwierigkeiten bringen, aus denen ihm niemand mehr heraushelfen konnte. Auch er nicht. Doch Sirius würde das wohl niemals einsehen, egal, was Lucius oder jemand anderes auch sagen mochte.</p><p>„Du brauchst gar nicht erst zu fragen, ich verrate es dir sowieso nie“, lachte er unbekümmert, und alles war in Ordnung zwischen ihnen, zumindest für den Moment.</p><center>*</center><p>„Musst du sie wirklich heiraten?“</p><p>„Darüber haben wir doch schon geredet.“</p><p>„Nein, haben wir nicht“</p><p>„Egal. Natürlich muss ich das. Mein Vater enterbt mich, wenn ich es nicht mache.“</p><p>„Es gibt wichtigeres als Geld.“</p><p>„Ja. Die Familienehre. Und jetzt hör schon auf.“</p><center>*</center><p>Lucius stöhnte entnervt auf. Er hasste sein Leben im Moment einfach. Es waren noch zwei Wochen bis Weihnachten. Zwei viel zu kurze Wochen, die ihm absurderweise viel zu lang waren, denn insgeheim wünschte er sich, es endlich hinter sich zu haben. Dann hätte diese endlose Folter endlich ein Ende. Narzissa war auch nur noch ein nervliches Wrack, und gerade deshalb versuchte sie ständig, mit ihren Problemen zu ihm zu kommen. Er konnte sie zwar verstehen, und als nervliches Wrack war sie ihm wesentlich lieber als zu der Zeit, als sie nur ihre Hochzeitsplanung im Kopf hatte, doch seine eigenen Probleme wuchsen ihm schon über den Kopf hinaus. Das letzte was er brauchte, waren noch mehr Probleme, die er lösen musste.</p><p>Da waren zum einen die Unmengen an Hausaufgaben, die alle Siebtklässler in den Wahnsinn trieben, obwohl es noch ein halbes Jahr zu den Prüfungen war. Und Lucius musste sich als Malfoy natürlich besonders um gute Noten bemühen und sich vorbildhaft vorbereiten, denn schließlich war er zusätzlich einer der Schulsprecher. Seit Mitte November ertrank er fast in Arbeit, und inzwischen spürte er die Folgen seiner nächtlichen Lernorgien. Sein Geduldsfaden riss immer schneller (er war so gefürchtet wie noch nie), und jeder, der ihn ansprach, musste damit rechnen, dass er explodierte. Lucius’ Laune war so schlecht wie schon seit langem nicht mehr.</p><p>Und damit nicht genug: Es war ja noch Weihnachten. Und Weihnachten bedeutete schließlich Geschenke. Und Geschenkte musste man kaufen. Eines musste ein ausgesprochen romantisches für Narzissa sein, um ihr zu zeigen, wie unglaublich viel sie ihm bedeutete. Und ein nach viel großartigeres Geschenk musste er für Sirius auftreiben um ihn ruhigzustellen.</p><p>Sirius. Das Problem, das ihn im Moment wohl am meisten beschäftigte. Sirius wollte einfach nicht akzeptieren, dass er in zwei Wochen heiraten würde. Wahrscheinlich hatte er irgendwelche Gewissensbisse, weil er eine Beziehung mit dem Mann seiner Cousine haben würde. Bei Gryffindors konnte man schließlich mit allem rechnen. Vor allem mit unsinnigen Gefühlsduseleien. Was erwartete er denn von ihm? Dass sie beide zusammen alles hinter sich lassen und auf ewig glücklich und zufrieden in der Muggelwelt leben würden? Das konnte, und vor allem wollte, Lucius nicht.</p><p>Doch Sirius sah das anders. Als sie sich an diesem Abend wieder sahen, es sollte das letzte Mal vor der Hochzeit sein, zu der zum Leidwesen der Blacks auch Sirius eingeladen werden musste, fing er wieder damit an. Konnte er ihm nicht einfach mal ein bisschen Ruhe gönnen? Es war ihm einfach zu viel, und Lucius verlor die Geduld.</p><p>„Ja, verdammt! Es muss wirklich sein! Was hast du dir denn gedacht? Dass ich mein Leben für dich opfern würde? Ich bin der Erbe der Familie Malfoy! Ich kann nicht einfach machen was ich will. Ich habe <em>Pflichten</em>! Ich kann es mir nicht leisten, mein Leben für einen kleinen Jungen wegzuwerfen. Ich kann nicht so, so … abnormal sein!“, brüllte er.</p><p>„Abnormal?! Kleiner Junge?! Du Arschloch, mehr bin ich nicht für dich? Nur ein blöder kleiner Junge? Weißt du was? Der blöde kleine Junge, der alles macht was Papi ihm sagt, bist du. Ich pfeife auf meine Pflichten gegenüber dem alten und ach so ehrwürdigen Haus Black! Die können mich alle mal nach dem, was sie mit Andromeda gemacht haben!“</p><p>„Was redest du da von dieser Schlampe?! Sich mit einem dreckigen Muggel einzulassen. Sie ist eine Schande für alle Reinblüter.“</p><p>„Ach ja, und du etwas nicht? Immerhin kannst du noch nicht mal was mit Frauen anfangen und stehst auf den Cousin deiner Verlobten. Wie willst du diesen furchtbaren Mangel an Reinblüterstolz wieder gut machen? Den Todessern beitreten und so viele Schlammblüter umbringen wie du kannst, nur damit du dich danach besser fühlst?“</p><p>Lucius schwieg vor Zorn.</p><p>„Das hast du wirklich vor, nicht wahr du Bastard?“</p><p>„Ohne den Dunklen Lord wäre die Zaubererwelt am Ende. Er ist der Einzige, der etwas gegen diesen Abschaum unternehmen kann, der hier alles verpestet.“</p><p>Sirius starrte ihn einen Moment lang entgeistert an. Lucius hätte ihn am liebsten geschüttelt, aber etwas hielt ihn davon ab. „Weißt du was“, begann Sirius verbittert und mit brüchiger Stimme „Das war’s mit uns.“ Er drehte sich um, doch Lucius packte ihn am Arm.</p><p>„Warte, das kannst du nicht ernst meinen.“</p><p>„Und wie ich das erst meine. Ich hasse dich Malfoy! Du bist ein Arschloch. Du planst schon, deine Frau zu betrügen, bevor du überhaupt verheiratet bist. Und außerdem ist dir das Leben unschuldiger Menschen völlig egal. Du würdest sie sogar selber töten. Du bist der größte Egoist, der mir je begegnet ist. Und jetzt lass mich gehen.“</p><p>„Nein, das lass ich nicht zu. Du gehörst—“</p><p>„Stupor!“</p><p>„—mir.“</p><center>*</center><p>Und so endete Lucius’ Beziehung mit Sirius. In einem alten, unbenutzten Klassenzimmer und mit einem Fluch. Es tat nicht so weh, wie er erwartet hatte. Aber das lag wohl mehr daran, dass die nächsten Wochen und Monate wie Nebel an ihm vorbeiglitten. Er erinnerte sich dunkel daran, dass er noch unermüdlicher für die UTZ-Prüfungen gebüffelt hatte, als es schon vor den Ferien der Fall gewesen war. Und auch an seine Hochzeit erinnerte er sich fast gar nicht. Die deutlichste Erinnerung an eines der wichtigsten Ereignisse in seinem Leben war die, dass Narzissa ihm erzählte, dass Sirius es irgendwie geschafft hatte, sich um die Teilnahme zu drücken, indem er den Hogwarts-Rekord im Nachsitzen gebrochen hatte. Was immer er auch getan hatte, es hatte Severus Snape eine Nacht im Krankenflügel eingebracht, und niemand konnte aus ihm herausbekommen, was passiert war. Lucius schenkte all dem keine Beachtung mehr. Er sah Sirius nicht mehr hinterher, wenn sich ihre Wege in den Korridoren kreuzten, und zu den Mahlzeiten blickte er kein einziges Mal beiläufig zum Gryffindor-Tisch hinüber. In den wenigen Momenten, die er nicht in der Bibliothek über einem Buch gebeugt verbrachte, fragte er sich, ob er schon tot war, und nur noch als Geist wie Professor Binns durch die Korridore wandelte, ohne dass es ihm aufgefallen wäre. Ihm war, wenn er nachts im Bett lag und dem ruhigen Atem seiner Mitschüler lauschte, als wäre sein Leben schon vorbei.</p><p>An seinem letzten Morgen in Hogwarts machte Lucius sich auf einen weiteren Tag voller betäubter Gefühle gefasst, einen Tag wie all die anderen Tage des letzten halben Jahres. Doch es kam anders. Sein sorgfältig gebautes Gefühlsgerüst brach über ihm zusammen und all die Gefühle, die er in all der Zeit hätte fühlen sollen, fluteten sein Herz binnen weniger Sekunden. Sirius, die Hochzeit, und die Erkenntnis, dass er für den Rest seines Lebens unglücklich sein würde. Das erste und einzige Mal in seinem Leben weinte Lucius Malfoy, aber er weinte still, bis seine Mitschüler aufwachten. Er stand als letzter auf, und als er das Zimmer verließ, war er wieder der Lucius Malfoy. Er war wieder perfekt. Zumindest das war ihm nach alledem geblieben. Und nichts würde das je wieder ändern.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27103/chapters/35348">Chapter 4</a>: Epilog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war ein sonniger Morgen, doch leider hatte Lucius nicht die Zeit, ihn zu genießen. In der Nacht war etwas Furchtbares passiert. Lord Voldemort war tot. Erledigt von einem gerade mal einjährigen Kind. Lächerlich. Sein Sohn Draco war auch nicht viel älter und konnte nichts weiter als sinnlos vor sich hinbrabbeln.</p><p>Lucius konnte nicht anders, es fiel ihm einfach schwer, sich für den Jungen zu erwärmen. Dabei wusste er ganz genau, dass es nichts mit Draco zu tun hatte. Es war ganz allein sein Problem. Er konnte nichts mit ihm anfangen und ebenso wenig konnte er etwas gegen dieses unglaublich penetrante Gefühl der Abneigung unternehmen, das ihn jedes Mal überkam wenn er mit ihm alleine war.</p><p>Narzissa und er hatten jedenfalls beschlossen (um genau zu sein hatte er beschlossen und Narzissa zugestimmt), dass sie ins Ministerium gehen und den Auroren sagen würden, dass sie unter dem Imperius-Fluch gestanden hatten. Sie waren sich beide einig darüber, dass das die beste Methode der Schadensminimierung war. Und genau dort waren sie an jenem Morgen auch. Sie standen in der Abteilung für magische Strafverfolgung, Narzissa mit Draco im Arm, und warteten darauf, dass einer der Auroren Zeit für sie haben würde. Es war erniedrigend, doch leider ließ es sich nicht vermeiden. Desinteressiert blickte Lucius sich um. Die vorbeihastenden Auroren waren natürlich skeptisch, aber sie würden sie davonkommen lassen. Das garantierten sein Geld und sein Einfluss.</p><p>Ein manisches Lachen im Gang erregte seine Aufmerksamkeit, und auch alle anderen wandten neugierig die Köpfe. Schließlich sahen sie, wie die Auroren jemanden vorbeiführten, und erschrocken stellte Lucius fest, dass es Sirius war. Er lachte als wäre er wahnsinnig, doch trotzdem gelang es ihm immer noch, Lucius mit seinem Anblick zu verzaubern. Dabei hatten sie sich schon seit Jahre nicht mehr gesehen. Und keiner der Blacks hatte je wieder ein Wort über ihn verloren, nachdem er von zuhause ausgerissen war. Doch warum hatten die Auroren Sirius festgenommen? Ein kurzer Blick zu Narzissa verriet ihm, dass sie ebenso ratlos war wie er.</p><p>Später erfuhr Lucius, dass Sirius die Potters verraten haben sollte. An Voldemort. Und dass er auf offener Straße einen Haufen Muggel umgebracht haben sollte. Sein Bild prangte auf der Titelseite des Tagespropheten und er wurde zum treuesten Anhänger des Dunklen Lords hochstilisiert. Lucius konnte es nicht glauben. War er denn der einzige, der Sirius wirklich kannte? Er wäre nie dazu fähig, seinen besten Freund zu verraten, und er würde eher sterben, als Voldemort auch nur den kleinen Finger zu reichen. Doch leider konnte Lucius nichts tun, und so blieb ihm nichts anderes übrig, als mitzuerleben, wie man Sirius in Askaban verrotten ließ. Nicht einmal einen Prozess war er der Zauberergemeinschaft wert gewesen.</p><center>*</center><p>Doch Sirius verrottete nicht. Zwölf Jahre später brach er aus, etwas, das vor ihm noch niemandem gelungen war. Und wieder war sein Bild in allen Zeitungen, an Fenster geschlagen und im Ministerium ausgehängt. Die Zaubererwelt war starr vor Entsetzten. Insgeheim wünschte Lucius ihm, dass er es schaffte. Er hatte genug gelitten. Jeder, der das ausgezehrte Gesicht auf den Fahndungsplakaten sah, konnte das sehen, und wieder wunderte er sich, dass es niemandem außer ihm aufzufallen schien. Nicht einmal Narzissa zweifelte daran, dass ihr Cousin ein Massenmörder war.</p><p>Lucius sah ihn nur zwei Mal wieder. Einmal als Hund am Bahnsteig, als er Draco zum Zug brachte. Er wusste da schon, dass es das war, womit Sirius soviel Zeit Anfang seines fünften Schuljahres verbracht hatte. Die Ratte war sehr gesprächig, auch wenn Lucius ihr lieber aus dem Weg ging. Sirius war ein Animagus. Und wieder rang er Lucius damit etwas mehr Respekt ab.</p><p>Das zweite Mal war gleichzeitig das letzte. Er und einige Todesser hatten versucht, den kleinen Potter in eine Falle zu locken, doch der Versuch misslang kläglich und endete mit einem Kampf unten in der Mysteriumsabteilung des Ministeriums. Aus den Augenwinkeln heraus konnte Lucius sehen, wie Sirius sich in den Kampf stürzte, wie ein typischer Gryffindor eben. Er hatte sich einigermaßen erholt, wenn man ihn mit den Fahndungsplakaten verglich, doch war er längst nicht mehr so schön wie früher. Askaban hatte seinen Preis gefordert, hatte etwas genommen, was nie wieder zurückkehren konnte, genau wie bei seiner Cousine Bellatrix, mit der er sich gerade duellierte. Ein Fluch schoss aus ihrem Zauberstab hervor und katapultierte Sirius nach hinten. Und so musste Lucius mit ansehen, wie er durch einen Torbogen mitten im Raum in den Tod fiel.</p><p>Es brach sein Herz, und dieser irreale Schmerz, von dem er geglaubt hatte, ihn schon längst begraben zu haben, zerriss ihn so sehr, dass es ihm kaum etwas ausmachte, als die Auroren ihm seinen Zauberstab abnahmen und nach Askaban abführten.</p><p><br/></p><center>
+<i>Ende</i>
+</center><center>
+<i>18.08.2005 – 07.07.2008</i>
+</center>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="DLeG1yC4liLGpVAYOXUHzpTgNioUMONDF0yy4MHU-LIBNGSoXB3MCFytpfMu5v8E9q5yb4LJMEBgtHeJ-4kFkA"/>
+          <input value="27103" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=27103">Comments (4)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Valkyrie1310">Valkyrie1310</a> and <a href="/users/rank97">rank97</a>
+             as well as 
+          8 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_27103">
+  <form class="new_comment" id="comment_for_27103" action="/works/27103/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="l9KVZr0PiK1Cb-t9vUbOipMyRv12NElnNSG3TgZlplaaUXcZwarSh9hnHpaq1TZA8XwCuODNmmRC2XInPDhbdA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_27103">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_27103" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_27103=new LiveValidation('comment_name_for_27103',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_27103.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_27103">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_27103" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_27103=new LiveValidation('comment_email_for_27103',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_27103.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_27103" class="landmark">Comment</label>
+        <textarea id="comment_content_for_27103" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_27103" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_27103_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_27103">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_27103=new LiveValidation('comment_content_for_27103',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_27103.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_27103.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_27103" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/27103/hit_count.json")})</script>
+
+
+  </body>
+</html>

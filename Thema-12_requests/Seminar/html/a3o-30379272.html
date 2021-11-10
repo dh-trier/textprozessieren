@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":73,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Die Pflicht die eigene Freiheit zu suchen - Saikra - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="_7y1krZTa1SmAuLRJGzbGkRM_hNsYsBXB0WXJCg3Dr0AGm6bEtxikrqIz6DoOkJFCjle66z_2hFYuJcjwdesKw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="CchsaC38Z7bazCJMrnCqRmF3jUYfZq7ZyL5iGK-JHlL2brdhiXNucMZGDz1iJjMZLwItvt_7tJ-XQ2IfRmm8xA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=30379272">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/30379272/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/30379272/Die%20Pflicht%20die%20eigene.azw3?updated_at=1617186055">AZW3</a></li>
+          <li><a href="/downloads/30379272/Die%20Pflicht%20die%20eigene.epub?updated_at=1617186055">EPUB</a></li>
+          <li><a href="/downloads/30379272/Die%20Pflicht%20die%20eigene.mobi?updated_at=1617186055">MOBI</a></li>
+          <li><a href="/downloads/30379272/Die%20Pflicht%20die%20eigene.pdf?updated_at=1617186055">PDF</a></li>
+          <li><a href="/downloads/30379272/Die%20Pflicht%20die%20eigene.html?updated_at=1617186055">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Not%20Rated/works">Not Rated</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Categories:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li><li><a class="tag" href="/tags/Multi/works">Multi</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Percy%20Weasley*s*Oliver%20Wood/works">Percy Weasley/Oliver Wood</a></li><li><a class="tag" href="/tags/Cedric%20Diggory*s*Percy%20Weasley/works">Cedric Diggory/Percy Weasley</a></li><li><a class="tag" href="/tags/Roger%20Davies*s*Percy%20Weasley/works">Roger Davies/Percy Weasley</a></li><li><a class="tag" href="/tags/Cedric%20Diggory*s*Oliver%20Wood/works">Cedric Diggory/Oliver Wood</a></li><li><a class="tag" href="/tags/Roger%20Davies*s*Cedric%20Diggory/works">Roger Davies/Cedric Diggory</a></li><li><a class="tag" href="/tags/Roger%20Davies*s*Oliver%20Wood/works">Roger Davies/Oliver Wood</a></li><li><a class="tag" href="/tags/Roger%20Davies*s*Cedric%20Diggory*s*Percy%20Weasley*s*Oliver%20Wood/works">Roger Davies/Cedric Diggory/Percy Weasley/Oliver Wood</a></li><li><a class="tag" href="/tags/Perogiveric/works">Perogiveric</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Roger%20Davies/works">Roger Davies</a></li><li><a class="tag" href="/tags/Oliver%20Wood/works">Oliver Wood</a></li><li><a class="tag" href="/tags/Cedric%20Diggory/works">Cedric Diggory</a></li><li><a class="tag" href="/tags/Percy%20Weasley/works">Percy Weasley</a></li><li><a class="tag" href="/tags/Ginny%20Weasley/works">Ginny Weasley</a></li><li><a class="tag" href="/tags/Amos%20Diggory/works">Amos Diggory</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Weddings/works">Weddings</a></li><li><a class="tag" href="/tags/Alternate%20Universe/works">Alternate Universe</a></li><li><a class="tag" href="/tags/Alternate%20Universe%20-%20Regency/works">Alternate Universe - Regency</a></li><li><a class="tag" href="/tags/Regency%20Romance/works">Regency Romance</a></li><li><a class="tag" href="/tags/Found%20Family/works">Found Family</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2021-03-31</dd><dt class="words">Words:</dt><dd class="words">12554</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="comments">Comments:</dt><dd class="comments">1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">4</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/30379272/bookmarks">1</a></dd><dt class="hits">Hits:</dt><dd class="hits">64</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Die Pflicht die eigene Freiheit zu suchen
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Saikra/pseuds/Saikra">Saikra</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>In der Ära der Regency, als gesellschaftliche Anforderungen an die Mitglieder der Gemeinde noch vielfältiger waren als heute, doch sicherlich genauso erdrückend, versuchen vier junge Menschen ihr Glück zu finden. Aus verschiedenen Schichten der Gesellschaft und unterschiedlichen Gebieten Englands stammend, schlagen Percy Weasley, Oliver Wood, Cedric Diggory und Roger Davies Wege ein, die ihre Leben mit einander zu verbinden scheinen.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p align="center"> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 1: Die Pflichten eines Gentlemans</u> </strong>
+</p>
+<p> </p>
+<p>Hatte Cedric Diggory als erster und einziger Sohn eines wohlhabenden Vaters Freiheiten vielerlei Art, so konnte es dennoch genau die Möglichkeit sein eigene Entscheidungen treffen zu können die ihm bedauerlicher Weise fehlte. Nie blieb ein Wunsch lange unerfüllt, außer der einer wieder lebendigen Mutter. Sein verwitweter Vater hätte nicht liebender und wohlbedachter sein können in seinem Bestreben seinem Sohn das bestmögliche Leben zu ermöglichen.</p>
+<p>Cedric konnte auf eine Anzahl von Lehrern zurückgreifen die in anderen Haushalten nur beim Küchenpersonal anzutreffen war. Konversationen bestritt er auf Französisch, Griechisch und Spanisch. In Tänzen jeder Art war er versiert. Die Buchführung des Anwesens sowie des Diggoryschen Unternehmens hatte ihn sein Vater schon früh mitverfolgen lassen.</p>
+<p>So konnte man im Großen und Ganzen von Cedric Diggory nur als ausgesprochenen Gentlemen sprechen, gesegnet mit vielen Talenten.</p>
+<p>Amos Diggory war der stolzeste Vater ganz Londons. Jede Anforderung meisterte Cedric ruhig und präzise und stellte sich seinem Vater dann wieder mit einem zuvorkommenden Lächeln. Wie hätte er ahnen können, dass gerade die Aussicht auf eine hervorragende Partie mit der Tochter eines befreundeten Unternehmers wahre Fluchtgedanken in seinem treuen Sohn auslösen würde.</p>
+<p>„Eine Hochzeit ist an der Zeit und ich könnte mir keine bessere Partie als Miss Olive Woodhouse vorstellen. Ihr Vater und ich kennen uns aus Uni Tagen und sie ist ein liebes Ding im genau richtigen Alter“, stellte sein Vater über die Salzkartoffeln hinweg fest und nickte zufrieden über seine Findigkeit.</p>
+<p>„Sie soll eine gesunde Vitalität besitzen.“</p>
+<p>Cedric hingegen konnte das Entsetzen in seinen Gesichtszügen nur teilweise verbergen und senkte sein Gesicht seinem Teller entgegen.</p>
+<p>„Ist dies deine Antwort auf meine Frage nach einem Medizinstudium, Vater?“, brachte er schließlich hervor und auch wenn sein Vater nichts von den hier aufwallenden Gefühlen im Esszimmer bemerkte, die Bediensteten warfen sich stumme Blicke zu.</p>
+<p>Amos Diggory hingegen wedelte abwerfend mit seiner Hand und lachte kurz auf.</p>
+<p>„Mein Junge, überlassen wir die Welt der körperlichen Mysterien Männern die noch keinen Fuß in der Wirtschaft gefasst haben.“</p>
+<p>Er wandte sich unbeirrt der nächsten Speise zu und strahlte Cedric über den Tisch hinweg an.</p>
+<p>„Du bist schon lange in mein Unternehmen mit eingestiegen. Es ist an der Zeit eine eigene Familie zu gründen. Enkelkinder würden mein Leben bereichern“, fügte er mit einem Zwinkern in den Augen hinzu. Cedric Diggory konnte seinem Vater nur wenige Dinge abschlagen, aber einen Wunsch nach Glück bei weitem sicher nicht.</p>
+<p>„Wie kommt es dass ich Olive Woodhouse noch nie getroffen habe, wenn sie doch die Tochter von Freunden ist?“, setzte er vorsichtig an. Sein Keim von Rebellion fest verschlossen in seinem Herzen.</p>
+<p>„Mr. Woodhouse hat wie wir eine Werft hier in London. Sein kleines Stadthaus bewohnt er gemeinsam mit seinen ältesten zwei Söhnen. Frau und Tochter wohnen im Landsitz in Brighton. Er reist selbst viel hin und her. Er meinte seine Tochter ist dort schon in die Gesellschaft eingeführt und dieses Jahr wird sie nach London kommen auf der Suche nach einem passenden Ehegatten.“</p>
+<p>Tatsächlich waren Cedric sowohl Mr. Woodhouse als auch seine beiden Söhne nur zu wohl bekannt. Alles Gentlemen und Männer mit denen er ein ums andere Mal eine tatsächlich interessante Unterhaltung gepflegt hatte. Kam Olive Woodhouse nach ihrem Vater so würde er sich niemals Sorgen machen müssen sich mit ihr zu langweilen, wie es so manche betuchte Dame der Londoner Gesellschaft bis jetzt getan hatte.</p>
+<p>„Mr. Woodhouse und ich sind überzeugt eure Verbindung wäre für beide Familien ein wahrer Segen“, schloss Amos Diggory seine Ansprache und Cedric neigte seinen Kopf in Zustimmung. Es war nicht so dass er selbst noch nie ans Heiraten gedacht hatte. Nur war seine Jugendliebe Miss Cho Chang weit unter seinem Stand gewesen und alles was sein Herz seit dem berührt hatte gehörte seinem eigenen Geschlecht an und eignete sich daher keineswegs für eine Hochzeit.</p>
+<p>Folglich war er fest entschlossen sich ein eigenes Urteil zu bilden, mit all der Offenheit die im Allgemeinen zu seinen Vorzügen gezählt wurde.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 2: Die Pflichten einer jungen Dame</u> </strong>
+</p>
+<p> </p>
+<p> </p>
+<p>Percy Weasley durchforstete den Wald mit wachen Augen, sein Pferd sich den Weg durch das Terrain selbstständig suchend. Jeder Baum und jedes als Versteck geeignete Dickicht in diesem Wald kannte er wie seine Westentasche. Olivers Pferd hatte er auf seiner Suche jedenfalls schon gefunden und ließ es am langen Zügel hinter sich herlaufen.</p>
+<p>„Oliver!“, rief er zum wiederholten Male in den Wald hinein und bekam nur Vogelgezwitscher und das sanft im Wind rauschenden Blattwerk um sich herum zur Antwort. Die beiden Pferde liefen unbeirrt weiter und ließen Äste auf dem Boden knacken.</p>
+<p>Besorgt ließ der junge Mann weiter seinen Blick streifen. Oliver, so war es Percy bewusst, kannte diesen Wald genauso gut wie er selbst, doch die Verfassung in der er das Haus verlassen und sich überstürzt auf sein Pferd begeben hatte, konnte ihm gefährlich werden. Noch nie hatte Percy seinen besten Freund in solch einem Zustand gesehen, nicht dass Oliver nicht genug Gründe für dunkle Stimmungen gehabt hätte.</p>
+<p>„Oliver, ich bitte dich. Rede mit mir“, rief er in den Wald und horchte auf Zeichen seines Kammeraden. Von weitem konnte er bereits das kleine Rinnsal sehen in welchem sie als junge Kinder versucht hatten Fische anzusiedeln, zur Freude der Kinder und zum Leid der Fische, waren diese doch nicht für solch kleine Gewässer geeignet gewesen.</p>
+<p>Entschlossen zog er die Stiefel aus den Steigbügeln und ließ sich von seinem Pferd gleiten. Die Zügel an einem liegenden Baumstamm gesichert machte er sich zu Fuß weiter auf den Weg. Über das Rinnsal hinweg hin zu dem Unterschlupf der seit Jahr und Tag den Witterungen und dem Spiel der beiden Freunde trotzte. Hatte die Welt Percy beigebracht er sei schwer zu lieben, Oliver Woodhouse hatte es stets einfach aussehen lassen und Percy würde ihm das niemals vergessen.</p>
+<p>Tatsächlich konnte er beim Näherkommen bereits das stockende Atmen und das Nasehochziehen wahrnehmen was sowohl auf die Anwesenheit als auch auf das Befinden von Oliver Woodhouse Rückschlüsse gab.</p>
+<p>Sich durch den Eingang duckend und sich neben seinem zusammengesunkenen Freund auf dem trockenen Boden niederlassend zog Percy die Augenbrauen zusammen. Nein, so aufgelöst hatte er Oliver noch nie erlebt und es nun zu tun zu müssen bereitete ihm wahrlich Schmerzen.</p>
+<p>„Oliver?“, fragte er sanft und legte seinen rechten Arm um dessen Schultern. Stets kühl im Umgang mit anderen hätte diese Geste jeden außer den Rezipienten schockiert. Dieser zuckte ob seiner plötzlichen Anwesenheit nicht einmal zusammen, hatte er ihn wohl doch von weitem Rufen gehört.</p>
+<p>„Bitte erzähl mir was passiert ist“, bat Percy wiederum und ließ seine Hand sanft über Olivers Rücken kreisen. Es gab neben seinen vielen Geschwistern keine Person die ihm näher am Herzen lag als der Mann neben ihm. Oliver als Kind einer alten Schreinerfamilie die sich mittlerweile zu großen Teilen dem Schiffsbau und dem Handel zugewandt hatte und Percy als einer von vielen Söhnen einer Försterfamilie, hatten schon von klein auf viel miteinander zu tun gehabt. Ihre Väter über Holz und seine Bearbeitung verhandelnd und sie unter einem Tisch tuschelnd, heimlich im Garten spielend und später aufsehenerregender durch das Dorf und die umliegenden Wiesen und Wälder streifend; das hatte zu einer tiefen Freundschaft geführt. Nie hatten ihn die Röcke in die die Familie Oliver steckte oder die Blicke der anderen ihn gestört, wenn sie gemeinsam die Welt erkundeten. Für Percy zählten das gute Herz eines Menschen, ihr Intellekt und davon besaß Oliver Woodhouse eine ganze Menge. Noch dazu hatte er nie einen Menschen getroffen der so durchsetzungsfähig und voller Tatendrang war. Wahrlich war seine Bewunderung Oliver gegenüber geradezu grenzenlos. So traf es ihn umso mehr ihn in Schwäche sehen zu müssen.</p>
+<p>„Was es auch ist, du wirst auch diese Hürde meistern. Bitte sei gewiss ich werde dir zur Seite stehen egal was deine Familie diesmal von dir wünscht“, stellte er mit fester Stimme fest und endlich hob Oliver den Kopf, seine hochgesteckten Haare größtenteils gelöst und an seinem feuchten Gesicht klebend.</p>
+<p>„Sie schicken mich nach London. Meinem Vater ist meine burschikose Art nun endlich zu viel geworden und er hat mir einen passenden Ehemann gesucht um mich endgültig der Gesellschaft unterwürfig zu machen“, platze es aus ihm heraus und die roten Flecken in seinem Gesicht wurden hervortretender.</p>
+<p>Percy setze zu einem Satz an und schloss dann nur gequält die Augen. Sein Herz zog sich voll Schmerz zusammen. Denn wie viele Versprechen er auch gegeben haben mochte und wie viel er auch bereit war zu tun und zu geben, gegen diese Heirat würde er nichts mehr tun können.</p>
+<p>„Es tut mir so unwahrscheinlich leid“, flüsterte er und schulte dann sein Gesicht wiederum zu einem angemessenen Gesichtsausdruck.</p>
+<p>„Es tut mir leid, dass ich dir diese Bürde nicht abnehmen konnte“, setzte er hinzu, denn hatte er nicht nur einmal versucht um Miss Olive Woodhouses Hand anzuhalten um Oliver eine Ehe mit jemandem zu ersparen der ihn nicht so lieben konnte wie er es verdiente und der ihn nicht verstand so wie Percy es tat. Doch natürlich war ein Weasley nicht gut genug gewesen um Mr. Woodhouse zu überzeugen, schon gar nicht ein dritter Sohn. Auch wenn Percy bereits seine Ausbildung zum Gottesmann hinter sich gebracht hatte und sicher für eine Familie sorgen könnte, gesellschaftlich hoch stand er nicht.</p>
+<p>„Schon allein dass du für mich auf eine glückliche Ehe und eine Liebesheirat verzichtet hättest, ist vollkommen genug.“ Oliver wischte sich mit seinem Ärmel die Tränen vom Gesicht und schüttelte den Kopf.</p>
+<p>„Ich will nicht alleine nach London. In Papas Stadthaus mit meinen Brüdern und all der zusammengepferchten Gesellschaft in dieser Stadt werde ich mich schrecklich beobachtet und einsam fühlen“, setze er hinzu und zog ein weiteres Mal die Nase hoch.</p>
+<p>Percy wusste er hatte in London nichts zu suchen, aber er wäre nicht er wenn ihm kein Weg einfallen würde dies zu ändern.</p>
+<p>„ Ich werde Ginevra überreden nach London reisen zu wollen, das wird kein schweres Unterfangen sein.“</p>
+<p>Oliver blickte etwas hoffnungsvoller zu ihm auf und wuschelte ihm dann durch die kurzen roten Haare.</p>
+<p>„Sie wird einen Bruder brauchen der sie nach London begleiten kann.“</p>
+<p>Percy ließ ihn kurz gewähren, einfach weil er sich über den Stimmungsaufschwung freute und zog dann Olivers Hand aus seinen Haaren.</p>
+<p>„Mit ein bisschen schlechtem Benehmen könntest du deinen Verehrer vielleicht auch noch in die Flucht schlagen“, schlug er vor.</p>
+<p>„Und das von dir“, murmelte Oliver und verdrehte die Augen.</p>
+<p>„Was ist mit der Pflicht einer Tochter gegenüber der Familie und der Verbindung vor Gott und so weiter?“, stichelte er weiter und Percy ließ ihn gewähren, denn so funktionierten sie beide nun einmal.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 3: Die Pflichten eines Bruders</u> </strong>
+</p>
+<p> </p>
+<p> </p>
+<p>„Das ist er nun, unser Abschied?“, schluchzte Mrs. Weasley und umklammerte ihre einzige Tochter so stark, dass deren Reisehaube zu verrutschen drohte.</p>
+<p>„Nur den Sommer über, Mama“, erwiderte Ginevra und brachte es zustande gleichzeitig ihre Haube zu retten und ihre Mutter zu umarmen.</p>
+<p>Percy hingegen beobachtete angespannt wie immer mehr Truhen mit Kleidern und anderen Habhaftigkeiten von Ginevra aus dem Haus getragen und auf dem Dach der Kutsche verstaut wurden. Seine einzelne Truhe war bereits fest vertäut und die etwas wichtigeren Dinge lagen in einer Reisetausche bereits unter seinem Sitz.</p>
+<p>„Ginevra, bitte sag mir dass du bald fertig bist. Erstens passen nicht noch mehr Packstücke auf oder in die Kutsche und andererseits werden die Woodhouses nicht ewig warten bevor sie selbst nach London aufbrechen.“ Percy fuhr sich angespannt durch die Haare und winkte Bedienstete hin und her, legte seiner Mutter kurz verabschiedend eine Hand auf den Rücken und schob dann seine jüngere Schwester auf die Kutsche zu.</p>
+<p>„Oliver wird schon nicht ohne uns los fahren“, sagte Ginevra und verdrehte die Augen während sie seine Hand nahm und sich von ihm in die Kutsche helfen ließ.</p>
+<p>„Oliver nicht, nein“, gab Percy zu und schaute sich dann nochmal gehetzt nach zurückgebliebenen Dingen um.</p>
+<p>„Aber seine Mutter wird sich streng an die Anweisungen von Mr. Woodhouse halten und der hat einen strikten Reiseplan aufgestellt.“</p>
+<p>Er ließ sich mit einem Seufzen auf die Bank fallen, zog die Tür hinter sich zu und gab dem Kutscher mit einem Klopfen zu verstehen dass sie abreisebereit waren.</p>
+<p>„Nun, spätestens in London werden wir ihn schon wieder sehen“, gab Ginevra erheitert zurück. Die Umstände einer Tochter, erzogen von liebenden und weniger strickten Eltern und einer Schwester unter vielen Brüdern, hatten sie zu einer sorglosen und lebensfrohen Frau gemacht.</p>
+<p>„Er reist mit einem Diener den ihm sein Vater aus London entgegen geschickt hat und sonst allein. Es wäre mir lieber wir würden gemeinsam abreisen“, erwiderte Percy kühl und Ginevra schaute nur begeistert aus dem Fenster und schien ihn vollkommen zu ignorieren als die Kutsche in Gang kam und sich die Holzräder über den Boden zu bewegen begannen. Percy Weasley war unter all ihren Brüdern der nüchternste. So hatte sie sein Wunsch nach London zu reisen sehr wohl überrascht, bis ein paar Wochen später herauskam, dass Oliver Woodhouse sich diesen Sommer ebenfalls nach London begeben würde.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 4: Die Pflicht eines Menschen sich selbst gegenüber</u> </strong>
+</p>
+<p> </p>
+<p> </p>
+<p>Am Morgen gestartet und tatsächlich gemeinsam, konnten sich die Kutschen in Brighton auf den Weg nach London machen. Kaum hatten die Kutschen die Kieseinfahrt des Woodhouse Anwesens verlassen, vertiefte sich Percy in ein Buch und Ginevra in die vorüberziehende Landschaft. Oliver Woodhouse hingegen bekämpfte die Gedanken die ihm seit der Verkündung der Verlobung nicht eine Minute Seelenfrieden ließen. Schon immer war er seinen Eltern zu wild gewesen, zu stürmisch in seinen Spielen, zu laut in seinem Lachen. Kleider hinderten ihn daran mit Percy auf Bäume zu klettern, Sticken war zeitaufwendig und langweilig und alles was er wollte war wie seine Brüder behandelt zu werden. Er wollte wie ein Mann auf einem Pferd sitzen und über eine Wiese jagen, über Baumstämme springen. Er wollte Enten schießen mit einem Gewehr. Er wollte die Bewirtschaftung der Felder planen und die Aufforstung und Nutzung des Waldes und er wusste er hatte ein Händchen dafür. Also tat er genau das.</p>
+<p>Er war besser als Percy in fast allem was körperlich war, und das trotz seiner Voraussetzungen. Er kannte sich in den Familiengeschäften sicher fast so gut aus wie seine beiden Brüder, obwohl diese darin ausgebildet wurden und er sich das meiste hatte durch eifrige Lektüre selbst hatte aneignen müssen. In den Liegenschaften um ihr Anwesen lief er in den geborgten und abgelegten Hosen seiner Geschwister, steckte sein langes Haar unter eine grobe Mütze und ließ sich von fremden Blicken nicht beirren. Jeder wusste ihn mit seinem Namen anzusprechen solange er aussah wie er sich selbst zu geben wünschte.</p>
+<p>Doch in der Stadt, unter Gesellschaft, wurden die Geduld und das Verständnis seiner Eltern ihm gegenüber dünn. In seinem Brief hatte sein Vater geschrieben, dass seine Tage der freimütigen Kindheit und des Austobens nun endgültig vorbei waren. Es ziemte sich für die Tochter eines wohlhabenden Gentlemans sich in der Gesellschaft gut zu verheiraten und ihrer Familie nicht zur Last zu fallen.</p>
+<p>Oliver Woodhouse wollte nichts ferner als seiner Familie zur Last zu fallen. Er wollte helfen. Er wollte beteiligt sein, auf Augenhöhe, doch all die Jahre des Streitens mit seinen Eltern, des Versteckens hinter Stoff, Stickereien und Spitze hatten ihm nur allzu deutlich gezeigt, dass diese Möglichkeit für ihn nicht in Frage kam. Und auch wenn er nun den Kopf beugen musste, er würde einen Weg finden um so bald wie möglich wieder sein zu können wie es ihn selbst am glücklichsten machte, ob nun alleine oder mit einem fremden Mann an der Hand der über ihn bestimmen durfte. Oliver Woodhouse war niemand der über sich bestimmen ließ, nur weil dieser jemand gedachte diese Macht zu besitzen.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 5: Die Pflichten eines Vaters</u> </strong>
+</p>
+<p> </p>
+<p>„Dies wird dein Hochzeitsgeschenk sein“, sprach Amos Diggory und schritt stolz das dreimastige Schiff ab, welches in den letzten Zügen der Fertigstellung in ihrer Werft lag.</p>
+<p>„Es ist wunderschön.“ Cedric blickte mit ungläubigen Augen die Schiffswände empor, dunkel und glatt. Die Arbeiter die um sie herumwuselten nickten den beiden geschäftig zu und brachten dann weitere angepasste Stücke heran um sie mit Metallschlägen zu befestigen. Ein echtes Lächeln breitete sich auf seinem Gesicht aus, denn hatte er zwar immer davon geträumt ein Arzt zu werden und Menschen zu helfen, so hatte ihn die Weite des Meeres stets fasziniert und auch die Möglichkeiten die es mit sich bringen würde eigene Routen und Ladungen zu planen war hinreichend verlockend.</p>
+<p>„Bald wird sie fertig sein, je nachdem wie schnell Miss Woodhouse und du euch mit einer Hochzeit anfreunden könnt, sicher auch schon zur Vermählung. Ein wahrhaftiges Geschenk für diesen Schritt in deinem Leben mein Sohn.“ Mr. Diggory legte eine Hand an das Holz und drehte sich dann wieder zu ihm um.</p>
+<p>„Du kannst dir selbst einen Namen für diese Schönheit überlegen.“ Damit trat er wieder ein paar Schritte zurück und stellte sich neben Cedric um ebenfalls die Schiffwände hinauf zu blicken.</p>
+<p>„Oder du wartest bis heute Abend und kannst deine Braut in diese Entscheidung gleich mit einbeziehen.“ Erschrocken schaute Cedric zu seinem Vater hinüber der nur unbeirrt weiter redete.</p>
+<p>„Sie ist gestern bereits in London bei ihrem Vater angekommen. Ihre Reise soll ohne Vorkommnisse von statten gegangen sein und nun ist sie ausgeruht genug und frohen Mutes dich kennen zu lernen. Ich habe ihre Familie und ihre Reisegefährten heute Abend zum Essen und Trinken eingeladen. Dann kannst du sie ganz ungezwungen kennenlernen. Herrlich, herrlich.“ Mr. Diggory war überaus begeistert über die Aussichten der nächsten Wochen, schlug seinem Sohn glücklich auf die Schulter und ging dann weiter um das Schiff herum.</p>
+<p>Cedric hingegen blieb in der Flut von Neuigkeiten und Gefühlen zurück und ließ sie dann wie die Brandung einfach über sich hinwegwaschen. Es hatte bis jetzt keinen einzigen Menschen gegeben den Cedric Diggory nicht gemocht oder der Cedric Diggory nicht gemocht hatte, denn wie zuvor erwähnt, war er ein ausgesprochener Gentlemen und so umgänglich, wie sie es selten sind.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 6: Die Pflichten der Höflichkeit</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p>Es hatte bis jetzt keinen einzigen Menschen gegeben den Cedric Diggory nicht gemocht oder der Cedric Diggory nicht gemocht hatte, bis er eines Abends bei einem Dinner in seinem Haus Miss Olive Woodhouse und Percy Weasley gegenüber saß. Sein Vater und Mr. Woodhouse unterhielten sich über Waren und Holzarten und Ginevra war die Freundlichkeit in Person und versuchte ihn ein ums andere Mal in ein ungezwungenes Gespräch zu verwickeln, um die Unhöflichkeit ihrer Freundin auszugleichen. Denn Miss Woodhouse hatte ihn von der Minute in der sie sich vorgestellt wurden keines Blickes gewürdigt, hatte sich stumm an ihren Platz am Tisch gesetzt noch bevor die Diener das Essen angekündigt hatten und hatte seit dem auf all seine Versuche mit ihr zu Sprechen nur mit einsilbigen Antworten reagiert.</p>
+<p>Es war neu für Cedric Diggory, aber auch er war sich nicht sicher wie er mit einer Person umgehen sollte, die ihrer Pflicht an Höflichkeit in keinster Weise nachkam.</p>
+<p>Erkundigte er sich nach ihrer Anreise, so zog sie die Augenbrauen nach oben und schnaubte, dass sie ja nun hier sei und offensichtlich angekommen sei. Fragte er sie nach ihren Vorlieben, zog eine Spur von Schmerz über ihr Gesicht und er schämte sich fast seines Fehltritts wegen, bis sie bissig Sticken und Tanzen gerade zu herausspuckte.</p>
+<p>Percy Weasley hingegen war den Abend hindurch überaus angespannt und verschlossen. Das einzige was ihn erweichen konnte waren die Momente in denen Miss Woodhouse sich über Cedric lustig zu machen schien und der Anblick der Bibliothek als sie sich nach dem Essen einen Brandy genehmigten.</p>
+<p>Alles in allem hatte er von Anfang an gewusst, dass es ihm nicht leicht fallen würde nicht aus Liebe zu heiraten. Aber nun hatte er gleichwohl die Befürchtung dass seine Braut ihn ebenso wenig, wenn nicht gar weniger wollte als er sie und es kratze an seinem bis zu diesem Zeitpunkt in seinem Leben unangetasteten Stolz.</p>
+<p>Wenn etwas einen freundlichen und mutigen Mann in Bewegung setzt, dann ist es die unausgesprochene Anschuldigung er sei keines von beidem. So war es dieser Zeitpunkt seit er Miss Olive Woodhouses Namen das erste Mal gehört hatte, dass er den Entschluss fasste dass er sie von sich überzeugen würde.</p>
+<p>Er strich sich durch seine blonden Haare, nahm Blickkontakt auf und ließ sich mit einem Lächeln und klugen Worten auf seiner Zunge die Unhöflichkeiten von Miss Woodhouse gefallen.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 7: Die Pflichten des Hofmachens</u> </strong>
+</p>
+<p>
+  <strong> </strong>
+</p>
+<p>Cedric Diggory hatte nicht unbegrenzt viel Erfahrung darin einer Dame den Hof zu machen, ein kleinen wenig jedoch besaß er schon. So war ihm durchaus bewusst dass die meisten Frauen der Gesellschaft sehr gerne Spazieren gingen und sich an der Natur erfreuten. Blumen waren gerne gesehen, zuweilen auch ein Gedicht. Eine Einladung in ein Konzert war so wie ihm schien eigentlich nie verkehrt, konnte man doch wenigstens ab und an andere Menschen die Gesellschaft unterhalten lassen.</p>
+<p><br/>Es vergingen Wochen in denen er mit Miss Woodhouse am Arm die Parks der Umgebung abschritt. Erwähnte er die Blumen am Wegesrand hörte er sie nur schwerer Atmen und nach einiger Zeit konnte er ihr Augenrollen bereits vor seinem inneren Augen sehen.<br/>Als er jedoch rein aus einer Laune heraus zu Pferd zu ihrem Treffpunkt kam sah er zum ersten Mal ihre Augen vor wahrem Interesse aufblitzen und er hätte lügen müssen, hätte er nicht zugegeben, dass ihm das nach all seiner Mühe nun eine ausgesprochene Genugtuung gab.</p>
+<p><br/>Elegant schwang er sich aus dem Sattel, strich mit der Handfläche über den warmen Hals seines Pferdes und deutete eine knappe Verbeugung Richtung Miss Woodhouse an. Hatte er doch schnell gelernt dass sie Handküsse gar schrecklich zu finden schien.</p>
+<p><br/>"Miss Woodhouse."</p>
+<p><br/>"Mr. Diggory", erwiderte sie und schritt dann ungefragt an seinen Wallach heran. Ohne Scheu strich sie seine Blesse hinauf und flüsterte ihm sanfte Worte gegen seine Nüstern. So liebenswürdig hatte er sie tatsächlich noch nicht angetroffen und Cedric wusste er durfte diesen Moment ihrer Offenheit nicht verstreichen lassen.</p>
+<p><br/>"Wollt ihr neben mir zu Pferd durch den Park reiten? Zu Fuß haben wir nun doch recht viele Wege hier in London bereits abgeschritten", stellte er also fest.<br/>Olive sah ihn nur erstaunt an, aber der Ausdruck von Sanftmut in ihren Augen hatte sich erhalten.<br/>"Zu gerne", gab sie zu und ehe er noch Ausschau nach einer Aufstiegshilfe für sie suchen konnte oder auch nur in die Zügel seines Pferdes greifen um es still zu halten, hatte sich Miss Olive Woodhouse selbst die Zügel gegriffen, den Steigbügel erobert und sich rittlings in den Sattel geschwungen wie ein Mann. Samt all ihrer Röcke hatte sie das eine Bein auf der einen und das andere Bein auf der anderen Seite des Pferdes und richtete nun die Stoffe über ihren Beinen aus, das glücklichste Lächeln auf den Lippen.</p>
+<p><br/>"Vielen Dank, Mr. Diggory. Sie können sich nicht vorstellen wie sehr ich meine Stute daheim vermisse."</p>
+<p><br/>"Zu Ihren Diensten, Miss Woodhouse", brachte er hervor und sah sich verstohlen im Park um ob jemand diesen Affront beobachtete. Doch nur zu gut wusste er dass er bei diesem seltenen, ehrlichen Lächeln nicht böse auf sie sein konnte, nein er fand es geradezu bezaubernd wie unumwunden und direkt sie sich zu allen Zeiten gab. Und mit jedem winzigen Detail ihrer Vorlieben, das er herausfand, schien sie ihm gegenüber wärmer zu werden. Diese Mischung aus Stolz und Erstaunen und Bewunderung auf seiner Seite brachte sein Herz durcheinander und schickte ein herzhaftes Lachen in die klare Luft hinaus, wo er sie doch hätte rügen sollen.</p>
+<p>„Immer zu ihren Diensten.“</p>
+<p> </p>
+<p>Olive Woodhouse liebte Bücher, keine mit Gedichten darin oder Bildern über Pflanzen, aber wie Cedric nach ihrem Ausritt im Park schnell herausfand, konnte er sie mit Büchern über die Pferdezucht erfreuen. Auch unterhielt sie sich bei Abendessen bei den Woodhouses daheim mit ihren Brüdern angeregt über Agrarwissenschaften und das passende Vieh. Da Cedric sich selbst bis jetzt nie in diese Richtung weitergebildet hatte, brauchte es einige Tage intensiver Lektüre auf seiner Seite, bis er sich im Stande sah sich angemessen an ihren Unterhaltungen beteiligen zu können. Dies brachte ihm erstaunte Blicke der Familie, ein nun nicht mehr so seltenes warmes Lächeln von Olives Seite und einen kalten Blick von Percy Weasley ein.</p>
+<p>Schon des Öfteren war ihm aufgefallen dass der Bruder von Miss Woodhouses Freundin Miss Weasley nicht gut auf ihn selbst zu sprechen war. Betrat Cedric einen Raum, wurde Percys Miene steinern und abweisend. Fand er einen Fehler an Cedric, dann wurde dies sofort kundgetan und ließ es sich schicklich erklären, so war Percy stets darauf bedacht ihn nicht mit Olive allein zu lassen.</p>
+<p>Er musste zugeben, dass er Mitleid mit Percy Weasley empfand. Er war ein kluger Mann, etwas zurückhaltend und abweisend für seinen Geschmack, aber dennoch ausreichend gebildet um interessante Unterhaltungen zu führen. Er schien glücklich damit seine Berufung als Geistlicher gefunden zu haben und doch war Cedric allzu deutlich bewusst, dass Percy seiner Liebe zu Miss Olive Woodhouse nachtrauerte. Niemals würde er selbst Olive unterstellen, dass diese Zuneigung zu einem unschicklichen Maße herangewachsen war, aber gegenseitig war sie auf jeden Fall, so würde Cedric sich doch jederzeit als empathischen Menschen bezeichnen.</p>
+<p>So tat ihm Percy Weasley von Herzen Leid, und hätte ihn Miss Woodhouse nicht längst mit ihrer besonderen Art eingenommen und sich anscheinend auch langsam an den Gedanken gewöhnt bald Mrs. Diggory zu werden, so hätte er sich um ihrer Willen zurückgezogen. Er war kein Mann der einem anderen Unglück wünschte oder eine Frau herzensgebrochen sehen wollte. Doch wo sich die Situation seines Werbens nun seit einigen Wochen im Wandel befand, so konnte er das Wunder gleichzeitig seinen Vater und sich selbst mit dieser Hochzeit glücklich zu machen nicht ziehen lassen.</p>
+<p>Es war zu später Stunde als er sich unangemeldet zum Stadthaus der Woodhouses begab und mit klopfendem Herzen den Türklopfer betätigte. Ein Diener ließ ihn ein, kündigte ihn im Wohnzimmer der Familie an und schon stand Cedric vor den kartenspielenden männlichen Familienmitgliedern, Ginevra am Klavier und Percy und Olive jeweils vertieft in ein Buch auf einem Sofa, dicht beieinander.</p>
+<p>„Ich bitte um die Erlaubnis alleine mit Miss Woodhouse sprechen zu dürfen“, brachte er hervor und der Raum brach in Bewegung aus. Mr. Woodhouse warf seine Karten auf den Tisch und stemmte sich vergnügt aus seinem Stuhl.</p>
+<p>„Meine Herren“ sprach er und wandte sich an seine Söhne und Percy.</p>
+<p>„Ginevra, würdet ihr mir bitte folgen. Solch einer höflichen Bitte sollten wir nachkommen.“</p>
+<p>Damit verließen er und seine Söhne mit schelmischen Grinsen im Gesicht den Raum, Ginevra schenkte Cedric einen Knicks bevor sie ebenfalls den Raum verließ. Olive war von ihrem Sofa aufgesprungen, ihr Buch aufgeschlagen auf dem Boden und umklammerte mit beiden Händen eine von Percys. Sie sah gleichzeitig glücklich und verängstigt aus und diese Emotionen konnte Cedric nur zu gut nachempfinden. Percy hingegen wirkte resigniert und zusammengefasst.</p>
+<p>„Du schaffst das. Aber du musst ehrlich mit ihm sein, um deines Willen“, flüsterte er ihr zu und Cedric runzelte angespannt die Stirn.</p>
+<p>Vorsichtig machte sich Percy Weasley los und schritt dann forschen Schrittes an ihm vorbei.</p>
+<p>„Mr. Diggory“</p>
+<p>„Mr. Weasley“</p>
+<p>Und endlich waren sie allein. Wie in Trance bahnte er sich die letzten Meter auf Olive zu, hob das Buch vorsichtig vom Boden auf um es auf einem Teetisch abzulegen und ließ sich dann auf ein Knie herabsinken.</p>
+<p>„Miss Olive Woodhouse, es kann euch nicht entgangen sein wie sehr ihr mich verzaubert habt, mit eurer Art an das Leben heranzugehen, mit der Weise wie ihr mit mir sprecht. Ihr wisst unsere Familien wünschen sich eine Verbindung zwischen uns, aber ich möchte dass ihr wisst dass ich nach den Wochen unseres Kontaktes diesen Wunsch von ganzem Herzen ebenfalls hege. Darum darf es euch nicht verwundern und ich hoffe ich habe eure Zeichen nicht falsch gelesen. Werdet ihr mir die Ehre erweisen und mich zu eurem Mann nehmen?“</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 8: Die Pflicht eines besten Freundes</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p> </p>
+<p>Percy Weasley hatte viele Gefühle als er den Salon mit seinem besten Freund und Mr. Diggory hinter sich zurücklassen musste, mit dem eindeutigen Wissen dass Mr. Diggory einen Ring bei sich trug und gewillt war einen Antrag zu machen.</p>
+<p>Percy wünschte sich nichts mehr in der Welt als Oliver glücklich zu sehen. Auch wenn er nicht für immer an Olivers Seite würde bleiben können, so schien es doch dass gegen all seinen Unmut Cedric Diggory ein von Herzen guter Mensch war und sich nach und nach in Olivers Herz geschlichen hatte. Percy konnte seine eigene Eiversucht kaum ertragen, hatte sie doch mehr als eine Ursache. Er war selbst Schuld daran Oliver nie seine Liebe gestanden zu haben, die Eifersucht dieser Art war die eine. Doch Cedric Diggory hatte ein erhebliches Erbe in Aussicht, Wohlhaben zur Hand und dadurch eine Freiheit von der Percy Weasley würde immer nur träumen können und es machte ihn rasend. Rasend vor Neid und rasend vor Scham darüber dass er ebendiesen empfand.</p>
+<p>Seine kreisenden Gedanken wurden je unterbrochen als Oliver aufgelöst und mit Flecken im Gesicht die Türen aufstieß und sich in seine Arme warf. Verdutzt fing er ihn auf und erhaschte einen Blick auf einen begossenen Cedric Diggory mit geöffneter Schmuckschatulle mitten im Raum.</p>
+<p>„Ich kann ihm das nicht antun“, schluchzte Oliver in seine Schulter und sank dann zu Boden und der letzte Rest von Percys Herzen sank mit ihm. Vorsichtig geleitete er Oliver zu Boden und stand dann mit geballter Faust wieder auf.</p>
+<p>Es war an der Zeit dass er rational dachte, das konnte er gut. Er tat es in allen Angelegenheiten in denen es nicht um Oliver Woodhouse ging, und nun war es an der Zeit sich von seinen eigenen Gefühlen loszumachen und das Beste für sie alle herauszuholen.</p>
+<p>Um Oliver auf dem Boden herum gehen, machte er sich auf den Weg zurück in den Salon. Nachdrücklich schloss er die Flügeltüren hinter sich und schritt die letzten Meter auf den Mann zu der sich immer noch nicht von der Stelle gerührt hatte.</p>
+<p>„Cedric, bitte setzen sie sich“, forderte er ihn auf und ließ sich gleichzeitig in einen der gepolsterten Sessel sinken.</p>
+<p>Cedric verfolgte ihn mit den Augen, gab sich dann sichtlich einen Ruck und nahm ihm gegenüber Platz. Die Schachtel samt Ring in seiner Hand betrachtend atmete er tief durch.</p>
+<p>„Darf ich dir eine Frage stellen?“, setze Cedric an und sah dann sichtlich mit sich kämpfend zu Percy herüber. Dieser ließ ihn mit einem Nicken sein Einverständnis wissen, war er doch etwas erleichtert nicht von sich aus diese schwere Unterredung beginnen zu müssen.</p>
+<p>„Warum hast du Miss Woodhouse nie selbst einen Antrag gemacht?“</p>
+<p>Percy versuchte sich die Überraschung über die Richtung der Frage nicht anmerken zu lassen und doch zuckten seine Mundwinkel in dem Versuch eines traurigen Lächelns.</p>
+<p>„Das habe ich. Mr. Woodhouse hielt mich nie für angemessen“, gab er zu und reckte dann das Kinn nach vorne. Diese Anträge lagen eine Weile zurück und so auch sein verletzter Stolz darüber.</p>
+<p>Cedric Diggory schien ob dieser Antwort eine Weile über seine nächsten Worte zu grübeln und so saßen sie eine Weile in gemeinsamen Schweigen. Zum ersten Mal zwischen ihnen war es nicht von einer missgünstigen Art und Weise sondern von übereinkommender Sorge um einen geliebten Menschen.</p>
+<p>„Du liebst sie, nicht wahr, es war mir bald bewusst, aber ich dachte nie daran dass es einen Unterschied für mich bedeuten würde.“</p>
+<p>Percy schloss die Augen und wusste dass er Cedric mit nichts als Ehrlichkeit begegnen würde, auch wenn ihm Oliver nicht die Erlaubnis dazu erteilt hatte. Doch er wusste dass Oliver sich an diesen Mann verloren hatte und egal wie sehr es ihn selbst schmerzte, er würde das unausgesprochene Problem zwischen den beiden bereinigen. Mit festen blauen Augen sah er wieder zum ungeduldig wartenden Cedric auf.</p>
+<p>„Ich liebe ihn.“</p>
+<p>Cedric kniff die Augen zusammen und Percy ließ sich nur zu gerne Zeit mit seinen nächsten Worten.</p>
+<p>„Schon seit wir Kinder sind war Oliver klar, dass er seinen Eltern nicht die Tochter sein kann die sie sich wünschen. Er fühlt sich wie wir, Cedric. Er kann mit den Machenschaften der Damen nichts anfangen aber ich verspreche dir er ist so vollständig und liebenswert wie es jeder andere Mensch nur sein kann.“</p>
+<p>Cedric hatte sich begonnen auf seinen Knien abzustützen und öffnete immer wieder lautlos den Mund als hätte er tausende von Fragen auf seiner Zunge liegen. Percy konnte sie gerade zu hören.</p>
+<p>„Ich weiß die Gesellschaft sieht es nicht gern, doch nach meinem Wissen sieht Gott nichts schlechtes daran wie Oliver fühlt. Auch meine Gefühle Oliver gegenüber mögen seltsam sein, doch nicht falsch. Und ich möchte euch vergewissern, dass euer Antrag bei ihm auf ein offenes Herz gestoßen ist und nur aus zu tiefer Liebe und zu eurem Schutz ausgeschlagen wurde. Liebte er euch weniger, so hätte er euch geheiratet und euch die Wahrheit nie oder erst zu spät mitgeteilt. Doch so wie es scheint, bedeutet ihr ihm schon jetzt…“, setzte er seinen letzten Satz an und konnte ihn doch nicht beenden. Waren doch Olivers Worte wie er ihm beteuerte, dass Percy ihm die Welt bedeutete, noch viel zu klar in Erinnerung.</p>
+<p>„Ich hätte es ahnen sollen“, murmelte Cedric unterdessen vor sich hin. „Die Art seiner Sprache, sein Umgang mit mir. Wie ich selbst auf ihn reagiere.“ Die Stirn in seine Hand stützend schüttelte er sanft den Kopf. Es verging eine ganze Weile in der sie beide ihren eigenen stürmischen Gedanken nachhingen.</p>
+<p>„Was kann ich tun?“, richtete er sich schließlich entschlossen an Percy und Percy wurde klar dass er Cedric Diggory ein ums andere Mal unterschätzt hatte.</p>
+<p>„Er hockt in der Eingangshalle und ich denke eine Wiederholung des Antrags mit passendem Namen und Pronomen würde vollkommen ausreichen“, berichtete Percy und streckte Cedric dann seine Hand hingegen.</p>
+<p>„Ich danke euch für euer Verständnis. Ich werde mich nicht dafür entschuldigen dass ich euch bis heute wenig getraut habe, aber ihr sollt wissen dass dem nun nicht mehr so ist.“</p>
+<p>Cedric befeuchtete sich die Lippen und schlug dann stärker als für Percys Geschmack nötig ein. Dann schien er geradezu auf seine Füße zu stolpern und Richtung Ausgang zu stürzen.</p>
+<p>Percy blieb wie angewurzelt sitzen, konzentrierte sich nur auf das Feuer im Hintergrund und das geflüsterte Gespräch im Nebenraum welches in einem verblüfften, glücklichen Lachen von Olivers Seite und einem erleichterten „Gott sei es gedankt“ von Cedric gipfelte. Erst dann stieß er einen gehaltenen Atemzug aus, griff sich sein Buch vom Tisch und nahm die Lektüre von vor der Unterbrechung wieder auf, schließlich war ihm schon lange klar gewesen, dass er dazu bestimmt war Oliver Woodhouse zu verlieren.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 9: Die Pflichten eines Versprechens</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p> </p>
+<p>Percy Weasley war ein starker Mann in der Hinsicht seine Gefühle zu verbergen, selbst vor sich selbst. Diese Fähigkeit wurde in den nächsten Wochen seines Aufenthalts in London nur zu stark beansprucht.</p>
+<p>Oliver und Cedric tätigten Planungen für eine Feier, schrieben Briefe an Verwandte und Freunde, gingen gemeinsam Einkaufen weil es nicht in Olivers Kopf gehen wollte solche Dinge gänzlich ihren Familien, oder Cedric Entscheidungen alleine treffen zu lassen. Und hätte Oliver nicht jeden Tag ums Weitere Percy darum gebeten ebenfalls von der Partie zu sein, so hätte er sicher bereits den Rücktritt angetreten und wäre nach Brighton zurückgekehrt.</p>
+<p>Doch Ginevra hatte schnell neue Freundinnen in London gefunden und sich in der Gesellschaft hier organisch eingefügt. Oliver balancierte einem Drahtseilakt gleich zwischen dem Oliver den er selbst kannte und dem Spiel welches er für die Familien aufrechterhielt. Cedric hingegen bekam immer mehr die Seiten an Oliver zu sehen die Percy nur zu gut kannte und von Herzen schätze, und auch Cedric schien angetan, nicht dass es Percy Weasley überraschte.</p>
+<p>Oliver war immer voller Energie und Tatendrang, doch in diesen Wochen schien er von innen heraus zu strahlen. Fast nichts konnte seine gute Laune trüben mit dem Ausblick auf eine Ehe in der er nicht vorgeben musste jemand anderes zu sein. Percy gönnte es ihm von Herzen, aber seinen Freund so glücklich zu sehen machte ihm seine eigene Situation um einiges deutlicher bewusst.</p>
+<p>Percy Weasley war nicht gut darin sich bei anderen Menschen sympathisch zu machen. Er besaß einen kühlen Verstand, er konnte die wichtigsten Regeln der Etikette befolgen und er war gottestreu. Die wichtigste Person in seinem Leben zu verlieren war daher ein arger Verlust, war ihm doch bewusst, dass er mit seinen Anlagen nicht gut darin stand jemals wieder auf solch einem Level verstanden zu werden wie es Oliver Woodhouse zustande brachte.</p>
+<p>Nein, Percy Weasley würde, so seinen Berechnungen zufolge, höchst wahrscheinlich als lediger Pfarrer in einer kleinen Gemeinde sein Leben fristen. Bücher und Korrespondenzen seine einzigen Freunde. Konnte er sich glücklich schätzen so würden Cedric und Oliver ihn derweilen zu sich in ihren Herrensitz einladen um ihn an ihrem Glück teilhaben zu lassen, nur damit er sich danach ein ums andere Mal in seinem Pfarrhaus noch einsamer fühlen konnte.</p>
+<p>Um es zusammenzufassen: Percy Weasley war ein stetiger Begleiter der Hochzeitsvorbereitungen die ihn daran erinnerten was er selbst nicht haben konnte. Er gab passende Hinweise, er unterstütze, er stand Oliver zur Seite wie es nur ein bester Freund tun konnte. Tatsächlich kam er nicht umhin Cedric Diggorys Stärke darin zu erkennen wie er sich in das Herz jedes Menschen reden konnte, als wüsste er die geheimsten Gedanken und Wünsche jedes einzelnen von ihnen zu lesen. Percy gab es nicht gerne zu, doch er wusste Oliver hätte sich keinen besseren Partner selbst aussuchen können und dass sich alles auf eine solche Weise gefügt hatte grenzte geradezu an ein Wunder.</p>
+<p>Seit der Verlobung war auch die kühle Atmosphäre zwischen Cedric und Percy etwas gebrochen, so dass er nicht umhin kam zu erkennen, dass auch Cedric Diggory nicht vollkommen glücklich in seinen Lebensumständen war, was Percy nicht verstehen konnte, aber was den anderen Mann dennoch um so vieles greifbarer und liebenswerter machte. Ja, Percy Weasley gab sich alle Mühe den Verlobten seines Freundes nicht zu mögen, doch diese Mühen fruchteten bei weitem nicht.</p>
+<p>Wie hätte er seinen beiden Freunden nun also ausschlagen sollen eine geheime, im kleinsten Kreise vollzogene Trauung abzuhalten, bevor die Zeremonie mit Gästen und Familie einen Tag später stattfinden sollte.</p>
+<p>In der Werft der Diggorys standen sie nun also zu dritt, über ihnen erhob sich majestätisch das Hochzeitsgeschenk von Amos Diggory was durch das Brautpaar auf den Namen Mayflower getauft worden war. Niemand war mehr zu Gange, war doch schon lange die Dunkelheit hereingebrochen und alle Arbeiter nach Hause gegangen. Nur die 3 Öllampen die sie selbst mit der Kutsche hergebracht hatten standen um sie herum und tauchten sie alle in warmes, flackerndes Licht.</p>
+<p>Oliver hatte eine Melone auf und seine Strähnen geübt so gesteckt, dass sie kurz und kokett darunter hervorlugten als wären sie tatsächlich in einem gesellschaftlich anerkannten Schnitt gekürzt. Seine breite Gestalt steckte in einem von Cedric geliehenen Anzug, wären doch alle von Percys zu klein für ihn gewesen. Cedric Diggory auf der anderen Seite war leger erschienen, Braun- und Grautöne von lockerer Leinenkleidung und glänzendes, wildes Haar rundeten seine Erscheinung ab.</p>
+<p>Sich gegenüberstehend hielten sie sich an den Händen und schauten erwartungsvoll zu Percy hinüber, der seine Bibel als auch die Ringe bei sich trug und sich um den Kloß in seinem Hals herum räusperte.</p>
+<p>„Wir haben uns heute hier versammelt um vor Gottes Gesicht diese beiden Menschen in das Haus der Ehe zu führen. Cedric Diggory, willst du diesen Mann zu deinem rechtmäßigen Ehegatten nehmen, ihn lieben und ehren in guten wie in schlechten Zeiten, bis das der Tod euch scheidet, so antworte mit: Ja, ich will.“</p>
+<p>Cedric und Oliver wandten sich einander zu und Oliver zog kokett eine Augenbraue nach oben, als Cedric nicht sofort antwortete. Eine kurze Unterhaltung später, die die beiden nur mit den Augen zu führen schienen, verengten sich Cedrics Augen zu glücklichen Halbmonden.</p>
+<p>„Ja, ich will.“</p>
+<p>„Oliver Wood, willst du diesen Mann zu deinem rechtmäßigen Ehegatten nehmen, ihn lieben und ehren in guten wie in schlechten Zeiten, bis das der Tod euch scheidet, so antworte mit: Ja, ich will.“</p>
+<p>„Ich will“, schoss Oliver ohne eine Sekunde zu zögern heraus und grinste beide Männer an. Es war die einzig richtige Entscheidung gewesen diese Trauung für sie durchzuführen.</p>
+<p>Er reichte ihnen die Ringe herüber, die sie sich wenigstens für eine Nacht anstecken konnten, bevor bei Morgengrauen dann der Tag ihrer zweiten offiziellen Trauung kommen würde.</p>
+<p>„Somit erkläre ich euch hiermit zu Mann und Ehemann“, endete Percy und ließ die Gratulationssprüche aus, waren sich die beiden Männer vor ihm doch bereits in die Arme gefallen. Oliver hatte seine Arme um Cedrics Taille gelegt und dieser seine Hände an Olivers Gesicht. Es war ein zu intimer Moment, Percy war sich sicher dass er nicht sehen wollte, wie die beiden sich küssten, also drehte er sich um und suchte sich einen Weg an die Themse.</p>
+<p>Am Wasser stehend, die kühle Brise im Gesicht wusste er, dass es nun endgültig Zeit war Ginevra zu einer Rückreise nach Brighton zu überreden. Oliver brauchte ihn nun nicht mehr so wie er es bisher getan hatte, und er konnte es nicht ertragen ihn im Gegenzug immer noch wie die Luft zum Atmen zu benötigen.</p>
+<p>Die Möwen kreischten über ihm, Wellen schlugen leise und rhythmisch ans Ufer, als er Schritte hinter sich hörte. Dennoch drehte Percy sich nicht um und ließ die Personen zu ihm kommen, anstatt ihnen entgegen zu treten. Es war nicht mehr an ihm dies zu tun.</p>
+<p>„Ich danke dir für all das“, sprach ihn Cedric von der Seite an. Percy nickte zum Wasser hin sein Entgegenkommen. Dann schlangen sich zwei Arme von hinten um ihn und zogen ihn fest an sich, Olivers frohes Kichern in seinen Ohren.</p>
+<p>„Wir haben eine Frage an dich, Percy. Und bitte“, und dabei piekte er ihm sehr grob mit einem Finger zwischen die Rippen.</p>
+<p>„Lass deinen Stolz einmal zurück und tu einfach das was du wirklich willst. Denn ich konnte es kaum fassen als Cedric mir davon erzählt hat, und ich möchte dir sagen ich hätte mich noch tausend mal mehr gefreut es von dir selbst zu erfahren, aber du bist halt ein Dickschädel und manchmal möchte ich dich greifen und stundenlang fest schütteln und –„ ließ Oliver ohne Unterlass Worte aus seinem Mund fallen, die für Percy keinerlei Sinn ergaben, bis Cedric ihn schließlich mitten im Satz unterbrach.</p>
+<p>„Ihr beide seid füreinander so gut. Ihr ward es schon immer und ihr werdet es immer sein. Das heißt nicht“ und damit küsste er Oliver auf die Wange, so dass Percy es unangenehm nah an seinem Ohr hören konnte.</p>
+<p>„Dass Oliver nicht genauso für mich bestimmt ist. Die Verbindung zwischen uns ist ein Wink des Himmels, nie hätte ich mir zu träumen gewagt dass diese arrangierte Ehe mich so erfüllen würde. Oliver damit die Freiheiten zu ermöglichen die er verdient, ist ein Bonus der mit nichts aufzuwiegen ist.“ Er Schritt ein Stück näher an das Ufer heran und versuchte Percys Blick auf sich zu lenken.</p>
+<p>„Hier in London, selbst in Brighton, kann er nicht sein wer er ist. Wir stehen unter der ständigen Beobachtung unserer Familien, es gibt Erwartungen an uns die wir nicht erfüllen können.“ Percy konnte das Zähneknirschen in seinem Nacken spüren. In seinem Kopf hörte er Kinderlachen verhallen.</p>
+<p>„Aber ich habe Geld, wir haben ein Schiff, und Amerika würde uns den Freiraum bieten den wir hier nicht haben“, schloss Cedric mit ernster Miene und Percy drehte sich mit offenem Mund zur Mayflower herum, Oliver immer noch seine Mitte umklammernd.</p>
+<p>„Bitte komm mit uns“, sagte Oliver und Percy schnalzte abwertend mit der Zunge. Als Reaktion drückte Oliver seine Arme fest zusammen, bis Percy sich erfolglos versuchte loszumachen. Dies schien schließlich selbst Oliver unter die Haut zu gehen.</p>
+<p>„Du weißt ich liebe dich, auf das Glühendste. Das habe ich schon immer und du bist ein Idiot von Güte“, stieß er ihm daraufhin entgegen und Percy erstarrte geradezu. Hätten sie alle es nicht besser gewusst, dann wären sie sicher davon ausgegangen dass Percy kurz davor war in Flammen aufzugehen und die Obrigkeiten zu rufen. So jedoch wussten sie, dass er jedes einzelne Wort auf seine Bedeutung prüfte und es mit seinen eigenen Gefühlen gegen zu wiegen versuchte.</p>
+<p>„Das…“, begann er und reckte sein Kinn nach vorne, „ ändert einiges?“</p>
+<p>„Ich gehe nicht. Nicht ohne dich.“</p>
+<p>Percy hatte zuvor nie gewagt der Liebe seine Hände entgegen zu strecken, war es doch zu schmerzhaft von Dingen zu träumen von denen klar war, dass sie niemals Realität werden würden. Nun schlug sein Herz erwärmt von der Gewissheit seine eigenen Gefühle erwidert zu hören und er hatte es Cedric Diggory zu verdanken. Cedric, der vorsichtig nach seiner Hand griff und die Lippen zusammendrückte, als hätte er Angst vor einer Zurückweisung. Cedric mit seiner sanften Art, mit der Percy Weasley sich arrangieren würde können.</p>
+<p>Er versuchte es mit einem zaghaften Lächeln und wurde mit so viel mehr belohnt.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 10: Die Pflichten eines Verantwortlichen</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p> </p>
+<p>Cedric Diggory hatte Erfahrung damit Überfahrten nach Amerika von der Pike auf zu planen, so dass sie sich am Ende rentieren würden. Doch dieses Mal gestaltete sich dieses Unterfangen etwas schwieriger, hatte sein Angetrauter sich doch fest in den Kopf gesetzt in der Ferne einen eigenen Hof mit Vieh- und allem voran Pferdezucht aufzubauen, so dass er den Frachtraum der Mayflower kurzfristig auf neue Weise aufteilen musste, so dass sie genug Zuchttiere, Güter für den Aufbau eines neuen Lebens, Waren zum Verkauf und gleichzeitig eine vielköpfige Crew unterbringen konnten ohne dass das Schiff durch das Gewicht aus dem Gleichgewicht kam oder zu tief im Wasser liegen würde. Auch andere Menschen mit dem Wunsch einer Überfahrt mussten untergebracht werden, um noch ein wenig Geld einzubringen.</p>
+<p>Hatte er damit noch nicht genug zu tun, so lag ihm Percy mit seinen Sorgen in den Ohren. Kaum hatte er sich dazu entschieden mit ihnen über den Ozean zu kommen, fingen seine Gedanken an in einer Geschwindigkeit zu kreisen, mit der Oliver und Cedric kaum gemeinsam mithalten konnten. Sorge um die große Familie die er zurück ließ, die Verantwortung die er nicht mehr tragen konnte. Bei diesem Thema ließ Cedric sich generell zurückfallen und Oliver das Problem lösen, hatte er doch selbst genau die gleichen Sorgen um seinen alleinstehenden Vater den er in England mit einer Firma und einem Haus und einer Menge Einsamkeit zurücklassen musste, wenn er seinem Herzen folgen und dadurch Oliver und Percy, sowie, wenn er es zugab, auch sich selbst glücklich machen wollte.</p>
+<p>Es hatte bis jetzt keinen Moment in seinem ganzen Leben gegeben in dem er nicht den Wünschen seines Vaters entsprochen hatte, und die Kluft die seine Entscheidung bereits jetzt zwischen ihnen beiden aufgebaut hatte schmerzte ihn sehr.</p>
+<p>Gut also, dass Percy immer wieder neue wichtige Dinge einfielen, die dringend mit auf das Schiff mussten. Getreide und Samen für Pflanzen, so wie was auch immer ihm gerade durch den Kopf ging.</p>
+<p>„Schließlich müssen auch die Tiere von etwas leben und ich werde nicht jeden Tag nur Fleisch essen, das ist schlecht für den Blutdruck. Dort drüben sind die einfachsten Dinge sicher viel teurer als hier.“</p>
+<p>„Medikamente, nur für den Fall dass in unserer Umgebung kein Arzt zu finden ist, oder eine Apotheke, oder wenn unser Barbier an Bord keine Ahnung von seinem Fach hat.“</p>
+<p>„Cedric, möglicher Weise sollten wir schon in England nach geeigneten Angestellten für unser Heim suchen. Wir könnten sie danach aussuchen dass sie sich in ihren Fähigkeiten ergänzen. So werden wir dort gleich starten können, ohne uns darauf verlassen zu müssen, dass geeignete Menschen bereits dort sind. In Amerika sind die guten sicher schon längst in Anstellung.“</p>
+<p>Zusammen hatten die drei eine Menge an Vorstellungen und Träumen die es zu verwirklichen gab. Für alle von ihnen eine gute Ablenkung um nicht daran zu denken was sie in England zurücklassen mussten.</p>
+<p> </p>
+<p>So war es nicht der einzig spannende Tag, als die Mayflower zu Wasser gelassen wurde und sich zu ihrer aller Freude als dicht erwies, sondern auch der, als tatsächlich all die geplante Fracht und Passagiere endlich nach und nach ihren angestammten Platz unter Deck fanden.</p>
+<p>Oliver konnte nicht aufhören ihnen beiden geheimnistuerisch zuzuflüstern, dass das Kleid welches er im Moment trug das einzige Kleid in seinem Gepäck und das letzte Kleid war, welches er jemals in seinem Leben gedachte zu tragen.</p>
+<p>Percy beobachtete das Verladen und die Matrosen mit einem Blick, der selbst diese hartgesottenen Seemänner den Blick senken ließ. Er wiederum wurde von einer Menschenmenge aus lauter rothaarigen Personen beobachtet, alle in einem anderen Stadium der Anspannung und Aufregung.</p>
+<p>Amos Diggory hingegen hatte sich bereits in seinem Büro von seinem Sohn verabschiedet. Seiner Meinung nach war alleine die Tatsache dass er ihn nicht enterbt und ihm nicht das Schiff genommen hatte der Beweis für seine Liebe zu ihm. Er konnte es nicht ertragen ihn tatsächlich wahrhaftig für immer ablegen und England den Rücken zukehren zu sehen.</p>
+<p>So wurden ihre letzten Schritte an Land davon begleitet, dass eine Schar an Weasleys sie alle in den Arm schloss. Oliver umarmte seine Brüder und reichte seinem Vater ein letztes Mal die Hand, bevor er geradezu die Schiffsplanke hinauf sprang. Begleitet vom Geschrei der Möwen und Matrosen, begaben sie sich aufs Deck der Mayflower die sanft im Spätsommerwind wiegte. Taue wurden aufgewickelt, letzte Kisten umhergetragen und die ersten Männer kletterten in die Masten um die Segel zum Setzen bereit zu machen.</p>
+<p>Es war ein Wunder dass sie alle Planungen und Umbauten noch vor den ersten Herbststürmen geschafft hatten, denn diese hätten die Reise zu gefährlich werden lassen. Trotzdem war eine angenehme Brise an Deck zu spüren, die schon eine Stunde später mit lauten Knattern die Segel füllte und Olivers langes Haar mit sich davon trug, welches ihm Cedric in ihrer Kabine sofort nach dem Ablegen hatte abschneiden müssen. Drei Männer in fester, winddicht geölter Kleidung, mit kurzen vom Wind gekämmten Haaren in drei verschiedenen Farben standen am Bug und betrachteten voller lebendiger Hoffnungen den Horizont, während sie nicht wenig Aufmerksamkeit auf sich zogen. Nicht nur weil einer von ihnen nicht beim Betreten des Schiffes hatte beobachtet werden können. Auch nicht nur weil einer von ihnen der eingetragene Besitzer dieses Dreimasters war. Nein, es gab auch einen Mann, der sie einzig aus dem Grund heraus beobachtete, dass er schon immer davon geträumt hatte das zu besitzen, was diese drei Männer bereits hatten.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 11: Die Plichten eines Matrosen</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p> </p>
+<p>Während Cedric den ersten Teil ihrer Reise größtenteils damit verbrachte mit dem Kapitän über Meereskarten gebeugt zu sitzen, die anderen Passagiere zu unterhalten und unter Deck nach dem Rechten zu sehen, hing Percy bei stärkerem Wellengang über die Reling gebeugt und entledigte sich seines Frühstücks. Hatte sich sein Magen wieder beruhigt, dann versuchte er sich von den Strapazen in seinem Bett zu erholen. Nicht dass ihm sein Aussehen je wichtig gewesen wäre, doch grün war bei weitem nicht seine Hautfarbe.</p>
+<p>Oliver hingegen tat nichts lieber als gegen die Anweisungen aller Menschen an Bord mit den Matrosen um die Wette zu klettern, konnten doch die Höhe und der Wind und die Freiheit die er in der Takelage des durch die Wellen schneidenden Schiffes fühlte mit nichts anderem verglichen werden.</p>
+<p>Wenn die Sonne sich dem Horizont entgegensenkte und der Ablauf der Tätigkeiten an Bord sich zu verlangsamen begann, dann setzten sich die Seemänner gerne zu Karten- und Würfelspielen zusammen, Oliver immer mit vollem Einsatz dabei. Schon nach einigen Tagen mit fragenden Blicken auf seine Gestalt, hatten sich die meisten Männer an Oliver Diggory gewöhnt. Er war so vorlaut wie sie, er schien vor ihnen keine Angst zu haben und immer wenn er sich ihrer Runde anschloss, war klar dass er die Stimmung mit seinem Temperament anfeuern würde. Dabei machte ihm nur ein Anderer Konkurrenz, war doch Roger Davies die Unterhaltung in Person.</p>
+<p>Sein scharfer Humor brachte jeden zum Lachen, so laut, dass Cedric für einen Moment zu ihnen herüber schaute und Percy sein eigenes Würgen nicht mehr hören konnte.</p>
+<p>Rogers Mut sich ganz alleine in die neue Welt aufzumachen, ohne Familie in England, ohne Rücklagen, nur mit seiner Arbeitskraft um sich voran zu bringen, hier auf der Mayflower und später in Amerika, imponierte nicht nur Oliver, doch Olivers Interesse wurde in einem Maße erwidert, dass die beiden Männer schon nach wenigen Tagen unzertrennlich zu machen schien.</p>
+<p>Hatte Roger Aufsichtsdienst an Deck oder Kombüsen Dienst, so war Oliver sicher in der Nähe zu finden. Im Schneidersitz auf dem Holzboden oder an eine naheliegende Wand gelehnt unterhielt er sich mit dem arbeitenden Matrosen. Etwas in Roger Davies klang in Oliver nach und er konnte sich nicht so recht erklären was es genau war, aber er wusste von ganzen Herzen, dass Roger so viele Steine in den Weg gelegt wurden und er es dennoch geschafft hatte seine Offenheit und seine Freude zu bewahren. Er war wie er selbst. Ein Kämpfer gegen seine eigene Situation, immer den Moment lebend der sich ihm gerade bot. Zwischen ihnen schien dieser Hunger auf Leben zu einem völlig neuen Maße heranzuwachsen.</p>
+<p>Percy und Cedric hingegen beobachteten die Entwicklungen mit Zurückhaltung und Bedacht, hatte Percy doch schon zuvor gesehen was es ihm selbst brachte Oliver von jemandem abbringen zu wollen, den er offensichtlich mochte und Cedric schwelgte in der Freude darüber, dass Oliver eine ganze neue Welt auf diesem Schiff entdeckt hatte, in welcher er sein konnte wer er war und herausfinden durfte wer er noch werden konnte.</p>
+<p>Ihre Zeit zu dritt war neu und aufregend, etwas nach dem sie nie gesucht und was sie trotzdem gefunden hatten. Percy und Cedric konnten Oliver am Boden halten, wenn er in seinen Träumen davonzufliegen schien. Cedric und Oliver konnten Percy aus dunklen Gedanken holen, wie es sonst noch niemand zuvor geschafft hatte. Oliver und Percy hatten ein Licht und so viele Möglichkeiten und Liebe in Cedrics Leben gebracht, dass er wusste er würde alles für diese beiden Männer geben. Noch mehr als er es jetzt schon getan hatte.</p>
+<p> </p>
+<p>Als nun also schon einige Wochen auf dem Meer vergangen waren, der Herbst seine ersten Finger nach ihnen ausstreckte und ein Sturm die Mayflower langsam aber sicher in seine Gewalt nahm, war es zu niemandes Überraschung dass es Oliver war, der seine Leistungen über- oder die Kraft der Wellen unterschätzte.</p>
+<p>Die Worte wurden den gegen die Kräfte des Windes und des Meeres ankämpfenden Männern von den Mündern gerissen, das Schiff schaukelte nicht, nein es stieg und fiel von Welle zu Welle. Die Segel waren schon halbiert, doch noch immer drohte der Wind sie daran in die Fluten zu drücken und jeder der halbwegs etwas von der Schifffahrt verstand, hatte sich bereits an Deck festgebunden, sich in seiner Kajüte versteckt oder war in der Takelage unterwegs um die Segel den Rest des Weges einzuholen.</p>
+<p>Es kam wie es kommen musste, Oliver als eine von vielen in der Dunkelheit unkenntlichen Gestalten, hing an den rauen Tauen und versuchte einen festgezogenen Knoten zu lösen, als die Mayflower früher als gedacht in das nächste Wellental fiel. Es war ihm als würden sich alle seine Innereien Richtung seiner Kehle schieben, für einen Moment war er schwerelos, nur um dann mit umso mehr Gewicht mit seinem rechten Fuß vom Seil abzurutschen. Seine Finger wurden blutig bei dem Versuch sich blindlings an etwas festzuhalten, egal an was, doch die Welt drehte sich um ihn herum, alles war weit entfernt und glitschig und als er hart mit dem Kopf eine Querstange traf wurde sein Blick endgültig schwarz.</p>
+<p> </p>
+<p>Percy hingegen befand sich an eine Treppe gebunden wieder. Gerade als Cedric den letzten Knoten um seine Hüfte festzog, ertönte ein ihnen beiden bekannter Schrei aus dem Himmel heraus und das Entsetzen mit dem sie sich beide zueinander drehten, ließ die Zeit für einen Moment stillstehen.</p>
+<p>„Mach mich wieder los!“ schrie Percy Cedric an, doch dieser war schon losgerannt Richtung Hauptmast. Seine Schritte fanden kaum Halt auf dem gefluteten Boden. Die Welt schien kein Oben und kein Unten zu haben. Irgendwo über ihm baumelte Oliver verheddert an einem Fuß in den Seilen und drohte jeden Moment auf das Deck herab zu stürzen.</p>
+<p>„Helft ihm!“, rief er und versuchte Männer die sich bereits in den Höhen befanden auf Oliver aufmerksam zu machen. Trotzdem bahnte er sich weiter seinen Weg auf die schaukelnde, bewusstlose Gestalt zu, bis er Roger Davies sicheren Schritt und sein rabenschwarzes Haar auf den Hauptmast zu rennen sah, wie er ein Seil zwischen sich und dem Baum verknotete und sich an den Aufstieg zu machen schien.</p>
+<p>Cedric Diggory atmete auf, drehte sich voller Erleichterung zu Percy zurück und wollte eine Entwarnung in seine Richtung rufen, als die Männer hinter ihm sich im Chor unverständliche Befehle zubrüllten, er von einem Windstoß nach vorne geworfen und dann von einer Welle von hinten von den Füßen und immer weiter Richtung Reling getrieben wurde. Er trat mit den Beinen und versuchte Halt zu erlangen. Salzwasser brannte in seinen Augen und der Sprühregen ließ ihn Husten und Würgen. Irgendwo vor ihm schrie Percy seinen Namen und kurz bevor er zu schnell um zu reagieren über die Reling herübergespült wurde, erklang sein Name noch aus zwei weiteren Mündern, verzweifelt und schockiert. Dann tauchte er unter in eiskalte und pechschwarte Fluten und alles was er tun konnte war mit allen Gliedmaßen zu strampeln, Mund und Augen zuzukneifen und an dem letzten bisschen Luft in seinen Lungen festzuhalten.</p>
+<p>Cedric Diggory war sportlich, er war des Schwimmens mächtig und bei bester Gesundheit, aber ihm war klar, dass er gegen eine Naturgewalt wie diese keine Chance haben würde. Er riss unter Wasser die Augen auf und suchte nach Sonnenstrahlen auf der Wasseroberfläche ohne auch nur feststellen zu können wo diese sein sollte. Sein Herz schlug schmerzhaft stark gegen seine Rippen, seine Lunge drohte zu zerbersten und doch wurde er seltsam ruhig. Er hätte nicht mehr tun können. Er war so frei gewesen wie in seinem Leben noch nicht und es hatte sich so sehr gelohnt, in nur einem Sommer. Blind rieb er seine Finger zusammen um den Ehering spüren zu können und machte sich bewusst, dass Oliver wenigsten die Mayflower und ihre Fracht erben würde. Er und Percy konnten sich das neue Leben aufbauen von dem sie zu dritt geträumt hatten. Er war nicht Schuld an ihrem Verderben, er würde nur kein Teil von ihrem Glück sein können und das trieb ihm Tränen der Erleichterung und der Trauer in seine Augen.</p>
+<p>Kurz bevor er das Bewusstsein gänzlich verlieren konnte, schloss sich eine warme, starke Hand um sein Handgelenk und kurz darauf ein Arm und seine Taille, der ihn schneller als er jemals hätte schwimmen können durch das Wasser riss.</p>
+<p>Ein schneidendes Seil um seine Mitte. Zwei Körper die gegen hartes Holz schlugen. Sein Kopf auf glitschigen Planken. Hände auf seinem Brustkorb. Lippen an seinen, aufdringlich. Unaufhaltsame warme Luft die in seiner Lunge brannte. Salziges Wasser was seinen Körper dazu brachte sich krampfhaft zusammenzuziehen und sich dann aus Mund und Nase zu ergießen. Zwei starke Arme die ihn durch alles hindurch sicher auf dem Boden hielten, ihn hochhoben, seinen Kopf auf eine Brust betteten und ihn unter Deck brachten. Dunkle Augen die ihn stumm darum baten nicht wieder in Ohnmacht zu fallen. Verwundert und vernebelt stellte Cedric fest, dass Sorge Roger Davies fast genauso gut stand wie Übermut.</p>
+<p>„Komplimente von deiner Seite nehme ich gerne an, auch wenn mir eine andere Situation lieber gewesen wäre“, grinste Roger auf ihn hinab und nun wäre Cedric nur zu gerne wieder von alleine in Ohnmacht gefallen.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>
+  <strong> <u>Kapitel 12: Die Pflicht, Pflichten auch einmal zum Ende kommen zu lassen</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p> </p>
+<p>Von diesem Tag an rückten Mannschaft und Passagiere emotional näher aneinander. Hatte doch nicht nur eine helfende Hand den Matrosen dabei geholfen das Schiff durch den Sturm zu bringen und es danach wieder sicher zu machen und hatten die Matrosen unter diesen schwierigen Stunden zeigen können, was ihren Job so besonders und sie talentiert machte. Von beiden Seiten kam mehr Verständnis und Offenheit für die andere Seite auf, so dass auch der Alltag auf der Mayflower sich von da an etwas geselliger gestaltete.</p>
+<p>Zog ein Seemann seine Mundharmonika heraus und begann eine flotte Melodie zu spielen, dann stimmten nicht nur die anderen Matrosen mit ihren Stimmen mit ein, auch die Kinder unter den Passagieren gesellten sich gerne dazu und tanzten wild zu den Tönen.</p>
+<p>Roger Davies konnte auf einer schmalen Flöte spielen, dass es so manche junge Dame neidisch gemacht hätte und sang er Lieder, so klang es bei weitem nicht perfekt, doch tagelang hatte jeder die Worte in seinem Kopf festsitzen.</p>
+<p>„Soon may the Wellerman come, to bring us sugar and tea and rum…“, hörte man nicht selten jemanden vor sich hinsingen, gefolgt von leisen Lauten der Frustration.</p>
+<p>Beim Essen saßen die Gruppen nicht mehr getrennt sondern durchmischten sich je nach Gesprächsthema, neu geschlossenen Freundschaften oder einfach danach wer gerade eben anwesend war im Speiseraum neben der Kombüse.</p>
+<p>Oliver mit einer riesigen Beule am Kopf, einem verstauchten Knöchel und einer Gehirnerschütterung, lehnte müde an der Schulter eines immer noch zerschrammten Cedric und lauschte einer wilden Geschichte die Roger Davies über seine Ausbildung bei einem Schmied berichtete. Wie er heimlich Schmuckstücke aus alten Hufeisen gefertigt hatte um sie den jungen Mädchen und hin und wieder auch einem Herren zu schenken.</p>
+<p>„Euch hätte ich…“, begann er und schaute dann überaus nachdenklich Percy an, der mit ausdrucksloser Mine den Blickkontakt hielt. Mit Faszination beobachteten Oliver und Cedric, wie Roger sich mit jedem Tag durch Percys Mauern zu graben schien.</p>
+<p>„eine Eule geformt. Eine Eule mit einer klugen Brillen, Mr. Weasley.“ Einige Sekunden lang starrten sie sich wortlos an, bis Percy seine Brille zurechtrückte und dann vergnügt durch seine Nase schnaubte.</p>
+<p>„Was bekommt Oliver?“, fragte er nach und allein schon das Interesse was sich dadurch zeigte, dass er von sich aus eine Nachfrage an Roger gestellt hatte, ließ die anderen Männer selig schmunzeln. Wie hatte es passieren können, dass sich nicht nur sein Kindheitsfreund Oliver in sein Herz geschlichen hatte, sondern der gutherzige Cedric und der voranstürmende Roger in ein und demselben Jahr? Percy wusste es nicht, aber seine Mutter, der Mensch mit dem größten Herzen der Welt, hatte Recht behalten: Es gab kein Ende für die Liebe, kein zu viel. Kamen Menschen dazu, dann wuchs das Herz einfach mit.</p>
+<p>„Oliver?“, wandte sich Roger gespielt überrascht an diesen und Oliver erhob seinen Zeigefinger um ihm stumm zu drohen.</p>
+<p>„Oliver braucht ebenfalls ein Tier das fliegen kann“, überlegte er laut und sowohl Cedric als auch Oliver selbst stöhnten auf.</p>
+<p>„Aus der Takelage wird er sich für den Rest der Reise trotzdem fernhalten“, stellte Percy trocken fest und Oliver verdrehte nur die Augen. Allen Anwesenden war klar, dass es nicht so kommen würde.</p>
+<p>„Vielleicht ein Albatros? Er ist ausdauernd“ setzte Roger an und lachte auf bevor er den Witz überhaupt ausgesprochen hatte.</p>
+<p>„Und er ist laut.“</p>
+<p>Zu aller Erheiterung bestätigte Oliver diese Beschreibung indem er einige unzufriedene Worte an Rogers Kopf warf und dann vorwurfsvoll auf Cedric deutete.</p>
+<p>„Beenden wir das. Was hättest du Cedric geschenkt?“</p>
+<p>„Einen Hund.“ Es kam ohne viel Verzögerung und Cedric schmunzelte nur zufrieden.</p>
+<p>„Vielen Dank, Roger. Ich liebe Hunde.“</p>
+<p>„Das war nicht der Grund aus dem –„</p>
+<p>„Ich weiß.“</p>
+<p>„Mhh“, führten sie ihre Unterhaltung fort, und Roger Davies hatte es wieder einmal geschafft. Er hatte drei junge Männer von stattlicher Statur an einer Reling stehen sehen. Vertrauen und Freundschaft und die frischen Keime von Liebe zwischen allen dreien. Nichts hatte er sich jemals mehr gewünscht, als sein Herz mit vielen Menschen von unterschiedlichsten Naturen teilen zu können und da hatten sie gestanden und geradezu nur auf ihn gewartet. Nicht umsonst zählte Roger die Manifestation von Dingen zu seinen Stärken.</p>
+<p>„Roger, du wärest eine rote Rose, denn du kannst nicht aufhören zu flirten.“ Roger zwinkerte Cedric zu und Percy und Oliver lachten tatsächlich immer noch. Oliver mit etwas schmerzverzerrten Gesicht über die Bewegungen die es in seinem Körper auslöste. Cedric hätte Roger nie lange böse sein können.</p>
+<p>Und so wie es in all seinen Geschichten geschah, die er jedem Publikum zum Besten gab, wenn sich jemand über sein bisheriges Leben erkundigte, nahm Roger etwas ins Vezier, beobachtete es bis er begann es stumm zu bewundern, bis hin es später zu lieben und nutzte dann all seinen Charme um es sich zu holen.</p>
+<p>Nun lachte Percy Weasley über seine Witze, Cedric Diggory würde die Welt für ihn bewegen und Oliver Wood stellte Schabernack mit ihm an bevor er nur danach gefragt hatte. Er hatte eine Reise in das Ungewisse begonnen und hatte seine Antworten gefunden bevor er überhaupt angekommen war. Irgendwie hatte er immer gedacht es würde seine Pflicht sein für immer auf der Suche nach etwas mehr zu sein, nach etwas Besserem.</p>
+<p>Doch Oliver Wood verdrehte die Augen, Percy Weasley griff von sich aus nach seiner Hand und wenn sie in Amerika ankamen, so hatten sie beschlossen, würden sie sich alle zusammen ein abgelegenes Heim aufbauen. Mit all den Wünschen und Träumen die Percy und Oliver hegten, mit der Erfahrung die Cedric und mit der Findigkeit die Roger Davies durch sein Leben und bis hierher gebracht hatte.</p>
+<p> </p>
+<p>Recht zufrieden damit noch eine weitere Person mit Gleichmut gegenüber gesellschaftlichen Konventionen gegenüber in seiner Gruppe zu wissen, ließ Oliver es sich nicht nehmen Roger Davies und seine Wortgewandtheit dazu zu nutzen Percy und Cedric zu Dingen zu überreden.</p>
+<p>Cedric Diggory hatte wie sie alle wussten einen Geigenkoffer mit an Bord gebracht. Es war die Geige seiner Mutter gewesen und tatsächlich wusste er mit ihr umzugehen, nicht dass er je für einen von ihnen gespielt hatte. Doch nach einigen Tagen hatten Olivers kesse Nachfragen nach einem Vorspiel und Roger Davies Allumschlag von alberner Schmeichelei bis hin zu zynischen Worten es geschafft ihn mit seinem Streichinstrument in den Essensaal zu locken.</p>
+<p>Dort hatten sich all jene bereits versammelt die ein Instrument bei sich trugen oder an Musik interessiert waren.  Es wurde kurz eine kleine Auswahl an Liedern zusammengestellt die allen ausreichend bekannt war und dann stellte sich die behelfsmäßige Musikgruppe auf.</p>
+<p>Schon vor den ersten Tönen schloss Cedric Diggory die Augen, ließ seine Finger einmal sanft alle Saiten entlang fahren und legte den Bogen so sachte an, dass man keinen Ton vernahm. Dabei war ein melancholischer Ausdruck auf sein sonst so frohes Gesicht getreten und schon ab da konnte niemand mehr den Blick von ihm abwenden. Als dann die ersten schwingenden Töne durch die Luft getragen wurden konnte jeder es spüren, all die traurigen, besinnlichen Gefühle denen Cedric sonst nie Ausdruck verleihen wollte. Hier waren sie, für sie alle zu lesen und ein jeder von ihnen fühlte sich gleichermaßen berührt und gleichermaßen eingedrungen in einen gar intimen Moment.</p>
+<p> </p>
+<p>Auf dem engen Lebensraum den die Mayflower allen Reisenden bot, wuchsen so manche Menschen enger zusammen als sie es sonst wo auf der Welt getan hätten, andere kamen sich mehr in die Haare und wieder andere hätten am liebsten kein menschliches Gesicht mehr sehen wollen.</p>
+<p>Unverkennbar für jedermann, ob sie die Beziehung der vier Männer nun gänzlich verstanden oder nicht, war jedoch, dass Cedric und Oliver Diggory, Roger Davies und Percy Weasley zusammengewachsen waren wie ein sorgsam gepflanztes Ökosystem. Sie brachten in den Anderen neue und hochstrebende Dinge hervor, das Beste. Oft sah man sie gemeinsam an der Spitze des Dreimasters stehen. Arme um Hüften gelegt, vorsichtig Kontakt suchend, während sie die Gesichter in den Wind hielten und die Mayflower durch Wellen und Gischt schnitt, schneller und schneller einer Zukunft entgegenstrebend.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong><u>Kapitel 13 </u></strong>(Denn aller guten Dinge sind drei(zehn))<strong>: </strong></p>
+<p>
+  <strong> <u>Die Pflicht eine Geschichte bis zum Ende zu bringen</u> </strong>
+</p>
+<p>
+  <strong>  </strong>
+</p>
+<p> </p>
+<p>Von der Ankunft in Amerika, der Sicherstellung der Fracht, der Unterbringung in einem Gasthaus bis der Gouverneur Zeit hatte sich mit Cedric zu treffen und ein Stück Land mit ihm auszuhandeln, dem Transport ihrer Tiere, ihrer Güter, ihrer Angestellten zum neuen Teil der Welt an dem sie ihr Leben aufbauen wollten bis zum tatsächlichen Beginn der Bauarbeiten an einem Herrensitz waren mehrere Wochen vergangen, knapp an zwei Monate grenzend, waren sie doch von der Küste aus noch weit ins Landesinnere gereist um in weniger dicht besiedelte Gebiete zu gelangen. .</p>
+<p>Neue Routen und Pläne für die Mayflower wurden angegangen und umgesetzt, so dass das Schiff noch aus dem Hafen von Portsmouth auslief, bevor sie selbst die Stadt hatten verlassen können.</p>
+<p>Noch in Portsmouth hatten sich bereitwillige Handwerker gefunden, die sowohl Lastwagen zum Verkauf stellten, als sich auch als Begleitung anboten um bei den ersten Schritten eines Neuanfangs zu helfen.</p>
+<p>Zwischen den langsam verfärbten Blättern und den nachts abkühlenden Temperaturen war ein Wettstreit angebrochen, den die Bauarbeiten zu bezwingen suchten. Die Überfahrt, die Karenzzeit in Portsmouth und die Überlandreise hinweg waren Stallungen, Anlagen und ein Haus geplant worden, so dass sie als sie am Fuß mehrerer Hügel ein bewaldetes Tal vorfanden, durchzogen von zwei Bächen und einem See, nur all die Zettel auszubreiten und sie wie Durchschlagpapier über die Landschaft legen mussten um mit den Bauarbeiten zu beginnen.</p>
+<p> </p>
+<p>Begab man sich heute in besagtes Weidental, dann konnte man schon vom Hügel aus den sich mäandernden Weg zwischen schattigen Bäumen, Feldern, Kuh-, Schaf- und Pferdeherden erkennen, der sich bis zu einem hellen Anwesen zog. Umringt von Stallungen und Lagern lag im Herzen des Tals das Herrenhaus von Perogiveric Park. Weiß getünchte Wände und Veranden umschlossen das zweistöckige Gebäude und die einladende Treppe zur Doppeltür. Die vielen Fenster sahen geradezu aus als würden sie selbst in die Landschaft hinausblicken.</p>
+<p>Stattdessen war es meist ein junger Mann mit rot-braunem Haar, der sich auf das Dach des Hauses geschlichen hatte um sich die Sonne in sein Gesicht brennen zu lassen. Den Wind an seinen Kleidern zerren zu spüren. Seinen Augen blieb nichts in der Umgebung verborgen.</p>
+<p>Percy Weasley hingegen gestaltete seine Freizeit abwechselnd damit die Pächter und Angestellten in einer kleinen Kapelle im Wald mit den Worten Gottes zu ermahnen und die seiner Liebsten vor sich selbst zu beschützen, die sich mal wieder auf die wildesten und schnellsten Pferde setzen wollten.</p>
+<p>„Percy!“, erklang Rogers Ruf schon von weitem her und drang hinauf zur oberen Veranda, auf der eben dieser saß und Rechnungen fein säuberlich auflistete. Seinen Blick dem Weg zuwendend konnte er drei Gestalten zu Pferd erkennen, die sich in einer sommerlichen Staubwolke auf das Haus zubewegten. Beunruhigender Weise ein viertes Pferd am Führseil hinter sich.</p>
+<p>„Es ist mein Geburtstag und ich habe einen Wunsch frei“, rief Roger munter weiter und Percy legte seine Papiere zusammen um sich nach unten zu begeben. Er mochte es nicht alle Welt an ihren Unterhaltungen teilhaben zu lassen. Um nichts in der Welt hätte er von hier oben herab gerufen.</p>
+<p>„Perc!“, schien sich nun auch Oliver einzumischen, blass trotz der vielen Sonne, aber strahlend nichtsdestotrotz reckte er sich im Sattel und lachte zufrieden, wusste er doch, dass Percy mit Kosenamen nichts anzufangen wusste und es seine Schritte nach unten aus diesem Grund beschleunigen würde.</p>
+<p>Aus der Tür tretend, hielt sich Percy eine Hand vor die Augen und blinzelte gegen die Sonne an. Cedric trieb sein Pferd bis an die Treppe des Hauses heran und hielt das unbemannte und doch fertig gesattelte Pferd an seinen Zügeln Percy hingegen. Seine Augen drückten gleichzeitig eine Entschuldigung als auch eine Bitte aus, während er die Lederriemen sanft hin- und herschaukeln ließ, bis Percy sie ihm erst einmal mit einem säuerlichen Schnalzen abnahm.</p>
+<p>„Willst du dir wirklich wünschen, dass ich mich auf ein Pferd begebe? Ist es das tatsächlich wert?“, wandte er sich an Roger und versuchte nicht die Arme zu verschränken. Er war des Reitens mächtig. Er war nicht unsicher im Sattel und er konnte Strecken sicher hinter sich bringen. Dann und wann fand er tatsächlich sogar Freude daran, sich in einem ruhigen Tempo durch die grüne Landschaft zu bewegen. Doch genau an diesem Punkt kamen er und seine Partner nie überein.</p>
+<p>„Wir machen einen Ausflug und deine Anwesenheit dabei ist es allemal wert“, gab Roger schelmisch zurück und wackelte dabei mit den Augenbrauen bis Percy die Augen verdrehen wollte.</p>
+<p>„Dafür wäre es förderlich wenn du nicht zu Fuß unterwegs bist.“</p>
+<p>„Ich habe nicht vor mir meinen Hals zu brechen nur um mit euch mithalten zu könnten.“</p>
+<p>„Dann lass dich einfach zurückfallen“, behauptete Oliver und zuckte mit den Schultern als wäre dies die einfachste Lösung der Welt. Percys Nase kräuselte sich, als er seine nächsten Worte hinunterschluckte und sich stattdessen das Pferd zum Aufsteigen näher an die Treppe dirigierte. Jedes Mal wenn sie behaupteten er könnte ein eigenes Tempo anschlagen, hatten sie ihn während des Ausrittes dann schließlich doch dazu bekommen in einem halsbrecherischen Galopp über die Wiesen zu jagen, sein Pferd nur darauf bedacht bei seinen Artgenossen zu bleiben, Stamm hin und Weidezaun her. Ja, Percy Weasley war bewusst, dass er auf dieses Pferd steigen konnte mit den sichersten Plänen im Sinn, die anderen würden sie ihm ausreden und er wusste nicht wie sie das ein ums andere Mal zu Stande brachten.</p>
+<p>„Wir könnten doch auf die eine oder andere herausfordernde Sache heute verzichten?“, gab Cedric zu bedenken und Roger spielte Entsetzen vor, während Oliver wortreich und aus voller Kehle verneinte.</p>
+<p> </p>
+<p>Demnach war es nur einige Augenblicke später als stampfende Hufe die Erde zum Beben brachten und Grasnarbe in die Luft schleuderten. Oliver in seinen Steigbügeln stehend und kaum noch den Sattel berührend lag nur eine halbe Pferdelänge vor Rogers Rappen. Der Wind trieb Tränen in alle Augen und doch hatten Oliver und Roger noch Zeit sich antreibende Worte der Herausforderung zuzurufen.</p>
+<p>Cedric hingegen wusste, dass sie an Geschwindigkeit verlieren würden, wenn die ersten Adrenalinstöße des Starts erst vorüber waren, und so ließ er sich aussitzend im Sattel etwas langsamer hinter ihnen her durch die Landschaft schaukeln. Seinen Blick träumerisch nach oben gewandt hin zu den Wolken, dem Lachen der beiden vor ihm lauschend. Mit ihnen hier zu reiten, in ihrer Heimat, fühlte sich jedes einzelne Mal an wie fliegen. Es war wie das Atmen, das er erst mit ihnen gemeinsam gelernt hatte.</p>
+<p>Percy, froh ob des ruhigeren Galopps, ließ sein Pferd einfach neben dem von Cedric verweilen und konzentrierte sich ganz auf seinen Sitz. Zu seinem Bedauernd dauerte es jedoch nicht lange, bis Oliver und Rogers Pferde kräftiger zu Schnauben begannen, Schaumflocken zwischen ihren Hinterbeinen fliegend. Cedrics Lippen umspielte ein zufriedenes Lächeln, bevor er sich entschuldigend an Percy wandte und seiner Stute dann mit ein paar einstudierten Klicklaufen die Sporen gab. Einen scharfen Bogen an den Spitzenreitern vorbeiziehend, streckte er beide Arme zu den Seiten aus und ließ sein Hemd im Wind flattern als würde dieser selbst ihn ins Ziel tragen. Sein Pferd vollkommen losgelöst, streckte seine Beine immer weiter, ließ seine Galoppsprünge immer länger werden und schien den Boden kaum noch berühren zu wollen.</p>
+<p>Roger warf spielerisch obszöne Worte in die Luft bis Percy es nicht mehr aushielt und ihn laut von weiter hinten scholt, gegen seine eigene Regel laut durch die Landschaft zu rufen.</p>
+<p>Oliver hingegen konnte sich nicht geschlagen geben und nahm die Verfolgung auf, auch wenn nach und nach klar wurde, dass Cedric für das heutige Rennen nicht mehr einzuholen war.</p>
+<p>Verschwitzt und verstaubt, Cedric trunken vor Siegesgewissheit, kamen sie am Ziel ihres Rennens an. Spiegelglatt lag der See vor ihnen und wären sie noch in England gewesen, so hätte das dann folgende Schauspiel nie stattgefunden. Doch unbeobachtet von jeder Gesellschaft, umringt von nichts als Natur und ihren schwer atmenden Pferden die ihre weichen Nasen in den kühlen See steckten, ließen sie alle ihre Oberkleider am Ufer zurück und tollten wie junge Burschen durch das klare Wasser. Und ein jeder von ihnen fühlte sich zugleich leicht und sorgsam gebunden. So frei und doch so sicher.</p>
+<p>Es fühlte sich an wie die ersten klaren Gedanken am Morgen, wenn die Morgensonne durch ihr Fenster fiel und sie langsam zu wecken begann. Ein Kopf der auf einer warmen Brust zum Liegen gekommen war, kalte Füße an fremden Waden, Finger die nach den anderen ausgestreckt wurden.</p>
+<p>Es fühlte sich an wie die Rückkehr von Cedric, wenn er aus der nächstgelegenen Stadt nicht nur notwendige Einkäufe mitbrachte, sondern auch neue Bücher für Percy oder einen Welpen für Oliver.</p>
+<p>Es fühlte sich an wie der ruhigste Abend vor ihrem Kamin. Roger spielte gedankenverloren auf seiner Flöte. Percy und Oliver spielten Karten und Cedric war längst mit seinem Kopf in Rogers Schneidersitz eingeschlafen.</p>
+<p>Es fühlte sich an wie Liebe die immer nur noch mehr werden konnte.</p>
+<p>Unendlichkeit.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p align="center">
+  <strong>~~Fin~~</strong>
+</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="GoWJ0vdhw0zBj-g5ZytPyVSnU1vxpLQDWcwebC_1SZzlI1LbU-7Kit0FxUirfdaWGtLzozE5rkUGMR5rxhXrCg"/>
+          <input value="30379272" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=30379272">Comments (1)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/gryffinpuff_girl">gryffinpuff_girl</a> and <a href="/users/wortvermis">wortvermis</a>
+             as well as 
+          2 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_30379272">
+  <form class="new_comment" id="comment_for_30379272" action="/works/30379272/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="_lg6RaGRepmziVQs4m1Yvudl34AbN155lozfT8fZmVMB_uFMBR5zX68DeV0uO8HhqRB_eNuqRD_Jcd9ILjk7xQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_30379272">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_30379272" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_30379272=new LiveValidation('comment_name_for_30379272',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_30379272.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_30379272">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_30379272" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_30379272=new LiveValidation('comment_email_for_30379272',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_30379272.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_30379272" class="landmark">Comment</label>
+        <textarea id="comment_content_for_30379272" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_30379272" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_30379272_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_30379272">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_30379272=new LiveValidation('comment_content_for_30379272',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_30379272.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_30379272.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_30379272" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/30379272/hit_count.json")})</script>
+
+
+  </body>
+</html>

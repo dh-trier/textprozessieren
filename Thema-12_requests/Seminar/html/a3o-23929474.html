@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":101,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        REQUIEM - 6. Akt: Am Scheideweg - CyberneticNemesis - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="LnYbjm_QEcoMfmrM0_QOIeN7nWJ1SWgUToO139unDOpTPUx3sfiC9XKnuneYWR73jmSZV_dPEKTszeeYjWc_rg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="FRRVmiyFQadCtYN-KSGHynKYPZwAxgshUl3pCSwYbcRoXwJj8q3SmDxsU8VijJccH4c5qYLAc5HwE7tOethegA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: buffy gen teen AND &quot;no archive warnings apply&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/23929474/chapters/57543241">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/23929474/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/23929474/REQUIEM%20-%206%20Akt%20Am.azw3?updated_at=1588264797">AZW3</a></li>
+          <li><a href="/downloads/23929474/REQUIEM%20-%206%20Akt%20Am.epub?updated_at=1588264797">EPUB</a></li>
+          <li><a href="/downloads/23929474/REQUIEM%20-%206%20Akt%20Am.mobi?updated_at=1588264797">MOBI</a></li>
+          <li><a href="/downloads/23929474/REQUIEM%20-%206%20Akt%20Am.pdf?updated_at=1588264797">PDF</a></li>
+          <li><a href="/downloads/23929474/REQUIEM%20-%206%20Akt%20Am.html?updated_at=1588264797">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape*s*Original%20Female%20Character(s)/works">Severus Snape/Original Female Character(s)</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li><li><a class="tag" href="/tags/Tom%20Riddle%20%7C%20Voldemort/works">Tom Riddle | Voldemort</a></li><li><a class="tag" href="/tags/Bellatrix%20Black%20Lestrange/works">Bellatrix Black Lestrange</a></li><li><a class="tag" href="/tags/Narcissa%20Black%20Malfoy/works">Narcissa Black Malfoy</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Thriller/works">Thriller</a></li><li><a class="tag" href="/tags/Drama/works">Drama</a></li><li><a class="tag" href="/tags/Adventure/works">Adventure</a></li><li><a class="tag" href="/tags/Book%206:%20Harry%20Potter%20and%20the%20Half-Blood%20Prince/works">Book 6: Harry Potter and the Half-Blood Prince</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/23928931">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 7 of the <a href="/series/537580">Severus Snape Saga</a> series</span><span class="divider"> </span><a class="next" href="/works/8955850">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-04-30</dd><dt class="status">Completed:</dt><dd class="status">2020-04-30</dd><dt class="words">Words:</dt><dd class="words">19733</dd><dt class="chapters">Chapters:</dt><dd class="chapters">13/13</dd><dt class="hits">Hits:</dt><dd class="hits">31</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      REQUIEM - 6. Akt: Am Scheideweg
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/CyberneticNemesis/pseuds/CyberneticNemesis">CyberneticNemesis</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Fortsetzung zu „REQUIEM – 5. Akt“ // Sirius Black ist tot. Lucius Malfoy im Gefängnis. Draco schwört Rache und schließt sich den Todessern an. Währenddessen wird Dumbledore von einem tödlichen Fluch belastet und vertraut sich Snape an ihn zu töten, wenn die Zeit gekommen ist. Der hat jedoch den Unbrechbaren Schwur geleistet Draco zu beschützen. Die Lage spitzt sich zu und schon bald muss jeder seine Seite wählen.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57543241">Chapter 1</a>: Prolog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war tiefste Nacht. Einzig das Flackern der Fackeln, die den riesigen, runden Raum erleuchteten, war zu hören. Steinsäulen aus Marmor ragten vom Boden auf. Etage für Etage wand sich eine Wendeltreppe nach oben. Etage für Etage war voller Frauen und Männer in schwarzen Roben, die auf das Schauspiel am Boden der marmornen Halle achteten.Eine Steinfigur in Form einer riesigen Schlange, die in einer Art flachen Bassin mündete. Über der Statur war ein Aufbau auf dem weitere in Roben gehüllte Männer standen. Sie hielten zwei Gefangene fest deren Augen verbunden waren. Vor ihnen führte eine Rinne in den Kopf der Schlange. Unter dem Maul der Statue stand ein blonder Teenager mit nacktem Oberkörrper. Er trug eine schwarze Stoffhose und seine nackten Füße befanden in dem Becken. Vor ihm stand ein großer, in eine schwarze Robe gehüllter Mann. Seine Kapuze verdeckte den Großteil seines Gesichtes, nur seine rot schimmernden Augen und seine schlangenförmige Nase und der Mund waren deutlich zu sehen. Er hielt dem Jungen einen langen, gewellten Dolch an die Brust.</p>
+<p>„Und so schwöre ich ewige Treue dem einzigen und wahren Meister. Sollte ich je Lügen oder vom Glaube abfallen, dann soll man mir die Zunge herausschneiden und das Herz durchstoßen. Unter der großen Schlange gelobe ich ewige Zugehörigkeit zu dem Bunde von dem mich nur der Tod befreit.“, sagte der Junge.</p>
+<p>Der Mann vor ihm ritzte ihm einen Strich in die Brust, so das nur ein Tropfen Blut die Stahlrinne seines Dolches zum Heft hinab floss. Er hob gebieterisch die Arme und trat von dem Aspiranten zurück. Die hier Anwesenden auf den oberen Rängen hoben jeweils den rechten Arm und riefen einen Laut: „Howl!“ - „Howl!“ - „Howl!“ war kein Wort, es war der ausgestoßene Schrei, der aus hunderten Kehlen kam. Ein Schrei, der sie verband in ihrem dunklen Bund, den sie mit ihrem Meister eingingen.</p>
+<p>Die Männer, die die Gefangenen festhielten beugten diese über die große Steinrinne und schnitten ihren Opfern mit einem Dolch die Kehlen durch. Das Blut strömte hinein und floss langsam in den Kopf der Schlange.</p>
+<p>Der Junge sah unsicher nach oben. Blut tropfte ihm auf die Stirn bis es schließlich zu einem Schwall wurde, der ihn ganz übergoss.</p>
+<p>Die Männer oben zogen die Leichen der unglückseligen Opfer an den Beinen nach oben, um sie ausbluten zu lassen. Kein Tropfen sollte verschwendet werden.</p>
+<p>Als alles Blut vergossen war endeten auch die Schreie der Kultisten auf den Rängen.</p>
+<p>Der Mann vor dem Jungen trat erneut an ihn heran. Er legte ihm zwei Finger auf die Stirn.</p>
+<p>„Nun bist du einer von uns, junger Malfoy. Diene mir gut und alles wird vergeben und vergessen sein.“</p>
+<p>Er nahm die Finger von der Stirn des Jungen und strich sich das Opferblut in Form eines Symbols auf die eigene Stirn. Zuerst machte er einen senkrechten Strich, aus dem ein Kreis um den Strich erwuchs, den er wiederum in ein Dreieck bettete. Er wandte sich an die Umstehenden und nahm seine Kapuze ab, die nun seinen kahlen Kopf offenbarte. Das Blut in seinem Gesicht wirkte auf seiner bleichen Haut fast wie ein Brandmahl.</p>
+<p>„Nun, meine Brüder, ist unsere Zeit gekommen. Zieht aus und bringt Tod und Verzweiflung denen, die sich uns widersetzen. Das Ende der Welt wie wir sie kennen ist nah und entstehen wir ein neues, unsterbliches Königreich. Gebunden durch Blut! Gebunden durch Glaube! Gebunden durch Überlegenheit!“</p>
+<p>Die Menge reckte erneut ihre Fäuste in die Luft. Wieder schrien Sie: „Howl! Howl! Howl!“</p>
+<p>In jenen Augenblick löste sich in einem der Ränge unmerklich eine der Kapuzengestalten. Sie entfernte sich und ging in einen der Flure, die in den hohen Säulenraum führten. Erschöpft lehnte sie sich gegen den schwarzen Marmor der Wand. Ein weiterer Robenträger kam auf sie zu. Die Kapuze tief ins Gesicht gezogen.</p>
+<p>„Du solltest das nicht tun. Wenn Er dich hier findet, dann ...“, sagte er und zog sich die Kapuze vom Kopf. Zum Vorschein kam sein rabenschwarzes, schulterlanges Haar und sein schmales, blasses Gesicht.</p>
+<p>„Ich kann das nicht ertragen.“, sagte die andere Gestalt mit der Stimme einer Frau. „Severus, ich ertrage es nicht.“</p>
+<p>Er ging zu ihr hin und legte den Arm um ihre Schulter.</p>
+<p>„Komm. Gehen wir, bevor sie es merken.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57543400">Chapter 2</a>: Der Unbrechbare Schwur
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Als Severus Snape in sein Haus bei Spinners End kam graute bereits der Morgen. Er hatte Nazissa nach Hause gebracht. Sie war seit Lucius' Verhaftung nicht mehr sie selbst und Dracos Initiierung hatte sie komplett aus dem Gleichgewicht gebracht. Er wusste nicht, ob Draco aus eigenen Antrieb zu den Todessern ging oder nicht, doch für seine Mutter brach gerade eine Welt zusammen. Sie hatte nie gewollt, dass Draco sich ihnen anschloss. Daraus hatte sie gegenüber Severus auch nie einen Hehl gemacht. Dass er jetzt an diesem scheußlichen Ritual teilnahm brachte sie komplett aus der Fassung.</p><p>Severus erinnerte sich noch gut an seine eigene Initiierung. Damals waren die Todesser jedoch noch ganz anders. Es war mehr eine politische Organisation denn ein okkulter Geheimbund. In den Jahren ohne Körper musste das was von Tom Riddles Geist noch übrig war komplett in den Schwarzen Lehren und Legenden versunken sein. Dieses Ritual war eine einzige Ansammlung magierokkultischtischer Mythenverehrung. Die große Schlange, die der Legende nach Salazar Sytherin gebar. Die rituelle Weihung im Blut der Ungläubigen – in diesem Fall zwei arme Teufel, wahrscheinlich Muggel oder dünnblütige Magier - und zum Schluss das Symbol. Severus kannte es aus seiner Kindheit. Die Heiligtümer des Todes. Es stammte aus einem Märchen. Beedle, dem Barden. Es gab Magier, die gerade diese Geschichte für Wahrheit hielten. Es war eine moderne Legende und die Artefakte aus dem Märchen sollten dem Träger fast unbegrenzte Macht verleihen. Kein Wunder also, dass Voldemort es nutzte. Der alte Tom Riddle, den Severus während des Krieges kennen gelernt hatte, war ein abergläubischer Okkultist. Gut möglich, dass er selbst daran glaubte. Dieses neue Initiierungsritual war jedoch ein Massenspektakel. Das war früher nicht so. Damals wurden sie quasi alle im stillen Kämmerlein mit dem Dunklen Mal verbunden.</p><p>Voldemort war jedoch schon immer gut darin die Massen zu manipulieren. Ihnen Trugbilder vorzuspielen und genau das zu erzählen, was sie hören wollten. Das er sich quasi selbst zu einer Art religiösen Führer erhob passte da nur gut ins Bild. Er tat alles, um Menschen an sich zu binden, denn für ihn war jeder, egal wie hoch er in der Hierarchie kam, am Ende nur Vieh mit dem er tun und lassen konnte, was er wollte. Diejenigen, wie Bellatrix, die in ihren Fanatismus ernsthaft glauben er sei ihnen auch nur ein Müdes Lächeln wert, lagen falsch. Er würde sie einfach opfern, wenn es nötig wäre. In Voldemorts Welt gab es nur ihn. Alle anderen waren Tiere auf der Schlachtbank.</p><p>Severus rieb sich die Stirn. Er brauchte unbedingt ein wenig Schlaf. Gerade als er daran dachte wie sterbensmüde er war flatterte ein Phönix an sein Fenster. Fawkes.</p><p>Nicht einen Augenblick der Ruhe hat man hier. , dachte Severus und öffnete das Fenster.</p><p>Er nahm dem dem Phönix den Brief ab, den er trug und das Tier verwandelte sich in einen leuchtenden Feuerball, während es davonflog.</p><p>Severus öffnete den Brief und las.</p><p> </p><p>
+  <em>Treffen Sie mich so bald wie Möglich in Hogwarts. Es gibt Neuigkeiten, die Sie interessieren dürften.</em>
+</p><p>
+  <em>Albus</em>
+</p><p> </p><p>Severus zerknüllte den Brief und warf ihn in das Feuer des Kamins. Er hob Dumbledores Briefe nie auf. Sicher war sicher. Was immer für Nachrichten er hatte, die konnten bestimmt noch ein paar Stunden warten. Wenn er sich nicht bald ins Bett legte würde er an Ort und Stelle umkippen.</p><p> </p><p>-----------------------------------</p><p> </p><p>Am Abend traf Severus in Hogwarts ein und machte sich gleich auf den Weg zum Büro des Schulleiters.</p><p>„Ah, Severus, endlich kommen Sie.“, sagte Dumbledore, der gerade über ein Stück Pergament gebeugt war.</p><p>„Was gibt es denn für wichtige Neuigkeiten?“, fragte Severus.</p><p>„Sagt Ihnen der Begriff Horcrux etwas?“, fragte Dumbledore.</p><p>„Ja, natürlich.“</p><p>„Sicher, das hätte ich mir denken können.“, sagte Albus und erhob sich hinter seinem Schreibtisch. „Wissen Sie noch als Sie mir letztes Jahr über die Gedächtnisprobleme von Voldemort erzählten?“</p><p>„Ja. Ich habe immer vermutet, schon während des Krieges, dass er etwas Ungesundes mit seinem Kopf angestellt hat. Sie glauben also er hat einen Horcrux erschaffen?“, fragte Severus.</p><p>„Nicht einen, sondern sieben.“, korrigierte Dumbledore ihn.</p><p>Severus zog die Augenbrauen nach oben.</p><p>„Das erklärt so einiges.“, sagte er.</p><p>„Sie meinen?“, fragte Albus.</p><p>„Seit ich ihn kenne hat er Symptome starken, psychischen Verfalls. Gedächtnislücken, Stimmungsschwankungen, mitunter wechselnde Persönlichkeiten. Hätte er wirklich sieben mal seine Seele so malträtiert … sein Wahnsinn wäre dann nicht gespielt, er wäre real. Das kann kein Mensch überleben, ohne dass seine Persönlichkeit völlig zerfällt.“</p><p>„Genau, Severus, sein Wahnsinn ist real und er bedroht uns alle. Es gibt keine Aufzeichnungen über Magier, die sich etwas derartiges jemals selbst angetan hätten. Wenn ich das aber weiter denke, dann werden seine Symptome immer schlimmer werden und seine Grausamkeit und sein Irrsinn werden expotenziell steigen.“, sagte Dumbledore. „Dummer Weise sind die Horcruxe auch der Quell seiner Unsterblichkeit.“</p><p>„Sie wollen sie finden und zerstören?“, fragte Severus.</p><p>„Uns bleibt nichts anderes übrig, wenn wir ihn besiegen wollen.“</p><p>„Töten.“, korrigierte Severus den alten Hexer. „Wir wollen ihn töten. Egal wie sehr Sie den Gebrauch dieses Wortes ablehnen, Albus, Sie sollten sich daran gewöhnen. Es wird keinen friedlichen Weg geben das zu beenden.“</p><p>„Ich fürchte da haben Sie recht.“, gab Dumbledore zu und es war wirklich selten, dass er sich zu so einer Tat überwinden konnte.</p><p>„Wissen Sie, wo die Horcruxe versteckt sind?“, fragte Severus.</p><p>„Bei einigen, aber leider nicht bei allen. Deshalb müssen Sie mir einen Gefallen tun.“</p><p>Severus verschränkte die Arme vor der Brust. Albus' Gefallen hatten in der Regel mehr als nur einen Haken.</p><p>„Sie müssen Lehrer für Verteidigung gegen die Dunklen Künste werden.“, sagte Dumbledore.</p><p>Severus starrte fassungslos an. Er hatte sich ja wohl verhört!</p><p>„Was?“, fragte Severus ungläubig und war kurz davor laut loszulachen.</p><p>„Der einzige Mensch, der wissen könnte, wo sich die restlichen Horcruxe befinden ist Horace Slughorn. Er war Tom Riddles Hauslehrer – und Ihrer wohlgemerkt. Ich werde ihn überreden seine Stelle als Zaubertranklehrer wieder aufzunehmen.“</p><p>„Horace? Wie lange ist der jetzt schon im Ruhestand? Fünfzehn Jahre? Hat er überhaupt noch so viel Elan den ganzen Explosionen aus dem Weg zu springen?“, fragte Severus lachend.</p><p>„Werden Sie nicht frech!“, ermahnte ihn Albus wie einen Schüler. „Es ist unsere beste Chance und Sie wollten doch schon immer mal das Fach wechseln.“</p><p>„Ach, jetzt fällt Ihnen das wieder ein?“, sagte Severus gespielt aufmüpfig.</p><p>„Besser spät als nie.“, gab Dumbledore zurück.</p><p>„Also gut. Ich tu es. Halten Sie nur die wütenden Eltern von mir fern.“</p><p>„Warum sollten die wütend sein? Sie sind doch bekannt für ihre liebevolle Art.“, entgegnete Albus.</p><p>„Ha ha!“, machte Severus trotzig. „Wenn also weiter nichts ist, ich habe noch zu tun.“</p><p>„Sicher, Severus.“, sagte Dumbledore und setzte sich wieder hinter seinen Schreibtisch.</p><p> </p><p>---------------------------------</p><p> </p><p>Severus saß am nächsten Morgen in seinem Sessel vor dem Kamin in seinem Haus in Spinners End. Er trank eine Tasse Tee und überflog gerade die aktuellen Meldungen im Tagespropheten. Auf der Titelseite pragte das Bild des neuen Zaubereiministers Rufus Scrimgeour. Ein Löwe von einem Mann mit schulterlangem, roten Haar und einem Bart, der sein Gesicht erschienen ließ als stamme er selbst vom Wappentier Gryffindors ab. Severus hatte ihn letztes Jahr getroffen. Damals war er noch Chef der Strafverfolgung gewesen. Severus konnte nicht sagen, ob ein ehemaliger Auror eine gute Idee für den Posten des Ministers war. Schließlich kannte er Mad-Eye Moody.</p><p>Der Regen trommelte gegen die Fenster und und Severus sah flüchtig hinaus. Das Wetter in Bristol war schon immer eher unbeständig. Typisch Küste. Plötzlich läutete es an der Tür. Severus legte die Zeitung weg und zog seinen Zauberstab. Er erwartete niemanden. Schon gar nicht jemanden, der wusste wie man eine Klingel benutzte.</p><p>Severus ging durch den schmalen Flur zur Tür und sah durch das Milchglasfenster nach draußen. Er atmete tief, steckte den Zauberstab weg und öffnete die Tür. Draußen standen zwei Frauen in ihren schwarzen Reiseroben, die er hier nicht erwartet hatte: Narzissa Malfoy und - leider Gottes! - ihre Schwester Bellatrix Lestrange.</p><p>„Dürfen wir eintreten?“, fragte Narzissa.</p><p>„Natürlich.“, sagte Severus ließ sie wie ein guter Gastgeber eintreten.</p><p>Narzissa und Bellatrix folgten ihm in das Wohnzimmer, wo er ihnen ein Platz vor dem Kamin anbot.</p><p>„Entschuldige, wenn ich es bevorzuge zu stehen.“, sagte Bellatrix. Sie lehnte sich lässig gegen den Kaminsims und ihre Augen huschten zwischen ihrer Schwester und Severus hin und her.</p><p>„Tee?“, fragte Severus Narzissa.</p><p>„Nein, danke.“, lehnte sie höflich ab und setzte sich in den Sessel ihm gegenüber.</p><p>„Also, womit kann ich euch beiden helfen?“, fragte Severus.</p><p>„Mir kann man bekanntlich nicht mehr helfen.“, gackerte Bellatrix belustigt los.</p><p>„Ssssch! Bella, sei still!“, fuhr Narzissa sie an. „Die Sache ist ich soll eigentlich nicht darüber sprechen. Der Dunkle Lord hat es verboten.“</p><p>„Und man soll bekanntlich nichts tun, was Er verboten hat!“, mischte Bellatrix sich ein.</p><p>Narzissa brachte ihre Schwester mit einem bösen Blick zum Schweigen.</p><p>„Es geht um Draco. Der Herr ließ mich wissen, dass er meinen Sohn damit beauftragt hat eine schier unmögliche Aufgabe zu lösen. Er soll Dumbledore ausschalten. Dumbledore, Severus! Wie soll ein Sechzehnjähriger das denn bewerkstelligen?“</p><p>Severus vermied es ihr in die Augen zu sehen. Ja, er hatte davon gehört. Voldemort legte es darauf an den Jungen scheitern zu sehen. Es war kein fairer Kampf.</p><p>„Wenn er scheitert, dann wird unser Meister ihn umbringen. Du weißt das, Severus.“, sagte Narzissa. „Und ich weiß genau warum er das tut! Es ist, weil er uns wegen des Versagens meines Mannes bestrafen will! Und er will mir meinen einzigen Sohn nehmen und mich dabei zusehen lassen wie er ihn zugrunde richtet!“</p><p>Narzissa begann, wie so oft dieser Tage, zu weinen. Bellatrix stöhnte nur genervt und verdrehte die Augen. Für sie war das alles sicher nur vertane Liebesmüh.</p><p>„Was soll ich nur tun? Was soll ich nur …?“, schluchze Narzissa verzweifelt.</p><p>„Und, Snape, hast du eine Idee?“, fragte Bellatrix provokant.</p><p>„Bellatrix, verschwinde!“, entgegnete Severus ihr scharf. „Raus! Und zwar sofort!“</p><p>Bellatrix hob die Augenbrauen und verschränkte die Arme vor der Brust.</p><p>„Nein.“, sagte sie nur stur.</p><p>Severus hätte es ehrlich gewundert, wenn sie auf ihn gehört hätte.</p><p>Severus erhob sich und ging zu Narzissa herüber. Er nahm sie in den Arm, wie schon vor wenigen Tagen bei Dracos Initiierung. Severus wusste, dass sie niemanden sonst hatte an den sie sich wenden konnte.</p><p>„Arrww, herzallerliebst!“, meinte Bellatrix.</p><p>Severus bedachte sie mit einem finsteren Blick. Zu seiner Überraschung hielt sie sogar die Klappe.</p><p>„Versprich mir, dass Draco nichts passiert! Schwöre es!“, sagte Narzissa.</p><p>„Ich verspreche es.“, sagte Severus.</p><p>„Nein, du musst es mir schwören! Schwöre es beim Unbrechbaren!“, sagte Narzissa.</p><p>Severus sah von ihr zu Bellatrix. Die hob nur abwehrend die Hände.</p><p>„Da ist Sie von ganz alleine drauf gekommen.“, sagte Bellatrix. „Ganz schön durchtrieben, meine Zissy, wenn sie denn mal aufhört zu flennen!“</p><p>Severus wusste, dass er ihr das nicht abschlagen konnte. Einen Unbrechbaren Schwur zu leisten war keine Nebensächlichkeit und jemanden darum zu bitten auch nicht.</p><p>„Also gut“, sagte Severus und erhob sich. Narzissa tat es ihm gleich.</p><p>Severus krempelte sich das Hemd an seinem rechten Arm hoch und umgriff Narzissas Handgelenk. Auf den Arm mit dem Dunklen Mal konnte er zur Not verzichten falls er es nicht schaffte worum sie ihn bat. Ein Unbrechbarer Schwur tötete einen, wenn man ihn nicht erfüllte. Es gab ein, zwei sehr radikale Gegenmaßnahmen, die ihm einfielen, aber die würden alle mit dem Verlust eines Körperteiles enden.</p><p>„Meine Schwester, Bellatrix Lestrange, sei mein Zeuge.“, sagte Narzissa und umgriff mit ihrer Hand Severus' Handgelenk. „Wirst du, Severus Snape, alles in deiner Macht stehende tun, um meinen Sohn zu beschützen?“</p><p>„Ich schwöre.“, sagte Severus.</p><p>Eine Flammenzunge wandte sich aus Narzissas Arm um sein Handgelenk. Er verzog das Gesicht als sie in ihn eindrang und den Pakt besiegelte.<br/>Nach einem Augenblick wand sich die Flamme aus ihm heraus und drang in Narzissias Arm ein. Die Hand des jeweils einen verkrampfte sich um das Handgelenk des jeweils anderen. Schließlich verschwand die Flammenzunge und sie ließen einander los.</p><p>„Damit ist es besiegelt.“, sagte Narzissa.</p><p>Severus rieb sich das Handgelenk und betrachtete die Brandnarbe, die der Fluch an ihm hinterlassen hatte. In der Theorie klang das alles weit weniger unangenehm.</p><p>„Komm, Bella.“, sagte Narzissa und ging mit ihr aus dem Haus. Severus sah ihnen nach.</p><p>Da hatte er sich was eingebrockt.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57543505">Chapter 3</a>: Der Fluch der Gaunts
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war tiefste Nacht als Albus Dumbledore den steinigen Weg in Little Hangleton hinab ging. Er war schon einmal hier gewesen. In einer weit entfernten Erinnerung. In einer anderen Zeit.</p>
+<p>Sein Zauberstab erleuchtete den Weg hell bis er zu der Ruine eines Landhauses kam. Der ganze Ort war von Moos überwuchert. Das Dach hatte große Löcher und in den Balken nisteten Vögel.</p>
+<p>Albus war sich sicher, dass dies eines der Verstecke war an dem Tom Riddle vor vielen Jahren einen seiner Horcruxe versteckt hatte. Er war zu Severus nicht ganz ehrlich gewesen. Albus verfolgte die Spur der Horcruxe schon lange. Spätestens aber seit Harry Potter ihm das zerstörte Tagebuch aus der Kammer des Schreckens mitgebracht hatte. Ihm war immer klar gewesen, dass Tom Riddle etwas Schreckliches getan haben musste, um Lord Voldemort zu werden. Das Zerteilen der eigenen Seele war so ziemlich das Schlimmste, was man sich selbst antun konnte. Als Severus ihm vor einem Jahr das erste Mal beschrieb wie sich dieses Auseinandereisen bei Tom Riddle äußerte bestätigte das seine Theorie nur. Und Severus hatte recht als er sagte, dass das niemands Verstand überleben könne. Die langen Jahre ohne Körper hatten sicher noch ihr übriges getan. Die Horcruxe zu zerstören und Voldemort endgültig zu töten war mehr die Erlösung eines Schwerkranken denn ein Mord. Dennoch tat es Albus leid. Er kannte den Jungen, den er damals aus diesem furchtbaren Waisenhaus geholt hatte. Und die ersten Jahre in Hogwarts dachte Albus wirklich, dass er Tom Riddle helfen könne, aber vermutlich war sein Geist schon damals zu beschädigt, um ihn noch auf den rechten Weg zu bringen. Albus hatte immer bedauert, dass ihm das nie gelungen war.</p>
+<p>Er atmete tief durch, bevor er die Ruine betrat. Das ehemalige Haus der Gaunts. Der Familie von Riddles Mutter. Es war schon seit Jahrzehnten nicht mehr bewohnt. Seit dem Tag an dem ihr Enkel zu ihnen zurückkehrte und sie alle umbrachte. Tom Riddle hinterließ schon bevor er zu Lord Voldemort wurde eine Spur aus Tod überall um sich herum.</p>
+<p>Albus hörte das unaufhörliche Tropfen von Etwas. Es hatte nicht geregnet und das Haus war ebenso staubtrocken wie das Land draußen. Er folgte dem tropfenden Geräusch eine knarzende, alte Treppe hinunter in den Keller. Die Türklinke der Kellertür war von einem seltsamen, schwarzen, zähflüssigen Schleim umhüllt, der auf den Boden tropfte.</p>
+<p>Albus deutete mit dem Zauberstab auf die Tür und sagte leise: „Aperire“</p>
+<p>Die Tür schwang auf und offenbarte den Keller, der komplett überzogen war mit diesem schleimigen Etwas. Fäden zogen sich von der Decke zum Boden auf dem eine Schachtel lag aus der unaufhörlich diese unnatürliche Flüssigkeit hervorquoll. Albus griff unter seinen Reisemantel und zog das Schwer von Godric Gryffindor hervor.</p>
+<p>Einen Horcrux zu zerstören war nicht einfach. Man brauchte sehr mächtige Magie, um das zu bewerkstelligen. Das Schwert Gryffindors war eines der wenigen Artefakte, die in der Lage waren etwas derartiges zu zerstören.</p>
+<p>Albus deutete mit dem Zauberstab auf die Schachtel und öffnete sie mit einem Wink. Drinnen befand sich eine silberner Wappenring. Aus ihm strömte und sprudelte der schwarze Schleim wie aus einem überkochenden Topf. Es war als ohne Zweifel der Horcrux. Aber er schien auf seltsame Art beschädigt als habe bereits jemand versucht ihn zu zerstören und sei gescheitert. Er hatte lediglich ein Loch in ihn gestoßen und das Böse blubberte seitdem unaufhörlich aus dem Horcrux wie dicker Brei aus einem Kochtopf.</p>
+<p>Zeit es zu beenden.</p>
+<p>Albus holte mit dem Schwert aus und wollte zuschlagen, doch genau während des Hiebes ertöne die verzerrte Stimme Voldemorts in jeder Faser dieses Ortes.</p>
+<p>„NEIN!“, rief sie.</p>
+<p>Schwarze Fäden schossen aus der Flüssigkeit am Boden und der Decke. Sie packten Albus samt Schwert und schleuderten ihn davon. Er flog die Treppe nach oben und landete in einer morschen Holzwand, die er laut knallend durchschlug.</p>
+<p>Das schleimige Böse aus dem Keller krabbelte die Treppe hinauf. Stufe für Stufe. Es umschlang Wände und alte Möbel und kroch genau auf Albus zu. Wieder schossen die wabbeligen Schleimtentakel auf ihn zu. Sie umschlangen seine Hand. Ein unvorstellbarer Schmerz durchfuhr ihn und er ließ das Schwert fallen. Seine Hand färbte sich allmählich schwarz wie abgestorbenes Fleisch.</p>
+<p>„DU KONNTEST SIE NICHT RETTEN!“, sagte erneut die hohle Stimme Voldemorts. „UND DU WIRST IHN NICHT RETTEN! DU VERSAGST WIE SCHON DAMALS!“</p>
+<p>Albus schwang seinen Zauberstab in Richtung der Tentakel, die ihn festhielten, und zerschnitt sie. Unter Schmerzen griff er mit seiner schwarzen Hand nach dem Schwert. Sie war taub und er fühlte wie der bösartige Schleim unter seiner Haut ihm den Arm hoch krabbelte. Unter einem Schrei rammte er den Zauberstab in den Boden und eine Welle aus Feuer breitete sich um ihn aus. Sie verbrannte die schwarze Massen, die einen  schmerzverzerrten Schrei ausstieß.</p>
+<p>Albus nahm seine ganze Kraft zusammen und sprintete erneut hinunter in den Keller, wo sich bereits neue Schleimfäden um den Ring wandten. Er schlug mit dem Schwert zu. Ohne Vorwarnung wurde er zu Boden geschleudert als eine schwarze Eruption sich durch das ganze Haus ausbreitete. Unter dem verzerrten Schrei von Voldemorts Stimme riss es die Reste des Haus in einer Welle schwarzen Lichts in Stücke. Das Dach brach zusammen und begrub alles unter sich.</p>
+<p>Albus hustete vor lauter Staub. Zugegeben, so etwas hatte er noch nie gesehen. Wie schon damals bei Tom Riddles Tagebuch mussten die in den Horcruxen eingeschlossenen Seelenstücke unfassbar mächtig sein. Das Böse, was sich darin angesammelt hatte, war wesentlich schlimmer als er vermutet hatte. Albus hatte mit einem zweiten Tom Riddle gerechnet, der ihn angreifen würde, doch nicht mit etwas derartig dunklen und bösen.</p>
+<p>Unter Schmerzen nahm er den Ring an sich und sprengte ein Loch in den Schutt, der die Treppe versperrte. Oben sah es aus als sei ein Tornado über das Haus hinweg gefegt. Kein Stein stand mehr auf dem anderen. Die Explosion des Horcrux hätte ihn vermutlich getötet, wenn er nicht im Keller gewesen wäre.</p>
+<p>Albus disapperierte genau in das Büro des Schulleiters. Minerva, die an seinem Schreibtisch stand, schrie erschrocken auf und ließ ihren Stapel Pergamente auf den Boden fallen als sie Albus entdeckte. Er rutschte auf die Knie und hielt sich am Schwert Gryffindors fest, das er in den Boden stemmte. Das würde Scharten im Parkett geben.</p>
+<p>„Holen Sie Severus!“, sagte Albus erschöpft.</p>
+<p>Minerva stockte für einen Augenblick, rannte dann aber an ihm vorbei die Treppe des Turms hinunter. Albus griff in die Tasche seines Mantels und holte den Ring hervor. Er war gespalten und nun nur noch ein Stück Metall.</p>
+<p>Als Minerva endlich mit Severus im Schlepptau zurück kam verdrehte Albus die Augen und fiel zur Seite um.</p>
+<p>„Albus!“, hörte er Severus noch rufen. „Albus, wachen Sie auf!“</p>
+<p>Albus jedoch war ohnmächtig geworden. Während er schlief suchten ihn dunkle Visionen heim. Das Böse das im Haus der Gaunts lauerte war wenigstens zu Teilen auf ihn übergegangen. Es versuchte nicht nur seinen Körper, sondern auch seinen Geist. Die glibbrigen Tentakel schlängelten sich durch ihn hindurch auf der Suche nach etwas, dass sie absorbieren und in die Finsternis hinabziehen konnten.</p>
+<p>Schweißgebadet wachte Albus auf. Sein Arm war in dicke Bandagen gewickelt und er lag auf der Couch in seinem Büro. Er sah durch das Fenster wie die Sonne bereits hinter den Bergen auftauchte.</p>
+<p>„Gott sei dank sind Sie wach.“, hörte er Severus sagen, der mit einem Glas Schnaps vor dem Kamin stand. „Was ist eigentlich passiert?“</p>
+<p>„Genau das ist die Frage, nicht wahr?“, sagte Albus schwach.</p>
+<p>Severus stellte sein Glas auf den Kaminsims und hockte sich neben die Couch.</p>
+<p>„Wenn Sie das nächste Mal losziehen, um einen Horcrux zu zerstören, dann sagen Sie vorher bescheid.“, ermahnte ihn Severus ernst. „Was Sie sich da zugezogen haben ...“</p>
+<p>„... ist ein Teil von Lord Voldemorts Seele.“, beendete Albus den Satz. „Ein Horcrux, lebendig und gefährlich. Es ist pures, konzentriertes Böses, Severus. Mehr Dunkelheit kann man sich nicht vorstellen.“</p>
+<p>„Dieses Ding in Ihnen wird sich weiter ausbreiten.“, sagte Severus, ganz mit der Stimme eines Arztes, der seinem Patienten schlechte Nachrichten brachte. „Ich habe es lediglich verlangsamt.“</p>
+<p>„Wie lange?“, fragte Albus, dem völlig klar war worauf das alles hinauslaufen würde.</p>
+<p>„Ein Jahr vielleicht.“, sagte Severus und er klang ehrlich betrübt.</p>
+<p>„Dann haben wir ja noch reichlich Zeit.“</p>
+<p>„Das ist kein Zeitpunkt für Scherze, Dumbledore!“</p>
+<p>Albus sah in Severus' Gesicht und er schien ernsthaft voller Sorge.</p>
+<p>„Trauern Sie nicht um mich. Ich lebe eh schon viel zu lange. Der Tod ist nur das nächste Abenteuer.“</p>
+<p>Severus erhob sich grummelnd. Es gefiel ihm eindeutig nicht, aber für Bedauern war es ohnehin zu spät.</p>
+<p>„Wenn die Zeit kommt, dann möchte ich, dass Sie etwas für mich tun, Severus. Kümmern Sie sich um Harry. So schwer es auch fällt.“</p>
+<p>Severus sah ihn an.</p>
+<p>„Warum ich?“, fragte er. „Potter hat doch so viele Freunde, die ihn viel besser verstehen.“</p>
+<p>„Mag sein, aber keinen von denen kann tun, was getan werden muss. Sie haben zu viel Mitleid mit ihm.“, sagte Albus.</p>
+<p>„Sie glauben, ich habe kein Mitleid? Da irren Sie sich aber, Albus. Nur wegen meines Mitleids bin ich überhaupt hier.“</p>
+<p>Severus nahm sein Schnapsglas vom Kaminsims und trank es auf Ex aus.</p>
+<p>„Sie sollten Ihren Arm möglichst nicht bewegen.“, sagte er noch und schnappte sich seine Robe, die über dem Sessel am Kamin hing.</p>
+<p>„Dann muss ich wohl meine andere Zauberstabhand trainieren.“, entgegnete Albus.</p>
+<p>„Sie müssen auch immer das letzte Wort haben.“, grummelte Severus und ging aus dem Raum.</p>
+<p>Albus lehnte sich zurück und sah der Sonne beim Aufgehen zu.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57543538">Chapter 4</a>: General
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus ging es nicht gut nachdem er Dumbledore verlassen hatte. Es war nicht nur, dass er sterben würde, sondern das er das offenbar so auf die leichte Schulter nahm. Warum war er auch allein zu diesem Haus gegangen, der alte Narr?</p>
+<p>Severus war wütend auf ihn wegen dieser Dummheit und gleichzeitig machte es ihn traurig. Sie waren selten einer Meinung und stritten oft erbittert, aber vielleicht machte das ihre Beziehung auch aus. Dieses ständige auf und nieder. Es gab Tage da hätte er Dumbledore am Liebsten erwürgt und dann gab es Tage, wenn sie ihre langen Kaminabende hatten und sich aussprachen. Aber das Albus der Meinung war ausgerechnet er sei der beste Mann, um sich nach seinem Tod um Harry Potter zu kümmern, das machte ihn wirklich platt. Severus war in diesen Dingen nie besonders gut, aber in Bezug auf Harry Potter stellte er sich wirklich an. Er und Potter konnten sich nicht ausstehen. Schon allein deshalb weil Severus sein Lehrer war.</p>
+<p>Er schüttelte den Kopf und ging den Weg weiter bis zu einer Höhle in einem Berg. Drinnen gab es eine große Stahltür. Er öffnete sie und trat in die Schleuse, die ihn zu einer weiteren Stahltür führte. An der Wand befand sich ein schwerer Eisenhebel den er betätigte und die Tür öffnete sich. Er betrat den alten Bunker. Ein Versteck von dem niemand wusste, nicht einmal Dumbledore, denn hier sammelte Severus alle Kräfte gegen Voldemort, die er finden konnte. Ein Widerstand außerhalb des Ordens. Auch wenn es jetzt durchs Albus' Dummheit anders kam als er zunächst angenommen hatte. Severus würde weder Dumbledore noch Voldemort bis in den Tod folgen. Er suchte schon lange nach einer Möglichkeit sein Schicksal in die eigene Hand zu nehmen – und das war sie.</p>
+<p>Severus würde nicht warten bis einer der beiden, großen Magier ihn opferte. Wenn er schon in diesem Krieg sterben musste, dann wollte er das erhobenen Hauptes tun. Und so sammelte er alles und jeden um sich, der weder Dumbledore noch Voldemort traute – genauso wie er. Halbtrolle, Zentauren und andere arme Teufel, die nichts zu verlieren hatten.</p>
+<p>„Na, General, auch mal wieder hier?“, sagte ein junger Erwachsener in Lederjacke und mit einer Schweißerbrille auf dem Kopf. Sein schwarzes Haar und die Gesichtszüge erinnerten nicht von ungefähr an Severus als er noch jung war.</p>
+<p>„Wer hat sich das denn ausgedacht?“, fragte Severus seinen Sohn.</p>
+<p>„Einer der Halbmenschen. Er meinte du hättest deine Berufung verfehlt, wenn du in der Schule als Lehrer rumhockst.“, sagte John Franco.</p>
+<p>„Ach, fällt das jetzt schon Außenstehenden auf?“, sagte Severus sarkastisch.</p>
+<p>„Alles in Ordnung? Du wirkst etwas neben dir.“, fragte John.</p>
+<p>„Ich hab nur etwas viel um die Ohren. Wo ist deine Mutter?“</p>
+<p>„Oben. Sie nimmt die Trolle beim Pokern aus.“, antwortete John.</p>
+<p>„Sie tut was?“, fragte Severus irritiert.</p>
+<p>„Ich sag dir, Mom entwickelt hier ganz neue Talente.“</p>
+<p>Severus ging mit John im Schlepptau zum Fahrstuhl. Severus schlug auf den schwergängigen Schalter.</p>
+<p>„Was schweißt du da eigentlich zusammen?“, fragte er während sie auf den Aufzug warteten.</p>
+<p>„Wir sind auf Idee gekommen, dass wir die Haupttür verstärken sollten falls hier wirklich mal 'ne Rotte Todesser auftaucht. Außerdem installieren wir gerade ein großes Sicherheitsystem. Schutzzauber und Kameras kombiniert.“</p>
+<p>„War das deine Idee oder die von Jason?“, fragte Severus.</p>
+<p>Der Fahrstuhl kam endlich an und sie stiegen ein. Severus schlug auf den Schalter für die obere Etage.</p>
+<p>„Wir sind ein gutes Team. Gib uns noch ein Jahr und wir machen hier draus eine Festung. Jetzt wo endlich alles läuft.“</p>
+<p>„Ich bin wohl nicht der Einzige, der seine Berufung verfehlt hat.“, kommentierte Severus.</p>
+<p>„Du kennst das doch. Gib mir einen Zauberstab und ein Stück Metall und ich bau dir ein zweites Hogwarts – nur mit weniger Treppen!“</p>
+<p>„Treppen sind gut für die Kondition.“, sagte Severus.</p>
+<p>„Die in Hogwarts sind nur gut für den Krankenflügel.“, entgegnete John.</p>
+<p>Endlich öffnete sich die Tür und sie stiegen aus. In dem Vorraum standen eine Menge Stühle und ein einfacher Holztisch. Er sah Jennifer, seine Frau. Ihr rotes Haar war in der Zeit hier deutlich gewachsen. Sie saß in Jeans und Karohemd da und hatte eine Gruppe genervt stöhnender Halbtrolle am Tisch sitzen.</p>
+<p>„Na, Leute, wollt ihr dass ich meine Karten aufdecke!?“, fragte sie provokant in die Runde.</p>
+<p>„Lieber nicht.“, sagte einer der Trolle und verdeckte kopfschüttelnd mit seiner Pranke die Augen.</p>
+<p>„Ich hoffe, du lässt ihnen wenigstens noch das letzte Hemd.“, sagte Severus als er an den Tisch ging.</p>
+<p>Einer der Halbmenschen griff sich auf die nackte Brust.</p>
+<p>„Dabei hab ich gar keins!“, rief er und prustete los.</p>
+<p>Jennifer deckte ihr Blatt auf. Die Trolle brachen in verzweifeltes Gejaule aus.</p>
+<p>„Habt ihr ein Glück, dass ich die nächste Runde nicht mehr mitspiele.“, sagte Jennifer und erhob sich vom Tisch.</p>
+<p>Sie ging auf Severus zu und umarmte ihn. Sie sahen sich so regelmäßig wie es ging und das war in der Tat nicht oft. In seiner Abwesenheit vertraute er darauf, dass Jason, Jennifer und John alles am Laufen hielten. Und es machte ihm fast etwas Angst wie gut sie das machten.</p>
+<p>„He, General ...“, rief einer der Halbtrolle zu ihm herüber.</p>
+<p>Schon wieder dieses General! Er sollte wohl mal ein paar Regeln im Flur aushängen wie er alles nicht genannt werden wollte.</p>
+<p>„Können wir unter vier Augen reden.“, sagte Severus zu Jennifer.</p>
+<p>„Na klar.“</p>
+<p>Sie gingen zu dritt den Flur entlang bis zu einem Privatbüro, dass er bereits letztes Jahr bezogen hatte. Es war mehr ein kleines Wohnzimmer mit Bett und Dusche. Auf jeden Fall mit genug Privatssphäre für sie.</p>
+<p>Severus setzte sich auf den Holzstuhl vor seinem Schreibtisch, währen die beiden anderen sich aufs Bett setzten.</p>
+<p>„Also was ist?“, fragte John.</p>
+<p>„Ich bringe euch auf den neusten Stand und der ist nicht gerade beruhigend. Dumbledore wird sterben.“, sagte Severus.</p>
+<p>Seine Frau und sein Sohn sahen kurz an.</p>
+<p>„Na ja, er ist ja auch schon fast hundertfünfzig.“, meinte John dazu.</p>
+<p>„John, keine Witze, dazu bin ich gerade nicht in Stimmung. Wir wissen, dass Voldemort seinen Geist in sieben Teile zerstückelt hat. Er hat sieben Horcruxe erschaffen, die ihn schützen, wenn sein realer Körper zerstört wird. Daher die scheinbare Unsterblichkeit. Albus hat versucht einen dieser Seelenteile zu vernichten und wurde dabei schwer verletzt.“</p>
+<p>„Sieben Horcruxe?“, sagte John überrascht. „Okay, einer, aber gleich sieben? Da hat einer aber ganz viel Angst vor dem Sterben.“</p>
+<p>„Das macht ihn auch gefährlicher. Sein Irrsinn rührt mit ziemlicher Wahrscheinlichkeit daher. Das heißt auch, dass wir unseren Plan ändern müssen, denn solange diese Dinger existieren können wir ihn nicht töten. Jetzt, wo wir Gewissheit haben.“</p>
+<p>„Und wie kriegen wir das hin? Die Teile könnten ja überall versteckt sein.“, sagte Jennifer.</p>
+<p>„Zwei sind schon zerstört. Der von Albus und das Tagesbuch von Tom Riddle, das Potter in seinem zweiten Schuljahr vernichtet hat. Bleiben noch fünf. Ich und Albus versuchen herauszufinden wo die restlichen versteckt sind. Ihr bereitet alles vor, dass wir einsatzbereit sind. Ich fürchte, uns läuft die Zeit davon.“</p>
+<p>„Und da fragt er sich, warum ihn die Jungs den General nennen.“, bemerkte John beiläufig zu seiner Mutter.</p>
+<p>Severus verdrehte nur genervt die Augen. Er war kein gottverdammter General! Er tat nur, was getan werden musste. Wie oft hatte er denn für Albus die Drecksarbeit erledigt? Nein, er war ganz bestimmt kein General.</p>
+<p>John erhob sich und ging nach draußen.</p>
+<p>„Was hast du da?“, fragte Jennifer.</p>
+<p>„Was?“, fragte er zurück.</p>
+<p>Jennifer nahm seine Hand und besah die Narbe an seinem Handgelenk.</p>
+<p>„Das ist nichts.“, sagte Severus.</p>
+<p>„Du sollst mich nicht anlügen.“, sagte Jennifer ernst. Sie merkte eben alles.</p>
+<p>„Das ist von einem Unbrechbaren Schwur. Narzissa Malfoy will, dass ich ihren Sohn vor Voldemort schütze.“</p>
+<p>„Sag mal, bist du wahnsinnig geworden?“, fragte Jennifer ihn.</p>
+<p>„Vielleicht.“, gab Severus zu. „So  was schlägt man nicht einfach ab. Schon gar nicht der Frau deines besten Freundes.“</p>
+<p>Jennifer schüttelte den Kopf als wolle sie ihn fragen, ob er denn noch alle Nadeln an der Tanne habe.</p>
+<p>„Wie lange wird er noch dein Freund sein?“, fragte sie ihn. „Wie lange, wenn wir erst mal gegen Voldemort ziehen?“</p>
+<p>Severus wusste natürlich, dass sie verflucht nochmal recht hatte, aber das würde er ihr auf gar keinen Fall sagen. Nicht jetzt zumindest.</p>
+<p>„Manchmal bist ein richtiger Vollidiot.“, sagte sie zu ihm als habe sie seine Gedanken erraten. „Da könnte ich dich pausenlos schlagen!“</p>
+<p>„Ich werde auf mich aufpassen.“, antwortete Severus kleinlaut.</p>
+<p>„Wenn du mir wegen so einem Mist stirbst, dann wirst du mich kennen lernen, Severus Snape, hast du das verstanden?!“, schimpfte sie ihn aus.</p>
+<p>„Natürlich, Ma'am.“, gab er ehrfürchtig zurück.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57543604">Chapter 5</a>: Verteidigung gegen die Dunklen Künste
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Die Zeit bis zu Beginn des neuen Schuljahres verging für Severus wie im Fluge. Kein Wunder, hatte er nebenbei doch noch genug anderes um die Ohren.</p>
+<p>Am Abend des großen Festessens saß Severus mit Dumbledore im Hinterzimmer der Halle. Eine Art Aufenthaltsraum für die Lehrkräfte. Er schnitt Albus die Bandagen ab. Sein schnelles Eingreifen und etwas alchemistische Fachexpertise hatten dieses Etwas in seiner Hand zumindest vorübergehend gestoppt. Er wollte sich besser gar nicht ausmalen wie Dumbledores Zustand in einem Jahr wäre. Die Hand war jedoch immer noch schwarz. Dieses Zeug, was immer es war, kroch unter seiner Haut entlang und befiel ihn wie ein Parasit aus irgendeinem Horrorfilm. So etwas hatte Severus noch nie gesehen. Unvorstellbar dass das in diesem Horcrux gefangen war.</p>
+<p>„Ich denke, Sie sollten die Hand trotzdem so wenig wie möglich bewegen.“, sagte Severus. „Muskelkontraktionen scheinen es zu reizen.“</p>
+<p>Er hatte ihm vorgeschlagen die Hand zu amputieren, doch Albus lehnte dankend ab. Severus konnte es ihm nicht verübeln. Die Chance das sie damit dieses Ding loswurden schätzte er nicht höher als fifty-fifty ein.</p>
+<p>Gerade als Severus fertig war brach ein Patronus durch die Wand des Zimmers. Es war ein vierbeiniges Etwas ohne Form.</p>
+<p>„Ich habe Harry gefunden. Bitte schicken Sie jemanden, um ihn abzuholen.“, sprach die Stimme von Nymphandora Tonks.</p>
+<p>„Severus, würden Sie sich darum kümmern?“, fragte Albus.</p>
+<p>„Natürlich.“, sagte Severus und ging davon.</p>
+<p>Er hatte sich schon gefragt wo Potter blieb. In seinem Kopf hatte er sich schon ausgemalt wie der Junge zu irgendeinem übereifrigen Abenteuer aufgebrochen war oder irgendwo von Todessern in die Enge getrieben wurde. Severus hatte Albus vor Beginn des Schuljahrs schon öfter gesagt, dass er den Hogwarts-Express für nicht sicher genug hielt. Das Ministerium hatte nach dem, was in der Mysteriumsabteilung passiert war, die Sicherheitsmaßnahmen überall erhöht. Aber nein, Harry Potter musste mit dem Zug nach Hogwarts kommen, weil es so ja am natürlichsten sei. Das war wieder eine Angelegenheit bei der er Albus gern gewürgt hätte.</p>
+<p>Als er am unteren Tor des Schlosses, das nach Hogsmead führte, ankam wartete Potter mit Tonks auf ihm. Der Junge war völlig blutverschmiert. Wie schaffte er das nur immer?</p>
+<p>„Was ist denn mit Ihnen passiert, Potter?“, fragte er und öffnete das Tor.</p>
+<p>Harry schwieg und funkelte ihn nur böse an, fast so als sei er es persönlich gewesen, der ihm die Nase gebrochen hatte.</p>
+<p>„Danke, Severus.“, sagte Tonks.</p>
+<p>Severus nickte nur schweigend und führte Potter nach oben. Der Junge warf ihm von der Seite immer wieder Blicke zu. So langsam ging Severus das auf die Nerven.</p>
+<p>„Also schön, Potter, was habe ich Ihrer Meinung nach verbrochen?“, fragte Severus.</p>
+<p>„Sie? Gar nichts.“, antwortete der Junge schnippisch.</p>
+<p>„He, nicht in diesem Ton!“, ermahnte ihn Severus.</p>
+<p>Potter blieb unvermittelt stehen.</p>
+<p>„Sie haben gar nichts getan!“, spie Harry aus. „Nichts außer Sirius Black zu reizen und dafür zu sorgen, dass ihre Freunde ihn umbringen, aber sonst haben Sie gar nichts getan!“</p>
+<p>Potter stampfte wutentbrannt an ihm vorbei. Severus brauchte einen Augenblick um diese Anschuldigung zu verdauen. Sie traf ihn bis ins Mark. Darauf fiel ihm nicht einmal ein zynischer Spruch ein, um Potter zu kontern – und das ärgerte ihn wiederum wahnsinnig.</p>
+<p>Er machte Severus für den Tod von Sirius Black verantwortlich? Fein, das taten ja ohnehin seit Wochen alle möglichen Menschen. Warum also nicht einer mehr? Das fiel auf seiner Liste der unmöglichen Anschuldigungen ja gar nicht mehr auf.</p>
+<p>Severus stiefelte Potter hinterher. Sein innerer Lehrer hätte ihm am Liebsten wegen irgendwelcher Trivialitäten Punkte abgezogen, aber Severus hatte gar nicht die Lust dazu. Schön, sollte Potter halt glauben er sei an allem, was letztes Jahr passiert war, schuld. Das machte jetzt auch nichts mehr.</p>
+<p>Severus rauschte an Potter am großen Eichenportal vorbei zurück in die große Halle. Das Fest hatte bereits begonnen und Dumbledore hielt seine übliche Eröffnungsrede. Severus ließ sich auf seinem angestammten Platz nieder und knurrte in sich hinein.</p>
+<p>„Kommen wir zu den diesjährigen Veränderungen im Kollegium. So bin ich hocherfreut dieses Jahr für das Fach Zaubertränke Professor Slughorn begrüßen zu dürfen!“, sagte Dumbledore.</p>
+<p>Slughorn, der neben Albus saß erhob sich und verbeugte sich feierlich so weit es sein Bauch zuließ. Severus hatte ihn deutlich jünger in Erinnerung. Mit deutlich mehr Haaren auf dem Kopf und auch deutlich weniger Bauch.</p>
+<p>Die Schüler klatschten verhalten und steckten die Köpfe zusammen. Severus wusste auch genau warum. Wenn Slughorn Zaubertränke gab, wer gab dann wohl den Unterricht für Verteidigung gegen die Dunklen Künste? Einige dürften schon schlimmes ahnen.</p>
+<p>„Das Fach für Verteidigung gegen die Dunklen Künste besetzt dieses Jahr Professor Snape.“, eröffnete Dumbledore den anwesenden Schülern.</p>
+<p>Auf drei Tischen nahezu entsetzte Gesichtsausdrücke und vorsichtiges Klatschen bei den Slytherins. Severus machte sich nicht die Mühe extra aufzustehen. Er kannte ja seinen Stand unter der Schülerschaft selbst nur zu gut.</p>
+<p>„Ähm ja.“, machte Dumbledore als sei er selbst etwas verunsichert. „Wie ihr sicher alle gehört habt sind Lord Voldemort und seine Todesser auf freiem Fuß. Ich muss euch ermahnen diese Situation äußerst ernst zu nehmen. Das Ministerium hat derweil die Sicherheitsmaßnahmen in Hogwarts verstärkt und Auroren zu unserem Schutz abgestellt. Das bedeutet jedoch auch, dass niemand mehr ohne Begleitung Hogwarts betreten oder verlassen darf. Besuche von außen benötigen nun eine mehrtägige Anmeldung. Das wäre erst einmal alles.“</p>
+<p>Dumbledore setzte sich und wirkte sichtbar müde. Severus hatte keinen Hunger nach alldem. Er hätte niemals geglaubt, dass die Beschimpfung des pubertierenden Teenagers ihn je so treffen könnte. Immerhin war er das ja gewöhnt. Das ihn das so nahe ging zeigte nur, dass er eben doch mehr für den Jungen empfand als nur den üblichen Potter-Groll. Natürlich hätte er das niemals offen zugegeben.</p>
+<p> </p>
+<p>-------------------------------------</p>
+<p> </p>
+<p>Severus' erste Unterrichtsstunde in Verteidigung gegen die Dunklen Künste hatte er ausgerechnet bei den Sechstklässlern. Potters Klasse. Er war nicht nervös in dem Sinne, aber das war was anderes als in seinem miefigen Keller zu hocken und den explodierenden Kesseln unfähiger Schüler auszuweichen.</p>
+<p>Der Raum für Verteidigung gegen die Dunklen Künste lag im Zweiten Stock. Ebenso wie Severus neues Büro. Er hatten sich so an die beengten Verhältnisse in den Kerkern gewöhnt, dass ihm seine jetzigen Räumlichkeiten fast schon zu groß erschienen.</p>
+<p>Nachdem Dumbledore ihm eröffnet hatte, dass er diese neue Stelle bekam war Severus zunächst ungläubig. Hatte der alte Mann doch selbst jahrelang verhindert, dass Severus auch nur in die Nähe der Unterrichtsräume kam. Er hatte einmal zu ihm gesagt, dass er nicht wolle, dass Severus in alte Gewohnheiten zurückfalle. Natürlich war das nichts als eine Ausrede von Albus. Er wusste genauso gut wie Severus, dass er seine jugendliche Faszination für das Thema schon längst beiseite geschafft hatte. Allerdings hatte Severus schon immer einen eher einzigartigen Blick auf die Magie. Etwa unterschied er grundsätzlich nicht in helle und dunkle Kunst. Alles war Magie. Selbst mit einem harmlosen Kitzelfluch hätte man jemanden töten können, wenn man das gewollt hätte. Es lag wie so oft im Auge des Betrachters.  </p>
+<p>Jetzt hier vor der Klasse zu stehen warf jedoch jede Theorie über den Haufen. Unterricht war in der Regel knallhartes improvisieren. Da half einem kein Buch dabei das zu lernen.</p>
+<p>Die Schüler blickten ihn an. Keiner sagte etwas. Viel mehr lag ein „Oh je, wer weiß was er jetzt mit uns anstellt!?“ in ihren Augen. Das es die meisten seiner Schüler wegen ihm vor Zaubertränke grauste war ihm ja bekannt. Ihn jetzt auch noch hier erdulden zu müssen, wo er einen Zauberstab in der Hand hatte war für viele wohl der reinste Alptraum.</p>
+<p>Severus räusperte sich.</p>
+<p>„Ich sage Ihnen gleich, ich bin ebenso überrascht wie Sie mich hier zu sehen.“, sagte er, um sie Stille zu durchbrechen. Die Schüler sahen sich gegenseitig an als wüssten sie nicht, was er da redete.</p>
+<p>„Das Fach Verteidigung gegen die Dunklen Künste an dieser Schule ist ja geprägt von einer recht unsteten Besetzungsliste und es ist wahrlich ein Wunder, dass Sie bei diesem Chaos überhaupt etwas gelernt haben. Ich kann Ihnen allerdings versprechen, dass ich mich überhaupt nicht verändert habe.“, sagte Severus.</p>
+<p>Wieder blickten die Schüler sich gegenseitig an.</p>
+<p>„Die Dunklen Künste, wenn man sie denn so nennen will, sind einem steten Wandel unterworfen. Mehr als jede andere Magieschule. Daher ist es natürlich unverzichtbar zu wissen wie man ihr möglichst effektiv begegnet. Dabei ist es egal, ob Sie Kreaturen oder Flüche abwehren. Das Prinzip verändert sich nicht.“, sagte Severus. „Longbottom, kommen Sie her.“</p>
+<p>Neville Longbottom, der in seinem Zaubertrankunterricht vor allem für seine Unfähigkeit berühmt war, machte große Augen und brachte kein Wort heraus. Viel mehr sah er so aus als würde er gleich in Ohnmacht fallen. Die Schülerin neben ihn rempelte ihn mit den Ellenbogen an und er erhob sich langsam. Er kam so vorsichtig auf Severus, dass man glauben konnte er habe es mit einem ganz besonders gefährlichen Tier zu tun.</p>
+<p>„Unser Freund Mister Longbottom hier, die größte, wandelnde Katastrophe, die ich je in Zaubertränke unterrichtet habe. Aber ich habe mir sagen lassen, er hat andere Talente.“, sagte Severus.</p>
+<p>Longbottom atmete tief ein und schien die Luft anzuhalten.</p>
+<p>„Nehmen wir mal an ich wäre ein böser, böser Mensch – was ich natürlich nicht bin – und ich würde sie in tiefster Nacht überfallen wollen, was würden Sie tun?“, fragte Severus.</p>
+<p>„Ähm ...“, machte Longbottom. „Ähm … weglaufen?“</p>
+<p>Einige in der Klasse lachten.</p>
+<p>„Nicht nur das, habe ich gehört.“, entgegnete Severus. „Welchen Fluch würden Sie anwenden? Ich will Ihnen schließlich an die Gurgel gehen.“</p>
+<p>„Ich würde Sie entwaffnen? Und dann vielleicht weglaufen?“, fragte Neville unsicher.</p>
+<p>Tatsächlich wirkte er als würde er genau das jetzt am Liebsten gleich tun.</p>
+<p>„Weglaufen ist natürlich immer eine Option, wenn der Kampf aussichtslos ist, aber was, wenn Sie keine Chance haben zu entkommen? Sie müssen mich unschädlich machen!“</p>
+<p>Longbottom blickte hilfesuchend in die Klasse. Granger hob andeutungsweise die Hand, doch Severus ignorierte sie. Er stellte sich vor Longbottom und breitete die Arme aus.</p>
+<p>„Machen Sie mich unschädlich!“, forderte Severus ihn auf.</p>
+<p>Longbottom sah ihn an als sei er verrückt geworden.</p>
+<p>„Nehmen Sie ihren Zauberstab und machen Sie mich unschädlich!“, sagte Severus.</p>
+<p>Longbottom trat von einem Fuß auf den anderen und Severus konnte sehen wie er mit seinem Mund still das Wort „Scheiße“ formte.</p>
+<p>„Ich verspreche Ihnen, dass ich Ihnen keine Punkte abziehe und Sie auch nicht nachsitzen müssen.“, sagte Severus.</p>
+<p>Zögernd hob Longbottom seinen Zauberstab.</p>
+<p>„Stupor!“, rief Longbottom.</p>
+<p>Severus wehrte den Schockzauber mit einer Handbewegung ab und Longbottom warf sich auf den Boden wie ein Soldat im Kreuzfeuer. Der Fluch traf die Wand.</p>
+<p>„So kann man's natürlich auch machen.“, kommentierte Severus. „Was ich mit dieser kleinen Demonstration sagen will ist, ihr müsst immer bereit sein. Einfacher ist das natürlich, wenn man den Fluch nicht erst aussprechen oder mit dem Zauberstab herumwedeln muss. Ungesagte Flüche sind schwieriger als die normalen Versionen, da sie mehr Konzentration erfordern. Longbottom, liegen Sie da nicht auf dem Boden herum, sondern setzen Sie sich!“</p>
+<p>Longbottom kletterte vom Boden hinter seinen Tisch als habe er Angst noch einen Fluch um die Ohren gefeuert zu bekommen.</p>
+<p>„Die Anwendung ungesagter Flüche erfordert ein ebenso ein hohes Maß an mentaler Stärke. Wie Sie vielleicht wissen ist Ihr Zauberstab nichts anderes als eine Fokussierungshilfe. Sie lenken dadurch und die zusätzlich aneinander gereihten Worte lediglich ihre magischen Kräfte in die Bahnen, die sie wollen. Bei einem ungesagten Zauber fällt diese Hilfe komplett weg. Sie müssen also lernen ihre Kräfte selbst zu steuern. Daher beginnen wir mit etwas einfachen, wie etwa einem Schwebezauber. Konzentrieren Sie sich auf einen Gegenstand und stellen Sie sich für das Erste die sonst von Ihnen gesprochenen Worte und Zauberstabbewegungen vor.“, erklärte Severus.  </p>
+<p>Die Schüler suchten sich alle einen Gegenstand von ihrer Bank aus wie Federn oder Stifte und versuchten sich darauf zu konzentrieren. Es wurde ungewöhnlich still, während sie das taten. Nur ab und zu war mal das entnervte Stöhnen einzelner Schüler zu hören, weil sich bei ihnen nichts rührte. Severus sah bei dem einen oder anderen wie sich ihre Gegenstände wenigstens minimal von ihren Bänken hoben. Für sie musste es so sein als seien sie wieder Erstklässler und würden in Zauberkunst wutscheln und wedeln. Granger konzentrierte sich so verbissen auf die Schreibfeder vor sich, dass Severus ihre Zähne knirschen hören konnte als er an ihr vorbei ging. Sie war sicher sauer, weil das etwas war, das ihr kein Buch beigebracht hatte.</p>
+<p>Als die Stunde schließlich endete atmete die Klasse aus als wären sie froh von dieser unmöglichen Aufgabe erlöst zu sein. Sie packten ihre Sachen zusammen und verließen das Zimmer.</p>
+<p>„Puh.“, machte Severus und lehnte sich gegen seinen Pult. „Das wird ein hartes Stück Arbeit.“</p>
+<p>Es klopfte vorsichtig am Türrahmen. Als Severus hinsah entdeckte er Minerva.</p>
+<p>„Ich wollte mich bei Ihnen entschuldigen.“, sagte sie.</p>
+<p>„Wofür?“, fragte Severus.</p>
+<p>„Wegen dem, was ich letztes Jahr zu Ihnen gesagt habe. Ich wusste nicht, ob ich Ihnen noch vertrauen kann.“, sagte Minerva leise.</p>
+<p>Severus antwortete nichts darauf, sondern sah aus dem Fenster.</p>
+<p>„Ich weiß natürlich, dass Sie nicht an Sirius' Tod schuld sind. Wir wissen das alle.“</p>
+<p>Severus wandte seinen Blick ab und sah sie an.</p>
+<p>„Wird ja auch mal Zeit, dass Sie das begreifen.“, sagte er.</p>
+<p>„Sie haben Albus das Leben gerettet. Dafür danke ich Ihnen, Severus.“, antwortete Minerva.</p>
+<p>„Hmm.“, machte Severus. Nur hatte er Dumbledore das Leben nicht gerettet, sondern es nur für einige Monate verlängert.</p>
+<p>Minerva atmete tief und ging aus dem Raum. Severus sah ihr nach.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57543628">Chapter 6</a>: Erster Versuch
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Die ersten Wochen des Schuljahres verliefen für Severus erstaunlich ruhig. Vielleicht zu ruhig.</p>
+<p>Entgegen aller Erwartungen bekam er keine Flut von wütenden Elternbriefen für seinen neuen Unterricht. Draco verhielt sich ebenfalls nicht besonders auffällig oder machte Anstalten auf Dumbledore loszugehen. Selbst Potter hatte nur seine übliche große Klappe. Das einzige, was Severus dieser Tage verwirrte war, dass Slughorn den Jungen ständig lobte wegen seiner außerordentlichen Leistungen im Zaubertrankunterricht. Entweder war Horace Niveau während des Ruhestands extrem abgeflacht oder etwas ging nicht mit rechten Dingen zu. Aber warum sollte jemand – ob nun Slughorn oder Dumbledore – Potter ausgerechnet in Zaubertränke bevorteilen? Für Severus blieb es ein Rätsel, aber er würde schon noch dahinter kommen was sich da abspielte.</p>
+<p>Und so zog selbst Halloween an ihnen vorbei, ganz ohne Zwischenfälle. Severus kümmerte sich in dieser Zeit um Dumbledore und versuchte herauszufinden, was dieses Ding war, das in diesem Horcrux lebte. In seiner umfangreichen Büchersammlung fand er jedoch nichts Vergleichbares. Selbst in der verbotenen Abteilung der Bibliothek von Hogwarts wurde er nicht fündig. Vermutlich waren sie tatsächlich die Ersten, die mit so etwas je zu tun hatten.</p>
+<p>„Machen Sie sich nichts daraus, Severus.“, sagte Dumbledore immer, wenn Severus offen über dieses Etwas in seinem Arm nachgrübelte. „Wir alle finden irgendwann unseren Meister.“</p>
+<p>Diese Antwort stellte Severus jedoch nicht im Geringsten zufrieden. Es musste eine Erklärung geben warum manche dieser Seelenteile sich offenbar richtig physisch manifestierten – so wie der Tom Riddle in der Kammer des Schreckens – und andere die Gestalt dieser schwarzen Masse hatten. Eines war sicher, wenn sie weitere Horcruxe finden und zerstören wollten, dann konnten sie jeder Zeit wieder diesem Etwas begegnen und darauf wollte Severus vorbereitet sein.</p>
+<p>So verging die Zeit, ohne das Severus etwas Nützliches tun konnte. Bis zu dem Tag an dem Minerva völlig überhastet in sein Büro gestürmt kam. Severus war gerade dabei einige überfällige Arbeiten zu korrigieren und sah überrascht auf.</p>
+<p>Minerva trug noch ihren karierten Reisemantel und ihre Jagdmütze, die sie immer ein wenig Sherlock-Holmes-mäßig erscheinen ließen. Sie klopfte sich Schnee und Matsch ab.</p>
+<p>„Severus, kommen Sie schnell!“, sagte sie und ohne auf ihn zu warten machte sie sich schon wieder davon.</p>
+<p>Severus sprang auf und hastete ihr hinterher.</p>
+<p>„Darf ich fragen, was los ist?“, sagte er.</p>
+<p>„Katie Bell wurde von einer Art Fluch getroffen.“, entgegnete Severus.</p>
+<p>Minerva antwortete ihm nicht sondern führte ihn in den Krankenflügel. Dort lag die Schülerin in einem Bett umringt von Freunden sowie Hagrid und Madam Pomfrey.</p>
+<p>„Aus dem Weg! Los, macht das ihr weg kommt!“, ging Severus die Menge an, die sich hier versammelt hatte.</p>
+<p>Katie lag wie unter Krämpfen da und wand sich voller Schmerzen. Severus hätte schwören können, dass es sich um irgendeine Art verstärkten Cruciatusfluch handelte. Man konnte die Schmerzen damit bekanntlich steigen bis das Opfer einfach daran starb. Der hier schien aber verpfuscht worden zu sein.</p>
+<p>„Poppy, holen Sie die Riemen. Das hier wird jetzt unschön, schicken Sie die anderen weg!“, wies Severus sie an.</p>
+<p>Hagrid und Minerva scheuchten die Schüler aus dem Krankenflügel, während Pomfrey ihm mehrere dickte Lederriemen brachte. Mit den Riemen schnallte er Katie an das Bett. Einer der Gürtel war mit einem Stück Holz versehen, den er ihr in den Mund zwischen die Zähne klemmte und festschnallte damit sie nicht erstickte bei der Prozedur. Severus legte ihr die Hand auf die Stirn und drückte ihren Kopf nach unten während er ihr einen Trank zur Schmerzlinderung einflößte. Er wollte sie schließlich nicht mehr quälen als notwendig.</p>
+<p>Normaler Weise konnte man solche Flüche nur aufheben indem man den Anwender unterbrach. Da es jedoch keinen Anwender gab musste er ihn künstlich unterbrechen. Das hieß, dass er ihr als Gegenpol zum aktuellen Fluch das gleiche antun musste. Severus zog seinen Zauberstab und richtete ihn auf Katies Brust.</p>
+<p>„Crucio!“, sagte er und sie wand sich trotz, dass sie sie festgeschnallt hatten. Severus hielt den Zauber einige Sekunden aufrecht. Ihr ganzer Körper erzitterte vor Schmerzen. Sie hätte geschrien, wenn sie nicht das Stück Holz im Mund gehabt hätte. Schließlich erstarben ihre Bewegungen und sie begann wieder normal zu atmen. Severus sah wie ihr Tränen die Wange hinunter liefen.</p>
+<p>„Alles gut, Miss Bell.“, sagte Severus und lockerte die Riemen. „Poppy, kümmern Sie sich um sie. Sie braucht jetzt vor allem Ruhe.“</p>
+<p>Er wandte sich von ihr ab und sah von Hagrid zu Minerva.</p>
+<p>„Wie hat Sie das abbekommen?“, fragte er sie eindringlich.</p>
+<p>„Kommen Sie, wir haben die Schüler noch nicht befragt.“, sagte Minerva.</p>
+<p>Sie führte ihn in ein Klassenzimmer unweit des Krankenflügels. Als Severus eintrat stöhnte er unwissentlich laut auf. Es waren Harry Potter, Ron Weasley, Hermine Granger und eine Schülerin, deren Name ihm entfallen war. Sie hielt eine Pappschachtel in ihren Händen und schien völlig durch den Wind. Das Trio jedoch war gefasst.</p>
+<p>„Warum sind es immer Sie drei, die in so etwas immer verwickelt sind?“, fragte Severus.</p>
+<p>„Ähm, also Professor Snape, das frage ich mich auch schon lange.“, gab Weasley zu bedenken.</p>
+<p>„Was ist passiert?“, fragte Severus und verschränkte die Arme vor der Brust.</p>
+<p>Die andere Schülerin reichte ihm die Pappschachtel.</p>
+<p>„Katie sagte sie solle das jemanden geben. Dann hat sie es aber auf gemacht.“</p>
+<p>Severus öffnete die Schachtel und sah darin ein Amulett. Sicher war es verhext worden. Er zog den Zauberstab und unterzog es einigen magischen Tests. Wer immer dieses Ding verzaubert hatte war ein mittelmäßiger Zauberer und ein Idiot obendrein.</p>
+<p>„Wem sollte sie es geben?“, fragte Minerva, während Severus das Amulett begutachtete.</p>
+<p>„Professor Dumbledore.“</p>
+<p>„Aber wer könnte …?“, fragte Minerva eher sich selbst. „Nun danke, Sie können gehen.“</p>
+<p>Das Mädchen ging, doch das Trio blieb stehen.</p>
+<p>„Es war Malfoy!“, sagte Harry Potter plötzlich.</p>
+<p>„Ach was, Sherlock?“, rutschte es Severus heraus. „Und wie kommen Sie zu dieser Annahme, Potter? Oder sind das wieder Ihre einzigartigen Gaben, die nur der Auserwählte hat?“</p>
+<p>„Intuition.“, sagte Potter.</p>
+<p>„Weil die sich bei Ihnen ja noch nie geirrt hat, richtig?“, fragte Severus schnippisch.</p>
+<p>„Es reicht! Beide!“, ging Minerva dazwischen, bevor Potter antworten konnte. „Sie gehen in ihre Gemeinschaftsräume. Das wäre alles!“</p>
+<p>Das Trio wagte es nicht ihrer Hauslehrerin zu widersprechen und verließ den Raum.</p>
+<p>„Ich nehme das mit ins Labor.“, sagte Severus und deutete auf die Schachtel. „Aber eines kann ich Ihnen jetzt schon sagen, das hat weder der Dunkle Lord noch irgendein Todesser verzaubert, sonst wäre Katie Bell jetzt tot.“</p>
+<p>Severus verließ Minerva und steuerte die Kerker an. Auf dem Weg dahin traf er auf Draco, der wie immer mit seiner Clique unterwegs war. Als er Severus sah hörte er plötzlich auf mit seinen Kumpels herum zu flaxen und wurde sehr ernst.</p>
+<p>„Mister Malfoy, auf ein Wort!“, sagte Severus.</p>
+<p>Draco löste sich aus der Gruppe und kam auf ihn zu.</p>
+<p>„Was ist, Professor?“, fragte er.</p>
+<p>„Nicht hier.“, sagte Severus leise und ging mit ihm in einen leeren Raum. „Damit das gleich klar ist, ich weiß von deinem Auftrag.“</p>
+<p>„Na und?“, sagte Draco und versuchte es lässig klingen zu lassen.</p>
+<p>„Na und? Für einen Auftragskiller ist das aber keine gute Mentalität.“, sagte Severus und reichte ihm die Schachtel mit dem Amulett. „Ich tu dir den Gefallen und lasse das verschwinden.“</p>
+<p>Draco sah von der Schachtel zu Severus und wieder zurück. Er wurde plötzlich ganz klein und still.</p>
+<p>„Ich kann dir helfen.“, sagte Severus.</p>
+<p>„Ich brauche deine Hilfe nicht.“, entgegnete Draco. „Der Dunkle Lord hat mich auserwählt!“</p>
+<p>„Ja, und wenn du scheiterst, dann tötet er nicht nur dich, sondern auch deine Familie? Willst du das?“, fragte Severus.</p>
+<p>„An meiner Familie kann man eh nichts mehr kaputt machen.“, sagte Draco trotzig.</p>
+<p>„Spiel hier nicht den starken Mann, Draco! Das ist todernst!“</p>
+<p>„Ich schaffe das allein!“, giftete der Junge ihn an.</p>
+<p>Ohne ein weiteres Wort stiefelte Draco aus dem Raum. Warum waren die Kinder in diesem Alter nur so verdammt dickköpfig?</p>
+<p>Severus hatte geschworen auf Draco aufzupassen und wenn das hieß ihn vor allem vor seiner eigenen Dummheit zu schützen, dann würde er das tun. Doch er wusste, dass es nur eine Frage der Zeit war. Draco hatte nur diese eine Chance, danach wären er und alle die ihm nahe standen Futter für die Würmer.</p>
+<p> </p>
+<p>-------------------------------------</p>
+<p> </p>
+<p>Am Abend stand Severus in Dumbledores Büro und verband dem alten Mann seinen Arm. Die schwarze Masse unter seiner Haut krabbelte jede Woche einige Zentimeter und hatte nun schon fast seine Schulter erreicht.</p>
+<p>Minerva saß in einem der Sessel am Kamin.</p>
+<p>„Albus, wir müssen etwas tun!“, sagte sie eindringlich.</p>
+<p>„Das war ein ziemlich halbherziger Anschlagsversuch. Wenn Sie mich fragen ist unser Attentäter nicht gerade bei der Sache. Wenn ich Sie wäre, Minerva, würde ich mir mehr Sorgen um die Schüler machen. Jemand der so schlecht zielt erschießt sicher irgendwann den Falschen.“</p>
+<p>Seit Severus' Besuch von Narzissa Malfoy bekommen hatte rang er damit, ob er Dumbledore einweihen sollte. Und nach dem Gespräch mit Draco hätte er das auch beinahe getan. Der Junge wusste nicht, was er da tat. Er war verblendet von Wut und  Trauer seit sein Vater im Gefängnis saß.</p>
+<p>„Aber Sie können das doch nicht so auf die leichte Schulter nehmen!“, sagte Minerva.</p>
+<p>„Warum? Weil mich jemand umbringen will? Wenn man davon absieht, dass ich sowieso schon tot bin, dann ist das bestimmt schon der sechsundfünfzigste Versuch von irgendjemanden mich töten zu wollen, wenn ich mich nicht verzählt habe.“</p>
+<p>Severus verband Albus' Arm fertig und sah die beiden an.</p>
+<p>„Severus, was sagen Sie eigentlich dazu?“, fragte Minerva. „Sie sind doch sonst nicht so still!“</p>
+<p>Ihm war ganz schlecht. Entweder er weihte Dumbledore ein und riskierte, dass Draco aufflog und aufgehalten wurde oder er ließ Draco machen und riskierte, dass der Junge scheiterte. Das war eine echt beschissene Wahl!</p>
+<p>„Ich glaube, ich muss ihnen beiden etwas beichten.“, sagte Severus. Er zog den Ärmel seines rechten Armes hoch und zeigte ihnen die Narbe an seinem Handgelenk.</p>
+<p>„Ein Unbrechbarer Schwur?“, fragte Albus überrascht.</p>
+<p>„Mit Narzissa Malfoy.“, erklärte Severus. „Draco ist der Attentäter. Potters Intuition ist tadellos.“</p>
+<p>„Was? Aber … Sie?“, stammelte Minerva.</p>
+<p>„Voldemort hat Draco Malfoy zum Todesser gemacht. Und er hat ihm aufgetragen Sie zu töten, Albus. Seiner Mutter und auch mir war völlig klar, dass er das unmöglich bewerkstelligen kann.“, sagte Severus.</p>
+<p>„Und Sie haben zugestimmt ihn zu schützen?“, schloss Dumbledore.</p>
+<p>„Hören Sie, wenn Draco scheitert, dann stirbt nicht nur der Junge oder ich, sondern alle die ihm nur im Geringsten nahe stehen. Der Dunkle Lord hat kein Herz für Versager.“</p>
+<p>„Ich vermute das ist eine Art Bestrafung für Lucius' Scheitern im Ministerium.“, sagte Albus.</p>
+<p>„Richtig. Lucius sitzt in Askaban. Da kommt er nicht an ihn heran. Aber seine Familie, die steht ihm zur Verfügung.“, sagte Severus.</p>
+<p>„Was wollen Sie jetzt tun?“, fragte Dumbledore.</p>
+<p>„Sagen Sie es mir, Albus. Sie sind ja derjenige, der stirbt.“, antwortete Severus.</p>
+<p>„Ihnen bleibt nur eine Wahl und das wissen Sie.“, sagte Dumbledore. „Sie müssen mich umbringen.“</p>
+<p>„Das kann nicht Ihr ernst sein!?“, mischte sich Minerva ein.</p>
+<p>„Hören Sie zu.“, beschwor Albus sie. „Wenn Draco scheitert sterben er und Severus und wenn wir Draco aufhalten sterben sie ebenfalls. Und selbst wenn ihn nicht Voldemort erledigt, dann wird es der Unbrechbare Schwur an seinem Arm tun. Da hat Sie die gute Narzissa aber in eine Zwickmühle gebracht.“</p>
+<p>„Ist mir auch schon aufgefallen.“, bemerkte Severus.</p>
+<p>„Sie können unmöglich in Erwägung ziehen …!“, ereiferte sich Minerva.</p>
+<p>„Wenn die Zeit gekommen ist, Severus, dann müssen Sie mich töten. Ehrlich, es ist besser so. Ich will nicht wissen was dieser Horcrux oder gar die Todesser mit mir anstellen würden. Bei Ihnen kann ich mir wenigstens sicher sein, dass es schnell und schmerzlos passiert.“, sagte Dumbledore.</p>
+<p>Severus war damit alles andere als glücklich, aber jetzt, wo er es ihm endlich gesagt hatte, fühlte er sich befreit. Er hätte ihn ungern getötet, ohne zu wissen, dass das auch sein Wille gewesen wäre.</p>
+<p>„Ihr beide seid verrückt!“, sagte Minerva und erhob sich. „Verrückt!“</p>
+<p>Sie verließ das Büro und knallte die Tür hinter sich zu.</p>
+<p>„Sie wird darüber hinweg kommen.“, sagte Albus.</p>
+<p>Severus hoffte das wirklich, denn nichts war schlimmer als eine Minerva McGonnagal im Blutrausch.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57544831">Chapter 7</a>: Slughorns Party
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Am nächsten Morgen saß Severus vor dem Unterricht im Lehrerzimmer. Er überflog die neusten Meldungen im Tagespropheten. Wie es aussah ließ Scrimgeour als Minister den harten Auroren raus hängen und ging hart gegen Todesser oder die, die er dafür hielt vor. Nach der Schlappe mit Fudge wollte das Ministerium jetzt natürlich Stärke demonstrieren. Außerdem betonten sie gefühlt jeden zweiten Tag wie sehr sie hinter dem Auserwählten Harry Potter standen. Severus konnte es beinahe nicht mehr hören. Auserwählter hier, Auserwählter da! Das bekanntwerden des vermeintlichen Inhalts der Prophezeiung hatte Potter auf die Titelseiten der Zeitungen katapultiert, obwohl sie kurz vorher noch als Lügner diffamiert hatten.</p>
+<p>Minerva bedachte ihn die ganze Zeit mit einem finsteren Blick sagte aber kein Wort. Severus hoffte sie würde sich bald wieder einkriegen, es war ja schließlich nicht seine Schuld, dass Dumbledore dem Tode geweiht war.</p>
+<p>Slughorn betrat das Lehrerzimmer und machte eine ausschweifende Geste.</p>
+<p>„Liebe Kollegen“, sagte er. „wie einige von Ihnen vielleicht wissen veranstalte ich ab und zu ein paar kleine Geselligkeiten und ich würde mich wirklich außerordentlich freuen, wenn Sie zu meiner diesjährigen Weihnachtsfeier kommen würden.“</p>
+<p>Severus kannte Horace noch als seinen Hauslehrer als er selbst noch in Hogwarts war. Damals suchte er sich besondere Schüler aus, die er in seinen Slug-Club einlud. Eine Art persönlicher Beliebtheitsclub von Slughorn. Severus war nie Teil davon, hatte aber auch nie Interesse daran. Und im Grunde war das auch der Grund warum Horace Slughorn hier war. Vor fast fünfzig Jahren hatte er schließlich schon einmal einen ganz besonderen Schüler in diesen Club aufgenommen: Tom Riddle. Dumbledore hoffte, dass Riddle ihn in seine Pläne zu den Horcruxen irgendwie eingeweiht hatte. Ihn vielleicht die Standorte verraten hatte oder ähnliches. Severus sah diesbezüglich eigentlich schwarz. Slughorn war ein Geselligkeitstier und vor allem konnte er kaum ein Geheimnis für sich behalten. Hätte Riddle ihm irgendwas relevantes verraten, dann wäre es ihm sicher schon längst raus gerutscht.  </p>
+<p>„Vergessen Sie nicht jemanden mitzubringen, es ist schließlich Weihnachten.“, hickste Slughorn überschwänglich.</p>
+<p>Severus faltete die Zeitung zusammen und erhob sich. Er musste ohnehin zum Unterricht und konnte so zumindest Slughorn entkommen. Er hatte mit seinem alten Lehrer bisher kaum ein Wort gewechselt und ehrlich gesagt war es ihm auch unangenehm. Severus wusste noch was er für ein Idiot als Schüler war – und er war heute noch ein Idiot, wenn man es genau nahm. Fachlich konnte ihm kaum jemand das Wasser reichen, doch menschlich hatte er schon immer Probleme gehabt. Und Slughorn war jemand, der ihm deutlich zu sehr menschelte. Als Schüler hatte er oft schlimme Auseinandersetzungen mit ihm gehabt. Meist wegen seines Verhaltens. Wenn er ihn jetzt wieder um sich hatte fühlte Severus sich als wäre er wieder ein Teenager und wartete darauf das man ihm wegen seines unmöglichen Verhaltens Punkte abzog.</p>
+<p>Severus ging in seinen Unterrichtsraum, wo bereits die Sechstklässler auf ihn warteten. Sie waren immer noch bei den ungesagten Zaubern, doch immerhin schon beim deutlich praktischeren Teil. Viele Magier waren ohne ihren Zauberstab fast wie Invaliden. Ungesagte Zauber fühlten sich daher oft an als müsse man als Erwachsener das Laufen oder Sprechen neu lernen. Tatsächlich lernten die Schüler es verhältnismäßig schnell. Selbst Longbottom stellte sich hier recht gut an, wenn er denn mal vergaß, dass Severus im Raum war.</p>
+<p>Heute stellte er die Schüler paarweise auf. Sie sollten sich gegenseitig ungesagt entwaffnen. Das funktionierte auch bei den meisten.</p>
+<p>„Expilliarmus!“, hörte er dann doch jemanden sagen.</p>
+<p>Es war Potter.</p>
+<p>„Potter, was glauben Sie warum es ungesagte Zauber heißt?“, fragte Severus.</p>
+<p>„Das ist mir so raus gerutscht.“, sagte der Junge.</p>
+<p>„Sollte es aber nicht.“, kommentierte Severus.</p>
+<p>„Ja.“, knurrte Potter und rollte mit den Augen.</p>
+<p>„Ja, Sir.“, berichtigte Severus ihn.</p>
+<p>„Sie müssen mich nicht Sir nennen.“, antwortete Potter vorlaut.</p>
+<p>Severus verpasste ihm reflexartig einen Schlag auf den Hinterkopf. Der Junge verzog das Gesicht und Severus ging weiter.</p>
+<p>Am Ende der Stunde waren sie immerhin so weit, dass die meisten ihren ungesagten Entwaffnungszauber beherrschten. Nach der Stunde bekam Severus überraschenden Besuch von Minerva. Er bereitete sich schon darauf vor von ihr ein Donnerwetter zu hören wegen der Sache von gestern, doch erneut überraschte sie ihn.</p>
+<p>„Wären Sie bereit mich auf die Weihnachtsfeier von Horace zu begleiten?“, fragte sie.</p>
+<p>„Bitte was?“, sagte Severus völlig irritiert.</p>
+<p>„Sie haben schon richtig gehört.“, entgegnete Minerva.</p>
+<p>„Also ich … äh ...“</p>
+<p>„Sie können sich eh nicht drücken, schließlich hat er das gesamte Kollegium eingeladen.“, sagte Minerva.</p>
+<p>„Ich frage mich nur warum Sie damit zu mir kommen.“, antwortete Severus.</p>
+<p>„Zu wem denn sonst?“, fragte Minerva zurück.</p>
+<p>„Ich dachte nur Sie wären immer noch sauer.“</p>
+<p>„Oh, das bin ich auch. Sie und Albus bringen mich um meinen letzten noch vorhandenen Nerv! Aber ich bin auch eine Dame, wie Sie mal so schön bemerkten, und als solche kann ich eigentlich nur Sie fragen.“</p>
+<p>Severus starrte sie für einen Moment komplett abwesend an. Er schüttelte verwirrt den Kopf. Das erinnerte ihn an früher als die Mädchen die Jungs fragen mussten, ob sie mit einen gehen wollen. Dieses ganze zwischenmenschliche Theater brachte ihn ja immer aus der Fassung.</p>
+<p>„Sagen Sie einfach ja.“, forderte Minerva ihn auf.</p>
+<p>„Ja?“, machte Severus unsicher.</p>
+<p>„Schön, dann wäre das geklärt.“, sagte sie und ging aus dem Raum.</p>
+<p>Severus blieb völlig verunsichert zurück.</p>
+<p> </p>
+<p>-----------------------------------</p>
+<p> </p>
+<p>Als Severus am Weihnachtsabend Minerva im Flur vor Slughorns Büro traf hatte er sich extra etwas in Schale geworfen. Er trug Hemd und Krawatte über das er ein schwarzes Jackett geworfen hatte und dazu seine übliche schwarze Robe. Severus wollte wenigstens so tun als gehöre er hier her.</p>
+<p>„Sie hätten sich ruhig etwas fröhlicher kleiden können.“, sagte Minerva, die in einem grünen Kleid auf ihn wartete. Ihm fiel auf, dass es das selbe Kleid war, dass sie schon vor zwei Jahren auf dem Weihnachtsball trug.</p>
+<p>„Das ist fröhlich.“, antwortete Severus.</p>
+<p>Minerva reichte ihm ihren Arm und er ergriff ihn. Auch wenn es eigentlich sie war die ihn führte, denn Severus fühlte sich auf solchen Veranstaltungen immer gänzlich unwohl und wäre Minerva nicht gewesen, dann hätte er sich an diesem Abend wohl irgendwo in den Kerkern versteckt.</p>
+<p>Als sie Slughorns Party betraten schallte ihnen Musik entgegen. Dicker Dunst schwebte über der Feierlichkeit. Severus ließ seinen Blick durch die Menge schweifen. Er entdecke fast alle Lehrer außer natürlich Dumbledore. Die Schüler bestanden fast alle aus Horaces Slug-Club und deren Mitbringsel. Dazu hatte er wohl noch irgendwelche Bekannten eingeladen, die Severus aber alle nichts sagten. Er entdeckte auch Potter, Weasley und Granger. Natürlich umgab sich Slughorn mit den dreien. Ihr Ruhm sollte schließlich abfärben.</p>
+<p>„Minerva, schön Sie zu sehen.“, sagte Horace mit knallrotem Kopf und einem Glas Portwein in der Hand. „Ach, und Severus … schön, schön, ich muss Ihnen jemanden zeigen.“</p>
+<p>Slughorn packte Severus an der Schulter und schob ihn durch die Menge ausgerechnet zu Harry Potter.</p>
+<p>„Sie beide muss ich sicher nicht einander vorstellen.“, sagte Horace hocherfreut.</p>
+<p>„Hmm-hmm.“, machte Severus nur. Potters Blick huschte zwischen Severus und Slughorn hin und her.</p>
+<p>„Wussten Sie, dass Mister Potter hier der beste Schüler ist, den ich jemals in Zaubertränke unterrichtet habe?“, sagte Slughorn. „Er hat mir erst neulich einen völlig tadellosen Trank des lebenden Todes gebraut! Ich fürchte, er ist sogar besser als Sie, Severus, und das will was heißen!“</p>
+<p>„Ach was?“, fragte Severus und musterte Potter.</p>
+<p>„Ja!“, pflichtete Slughorn ihm bei. „Außerordentlich, nicht wahr? Selten so ein Naturtalent erlebt!“</p>
+<p>In Potters Blick lag etwas Unangenehmes. Nicht die übliche Verachtung mit der er Severus sonst bedachte. Viel eher schien ihm die Anwesenheit seines ehemaligen Zaubertranklehrers zu verunsichern. Severus ahnte ja schon lange das etwas mit Potters plötzlichen Wandel in dem Fach nicht stimmte. Sein Verhalten und Horace ausschweifende Erzählungen von Potters unglaublichen Talent ließen ihn erneut aufhorchen. Es war nicht logisch zu erklären wie Potter es in einem halben Jahr geschafft hatte Klassenbester zu werden, wo er doch in Severus' Unterricht gerade so das Mittelmaß geschafft hatte.  </p>
+<p>„Und Sie sind sich sicher, dass Mister Potter das ganz allein bewerkstelligt hat?“, fragte Severus.</p>
+<p>„Ich weiß, es ist schwer zu akzeptieren, dass es jemand so weit schafft ohne offensichtliche Hilfe, aber ich kann Ihnen versichern, dass Harry hier ein wahrer Meister seines Faches ist. Stimmt es nicht, Mister Potter?“, sagte Slughorn beschwipst.</p>
+<p>„Ähm, genau.“, sagte Potter.</p>
+<p>„Und so bescheiden.“, fügte Slughorn hinzu.</p>
+<p>„Horace, wenn Sie mich entschuldigen würden ...“, sagte Severus und wandte sich aus Slughorns Griff.</p>
+<p>Er ging durch die Menge zu dem Buffet und schenkte sich einen großen Scotch ein. Severus schüttelte in Gedanken den Kopf. Entweder war Slughorn komplett besoffen oder Potter hatte irgendeinen Weg gefunden ihn an der Nase herumzuführen. Klassenbester? Sogar besser als Severus? Das gehörte definitiv zu den Dingen, die schon rein physikalisch komplett unmöglich waren! Aber so was von!</p>
+<p>„Stimmt etwas nicht mit Ihnen?“, fragte Minerva, die sich zu ihm gesellte.</p>
+<p>„Können Sie mir erklären wie es Harry Potter geschafft hat in so kurzer Zeit so ungeahnte Fähigkeiten in der Alchemie zu entwickeln?“, fragte Severus und trank seinen Schnaps.</p>
+<p>„Unglaublich, nicht wahr? Vielleicht brauchte er nur einen etwas verständigeren Lehrer?“, sagte Minerva.</p>
+<p>Severus schüttelte energisch den Kopf.</p>
+<p>„Wenn ich eines weiß, dann das dieser Junge niemals über das Mittelmaß kommt! Lehrer hin oder her!“, sagte Severus.</p>
+<p>„Sie können ihm ruhig mal etwas Glück zugestehen.“, sagte Minerva.</p>
+<p>„Glück? Mit Glück hat das nicht das Geringste zu tun! Irgendetwas ist da mächtig faul und ich werde herausfinden was es ist!“</p>
+<p>„Jetzt seien Sie nicht so griesgrämig!“, sagte Minerva zu ihm. „Genießen Sie doch einfach die Feier.“</p>
+<p>Ein als Kellner angeheuerter Schüler brachte ihnen ein Tablett mit etwas das verdächtig nach den Hoden eines Tieres aussah.</p>
+<p>„Sind das etwa Drachenbällchen?“, fragte Minerva.</p>
+<p>„Ja, Ma'am.“, antwortete der Kellner.</p>
+<p>Minerva schnappte sich einige davon.</p>
+<p>„Das essen Sie nicht ernsthaft?“, fragte Severus sie.</p>
+<p>„Meine Mutter machte immer die besten Drachenbällchen weit und breit.“, erklärte Minerva.</p>
+<p>„Ihr verrückten Schotten.“, meinte Severus.</p>
+<p>„Sie war Irin.“, betonte Minerva und aß ihre gerösteten Drachenhoden mit einem Genuss wie ihn wohl nur wahre Kenner erfahren konnten.</p>
+<p>Severus bemerkte plötzlich einen Tumult weiter vorn. Der Hausmeister Filch zerrte jemanden am Kragen seines Umhangs wie einen Gefangenen zu Slughorn. Es war Draco.</p>
+<p>„Entschuldigen Sie mich.“, sagte Severus zu Minerva.</p>
+<p>„Ich habe diesen Schüler draußen beim herumlungern erwischt!“, knurrte Filch.</p>
+<p>„Aber, aber, doch nicht so grob. Es ist Weihnachten!“, sagte Slughorn, der inzwischen mehr als nur etwas beschwipst war.</p>
+<p>„Mister Filch, entschuldigen Sie, ich kümmere mich um diesen Schüler.“, sagte Severus.</p>
+<p>„Seien Sie nicht hart zu ihm.“, ermahnte ihn Slughorn.</p>
+<p>„Was ich mit meinen Schülern mache ist immer noch meine Sache, Professor.“, sagte Severus und packte Draco am Umhang. Er schob ihn nach draußen auf den Flur.</p>
+<p>„Was sollte das gerade?“, fragte Severus ihn.</p>
+<p>„Nichts.“, meinte Draco.</p>
+<p>„Ach komm, markier nicht den harten!“, sagte Severus und stieß ihn gegen die Wand.</p>
+<p>„Was geht dich an, was ich in meiner Freizeit mache?“, knurrte Draco ihn.</p>
+<p>„Jetzt hör mal zu ...“, sagte Severus scharf. „... die anderen beeindruckt es vielleicht, wenn du den harten Kerl spielst, aber bei mir kommst du damit nicht weit! Und sage ich dir nicht als Lehrer, sondern als dein Pate!“</p>
+<p>„Du brauchst mich nicht bemuttern!“, sagte Draco.</p>
+<p>„Doch, genau das muss ich, weil du dich nämlich aufführst wie ein Kind, dass den ernst der Lage nicht begreift!“</p>
+<p>Draco verdrehte genervt die Augen und sah zu Boden.</p>
+<p>„Mein Angebot steht noch.“, sagte Severus. „Ich kann dir helfen, aber du musst dir auch helfen lassen!“</p>
+<p>„Und warum sollte ich?“, fragte Draco stur.</p>
+<p>Severus drückte ihn gegen die Wand.</p>
+<p>„Ich habe deiner Mutter geschworen, dass ich dafür sorge, dass du das hier überlebst! Ich habe den Unbrechbaren geschworen! Wenn es nur darum ginge, dass du dich selbst umbringst wäre das nicht mein Problem, aber du ziehst da jeden mit rein, der dich liebt! Narzissa ist krank vor Sorge um dich und deinen Vater wegen alldem! Und du tust so als ginge dich das alles nichts an! Verflucht, benutze deinen Kopf!“</p>
+<p>Severus ließ ihn los und ging einige Schritte auf und ab.</p>
+<p>„Hat das Mutter so gesagt?“, fragte Draco.</p>
+<p>„Mehr als deutlich!“, antwortete Severus. „Du weißt, dass du die Aufgabe die dir der Dunkle Lord gestellt hat niemals fertigbringen kannst. Und Voldemort weiß das auch. Er weiß, dass er einen dummen Jungen auf eine Selbstmordmission geschickt hat. Wahrscheinlich sitzt er jetzt gerade da und lacht sich halb tot!“</p>
+<p>„Aber es ist meine Aufgabe.“, sagte Draco leise.</p>
+<p>„Glaubst du ernsthaft, es nützt deinem Vater auch nur irgendetwas, wenn du dich aus lauter Dummheit abschlachten lässt?“, fragte Severus.</p>
+<p>„Du glaubst also ich bin zu dumm, um das zu schaffen?“</p>
+<p>„Nein, du bist nicht zu dumm, du bist nur zu jung.“, entgegnete Severus. „Draco, begreif das doch, alles was er dir versprochen hat ist eine Lüge.“</p>
+<p>„Du glaubst also nicht an den Dunklen Lord, richtig?“, fragte Draco.</p>
+<p>„ICH GLAUBE, DASS WIR DIESEN VERDAMMTEN KRIEG ÜBERLEBEN MÜSSEN!“, schrie Severus ihn an.</p>
+<p>Draco rannte davon.</p>
+<p>„Draco, bleib stehen! Draco!“, rief Severus ihm hinterher, doch es war zu spät. Draco war fort.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57544864">Chapter 8</a>: Zweiter Versuch
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus beschäftigte die Sache mit Draco. Es tat ihm leid ihn angeschrien zu haben. Über die Feiertage hinweg ging er ihm ständig aus dem Weg also packte Severus die Gelegenheit in der ersten Schulwoche beim Schopf und bestellte ihn in sein Büro, doch Draco reagierte nicht. Wahrscheinlich hätte sich nicht einmal Potter getraut seine Aufforderung zu ignorieren. Draco hatte leider weit weniger Furcht vor ihm wie seine anderen Schüler. Innerhalb der nächsten Wochen sammelten sich ganze fünf Anordnungen an bei denen Severus Draco in sein Büro zitierte und die er alle missachtete. Wenn Severus ihn im Flur traf, dann wechselte er immer schnell die Richtung oder verwickelte sich mit anderen Lehrern so in Gespräche, dass es Severus nicht möglich war ihn abzupassen. Eines musste man Draco lassen; ausweichen und sich dünn machen, das konnte er. Das hatte er eindeutig von Lucius gelernt.</p>
+<p>Es war mitten in der Nacht als Severus einmal mehr in den Krankenflügel gerufen wurde. Dumbledore, ein sichtlich erschütterter Slughorn und Harry Potter warteten auf ihn. In dem Bett vor ihnen lag Ron Weasley.</p>
+<p>„Was?“, fragte Severus müde. Er hatte gerade mal ein paar Stunden geschlafen.</p>
+<p>„Ein weiterer Anschlag.“, eröffnete ihm Albus im Plauderton. Er reichte ihm eine Flasche mit Met. Severus roch daran sofort das Gift.</p>
+<p>„Ich bin untröstlich.“, sagte Slughorn völlig neben sich zu Dumbledore. „Wenn ich bedenke, dass ich dir die Flasche eigentlich schenken wollte ...“</p>
+<p>Severus musste nicht groß kombinieren. Jemand hatte den Met vergiftet, ihn Slughorn überreicht, der ihn dann Albus schenken sollte. Und Severus wusste genau wer dieser jemand war. Nur war auch dieser vermeintliche Anschlag so schlecht gezielt und vor allem gemacht. Es hatte Weasley erwischt, fein, aber das Gift roch jeder Idiot, was ihn zu seiner nächsten Frage brachte: Warum hatte Slughorn es nicht bemerkt? Oder war der alte Knabe wirklich langsam senil?</p>
+<p>„Wer hat Weasley gerettet?“, wollte Severus wissen. Horace traute er das in seinem Zustand nicht zu.</p>
+<p>„Oh, Mister Potter hier hat im entscheidenden Augenblick das richtige Gegengift gewusst.“, sagte Slughorn.</p>
+<p>Severus blickte Potter tief in die Augen, der wandte sich jedoch ab. Es war ihm sichtlich unangenehm. Und da waren sie wieder; Potters plötzlich auftauchende alchemistischen Gaben. Das konnte nur rein logisch betrachtet alles gar nicht sein!</p>
+<p>„Horace, würden Sie Mister Potter bitte nach draußen begleiten.“, sagte Dumbledore.</p>
+<p>„Oh ja, ja, natürlich.“</p>
+<p>Slughorn ging mit Potter im Schlepptau nach draußen. Severus setzte sich auf das Bett neben Weasley.</p>
+<p>„Warum hat er es nicht bemerkt?“, fragte Severus Albus.</p>
+<p>„Horace? Er war völlig überrascht. Hätte wohl nie damit gerechnet, dass jemand ihm vergifteten Met andrehen könnte. Und Potters Reaktion war ausgezeichnet, das müssen selbst Sie einsehen.“</p>
+<p>„Etwas zu ausgezeichnet, wenn Sie mich fragen.“, sagte Severus.</p>
+<p>„Minerva hat schon erzählt, dass Sie es nicht ertragen können, dass der Junge Sie zum ersten Mal in etwas geschlagen hat.“, antwortete Dumbledore.</p>
+<p>„Das ist es nicht!“, entgegnete Severus. „Wenn ein Schüler, der vorher nie irgendwelche genialen Anwandlungen zeigte, über Nacht zum Meister der Alchemie wird, dann ist eindeutig etwas faul. Und nein, ich bin nicht beleidigt, aber das bisschen an Lehrerinstinkt, dass ich habe, sagt mir dass er mogelt. Ich weiß nur noch nicht wie!“</p>
+<p>Albus atmete tief und sah aus dem Fenster über Weasleys Bett.</p>
+<p>„Severus, Sie sollten ihrem Schützling klar machen, dass er sich auf dem Holzweg befindet, bevor es zu spät ist.“</p>
+<p>„Glauben Sie, das hätte ich nicht bereits versucht? Er ist so ein sturer, kleiner … Teenager.“, sagte Severus.</p>
+<p>Er erhob sich und ging aus dem Raum.</p>
+<p> </p>
+<p>----------------------------------</p>
+<p> </p>
+<p>Severus startete am nächsten Morgen einen weiteren Versuch Draco endlich abzufangen. Er wusste, dass sein Patensohn nach dem Frühstück immer erst nochmal in die Kerker ging, um seinen Rucksack zu holen. Severus verbarg sich in einer Nische und packte Draco am Kragen seines Umhangs als er vorbei ging. Ohne Worte zu verschwenden zerrte er ihn in das nächste, leer stehende Zimmer. Als er ihn los ließ wollte Draco an ihm vorbei stürmen, doch Severus stellte sich in die Tür.</p>
+<p>„Jetzt reicht es!“, sagte Severus streng.</p>
+<p>„Geh da weg!“, knurrte Draco.</p>
+<p>„Ich denk gar nicht dran!“, entgegnete Severus. Er zog sicherheitshalber den Zauberstab. Nochmal ließ er ihn nämlich nicht entkommen. Draco begriff, dass er in der Falle saß und ließ davon ab an Severus vorbei zu wollen.</p>
+<p>„Also schön, reden wir.“, sagte Severus.</p>
+<p>Draco ließ seinen Rucksack fallen und setzte sich auf eine der vorderen Bänke.</p>
+<p>„Du weißt, dass du Dumbledore so nicht kriegst.“, sagte Severus.</p>
+<p>„Mag sein, aber ich habe einen Plan B.“, antwortete Draco.</p>
+<p>„Einen Plan B? Ich hoffe der ist besser als Plan A.“, entgegnete Severus.</p>
+<p>„Ich darf nicht darüber reden.“, sagte Draco.</p>
+<p>„Oh, wir sind hier doch unter Freunden. Quasi von Todesser zu Todesser.“, sagte Severus.</p>
+<p>Draco verschränkte die Arme vor der Brust und atmete tief.</p>
+<p>„Es gibt einen Weg an den Schutzmaßnahmen des Ministeriums vorbei. Auf diesen Weg könnten mehrere Personen ins Innere der Schule gelangen und Dumbledore ein für alle male ausschalten.“, sagte Draco.</p>
+<p>„Welcher Weg?“, wollte Severus wissen.</p>
+<p>„Das wäre dann doch zu viel des Guten.“, antwortete Draco.</p>
+<p>„Funktioniert es?“, fragte Severus. „Denn es muss tadellos funktionieren, wenn du und ich das lebendig hinter uns bringen wollen.“</p>
+<p>„Es wird funktionieren.“, sagte Draco.</p>
+<p>„Wer hatte die Idee dazu?“, fragte Severus.</p>
+<p>Draco schwieg.</p>
+<p>„Komm, egal wie ihr hier hinein gelangen wollt, das ist höhere Magie und wir beide wissen, dass das nicht dein Niveau ist.“, sagte Severus.</p>
+<p>„Tante Bellatrix.“, antwortete Draco. „Sie hatte die Idee.“</p>
+<p>Severus mochte von Bellatrix halten was er wollte, aber zaubern konnte sie. Wenn das auf ihrem Mist gewachsen war, dann würde es vielleicht tatsächlich funktionieren.</p>
+<p>„Sagst du es Dumbledore?“, fragte Draco nach einer kurzen Pause.</p>
+<p>„Damit ich alles torpediere und von einem Unbrechbaren Schwur getötet werde? Egal, was sie über mich sagen, aber ganz so dämlich bin ich nun auch nicht.“, entgegnete Severus.</p>
+<p>„Was du über den Dunklen Lord gesagt hast? Das er lügt?“, fragte Draco.</p>
+<p>„Ich und dein Vater haben nur deshalb so lange überlebt, weil wir wissen, wann er etwas ernst meint und wann er nur mit uns spielt. Und es ist nicht leicht den Unterschied zu erkennen.“, sagte Severus. „In deinem Alter war ich genauso illusorisch, um nicht zu sagen dumm, deshalb weiß ich wie sich das für dich anfühlt, aber glaub mir, für den Dunklen Lord sind auch wir nichts als Ungeziefer, dass er bei bedarf zertreten kann. Du solltest wirklich nicht so viel Zeit mit deiner Tante verbringen. Die bringt dich auf falsche Gedanken.“</p>
+<p>„Sag ihr das bloß nicht.“, fügte Severus noch schnell hinzu.</p>
+<p>„Kann ich gehen?“, fragte Draco.</p>
+<p>Severus nickte und trat von der Tür weg.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57544885">Chapter 9</a>: Sectumsempra
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus Snape lag auf der Couch in seinen Quartieren und dachte nach. In seiner Hand hatte er ein Glas Whisky. Nach dem Gespräch mit Draco ging ihm einiges durch den Kopf. Etwa wie sie es schaffen wollten in Hogwarts einzudringen. Das Ministerium hatte alle Register gezogen, was Schutzzauber anging. Es gab Aurorenpatroullien und Dumbledore hatte extra persönlich noch einige seiner eigenen Sicherheitsmaßnahmen drauf gelegt. Jeder der auf physischen oder magischen Wege hier eindringen wollte würde von den Gegenmaßnahmen in kleine Würfel zerhackt. Dafür hatten sie gesorgt. Also wie dann? Wie wollten sie es bewerkstelligen?</p>
+<p>Severus hatte Dumbledore nichts von seiner kleinen Unterredung mit Draco erzählt. Er war ja schließlich nicht bescheuert. So sehr es ihn auch schmerzte er musste zulassen, dass die Todesser einen Weg in das Schloss fanden, um Albus dann im richtigen Augenblick zu töten. Das war eine noch undankbarere Aufgabe als auf Harry Potter aufzupassen. Albus hatte stets seine eigenen Pläne gehabt und oft hatte Severus erlebt wie der alte Mann selbst die Leute bis aufs ärgste manipulierte, die ihn einen Freund nannten. Um Dumbledore machte sich Severus keine Sorgen. So wie er das sah hatte Albus seinen Tod bereits vor langer Zeit mit einkalkuliert. Nein, ihn machten diejenigen Sorgen, die Dumbledore als ihren Freund kannten. Allen voran Minerva und Harry Potter. Sie würden es ihm niemals verzeihen, da war Severus sich sicher.</p>
+<p>Er trank seinen Whisky und setzte sich auf. Severus brauchte Hilfe und zwar dringend. Alleine würden ihn die kommenden Ereignisse wie Mühlsteine zerreiben. Also stand er auf und warf sich seinen schwarzen Mantel über. Severus ging aus dem Schloss und verließ es in Richtung Hogsmead. Die Sicherheitsmaßnahmen verboten, dass er vom Gelände apparierte.</p>
+<p>Severus kehrte in das Wirtshaus namens Der Eberkopf ein. Dumbledores Bruder Aberforth stand hinter der Theke und wusch einige Bierkrüge auf. Die Kneipe war um diese Zeit überraschend leer und bis auf ein, zwei betrunkene Raufbolde war niemand zugegen.</p>
+<p>„Severus.“, begrüßte Aberforth ihn und nickte ihm zu.</p>
+<p>Severus erwiderte das Nicken und ging durch den Hinterausgang nach draußen. Aberforth folgte ihm.</p>
+<p>„In was für einen Schlamassel hat sich mein Bruder jetzt schon wieder reingeritten?“, fragte Aberforth als sie draußen waren.</p>
+<p>„In endgültigen.“, sagte Severus. „Du weißt, dass er stirbt?“</p>
+<p>„Ich bin bestens im Bilde.“, sagte Aberforth düster. „Ich schätze du bist nicht aus Freundlichkeit hier.“</p>
+<p>„Dein Bruder hat mich um etwas gebeten und ich weiß nicht, ob ich das alleine schaffe.“, sagte Severus. „Er möchte, dass ich ihn töte.“</p>
+<p>„Ach Albus!“, grollte Aberforth. „Immer nur Scherereien mit dir!“</p>
+<p>Aberforth sah Severus an und stemmte die Arme in die Seiten.</p>
+<p>„Wirst du es tun?“, fragte er.</p>
+<p>„Es bleibt mir keine Wahl. Wenn die Zeit kommt wird er durch meine Hand sterben. Das Problem vor dem ich stehe ist, dass jeder glauben wird ich hätte es aus bösen Willen getan.“, sagte Severus.</p>
+<p>„Ich sehe schon, in welche Lage mein lieber Bruder dich gebracht hat. Hör mal, ich weiß wie es ihm geht und was er getan hat. Ich mag ihn zwar nicht, aber so ein Ende hat er wahrlich nicht verdient. Nur glaube ich nicht, dass irgendjemand dem Jüngeren der Dumbledores zuhören wird, wenn es darum geht dir zu helfen aus der Sache herauszukommen. Ich bin ja nur der mit den Ziegen.“</p>
+<p>„Ich weiß.“, antwortete Severus. „Aber du hast noch Kontakte zum Orden, oder? Du kannst sie vielleicht beruhigen, denn wenn es soweit ist werde ich verschwinden müssen.“</p>
+<p>„Ja, ich verstehe vollkommen. Ich werde sehen, was ich tun kann, doch versprechen kann ich nichts diesbezüglich. An deiner Stelle würde ich mich darauf vorbereiten, dass sie dich jagen werden.“, sagte Aberforth.</p>
+<p>Severus hatte diese Reaktion einkalkuliert, doch er hoffte es so lange hinauszögern zu können wie möglich. Er war nicht scharf darauf die Todesser und den Orden und das Ministerium gleichzeitig abschütteln zu müssen. Denn eines wusste er ganz genau, man würde ihm die Schuld geben, wenn Dracos Plan Erfolg hatte. Er wäre der ultimative Sündenbock.</p>
+<p>„Ich danke dir, Aberforth, für alles, was du in den letzten Jahren für mich getan hast. Ich fürchte unser Weg endet hier.“, sagte Severus.</p>
+<p>Aberforth umarmte ihn wie ein Bruder und klopfte ihm auf den Rücken.</p>
+<p>„Ich wünsche dir viel Glück, Severus Snape. Du warst ein besserer Freund als es Albus je sein wird.“</p>
+<p>Severus nickte ihm zu und disapperierte. Als er wieder auftauchte landete er vor dem Eingang des Bunkers. Sich von Aberforth zu verabschieden bevor das Jahr zu Ende ging war ihm wichtig. Er konnte nicht sagen, ob er in den kommenden Wochen den richtigen Augenblick dazu gefunden hätte. Mit Aberforth konnte er immer reden, wenn Albus ihn gerade einmal wieder um den Verstand gebracht hatte. Vielleicht hatte er seinem älteren Bruder auch das eine oder andere angetragen, dass Severus ihm niemals ohne einen Wutausbruch hätte sagen können.</p>
+<p>Severus ging durch die Schleuse nach drinnen. Geradlinig suchte er sein Büro auf und ließ sich auf das Bett fallen. Er legte die Hände aufs Gesicht und rieb sich die Augen. In diesem Augenblick öffnete sich die Tür und Jennifer trat ein.</p>
+<p>„Du hättest sagen können, dass du hier bist.“, sagte sie und setzte sich zu ihm. „Was ist los?“</p>
+<p>Severus antwortete nicht, sondern sah sie bloß an. Er setzte sich auf und atmete schwer.</p>
+<p>„Du siehst völlig fertig aus.“, bemerkte Jennifer.</p>
+<p>„Das bin ich auch.“, gab Severus zu.</p>
+<p>Jennifer nahm ihren Mann in den Arm und streichelte ihn. Severus tat ihre Nähe gut. In den letzten zwei Jahren hatten sie sich kaum gesehen. Es war schwierig ein Privatleben aufrecht zu erhalten, wenn man zwischen Voldemort und Dumbledore hin und her sprang. Manchmal, so wie jetzt, fühlte Severus sich als würde man ihn durch den Fleischwolf drehen. Eigentlich wollte er nur schlafen und bei ihr sein. Er wollte in ihren Armen liegen und wenigstens für ein paar Stunden vergessen, dass sich die ganze Welt gegen ihn verschworen hatte.</p>
+<p> </p>
+<p>-------------------------------------</p>
+<p> </p>
+<p>Severus lag in seinem Bett mit Jennifers Kopf an seiner Brust. Er zog an der Zigarette in seinem Mund und strich ihr sanft durchs Haar. In ihrer Nähe konnte Severus sich entspannen und sich fallen lassen. Wenn sie nicht gewesen wäre, dann hätte er sich schon vor vielen Jahren die Kugel gegeben. Allein stand das niemand durch. Auch weil Severus wusste das er all das nicht nur für sich tat, sondern auch für sie und für seinen Sohn. Es war fast unmöglich eine Familie zu haben und nebenbei noch ein Doppelagent zu sein. Das war die Last, die er seit über fünfzehn Jahren mit sich herumtrug. Doch bald würde es enden. Ein für alle mal. Severus wusste nicht, ob es ihn freuen sollte, dass er sich bald offen bekennen konnte. Alle würden ihn wie einen Hund jagen. Voldemort. Der Orden des Phönix. Das Ministerium.</p>
+<p>Severus setzte sich auf. Er spürte Jennifers Hand wie sie von seinem Bein glitt. Er griff nach ihr und küsste sanft ihre Knöchel.</p>
+<p>„Gehst du?“, fragte sie.</p>
+<p>„Ja“, antwortete Severus.</p>
+<p>Er saß auf dem Bett und rauchte seine Zigarette zu Ende, bevor er aufstand und sich anzog. Jennifer kam auf ihn zu. Sie nahm sein Gesicht in ihre Hände und gab ihm einen langen, sanften Kuss.</p>
+<p>„Pass da draußen auf dich auf.“, sagte sie.</p>
+<p>„Das werde ich.“, sagte er und umarmte sie zum Abschied.</p>
+<p>Severus fiel es immer schwer zu gehen und nach Hogwarts zurückzukehren, doch dieses mal war es für ihn als würde er sich zu seiner Hinrichtung begeben. Anders als die Jahre zuvor wusste er dieses mal wie wenig Zeit ihm blieb. Eines konnte er klar sagen, es war besser wenn man nicht wusste, was einem bevorstand.</p>
+<p>Zurück in Hogsmead begegnete er auf dem Weg über die Ländereien einem völlig aufgelösten Hagrid. Er wusste zwar, dass der Halbriese zuweilen etwas nah am Wasser gebaut war, um nicht zu sagen, dass er einfach zu sensibel war, doch dieses Mal schien etwas ernsthaft schlimmes passiert zu sein. Er trug eine Schaufel über der Schulter und wischte sich mit dem Ärmel seines Mantels die Tränen weg.</p>
+<p>„Hallo, Professor.“, schniefte er im vorbeigehen.</p>
+<p>„Kann ich dir helfen?“, fragte Severus. Er hatte immer ein gutes Verhältnis zu Hagrid gehabt, weshalb er ihn nicht einfach so heulend in der Gegend rumstehen lassen konnte.</p>
+<p>„Nein.“, sagte Hagrid. Er holte ein großes, gepunktetes Taschentuch hervor und trötete wie ein Elefant hinein.</p>
+<p>„Ist etwas geschehen von dem ich wissen sollte?“, fragte Severus.</p>
+<p>„Aragog ist tot.“, sagte Hagrid traurig.</p>
+<p>Severus war der Spinne vor vier Jahren einmal begegnet. Ihr und ihrem gesamten Nest. Es war keine gute Erinnerung.</p>
+<p>„Das tut mir leid.“, sagte Severus und versuchte es wenigstens etwas tröstlich klingen zu lassen.</p>
+<p>„Er war mein ältesten Freund, wussten Sie das?“, schniefte Hagrid.</p>
+<p>„Hmm-hmm.“, machte Severus.</p>
+<p>Er kannte die Geschichte natürlich. Hagrid hatte sie als Schüler als Haustier mitgebracht und man hielt sie fälschlicher Weise für das Monster aus der Kammer des Schreckens. Hagrid wurde der Schule verwiesen und sein Zauberstab zerbrochen. Dank Dumbledore durfte er jedoch als Wildhüter bleiben. Hagrid hatte schon immer eine Schwäche für Haustiere, die einen mindestens verspeisen konnten. Severus erinnerte sich noch lebhaft daran wie er einmal versucht hatte einen Drachen in seiner Hütte großzuziehen.</p>
+<p>„Aber er war alt und hatte so viele Kinder. Die werden ihn sicher vermissen.“, sagte Hagrid.</p>
+<p>Severus meinte sich zu erinnern einmal gelesen zu haben, dass Acrumantulas ihre toten Alphatiere verspeisten. So viel zur familiären Bindung.</p>
+<p>„Ich muss dann.“, sagte Severus und ging weiter.</p>
+<p>Er ging ins Schloss, wo der übliche Tumult in den Fluren tobte. Es war kurz vor dem Abendessen und die Schüler strömten in die Große Halle. Severus entschied sich, dass er keinen Hunger hatte und ging in Richtung Kerker. Auf dem Weg fiel ihm Draco auf. Er war völlig neben sich und wischte sich die Augen. Moment, weinte er? Severus hatte ihn seit er ein Kleinkind war bestimmt nie in der Öffentlichkeit weinen sehen. Schon gar nicht jetzt, wo er doch allen zeigen wollte was für ein harter Kerl er war. Severus folgte seiner Intuition und ließ Draco etwas Vorsprung, bevor er ihm nachging.</p>
+<p>Draco bog in eines der Jungsklos ein. Severus verbarg sich in einer Nische davor und wartete eine Weile. Er kam nicht wieder heraus. Dafür tauchte ausgerechnet Harry Potter auf. Der ging zielstrebig hinein. Wenig später konnte Severus Schreie und Lärm vernehmen. Das reichte! Severus zog seinen Zauberstab und betrat die Jungentoilette.</p>
+<p>Es hatte offensichtlich einen Kampf gegeben. Fliesen waren an den Wänden abgesplittert und ein Wasserrohr war gebrochen. Auf dem Boden lag Draco. Seine Brust war aufgeschlitzt als habe ihn jemand mit einem großen Messer traktiert. Potter stand mit dem Zauberstab über ihn. Der Junge sah ihn erschrocken an.</p>
+<p>„Was hast du getan?“, fragte Severus ihn.</p>
+<p>Potter wisch vor ihm zurück.</p>
+<p>„Expilliarmus.“</p>
+<p>Severus entwaffnete Potter für alle Fälle. Er fing seinen Zauberstab leichtfüßig und kniete sich neben Draco. Der schluckte schwer. Blut lief ihm aus dem Mund. Severus kannte diesen Fluch genau, doch es war unmöglich, dass Potter ihn kannte. Das war nämlich einer von seinen Flüchen. Einer von denen, die er als Teenager erfand.</p>
+<p>Severus deutete mit dem Zauberstab auf Dracos Brust.</p>
+<p>„Vulnera Sanentur“, sagte er und die Wunden fingen an sich langsam zu schließen. Severus wiederholte das einige Male bis er seinen Patensohn zumindest äußerlich geheilt hatte. Draco war dennoch ohnmächtig.</p>
+<p>Potter drückte sich starr vor Angst an die Wand. Ihm war ohne Zweifel klar, dass Severus ihm das nicht verzeihen würde.</p>
+<p>„Woher kennst du diesen Spruch?“, fragte Severus. „Und lüg' mich nicht an!“</p>
+<p>Potter jedoch schwieg und umklammerte den Gurt seiner Tasche. Severus fragte nicht erst, sondern riss ihm seine Schultasche von der Schulter und leerte alles was darin war auf dem Boden aus. Schulbücher, Federkiele, Süßigkeiten und was man als Hogwartsschüler noch so alles mit sich rumschleppte rollte über die nassen Fliesen. Einiges davon landete in der Blutlache in der Draco immer noch lag. Dann sah Severus es. Ein altes, zerfleddertes Exemplar von „Zaubertränke für Fortgeschrittene“.</p>
+<p>„Nein!“, rief Potter laut als Severus danach griff.</p>
+<p>Er schlug die erste Seite auf. In Severus' eigener, minderjähriger Handschrift stand dort:</p>
+<p align="center">
+  <em>Dieses Buch gehört dem Halbblutprinzen.</em>
+</p>
+<p>So dumm konnten Zufälle doch gar nicht sein, oder? Severus war nun völlig klar woher Potters plötzliche Intelligenz rührte. Er hatte sein altes Zaubertrankbuch irgendwie in die Finger bekommen. Severus blätterte weiter. Die Seiten des Buches waren von vorne bis hinten beschmiert mit seiner Handschrift. Viele Trankrezepte waren von ihm verbessert worden und wie Severus damals war hatte er einfach alles durchgestrichen, was ihm nicht passte. Jede Seite war im Grunde der Schatz seines damaligen Wissen und obendrein hatte er damals eigene Zaubersprüche darin aufgezeichnet. Severus blätterte im Schnelldurchgang durch das Buch und fand ihn schließlich. Sectumsempra. Markiert hatte er den Fluch mit dem netten Zusatz „Für Feinde“.</p>
+<p>Potter sah Severus mit großen, angsterfüllten Augen an. Zweifellos wurde ihm gerade klar wessen Buch er da die ganze Zeit benutzt hatte. Severus ließ das Buch in seiner Manteltasche verschwinden und warf Potter wütend seinen Zauberstab vor die Füße.</p>
+<p>„Du hast Glück, dass du der Auserwählte bist!“, sagte Severus. „Jeden anderen hätte ich für so etwas umgebracht.“</p>
+<p>Ohne weiter auf den Jungen zu achten hob er Draco vom Boden auf. Severus brachte ihn in den Krankenflügel und legte ihn in ein freies Bett. Madam Pomfrey nährte sich ihm.</p>
+<p>„Fragen Sie nicht!“, giftete er sie an. Die Krankenschwester suchte das Weite.</p>
+<p>Severus holte zwei Tränke aus der Apotheke des Krankenzimmers. Der eine würde Draco die Schmerzen nehmen, wenn er aufwachte und der andere dafür Sorgen, dass seine Inneren Organe nicht kollabierten. Sectumsempra war einer der schlimmsten Flüche, die sich Severus je ausgedacht hatte. Er war dafür geschaffen jemanden von Innen zu zerreißen. Seit seiner Zeit bei den damaligen Todessern hatte er ihn nie wieder benutzt.</p>
+<p>Severus zog jeweils eine Spritze mit den Tränken auf und injizierte sie Draco. Anschließend setzte sich an das Bett. Er wachte die ganze Nacht an seiner Seite bis er auf dem Stuhl einschlief.</p>
+<p>„He!“, machte jemand und schüttelte ihn sanft an der Schulter.</p>
+<p>Es war Minerva. Severus kniff die Augen kurz zu und gähnte. Draußen brach bereits der Morgen an. Zu seiner Überraschung war auch Dumbledore hier.</p>
+<p>„Was ist geschehen?“, fragte Albus mit Blick auf Draco.</p>
+<p>Severus griff in die Manteltasche und holte das alte Zaubertrankbuch hervor.</p>
+<p>„Der Quell für Potters plötzliche Genialität.“, sagte Severus und zeigte den beiden den Eintrag auf der ersten Seite.</p>
+<p>„Sie?“, fragte Minerva überrascht.</p>
+<p>„Mein altes Buch. Potter muss es irgendwie bei Slughorn bekommen haben. Anders kann ich mir das nicht erklären.“, antwortete Severus. „Den Spruch, den er verwendet hat, der war von mir … meinen früheren Ich.“</p>
+<p>Minerva und Dumbledore sahen sich an.</p>
+<p>„Machen Sie sich keine Vorwürfe.“, sagte Minerva.</p>
+<p>Severus antwortete nicht. Er wusste nicht, ob er sich deswegen schuldig fühlte. Wie hätte er damit rechnen sollen, dass Harry Potter sein altes Zaubertrankbuch in die Finger bekommt und dann auch noch so dämlich ist seine Sprüche auszuprobieren?</p>
+<p>„Hoffentlich haben wir nicht noch alte Schulbücher von Tom Riddle in irgendeinem Schrank liegen. Das wäre sicher eine noch größere Katastrophe.“, sagte Severus grimmig.</p>
+<p>Er steckte das Buch wieder in seine Tasche und erhob sich. Ohne weiter auf Minerva oder Albus zu achten verließ Severus den Krankenflügel. Er ging hinunter in die Kerker in seine Gemächer. Dort holte er das Buch wieder hervor. Severus warf es in die lodernden Flammen des Kamins. Es war besser so. Nicht das noch jemand zu schaden kam.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57545077">Chapter 10</a>: Dritter Versuch
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus stand in Dumbledores Büro. Der alte Mann faltete ein Stück Pergament und steckte es in einen Briefumschlag.</p>
+<p>„Letzte Anweisungen.“, sagte Albus und legte ihm den Brief hin. „Für den Fall, dass ich diese Nacht nicht überstehe.“</p>
+<p>„Ich halte es für falsch.“, sagte Severus. „In ihrem Zustand können Sie diese Reise nicht machen.“</p>
+<p>„Ich bin mir der Gefahren durchaus bewusst.  Harry wird mich begleiten. Sie jedoch müssen dafür sorgen, dass alles einen Abschluss findet.“, sagte Dumbledore und erhob sich hinter seinem Schreibtisch.</p>
+<p>Sein Gesundheitszustand hatte sich in den letzten Wochen deutlich verschlechtert, ganz so wie Severus vorausgeahnt hatte. Mittlerweile waren große Teile von Dumbledores Körper von diesem schwarzen Parasiten befallen. Eine Reise per Apparieren oder gar die Zerstörung eines Horcruxes konnte er niemals lebend überstehen. Severus wusste, dass Albus die letzten Monate darauf verwendet hatte Harry Potter in das Geheimnis der Horcruxe einzuweihen und das fehlende Glied in Horace Slughorns Erinnerungen zu finden. So hatte sich der Standort eines weiteren Horcruxes ergeben. Severus hatte Dumbledore gebeten die Sache zu verschieben und diese Reise nicht anzutreten. Er war einfach zu schwach. Wer wusste, ob er in diesem Zustand überhaupt den Ort erreichte. Und warum musste er Potter mitnehmen? Für Severus ergab das alles nur bedingt Sinn.</p>
+<p>„Sie wissen, dass Sie das unmöglich überleben können.“, sagte Severus.</p>
+<p>„Wir müssen alle einmal sterben, Severus.“, antwortete Albus. „Ich habe keine Angst vor dem Tod. Es wird sich wie nach Hause kommen anfühlen.“</p>
+<p>Dumbledore legte seinen Reisemantel an und setzte den Hut auf.</p>
+<p>„Wir sehen uns auf der anderen Seite.“, sagte Albus und verließ den Raum.</p>
+<p>Severus blieb zweifelnd zurück. Er nahm den Brief vom Tisch und steckte ihn in die Tasche seiner Robe. Severus schüttelte den Kopf und blickte aus dem großen Fenster.</p>
+<p>Jetzt ist es soweit, dachte er. Auf diesen Augenblick war alles hinausgelaufen. Allerdings fühlte Severus sich als würde er in den Tod gehen und nicht Dumbledore.</p>
+<p>Severus ging aus dem Büro hinunter in den Krankenflügel. Draco saß auf dem Bett. Er hatte sich rasch erholt.</p>
+<p>„Es ist Zeit.“, sagte Severus.</p>
+<p>Draco sah über die Schulter, ob die Krankenschwester in der Nähe war. Dann erhob er sich und ging mit Severus nach draußen.</p>
+<p>„Also dann.“, sagte Severus und ließ Draco den Vortritt.</p>
+<p>Der Junge führte ihn bis in den Siebenten Stock, wo er an einer Stelle in der Wand auf und ab ging. Wie aus dem Nichts erschien eine Tür.</p>
+<p>„Der Raum der Wünsche?“, sagte Severus. „Ich lerne hier auch noch immer was Neues.“</p>
+<p>Er kannte Gerüchte um den Da-und-Fort-Raum, hatte jedoch nicht geglaubt, dass er wirklich existiert. Severus folgte Draco hinein. Der Raum war bis unter seine gigantische Decke vollgestopft mit allen möglichen Gerümpel. Wenn man nicht wusste wonach man suchte, dann hätte man hier sicher niemals etwas wiedergefunden. Draco führte ihn bis zu einer Art Schrank, der mit einem Laken verhängt war. Er zog es herunter offenbarte ein Verschwindekabinett.</p>
+<p>„Ein Verschwindekabinett? Clever.“, sagte Severus.</p>
+<p>„Das Gegenstück steht bei Borgin. Dieses war beschädigt, doch ich konnte es reparieren. Tante Bella hat es mir verraten.“, sagte Draco.</p>
+<p>Draco öffnete den Schrank. Er zog sich den silbernen Ring vom Finger. Es war der Wappenring der Malfoys. Er hatte sicher einmal Lucius gehört. Draco legte den Ring hinein und schloss das Kabinett.</p>
+<p>„Das ist das Zeichen, dass wir bereit sind.“, sagte Draco. „Jetzt müssen wir nur noch warten.“</p>
+<p>Severus zog aus dem Gerümpelhaufen hinter sich einen wackligen Stuhl hervor und setzte sich darauf.</p>
+<p>„Das dauert sicher 'ne Weile.“, sagte Severus.</p>
+<p>Draco lief vor dem Verschwindekabinett auf und ab. Es war ihm anzusehen, dass er nervös war. Es verging mindestens eine halbe Stunde ehe sie hörten wie jemand in dem Kabinett ankam. Die Tür öffnete sich und ausgerechnet Bellatrix Lestrange stieg heraus.</p>
+<p>„Oh, das hat er gut gemacht!“, freute sie sich und tätschelte Draco die Wange. „Severus, auch hier?“</p>
+<p>„Ich will nur nichts verpassen.“, entgegnete er und erhob sich.</p>
+<p>„Ja, ja, aber sicher doch. Wo ist Dumbledore?“, fragte Bellatrix.</p>
+<p>„Er ist unterwegs, aber er kommt sicher irgendwann wieder.“, sagte Severus.</p>
+<p>„Was soll das heißen? Er ist unterwegs?“, fragte Bellatrix ihn gackernd.</p>
+<p>„Er und Harry Potter machen einen kleinen Ausflug. Nichts weltbewegendes. Sobald sie wieder da sind kann es losgehen. Es dauert doch eh noch bis ihr alle zusammengetrommelt habt. Ich kenn das doch. Todesser und Uhren.“, entgegnete Severus.</p>
+<p>„Irgendwann, Snape, schneidet dir der Dunkle Lord deine lose Zunge schon noch heraus.“, sagte Bellatrix schnippisch. „Aber siehst du, Draco hat es geschafft. Und du und Zissia dachten er wäre dafür zu dumm. Nicht wahr, mein Spatz?“</p>
+<p>Bellatrix drückte Draco an sich und wuschelte ihm durch die Haare.</p>
+<p>„Tante Bella, bitte!“, sagte Draco ungehalten.</p>
+<p>„Schon gut, schon gut. Die Jungs in diesem Alter sind sich ja immer zu fein.“, sagte Bellatrix und verdrehte die Augen.</p>
+<p>Nach und nach trudelten die Todesser via Verschwindekabinett ein. Severus zählte vier weitere Männer. Amycus, Avery, Rookwood und Fenrir Greyback. Der Werwolf bleckte die Zähne.</p>
+<p>„Na, wo ist denn nun der alte, zähe Knochen?“, fragte er.  </p>
+<p>Severus sah auf die Uhr. Dumbledore und Potter waren schon seit zwei Stunden weg.</p>
+<p>„Ich gehe voraus. Ihr folgt mir mit Abstand. Im Schloss sind Auroren. Scheucht sie nicht auf, wenn es nicht unbedingt notwendig ist.“, sagte Severus.</p>
+<p>„Gibst du hier jetzt die Befehle?“, fragte Bellatrix.</p>
+<p>„Ich bin unauffälliger. Wenn ich mit Draco zum Astronomieturm gehe fällt das nicht auf. Ihr dagegen seid wie eine Gruppe brüllender Affen. Versucht wenigstens unauffällig zu sein, klar? Draco, komm.“, sagte Severus.</p>
+<p>Er ging mit seinem Patensohn voraus. Hinter sich konnte er hören wie die Todesser aus dem Raum spazierten. Na hoffentlich hielten sie sich an den Plan. Er brauchte die Zeit damit sie wenigstens ein paar Minuten mit Dumbledore und Potter allein waren, bevor die Todesser ihnen nachkamen.</p>
+<p>Sie stiegen den Turm hinauf. Severus konnte hören wie das leise Pflop! eines Apparierzaubers ertönte. Dumbledore und Potter mussten gerade wieder angekommen sein.</p>
+<p>„Geh vor. Ich gebe dir Rückendeckung.“, sagte Severus zu Draco.</p>
+<p>Draco nahm seinen Mut zusammen und ging hoch. Oben sahen sie nur Albus wie er schwach und voller Schmerzen auf die Knie sank.</p>
+<p>„Expilliarmus!“, rief Draco und entwaffnete Dumbledore.</p>
+<p>Severus entdeckte Potter schließlich hinter einigen Kisten, sagte aber nichts. Er legte den Finger auf den Mund und bedeutete Potter damit das er sich still verhalten sollte.</p>
+<p>„Ist hier sonst niemand?“, fragte Draco angespannt.</p>
+<p>„Nein.“, sagte Severus. „Potter muss schon unten sein. Die anderen werden ihn sicher finden.“</p>
+<p>„Nun, das ist unerwartet.“, sagte Dumbledore. „Sagen Sie, Draco, wollen Sie das wirklich tun?“</p>
+<p>Dracos Zauberstab zitterte.</p>
+<p>„Sie sind kein Mörder.“, beschwor Albus ihn.</p>
+<p>„Sie wissen nicht, was ich bin.“, giftete Draco ihn an. „Sie wissen nicht wozu ich alles fähig bin!“</p>
+<p>„Oh, Sie haben Katie Bell ein verhextes Amulett gegeben, was sie fast umgebracht hätte. Dann haben Sie Professor Slughorn eine Flasche vergifteten Met überreicht damit er ihn mir schenkt. Ihre Versuche mich für Voldemort aus dem Weg zu räumen waren, gelinde gesagt, unglücklich und nicht gerade zielsicher.“</p>
+<p>„Halten Sie den Mund!“, fauchte Draco Dumbledore an. „Das ist keine verfluchte Benotung!“</p>
+<p>„Natürlich ist es das nicht. Das was Sie hier tun ist nicht das Ende Ihrer Reise, das wissen Sie sicher.“, sagte Dumbledore friedlich. „Wenn Sie einmal für Voldemort getötet haben wird er das immer wieder von Ihnen verlangen.“</p>
+<p>Sie hörten das Getrampel von Stiefeln die Treppe hinauf.</p>
+<p>„Ich nehme an Sie haben einen Weg gefunden die Schule zu betreten ohne das jemand davon erfährt. Eine wirkliche Leistung, aber ich schätze das war nicht allein Ihr Verdienst.“, sagte Albus.</p>
+<p>Die Todesser kamen nun einer nach den anderen die Treppe hoch. Severus stellte sich so vor die Kisten, dass sie Potter nicht sehen konnten, falls sie doch einen näheren Blick darauf warfen.</p>
+<p>„Oh, was sagt man dazu? Dumbledore allein und unbewaffnet. Sehr gut, Draco.“, freute sich Bellatrix wie ein kleines Kind.</p>
+<p>„Ah, Mrs Lestrange, immer wieder eine Freude.“, sagte Albus in einem Ton als sei er beim Kaffeeklatsch.</p>
+<p>„Blah, blah, blah!“, machte Bellatrix. „Immer die gleiche Leier mit dem alten Dumby! Aber dieses Mal wird er sich nicht einfach heraus quatschen!“</p>
+<p>„Das hatte ich nicht vor.“, antwortete Dumbledore.</p>
+<p>„Los, Draco, töte ihn!“, sagte Bellatrix.</p>
+<p>„Er kann es nicht! Hat nicht die Nerven.“, meinte Amycus.</p>
+<p>„Tu es!“, sagte Bellatrix.</p>
+<p>„Ach, ich hab es doch gleich gesagt. Er ist noch zu grün hinter den Ohren!“, entgegnete Greyback. „Lasst mich ihn erledigen, dann haben wir alle etwas Spaß.“</p>
+<p>„Severus ...“, sagte Dumbledore leise zu ihm. „Severus, bitte.“</p>
+<p>Severus zog seinen Zauberstab.</p>
+<p>„Avada Kedavra.“</p>
+<p>Ein grüner Blitz traf Albus und schleuderte ihn nach hinten über die Brüstung des Turms. Bellatrix brach in Jubelschreie aus. Severus packte Draco an der Schulter und zerrte ihn nach hinten. Er führte ihn den Turm hinunter. Unten sah Severus im Flur die leblosen Körper einiger Auroren liegen. Es war ja klar, dass sie sich wieder nicht beherrschen konnten.</p>
+<p>„Du hättest das nicht tun sollen!“, sagte Draco zu ihm.</p>
+<p>„Du hättest es nie fertig gebracht.“, entgegnete Severus. „Und das weißt du auch. Dumbledore hatte recht. Du bist kein Mörder.“</p>
+<p>Es dauerte eine Weile bis die anderen Todesser ihnen nach kamen. Bellatrix war außer sich vor Freude und hatte nichts besseres zu tun als die Einrichtung zu demolieren, während sie nach draußen gingen. Die Nacht wurde vom grünen Schimmern des Dunklen Mals erhellt, dass sich über dem Astronomieturm von Hogwarts wand. Als sie über die Ländereien gingen schoss Bellatrix freudig tanzend einen Fluch in Hagrids Hütte woraufhin sie in Flammen aufging.</p>
+<p>„SIE!“, hörte Severus Potter hinter sich schreien.</p>
+<p>Der Junge war außer sich vor Zorn.</p>
+<p>„Geht!“, sagte Severus zu Draco und den anderen. „Ich erledige das.“</p>
+<p>„ER HAT IHNEN VERTRAUT!“, schrie Potter und schoss einen Fluch auf ihn ab.</p>
+<p>Severus parierte.</p>
+<p>„WAS IST? WEHREN SIE SICH, SIE FEIGLING!“</p>
+<p>Erneut flog ein Fluch auf Severus zu. Wieder parierte er ihn. Dieses mal jedoch so, dass es den Jungen durch die Wucht des Zaubers nach hinten warf.</p>
+<p>„Du kannst von Glück reden, dass ich dich leben lasse.“, sagte Severus und trat Potters Zauberstab ins nächste Gebüsch. „Versuche nicht mir zu folgen, es wäre sinnlos.“</p>
+<p>Severus entfernte sich und verschwand in der Dunkelheit.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-11">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57545143">Chapter 11</a>: Der Tag danach
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Die Todesser am langen Tisch des Dunklen Lords waren in heller Aufregung. Waren die Gerüchte wahr? War Albus Dumbledore tot? Der Dunkle Lord trat an seinen Stuhl heran und lächelte.</p><p>„Albus Dumbledore ist tot!“, sagte er lachend.</p><p>Das aufgeregte Gemurmel der Todesser erstarb jäh.</p><p>„Ja, ihr habt richtig gehört. Der große Hexenmeister Albus Dumbledore hat das zeitliche gesegnet!“</p><p>Voldemort lachte aus voller Kehle als könne er selbst sein Glück kaum fassen. Schließlich wurde er wieder ernst und setzte sich auf seinen angestammten Platz.</p><p>„Und das alles haben wir ihm zu verdanken!“, sagte Voldemort und deutete über den Tisch auf Draco. „Mir fällt bestimmt eine schöne Belohnung für dich ein, junger Malfoy. Hauptsache ist, dass dieses Hindernis aus dem Weg geräumt wurde. Pius, wie steht es mit der Übernahme des Ministeriums?“</p><p>Pius Thicknesse war ein aristokratischer Schleimer wie er im Buch stand. Er saß da in Nadelstreifenanzug und Krawatte. Sein langes Haar zu einem Schwanz gebunden und mit einem Zwirbelbart wie bei einem schwarzen Magier aus dem Klischee eines Kinderbuches. Obendrein hatte er Jahre damit verbracht das Ministerium von Innen auszuhöhlen mit einem Netzwerk von Informanten.</p><p>„Sehr gut, mein Lord.“, sagte Pius. „Rufus Scrimgeour glaubt er habe die Auroren hinter sich, doch da irrt er sich, denn es sind in Wahrheit meine Auroren.“</p><p>„Dann kann es beginnen. Unverzüglich.“, entgegnete Voldemort. „Jetzt bleibt nur noch ein Problem und ihr wisst alle wie dieses Problem heißt! Harry Potter! Jetzt da Dumbledore tot und das Ministerium quasi in unseren Händen ist wird er sich nicht länger verstecken können! Und selbst wenn er wegläuft! Wir jagen ihn! Zur Not bis ans Ende der Welt! Ich will diesen Jungen haben und wenn es soweit ist, dann will ich sehen wie das Licht aus seinen Augen erlischt, ist das klar? Sollte es jemand wagen ihn vor mir anzurühren, dann werde ich nicht nur ihn töten, sondern auch seine Kinder und seine Kindeskinder! Ich werde denjenigen, der sich mir widersetzt auslöschen, auf das sein Blut vollkommen aus der Geschichte getilgt wird!“</p><p>„Ja, mein Lord.“, sagten die Todesser.</p><p>„Damit wäre das klar.“, sagte Voldemort. „Geht nun.“</p><p>Die Todesser erhoben sich und verließen den Raum.</p><p> </p><p>----------------------------------</p><p> </p><p>Severus Snape brachte Draco zurück in das Haus der Malfoys. Narzissa wartete bereits auf sie. Sie umarmte ihren Sohn überschwänglich.</p><p>„Ich dachte schon euch sei etwas passiert!“, sagte Narzissa.</p><p>„Alles in Ordnung.“, sagte Severus.</p><p>„Der Dunkle Lord, was hat er gesagt?“, fragte sie.</p><p>„Er war hocherfreut. Sicher wird man euch belohnen.“, antwortete Severus.</p><p>Narzissa ließ von Draco ab und trat auf Severus zu.</p><p>„Und Lucius?“, fragte sie.</p><p>„Dazu hat er nichts gesagt, aber wenn das Ministerium erst einmal in den Händen der Todesser ist wird man sicher eine Generalamnestie für alle gefangenen Getreuen des Dunklen Lords in Betracht ziehen.“, sagte Severus.</p><p>Narzissa sah ihn an. Sicher ahnte sie etwas.</p><p>„Draco, bitte lass uns allein.“, sagte sie zu ihrem Sohn.</p><p>Draco sah von seiner Mutter zu Severus, doch er sagte nichts, sondern ging einfach.</p><p>„Was hast du vor?“, fragte Narzissa leise. „Ich kann es dir ansehen.“</p><p>„Nichts, was dich oder deine Familie diskreditieren würde. Ich bin froh, meinen Teil unserer Abmachung erfüllt zu haben. Das ist alles.“, sagte Severus.</p><p>Er zog den Ärmel seines Hemdes nach oben und zeigte ihr die Narbe des Unbrechbaren Schwurs.</p><p>„Damit ist unser Pakt vollendet.“, sagte Narzissa.</p><p>Sie umgriff sein Handgelenk. Die Zunge aus Feuer umschlang ihrer beider Hände und löste sich schließlich auf. Die Narben, die sie beide kennzeichneten verblassten innerhalb weniger Augenblicke. Der Unbrechbare Schwur war erfüllt. Alles war getan.</p><p>Severus nickte ihr zu und drehte sich um.</p><p>„Severus ...“, sagte Narzissa als er gehen wollte. „... tu nichts unvernünftiges.“</p><p>„Würde ich nie.“, antwortete Severus über die Schulter und verließ Malfoy Manor.</p><p>Es war ungewiss, ob sie sich je wiedersehen würden.</p><p> </p><p>---------------------------------------</p><p> </p><p>Severus saß an seinem Schreibtisch im Büro seines Bunkerverstecks. Vor ihm lag der Brief, den ihn Dumbledore vor seinem Tod gegeben hatte. Er hatte bis jetzt nicht den Mut gefunden ihn zu öffnen. Severus schnitt den Umschlag mit einem Messer auf und entfaltete das Pergament darin.</p><p>
+  <em>Werter Severus,</em>
+</p><p>
+  <em>Wenn Sie das lesen bin ich bereits tot. Nach meinem Dahinscheiden wird Minerva meinen Posten in Hogwarts übernehmen. Ich glaube, dass Sie damit zufrieden sein werden, da Sie ja ohnehin nie wert darauf legten im schulischen Betrieb weiter zu verbleiben. Das einzige, was ich Ihnen ans Herz legen möchte – ich weiß, dass ich Sie nun zu nichts mehr zwingen kann -, dass Sie sich um Harry Potter kümmern. Voldemort wird, nun da ich nicht mehr da bin, nichts unversucht lassen ihn zur Strecke zu bringen. Der Junge braucht Ihre Hilfe genauso sehr wie Sie seine brauchen werden, auch wenn Sie das jetzt vielleicht noch nicht so sehen mögen. Beschützen Sie ihn, suchen Sie die Horcruxe und beenden Sie es ein für alle mal. Auch wenn wir unsere Differenzen hatten, ich habe Sie immer respektiert. Lassen Sie mein Opfer nicht umsonst gewesen sein.</em>
+</p><p>
+  <em>Hochachtungsvoll,</em>
+  <br/>
+  <em>Albus Dumbledore</em>
+</p><p>Severus wusste nicht warum, aber er musste auf einmal anfangen zu weinen wie ein kleines Kind. Unter Tränen zerriss er den Brief und warf ihn in den Abfall. Er stützte sich auf seine Arme und wischte sich die Tränen aus dem Gesicht. Severus erhob sich und ging zum Schrank. Er holte eine Flasche Whiskey daraus hervor und schenkte sich ein Glas ein, dass er sogleich auf Ex leerte.</p><p>Es klopfte an der Tür.</p><p>„Ja.“, sagte Severus mit schwacher Stimme.</p><p>Jennifer trat ein. Sie sah zu ihrem Mann und nahm ihn in die Arme. Severus vergrub sein Gesicht in ihrer Schulter und weinte. Sie belastete ihn nicht weiter mit Worten, sondern strich ihm nur sanft über den Kopf. Schließlich löste sich Severus von ihr und ließ sich auf dem Bett nieder. Er rieb sich die Augen und schüttelte den Kopf.</p><p>„Womit habe ich das alles nur verdient?“, sagte Severus leise.</p><p>Jennifer setzte sich neben ihn und legte ihm den Arm um die Schultern. Sie antwortete nicht auf seine Verzweiflung, sondern hielt ihn bloß fest. Jennifer wusste, dass es keinen Sinn hatte auf ihn einzureden, wenn er in diesem Zustand war. Und so saßen sie beide für lange Zeit nur so da. Severus weinte leise vor sich hin. Seine Frau strich ihm sanft die Strähnen aus dem Gesicht und über unrasierte Wange. Sie würde nicht sagen „Alles wird gut.“, denn sie wussten beide, dass es das nicht würde. Die Finsternis, die jetzt heraufzog würde alles bisher dagewesene in den Schatten stellen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-12">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57545224">Chapter 12</a>: Das Ende des Dunklen Mals
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Tief im Bunker hatte sich Severus eine der Lagerhallen in eine Bibliothek umfunktionieren lassen. Hier hatte er alle Bücher hin verlegt, die er in Spinners End oder Hogwarts gelagert hatte. Selbst einige Exemplare aus der Verbotenen Abteilung. Die gute Madam Pince würde vermutlich einen Herzinfarkt bekommen, wenn sie herausfand, was er alles hatte mitgehen lassen.</p>
+<p>Auf dem Tisch vor Severus waren unzählige Bücher ausgebreitet. Ihm war klar, wenn er losschlagen wollte, dann musste er zuerst noch etwas dringendes erledigen. Das Dunkle Mal an seinem Arm war nicht bloß ein Erkennungszeichen oder dazu geeignet die anderen Todesser zusammenzurufen. Es war direkt mit Voldemort verbunden, deshalb konnten sie ihn damit rufen und er sie. Severus hatte viele Jahre lang versucht den Fluch hinter dem Mal zu ergründen. Seine Recherchen führten ihn tief in die Schwarze Magie. In Bereiche die wohl kaum ein anderer Zauberer, außer vielleicht der Dunkle Lord selbst, zu betreten bereit war.</p>
+<p>Die Tür öffnete sich und Jennifer, John und Jason Murlahey traten ein. Murlahey trug wie immer seine schwarze Bomberjacke. Sein kurzes, blondes Haar wirkte ungekämmt. Hier unten litten sie alle auf ihre Art. Die drei setzten sich an den Tisch.</p>
+<p>„Also, was ist?“, fragte Jason.</p>
+<p>Severus sah von dem Notizbuch auf, dass er vor sich liegen hatte. Darin hatte er alle relevanten Informationen zum Dunklen Mal aufgeschrieben. Nur hatte er nie einen von ihnen erzählt, was er alles so heimlich trieb. Severus zog den Ärmel seines Pullovers hoch und entblößte die Tätowierung auf seinem Arm.</p>
+<p>„Ich mache es kurz. Ich weiß nun wie ich das Dunkle Mal möglicherweise von mir lösen kann.“, sagte Severus. „Und es wird euch nicht gefallen.“</p>
+<p>„Ich dachte, das kann man nicht entfernen?“, fragte John.</p>
+<p>„Nun, nicht auf einem herkömmlichen, magischen Weg. Es ist fest mit Voldemort verbunden. Deshalb ist es verblasst als sein Körper zerstört wurde und kam wieder als er wiederauferstanden ist.“, erklärte Severus. „Es ist ein Marker. Wie ein Brandmal bei einem Pferd, nur dass man es sich nicht einfach herausschneiden kann.“</p>
+<p>„Wie willst du es entfernen?“, fragte Jennifer. Sie sah ihn streng an wie als wolle sie sagen: „Mach nichts dummes!“</p>
+<p>„Ich muss die Verbindung zwischen mir und dem Dunklen Lord kappen. Blöder Weise scheint es nur einen Weg zu geben das nachhaltig zu tun. Ich muss sterben.“, sagte Severus.</p>
+<p>Es herrschte ein Augenblick Ruhe. Die drei sahen ihn an als könnten sie nicht glauben, was er da sagte.</p>
+<p>„Was?“, sagte Jennifer laut.</p>
+<p>„Ich muss sterben.“, wiederholte Severus ruhig. „Nicht für lange. Theoretisch würden ein paar Sekunden reichen.“</p>
+<p>„Das kann nicht dein ernst sein!“, rief Jennifer aufgebracht.</p>
+<p>„Bitte reg dich nicht auf.“, sagte Severus.</p>
+<p>„Ich soll mich nicht …? Nach allem was wir gemeinsam durchgemacht haben, da lass ich dich doch nicht so was Beklopptes machen!“, sagte Jennifer.</p>
+<p>„Wenn ich das Mal nicht von mir trenne wird Voldemort weiterhin zugriff auf mich haben. Theoretisch kann er mich damit sogar töten, wenn er die Verbindung entsprechend nutzt. Nein, Jenny, es gibt keinen anderen Weg.“, sagte Severus zu ihr.</p>
+<p>„Wie willst du das machen?“, fragte Jason. „Ich meine, Sterben ist das eine, aber danach?“</p>
+<p>„Im Bunker gibt es eine medizinische Station und dort einen Defibrillator. Ich sterbe also, bin einige Sekunden klinisch tot und dann belebt ihr mich wieder. Danach müsste die Verbindung getrennt sein.“, erklärte Severus.</p>
+<p>„Mal im ernst.“, schaltete sich John ein. „Das ist 'ne Scheißidee.“</p>
+<p>„Ich weiß und vermutlich ist es die größte Scheißidee, die ich je in meinem Leben haben werde, aber es ist leider auch die einzige, um dieses Problem zu lösen.“</p>
+<p>Jennifer griff nach einem der Bücher und warf es nach Severus. Er konnte sich gerade noch wegducken als es knapp an seinem Kopf vorbei segelte.</p>
+<p>„Blödmann! Elender, sturer Blödmann!“, rief sie aufgebracht. Sie sprang auf und rauschte wütend aus dem Raum.</p>
+<p>„Na toll.“, sagte John. Er erhob sich und ging seiner Mutter nach.</p>
+<p>„Wenn ich sie wäre, wäre ich auch nicht begeistert.“, sagte Jason.</p>
+<p>„Es muss aber sein.“, antwortete Severus.</p>
+<p>„Wann willst du damit starten?“, fragte Jason.</p>
+<p>„Umgehend.“ Severus schlug das Notizbuch zu und erhob sich.</p>
+<p>„Aber nicht ohne mich.“, sagte Jason. „Jemand muss ja aufpassen, dass du dich nicht doch umbringst. Jennifer würde mir den Kopf abreisen, wenn du das versaust.“</p>
+<p>Zusammen gingen sie zur ärztlichen Station des Bunkers. Es war im Grunde ein kleines Krankenhaus mit einem OP-Saal und mehreren Krankenzimmern. Im OP befand sich auch alles, was sie für eine Wiederbelebung brauchten.</p>
+<p>„Hast du dir schon überlegt wie du sterben willst?“, fragte Jason als sie alles vorbereiteten.</p>
+<p>Severus holte eine große Stahlschüssel aus dem Schrank und füllte sie mit Wasser. Er stellte sie auf den Boden. Zusätzlich zog er einen Stuhl heran und wickelte ein Kabel von einer Steckerrolle ab. Er schnitt das Kabel durch und entfernte die Isolierung an diesem Ende.</p>
+<p>„Autsch!“, machte Jason.</p>
+<p>„Besser als sich die Pulsadern aufzuschneiden.“, meinte Severus.</p>
+<p>Er zog sich Pullover und Hemd aus und machte seinen Oberkörper frei. Dann zog er sich die Socken aus und krempelte sich die Hosenbeine hoch.</p>
+<p>„Also gut.“, sagte Severus und steckte den Stecker des Kabels in die Steckdose. Er setzte sich und tauchte die Füße in kalte Wasser. „Wünsch mir Glück.“</p>
+<p>Severus tauchte das unter Strom stehende Ende des Kabels in das Wasser. Der Schlag katapultierte ihn nach hinten und er fiel vom Stuhl. In dem Augenblick in dem er auf die Fließen des OP-Saals auftraf wurde ihm schwarz vor Augen.</p>
+<p>Severus fühlte nichts, noch sah er etwas. Sein Körper schien ihm komplett entschwunden. War das der Tod? Diese gähnende Leere? Sein Ich schwebte durch dieses große, schwarze Nichts. Wie ein Säugling im Mutterleib, dass von der Außenwelt noch nichts ahnte und lediglich die Dunkelheit kannte. Mit einem Mal spürte er wie ein Schock ihn durchfuhr. Wie Blitz, der ihn von weither traf. Ein seltsames kleines Licht tauchte am Horizont auf. Wieder durchfuhr ihn der elektrische Schlag. Das Licht kam näher. Es war zum greifen nah. Schließlich durchfuhr ihn zum dritten Mal ein Schock. Severus schnappte nach Luft und riss die Augen auf. Das Licht der OP-Lampe blendete ihn. Er rang nach Luft zum Atmen. Das laute Piepen der medizinischen Geräte bohrte sich wie ein greller Schmerz in seinen Kopf.</p>
+<p>„Er lebt!“, hörte er jemanden rufen.</p>
+<p>Mehrere Hände hievten ihn vom OP-Tisch auf eine Trage. Severus schloss die Augen. Ihm war schlecht. Was um ihn herum geschah nahm er nur schemenhaft wahr. Er spürte wie er weg dämmerte. Als er die Augen wieder öffnete lag in einem Krankenbett. Ein Tropf hing an seinem Arm. Severus rieb sich die schmerzende Stirn.</p>
+<p>„Severus!“, hörte er jemanden sagen. Verwirrt sah er zum Ende des Bettes. Jennifer, John und Jason standen dort.</p>
+<p>„Erinnert mich daran, dass ich das nie wieder mache.“, sagte Severus schmerzverzerrt.</p>
+<p>Er sah auf seinen rechten Arm. Das Dunkle Mal verblasste allmählich. Es hatte funktioniert und entgegen aller Wahrscheinlichkeit lebte er sogar noch. Leider tat ihm nur alles zu sehr weh, um in Freudenschreie auszubrechen.</p>
+<p>„Du bist so ein Idiot, Severus Snape!“, schimpfte Jennifer ihn aus.</p>
+<p>„Aber er ist unser Idiot.“, fügte John hinzu.</p>
+<p>„Wie lange war ich weg?“, fragte Severus.</p>
+<p>„Fast den ganzen Tag.“, antwortete Jason. „Sie mag ja jetzt mit dir meckern, aber unsere Jennifer ist dir die ganze Zeit nicht von der Seite gewichen.“</p>
+<p>„Natürlich, man muss ja auch ständig auf ihn aufpassen.“, sagte Jennifer.</p>
+<p>Sie setzte sich zu ihm ans Bett und nahm seine Hand.</p>
+<p>„Und ihr beiden haltet die Klappe!“, sagte Jennifer über ihre Schulter hinweg und versuchte ein Schmunzeln zu unterdrücken.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-13">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23929474/chapters/57545284">Chapter 13</a>: Epilog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Das Schulleiterbüro von Hogwarts lag in dunklen, einsamen Schatten brach. Seit dem Tod von Albus Dumbledore hatte es niemand betreten. Das Schloss und seine Bewohner verharrten in Trauer. Aus dem Schatten lösten sich die Umrisse eines Mannes in schwarzer Robe. Er hatte die Kapuze tief ins Gesicht gezogen und Schritt vor die Vitrine in der das Schwert von Godric Gryffindor lag. Mit einem Wink seines Zauberstabes öffnete er sie und nahm die Waffe heraus.</p><p>„Wissen Sie, Sie hätten ruhig danach fragen können.“, sagte das Portrait von Albus Dumbledore zu dem Mann.</p><p>Er drehte um und zog die Kapuze herunter.</p><p>„Keine Sorge, Dumbledore, ich habe einen Plan.“, sagte Severus Snape.</p><p>„Oh, das hoffe ich doch.“, entgegnete das Portrait.</p><p>„Auch wenn es nicht Ihrer ist.“, sagte Severus und lehnte die Klinge des Schwertes an seine Schulter.</p><p>Der Portrait-Dumbledore sah ihn über seine Halbmondgläser seiner Brille hinweg an.</p><p>„Dann kann ich nur ebenso hoffen, dass Sie wissen was Sie da tun.“, sagte Dumbledore.</p><p>„Das werde ich wohl kaum mit einem Portrait diskutieren.“, entgegnete Severus.</p><p>Er zog sich die Kapuze wieder über den Kopf und verschwand rückwärts in den langen, dunklen Schatten.</p><p> </p><p align="center">
+  <strong>Die Geschichte geht weiter in<br/></strong>
+</p><p align="center">
+  <strong>REQUIEM – 7. Akt: Das Ende aller Dinge</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/23928931">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 7 of the <a href="/series/537580">Severus Snape Saga</a> series</span><span class="divider"> </span><a class="next" href="/works/8955850">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="2but_qqKx1-DBiJVro8EOQK-egd7pwMQpZj5WF51DhOk8PoHdKJUYP3f8u7lIhTvb6F-Mvmhe6AH1qsfCLU9Vw"/>
+          <input value="23929474" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_23929474">
+  <form class="new_comment" id="comment_for_23929474" action="/works/23929474/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="6Hmul7DkIu_hl0MT6R5PfiEUOeBEjeDPAqBQI0Qf0GSVMvlubsyx0J9Ok6iis1-oTAs91caLmH-g7gJkEt_jIA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_23929474">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_23929474" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_23929474=new LiveValidation('comment_name_for_23929474',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_23929474.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_23929474">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_23929474" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_23929474=new LiveValidation('comment_email_for_23929474',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_23929474.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_23929474" class="landmark">Comment</label>
+        <textarea id="comment_content_for_23929474" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_23929474" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_23929474_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_23929474">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_23929474=new LiveValidation('comment_content_for_23929474',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_23929474.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_23929474.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_23929474" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/23929474/hit_count.json")})</script>
+
+
+  </body>
+</html>

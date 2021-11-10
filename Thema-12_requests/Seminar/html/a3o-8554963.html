@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":119,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+      <meta name="robots" content="noindex"/>
+      <meta name="googlebot" content="noindex"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Addiction - Sucht - MissJinx - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="blV8oKoUTVKEgKFir063kvZecQN8hv89FkOkfP1BCR4SRZATqy2irlD1b_oL8JvN2xwswrtS3UY3-pCNYWiAIw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="0ZpACKqo-CEBaxfxBXPT6aQWMLsglx_sIIGj3-xPjHGtiqy7q5EX3dUe2Wmhzf-2iVRteudDPZcBOJcucGYFTA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/8554963/chapters/19613584">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8554963">Comments </a>
+  </li>
+
+
+
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/8554963/Addiction%20-%20Sucht.azw3?updated_at=1516506897">AZW3</a></li>
+          <li><a href="/downloads/8554963/Addiction%20-%20Sucht.epub?updated_at=1516506897">EPUB</a></li>
+          <li><a href="/downloads/8554963/Addiction%20-%20Sucht.mobi?updated_at=1516506897">MOBI</a></li>
+          <li><a href="/downloads/8554963/Addiction%20-%20Sucht.pdf?updated_at=1516506897">PDF</a></li>
+          <li><a href="/downloads/8554963/Addiction%20-%20Sucht.html?updated_at=1516506897">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Explicit/works">Explicit</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter*s*Severus%20Snape/works">Harry Potter/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Lucius%20Malfoy/works">Lucius Malfoy</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Minerva%20McGonagall/works">Minerva McGonagall</a></li><li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Ron%20Weasley/works">Ron Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mythical%20Beings%20*a*%20Creatures/works">Mythical Beings &amp; Creatures</a></li><li><a class="tag" href="/tags/Bonding/works">Bonding</a></li><li><a class="tag" href="/tags/Mistletoe/works">Mistletoe</a></li><li><a class="tag" href="/tags/Halloween%20Costumes/works">Halloween Costumes</a></li><li><a class="tag" href="/tags/Absolute%20clich%C3%A9%20fic/works">Absolute cliché fic</a></li><li><a class="tag" href="/tags/Romance/works">Romance</a></li><li><a class="tag" href="/tags/Humor/works">Humor</a></li><li><a class="tag" href="/tags/Exhibitionism/works">Exhibitionism</a></li><li><a class="tag" href="/tags/Blood%20Drinking/works">Blood Drinking</a></li><li><a class="tag" href="/tags/Vampire%20Sex/works">Vampire Sex</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-11-14</dd><dt class="status">Completed:</dt><dd class="status">2016-11-14</dd><dt class="words">Words:</dt><dd class="words">18172</dd><dt class="chapters">Chapters:</dt><dd class="chapters">6/6</dd><dt class="comments">Comments:</dt><dd class="comments">6</dd><dt class="kudos">Kudos:</dt><dd class="kudos">150</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/8554963/bookmarks">7</a></dd><dt class="hits">Hits:</dt><dd class="hits">1319</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Addiction - Sucht
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/MissJinx/pseuds/MissJinx">MissJinx</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Unmittelbar nach der Schlacht um Hogwarts enthüllt sich Harry Potter ein weiteres Geheimnis. Fasziniert von diesem neuen Wissen, versucht er während seines achten Schuljahres, seinem Lehrer für Zaubertränke näherzukommen, doch Snape scheint allen Bestrebungen Harrys mit der ihm eigenen Gewandtheit und Finesse auszuweichen.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+    <ul class="associations">
+
+
+        <li>
+            A translation of
+
+            <a href="/works/1703813">Addiction</a> by <a rel="author" href="/users/Lizzy0305/pseuds/Lizzy0305">Lizzy0305</a>.
+        </li>
+
+    </ul>
+
+    <blockquote class="userstuff">
+      <p>Vorwort der Übersetzerin: Lizzy0305 ist die Autorin dieser Geschichte und war so freundlich, mir ihre Erlaubnis für eine deutsche Übersetzung zu erteilen. Das englischsprachige Original "Addiction" ist oben verlinkt.</p><p>Kommentar der Übersetzerin: Ein Klassiker – oder wie es die Autorin ausdrückt, eine "cliché fic" – im Original ganz wunderbar geschrieben, humorvoll, schnuffig und sexy. Ich hoffe sehr, ich kann dies in meine Übersetzung übernehmen.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8554963/chapters/19613584">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Albus beugte sich über den reglosen, blutüberströmten Körper von Severus Snape und blickte dann zu seiner Kollegin. "Hol Harry her, Minerva", seine Stimme war voller Sorge.<br/>
+<br/>
+"Albus, können wir nicht..."<br/>
+<br/>
+"Nein, Minerva, es muss Harry sein. Hol ihn. Und beeil dich."</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/>
+Harry lächelte seine Freunde an, während sie auf dem zerstörten Schulhof standen. "Es ist vorbei", grinste er. "Es ist vorbei und wir haben überlebt."<br/>
+<br/>
+Ron nahm Hermines Hand in seine und küsste ihren Handrücken, bevor er nickte: "Ja, wir haben es geschafft."<br/>
+<br/>
+Harry sah sich um. Hogwarts, verwüstet, aber immer noch wunderschön, erstrahlte im hellen Licht der aufgehenden Sonne. Die Menschen um sie herum versorgten die Verletzten. Die Weasley-Zwillinge, mit Wundverbänden übersät, lehnten sich mit geschlossenen Augen gegeneinander, ein leichtes Lächeln auf ihren Lippen. Remus und Sirius trugen gerade Tonks herbei, ihr blutendes Bein musste geheilt werden. Madame Pomfrey winkte sie zu sich. Sirius nickte Harry zu und lächelte, Harry hob im Gegenzug seine Hand.<br/>
+<br/>
+Einige der Lehrer arbeiteten bereits am Wiederaufbau des Schlosses, der kleine Professor Flitwick dirigierte die Statuen, die für sie gekämpft hatten, und ließ sie ihre verlorenen Teile wieder einsammeln sowie sich selbst reparieren, damit sie helfen konnten, den Schutt beiseite zu räumen. Filch fegte den Staub weg und (Harry konnte kaum das Lachen unterdrücken, welches in seiner Kehle hochzublubbern drohte) vermutlich auch die letzten Überreste von Tom Riddle.<br/>
+<br/>
+Es war vorbei. Sein Leben war wieder normal. Oder besser gesagt: Sein Leben konnte endlich anfangen, normal zu werden.<br/>
+<br/>
+Minerva McGonagall kam mit weit ausholenden Schritten auf sie zu, ihre Lippen rasiermesserdünn zusammengepresst. Harrys vorangegangener Gedanke war obsolet; irgendetwas war nicht in Ordnung.<br/>
+<br/>
+"Was ist passiert?", fragte er seine Professorin sofort.<br/>
+<br/>
+"Mr. Potter, Sie müssen mit mir kommen. Jemand braucht Ihre Hilfe", antwortete sie und umschloss mit ihren langen, eiskalten Fingern Harrys Handgelenk.<br/>
+<br/>
+Ron und Hermine setzten sich in Bewegung, um mit ihnen zu gehen, aber Minerva hielt sie zurück. "Nur Mr. Potter, fürchte ich."<br/>
+<br/>
+Harry nickte seinen Freunden zu und murmelte: "Ist schon okay", bevor er seiner Hauslehrerin zurück ins Schloss folgte.</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/>
+Albus Dumbledore stand hoch aufgerichtet vor ihm und verbarg somit erfolgreich die Person, die seine Hilfe brauchte, wer immer es auch sein mochte.<br/>
+<br/>
+"Ich weiß, dass du wahrscheinlich nichts anderes willst, als dich auszuruhen und in Ruhe gelassen zu werden", begann der Professor, "aber ich muss dich noch ein weiteres Mal um Hilfe bitten."<br/>
+<br/>
+Harry nickte und bedeutete ihm fortzufahren , er wusste, wer auch immer da seine Hilfe benötigte, er würde helfen. Außer natürlich, es handelte sich um Voldemort, aber er hatte mit eigenen Augen gesehen, wie dieser zu Staub zerfallen war, also war diese Möglichkeit wohl auszuschließen.<br/>
+<br/>
+Albus ging zur Seite, bis Harry schließlich ein paar schwarze Lumpen auf dem Boden liegen sah. Sie waren dreckig und augenscheinlich blutverkrustet. Auf einmal bewegten sie sich und Harry erkannte, dass dies kein Lumpenhaufen war, sondern Professor Snape. Die Erinnerungen, die dieser Mann kürzlich mit ihm geteilt hatte, stürmten wieder auf ihn ein, der Anblick seiner Mutter als Kind verfolgte ihn noch immer.<br/>
+<br/>
+"Er... er lebt?", fragte Harry das erste, was ihm in den Sinn kam.<br/>
+<br/>
+"Gerade noch so", antwortete Dumbledore. "Es gibt etwas Wichtiges, das du über Professor Snape wissen musst, Harry."<br/>
+<br/>
+"Ja, ich weiß schon. Er hat mir seine Erinnerungen gezeigt. Ich weiß, dass er die ganze Zeit auf unserer Seite war."<br/>
+<br/>
+"Das ist wohl wahr, aber nicht das, was ich dir mitteilen muss." Dumbledore kniete neben Snapes momentan regungslosem Körper und bedeutete Harry, es ihm gleichzutun. Harry gehorchte und als er näher herantrat, sah er, dass der Mann nicht vollkommen unbewegt war. Sein Körper zuckte und bebte, er krümmte sich, als litte er große Schmerzen. Seine Muskeln verkrampften sich und seine Handflächen bluteten, da, wo sich seine Nägel in das weiche Fleisch geschnitten hatten. Die Wunde am Hals des Mannes war kaum noch zu sehen, obwohl Harry sich erinnern konnte, dass nur Stunden zuvor karmesinrotes Blut aus ihr geströmt war. Harrys Magen zog sich bei der Erinnerung daran schmerzhaft zusammen.<br/>
+<br/>
+"Was ich dir jetzt verraten werde, Harry, ist ein Geheimnis, um das niemand an dieser Schule weiß, mit Ausnahme von Minerva und mir. Dies entspricht Severus' Wünschen, dennoch, unter den gegebenen Umständen musst du ebenfalls über die wahre Natur seines Wesens Bescheid wissen."<br/>
+<br/>
+Snape zuckte sichtlich zusammen, als wäre ihm allein die Vorstellung zuwider, dass Harry noch weitere seiner Geheimnisse erfahren würde. Harry legte beruhigend eine Hand auf die Brust des Mannes und konnte dabei spüren, dass der Stoff noch immer leicht feucht und klebrig vor Blut war. Harry fragte sich, wie viel Blut Snape wohl verloren haben mochte. Als er die außergewöhnlich blassen, fast schon durchscheinenden Züge des Mannes betrachtete, schlussfolgerte er, dass es <em><span class="user_italic">viel</span></em> gewesen sein musste.<br/>
+<br/>
+Albus lächelte ob der Geste und beobachtete den knienden Jungen. Harry war still, es gab kein Anzeichen dafür, dass er noch feindliche Gefühle gegenüber dem sterbenden Mann hegte. Der Gryffindor schaute auf und wartete darauf, dass der Schulleiter mit seiner Erklärung fortfuhr.<br/>
+<br/>
+"Harry...", begann er, doch plötzlich öffneten sich die schwarzen Augen des zwischen ihnen liegenden Mannes.<br/>
+<br/>
+"Sie dürfen nicht... noch nicht...", krächzte Snape, seine sonst so klaren Augen waren umwölkt vor Schmerz, vielleicht zeigte sich auch schon der nahende Tod in ihnen. Harry spürte unvermittelt das Verlangen, dem Mann eine kräftige Ohrfeige zu geben und sei es nur, damit er sich seiner Situation wieder bewusst würde. Er mochte es nicht, Snape so zu sehen, so... gebrochen. Er konnte es nicht ertragen, dass jemand, der so stark, so tapfer, so unbeugsam war wie Severus Snape, auf eine solche Art betteln könnte, verloren, vernichtet, besiegt. Er wollte <em><span class="user_italic">seinen</span></em> Snape zurück, den Arsch, den Bastard, den Mann, der ihn immer gehasst hatte. Sogar die Abscheu war besser als die Schwäche, die er jetzt in den unergründlichen schwarzen Augen sehen konnte. Besiegt sein stand Severus Snape nicht.<br/>
+<br/>
+"Was muss ich wissen? Wie kann ich ihm helfen?", fragte Harry Dumbledore, ohne seinen Blick von Snape abzuwenden. Die schwarzen Augen huschten zu ihm und er konnte sehen, wie sie versuchten, sich auf sein Gesicht zu fokussieren. Snape blinzelte und sein Blick war wieder klar. Harry wusste, falls es irgendetwas gab, das Snape dazu brachte zu kämpfen und am Leben zu bleiben – und sei es nur, damit er noch einmal spotten oder ihn beleidigen und Gryffindor Hauspunkte abziehen könnte – dann wäre es die Tatsache, ihn, Harry, noch einmal aufsässig zu erleben. Und so grinste er dem Mann frech mitten ins Gesicht.<br/>
+<br/>
+Er musste auch gar nicht lange warten. Snapes Gesichtsausdruck änderte sich, als er versuchte, Harry höhnisch anzuschauen. "Nein", flüsterte er heiser. Harry hob nur eine Augenbraue und grinste weiter. Die schwarzen Augen wurden immer klarer, als Snapes Schwäche seinem Zorn wich.<br/>
+<br/>
+"Oh doch." Harry lächelte und schaute zu Dumbledore. "Erzählen Sie es mir. Sie zwei haben mir in den letzten siebzehn Jahren mehr als genug Geheimnisse vorenthalten. Wenn er <em><span class="user_italic">meine</span></em> Hilfe braucht, dann werden Sie mir <em><span class="user_italic">alles</span></em> erzählen."<br/>
+<br/>
+Snape schnaubte, dann hustete er Blut. Harry wischte es mit seinem Daumen ab, während er vorgab, nicht zu bemerken, wie sich Snapes Augen bei seiner Berührung weiteten.<br/>
+<br/>
+"Es tut mir wirklich leid, Severus, aber ich habe nicht die Absicht, Sie zu verlieren, nur weil Sie denken, dass der Zeitpunkt hierfür unpassend ist", sagte Albus leise und blickte dann zu Harry. "Harry, Severus ist nicht zu einhundert Prozent ein Mensch. Er ist ein Vampir."<br/>
+<br/>
+Harry riss die Augen auf und rang nach Luft. "Ein... Vampir?", fragte er geschockt. "Mit den...", er berührte einen seiner eigenen Eckzähne mit dem Zeigefinger, bevor er kaum hörbar wisperte, "... Reißzähnen und allem Drum und Dran?"<br/>
+<br/>
+Snape verdrehte seine Augen, bevor er sie wieder schloss.<br/>
+<br/>
+"Ja, Harry, mit allem Drum und Dran, das einen Vampir ausmacht. Ich bin nicht ganz sicher, an wie viel du dich aus deinem Unterricht zu diesem Thema erinnerst, also lass es mich bitte kurz erklären. Severus wurde nicht als Vampir geboren, er wurde während einer seiner Missionen für Voldemort von einem Vampir gebissen und umgewandelt. Bitte erinnere dich stets daran, dass er keine grausame Bestie ist, sondern ein Mann, der lediglich eine gewisse... Nahrungsergänzung benötigt."<br/>
+<br/>
+"Sie reden von menschlichem Blut?", fragte Harry. So langsam hatte er einen Verdacht, weshalb er hier war. Snape hustete wieder Blut.<br/>
+<br/>
+"Präzise, Harry!" Der Schulleiter nickte. "Ich war imstande, seine Wunden zu schließen, aber er hatte bereits eine beachtliche Menge Blut verloren, als Nagini das bisschen vergiftete, was er noch in seinem Körper hatte. Seine größte Überlebenschance besteht darin, dass er das Blut eines sehr mächtigen Zauberers zu sich nimmt. Aufgrund meiner Erlebnisse mit Vorlost Gaunts Ring würde mein Blut ihm mehr schaden als nützen, aber... deines könnte ihn retten."<br/>
+<br/>
+Harry überdachte, was er gehört hatte und beobachtete dabei Snape, der die Augen nach wie vor geschlossen hielt. "Muss ich... ähm... äh... Muss ich mich dazu auf den Boden legen, oder...", stammelte Harry verlegen. Er hatte keine Ahnung, wie er vorgehen sollte, schließlich hatte er noch nie einen Vampir von sich trinken lassen. Snape wimmerte leise. Harry schaute ihn an, aber die schwarzen Augen waren immer noch geschlossen.<br/>
+<br/>
+"Das wird nicht nötig sein. Halt ihm einfach nur dein Handgelenk hin."<br/>
+<br/>
+Harry zog seinen Pulloverärmel hoch und entblößte nackte Haut. Er hielt sein Handgelenk über Snapes Lippen, aber der Mann drehte seinen Kopf weg.<br/>
+<br/>
+"Professor Snape, bitte! Es ist in Ordnung, ich werde niemandem davon erzählen. Nur bitte trinken Sie!" Harry hätte beinahe hinzugefügt: 'Ich will nicht, dass Sie sterben', spürte aber instinktiv, dass dies wohl ein bisschen dick aufgetragen klänge, auch wenn es ganz genau das war, was er in diesem Moment fühlte. Er versuchte wieder, sein Handgelenk an Snapes Lippen zu pressen, aber jener drehte seinen Kopf diesmal in die entgegengesetzte Richtung weg.<br/>
+<br/>
+Harry seufzte und zog seinen Zauberstab. Er hielt die Spitze des Stabes an seine Hauptschlagader und verursachte einen kleinen Schnitt. Sein Blut begann aus der Wunde zu fließen, das tiefe Rot sah fast wie Farbe auf seiner gebräunten Haut aus. Er hielt sein Handgelenk abermals über Snapes Mund und ließ die Bluttropfen gezielt auf die blassen, leicht ausgetrockneten Lippen fallen.<br/>
+<br/>
+Als der erste Tropfen traf, stöhnte Snape leise und seine Zunge leckte ihn rasch auf. Harry konnte die langen Reißzähne sehen und spürte ein plötzliches Ziehen in seinem Bauch. Ihm wurde bewusst, dass er spüren wollte, wie diese Zähne sich durch seine Haut bohrten und dieser Mund den Lebenssaft aus ihm heraussaugte. Augenblicklich drückte er sein blutendes Handgelenk fest gegen Snapes Lippen und wartete aufgeregt auf den stechenden Schmerz und das leidenschaftliche Saugen.<br/>
+<br/>
+Doch stattdessen leckte Snapes raue Zunge lediglich über die Wunde, entfernte das Blut und heilte den Schnitt. Er schluckte schwer und öffnete die Augen. Er schaute Harry an und da war etwas in seinem Blick, was dieser nicht entschlüsseln konnte. Möglicherweise... eine Abbitte?<br/>
+<br/>
+"Holt mir Lucius", murmelte Snape, schloss seine Augen wieder und wandte den Kopf von Harry ab.<br/>
+<br/>
+Harry wusste, er sollte eigentlich erleichtert sein, dass der Vampir nicht von ihm getrunken hatte. Er sollte sich befreit fühlen, dass es nicht sein Blut wäre, welches Severus Snape ins Leben zurück brächte, den Mann, den so viele Menschen hassten.<br/>
+<br/>
+Er verstand nicht, warum er sich stattdessen auf einmal so enttäuscht fühlte. Warum er sich betrogen fühlte. Zurückgewiesen.<br/>
+<br/>
+Er weigerte sich, den Raum zu verlassen, ganz gleich, wie eindringlich Dumbledore ihm nahelegte, dass es das Beste für ihn sei, wenn er nicht sähe, wie Severus von Lucius Malfoy trank. Harry schüttelte nur seinen Kopf, er blieb, wo er war, in einer Ecke des Büros, seine Arme fest vor seinem Körper verschränkt. Er verharrte unbewegt, bis Malfoy, unmittelbar gefolgt von Minerva, das Büro betrat und sofort neben Snape auf seine Knie fiel.<br/>
+<br/>
+"Mein lieber, alter Freund..." murmelte er, während er die Ärmel seiner Robe und seines Hemdes aufriss.<br/>
+<br/>
+Die schwarzen Augen öffneten sich und Snape flüsterte: "Bitte..." Doch Lucius hielt sein blutendes Handgelenk bereits an Snapes Lippen.<br/>
+<br/>
+"Nimm so viel, wie du brauchst, Severus", meinte Lucius leise, obwohl das letzte Wort nur noch ein Seufzer war, als lange Reißzähne bloße, helle, aristokratische Haut durchstießen.<br/>
+<br/>
+Harry knurrte fast bei diesem Anblick. Snape hielt Malfoys Handgelenk so fest er konnte, seine Lippen pressten sich gegen die blutbefleckte weiße Haut. Die rote Flüssigkeit sickerte zwischen den dünnen Lippen hervor und lief an Snapes Wangen und seinem Hals hinab. Lucius andere Hand streichelte besänftigend das lange schwarze Haar, während er selbst leise keuchte und stöhnte. Harry wusste in diesem Moment, dass Snape nicht der Einzige war, der dies genoss. Geben schien genauso erquicklich zu sein wie Nehmen und er war wütend, dass der blonde Mann ihm das gestohlen hatte. Es sollte sein Blut sein, welches Snapes Kehle wie ein weicher Rotwein hinab rann, es sollte seine Hand sein, die ihn streichelte, es sollte seine Stimme sein, die ihn anspornte, mehr zu nehmen, mehr zu trinken, so viel zu trinken, wie er nur wolle.<br/>
+<br/>
+Aber er war es nicht und er fühlte Verbitterung in sich aufsteigen. Verbitterung, Zorn, Enttäuschung und...<br/>
+<br/>
+"Es wäre das beste, wenn du jetzt gingst, Harry", sagte Albus und bugsierte ihn zur Tür.<br/>
+<br/>
+Er schaute noch einmal zurück. Snape beobachtete ihn und auf einmal wandelte sich seine Augenfarbe von unergründlichem Schwarz zu Eisblau. Der Rand seiner Iris und die kleine Pupille in der Mitte waren nach wie vor schwarz, doch alles dazwischen war ein so helles Blau, dass es fast weiß erschien und Harry lief ein heißer Schauer über den Rücken.<br/>
+<br/>
+Snape biss stärker zu und Lucius warf mit einem rauen Stöhnen seinen Kopf zurück. Harry spürte, wie er selbst hart wurde.<br/>
+<br/>
+Er wandte sich schnell ab und verließ den Raum, erregt und verwirrt. Eifersucht fraß sich wie Feuer durch seine Eingeweide, sein Herz und seinen Verstand und er erkannte, dass ein normales Leben für ihn wieder einmal nichts weiter war als ein ferner Traum.</p><p> </p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8554963/chapters/19613629">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Wie viele andere Schüler ihres Jahrgangs auch, hatten Harry, Ron und Hermine sich entschieden, nach Hogwarts zurückzukehren und ihre UTZe zu beenden. Als ihr achtes Jahr begann, erfuhren sie, dass Snape seinen Posten als Lehrer für Zaubertränke wieder aufgenommen hatte. Einige waren deshalb unglücklich. Neville stieß ein ersticktes Wimmern aus. Und Harry grinste.<br/>
+<br/>
+Bedingt durch ihre vielen Unterrichtsstunden und das Lernen dafür, vergingen die Wochen wie im Fluge und so stand Halloween sehr viel schneller vor der Tür, als Harry es erwartet hatte. Während ihres Frühstücks am Halloweenmorgen in der Großen Halle, wandte sich Harry Hermine zu und bettelte sie an: "Kannst du bitte, bitte ein Kostüm für mich auftreiben, ja?"<br/>
+<br/>
+"Was habe ich dir gesagt, Harry?", fragte Hermine und schob ihren Teller von sich.<br/>
+<br/>
+"Dass, wenn ich etwas Gutes haben will, ich mich früh genug darum kümmern muss, aber ich bin dumm und habe nicht auf dich gehört."<br/>
+<br/>
+"Isst du das noch?", säuselte Ron von Hermines anderer Seite und streckte schon die Hand nach ihrem Teller aus.<br/>
+<br/>
+Sie schüttelte ihren Kopf und verdrehte die Augen. "Warum hörst du <em><span class="user_italic">niemals</span></em> auf mich?", seufzte sie entnervt.<br/>
+<br/>
+"Weil ich ein Idiot bin. Ich bin der größte Idiot auf der ganzen, weiten Welt." Harry lächelte das Mädchen hoffnungsvoll an.<br/>
+<br/>
+Ein leises Schnauben ertönte hinter ihnen und Harry drehte sich um. Ein raschelnder schwarzer Umhang streifte seinen Arm, als Snape durch den Gang zwischen den zwei Haustischen eilte, um nach vorn zum Lehrertisch zu gelangen. Er war eine gespenstische Erscheinung in der Großen Halle, wie eine dunkle Wolke in einem helllichten Raum.<br/>
+<br/>
+In den vergangenen Jahren hatte Harry viele Dinge an Snape beobachtet, doch all diese Beobachtungen hatten eine neue Bedeutung, seit er von dessen Geheimnis wusste. Er beobachtete auch Neues an ihm, zum Beispiel, dass der Umriss Snapes diffus aussah, irgendwie verschwommen. Außerdem schien er dieser Tage gelassener zu sein und weniger blass. Harry hatte den Verdacht, dass der Grund dafür entweder in Voldemorts Ableben, oder aber Lucius Malfoys regelmäßigen Besuchen lag. Snape aß und trank, Harry hatte dies mehr als einmal gesehen, und er tat es mit einer gewissen Anmut. Das war eine typische Verhaltensweise für einen Menschen, der von einem Vampir gebissen und umgewandelt worden war. Die Nahrungsaufnahme, wohlgemerkt, nicht die Anmut. Nur geborene Vampire waren imstande, sich ausschließlich von Blut zu ernähren.<br/>
+Jawohl, Harry hatte seine Hausaufgaben gemacht.<br/>
+<br/>
+Und obwohl er nun ein weiteres bedeutsames Geheimnis mit Snape teilte, schien sich ihre Beziehung nicht sehr verändert zu haben. Sicher, der gnadenlose Hass war Vergangenheit, aber die Distanz und Kälte, die blieben. Harry hatte gehofft, dass Snape umgänglicher werden würde und sie sich annähern könnten, immerhin war er der beste Freund seiner Mutter gewesen. Doch sein Professor hatte ihn weder zu einem Spaziergang um den See, noch zu einem Plausch am Kamin eingeladen und so war Harry gezwungen, ihn weiterhin aus der Ferne zu beobachten.<br/>
+<br/>
+Er fühlte sich wieder einmal von dem Mann angezogen. Als er ihm nachblickte, wie er sich von ihm entfernte und an Dumbledores rechte Seite setzte, fühlte er plötzlich den unbändigen Drang, dorthin zu gehen und sich einfach nur neben ihn zu stellen oder, besser noch, ihn zu berühren. Er verstand diese Gefühle nicht, sie irritierten und beunruhigten ihn und dennoch, sie waren immer noch denen vorzuziehen, die er verspürte, als er wollte, dass dieser Mann, <em><span class="user_italic">dieser Vampir</span></em>, ihn biss und <em><span class="user_italic">sein</span></em> Blut trank anstelle Malfoys.<br/>
+<br/>
+Snape schaute über den Rand seines Kelches und ihre Blicke trafen sich über die vielen Köpfe in der Halle hinweg. Er deutete ein Grinsen an, seine Oberlippe spannte sich leicht und entblößte lange Eckzähne. Harry verschlug es den Atem und er musste sich zwingen, seinen Blick abzuwenden.<br/>
+<br/>
+Seitdem das Schuljahr begonnen hatte, hatte Snape dies viele Male getan. Sobald niemand hinsah, zeigte er Harry höhnisch seine Fangzähne. Es fühlte sich wie eine permanente Erinnerung an diesen einen Morgen an, daran, dass sein Blut nicht gut genug für Snape war. Er schämte sich dafür, aber was ihn wirklich verwirrte, war die zuverlässige, unabänderliche Reaktion seines Körpers darauf: das Kribbeln in seinem Bauch, sein immer schneller werdender Herzschlag und sein steifer Schwanz.<br/>
+<br/>
+Er blickte zu Hermine und errötete leicht, als er ihren wachsamen Blick bemerkte.<br/>
+<br/>
+"Du solltest einfach mit ihm reden, Harry."<br/>
+<br/>
+"Und was soll ich sagen?", fragte Harry, während er mit seinem Frühstücksspeck spielte. "Sie haben meine Mutter geliebt, wollen wir nicht ein bisschen plaudern?"<br/>
+<br/>
+Hermine schüttelte ihren buschigen Haarschopf, beobachtete Harry noch einen Moment lang und seufzte dann. "Weißt du was, ich glaube, ich habe ein Kostüm, das perfekt für dich wäre.“<br/>
+<br/>
+Harry schaute ruckartig wieder hoch und grinste sie an. "Danke, 'Mine."</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p> <br/>
+Harry glitt mit den Händen über seinen lederbedeckten Arsch und hob eine Augenbraue, als er Hermine ansah. "Bist du dir sicher, dass das hier eine gute Idee ist?"<br/>
+<br/>
+Das Mädchen kicherte. "Es ist sogar eine geniale Idee!" Sie tippte ihren Zauberstab gegen Harrys schwarzes Seidenhemd, welches sich daraufhin von selbst ordentlich in seine Hose steckte. Dann murmelte sie einen Zauberspruch und ein schwarzer Gürtel schlängelte sich aus der Spitze ihres Stabes. Sie hielt Harry den Gürtel hin und befahl: "Leg den hier auch um."<br/>
+<br/>
+Harry gehorchte und begutachtete sich anschließend selbst im Spiegel. Er sah ganz okay aus, aber noch lange nicht wie eine Katze. Gerade als er überlegte, ob es wirklich so eine gute Idee gewesen war, Hermine um Hilfe zu bitten, sah er ihr hinterlistiges Grinsen.<br/>
+<br/>
+Diesmal tippte sie den Zauberstab gegen seine Ohren, woraufhin er plötzliches Ziehen an seinem Kopf verspürte. Hermine schnippte zweimal mit ihren Fingern und Harry konnte im Spiegel sehen, wie seine nunmehr dreieckigen Ohren zuckten und sich der Geräuschquelle zuwandten. Mit großen runden Augen betrachtete er sich und seine Hände zitterten, als er die Katzenohren berührte, die sich jetzt auf seinem Kopf befanden, umgeben von seiner chaotischen Mähne. Die neuen Ohren waren mit weichem schwarzen Fell bedeckt. Er kratzte eines mit seinen scharfen Nägeln. Es fühlte sich unglaublich gut an.<br/>
+<br/>
+Als nächstes bat ihn Hermine, seine Brille abzunehmen, Harry tat es und prompt verschwamm seine Sicht.<br/>
+<br/>
+"Mach die Augen zu, keine Sorge, das ist nur Eyeliner", sagte sie, als sie mit einem Stift in der Hand auf ihn zukam. Einen Moment später fühlte Harry überrascht, wie ihn ein Zauber traf. Es tat nicht weh, aber er öffnete seine Augen und sah Hermine tadelnd an.<br/>
+<br/>
+Obwohl sie ihm direkt in die Augen sah, bemerkte sie seinen Blick nicht. Sie setzte ihm die Brille wieder auf die Nase und Harry schaute erneut in den Spiegel. Er japste, als er seine katzengleichen Augen sah, leuchtend grün im Kerzenlicht, seine Pupillen nur ein schmaler senkrechter Strich in der Mitte.<br/>
+<br/>
+"Wow, Hermine! Du bist genial."<br/>
+<br/>
+"Ich weiß", grinste sie, "aber eines fehlt noch."<br/>
+<br/>
+Ron platzte in ihr Zimmer und blieb wie angewurzelt stehen, als er Harrys Aufmachung sah. "Kumpel, du siehst Hammer aus! Können wir gehen? Ich hab Hunger."<br/>
+<br/>
+Harry nickte und wandte sich um. Hermine schleuderte noch einen weiteren Zauber auf ihn und er bemerkte nicht, was er bewirkt hatte, bis etwas seinen Arm streifte. Er grinste diabolisch und streichelte seinen weichen schwarzen Katzenschwanz. Dieser Abend würde ein Spaß werden!</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p> <br/>
+In der Großen Halle war es dunkel, doch Harry konnte alles deutlich sehen. Die Musik war laut, aber wenn er sich ausreichend konzentrierte, dann konnte er verstehen, worüber die Leute ein paar Meter weiter sprachen. Er nippte an seiner warmen Milch mit Kürbisgeschmack und beobachtete die Leute um ihn herum.<br/>
+<br/>
+Er hielt Ausschau nach Snape, er war neugierig, ob der Mann sich verkleidet hatte und falls ja, in was er sich für den heutigen Abend verwandelt hatte.<br/>
+<br/>
+Ein Mädchen in einem Geisterkostüm schnappte sich seine Hand und versuchte, ihn auf die Tanzfläche zu ziehen, aber Harry fauchte sie nur an. Der nächste, der auf ihn zukam, war ein Junge aus Ginnys Jahrgang, er trug enge, weiße Kleidung und ein Paar großartige weiße Schwingen. Sie glühten gespenstisch und waren wunderschön. Der Engel grinste ziemlich teuflisch. Harry grinste zurück und streifte die Federn spielerisch mit seinem Katzenschwanz. Er fragte sich, wie sie sich wohl gegen seine nackte Haut anfühlen würden, doch bevor der Junge näher kommen konnte, schüttelte er den Kopf und trat einen Schritt zurück. Der Engel zuckte mit den Schultern und ging, während Harry sich, nachdem er sein Glas Milch auf einem nahestehenden Tisch abgestellt hatte, in die Dunkelheit zurückzog.<br/>
+<br/>
+Seine scharfen Ohren hatten kein einziges Geräusch vernommen, daher wusste er nicht, was ihn dazu bewogen hatte, sich umzudrehen. Als erstes sah er nur ein Paar eisblauer Augen und dann trat Snape aus der Dunkelheit heraus, die ihn wie eine Wolke zu umwabern schien.<br/>
+<br/>
+Es wirkte, als hätte Snape sich als er selbst verkleidet. Er neigte leicht seinen Kopf und nahm Harrys Kostüm in Augenschein, wobei sein Blick gänzlich unverhohlen über dessen Körper strich.<br/>
+<br/>
+Zum ersten Mal in seinen Leben sah Harry einen echten Vampir, einen, wie er auch einem der Filme hätte entstammen können, die er ab und an gesehen hatte, wenn die Dursleys ihn alleine zu Hause gelassen hatten: ein langer, schwarzer Umhang mit einem Stehkragen, eine enge Samtweste, ein burgunderrotes Hemd, die Haare mittels eines schwarzen Bandes zurückgenommen, nur einige wenige Strähnen umspielten sein Gesicht. Seine Augen waren wieder schwarz und Harry dachte, er würde seine Seele verkaufen, nur, um die herrlich eisblaue Farbe noch einmal sehen zu können; seine Lippen waren weit genug geöffnet, so dass er einen Blick auf die Spitzen der scharfen Reißzähne erhaschen konnte. Snape sah aus, als wäre er geradewegs Harrys Phantasien entsprungen.<br/>
+<br/>
+"Mr. Potter, dieses Kostüm ist wahrlich wie für Sie geschaffen", spottete Snape, "eine faule und hochmütige Katze."<br/>
+<br/>
+Harry sah sich um, um sicherzugehen, dass niemand in der Nähe war, bevor er antwortete: "Ihr Kostüm spiegelt die Bestie in Ihnen auch ziemlich gut wider, Sir."<br/>
+<br/>
+"Ich bin keine Bestie, Mr. Potter. Wenn ich eine wäre, dann gäbe es hier ein... Blutbad", meinte Snape.<br/>
+<br/>
+"Nun ja, und ich bin weder faul, noch hochmütig", wisperte Harry und fing an, Snape zu umkreisen. "Katzen sind... verspielt", murmelte er und tauchte in die Dunkelheit ab. Snape verlor ihn einen Moment lang aus den Augen, doch dann konnte Harry einen festen Griff an seinen Hüften und einen warmen Körper hinter sich spüren. Es verblüffte ihn, wie problemlos Snape sich in der Dunkelheit orientieren konnte. "Katzen sind... neugierig", flüsterte er, als er mit seinen Fingern über die Hand an seiner Hüfte glitt. Snape zischte und Harry schlug mit seinen scharfen Krallen vier lange, rote Kratzer in die weiße Haut.<br/>
+<br/>
+Er fühlte eher als er sah, wie Snape vor ihn trat. Die Dunkelheit veränderte ihre Form und ein eisiger Blick leuchtete plötzlich nur Zentimeter vor ihm. Snapes Reißzähne waren so lang, dass sie seine Unterlippe einkerbten.<br/>
+<br/>
+Harry wand seinen Katzenschwanz um das Handgelenk des Mannes und zog die Hand zurück an seine Hüfte. Snape packte ihn abermals und Harry grinste. Er lehnte sich näher zu Snape und raunte: "Katzen sind auch... durchtrieben." Er schlüpfte mit seinem Katzenschwanz unter die Weste und das Hemd seines Professors und schlängelte sich immer weiter, bis er nackte Haut berührte.<br/>
+<br/>
+Snape zischte und drängte Harry gegen eine kalte Wand. "Mr. Potter, mit mir zu spielen ist nicht nur zwecklos, es ist auch widersinnig." Er schmunzelte, als er sich zu Harrys Hals beugte und tief einatmete. "In Anbetracht meines... Wesens, kann ich Sie in der Luft wittern, Mr. Potter. Sie können nichts vor mir verbergen. Ich kann Ihr Herz schlagen hören. Ich kann das Blut in Ihrem Körper fühlen, Mr. Potter. Ich kann fühlen, wie es sich bewegt, wie es fließt und durch Ihre Adern gepumpt wird, jedes Eckchen Ihres Körpers ausfüllt und Sie... lebendig macht." Er fasste Harrys Kinn und hob es an, der junge Mann war überrascht von der Wärme der Berührung. Er hätte Kälte erwartet. "Ihr Blut pulsiert unter dieser dünnen Haut. Es würde mich nur eine Sekunde kosten, sie zu durchbohren." Snape ließ ihn los und trat zurück. Er hob eine Augenbraue, während sein Blick noch einmal über Harrys Körper glitt. "Interessante Tiere, diese Katzen, Mr. Potter. Mit zu viel Neugier geschlagen, würde ich meinen. Ich bin sicher, dass Sie bereits von der Redewendung gehört haben: 'Die Neugier ist der Katze Tod.'"<br/>
+<br/>
+Harry versuchte, die Reaktion seines Körper auf die unmittelbare Nähe dieses Mannes zu verbergen, indem er seinen Katzenschwanz um seinen Unterkörper schlang. Ein sinnloser Versuch, wirklich. "Ich glaube nicht, dass mich nach all dieser Zeit ein bisschen mehr Neugier umbringen könnte, Professor Snape", sagte er mit leiser Stimme.<br/>
+<br/>
+"Ein Vampir jedoch könnte."<br/>
+<br/>
+"Sie haben bereits sehr deutlich gemacht, dass Sie nicht an meinem Blut interessiert sind, Professor", Harry grinste, fühlte aber die bekannte Bitternis in sich aufsteigen. Er war sich der Bewegungen seines Katzenschwanzes nicht mehr ganz gewahr; er strich schon wieder über Snapes Körper.<br/>
+<br/>
+"Blut ist Blut, Mr. Potter", sagte Snape schroff.<br/>
+<br/>
+"Und dennoch würden Sie eher an Malfoy saugen als an mir." Harry wurde sich der unterschwelligen Doppeldeutigkeit seines Satzes erst bewusst, als er ihn schon ausgesprochen hatte. Er fühlte, wie ihn eine Welle der Scham und der Erregung erfasste.<br/>
+<br/>
+"Vorsicht, Mr. Potter, ich kann schon fast sehen, wie ihr Blut grün wird", lachte Snape.<br/>
+<br/>
+"Ich bin nicht eifersüchtig", blaffte Harry.<br/>
+<br/>
+"Sie sollten es sein." Snape grinste süffisant und lehnte sich zu einem der dreieckigen, schwarzen Katzenohren. "Es ist ein ganz und gar außergewöhnliches Gefühl, wenn ein Vampir von Ihnen trinkt. Mit dem richtigen Partner ist es fast besser als Sex."<br/>
+<br/>
+Harry keuchte laut und versuchte, sich näher an Snape zu drängen, aber der Mann legte eine Hand auf seine Brust und hielt ihn auf Armlänge entfernt. Er kräuselte seine lange Nase und schnupperte. "Ich muss Sie nun bitten, mich zu verlassen, Mr. Potter." Er rieb an seiner Nase. "Unabhängig davon, wie verlockend Ihr Kostüm anzusehen ist, Ihr Geruch reizt meine Nase derart, dass es einem Jucken gleicht." Er schnupperte nochmals und nieste leise. "Wie Sie sehen, bin ich hochallergisch gegen Katzen."<br/>
+<br/>
+Harry starrte ihn eine Sekunde lang mit offenem Mund an, dann drehte er sich um und entfernte sich wütend von seinem Professor. Er erstarrte in der Bewegung, als ein leises Flüstern, welches nur seine Ohren vernehmen konnten, quer durch den lauten Raum wehte.<br/>
+<br/>
+"Es ist wahrhaftig eine Schande, dass Lucius nicht der richtige Partner für mich ist."</p><p> </p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8554963/chapters/19613746">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Weihnachten stand kurz bevor. Harry musste nur noch einen einzigen Nachmittag zwischen den dicken Mauern Hogwarts' überstehen, dann könnte er zum Grimmauld Platz zurückkehren und die Ferien mit Sirius, Remus und höchstwahrscheinlich auch den Weasleys verbringen.<br/> <br/> Er war zu rastlos, um in seiner Freistunde zu lernen, und durchstreifte geistesabwesend die kühlen Gänge des Schlosses. Ron war mit Hermine spazieren gegangen, während Ginny, Neville und der Rest seiner Freunde sich vermutlich irgendwo auf dem Gelände eine Schneeballschlacht lieferten.<br/> <br/> Harry wanderte gedankenlos umher; er ließ sich von seinen Instinkten leiten, ohne ein genaues Ziel vor Augen zu haben. Plötzlich trat er durch eine Art Wand aus lauwarmer Luft und stieß gegen etwas Unsichtbares. Zuerst dachte er, dass hier jemand unter einem Tarnumhang vor ihm stünde, aber er musste schon bald erkennen, dass dem nicht so war.<br/> <br/> Er war von einer unsichtbaren Energie umgeben, er konnte sie anfassen, aber nicht sehen. Eine Art Kraftfeld? Er zog seinen Zauberstab und probierte verschiedene Zaubersprüche, um die magische Wand zu entfernen, doch sie schien jeden einzelnen seiner Zauber zu absorbieren. Es dauerte fast fünf Minuten, bis er die kleine grüne Pflanze über seinem Kopf bemerkte.<br/> <br/> Er wusste nicht, ob er lachen oder weinen sollte.<br/> <br/> Ein Mistelzweig schwebte wenige Meter über ihm und er hätte schwören können, dass das verdammte Ding leise kicherte. Er konzentrierte sich auf seinen Frust und schoss mithilfe dessen einen machtvollen Bombarda hinauf, doch der Zauber prallte ab, versengte ihm ein paar Haare und wurde von der Wand absorbiert.<br/> <br/> "Na super", grummelte er in sich hinein, zumal niemand in der Nähe war, um ihn zu hören.<br/> <br/> <em><span class="user_italic">"Einen Kuss auf die Lippen musst du erlangen,  </span></em><br/><em> sonst bleibst du auf ewig herinnen gefangen.</em><br/><em> Für alle ander'n unsichtbar,</em><br/><em> nur seine Augen sehen klar,</em><br/><em> wenn der Eine erscheint,</em><br/><em> nach dem dein Herzchen weint",</em><br/> <br/> sang eine nervige, kindische Stimme oberhalb von Harry.<br/> <br/> Harry hielt als Antwort seinen ausgestreckten Mittelfinger hoch, dann setzte er sich auf den kalten Boden und lehnte sich an die magische Barriere.<br/> <br/> Nach dem sein <em><span class="user_italic">Herzchen</span></em> weinte... na danke. Trotzdem. Es war keine Frage, wer da wohl gemeint sein könnte.<br/> <br/> Harry wartete stundenlang. Es liefen jede Menge Leute an ihm vorbei, aber niemand bemerkte seine Anwesenheit. Er hatte versucht, auf sich aufmerksam zu machen, indem er schrie, gegen die Barriere hämmerte, alles, aber nichts half.<br/> <br/> "Ich frage mich, wo er abgeblieben ist, McGonagall schien fuchsteufelswild zu sein, als er nicht zu ihrem Unterricht aufgetaucht ist", seufzte Hermine, als sie und Ron an seinem unsichtbaren Käfig vorbeiliefen.<br/> <br/> "Ich bin direkt hier vor euren Augen, ihr Blindfische!", schrie Harry ihnen nach. Er zitterte mittlerweile und seine Zähne klapperten vor Kälte. Wenn man auf so kleinem Raum gefangen war, schienen die Flure sogar noch kühler zu sein als sonst.<br/> <br/> Mit einem Mal hörte er ein kaltes Lachen. Malfoy und Snape spazierten ein Stück entfernt Schulter an Schulter und waren tief in ihr Gespräch verwickelt. Snape verdrehte gerade die Augen, vermutlich wegen etwas, das Lucius, der ihn immer noch grinsend ansah, gesagt hatte.<br/> <br/> "Weiß er es nun?", lachte Lucius. "Sag mir nicht, dass er es herausgefunden hat. Er ist doch viel zu dumm dafür."<br/> <br/> "Vergiss nicht, über wen du hier sprichst, Lucius", warnte Snape ihn, obwohl er zurück grinste.<br/> <br/> "Du hast recht... schließlich hat er das Fräulein Alleswisserin Granger auf seiner Seite. Hat sie es herausgefunden?", fragte Lucius dann.<br/> <br/> Harry hatte stark das Gefühl, dass es in diesem Gespräch um ihn ging. Er mochte dieses Gefühl nicht.<br/> <br/> "Ich bezweifle, dass er auch nur die geringste Ahnung davon hat, was geschehen ist", sagte Snape leise und Lucius brüllte vor Lachen. Snape schlug ihm leicht gegen die Brust. "Achte auf deine Manieren, Lucius. Immerhin lachst du hier über meinen..." Snape sog zischend die Luft ein, als seine schwarzen Augen plötzlich Harry erspähten, der auf dem kalten Boden herumsaß. "Mr. Potter", höhnte Snape.<br/> <br/> Malfoy lachte erneut: "Das klingt sehr..."<br/> <br/> "Schweig, Lucius! Lass uns lieber mal nachsehen, was wir hier haben." Malfoy war still und Snape näherte sich Harry mit zwei großen Schritten.<br/> <br/> "Siehst du ihn?", fragte Snape den Blonden.<br/> <br/> "Wen?", fragte Lucius zurück. "Was ist los mit dir, Severus? Hat dich dein Blutdurst jetzt endgültig in den Wahnsinn getrieben?"<br/> <br/> "Mr. Potter scheint gefangen zu sein. Und zwar in einer Art von...", Snapes Augen suchten die Umgebung Harrys ab. Harry, der inzwischen aufgestanden war, zeigte mit dem Finger nach oben und Snapes Blick folgte seiner Richtung. Er stieß ein amüsiertes Lachen aus. "... Mistelzweig."<br/> <br/> "Mistelzweig?" Lucius lächelte kalt und beäugte die Luft etliche Meter von Harry entfernt.<br/> <br/> "In der Tat, das scheint die hiesige Sachlage zu sein", Snape schmunzelte, doch seine schwarzen Augen verrieten auch Besorgnis. Er drehte sich abrupt um, zog seinen Zauberstab und richtete ihn auf seinen Freund, der nur die Augenbraue hob. Ein ungesagter Zauber flog aus der Spitze des schwarzen Zauberstabes und traf Malfoy mitten in die Brust.<br/> <br/> Der blonde Mann schaute sich erneut um und diesmal konnte er Harry sehen. "Oh", lachte er, "Was ist Ihr Problem, Potter? Ist niemand bereit, den Heldenjungen zu küssen?"<br/> <br/> "Lecken Sie mich am Arsch, Mr. Malfoy", antwortete Harry mit einem so süßlich maliziösen Lächeln, das es Dolores Umbridge zur Ehre gereicht hätte. "Bisher konnte mich niemand sehen."<br/> <br/> Einen Moment lang huschten die grauen Augen zwischen Snape und Harry hin und her, dann fing Lucius wieder an zu lachen: "Oh, das wird nett."<br/> <br/> "Ich hatte gehofft, dass du das sagst", nickte Snape. "Jetzt geh hin und küss ihn auf den Mund. Einmal. Überschreite ja nicht deine Grenzen, Lucius." Die Warnung am Ende überraschte Harry, Malfoy hingegen wirkte vielmehr geschockt.<br/> <br/> "<em><span class="user_italic">Ich</span></em>, Severus?"<br/> <br/> "Nun ja, lieber du als..." Harry dachte eine Sekunde lang, dass der Satz mit 'ich' enden würde und bereitete sich auf das kalte Gefühl in seinem Inneren vor, das ihn schon bei Snapes letzter Zurückweisung befallen hatte, doch dann sagte der Mann: "... jeder andere."<br/> <br/> "Lieber jeder andere als <em><span class="user_italic">er</span></em>!", brauste Harry auf, wurde aber ignoriert.<br/> <br/> "Severus...", begann Malfoy zögerlich, doch Snapes Zischen unterbrach ihn.<br/> <br/> "Beweg deinen knochigen Arsch da rüber, Malfoy, bevor ich euch beide in Stücke reiße!" Snape schien einen Moment lang außer sich zu sein, bevor er einen tiefen Atemzug nahm, um sich zu beruhigen.<br/> <br/> Lucius grinste schon wieder. "Gut, gut... gut. Es scheint, als hätte ich meinen Beweis", kommentierte er leise, als er an Snape vorüber ging und vor Harry trat. "Nur um eines klarzustellen, Potter, ich will das hier genauso wenig wie du. Wenn du deine Zunge ins Spiel bringst, dann werde ich dich in eine Ratte verwandeln."<br/> <br/> Harry schnaubte verächtlich. "Ich würde lieber den Rest meines Lebens hier drin verbringen, vielen Dank auch."<br/> <br/> "Dann wirst du das", meinte Lucius schulterzuckend und wandte sich ab.<br/> <br/> "Tu es", befahl Snape kalt.<br/> <br/> Malfoys Blick schoss kurz zu seinem Freund, doch dann stellte er sich fest entschlossen vor Harry. Er streckte seine Hand aus, gewillt, den gefangenen jungen Mann zu ergreifen, aber sie prallte nur gegen die magische Barriere. Harry hatte sich in seinem ganzen Leben noch nie so erleichtert gefühlt.<br/> <br/> "Ich komme nicht durch", verkündete Lucius und trat beiseite. Harry lachte, als er heraushörte, dass der Blonde darüber ebenso sehr erleichtert war wie er selbst.<br/> <br/> "Verdammt...", murmelte Snape, "Also gut, Lucius, verschwinde."<br/> <br/> Der Mann feixte: "Wie es aussieht, musst es am Ende doch du sein. Oh, du <em><span class="user_italic">glücklicher</span></em> Schweinehund." Snape reagierte auf den Sarkasmus mit einen kalten Lächeln.<br/> <br/> "Auf Wiedersehen, Malfoy."<br/> <br/> "<em><span class="user_italic">Professor</span></em> Snape", meinte Malfoy grinsend, neigte leicht den Kopf und ging.<br/> <br/> Sie schwiegen, bis Lucius hinter einer Ecke verschwunden war, dann blickte Snape zu Harry.<br/> <br/> "Hören Sie auf zu schmollen, Potter, das riecht nach verfaultem Kohl. Und ich mag keinen Kohl."<br/> <br/> Harry seufzte und schaute seinen Professor an. Er fror und wollte einfach nur noch hier raus. "Lassen Sie mich raten, Sir, eine Allergie?"<br/> <br/> "Nein, Mr. Potter, simple Abneigung." Snape lächelte, als er vor die Barriere trat.<br/> <br/> "Es scheint, als könnten nur Sie mich sehen", sagte Harry, während er in seinem kleinen Käfig zurückwich und damit Snape unbewusst Platz machte.<br/> <br/> "Ich sehe Sie, ja, aber vor allem <em><span class="user_italic">rieche</span></em> ich Sie." Snape schnupperte und schüttelte angewidert den Kopf. "Sie müssen aufhören, sich Sorgen zu machen. Und zu schmollen."<br/> <br/> "Wenn Sie hier herein kämen, könnte ich aufhören. Mit beidem", schnauzte Harry gereizt, die langen Stunden seiner Gefangenschaft nagten merklich an seiner Geduld.<br/> <br/> "Oh, ich werde sicher noch eine Weile nicht durch diese Barriere treten, Mr. Potter. Anders als bei Ihnen, sind meine Sinne nämlich immer sehr sensibel und nicht nur dann, wenn ich ein Kostüm trage. Snape wedelte mit der Hand vor seiner Nase hin und her, als würde er versuchen, einen unangenehmen Geruch zu vertreiben. "Sie riechen nach verdorbenen Lebensmitteln und ich habe den Verdacht, dass es auf der anderen Seite noch viel schlimmer ist."<br/> <br/> "Ich rieche so, weil ich schon den ganzen verdammten Nachmittag lang hier drin verrotte!", schrie Harry und schlug mit der Faust gegen die magische Wand.<br/> <br/> Snape atmete tief ein. "Mmh, ja, Zorn. Viel besser. Ärgern Sie sich, wüten Sie, lassen Sie Ihren Zorn ihr Selbstmitleid übermannen und Sie bekommen, was sie wollen."<br/> <br/> Harry zog sich verschreckt in die hinterste Ecke zurück. Was er wollte, war leider nicht nur ein Kuss. Oder hier heraus zu kommen. Was er wollte, war, dass Snape seine spitzen Reißzähne in seine Haut schlug und all das Blut trank, das aus der Wunde floss.<br/> <br/> "Angst, bitter und zitrusartig. Ich möchte nicht, dass Sie mich fürchten." Snape trat näher und hielt seine Hand behutsam vor die Barriere, ohne sie jedoch zu berühren. "Seien Sie vorsichtig, ja, aber Angst ist nicht erforderlich."<br/> <br/> "Das ist ziemlich schwer zu glauben, wenn Sie mich so ansehen", antwortete Harry. Sein Herz schlug schneller.<br/> <br/> "Und wie sehe ich Sie an, Mr. Potter?"<br/> <br/> "Als wenn ich ein Stück Fleisch wäre?" Harry schluckte.<br/> <br/> Snape schmunzelte. "Ich ernähre mich von menschlichem Blut. Für mich sind die meisten Menschen einfach nur Lebensmittelbehälter."<br/> <br/> Harry lachte laut auf. "Also, das sind wir für Sie? Büchsen? Kein Wunder, dass Sie das Unterrichten so hassen. Es muss schmachvoll sein, einem Raum voller <em><span class="user_italic">Büchsen</span></em> Zaubertränke beibringen zu müssen."<br/> <br/> "Es gibt Ausnahmen." Snape zuckte mit den Schultern und lächelte, so dass die Spitzen seiner Reißzähne erneut sichtbar wurden. Harry musste ein Aufstöhnen unterdrücken. "Ihre Miss Granger, zum Beispiel, ist wohl kaum nur eine Büchse."<br/> <br/> "Ich kann auch keine sein. Wenn ich eine wäre, dann hätten Sie wenigstens in Erwägung gezogen, mein Blut zu trinken."<br/> <br/> "Warum sind Sie eigentlich dermaßen beleidigt, dass ich nicht von Ihnen getrunken habe? Die meisten Menschen wären dankbar."<br/> <br/> "Seit wann bin ich auch nur ansatzweise wie die meisten Menschen?", antwortete Harry mit einer Gegenfrage. Er beobachtete den anderen Mann, der seine Hand weiterhin vor die unsichtbare Barriere hielt, trat näher und erhob seine Hand ebenfalls. Ihre Handflächen waren nur einen Zentimeter voneinander entfernt und er konnte fühlen, wie die Magie zwischen ihnen vibrierte. "Sie haben unmissverständlich aufgezeigt, dass mein Blut nicht gut genug für Sie ist. Wie sollte mich das nicht beleidigen?"<br/> <br/> "Sie denken, das ist es, was ich getan habe?", fragte Snape leise und holte tief Luft. "Wie immer könnten Sie nicht weiter danebenliegen."<br/> <br/> "Dann erklären Sie es mir", forderte Harry und presste ihre Handflächen zusammen. Snapes Haut war warm gegen seine kalte Hand. Es fühlte sich wirklich gut an.<br/> <br/> "Ihr Blut ist mit mächtiger Magie durchtränkt", sagte Snape bedächtig, er wägte jedes einzelne Wort ab.<br/> <br/> "Ja, so viel hatte Dumbledore mir auch schon erzählt. Es wäre der einfachste Weg gewesen, Sie zu retten."<br/> <br/> "In der Tat. Im Gegenzug kann Macht süchtig machen", flüsterte Snape furchteinflößend und seine Augenfarbe wandelte sich wieder zu Eisblau. Harry keuchte leise. "Ihr Blut ist, aller Wahrscheinlichkeit nach, die Substanz mit dem höchsten Suchtpotential der ganzen Welt für mich."<br/> <br/> Harry stöhnte auf, packte Snapes Handgelenk und zog ihn in seinen Käfig. "Sie haben es bereits gekostet", sagte er, während er sich angestrengt davon abhielt, sich mit seinem ganzen Körper gegen den Professor zu drängen, obwohl sein harter Schwanz entschieden gegen diese Zurückhaltung war.<br/> <br/> Snape inhalierte die Luft um Harry und seine Augenlider flatterten zu. Harry atmete schneller.<br/> <br/> "Wonach rieche ich jetzt?", fragte er arglos.<br/> <br/> Der Vampir antwortete mit geschlossenen Augen: "Regengeruch. Der Duft der warmen Erde, die von den ersten Regentropfen berührt wird." Sein Mund öffnete sich und Harry konnte die Fangzähne wachsen sehen, bis sie fast dreimal so lang waren wie die benachbarten Zähne.<br/> <br/> Harrys Schwanz zuckte und drückte von innen gegen seine Hose. "Verfaulter Kohl war Selbstmitleid und Schmollen. Bitter und Zitrusartig waren Angst. Was ist das jetzt?", brachte Harry schwer atmend hervor und zog Snape näher, bis ihre Oberkörper sich berührten.<br/> <br/> Die Augen öffneten sich wieder und Harry verlor sich in dem leuchtend eisblauen Blick, der ihm die Sinne vernebelte. Snape biss sich selbst so fest auf die Unterlippe, dass die Reißzähne sie verletzten und sie zu bluten begann. Harry beobachtete einen kleinen Tropfen, wie er über die sinnlichen Lippen floss und bevor er zu Boden fallen konnte, lehnte er sich schnell vor und leckte ihn ab.<br/> <br/> Der Geschmack des Vampirblutes jagte ein glühendes Kribbeln durch seinen Körper. Es war fast wie ein elektrischer Schlag.<br/> <br/> "Finite Incantatem", murmelte Snape, dann trat er mit wehendem Umhang zurück.<br/> <br/> "<em><span class="user_italic">Was</span></em>?"<br/> <br/> Die, nun wieder schwarzen, Augen blickten zu dem Mistelzweig hinauf und Harry konnte den bitteren Geruch von Rauch wahrnehmen, dann fühlte er, wie die restliche Asche der Pflanze auf seinen Kopf fiel. Die Barriere war verschwunden.<br/> <br/> "Zehn Punkte Abzug von Gryffindor. Betrachten Sie dies als Ihre letzte Warnung, Mr. Potter. Ich mag eine Kreatur sein, die von ihren Instinkten getrieben wird, aber ich bin auch Ihr <span class="user_italic">Professor</span>", sagte Snape und ging.<br/> <br/> Die erneute Zurückweisung machte Harry kopflos und waghalsig und er schrie ihm nach: "Beißen Sie mich, <span class="user_italic">Sir</span>."<br/> <br/> Snape blieb stehen und wandte sich um. Einen Moment lang dachte Harry, dass er gleich gegen eine Wand geschmettert werden würde, aber nichts dergleichen geschah und er war sich nicht sicher, ob er deshalb nun erleichtert oder enttäuscht war.<br/> <br/> Snape grinste lediglich und meinte: "Falls das ein Angebot gewesen ist, muss ich es zum jetzigen Zeitpunkt ablehnen. Sollte es eine Beleidigung gewesen sein, dann muss ich Ihnen Punkte abziehen. Was soll es sein, Potter?"<br/> <br/> "Ich würde Ihnen niemals etwas anbieten, Professor Snape", knurrte Harry.<br/> <br/> Snape lachte. "Nein, das würden Sie nicht, nicht wahr? Wie Sie wünschen. Weitere zwanzig Punkte Abzug von Gryffindor, Mr. Potter, für das Beleidigen eines Lehrers. Dennoch, Sie haben mir etwas geschenkt. Ich werde den Gefallen erwidern und Sie warnen. Seien Sie sehr vorsichtig in meiner Nähe, Potter. Ich bin vielleicht kein bösartiges Geschöpf, aber das bedeutet nicht, dass ich nicht auch meine Grenzen habe."<br/> <br/> Harry missachtete den Ratschlag auf der Stelle und fragte: "Was habe ich Ihnen geschenkt?"<br/> <br/> Snape betrachtete ihn eine Weile, bevor seine Augen kurz eisblau aufleuchteten. "Den Regengeruch, Mr. Potter. Der Geruch Ihrer sexuellen Erregung ist sehr wohl ein Geschenk."</p><p> </p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8554963/chapters/19613872">Chapter 4</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8554963/chapters/19613872#chapter_4_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Der Frühling stand in voller Blüte, als die Osterferien begannen. Am Samstagmorgen erwachte Harry von der Wärme der Sonne, die ihm ins Gesicht schien. Jedoch schon kurz nachdem er so angenehm geweckt worden war, musste er feststellen, dass seine Ferien nicht mit einer Partie Schach oder einer Runde Quidditsch mit seinen Freunden beginnen würden.<br/>
+<br/>
+Eine hübsche Eule flog durch das offene Fenster herein und ließ einen Brief auf seinen Kopf fallen. Sie gurrte und verließ sofort wieder das Zimmer. Der Brief trug keine Unterschrift, aber als Harry ihn öffnete und zu lesen begann, wusste er sofort von wem er stammte.<br/>
+<br/>
+<br/>
+<em><span class="user_italic">Sie werden heute Abend bei Professor Snape nachsitzen. Bitte befinden Sie sich Punkt 18.00 Uhr im Klassenzimmer für Zaubertränke ein. Er hat mich informiert, dass Sie an seiner letzten Aufgabe gescheitert sind, aber ich konnte ihn nach einigem guten Zureden überzeugen, Sie es erneut versuchen zu lassen. Versagen Sie nicht noch einmal, Mr. Potter, oder ich werde mir die Entscheidung, meinem eigenen Haus wegen Ihrer nächtlichen Spaziergänge im Schloss und auf dem Gelände keine Punkte abzuziehen, noch einmal überlegen.<br/>
+<br/>
+Prof. M. McGonagall<br/>
+<br/>
+P.S.: Seien Sie <span class="user_underlined"><u>pünktlich</u>!</span></span></em><br/>
+<br/>
+<br/>
+Harry zerknüllte den Brief und schmiss ihn an sein Bettende.<br/>
+<br/>
+Na klar doch, ein bisschen Zweisamkeit mit Snape würde ihm mit Sicherheit helfen, ein besseres Veritaserum zu brauen.</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/>
+Eine Sekunde, bevor die Große Uhr in der Eingangshalle in der Ferne zu läuten begann, klopfte Harry an die Tür des Klassenzimmers für Zaubertränke. Die schwere hölzerne Eingangstür öffnete sich und er trat ein.<br/>
+<br/>
+Wie immer saß Snape an seinem Pult, während all die Ausrüstung, die Harry benötigen würde, bereits auf dem vordersten der Schülerpulte aufgereiht lag.<br/>
+<br/>
+"Sie haben neunzig Minuten", sagte Snape, ohne von den Aufsätzen, die er gerade korrigierte, aufzuschauen. "Sie dürfen anfangen."<br/>
+<br/>
+Harry setzte sich und begann, leise zu arbeiten. Über eine Stunde lang waren die einzigen Geräusche im Raum das Kratzen von Snapes Feder auf dem Papier und das Hacken und Schneiden von Harrys Messer auf seinem Holzbrettchen sowie das gelegentliche Blubbern der Flüssigkeit, wenn er eine weitere Zutat in den Kessel warf. Er war selbst überrascht, wie gut es lief. Das Wahrheitsserum wies exakt den Blauton auf, den es haben sollte, bevor der Trank ruhen musste, um seine typische Transparenz zu erreichen.<br/>
+<br/>
+Dann klopfte es an der Tür.<br/>
+<br/>
+Snape blickte hoch und leckte sich über die Lippen. Harry wusste sofort, wer auf der anderen Seite der Tür sein würde. Sie öffnete sich und die Angeln quietschten, als Lucius Malfoy sie wieder schloss. Die Absätze seiner glänzenden schwarzen Schuhe klackten auf dem Steinboden, als er näher schritt.<br/>
+<br/>
+Snape stand auf und begrüßte ihn: "Lucius."<br/>
+<br/>
+"Severus, mein Freund, es ist mir ein Vergnügen, dich wiederzusehen."<br/>
+<br/>
+Harry fragte sich, wie lange es wohl her sein mochte, seit Snape von dem Mann getrunken hatte, doch sein Trank begann zu sieden und so musste er seine Aufmerksamkeit schnell wieder darauf richten.<br/>
+<br/>
+"Lass uns... reden." Snape winkte Malfoy zu seinen Privatgemächern. Als sie hinter der Tür verschwanden, fühlte Harry, wie sich die bereits bekannte Eifersucht in ihm ausbreitete.<br/>
+<br/>
+Die Minuten vergingen und er rührte monoton in seinem Veritaserum.<br/>
+<br/>
+Dreimal gegen den Uhrzeigersinn. Viermal im Uhrzeigersinn.<br/>
+Dreimal gegen den Uhrzeigersinn. Viermal im Uhrzeigersinn.<br/>
+Dreimal gegen den Uhrzeigersinn. Viermal im Uhrzeigersinn.<br/>
+Dreimal gegen den Uhrzeigersinn.<br/>
+<br/>
+Die Tür öffnete sich und eine gedämpfte Stimme fragte: "Bist du dir sicher, Severus?"<br/>
+<br/>
+Harry schaute gerade noch rechtzeitig auf, um Snapes Nicken zu sehen. In seinem Gesicht war kein Blut zu sehen, aber er konnte sich auch nicht vorstellen, dass Snape so ungehobelt wäre, einem Schüler dergestalt zu begegnen. Ohne Harrys Anwesenheit zu beachten, schlenderte Lucius aus dem Raum.<br/>
+<br/>
+Zweimal gegen den Uhrzeigersinn. Harry hörte auf zu rühren und beobachtete die geschlossene Tür.<br/>
+<br/>
+"Fahren Sie mit Ihrer Arbeit fort, Mr. Potter", schnarrte Snape, als er näher kam, um seine Fortschritte zu begutachten.<br/>
+<br/>
+Harry brauchte weniger als eine Minute, um all seinen bisherigen Erfolg dem Erdboden gleichzumachen. Wortwörtlich. In Gedanken darüber versunken, was wohl in dem anderen Zimmer geschehen sein musste, fügte er dem Trank eine weitere Zutat hinzu, ohne jedoch zu bemerken, um welche es sich handelte. Dann rührte er fünfmal gegen den Uhrzeigersinn.<br/>
+<br/>
+Die Explosion riss sie beide von den Füßen und bespritzte sie von oben bis unten mit der unbekannten, heißen Flüssigkeit. Harry versuchte, sich aufzusetzen, aber ein Reinigungszauber warf ihn sofort wieder auf den Rücken. Eine Sekunde später stand Snape wutentbrannt über ihm.<br/>
+<br/>
+"Sie Schwachkopf! Sie Vollidiot! Haben Sie auch nur die geringste Ahnung davon, was Sie getan haben?", brüllte er ihn an.<br/>
+<br/>
+"E-es tut mir leid, Sir! Ich weiß nicht, was passiert ist."<br/>
+<br/>
+"Aber ich weiß ganz genau, was geschehen ist, Sie Wahnsinniger, Sie haben uns beinahe umgebracht! Sie verantwortungsloser Depp!" Snape riss ihn an seinem Arm hoch und stieß ihn in Richtung Tür. "Raus! Bevor ich Sie mit meinen bloßen Händen umbringe!", schnauzte er und Harry gehorchte eilfertig, er wollte so schnell wie möglich von Snape weg.<br/>
+<br/>
+Er packte die Türklinke und drückte sie nach unten, aber die Tür ließ sich nicht öffnen.<br/>
+<br/>
+"Ähm... Sir?"<br/>
+<br/>
+"Sind Sie dermaßen unfähig, dass Sie Hilfe brauchen, um eine verdammte Tür zu öffnen?", schrie Snape ihn an.<br/>
+<br/>
+"Es scheint so...", nuschelte Harry, der immer noch nicht in der Lage war, die Tür aufzuziehen. Er versuchte es mit Magie, doch als sein Alohomora auf das eiserne Türschloss traf, leuchtete eine Sekunde lang eine lilafarbene Absperrung auf. "Haben Sie das gesehen?", fragte Harry und beäugte misstrauisch die Tür.<br/>
+<br/>
+"Verdammt", seufzte Snape, nun etwas ruhiger. Er kam näher und legte seine Handfläche auf die Holztür. Die Absperrung leuchtete erneut kurz auf und verschwand gleich wieder. Er blickte zu Harry hinunter und verdrehte seine Augen. "Selbstredend. So etwas kann auch nur einem <em><span class="user_italic">Mister Harry Potter</span></em> passieren."<br/>
+<br/>
+"Wovon reden Sie?", schnappte Harry und fügte eine Sekunde später hinzu: "Sir?"<br/>
+<br/>
+"Es scheint, als wären wir unter Quarantäne."<br/>
+<br/>
+"Was?! Wieso?"<br/>
+<br/>
+"Weil ein idiotischer, ahnungsloser Dummkopf weder lesen, noch einfachen Anweisungen folgen kann und daher einen hochgefährlichen Trank produziert hat."<br/>
+<br/>
+"Was? Sind wir in Gefahr? War das Zeug giftig?", fragte Harry panisch.<br/>
+<br/>
+"Im Falle einer tödlichen Vergiftung wäre die Absperrung rot gewesen. Lila bedeutet eher... Unbehaglichkeit."<br/>
+<br/>
+"Was zur Hölle meinen Sie mit 'Unbehaglichkeit'?", stöhnte Harry genervt.<br/>
+<br/>
+"Hüten Sie Ihre Zunge, Mr. Potter. Unbehaglichkeit kann alles Mögliche heißen: Juckreiz, eine laufende Nase, Hautausschläge, leichtes Fieber und sogar einige reversible Veränderungen des Körpers.  Alles, was bewirkt, dass Sie sich unbehaglich fühlen, nicht ernstlich krank sind und ganz gewiss nicht sterben."<br/>
+<br/>
+"Und für wie lange werde ich mich <em><span class="user_italic">unbehaglich</span></em> fühlen?", fragte Harry gereizt, während er zu einem Pult ging und sich setzte.<br/>
+<br/>
+"Unterschiedlich. Aber normalerweise kann das Schloss Kontaminationen dieser Art in circa... drei bis vier Stunden beseitigen."<br/>
+<br/>
+"Drei bis vier <em><span class="user_italic">Stunden</span></em>?", jaulte Harry auf. "Und was bitte soll ich drei bis vier Stunden lang hier machen?"<br/>
+<br/>
+"In Anbetracht Ihrer bisherigen Misserfolge würde ich nicht vorschlagen, dass Sie den Versuch unternehmen, ein akzeptables Veritaserum zu brauen", grinste Snape. "Allerdings können Sie sich gern mit einigen dieser Bücher dort drüben beschäftigen. Vielleicht hilft es Ihnen, sich zu verbessern." Mit diesen Worten rauschte Snape zu seinem Pult zurück und begann erneut, die Aufsätze zu korrigieren.<br/>
+<br/>
+Die erste Stunde war einfach. Sie verging rasch, es passierte nichts, das sich auch nur annähernd unbehaglich anfühlte. Harry las, Snape korrigierte und es herrschte eine angenehme Stille. Als Harry durstig wurde, beschwor er Tee und bot auch Snape eine Tasse an. Der Vampir musterte ihn kurz, dann nickte er zustimmend. Harry schenkte ihm eine Tasse Earl Grey Tee ein und widerstand sogar dem Drang, einige Tropfen seines Blutes hinzuzufügen. Stattdessen legte er ein paar Kekse daneben. Die Zeit verging, der Tee war ausgetrunken. Harry fing an, sich rastlos zu fühlen.<br/>
+<br/>
+Die zweite Stunde war schon schwieriger. Harry kämpfte gegen die Langeweile und die Rastlosigkeit; er wusste auch, dass er nicht der Einzige war, der dies empfand. Snape war nervös. Er konnte nicht stillsitzen, kratzte sich am Kopf, strich sich ständig die Haare aus dem Gesicht, rieb seine Handballen und seufzte gelegentlich. Harry konzentrierte sich angestrengt auf sein Buch, so intensiv, dass sogar Hermine stolz auf ihn gewesen wäre. Aber gegen Ende der zweiten Stunde musste er dieselbe Passage drei- oder viermal lesen, um sie zu verstehen.<br/>
+<br/>
+Die dritte Stunde war ganz übel. Harry war spitz wie Nachbars Lumpi, man konnte es wirklich nicht anders nennen. Er schwitzte, Hitze- und Kältewellen jagten abwechselnd durch seinen Körper und er schlotterte. Er war erregt, sein Schwanz fast schmerzhaft hart. Sein Herzschlag raste, als würde er rennen. 'Unbehaglichkeit' erreichte gerade eine ganz neue Stufe auf der Skala, als Snape tief durchatmete und aufstand.<br/>
+<br/>
+"Sie müssen damit aufhören", sagte er nonchalant.<br/>
+<br/>
+"Ich habe überhaupt nichts getan! Womit soll ich denn aufhören?" Harry schob das Buch von sich und lehnte sich zurück. Er hatte die letzten fünfundvierzig Minuten auf dieselbe Stelle gestarrt. Seine Beine öffneten und schlossen sich wie von alleine, sein steifer Schwanz rieb gegen seine Unterwäsche.<br/>
+<br/>
+"Damit", seufzte Snape und kniff in seine Nasenwurzel. "Sie müssen unbedingt <em><span class="user_italic">damit</span></em> aufhören."<br/>
+<br/>
+"Ich mache <em><span class="user_italic">überhaupt nichts</span></em>", beharrte Harry und lehnte sich wieder nach vorn. Der mittlerweile durchnässte Stoff seiner Unterhose drückte gegen seine schmerzende Erektion.<br/>
+<br/>
+"Ich wittere Regengeruch, Mr. Potter", sagte Snape, während er sich gegen sein Pult lehnte. "Sie erinnern sich möglicherweise, unter welchen Umständen ich diesen Geruch das letzte Mal wahrgenommen habe."<br/>
+<br/>
+Harry lief tiefrot an und stöhnte frustriert auf. Natürlich erinnerte er sich. Wie könnte er es auch vergessen, wenn es ihn fast jede Nacht in seinen Träumen verfolgte?<br/>
+<br/>
+"Sie machen es nur noch schlimmer", meinte Snape leise.<br/>
+<br/>
+"Hören Sie doch einfach auf, meinem verdammten Geruch hinterherzuschnüffeln, Snape!", explodierte Harry und sprang auf. Er stieß seinen Stuhl mit so viel Wucht zurück, dass dieser mit einem lauten Knall auf dem Steinboden aufschlug.<br/>
+<br/>
+"Der ganze Raum ist davon erfüllt, Potter, und es ist nicht so, als könnte ich meinen Geruchssinn an- und abstellen."<br/>
+<br/>
+"Dann denken Sie an etwas anderes. Ich bin sicher, Sie stinken immer noch nach Malfoy, warum konzentrieren Sie sich nicht einfach darauf?", schrie Harry und pfefferte sein Buch in die Ecke.<br/>
+<br/>
+Snape starrte ihn einige Sekunden lang an, seine Atmung war unregelmäßig.<br/>
+<br/>
+"Sie müssen mich fesseln", sagte er plötzlich und Harry kippte fast aus den Latschen.<br/>
+<br/>
+"Ich... <em><span class="user_italic">WAS</span></em>?", kreischte er.<br/>
+<br/>
+"Sie haben mich schon verstanden", schnarrte Snape und beschwor mehrere schwere Eisenketten. Er setzte sich auf seinen Stuhl und winkte Harry zu sich.<br/>
+<br/>
+"Benutzen Sie die hier. Fesseln Sie mich so fest wie möglich und beten Sie zu Merlin, dass sie halten." Snape schloss dicke Schellen um seine Fußknöchel und eines seiner Handgelenke. Es war offensichtlich, dass Harry die letzte Schelle um das zweite Handgelenk schließen sollte. Die jeweils anderen Enden der Eisenketten schienen derweil mit dem großen, schweren Holzstuhl verschmolzen zu sein. "Tun Sie, was ich sage!", befahl er und Harry griff sofort nach einer Kette. Seine eigenen Beschwerden waren vergessen, als er seinen Professor an den Stuhl fesselte. "Fester", ächzte Snape und Harry zog an den Ketten.<br/>
+<br/>
+"Warum mache ich das hier, Sir?", fragte Harry. Er verspürte keine Angst, war aber auf der Hut.<br/>
+<br/>
+"Wenn die Auswirkungen dieser Kontamination, die Sie verursacht haben, sich so entwickeln, wie ich es vermute, dann werde ich zurückgehalten werden müssen. Falls ich unrecht habe, war es nur eine Vorsichtsmaßnahme."<br/>
+<br/>
+"Sie haben nicht oft unrecht, oder, Sir?"<br/>
+<br/>
+"Es kam ein paar Mal vor", räumte Snape ein, doch Harry fühlte sich dadurch keineswegs besser.<br/>
+<br/>
+Der Mann riss an den Fesseln so stark er konnte, aber sie hielten ihn. "Hören Sie mir zu, Potter. Egal, was ich sage, egal, wie sehr ich bettle, Sie werden auf gar keinen Fall tun, was ich will. Haben Sie mich verstanden?"<br/>
+<br/>
+"Sir, was geschieht mit Ihnen?", fragte Harry, als er die vielen Ketten betrachtete, die über Snapes Körper liefen.<br/>
+<br/>
+"Ich fühle mich unbehaglich, Potter", fauchte Snape. "Um genau zu sein", er atmete tief ein und die Ketten klirrten, als er seine Lungen weitete, "ich fühle mich unangenehm hungrig."<br/>
+<br/>
+Harry zischte, seine eigenen Beschwerden kamen schlagartig mit voller Wucht zurück. Sein Schwanz drückte merklich von innen gegen seine Hose und obwohl er direkt vor Snape stand, hätte er fast seinen Handballen dagegen gepresst.<br/>
+<br/>
+"Verdammte Scheiße, Potter, beherrschen Sie sich!", donnerte Snape. Seine Nasenflügel bebten, als er einen weiteren tiefen Atemzug nahm und dieses Mal wusste Harry mit absoluter Sicherheit, welchen Geruch der Mann inhalierte. "Versprechen Sie es mir, Potter. Wenn es Ihnen gelingt, in der nächsten Stunde auf der gegenüberliegenden Seite des Zimmers zu bleiben und alles zu missachten, was ich Ihnen sage, dann werde ich Sie bestehen lassen. Minerva wird denken, dass Sie ein tadelloses Veritaserum gebraut haben und wir werden vergessen, was hier geschehen ist. Wenn Sie es nicht schaffen, dieser simplen Anweisung Folge zu leisten, wenn Sie irgendwie in meine Nähe kommen, dann werden Sie alle Samstage des restlichen Schuljahres mit Strafarbeiten bei Mr. Filch verbringen. Haben Sie mich verstanden?"<br/>
+<br/>
+"Ja, Sir." Harry nickte, rührte sich aber nicht.<br/>
+<br/>
+"Schwören Sie, Potter. Sie werden alles außer Acht lassen, was ich sage. Egal, wie sehr ich bettle und vor allem, wie sehr ich Sie bedrohe, Sie werden nicht tun, was ich sage."<br/>
+<br/>
+"Ich schwöre es."<br/>
+<br/>
+"Sie werden mir kein Blut geben."<br/>
+<br/>
+Harry starrte unverhohlen auf die Fangzähne. "Nicht mal eine klitzekleine Kostprobe?"<br/>
+<br/>
+Snape fauchte ihn wütend an: "Nicht einen einzigen gottverdammten Tropfen, Potter!"<br/>
+<br/>
+Harry nickte abermals und zog sich in die gegenüberliegende Ecke des Raumes zurück. Er ahnte, dass dies nicht nur für den Vampir das Beste wäre, sondern auch für ihn selbst.</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p> <br/>
+Während der ersten zehn Minuten lief es ganz gut.<br/>
+<br/>
+Danach... war es ein Desaster.<br/>
+<br/>
+Harry fühlte sich einer Ohnmacht nahe; er war sich sehr sicher, dass der Großteil seines Blutes in seinem Schwanz pochte und nichts davon für sein Gehirn übriggeblieben war. Später schob er diesem Umstand die Schuld für seine Handlungen in die Schuhe, da er der Meinung war, er hätte so etwas niemals getan, wenn er nur wenigstens noch einen einzigen Tropfen Blut im Gehirn gehabt hätte, anstatt alles davon in seiner harten Erektion.<br/>
+<br/>
+Snape hielt die Augen geschlossen und war ruhig, bis Harry das erste Mal die Hand über seinen steifen Schwanz gleiten ließ. Harrys Stöhnen klang genauso gierig wie Snapes Zischen.<br/>
+<br/>
+"Potter, hören Sie sofort damit auf!", schrie Snape, während er seinen Kopf zurückwarf.<br/>
+<br/>
+"Ich kann nicht", antwortete Harry und es war die Wahrheit. Jetzt, nachdem er es einmal getan hatte, konnte er nicht mehr aufhören. Er schob die Hand erneut zwischen seine Beine und presste sie vehement gegen seinen Schwanz. Er ließ seine Hüften kreisen und stöhnte laut.<br/>
+<br/>
+"Ich sagte: aufhören!", brüllte Snape und fügte dann mit leiserer Stimme hinzu: "Das ist Folter."<br/>
+<br/>
+"Oh, Sie denken, das ist Folter?", antwortete Harry, während er sich immer schneller rieb. "Haben Sie eine Ahnung, wie verdammt hart ich gerade bin? Und ich bin nicht festgebunden!"<br/>
+<br/>
+"Ja, Potter, ich weiß sogar sehr genau, wie hart Sie sind. Das ist exakt der Grund, weshalb ich momentan gefesselt bin, Sie Schwachkopf. Ihr Blut schreit geradezu nach mir. Ich kann jedes Pochen fühlen, jedes Pulsen."<br/>
+<br/>
+"Na, dann ist es ja gut, dass ich es Ihnen jetzt nicht anbiete", knurrte Harry und knöpfte seine Hose auf.<br/>
+<br/>
+"Tun Sie das nicht, bitte, tun Sie das <em><span class="user_italic">nicht</span></em>!"<br/>
+<br/>
+Harry grinste. Snape hatte gesagt, er solle nicht auf ihn hören. Er langte in seine Hose und holte seinen Schwanz hervor. Er ergriff den Rand des Pultes und streckte seinen Rücken durch, während er über seine entblößte Erektion strich. Gott, es fühlte sich himmlisch an.<br/>
+<br/>
+"Merlin, Potter, Sie bieten es nicht an, Sie betteln regelrecht darum, dass es Ihnen genommen wird!", wimmerte Snape.<br/>
+<br/>
+"Ich bot es an, Sie lehnten ab. Ich habe Sie praktisch angefleht, aber Sie lehnten ab. Ich gebe einen Dreck auf ihre Gepflogenheiten, Snape, Sie können vor Durst umkommen, mir ist es gleich."<br/>
+<br/>
+"Nun, das kann ich sehen, Mr. Potter. Wenn Sie auch nur noch einen Funken Anstand im Leib hätten, würden Sie sich nicht direkt vor meinen Augen einen runterholen."<br/>
+<br/>
+"Ich bin hier nicht derjenige, der <em><span class="user_italic">gefesselt</span></em> werden musste", sagte Harry, ließ sein Becken vorwärts schnellen und stieß kräftig in seine Faust.<br/>
+<br/>
+"Der Grund dafür ist, dass ich sehr viel mehr tun würde, als nur mich selbst zu berühren, wenn ich in diesem Augenblick frei wäre."<br/>
+<br/>
+Harry grinste, als er aufstand und mit seinem harten Schwanz in der Hand auf Snape zuging. Seine Hände rieben unablässig über sein Glied.<br/>
+<br/>
+"Bleiben Sie von mir weg, Potter."<br/>
+<br/>
+Harry kam näher, hüpfte auf das Pult seines Professors und sah ihn an. Der Mann beobachtete ihn aus eisblauen Augen, den Blick starr auf Harrys Gesicht gerichtet, unwillig, auch nur einen Zentimeter tiefer zu schauen.<br/>
+<br/>
+"Sie sagen ständig das Falsche", sagte Harry, bevor er sich in die Hand spuckte. "Ich bin sicher, vor ein paar Stunden haben Sie genau das Gegenteil zu Lucius Malfoy gesagt." Seine Hand kehrte zu seiner Erektion zurück und glitt nun viel geschmeidiger darüber. Er stöhnte und stellte einen Fuß auf der Armlehne von Snapes Stuhl ab.<br/>
+<br/>
+"Ich habe fast dasselbe zu Lucius Malfoy gesagt", meinte Snape und Harry unterbrach seine Bewegungen für einen Moment.<br/>
+<br/>
+"Sie haben ihn weggeschickt?"<br/>
+<br/>
+"Natürlich habe ich ihn weggeschickt, was dachten Sie denn? Dass ich von ihm trinke, während Sie nebenan einen Trank brauen?"<br/>
+<br/>
+"Ich... ja, das hatte ich gedacht", gestand Harry leicht perplex.<br/>
+<br/>
+"Idiot..." Snape schüttelte seinen Kopf und schloss die Augen, als er merkte, dass er kurz davor war, an Harrys Körper herabzuschauen. "Seit ich ins Schloss zurückgekehrt bin, habe ich von niemanden mehr direkt getrunken."<br/>
+<br/>
+"Warum ist er dann jeden Monat hier?"<br/>
+<br/>
+"Moralische Unterstützung. Er bringt mir alle drei Monate sein Blut. Er liefert es in Blutbeuteln aus Plastik."<br/>
+<br/>
+"Trotzdem. Sie trinken immer noch <em><span class="user_italic">sein</span></em> Blut. Es ist fast dasselbe."<br/>
+<br/>
+"Es ist etwas völlig anderes. Sie verstehen es noch nicht, aber eines Tages... eines Tages werden Sie verstehen."<br/>
+<br/>
+"Was verstehen?", fragte Harry und bearbeitete seine Erektion immer schneller, seine Augen fest auf den Mann vor ihm gerichtet. Snape war errötet, das Rot seiner Wangen kontrastierte wunderschön mit seiner weißen Haut. Seine Reißzähne waren so lang, dass sie sich in das weiche Fleisch seiner Unterlippe drückten. "Sie verheimlichen mir doch schon wieder etwas. Sehen Sie mich an! Was verstehen?"<br/>
+<br/>
+Snapes Augen öffneten sich und dieses Mal verharrte der eisblaue Blick nicht starr auf Harrys Gesicht. Er glitt über dessen gesamten Körper, von Kopf bis Fuß. In der Mitte blieb er dann schließlich hängen und folgte den Auf- und Abbewegungen von Harrys Hand. Er verfolgte den Weg eines Lusttropfens, der an der Unterseite des Schwanzes hinablief, bis er unter den Fingern des jungen Mannes verschwand.<br/>
+<br/>
+Falls überhaupt möglich, wurde Harry unter dem durchdringenden Blick noch härter. Sein Schwanz zuckte in seiner nassen Hand und sein ganzer Schritt brannte wie Feuer.<br/>
+<br/>
+"Was tun Sie mit mir, Snape?", keuchte Harry verzweifelt hervor. Sein Schwanz war quälend hart und jede Berührung schürte die Hitze in seinem Unterleib noch mehr. Als er sah, wie Blut rechts und links von Snapes Lippen strömte, stöhnte er hemmungslos und ließ seinen Daumen über seine empfindsame Kuppe gleiten. "Sehen Sie mich nur an... Was tue ich hier? Ich würde doch niemals..."<br/>
+<br/>
+"Hören Sie auf, sich Sorgen zu machen", krächzte Snape heiser und leckte sich das Blut von den Lippen. "Ich weiß, was Sie wollen, Potter."<br/>
+<br/>
+"Wo würden Sie mich beißen?", fragte Harry taumelig, er war kurz davor, zum Orgasmus zu kommen. "In meinen Hals? Mein Handgelenk? Oder... hier?" Er zeichnete mit seinem Zeige- und Mittelfinger die dicke Ader auf der Unterseite seines Schwanzes nach. "Würde es weh tun?"<br/>
+<br/>
+Snapes Blick loderte auf, seine schwarzen Pupillen waren stark erweitert, seine Atmung schnell, aber regelmäßig. Ansonsten war er regungslos, er erschien nahezu gelassen. "Sie würden den Schmerz nur eine Sekunde lang spüren. Danach..."<br/>
+<br/>
+Harry malte es sich aus. Snapes Lippen an seinem Schwanz und wie er die zarte Haut durchbohren würde, Fänge, die sich in blutgefüllte Adern schlügen, ein stechender Schmerz, der in dem Moment dumpf würde, wenn Snape anfinge zu saugen.<br/>
+<br/>
+Seine Hoden zogen sich beinahe schmerzhaft zusammen, die Muskeln in seinem Unterleib verkrampften sich und er bog den Rücken durch, als er kam und seinen heißen Samen über seine Hand und auch Snape spritzte. Er ließ sich rückwärts auf das Pult fallen und versuchte, gleichmäßig zu atmen, versuchte, zurückzufinden aus den Höhen, in die Snape ihn gesandt hatte. Sein Verstand klarte sich nur langsam auf, so wie ein dunstiger Morgen am Meer. Als sich seine Umnebelung lichtete und ihm seine eigenen Handlungen bewusst wurden, hätte er am liebsten geheult.<br/>
+<br/>
+Er stopfte seinen schlaffen Schwanz in seine Hose und legte einen Arm über sein Gesicht. Seine Finger waren immer noch mit Sperma beschmiert. Und Snape ebenso, erinnerte er sich. Er stöhnte voller Scham über sich selbst auf. Jetzt hatte mit Sicherheit sein letztes Stündlein geschlagen. Er setzte sich auf, zog seinen Zauberstab und sprach zuerst über den Vampir einen Reinigungszauber und anschließend sich selbst. Die eisblauen Augen waren geschlossen, das Gesicht des Mannes war ausdruckslos.<br/>
+<br/>
+"Ähm... Es ist vorbei, oder?", fragte Harry mit belegter Stimme. Er war sich nicht sicher, ob er damit sein Leben oder die Quarantäne meinte.<br/>
+<br/>
+"Fühlen Sie sich noch in irgendeiner Art unbehaglich?" fragte Snape im Gegenzug und öffnete langsam seine Augen. Sie waren nach wie vor eisblau. Harry fragte sich, was es damit wohl auf sich hatte.<br/>
+<br/>
+Harry lachte matt. "Na ja, ja. Obwohl ich bezweifle, es im Moment durch den Trank bedingt ist." Er rutschte vom Pult herunter, um Snapes Ketten zu lösen, ungeachtet dessen, dass er wusste, dass dies sein sicheres  Ende bedeuten würde. Wenn er den Vampir gefesselt zurückließe, hätte er vielleicht eine Chance zu entkommen.<br/>
+<br/>
+"Es tut mir leid." Er sprach leise zu der Eisenkette, die über den rechten Arm lief. Er erhielt keine Antwort von Snape und so nahm Harry seinen Zauberstab zur Hand. Er schwenkte ihn, die Schellen öffneten sich und die Ketten glitten vom Körper des Mannes auf den Boden.<br/>
+<br/>
+Sobald er frei war, stand Snape auf und massierte seine Handgelenke, um den Blutfluss anzuregen. Harry wagte es nicht, ihm in die Augen zu blicken.<br/>
+<br/>
+"Ich werde Minerva von Ihren Ergebnissen berichten. Mr. Filch wird sich mit Ihnen bezüglich der Details Ihrer Strafarbeit am nächsten Samstag in Verbindung setzen. Sie können gehen."<br/>
+<br/>
+"Was?" Harry hob ruckartig den Kopf. Es lagen nur dreißig Zentimeter zwischen ihnen. Vielleicht lag es lediglich an der körperlichen Nähe, aber Snape wirkte größer als sonst. Sein Gesichtsausdruck wirkte gelassen, nichtsdestoweniger strahlte er Kälte aus. Die Reißzähne waren immer noch sehr lang.<br/>
+<br/>
+"Sie waren nicht imstande, meinen Anweisungen Folge zu leisten", sagte Snape und Harry dachte bei sich, dass dies die Untertreibung des Jahres sei. Doch er fühlte sich plötzlich auf Krawall gebürstet.<br/>
+<br/>
+"Wenn man es genau nimmt... habe ich ihnen Folge geleistet. Sie sagten, ich solle auf keinen Fall tun, was Sie wollen. Und das ist genau das, was ich getan habe", widersprach Harry und zuckte mit den Schultern.<br/>
+<br/>
+Snape dachte darüber nach. "Gryffindor...", murmelte er dann und schüttelte den Kopf. "Raus hier, Potter, bevor ich es mir anders überlege und Sie für das umbringe, was Sie heute Abend getan haben."<br/>
+<br/>
+Harry rührte sich nicht. "Sie wollen trinken", behauptete er.<br/>
+<br/>
+"Oh ja, die Flasche Feuerwhisky in meinen Privaträumen wird mit jeder Sekunde, die ich in Ihrer Gesellschaft verbringe, verlockender."<br/>
+<br/>
+"Das meinte ich nicht." Harry lächelte sanft und lehnte sich gegen das Pult. "Ich biete es Ihnen ein letztes Mal an." Er neigte den Kopf, um die Ader an seinen Hals zu entblößen. Snape sog zischend die Luft ein. "Als Gegenleistung dafür, was ich heute getan habe."<br/>
+<br/>
+"Ich habe immer noch einen Blutbeutel von Lucius. Er ist ein Reinblüter, sein Blut ist mächtig. Warum sollte ich Ihres nehmen?", fragte Snape, trat aber näher.<br/>
+<br/>
+Harry antwortete nicht. Er streckte die Hand aus und berührte Snapes Gesicht. Die eisblauen Augen flatterten zu. Er zog den Mann behutsam zu seinem Hals. Seine Berührungen waren sehr zart, Snape hätte sich jederzeit von ihm lösen können. Aber er tat es nicht.<br/>
+<br/>
+Harry schloss seine Augen, als er heißen Atem auf seiner Haut spürte. Er seufzte sehnsuchtsvoll und spreizte unbewusst seine Beine, damit Snape zwischen ihnen Platz fände. Er zog den Mann so nah wie möglich an sich heran, seine Hand vergrub sich in den weichen schwarzen Haaren.<br/>
+<br/>
+Spitze Reißzähne kratzten an seiner überraschend empfindlichen Haut und Harry fühlte, wie er erneut hart wurde. Snape atmete tief ein und versuchte, sich näher an Harry zu drängen. Eine lange Nase schnüffelte an seinem Hals und Zähne drückten sich tief hinein, durchbrachen jedoch nicht die Haut.<br/>
+<br/>
+Der Gryffindor versuchte, Snapes Kopf noch fester gegen seinen Hals zu pressen, aber diesmal widerstand der Mann. Er atmete ein letztes Mal tief ein, dann spürte Harry, wie die Reißzähne wieder schrumpften. Weiche Lippen schmiegten sich an seine Haut, Snape küsste seinen Hals und lehnte sich zurück.<br/>
+<br/>
+Die eisblauen Augen leuchteten heller als je zuvor.<br/>
+<br/>
+"Ich honoriere das Angebot, aber ich muss es ablehnen", sagte Snape heiser. "Ich trinke nicht von meinen Schülern, Mr. Potter."<br/>
+<br/>
+Harry fühlte sich auf einmal innerlich kalt. Kalt und taub. Er nickte und trat von seinem Professor zurück. Lange, warme Finger schlossen sich um sein Handgelenk und hielten ihn zurück.<br/>
+<br/>
+"Ich meine, was ich sage, Potter." Snapes Daumen streichelte die Unterseite von Harrys Handgelenk, direkt über die kleinen Unebenheiten seiner hervorstehenden Adern. "In allererster Linie bin ich ein Professor an dieser Schule. Meine Natur und demzufolge auch meine persönlichen Bedürfnisse müssen dahinter zurückstehen."<br/>
+<br/>
+"Ist das Nachsitzen vorbei, Professor Snape?" Harry erschien teilnahmslos.<br/>
+<br/>
+Snape nickte und ließ seine Hand so schnell los, als hätte er sich an ihr verbrannt. Harry stürzte zur Tür und öffnete sie rasch.<br/>
+<br/>
+"Mr. Potter!", rief ihm Snape nach. "Wir werden diesen Abend vergessen. Minerva wird denken, dass Sie ein brauchbares Veritaserum hergestellt haben. Ich muss Sie dennoch nachsitzen lassen, daher werden Sie an jedem Samstag dieses Monats zu Mr. Filch gehen. Und Sie werden mir einen zweiseitigen Aufsatz darüber schreiben, wie man ein perfektes Wahrheitsserum braut."<br/>
+<br/>
+Harry nickte wortlos und ließ das Klassenzimmer endgültig hinter sich.</p><p> </p><p> </p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_4_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Die Eule, die zu Beginn dieses Kapitels McGonagalls Notiz ausliefert, heißt im Original 'Athena Owl' – zu Deutsch: Eule der Minerva. Es gibt keine Namensvariante und es wäre mit dem nachfolgenden Kontext kollidiert, wenn ich das getreu übersetzt hätte. Aus dem Grund habe ich die Bezeichnung der Eulenart unter den Tisch fallen lassen.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8554963/chapters/19614148">Chapter 5</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Snape hatte nicht gescherzt, als er sagte, dass sie diesen Abend vergessen würden. Er benahm sich, als ob absolut gar nichts geschehen wäre. Harry fiel das nicht so leicht. Er hatte sein Sperma über diesen Mann gespritzt, um Merlins willen, solch eine Erinnerung konnte man nicht so einfach vergessen.<br/> <br/> Die Wochen vergingen schnell, während die Abschlussprüfungen näher rückten. Je mehr sie sie fürchteten, desto schneller verging die Zeit. Auf einmal waren es nur noch zwei Wochen und Harry und seine Freunde fanden bei ihrem Lernpensum kaum noch die Zeit zu essen. Dann war es nur noch eine Woche und die Panik wich einem Gefühl von Despektion. Sie wollten alle nur noch, dass es vorbei wäre. Dann begann das Examen. Harry hatte innerhalb von zwei Wochen neun Prüfungen, denn in Verteidigung gegen die dunklen Künste, Zauberkunst, Verwandlung und Zaubertränke musste er jeweils eine theoretische und eine praktische Prüfung ablegen. In Kräuterkunde war es nur eine theoretische.<br/> <br/> Einen Tag vor seiner letzten Prüfung – Zaubertränke – entschied Harry, dass er die Nase gestrichen voll hatte von der Büffelei. Lernen auf den letzten Drücker war sowieso nicht besonders effizient, sagte er sich, und er war sehr erschöpft, weswegen er einen Spaziergang zum Großen See machte, um sich an ihrem gewohnten Plätzchen unter einen Baum zu setzen. Dort angekommen, legte er sich auf den Rücken in das grüne Gras und verschränkte die Arme hinter seinem Kopf. Zur Zeit waren seine Träume mehr als nur unangenehm und so hatte er nicht die Absicht zu schlafen, sondern starrte einfach nur in den wolkenlosen blauen Himmel.<br/> <br/> Er wusste nicht, wie lange er hier schon herumgelungert hatte, als er ein eigenartiges Geräusch aus der Richtung des nahegelegenen Gebüschs hörte. Er hob den Kopf und sah sich um. Erst raschelten nur die Blätter eines Busches und dann kam eine schwarze Katze darunter hervor.<br/> <br/> "Hallo", grüßte Harry vorsichtig. Seit Pettigrew war er fremden Tieren gegenüber eher misstrauisch.<br/> <br/> Als die Katze ihn bemerkte, erstarrte sie mitten in der Bewegung, eine Pfote hing noch immer in der Luft. Harry streckte eine Hand aus. "Komm ruhig her."<br/> <br/> Die Katze miaute und schritt näher. Sie vermied Harrys Hand und stolzierte zu seiner Hüfte, wo sie sich niederließ und anfing, sich zu putzen. Harry hob eine Augenbraue, aber er berührte das Tier nicht. Er verschränkte einfach wieder seine Arme hinter dem Kopf und schaute in den blauen Himmel.<br/> <br/> "Ich frage mich, wem du wohl gehörst", murmelte er halblaut.<br/> <br/> Die Katze miaute. "Oder bist du ein Streuner?" Ein weiteres Miauen. "Ich spreche kein Kätzisch, weißt du."<br/> <br/> Die Katze rieb ihren Kopf an seiner Seite und Harry entwand sich ihrer Berührung mit einem Kichern. "Hey, das kitzelt."<br/> <br/> Das Tierchen sprang auf seinen Bauch und rollte sich zu einem schwarz glänzenden Fellball zusammen. Harry versuchte, es zu berühren, aber es hob sein Köpfchen und fauchte ihn an. Es hatte sehr vertraute wunderschöne hellblaue Augen.<br/> <br/> Harry japste. "Nein, das kann nicht sein..." Er ließ seinen Kopf wieder nach hinten fallen.<br/> Die Sonne war warm, die Katze war angenehm schwer und so dauerte es gar nicht lange, bis Harry mit dem Empfinden, dass jemand auf seinem Bauch lag und wie ein kleiner Motor schnurrte, in den Schlaf fiel.</p><p> </p><p></p><div class="user_center">
+  <hr/>
+</div><p><br/> "Kumpel, wach auf! Die Fledermaus ist verschwunden!" Eine kräftige Hand packte seine Schulter und schüttelte ihn, um ihn aufzuwecken, aber die Worte waren wesentlich wirkungsvoller.<br/> <br/> "Was?" Harry setzte sich ruckartig auf und die schwarze Katze landete mit einem gereizten Miauen in seinem Schoß.<br/> <br/> "Wir haben gerade durch Zufall mit angehört, wie die alte McGonagall es Dumbledore erzählt hat. Er hätte sich eigentlich bei einer Versammlung mit den Prüfern blicken lassen müssen, oder sowas, doch er ist nicht aufgetaucht. Sie haben ihn seit heute Morgen gesucht, aber niemand kann ihn finden."<br/> <br/> Harry starrte wie betäubt auf die Katze in seinem Schoß, die ihn mit ihren hellblauen Augen anschaute.<br/> <br/> "Wo hast du die Katze gefunden?", fragte Ron. "Sie ist niedlich. Auf jeden Fall hübscher als Krummbein." Er versuchte, das Tier zu streicheln, aber es fauchte und kratzte dem Rothaarigen mit seinen scharfen Krallen die Hand auf. "Aber nicht viel freundlicher, verdammt!", stöhnte Ron, während er seine verletzte Hand hielt.<br/> <br/> Harry musste lachen. "<em><span class="user_italic">Sie</span></em> hat mich gefunden."<br/> <br/> "Ich muss wieder los", seufzte Ron, "'Mine wartet in der Bibliothek auf mich. Wir müssen <em><span class="user_italic">vor den Prüfungen lernen. Wenn wir durchfallen, ist unsere ganze Zukunft ruiniert</span></em>", intonierte er, während er Hermines Gestik und Mimik imitierte. Harry war sicher, dass Ron alles andere lieber täte als zu lernen.<br/> <br/> "Tut mir echt leid, Kumpel", antwortete Harry matt.<br/> <br/> "Ach, ist schon okay. Sie hat versprochen, eine Runde Quidditsch mit mir zu spielen, wenn das Examen vorbei ist." Ron zwinkerte und Harry realisierte, dass er definitiv nicht dabei sein wollte, wenn die zwei sich nach ihrem Spiel in die Umkleide verzögen. "Okay, Kumpel. Die Bücher rufen. Ich seh dich dann beim Abendessen."<br/> <br/> Harry lachte und beobachtete, wie sein Freund sich entfernte. Dann blickte er hinunter auf die Katze, die gerade an ihrer Pfote schleckte.<br/> <br/> "Lust auf einen Spaziergang, Professor Snape?", fragte er und stand auf.<br/> <br/> Die hellblauen Augen schimmerten im Sonnenlicht des Nachmittags. Das Tier begann in Richtung des Verbotenen Waldes zu laufen, der lange Schwanz schwang hin und her und die weichen Pfötchen verursachten kein einziges Geräusch in dem hochgewachsenen Gras.<br/> <br/> Harry folgte ihm lächelnd.</p><p> </p><p></p><div class="user_center">
+  <hr/>
+</div><p><br/> "Ich sollte Sie mit ins Schloss zurück nehmen", bemerkte Harry, während sie an der Baumlinie des Waldes entlang liefen. "Ich bin sicher, Professor Dumbledore ist sehr erpicht darauf, Sie wiederzuhaben."<br/> <br/> Die Katze miaute.<br/> <br/> "Was denn, Sie denken das nicht?" Harry beobachtete das Tierchen, das neben ihm lief. "Ich dachte, Sie wären Freunde. Ich dachte, er wäre der einzige Grund, weshalb Sie wieder an die Schule zurückgekehrt sind."<br/> <br/> Die blauen Augen funkelten, als das Köpfchen sich ihm einen Moment lang zuwandte.<br/> <br/> "Oh. Sie sind also nicht wegen ihm hier. Warum dann? Ich bin sicher, es ist nicht wegen der <em><span class="user_italic">Büchsen</span></em>." Harry lachte und blieb stehen, dann kniete er sich neben das Tier. "Warum sind Sie hier? Sie hassen das Unterrichten. Sie haben inzwischen andere Möglichkeiten. Sie können tun, was Sie wollen. Warum vergeuden Sie hier Ihre Zeit?"<br/> <br/> Die Katze setzte sich vor ihm auf den Boden, sagte aber natürlich nichts. Sie blickte zu Harry hinauf und die blauen Augen schauten direkt in die Seele des jungen Mannes. Ein weiches Pfötchen berührte mehrmals Harrys Knie, als die Katze dagegen tippte.<br/> <br/> "Ich?", fragte Harry erstaunt. "Sie sind wegen mir hier?"<br/> <br/> Die Katze miaute. Ihre Ohren zuckten in Richtung des Waldes, sie hörte anscheinend irgendetwas. Harry hörte nichts und so fuhr er mit dem Thema fort.<br/> <br/> "Nun, ich werde das nicht glauben, solange Sie es nicht laut aussprechen. Also müssen Sie sich wohl zurück verwandeln." Nichts geschah. "Irgendwann jetzt vielleicht? Jederzeit, wirklich. Nur keine Eile."<br/> <br/> Stille. Nur die Blätter der Bäume raschelten.<br/> <br/> "Kommen Sie, Snape. Machen Sie schon. Verwandeln Sie sich zurück, bitte. Mir zuliebe."<br/> <br/> Die Katze neigte ihr Köpfchen, der Schwanz bewegte sich leicht hin und her.<br/> <br/> "Es sei denn, Sie können nicht", meinte Harry nachdenklich. Er zog seinen Zauberstab und sprach einen Zauber, den er von Sirius gelernt hatte. Er war äußerst nützlich, wenn man einen Animagus zwingen wollte, sich in seine menschliche Form zurück zu verwandeln, aber die Katze sah Harry nur vorwurfsvoll an, leckte an ihrer Vorderpfote und strich sich anschließend damit über ihren Kopf.<br/> <br/> Irgendwo in der Nähe quakte ein Frosch und sie schauten beide in diese Richtung. Und Harry hatte eine Idee. Zugegeben, eine bescheuerte Idee, die wahrscheinlich auch gar nicht funktionieren würde, aber trotzdem... sie wäre einen Versuch wert.<br/> <br/> "Haben Sie jemals von dem Märchen des Froschkönigs gehört?", fragte Harry und bereitete sich innerlich schon auf den ausholenden Schlag der scharfen Krallen vor. Doch die Katze blieb entspannt und miaute. "Der Prinz ist in der Gestalt eines Frosches gefangen und nur der Kuss der Prinzessin kann ihn erlösen. Was denken Sie, ist es einen Versuch wert?" Harry grinste in sich hinein. Das war die absurdeste Idee, die er je hatte.<br/> <br/> Zu seiner Überraschung stellte sich die Katze auf einmal mit ihren Vorderpfoten auf seine Knie und reckte ihm ihr Köpfchen entgegen. Er lachte und streckte die Hand aus, um sie zu streicheln, bevor er seinen Versuch wagen würde. Das schwarze Fell war seidenweich.  <br/> <br/> Harry beugte sich hinunter und setzte einen sanften Kuss unter die kleine rosa Nase. Die Katze begann zu schnurren und rieb ihren Kopf gegen Harry, aber ansonsten geschah nichts.<br/> <br/> "Ernsthaft, Mr. Potter, Zoophilie?", meinte eine dunkle, samtene Stimme hinter ihm und Harry sprang auf, sein Herz klopfte wie wild.<br/> <br/> "Heilige Scheiße, Sie haben mich fast zu Tode erschreckt!", vergaß er er kurz sämtliche Manieren, bevor er sich umdrehte.<br/> <br/> "Habe ich soeben die bizarrste Episode von 'Prinzessin Potters Tagträume' gesehen oder können Sie mir erklären, warum Sie dieses Tier sexuell belästigt haben?"<br/> <br/> Harry starrte den Mann mit offenem Mund an und blickte dann zu dem Tier, das gerade im Gras saß und sich die Eier leckte. Harry war plötzlich schlecht. "Igitt", stöhnte er und wischte sich mehrmals über den Mund.<br/> <br/> "Exakt meine Meinung", sagte Snape. "Ich warte, Mr. Potter."<br/> <br/> "Ich dachte, er wäre Sie", nuschelte Harry verlegen. Es klang sogar in seinen eigenen Ohren lächerlich.<br/> <br/> Snape hielt inne. Er lehnte gegen einen der Bäume, war unversehrt und sogar verhältnismäßig guter Laune. Dann spottete er: "Ich fürchte, diese Erklärung wirft mehr Fragen auf, als sie beantwortet. Warum dachten Sie, dass ich ausgerechnet eine <em><span class="user_italic">Katze</span></em> wäre? Warum dachten Sie, ich würde mich <em><span class="user_italic">überhaupt</span></em> in ein Tier verwandeln? Und warum zum Teufel würden Sie mich küssen, während ich gerade die Gestalt einer Katze innehätte?"<br/> <br/> "Die Leute haben nach Ihnen gesucht, Sir. Diese Katze tauchte aus heiterem Himmel auf." Harry versuchte, es zu erklären, doch diese ganze verfahrene Situation erschien ihm auf einmal selbst völlig idiotisch.<br/> <br/> "Und die Erklärung dafür, dass ich nicht auffindbar war, welche Ihr geniales Hirn ausbrütete, war nicht etwa, dass mich jemand angegriffen oder entführt hätte oder gar versucht hätte, mich umzubringen, nein, sondern dass ich mich <em><span class="user_italic">in eine verdammte Katze verwandelt hätte und außerstande sei, mich zurück zu verwandeln</span></em>?"<br/> <br/> Harry nickte. Jetzt, nachdem Snape es so prägnant zusammengefasst hatte, klang es sogar noch furchtbarer.<br/> <br/> "Genau in diesem Moment jetzt bin ich vollkommen davon überzeugt, dass Sie der größte Dummkopf auf diesem Planeten sind", seufzte Snape, bevor er mit seiner Hand wedelte. "Korrigieren Sie mich, wenn ich falsch liege."<br/> <br/> Harry schüttelte den Kopf. "Vorhin schien es noch logisch zu sein."<br/> <br/> "Potter, das ist das Unlogischste, das ich je gehört habe. Ich bin ein Vampir, ich kann gar keine Animagusgestalt annehmen und selbst wenn ich es könnte, wie ich Ihnen bereits sagte, bin ich <em><span class="user_italic">allergisch gegen Katzen</span></em>. In der Sekunde, in der ich mich verwandelte, würde ich mir die Seele aus dem Leib niesen. Von all dem abgesehen, warum um alles in der Welt sollte ich zu Ihnen kommen, wenn ich nicht fähig wäre, mich zurück zu verwandeln? Albus wäre mir eine viel größere Hilfe. Jeder einzelne meiner Kollegen wäre eine größere Hilfe. Sogar Miss Granger wäre eine größere Hilfe."<br/> <br/> Harrys Enttäuschung und Scham verwandelten sich im Handumdrehen in Wut. "Das ist eine hervorragende Frage, Professor Snape", schnappte er. "Warum nur würden Sie jemals zu mir kommen? Es ist überdeutlich, dass Sie <em><span class="user_italic">gar nichts</span></em> von mir brauchen!"<br/> <br/> Sie starrten einander für eine Weile an, keiner sprach.<br/> <br/> "Warum haben Sie sie geküsst?", fragte Snape schließlich und deutete dabei auf die Katze.<br/> <br/> "Weil ich ein Idiot bin, deswegen!", brauste Harry auf, schnappte sich die Katze und wandte sich zum Gehen. Er wollte so weit wie möglich weg von hier. Der einzige Gedanke in seinem Kopf war, dass er nur noch die nächsten anderthalb Wochen überstehen müsste und dann diesen Mann niemals wiederzusehen bräuchte.<br/> <br/> Snape stand blitzartig vor ihm. "In der Tat, Sie sind ein Idiot, aber selbst ein Idiot wie Sie sollte wissen, dass Magie dieser Art nur unter ganz bestimmten Umständen funktioniert, Mr. Potter. Und ich rede von Umständen wie <em><span class="user_italic">Liebe</span></em>", flüsterte er mit plötzlich leuchtend eisblauen Augen.<br/> <br/> "Ja, Professor Snape, ich bin mir dessen vollkommen bewusst", antwortete Harry leise und entfernte sich von dem Vampir.<br/> <br/> Snape packte ihn an seinem Arm und zog ihn zurück. "Morgen. Zaubertränke ist Ihre letzte Prüfung, ist das korrekt?"<br/> <br/> "Lassen Sie mich gefälligst los", fauchte Harry.<br/> <br/> "Ist das korrekt, Potter?", beharrte Snape. Seine Augen waren so hell, es war nahezu hypnotisch.<br/> <br/> "Sie beantworten nie eine einzige meiner Fragen", höhnte Harry. "Warum sollte ich also Ihre beantworten?"<br/> <br/> "Weil ich immer noch Ihr Professor bin."<br/> <br/> Harry lachte bitter auf. "Ja, das sind Sie. Noch einen Tag lang. Morgen, nach 11.00 Uhr, werde ich nicht mehr gezwungen sein, auch nur irgendeine Ihrer Fragen zu beantworten."<br/> <br/> Er riss seinen Arm aus dem Griff des Professors, drehte sich wieder um und nahm die Katze fester in seine Arme. Sie miaute leise.<br/> <br/> "Eine Frage, Mr. Potter", sagte Snape hinter ihm. "Fragen Sie mich, was Sie wollen und ich werde antworten."<br/> <br/> Harry blieb stehen, schloss die Augen und atmete tief ein. Er fühlte sich innerlich nur noch leer. "Es interessiert mich nicht mehr, Snape. Gehen Sie und spielen Sie Ihre Spielchen mit jemand anderem. Ich habe genug davon." Er ging weiter, bis ihn eine sanfte, warme Berührung an seiner Schulter zwang, abermals stehenzubleiben.<br/> <br/> "Fragen Sie", sagte Snape und es war der beinahe bittende Tonfall seiner samtenen Stimme, der Harry schlussendlich dazu brachte zu sprechen.<br/> <br/> Er starrte hinab in die blauen Augen der Katze in seinen Armen und fragte: "Warum verändert sich Ihre Augenfarbe?"<br/> <br/> Er fühlte, wie Snape näher trat, er fühlte es an dessen dunkler, vampirischer Aura.<br/> <br/> "Aus demselben Grund, weshalb sich Ihr Geruch ständig ändert. Emotionen."<br/> <br/> Harry wusste, er würde keine Antwort mehr auf seine zweite Frage bekommen. Er stellte sie trotzdem. "Was fühlen Sie, wenn Ihre Augen eisblau werden?"<br/> <br/> Heißer Atem strich über sein Ohr. "Lust", hauchte Snape.<br/> <br/> Harry hielt die Katze unbewusst noch fester. Sie schätzte das offensichtlich nicht, zappelte, zerkratzte Harrys Handgelenk und sprang aus seinen Armen. Harry kümmerte es nicht. Er drehte sich rasch um. Es traf ihn unvorbereitet, die langen Reißzähne von neuem zu sehen.<br/> <br/> "Lust worauf?", fragte er atemlos, sein Blick huschte zwischen den spitzen Fängen und den eindringlich schauenden eisblauen Augen hin und her. "Auf Blut?" In dem Moment, als er das Wort 'Blut' aussprach, fühlte er, wie sich aus dem Katzenkratzer an seinem Handgelenk ein dicker Tropfen eben davon löste und an seiner Hand hinab lief.<br/> <br/> Snape hob die blutige Hand an seine Lippen. Er inhalierte die Luft oberhalb der Wunde und Harry sah, wie seine Augen für eine Sekunde aufleuchteten. Er entriss Snape seine Hand und leckte das Blut hastig selbst ab. Er wusste, dass noch etwas davon an seinen Lippen kleben musste, als Snape seinen Blick nicht von ihnen abwenden konnte.<br/> <br/> Snape grinste. "Ich sehe Sie morgen, Mr. Potter. Und ich wünsche Ihnen Glück bei Ihrer Abschlussprüfung in Zaubertränke, ich denke, Sie werden es nötig haben."</p><p> </p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8554963/chapters/19614283">Chapter 6</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Das hier ist das letzte – und mit Abstand längste ;) – Kapitel von "Addiction – Sucht" und jaaaa, wir kommen nach viel tease &amp; denial  nach Art des Hauses Severus &amp; Harry nun endlich zu den sexy Parts. Zu denen möchte ich zwei Dinge vorab sagen:</p><p>1. dieses Kapitel, ganz besonders die Sexszene, habe ich signifikant freier übersetzt, als den Rest der Geschichte. Möglicherweise merkt man das, weil mein eigener Stil mehr durchschimmert; ich kann das nicht einschätzen. Ihr wisst schon: Wald und Bäume und so. Nichtsdestoweniger musste ich es tun, denn so heiß und erotisch einiges auf Englisch klingen mag – eng am Original übersetzt klänge es auf Deutsch unter Umständen seltsam bis unerotisch bis... vielleicht sogar manchmal abstoßend. Manche Dinge kann man nicht eins zu eins übersetzen. Ich habe mich in dieser Geschichte an den originalen Ablauf gehalten, aber die Wortwahl speziell bei den sexy Parts ist zum Teil nur rudimentär im Original zu finden.</p><p>2. Ich will niemanden vor den Kopf stoßen und gönne vor allem jedem seine sprachlichen Vorlieben, deswegen beachtet bitte, dass Nachfolgendes nur meine Meinung darstellt und keinen Anspruch auf irgendetwas hat, außer darauf, meine Meinung zu sein: Die im deutschen Fandom recht verbreitete Art, Sexszenen zu schreiben, liest sich für -mich persönlich- extrem unerotisch. Ich habe also alle Seelenspiegel zerdeppert, die Seen vergiftet, die Mundhöhlenforscher umgebracht, sämtliche Edelsteine verschenkt, die verdammte Klippe zur Todeszone erklärt und vor allem das Erbe durchgebracht.<br/>Kurz gesagt: Hier wird kein Erbe auf der Brust verteilt (Oh Gott, hoffentlich waren es nur ein paar von den Edelsteinen und nicht gleich ein ganzes Haus!), sondern Sperma verspritzt.<br/>Ich bin zwar nicht groß, aber alt genug und bevorzuge es, die Dinge beim Namen zu nennen. Das finde ich erotischer. Und das finde ich erotischer an den englischen Sexszenen, die sind nämlich oft genug noch wesentlich deutlicher. Das hat sich in den vorherigen Kapiteln vielleicht auch schon für den ein oder anderen Leser angedeutet.</p></blockquote>
+            <p>
+            (See the end of the chapter for  <a href="/works/8554963/chapters/19614283#chapter_6_endnotes">more notes</a>.)
+            </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Harry nahm das Blatt Pergament vom Pult auf und drehte es um.<br/>
+<br/>
+"Veritaserum", las er laut. Dies war also seine allerletzte Prüfung, ein akzeptables Wahrheitsserum zu brauen. Die Erinnerungen an seine letzten diesbezüglichen Versuche stiegen in ihm auf und er sah sich um. Er wusste, dass Snape im Raum sein würde.<br/>
+<br/>
+Er fand ihn schnell, er lehnte nicht weit entfernt gegen eine Wand und beobachtete Harry. Als ihre Blicke sich trafen, nickte Snape ihm beruhigend zu, als ob er den Namen des Trankes gehört hätte. Hatte er wahrscheinlich auch. Der rechte Winkel der fest zusammengepressten dünnen Lippen zog sich nach oben und Harry fühlte neues Zutrauen in sich. Er erwiderte das Lächeln und ging zum Zutatenschrank, um endlich mit seiner Arbeit anfangen zu können.<br/>
+<br/>
+Seine Prüferin, eine lächelnde, ältere Hexe mit einem Notizblock in der Hand, beobachtete jede seiner Bewegungen, doch er bemerkte sie kaum.</p><p> </p>
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/>
+Er schöpfte ein wenig seines Veritaserums ab und goss die Flüssigkeit in eine kleine Glasphiole. Er verkorkte sie und mit dieser Bewegung war seine letzte Abschlussprüfung offiziell vorüber. Wie auch immer das Ergebnis ausfallen würde, er war ab jetzt nicht länger ein Schüler der Hogwarts-Schule für Hexerei und Zauberei. Er händigte die Phiole Mrs. Frickshaw aus, die ihn mit einem breiten Lächeln belohnte.<br/>
+<br/>
+"Ich gehöre normalerweise nicht zu den Leuten, die irgendetwas verraten, bevor die Eulen bei den Schülern eintreffen, Mr. Potter, aber ich kann Ihnen eines sagen: Sie haben keinerlei Grund, sich um das Ergebnis Ihrer Prüfung in Zaubertränke Sorgen zu machen." Dann zwinkerte sie.<br/>
+<br/>
+Harry wollte ihr gerade danken, als wie aus dem Nichts kräftige, warme Finger erschienen, sein Handgelenk umklammerten und jemand begann, ihn aus dem Klassenzimmer zu zerren. Er wusste genau, wem diese übermenschliche Stärke inne war und blickte zu seinem Entführer. Snape hetzte schweigsam durch die Gänge, sein Griff an Harrys Handgelenk war eisern. Sie rannten in etliche Leute oder genauer gesagt, an ihnen vorbei, aber sie waren so schnell, dass die meisten sie gar nicht erkannten. Doch die, die sie erkannten, waren sicher, dass nunmehr Harry Potters letztes Stündlein geschlagen hatte. Einige rannten ihnen sogar nach, bereit, den Retter der Zaubererwelt zu beschützen, doch dann sauste das Paar an Albus Dumbledore vorbei und als der Schulleiter beim Anblick seines Goldjungen – heutzutage eher ein junger Mann – und wie er in Richtung der Kerker geschleift wurde, lediglich lächelte, entspannte sich die Schülerschaft und ließ es ebenso geschehen.<br/>
+<br/>
+Harry Potter allerdings, der ebenfalls fest davon überzeugt war, dass er dem Untergang geweiht war, sah weder seine besorgten Mitschüler, noch den zufrieden aussehenden Schulleiter. Er geriet immer mehr in Panik. Was sollte er tun? Und was tat Snape hier eigentlich überhaupt?<br/>
+<br/>
+Der Weg zu den Kerkern kam ihm noch nie so kurz vor.<br/>
+<br/>
+Auf einmal wurde er gewaltsam in einen angenehm kühlen Raum gestoßen, der sich regelrecht erfrischend anfühlte, nachdem er neunzig Minuten lang über einem siedenden Kessel gekauert hatte.<br/>
+<br/>
+"Snape, was...", weiter kam er nicht, bevor eisblaue Augen aufleuchteten und er von einem scheinbar wild gewordenen Vampir an den Armen gepackt und gegen eine kalte Steinwand gedrängt wurde. Er kämpfte gegen die Umklammerung, doch sein Versuch wurde lediglich mit einem Grinsen quittiert, welches ihm klar machte, dass er nirgendwohin gehen würde, es sei denn, Snape ließe ihn.<br/>
+<br/>
+"Wir gratulieren Ihnen zu der Beendigung Ihres Studiums, Mr. Potter", sprach Snape mit schleppender Stimme, sein Tonfall voll vorgetäuschter Gelassenheit. "Hogwarts konnte sich glücklich schätzen, einen Schüler wie Sie in seinen Mauern zu beherbergen, doch, so schmerzhaft dies auch für uns alle sein mag, alles findet einmal sein Ende. Wir sind betrübt, Sie gehen zu sehen, wünschen Ihnen aber alles Gute für Ihre Zukunft." Einen Herzschlag lang herrschte Stille, während derer Harry darüber nachdachte, dass er soeben eine Version der Rede, die normalerweise bei ihrer Abschlussfeier gehalten werden würde, gehört hatte. Und dann ächzte Snape: "Ich habe ernsthaft befürchtet, dieser Tag würde niemals kommen."<br/>
+<br/>
+Und auf einmal pressten sich Lippen wild entschlossen gegen seine und er stöhnte und küsste genauso inbrünstig zurück. Er zeichnete mit seiner Zunge die Zähne nach, die seine Aufmerksamkeit seit dem letzten Sommer gefesselt hatten und berührte vorsichtig die scharfen Spitzen der Vampirfänge. Snape stöhnte auf und Harry fragte sich kurz, ob sie empfindsamer wären als normale Zähne, doch dann öffnete sich Snapes Mund und Harrys Zunge glitt wie von selbst hinein und begegnete warmen Fleisch, umfing eine andere Zunge, strich gegen sie und jeder rationale Gedanke war vergessen.<br/>
+<br/>
+Snape hielt ihn immer noch fest, er presste seinen schlanken Körper gegen Harry und biss ihm in die Unterlippe, was Harry ein leises Zischen abrang. Er mochte diese Art von Schmerz, nur ein wenig mehr Druck und die Reißzähne hätten seine Haut durchbohrt, doch Snape war immer noch vorsichtig und Harry wimmerte vor Gier.<br/>
+<br/>
+Snape unterbrach den Kuss überraschend und trat zwei Schritte zurück.<br/>
+<br/>
+"Stell deine Fragen", keuchte er hervor. "Frag alles. Alles, was du nur willst."<br/>
+<br/>
+Harry war eine Sekunde lang verdattert, sein Hirn noch immer wie leergefegt von dem frenetischen Kuss kurz zuvor. Dann begriff er das Angebot und lachte auf. "Nun ja, ich bin im Moment nicht gerade daran interessiert zu <em><span class="user_italic">reden</span></em>." Und schon presste er seine Lippen erneut gegen Snapes, er saugte an der weichen Zunge, während er seine Hände in den langen schwarzen Haaren vergrub.<br/>
+<br/>
+<br/>
+Es war entweder ein tiefes Knurren oder aber ein Glucksen, das Snapes Kehle entkam. Harry war überzeugt, dass der Mann rein physisch unfähig war, letzteres zu produzieren, also entschied er, es müsste ein Knurren gewesen sein.<br/>
+<br/>
+Snape trat erneut zurück. "Vor kurzem wolltest du nichts lieber als Antworten."<br/>
+<br/>
+"Genau genommen gab es sehr wohl etwas, was ich noch lieber gehabt hätte als Antworten", sagte Harry anzüglich und beobachtete, wie sich Snapes Reißzähne in dessen Unterlippe drückten.<br/>
+<br/>
+Snape grinste. "Dann lass mich ein paar Dinge sagen."<br/>
+<br/>
+Harry kam langsam auf den Vampir zu und beugte sich zu dessen Hals. Er küsste die zarte Haut und liebkoste die kantige Kieferlinie mit seiner Nase. "Sicher doch, lass uns reden. Es ist ja nicht so, als hätten wir... nichts Besseres zu tun." Er saugte die Haut direkt über dem Pulsschlag in seinen Mund und Snape wimmerte. Harry liebte dieses Geräusch sofort und wiederholte seine Tat, woraufhin Snape aufstöhnte.<br/>
+<br/>
+"Ich habe dich angelogen."<br/>
+<br/>
+Es brauchte nur diese vier kleinen Worte, um Harry schlagartig auf Abstand zu bringen. Er stand drei Schritte von Snape entfernt und fragte bedächtig: "Was meinst du damit?" Sein Unterton klang drohend.<br/>
+<br/>
+"Ich habe dir auch Informationen vorenthalten", fügte Snape hinzu.<br/>
+<br/>
+"Sprich!", befahl Harry angespannt.<br/>
+<br/>
+Snape grinste. "Auf einmal sind wir nicht mehr so lüstern, was, Mr. Potter?"<br/>
+<br/>
+"Spiel keine verdammten Spielchen mit mir", warnte Harry ihn.<br/>
+<br/>
+Snape seufzte. "In Albus' Büro wurde dir nicht die ganze Wahrheit enthüllt."<br/>
+<br/>
+"So viel war mir auch klar", schnauzte Harry. "Worüber hast du gelogen?"<br/>
+<br/>
+"Dein Blut. Erinnerst du dich daran, was ich dir darüber erzählt habe? Warum ich damals nicht von dir getrunken habe?"<br/>
+<br/>
+"Es ist äußerst mächtig und du würdest süchtig danach werden", antwortete Harry und drängte Snape, endlich auf den Punkt zu kommen.<br/>
+<br/>
+"Ich bin bereits danach süchtig. Ich habe es gekostet und seitdem wollte ich immer nur noch mehr davon." Snape stöhnte vor Blutdurst, seine eisblauen Augen schimmerten im Kerzenlicht des Zimmers.<br/>
+<br/>
+"Ich habe es angeboten und du hast abgelehnt!", brüllte Harry, während er anschuldigend mit dem Finger auf seinen (Ex-) Professor zeigte. "Verdammt noch mal, spiel keine Scheißspielchen mit mir, Snape!"<br/>
+<br/>
+"Da ist noch mehr."<br/>
+<br/>
+"Dann komm auf den gottverdammten Punkt!", knurrte Harry hervor, während er seine Fäuste ballte.<br/>
+<br/>
+"Du dachtest, ich würde dich ablehnen, weil dein Blut nicht gut genug für mich wäre. Es war genau anders herum. Du warst für das hier noch nicht bereit, nicht, solange du noch ein Schüler warst. In dem Moment, in dem ich meine Reißzähne in dich geschlagen hätte, hättest du es gewusst. Du hättest es gefühlt!"<br/>
+<br/>
+"Was gefühlt?!", schrie Harry frustriert.<br/>
+<br/>
+Snape atmete tief ein. "Ich würde mich mit dir verbinden. Wenn ich dein Blut tränke, würde ich uns aneinander binden."<br/>
+<br/>
+Diese Antwort kam unerwartet und Harry war vollkommen perplex. "Aber... du hast schon von meinem Blut getrunken."<br/>
+<br/>
+"Das war nicht genug, nicht annähernd genug. Ich wollte mehr davon, glaub mir, mehr als alles andere in meinem Leben, aber ich war dein Professor. Ich konnte nichts tun, bis du die Schule beendet hattest. Potter, du hast nicht die geringste Vorstellung davon, wie viel Macht du über mich hast."<br/>
+<br/>
+"Das ist es, worüber du gelogen hast?"<br/>
+<br/>
+"Ja. Dein Blut macht mich unvermeidlich süchtig, aber nicht, weil du ein mächtiger Zauberer bist, sondern weil <span class="user_italic">du <em>mein Gefährte bist</em></span>. Auch, wenn ich nur ein einziges Mal von dir trinke, gibt es kein Zurück mehr. Wenn ich mich an dich binde, kann ich nur noch von dir trinken und von niemandem sonst."<br/>
+<br/>
+"Und was ist mit Lucius Malfoy?", fragte Harry irritiert.<br/>
+<br/>
+Snape lachte. "Gar nichts. Lucius ist ein Freund und von reinblütiger Abstammung. Ich habe sein Blut getrunken, weil es ausreichend machtvoll ist, so dass ich nicht öfter als alle drei Monate trinken musste."<br/>
+<br/>
+"Wenn das wahr ist, warum, um Merlins willen, hast du mich dann zurückgewiesen? Warum hast du mit mir gespielt? Ich habe mich dir praktisch an den Hals geworfen!", warf Harry ihm vor.<br/>
+<br/>
+"Hogwarts selbst hätte es niemals zugelassen, dass ich von einem Schüler trinke, jedenfalls nicht, so lange ich hier Professor bin. Es war sehr schwer, aber Hogwarts' Magie half mir, mich zu beherrschen. Es war... Einige Male erwog ich ernsthaft, mitten im Schuljahr zu kündigen. Du hast keine Ahnung, Potter. Du kannst dir nicht einmal ansatzweise vorstellen, wie unendlich groß die Sehnsucht und das Verlangen sind, die einen Vampir überkommen, wenn sein Gefährte sich ihm freiwillig anbietet. Und du hast das getan. Mehrmals."<br/>
+<br/>
+Harrys Atmung beschleunigte sich, als er die Lust in Snapes Augen erkannte. Er trat näher. Snape sprach weiter: "Halloween war die erste große Versuchung, aber in Anbetracht deines Katzenhaares war es relativ leicht zu widerstehen. Weihnachten... der einzige Grund, weshalb ich fähig war, den Zauber, der auf dem Mistelzweig lag, zu brechen, lag darin, dass Hogwarts wusste, wenn ich dich küsste, dann könnte ich an diesem Punkt nicht aufhören. Meine Fangzähne hätten sich in dich gebohrt, bevor du auch nur hättest <em><span class="user_italic">'nein'</span></em> sagen können. Aber du hättest nicht 'nein' zu mir gesagt, nicht wahr, Potter?"<br/>
+<br/>
+Harry schüttelte den Kopf und trat vor den heftig zitternden Mann.<br/>
+<br/>
+Snape sprach fast tonlos: "Sie müssen Ihre Wahl treffen, Mr. Potter, und Sie müssen sie heute treffen. Sie haben noch einen weiteren Tag, ich kann einfach nicht mehr länger warten. Wenn Sie sich nicht an mich binden möchten, dann verstehe ich das. Ich werde Sie verlassen und Sie werden mich in Ihrem ganzen Leben niemals wiedersehen. Aber wenn Sie mir Ihr Blut nur noch ein einziges Mal anbieten, dann werde ich es mir nehmen. Ich werde mir nehmen, so viel Sie geben können. Doch seien Sie gewarnt, Mr. Potter, nehmen Sie dies nicht auf die leichte Schulter. In der Sekunde, in der meine Fänge Ihre Haut durchbrechen und ich den ersten Schluck Ihres Blutes trinke, gehen Sie einen verbindlichen magischen Vertrag mit mir ein. Mein Tod ist das Einzige, das diesen Vertrag auflösen kann. Und bis dahin werde ich an jeder einzelnen erreichbaren Ader Ihres Körpers saugen."<br/>
+<br/>
+Snapes Stimme war im Verlauf seiner kleinen Rede lauter geworden und nun leckte er sich bei dem Gedanken an das zuletzt Gesagte die Lippen; Harry spürte, wie er selbst bei der Vorstellung hart wurde. "Ich brauche keinen weiteren Tag, um eine Entscheidung zu treffen. Aber ich will nicht deine Blutbank sein", formulierte er seine Antwort sorgfältig. Snapes Gesichtsausdruck wandelte sich innerhalb eines Wimpernschlages von lüstern zu eiskalt. Die eisblauen Augen wurde schwarz, es war, als wäre das Licht in ihnen erloschen.<br/>
+<br/>
+"Ich verstehe." Snape drehte sich weg und deutete zur Tür. "Wenn Sie mich nun bitte entschuldigen würden."<br/>
+<br/>
+Harry rührte sich nicht. "Nein, warte einen Moment, ich bin noch nicht fertig."<br/>
+<br/>
+"Doch, das sind Sie. Mein Zustand geht Sie nichts mehr an. Und ich will allein sein." Der Tonfall des letzten Satzes ließ Harry bewusst werden, warum Snape allein sein wollte.<br/>
+<br/>
+"Du willst trinken", stellte er fest. Und fügte dann gehässig hinzu: "Malfoys Blut, schon wieder."<br/>
+<br/>
+"Ich habe in den letzten drei Monaten nicht einen einzigen Tropfen zu mir genommen. Man könnte also sagen, dass ich mich hungrig fühle, ja", stimmte Snape zu.<br/>
+<br/>
+Harry fauchte eifersüchtig: "Wenn du sein verdammtes Blut auch nur anrührst..."<br/>
+<br/>
+Urplötzlich stand Snape direkt vor ihm und zischte hitzig: "Du hast kein Recht, mir zu sagen, was ich tun oder lassen soll!"<br/>
+<br/>
+Harry wich nicht von der Stelle, sondern presste seine Brust gegen Snapes. "Beiß. Mich.", knurrte er wütend. Snapes Augen leuchteten abrupt von neuem auf, der eisblaue Blick war fast blendend hell.<br/>
+<br/>
+Eine kräftige Hand packte seinen Kiefer, riss seinen Kopf zu Seite und entblößte seinen Hals. Dann fühlte er Lippen an seiner Haut und schließlich zwei spitze Reißzähne. Er klammerte sich an den Körper vor ihm, er wollte dies hier mehr, als er es sich einzugestehen wagte. Selbst, wenn Snape ihn nur als Blutquelle benutzen wollte und sonst nichts.<br/>
+<br/>
+"Ich habe es dir gesagt, Potter, wenn du dich mir heute anbietest, werde ich nicht ablehnen", raunte Snape dunkel.<br/>
+<br/>
+"Nimm es dir", flüsterte Harry. "Nimm, was immer du willst. Nimm es, wann immer du es brauchst. Ich gehöre dir. Auch wenn du mich nur wegen meines Blutes willst."<br/>
+<br/>
+Snape trat blitzschnell zurück und Harry stöhnte frustriert auf.<br/>
+<br/>
+"Was zum Teufel meinst du mit <em><span class="user_italic">'nur wegen deines Blutes'</span></em>?" Der Vampir atmete hektisch, seine Worte klangen leicht verzerrt, bedingt durch die riesigen Eckzähne, die aus seinem Mund hervorstanden.<br/>
+<br/>
+"Ich will mit dir zusammen sein, du Idiot! Sogar, wenn uns nur dein Blutdurst beieinander hält. Ich dachte, ich könne es nicht aushalten, wenn du mich nur berührst, um an das Blut zu kommen, wenn du nur dann in meiner Nähe sein willst, wenn du durstig bist, aber ich kann schon den Gedanken nicht ertragen, dass du jemals wieder von jemand anderem trinkst!"<br/>
+<br/>
+Snape lachte und murmelte dann: "Du Dummkopf", und drängte Harry erneut gegen die Wand. Er presste ihn mit seinem ganzen Körper dagegen, seine großen, warmen Hände lagen an Harrys Taille. "Denkst du etwa, so funktioniert das? Denkst du etwa, ich könnte <em><span class="user_italic">nur dein Blut</span></em> nehmen? Denkst du etwa, von dir zu <em><span class="user_italic">trinken</span></em> ist das Einzige, woran ich in letzter Zeit gedacht habe?" Er schmunzelte. "Lucius ist nicht mein Gefährte, ich fühle nichts als Freundschaft für ihn und umgekehrt er für mich. Nichtsdestotrotz, das einzige Mal, als ich direkt von seiner Vene getrunken habe, kam er zweimal zum Orgasmus, ohne auch nur anderweitig berührt zu werden. Wenn du denkst, ich könnte von dir trinken – und zwar <em><span class="user_italic">nur von dir trinken</span></em> – und mir nichts anderes von dir nehmen, dann bist du gewaltig auf dem Holzweg!"<br/>
+<br/>
+Harry atmete schwer und zog ihn näher an sich heran, seine Hände vergruben sich wieder in dem rabenschwarzen Haar.<br/>
+<br/>
+"Der einzige Grund, weshalb ich dich an <em><span class="user_italic">dem</span></em> Abend nicht gefickt habe, Potter, war, weil ich angekettet war. Hogwarts half mir, die Gier nach deinem Blut zu unterdrücken, aber es kann nichts tun, um mein Verlangen danach zu zügeln, meinen Schwanz so tief in dich zu stoßen, dass du das Gefühl hast, ich würde dein Herz ficken."<br/>
+<br/>
+Harry wimmerte verzweifelt vor Lust auf und zog ihn näher an seinen Hals, während er seinen steifen Schwanz gegen die nicht minder harte Erektion des anderen Mannes rieb. "Ich schwöre bei Merlin, wenn du mich nicht endlich beißt, werde ich dir einen Pflock durch dein Herz jagen."<br/>
+<br/>
+Snape öffnete hungrig seinen Mund und küsste Harrys Hals. "Das ist deine allerletzte Warnung, Potter. Ich binde mich nur ein einziges Mal und ich binde mich lebenslang."<br/>
+<br/>
+Harry verstärkte den Griff seiner rechten Hand in den Haaren des Mannes, während die linke an dessen schlankem Körper hinab glitt. Er umfasste Snapes Erektion und strich fest darüber. "Dann mach endlich. Binde uns", stöhnte er.<br/>
+<br/>
+Die Reißzähne schlitzen wie zwei Dolche durch seine Haut und Harry schrie ekstatisch. Er spürte, wie sein eigenes Blut hervor sickerte und Snape es trank, er biss wieder und wieder und kreierte unzählige Male auf Harrys gebräunter Haut. Der Mann hatte recht gehabt, Harry hatte sich in seinem ganzen Leben noch nie so euphorisch gefühlt, die Sinneseindrücke waren überwältigend, der Schmerz zugleich stechend und dumpf. Das leidenschaftliche Saugen an seinem Hals ließ ihn wimmern und stöhnen.<br/>
+<br/>
+"Mehr!", schrie er und zog Snape wieder zu sich, als er spürte, dass dieser sich zurückziehen wollte. "Trink mehr, trink alles", nuschelte er zwischen lustvollen, atemlosen Seufzern. Als Antwort riss Snape an seiner Kleidung, erst die Roben, dann sein Hemd und zuletzt seine Hose samt Unterwäsche. Harry schlängelte sich aus den Kleidungsstücken, bis er nackt vor der Wand stand. Sein harter, tropfender Schwanz drückte sich gegen Snapes Bauch. Harry fühlte ein Grinsen gegen seine Haut und gleich darauf packte Snape seine Hüften, die Fingernägel gruben sich in sein Fleisch und hinterließen rote Abdrücke.<br/>
+<br/>
+Der Mann saugte erneut an seinem Hals und trank das warme Blut, er ließ nicht einen einzigen Tropfen entkommen und Harry schluchzte nahezu, seine eigene Lust übermannte ihn so stark, dass es beinahe schmerzte. Er winselte und stöhnte und Snape biss härter zu und Harry kam, sein Unterleib brannte wie Feuer, sein Samen spritzte in mehreren kraftvollen Schüben aus seinem Schwanz.<br/>
+<br/>
+Ein animalisches Knurren vibrierte an seinem Hals und Snape lehnte sich zurück, nur, um Harrys Oberschenkel zu umfassen, ihn hochzuheben und seine Beine um die eigenen Hüften zu schlingen. Harry zog an den schwarzen Strähnen, er wollte Snape in die Augen sehen.<br/>
+<br/>
+Seine Pupillen waren maximal erweitert, als Snape ihn mit einem Ausdruck grausamen Hungers in den Augen anblickte. Seine Lippen und seine Zähne waren blutverschmiert, die Reißzähne lang und Harry dachte, dass er in seinem ganzen Leben noch nie etwas so Erregendes gesehen hatte. Er warf sich nach vorn und küsste Snape ebenso gierig wie der Vampir kurz zuvor sein Blut getrunken hatte. Snape warf den Kopf zurück und brüllte auf, als Harry in die schwarze Hose griff und seine bebende Hand um dessen Erektion schloss. Er zog den harten Schwanz hervor und strich einige Male darüber, doch ein zittriges Wimmern ließ ihn innehalten. Er wollte nicht, dass Snape kam, zumindest noch nicht.<br/>
+<br/>
+Sie küssten einander wie besessen und Snapes Hände massierten Harrys Arsch einige Minuten, bevor er einen Mittelfinger in dessen Öffnung presste. Harry hatte den gemurmelten Zauberspruch, der ihn mit Gleitgel versorgte, nie gehört, möglicherweise, weil Snape in seine Unterlippe biss und während ihres Kusses trank. Snape saugte die blutende Lippe in seinen Mund und schob mit einer schnellen Bewegung den Finger hinein, Harry war wie berauscht, Ekstase schwemmte durch seinen überempfindlichen Körper und er bog sich von der Wand weg und Snape entgegen.<br/>
+<br/>
+"Oh Gott... ja... mehr..." Harry drückte seinen Körper nach unten und sich dem Finger entgegen.<br/>
+<br/>
+Snape presste einen zweiten Finger in ihn, während er mit seinen Zähnen über Harrys Haut kratzte. Er kehrte zu jedem Biss zurück, den er verursacht hatte, leckte über die jeweilige Wunde und schloss sie. Zwischenzeitlich stießen seine Finger erbarmungslos und ungeduldig in ihn hinein, keinesfalls sanft, doch Harry hätte es auch gar nicht anders gewollt. Er fickte sich selbst auf den Fingern in ihm, während er seine Balance hielt, indem er einen Arm um Snape gelegt hatte. Seine Hände rissen und zerrten an den schwarzen Haaren, doch auch Snape hatte nichts gegen diese Grobheiten einzuwenden.<br/>
+<br/>
+"Wie oft... werden... wir das... tun?", fragte Harry so kohärent, wie er nur konnte.<br/>
+<br/>
+"Von dir werde ich mindestens einmal in der Woche trinken müssen", murmelte Snape. Er krümmte seine Finger leicht und drückte deren Spitzen fest auf  Harrys Prostata.<br/>
+<br/>
+<em>"<span class="user_italic">AH... das ist... gut</span>"</em>, stöhnte Harry und rieb sich fieberhaft gegen den anderen Mann. Eine unnatürlich warme Hand liebkoste seine erwachende Erektion, ein Daumen strich sanft über die immer noch hochempfindliche Kuppe.<br/>
+<br/>
+"Wenn du jedoch weiterhin Geräusche wie diese machst, dann könnte es auch dreimal die Woche sein. Oder vielleicht täglich. Oder sogar mehrmals am Tag."<br/>
+<br/>
+"Ich bin... völlig einverstanden", seufzte Harry, ließ sich wieder gegen die Wand fallen und seine Hüften vor- und zurückschnellen. Als Antwort gesellte sich ein dritter Finger zu den zweien in ihm, stießen in ihn und dehnten ihn mit schnellen, harten Bewegungen. Er musste nicht bitten. In der nächsten Sekunde waren die Finger verschwunden.<br/>
+<br/>
+Snape ließ Harrys Schwanz los und positionierte sich. Er hielt seine eigene Erektion fest in der Hand, als er raunte: "Setz dich auf mich. Lass uns eins werden." Harry stöhnte und drückte seinen Körper nach unten, er schrie voller Wollust, als sich der dicke Schaft mühsam durch seinen engen Muskelring zwängte. Snape leckte seinen Hals, dann stieß er seine Hüften mit einem Ruck vorwärts und glitt geschmeidig bis zum Anschlag tief in Harry hinein.<br/>
+<br/>
+Der Vampir balancierte ihrer beider Stand, indem er beide Arme gegen die Wand legte und begann, Harry mit brutaler Kraft zu ficken. Der Kopf des jungen Mannes schlug gegen die kühle Steinwand, sein ganzer Körper wurde mit jedem enthemmten Stoß dagegen geschmettert. Harry konnte die ungebändigten rohen Bewegungen in seinem ganzen Körper spüren. Der glitschige, harte Schwanz stieß mit Leichtigkeit in ihn, doch seine schiere Größe verursachte eine Spannung in seinem Inneren, die ihn nahezu entzwei riss. Harry liebte es, er liebte, dass alles hieran triebhaft und animalisch war: das gierige Stöhnen, die ungezügelte Kraft, die reine, blanke Gewalt in jedem einzelnen Stoß.<br/>
+<br/>
+Jetzt, nachdem er einmal hiervon gekostet hatte, könnte er nie wieder ohne dies leben. Snapes atemloses Keuchen echote in seinem Kopf, die schnellen Atemzüge stockten jedes Mal für eine Millisekunde, wenn Snape in ihn stieß. Die Laute waren lüstern und sündig, allein die Art wie Snapes Körper gegen seinen prallte, das Geräusch dieses dumpfen Aufschlages ließ seinen Schwanz vor Gier zucken.<br/>
+<br/>
+Snape glitt mit dem Mund über seine Haut und bevor Harry sich dafür bereitmachen konnte, fühlte er die spitzen Reißzähne abermals in seinen Körper eindringen. Doch dieses Mal war der Biss nicht schnell und brutal, sondern in vollendetem Gegensatz zu den unerbittlichen Stößen. Snapes Fänge glitten langsam und sinnlich in sein Fleisch, er genoss jedem einzelnen Millimeter, den sie tiefer und tiefer sanken. Harry reckte sich ihm hingebungsvoll entgegen und er kam in der Sekunde, als Snape anfing, sein Blut aus ihm zu saugen. Während der Orgasmus durch jede Zelle seines Körpers raste, ritt er ungestüm den mächtigen Schaft in sich und stieß ihn so tief wie möglich in seinen Arsch. Das Gefühl des Höhepunktes schien nicht aufhören zu wollen. Jedes Saugen, jeder Schluck Blut, der ihm genommen wurde, jeder glühende Stoß war wie ein neuer Orgasmus und Harry kam und kam, hilflos, sein sämiges Sperma barst unaufhörlich aus seinem Schwanz und bespritzte sie beide über und über.<br/>
+<br/>
+Gerade als er dachte, dass diese hemmungslose Tortur der Sinne vorbei wäre, kam Snape und dessen Höhepunkt traf ihn fast genauso sehr wie sein eigener. Snape biss ein letztes Mal schmerzhaft tief in seinen Hals und kam zum Orgasmus, seine Hüften hämmerten gegen Harry und fickten ihn schonungslos gegen die Wand. Harry klammerte sich an Snape fest, seine Finger verkrallten sich in den schwarzen Haaren, als ihre Lust sie übermannte.<br/>
+<br/>
+Sie fanden nur langsam ins Hier und Jetzt zurück. Harry hatte keinen Zweifel, dass er für einige Minuten das Bewusstsein verloren hatte. Er blutete noch immer. Er konnte spüren, wie das Blut an seinem Hals hinunter lief, während sein milchig weißer Samen langsam seinen Bauch hinab rann. Snape zog gemächlich seinen Schwanz aus Harry heraus, ließ ihn aber nicht los und dieser war dankbar, denn er wusste sicher, dass seine Beine ihn nicht tragen würden, sobald er versuchte, sie zu belasten.<br/>
+<br/>
+Stattdessen wurde er getragen, wohin, das wusste er nicht. Der Raum war abgedunkelt und angenehm kühl, er zitterte leicht, als Snape ihn auf ein weiches Bett legte. Seine Beine fielen augenblicklich zur Seite, wie die einer Marionette mit durchgeschnittenen Fäden. Snape stand über ihm und betrachtete ihn für einen Moment, dann streckte Harry seine Hand nach ihn aus.<br/>
+<br/>
+Der Vampir entledigte sich seiner Kleider und ließ sie achtlos auf den Boden fallen, bevor er sich zu ihm ins Bett legte und seinen Körper eng an den des jungen Mannes schmiegte. Er stützte sich auf einen Ellbogen und begann, Harrys Körper zu säubern. Er leckte über die Bisswunden und er leckte das getrocknete Blut auf und den zähflüssigen, weißen Samen ebenso. Harrys Müdigkeit und Erschöpfung verringerten sich mit jedem Lecken, mit jedem kleinen Saugen an seiner Haut.<br/>
+<br/>
+"Wenn wir das hier täglich machen...", sagte er schleppend, "... muss ich ernsthaft die Einnahme von Blutbildungstränken in Erwägung ziehen."<br/>
+<br/>
+"Du musst dir darüber keine Sorgen machen", murmelte Snape gegen seine Haut. "Ich bin mehr als fähig, dir jeden Trank zu brauen, den du brauchst. Du wirst genug Blut für uns beide haben."<br/>
+<br/>
+"Das ist gut, ich fange nämlich an zu glauben, dass dieses Sucht-Ding keine Einbahnstraße ist."<br/>
+<br/>
+Snape lachte leise, seine Lippen befanden sich grad bei Harrys Brustwarzen. Der junge Mann setzte sich auf und zog ihn näher, damit er ihn erneut küssen könnte. Dieses Mal bewegten sie sich langsam, genüsslich, weiche Lippen, sanfte Küsse und noch zarteres Knabbern. Snape schmeckte metallisch vom Blut und Harry musste zugeben, dass es ein faszinierender Geschmack war.<br/>
+<br/>
+"Lass mich wissen, wenn du bereit bist, weiterzumachen", murmelte Snape und leckte über Harrys Lippen.<br/>
+<br/>
+"Weitermachen?", stöhnte Harry und sackte auf dem Bett zusammen.<br/>
+<br/>
+"Oh ja, allerdings", grinste Snape. "Das letzte Mal, dass ich eine anständige Mahlzeit hatte, war letzten Sommer. Ich habe meinen Appetit seitdem... gezügelt."<br/>
+<br/>
+Harrys halb geschlossene Augen öffneten sich auf der Stelle. "Das ist sehr lange her", stellte er fest und fing an, erwartungsvoll zu zittern, als Snape sich langsam an seinem Körper hinab bewegte.<br/>
+<br/>
+"Ja. Man könnte sagen, ich bin ausgehungert."<br/>
+<br/>
+Harry spreizte seine Beine, seine halbsteife Erektion wurde härter. "Nun dann, Severus...", seufzte er und machte es sich bequem, "muss ich es in deinen Mund befördern?"<br/>
+<br/>
+Snape hob eine Augenbraue, schmunzelte aber. "Oh Harry, du hast nicht die geringste Ahnung, in was du dich hier hineingeritten hast", neckte er.<br/>
+<br/>
+"Möglich." Harry zuckte mit den Schultern und betrachtete die eisblauen Augen, die ihn hungrig anstarrten, während die Reißzähne sogar noch länger wurden. "Aber ich kann es kaum erwarten, es herauszufinden."<br/>
+<br/>
+"Lass mich dir einen kleinen Vorgeschmack geben", zischte Snape leise und versenkte seine Zähne in der Hauptschlagader von Harrys Bein.<br/>
+<br/>
+Harry stöhnte auf und warf lustvoll seinen Kopf zurück. Er hatte noch eine Woche in Hogwarts, die er höchstwahrscheinlich genau hier in diesem Raum verbringen würde. Und danach? Wer wusste das schon. Aber er war gespannt darauf, es herauszufinden, mit Severus an seiner Seite.<br/>
+<br/>
+</p><p> </p><p> </p>
+<p></p><div class="user_center" align="center">
+  <p>*** ENDE ***</p>
+</div><div class="user_center" align="center">
+  <p> </p>
+</div><div class="user_center" align="center">
+  <p> </p>
+</div>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_6_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Ich hoffe, euch hat diese Geschichte und meine Übersetzung gefallen. </p><p>Ich würde mich sehr, sehr, sehr über ein kleines Abschlussreview freuen, auch Kritik und Vorschläge sind natürlich herzlich willkommen.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="L6t-iHKZpqk2_28zAkIVSpw0t59HT2kh9l8Hr5FdJMBTu5I7c6BJVeKKoaum_DkVsXbqXoCbS1rX5jNeDXSt_Q"/>
+          <input value="8554963" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8554963">Comments (6)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Shankala">Shankala</a>, <a href="/users/RudeSumienie">RudeSumienie</a>, <a href="/users/crycrycrytillyouknowwhy">crycrycrytillyouknowwhy</a>, <a href="/users/Fewtoria">Fewtoria</a>, <a href="/users/Jaaviittaaa">Jaaviittaaa</a>, <a href="/users/celtica25">celtica25</a>, <a href="/users/winonavibes">winonavibes</a>, <a href="/users/4815">4815</a>, <a href="/users/LourdesFerreira">LourdesFerreira</a>, <a href="/users/Jubival">Jubival</a>, <a href="/users/Ayenma">Ayenma</a>, <a href="/users/jabbasheep">jabbasheep</a>, <a href="/users/AnnaMarieLuise">AnnaMarieLuise</a>, <a href="/users/MelindaGhost">MelindaGhost</a>, <a href="/users/Lara7740">Lara7740</a>, <a href="/users/DianthusLilium">DianthusLilium</a>, <a href="/users/lockthewho">lockthewho</a>, <a href="/users/ginnabella">ginnabella</a>, and <a href="/users/Kirafoox">Kirafoox</a>
+             as well as 
+          131 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_8554963">
+  <form class="new_comment" id="comment_for_8554963" action="/works/8554963/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="z5ln9h945gxaVT7oRxLpchA8J6d7phlSfKGwg4DFUPSziYtFHkEJ8I4g8HDjrMUtPX56ZrxyOyldGIRyHOzZyQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_8554963">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_8554963" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_8554963=new LiveValidation('comment_name_for_8554963',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_8554963.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_8554963">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_8554963" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_8554963=new LiveValidation('comment_email_for_8554963',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_8554963.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_8554963" class="landmark">Comment</label>
+        <textarea id="comment_content_for_8554963" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_8554963" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_8554963_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_8554963">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_8554963=new LiveValidation('comment_content_for_8554963',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_8554963.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_8554963.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_8554963" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/8554963/hit_count.json")})</script>
+
+
+  </body>
+</html>

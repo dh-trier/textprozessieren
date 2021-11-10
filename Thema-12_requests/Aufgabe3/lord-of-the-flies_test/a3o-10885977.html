@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f2edcff25e","applicationID":"190034","transactionName":"dgwMEkpfWVsHERpRXlQTFgNKQxpECgxC","queueTime":0,"applicationTime":137,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcCWV9RGwIJVFFRAw=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <title>
+        we're hungry &amp; frozen - some life that we've chosen - Chapter 1 - queencrank - Lord of the Flies - William Golding [Archive of Our Own]
+    </title>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.9e-4YkQChA.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.7zn7RLxMSF.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="PlfzAju61tAO87YnklhWwF87TbtpIq6MNoQ1CzuDAyAGtPZ6tbtL/37JRpV/KyPg1SGXyAeSvNYsPo5IhPU0uA=="/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user_session" id="new_user_session" action="/user_sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="MUN3HSLA0MycdyIwsRQI66gB5ZkgBYcrWx+oPUzpSfgJoHJlrMFN4+xN0oJcZ33LIhs/6k61lXFBpRN+859+YA=="/>
+	<dl>
+    <dt><label for="user_session_login">User name:</label></dt>
+    <dd><input class="text" type="text" name="user_session[login]" id="user_session_login"/></dd>
+    <dt><label for="user_session_password">Password:</label></dt>
+    <dd><input class="text" type="password" name="user_session[password]" id="user_session_password"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_session_remember_me" class="action"><input type="checkbox" name="user_session[remember_me]" id="user_session_remember_me" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>    
+</form>
+<ul class="footnote actions">
+  <li><a href="/passwords/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: buffy gen teen AND &quot;no archive warnings apply&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="chapters-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+  <!-- BEGIN work -->
+  <div class="work"><p class="landmark"><a name="top">&nbsp;</a></p>
+      <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="#share">Share</a>
+      <div id="share">
+
+  <p class="note">Copy and paste the following code to link back to this work (<kbd>CTRL A</kbd>/<kbd>CMD A</kbd> will select all), or use the Tweet or Tumblr links to share the work on your Twitter or Tumblr account.</p>
+  
+  <p>
+    <textarea cols="50" rows="4" id="embed_code">&lt;a href=&quot;http://archiveofourown.org/works/10885977&quot;&gt;&lt;strong&gt;we&#39;re hungry &amp;amp; frozen - some life that we&#39;ve chosen&lt;/strong&gt;&lt;/a&gt; (5083 words) by &lt;a href=&quot;http://archiveofourown.org/users/queencrank&quot;&gt;&lt;strong&gt;queencrank&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;Chapters: 1/2&lt;br /&gt;Fandom: &lt;a href=&quot;http://archiveofourown.org/tags/Lord%20of%20the%20Flies%20-%20William%20Golding&quot;&gt;Lord of the Flies - William Golding&lt;/a&gt;&lt;br /&gt;Rating: Mature&lt;br /&gt;Warnings: Major Character Death&lt;br /&gt;Relationships: Jack Merridew/Ralph, Jack Merridew &amp; Ralph, Background Piggy/Sam, Background Maurice/Simon&lt;br /&gt;Characters: Jack Merridew, Ralph (Lord of the Flies), Roger (Lord of the Flies), Sam and Eric (Lord of the Flies), Piggy (Lord of the Flies), Maurice (Lord of the Flies), Simon (Lord of the Flies)&lt;br /&gt;Additional Tags: Alternate Universe - RENT&lt;br /&gt;Series: Part 2 of &lt;a href=&quot;http://archiveofourown.org/series/720738&quot;&gt;jalph musical aus&lt;/a&gt;&lt;br /&gt;Summary: &lt;p&gt;December 24th, Eastern Standard Time.&lt;br /&gt;From here on in, I shoot without a script.&lt;/p&gt;</textarea>
+  </p>
+  
+  <ul>
+    
+    <li>
+      <a href="http://twitter.com/share" class="twitter-share-button" data-size="large" data-via="ao3org" data-text="we&#39;re hungry &amp;amp; frozen - some life that we&#39;ve chosen by queencrank - Lord of the Flies - ..." data-url="http://archiveofourown.org/works/10885977">
+        Tweet
+      </a>
+    </li>
+      
+    <li>
+      <a href="http://tumblr.com/widgets/share/tool?canonicalUrl=http%3A%2F%2Farchiveofourown.org%2Fworks%2F10885977&title=we%27re%20hungry%20%26amp%3B%20frozen%20-%20some%20life%20that%20we%27ve%20chosen%20%285083%20words%29%20by%20queencrank%20%5BAO3%5D&caption=Chapters%3A%201%2F2%3Cbr%20%2F%3EFandom%3A%20%3Ca%20href%3D%22http%3A%2F%2Farchiveofourown.org%2Ftags%2FLord%2520of%2520the%2520Flies%2520-%2520William%2520Golding%22%3ELord%20of%20the%20Flies%20-%20William%20Golding%3C%2Fa%3E%3Cbr%20%2F%3ERating%3A%20Mature%3Cbr%20%2F%3EWarnings%3A%20Major%20Character%20Death%3Cbr%20%2F%3ERelationships%3A%20Jack%20Merridew%2FRalph%2C%20Jack%20Merridew%20%26%20Ralph%2C%20Background%20Piggy%2FSam%2C%20Background%20Maurice%2FSimon%3Cbr%20%2F%3ECharacters%3A%20Jack%20Merridew%2C%20Ralph%20%28Lord%20of%20the%20Flies%29%2C%20Roger%20%28Lord%20of%20the%20Flies%29%2C%20Sam%20and%20Eric%20%28Lord%20of%20the%20Flies%29%2C%20Piggy%20%28Lord%20of%20the%20Flies%29%2C%20Maurice%20%28Lord%20of%20the%20Flies%29%2C%20Simon%20%28Lord%20of%20the%20Flies%29%3Cbr%20%2F%3EAdditional%20Tags%3A%20Alternate%20Universe%20-%20RENT%3Cbr%20%2F%3ESeries%3A%20Part%202%20of%20%3Ca%20href%3D%22http%3A%2F%2Farchiveofourown.org%2Fseries%2F720738%22%3Ejalph%20musical%20aus%3C%2Fa%3E%3Cbr%20%2F%3ESummary%3A%20%3Cp%3EDecember%2024th%2C%20Eastern%20Standard%20Time.%3Cbr%20%2F%3EFrom%20here%20on%20in%2C%20I%20shoot%20without%20a%20script.%3C%2Fp%3E" title="Share on Tumblr" style="display:inline-block;text-indent:-9999px;overflow:hidden;width:81px;height:20px;background:url(//platform.tumblr.com/v1/share_1.png) top left no-repeat transparent;border-bottom:none" target="_blank">
+        Share on Tumblr
+      </a>
+    </li>
+      
+  </ul>
+  
+</div>
+
+
+    </li>
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+        <li><a href="/downloads/qu/queencrank/10885977/were%20hungry%20amp%20frozen%20some.mobi?updated_at=1495403348">MOBI</a></li>
+        <li><a href="/downloads/qu/queencrank/10885977/were%20hungry%20amp%20frozen%20some.epub?updated_at=1495403348">EPUB</a></li>
+        <li><a href="/downloads/qu/queencrank/10885977/were%20hungry%20amp%20frozen%20some.pdf?updated_at=1495403348">PDF</a></li>
+        <li><a href="/downloads/qu/queencrank/10885977/were%20hungry%20amp%20frozen%20some.html?updated_at=1495403348">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Major%20Character%20Death/works">Major Character Death</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lord%20of%20the%20Flies%20-%20William%20Golding/works">Lord of the Flies - William Golding</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Jack%20Merridew*s*Ralph/works">Jack Merridew/Ralph</a></li><li><a class="tag" href="/tags/Jack%20Merridew%20*a*%20Ralph/works">Jack Merridew &amp; Ralph</a></li><li><a class="tag" href="/tags/Background%20Piggy*s*Sam/works">Background Piggy/Sam</a></li><li><a class="tag" href="/tags/Background%20Maurice*s*Simon/works">Background Maurice/Simon</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Jack%20Merridew/works">Jack Merridew</a></li><li><a class="tag" href="/tags/Ralph%20(Lord%20of%20the%20Flies)/works">Ralph (Lord of the Flies)</a></li><li><a class="tag" href="/tags/Roger%20(Lord%20of%20the%20Flies)/works">Roger (Lord of the Flies)</a></li><li><a class="tag" href="/tags/Sam%20and%20Eric%20(Lord%20of%20the%20Flies)/works">Sam and Eric (Lord of the Flies)</a></li><li><a class="tag" href="/tags/Piggy%20(Lord%20of%20the%20Flies)/works">Piggy (Lord of the Flies)</a></li><li><a class="tag" href="/tags/Maurice%20(Lord%20of%20the%20Flies)/works">Maurice (Lord of the Flies)</a></li><li><a class="tag" href="/tags/Simon%20(Lord%20of%20the%20Flies)/works">Simon (Lord of the Flies)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Alternate%20Universe%20-%20RENT/works">Alternate Universe - RENT</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        English
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/10545052">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 2 of the <a href="/series/720738">jalph musical aus</a> series</span></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2017-05-21</dd><dt class="status">Updated:</dt><dd class="status">2017-05-21</dd><dt class="words">Words:</dt><dd class="words">5083</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/2</dd><dt class="kudos">Kudos:</dt><dd class="kudos">6</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      we're hungry &amp; frozen - some life that we've chosen
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/queencrank/pseuds/queencrank">queencrank</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>December 24th, Eastern Standard Time.<br/>From here on in, I shoot without a script.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>same dealio as my heathers au - this is more the actual stage musical than the movie. </p><p>if you are squigged out by any of the following topics, don't read: drug use/abuse, mentioned suicide, death, illness, a few slurs, general angst &amp; edginess.</p><p>this is also VERY dialogue heavy</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+
+    <div id="chapters">
+      <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10885977/chapters/24190887">Chapter 1</a>: ACT ONE.
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+      <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>'Christmas Eve. 1989. From now on, I shoot without a script. See where it gets me.' Roger stands on a milk crate in the middle of their loft space, 16mm camera in hand. <br/>Jack glances up from the floor, where he tunes his guitar idly. He knows that his friend wasn't talking to him - he's got his Serious Director voice on. But he still acts as if he is.</p><p>'Instead of your old shit?' His roommate makes a face at him, then he zooms in on him.</p><p>'First shot - my roommate, Merridew. Tuning the Fender guitar he hasn't played in a year.'</p><p>'It won't - tune.'</p><p>'As we hear,' Roger hops down from the milk crate, 'He's just coming out of half a year of withdrawal.' Jack glares up at him as he crouches in front of him, messing with the focus for a moment, muttering to himself. Then, he holds his hand up and nods. 'Right there! Hold it. Alright, Merridew, tell the folks at home what you're doing.' Jack opens his mouth to answer when the phone rings, and he crows in victory, turning back to his Fender.</p><p>
+  <em>'Speak!'</em>
+</p><p>'Hi, Rogie-poo! It's your mom - and your dad, too.  Is this - are you screening your calls again? Anyhow, we're just calling to say a Happy Christmas! You'll be in our prayers.'</p><p>'Roger. We're sorry to hear that Sam dumped you. I say that if he wants to be a fag, let him be. Not that I have anything wrong with fags, of course. Anyways. Happy Christmas.' The line goes dead, and Jack raises his brows. Roger turns back to him.</p><p>'Anyways. As I was saying- The phone rings again, and Jack smiles up at him smugly.</p><p>
+  <em>'Speak!'</em>
+</p><p>'Deck the halls-' Roger sets the camera down on the breakfast bar and picks up the phone, turning it to speaker.</p><p>'Maurice!' The two boys call in unison.</p><p>'I'm downstairs - throw down the keys.' Roger pokes his head out the window and drops the keys down, then hangs up the phone. He turns to Jack, then tries to find the same focus, clicking his tongue in annoyance. The lights flicker for a moment, then the phone rings. Roger picks up this time, setting it on speaker again.</p><p>'Ho Ho Ho.'</p><p>'Eric,' Roger sounds enthralled.</p><p>'I'm on my way, men. I need the rent.'</p><p>'What rent?' Jack stands and leans on the breakfast bar and picks at the still-untuned guitar strings.</p><p>'The rent I let slide.'</p><p>'Let slide? You said we were golden.'</p><p>'When we were roommates. Remember - you used to live here?' Jack pipes in. Eric laughs.</p><p>'How could I forget? You, me, Maurice, and Sam. How is the drama queen, by the way?'</p><p>'You should know - you're his twin.'</p><p>'You're his stage manager.' Roger sighs, and Jack smiles despite himself, brimming with the desire to tell Eric <em>all</em> about their dramatic break up the month before.</p><p>'Not anymore. I got bumped two days ago.'</p><p>'Well, you're still his boyfriend. Unless that didn't work out, either.' Roger sighs again.</p><p>'He's performing tonight.' He says in reply, and Jack gives up, leaning close.</p><p>'He was dumped last month,' He ignores the look of betrayal, sets his chin in his hand, 'Sam's in <em>lo-ove</em>.' Eric guffaws.</p><p>'Got a new fuck?'</p><p>'No.'</p><p>'What's his name?'</p><p>'We call him Piggy.' They say in unison, and Eric laughs again. He does it for a while this time, then sighs, like he's wiping tears of mirth from his eyes. Jack hops up onto the breakfast bar and begins to play <em>La Boheme. </em>Eric stops laughing, his voice serious.</p><p>'Rent is due, amigos. If you don't pay up, I'm gonna have to evict you. Be there in a few.' The line goes dead, and the power follows soon after. Roger clenches his fists and groans through clenched teeth.</p><p>'How the fuck are we gonna pay <em>last year's</em> rent?'</p><hr/><p> Down on the street, Jack steps around a flaming eviction notice - he supposes the rest of street had the same idea as they did. Ashes flutter down from the sky, and he glances up. From several floors up, maybe a floor or two below them, there's a cute blond standing on the fire escape, smoking a cigarette. The blond smiles down at him, and Jack looks away quickly.</p><p>'Hey - where's Maurice?' Roger says, and Jack forgets about the blond, looking around the street.</p><p>'Dunno. But I do know where someone else is.' He says, pointing out Eric, who's shooing a homeless man away from his Range Rover. Eric beams when he spots them, and spreads his arms.</p><p>'Gentlemen.'</p><p>'That attitude towards the homeless is exactly what your brother is protesting.'</p><p>'My brother isn't protesting my attitude. He's throwing a hissy fit because he lost his performance space.' Jack sighs, leaning on the Range Rover.</p><p>'What happened to old Eric's heart?' He asks Roger, who leans beside him.</p><p>'The rent, boys.'</p><p>'You're wasting your time. We're broke.' Jack calls, picking at his nails. Roger stands and walks up until he's almost chest-to-chest with Eric. It looks ridiculous.</p><p>'And you broke your word.' Eric sighs, puts his hand between their bodies.</p><p>'Look - that lot next door? The owners can do with it as they please. Now that the block is de-zoned, our dreams can become a reality!' He looks between the two of them, eyebrows high, face eager, 'There's a way where you won't have to pay.'</p><p>'Knew it.' Roger shifts back and scoffs.</p><p>'Just do me this one small favor, and I'll forego your rent - signed-on-paper guarantee.'</p><p>'What?'</p><p>'Get Sam to stop the protest.' They both blink, standing in shocked silence.</p><p>'You want to shut down your own brother's performance? And just... Call the police.'</p><p>'I did. They're on standby. My investors want this to be handled... Quietly. So?'</p><p>'No - that's a dick move, even for you.'</p><p>'If you wanna produce films and write songs, you need somewhere to do it! You'll see, boys. Or, you'll pack. Your choice.'</p><hr/><p> Back in the loft, the power wasn't even back on when the phone rings yet again. Roger picks it up.</p><p>'Hello? Sam? Your... your equipment won't work? Shit, shit, okay - Alright! Yes, I'll go!' He slings his coat onto one arm, and Jack looks up from his guitar, frowning.</p><p>'Where are you going?'</p><p>'Sam calls.' Jack snorts humorlessly and makes the motion of whipping someone. Roger rolls his eyes. 'Can I get another shot, real quick?'</p><p>'Whatever.'</p><p>'Zoom in on Merridew - his boyfriend Avril left him a note - <em>We've got AIDS</em> - and slit his wrists in the bathroom.' Jack gives him a dirty look, and he smiles, putting the camera away. 'You sure you don't wanna come to dinner?'</p><p>'Zoom in on my empty wallet.'</p><p>'Take your AZT. And get out of the house. It'd be good for you.' He heaves the loft door shut behind him, and Jack sighs, looking back to his guitar. He plucks at a few chords he had been playing around with, weighing the ideas for his Last Great Song, murmuring to himself.</p><p>'A song about love. No - too cliche. The soul of a young man - <em>fuck</em> no. Maybe - ' He loses his train of thought when someone knocks sharply at the door, and he sighs, setting the Fender down again, then going over to the door.</p><p>'What'd you forget?' He asks as he heaves the door open. The blond from earlier stands there.</p><p>'Got a light?' He asks softly. He holds a single candle. Jack swallows thickly, and the blond pushes past him anyways, looking around the loft.</p><p>'I think I know you, you're - you're shivering.' The blond looks over his shoulder and laughs, wrapping his arms around himself. He was barely dressed for such weather.</p><p>'They turned off my heat. And I'm just a little... Weak on my feet,' He smiles, and Jack can't breathe, can't stop thinking about Avril, 'Do you have a light or - what're you staring at?'</p><p>'Fuck - nothing.' He goes over to the kitchenette as an excuse to stop looking at the blond, pulling out the book of matches. He lights one, and holds it to the cold wick. The blond murmurs his thanks and turns to leave, swaying on his feet. Without thinking, Jack steadies him. 'You gonna make it?' He whispers.</p><p>'Just... Haven't eaten much today. I'm fine.' The blond smiles at him over his shoulder, and Jack's breath hitches. The blond notices and bites his lip. 'What?'</p><p>'Your smile... Reminded me of - '</p><p>'I always remind someone of someone. Who is he?'</p><p>'He died. His name was Avril.'</p><p>'I'm sorry.' The blond says genuinely, then quickly turns to him. 'It went out - do you mind?' Jack lights it again, and they linger awkwardly, staring into each other's eyes.</p><p>'Well,'</p><p>'Yea - ow!' The blond jerks away and frowns at the candle.</p><p>'Oh. The wax.' The blond meets his eyes again and bites his lip.</p><p>'It's dripping. I like it on my - ' He leans in close, voice dropping to a whisper. Jack flinches away and laughs nervously.</p><p>'Hands? I... Figured. Goodnight.' Jack hurries, and the blond smiles again, then leaves, lingering in the doorway to blink at him.</p><p> </p><p>He's barely gone a minute when he's back, knocking on the still-opened loft door.</p><p>'It blew out again?'</p><p>'No, I think... I think I dropped my stash.' Jack blinks, then it dawns on him - the shivering, the faintness.</p><p>'I know I've seen you, when I used to go out.' The blond pushes past him and runs his hands through his hair.</p><p>'I must be illin' - I know I had it when I walked in the door. Is it...?' He drops to all fours, and Jack can't help but glance at his rear, then back at the ceiling, clearing his throat. The blond looks over his shoulder and laughs, giving his rear a half-hearted sway.</p><p>'They say I've got the best ass below 14th - you're staring again.'</p><p>'Oh, no. Um. You do, have a nice - I mean, <em>fuck</em>, you look familiar.' The blond sighs, lowering his head between his shoulder in resignation.</p><p>'At least help me look. Do you... Have you ever been to the Cat Scratch Club? I dance.'</p><p>'That's it! They tie you up.'</p><p>'It's a living.' He says through gritted teeth.</p><p>'Didn't recognize you without the handcuffs.' The blond rises onto his knees and looks back at him.</p><p>'Light my candle?' He asks in a soft tone. Jack does, then sits on the coffee table.</p><p>'Why don't you forget that shit? You look about sixteen.'</p><p>'I'm nineteen - but I'm old for my age. Born to be bad, baby.'</p><p>'I was born to be bad, once. I used to shiver like that, you know.'</p><p>'I told you - no heat.'</p><p>'I used to be a junkie. I know what it looks like. Jesus.'</p><p>'Now and then I like to - ' He rises up and looks like he's going to sit in Jack's lap, ' - Feel good.' He says breathlessly, stroking down his face. Jack spots something on the floor and grabs for it quickly.</p><p>'Oh! Here - um. Never mind.'</p><p>'What was it?'</p><p>'Uh. Candy bar wrapper.' Jack stands and tucks the blond's stash into his back pocket, heart in his throat. The blond narrows his eyes.</p><p>'Uh huh?'</p><p>'Yeah.' When he gets close, Jack discreetly blows out the candle.</p><p>'Your candle's out.'</p><p>'What'd you do to it?' Jack raises his hands and shrugs.</p><p>'It was my last match. Sorry.'</p><p>'Our eyes'll adjust.' He whispers, and Jack swallows when his hand brushes over one of his.</p><p>'Your hands are cold.' He manages.</p><p>'So are yours. Big too,' Again with that soft voice, 'Like my father's. Wanna dance?' Jack blinks - it didn't surprise him that this boy was on drugs - his focus was nonexistent.</p><p>'With you?'</p><p>'Nah. With my father,' The shorter boy steps up close, 'What's your name?'</p><p>'Jack.' The blond's breath washes over his face, pleasantly warm. He can't remember the last time he's kissed someone.<br/> The blond's hand slides into his back pocket, and he brushes his lips over his neck. Jack lets out a shuddering breath. He can't remember the last time he's touched someone.</p><p>'I'm Ralph.' He whispers, then pulls back. Jack deflates when he waves the stash in his face, smiles, then saunters out of his loft.</p><hr/><p> </p><p>It's Christmas Eve and there was still no sign of Maurice, and Roger was starting to get strung out, wringing his hands.</p><p> </p><p>Finally, someone drags open the loft door, and Maurice walks in, bloodied and bruised and holding a pickle tub full of food and drink.</p><p>'Merry Christmas you sorry motherfuckers!' He cries, and Roger spins around, crying his name.</p><p>'Oh hi.' Jack says, barely looking up.</p><p>'<em>Oh hi?</em> After seven months, that's all I get, Chief?' Jack shrugs, and Roger helps Maurice unload the pickle tub onto the coffee table, saying each - brand name - item as he does, getting more and more excited. Jack picks up a pack of Marlboro.</p><p>'You struck gold at MIT, I see.'</p><p>'They kicked me out. Still haven't left the house?'</p><p>'I was waiting for you.'</p><p>'Well, tonight's the night! Come on down to the Life Cafe after Sam's show.' Jack shrugs, takes a swig of Stolichnaya vodka. 'Gentlemen, I'd like to introduce you to our benefactor on this Christmas Eve - Simon Dumott Shunard! His charity is matched only in talent!' A small boy in a Santa Claus dress comes in, face bright. He has a fan of twenties in each hand, and it's fabulously flamboyant. He throws each fan at Roger, then at Jack, then sits primly on the arm of the couch, taking the pickle tub and upending it to drum on it.</p><p>'Today for you, tomorrow for me.' He says, voice softer and nicer than even Ralph's. Maurice steps up behind him and grins, that Maurice-grin that he saves for no one and gives to everyone.</p><p>'You should hear her beat. Tell 'em, babe.'</p><p>'You earned this on the street?' Roger has gathered all the twenties, and is counting them.</p><p>'It was my lucky day, out on Avenue A. This lady in fur come my way, and said,' He adopts a posh British accent, ''Dahling, be dear - I haven't slept in a year! My neighbor's yappy pup - an Ekita. Usually quite quiet - just <em>won't</em> shut up!' A thousand dollar guarantee, we agree, yes? Tax free! And a bonus, if I trimmed her tree.' Simon winks, bites his lip in a way that wasn't unlike Ralph, the night before.</p><p>'And how did you meet Maurice?'</p><p>'He got mugged - I took him home and dressed his wounds, got him back on his feet. And the rest? Well,' Simon shrugs, then leans back into Maurice, grinning brightly.</p><p>'Oh, Jack - there's a Life Support meeting at nine-thirty. You up for it? Anyone can come along,' He looks to Roger with that last part, and Roger shrugs.</p><p>'I've got a protest to save. Still haven't fixed Sam's equipment. Piggy wouldn't even let me in yesterday.' Simon frowns.</p><p>'Doesn't he have an actual name?'</p><p>'Yeah, but who cares what it is?' Jack sniggers, and lights one of the new cigarettes.</p><p>'So, Jack?'</p><p>'You'll find that I'm not much company.' Roger points at him from the doorway.</p><p>'Behave!'</p><hr/><p> </p><p>At the Life Support meeting, they all sit in a circle - Jack hunches low in his seat, arms crossed over his chest. The members all introduce themselves, sounding forlorn - what would you expect, from a group of ten all sentenced to death?</p><p>Jack is just about to introduce himself when Roger bursts in clumsily, noisily, fumbling with his camera. Jack wonders if Sam was there - he looks flustered. The leader, a man named Paul, smiles politely.</p><p>'And you are?'</p><p>'Oh - I'm not - I don't have, I'm here with... Um. Roger. I'm Roger. Do you mind if I...?' He lifts the camera, and they all shrug. Jack slides lower down his chair as Paul turns back to the circle.</p><p>'Let's continue with the affirmation.'</p><hr/><p align="center">-XXX-</p><hr/><p align="left">There was nothing more exhilarating than the pound of music so loud he can feel it through his feet, the faces of men looking up at <em>him</em> - admiring him. Wanting him.<br/> Maybe there was one more exhilarating.</p><p align="left">In the back dressing room, Ralph leans over to the table and presses his finger to his right nostril, taking in the short line of coke. It was the last of it - he'd have to chase down his dealer, and soon. He tilts his head back and wipes at his nostril carefully, then checks his reflection, dabbing away at the powder that lingers, then stands quickly, walking down the hall as briskly as he can in these<em> ridiculous</em> boots.</p><p align="left">Out on the stage, he finds someone in the crowd to focus on, hunching down low and biting his lip, meeting the man's eye evenly as he purrs, barely loud enough to be heard over the music. A wad of tens is pushed into his face, and he breaks the rules, kisses the hand that holds them as he slips the bills down into the front of his briefs, then straightens back up and moves onto the next man.</p><p align="left">On the street, it's cold. The chill works through his sorry excuse for a coat, even when he's still coming down from the high, and his cheeks are still on fire. He made a good earning tonight - at least 200 dollars, if not more. Definitely enough for some more blow. Maybe even some smack too.</p><p align="left">He tracks down his dealer before going home, blows almost all of his money on drugs, and he just wants to <em>celebrate</em>. His thoughts go to Jack - he always liked musicians. And broken boys. A broken musician? He hit the fucking jackpot with this boy.</p><p align="left"> </p><p align="left">He doesn't even bother knocking, just heaves that stupidly heavy loft door open and strolls in like he owned the place. Jack looks up from the couch, surprised, and Ralph pushes his guitar from his lap and climbs on top of him.</p><p align="left">'Take me.' He whispers, then kisses him, long and harsh and desperate, pulling his new stash from his pocket and pressing the little bag to Jack's cheek to make sure he feels it. <br/> Jack is stiff, then seems to gather himself and pushes him away. Ralph barely misses the coffee table as he scrambles to his feet, eyes wide. Jack looks disgusted with him, and stands up, grabs his arm.</p><p align="left">'Who the fuck do you think you are?!'</p><p align="left">'I-I thought...'</p><p align="left">'Look, kid, the fucking door is that way. Take your fucking... Take your candle, and your powder, and get the<em> fuck</em> out.'</p><p align="left">'Why can't you just <em>live</em>, Jack?' He hisses, stepping forward.</p><p align="left">'Living off blow isn't fucking - Jesus, just get the fuck out!'</p><p align="left">'There's only us! Only this! C'mon, just forget it. Stop moping and just... Seize it.' Jack goes quiet, then turns away.</p><p align="left">'I should... I should tell you - I should -' Ralph rests his hand on his shoulder, steps up close, and Jack turns back on him, eyes ablaze, ' - No! Fuck... Another time - another place.'</p><p align="left">'There's no day but today! <em>C'mon</em>!'</p><p align="left">'If you're so fuckin' wise, why do you need drugs?' Ralph recoils, and bites his lip. Jack snorts and grabs his arm, dragging him out of the loft.</p><p align="left">'Take those sad eyes somewhere else, Ralph. I don't need more baggage.' He hisses, then slams the door as best he can in his face. Ralph scoffs, shifts from one foot to the other, then stalks down the stairs.</p><hr/><p align="center">-XXX-</p><hr/><p align="left"> It's Christmas morning, and Roger had convinced Jack to come out with them for breakfast. On the subway, Simon lazily rounds around the pole, then leans his cheek on his hand.</p><p align="left">'New York City.' He says, mockingly wistful. Roger had told them about a homeless woman who had chewed him out just because he had tried filming her when the police were trying to kick her off the curb she was sleeping on. Jack wonders if he was commenting on the lengths that Roger was going to film this stupid documentary or the ridiculousness that was the extent of the homeless problem in this city.</p><p align="left">'Uh huh.' Roger mutters.</p><p align="left">'Center of the goddamned universe. Times are pretty shitty, but at least things can't get worse.'</p><p align="left">'Are you kidding? If you ever leave New York, it'd be a fucking pleasure cruise.' Jack pipes up, leaning back against the car windows. They all hum in agreement, and Maurice starts going on about Santa Fe.</p><p align="left"> </p><p align="left">The train pulls up at their station, and they get off.</p><p align="left">After breakfast, Roger stops Maurice and Simon, and Jack doesn't wait for him, although he speaks loud enough that Jack can hear him.</p><p align="left">'I'll meet you at the show. I'm gonna try and see if Merridew will go too.'</p><p align="left"> </p><p align="left">Back at the loft, Jack has returned to his usual place, moping on the couch as he picks at his Fender. Roger flits around the apartment, collecting his camera and his emptied wallet.</p><p align="left">'It'd be good for you, Jack. C'mon, you don't need to worry about money, Simon's got us covered.' Jack sighs and plucks at those same chords he's been playing with for the last eight months. Roger sighs too, then looks up, raising a brow. 'Is that for you?' Jack twists to look behind him. There's a note written in the fog on the loft windows.</p><p></p><blockquote>
+  <p align="left">
+    <strong>lunch? ↘</strong>
+  </p>
+</blockquote><p align="left">Jack sighs, thinking of Ralph's smile, then the press of the plastic bag to his cheek. Roger turns back to him, smiling.</p><p align="left">'Who's that from?'</p><p align="left">'Ralph.'</p><p align="left">'The dancer? From the Cat Scratch Club? Where did that come from?' Jack sighs, then sets his guitar down.</p><p align="left">'We should get going. I'll tell you on the way?'</p><p align="left"> </p><p align="left">'So what? He waved a candle in your face... And then he wanted you to shoot up with him?'</p><p align="left">'More or less.'</p><p align="left">'Are you seeing him?'</p><p align="left">'He's okay - he's more than okay, actually. But I pushed him away. I got mad, and I wanted him gone. It was bad.'</p><p align="left">'But you said he was sweet.'</p><p align="left">'He was. Is. Let's just go to Sam's show, then eat. Maybe I'll get fat, and I won't have to worry about him anymore - fuck. There he is.'</p><p align="left">'Sam?' Roger looks around, and Jack rolls his eyes.</p><p align="left">'No, dumbass. Ralph. I should go.'</p><p align="left"> </p><p align="left">Jack pulls Ralph aside from the man he's talking to - he recognizes him. He used to buy drugs off of him, back when Avril was alive - and shoves his hands into his pockets.</p><p align="left">'Hey.' Ralph looks surprised to see him.</p><p align="left">'Hey. I'm sorry about the way I - '</p><p align="left">'It's no big deal. Forget it.'</p><p align="left">' - I'm sorry about the way I blew up at you last night. Can I make it up to you?' Ralph smiles like he's trying not to, biting his lip and shifting on his feet as he rubs at the back of his neck.</p><p align="left">'How?'</p><p align="left">'Dinner party? After the show - you are seeing the show, yeah?' Ralph nods, bites his thumb.</p><p align="left">'I suppose that'll do.' The man pushes between them, snarling.</p><p align="left">'Yo, lover boy. You steal my client and you die.' Jack rolls his eyes, pushing him away.</p><p align="left">'You don't miss me. You won't miss him.' He pulls him off, and Ralph hangs onto his arm, glancing over his shoulder with every step. Jack doesn't pull away this time, guides him through the scattered crowd to Roger's side.</p><p align="left">'Roger - this is Ralph. He'll be dining with us this evening.'</p><p align="left">'Hey. We should go to the lot. Sam's performing.'</p><p align="left">'Sam?' Ralph says, looking up at Jack. He's still holding onto his arm.</p><p align="left">'Roger's ex.'</p><p align="left">'I'm over him!' Roger calls over his shoulder as he pushes further into the run-down building. Ralph's hand shifts down, but Jack gently pulls away.</p><p align="left">'Let's not hold hands just yet - stay close.' He murmurs, just loud enough that Ralph would be able to hear him over the chattering of vendors and junkies.</p><p align="left">'Is that a warning?' He asks, only sounding a little teasing.</p><p align="left">'I just need to take it slow, 'kay?' <em>I should tell you</em>.</p><p align="left">'Okay.'</p><hr/><p align="left"> </p><p align="left">Sam's performance is interesting, to say the least. They always are, with over-acted expressions and pregnant pauses between odd words. At the end, he spreads his arms, encourages the audience to moo with him. His piece had quoted that nursery rhyme that Jack never got, spinning it into a tale about a space cow who couldn't be milked. Jack didn't get it, but Ralph is grinning through the whole thing, eagerly mooing with the rest of the crowd. It was the most bizarre first date that Jack had ever been on. If it was. Another thing Jack wasn't sure about.</p><p align="left">The crowd gets too rowdy, and the police sweep in, pulling out random people from the crowd, ignoring Sam's desperate shouts. Jack sighs, and grabs Ralph, pulling him along as he follows the other three. Roger is still trying to get a good shot of a man getting pushed to the stage. Jack pushes at him.</p><p align="left">'Fuck your documentary, man! You can't be a director in prison.'</p><p align="left"><br/>On the street, they all catch their breath, Simon and Maurice laughing breathlessly. They look about two seconds from making out right then and there - Jack wonders if they've worked that out, yet. Ralph squeezes his arm and smiles up at him, panting.</p><p align="left">'Fuck, was that fun.' He pants, and Jack shrugs, looking over to Roger.</p><p align="left">'Should we head to the Cafe?'</p><p align="left">'Nah. Let's wait for Sam... and Piggy, of course.' Jack scoffs, makes the same whipping action that he had before, and tries to forget about Ralph, still hanging off him with a tight grip. Maurice offers him a cigarette, and he gladly takes it.</p><p align="left"> </p><p align="left">At the Life Cafe, they're almost turned away. The owner puts his arm across the door, shaking his head.</p><p align="left">'No! No, no, no, not tonight. Please don't make a scene!'</p><p align="left">'What?' Roger protests.</p><p align="left">'You sit here all night, and you never order anything!'</p><p align="left">'That's a lie! Last week I ordered a tea.'</p><p align="left">'You couldn't pay.' A beat.</p><p align="left">'Oh. Yeah.' Simon pushes up to the front of the group and smiles.</p><p align="left">'Well, we're paying tonight.' He announces, holding up a wad of bills. The owner sighs, then steps past.</p><p align="left">'Fine. But don't push the tables together!' They ignore him, and get the diners to push their tables into one long one. All the diners except one table. Sam steps forward, crosses his arms as he stands over his twin.</p><p align="left">'Eric! Here?' He says mockingly, and Maurice steps up on the other side.</p><p align="left">'The enemy of Avenue A. What brings the mogul in his own mind to the Life Cafe?' Eric sighs, then lifts his glass.</p><p align="left">'I'd like to propose a toast - to my dear brother's noble try. It went well.'</p><p align="left">'Fuck you.'</p><p align="left">'How many tickets did you actually sell?' Roger steps up to Sam's defense, so Jack scoffs, and steps up behind him.</p><p align="left">'How come Muffy -' Roger starts,</p><p align="left">'Alison - '</p><p align="left">'Missed the show?'</p><p align="left">'There was a death in the family.'</p><p align="left">'Who died?' Simon.</p><p align="left">'Our dog. An Ekita,' He spots Ralph and straightens up, 'Ralph! I'm surprised that a smart boy like you would hang out with slackers like this.' Jack turns, and Ralph looks down, cheeks pink. 'Bohemia is dead boys. Get a job.' Roger scoffs, then stands on a table, standing like he's performing a eulogy.</p><p align="left">'Dearly beloved. We gather here, to say our goodbyes. For here She lies!' Jack blocks out the rest of his friends' latest addition to their list of <em>Fuck The Man</em>, and spots Eric talking to Ralph, leaning down way too close for his liking. He tries to ignore the spike of jealousy, and turns back to his friends.</p><hr/><p align="left"> </p><p align="center">-XXX-</p><hr/><p align="left"> </p><p align="left">'Your new boyfriend doesn't know about us?' Ralph tries to look over Eric's shoulder. He didn't want Jack seeing him talking to him. Especially if he and his friends didn't like him. It hurt his chances of this ever actually working out between them.</p><p align="left">'There's nothing to know. It was three months ago.'</p><p align="left">'He doesn't act like he's going with you.'</p><p align="left">'We're taking it slow.' Ralph fingers his beeper and bites his nail, looking around nervously.</p><p align="left">'Hm. So where is he now?' Ralph steps past him to point to where he once stood.</p><p align="left">'He's right - oh. Where did he...?' Eric laughs, then calls for his check. Someone plays a song that Ralph doesn't recognize on an electric guitar, and his eyes meet Jack's. As soon as he's done his little song, Ralph pulls him aside, cheeks burning.</p><p align="left">'Did I do something wrong?' Jack rolls his eyes and sets the guitar he holds - it's not the one Ralph had spotted in his apartment. Maybe it belonged to the Cafe - down on the ground. 'You're the one who invited me, but I've been ignored all night!'</p><p align="left">'Look, Ralph, I'm trying. But I've got my own baggage to worry about.'</p><p align="left">'Life's too short, baby. I'm just... I'm looking for someone who's baggage goes with mine. I'm hoping... I'm hoping that you're the one.' Jack snorts, seemingly lost in thought as he wanders away. Ralph chases after him, not even bothering to grab his coat when he pushes out into the snow that has begun to fall. 'You're not the only one who has baggage, Jack.'</p><p align="left">'I guess I should - ' From inside, several beepers sound. Including his. Including Jack's. Ralph sighs and digs out his pills, meeting Jack's eyes as he takes them. Jack looks sad and vaguely horrified.</p><p align="left">'You...?'</p><p align="left">'Yeah. You?' Jack says his name softly, then carefully takes his hands. Ralph can't breathe.</p><p align="left">'I guess I should tell you that I'm a fucking disaster. It's... It's been a long time. I don't know how to...'</p><p align="left">'Let's just make this go faster. I'm not even in it yet.' Ralph steps forward slowly, never tearing his eyes away from Jack's face. 'I should tell you that I blew that candle out. To get back in.' Jack leans in, and Ralph leans against him, head fitting perfectly under his chin.</p><p align="left">'I forgot how to smile until your candle burned my skin.' Jack wraps his arms around him and lets out a shuddering breath. 'Oh no.'</p><p align="left">'I know. Just... Trust your desire. Learn again.'</p><p align="left">'Learn again.' Jack's voice is soft, and he presses his face into Ralph's hair. There is chorus of cheers, then laughter, then more boisterous talk inside the Cafe. Jack pulls back to look into the window. Ralph squeezes his hands, and says his name.</p><p align="left">When he looks back, they share a soft kiss, short and sweet and oh-so-lovely.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+  
+      <!--afterword-->
+      <div class="afterword preface group" role="complementary">  
+          <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/10545052">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 2 of the <a href="/series/720738">jalph musical aus</a> series</span></span></li>
+  </ul>
+</div>
+<!--/series links-->
+      </div>
+      <!--/afterword-->
+  
+    </div>
+    <!-- END work skin -->
+  </div>
+  <!-- END work -->
+
+  <!-- BEGIN comment section -->
+  <!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="O+lqaVMqC/WilslrcKpZRjI/Cr62SlxoOQk5hy6lWh0DCm8R3SuW2tKsOdmd2SxmuCXQzdj6TjIjs4LEkdNthQ=="/>
+          <input value="10885977" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+  <div id="kudos_message"></div>
+
+  <h3 class="landmark heading"><a name="comments">Comments</a></h3>
+
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/strayingSoul">strayingSoul</a>, <a href="/users/ThisIsOnlyTheBeginning">ThisIsOnlyTheBeginning</a>, and <a href="/users/localdisappointment">localdisappointment</a>
+             as well as 
+          3 guests
+         left kudos on this work!
+        <span class="kudos_expanded hidden">
+          <a id="kudos_collapser" href="#">(collapse)</a>
+        </span>
+      </p>
+</div>
+
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_24190887">
+  <form id="comment_for_24190887" class="new_comment" action="/chapters/24190887/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="0++zNyWKkY13YfnCV9WUJSbO764fAL2Uin5W+detsXTrDLZPq4sMogdbCXC6puEFrNQ13XGwr86QxO26aNuG7A=="/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_24190887">Name: </label></dt>
+          <dd>
+            <input id="comment_name_for_24190887" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_24190887=new LiveValidation('comment_name_for_24190887',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_24190887.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_24190887">Email: </label></dt>
+          <dd>
+            <input id="comment_email_for_24190887" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_24190887=new LiveValidation('comment_email_for_24190887',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_24190887.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+
+        
+      <p>
+        <label for="comment_content_for_24190887" class="landmark">Comment</label>
+        <textarea id="comment_content_for_24190887" class="comment_form observe_textlength" title="Enter Comment" name="comment[content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_24190887" name="controller_name" value="chapters"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_24190887_counter" class="value" data-maxlength="4300" aria-live="polite" aria-valuemax="4300" aria-valuenow="comment_content_for_24190887">4300</span> characters left</p>
+      <script>var validation_for_comment_content_for_24190887=new LiveValidation('comment_content_for_24190887',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_24190887.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_24190887.add(Validate.Length,{"maximum":"4300","tooLongMessage":"must be less than 4300 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_24190887" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+  <!-- END comment section -->
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.225.0">otwarchive v0.9.225.0</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+jquery.cookie.js+filters.min.js.pagespeed.jc.bqJDpxVdLI.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_KmWy4miNOM);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>$j(document).ready(function(){if($j.cookie("accepted_tos")!=20180523){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  $j(document).ready(function() {\n    var container = $j(\"#tos_prompt\");\n    var outer = $j(\"#outer\");\n    var button = $j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      $j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      $j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            // Expires in 20 years, like a Rails permanent cookie\n            $j.cookie(\"accepted_tos\", \"20180523\", { expires: 7300, path: \"/\" });\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            $j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+          <script>var name_id="#comment_name_for_24190887";var email_id="#comment_email_for_24190887";if(!$j(name_id).val()){$j(name_id).val($j.cookie('comment_name'));}if(!$j(email_id).val()){$j(email_id).val($j.cookie('comment_email'));}</script>
+
+  </body>
+</html>

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":79,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Intense - KMZ - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="cEd1yK6TewFZlCifyNtBH-7iPfO096WpoFmpJrLaxAT-geXyA2H6QSsX8SBmWrq-Yy-8yDiVKuz6-zq9TUofxQ"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="0KztLPa_VMIOrnyGo0rks9-hazLJwaI-GoIyLngMc-Fean0WW03VgnwtpTkNyx8SUmzqCUWjLXtAIKG1h5yoIA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: katekyou &quot;alternate universe&quot; sort:&gt;words</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/19447660/chapters/46287628">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=19447660">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/19447660/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/19447660/Intense.azw3?updated_at=1567490007">AZW3</a></li>
+          <li><a href="/downloads/19447660/Intense.epub?updated_at=1567490007">EPUB</a></li>
+          <li><a href="/downloads/19447660/Intense.mobi?updated_at=1567490007">MOBI</a></li>
+          <li><a href="/downloads/19447660/Intense.pdf?updated_at=1567490007">PDF</a></li>
+          <li><a href="/downloads/19447660/Intense.html?updated_at=1567490007">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Explicit/works">Explicit</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Severus%20Snape/works">Hermione Granger/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li><li><a class="tag" href="/tags/Mrs%20Granger%20(Harry%20Potter)/works">Mrs Granger (Harry Potter)</a></li><li><a class="tag" href="/tags/Mr%20Granger%20(Harry%20Potter)/works">Mr Granger (Harry Potter)</a></li><li><a class="tag" href="/tags/Narcissa%20Black%20Malfoy/works">Narcissa Black Malfoy</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-07-02</dd><dt class="status">Completed:</dt><dd class="status">2019-09-03</dd><dt class="words">Words:</dt><dd class="words">18427</dd><dt class="chapters">Chapters:</dt><dd class="chapters">10/10</dd><dt class="comments">Comments:</dt><dd class="comments">4</dd><dt class="kudos">Kudos:</dt><dd class="kudos">14</dd><dt class="hits">Hits:</dt><dd class="hits">459</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Intense
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/KMZ/pseuds/KMZ">KMZ</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Manchmal trennt nur eine hauchfeine Grenze eine Welt von der anderen. Wenn man diese Grenze respektiert und weder zerstört, noch übertritt, könnte man über allem eine fragile Zwischenwelt erschaffen, in der gut böse ist und böse gut. Was treibt Hermione Granger jede Nacht in die Nokturngasse? Was lässt Severus Snape Worte sagen, die er niemals nur gedacht hat?</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/46287628">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Die Nokturngasse.<br/>
+Nicht ihr Weg und trotzdem war sie da. Aus Neugier, sagte sie sich, doch es stimmte nur bedingt.<br/>
+Sie müsste etwas Wichtiges besorgen, hatte sie ihren Eltern gesagt.<br/>
+In der Winkelgasse? Ja – für ihre Eltern. Nein, hier. Harry hatte von einem Spion gehört, der ihn angeblich über Voldemort informieren wollte. Harry selbst könnte nicht hier sein. Er war bekannt und vogelfrei. Sie könnte hier sein.<br/>
+Niemand wusste, dass sie hier war. Nicht mal Harry oder Ron. Nur so fühlte sie sich sicher.<br/>
+Herzrasen, feuchte Hände, Übelkeit im Bauch. So sah Sicherheit also aus?<br/>
+Mit tief ins Gesicht gezogener Kapuze lief sie durch die Gasse und deren endlichen Nebenausläufern, auf der Suche nach dem Spion. Er hatte weder Namen, Gesicht, noch Identität. Sie müsste dem Glück vertrauen. Und darauf, dass das Gute der Welt sie fand und ansprach.<br/>
+Ein Rempeln. Sie war unaufmerksam und wurde gegen die Mauer gedrückt. Ein Grollen, doch die Gestalt lief weiter. Ihre Schulter schmerzte leicht und sie rieb darüber. Sie müsste wachsamer sein.<br/>
+Wehrhafter.<br/>
+Vielleicht war es ein Fehler allein hier zu sein. Ihre Finger schmerzten, so fest umfasste sie den Zauberstab. Nur nicht unbesonnen sein, ermahnte sie sich streng und holte tief Luft.<br/>
+Gestank. Doch besser nur flach atmen.</p><p> </p><p>„Nein, bitte nicht!“<br/>
+Worte. Ängstliche Worte. Worte einer Frau.<br/>
+Wildes Herzklopfen und vorsichtige Schritte führten sie näher. Sie riskierte einen Blick um die nächste Ecke. Vielleicht hätte sie tagsüber herkommen sollen, doch da war der Spion nicht da. Wurde Harry zugetragen. Vielleicht war es nur eine Falle. Selbst wenn, sie würde sich opfern.<br/>
+Mut und Entschlossenheiten, das war ihr Kredo in diesen Zeiten. Zögern tötete.<br/>
+Dabei waren Sommerferien und sie sollte irgendwo am Badesee sein. Stattdessen Dunkelheit, Gestank und geistige Fäulnis.<br/>
+Es WAR eine Frau. Und ein Mann.<br/>
+Der Mann drückte die Frau gegen die Wand. Eine Hand um ihren Hals, in der anderen ein erhobener Zauberstab, gedrückt an ihre Halsschlagader, wie ein Messer.</p><p>Blut. So fest biss sie sich auf ihre Zunge, um kein Geräusch zu produzieren. Sie kannte den Mann sehr gut. Severus Snape. Ihn in der Nokturngasse anzutreffen, war nicht verwunderlich. Trotzdem.<br/>
+Hitze im Gesicht, Schwäche in den Beinen und rasende Gedanken. Was tun?<br/>
+„Nein, nicht!“, hörte sie die Frau wieder jämmerlich betteln. Es klang seltsam. Ekelhaft provozierend, gleichzeitig unterwürfig ängstlich.<br/>
+Snape zischte ihr etwas ins Gesicht. Sie verstand es nicht, erschauerte aber angstvoll. Ihr Kopf war leer, ihr Bauch zitterte und ihre Hand bewegte sich von selbst.<br/>
+Hermione hob den Zauberstab tapfer an. Sie trat aus dem lautlosen Schatten, zielte auf Snape und sagte fest:<br/>
+„Lass sie los, sofort!“<br/>
+Keine Reaktion. Niemand schien sie wahrzunehmen.<br/>
+„Lass die Frau in Ruhe!“ Ihre Stimme, lauter, weniger fest.</p><p>„Verpiss dich, Mädchen!“, fauchte die Frau böse. Hermione blinzelte verwirrt, sah Snape seinen Zauberstab vom Hals der Frau nehmen und spürte im nächsten Moment einen fiesen Schmerz in der Brust.<br/>
+Die Mauer im Rücken war hart, der Aufprall tat weh, ihr Schrei war heiser. Sie fiel. In den Dreck und verlor. Ihr Bewusstsein und ihre Kontrolle.</p><p>Schmerzen, beim Aufwachen. Schmerzen im Kopf und in der Brust. Schmerzen am Hals.<br/>
+Snapes Finger um ihrer Kehle. Sein Gesicht dicht vor ihr. Seine Waffe jetzt an ihrem Hals. Was war passiert? Sie blinzelte, sein Blick blieb schwarz und starr.<br/>
+„Was suchst du hier, Granger?“<br/>
+Die dunkle Stimme drang in ihr Blut. Ließ Angst auflodern. Beschleunigte ihren Herzschlag. Schürte ein seltsames Feuer.<br/>
+„Geht dich nichts an …“, keuchte sie tapfer, oder dumm. Luftmangel, Schmerz und Wut dämpften ihren Ton. Ließen ihn furchtsamer erscheinen, als sie war.<br/>
+„Oh doch. Nochmal: Was willst du hier?“<br/>
+„Besorgungen.“<br/>
+„In der Nokturngasse? Sind die Ferien so langweilig, dass du eine Runde mit deinem Leben spielen willst?“<br/>
+Noch immer klang er anklagend, drohend. Noch immer war seine Hand fest um ihren Hals. Noch immer presste er sie an die Wand, wie die arme Frau eben. Was war mit der Frau geschehen? War sie entkommen? War sie jetzt stattdessen Snapes Opfer?<br/>
+Sah ganz so aus.<br/>
+„Sag es mir!“, zischte er fordernd. Seine schwarzen Augen drangen in sie ein. Tränen stiegen nach oben.<br/>
+„Nein!“, war ihre Antwort. Sie konnte ihm nicht trauen.<br/>
+Sein Griff um ihren Hals wurde fester und er hatte etwas gemacht, was sie nicht bemerkt hatte. Ein gemeiner, ziehender Schmerz ging von der Spitze seines Zauberstabes aus. Drang durch ihre Haut, durch ihr Fleisch und ihre Muskeln, kroch bis ins Blut. Hermione wimmerte ein Mal auf.<br/>
+„Sag es!“<br/>
+Sein Knurren ließen die Tränen die letzte Mauer durchbrechen. Eine heiße Spur zog sich über ihre Wange. Snape blinzelte. Höchstens zwei Mal und sein Griff um ihre Kehle lockerte sich minimal.<br/>
+„Nur, wenn … du mir sagst, was du mit der Frau vorhattest!“, forderte sie hart. Wissend, dass er das niemals preis geben würde. Seine Augenbrauen schossen kurz hoch, dann schlossen sich seine Augen fast vollständig. Ein günstiger Moment, dachte sie und bewegte sich.<br/>
+Sinnlos. Er trat einen kleinen Schritt näher und presste sie nun mit seinem Körper an die Mauer.<br/>
+„Das willst du nicht wissen und du wirst mir trotzdem nicht sagen, was du hier tust.“<br/>
+Eine reine und ziemlich treffsichere Feststellung. Zu verlieren hatte sie allerdings nichts mehr.<br/>
+„Bist du dir da sicher?“<br/>
+Nur ein heiseres, provokantes Flüstern. Snape antwortete mit einem verächtlichen Schnauben.<br/>
+„Neugier kann tödlich sein, Granger.“<br/>
+Sie antwortete nicht, fühlte nur die immense Schwäche ihres Körpers. In Anbetracht seiner Macht. Seiner finsteren, überwältigenden, hasserfüllten Stärke. Wo war eigentlich ihr Zauberstab?<br/>
+„Was denn nicht, heutzutage?“<br/>
+Hatte sie den Verstand verloren? Er könnte sie hier einfach töten und er würde. Es war Severus Snape.</p><p>Seine Lippen waren hart, drängend und plötzlich auf ihrem Mund. Nach Luft schnappen? Unmöglich. Seine Zunge in ihrem Mund. Ihr Schreck war unbeschreiblich. Die aufflammende Lust hingegen zerstörerisch. Ihr heftiges Aufstöhnen erschütterte sie, ihre Hand, die ihn enger an sich zog, gehörte abgeschlagen. Hitze in ihrem Unterleib, Flammen im Bauch, Feuer hinter den Augen. Sie schnappte nach Luft, als er sie losließ.<br/>
+„Das war es. Jetzt verschwinde, Granger. Das nächste Mal, lass ich dich nicht davonkommen!“<br/>
+Er trat zurück. Es wurde kalt. Eisige Kälte, die Hermione lähmte. Ihre Hand zitterte, als sie nach ihren Lippen griff. Sie schienen noch immer zu brennen. Sein Geschmack in ihrem Mund ließ keinen Platz für Worte. Snape sah sie an. Vorwurfsvoll, finster und … verwundert. Sie sah ihn schwer atmen, sah seine leicht geöffneten Lippen.<br/>
+„Was …“, begann sie trocken, doch er wartete nicht. Disapparierte direkt vor ihren Augen. Ein zersplitternder Schatten.<br/>
+Ihr Körper gab nach. Sie rutschte an der Wand nach unten und saß zitternd im Dreck der Nokturngasse. Und begriff nichts.<br/>
+Bei was hatte sie Snape gestört? War sein heftiger Kuss eine Lüge gewesen? Um schlimmere Absichten zu vertuschen? Was war mit ihr geschehen? Ihr war so heiß und sie war so verstört.<br/>
+War die Frau eine Hure gewesen? Wollte Snape sie nur ficken und tat es auf seine düstere Art. Hatte sie ihn gestört? Wollte er ihr nur Angst machen? Mit seinem Kuss, der längst nicht mehr nur auf ihren Lippen war. Er drang tiefer in sie ein. Bis in ihre Blut und jede Zelle ihres Daseins.<br/>
+Leidenschaft hätte sie ihm nicht zugetraut. Zerstörung schon. Sie hatte beides zur selben Zeit zu sehen bekommen. Verrückt.</p><p> </p><p>Die Sonne am nächsten Tag schmerzte in den Augen. Es war warm, doch nicht vergleichbar mit der Hitze der letzten Nacht.<br/>
+Hermione lag im Bett, wollte nicht aufstehen, sondern lieber bis zur Nacht weiterschlafen.<br/>
+Sie musste wissen, ob Snape sie über den Grund seiner Bedrohung angelogen hatte. Sie würde wieder in die Nokturngasse gehen. Vorsichtiger diesmal, schlauer. Sie würde ihn finden und sie würde seine Lüge aufdecken. Sie würde seinen allesverschlingenden Kuss als das entlarven, was er war:<br/>
+Täuschung.<br/>
+Eine Vorspieglung von Sehnsucht, Bedürfnis und Aufmerksamkeit. Ihre Finger zwischen ihren Schenkeln brachten Erleichterung. Nur oberflächlich, flüchtig – nicht zu vergleichen mit der nächtlichen Intensität der Nokturngasse.<br/>
+Und Severus Snape. Der all das verkörperte, was dieser verkommene, schäbige Teil der Zauberwelt repräsentierte.</p><p> </p><p>Heißes Wasser, ein schmerzhaftes Brennen auf der Haut. Wut.<br/>
+Wie konnte sie nur?! Wie konnte sie ihn derart bloßstellen?<br/>
+Potter, der Dieb. Granger, der Aggressor, Weasley, die dumme Executive.<br/>
+Das goldene Trio. Wie lächerlich.<br/>
+Lauwarmes Wasser. Scham und Enttäuschung.<br/>
+Gerade sie. Gerade dieses Mädchen. Siebzehn. Viel zu schön, viel zu clever und viel zu wertvoll.<br/>
+Dumm ebenso. Närrisch oder lebensmüde? Wollte er das wirklich wissen?<br/>
+Eisiges Wasser.<br/>
+Lust. Erregung. Es hatte kein Ende gefunden. Sein Opfer für diese Nacht hatte keine Lust mehr. Hatte Mitleid mit dem Mädchen, hat ihn beschimpft. Er hat sich sein Geld zurückgeholt, hat ihr gedroht – natürlich. Böse Menschen machten das so. Er war einer, auch wenn es Menschen gab, die es nicht recht glauben wollten. Absurd. Die Nokturngasse war sein Wohnzimmer, das Gesindel dort waren seine gutbekannten Nachbarn. Alles Hure, Säufer, Kriminelle und Abschaum. Der Dunkle Lord war seine „Familie“. Man könnte es kaum übler treffen. Aber so war es von Anfang an gewesen.<br/>
+Potter und der Rest der Welt waren seine Feinde.<br/>
+Tiefes Seufzen. Wenn es mal so einfach wäre.<br/>
+Seine Hand vollbrachte schnell und sicher, was heute anders gedacht war. Dieses verblödete, gutgläubige Kind aus gutem Haus.<br/>
+Qual. Lust. Leid. Sehnsucht …<br/>
+Gleichgültigkeit, im Endeffekt.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/47352055">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Wieder Nacht.<br/>Die Neugier trieb sie raus, die Lüge für ihre Eltern „erlaubte“ es. Beschämung, die weniger wurde, umso weiter sie durch die Nokturngasse schlich. <br/>Die Hitze war drückender, der Gestank bestialischer, die Angst größer. Vorsichtig, wachsam, ständige Blicke über die Schulter. Sie bekam Kopfweh, weil sie zu aufmerksam sein musste.<br/>Nichts. Leere, finstere Winkel oder dumpfe Gestalten. Kein Snape, keine große Macht, keine Angst und kein Herzrasen.<br/>Auch kein Spion. Nichts Gutes.</p><p>Keine verdammte Antwort. Hermione begann sich zu ärgern. Wut übernahm ihr Denken, Zorn fraß ihre Achtsamkeit. <br/>Ein böser Schmerz im Rücken ließ sie jäh taumeln. Keuchen, Tränen und der Schreck musste raus. Sie schrie auf, zog ihren Zauberstab und murmelte einen Explosionszauber, ehe sie ihn erkennen konnte.<br/>Ihr Zauberstab hatte letzte Nacht in ihrer Tasche gesteckt. Wie aufmerksam, hatte sie sich zynisch in Gedanken bei Snape bedankt.<br/>Von Dank konnte jetzt keine Rede sein. Mit Leichtigkeit lenkte er ihren Zauber um und traf sie erneut. An der Schulter diesmal. Die Seite, mit der sie zauberte. Ihre Waffe fiel zu Boden, ihre andere Hand ging zur Schulter. Au, verdammt.<br/>Seine Worte tropften vor Verachtung:<br/>„Warum nur wusste ich, dass du wiederkommst, Granger?“<br/>„Weil du etwas zu verbergen hast, deshalb?“, schrie sie spitz. Kein Blut. Nur Schmerz. Snape hatte Acht gegeben sie nicht zu verletzen. Ein nettes Ungeheuer.<br/>„Selbst wenn … willst du es aus mir heraus … küssen?“ <br/>Zynismus pur, leider viel zu schrill.<br/>Sprachlos, blinzelnd und wie gelähmt stand sie da. Es war eine andere Nebengasse. Nicht weniger stinkend, ebenso düster und gefährlich. Aber stiller. Würde er sie töten wollen, könnte er es. Niemand würde ihre Schreie oder ihren Todeskampf hören.<br/>„Du hast MICH geküsst!“, erwiderte sie nach gefühlten Stunden. Ein abfälliges Geräusch aus seiner Richtung. In der Gasse war Dunkelheit, doch Snape stand zusätzlich im Schatten. Wenn er nichts zu verbergen hatte, wer dann? Severus Snape, die lebende Täuschung, der tödliche Schatten.<br/>„Du bist hier, weil ich es wieder tun soll.“ <br/>Er kam näher. Seine Worte waren kein bisschen warm, enthielten absolut keine Genugtuung. Es war eine klare, kalte Feststellung.<br/>„Das ist … lächerlich.“ <br/>Viel zu dünne Worte, keine Stärke war heraushörbar. Das hatte steigenden Ärger zur Folge. Anschwellende Wut, weniger Besonnenheit. <br/>„Ich dachte, du hättest verstanden, was du gesehen hast, Granger! Mich interessiert nicht, ob du dich hier umbringen lassen oder vergewaltigen lassen willst. Aber mich interessiert, wenn du mir hinterher schnüffelst. Was es auch ist, geh mir aus dem Weg …“<br/>„Sonst was?!“ <br/>Sie konnte es nicht zurückhalten, weil er recht hatte. Snape schwieg, beinah höflich.<br/>„Sonst bedrohst du mich wie deine Hure und küsst mich dann wieder, bis …?“ <br/>Erschrockenes Verstummen. Himmel, was hatte sie da gerade sagen wollen? Snape schwieg und lachte dann trocken. Nur kurz, nur dunkel, nur atemberaubend schön. <br/>Hitze in ihrem Leib. Sie bekam keine Luft, für einen Moment. Schnappte im nächsten verzweifelt danach, wie ein Fisch am Strand.<br/>„… bis du weinend zu Mami und Daddy läufst?“, fragte er spöttisch. Weniger kalt wie erwartet, eher gönnerhaft. Wütendes Schweigen von ihrer Seite und ein Handkrampf um ihren Zauberstab. Sie würde gegen ihn verlieren. Jederzeit und er wusste das. Nicht die Kontrolle verlieren, Hermione!<br/>Denk nach! Beherrsch dich!<br/>„… bis ich schwach werde …“, hörte sie sich flüstern und zog scharf die Luft ein. Die Wangen heiß vor Verlegenheit. Hatte sie diese absurde Verfänglichkeit laut ausgesprochen? Snape kam noch näher. Sein Zauberstab war gesenkt und ein ungewohntes Lächeln umspielte seine Lippen. Sie hatte das noch nie an ihm gesehen. Es machte ihr Angst, denn es machte ihn hübsch. Anziehend und berauschend in seiner zerstörerischen Dunkelheit.<br/>„Sag das nochmal, Granger!“<br/>„Ich habe nichts gesagt!“ <br/>Auf ihre giftige Erwiderung, folgte sein schwacher Zauber. Das Ziel war ihre Hand, die beiläufig nach unten ihren Zauberstab greifen wollte. Hatte er nicht mal einen Zauberspruch benutzt? Kannte sie Snape wirklich oder kannte sie nur den Dreckskerl Professor Snape?<br/>„Sag. Es. Nochmal!“, forderte er und die Spitze seiner Waffe stach wieder in ihren Hals. Sein Gesicht ganz nah. Schwarze, glänzende Augen, sein Körper auf Abstand.</p><p>Nass auf ihrer Haut. Viel Nass. Sie sah verwundert nach oben. Es hatte begonnen zu regnen. Zu schütten. Eine Frechheit, mitten in einer Auseinandersetzung. Fernes Donnergrollen.<br/>„Nein!“ <br/>Ihr Trotz war stärker als ihre Todesangst. Aus dem Nichts traf sie der Zauber. Ihr Magen krampfte sich schmerzhaft zusammen. Ein Stück flog sie nach hinten, polterte gegen eine Tonne und rappelte sich wieder hoch. Schon war er wieder bei ihr, eindeutig drohend.<br/>Seine Hand wieder um ihren Hals, sein Daume schob sich zwischen ihre Zähne.<br/>„Wie viel willst du dafür?“, fragte er sie hämisch und griff ihr nicht allzu sanft zwischen die Beine. Hermione schrie erschrocken auf. Der Schreck galt ihrem eigenen Verlangen und nicht seiner groben Direktheit. <br/>„Ich bin doch … keine Hure!“, fauchte sie und versuchte nach ihm zu schlagen. Wieder dieses Lächeln, während er mit Leichtigkeit ihren Arm abfing. Er war schön, wenn ihn etwas amüsierte.<br/>„Also gratis, umso besser. Hier oder soll ich dich mit zu mir nach Hause nehmen?“ <br/>Bitterer, verletzender Sarkasmus aus seinem Mund. Sein Kuss war besser, dachte sie atemlos. Sein Kuss. Es hatte nur ein Kuss gebraucht und sie war seine Hure. Nein, Korrektur. Sie WOLLTE seine Hure sein.<br/>„Schon gut, ich habe es verstanden!“ <br/>Sie bemühte sich um Autorität und gelassene Ernsthaftigkeit. Snape nahm sie nicht mehr ernst. Noch immer dieses zweideutige Lächeln, was ihren Blick anzog. Noch stand er dicht vor ihr, wenn auch nicht mehr grundsätzlich drohend, eher lauernd. Jederzeit bereit zu morden. Und zu küssen?<br/>„Wirklich? Hast du das?“<br/>„Ja, auch wenn ich weiterhin der Meinung bin, du führst irgendwas im Schilde.“<br/>„Natürlich. Das tut jeder, zu jederzeit. Auch ich. Nur geht es dich nichts an. Dich geht an, was ich dir über Tränke beibringen und vielleicht würde es dich interessieren, was ich dir über deinen geschätzten Freund Potter und seine Familie berichten kann. Aber ich habe keine Lust dazu.“<br/>Sie starrte nur auf seinen Mund, hörte seine Stimme, die in sie eindrang wie ein scharfes Messer. Sie verursachte Hitze und ein Verlangen, was sie verzweifeln ließ. Sie hätte niemals wieder hier her kommen sollen, auf der Suche nach diesem Ungeheuer.<br/>„Du bist … verabscheuungswürdig!“ <br/>Scharfe Worte. In Hogwarts hätte sie das zu ihm niemals gesagt. Nicht im Beisein von Harry und Ron. Alleine bestimmt auch nicht. Nicht im Rahmen ihrer Welt. Hier war seine Welt und hier konnte er ruhig hören, was sie von ihm hielt. Er verachtete sie sowieso schon.<br/>„Ich weiß …“ <br/>Keine Überraschung, keine Resignation. Eher Teilnahmslosigkeit.<br/>Seine Körper drückte sie wieder an die Wand. Sie starrte auf das Nass in seinen Haaren, weiß, dass sie sich wehren sollte. Sie könnte schreien, sie könnte kämpfen, ihn beschimpfen. Sie war gelähmt, vor Verlangen. Der Regen auf seinem Gesicht, die Abgründe seiner Augen, kein Lächeln mehr, was ihn schön machte. Er war das Gesicht der Nokturngasse. Deren verruchter Rhythmus in ihrem Körper. Feuchte Hitze zwischen ihren Beinen. Ihr Unterleib war wie eine aufblühende Knospe. Gierig nach der Gewalt der Finsternis. Sehnsüchtig nach ihm und seiner Brutalität. Sein Daume drückte ihre Lippen wieder auseinander. Ihr Keuchen war lahm, unwürdig und verräterisch. <br/>„Du solltest gehen.“ <br/>Seine Worte waren nur mehr ein belegtes Flüstern. Noch immer gefährlich, so voller Warnung, dass sie Angst haben musste. Und sie hatte Angst. Vor sich selbst. Vor sich und dem, was sie begehrte.<br/>„Zu spät …“, flüsterte sie. Konnte nicht wegsehen. Musste sehen, wie der Regen ihn weinen ließ. Seine Augen glänzten, aber nicht wegen der Tränen. Seine andere Hand strich ihr die nassen Haare aus dem Gesicht. Sie fragte sich benommen, ob sie träumte.<br/>Tat sie nicht, denn sein folgender Kuss war so eindringlich und fordernd, dass sie hilflos seinen Namen dachte. <br/>Severus. <br/>Oh Gott … was geschah mit ihr?<br/>Seine Hand schob sich unter den Pullover. Legte sich auf ihre Brust. Fest, nicht schmerzhaft, nur erregend besitzergreifend. </p><p> </p><p>***</p><p> </p><p>Er musste es tun. Wie könnte er nicht? Warum sollte er widerstehen? Sein, von Anfang an verpfuschtes Leben ist Entschuldigung genug. Freche Mädchen gehören bestraft. Neugierige getötet. Vielleicht tötet er sie später. Sie will einen Kuss? Weshalb? Er wollte ihr doch nur Angst machen. Herrje, immer dieser unnötige Pseudowiderstand, um sich selbst Stärke zu beweisen. Moment, hatte sie vorhin etwas geflüstert, was sich nach „dein Kuss macht mich schwach“ angehört hatte? Da hatte er sich bestimmt verhört. <br/>Furcht brachte schwache Mädchen immer zum Weinen und Granger weinte schnell und oft. In letzter Zeit weniger, was für ihn ein schlechtes Zeichen war. Verrohung, Abstumpfung, fehlende Intensität. <br/>Aber sie floh nicht. Kam stattdessen mit billigen Ausreden wieder, um ihm nachzuspionieren. Ärger, vermischt mit Verzweiflung, ließ sein Blut kochen. Sein Schwanz war hart und drängend an ihrem Unterleib. Nur ein Kuss. Nur ein richtiger Kuss, und sie würde ihn hier nie wieder belästigen. Er konnte weiter herumhuren, trinken, sich mit stinkendem Pakt prügeln und ab und zu mal einen töten. Was machte es denn schon noch? Sein Leben war sowieso zu Ende und er hatte nichts zu verlieren.<br/>Wollte sich dieses närrische Ding ihm ausliefern, würde er sie eben benutzen.<br/>Ihr weicher, erschrockener Mund – das machte ihn hilflos und gierig. Ihr Körper so schwach und anschmiegsam, der perfekte Gegenpart zu seinem.<br/>Sein Schritt von ihr weg missglückte. Ihr Griff in seine Haare war schmerzhaft und erbarmungslos. Das ist doch eher sein Gebiet. Er sollte …</p><p> </p><p>***</p><p> </p><p>„Habe ich mir doch gedacht, dich hier zu finden, Snape!“ <br/>Eine dunkle Stimme aus dem Schatten. <br/>Snape riss sich schroff los, schubste sie zur Seite und zischte ihr zu:<br/>„Verschwinde! Auf der Stelle!“ <br/>Hermione rannte los, hob endlich ihren Zauberstab auf und sah dabei die Blitze der Magie aus den Augenwinkeln. Wer auch immer gekommen war, kämpfte nun mit Snape. <br/>Nur weg hier. Sie rannte um einige Ecken, rutschte aus und fiel schmerzhaft auf die Knie.<br/>„Verdammt …“ <br/>Sie blieb knien, saugte die regennasse Luft ein und fragte sich, was geschehen war. Wie konnte sie diesem Monster erlauben sie so zu behandeln? Snape hatte sie erniedrigt, ihr weh getan, sie beleidigt und beschimpft. Und sie geküsst und mit seinem Körper berührt. Herzrasen. Allein die Erinnerung daran verursachte es. War alles nicht anders zu erwarten und durchaus gewollt. Doch tat es weh. Sie fühlte einen Schmerz, der ihr so unbekannt war. Zwischen den Schenkeln das heiße Ziehen. Sie stand auf, lief weiter, vorsichtig und zitternd. Eindeutige Geräusche ließen sie einen wachsamen Blick um die Ecke werfen. Eine weitere Sackgasse. Stinkend, dunkel, Sexgeräusche. Das könnten er und sie sein. Wenn nicht … wer auch immer gekommen wäre. Würde wer auch immer Snape töten? Hoffentlich.<br/>Morgen würde sie zum Badesee gehen und den sonnigen Tag genießen.</p><p> </p><p>***</p><p> </p><p>„Ist sie nicht ein bisschen jung, Snape?“<br/>„Was willst du, Vlad?“<br/>„Was könnte ich schon wollen, Severus?“ <br/>Ein Feuerwerk der Magie in dieser Seitengasse und keinen interessierte es. Eine Katze huschte vorbei und verlor ihren Schwanz. Animalisches Kreischen.<br/>„Du bist widerlich, Vlad.“<br/>„Ups, ich dachte, das wusstest du? Ach komm schon! Dir hat es doch gefallen … bist du wieder zu den Huren gegangen? Hätte ich jetzt nicht erwartet.“<br/>„Halt dein Drecksmaul …“ Snapes Zauber war gut gezielt. Vlad ging keuchend zu Boden. Zeit, um nachzusetzen, Zeit um zu töten. Severus disapparierte und verzichtete.<br/>Vlad war nur ein armes Schwein, so wie er. Fehlgeleitet, gequält und hin und wieder tauchte er im falschen Moment am falschen Ort auf.<br/>Aber sie war weg und das tat ihm plötzlich leid.<br/>Ihre Brust unter seinen Fingern und ihre warmer, süßer Mund verfolgten ihn weit in seine Träume hinein.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/47551252">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Der Badesee. <br/>Sonne. Hitze. Die zu erwartende Fröhlichkeit des Sommers.<br/>„Möchtest du Eistee, Liebling?“<br/>„Nein, danke. Mum.“ <br/>Hermione drehte ihr den Rücken zu, schlug alibimäßig ihr Buch auf und starrte auf die Seiten. Die letzten beiden Nächte waren wie ein Traum. Hatte sie geträumt? Wie könnte sie das herausfinden? Snape hatte keine Spuren hinterlassen. Nicht auf ihrer Haut, nur in ihr drin. Unsichtbar und nachhaltig. Seine vollkommene Gier hatte sich in ihr selbst ausgebreitet. Die Dunklen Künste. Seine schwarze Sehnsucht war heißer als die Sonne auf ihrer Haut.<br/>„Ich geh ins Wasser“, meldete sie sich ab und wich Mums besorgtem Blick aus. Sie dürfte nie wieder nachts allein durch die Nokturngasse schleichen. Wie eine Verbrecherin, wie eine Kriminelle und oder wie eine Hure. Was tat Snape mit den Frauen? Das, was er mit ihr tat? War diese Frau der ersten Nacht deshalb so ungehalten über ihr Auftauchen? Weil sie es genießen wollte sich zu unterwerfen? Weil es ihr gefiel, wenn ein Mann so war? Weil ihr der finstere Snape gefiel? Kaum denkbar.<br/>War es nur ein Spiel, was er von ihr forderte? Mussten sie Angst vor ihm haben, weil es ihn erregte? Das Wasser war angenehm kühl und still. Sie betrachtete ihr Gesicht in der aquamarinen Spiegelung. Und erkannte sich gar nicht mehr. Wie konnte ein schrecklicher Mann diese Intensität in ihr wecken?<br/>Sie tauchte unter, hielt die Luft an solange sie konnte. Schwerelos, gedämpft. Wie in seiner dreckigen Welt. Seine harte Lust an ihrem Unterleib, ihr Körper spürte ihn erneut. Intensiv, als wäre er gerade hier.<br/>War das seine Anerkennung oder nur seine kalte Abscheu? Nein, sie dürfte es um keinen Preis rausfinden wollen. Nie wieder Nokturngasse! Hermione, ich fleh dich an!</p><p> </p><p>„Bist du in Ordnung, Schatz?“, fragte ihre Mum besorgt, als sie aus dem Wasser kam.<br/>„Ja, Mum. Bin nur ein wenig müde.“<br/>„Schläfst du schlecht? Ist bestimmt die Hitze.“ <br/>Ja, die Hitze, dachte sie träge. Zum ersten Mal hatte sie nicht das Bedürfnis mit ihrer Mutter über alles zu sprechen. Mum leider schon.<br/>„Oder schläfst du schlecht, wegen eines Jungen?“<br/>„Nein, Mum …“ <br/>Abwehrendes Lächeln ihrerseits, skeptischer Blick ihrer Mum.<br/>„Du weißt, dass du mit mir über alles sprechen kannst, Hermione?“<br/>„Ja, ich weiß. Es ist nichts. Wirklich.“<br/>„Oder hat sich dieser … Victor wieder gemeldet?“<br/>„Nein, das war doch nur eine kurze … Geschichte.“<br/>„Er war dir zu oberflächlich und schweigsam, oder?“<br/>„Nein, das war es nicht …“ <br/>Mum wollte reden und sie konnte nicht unhöflich werden.<br/>„Es lag nicht an Victor. Eher an mir und meinen Ansprüchen, weißt du.“ <br/>Mum lächelte verständnisvoll. Hermione dachte über Gewalt, Schmerz, Demütigung und Finsternis nach.<br/>„Ja, da sollte man wirklich keine Kompromisse eingehen, Schatz.“<br/>„Wieso sagst du das?“<br/>„Na ja, wenn es nicht vollkommen ist, dann verliert sich die Intensität einer Beziehung schnell.“<br/>Intensität. Schon wieder dieser Begriff. Sie fühlte sich verfolgt.<br/>„Und wenn … eine Beziehung nicht gut ist?“<br/>„Nicht gut? Wie meinst du das?“<br/>„Na ja, wenn sie von anderen als schrecklich, böse, ungut oder abstoßend angesehen wird, sie für die beiden, die sie haben, aber vollkommen ist, was dann?“ <br/>Mum sah sie nachdenklich an. Sorgenfalten erschienen, gingen, kamen wieder.<br/>„Du würdest mir doch sagen, wenn du …“<br/>„Nein, das waren nur eine theoretische Frage, Mum. Mach dir keine Sorgen. Wirklich … Ich schlafe jetzt ein wenig.“ <br/>Mum schwieg. Eindeutig besorgt. Mist.</p><p> </p><p>Decke hoch, Decke runter. Aufstehen, vor dem Fenster stehen und in die Nacht starren.<br/>Sie war so unruhig und sie hasste sich selbst. Heute regnete es nicht, heute schien nur der Mond, fett und ekelerregend. Schnell war sie angezogen, der Griff nach dem Zauberstab war unbewusst, das schlechte Gewissen unterirdisch. Wie eine Kriminelle schlich sie sich AUS dem Haus ihrer Eltern.<br/>Vielleicht hatte der fremde Mann Snape getötet. Musste sie das nicht unbedingt wissen? Es wäre schließlich ein kleiner Sieg für Harry, wenn die subtile Gefahr, die ständig von Snape ausging, Geschichte wäre.<br/>Erleichterung? Auch für sie?</p><p> </p><p>Nokturngasse. <br/>Die Sackgasse von gestern. Leer und dunkel lag sie vor ihr. Weniger bedrohlich, da der Mond ein wenig Licht erübrigen konnte. Nur Müll, ein paar Ratten rannten davon, als sie mit dem Fuß irgendwo hängen blieb und stolperte. Dreck und Gestank, kein toter Snape. Jetzt könnte sie überzeugt zurückgehen, tat es aber nicht. Ein Schatten in ihrem Augenwinkel. Ihr Kopf flog herum. Nichts. Sie verfolgte eine Spur, die es nicht gab, stieß mit zwei Gestalten zusammen, deren Geschlecht unmöglich zu benennen war. Eine Hand stieß sie brutal weg, sie landete auf dem Hinterteil, rappelte sich schnell wieder hoch und lief weiter. Einer Illusion hinterher, die sie eigentlich verachten musste.</p><p> </p><p>Plötzlich aus dem Nichts eine Hand in ihrem Nacken, ein fester Griff in ihre Haare.<br/>„Au …“, entfloh es ihr mädchenhaft.<br/>„Du bist verrückt, Granger!“ <br/>Snapes Stimme, grimmig und kalt. Er ließ sie nicht los, zerrte sie an Haaren und Hals fest gepackt neben sich her, durch eine Tür. Sie betraten eine gut gefüllte, laute Spelunke, die Hermione nicht kannte.<br/>„Hinsetzen!“<br/>Er schubste sie zu einem schäbigen, wackligen Tisch, an dem zwei Stühle standen. Sie sahen aus, als wenn sie zusammenbrechen würden, wenn sie sich setzte. Vorsichtig und mit schnellem Atem setzte sich Hermione. Die Fragilität der Sitzgelegenheit stellte sich als überraschend stabil heraus. Sie zog die Kapuze ihres schwarzen Hoodies über die Haare. Unsichtbarkeit wäre nicht schlecht. Wässrige Säuferaugen betrachteten sie schamlos und sabbernd. Rotgeränderte Hurenaugen ebenso. Boshaft, neidisch und jederzeit mordlüstern. Snape war zum Tresen gegangen und kam nun mit zwei Getränken wieder.<br/>„Lächle sie nicht an, das nehmen sie als Einladung für was auch immer!“, knurrte er und stellte ihr etwas Undefinierbares hin.<br/>„Wo bin ich hier?“, flüsterte sie in sein abweisendes Gesicht.<br/>„In Sicherheit. Wenn du nicht lächelst. Warum bist du wiedergekommen?“<br/>„Ich wollte sehen, ob es etwas zu feiern gibt“, sagte sie respektlos. Seine Bosheit färbte ab. Er verstand, sofort. Und lächelte. Ihr verwundertes Seufzen ertränkte sie in … was auch immer … eine Mischung aus Bier, Wein, Wodka und Ekel. Es schmeckte süß, sauer und bitter – alles zur selben Zeit. Und es war ziemlich stark.<br/>„Entzückend. Glaubst du ernsthaft ein … Verrückter wie Vlad kann mir etwas anhaben?“<br/>„Vlad?“<br/>Snape erklärte nichts, starrte sie nur vernichtend an.<br/>Langes Schweigen. Ein paar Schlucke „Ekelhaft“ weiter, sagte er:<br/>„Wenn Potter wüsste, was dich herführt, würde er dich verachten und verstoßen!“ <br/>Tiefes, langes Erröten.<br/>„Ja, würde er.“ <br/>Sie senkte den Blick, tunkte den Finger in das was auch immer und rührte darin herum. Nur nicht ihm in die Augen schauen. Seine Verachtung schmerzte und sein Vergnügen über ihre Beschämung erregte sie.<br/>„Gut, ich sage dir was du gesehen hast und dann gehst du und  … kommst nie wieder an diesen Ort!“ <br/>Herrische Worte, die ein Nicken forderten. Hermione holte Luft. Säuerlicher Biergeruch, Pennergestank mit Urin durchsetzt, billiges Parfüm der Huren, Snapes Geruch der Macht. Das alles machte sie atemlos. Sie nickte nur schwach. Vielleicht übersah er es.<br/>„Es war eine Hure, ich habe sie bezahlt. Du hast nichts gesehen, was dir Sorgen machen muss. Ich hätte sie gefickt, nachdem sie sich vor Angst gekrümmt hätte. Weder hätte ich sie getötet, noch ihr besonders weh getan. Zufrieden?“ <br/>Seine Stimme war ausdruckslos. Sein Blick scharf.<br/>„Nicht … besonders weh getan?“ <br/>Wieder dieses jähe Lächeln, was ihn so schön machte. Seine Augen, im weichen Licht der Spelunke tief und schwarz wie Edelsteine.<br/>„Nur, wenn sie darauf bestanden hätte.“<br/>„Wer ist Vlad?“<br/>„Das spielt keine Rolle. Ist deine Neugier befriedigt?“ <br/>Sie nickte gleich. Obwohl … nein. Sie hätte noch viele Fragen, doch sein Gesicht hatte sich wieder unwillig verschlossen.<br/>„Gut. Dann trink diesen Dreck besser nicht aus und verschwinde.“ </p><p>Er wartete nicht, stand auf und zerrte sie an ihrem Pullover hoch. Unnachgiebig drängte er sie nach draußen. Der Mond war gewandert, die Luft war minimal frischer und es war dunkler in der Gasse.<br/>Irgendwo schreiende Stimmen, Kampfgeräusche. Snapes Hand noch immer an ihrem Pullover. Er trieb sie vor sich her, weg von der Tür, weiter in den Schatten.<br/>„Sollte ich dich hier nochmal treffen …“ <br/>Seine Hände hatten sie vorn am Pullover gepackt, hielten sie fest. Eine aggressive Geste, die seinem Augenglanz widersprach.<br/>„Dann tötest du mich?“ <br/>Ihre Stimme war dünn und hilflos. Ärgerlich, zumal auch ihre Beine fast versagten.<br/>„Nein. Dann werde ich dich ficken. Weil ich dann davon ausgehen muss, dass du es willst. Sei also kein dummes Mädchen, was sich langweilt und nach Aufregung sucht. Denn ich verspreche dir eins, du wirst es bereuen!“ <br/>Wieder sein Mund auf ihren Lippen. Unangekündigt, drängend und atemberaubend. Sein Körper brachte sie zu Boden. Die Schmerzen im Rücken beim Aufprall zwangen sie zum Stöhnen. Er auf ihr drauf. Schwer, beherrschend. Ohne Aussicht auf einen Ausweg. Sie war von seiner Gnade abhängig und zögerte, sie von ihm zu erbitten. Seine Hand an ihrem Gesicht. Nicht grob aber trotzdem über jeden Zweifel erhaben. Schneller Atem an ihrem Ohr. <br/>Der schäbige Puls des Ortes schlug zu. Ihr Körper wurde weich. Sie bot ihm ihre Halsschlagader an, doch er verzichtete. Drückte nur seinen Unterleib gegen ihren, damit sie spüren musste, was sie mit ihm anstellte. Sie wollte es. Und so viel mehr. Ihre Hand erreichte seine Wange, doch er hielt sie fest. Drückte sie weg und stand dann auf. Dämonisch und tödlich stand er breitbeinig über ihr.<br/>„Du bist erbärmlich, Granger. Enttäuschend und billig.“<br/>„Ja …“, hauchte sie mit Tränen in der Stimme, doch er disapparierte schon.</p><p> </p><p>Oh, wen haben wir denn da?<br/>„Granger!“<br/>Ich weiß, Idiot! Wie findest du das?<br/>„Was?“<br/>Dass sie im Schmutz liegt!<br/>„Geschieht ihr recht. Ich hasse sie!“<br/>Du hasst sie. Wie sehr, mein Sohn?<br/>„Sehr! Sie und Potter und Weasley!“<br/>Aber nur sie ist hier. Wie sehr hasst du sie, Draco?<br/>„Ich denke drüber nach, Dad.“<br/>Ich denke drüber nach?! Verdammter Feigling.<br/>„Schnauze, Vater! Du bist nicht mal hier!“ Draco fuchtelte kurz unkoordiniert mit dem Zauberstab, um seinen imaginären Vater zu verscheuchen. In Askaban war es bestimmt nicht übler, als in dieser Gegend. Trotzdem verfolgte ihn sein enervierender Geist.</p><p>Granger im Dreck, gefiel ihm ausnehmend gut. Eine einmalige Chance für Rache und ein unerkanntes Verschwinden. Quasi „Zaubererflucht“. Fast hätte er sie nicht erkannt. Ganz in Schwarz. Ihre Kapuze verdeckte ihr Gesicht. Jetzt schob sie sie nach unten. Entsetzen in ihrem Gesicht. Dumme Kuh. Sie war offensichtlich gerade überfallen worden, doch was trieb sie sich um diese Zeit auch in der Nokturngasse herum? Sie müsste es doch besser wissen. Mitgefühl empfand er nicht, nur stumpfe Kälte und Hass auf alles.<br/>Draco hob seinen Zauberstab, wollte vielleicht aus dem Schatten treten und ihr einen Unverzeihlichen Fluch auf den Hals schicken. Eine Hand presste sich fest auf seinen Mund und zerrte ihn wieder hinter die Mauer zurück.<br/>„Nicht so voreilig …“, murmelte eine dunkle Stimme, dicht an seinem Ohr.<br/>Nicht die Stimme seines Vaters.</p><p> </p><p>Hermione disapparierte unverzüglich. Im Garten ihrer Eltern, übergab sie sich zweimal, bevor sie wieder leise ins Haus schlich. Den Rest der Nacht erzitterte sie. Wieder und wieder. Unter seinem Körper, seinen verheißungsvollen Worten und seinem Blick. Sie hatte begriffen. Er gab ihr eine letzte Chance und sie sollte sie nutzen. Aber sie wollte nicht seine Großzügigkeit. Sie wollte seinen Zorn und seinen lustvollen Hass in sich spüren. Sie war ein abgrundtief schlechter Mensch. Tränen kamen, Tränen gingen. Lust kam in Wellen, doch sie ignorierte verachtungsvoll ihr Bedürfnis sich zu erleichtern.<br/>Gegen Morgen schlief sie ein.</p><p> </p><p>***</p><p> </p><p>Sie würde wiederkommen. Er hatte es in ihren Augen gesehen. Granger fand zu viel Gefallen am Spiel mit dem Feuer. Es tat ihm leid, doch er würde tun, was er tun musste. Alles an ihm schrie danach. Nur sein Verstand wehrte sich vehement. Und qualvoll. <br/>Sie war nur ein Mädchen. Eins, was er sogar kannte und eins, was er an anderen Orten der Welt beschützen musste. Nicht hier. Sie war in seine Welt eingedrungen und war unersättlich wie eine dieser widerlichen Ratten, die sich gern über Aas hermachten.<br/>Gut war, Hass war endlich. Er hatte in Hogwarts begonnen und würde da enden.<br/>Es sollte ihm egal sein.<br/>Hermione Granger sollte ihm egal sein.</p><p> </p><p>***</p><p> </p><p> </p><p>Ein weiterer Tag am See. Heute ohne Mum. Ihr besorgter Blick verfolgte sie noch lange. <br/>„Mir geht es gut!“, hatte sie wieder zu Mum gesagt und schauderte unter ihrer eigenen Lüge.<br/>Es ging ihr nicht gut. Sie hatte Hunger. Heftiges Verlangen. Nach Dreck, Schmerz, Demütigung und nach Gewalt. Nach Snape, der all das verkörperte und doch eigentlich etwas ganz anderes war.</p><p> </p><p>Ron, dachte sie liebevoll, als sie in der Sonne lag. Sie schlief bei den Gedanken an Ron recht zügig ein.<br/>Nach einer Runde Schwimmen, dachte sie an Victor. Ihr erster Freund. Sie hatte es nie jemand gesagt, doch sie hatten zusammen geschlafen. Gleich in der zweiten Nacht. Es war spontan und es ging von ihr aus. Viele Wochen danach hatte sie sich dafür geschämt. Dafür, dass sie es unbedingt wollte. Es gefiel ihr, doch sie kamen irgendwie nicht zusammen, weil er so introvertiert war. Snape war auch nicht freigiebig mit seinen Gedanken.<br/>Musste er nicht, sie fühlte es. Sein Zorn zog überdeutlich in ihrem Unterleib. Sein Körpergewicht drückte sie zu Boden, hielt sie fest und beschützte sie. Mit seinem Leben. Alberne Gedanken.<br/>Ron …      <br/>Es gab wichtigere Dinge, als ihre Libido. Hermione, lass es! Weder Ermahnung, noch Ermunterung, noch der Wunsch nach Selbstgeißelung halfen. <br/>Der Drang zu ihm zu gehen, war übermächtig. Aber noch war nicht Nacht, noch hatte sie eine Chance. Noch konnte sie widerstehen. In der Sonne des Sommers war das leicht. Die Hitze der Nacht verstörte sie, verwirrte ihren Körper, ließ ihre Gedanken aufflammen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/47730208">Chapter 4</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Unruhe.<br/>Hermione fand weder Schlaf noch Absolution. Endlos schlug sie Bücher auf, wieder zu. Setzte sich an ihren Schreibtisch, schrieb in ihr Tagebuch. Schändliche Dinge, perverse Sehnsüchte, seine Küsse. Sie verbrannte es im Garten.<br/>„Hermione! Was tust du denn da?“ <br/>Ihre Mutter am Fenster. Sie hatte Angst ihre Tochter würde Zaubern. Tat sie nicht. Oder, in gewisser Weise schon. Indem sie ihr Verlangen verbrannte, hoffte sie, es abzutöten. Alltagszauberei eben.<br/>„Keine Sorge, Mum. Ist nur ein normales Feuer. Ich lösche es gleich …“ <br/>Die Nacht war warm und still. Ruhig und leer. An anderen Stellen der Welt war sie laut und erregend. Verdammt, bleib stark. Snape war ein gefährliches Ungeheuer. Sie sollte ihm nicht noch freiwillig geben, was er auf krankhafte Weise begehrte. <br/>Und wenn sie irrte? Wenn er sie über alles nur angelogen hatte? Wenn er die arme Frau wirklich nur bedroht hatte. Wenn er sie getötet hätte? Oder sogar hat? Nein, sie müsste diesen Komplikationen aus dem Weg gehen, unbedingt. Als der Morgen graute, hatte sie es geschafft. Standhaft war sie geblieben. Wund war ihr Inneres. Wieso? Er hatte sie nur geküsst. Es waren keine normalen Küsse. Es waren Vergewaltigungen ihrer Lippen, ihres Mundes, ihres gesamten Wesens. Mit einem Gefühl anschwellender Lippen, träumte sie vor sich hin. </p><p>Der Tag bestand aus Shoppen – mit Mum, Essen - mit Mum, Kino  - mit Dad am Abend. <br/>Auf dem Heimweg, sie saßen im Taxi, sprach ihr Vater.<br/>„Du hast Sorgen?“<br/>„Nein, Dad. Nur die Üblichen. Mum sieht Gespenster, wirklich. Es ist nur diese … Hitze.“<br/>„Ja, es ist wirklich warm. Witzig, dass es in anderen Gegenden der Welt zur selben Zeit eisig kalt ist.“ Dad begann darüber zu schwadronieren und sie schaltete auf halblaut. Ja, woanders war es dunkel und kalt. Das Pulsieren ihrer Halsschlagader erinnerte an Snapes schnellen Atem an dieser Stelle. Er wollte sie. Vermutlich aber alles, was weiblich war. Sie hatte nie drüber nachgedacht. Abgelehnt hatte er sie. Verurteilt und gedemütigt, dieser Mistkerl.<br/>„Was ist denn, Kind?“ <br/>Dad griff nach ihrer Hand. Sie merkte ihr Zittern in der Hand ihres Vaters.<br/>„Hm?“<br/>„Du zitterst und hast ein komisches Geräusch gemacht?“<br/>„Ein Geräusch?“<br/>„Geseufzt, würde ich behaupten. Hat Mum doch recht?“ <br/>Hermione schluckte. Mum zu beschwichtigen war einfach. Dad anzulügen, viel schwerer. Erst recht beim Zittern ihrer Hand.<br/>„Ich bin okay. Aber vielleicht … gibt es da jemand …“<br/>„Jemand, den deine Freunde vielleicht nicht mögen? Harry, Ron und die anderen?“ <br/>Dad war schlau. Und behutsam. Seine Hand tätschelte ihre eher beiläufig, er sah sie aber direkt an.<br/>„Ja, vielleicht.“<br/>„Du schämst dich dafür?“<br/>„Es ist nichts passiert. Aber … ja, ich glaube, ich … denke zu viel darüber nach.“<br/>„Ach, mein Mädchen … du  machst das schon richtig …“ <br/>Würde Dad das auch sagen, wenn sie wüsste, um wen es geht? Wenn ihr besorgter Dad wüsste, dass sie sich danach verzehrte sich zu Füßen eines grausamen, gewalttätigen, bösartigen Mannes zu werfen?<br/>„Ich weiß nicht recht.“<br/>„Ich schon, Hermione. Weil du klug bist, richtig?!“ <br/>Ein fügsames Nicken. Klugheit. Als ob das vor allem schützt! Tat es nicht. Sie würde in die Nokturngasse gehen. Heute Nacht! Sie musste wissen, was sie so sehr vermisste, dass sie seine Hure sein wollte.<br/>Gleich ging es ihr besser. Sie lächelte und Dad kniff in ihre Wange.<br/>„So ist es gut, mein Mädchen!“</p><p>Eine weitere Nacht. Dunkel, windstill, warm – nicht heiß. Belanglos und nur eine Reihe von vielen Nächten. Nicht für sie. Mit dem Zauberstab in der Hand schlich sie durch die Nokturngasse und die Nebengassen. Nur Gesindel. Kein Snape. Keine Erlösung. Zorn stieg in ihr auf. War sein Versprechen nichts wert? Hatte er nur geblufft? Hatte er letzte Nacht auf sie gewartet. Ihr Hals wurde eng. Schlucken, schlucken. Kindische Tränen stiegen trotzdem nach oben.<br/>Hermione kletterte auf einen Müllcontainer, setzte sich mit dem Rücken an die Wand, zog die Beine an und begann leise zu weinen. Aus Scham über sich selbst.<br/>Eine ganze Weile Weinen, nur unterbrochen von einer Katze, die plötzlich aufschrie und davon sprang, als hätte sie jemand getreten. Nichts konnte Hermione Erleichterung bringen. </p><p> </p><p>„Du bist so armselig, Granger!“ <br/>Snapes Stimme kam von der Wand gegenüber. Dort war absoluter Schatten und der Mann nicht zu sehen. Bestimmt nutzte er Magie.<br/>Herzrasen und Schwindel. Gut, dass sie schon saß.<br/>„Zeig dich, Feigling!“ <br/>Ihre Stimme war unangebracht forsch. <br/>Er kam näher, trat aus dem Schatten. Für sie. Sein Blick verschleiert, unergründlich. Lüstern. Lust? Oder hatte er Mordgedanken? Seine Waffe war nicht zu sehen. Seine Hände waren in den Taschen. Snape sah gelangweilt, angewidert und auf eine bizarre Weise amüsiert aus.<br/>„Warum müssen brave Mädchen immer im Dreck wühlen? Ich verstehe es nicht. Selbst Potter würde so ein Schwachsinn nicht einfallen.“<br/>„Ich bin nicht Harry!“ <br/>Gekränkter Stolz durchtränkte ihre Antwort. Ihre feuchten Finger umklammerten den Zauberstab. Viel zu fest, viel zu furchtsam. Viel zu eindeutig schwach. Er merkte es bestimmt.<br/>„Nein? Warum hockst du dann da oben und siehst so aus, als hättest du Angst?“<br/>Hermione grunzte empört. Sie rutschte vom Container nach unten und stellte sich vor ihn. Nicht zu nah, nicht zu tapfer. Nur nah genug, um ihm zu beweisen und zu provozieren.<br/>„Schon besser …“ <br/>Nur ein herablassendes Flüstern. Sein scharfer Blick in ihre Augen, auf ihre Lippen. Er ging tiefer und sie schluckte trocken ihre aufflammende Erregung nach unten. Das wollte sie doch nicht wirklich, oder? Seine Hände, die schon zig Mal getötet hatten, auf ihrer Haut?<br/>„Wenn du denkst, es liegt an meiner Herkunft, irrst du dich!“ <br/>Rau und hilflos, klang sie. Blut sammelte sich in ihrem Becken, machte es warm und öffnete es. Er schwieg. Hatte offensichtlich nicht vor, ihr zu offenbaren, was er über sie dachte.<br/>„Was ist? Hast du Zweifel? Für Anstand ist es doch längst zu spät, Professor …“<br/>Seine flache Hand traf ihre Wange. Nicht sehr fest. Eher abfällig lasch.<br/>„Keine Förmlichkeiten an diesem Ende der Welt, Granger!“, knurrte er warnend. Seine Hände packten ihre Schultern, drehten sie und trieben sie in den Schatten, aus dem er gekommen war. Dort presste er sie unverzüglich gegen das raue Mauerwerk. Harte, spitze Steine kratzen über ihre Wange. Ein überraschtes Aufstöhnen aus ihrem Mund. Seine Hand drückte ihr Gesicht weiter an die Mauer. Sie hörte seinen Atem. Schnell, gepresst und vielversprechend.<br/>Sein Körper jäh an ihrem. Sein harter Schwanz an ihrem Hinterteil. Seine Hand griff nach vorn, schob sich unter ihren Pullover. Ihr Erzittern kam plötzlich, zusammen mit einem kleinen Aufschrei.<br/>„Bist du nicht still, muss ich dir einen Zauber verpassen, Granger. Das würde ich nur ungern tun, denn ich will dich jammern hören. Aber leise, wenn es geht. Es sei denn du möchtest, dass noch anderes Gesindel dazu kommt …“ <br/>Seine belegten Worte waren leise an ihrem Ohr. Eindringlich und spöttisch. Drohend, und allein sein tiefer Tonfall war erregend. Seine Hand umgriff wieder ihre eine Brust. Nur fest und besitzergreifend, nicht brutal. Die andere Hand ließ ihren Kopf los und begann ihre Hose zu öffnen. <br/>Sie schloss die Augen, spürte die Rauheit der Mauer unter Gesicht und Händen und wollte sich ergeben. Ihm, dem Moment, dem Schmerz und ihrer alles beherrschenden Lust. Seine Hand schob sich unter ihren Slip zwischen ihre Schenkel. Die Kühle seiner Finger prallte gegen die tropische Hitze ihres Verlangens. Er keuchte einmal überrascht auf, als er ihre feuchte Hitze fühlte.<br/>Es kam kein Spott. Beinah war sie enttäuscht darüber. <br/>Ohne sich von der Wand zu bewegen, schob sie sich selbst ihre Hose und ihren Slip nach unten, damit er sie besser berühren konnte. Ihr Denken fand nur noch am Rande statt.<br/>„Du bist so ein perverses Miststück …“, murmelte er begehrlich in ihr Ohr. Ein Finger drang in sie ein und sie zitterte zum Dank. Ihre Schenkel öffneten sich unwillkürlich. Ein harter Biss auf ihre Unterlippe. Nur kein Stöhnen. Nur nicht zugeben, wie gut es ihr gefiel.<br/>Snape nahm seine Hand weg. Sie stöhnte jetzt doch, aus lauter Enttäuschung. Aber er zog sich nur selbst die Hose nach unten. Wenig später drückte er sich wieder an sie. Genau zwischen ihre Lenden. Fest, steif und verlangend. Ein raues Stöhnen, dicht an ihrem Ohr. Seine eine Hand wieder zwischen ihren Beinen. Eindringend, liebkosend. Die andere Hand an ihrer Brust. Sein Atem in ihrem Nacken. Dunkelheit am Ort am Ende der Welt. Sie hatte es geahnt. Es WAR wundervoll. Sie sollte es keinesfalls tun, doch sie ließ sich fallen. Sie wusste nicht, wie tief sie fallen würde und wie der  Aufprall sein würde. Aber sie tat es. Einfach so. Denn er stand hinter ihr und hielt sie fest. Wieder nahm er seine Hand weg. Diesmal war sie weniger panisch. Er zog sie an den Hüftknochen ein wenig zu sich heran und drang dann in sie ein.<br/>Treibend und unerbittlich. Es war viel zu einfach.<br/>Hermione wimmerte. Lust und Schreck und eine groteske Erleichterung brachten sie an den Rand des Verstandes. Sein Stöhnen war dunkel, aber gedämpft. Leicht glitt er in sie, drang tief vor und entzog sich ihr wieder. Nur um gleich ein wenig fester in die Tiefe vorzudringen. Ihre Lippen offen, Speichel lief aus ihrem Mund. Ihre Augen blicklos nach unten gerichtet. Nur dieses irre Gefühl in sich. Seine Macht und sein Zorn erfüllten sie mit Schwärze und Feuer. Sie drängte sich im entgegen, um ihn tiefer zu fühlen. Snape merkte es und unterbrach seine Bewegungen. Er lehnte sich an sie, schob von vorn ihre Hände zu ihrem Lustzentrum. Ein hemmungsloses Keuchen entfloh ihr. Sie war Abschaum … wie er ... und es fühlte sich berauschend an. Ihr Zittern war unkontrollierbar. Sein Schwanz füllte sie aus. Sie merkte ihn überdeutlich in sich pulsieren.<br/>Seine Finger waren erbarmungslos. Rieben sie zu einem Höhepunkt, den sie nicht im Mund behalten konnte. Ein leiser Schrei entkam ihr. Zusammenziehende Muskeln, sein Schwanz noch viel enger in ihr drin, sein Unterleib eng an ihr.  Ihre Angst zu verbrennen. Ihre Furcht einfach in die Knie zu gehen. Ihre Sorge seinen Namen in die Nacht zu schreien. Seine Hand auf ihrem Mund. Nur noch ein dumpfes, haltloses Stöhnen. Abrupte Erschöpfung und ein Taumel aus Glückseligkeit und unendlich erscheinender Befriedigung.<br/>Snape nahm seine Hand weg. Seine Bewegungen bekamen mehr Profil. Seine Macht drang tief und ein wenig schmerzhaft in sie vor. Er tötete, verstand sie mit einem heftigen Schreck. Ihre Beine zitterten noch immer, als sein Stöhnen animalischer wurde. Seine Finger nun fest an ihren Hüften. Am Ende der Welt packte er sie, schlang seine Arme um ihren Bauch und ergoss sich in ihr mit einem gefährlichen Knurren.</p><p>Sein einer Arm löste sich. Seine Hand packte ihre Kehle.<br/>„Komm nie wieder zu mir, Granger! Ich verachte dich zutiefst!“, flüsterte er. Noch atemlos, heiser vor Lust. Er entzog sich ihr. Sie wimmerte auf, Tränen stiegen nach oben. Unaufhaltsam und gerechtfertigt. Sie hörte ihn sich anziehen und dann war er weg.<br/>Auch sie zog sich an. Die offene Wunde zwischen ihren Beinen brannte. Vor Scham. Leider auch noch immer vor Lust und Freude. Snape hatte sie heute Nacht getötet. Sie war sein Opfer und er der Jäger gewesen.<br/>Seine Männlichkeit in ihr, hatte einen unvergesslichen Eindruck hinterlassen. Mächtig, ausfüllend, erhaben über alle Zweifel. Sie würde niemals bezweifeln müssen, dass er sie gewollte hatte.<br/>Und wie er das hatte! Ein verrücktes Lachen mischte sich unter ihr Weinen. Sie ging ein paar Schritte, sank dann auf die Knie. Direkt in den Dreck. Schwach wie ein Weib, das sie war. Sehnsüchtig, wie eine Frau, die liebte. Hilflos wie ein Kind, was ohnmächtig der Welt der Erwachsenen gegenüber stand. Gebrochen wie eine Witwe, die ihren Liebsten gerade verloren hatte. Gebannt von dem Zauber seines dunklen Kerns. Zu intensiv. Zu … viel.</p><p> </p><p>„Los! Jetzt!“<br/>Draco verspürte den Stoß in den Rücken. Er war gerade gekommen. Auf der Suche nach Granger. Er hörte nur ihr Winseln. Was zum Teufel tat sie hier? Allein? Ein vorsichtiger Blick um die Ecke zeigte seine Feindin auf den Knien. Heulend.<br/>Mitleid regte sich, doch dann bekam er den Stoß in den Rücken. Sie sah hoch, erkannte ihn, es gab kein Zurück.<br/>„Hey, Granger. Schöne Nacht, oder?“ <br/>Zynismus war das neue Sexy.<br/>„Malfoy? Was  …“ <br/>Er packte sie und disapparierte sich mit ihr zusammen in ihre neue Unterkunft. Für die nächsten Tage oder vielleicht für immer. Je nach Laune seines neuen Freundes Vlad.</p><p> </p><p>Keine Erleichterung. Wie konnte das sein? Es verschaffte ihm immer Erleichterung sie zu demütigen und zu ficken. Nun ja, es betäubte ihn zumindest eine Weile. Vielleicht war Erleichterung das falsche Wort. Ernüchterung würde es wohl besser treffen.<br/>In Granger zu sein, war anders. Vieles war anders gewesen. Er hatte Jungfräulichkeit erwartet. Hatte sich schon boshaft ausgemalt, sie ihr unwiderruflich zu nehmen. Ihre widerliche Reinheit, ihre angeborene Unschuld. <br/>Aber sie war keine Jungfrau. Sie war auch nicht zögerlich gewesen, wie es ihm lieber gewesen wäre. Dann hätte er sie brechen und ängstigen können. Im Gegenteil. Ihre Weiblichkeit war nass und warm, als er sie da berührte. Sie hatte es gewollt. Alles an ihr zeigte es ihm. Huren spielten ihm das vor. Manche gut, manche so mies, dass er sich am Ende sein Geld zurückholte. Ohne schlechtes Gewissen. Granger wollte genau das, was er ihr gab. <br/>Keine Gnade.<br/>Wieder bebte er bei der Erinnerung an ihr Innerstes. Wie konnte es sein, dass sie das wollte? Sie war ein verachtenswertes Kind aus gutem Elternhaus. Klug, ehrgeizig, hübsch, gewitzt und sie hatte Freunde. Ob die Freunde gut waren, war eine andere Sache. Bei diesen Gedanken fühlte er die übliche Schadenfreude.<br/>Gestern war er noch siegessicher. Hatte geglaubt, seine Strategie hätte funktioniert. Schwächliches Mädchen, plus bildliche Androhung, gleich Angst. Aber er war auch seltsam enttäuscht. Hatte etwas mehr Mumm von ihr erwartet. Letztlich war es besser so. <br/>Dass sie heute auftauchte, verwirrte ihn. Lange hatte er ihr beim Heulen zugesehen. Es hatte ihn gestresst und am Ende hatte er das dumme Katzenvieh getreten, was sich dauernd an seinem Bein rieb.<br/>Ihre Willigkeit, ihre echte Hingabe war verstörend. Sie war real und berauschend. Granger war nicht nur real und existent. Er kannte sie sogar und müsste ihr an anderen Orten wieder begegnen. Mit all dem Wissen über ihr Verlangen.<br/>Erregend. Sein Schwanz wurde wieder hart. Seine Sehnsucht war unerträglich. Finster und quälend. Gezielt brachte er sich zum Höhepunkt. <br/>„Hermione …“ <br/>Eine schmerzhafte Aneinanderreihung von Buchstaben verließ seinen Mund. Er hatte sie nicht mal gedacht und konnte sie nicht verhindern. <br/>Gleich danach lachte er bitter. Das dumme Miststück hat nicht mal nach Verhütung gefragt, so scharf war sie auf seine unwürdige Behandlung. Wenn er nicht verhütetet hätte …<br/>Aus dem nicht fröhlichen Lachen, wurde ein Seufzen. Ein sehnsüchtiger Laut der Verzweiflung.     <br/>Würde sie wiederkommen?<br/>Er hatte keine Ahnung. Hatte es heute nicht in ihren Augen gesehen. Weil er fliehen musste. Vor sich und dem, was er war und getan hatte.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/47908462">Chapter 5</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Stunden später in Unwissenheit.<br/>Feuchte Kälte und absolute Leere umgaben sie. Irgendwo tropfte Wasser stetig von der Decke. Ein nervendes Geräusch, das einzige Geräusch, außer dem Tippeln von Rattenfüßchen über den rauen Steinboden. Nur Finsternis und Fäulnis um sie herum.</p><p>„Na, wie gefällt dir dein neues Heim?“<br/>Könnte eine nette Frage sein, war sie aber nicht. Draco schob ihr ein Tablett mit Essen unter der Gittertür durch und starrte sie böse an. Hermione Granger saß auf einer kahlen Pritsche, hatte die Beine angezogen und verbarg ihr Gesicht in der Armbeuge. Höflich hatte er gewartete, bis sie mit der Heulerei aufhörte.<br/>Trotzdem gab sie ihm keine Antwort.<br/>„Rede gefälligst mit mir, Miststück!“, schrie er sie an. Sein Fuß traf das Tablett. Es schlidderte weiter in die Zelle und das Essen fiel runter. Brot, Obst, ein Stück Käse und ein hartes Stück Wurst rollten über den rohen Steinboden des Kerkers von Malfoy Manor. Draco hatte sie gleich nach ihrem Einzug informiert. Großspurig, mit beißendem Unterton.<br/>„Hast du den Verstand verloren, Malfoy? Lass mich gehen!“, hatte sie gesagt.<br/>„Nein!“<br/>„Weshalb? Hat dein Vater dir das aufgetragen? Oder deine irre Tante? Oder etwa Voldemort selbst?“<br/>„Nein!“ <br/>Vernichtender Blick und doch so wundervoll leidend.<br/>„Wer dann? Was soll das?“<br/>„Das erfährst du schon noch, Granger. Aber du kannst mir eine Frage beantworten. Was hattest du in der Nokturngasse zu suchen?“<br/>Hermione verengte die Augen und gab keine Antwort.<br/>„Du wirst schon noch reden. Bis dahin … mach es dir gemütlich.“</p><p>„Leiden lassen! Du musst sie in Einsamkeit leiden lassen. So brichst du ihren Willen. Keine Gesellschaft und keine Antworten. Entzieh sie dem Leben und sie werden schon bald alles tun!“, hatte Vlad gesagt. Draco kam er unheimlich vor. Vlad war irgendein Rumäne, Zigeuner oder so was. Er hatte es nicht genau verstanden und sich nicht getraut nachzufragen. Vlad war ein wirklich attraktiver Mann. Seine lockigen, dunklen Haare waren akkurat geschnitten, sein Bart war perfekt gepflegt, er roch ausgesprochen gut, war edel gekleidet, war manikürt, hatte die Attitüde eines Adligen, sprach demnach auch ziemlich hochnäsig und war schwul. Das hatte er Draco schon im dritten Satz ihres Kennenlernens auf die Nase gebunden. Er war panisch zurückgewichen und Vlad, der hellblaue Augen hatte, die einen guten Kontrast zu seinem kastanienbraunen Haaren und seiner gebräunten Haut abgaben, hatte gegrinst.<br/>„Keine Sorge. Ich stehe nicht auf bleiche, dünne Jungs. Aber wir haben ein gemeinsames Interesse.“<br/>„Ach ja?“<br/>„Ja. Ich habe dich gesehen, wie du dieses Mädchen in der Nokturngasse beobachtet hast. Kein Grund rot zu werden. Du hegst eine Abneigung gegen sie, oder?“ <br/>Draco hatte stumm genickt.<br/>„Fein. Ich auch. Ich weiß auch wer du bist. Und ich weiß, dass dein Vater nicht zu Hause, sondern in Askaban ist. Und ich habe vernommen, euer Anwesen hätte einen wundervollen Kerker zu bieten. Lust auf ein kleines, fieses Spielchen mit dem Mädchen?“ <br/>Draco zögerte. Seine Abneigung war still. Nicht laut und aktiv.<br/>„Du musst nichts weiter machen, als sie in den Kerker zu bringen. Ich kümmere mich um alles andere. Abgemacht?“<br/>„Was genau ist denn dein Problem mit Granger?“<br/>„Hm. Das ist ein wenig kompliziert. Wir werden Zeit haben, es zu erörtern, Junge. Nun, was ist?“ <br/>Sein Nicken war nur angedeutet und Vlad klatschte einmal begeistert in die Hände. Draco zuckte zusammen. Seine Nerven waren dünn geworden.<br/>„Wundervoll. Du wirst eine Menge von mir lernen können, Junge.“<br/>„Ach ja? Wie man sich schwul anzieht?“ <br/>Vlad kicherte kratzig.<br/>„Ich dachte eher an subtile Bosheiten, listige Täuschungen und intrigante Geschäftspraktiken. Dinge, die Väter ihren Kindern beibringen sollten. Aber da deiner ja einsitzt … sag nicht, du bist daran nicht interessiert?“<br/>„Doch.“ <br/>Dracos Antwort war lahm. Überzeugung sah anders aus. Die Aussicht Granger leiden zu sehen, war süß, wenn auch nicht treiben. Mal sehen. Er könnte sie noch immer gehen lassen.</p><p> </p><p>Hermiones Anblick hatte ihn traurig gestimmt, als er sie verließ. Er verstand nicht recht, was dieser schwule Vampirgraf mit Granger zu tun hatte. Vlad hatte ihm noch nichts erläutert, sagte immer noch, er wartete. Wollte aber auch nicht sagen auf was. Er wohnte inzwischen im Anwesen, unbemerkt von Narcissa. Das Haus war weitläufig, Narcissa in tiefer Depression und Draco konnte nach Belieben tun, was er wollte.<br/>Der erste Kick Granger einzusperren, war verflogen. Es blieben nur Fragen nach dem Weshalb und dem Wie weiter.<br/>„Heute gehst du in die Nokturngasse, Junge!“, säuselte Vlad beim Abendessen über den Tisch. Narcissa ließ sich ihr Essen schon lange aufs Zimmer bringen.<br/>„Weshalb sollte ich das tun?“<br/>„Weil du deine Freundin Granger suchst, deshalb.“<br/>„Tue ich das?“<br/>„Ja. Du gehst in alle Spelunken, gehst zum Wirt und fragst, ob jemand Hermione Granger gesehen hätte. Flüstere nicht. Sag es normal. Keiner wird wissen, von dem du überhaupt sprichst. Doch das ist egal.“<br/>„Wozu soll ich dann fragen?“ <br/>Seine Stimme klang unwillig. Vlad sah ihn hintergründig an und zwinkerte aufdringlich.<br/>„Wirst du schon noch merken. Keine Eile. Sie ist ja gerade erst mal einen Tag im Kerker. Isst sie was?“<br/>„Nein, denke nicht. Ihre Eltern werden sie schon suchen lassen.“<br/>„Oh, bestimmt. Aber so schnell wird sie hier nicht gefunden werden, nicht wahr?“ <br/>Er nickte gleichgültig.<br/>„Warum soll ich dann nach ihr fragen?“<br/>„Grundgütiger, Junge. Sei nicht so ein Idiot?!“ <br/>Vlads Verstimmung tangierte Draco kaum. Immerhin näherte sich der Typ ihm nicht unsittlich. Er hatte ihm undurchsichtige Geschichten vom Durmstrang-Institut und seine Rolle als Todesser erzählt, machte vage Andeutungen über seine immense Bedeutung und fragte ihn dann über die Lehrer in Hogwarts aus. Auch Draco blieb vage und einsilbig. Er hatte schon lange keine Lust mehr auf Gespräche dieser Art.<br/>„Schon gut, ich mache es …“, sagte er resigniert und verließ den komischen Typ. Er ging wieder zu Granger in den Kerker. Er hatte sonst sowieso nichts zu tun.</p><p> </p><p>„Iss was!“, rief er ihr zu. Keine Reaktion.<br/>„Bitte, du musst was essen!“<br/>„Man verhungert nicht gleich, wenn man ein paar Tage nichts isst“, war ihre dumpfe Antwort.<br/>„Sag mir, was du mit mir vorhast, Malfoy, und ich esse etwas.“<br/>„Du versuchst mich mit deiner Gesundheit zu erpressen?“ Draco lachte laut und falsch.<br/>„Du spinnst doch, Granger. Nur damit du es weißt, ich arbeite nicht allein!“<br/>„Oh, der reiche Junge hat nun einen Partner gekauft. Glückwunsch.“ Eisige Kälte brachten ihre Worte in seine Richtung.<br/>„Ich hasse dich! Du wirst schon sehen, was du von deiner Arroganz hast, Granger!“<br/>„Lass mich gehen, Draco. Bitte …“ Er hob die Brauen. Sie benutzte eine neue Strategie. Aber er war nicht dämlich. Nur schwach.<br/>„Gutes Hungern!“<br/>Er begab sich wenig später in die Nokturngasse, um zu tun, was Vlad wollte. Auch wenn er nicht verstand, was er damit beabsichtigte. Immerhin hatte er etwas zu tun und spielte nicht mehr ständig mit den Gedanken etwas Unbesonnenes zu tun, um sein Glück herauszufordern, um es endlich hinter sich zu bringen. <br/>Das Leben.</p><p> </p><p>***</p><p> </p><p>Letzte Nacht war er allein geblieben. Granger hatte es vorgezogen nicht zu kommen. Es sollte ihn nicht wundern. Er war sehr deutlich gewesen. Vielleicht auch grob. In seinem Wortschatz hieße das Wort Leidenschaft. Wie er sie gewollt hatte! Mit dieser Heftigkeit, wie er nur seinen eigenen Tod nach dem Ableben von Lily wollte. Sie zu halten, hatte sich gut angefühlt. Es hatte Sinn gemacht, ihn getröstet. Aber er hatte sie erschreckt und das war letztlich seine Absicht gewesen.<br/>Natürlich kam sie nicht wieder. Selbst wenn sie es auch spürte, diesen dunklen Sog, diese Grenze zwischen weich und hart, er könnte sie nicht zwingen diese Welt mit ihm zu teilen. Es war nur seine Welt, die er bald verlassen würde. Sybill hatte es ihm gesagt. Gut, er hatte sie dazu gezwungen. Er hatte nie Wert auf Spitzfindigkeiten gelegt. Aber Wissen war immer besser, als blind ins Verderben zu laufen. Es war in Ordnung. Jeder musste sterben. Es könnte eine große Erleichterung sein. <br/>Es MUSSTE!<br/>Nur warum wollte er jetzt nicht mehr sterben? Warum wollte er sie erneut besitzen. Warum wollte er sie wieder in die Knie zwingen, sie zerstören und sie von ihrem Sehnen erlösen.<br/>Er ging in die nächstbeste Spelunke, verzichtete auf eine Hure, nahm nur die alkoholisierte Betäubung. Das war billiger und sicherer.<br/>Er vermisste sie.<br/>Ihre befleckte Unschuld. Ihre Unfähigkeit ihm zu widerstehen. Ihre tapfere Aufrichtigkeit.<br/>Vielleicht hatte er ihr Unrecht getan?</p><p> </p><p>„Hey, Arschloch!“ <br/>Die Hure der Nacht, in der Granger ihn gestört hatte.<br/>„Verschwinde. Kein Interesse.“<br/>„Ich weiß. Hast ja jetzt `ne neue Mätresse. Schreit sie besser als ich?“<br/>„Hau. Ab! Es gibt keine dritte Warnung, Weibsstück!“ <br/>„Veronika. Mein Name ist übrigens Veronika. Aber es ist in Ordnung, dass dich das nicht interessiert, nur … warte! Bitte … lass mich ausreden …“ <br/>Sie drückte seinen Arm wieder nach unten. Sein Zauberstab berührte den Tisch. Ein unwilliges Knurren entfloh ihm.<br/>„Sprich!“<br/>„Jemand hat nach dem Mädchen gefragt. Vorhin. Sie hieß doch Granger oder so ähnlich, ja?“<br/>„Ja. Wer?“<br/>„Ein … junger Mann. Bleich, dünn, auffällig hellblondes Haar, trauriges Gesicht.“ <br/>Draco Malfoy, schoss es Snape sofort durch den Kopf.<br/>„Warum sagst du mir das? Du musst mir keine Gefallen tun, ich besorge es dir nicht deshalb …“ Veronika sah ihn giftig an.<br/>„Vielleicht ist trotzdem eine Belohnung drin?“<br/>„Weshalb? Weil jemand nach jemand gefragt hat, der mich absolut nicht interessiert?“<br/>„Das ist eine Lüge, Severus Snape!“ <br/>Eine ekelhafte Hure wagte es … Tief holte er Luft, schmerzhaft lang. Dann kramte er Geld heraus und gab ihr eine großzügige Summe. Sie strahlte und er verengte die Augen. <br/>„Verpiss dich jetzt, VERONIKA!“, zischte er. Sie gehorchte umgehend.</p><p> </p><p>Malfoy hatte Hermione gesucht? Wozu? War es überhaupt Malfoy? Besorgniserregend. Unauffällig begab er sich zu Grangers Haus. Gut, dass er gerade erst angefangen hatte sich zu betrinken. Veronika. Also wirklich, als ob ihn das interessieren würde. Morgen hätte er ihren Namen schon vergessen. Niemals jedoch, wie sich Hermione innen angefühlt hatte. So erregend eng, süchtig machend. So begierig auf ihn. Wie sein Gegenstück der heilen Welt, welches es selbstverständlich nicht geben konnte.<br/>Denn das Leben war grausam und niemals fair. Und er war ein Unhold und hatte nichts anderes verdient.<br/>Er beobachtete das Granger-Haus eine Weile. Ein Polizeiauto stand vor der Tür. Er sah die Eltern am Fenster entlang laufen. Ihre Mutter heulte (welch‘ Überraschung), ihr Vater behielt die Fassung. Er machte einen kompetenten, starken Eindruck. Offensichtlich war Hermione verschwunden.<br/>Nichts, was ihn interessieren sollte. <br/>Doch es interessierte ihn. Er gab sich die Schuld daran. Er hatte ein schlechtes Gewissen und sorgte sich plötzlich sehr um ihre Sicherheit. Er hatte sie in diesen Sumpf der Sünde gezogen, hatte sie verdorben, hatte sie provoziert. Nur wegen ihm, war sie so weit gegangen. Er war ein Schwein, nicht besser als James Potter. Nur sein baldiger Tod könnte ihn von der Schmach, die sich sein Leben nannte, erlösen. <br/>Zuvor musste er sie finden und in Sicherheit wissen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/48143806">Chapter 6</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Verfall.<br/>Sein Eindringen in das Malfoy Manor wurde nicht behindert. Obwohl Lucius in Askaban war, konnten nur die Todesser nach wie vor ein- und ausgehen. Doch Severus spürte durchaus, dass Malfoys Magie schwächer wurde. Malfoys WAREN Schwächlinge, das waren die schnöden Fakten.<br/>Das Haus war beinah leer, wie tot. Kein Wunder, dachte er zynisch, nahm eine dezente Spur von Draco wahr und folgte ihr. Der Junge saß in der Küche. Allein am Tisch und stocherte in einer Schüssel Cornflakes herum. Lustlos. Sein Kopf flog herum.<br/>„Snape!?“ <br/>Der Junge griff unkoordiniert nach seinem Zauberstab.<br/>„Expelliarmus!“ <br/>Dracos Zauberstab schlidderte über den Boden zu ihm. Severus stellte seinen Fuß drauf.<br/>„Was … was ist denn?“ <br/>Der Junge war verwirrt und unsicher.<br/>„Ich habe gehört, du hast dich in der Nokturngasse herumgetrieben?“<br/>„Selbst wenn … na und? Darf ich das nicht?“<br/>„Du hast nach Hermione Granger gesucht?“ <br/>Störrisches Schweigen. Sein Jungengesicht verschloss sich. Severus sah ihn ohne Erbarmen an.<br/>„Ich will eine Antwort, Malfoy!“<br/>„Wozu? Sie ist der Feind. Wir sind nicht in Hogwarts, wo du so tun musst, als würdest du dich um all die lieben Kinderlein kümmern müssen. Sie ist eine beschissene, nervige Hexe! Und nicht auf unserer Seite!“<br/>Seine Augenbrauen schossen nach oben. Dracos unbändige Abneigung konnte nur eins bedeuten. Irgendwann hatte er sich mal in Granger verliebt. Seine Chancen waren null, tendierten inzwischen zu unterirdisch und hinterließen nichts als tiefe Wunden. Das kam ihm ziemlich bekannt vor. Nicht anders erging es ihm bei Lily.<br/>„Sagst du es mir nicht, werde ich deinen Verstand eindringen und mir meine Antwort holen!“ <br/>Trotz Mitgefühl für Dracos Lage, durfte es keine Gnade geben. Weil er sie finden musste. Weil er sie in Sicherheit bringen musste. Um noch einmal mit ihr zusammen zu sein. Sein Geschlecht wurde bei dem Gedanken hart. Unpassender Moment. Draco allerdings, rührte nur in den Cornflakes.<br/>„Das wagst du nicht. Du bist in meinem Haus und meine Mutter könnte jederzeit herein kommen. Sie würde das nicht zulassen und dir …“ <br/>Severus drang in seinen Kopf ein. Er hatte gewarnt, Draco war ein dummer Junge. <br/>Nebenbei hörte er sein schockiertes Aufstöhnen, dann sah er Hermione. <br/>Im Dreck, aufstehend, sich die Kleidung richtend. Schluchzend und doch irgendwie … glücklich. Er sah sie aus Dracos Perspektive. Der Junge hatte nicht gesehen, was vorher geschehen war. Sein Glück, sonst wäre er gleich tot.<br/>Überfallen, dachte Draco gehässig. Ja, irgendwie war das sogar wahr. Draco hob seinen Zauberstab, wollte seiner Enttäuschung, seinem Leid und seinem Zorn Luft machen – nur zu verständlich. Zögerte aber. Typisch Malfoy! Versager auf ganzer Linie. Dann die Hand vor seinem Mund. <br/>‚Nicht so voreilig …‘<br/>Vlads Stimme. Überraschung. Und auch wieder nicht.</p><p> </p><p>„Hallo, Severus, ich …“ <br/>Severus zog sich zurück, Narcissa hatte den Raum betreten. Sie war blass, hatte Augenringe, Falten in den Mundwinkeln und wirkte erschöpft.<br/>„Draco? Was ist denn?“ <br/>Sie ging zu ihrem Sohn. Draco, der aufgestanden war, strauchelte. Packte die Stuhllehne, hielt sich da fest und sah ihn finster an.<br/>„Nichts. Alles gut. Ich hatte mir nur das Knie beim Aufstehen verdreht.“<br/>Severus hob verwundert die Brauen. Draco log, das war eine Überraschung. Sicher nicht, um ihn zu schützen. Weil Vlad hier war, deshalb. Also er steckte hinter allem und hatte sich sogar hier verkrochen. Natürlich war so etwas nicht auf Dracos Mist gewachsen. Hätte er mehr Zeit gehabt, hätte er auch Hermione gefunden.<br/>„Severus, ist was passiert?“ <br/>Narcissa kam wieder auf ihn zu.<br/>„Nein. Ich wollte nur mal nach euch sehen.“ <br/>Ihr Blick war misstrauisch, doch sie schwieg erst einmal.<br/>„Er wollte auch gerade gehen“, knurrte Draco in seine Richtung. Er war noch bleicher als zuvor. Eine weitere Welle Mitgefühl schwappte über ihn hinweg. Beinah tat ihm der Junge leid.<br/>„Uns geht es soweit gut. Danke, dass du dir die Mühe gemacht hast“, sagte Narcissa matt und lief langsam los. Auch sie wollte ihn losbekommen. Kein Wunder, das Malfoy Manor und all seine Bewohner waren dem Verfall näher als dem Leben.<br/>Er verabschiedete sich, disapparierte vor der Eingangstür. Jedoch nur in den weitläufigen Park. Um nachzudenken. </p><p> </p><p>Vlad also. Dieser dämliche Hund. Er hätte ihn nicht ficken sollen. Schon damals wusste er, dass es ein Fehler war. Aber er hatte seine Hilfe gebraucht. Hatte einen „Pfand“ angeboten, der ihm nun zum Verhängnis wurde. Hin und wieder traf er Vlad. Zufällig, wie er glaubte, scheinbar nicht. Meistens entkam er seinen manikürten Griffeln mit List und Verstand. Manchmal mit Gewalt.<br/>Dass sich Vlad allerdings etwas holte, was Wert für ihn hatte, war … erschreckend. Der Gedanke, dass Granger einen Wert für ihn hatte, war gewaltig erschreckend. Severus lehnte an einer uralten Buche und sah auf die Turmspitzen des Malfoy Manor. Er kannte Narcissa. Sie würde es weder Draco erlauben, sich mit Gestalten wie Vlad abzugeben, noch würde sie einen unbekannten Verrückten in ihrem Haus beherbergen. Sie wusste offensichtlich von nichts, ergab sich nur noch ihrer lähmenden Tristes. Dabei hatte sie einen Wert auch ohne ihren unfähigen Mann.<br/>Wenn Vlad aber nicht nur emotionale Gründen hatte? Wenn viel mehr dahinter stand? Infiltration? Seine Enttarnung? War er im Auftrag des Dunklen Lords unterwegs, um seine Loyalität zu testen?<br/>Malfoy Manor hatte einen Kerker, wie er wusste. Vermutlich war Hermione dort eingesperrt. Vlad hatte Draco losgeschickt, um ziemlich auffällig nach Granger zu fragen. So, dass er es mitbekommen musste. So, dass er hier her kam. Um was …?<br/>Nicht voreilig handeln, ermahnte er sich streng. Vlad war ein perverser Widerling, doch seine Magie war nicht zu unterschätzen. Wenn sie erneut aufeinander trafen, durfte es nur einen Sieger geben. <br/>Draco ließ sich mal wieder benutzen und hatte allerhöchstens ein paar seichte Gefühle von vollzogener, halbherziger Rache davon. Grangers Zurückweisung blieb. Diese Wunde würde niemals heilen. Niemand wusste das besser als er!</p><p>Letztlich war Hermione Granger selbst schuld. Mit Penetranz und kindischer Hartnäckigkeit hatte sie darauf hingearbeitet in seine Welt einzudringen. Jetzt saß sie da fest und er musste sie retten. Eine schmerzhafte Ironie. Zumal er sie gewarnt hatte. Zumal er ihr einen Ausweg gelassen hatte. <br/>Aber sie musste es tun. Das hatte er so deutlich gespürt, wie er sie in Besitz nehmen wollte. Dieser mächtige Drang die vollen Intensität der Vereinigung zu spüren, verband sie.<br/>Mit großer Vorsicht apparierte Severus zurück in die Nähe des Hauses. Malfoys Zauber war billig und für ihn leicht zu umgehen. Allerdings musste er auf der Hut sein. Vielleicht hatte Vlad eigene Warnzauber installiert.<br/>Es gab tatsächlich einen, nahe den Zellen. Einen Zauber, der Vald warnen würde, wenn er ihn a) deaktivierte b) durchquerte. Er bräuchte dafür etwas, was er nicht hier hatte. Außerdem brauchte es Vorbereitung, wenn er sicher war, dass sie hier eingesperrt war. Es gab nur eine Möglichkeit:<br/>„Granger? Bist du hier?“, rief er nach ihr. In die endlos erscheinenden Weiten des unterirdischen Kerkersystems. Er verstärkte seine Stimme mit einem Zauber und würde auch ihre besser hören, wenn sie antworten würde.</p><p> </p><p>Die Tränen waren alle. Ihre Wut war weg. Ihr Schreck auch. Es blieben Hilflosigkeit und seltsame Gedanken. Draco war ein dämlicher Kerl. Er fiel immer auf die rein, die stärker waren als er. Was nicht besonders schwer war. Würde er aus einem anderen Elternhaus kommen, hätte sie sich gern um ihn gekümmert. Sie hätte ihm sogar ihre Freundschaft angeboten, denn er war kein schlechter Junge.<br/>Jetzt ließ er sie schmoren. Brachte ihr Essen und Trinken, verriet aber nicht in wessen Auftrag er sie entführt hatte. Snape. Ganz sicher Snape, dachte sie bitter. Er wollte es ihr heimzahlen, dass sie ihn dazu gebracht hatte, sich an ihr zu vergehen. Komisch. Die Erinnerung daran, machte sie leicht wie eine Feder. Er hatte sie so eng an sich gepresst. Sein harter Herzschlag in ihrem Rücken. Sein erregtes Atmen heiß an ihrem Ohr. Gänsehaut. <br/>Aber Snapes Plan war größer gedacht. Und sie war eine Närrin, die glaubte, dass er sie wirklich gewollt hatte. So, wie es vorgesehen war. Nein, er hatte gelogen, gespielt und gab ihr nun den Rest. <br/>Die finale Erniedrigung.<br/>Um es endgültig zu machen. Sie hatte es nicht anders verdient. Wenn sie sich nur nicht um ihre Eltern so sorgen würden. Draco hatte ihren Zauberstab mitgenommen und sie hatte aufgehört zu weinen. </p><p>Seine Stimme rief nach ihr. Die Halluzinationen der Gefangenschaft – sie hatte davon gelesen.<br/>Die dunkle Stimme hallte durch die Mauern. Sein Schwanz war sofort überdeutlich in ihr. Trotz harter Pritsche, feuchter Kühle und modriger Dunkelheit reagierte sie auf seine Stimme mit Erregung. Ihr blieb viel Zeit, um nachzudenken. Darüber, wie es sein konnte, dass sein barbarisches Verhalten diese weiche Lust in ihr auslöste. Wie es sein konnte, dass sein Penetration sie so großzügig werden ließ. So, dass sie darüber nachdachte, dass Snape vielleicht doch nicht nur das finstere Arschloch war.<br/>„Halt die Klappe!“, rief sie leise, nach seinem zweiten Rufen. Es galt ihre eigenen auditiven Trugbilder zu vertreiben.<br/>„Na endlich, da bist du ja!“ <br/>Ihr Kopf fuhr hoch. Sie war allein, sie blieb allein. Wollte er sie jetzt endgültig in den Wahnsinn treiben? Ihr Herz schlug rasend schnell, Schweiß brach ihr aus und sie begann zu zittern.<br/>„Zeig dich, du mieses Arschloch!“, brüllte sie ins Gewölbe. Seine Antwort kam prompt.<br/>„Ich kann nicht. Nicht jetzt. Diese Grenze kann ich nicht überqueren. Wir können reden. Was …“<br/>„Warum tust du mir das an, du elender Mistkerl? Hat es nicht gereicht, dass ich … mich … dir …“ <br/>Sie begann wieder zu weinen. Seine Antwort war ein irritiertes Schweigen.<br/>„Warte. Du denkst, das hier … war ich?“ <br/>Seine Stimme war rauer, gekränkt.<br/>„Natürlich! Wer denn sonst! Du hast angedeutet, du würdest mich zerstören wollen. Du kennst keine Gnade, schon klar.“<br/>„Aber doch nicht so … Ich habe hiermit nichts zu tun!“<br/>„Selbst das Lügen fällt dir doch leicht. Sag mir einfach, was du erwartest!“ <br/>Hermione begann für ein paar Augenblicke hysterisch zu schluchzen. Scheinbar war das Reservoir der Tränen doch unendlich. </p><p> </p><p>Sein Herz krampfte sich schmerzhaft zusammen. Sie hatte ihn verletzt. Es war logisch, dass sie annahm, es wäre sein Plan. Dass sie es aussprach, tat seltsam weh. Er hatte bekommen, was er beabsichtigt hat. Dabei müsste er Vlad und Draco danken, die es endlich geschafft hatten, das Mädchen zur Vernunft zu bringen. Jetzt sollte er gehen. Die Sache auf sich beruhen lassen. Es wäre egal, was mit ihr passierte. Wenn, galt seine Aufmerksamkeit Potter. Alles Weitere war zu vernachlässigen.<br/>„Bist du noch da?“ <br/>Ihre Stimme bestand aus lauter Tränen. Sein Drang sie in den Arm zu nehmen, war beinah überwältigend. Aber er konnte nicht, musste erst herausfinden, was Vlad wollte.<br/>„Bin ich. Ich erwarte nichts von dir, Miss Granger. Nur, dass du noch eine Weile ausharrst. Ich werde dich rausholen, doch dafür muss ich ein paar Dinge erledigen.“ <br/>Dinge, wie Vlad foltern.<br/>Am besten töten, damit er nie wieder in seinem kurzen Leben seinen Weg kreuzen würde. Er hätte es damals tun sollen, gleich, nachdem er ihn gefickt hatte. Gleich nachdem er sich damals aus lauter Selbsthass die Seele aus dem Leib gekotzt hatte. Er hatte gezögert, wie Draco.<br/>„Hast du hiermit wirklich nichts zu tun?“ <br/>Mädchenhafte Hoffnung war in ihrem Tonfall. Es erleichterte ihn. Ließ sein Herz schneller schlagen, als wäre er verliebt.<br/>„Nein. Aber ich weiß, wer etwas damit zu tun hat. Verhalte dich ruhig und spiele mit. Verärgere Malfoy nicht, er ist … empfindlich. Ich komme wieder und …“<br/>„Warte!“<br/>„Was?“<br/>„Würdest du bitte zu meinen Eltern gehen und ihnen sagen, dass es mir gut geht und sie sich keine Sorgen machen müssen?“ <br/>Severus kämpfte mit einem starken Widerwillen. Seine Anwesenheit in der Muggelwelt war immer eine heikle Angelegenheit. Natürlich kannten ihn die Grangers, trotzdem … Nachdem, was er mit ihrer gut behüteten Tochter angestellt hatte, kostete es ihn Überwindung.<br/>„Bitte, Severus!“ <br/>Wie konnte er widerstehen, wenn sie seinen Namen nannte?<br/>„Ja, mache ich.“ <br/>Weg war er, ehe er seine Entscheidung bereuen konnte.</p><p> </p><p>Hermione weinte wieder. Aus Erleichterung.<br/>Nicht, weil er sie hier rausholen würde. Nicht, weil er ihre Eltern beruhigen würde. <br/>Sie weinte, weil er nicht für ihre Entführung verantwortlich war. Sie wollte Snape nicht glauben. Sie wollte, dass er verantwortlich war. Die Kränkung in seiner Stimme war überdeutlich und ehrlich.<br/>Er war es nicht. Er hatte recht. Seine Zerstörung bezog sich auf andere Dinge. Nicht auf eine oberflächliche, unwürdige Behandlung ihres Körpers. Snape wollte ihre Naivität zerstören und hatte großen Erfolg damit.<br/>Aber war ihm auch klar, dass er etwas Neues erschuf? War ihm klar, dass er dafür sorgte, dass Hermione begann zu glauben? An ihn und an das Gute in ihm.<br/>Vermutlich nicht.<br/>„Vermutlich nicht …“, flüsterte sie ihre Gedanken leise in die dunkle Feuchtigkeit.     <br/>Freudige Hoffnung durchströmte sie und wechselte sich mit der intensiven Erinnerung daran ab, wie er in ihr war, wie eng ihre Körper beieinander waren. Beinah grenzenlos verschmolzen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/48279118">Chapter 7</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Ihre Eltern. <br/>Gezwungen suchte er nach Hermione in den Gesichtern der beiden, die an der Tür erschienen. Er entdeckte ihren unverwüstlichen Willen in den Zügen ihres Vaters und die Sensibilität in den Augen ihrer Mutter. Hermione war mehr. Etwas ganz anderes. Sie war die Grenze zwischen ihren Eltern. Sie war das, was sie in jener Nacht gemeinsam beschritten hatten, so wie ihre Eltern es vor vielen Jahren auch getan hatten. Tränen saßen in seinem Hals. Wie konnte das sein? Wie konnte dieser kleine Spaziergang auf der Grenzlinie zwischen ihrer beider Welten ihn dermaßen sentimental stimmen?<br/>„Professor Snape?“ <br/>Die ängstliche Stimme ihrer Mutter. Auch sie mit wartenden Tränen in der Stimme. Der Vater bat ihn höflich aber gefasst ins Haus. <br/>„Hermione geht es gut. Sie müssen sich keine Sorgen machen, sie ist in Hogwarts“, sagte er schnell, um wegzukommen. Seine Umgangsformen waren nicht die besten und er befürchtete Tee und nerviges Geheule.<br/>„Aber … wieso ist sie denn … es sind doch Ferien und sie hat mit keinem Worte erwähnt, dass  …“<br/>„Es war eine spontane Gelegenheit. Eine Dame, die sonst nur Unterricht in Ilvermorny gibt, kam spontan nach Hogwarts, um eine befreundete Kollegin zu besuchen. Ihre Tochter hat davon gehört und konnte sich diese Chance nicht entgehen lassen.“<br/>„Aber … sind Harry, Ginny und Ron denn auch da?“<br/>„Nicht, dass ich wüsste. Wie gesagt, es war sehr spontan. Diese Dame bietet in Amerika das Unterrichtsfach „Die Kunst des Traumzauberns“ an. Schwierige Sache, weil man nicht wirklich wach ist und nicht wirklich dabei schläft.“ <br/>Hermiones Mutter nickte, verstand aber gar nichts. Ihr Vater war praktischer veranlagt.<br/>„Warum hat sie uns denn keine Nachricht zukommen lassen.“<br/>„Hat sie doch. Deshalb bin ich hier.“<br/>„Nach über einem Tag und einer Vermisstenmeldung!“, sagte er vorwurfsvoll. Er war blass um die Nase.<br/>„In den Ferien läuft das Nachrichtensystem auf Sparflamme, vielleicht deshalb. Sie musste die Chance nutzen, mit einem Lehrer nach Hogwarts zu kommen und das hat sie. Es blieb keine Zeit für eine Nachricht. Ich soll aber sagen, dass es ihr leid tut.“ <br/>Himmel, hoffentlich ließen sie ihn bald gehen.<br/>„Verstehe. Aber … es geht ihr gut?“<br/>„Ja. Sie lernt. Eifrig, würde ich behaupten.“ <br/>Erleichterung huschte über das Gesicht der Mutter.<br/>„Und wann kommt sie nach Hause.“ <br/>Snape schluckte. Durfte er? Durfte er es wagen an das Wort Hoffnung nur zu denken? Oder wäre es vermessen? Seine Stimme war überraschend rau:<br/>„Ich denke mal, in ein paar Tagen.“<br/>„Oh schön, dann hat sie ja noch was von den Ferien. Danke, dass sie extra vorbeigekommen sind …“<br/>„Ich war sowieso in der Stadt“, sagte er tonlos und bewegte sich in Richtung Tür. Weg von Hermiones Mutter, die in Richtung Küche abbog.<br/>„Bleiben Sie doch wenigstens auf einen Tee, Professor Snape“, rief sie freundlich aus der Küche.<br/>„Ich kann nicht. Ich habe noch einen Termin.“ <br/>All die jämmerlichen Lügen. Er hätte nie gedacht, dass er ein schlechtes Gewissen in Gegenwart ihrer Eltern bekommen würde. Ihr Vater musterte ihn nachdenklich und brachte ihn dann zur Tür.<br/>„Sie … passen doch gut auf unser Mädchen auf, oder?“, fragte Mister Granger drängend. Sein Herzschlag setzte ein Mal aus. Nein, der Mann konnte nichts wissen. Er erinnerte ihn nur an seine Pflicht als Lehrer und an sein Verantwortungsbewusstsein. Gerade kam er sich eher wie seine eigene 17jährige Version seiner selbst vor. Jämmerlich.<br/>„Natürlich! Ich würde mein Leben geben, um sie zu beschützen!“, sagte er hart. In seinen Ohren klang es schwülstig und völlig übertrieben, doch ihr Vater musste es hören. Genau diese Entschlossenheit hatte er benötigt, um ihm zu glauben. <br/>„Das beruhigt mich. Danke fürs Vorbeikommen, Professor Snape!“</p><p>Erleichterung. Für ein paar Augenblicke. Jetzt kam der schmutzige Teil. <br/>Vlad.</p><p> </p><p>„Iss doch endlich etwas!“ <br/>Dracos Stimme war nörgelnd und dunkel.<br/>„Warum sollte ich?“<br/>„Hungerstreiks sind für’n Arsch Granger. Dem Typen bist du völlig egal.“<br/>„Dem Typen?“ <br/>Hermione kam an die Gittertür. Draco wich einen Schritt zurück, besann sich dann und trat wieder nach vorn. Schweigen.<br/>„Draco, bitte. So bist du nicht. Lass mich gehen, ja?“<br/>„Du hast überhaupt keine Ahnung, wer ich bin.“ <br/>Sie seufzte, er hatte recht. Sein Blick war unstet, verschleiert. Es war zu spät. Sie würde ihn nicht mehr erreichen können. Nicht mit Vernunft und gutem Willen, nicht mit Versprechungen und Mitgefühl. Dracos Weg war vorgezeichnet und er würde ihn gehen, ob er wollte oder nicht.<br/>„Dann nerve mich nicht weiter mit deinem Essen, Malfoy!“, knurrte sie scharf und funkelte ihn an. Sie dachte an Snape, wie er sie genommen hat. Sie dachte an diese immense Macht in sich drin, die ihr dieses irre Hochgefühl verschafft hatte. Malfoy sah es in ihrem Blick. Seine Augen weiteten sich ein wenig ängstlich und er trat wieder instinktiv zurück.<br/>„Du bist eine ekelhafte Hure, Granger!“, zischte er abfällig und ging weg.<br/>Ja, seine Hure, dachte sie und lächelte. Die Nokturngasse hatte sie verändert, färbte ab, machte sie stärker. Widerstandsfähiger gegen dunkle Mächte wie Draco und im Ende gegen den Dunklen Lord selbst.<br/>Severus würde sie befreien. Das Warten fiel ihr schwer. Weil sie ihm sagen müsste, was sie von ihm hielt. Sie müsste diesem Mann sagen, dass er alles richtig gemacht hatte.</p><p> </p><p>„Ich schulde dir gar nichts, Widerling!“<br/>Veronika versuchte sich aus seinem Griff zu befreien. <br/>„Schuld? Ich rede von einer Belohnung, wenn du tust, was ich sage, Veronika.“ <br/>Die Hure stutzte, sah ihn verblüfft an.<br/>„Was? Hast du gedacht, ich vergesse deinen Namen?“, sagte er spöttisch.<br/>Ja, hatte sie. Hatte er auch. Aber er hatte vorhin schnell noch eine ihrer schmierigen Kolleginnen gefragt, wie sie hieß. Gewusst wie, war das Motto der Stunde. Sie lächelte breit. Gleich viel gewillter ihm zuzuhören.<br/>„Wie viel ist drin?“<br/>„Dreimal so viel, wie ich dir sonst bezahle.“<br/>„Abgemacht. Wie sieht er aus?“ <br/>Snape beschrieb ihr Vlad. <br/>„Es gibt nur ein … Problem. Er ist schwul.“<br/>„Ach, das ist keins. Ich bekomme es schon hin. Mache ihm ein paar Versprechungen, erzähle ihm von meinem kleinen Bruder, der sich langweilt und so weiter …“ <br/>Severus fragte sich wieder, ob er vielleicht nicht doch jemand anderes hätte um Hilfe bitten sollten. Aber es war absurd, in gewisser Weise vertraute er Veronika. Zumindest ihrer Geldgier. Außerdem war sie gerissen, konnte einen in Grund und Boden quatschen und war ausgesprochen hartnäckig. Sie würde Vlad finden und zu ihm bringen. Er könnte ihm auch irgendwo auflauern oder ihn irgendwo hin einladen. In jedem dieser Fälle wäre Vlad sehr wachsam. Vlad dürfte aber höchstens eine unterschwellige, dunkle Ahnung haben. Nicht mehr. </p><p> </p><p>Draco hatte Vlad alles über seine Begegnung mit Snape erzählt.<br/>„Worum geht es dir wirklich? Darum Snape fertig zu machen? Dann ist Granger nicht gerade die beste Wahl als ein Köder. Er kann sie nicht ausstehen!“ <br/>Draco klang kindisch aggressiv. Vlad hielt ihn offenbar für dumm. Als wenn er nicht kapierte, dass diese rumänische Schwuchtel hinter Snape her war. Es war zwar ekelhaft, aber er war kein Idiot und verstand auch homosexuelle Rachegelüste.<br/>„Bist du sicher, Junge?“<br/>„Natürlich! Snape hasst jeden. Vor allem jeden, der was mit Potter zu tun hat.“<br/>Vlad machte einen geheimnisvollen Gesichtsausdruck und ging nicht weiter darauf ein. Ein schnödes Rachespiel, in dessen Klauen er gefangen war. Er hatte sich instrumentalisieren lassen und war mal wieder leer ausgegangen. Granger in seinem Kerker, war weniger befriedigend, als er erwartet hätte. Es macht ihn nur traurig. Seine Gefühle für sie waren noch immer da und sie wusste es nicht mal. Na ja, es war egal, was Vlad mit ihr oder Snape machte. Er stellte nur den Kerker zur Verfügung und versank lieber wieder in seine ergebnislose Grübelei über sein beschissenes Leben.</p><p> </p><p>Granger war eine ziemlich gute Wahl, hätte Vlad widersprechen können, denn Snape hatte sie sogar schon besucht. War aber umsichtig genug, nicht in seine magische Falle zu laufen. Das zarte, fast unmerkliche Berühren der magischen Barriere hatte er trotzdem gemerkt.  Dass er das Mädchen nicht sofort befreite, gab Vlad Hoffnung. Vielleicht war sie doch weniger wertvoll. Gerade genug, um nach ihr zu sehen. Aber Snape war schlau. Er konnte nun Eins und Eins zusammenzählen und ihr nächstes Zusammentreffen würde ganz anders ausgehen. Vlad würde sich nicht mehr zurücknehmen, nur weil er ihn begehrte. Die Zeiten waren vorbei, denn er hatte begriffen, dass Snape ihn niemals so wollte, wie er ihn.<br/>Uneinsichtiger, hartherziger Mann. Vernarrt in die Vergangenheit. In ein dämliches, längst verrottetes Weibsbild.<br/>Sollte die Göre doch da unten verfaulen. Wäre sie in guter Gesellschaft. Er würde sie Malfoys Gnade überlassen. Vermutlich vergaß Draco das Weib bald, weil er lieber in Selbstmitleid badete. Sie würde einfach verhungern. Denn Snape würde sie nicht mehr retten. Tod durch seine Hand, das war Snapes einziges Schicksal.<br/>Was man nicht bekommen konnte, dürfte auch kein anderer bekommen.     <br/>Nur noch ein paar Besorgungen machen, dann war er bereit für ein letztes Treffen. Todesser-Loyalität – pah! Wer hatte dieses falsche Wort eigentlich erfunden? Jeder steht sich selbst am nächsten. Niemand würde das schneller unterschreiben, als ein Todesser.<br/>Falls Lucius Malfoy herausfinden würde, dass er seinen Sohn benutzt hatte, würde er ihn jagen. Bis dahin, war er aber schon lange weg. Oder Lucius Malfoy war vorher tot. Die Chancen dafür standen ausgezeichnet.</p><p> </p><p>Hermione wartete.<br/>Und fühlte sich wie Dreck. Wie Schmutz unter den Nägeln der Nokturngasse. Seit Severus in ihr gewesen war, hatte sie nicht geduscht und nichts gegessen. Nie hatte sie sich besser gefühlt. <br/>Schmuddelig und doch gereinigt. Erfüllt. Vollständig. Sich und ihrer selbst bewusst.<br/>Ja, sie fühlte sich zu ihm hingezogen. Zu seinem harten Schmerz, der in sie hineinstieß, wie ein scharfes Schwert. Sie mochte seine unzweideutig, direkte Art. Seine unvollkommene Sinnlichkeit. <br/>Sie hatte seine Haltlosigkeit gefühlt. Umso mehr Zeit sie hatte, darüber nachzudenken, umso besser verstand sie. Er hatte bei ihr Halt gesucht. Hatte er ihn gefunden?<br/>Sie würde es erfahren. Da war sie sicher. Wenn er sie hier rausgeholt hatte. Nur nicht ungeduldig werden. <br/>Vertrauen. Er hatte ihres verdient.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/48417949">Chapter 8</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Warten war eine Kunst. <br/>Severus hatte sie beherrscht. Zumindest dachte er das von sich. Das Zimmer von Veronika war erbärmlich, doch einigermaßen sauber. Er war ein paarmal hier gewesen. In seine Wohnung nahm er niemals jemand mit. Dort wohnte nämlich der Rest seines Stolzes. Unter dem Bett wimmerte irgendwo seine Würde unbeachtet vor sich hin.<br/>Veronikas Zimmer war optimal. Es lag auf der Westseite der Nokturngasse, oben unter dem Dach. Das Fenster ging in einen der Hinterhöfe. Von hier oben gerade nicht übersehbar, so dunkel war es da unten. Es ging bestimmt sieben Meter in die Tiefe. Die Höhe wäre der alles entscheidende Vorteil. <br/>Der erste Vorteil war, dass alle anderen Huren ihre Zimmer im anderen Trakt hatten. Veronika hatte leider das Pech das schlechteste Zimmer von allen zu haben. Dabei beherrschte sie ihr Handwerk gut. Das Schauspielern leider nicht so.<br/>Letztlich konnte niemand nur so tun. Nur jemand, der wirklich brauchte, konnte sein, wie es Hermione war. <br/>Er wurde wieder hart bei dem Gedanken an Hermione. Hatte er in Hogwarts immer großzügig darüber hinweg gesehen? Absichtlich, vielleicht? Nicht auszuschließen. Fakt war, es war schlecht, dass er jetzt davon wusste. Noch schlechter war, dass er es ausgenutzt hatte. Unterirdisch schlecht war, dass er ihr gegeben hatte, was sie beide so sehr brauchten. Er würde dafür bezahlen.<br/>Andererseits, was machte es schon noch? Seine Tage waren gezählt. Dass er vor seinem Tod wirklich noch mal etwas so Pures erleben würde, damit hatte er niemals gerechnet. Erst recht nicht, dass es aus Potters Ecke kommen würde. Wäre vielleicht Versöhnung angebracht?<br/>Hatte er sich um Vlad gekümmert, würde er Hermione holen. <br/>Sie verdiente seine Entschuldigung. </p><p>Er hörte Geräusche unten im Haus, stand auf und nahm seinen Zauberstab zur Hand.</p><p> </p><p>„Wehe dir dein Bruder sieht nicht so aus, wie du es mir versprochen hast!“, hörte er Vlads laute Stimme. So ein Idiot. Er lief einem Traum nach. So wie er auch. Erbärmlich. Das waren sie beide.<br/>Vlad trat ein, Veronika schloss von außen die Tür magisch ab und verschwand. So, wie sie es verabredet hatten.<br/>„Was soll das? Du Hure!“, schrie Vlad ihr nach. Severus löste seine Tarnung auf.<br/>„Was, bist du mit dem Anblick ihres kleinen Bruders etwa nicht zufrieden?“ <br/>Sein Tonfall tiefschwarz. Belustigt und drohend gleichermaßen.<br/>Vlad fuhr herum.<br/>„Dieses verhurte Miststück!“, knurrte er und zielte mit seinem Zauberstab auf Snape.<br/>„Langsam, Vlad. Ich bin hier, weil ich mit dir sprechen will.“<br/>„Zu deinen Bedingungen, wie ich annehme!“ <br/>Es war keine Frage.<br/>„Sieht ganz so aus. Du weißt, ich lasse mich ungern manipulieren. Veronika ist übrigens wirklich eine nette Hure und ich komme regelmäßig zu ihr. Fällt dir etwas auf?“<br/>„Sie ist eine Frau!“ <br/>Vlad war nicht blöd. Nur wütend. Sein Zauberstab zitterte minimal in seiner Hand. Severus sah es natürlich.<br/>„Richtig. Das mit uns war … ein Versehen. Dass du das immer noch nicht einsehen willst, nach all den vielen Jahren, ist eine jämmerliche Charakterschwäche, Vlad.“<br/>„Vielleicht aber auch eine Tugend. Nennt sich Zielstrebigkeit.“<br/>„Es nennt sich Uneinsichtigkeit. Denkst du wirklich, du kannst mich mithilfe eines unbedeutenden Mädchens ködern?“<br/>„Du warst da, um nach ihr zu sehen.“<br/>„Ja. Habe ich sie mitgenommen? Nein! Hätte ich es gekonnt? Ja.“ <br/>Vlad knurrte dunkel. Seine blauen Augen fixierten ihn. Severus hatte seinen Zauberstab nicht gegen ihn erhoben. <br/>„Du kannst mich nicht überzeugen. Ich habe nichts für Männer übrig. Es liegt auch nicht an dir. Du kannst mich nicht töten. Und du kannst mich nicht umstimmen, mit nichts. Weißt du weshalb? Weil es mir egal ist. Ziehe deinen Schluss daraus, Vlad. Sei ein guter Zigeuner, los mach schon …“ <br/>Severus‘ Tonfall wurde süffisant und provozierend. Er wollte keine Einigung erreichen. Nur Ablenkung.<br/>„Warum denkst du, ich gebe auf?“<br/>„Komm mir jetzt nur nicht mit peinlichen Liebesschwüren!“, fauchte Snape ihn scharf an. Vlad kniff die Augen zusammen, blieb aber stehen.<br/>„Liebe? Nein. So was hast du nicht verdient. Nicht mal von mir. Ich dachte eher an körperliche Ertüchtigung und …“<br/>„Lüge!“, fuhr ihm Severus knallhart ins Wort.<br/>„Lass es mich so sagen. Es ist wahrscheinlicher, dass du den Bruder von Veronika der Hure ins Bett bekommst – den es übrigens nicht mal gibt – als mich ein weiteres Mal.“<br/>„Warum bist du dir so sicher? Du hast es schon einmal getan. Du hast schon einmal die Grenze überschritten. Und du warst richtig gut. Keine Ahnung, was und wie du es getan hast – aber ich habe es nie vergessen können.“ <br/>Das hatte er nicht erwartet. Seine Augenbrauen schoben sich zusammen.<br/>„Ich weiß nicht, wovon du sprichst, Vlad. Aber ich weiß, es ist irrelevant für dich und mich.“<br/>„Weil du … sie liebst …?“, brach es ungläubig aus Vlads Mund heraus. Wie ein ekliger Brocken schimmliges Brot fiel es auf den Boden des Raumes. Severus war heilfroh, dass Vlad nicht ihren Namen benutzt hatte, sonst hätte er ihn nun unverzüglich magisch angegriffen. Es wäre ein mieser Impuls gewesen.<br/>„Ja, vielleicht bin ich ein wenig in Veronika verliebt. Das wirst du mir nicht übelnehmen können. Schließlich treffe ich sie 1-2-mal die Woche.“<br/>„Veronika?“ <br/>Vlad blinzelte des Todes verwirrt.<br/>„Ich spreche von …“<br/>„Gut, sprechen wir von den Bedingungen deines Überlebens, Vlad.“ <br/>Dessen Gesichtsausdruck wurde kalt und unnachgiebig. Severus wusste, was es bedeutete. Bedauern fühlte er nicht. Nur eine Art Notwendigkeit. Und Macht. Die Macht zu töten. Nur wenige hatten sie. Nur wenige überlebten sie so lange wie er.<br/>„Oder wir sprechen darüber, wie du zu Tode kommst, Severus Snape!“ <br/>Er legte den Kopf amüsiert schief. Das Zimmer war viel zu klein für eine ernsthafte, faire magische Auseinandersetzung. Vlad war gut in den Dunklen Künsten und es würde ein harter Kampf werden. Aber das hatte er nie vor.<br/>„Ich nehme Folgendes an, Vlad. Weder wirst du mich in Ruhe lassen, noch diejenigen, die zufällig gerade in meiner Nähe sind und von denen du glaubst, sie bedeuten mir etwas. Richtig?“ <br/>Der Rumäne nickte nicht mal, starrte ihn nur mordlüstern an.<br/>„Es ist eine ziemlich kindische Einstellung, wenn du mich fragst. Aber ich halte dir zugute, dass du aus einem Haus kommst, in dem man unweigerlich solche Attitüden entwickeln muss.“<br/>Ein heftiger Zauber traf Severus an der Schulter. Er wurde gegen die dünne Zimmerwand geschleudert. Seine Befürchtung durchzubrechen und ein paar Meter in die Tiefe zu fallen, traf zum Glück nicht ein. Vlad hatte ihn verwundet. Schmerz und Blut vermischten sich mit seinem Zorn auf diesen uneinsichtigen, wahnsinnigen Kerl. Vlad bedrohte nicht nur ihn, sondern Hermione. <br/>Severus ließ seinen Zauberstab einfach zu Boden fallen, sprang auf ihn zu und kassierte vorher einen weiteren bösen Zauber gegen die Brust. Es hielt ihn nicht davon ab mit Vlad zusammen in Richtung Fenster zu taumeln. Der andere Mann hatte in etwa seine Größe und Statur. Er wehrte sich nach Kräften. Vlad fehlte jedoch etwas, was Severus hatte. Körperliche Wehrhaftigkeit. Nicht nur Magie, Klugheit und Listigkeit waren ihm zu eigen. Auch sein Körper war im Notfall wehrhaft. Trotz Verletzung. Der eigene Blutgeruch bereite ihm Übelkeit. In seiner augenblicklichen Hartnäckigkeit war er Vlads Starrsinn aber gerade ebenbürtig. Immer weiter drängte er ihn zum Fenster und stieß ihn schließlich mit gesammelter Kraft hindurch. Vorher riss er ihm seinen Zauberstab aus der Hand. Vielleicht hatte es für Vlad vorher so ausgesehen, als wenn das Fenster geschlossen und die Fensterläden vorgelegt waren. Allein, es war nur Snapes magische Illusion, um ihn in Sicherheit zu wiegen.<br/>So fiel Vlad nun ein paar hohe Meter in die Tiefe. Severus sah ihn nicht aufkommen. Hörte nur den dumpfen Aufprall und wartete. Er keuchte schwer und seine Wunden bluteten stark.<br/>„Bestens. Severus! So tot, wie er nur sein kann“, rief Veronika wenige Augenblicke später nach oben. Auch sie sah er nicht. Hörte nur ihre aufgeregte Stimme. Nun würde er ihren Namen sicher nie wieder vergessen. Veronika - Seine Mordkomplizin.<br/>„Dreihundert extra, wenn du ihn entsorgst …“, rief er matt nach unten. Eigentlich wollte er das selbst machen. Der Schwindel ließ ihn taumeln.<br/>„Ja, Sir! Sehr gern“, rief sie hoch.<br/>Er wankte zum Bett, angelte sich den Zauberstab vom Boden und versuchte den Schaden zu begrenzen und das Bluten zu stoppen.<br/>Mistkerl. Seine Gedanken galten Vlad. Dabei wollte er ihm nur einen Gefallen tun und sich bei ihm bedanken. Weil er damals kein Geld hatte, um ihn zu bezahlen. Scheiß siebzehn Jahre später bezahlte er fast für seinen damaligen Ausrutscher mit seinem Leben. Nicht nur er. Auch ein siebzehnjähriges Mädchen hätte fast dafür bezahlt. Nur weil Vlad ihm einen Zauber beschaffen sollte, der ihn Lily zurückbringen könnte. Was natürlich nie funktioniert hatte.<br/>Hermione. Er musste zu ihr. Sie retten, ehe ihr Draco noch etwas antat.<br/>Sein Körper weigerte sich frech. Diffuse Gedanken an Hermione begleiten ihn in eine schwarze Finsternis. Veronikas Bett war so weich. Das war ihm nie aufgefallen.</p><p> </p><p>Draco tat ihr nichts an.<br/>Er saß vor Hermiones Zelle und redete mit ihr. Leise. Zu leise, damit sie es hörte, denn sie war in einen tiefen Erschöpfungsschlaf gefallen. <br/>„Du hättest etwas essen sollen …“, sagte Draco traurig. Er hatte ihr gesagt, dass er sich gleich im ersten Jahr in sie verliebt hatte und es ihn zutiefst verletzt hat, dass sie sich verfeindet gegenüber stehen mussten. Aber so war es nun mal. Es hatte nie etwas an seinen Gefühlen für sie geändert.<br/>Er stand auf, schloss die Zellentür auf und öffnete sie weit. Er legte ihr vorsichtig ihren Zauberstab auf den Bauch, damit sie ihn hatte, wenn sie erwachte. <br/>Scheiß auf Vlad. Sollte Granger gehen, wenn sie wollte. Hätte er nur eine einzige reelle Chance bei ihr gehabt, bei Gott, er hätte sie genutzt. </p><p> </p><p>Severus erwachte und war desorientiert.<br/>„Da ist er ja wieder. Gute Arbeit, Doc!“, hörte er Veronikas Stimme. Er rappelte sich hoch. Seine Wunden waren fachmännisch versorgt. Sie bluteten nicht mehr, doch sie brannten höllisch.<br/>„Sie sollten sich wirklich noch nicht bewegen, Mister!“ <br/>Irgend so ein Kurpfuscher saß neben seinem Bett und packte seine Arzttasche zusammen.<br/>„Müsste ich sie kennen, Doc?“<br/>„Müsste ich sie kennen, Mister?“<br/>„Gute Antwort!“, grummelte Severus zufrieden und richtete sich endgültig auf.<br/>„Ich muss jetzt leider gehen. Danke für die Hilfe.“<br/>„Fünfhundert extra für den Doc!“, rief ihm Veronika grinsend zu.<br/>„Du bist eine Halsabschneiderin, Weibsstück!“<br/>„Aber sicher … bei dir besonders gern.“<br/>„Gut. Ich bringe es dir die Tage vorbei. Werde nicht ungeduldig, ich könnte ein paar Momente brauchen, um wieder auf die Beine zu kommen. Das würde ich aber gern in meinen eigenen vier Wänden machen.“<br/>„Keine Sorge, ich vertraue dir doch …“, kicherte sie und winkte ab.<br/>Mit dem Doc zusammen, ging er nach unten. Der Schwindel wechselte sich mit Übelkeit und Schmerz ab.<br/>„Sie sollten sich wirklich ein paar Tage schonen, Mister.“<br/>„Werde ich. Zuvor habe ich noch was zu erledigen.“<br/>„Und zweihundert für meine blutige Bettwäsche!“, kreischte Veronika aus dem Fenster auf die Straße.<br/>„Gierige Hure …“, murmelte er und als sich zu Doc umdrehte, war Doc weg. Disappariert, vermutlich. Das tat er auch und musste sich erst mal an Ort und Stelle vor Schmerz übergeben. Malfoys Kerker würde ihm das nicht übelnehmen.</p><p> </p><p>Wacklig begab er sich zu Hermiones Zelle. Sie war offen. Draco war nicht da und Hermione schien zu schlafen. Sacht berührte er sie an der Schulter. Keine Reaktion. Seine Angst schlug in Wellen über ihn zusammen. Sein zweiter Griff war fiel zu fest.<br/>„Granger! Komm zu dir!“<br/>Sie rührte sich. Sah ihn an. Erst verwirrt, dann erfreut und erschöpft.<br/>„Ich bin so … schwach …“, murmelte sie kaum hörbar. Ihr Griff um den Zauberstab war unbewusst und fest. Ihr Lächeln ließ ihn alles tun. Er griff seinen Zauberstab fester, schob seine Arme unter ihren Körper und hob ihn hoch. Sie war leicht, doch für ihn heute unendlich schwer. Seine Kiefergelenke knirschten vor Anstrengung.<br/>„Festhalten“, befahl er und apparierte mit ihr in seine Wohnung. <br/>Er trug sie zu seinem Bett, legte sie behutsam ab und legte sich neben sie. Ihre Hand berührte besorgt sein Gesicht und Severus verlor das Bewusstsein.</p><p> </p><p>Er war gekommen. Sie zu retten. Zu beweisen, wer er war.<br/>Jemand, den man lieben konnte.<br/>Hermione liefen Tränen über die Wangen, als sie über seine Wange strich und dann wieder erschöpft einschlief.<br/>Neben ihm. Ihre Hand auf seiner.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/48546416">Chapter 9</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Kaffee.     <br/>Kaffee war Geborgenheit.<br/>Der Geruch von Kaffee weckte sie. Sie fühlte sich schwach, hungrig und sinnlos glücklich. <br/>Severus hatte ihr Frühstück ans Bett gebracht und sah sie dunkel an.<br/>„Iss was!“, forderte er. Er war blass. Blasser als sonst. Doch irgendwie anders. <br/>„Danke“, sagte sie matt und nippte am heißen, süßen Kaffee mit viel Milch. Woher wusste er, wie sie ihren Kaffee mochte? Unheimlich, wenn sie nicht schon merkwürdigere Dinge mit ihm erlebt hätte. <br/>„Es war meine Schuld und ich räume hinter mir auf“, war seine Antwort. Sie aß das Toast eher mechanisch. Die zweite Scheibe allerdings mit Hunger, die dritte dann mit Appetit. Er saß neben ihr und sah ihr dabei zu.<br/>„Bin ich in deiner Wohnung?“<br/>„Ja.“<br/>„Welche Ehre …“<br/>„Ist es nicht. Meine Würde und mein Stolz verstecken sich hier irgendwo. Grüße sie von mir, wenn du sie entdeckst.“ <br/>Kein Lächeln. Sie aber lachte leise.<br/>„Erklär es mir!“, forderte sie schließlich. Sie hatte alles gegessen, was er ihr gebracht hatte. Erleichterung lag in seinem Blick.<br/>„Deine Eltern denken, es geht dir gut. Du bist in Hogwarts und belegst ein Ferienseminar „Die Kunst des Traumzauberns“. Spontane Sache. Sie waren beruhigt.“<br/>„Oh ehrlich? Gibt es das Seminar wirklich?“<br/>„Nein.“<br/>„Schade. Klingt gut. Weiter …!“<br/>„Für deine Entführung ist ein gewisser Vlad verantwortlich. Er hat Malfoy nur benutzt. Das wird dich nicht allzu sehr überraschen, oder?“ <br/>Sie schüttelte den Kopf. Snape wirkte … beschädigt. Schwarz. Seine Hose war schwarz, sein Hemd auch. Ebenso Blick und Haare.<br/>„Wer ist Vlad?“<br/>„Vor vielen Jahren habe ich mal einen von vielen Fehlern begangen, zu Kosten Vlads und der hat sich gerächt. Mehr musst du nicht wissen.“ <br/>Mehr musste sie wirklich nicht wissen. Sie nahm seine Reue überdeutlich wahr.<br/>„Was ist mit ihm … passiert?“<br/>„Ich nehme an, Draco hat dich freigelassen. Die Tür war schon offen, als ich kam.“<br/>„Ich meine mit Vlad?“<br/>Langes Schweigen. Intensiver Augenkontakt, der fast schmerzhaft war.<br/>„Ich habe ihn getötet.“ <br/>Snapes Worte waren klar umrissen, deutlich. Unmissverständlich. Seine Augen, direkt in ihren. Ihr Atem ging schneller. Er wollte, dass sie wusste, wer er war. Wusste sie doch vorher schon. Das war es doch, was sie so unbesonnen machte.<br/>„Dann hatte er es auch verdient …“, flüsterte sie belegt. Er schwieg. Lange.</p><p> </p><p>„Ich weiß nicht.     Er war … eine Bedrohung. Für dich und mich. Aber … er wollte nur unbedingt etwas, was er niemals bekommen würde.“<br/>„Das ist in der Tat traurig. Aber keine Entschuldigung für meine Entführung.“ <br/>Er lächelte jäh. Ihr Herz schmolz dabei. Wie konnte das sein, dass sein rares Lächeln sie so euphorisch machte.<br/>„Du hast das Richtige getan“, fügte sie an, weil sie es unbedingt sagen musste. Snape lauschte, dachte nach und sagte schließlich leise:<br/>„Dinge, die man aus einem Gefühl heraus tut, sind nicht immer richtig, Granger. Sie haben nur in diesem Moment einen gerechtfertigten Grund. Im nächsten aber vielleicht schon nicht mehr.“<br/>„Für mich war es richtig. Falls dir das wichtig ist.“<br/>„Du hättest niemals wieder kommen dürfen.“<br/>„Bin ich aber. Habe ich richtig verstanden: Meine Eltern denken, ich bin ein paar Tage außer der Reihe in Hogwarts?“ <br/>Er nickte gleich, sah dann aber überrumpelt aus und kniff die Augen zusammen.<br/>„Ja, ich denke schon“, erwiderte er argwöhnisch langsam.<br/>„Hast du eine Badewanne?“<br/>„Ja, ich denke schon …“ <br/>Seine Stimme war viel dunkler. Hörte sie etwa Furcht heraus?<br/>„Seit wann so unpräzise, Professor Snape?“ <br/>Keine Antwort. Nur sein Schweigen. Hermione sah sein schnelles, verwirrtes Luftholen.<br/>„Fein. Dann lass mir die Badewanne ein, ja?“<br/>Er tat es. Um ihr zu entkommen. Und dem, was geschehen könnte. <br/>Als er kam, um sie ins Bad zu tragen, sah sie es. Er war schwer verletzt.<br/>„Lass mich runter, sofort!“, forderte sie. Behutsam stellte er sie ab. Sie teilte sein Hemd, sah den Verband und ihm fragend in die Augen.<br/>„Vlad. Er war ein begabter Magier. Das Risiko musste ich eingehen.“ <br/>Hermione schluckte. Die Tränen kamen trotzdem.<br/>„Deshalb musst du nicht weinen …“ Seine Stimme klang so hilflos.<br/>„Nein? Weshalb dann?“<br/>„Höre mit der Heulerei auf oder ich sperre dich in meinen eigenen Kerker“, sagte er, halb im Scherz, halb ernst. Er drängte sie ins Bad und schloss die Tür hinter ihr von außen.</p><p> </p><p>Luft! Er brauchte viel Luft!<br/>Severus riss das Fenster auf. Endlich war es kühler. Regen zog Bindfäden durch die Luft. Sein Herz zitterte, als er scharf die Luft einsaugte. Wie konnte er es wagen zu hoffen?<br/>Er tat es. Er hoffte. Wenn ihn jemand verstehen konnte, dann sie.<br/>Wenn jemand mit seinem grausamen Bedürfnis umgehen konnte, dann sie. Weil sie war wie er. Weil sie es wollte. Weil sie es so sehr brauchte. <br/>Er könnte nicht sagen, wie lange er am offenen Fenster stand. Nur atmete und Gründe für ein Dagegen suchte.<br/>Seine Wunden schmerzten. Seit Hermione bei ihm war, schon weniger. Sie heilten. Unter ihren Blicken und unter ihren leisen Worten.</p><p>Sie kam aus dem Bad. Gewickelt in ein Handtuch. Ihre Haare noch nass. Sie steuerte sein Bett an und fiel erschöpft seufzend hinein.<br/>„Komm her!“, forderte sie matt und er kam. Er tötete sogar für sie. Warum sich nicht neben sie legen?<br/>Behutsam deckte er sie zu, legte sich neben sie und sah sie nur an.<br/>„Es tut mir leid“, flüsterte er auf ihren Mund.<br/>„Das weiß ich. Mehr als du dir vorstellen kannst. Ich hätte auf dich hören sollen. Aber … ich konnte nicht.“<br/>„Weshalb?“<br/>„Tief in mir, gibt es diesen schwarzen Punkt. Der macht mir Angst. Große Angst. Erst mit dir zusammen, konnte ich verstehen was es ist. Das Böse in mir. Du hast es … gefunden, mir gezeigt und … mir so meine Angst davor genommen. Es ist ein Teil von mir. So wie das Gute ein Teil von dir ist.“<br/>Sie war so klug. So verständig. Wunderschön und begehrenswert. Eindeutig nicht seine Liga.<br/>„Man lernt auch in den Ferien etwas …“, sagte er lahm. Die berührenden Augenblicke mussten dringend an Bedeutung verlieren. <br/>„Sag das nicht. Rede es nicht klein, Severus“, flüsterte sie.</p><p> </p><p>Ihm fehlten die Worte. Niemals war es deutlicher, als in diesem sonderbaren Moment. Hier, in seinem Bett, neben ihm. Sie fühlte sich warm und sicher, gereinigte und beschützt. Das alles war sein Verdienst und er konnte das Gute daran nicht sehen.<br/>„Warum habe ich dich nicht getroffen, als ich so alt war wie du …?“ <br/>Seine Stimme klang schläfrig. Sie täuschte er nicht. Er war traurig und empfindsam.<br/>„Du hast mich jetzt getroffen. Ich war so ein Dickkopf und du … hattest recht mir das deutlich zu machen. Was du mir gibst …“ <br/>Ihre Stimme wurde dunkel. Vor Lust und Verlangen.<br/>„Ich wusste nicht, wie sehr ich das brauche …“ <br/>Er legte eine Hand behutsam auf ihr Gesicht, küsste ihre Stirn.<br/>„Schlaf ein wenig, ja?“<br/>„Du gehst in der Zwischenzeit nicht weg?“<br/>„Nein. Ich bleibe neben dir liegen.“<br/>„Gut …“ <br/>Sie griff nach seiner Hand und schlief im Handumdrehen ein. Angekommen und wissend, wer sie wirklich war. Severus war ein Seelenverwandter. Wie hatte sie ihm nur jemals mutwillige Boshaftigkeit ihr gegenüber unterstellen könnte. Er war genau so, wie das, was sie brauchte, um sich vollkommen zu fühlen.</p><p> </p><p> </p><p>Während sie schlief weinte er. Weil er nicht mehr sterben wollte. Weil er nicht mehr wollte, dass es bald endete. Weil er keine Wahl hatte und alles vorbestimmt war. Jetzt, wo er sie endlich gefunden hatte. Und sie ihn …</p><p> </p><p> </p><p>Der Schlaf war sehr erholsam. Für beide. Als Hermione erwachte, war es später Vormittag. Sie hatte Hunger. <br/>Wie versprochen, lag Severus neben ihr. Er schlief noch und war weniger blass. Eine ganze Weile sah sie ihn nur an. Niemand würde sie jemals nur annähernd erklären können, was sie wirklich verband. Dieser Punkt, tief in ihr, der sich nach ihm sehnte. Ihm ging es ähnlich. Auch er hatte sie gesucht. Gefunden. Und Severus war überaus schockiert darüber. Dass ausgerechnet sie es war. Keiner Menschenseele könnte sie davon erzählen.<br/>Harry hatte andere Probleme, Ron wäre nur enttäuscht und eifersüchtig und Ginny … wäre entsetzt. Ihre Eltern würden sie enterben. Jeder würde sie verurteilen, der nicht das in sich trug, was sie hatte. Dieses Bedürfnis nach einer höheren, einer absoluten Macht. Schwach. Würden es viele nennen. Dann war sie schwach. Er machte sie schwach. Hielt sie fest und machte sie gleichzeitig unendlich stark. Weil sie auf ihr volles Potenzial zugreifen konnte. Nicht nur auf eine Seite ihr komplexen Persönlichkeit.<br/>Severus war kein schlechter Mensch. Nur einer, dem Schlechtes passiert war. Einer, der immer nach dem Guten gesucht hatte. Einer, der immer Misserfolge hatte. Einer, der trotzdem nie aufgegeben hatte. Und jetzt hatten sie sich gefunden. Es war wunderbar. Dieser Mann war wundervoll. Selbst und sogar in seiner grausamen Rohheit und seiner brutal Verachtung jeglicher sanften Schönheit. <br/>Er hatte ihr gezeigt, was Liebe alles sein konnte. Angstvoll, schmerzhaft, triebhaft und treibend. Man konnte sie weder kontrollieren, noch austricksen. Man konnte nicht widerstehen, nicht auf Dauer. Man konnte sich nur drauf einlassen. Mutig und bewusst.<br/>Dann konnte man sie erleben. Die pure, die vollkommene, die intensivste Liebe.<br/>Sie küsste ihn sanft auf die Lippen. <br/>Severus schlug seine Augen auf. Immer noch schwarz wie seine Seele. Er wirkte ein wenig verwirrt.<br/>„Ich muss dich in mir spüren. Jetzt …“, raunte sie in sein Ohr und küsste seinen Hals.<br/>„Es sei denn deine Wunden …“<br/>„Bestimmt nicht!“ <br/>Er drückte sie auf den Rücken. Und lächelte. Er war so schön in seiner unverstellten Art zu lieben.<br/>„Für Huren reicht mein Zustand allemal“, flüsterte er rau auf ihre Lippen. Sein erster Kuss war behutsam. Der zweite schon tiefer. Seine Hände hatten sich in ihre Haare geschoben und sein Körper hatte sich auf ihren gelegt. Schwer, besitzergreifend und erregend beherrschend.</p><p> </p><p>Noch war er schwach, beschädigt. Noch war sie seines Schutzes bedürftig. So liebte er sie. Sanft, behutsam und zärtlich. Sie seufzte wohlig in sein Ohr, als er sich in ihr bewegte. Sie machte es ihm leicht. War warm, weich, feucht und begierig auf ihn. <br/>Spannung baute sich auf, vermischte sich mit dem Schmerz seiner Wunden. Nur eine Sekunde. Er musste sie ansehen. Nicht bewegen, auf ihre Lippen atmen, bis sie ihn ansah. <br/>Ihre Augen waren dunkel, halb geschlossen. Ihre Lippen lächelten.<br/>„Was?“, flüsterte sie belegt.<br/>„Ich bin verloren, Hermione …“ <br/>Ihr Lächeln verschwand. <br/>„Bist du nicht. Du bist in mir …“ Er bewegte sich wieder, um die Tränen über sein Wissen zu unterdrücken. Sie stöhnte auf und er gab ihr Antwort. Er war verloren, hatte sich an den Tod verkauft. Seine Lippen an ihrem Hals. <br/>Ihr süßer Duft. Es müsste endlos sein.<br/>„Rette mich …“, flüsterte er ganz leise in den Raum, weg von ihrem Ohr. Wieder und wieder. Kaum hörbar. Weil er nicht mehr wollte, dass es endete. <br/>Nicht jetzt! Niemals wieder.<br/>Danach blieb er einfach auf ihr liegen. Ihre Hände streichelten ihn. Seine Tränen waren lautlos und unsichtbar. Irgendwann schlief er ein.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/19447660/chapters/48653720">Chapter 10</a>: Epilog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Ich werde es versuchen …“, hatte sie ihm nach zwei Tagen zum Abschied gesagt. Snape hatte die Worte nicht in einen Kontext bringen können. Aber das war nicht entscheidend. Sie hatten eine wundervolle, sehr zärtliche Zeit zusammen verbracht. Lagen hauptsächlich im Bett, manchmal haben sie gesprochen. Sich von ihm lieben zu lassen, war … ungeheuerlich. Das war aber nur die eine Seite. Die schwache, die sanfte Seite. Jetzt musste sie gehen. Ihr Abschiedssatz bezog sich auf sein Flüstern, während er in ihr war. Vielleicht dachte er, sie würde ihn nicht erhören? Das tat sie jedoch. Sie hörte seinen Hilfeschrei und spürte ihn auch. Sie würde versuchen alles zu tun, um ihn zu retten. Auch wenn sie nicht wusste wie und wann. <br/>„Wir sehen uns, Miss Granger“, sagte er ohne besondere Intonation. <br/>Rette mich … Ich bin verloren …<br/>Er sah ihr nach. Ausdruckslos, als wäre es ihm egal. Sie lächelte, weil sie wusste, sie würde ihn auf der anderen Seite der Welt wiedertreffen. Dort in seine Arme sinken, seine Rauheit spüren und seinen Namen keuchen. Lust, Befriedigung und Glück. <br/>Dreckiger Sex und doch so viel mehr. Überlebensnotwendig. <br/>Sie selbst verstand es nicht recht. Wusste nur, dass er diesen Punkt in ihr berührte. Tief drin, mit seinem Hass und seinem Schmerz.<br/>Severus Snape. Ein Mann, den sie nie erkannt hatte als das, was er war. Eine Schande.     <br/>Ein atemberaubendes Stück Leid.<br/>Seinen sanften Kuss nahm sie lächelnd mit.</p><p> </p><p>Ihre Eltern waren seltsam erleichtert. Der Blick ihres Vaters aus dem Augenwinkel, skeptisch. Mum, übertrieben erleichtert. Als wäre sie Reporterin im Kriegsgebiet und war unversehrt nach Hause gekommen. Irgendwie war es auch so. Dabei kamen die harten Zeiten sicher erst noch.</p><p> </p><p>„Jungs sind manchmal komisch“, sagte Mum zusammenhangslos. Am Badesee, am nächsten Tag.<br/>„Jungs sind total komisch, Mum“, erwiderte sie lächelnd. <br/>Sie dachte an Ron. An seine lustige, tollpatschige und liebenswürdige Art. An Harry, dessen Tapferkeit, dessen Stärke und seine Schüchternheit gegenüber Mädchen. Sie dachte an Victor, geheimnisvoll in seiner Schweigsamkeit. Nur Severus hatte nichts davon und doch alles. Er war kein Junge und doch war er einer gewesen. Jetzt nicht mehr.<br/>„Und wenn ich mit Jungs nichts anfangen kann, Mum?“, fragte sie leise und knabberte einen Keks. Schweigen aus Mums Ecke.<br/>„Mädchen sind auch okay, Hermione. Das weißt du doch, oder?“ <br/>Sie lächelte. Snape würde sich über diesen Wortwechsel köstlich amüsieren.<br/>„Ja, das weiß ich. Kommst du mit ins Wasser?“ <br/>Sie könnte und würde ihren Eltern niemals sagen können, wer für sie wirklich „okay“ war. Vielleicht in ein paar Jahren. Vielleich nie.</p><p> </p><p> </p><p>Warmer Sommerregen durchnässte ihn. Das Gewitter war vorbei, grummelte nur noch in der Ferne. Es roch ausnahmsweise sauberer in der Nokturngasse. Eine Katze schrie auf, eine zweite fauchte, ein Penner in der Nähe brabbelte etwas Unverständliches. Jemand stieß ihn an. Aus Versehen.<br/>Er folgte der Person, um sich zu rächen. Niemand rempelte ihn an. Nicht aus Versehen. Niemals. Niemals, ohne seinen Zorn zu spüren.<br/>Sie trug wieder ihr schwarzes Hoodie, hatte die Kapuze über die Haare gezogen. Er packte sie am Arm, zerrte sie in eine finstere Ecke, trieb sie weiter hinein. Atemlos. Vor Lust und Freude sie zu sehen.<br/>Seine Hände streiften die Kapuze nach unten. Seine Lippen drückten sich auf ihren halboffenen Mund. Er schluckte ihr Aufstöhnen, keuchte selbst in ihren Mund. So hart, so unerträglich verlangend. Nur ein Schatten ihres Duftes und er verlor den Verstand. Sie sagte nichts. Kam gar nicht dazu. Wollte auch nicht. Wozu? Ihre Lippen, ihre Zunge und ihre warmen Hände unter seinem Hemd, sagten doch alles. Hermione wollte ihn ebenso, wie er sie wollte.<br/>Er löste sich, packte ihre Haare und zerrte sie noch ein Stück weiter in den Schatten der Gasse. Weg von allen, weg von der Welt. Er wollte sie für sich. Für sich ganz allein. Unteilbar.<br/>„Wie sehr willst du es, du Drecksstück?“, zischte er in ihr Ohr und schubste sie gegen den Müllcontainer, auf dem sie vor einiger Zeit bitterlich geheult hat.<br/>„Sehr …“, wimmerte sie auf. Er kam ihr nach, drückte sie auf den Container, ihr Gesicht auf dem schmutzigen Blech.<br/>„Wie sehr, du Hure?“ <br/>Sie weinte. Sie schluchzte, glücklich und begierig. Severus trat ein wenig zurück. Um noch ein wenig an seiner Kontrolle festzuhalten. Um zu sehen, ob sie allein waren. Nur Ratten und das Katzenvieh ohne Schwanz kitzelten seine Sinne. Hermione nestelte an ihrer Hose und zog sie dann nach unten. Er lächelte, sah auf ihr helles Hinterteil, welches trotz Dunkelheit zu sehen war.<br/>Wie das Gute in ihr. Was immer heller strahlen würde, als der dunkle Punkt. Hiernach würde er sie mit nach Hause nehmen. Er würde sanft zu ihr sein. Sie würden sprechen. Über so vieles, nichts was den Namen Potter nur am Rande streifte. Über philosophische Dinge, über die Welt wie sie wirklich war, über Magie, über die Menschen - den Tieren näher als den Göttern. Über alles. Nur nicht über eine Zukunft für sie beide.<br/>Hiernach.<br/>Er trat näher. Ihr deutliches Zittern erregte ihn sehr. Sein Schwanz pulsierte hungrig, tat ein wenig weh. So sehr wollte er sie.<br/>„Bitte …“, bettelte sie. Niemals könnte eine Hure diesen Tonfall der absoluten Verzweiflung imitieren. Nur jemand, der brauchte, war auch empfänglich. Wie Hermione. Sie musste ihn in sich spüren.<br/>Nicht grob aber auch nicht feinfühlig, drang er in sie ein. Ihr dunkles Stöhnen ließ ihn beben. Nur nicht die Augen schließen. Nur nicht den Fokus verlieren. Tiefer drang er vor, bewegte sich in ihr wie sie es brauchte. Hart, unerbittlich und hingebungsvoll. Sie richtet sich ein wenig auf. Er packte ihren Hals, ihr Kinn und zwang ihren Kopf herum. Um ihre Lippen zu treffen. Um ihr seine Liebe auf die Lippen zu keuchen.</p><p>Dieses Mädchen. Was ihm seit dem ersten Jahr ein Dorn im Auge gewesen war. Sie hatte so wenig nach Hogwarts gepasst, wie ein Malfoy in die Muggelwelt.<br/>Doch erst jetzt verstand er, warum das so war.<br/>Er küsste sie, verschmolz mit ihr und ließ die Grenze zwischen ihren Welten verschwinden.<br/>Sie wimmerte, sie seufzte, sie stöhnte und sie keuchte. Lustvoll, als er ihre Schamlippen mit den Fingern teilte. Hingebungsvoll und sein.<br/>Sie gaben der Nokturngasse ein neues Gesicht und einen anderen Namen.</p><p>Später hob er sie einfach hoch und brachte sie nach Hause. Er musste sie lieben, solange es ging.</p><p> </p><p>Glücklich schlief sie in seinen Armen ein. Es würde nur ein kurzer Schlaf sein, bevor sie nach Hause müsste. Zu ihren Eltern. In ihre Welt. Ihre Mutter dachte nun, sie wäre lesbisch. Severus hatte geschmunzelt, als sie es ihm erzählt hatte. Er wirkte zufrieden und schön in seinem Glück.<br/>Still hatte sie sich fest vorgenommen ihn zu retten. Zumindest musste sie es versuchen. Dann, wenn die Zeit reif war, dann wenn sie die Zeichen sehen und deuten konnte.<br/>Bis dahin nahm sie die Nächte, wie sie kamen. <br/>Am liebsten mit ihm zusammen. Seinen Schmerz tief in ihr, wo er endlich Halt finden konnte. <br/>Zwar hatte sie den angeblichen Informanten in der Nokturngasse nicht gefunden, dafür hatte das Gute sie in seine Arme genommen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="dUeNomcGmUo2Fq_7nwoW49ps1vd1XsCYOd-t-MkTuA77gR2YyvQYCkSVdkQxi-1CV6FXzPk8T91jfT5jNoNjzw"/>
+          <input value="19447660" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=19447660">Comments (4)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/GrazySly">GrazySly</a>, <a href="/users/Jevan">Jevan</a>, <a href="/users/HeadInTheCloudsEyesToTheSky">HeadInTheCloudsEyesToTheSky</a>, and <a href="/users/Yaya3850">Yaya3850</a>
+             as well as 
+          10 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_19447660">
+  <form class="new_comment" id="comment_for_19447660" action="/works/19447660/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="k2tUKUZmjPy-f9it6KO7O3nhZfIdy4sDzD56swl3i4odrcQT65QNvMz8ARJGIkCa9CzkyZGpBEaWnOko9udQSw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_19447660">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_19447660" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_19447660=new LiveValidation('comment_name_for_19447660',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_19447660.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_19447660">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_19447660" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_19447660=new LiveValidation('comment_email_for_19447660',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_19447660.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_19447660" class="landmark">Comment</label>
+        <textarea id="comment_content_for_19447660" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_19447660" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_19447660_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_19447660">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_19447660=new LiveValidation('comment_content_for_19447660',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_19447660.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_19447660.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_19447660" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/19447660/hit_count.json")})</script>
+
+
+  </body>
+</html>

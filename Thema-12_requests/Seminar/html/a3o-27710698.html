@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":129,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        TRAINing Day - Spinnchen - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="JkEMULiH7pY95Ls4SRTq1kzuGMRdXzPJqrF5e7n_VZdkECM01JHEqyRxYmb1dINqRd4rnGYe3v5Or9y1GUxl4w"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="2hdyM9Ws76zTsSxoyrUQQWjSJe6tp5k_gaft2EFF1KuYRl1XubrFkcok9TZ21Xn9YeIWtpbmdAhluUgW4fbk3w"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: katekyou &quot;alternate universe&quot; sort:&gt;words</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/27710698/chapters/67820686">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=27710698">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/27710698/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/27710698/TRAINing%20Day.azw3?updated_at=1611427284">AZW3</a></li>
+          <li><a href="/downloads/27710698/TRAINing%20Day.epub?updated_at=1611427284">EPUB</a></li>
+          <li><a href="/downloads/27710698/TRAINing%20Day.mobi?updated_at=1611427284">MOBI</a></li>
+          <li><a href="/downloads/27710698/TRAINing%20Day.pdf?updated_at=1611427284">PDF</a></li>
+          <li><a href="/downloads/27710698/TRAINing%20Day.html?updated_at=1611427284">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter*s*Severus%20Snape/works">Harry Potter/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Ginny%20Weasley/works">Ginny Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Humor/works">Humor</a></li><li><a class="tag" href="/tags/Parodie/works">Parodie</a></li><li><a class="tag" href="/tags/Hogwarts%20Express/works">Hogwarts Express</a></li><li><a class="tag" href="/tags/Zugfahrt/works">Zugfahrt</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-11-25</dd><dt class="status">Completed:</dt><dd class="status">2021-01-23</dd><dt class="words">Words:</dt><dd class="words">12632</dd><dt class="chapters">Chapters:</dt><dd class="chapters">12/12</dd><dt class="comments">Comments:</dt><dd class="comments">5</dd><dt class="kudos">Kudos:</dt><dd class="kudos">20</dd><dt class="hits">Hits:</dt><dd class="hits">454</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      TRAINing Day
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Spinnchen/pseuds/Spinnchen">Spinnchen</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Harry trifft Severus Snape im Hogwarts Express und lernt von ihm ein paar sehr wichtige Lektionen.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/67820686">Chapter 1</a>: Gleis 9 ¾
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Da war Harry James Potter nun, er stand da und kaute auf einer Zuckerspinne herum.<br/>Das war nicht wirklich etwas besonderes, es gab viele Leute die dies taten, besonders an diesem Tag und an diesem Ort.<br/>Zuckerspinnen waren eine neue Süßigkeit die in der magischen Welt erst seit zwei Wochen auf dem Markt war. Jeder liebte sie, auch der anwesende Held.<br/>Und da er ein Held war, und deswegen einige Privilegien besaß, konnte er auch schon seit vier Wochen damit üben... etwas was wirklich notwendig war.<br/>Es war nicht leicht mit so einer Zuckerspinne klar zu kommen, deswegen durfte sie auch niemand unter zwölf Jahren kaufen.<br/>"Zu gefährlich", hatte das zuständige Ministerium beschlossen, und sie war zudem auch für alle verboten die den Gegenzauber nicht beherrschten.<br/>Der junge Mann kaute schneller.<br/>Das Besondere an einer Zuckerspinne war, dass sie scheinbar lebendig in Harrys Mund herumkrabbelte und dabei ein süßes Netz aus reinem Zucker webte.<br/>Man musste sie schnell erwischen, denn sie krabbelte nicht kontrolliert umher, war man nicht geschickt genug, kam sie in die Atemwege, konnte das wirklich miese Konsequenzen haben.<br/>Dreimal war sie schon in Harrys Nase gewesen, sechs Mal wäre sie fast in seiner Lunge angekommen.<br/>Vor vier Wochen kam ein Geschenkpaket des Herstellers, mit einer Anleitung zum Verzehr und dem Zauber. Ein paar von den Spinnen hatte er verschenkt, natürlich erst nachdem der Zauber gelernt wurde und alle wussten was auf sie zukam.<br/>Sechsundzwanzig Spinnen konnte man nun pro Tütchen kaufen, es gab ein paar Geschmacksrichtungen wie Honig oder Lakritze, das schmeckte man aber erst wenn die Spinne zerkaut wurde.<br/>Er hustete lachend, als er daran dachte das Remus Lupin wie wild auf seiner Spinne herumkaute und dann doch versagte, sie war ihm in die Nase geklettert und er konnte gerade noch den Gegenzauber wirken.<br/>Harry kaute noch schneller, ein wenig mit der Zunge herum schieben und dann hatte er sie sicher gleich.<br/>Mittlerweile hatte er einige Techniken zum besseren Einfangen entwickelt.<br/>Mit der Zunge verschiebe und auch irgendwie aufhalten, unter die Zähne schieben und dann drauf beißen. So etwas beherrschte man nur wenn man sehr viel Geschick besaß und wie der Held sehr viel übte.<br/>Ein Brei aus warmer Pfefferminze breitete sich in seinem Mund aus, löste auch das Netz auf und ließ sich problemlos runter schlucken.<br/>Wunderbar.<br/>Er liebte Pfefferminze, und da alle Spinnen gleich aussahen, konnte man Freunden auch mal etwas scharfes oder bitteres unterschieben.<br/>Der Gegenzauber durfte als Einziger von allen Schülern, außerhalb der Schulzeit, angewendet werden. Anders wäre der Umsatz nie so gigantisch geworden, der Hersteller rieb sich bestimmt nicht nur einmal die Hände, für diese Idee.<br/>Harry sah hoch, zur Bahnhofsuhr und zählte eine Vierzehn ab.<br/>Das war die Anzahl seiner Blicke zur Uhr in den letzten zehn Minuten, wie er fand ein ganz guter Durchschnitt.<br/>Eigentlich war es aber auch irrsinnig so ungeduldig auf den Zug zu warten.<br/>Er kam definitiv nicht früher als elf Uhr und Harry war sich sicher, dass nur Voldemorts Auferstehung, aus dem Reich der Toten, den Hogwarts Express dazu bringen konnte sich zu verspäten.<br/>Wobei, wahrscheinlich nicht, der Hogwarts Express kam nie zu spät.<br/>Aber Voldemort war definitiv tot, der Held hatte ihn selbst in die Hölle befördert, es war endgültig vorbei. Der Krieg, die Schlachten, all das Leid und die Unterdrückung, die Schmerzen, seelisch und körperlich.<br/>Aber trotz allem, auch trotz der Tatsache das es vorbei war, Harry war immer noch irgendwie gefangen. Der Sieg hatte ihm sicher nicht die Freiheit geschenkt, im Grunde war nichts für ihn anders geworden.<br/>Egal wo er hin ging, die Presse verfolgte ihn.<br/>Er musste sich nur in diesem Moment umdrehen und schon wurde ein Foto von ihm gemacht, von einer Säule aus, hinter einem Verkaufsstand... wo auch immer die Reporter sich versteckten. Etwas was dann wahrscheinlich dazu führte, dass man sich am nächsten Morgen im Tagespropheten fragte wieso er so früh nach Hogwarts fuhr.<br/>Eine Woche vor dem Beginn seines letzten Jahres.<br/>Nun eigentlich hatte er ja abbrechen wollen aber wie sah das dann aus? Es würde die Zeitungen noch mehr füllen, als wenn er es absolvierte. Und trotzdem, seine Lust darauf war sehr gering.<br/>Für was sollte er auch hingehen?<br/>Arbeiten musste er nicht, und Auror werden wollte er auch nicht mehr.<br/>Denn er konnte sich schon ausmalen wie das dann ablaufen würde:<br/>“Harry, da ist ein böser Kerl, mach den mal bitte platt.“<br/>“Ach Harry, die zwanzig entlaufenen Todesser, die schaffst du doch im Alleingang. Du hast doch Voldemort besiegt.“<br/>“Wir brauchen dir doch sicher nicht zu helfen. Die Zehn Trolle sind doch ein Kinderspiel für dich. Voldemort war doch bestimmt viel schlimmer und den hast du locker geschafft.“<br/>Er verzog fast schmerzverzerrt das Gesicht, darauf hatte er wirklich keine Lust. Und Quidditschspieler… nein bitte nicht.<br/>Das würde doch genauso ablaufen.<br/>Egal welchen Beruf er ausüben würde, am Ende musste er dann alles alleine machen. Und das alles nur, weil jeden Tag in der Zeitung stand wie unbesiegbar und stark er war.<br/>Alle verließen sich immer nur auf ihren Helden.<br/>Harry atmete tief durch, das Pfeifen des Zugs war schon zu hören, langsam wurde es unruhig auf dem Gleis.<br/>Sollte er sich eine Zeitung holen, oder nicht? Er sah sich um, der Stand des Tagespropheten war eigentlich nicht weit entfernt.<br/>Aber was war wenn das so ablief wie bei den frittierten Euleneiern, welche er sich vor zwanzig Minuten geholt hatte? Nun besaß die ganze Familie des Standbesitzers Harry-Potter-Autogramme und er gratis Euleneier.<br/>Frittierte Euleneier.<br/>Auch ganz neu auf dem Markt, und Hedwig war immer noch sauer auf ihn, wenn er sie aß. Aber jetzt war sie gerade nicht da und würde ihm nicht auf dem Kopf herum hacken. Sie machte sich allein auf den Weg nach Hogwarts, wahrscheinlich um der langweiligen Zugfahrt im Käfig zu entgehen.<br/>Harry würde sie erst am Abend wieder sehen, und dann natürlich mit einem Haufen Eulenkeksen besänftigen.  Sie ahnte doch bestimmt, dass er in ihrer Abwesenheit ein paar Euleneier aß.<br/>Der junge Mann sah auf den Beutel in seiner Hand.<br/>Zwei Mal frittierte Euleneier, zwei Sandwichs aus der Küche von Remus Lupin und eine 1 Liter Flasche Cola. Die hatte Harry schnell auf dem Muggelteil von Kings Cross besorgt, bevor er dann das Gleis 9 3/4 aufsuchte.<br/>Der Hogwarts Express fuhr auf dem Gleis ein und Harry entschied sich gegen die Zeitung, wichtiger war das er ein freies Abteil für sich bekam.<br/>Er wollte alleine sein, alleine fahren und nebenbei über seine Situation nachdenken… okay er würde wahrscheinlich die ganze Fahrt über schlafen. Mittlerweile hatte er gelernt das man überall schlafen konnte, wenn man nur genug Dreistigkeit dazu besaß.<br/>Opernbesuch mit Hermine?<br/>Kein Problem, Harry war gnadenlos eingeschlafen und Hermine hätte ihn fast in einen Frosch verwandelt. Nur fast, einen Frosch als Held wollte nicht einmal sie.<br/>Fußball mit Ron und Arthur Weasley?<br/>Sie hatten Harry sogar mit Hot Dogs beworfen, er war aber nicht wirklich aufzuwecken gewesen und ihre bösen Blicke quittierte er nur mit einem entschuldigendem Lächeln... eines das er nicht einmal wirklich ernst meinte.<br/>Der Vernichter Voldemorts war einfach nicht mehr bereit etwas zu tun was er nicht wollte, und wenn er nicht Nein sagen konnte, dann schlief er eben ein. Seine Art zu zeigen, dass er sich sehr widerwillig an diesem Ort befand, was aber seine Begleiter nicht zu stören schien. Immer und immer wieder baten sie ihn, er solle sie doch begleiten und er konnte nie Nein sagen.<br/>Bei einem Quidditschspiel wäre er aber sicher nicht eingeschlafen.<br/>Oder bei einem Konzert der Naughty Witches.<br/>Kein Wunder, Luna Lovegood war die Leadsängerin. Da durfte er einfach nicht mal  die Augen schließen, sonst verwandelte Sie ihn wirklich in einen Frosch. Einen mit blauen Warzen und rosa Haut.<br/>Aber andererseits, er mochte ihre Musik und ging mehr oder weniger gerne hin.<br/>Luna hatte die Schule gleich nach der Schlacht abgebrochen und zwei Wochen später war sie das erste Mal auf einer Bühne gesehen worden.<br/>Nun waren sie berühmt, Harry besaß alle Musikzauber ihrer Singles und Alben.<br/>Vielleicht sollte er im Zug… nein, es war verboten im Zug zu zaubern. Eine Regel die erst nach dem Tod von Voldemort eingeführt wurde, um Ruhe zu schaffen.<br/>Und es galt nicht nur für die Schüler, auch für die Lehrer und alle anderen die damit fuhren. Helden mit eingeschlossen, keine Ausnahme.<br/>Harry nahm seinen Koffer in die Hand und ging zu einem Waggon, irgendein freies Abteil würde er schon finden.<br/>Ansonsten „bat“ er einfach jemanden sich einen anderen Platz zu suchen.<br/>Immerhin war er doch Harry Potter.<br/>Wenn er diese Tatsache sonst fast nie ausnutzte, in einem solchen Fall war es sicher okay.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/68064328">Chapter 2</a>: Entscheidungen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry war endlich im letzten Waggon angekommen.<br/>Den ganzen Zug hatte er schon abgeklappert, aber überall war es hochvoll. Jedes Abteil war voll, oder mit Insassen besetzt die Harry nicht die ganze Fahrt über ertragen wollte.<br/>Und dabei begann die Schulzeit doch erst in einer Woche, was trieb die Leute nur nach Hogsmeade?<br/>Wäre er doch später gefahren, dann hätte er bestimmt ein Abteil für sich allein bekommen. Stattdessen erntete er nur Gelächter und Ablehnung, oder Ehrfurcht, die aber nicht wirklich reichte.<br/>Die zukünftigen Erstklässler hätten voll großer Ehrfurcht lieber auf dem Gang ausgeharrt, als sich ihm zu nähern. Dann wäre er alleine gewesen und...okay Harry war sauer. Vor allem auf sich selbst, und wahrscheinlich würde er eher auf dem Gang ausharren als das er dies irgendeinem anderen antat.<br/>Das blonde Mädchen aus dem zweiten Waggon hätte er einfach rauswerfen können, dann wäre das Problem gegessen gewesen und er würde schon sitzen. Aber sie hatte ihn so merkwürdig angesehen, so als ob sie es nicht in Betracht zöge sich vertreiben zu lassen.<br/>Vielleicht aber war das nur ein beginnender Flirt gewesen...  er konnte so etwas auch einfach nicht richtig deuten.<br/>Der Zug fuhr mittlerweile auch schon, er konnte das Vibrieren unter seinen Füßen spüren und die Landschaft raste an dem Fenster neben ihm vorbei.<br/>Sie fuhren schon seit 30 Minuten, und genauso lange suchte er schon nach einem freien Abteil.<br/>Seufzend nahm er sich vor diesen Waggon noch abzusuchen, wenn er dann nichts fand würde er einfach den Insassen des letzten Abteils raus werfen.<br/>Genau, das würde er tun!<br/>Der Vernichter Voldemorts würde ihm sagen, dass er selbst da drin sitzen wolle und dieser Mensch sich ein anderes Abteil suchen musste.<br/>Vielleicht würde Harry dann noch mit der Presse drohen, dass er denen ein Interview gab und darin erwähnte, wer ihn dazu zwang auf dem Gang auszuharren.<br/>Ja, das war ein perfekter Plan.<br/>Na ja, eigentlich waren es genau die Methoden die von Draco Malfoy angewandt wurden und gar nicht in der Natur von Harry Potter lagen. Aber Draco hatte sehr großen Erfolg damit, unter anderem war deswegen eine Gratis-Jahreskarte zu allen Quidditschspielen in seinem Besitz.<br/>„Ich war bei der Schlacht dabei, Harry Potter und ich haben Seite an Seite gekämpft… da bezahle ich doch nicht so einen Preis. Oder soll ich ihm davon erzählen? Wir sind die besten Freunde und ihm würde das sicher nicht gefallen was sie hier abziehen. Vielleicht probiert er dann einige der Flüche an Ihnen aus, die auch Voldemort abgekriegt hat.“<br/>Harry musste schmunzeln als er daran dachte wie Draco ihm das erzählte.<br/>Quidditschspiel mit Draco… da war er auch nicht eingeschlafen.<br/>Nur sein Arm war am nächsten Tag taub gewesen, vom Fähnchen schwenken und  rumwedeln. Und dieses Brüllen, er konnte drei Tage nur krächzen und Draco ging es nicht anders.<br/>So ein Quidditschspiel, das liebte er, zu spannend um dabei einzuschlafen...</p><p>Harry seufzte leise auf, fing dann an die Abteile im letzten Waggon abzuklappern.<br/>Eine fünfköpfige Familie, ein knutschendes Liebespärchen, sechs tratschende Hexen die alle wie Trelawaney aussahen, ein Zentaur…<br/>Harry blickte erneut in das Abteil.<br/>Ein Zentaur, eindeutig.<br/>Und er hatte es nicht sehr bequem, irgendwie sah er recht eingequetscht aus. Zudem brauchte er das ganze Abteil für sich.<br/>Was zum Teufel machte ein Zentaur im Hogwarts Express, was hatte er in London gewollt?<br/>Harry öffnete die Tür vorsichtig, das Gesicht des vierbeinigen Fahrgastes sah nicht sehr glücklich aus.<br/>„Verschwinde Potter“ knurrte der Zentaur ungehalten, da hatte wohl jemand einen schlechten Tag... wie hieß er noch gleich, Harry lag es auf der Zunge.<br/>„Ich wollte fragen was du im Zug machst“ erklärte der Gryffindor höflich.<br/>„Ich fahre nach Hause, wonach sieht es denn sonst aus“ schimpfte der junge Zentaur ungehalten.<br/>Harry schloss die Tür schnell wieder, mit dem war nicht zu reden und irgendwie verstand er es auch, der arme Kerl musste sich zwischen die Sitze auf den Boden quetschen.<br/>Er würde sich aber auch wieder beruhigen und vielleicht erfuhr Harry dann in Hogsmeade mehr.<br/>Mittlerweile hatte er einen guten Draht zu den Bewohnern des verbotenen Waldes, und sogar Bane war ihm freundlicher gesinnt.<br/>Obwohl es immer noch nicht klug war sich mit Bane anzulegen.<br/>Erst recht aber nicht mit Darien, dem Ältesten der Herde, der konnte sehr fies sein und dann auch mal austreten.<br/>Harry ging seufzend weiter.<br/>Eine Schwangere und ihr Begleiter, es sah nach dem sechstem Monat aus, eine Kindergartengruppe mit Betreuer, siebenundzwanzig Feen und im letzten Abteil Severus Snape.<br/>Harry erschrak heftig und unterdrückte ein Quietschen.<br/>Im letzten Abteil saß tatsächlich Professor Severus Snape.<br/>Harry blickte erneut kurz hinein und zog sich dann wieder zurück, er war es wirklich...verdammt.<br/>Dabei hatte er sich doch selbst versprochen den Insassen vom letzten Abteil rauszuwerfen.<br/>Aber Severus Snape… sollte Harry vielleicht die siebenundzwanzig Feen vor die Tür setzen?<br/>Nein, wenn man so etwas mit denen machte dann wurde man höchstens zu einer Steinsäule oder in einen Frosch verwandelt.<br/>Vielleicht zurück zum blonden Mädchen...die saß im ersten Waggon.<br/>Nein, nein, nein.<br/>Er musste an seinem Vorhaben festhalten.<br/>Severus Snape musste raus aus dem Abteil, damit Harry Potter rein konnte.<br/>Vorsichtig spähte er in den kleinen Raum hinein.<br/>Der Zaubertränkemeister sah verändert aus.<br/>Sein Haar war lang, seidig glänzend und gut gepflegt. Es reichte ihm schon fast bis zu den Hüften und war mit einem schwarzen Seidenband ordentlich nach hinten gebunden worden. Dazu trug der Professor eine schwarze Lederhose, wirklich eine hautenge schwarze Lederhose, und ein schwarzes Seidenhemd.<br/>Neben ihm am Haken hing ein schwarzer Ledermantel. Harry kannte so einen.<br/>Kino mit Ginny Weasley… gnadenlos eingeschlafen.<br/>Aber den Mantel von diesem Neo hatte er noch gesehen.<br/>Ob Severus Snape ein Kinogänger war?<br/>Ganz sicher nicht. Aber das war eindeutig Muggelkleidung.<br/>Vielleicht war es ja auch nicht Harrys alter Lehrer, sondern dessen unheimlicher Zwilling.<br/>Harry sah auf die linke Wange des Mannes im Abteil. Diese konnte er als einziges sehen denn der Professor sah aus dem Fenster. Und tatsächlich da war sie, die kleine unscheinbare Narbe die Lucius Malfoy ihm in der Schlacht zugefügt hatte.<br/>Es war wirklich der Severus Snape der da im Abteil saß und Muggelkleidung trug.<br/>Harry musste ihn raus werfen.<br/>Gnadenlos!<br/>Der junge Mann lehnte sich gegen eine nahe Wand und atmete tief durch. Wie sollte er es anstellen? Einfach reingehen und ihm sagen er sollte verschwinden?<br/>Zaubern durfte Harry nicht.<br/>Und wenn, der Zaubertränkelehrer würde alle Zauber durchschauen.<br/>Er hatte die Fähigkeiten des Lehrers in der Schlacht gesehen, Wahnsinn.<br/>Der Zaubertränkemeister beschwor sogar einen Werwolf, natürlich keinen echten, der aber trotzdem drei Todesser zerfetzen konnte.<br/>Sogar Remus hatte Schiss vor dem Vieh bekommen, als Severus den Werwolf, nach der Schlacht, auf Remus hetzte.<br/>Und das mit einem breiten Grinsen im Gesicht.<br/>Und wieso, weil dieser gesagt hatte Severus sähe aus wie ein Haufen zerquetschter Kohlrabi.<br/>Harry atmete erneut tief durch.<br/>Er war doch Harry Potter! Genau, wenn das schon für nichts anderes gut war, dann wenigstens für die Beschaffung eines freien Abteils.<br/>Er nahm seinen Koffer und betrat mit einem heftigen Ruck das Abteil.<br/>Severus Snape sah ihn an, Harry kniff kurz die Augen zusammen.<br/>„Raus“ er deutete auf die Tür:<br/>„Ich will das Abteil für mich.“<br/>Der Zaubertränkemeister stand langsam auf, Harry rechnete schon mit dem Schlimmsten, aber stattdessen nahm der Lehrer seinen Koffer aus der Ablage, griff nach seinem Mantel, und ging einfach raus.<br/>Harry schnappte nach Luft, er hatte für wenige Sekunden aufgehört zu atmen… und sah dem Professor nach.<br/>Dieser verschwand in dem Abteil mit der Kindergartengruppe.<br/>Die armen Kinder!<br/>Harry schloss die Tür hinter sich und shob seinen Koffer in die Ablage.<br/>Wieso war er einfach gegangen?<br/>Wieso hatte er Harry nicht zum Teufel geschickt?<br/>Und wieso fuhr Severus Snape, des Apparierens doch sicherlich mächtig, eigentlich mit dem Zug?<br/>Harry hängte seine Jacke auf und setzte sich daneben.<br/>Dort hin wo zuvor noch der Professor gesessen hatte. Welcher sich nun mit den Kindern rumschlagen musste.<br/>Wer war eigentlich schlimmer dran?<br/>Harry stand ruckartig auf.<br/>Ging raus, zu dem Abteil der Kindergartengruppe und riss es auf. Wieder hörte er auf zu atmen, kniff die Augen kurz zusammen.<br/>„Zurück in das Abteil“ erklärte er mit bebender Stimme. Severus Snape nahm seinen Kram, ging zurück und Harry folgte ihm staksend.<br/>Wahrscheinlich würde der junge Mann das noch bereuen… spätestens am Abend, wenn er sich gleich in die psychiatrische Abteilung von St. Mungos einliefern lassen konnte.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/68303425">Chapter 3</a>: Proviant
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry saß ihm gegenüber.<br/>Er saß dem Mann gegenüber, der ihn sechs Jahre lang bis zur Verzweiflung getriezt hatte. Und dieser Mann, der sah einfach aus dem Fenster raus. Er beachtete Harry gar nicht. Das war doch Wahnsinn! Vielleicht sollte er selbst zu den Kindergartenkindern gehen, eventuell konnte er den Kleinen ein paar Geschichten aus seinem Leben erzählen... nein, lieber nicht.<br/>Und doch, dieses Ignorieren tat verdammt weh.<br/>Vielleicht aber wartete der Professor auch nur auf den Beginn eines Gesprächs?<br/>“Wieso fahren sie mit dem Zug“ fragte Harry und presste die Worte fast durch seine Zähne hindurch.<br/>Natürlich hatte er Angst.<br/>Severus Snape war so ziemlich der einzige Mensch, der ihm wirklich Angst machen konnte. Selbst Voldemort gegenüber empfand er nie eine solche Furcht, war teilweise von seinem Feind sogar genervt, aber Severus Snape... vor dem konnte man doch nur Angst haben.<br/>„Hatte Lust dazu“ war die trockene Antwort und Harry gab es auf. Dieser Mann wollte sich nicht unterhalten, es war sinnlos.<br/>Am besten war es wenn er sich einfach entspannte und den Zaubertränkemeister ignorierte, ja wirklich, das war das Allerbeste.<br/>Eine Zuckerspinne vielleicht… ja das war eine gute Idee.<br/>Er griff in seinen Beutel und holte das letzte Päckchen hervor, welches er noch besaß.<br/>Gut aber, dass es noch original verschlossen war, alle sechsundzwanzig Spinnen noch drin.<br/>Vielleicht sollte er Snape auch eine anbieten, dann erstickte der daran und Harry hatte die Welt von einem Fiesling mehr befreit.<br/>Andererseits, Severus kämpfte auch mit in der Schlacht, tötete mehr Todesser als Ron und Hermine zusammen.<br/>Etwas was man dem alten Fiesling hoch anrechnete.<br/>Okay, Ron war geflohen als es hart auf hart kam und Hermine kippte beim ersten Todesser bewusstlos um, war erst wieder aufgewacht als alles vorbei gewesen war und Harry sie retten musste.<br/>Genauso war es gewesen, auch wenn sie etwas anderes behaupteten.<br/>Harry hatte es doch gesehen, er war doch da gewesen und schützte noch die schlafende Hermine.<br/>Eben weil er etwas anderes behauptete, und dann auch noch Zeit mit Slytherins wie Draco verbrachte, waren sie sauer auf ihn. Sie zeigten es nicht, aber allein schon wie er bei ihren Unternehmungen immer einschlief und kein Interesse zeigte...<br/>Mit Draco, Blaise und Pansy war es viel lustiger, spannender...<br/>Um die Häuser ziehen mit Blaise, betrunken gewesen und bei Dracos bestem Freund, unterm Küchentisch, den Rausch ausgeschlafen.<br/>Das war ein Abend gewesen, fantastisch.<br/>Harry öffnete die Verpackung und holte eine Spinne hervor um sie sich in den Mund zu stecken, sofort loskauen wäre das Klügste, aber das machten nur die, welche Angst hatten.<br/>Und so ließ er sie erstmal laufen.<br/>Dann hielt er Snape die Schachtel anbietend hin.<br/>Dieser sah darauf, griff nach einer Spinne und steckte sie sich in den Mund. Entweder wusste er genau was er da nahm oder es war ihm egal.<br/>Der Professor sah wieder zu dem Fenster raus, sein Mund bewegte sich nicht. Harry fing nun an zu kauen, der Professor aber tat es noch nicht.<br/>Da, nun kaute er.<br/>Harry beobachtete jede Bewegung seines Mundes, vergaß aber dabei selbst zu kauen.<br/>Und schon war es zu spät. Die Spinne war in seine Nase gekommen.<br/>Harry rang nach Luft, verdammt!<br/>Zauberstab!?<br/>Wo war sein Zauberstab?<br/>Er nieste, rang durch den Mund nach Luft und suchte seinen verdammten Zauberstab.<br/>Wo hatte er ihn?<br/>Im Koffer!<br/>Er sprang auf und riss seinen Koffer runter. Er durfte kein Accio im Zug wirken, nur den Gegenzauber.<br/>Im Augenwinkel sah er das breite Grinsen des kauenden Severus Snape.<br/>Harry öffnete seinen Koffer und durchwühlte ihn.<br/>Da war der Zauberstab!<br/>Gerade als er den Zauber sprechen wollte war seine Nase wieder frei.<br/>Harry fuhr herum und sah auf den ausgestreckten Zauberstab des Professors.<br/>Dieser Arsch!<br/>Er hatte extra gewartet bis Harry seinen Zauberstab in der Hand hatte, und ihn dann erst gerettet.<br/>Severus steckte den Stab wieder weg und sah kauend zum Fenster hinaus. So als wäre nie etwas gewesen.<br/>„Arschloch“ schimpfte Harry und bewarf Snape mit einer alten Shorts.<br/>Oh Nein! Das hätte er nicht tun dürfen!<br/>Der Zaubertränkemeister nahm die Shorts, betrachtete sie und warf sie dann blitzschnell aus dem Fenster raus.<br/>Entsetzt sah Harry seinen Shorts hinterher und der Professor saß so da als wäre nichts geschehen. Er kaute immer noch und schluckte dann plötzlich.<br/>Harry räumte knurrend seinen Koffer wieder ein, hob ihn in die Ablage und setzte sich wieder hin.<br/>Nie wieder, wirklich nie wieder, würde er mit diesem Mann ein Abteil teilen.<br/>Obwohl, es war wahrscheinlich seine letzte Fahrt in diesem Zug. Ginny wollte in der Muggelwelt leben, wenn sie mit der Schule fertig war, und sie waren schon so gut wie verlobt.<br/>Harry wollte das nicht, er wollte in der Zaubererwelt bleiben.<br/>Er wollte auf einem Besen fliegen und nicht mit einem Auto ins Büro fahren.<br/>Er wollte nicht mal mehr mit Ginny zusammen sein, sie war eine Furie.<br/>Eine verdammte Furie und Zicke, nichts machte er richtig, dauernd keifte sie ihn an.<br/>Und Harry hatte Angst.<br/>Angst vor der Wiederholung.<br/>Er wollte keine rothaarige Frau heiraten und einen Sohn mit ihr bekommen. Nur weil sich die Presse einen würdigen Nachfolger für ihren Helden wünschte.<br/>„Alles wiederholt sich“ sagte Hermine einmal:<br/>„Das ist er Lauf der Zeit. Das ist so vorherbestimmt.“<br/>Harry wollte aber nicht das sich alles wiederholte. Er wollte ein anderes Leben als sein Vater und vor allem wollte er nicht in der Muggelwelt leben…<br/>Doch er konnte nie Nein sagen.<br/>Seufzend nahm er ein Sandwich heraus, er biss ins Leere. Suchend sah er sich um und entdeckte sein Brot in der Hand von Severus Snape. Es war abgebissen und der Professor kaute.<br/>Dabei sah er aus dem Fenster, als wäre nichts geschehen.<br/>„Das war mein Sandwich“ fauchte Harry böse. Jeder, wirklich jeder seiner Freunde, wusste das man Harry kein Essen wegnehmen durfte.<br/>Das war absolut tödlich… aber andererseits war Severus Snape keiner von Harrys Freunden.<br/>„War“ nickte der Professor und biss erneut in das Brot.<br/>Harry fluchte einige Verwünschungen und holte dann die frittierten Euleneier heraus.<br/>„Erdbeere“ fragte der Professor.<br/>„Nein Banane“ knurrte Harry.<br/>„Sehr gut“ und schon war Harry die warme Leckerei los.<br/>„Wah“ kreischte Harry auf als Severus Snape das Brot aufaß und sich dann den frittierten Euleneiern widmete.<br/>Das war zu viel für den jungen Mann. Mit einem Satz hatte er sich auf den Professor gestürzt und versuchte ihm die Eier wieder abzunehmen.<br/>Aber jeder, wirklich jeder, wusste das Severus Snape unendlich stark war.<br/>Er packte Harry hier und dort, setzte ihn dann kurzerhand wieder auf dessen Platz. Severus setzte sich und aß genüsslich die frittierten Euleneier mit Bananenfüllung.<br/>Harry sah wie erstarrt zu.<br/>Das war doch alles ein böser Alptraum, anders konnte es nicht sein.<br/>Er atmete tief durch als der Professor die leere Packung wegwarf.<br/>„Hast du noch mehr“ fragte der Zaubertränkemeister fast neugierig.<br/>„Nein“ schimpfte Harry:<br/>„Nicht für sie.“<br/>Er holte das letzte Sandwich hervor, wollte hinein beißen, aber er traf wieder nur die Luft.<br/>“Die von Lupin sind die Besten“ stellte Snape fest und biss genüsslich in das Brot:<br/>„Mit Truthahn und Käse. Sehr gut.“<br/>Harry war wie gelähmt. Mit offenem Mund starrte er den essenden Professor an. Es war ein Traum, es musste einfach ein ganz schrecklicher Alptraum sein.<br/>„Jetzt ist es aus“ Harry löste sich aus seiner Starre und sprang auf, stürzte sich auf den Professor und packte dessen Haare…</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/68870556">Chapter 4</a>: Leerer Magen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry saß auf seinem Platz, im Abteil des Hogwarts Express und sein Magen knurrte.<br/>Er hatte nichts mehr zu Essen.<br/>Der Zaubertränkelehrer von Hogwarts hatte ihm alles genommen und selbst gegessen.<br/>Nun saß er da und richtete sein Haar. Dabei schwebte ein Spiegel vor ihm und er hantierte mit einer Bürste herum.<br/>„Davon werden sie auch nicht hübscher“ fauchte Harry böse und verschränkte beleidigt die Arme vor der Brust.<br/>„Ich bin hässlich, du dumm. Ich kann was dagegen tun, bei dir ist es hoffnungslos“ brummte der Professor.<br/>Und schon flog sein Spiegel aus dem Fenster. Eigentlich war Severus gar nicht so hässlich, Harry fand ihn sogar recht gut aussehend. Besonders mit diesem langen Haar, das wie ein Wasserfall auf seinen Schultern lag, wenn er es nicht nach hinten gebunden trug.<br/>„Jetzt fliegst du hinterher und holst ihn zurück“ der Professor packte Harry und wollte ihn scheinbar wirklich aus dem Fenster des fahrenden Zugs werfen.<br/>“Aber sie holen zuerst meine Shorts“ zappelte der junge Mann.<br/>Knurrend ließ Snape seinen Schüler los und setzte sich wieder hin um sich das Haar zusammen zu binden.<br/>Harry atmete tief durch und setzte sich auch wieder, das war knapp gewesen.<br/>„Wie haben Sie es so schnell so lang gekriegt“ fragte er dann vorsichtig, ja wirklich vorsichtig. Er hatte Severus das letzte Mal vor sechs Wochen gesehen und da war es noch so kurz wie Harrys ganze Schulzeit über.<br/>„Gar nicht“ brummte der Professor:<br/>„Albus mochte keinen langen Haare bei Männern. Aber es gibt Zauber die Haare kurz aussehen lassen, auch wenn sie lang sind.“<br/>“Und fettig.“<br/>“Das war Haargel“ fauchte Severus ungehalten:<br/>„Und ich schlafe weder in einer Gruft, noch sauge ich Erstklässler das Blut aus. Und vor allem, verwandele ich mich bei Vollmond nicht in eine Fledermaus.“<br/>Harry zuckte zusammen, er hatte wirklich gedacht das Gerücht mit der Gruft stimmte.<br/>„Pah! Das mit dem Haargel glaube ich nicht“ Harry war eigentlich nur immer noch beleidigt weil sein Magen leer war, aber der von Severus Snape nun hochvoll.<br/>Und zwar mit dem Proviant von Harry James Potter!<br/>Da durfte man ruhig beleidigt sein.<br/>Der Professor stand auf und hob seinen Koffer runter, um ihn dann vor Harrys Nase zu öffnen. Er war halbvoll mit Pflegeprodukten.<br/>Hatte der Lehrer einen Drogeriemarkt geplündert?<br/>“Duschgel, Lotion, Tagescreme, Nachtcreme, sechs Deos mit verschiedenen Gerüchen, Aftershave, Rasierschaum,“ zählte der Professor auf:<br/>„Haargel, Haarschaum, Shampoo für fettige Haare, Haarkur gegen spröde Haare, Spülung für beanspruchtes Haar, Pinzette, Rasierer mit Batterien und für den Notfall noch ein Nassrasierer…“<br/>“Was ist das alles“ staunte Harry.<br/>„Das brauche ich täglich“ Severus hielt den Tiegel mit dem Haargel vor Harrys Nase:<br/>„Das ist das Haargel welches ich benutze. Manchmal auch Haarwachs.“<br/>Harry klappte die Kinnlade runter:<br/>“Wieso?“<br/>“Wieso? Weil diese verdammte Zaubertränkebrauerei die Haare zerstört,die Haut trocken und kaputt macht. Diese Dämpfe machen einen dreißig Jahre älter als man eh schon ist. Dazu die Böser- Lehrer- Nummer, das kann einem ganz schön zusetzen.“<br/>Harry atmete tief durch, während Severus alles wieder einpackte und den Koffer in die Ablage hob.<br/>„Sie sind eitel“ stellte der junge Mann dann fest:<br/>„Sie sind einfach nur eitel.“<br/>“Keine schlechte Eigenschaft“ Severus griff in seinen Mantel und holte einen tiefroten Apfel hervor, Harrys letzte Chance.<br/>Er stürzte sich auf den Professor, packte den Apfel als wäre er ein goldener Schnatz und wollte ihn dem Lehrer entreißen.<br/>„Lästige Fliege“ schimpfte Severus und schubste Harry, ohne Apfel, auf seinen Sitz zurück:<br/>“Der ist meiner!“<br/>“Ich habe Hunger“ knurrte Harry böse und versuchte es erneut.<br/>Aber der Apfel schien in der Hand des Professors festzukleben.<br/>“Das ist deine eigene Schuld“ Severus schubste seinen Schüler zurück auf den Platz, jedoch war Harry schneller wieder da als erwartet.<br/>„Nein“ schimpfte der junge Mann:<br/>“Sie haben mir alles weg gefressen.“<br/>Harry wollte gerade in den Apfel beißen, der immer noch von Severus festgehalten wurde, als es an der Tür klopfte.<br/>Die Beiden erstarrten und Harry wurde knallrot. Er lag auf seinem Lehrer, die Nase an dem Apfel, der restliche Körper auf dem älteren Mann. Und die Pose war sehr eindeutig, besonders weil Severus seine Hand auf dem Po des Helden hatte.<br/>Sie sahen langsam zur Tür… die Frau mit dem Snackwagen.<br/>Harry sprang auf und suchte nach seinem Geld, aber er fand nur ein paar winzige Münzen… Pfund.<br/>Oh nein! Er hatte sein ganzes magisches Geld für den Proviant ausgegeben. Welcher sich nun in dem Magen seines Zaubertränkelehrers befand. Verzweifelt schlug Harry seinen Kopf gegen das Fenster, während der Professor einige Sachen kaufte.<br/>„Willst du Diät machen“ fragte Severus neugierig, als die Frau wieder weg war:<br/>„Wieso musste ich dann alles klauen was du hattest?“<br/>“Arschloch“ brüllte Harry und stürzte sich wieder auf den Lehrer:<br/>„Her mit dem Zeug. Ich hab mein ganzes Geld für den Kram ausgegeben, den Sie gefressen haben.“<br/>“Oh du armer Junge“ Severus Snape spitzte unschuldig seine Lippen und sah für einen Moment so aus, als wäre er nicht älter als Harry selbst.<br/>Die schwarzen Augen lachten jung und fröhlich, seine Züge waren weicher geworden.<br/>„Ich will was zu essen“ brüllte Harry und griff nach dem Sandwich, das sich der Professor gekauft hatte, er bekam es zu fassen und lief damit aus dem Abteil raus.<br/>Doch keine zwei Schritte später wurde er von etwas Unsichtbarem gepackt und zurück ins Abteil gezogen.<br/>Severus hatte seinen Zauberstab auf ihn gerichtet.<br/>„Sie dürfen hier nicht zaubern“ fluchte Harry.<br/>“Ich habe eine Sondergenehmigung“ nickte der Professor und setzte sich gemütlich hin, nachdem er Harry natürlich das Sandwich abgenommen hatte.<br/>Harry setzte sich ebenfalls hin und starrte auf das Essen, welches vor seiner Nase im Magen des Lehrers landete.<br/>Nur der Apfel blieb übrig.<br/>Severus drehte ihn in der Hand:<br/>“Eigentlich bin ich satt.“<br/>“Her damit“ knurrte Harry, stürzte sich auf den Professor und wollte den Apfel nehmen, landete aber nur wieder zurück auf seinem Platz.<br/>„Wie wäre es wenn du ein wenig Demut lernst“ grinste der Zaubertränkemeister:<br/>„Du hast mich nicht ein einziges Mal gefragt ob du etwas abbekommst.“<br/>Harry starrte ihn entsetzt an, seine Kinnlade klappte runter, Severus hatte recht.<br/>„Darf ich den Apfel haben“ fragte der junge Mann dann.<br/>„Mmh“ brummte der Professor.<br/>„Bitte“ fügte Harry hinzu und bekam den Apfel gereicht. Anscheinend war das eine Lektion mehr gewesen, im Leben von Harry Potter.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/69384132">Chapter 5</a>: Leere Worte
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry war satt, erstmal jedenfalls.<br/>Der Apfel war zwar nahrhaft, jedoch auch sehr klein, gewesen.<br/>Und doch reichte es ihm sicher bis Hogsmeade.<br/>Dann würde Harry im Hotel essen und in Ruhe schlafen gehen.<br/>Es waren ja nur noch ein paar Stunden bis dahin.<br/>Ein paar Stunden in der Gegenwart des unheimlichen Zwillings von Severus Snape. Es konnte einfach nicht Harrys Lehrer sein, nicht der Professor Snape, welcher kurz vor der Schlacht noch sagte:<br/>“Wenn du ihn nicht besiegst und überleben solltest, bekommst du Nachsitzen bei mir bis du Achtzig bist. Und allein fünfzig Jahre wirst du damit verbringen meine sämtlichen Labore zu putzen.“<br/>Da hatte Harry schon alleine aus Angst davor Voldemort besiegen müssen. Denn der wirkliche, richtige Professor Severus Snape hätte das wahr gemacht.<br/>Das was vor Harry saß und aus dem Fenster sah, als wäre in der letzten Stunde nichts geschehen, das war niemals Severus Snape. Das war eine billige Kopie, ein unheimlicher Zwilling und zudem ein eitler Gockel.<br/>„Was sollen die Muggelklamotten“ fragte Harry, nach zehn Minuten des Schweigens.<br/>„Du wirst es nicht glauben, ich war bis jetzt im Urlaub“ brummte der Zaubertränkemeister:<br/>„In der Muggelwelt. Paris um genau zu sein.“<br/>“Wollen Sie mich verarschen“ fauchte Harry:<br/>„Sie machen doch niemals Urlaub.“<br/>“Ich habe schon sehr oft Urlaub gemacht. Immer in den Sommerferien. Venedig, Paris, Berlin… die üblichen Reisen in irgendwelche Städte.“<br/>“Allein?“<br/>“Allein!“<br/>“Wie armselig“ schnappte Harry böse:<br/>„Aber wer will schon mit Ihnen durch die Museen tigern?“<br/>“Ich besuche keine Museen“ wehrte Severus ernst ab.<br/>“Was dann? Alte Kirchen?“<br/>“Disneyland.“<br/>“Was“ Harry kreischte fast.<br/>“Ich war in Disneyland, in Paris.“<br/>“Sie wollen mich verarschen, eindeutig.“ Das war es, es musste die unheimliche Zwillingskopie von Severus Snape sein.<br/>Vielleicht ein Frankenstein-Snape.<br/>„Nein“ Severus schüttelte den Kopf:<br/>„Ich fand es… amüsant.“<br/>„Allein?“<br/>“Allein.“<br/>“Kein Wunder das Sie es nur amüsant fanden.“<br/>“Ich habe leider niemanden der mit mir in Urlaub fährt.“<br/>“Kein Wunder“ lachte Harry gehässig und im nächsten Moment tat ihm der Schädel weh:<br/>„Au.“<br/>“Selbst schuld. Lerne Demut. Ich habe sehr viel geopfert, dazu gehört auch das gemeinsame Leben mit einem geliebten Menschen. Du hast ja dein Weasley- Mädchen. Ich bin zu alt. Alle die auf mich fliegen sehen aus wie die tratschenden Hexen aus dem vorderen Abteil.“<br/>“Sie sind aber in Ihrem Alter.“<br/>“Ja, genau das ist das Problem. Und das sie reinblütig sind.“<br/>“Aha?“<br/>“Das kapierst du wohl nicht. Okay, nehmen wir ein Beispiel. Minerva McGonagall.“<br/>“Ja und?“<br/>“Sie ist nicht reinblütig. Und sie ist Achtzig. Wie sieht sie aus?“<br/>“Fit.“<br/>“Und Sybill Trelawaney.“<br/>“Urgghs.“<br/>“Sie ist etwa so alt wie ich. Wie sieht sie aus?“<br/>“Grauenhaft.“<br/>“Sie ist reinblütig. Reinblütige Hexen und Zauberer werden zwar uralt, sehen aber auch so aus. Welche die Muggelblut in sich fließen haben, werden zwar auch uralt, sehen aber noch fit aus. Dafür sind sie im Alter dann aber auch etwas gebrechlicher, Rheuma und so.“<br/>“Ich bemitleide Sie nicht“ Harry spitzte unschuldig die Lippen.<br/>„Tja“ grinste Severus breit:<br/>„Ich muss dich leider enttäuschen. Mein Vater war ein Muggel gewesen.“<br/>Harry klappte erneut die Kinnlade runter. Das war doch wohl ein Witz.<br/>„Es ist nicht immer alles so wie es scheint“ nickte der Professor:<br/>„Aber du achtest einfach nicht auf Details“ er zeigte eine Armbanduhr vor:<br/>„Die trage ich schon seit Jahren. Tag für Tag. Aber sie ist noch keinem aufgefallen.“<br/>“Sie haben noch nie drauf gesehen.“<br/>“Wieso sollte ich? Sie bleibt stehen, sobald ich in die Zaubererwelt komme.“<br/>“Und der Rasierapparat?“<br/>“Verzaubert.“<br/>“Wieso verzaubern Sie nicht die verdammte Uhr“ Harry fühlte sich der Verzweiflung nah.<br/>„Dann wäre sie ja nicht mehr die Uhr, welche ich immer trage, dann wäre sie einfach nur eine verzauberte Uhr, wie sie viele haben. Aber ich will diese Uhr tragen, keine andere.“<br/>Harry wollte etwas dazu sagen und schüttelte den Kopf. Er lehnte sich zurück und seufzte leise, das war doch irrsinnig. Eine Uhr veränderte sich doch nicht dadurch das man sie verzauberte. Der Rasierapparat war doch auch noch derselbe Rasierer.<br/>Nur eben verzaubert.<br/>„Wenn ich dich unsterblich zaubern könnte“ fragte Severus Snape:<br/>“Wenn ich das machen würde… wärst du dann immer noch Harry Potter?“<br/>“Natürlich.“<br/>“Aber du wärst nicht mehr der Harry Potter der du vorher gewesen bist. Denn vorher warst du sterblich. Vorher stand fest das dein Leben irgendwann endet und es dann Harry Potter nicht mehr gibt. Nach der Verzauberung bist du nur noch ein Lebewesen, welches diesen Namen trägt. Du wärst nicht mehr das, was deine Mutter auf die Welt gebracht hat. Und wenn ich die Uhr verzaubere dann ist es nicht mehr die Uhr, die ich von meinem Vater einmal bekommen habe.“<br/>“Dann haben sie aber die Batterien auswechseln müssen.“<br/>“Wenn du krank wirst und ein neues Herz brauchst. Dann bekommst du bei den Muggeln eins, bist aber danach immer noch Harry Potter. Nur dein Herz wurde ausgetauscht. Du wurdest aber nicht im Ganzen verändert. Wenn ich dich aber unsterblich zaubern würde dann wärst du im Ganzen verändert. Ich mache nicht dein Herz allein unsterblich, sondern alle deine Organe, deine Haut und deine Seele. Das verändert dich. Dein Charakter wird sich verändern weil du dann weißt, dass du unsterblich bist.“<br/>“Die Uhr wird nicht wissen, dass sie dann auch in der Zaubererwelt funktioniert. Was soll der Schwachsinn?“<br/>“Ich kenne den Spruch nicht.“<br/>“Was!?“<br/>“Ich kenne den Spruch nicht, der sie auch in der Zauberwelt laufen lässt.“<br/>“Aber den für den Rasierer.“<br/>“Das war Lupin. Er hat mir den Spruch nicht gesagt.“<br/>Es wurde still in dem Abteil. Totenstill.<br/>„Also haben Sie mir gerade Schwachsinn erzählt.“<br/>“Das musst du selbst entscheiden.“<br/>“Es war absoluter Schwachsinn“ Harry zog seinen Zauberstab hervor und schwang ihn, richtete ihn auf die Uhr, die daraufhin rot aufleuchtete und dann wieder tickte.<br/>„Und wie geht der Spruch?“<br/>“Verrate ich Ihnen nicht.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71007921">Chapter 6</a>: Kaugummi
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Noch vier Stunden“ Harry sah zum Fenster raus, so wie Severus Snape es schon wieder tat:<br/>„Und Sie haben mir immer noch nicht gesagt wieso Sie mit dem Zug fahren.“<br/>“Ich wollte mich ausruhen. Heute Morgen war ich noch auf der schlimmsten Achterbahn gewesen. Ich hab die letzten Nächte auch kaum geschlafen.“<br/>“Tja und da tauche ich auf und bringe Ihren Plan zum scheitern.“<br/>“Wäre nicht das erste Mal“ Severus griff in seinen Mantel und holte ein Päckchen Kaugummis hervor.<br/>„Nein“ schimpfte Harry, nahm es ihm weg und warf es aus dem Fenster.<br/>„Was soll das?“<br/>“Wir sitzen uns gegenüber. Ich hasse es wenn ich zusehen muss wie jemand wie ein Rindvieh auf Kaugummi rum kaut.“<br/>“Rindvieh“ knurrte Severus Snape.<br/>„Genau, wie eine Kuh auf der Weide die ihr Gras wiederkäut.“<br/>“Ich werde sicher nicht wie eine Kuh, auf der Weide, aussehen.“<br/>“Aber wie ein Ochse“ fauchte Harry böse und bekam schon wieder einen schmerzenden Schädel verpasst.<br/>„Sie dürfen mich nicht schlagen!“<br/>“Weichei. Es ist eine Woche vor Schulbeginn, du bist noch nicht offiziell mein Schüler. Ich kann dich schlagen wie ich will. Und du ersetzt mir den Kaugummi.“<br/>“Ein Pfund…“<br/>“2 Euro. Der war noch aus Paris“ Severus verschränkte die Arme vor der Brust und sah Harry nahezu beleidigt an.<br/>„Machen sie mich nicht nach“ kreischte der junge Mann.<br/>„Ich will zwei Euro“ knurrte der Zaubertränkemeister beleidigt.<br/>„Zwei Pfund.“<br/>“Ich will ein zwei Euro Stück. Oder zwei einzelne Eurostücke.“<br/>“Ich habe keine Euros.“<br/>“Dann neuen Kaugummi. Aus Frankreich.“<br/>“Habe ich auch nicht.“<br/>„Dann etwas gleichwertiges“ Severus sah ihn auffordernd an und Harry kramte mühsam in seiner Jackentasche. Aber fand nichts außer einen Kugelschreiber. Den reichte er dem Zaubertränkemeister.<br/>„I’m Magic“ stand auf dem Kuli und Severus drehte ihn nachdenklich in der Hand.<br/>„Schreibt der auch“ fragte er dann.<br/>„Gerade erst gekauft. Für drei Pfund. Ich krieg noch was zurück.“<br/>“Ich habe kein Muggelgeld mehr dabei.“<br/>“Dann etwas gleichwertiges.“<br/>Severus Snape atmete tief durch und griff in seine Hosentasche. Knurrend holte er einen Schlüsselanhänger hervor. Es war ein kleines rotes Herz. Wenn man es anschaltete, dann kam ein Lichtsignal im Herzschlagtakt.<br/>„Hier“ der Zaubertränkemeister reichte Harry den Anhänger:<br/>„Kannst du deiner geliebten Furie geben.“<br/>“Woher wissen Sie, dass sie eine Furie ist“ Harry nahm den Schlüsselanhänger und steckte ihn ein, den bekam Ginny sicher nicht.<br/>„Ich hab ihr eine schlechte Note gegeben und sie schlägt mir ihr verdammtes Zaubertränkebuch um die Ohren. Das sagt wohl alles.“<br/>„Das hat sie mir nie erzählt.“<br/>“Ich nehme an, dass sie dir selten etwas erzählt“ brummte Severus:<br/>„Oder hat sie dir erzählt was sie ihren Freunden über dich erzählt?“<br/>“Nein.“<br/>“Und ich habe meine Ohren überall. Ich weiß, dass sie dich als Weichei ansieht, dass sie es für unwahrscheinlich hält das du je einen hoch kriegst und das du dann, wenn du es erkennst, heulen wirst. Das sie nur mit dir zusammen kommen wollte, weil man ja Harry Potter dann an der Angel hat und das sie niemals ein Kind von dir will, von anderen aber schon. Egal ob sie dann mit dir verheiratet ist oder nicht. Sie hält dich nicht für sonderlich zeugungsfähig.“<br/>“Das ist gelogen“ knurrte Harry böse.<br/>„Habe ich dich jemals angelogen?“<br/>Harry knurrte wütend, sagte aber nichts, Severus hatte keinen Grund ihn anzulügen. Und so wie Ginny mit ihm umsprang war das alles noch nicht mal unwahrscheinlich. Sie mutierte zu einer zweiten Molly, wenn er bei ihr war und Sex hatten sie auch noch nicht gehabt. Zudem war sie sehr oft angeblich einkaufen gewesen und kam mit leeren Händen wieder.<br/>Er schnaubte, diese Beziehung war sowieso zum Scheitern verurteilt gewesen, Harry hatte immer noch Angst vor der Wiederholung.<br/>„Machst du jetzt mit ihr Schluss“ wollte Severus wissen.<br/>„Das weiß ich noch nicht.“<br/>“Du tust es.“<br/>“Ja, das tue ich“ keifte Harry böse.<br/>„Du bist sehr leicht zu beeinflussen. Das solltest du ablegen, sonst kann weiterhin jeder mit dir machen was er will. Deswegen bist du doch nur mit ihr zusammen. Deswegen hast du doch nur Voldemort besiegt. Weil irgendjemand mal gesagt hat das du das machen wirst. Draco hätte es genauso geschafft.“<br/>“Es war in der Prophezeiung.“<br/>“Schwachsinn. Prophezeiungen sind nur Wegweiser. Es ist wichtig was man draus macht. Prophezeiungen sind nur gesprochene Worte.“ Severus verschränkte die Arme wieder vor der Brust.<br/>„Was wäre gewesen wenn du auch Angst gehabt hättest wie dein rothaariger Freund? Was wäre wenn du auch die Beine in die Hand genommen hättest?“<br/>“Dann wäre Voldemort nicht tot“ schnaubte Harry böse.<br/>„Dann hätte es jemand anderes gemacht. Wir hatten einen Notfallplan. Der Plan wäre zwar auch mein Tod gewesen, aber wir hatten wirklich einen Notfallplan. Wenn du gestorben wärst und nicht Voldemort, dann hätten wir diesen Plan auch eingeschaltet. Voldemort wäre so oder so gestorben. Prophezeiungen sind eben nur Wegweiser. Und man ist ein Dummkopf wenn man sich darauf verlässt.“<br/>“Und wieso musste ich das dann machen?“<br/>“Weil ich keine Lust auf Sterben hatte. Was willst du denn? Du lebst, er ist tot und wir sind alle glücklich. Und weißt du wieso? Weil du dich hast beeinflussen lassen. Dir hat jemand gesagt, dass du es machen musst. Also hast du es getan. Jeder kann alles mit dir machen.“<br/>“Das ist nicht wahr.“<br/>“Wetten wir?“<br/>“Mmh.“<br/>Severus grinste breit.<br/>„Ich wette, dass ich dich innerhalb dieser Zugfahrt“ erklärte der Zaubertränkemeister dann:<br/>„Küssen werde, und du willst es sogar.“<br/>“Niemals“ fauchte Harry:<br/>„Das ist ja eklig.“<br/>“Wetten wir?“<br/>“Okay um was?“<br/>“Wenn ich gewinne“ Severus grinste noch breiter:<br/>„Dann putzt du mein Labor, und zwar mit den Händen.“<br/>“Und wenn ich gewinne dann mache ich das ganze Jahr keine Hausaufgaben mehr in Zaubertränke“ knurrte Harry<br/>„Und das Straffrei.“<br/>“Du wirst nicht gewinnen. Aber es gibt eine Regel dabei.“<br/>“Welche?“<br/>“Keiner von uns verlässt das Abteil bevor der Zug anhält.“<br/>“Okay“ Harry reichte ihm die Hand, Severus packte sie und…</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71007975">Chapter 7</a>: Wiederholung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry saß auf dem Schoß von Severus Snape, und war ihm ungewöhnlich nah, zu nah.<br/>Er roch das billige After Shave, die Lotion, das Duschgel und eine Mischung aus sieben, oder acht, Deos.<br/>Severus grinste breit, es war ein Unheil verkündendes Grinsen.<br/>Mit einem Satz war Harry wieder auf seinem Platz und atmete schwer.<br/>„So nicht“ zischelte er böse.<br/>„Nein, wirklich nicht“ der Zaubertränkemeister konnte sich ein Schmunzeln nicht verkneifen:<br/>„Ich will ja das du es auch willst.“<br/>“So etwas will ich niemals. Ich bin nicht schwul.“<br/>“Das habe ich auch nie behauptet. Man muss nicht schwul sein um einen Mann küssen zu wollen. Man kann auch bisexuell sein.“<br/>“Ich bin auch nicht bi. Ich steh auf Frauen“ Harry zitterte vor Aufregung, damit hatte er nicht gerechnet. Und verdammt, er konnte sich nun nicht einmal mehr zu den 27 Feen setzen. Er war gefangen. Wie konnte er nur so leichtsinnig sein, er hatte sich von diesem Mann zu einer Wette überreden lassen… schon wieder überredete ihn jemand zu etwas, was er eigentlich gar nicht tun wollte.<br/>Snape hatte recht.<br/>Harry war viel zu leicht zu beeinflussen, ob nun von Prophezeiungen oder Ginny. Wahrscheinlich würde er nicht mit ihr Schluss machen, sie heiraten und fünf Kinder haben, die alle nicht von ihm waren.<br/>Und das nur weil sie es wollte.<br/>Dabei wollte er doch keine Wiederholung.<br/>Ein Klos bildete sich in seinem Hals. Harry hatte nie etwas besonderes sein wollen, außer für den Menschen den er liebte, und der ihn liebte. Ginny liebte ihn gar nicht, nur seinen Namen und die Hülle. Sie würde sich irgendwann ihren Harry Potter zusammen schmieden, wie sie es haben wollte. Dann war er verzaubert wie die Uhr von Snape und nicht mehr das was seine Mutter einmal zur Welt gebracht hatte.<br/>„Heulst du jetzt“ fragte Severus und es klang leicht genervt.<br/>„Nein“ schnappte Harry nach Luft.<br/>„Und wieso wirst du blass und verziehst dein Gesicht so komisch?“<br/>“Wut“ schnappte Harry erneut nach Luft. Er durfte nicht weinen, nicht beim Gedanken daran, dass er seine Zukunft dem nächsten Troll genauso gut in den Hintern schieben könnte.<br/>„Auf dich selbst“ Severus atmete tief durch:<br/>„Ich küsse kein verheultes Gesicht. Also erzähl schon.“<br/>Harry schwieg, versuchte sich zu beruhigen und dachte dabei darüber nach ob er es dem Zaubertränkemeister wirklich erzählen sollte.<br/>Wieso eigentlich nicht?<br/>“Wiederholung“ schnappte Harry nach Luft:<br/>„Hermine hat gesagt das sich alles wiederholen wird“ nun plapperte Harry wie ein Wasserfall:<br/>„Sie hat gesagt das ich eine rothaarige Frau heiraten werde. Das ich einen Sohn bekomme der mir ähnlich sein wird. Das ich nichts dagegen tun kann weil das Schicksal sich immer wieder wiederholt und das es so geschehen wird wie es vorherbestimmt ist. Ich will das nicht. Ich will keine Wiederholung. Ich will meine Kinder nicht James oder Lilly nennen. Ich will überhaupt keine Kinder, weil ich mein halbes Leben lang schon genug Stress hatte. Ich will auch keine rothaarige Frau haben. Ich will eine blonde oder eine brünette. Vielleicht was schwarzhaariges. Aber nur nichts rotes. Ich will nicht das die Leute irgendwann sagen, hey die sehen aus wie Lily und James Potter. Ich will das sie sagen das sind Harry Potter und seine Lebensgefährtin. Aber wenn ich Ginny heirate… dann wiederholt sich alles. Das ist doch scheiße.“<br/>Severus Snape legte nachdenklich den Kopf schief.<br/>„Luna hätte zu dir gepasst“ sagte er dann und Harry sah ihn verwirrt an:<br/>„Luna Lovegood. Sie hätte perfekt zu dir gepasst. Jetzt ist sie weg. Auf Welttournee kann sie sicher keinen Ehemann gebrauchen, der ihr die Show stiehlt. Ich war auf ihrem letzten Konzert gewesen, bevor ich nach Paris reiste, gute Musik. Hab alle Zauber gekauft. Ich gebe zu, ich mag sie irgendwie. Wäre gut für dich gewesen.“<br/>“Sie hat nie Interesse gezeigt“ Harry schniefte.<br/>“Idiot“ schimpfte Severus böse:<br/>„Jedes verdammte Mädchen in der magischen Welt ist an dir interessiert. Aber nicht alle sind so dumm und springen dir in die Arme. Luna hättest du erobern müssen. Ihr zeigen das du etwas für sie empfindest. Aber sie hätte dann gesehen das du etwas besonderes bist, etwas ganz besonderes. Und etwas so besonderes lässt man nicht mehr los. Du hättest dich anstrengen müssen, euer ganzes Leben lang. Sie jeden Tag neu erobern. Und hast du gesehen wie hübsch sie geworden ist? Das ist keine zweite Lily, das ist ein Engel.“<br/>“Vorbei“ seufzte Harry leise.<br/>„Endgültig. Sicher holt sie sich irgendeinen Rocker… und du siehst sie nur noch in der Zeitung.“<br/>Der Professor schwang den Zauberstab und schon erklang ein Lied von Luna, die einzige Ballade.<br/>Severus lehnte sich zurück und atmete tief durch.<br/>„My heart is cold as Ice“ sang Luna und Harry knurrte wild, dann beendete er das Lied mit seinem Zauberstab.<br/>„Du darfst nicht im Zug zaubern, und das war jetzt auch nicht das erste mal“ erklärte Severus ernst und öffnete die Augen wieder.<br/>„Schweigen Sie, sonst verwandele ich Sie in ein Hängebauchschwein“ brüllte Harry ihn an.<br/>„Wie einfallsreich, doch selbst in diesem Zustand könnte ich dich noch dazu bringen mich küssen zu wollen.“<br/>“Niemals.“<br/>“Wette nicht darauf.“<br/>“Mit Ihnen wette ich sowieso nie wieder.“<br/>“Dachte ich mir“ Severus stand auf und streckte sich, dann wollte er das Abteil verlassen.<br/>„Was ist mit der Regel“ fauchte Harry.<br/>„Erstens, brauchst du keine Angst haben das ich dir weglaufe… ich will dich ja küssen. Und zweitens, ich muss aufs Klo, da gilt die Regel nicht.“<br/>Und weg war er. Harry schluckte hart, worauf hatte er sich da nur eingelassen?</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71008011">Chapter 8</a>: Kündigung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es dauerte eine Weile bis der Zaubertränkelehrer zurückkehrte und sich gemütlich hinsetzte.<br/>„Du siehst nicht gut aus“ stellte er fest, Harry saß auf seinem Platz wie ein Häufchen Elend.<br/>“Mir gefällt die Vorstellung nicht Ihre eklige Zunge spüren zu müssen“ knurrte der junge Mann böse.<br/>Und schon hatte Severus ihm eben diese Zunge raus gestreckt, grinsend und mit einem großen Schalk im Nacken sitzend.<br/>„Pah“ schmollte Harry und konnte sich ein Grinsen nicht verkneifen… doch dann wurde er wieder ernst. Da war noch eine Frage die auf ihm brannte.<br/>„Waren Sie schon immer so“ fragte er dann vorsichtig.<br/>„Was meinst du“ Severus sah auf die Uhr, er schien auf etwas zu warten.<br/>„So wie jetzt. Was ist mit der böser- Lehrer- Nummer? Wer davon ist der echte Snape? Der jetzt vor mir sitzt oder der den ich die letzten Jahre kennen gelernt habe.“<br/>Severus schwieg.<br/>Harry sah ihn auffordernd an.<br/>Severus schwieg.<br/>„Antworten Sie“ schimpfte Harry böse.<br/>„Was soll ich auf eine so dumme Frage antworten?“<br/>“Arschloch“ fauchte Harry.<br/>„Darauf antworte ich erst recht nicht. Denk drüber nach, dann kommst du vielleicht selbst drauf.“<br/>Harry knurrte in seinen nicht vorhandenen Bart hinein und schwieg. Es war wirklich eine dumme Frage gewesen. Wahrscheinlich war alles in den letzten Jahren nur Show. Mehr nicht.<br/>„Und was ist jetzt“ fragte er dann:<br/>“Voldemort ist endgültig tot.“<br/>“Ich hab gekündigt“ nickte Severus ernst und Harry kreischte.<br/>„Gekündigt“ kreischte Harry.<br/>„Gekündigt“ nickte der ehemalige Professor.<br/>„Welchem Gott muss ich dafür danken?“<br/>Harry grinste breit, aber innerlich war er total aufgewühlt. Eigentlich hatte er sich vorgestellt nun mal endlich Spaß im Zaubertränkeunterricht zu haben. Dann wenn Severus seine Maske nicht mehr tragen musste, wenn er endlich er selbst sein konnte.<br/>So wie auf dieser Zugfahrt.<br/>„Dem Ministergott. Denn der hat meiner Kündigung freudig statt gegeben.“<br/>“War wohl ein ehemaliger Schüler gewesen“ maulte Harry.<br/>Wieso tat er Harry das nur an? Es sollte doch ein perfektes letztes Jahr werden, ohne Stress, ohne Angst.<br/>„Du bist nicht so begeistert wie du tust“ Severus griff in seine Manteltasche und holte einen Lutscher hervor. Er befreite das Objekt von seinem Papier und steckte es sich in den Mund.<br/>„Sie sind verrückt geworden“ staunte Harry.<br/>„Jetscht erscht gemerscht“ nuschelte Severus zwischen Lutscher und breitem Grinsen.<br/>Harry packte den Stiel des Lutschers, riss Severus diesen aus dem Mund und warf ihn aus dem Fenster.<br/>“Hey“ der ehemalige Lehrer sprang auf und sah seiner Süßigkeit hinterher, dann spießte er Harry mit seinen schwarzen Augen förmlich auf. Harry zuckte zusammen, diesen Böser-Lehrer-Blick kannte er sehr gut.<br/>Severus kam näher, beugte sich über den jungen Mann und war ihm dann so nahe, dass sich fast ihre Nasen berührten.<br/>Harry rutschte immer mehr in den Sitz hinein, das war nicht gut, das war ganz und gar nicht gut.<br/>„Der war auch aus Frankreich“ knurrte Severus Snape und Harry roch das er wohl nach Pfefferminz geschmeckt haben musste.<br/>Dann spürte er wie etwas in seine Hosentasche griff, den Schlüsselanhänger raus zog, doch bevor Severus damit verschwinden konnte hielt Harry die diebische Hand fest.<br/>„Meiner“ schimpfte der junge Mann.<br/>„Ich will ihn wieder, für den Lutscher.“<br/>“Nicht den. Den will ich behalten.“<br/>Harry nahm ihm den Anhänger wieder ab und steckte ihn ein.<br/>„Pah den gibt’s in London an jeder Ecke zu kaufen“ Severus setzte sich hin, er war beleidigt, wohl wegen des Lutschers.<br/>„Ich will aber diesen und keinen anderen.“<br/>“Für was“ nun wurde Severus neugierig.<br/>„Vielleicht als Andenken“ murmelte Harry und seufzte leise.<br/>Hogwarts ohne Severus Snape, das ging doch nicht. Das war ja schlimmer als Hogwarts ohne Häuser, große Halle und Quidditsch.<br/>„Ich habe nicht gesagt, dass ich Hogwarts verlasse“ Harry sah zu dem Professor der nun unschuldig die Lippen spitzte:<br/>“Gib es zu, du würdest mich vermissen.“<br/>“Ja“ seufzte Harry leise, jetzt war er schon wieder verarscht worden. Das musste er Snape irgendwann heimzahlen.<br/>Aber was machte Severus dann für einen Job? Hausmeister? Filch war tot. Das stand fest. Verdammt, dieser alte Idiot hatte auch noch mitgekämpft.<br/>Sein Tod war so unnötig gewesen.<br/>Und Snape als Hausmeister? Fies genug konnte er ja werden. Aber wenn das nur Show gewesen war…<br/>„Weichei“ schimpfte Harry plötzlich:<br/>„In Wirklichkeit sind Sie ein Weichei welches keiner Fliege etwas zu Leide tun könnte. Haben Sie etwa gekündigt weil ihnen der Job in Wirklichkeit zu hart war?“<br/>Klatsch.<br/>Die Ohrfeige hatte gesessen. Wäre Harry nicht ein wenig kräftiger als seine Mitschüler, was er wohl dem Quidditsch zu verdanken hatte, hätte es ihn in diesem Moment durch die Abteiltür geschossen.<br/>„Arschloch“ brüllte der junge Mann und stürzte sich auf Snape. Jetzt würde dieser seine Abreibung bekommen. Aber stattdessen wurde Harry hier und dort gepackt, und auf seinen Platz gesetzt.<br/>„Willst du noch einen Schlag“ fauchte Snape böse:<br/>„Ich kann dir auch einen Sonderflug nach Hogsmeade verpassen. Angetrieben von meiner Faust.“<br/>Severus war sauer, Harry sah es in den schwarzen Augen, die schon fast weinrot wirkten.<br/>„Ich habe gekündigt damit ich den schwersten und schlimmsten Job an dieser verdammten Schule übernehmen konnte. Und wieso“ die Stimme des Professors war bedrohlich kalt geworden:<br/>„Wegen dir. Und wenn du aus deiner weinerlichen Scheinwelt aufgewacht bist ,dann wird dir vielleicht auch mal klar wieso. Wach endlich auf! Sonst prügele ich dich ins Nirwana!“<br/>Harry hob sein Bein und schon hatte er dem Lehrer in die Weichteile getreten. Snape wurde blass, schwankte und musste sich setzen. Das tat weh. Harry wusste wie weh so etwas tun konnte und stellte zu seiner Befriedigung fest das Snape nicht alles ertragen konnte. Auch wenn er mit einem gebrochenen Bein noch auf dem Schlachtfeld rum gelaufen war, um Todesser zu töten, so einen Tritt steckte er nicht so einfach weg.<br/>“Das kriegst du zurück“ presste der Professor hervor und Harry grinste nur triumphierend.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71008026">Chapter 9</a>: Wahrheit?
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus spürte wie der Schmerz langsam verschwand, aber Harry grinste immer noch. Das würde dieser Wicht noch zurück bekommen.<br/>„Und ist die Potenz wieder hergestellt“ fragte der junge Mann grinsend:<br/>„Oder immer noch impotent.“<br/>Und schon war Severus wieder bei ihm, hielt mit der einen Hand die Beine von Harry fest, mit der anderen hatte er dessen Hals umschlossen.<br/>„Ich nehme dir gleich deine Potenz“ knurrte der ehemalige Zaubertränkelehrer:<br/>„Und das ist wesentlich schmerzhafter als das was du mir eben zugefügt hast.“<br/>“Trauen Sie sich sowieso nicht“ grinste Harry:<br/>“Sie würden mir nie weh tun können.“<br/>“Was macht dich so sicher?“<br/>“Weil Sie ihr halbes Leben alles für mich getan haben und nicht einmal jetzt damit aufhören können.“<br/>Severus sah ihn leicht erstaunt an, im Grunde stimmte es. Er hatte wirklich immer alles für Harry getan. Er war für ihn Lehrer geworden, damit er auf ihn aufpassen konnte sobald dieser zur Schule ging. Er hatte alles immer nur für Harry getan, er wäre sogar für ihn gestorben, mit Freuden sogar.<br/>„Das bedeutet aber nicht, dass ich dich besonders gut leiden kann“ Severus setzte sich wieder und knurrte in seinen nicht vorhandenen Bart.<br/>„Und wieso wollen Sie mich dann küssen?“<br/>“Um dir zu zeigen, dass du alles mit dir machen lässt.“<br/>„Kann es da nichts anderes geben?“<br/>“Nein“ Severus leckte sich über die Lippen:<br/>„Vielleicht gefällt es dir ja.“<br/>“Definitiv nicht. Ich steh auf Mädchen, nicht ein bisschen auf Kerle“ Harry knurrte wieder.<br/>„Jeder Mensch wird bi geboren, nur sein Umfeld macht ihn hetero oder homosexuell.“<br/>“Wer sagt das?“<br/>“Irgendeine Muggelzeitung.“<br/>“Ich hasse die Muggel“ kreischte Harry:<br/>„Ich bin nicht bi oder schwul. Ich bin hetero.“<br/>„Du hasst doch die Muggel nicht“ Severus lachte leise auf:<br/>„Es ist ganz normal das du nichts mehr mit ihnen zu tun haben willst und diese Welt ist wesentlich einfacher, reicher. Und das du angeblich hetero bist weiß jetzt zu Genüge.“<br/>„Schreiben Sie es sich von mir aus auf. Und Sie werden die Wette nicht gewinnen.“<br/>“Wirklich nicht“ Severus stand auf und kniete sich vor Harry, seine Züge wurden weicher und seine Stimme dunkler, rauer:<br/>“Habe ich dir eigentlich schon gesagt wie wunderschön du für mich bist. Deine Augen, so klar wie Diamanten, rein und strahlend wie Smaragde. Und dein Haar, das so seidig glänzt“ er nahm eine Hand von Harry zart und hauchte einen sanften Kuss darauf:<br/>“Deine Haut fühlt sich an wie Seide, so weich und makellos. Noch nie zuvor habe ich ein so wundervolles Wesen wie dich gesehen“ Harry spürte wie ihm das Blut in den Kopf schoss:<br/>„Eine Veela, oder eine Elfe… egal welches Wesen… sie alle erblassen neben deiner Schönheit.“<br/>Severus stand auf, grinste süffisant und setzte sich wieder hin um triumphierend die Arme vor der Brust zu verschränken.<br/>Harry schnappte nach Luft.<br/>„Sie Arschloch“ brüllte er dann.<br/>„Was denn? Sag mir nicht das es dir nicht gefallen hat“ Severus spitzte seine Lippen unschuldig.<br/>„Aber es war doch gelogen“ knurrte Harry böse.<br/>Noch nie hatte ihm jemand auch nur etwas ähnliches gesagt. Und Severus Snape sollte das sicher nicht tun. Aber andererseits, wenn er nicht schwul war, wieso hatte es ihm dann gefallen? Der Professor hatte ihm doch einen Handkuss gegeben, wie man es bei einer Lady macht, und er hatte dieselben Worte benutzt, die man eigentlich für eine Frau anwendet.<br/>„Woher willst du das wissen“ fragte Severus:<br/>„Habe ich dich jemals angelogen?“<br/>“Gerade eben“ fauchte Harry:<br/>“Sie können mich nicht leiden, das haben Sie gesagt, und dann schmieren Sie mir Honig um die Nase, damit Sie ihre blöde Wette gewinnen. Sie haben doch gar kein Labor mehr, wenn Sie kein Zaubertränkelehrer sind.“<br/>“Ich habe ein ehemaliges Labor und das muss für den neuen Lehrer eine Grundreinigung bekommen.“<br/>“Die Wette lautete: Ich muss Ihr Labor putzen.“<br/>“Ich habe ein Labor in meinem Haus. Da kleben die explodierten Tränke dreißig cm dick an den Wänden. Das kannst du gerne putzen, du wirst nur Jahre dafür brauchen. Putzen wirst du so oder so.“<br/>“Niemals. Sie werden mich niemals küssen, und wenn dann lasse ich es nicht kampflos zu“ Harry schrie fast, sein Kopf war ganz rot vor Wut, er rang nach Luft.<br/>„Reg dich ab“ knurrte Severus.<br/>„Ich will mich aber jetzt nicht abregen“ kreischte Harry und schon tat ihm die andere Wange auch noch weh.<br/>Es wurde still in dem Abteil, unheimlich und totenstill.<br/>„Schade irgendwie“ brummte Snape dann:<br/>“Du hast wirklich ein hübsches Gesicht. Aber gegen deine Dummheit helfen nur kräftige Ohrfeigen.“<br/>Klatsch.<br/>„Autsch“ Severus Snape hielt sich die Wange, sie pulsierte vor Schmerz.<br/>„Auch kleine Dummheiten müssen bestraft werden“ Harry hielt sich die schmerzende Hand.<br/>„Da schlägt ja Granger noch härter zu“ knurrte Severus böse.<br/>„Die hätte Ihnen die Augen ausgekratzt.“<br/>„Sie wäre schon längst vor Angst geflohen und hätte sich zu den tratschenden Weibern gesetzt… nein falsch, sie wäre nicht mal auf die Idee gekommen sich hier breit machen zu wollen.“<br/>“Weil Sie ein stinkender, fieser Eber sind, der nichts anderes im Sinn hat als anderen Leuten das Leben schwer zu machen.“<br/>“Habe ich dir in den letzten drei Stunden das Leben schwer gemacht?“<br/>“Ja“ knurrte Harry böse:<br/>“Wegen Ihnen werde ich mit meiner Freundin Schluss machen.“<br/>“Oh wie schlimm, du wirst die Furie los sein.“<br/>“Und ich habe nur einen Apfel im Magen.“<br/>“Ich koche für dich heute Abend.“<br/>“Soll ich verrecken?“<br/>“Ich koche sehr gut“ Severus blieb gelassen, er wollte auf keinen Fall das Harry sich schon wieder aufregte.<br/>„Schweinefraß, für Eber gut genug“ bluffte der junge Mann ihn an.<br/>„Okay, dann fastest du heute Abend eben.“<br/>“Im Hotel gibt’s genug zu futtern.“<br/>“Oh“ Severus legte ein übertrieben enttäuschtes Gesicht auf:<br/>“Ich bin mir sicher, du wirst heute Abend in Hogwarts schlafen wollen. Um genau zu sein, in meinen Privaträumen.“<br/>“Ich schlafe nicht gerne in Särgen und Grüften“ fauchte Harry böse.<br/>„Wohl lieber im Baumhaus du Affe“ zischelte Severus böse und schon hatte er Harry wieder bei sich. Der junge Mann versuchte ihn doch tatsächlich schon wieder zu schlagen und dann… ein Riss. Severus schrie schmerzerfüllt auf und sprang auf die Beine so das Harry von ihm runter fiel. Dieser hatte ein Büschel lange schwarze Haare in den Händen.<br/>Severus tastete entsetzt seinen Kopf ab, eine kreisrunde, kahle Stelle an seinem Hinterkopf.<br/>“Du Arsch“ er packte Harry und zog an dessen Haaren.<br/>“Ah“ brüllte dieser:<br/>“Das war doch ein Versehen gewesen.“<br/>“Meine Haare“ schrie Severus:<br/>“Meine Haare!!“<br/>“Ich kenne einen Zauber“ kreischte Harry als er seine Haare reißen spürte:<br/>“Ich kann das wieder reparieren.“<br/>Severus hielt inne und ließ den jungen Mann los.<br/>„Wehe du lügst“ knurrte der ehemalige Zaubertränkemeister:<br/>“Dann war dies deine letzte Zugfahrt.“<br/>“War es sowieso“ Harry zog seinen Zauberstab.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71008053">Chapter 10</a>: Beziehungen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus Snape tastete seinen Kopf vorsichtig ab, alles war wieder heil.<br/>„Und sagen Sie nie wieder, dass ich nicht im Zug zaubern darf“ schnaubte Harry als er seinen Stab wieder einsteckte.<br/>„Du hast sie mir doch ausgerissen“ schimpfte der ehemalige Lehrer.<br/>„Und Sie fühlten sich gleich an der Männlichkeit gepackt, was? Wissen Sie was ich glaube? Sie sind stockschwul und wollen mich in ihrem Bett.“<br/>“Stimmt“ erklärte Severus trocken und fing an sein Haar zu bürsten:<br/>“Ich bin tatsächlich schwul und ich will dich wirklich in meinem Bett.“<br/>“Wollen Sie mich verarschen“ kreischte Harry.<br/>„Nein“ Severus band sich das Haar wieder zusammen.<br/>„Perverser, pädophiler Eber“ kreischte der junge Mann.<br/>„Du bist doch siebzehn, das fällt nicht mehr unter Pädophilie.“<br/>“Aber sie sind…“ Harry atmete tief durch, wie alt war Snape eigentlich? Sechzig? Nein, jünger. Fünfzig… ja bestimmt fünfzig.<br/>„39“ knurrte Severus, „im Januar werde ich vierzig.“<br/>“Alter Sack“ zischelte Harry böse.<br/>„Du wirst diesen alten Sack heute noch küssen und dabei sehr glücklich sein.“<br/>“Niemals.“<br/>“Doch“ Severus nickte ernst und stand auf, beugte sich über Harry und kam ihm gefährlich nah. Harry knurrte böse, wartete aber auch ruhig darauf was nun geschah.<br/>„Ich würde dich sehr gerne küssen“ hauchte der Lehrer mit samtiger Stimme, Harry bekam sofort eine Gänsehaut:<br/>“Du hast so eine wunderbar erotische Ausstrahlung. Jede Pore deiner Haut wartet nur darauf das ich sie berühre, mit Küssen bedecke. Ich würde dich so gerne küssen, überall dort wo du es dir vorstellen kannst, und dort wo du es dir nicht vorstellen kannst.“<br/>Severus setzte sich wieder hin und beobachtete mit großer Befriedigung das Harry schon wieder rot bis zum Hals runter war.<br/>„Niemals“ brachte der junge Mann atemlos hervor, verdammt, es gefiel ihm auch noch. Jedes Wort was Severus zu ihm gesagt hatte, berührte sein Herz, verpasste ihm eine Gänsehaut und ließ ihn zittern.<br/>„Doch“ nickte der ehemalige Zaubertränkemeister:<br/>“Und ach wie schön… da fällt mir gerade ein das du ja gar keine Hausaufgaben mehr von mir auf bekommst. Wenn ich verlieren sollte, verliere ich nichts. Außer vielleicht den Kuss den ich mir so sehr ersehne.“<br/>“Perverser Eber“ knurrte Harry böse:<br/>“So was wie Sie sollte eingesperrt werden.“<br/>Severus lachte nun laut auf, es klang unheimlich und böse. Harry schreckte zusammen, das wollte er eigentlich nicht hören.<br/>„Für dich bin ich gerne schweinisch“ grinste Severus dann und Harry knurrte ihn wild an.<br/>„Ich will von Ihnen nicht geküsst, nicht angefasst und vor allem nicht mehr angemacht werden“ zischte der junge Mann böse:<br/>“Ich such mir ein hübsches Mädchen, eines was mich nicht in die Wiederholung treibt.“<br/>„Ein Mann an deiner Seite würde dich auch nicht in die Wiederholung treiben.“<br/>“Aber in den Tagespropheten!“<br/>“Da stehst du doch eh schon jeden Tag drin, und die nächsten zehn Jahre wird sich das nicht ändern. Wie würde wohl die Zaubererwelt reagieren wenn sie liest, das du mit einem 40 Jahre alten Lehrer zusammen bist. Das ihr heiraten werdet und vielleicht ein Kind adoptiert.“<br/>“Ich will keine Kinder“ knurrte Harry:<br/>“Und Sie bestimmt nicht heiraten. Da würde ich mich ja selbst in die Hölle verfrachten.“<br/>“Schwachsinn. Wer mit mir verheiratet ist landet im Himmel. Ich kann kochen, ich liebe es ordentlich und sauber und ich bestehe darauf meinen Lebenspartner von oben bis unten zu verwöhnen“ wieder war Severus Harry sehr nah:<br/>“Ich würde dich jeden Tag neu erobern. Dir jeden Tag zeigen wie wichtig du für mich bist und wie sehr ich dich liebe“ wieder wurde die Stimme des ehemaligen Zaubertränkemeisters samtig und warm:<br/>“Wir wären für immer zusammen und du würdest nicht mal im Traum an Frauen, oder gar andere Männer, denken.“ Severus langte zu seinem Koffer, griff hinein und holte eine Dose mit einem dickflüssigen Inhalt hervor, die reichte er Harry.<br/>„Was ist das“ fragte dieser.<br/>„Zauber es dir warm und iss es“ er reichte ihm einen Löffel dazu und setzte sich wieder hin. Harry öffnete die Dose und schnupperte daran. Es war ein Eintopf und selbst in dem kalten Zustand roch er so lecker, dass dem Helden Wasser im Mund zusammen lief.<br/>„Zaubern Sie ihn warm“ forderte Harry und Severus schwang seufzend den Zauberstab. Der Eintopf wurde heiß und verbreitete seinen angenehmen Geruch im ganzen Abteil.<br/>„Iss“ forderte Severus. Harry sah auf den Eintopf und fing dann einfach an zu essen. Wunderbar, einfach lecker.<br/>„Könnte auch Gift sein“ nickte der Professor.<br/>„Sicher nicht“ kaute Harry.<br/>„Du hast Manieren wie ein Schwein“ fluchte Severus:<br/>“Man spricht nicht mit vollem Mund.“<br/>“Damit müssten Sie leben wenn Sie mich heiraten würden“ kaute Harry grinsend, dabei lief ihm die Suppe aus dem Mund raus.<br/>„Ich würde dir schon Manieren beibringen“ fauchte Snape böse:<br/>“Und da nennst du mich Eber.“<br/>Harry antwortete nicht, sondern schaufelte weiter den Eintopf in sich hinein.<br/>Severus legte nachdenklich den Kopf schief, irgendwie… war das niedlich was Harry da abzog. Es war ein kleines Geheimnis, dass Severus schon etwas länger ein Auge auf den jungen Mann geworfen hatte. Diese Zugfahrt war eine einmalige Chance, und er wusste sie zu nutzen.<br/>Ein Lächeln glitt über die Lippen des ehemaligen Zaubertränkemeisters, Harry würde ihm gehören, definitiv. Schon an diesem Abend, wenn alles so klappte wie es geplant war.<br/>„Was soll dieses Lächeln bedeuten“ Harry holte ein Taschentuch hervor und wischte sich den Mund ab.<br/>„Das ich dich niedlich finde“ nickte Severus ehrlich und innerhalb einer Sekunde wurde Harry rot bis hinter die Ohren.<br/>Severus hatte schon gewonnen, er sah auf seine Armbanduhr, bald war es soweit.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-11">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71008071">Chapter 11</a>: Annäherungen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry saß bei Severus auf dem Schoß, und er wusste nicht mal mehr wie er dort hin gekommen war. Er wusste nur noch, dass er aufgegessen hatte und dann… aber aus irgendeinem Grund blieb er sitzen.<br/>Severus grinste breit, das war das Einzige was Harry an der Sache nicht gefiel.<br/>„Siehst du, so schlimm ist es doch nicht mir nah zu sein“ flüsterte der ehemalige Zaubertränkelehrer dann.<br/>„Doch“ maulte Harry und spürte wie Hände über seinen Rücken streichelten. Das war ihm dann doch zu viel und schnell war er wieder auf seinem Platz.<br/>Wieso hatte Severus ihn nicht aufgehalten?<br/>Und was war wenn der Professor das alles ernst meinte? Das mit dem heiraten, der ernsthaften Beziehung? Nein, Harry schüttelte instinktiv den Kopf. Nicht mit einem Mann, und bestimmt nicht mit einem soviel älteren Mann.<br/>Auch wenn Harry sich genau so etwas doch wünschte. Eine ernsthafte und ehrliche Beziehung.<br/>„Was ist“ Severus legte den Kopf schief und sah ihn verwundert an. Harry gefiel dieser Blick, diese Mimik, es machte Severus gleich zwanzig Jahre jünger. Davon abgesehen sah er sowieso zwanzig Jahre jünger aus, jedenfalls wenn man bedachte das er vorher wie 59 ausgesehen hatte.<br/>„Pah“ Harry verschränkte trotzig die Arme, noch einmal würde er dem ehemaligen Zaubertränkemeister nicht so nah kommen.<br/>„Oh, schmollst du etwa“ lachte Severus und versteckte seine Hand hinter dem Rücken, als er sie wieder vor holte, hielt er eine rote Rose darin. Die streckte er dem jungen Mann entgegen. Es war eine wunderschöne Rose, weinrot und glänzend. Zögernd nahm Harry sie und spürte wieder wie ihm das Blut in den Kopf schoss.<br/>„Gefällt sie dir“ fragte Severus neugierig und Harry nickte langsam:<br/>“Dachte ich mir. Ich weiß genau was du magst.“<br/>“Bestimmt nicht“ knurrte Harry böse, hielt aber die Rose vorsichtig in de Händen.<br/>„Doch. Du magst Rosen, frittierte Euleneier und meinen Eintopf.“<br/>“Das haben Sie auf dieser verdammten Fahrt herausgefunden“ knurrte Harry böse.<br/>„Du magst auch die Farben schwarz und grün, hättest gerne eine schwarze Kobra als Haustier, aber du hast Angst das sie in der Öffentlichkeit mit dir sprechen will und du antworten musst. Und du kannst Pfannkuchen mit Zwiebeln und Speck nicht widerstehen.“<br/>Harry klappte die Kinnlade runter, erstaunt sah er Severus einige Momente erstaunt an, sich fragend woher der Lehrer das wusste. Dann aber fiel es ihm ein.<br/>“Draco, Sie wissen das von Draco“ fauchte Harry böse.<br/>„Erwischt“ Severus spitzte seine Lippen:<br/>“Ich bin, wenn Ferien sind, im ständigen Briefkontakt mit ihm und da erzählt man sich einiges. Und du warst halt in letzter Zeit oft bei ihm. Was ich natürlich begrüße. Er ist gut für dich, und hetero. Also keine Konkurrenz für mich.“<br/>“Es gibt gar keine Konkurrenz“ schimpfte Harry laut:<br/>“Weil ich keine Beziehung, oder sonst was, mit Ihnen eingehen werde. Ich werde Sie noch nicht mal küssen!“<br/>„Das sagst du jetzt, aber spätestens in einer Stunde wird sich das ganz anders anhören.“<br/>“Niemals“ Harry wurde schon wieder sauer. Langsam ging ihm das auf die Nerven, und schon wieder saß er auf dem Schoß von Severus.<br/>Und wieder wehrte er sich nicht. Die Hände die sich auf seinen Rücken legten waren groß und warm, es war als würden sie ihn sacht festhalten und beschützen. Beschützen… nichts und niemand würde ihm wehtun können, solange er bei Severus war. Der würde ihn vor allem beschützen.<br/>“Harry“ flüsterte Severus leise und sah ihn sanft an:<br/>“Ich will dir doch nichts böses. Ich will das du glücklich bist.“<br/>“Pah“ Harry verschränkte die Arme vor der Brust, blieb aber sitzen:<br/>“Irgendwie kann ich das nach sechs Jahren nicht glauben.“<br/>Im nächsten Moment berührte Harrys Nase die von Severus.<br/>„Du willst mich doch nur ärgern“ hauchte der Professor mit samtiger Stimme:<br/>“Oder bist du wirklich so naiv?“<br/>“Ich bin nur nicht schwul, oder bi.“<br/>“Sicher“ Severus wanderte mit seinen Lippen über Harrys Wange, dann zu dessen Hals, bedeckte ihn mit zarten Küssen und entlockte dem jungen Mann doch tatsächlich ein leises Gurren.<br/>„Lassen Sie das“ flüsterte Harry halbherzig als er die Zunge von Severus Snape an seiner Haut spürte.<br/>„Sicher“ fragte Severus erneut.<br/>„Ja“ Harry sprang auf und setzte sich zitternd auf seinen Platz. Verdammt, das war gut gewesen, das hatte er noch nie gespürt. Und vor allem, Ginny würde nie auf die Idee kommen so etwas zu tun.</p><p>Eine Stunde später<br/>„Ha“ Harry deutete aus dem Fenster:<br/>“Da ist Hogsmeade und Sie haben mich noch nicht küssen können.“<br/>Harry stand auf und sah hinaus. Die ganze Stunde über hatten sie schweigend da gesessen. Severus hatte nichts mehr gemacht, ihm nur derweil ein sanftes Lächeln gezeigt.<br/>„Noch sind wir nicht da“ der Professor erhob sich ebenfalls, stand plötzlich hinter Harry und umarmte ihn sanft.<br/>„Lassen Sie das, ich werde Sie nicht küssen“ knurrte Harry, aber nur noch halbherzig, irgendwie mochte er es doch wenn Severus ihn berührte.<br/>Und wie wohl ein Kuss mit ihm war?<br/>Die ganze Stunde über hatte Harry darüber nachgedacht, und das war auch wohl der Grund für das Schweigen, Harry sollte darüber nachdenken. Über Küssen, Beziehung und vielleicht sogar heiraten. Und über das Beschützen, das Harry nicht mehr stark sein musste, sobald er bei Severus war. Harry konnte dann auch mal schwach sein, sich einfach fallen lassen.<br/>„Wirklich nicht“ Severus drehte Harry zu sich um:<br/>“Bist du eigentlich schon mal geküsst worden?“<br/>“Ich habe oft geküsst.“<br/>“Hat dich schon mal jemand geküsst? Oder musstest du immer die Mädchen küssen?“<br/>Harry sah ihn erstaunt an, öffnete den Mund um etwas zu sagen, aber er ließ es, aus einem ganz einfach Grund… Severus küsste ihn zärtlich.<br/>Fordernd, aber doch zärtlich.<br/>Und es gefiel Harry.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-12">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27710698/chapters/71008101">Chapter 12</a>: Epilog - Gleis 9 3/4
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry James Potter stand am Gleis 9 ¾ und kaute auf einer Zuckerspinne herum. Seinen Koffer hatte er diesmal nicht dabei, der war schon mit einem Zauber nach Hogwarts geschickt worden.<br/>
+Nachdenklich sah er auf die Uhr über ihm, noch zehn Minuten, dann kam der Hogwarts Express.<br/>
+Er kaute schneller, diese verdammte Spinne, wohin hatte sie sich verkrochen?<br/>
+Mittlerweile hatten sie die Süßigkeit harmloser gemacht. Sie blieb im Mund und wollte nicht mehr woanders hin krabbeln. Andererseits, seit dem war Harry nicht mehr so wild darauf, der Reiz war irgendwie verloren gegangen.<br/>
+Wieder sah er nach oben, vielleicht ging die Bahnhofsuhr auch falsch, schnell schob er den Ärmel seines schwarzen Hemds hoch und verglich die Bahnhofsuhr mit seiner exakt laufenden Armbanduhr.<br/>
+Eindeutig zehn vor elf.<br/>
+Endlich, die Spinne wurde von ihm zerbissen und der leckere Brei verteilte sich in seinem Mund. Banane diesmal.<br/>
+Im Grunde wartete Harry ja nicht auf den Zug, sondern auf jemand anderes, jemand besonderen.<br/>
+“Wo bleibt er nur“ brummte der junge Mann und drehte sich suchend um, und schon ein Blitz, ein Fotograf lief schnell weg. Harry seufzte leise. Über ein Jahr war es her, dass er Voldemort besiegt hatte. Seine Schulzeit war vorbei und doch war er wieder auf dem Weg nach Hogwarts. Mit dem Zug.<br/>
+„Harry“ eine samtige Stimme sprach ihn an und starke Arme umarmten ihn von hinten:<br/>
+“Und hast du mich vermisst?“<br/>
+Er drehte sich um und sofort wurde er zärtlich geküsst.<br/>
+Harry wurde geküsst.<br/>
+Im letzten Jahr war er oft geküsst worden, nie hatte er küssen müssen. Und es war jedes Mal etwas besonderes gewesen. Wunderschön und so zärtlich, voller Liebe.<br/>
+„Severus“ flüsterte der junge Mann sanft:<br/>
+“Hast du alles bekommen?“<br/>
+“Harry“ der Direktor von Hogwarts sah ihn ernst an:<br/>
+“Zerstör doch nicht immer die romantischen Momente in unserem Leben, mit diesen unnötigen Fragen“ er hob einen Beutel hoch:<br/>
+“Drei mal frittierte Euleneier, sechs Sandwichs mit Truthahn und Käse und eine große Flasche Cola.“<br/>
+“Das finde ich sehr romantisch“ schnurrte Harry:<br/>
+“Ich werde dich damit füttern.“<br/>
+“Das finde ich wiederum auch sehr romantisch“ schnurrte Severus Snape zurück.<br/>
+Harry wollte etwas sagen als ein Kreischen erklang. Dieses Kreischen kannte er doch, entsetzt zuckte er zusammen, als eine junge, rothaarige Frau zu ihnen gelaufen kam.<br/>
+Ginny Weasley.<br/>
+„Harry Potter“ kreischte sie:<br/>
+“Jetzt reicht es mir! Endlich! Jetzt kannst du dich mir nicht mehr entziehen.“<br/>
+Es war wahr, Harry hatte eine Konfrontation mit ihr vermieden und per Eulenpost mit ihr damals Schluss gemacht. Daraufhin hatte sie die Schule abgebrochen. Was für eine Schande, Harry Potter macht mit ihr Schluss, wegen einem Mann.<br/>
+Wegen dem Direktor von Hogwarts, einem sehr viel älteren Mann.<br/>
+„Ich regele das für dich“ knurrte Severus und zog seinen Zauberstab, Ginny blieb stehen.<br/>
+„Ihr perversen Schweine“ kreischte sie aus sicherer Entfernung:<br/>
+„Wegen ihm hast du mich verlassen!“<br/>
+“Nein, ich habe dich verlassen weil du eine Furie und eine Lügnerin bist“ knurrte Harry böse und schmiegte sich an Severus. Der beschützte ihn, immer, und egal vor was. Harry wusste genau, Severus würde, wenn nötig, sogar für ihn sterben. Harry musste nicht mehr stark sein, nicht mehr kämpfen.<br/>
+„Er hat dir die Lügen erzählt“ brüllte Ginny:<br/>
+“Mit welchem Trank hat er dich verführt?“<br/>
+“Ein Liebestrank“ grinste Severus:<br/>
+“Er war im Eintopf gewesen.“<br/>
+“Ach deswegen hat der so lecker geschmeckt“ kicherte Harry amüsiert. Und Severus konnte kochen, und er kochte jeden Abend das beste Essen nur für Harry.<br/>
+„Nur deswegen, und jeden Abend bekommst du eine neue Portion von mir“ die Beiden beachteten Ginny kaum noch.<br/>
+„Komm zu mir zurück“ kreischte diese:<br/>
+„Er ist ein Mann!“<br/>
+“Mein Mann“ nickte Harry und hob seine Hand, daran war ein goldener Ring zu sehen.<br/>
+Sofort blitzte es wieder und ein Fotograf lief weg.<br/>
+„Genau“ Severus zeigte seinen Ring:<br/>
+“Wir waren die letzten drei Wochen in Paris gewesen. Und ich musste die Chance einfach nutzen.“<br/>
+“Sehr gut genutzt“ Harry kicherte wieder:<br/>
+“Besonders der Antrag auf der Ballonfahrt… das war wirklich romantisch.“<br/>
+“Nur für dich“ nickte der Schulleiter und sah wieder zu Ginny, sie war verschwunden.<br/>
+„Weg“ stellte Harry fest:<br/>
+“Die sehen wir wohl nicht so bald wieder.“<br/>
+“Ich lege auch keinen Wert darauf.“<br/>
+Der Hogwarts Express fuhr pfeifend ein, Bewegung kam in die Massen von Menschen, welche auf dem Gleis warteten.<br/>
+„Und“ Severus sah ihn fragend an:<br/>
+“Hast du es dir überlegt?“<br/>
+“Du könntest mich darum bitten“ schmunzelte Harry.<br/>
+„Aber du würdest dann nicht Nein sagen, weil du es nicht kannst, und ein halbes Jahr später bist du dann unglücklich damit. Also, willst du?“<br/>
+“Eigentlich dachte ich an etwas anderes, was ich zu tun hätte.“<br/>
+“Und was“ Severus sah ihn erstaunt an und Harry holte eine Phiole hervor mit einer grünen Flüssigkeit darin:<br/>
+“Was ist das?“<br/>
+“Veränderungstrank“ flötete Harry:<br/>
+“Den habe ich mir aus den USA schicken lassen.“<br/>
+Er kicherte und sprang in den Zug, Severus folgte ihm mit roten Wangen. Jetzt musste er doch Lupin fragen ob dieser wieder unterrichten wollte… und ein Kinderzimmer anbauen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="3u2mSUmqMkxz6n0cVagG59WoxL-9GhkdrUzpwXSotsGcvIktJbwYcWp_pELpyG9b3Jj354Zb9CpJUkwP1BuGtQ"/>
+          <input value="27710698" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=27710698">Comments (5)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Lenny69">Lenny69</a>, <a href="/users/blaketiger">blaketiger</a>, <a href="/users/Lupa0">Lupa0</a>, <a href="/users/M_Roxton">M_Roxton</a>, and <a href="/users/Shironia">Shironia</a>
+             as well as 
+          15 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_27710698">
+  <form class="new_comment" id="comment_for_27710698" action="/works/27710698/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="wPFqPcJ_LsjUu3pKCAA1OXcFWXQrFoseuc1SN728s8GCoEVZrmkE9c0uoxS0YFyFfjVqLBBXZild0_f5HQ-DtQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_27710698">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_27710698" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_27710698=new LiveValidation('comment_name_for_27710698',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_27710698.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_27710698">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_27710698" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_27710698=new LiveValidation('comment_email_for_27710698',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_27710698.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_27710698" class="landmark">Comment</label>
+        <textarea id="comment_content_for_27710698" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_27710698" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_27710698_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_27710698">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_27710698=new LiveValidation('comment_content_for_27710698',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_27710698.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_27710698.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_27710698" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/27710698/hit_count.json")})</script>
+
+
+  </body>
+</html>

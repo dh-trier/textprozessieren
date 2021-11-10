@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":82,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Auf Augenhöhe - KMZ - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="FVG1VSmQJX1jmMPS7QIU9xTEv_FR1pcuMJ_7yy44f09j2j18PcDrOiR87u_Lxu-geMrGR2Ejgr1kJS5vPHGFhg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="TUgGWPwjlreGWdVQt7RLkCvxn_CKNFOWKEJDoB0K-iI7w45x6HNY8MG9-G2RcLDHR__mRrrBRgV8-JYED0MA6w"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/17611514/chapters/41518430">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=17611514">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/17611514/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/17611514/Auf%20Augenhohe.azw3?updated_at=1550475043">AZW3</a></li>
+          <li><a href="/downloads/17611514/Auf%20Augenhohe.epub?updated_at=1550475043">EPUB</a></li>
+          <li><a href="/downloads/17611514/Auf%20Augenhohe.mobi?updated_at=1550475043">MOBI</a></li>
+          <li><a href="/downloads/17611514/Auf%20Augenhohe.pdf?updated_at=1550475043">PDF</a></li>
+          <li><a href="/downloads/17611514/Auf%20Augenhohe.html?updated_at=1550475043">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Explicit/works">Explicit</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warnings</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li><li><a class="tag" href="/tags/Rape*s*Non-Con/works">Rape/Non-Con</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lucius%20Malfoy*s*Severus%20Snape/works">Lucius Malfoy/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lucius%20Malfoy/works">Lucius Malfoy</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-01-31</dd><dt class="status">Completed:</dt><dd class="status">2019-02-18</dd><dt class="words">Words:</dt><dd class="words">12337</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="comments">Comments:</dt><dd class="comments">18</dd><dt class="kudos">Kudos:</dt><dd class="kudos">12</dd><dt class="hits">Hits:</dt><dd class="hits">354</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Auf Augenhöhe
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/KMZ/pseuds/KMZ">KMZ</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Der 16jährige Severus Snape trifft eines Abends in Hogwarts auf den älteren Lucius Malfoy, der schon länger kein Schüler mehr ist und eindeutig Ungutes im Sinn hat. Snape forderte im Namen von Slytherin Malfoys Hilfe ein und bekommt sie gewährt. Doch alles hat seinen Preis. Manchmal brauchte es Jahre, um ihn abzubezahlen. [Severus Snape x Lucius Malfoy]*Snucius* SS/LM</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17611514/chapters/41518430">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Lucius Malfoy blieb stehen und sah sich um. Mit einem Zauber hatte er seine Fußspuren im Schnee verwischt, damit ihm ja niemand würde folgen können.<br/>Inzwischen war er unbemerkt bis zum nördlichen Teil der Mauer gelangt, die das Schlossgebäude umgab. Er hatte den zugigen Durchgang durchquert und keiner der Schüler war ihm entgegen gekommen. Da es früher Abend war und die meisten Kurse noch etwa eine halbe Stunde liefen, wähnte er sich in Sicherheit. Das Licht war schon diffus und als er nach oben in den trüben Himmel sah, erreichten die ersten Schneeflocken sein Gesicht. Er lächelte und lauschte. Stille. <br/>Nein, doch nicht. Irgendwo hörte er Jungenstimmen. Sie waren weit weg und er streifte sich nun endgültig seine Kapuze vom Kopf. Seit zwei Tagen war er unbemerkt in Hogwarts und wartete auf den richtigen Moment, um sich zu holen, was ihm gehörte.<br/>Er löste das Band, welches seine blonden und auffälligen Haare zu einem Zopf verbunden hatte und seufzte erleichtert. Als ein Schüler in Uniform hatte er sich in den Zug geschmuggelt und sich die meiste Zeit der Reise magisch verborgen. Es hatte ihn Kraft gekostet und so musste er diese zwei Tage warten, um sich wieder zu regenerieren, um anschließend unbemerkt fliehen zu können. Wie, wusste er noch nicht. Er schüttelte seinen Kopf, um seine Haare zu lockern und die Kopfschmerzen zu vertreiben. Im selben Augenblick, erschien plötzlich ein Junge neben ihm. Er stürmte um eine nahe Mauerecke und drehte den Kopf nach hinten, um sich vermutlich nach seinen Verfolgern umzusehen. Dabei übersah er ihn. Lucius war sich sicher gewesen, dass der Junge noch ausweichen würde, doch dann war es schon zu spät. Er lief hart in ihn hinein und prallte schmerzhaft gegen seine Schulter.<br/>Der dunkelhaarige Junge war er trotz seiner Größe noch nicht volljährig, wie Lucius schnell sah. Der Schüler, dessen Uniform die Slytherinfarben zeigte, ging stöhnend zu Boden, während er, vermutlich um einiges schwerer und stabiler, stehen blieb. Lucius sah auf ihn hinab, runzelte die Stirn und rieb über seine schmerzende Schulter. Der Junge kam ihm ziemlich bekannt vor. Wenn er sich nicht irrte, war das dieser seltsame Severus Snape, der noch ein kleiner Bengel war, als er damals zum ersten Mal Vertrauensschüler des Hauses Slytherin gewesen war. <br/>„Los, Snape muss dahinten sein!“, hörte er dann entfernt die Stimmen der Jungs, die er eben schon vernommen hatte.<br/>„Du wirst den Boden mit deiner Zunge säubern!“ rief ein anderer Junge und Lucius hob die Augenbrauen. Snape rappelte sich nun hoch. Inzwischen war der „kleine Bengel“ fast sie groß wie er selbst. Lucius war seit vier Jahren kein Schüler mehr in Hogwarts und demzufolge müsste Snape etwa 16 Jahre alt sein. Noch immer hatte er diese dunklen, längeren Haare und diese schwarzen, unheimlichen Augen. Aber auch die Jungenstimme, die diese Drohung in den Wind gerufen hatte, kannte er nur zu gut. James Potter.<br/>Sie hatten es wohl offensichtlich auf Snape abgesehen. Wäre bestimmt ein amüsantes Schauspiel, welches er aus dem Verborgenen genießen könnte, wenn er nicht gerade etwas Anderes vorgehabt hätte.</p><p> </p><p>Auch Severus hatte Lucius sofort wiedererkannte. Wie könnte er nicht! Lucius Malfoy mit den Haaren eines Engels und dem Herzen eines Dämons. In seinen ersten Jahren in Hogwarts hatte er so einige Gerüchte und Geschichten über den Vertrauensschüler gehört. Alle enthielten Respekt und Furcht. Viele beschrieben seine Schönheit und seine Gerissenheit. Einige erzählten über kuriose Begebenheiten, die vermutlich nicht allzu nahe an der Wahrheit waren und keine der Geschichten enthielt nur einen einzigen Funken echte Wertschätzung oder gar Liebe. Aus weiter Ferne hatte ihn Severus manchmal beobachtet und irgendwie bewundert, doch er wollte ihm nicht nahe kommen. Irgendwas war an Malfoy, was ihn unbedingt zur Vorsicht mahnte. Vielleicht war es seine fast überirdische Schönheit. Wie einer Meduse starrte er Lucius nun in die grauen, klaren Augen, die ihn verächtlich und ohne zu blinzeln musterten.<br/>„Wir finden dich, Snape!“, hörten beide Potter schreien. Sie kamen näher und würden innerhalb der nächsten Minute auf die beiden treffen. Umständlich und mit schmerzendem Kopf rappelte sich Severus hoch.<br/>Lucius grinste zwielichtig und Severus Stimme, die in der letzten Zeit sehr dunkel vor lauter Einsamkeit geworden war, sagte kaum hörbar:<br/>„Hilf mir, Malfoy!<br/>Lucius hob sein Kinn an, sah ihn so von oben herab an und flüsterte zurück:<br/>„Warum sollte ich?“<br/>„Weil wir Slytherin sind, für immer.“<br/>Malfoy gab ein verächtliches Schnauben von sich und Severus, dem schon ganz schlecht vor Angst war, fügte leise an:<br/>„Bitte, Lucius!“<br/>„Wenn du Lily noch einmal so anschaust, werde ich dir …“, hörte man wieder James Potter brüllen. Malfoy packte ihn plötzlich hart am Nacken und schob ihn nach rechts. Dort war ein kleiner Durchgang, der zu den Kellergewölben führte, der irgendwann, wenn man sich auskannte, zu einem Ort führte, an dem die Dinge aufbewahrt wurden, von denen niemand wissen durfte, dass es sie gab.<br/>„Potter kennt den Durchgang!“, flüsterte Snape allerdings rau, lief aber gehorsam mit.<br/>„Mag sein. Nicht jedoch den Zauber, der die Tür wieder schließt.“ Lucius schob ihn durch die knarrende Holztür, drückte sie wieder ran und flüsterte dann leise:<br/>„Abscondare Secura!“ <br/>Snape hingegen flüsterte leise „Lumos“ und der kleine Lichtball entstand am Ende seines Stabes. Lucius griff sofort danach und löschte das Licht. Es war wieder dunkel und dann hörten sie schon Potter und seine Freunde auf der anderen Seite:<br/>„Wir haben deine Fußspuren im Schnee gesehen, Snape! Wir wissen, dass du da drin bist und warten, bis du rauskommst. Wir haben ganz viel Zeit!“<br/>Dann probierten sie die Tür zu öffnen. Mit Gewalt und Magie, doch sie blieb verschlossen.</p><p> </p><p>Severus merkte, wie Lucius seinen Umgang und den Pullover darunter mit seiner Faust packte und ihn weiterzerrte. Besonders feinfühlig war er nicht, doch Snape, der froh war diesem Mob entkommen zu sein, ging bereitwillig mit. Nach einigen Minuten machte Lucius mit seinem eigenen Zauberstab Licht.<br/>Herablassend grinsend sah er Severus an.<br/>„Du bist also immer noch hinter diesem widerlichen Schlammblut Lily Evans her? Schäm dich!“<br/>Zwar flüsterte Malfoy nur, doch trotzdem war er ziemlich gut zu verstehen. Seine Worte verursachten in Severus Scham aber auch Trotz.<br/>„Sie hat etwas Besseres als diesen Potter verdient!“ sagte er starrköpfig, wagte es aber nicht Malfoys Blick länger zu begegnen. <br/>Der Blonde antwortete nicht. Im sanften Schein des Lumos-Zaubers sah Snape, dass Lucius‘ Gesicht vollkommen verschlossen war. Nie wusste jemand, was er dachte. Es ging das Gerücht um, dass Malfoy ein Experte im Gebrauch der Okklumentik war. Dieser fehlende Ausdruck von Emotionen, ließ Lucius noch schöner und beinah überirdisch erscheinen, als er sowieso schon war. Er wirkte gerade im bläulichen Licht des Lumos-Zaubers tatsächlich wie ein zur Erde gefallener Engel. Snape starrte wie hypnotisiert auf dessen weißblondes Haar, welches der Bewegung von Malfoys langen Schritten mit leichtem Schwung folgte. <br/>Vielleicht träumte er ja nur, dachte Severus und versuchte sich mit allen, ihm bekannten Tricks von der Realität zu überzeugen. Weit kam er damit nicht, denn Lucius gab ihm plötzlich einen harten Schubs und er landete in einer Mauernische. Malfoy blockierte den Zugang mit seinem Körper, hielt ihm das Licht ins Gesicht und sagte mit teilnahmsloser Stimme:<br/>„Wir haben jetzt ein Problem, Snape!“</p><p> </p><p>Lucius war sich nicht ganz sicher, wie es von hier aus weitergehen sollte. Jetzt hatte er diesen, vielleicht irgendwann ganz brauchbaren, dürren Kerl an der Hacke, doch wollte er ihn um nichts in der Welt in seine Pläne einweihen. Zurückschicken oder hierlassen konnte er ihn aber auch nicht so einfach.<br/>Wenn ihn jemand gefragt hätte, warum er ihm geholfen hatte, hätte er sofort gesagt, dass er es aus Loyalität dem Haus Slytherin gegenüber getan hatte. Eigentlich hatte er ihm geholfen, weil etwas an diesem Snape war, was ihn an sich selbst erinnerte. Vermutlich war es diese verzweifelte Suche nach dem Sinn hinter allem. Snape war nicht besonders hübsch, doch etwas an seinem Wesen war anziehend. Interessanter war aber sein körperlicher Ausdruck, der Lucius Kennerblick eine Menge Stolz aber auch eine krankhafte Leidenschaft verriet. Was sollte er nun mit ihm machen? Wie wurde er ihn los, ohne seine Absicht zu verraten?<br/>„Weil …?“ fragte der schwarzhaarige Junge nun unsicher.<br/>„Du schuldest mir jetzt etwas!“ erwiderte Malfoy sofort hart und unüberlegt. Er liebte diese Floskel einfach zu sehr und die Versuchung sie auszusprechen, war sehr groß. Er sah auch sofort die besorgte Unsicherheit durch Snapes Gesicht huschen.</p><p> </p><p>Severus stockte der Atem, denn in jenem Moment fiel ihm noch ein Gerücht ein, was man sich über Malfoy erzählte. Er forderte ständig Gefallen ein, wenn er mal ein Auge bei einer Regelverletzung zudrückte. Die Gefallen, so besagten die Gerüchte, bestanden darin, dass er sich gern von seinen Mitschülern oral befriedigen ließ. Dabei machte er wohl keinen Unterschied zwischen Mädchen und Jungen. Ob das stimmte, wusste Snape nicht, denn diese Art Gedankenexperiment waren nicht seine Sache. Für ihn gab es nur eines, was zählte: seine Liebe zu Lily. Eine Liebe, die weit über eine körperlicher Hingezogenheit hinaus ging.<br/>Snape wusste aber auch, dass Lucius ihn nicht nur retten, sondern ebenso schnell seinen Feinden, die sicher immer noch vor der Tür warteten, wieder ausliefern könnte. Welche Art Kränkung war besser? Potters grausamer Spott und die körperlichen, nicht unerheblichen Folgen oder Lucius Demütigung. </p><p>Severus entschied sich und ließ sich langsam vor Malfoy auf die Knie.</p><p> </p><p>Lucius hätte fast aufgelacht, denn er selbst hatte diese Gerüchte ganz gezielt in Umlauf gebracht, dabei hatte es kein einziges echtes Ereignis dieser Art gegeben. Allein der Gedanke, sein Körper würde in Berührung mit ungewaschenen Händen und einem ekligen Mund kommen, hatte ihm immer Unwohlsein beschert. Er war ein absoluter Kopfmensch und wenig an dieser Art Kontakt interessiert. Die Gerüchte hingegen, erwiesen sich als überaus hilfreich, denn offenbar konnten sich sogar jüngere Mitschüler noch daran erinnern. Er sah auf Snapes schwarzes Haar, was unter dem bläulichen Zauberlicht seltsam schimmerte. <br/>Er müsste das verhindern, doch irgendwie formte sich in seinem Verstand kein einziges Wort. Zaghaft legte Snape nun seine Hände auf seine Oberschenkel. Es war eine Berührung, die ihn erschreckte. Sein Schreck machte ihn wütend und Wut verminderte seine logische Gedankenführung und das führte zu einer noch viel erschreckenderen Sprachlosigkeit.<br/>Die Hände des 16jährigen Burschen schoben sich langsam und fast ängstlich höher. Ob Lucius wollte oder nicht, die Situation war so grotesk, dass es ihn erregte und er hart wurde. Eine nicht besonders gut bekannte und schon gar nicht willkommene Lust schoss unaufhaltsam durch seinen Körper. Mit offenem Mund sah er nach unten, wie der Junge sanft über die Stelle seiner Hose strich, unter der sein angeschwollenes Verlangen zu zucken begann. Erst als Severus nach oben sah, ihre Blicke sich begegneten und Lucius in den schwarzen Augen des Burschen etwas sah, was man als Berechnung bezeichnen könnte, fand er die Kraft ihn von sich zu schieben.<br/>„An so etwas dachte ich nicht! Steh auf und hör mir zu!“ <br/>Dabei ließ Lucius seinen Lumos Zauber ausgehen, denn er fühlte, wie die lustvolle Hitze des Verlangens und der Verlegenheit seine Wangen erreicht hatte und aus seinem attraktiven, majestätischen Gesichtszügen vermutlich ein beschämendes Abbild seiner Leidenschaft gemacht hätte. Snape musste das nicht sehen.<br/>„Ich bin hier, weil ich etwas holen muss, was mir genommen wurde. Es gehört mir und ich kann es nicht einfach so Hogwarts überlassen.“ Seine Stimme war erschreckend rau.<br/>„Um was geht es?“ Snape klang unerwartet ruhig und ernsthaft. In diesen Augenblicken wirkte der Hogwartsschüler wie ein Erwachsener und Malfoy begriff, dass er diesen Severus Snape auf keinen Fall und niemals unterschätzen sollte. Gerade die Gejagten, Gequälten und Verachteten, waren in der Lage die größte Macht heraufzubeschwören.</p><p>„Um den Knauf in Form eines Schlangenkopfes, der auf einen Gehstock gehört. Er ist ein Familienerbstück und wurde mir vor Jahren, als ich Hogwarts verlassen habe, weggenommen, weil ich damit angeblich einen Mitschüler geschlagen habe.“<br/>„Hast du?“<br/>„Das geht dich nichts an.“<br/>Severus hatte davon gehört und erinnerte sich daran. Weggenommen wurde er Malfoy allerdings nicht, weil er damit Gewalt ausgeübt hatte, sondern weil dieser Schlangenkopf ein schwarz-magischer Gegenstand war und die Schulleitung es für gefährlich und unverantwortlich hielt, wenn er ihn behalten durfte. Hätte er nicht damit angegeben, wäre er nun nicht hier und hätte ihn vor Potters Rache gerettet. Snape schmunzelte bei diesen Gedanken, denn er hatte eben bemerkt, dass ihm Lucius in manchen Dingen sehr ähnlich war. Ihnen beiden fehlte Erfahrung, was das Eigenleben ihrer Körper betraf. Malfoy war eindeutig erregt gewesen und das hatte ihn so verunsichert, dass er für ein paar Momente seine Maske der hochmütigen Überlegenheit fallen lassen musste. Die Folge war, er hatte ihn in sein Vorhaben eingeweiht und würde sich später darüber vermutlich schwarz ärgern.</p><p>Er hätte es getan. Er hätte Lucius Penis, der sicherlich ebenso wundervoll wie seine ganze Gestalt war, in den Mund genommen und er hätte es gut gemacht. Vielleicht sogar sehr gut, denn während er vor dem blonden Mann gekniet hatte, hatte er etwas gespürt, was ihn berauscht hatte. Malfoys unbestreitbare Macht war mit seiner gleichzeitigen Schwäche zusammengeprallt und der Knall hatte Severus bis tief in sein Innerstes erschüttert. Er wollte Lucius plötzlich unbedingt gefallen, wollte dessen Wohlwollen und er wollte sein lusterfülltes Stöhnen. Diese groteske Sehnsucht irritierte ihn ebenso wie sie ihn kein bisschen überraschte. Mit Liebe, einer reinen, unschuldigen Liebe, wie er sie für Lily empfand, hatte das nichts zu tun. <br/>Das hier glich eher einem Machtspiel, war jedoch vielleicht trotzdem überaus befriedigend.<br/>„Was  soll ich also tun?“ fragte Severus leise.<br/>„Du hilfst mir an den Knauf zu kommen. Damit ist deine Schuld beglichen. Falls du mich jedoch verpetzen solltest, wirst du dafür bezahlen und zwar nicht nur ein Mal, sondern dein ganzes, kümmerliches Halbblutleben lang!“ Malfoys Stimme klang wieder überlegen und glatt. Er sprach sogar wieder den Lumoszauber. Ein Blick in Lucius Gesicht, verriet nichts mehr von seiner flüchtigen Verwirrung von eben. Irgendwann würde er wie Lucius Malfoy sein, begriff Severus in diesem Moment und nickte ergeben.<br/>„Gut, dann folge mir!“</p><p> </p><p>Sie liefen noch eine ganze Weile schweigend durch die Gänge. Lucius musste sich konzentrieren, um die richten Abzweigungen zu nehmen. Außerdem irritierte ihn die Anwesenheit des Schwarzhaarigen. Zwar schwieg Snape, doch seine Präsenz war gut spürbar. Manchmal hinter ihm, manchmal neben ihm und in unkontrollierten Momenten, glaubte Lucius ihn in sich zu spüren, was Unsinn war, denn er war viel mächtiger und geübter in Magie und Anwendung von Zaubern, als ein 16jähriger Bursche, der sicherlich großes Potenzial hatte. <br/>„Was vermag der Schlangenkopf?“ hatte Snape ihn vor wenigen Augenblicken neugierig gefragt. <br/>„Der Kopf ist schwer und man kann damit gut zielen, bevor man zuschlägt“, log Lucius dreist. Er würde doch nicht dem Halbblut das Geheimnis eines Artefaktes verraten. <br/>Der andere sah ihn auch ziemlich zweifelnd an, war aber klug genug, um nicht zu widersprechen.<br/>Endlich waren sie an der richtigen Stelle. Nur noch durch den rechten Gang, dann kamen sie in magisch versiegeltes Gebiet. Kein Schüler mit noch so guten Anlagen könnte den Zauber brechen. Allerdings war er kein Schüler mehr und wusste, was zu tun war.<br/>„Du bleibst hinter mir, wenn du nicht sterben willst. Nimm deinen Zauberstab, doch nutze ihn wirklich nur im Notfall“, wies er Snape an. Dessen schwarzen Augen sahen ihn ruhig an, sein Gesicht war eine ebenso ausdruckslos Maske wie sein eigenes und Lucius fühlte sich einen kurzen Moment unwohl. Gleichzeitig verspürte er einen absurden Drang in sich, dem Jungen seine Lippen auf den Mund zu pressen und gewaltsam mit seiner Zunge in seinen Mund einzudringen.<br/>Schnell wandte er sich ab und lief langsam los.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17611514/chapters/41700923">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus folgte ihm, ohne eine große Wahl zu haben. Er hörte, wie Malfoy leise vor sich hinmurmelte. Plötzlich blieb er wie erstarrt stehen und Snape wäre ihm fast in den Rücken gelaufen. Er roch den Duft des blonden Haares, was ihn irgendwie irritierte und hätte deshalb beinah nicht gesehen, weshalb Lucius nicht weiterlief.<br/>
+Ein schwarzer, übergroßer Panther mit gelben Augen lief lautlos auf sie zu. Nun erstarrte auch er und hörte sein eigenes Herz laut pochen. Malfoy machte eine winzige aber komplizierte Bewegung mit dem Zauberstab und flüsterte heiser:<br/>
+„Somnum Animagus!“ Nichts geschah und Severus wich vorsichtig schon mal ein paar Schritte zurück. Obwohl er sich auf seltsame Weise zu Malfoy hingezogen fühlt, wollte er nicht für seine zwielichtigen Absichten sterben.<br/>
+„Somnum Animagus!“ rief Lucius erneut, diesmal laut, denn er schrie gegen das ziemlich laute Knurren der Riesenkatze an. Aus dem offenen Maul, aus dem das bedrohliche Knurren, zusammen mit einem widerlichen Gestank gekommen war, wurde ein Gähnen. Wie in Zeitlupe sank das magische Wesen zusammen, legte den Kopf auf die vorderen Pfoten und begann leise zu schnarchen. Sie schlichen sich vorbei und betraten einen Abschnitt, der eisigkalt war. Je weiter sie liefen, umso schwerer fiel es ihnen, denn ihre Glieder schienen bei jedem Schritt einzufrieren.<br/>
+Malfoy blieb stehen und starrte irgendwie abwesend vor sich hin.<br/>
+Plötzlich sagte Snape ein leises:<br/>
+„Ignatus!“ Der Zauber taute immerhin ein paar Zentimeter um ihre Füße herum auf, würde aber keineswegs reichen, um weiterlaufen zu können. Doch durch Severus‘ dilettantischen Feuerzauber, für den ihn Lucius am liebsten einen Fluch zugeworfen hätte, fiel ihm selbst ein viel besserer ein:<br/>
+„Leviores!“ sagte er fest und eine breite Flammenwand erschien vor seinem Zauberstab. Langsam lief er vorwärts und schob die Feuerwand vor sich her. Dahinter war es heiß und als sie die eisige Stelle passiert hatten, sah Severus auf die Schweißtropfen an Lucius Stirn. Wie schon der Duft seines hellen Haares, wühlte ihn diese Beobachtung erneut auf, denn irgendwie ließ es diesen glänzenden Gott menschlich erscheinen.<br/>
+Der folgende Abschnitt wurde eine weitere Herausforderung, denn als sie ein paar Meter gelaufen waren – laut Lucius Kenntnis waren es nur noch wenige Meter bis zum Eingang des Raumes, in dem die Dinge waren, die es nicht geben sollte – verstrickten sie sich bei jedem Schritt, den sie taten in klebrige Spinnenweben. Die Spinnenweben krochen nach oben und umschlangen ihre Körper fast liebevoll, doch unnachgiebig.<br/>
+Snape fuchtelte nun recht unkoordiniert mit seinem Zauberstab, murmelte Sprüche und Flüche, doch außer einem sanften, roten Zucken aus der Spitze seines magischen Instruments, geschah nicht viel. Lucius hingegen, versucht sich so wenig wie möglich zu bewegen, denn nur so würde er genug Spielraum haben, um seine Hand weiterhin benutzen zu können. Noch suchte er nach dem richtigen Zauber, um zu entkommen. Leider fiel ihm nichts ein, was gegen Spinnenseide half, die einen festsetzte. Er sah zu Severus, der schon vollständig gefangen war. Immerhin wurde der Junge nicht panisch und schrie um Hilfe, denn dann wäre dieser nette Ausflug sehr bald vorbei. Aber die dunklen Augen sahen ihn ziemlich vorwurfsvoll an. </p><p> </p><p>Lucius ärgerte sich, dass er den Burschen mitgenommen hatte und nicht einfach eben in dieser Nische außer Gefecht gesetzt hatte. Er bereute es, weil seine Gedanken dauernd von Snapes Gegenwart abgelenkt waren. Ständig spürte er dessen Blicke und dessen Atem in seinem Nacken. Schon zu Schulzeiten hatte er viel Wert auf Abstand gelegt. Stand nur einer zu dicht an ihm, konnte er ohne Vorwarnung explodieren. Es war ein Wunder, dass man ihm dieses Gerücht, er würde sich oral befriedigen lassen, abgenommen hatte. Das zeigte aber nur, wie gut er in seiner Manipulation war und wie perfekt seine Maske war.<br/>
+Jetzt, hier in der Enge des Ganges, musste er Severus Snape wahrnehmen, ob er wollte oder nicht. Aus dem Augenwinkel sah er immerzu, mit welchem unbegründeten Stolz sich der schlanke Junge bewegte. Er fühlte dessen ergebene Einsamkeit aber ebenso diese rätselhafte Kraft in ihm, die einen guten Schwarzmagier ausmachte. Er sah es nun in seinen Augen, die schwarz und missbilligend auf ihn blickten. Lucius gestand sich in diesem Moment zum allerersten Mal in seinem Leben ein, dass er begehrte. Dass er etwas heftig begehrte, was abseits seines eigenen, göttlichen Körpers war. Eine rasende Glut eroberte seinen Körper, angefacht von seiner schrecklichen Erkenntnis und dem Anblick des Jungen. Ein Feuer schlug in ihm hoch, was er dringend löschen musste. Eine gierige Hitze, die seinen sonst so kühlen und klaren Verstand völlig unbrauchbar machte und nun dazu führte, dass er den falschen Zauberspruch anwendete.<br/>
+Anstand das Feuer zu löschen, benutzte er einen gefährlichen Schwarz-Magischen Zauber, der dazu führte, dass sein Körper nur noch mehr in Flammen stand. Er schien nicht nur zu brennen, er tat es. Flammen züngelten um ihn herum und die Spinnenseide schmolz unter dieser magischen Hitze.<br/>
+Er war Ifrit und würde alles und jeden zu Asche verbrennen, dachte er und kam nicht mehr aus dieser Spirale der Schwärze heraus. Der angerufene Dämon hatte Besitz von ihm ergriffen und wollte ihn nicht mehr gehen lassen.</p><p> </p><p>Severus riss die Augen auf. Schockiert sah er Malfoy brennen, ohne, dass es seiner Kleidung, seiner Haut oder seinen wundervollen Haaren etwas ausgemacht hätte. Doch sein Gesicht war schmerzerfüllt. Tränen liefen aus seinen Augen und verdampften zischen in den Flammen. Schon längst war Lucius kein Gefangener der Spinnenweben mehr, doch das schien er nicht zu merken. Er hatte die Arme ausgebreitet, schrie lautlos und stand in Flammen.<br/>
+Snape hatte von der Ifrit-Invokation gehört, doch niemals gesehen. Es hieß, nur wenige Magier waren imstande diesem bösartigen Dämon länger standzuhalten. Eine harte Gänsehaut überzog seine Haut und sein Puls jagte nur so. Würde er jemals so mächtig wie Malfoy sein? Wahrscheinlicher war, Lucius würde gleich in seiner eigenen, brennenden Macht sterben.<br/>
+„Malfoy!“ rief er ihn besorgt an, doch der Mann reagierte gar nicht. Wenn nichts geschah, würde Lucius Malfoy in wenigen Momenten ein Häufchen Asche sein, was an sich keine Rolle spielte. Er war nur hier, weil der blonde Mann ihm geholfen hat. Obwohl ihm ganz sicher keiner glauben würde, denn die Asche würde niemand als Malfoy erkennen. Man würde ihn beschuldigen hier eingedrungen zu sein, um gefährliche Artefakte zu stehlen.<br/>
+„Lucius Malfoy!“ schrie Snape nun und er sah, wie der Mann seine klaren, grauen Augen, die in Tränen schwammen weiter aufriss und ihn ansah. Endlich wurde der Blick von Sekunde zu Sekunde kälter und damit erloschen auch die Flammen um ihn herum. Erleichtert holte Severus Luft, als schließlich Lucius in seiner vollen Pracht vor ihm stand.<br/>
+Wortlos befreite er ihn dann aus den Spinnenweben und sagte nur:<br/>
+„Wir haben es gleich geschafft.“ Er gab keine Erklärung ab und Snape erwartete das nicht, denn er würde es auch niemanden erzählen, dem er kein Vertrauen schenken konnte. Aber er wäre sehr neugierig gewesen, was Lucius schließlich doch zur Besinnung gebracht hatte.</p><p> </p><p>Die Tür des winzigen Raumes ließ sich anschließend ohne Probleme und magische Fallen öffnen.<br/>
+Es war wirklich nur eine quadratische Kammer, die höchsten fünf mal fünf Meter maß. An allen Wänden befanden sich Regal, die allerlei interessante Gegenstände enthielten. Lucius suchte zielgerichtet und hielt dann triumphierend den silbernen, massiv wirkenden Schlangenkopf hoch.<br/>
+„Das war’s. Ich würde dir empfehlen, nichts zu stehlen, denn diese Gegenstände hinterlassen magische Spuren, die man zurückverfolgen kann.“<br/>
+„Aber …“ Snape, der gerade einen interessant aussehenden Brieföffner in den Fingern hielt und tatsächlich überlegt hatte ihn mitzunehmen, deutete empört auf Lucius Schlangenkopf.<br/>
+„Tja, der gehört mir. Er wurde mir widerrechtlich weggenommen. Man wird bald wissen, dass ich ihn mir zurückgeholt habe, doch niemand wird es wagen ihn einzufordern. Bei dir sieht die Sache schon anders aus, Bursche!“<br/>
+Auf Lucius Lippen war ein erleichtertes Lächeln erschienen und Snape deutete das so, dass er froh war, sein Erbstück wiedererlangt zu haben.</p><p> </p><p>Allerdings lächelte Lucius aus anderen Gründen. Natürlich war er froh, den massiven Schlangenkopf wieder in seinen Händen zu halten, doch darüber hinaus, hatte der Erfolg ihn irgendwie aufgeputscht. Nicht, dass er daran gezweifelt hätte bis hierher zu kommen. Die Sache, für die er keine Lösung gehabt hatte, war, wie er wieder von hier wegkommen würde. Aber da gab es ja den entzückenden Severus Snape. Der Bursche würde ihm zur Flucht verhelfen, auch wenn er noch nichts davon ahnte.<br/>
+„Bevor wir gehen …“ Mit einem Schritt stand er vor Snape. Obwohl sie fast gleichgroß waren, sah ihn Lucius nun betont von oben herab an.<br/>
+Die dunklen Augen wichen ihm nach einer Weile aus und das erfreute Lucius, obwohl es nicht mit dem zusammen zu passen schien, was nun geschehen würde. Aber so war sein Innerstes. Nichts passte zusammen und nur seine äußere Maske erhielt eine strenge Ordnung aufrecht, die ihn arrogant, überlegen und mächtig erscheinen ließ.<br/>
+Allerdings hatten ihn die letzten Minuten die Augen über seine geheimsten Sehnsüchte geöffnet. Er würde es gern ungeschehen machen. Da das aber unmöglich war, würde er sich nehmen, was ihm gebührte.</p><p>„Ich habe es mir anders überlegt, Snape. Ich fordere doch meinen Gefallen ein. Zieh deine Hose runter!“ Seine Stimme war leise, ein bisschen kratzig (was ihn selbst ärgerte, da es ihm nicht gelang sein Verlangen herauszuhalten) aber trotzdem gebieterisch.<br/>
+„Aber ich …“<br/>
+„Aber … aber … hast du mir bis hierhin geholfen oder habe ich alles ein gemacht? Habe ich dich gerettet oder nicht?“ Snape, der erst trotzig versuchte seinem Blick nicht auszuweichen, errötete ein wenig und sah zur Seite. Das zarte Rot auf Severus Wangen machte Lucius plötzlich ganz atemlos. Es machte den Jungen hübsch und suggerierte Wärme. Seine rechte Hand schloss sich fest um seinen Zauberstab, die andere schloss sich so fest um den Schlangenkopf, dass es wehtat. Würde er das nicht tun, würde er diesen dürren Burschen nun küssen, weil er unbedingt wissen wollte, wie es sich anfühlte. Gerade so ein Kerl wie Snape, der ihm irgendwie ähnlich war und diese düstere Verletzlichkeit ausstrahlte, war überaus reizvoll.<br/>
+Eine Antwort bekam er von Severus nicht und dafür musste er ihn bewundern. Stattdessen begann er am Bund seiner Hose herumzunesteln, während Lucius‘ innere Erregung ein ganz neues Level erreichte. Vielleicht hätte er sich doch vorher mal überwinden sollen, bevor er nun seine gut gehütete Unschuld an diesen schwarzhaarigen Teufel verlor. Zu spät. Er konnte nicht mehr zurück, das spürte er überdeutlich. Seine steife Lust, drückte in seinem Schritt und er schluckte schwerfällig, als er hörte, wie die Beinkleider zu Boden rutschten und dann der schwache Klang der Unterhose, der widernatürlich laut in seinem Kopf hallte. Noch immer sah Snape zur Seite und Lucius steckte nun mit kalter Hand den Schlangenkopf in seine Manteltasche. Dann griff er mit dieser Hand grob nach Snapes Kinn und drückte es nach oben.<br/>
+„Du musst mich nicht zwingen, ich tue es freiwillig!“ sagte der Schwarzhaarige mit niedlich fester Stimme, doch seine Augenlider blinzelten dabei nervös.<br/>
+„Wer sagt denn was von zwingen?“ flüsterte Lucius belegt und brachte sein Gesicht ganz nahe an das andere heran. Er schloss die Augen und versuchte seinen Sinnen zu lauschen. Vielleicht hielt ihn ja doch noch etwas davon ab, zu tun, was er beabsichtigte. Nein, Absicht war es nicht. Es glich eher einem Zwang, dem er in diesem grotesken Moment völlig unterlegen war. So unterlegen, dass er sich lustvoll unter dieser fremdartigen Macht wandte, wie ein Schlangenleib in der Hitze der Sonne. Seine Haut prickelte vor Lust und er bekam es nicht mehr hin seinen Atem ruhig und langsam zu halten.<br/>
+„Sieh mich an!“ forderte er dann dunkel von Snape. Der hob seinen Blick dann tatsächlich und Lucius musste schmunzeln. In den schwarzen Augen war so viel finstere Gewalt und bösartiges Gift, dass Snape wie das Ideal eines Slytherin wirkte. Wenn nicht er seine Unschuld verdiente, wer sonst? Noch immer lag seine Hand um Snapes Kinn, fest wie ein Schraubstock.<br/>
+Er ließ ihn auch nicht los, als er seinen Mund berührte. Kaum legten sich seine Lippen auf seine, öffnete sich der Mund des Schülers wie die empfangende Vulva einer Frau. Etwas in Lucius drängte ihn dazu, seine Zunge tief in diese warme Höhle zu stoßen, zu erobern und für alle Zeiten als sein Eigentum zu markieren, doch er konnte gerade noch so widerstehen. Severus Snape war nur ein Junge und so beendete er diese intime Berührung besser.<br/>
+Stattdessen fühlte er Snapes Atem auf seinen feuchten Lippen nach, der kühlte und gleichzeig heiß wie brennende Lava war. Seine Erektion begann unkontrolliert zu zucken und ehe er die Beherrschung verlor und den Jungen an sich riss, um ganz und vollkommen über ihn zu kommen, fiel er vor ihm auf die Knie.<br/>
+Ein Geräusch der Überraschung begleitete sein Tun, denn Snape keuchte auf.</p><p> </p><p>Fassungslos sah Severus nach unten. Er hatte für diesen blonden aber gefallenen Engel schon vorher viel Bewunderung übrig gehabt, einfach, weil Malfoy nie versteckte, wer er war und was ihm seiner Meinung nach als reinblütiger Zauberer alles zustand. Doch durchschaut hatte er ihn niemals. Warum nun Lucius vor ihm kniete, begriff er ganz und gar nicht. Aber dessen Blicke, seine kalten, herrschsüchtigen Worte und die so intensive und hitzige Berührung seiner Lippen, hatten ihn vollkommen verwirrt. </p><p>Malfoys kalte Hände lagen hinten auf seinen Oberschenkeln. Unwillkürlich hatte Snape unter dieser Berührung und der Absurdität dieser Situation zu zittern begonnen. Nicht nur Furcht vor Lucius Rätselhaftigkeit, sondern auch eindeutig sexuelles Verlangen, brachte seinen dünnen Körper zum Beben. Die kühlen Hände schoben sich langsam höher. Mit aufgerissenen Augen sah Severus auf die blonden Haare und wünschte sich, Malfoy mögen den Blick heben, damit er erkennen könnte, was der Mann vorhatte. Das tat er nicht.</p><p>Als seine warme Zunge schließlich über sein erigiertes Glied streifte, zuckte Severus unwillkürlich zusammen. Das hier, war nichts, was er wollte und trotzdem fühlte er sich nicht in der Lage diesem prickelnden Rausch zu entkommen.<br/>
+„Du … solltest das nicht tun …“, flüsterte er trotzdem rau, um Malfoy aufzuhalten. Doch der fauchte nur:<br/>
+„Klappe, Snape!“<br/>
+Gleich darauf schob er seine warmen Lippen über die Erektion und schob sie tief in seinen Mund.<br/>
+Snape musste aufstöhnen. Es war ein dunkles, unartikuliertes Stöhnen, was nur zeigte, wie unkontrollierbar die Situation für ihn war.</p><p> </p><p>Dieses animalische, raue Stöhnen, machte Lucius fast verrückt. Er war kurz davor sich selbst die Hose runterzuzerren und dieses Halbblut anzubetteln ihn zu ficken. Aber noch fungierte sein Stolz als Schutzschild und wenn er das Zittern des Körpers in seinen Händen richtig deutete, würde es sowieso nicht lange dauern. Seine Fingerspitzen schoben sich weiter nach hinten und gruben sich dann begehrlich in die warme Spalte. Wieder krümmte sich Snapes Leib kurz und erschrocken zusammen.<br/>
+Das Keuchen des Burschen war schnell und hektisch. Vielleicht wäre es klug diesen seltsamen Kerl hiernach zu töten. Es sollte keine Spuren geben, die verraten könnten, wer er wirklich war. Seine Mund bewegte sich über den harten Penis, seine Zunge tastete die angeschwollenen Adern ab und seine Hände pressten den Jungen an sich. Ja, er übte Gewalt aus. Severus Snape hatte so viel Furcht vor ihm, dass er ihn nicht so ohne Weiteres abgewiesen und zurückgestoßen hätte. Aber er übte auch physische Gewalt aus, denn es wäre nicht einfach seinem festen Griff zu entkommen.<br/>
+Wieder nahm er den Penis des Jungen tief in den Mund und ließ ihn da, während er zum ersten und einzigen Mal nach oben sah.<br/>
+Snape hingen die schwarzen Haare vors Gesicht, so dass es fast schade war, dass er seinen Gesichtsausdruck so schlecht erkennen konnte. Aber was er sah, reichte. Die schwarzen Augen waren lustgeweitet und der Blick starr. Snapes Lippen waren weit offen und er hechelte, als wäre er zehn Kilometer am Stück in Höchstgeschwindigkeit gelaufen. Viel mehr gefiel Lucius aber, dass sich seine Hände in Höhe seiner Brust so fest in den Stoff seines Umgangs gekrallt hatten, dass die Knöchel weiß hervortraten.<br/>
+Hingabe. Ja, das war es wohl, was er sah. Verzweifelte Hingabe, die ein Ziel hatte, was niemals erreicht werden würde. Diese Erkenntnis ließ ihn sich Severus sehr nah fühlen. Beinah verspürte er Mitgefühl und eine zarte Verbundenheit mit diesem finsteren Jungen, der es weit bringen könnte und noch weiter, wenn er reinblütig wäre.</p><p>Wenn er noch jemals in die Verlegenheit kommen würde, seinen wahren Bedürfnissen nachzugeben, dass musste es Snape und kein anderer sein. Nur ein Seelenverwandter würde ihm Befriedigung verschaffen können.<br/>
+Lucius senkte den Blick wieder, bewegte seinen Mund noch ein wenig liebevoller und merkte dann tief in sich drin, wie Severus vor seiner Macht kapitulierte. Dessen Unterleib schien sich in seinen Händen wie eine Blüte um Mitternacht zu öffnen. Zaghaft, beinah schüchtern und doch nicht mehr aufzuhalten.<br/>
+Sein tiefes, sehnsüchtiges Stöhnen brachte Lucius schließlich, und für sich selbst vollkommen unerwartet, dazu, einfach so, ohne sich berühren zu müssen, zu ejakulieren. Dabei nahm er den Mund nicht weg, weil er unbedingt das salzige Sperma des Jungen in seinem Mund schmecken wollte. Es war viel und lief seine Kehle hinab, während es in seinem eigenen Schritt heiß und feucht wurde. Wie in Trance, kaum noch in der Lage sich zu bewegen und mit geschlossenen Augen, schluckte er und versuchte verzweifelt seine massive Lust und dieses so mächtige Gefühl, was über ihn kam, nach unten zu zwingen.<br/>
+Erst die Gedanken, er wäre erbärmlich und das hier war eines Reinblutes unwürdig, schafften es, dass er seinen Mund wegnahm. Während er aufstand, legte er unauffällig seinen Mantel über seine Körpermitte. Dieser Bengel musste nicht sehen, was er angerichtet hatte. Demonstrativ verächtlich wischte er sich über den Mund und sah den Schwarzhaarigen an.<br/>
+Er war verwirrt, doch nicht so sehr, wie er erwartet hätte. Schweigsam zog er seine Hose nach oben und wartete.</p><p> </p><p>Lucius nahm wieder den Schlangenkopf aus der Tasche und hielt ihn Snape vors erhitzte Gesicht.<br/>
+„Schau ihn dir an“, sagte er liebenswürdig. Das tat der Bursche, doch als er den Blick hob, vermutlich um zu fragen, was es zu sahen gab, schlug Malfoy ihm den Schlangenkopf kraftvoll gegen die Schläfe. Die dunklen Augen glitten unter die Lider und dann sackte Severus Snape wie in Zeitlupe zusammen.<br/>
+Malfoy fing ihn noch auf und ließ ihn behutsam zu Boden gleiten.</p><p>Dann ging er vor die Tür, verursachte mit einem Alarmzauber alle möglichen schrillen Geräusche und wartete dann auf Schritte. Als er sie vernahm, als er sicher sein konnte, dass die magischen Barrieren für ein paar Momente außer Kraft waren, hüllte er sich in einen Desillusio Zauber und konnte das Gewölbe unbemerkt verlassen. Der Schulleiter und zwei eingeweihte Lehrer waren auf dem Weg und würden gleich Snape in der Kammer finden. Der Junge würde Ärger bekommen und vielleicht wurde sogar eine Weile seine Beteiligung nicht bemerkt. Hoffentlich so lange, bis er aus Hogwarts entkommen war.<br/>
+Dieses Problem entpuppte sich als schnell lösbar, denn nur wenige Stunden später, als er unbemerkt durch den großen Innenhof schlich, hörte er, wie ein Angestellter zu einem anderen sagte, dass er leider gleich nochmal nach London müsste, da irgendein Idiot vergessen hätte die Vorräte zu bestellen. Unbemerkt und mithilfe eines schwarz-magischen Zaubers hängte sich Lucius an ihn wie ein Schatten und war kurze Zeit später zurück in London.<br/>
+Er hatte bekommen, was er wollte. Und er hatte bekommen, was er begehrte. Und es war etwas passiert, was nie hätte geschehen dürfen.</p><p> </p><p>Irgendwie ahnte er zu diesem Zeitpunkt schon, dass man sich immer zweimal im Leben traf. Ein weiteres Zusammentreffen mit Severus Snape würde vermutlich nicht so einseitig verlaufen.<br/>
+Nun ja, seine Neugier und sein Begehren waren so einigermaßen gestillt und wenn er sich nicht allzu dämlich anstellte, würde er die nächsten Jahre Ruhe haben. Denn schließlich hatte er nun eine Erinnerung. Die Erinnerung an einen finsteren Burschen und dessen zitternden Körper in seinen Händen. Diese Erinnerung verblasste jedoch schnell. Was nie verblasste war das Geräusch von Snapes unartikuliertem Stöhnen, was irgendetwas in Lucius berührte, dem er nicht entkam. Immer, wenn es ungewollt in seinen Sinn kam, war er schlagartig erregt. Manchmal so sehr, dass er sich selbst verzweifelt Erleichterung verschaffen musste. Er hasste sich dafür.<br/>
+Sogar Narzissa und deren selbstverliebte Gegenwart, die seiner glich, konnte nichts gegen diese zerstörerische Erinnerung ausrichten, die ihn hin und wieder einholte und zu Boden brachte. Erst viele Jahre später, dann als er Severus Snape erneut von Angesicht zu Angesicht gegenüber stand – diesmal auf Augenhöhe – verstand Lucius Malfoy, dass er sich an diesem unheilvollen Abend in diesen finsteren Jungen mit dem bösen Blick verliebt hatte. Unwiderruflich und mit allen Konsequenzen. </p><p> </p><p>Severus Snape wurde von Dumbledore und McGonagall aufgefunden. Er wurde verhört und beschuldigt, in der Hoffnung, dass er verriet mit wem er dort gewesen war. Aber Snape behauptete steif und fest, dass er nur neugierig gewesen war und schließlich nur unglücklich gestolpert war und mit dem Kopf gegen ein Regal gefallen war.<br/>
+Dumbledore glaubte ihm sichtlich kein Wort, drang aus unerklärlichen Gründen aber nicht tiefer in ihn. Dass der Schlangenkopf fehlte, erwähnte niemand. Severus Snape bekam für Monate Strafarbeit aufgebrummt, die ihm in dem Sinne nichts ausmachte, weil er sehr beschäftigt damit war den Hof zu fegen und andere Reinigungsarbeiten zu machen. Während er das tat, ging Potter ihm aus dem Weg, denn er befürchtete wohl, dass er selbst dazu verdonnert würde, wenn er ihn davon abhielt. Aber es war auch so, dass geheime Gerüchte kursierten, Snape hätte im Alleingang einen gut gesicherten und mit magischen Fallen gespickten Gang durchquert und hätte überlebt. Es brachte ihm neuen Respekt ein und er wehrte sich nicht dagegen, auch wenn er alles nur Lucius zu verdanken hatte. Der Gedanken an Lucius missfiel ihm allerdings, umso älter er wurde. Mit zunehmendem Alter verstand er, dass Malfoy ihn von vorn bis hinten manipuliert und missbraucht hatte und doch gab es einen Punkt, den Snape nicht ignorieren konnte.<br/>
+Da unten hatte er in Lucius kaltes Herz gesehen, was sich ebenso danach sehnte zu lieben wie seines. Um das zurück Geliebt werden, ging es beiden nicht. Weder Malfoy noch er legten Wert auf die Liebe eines anderen Menschen. Achtung, ja. Respekt und Furcht, ja. Aber es ging darum, diesen einen Menschen zu finden, der es wert war von einem Mann wie Lucius Malfoy geliebt zu werden. Es ging einzig und allein um einen Menschen, der diese Art beängstigende Liebe verstehen und annehmen konnte.<br/>
+Er selbst hatte seine Liebe schon vor vielen Jahren an ein hübsches Mädchen namens Lily Evans verschenkt. Aber Liebe war nicht alles. Lucius hatte in ihm etwas geweckt, was sich Begehren nannte. Und in vielen, schlaflosen Nächten erinnerte sich Severus an diesen fast mystischen Moment, in dem Lucius ihn geliebt hatte. Es hatte ihn fassungslos staunend gemacht, weil er überwältigt von der Aufrichtigkeit dieses Momentes war. Diese Echtheit und Lucius passten aber so wenig zusammen, dass es auf eine gute Weise schmerzhaft war an ihn zu denken.<br/>
+Malfoy mochte ein gerissener Blender und famoser Magier sein, der eine perfekte Maske erschaffen hatte und sie auch unter allen Umständen aufrecht erhalten konnte. Doch es gelang ihm nicht seine Absicht zu verbergen. Hätte er das tun wollen, hätte er Snape mit einem Zauber außer Gefecht setzen können und er hätte ihm sogar die Erinnerung nehmen können.<br/>
+Doch stattdessen hatte er ihn mit dem niedergeschlagen, was ihm lieb war. Dem Kopf der Schlange, ein Familienerbstück. Für ihn hieße das, Lucius wollte nicht, dass er vergaß, er wollte weiter hoffen.<br/>
+Snape war sich nicht ganz im Klaren darüber, was es für ihn bedeutete. Da gab es seine unschuldige Liebe zu Lily und dann gab es diese finstere Leidenschaft, die ihn an Malfoy denken ließ.<br/>
+So viele Jahre auch vergingen, es änderte sich daran nichts. </p><p>Und dann trafen sie sich wieder.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17611514/chapters/41887259">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Lucius saß im Tropfenden Kessel vor seinem Pint Bier. Es war schon das vierte und er konnte sich einfach nicht dazu überwinden sich nach Hause zu begeben. Den halben Tag musste er mit Narzissa und Draco Sachen für Hogwarts besorgen. In ein paar Tagen würde auch sein Sohn Draco seine Ausbildung in Hogwarts beginnen. Er hatte sich gewehrt und hätte ihn lieber nach Durmstrang geschickt. Narzissa gegenüber hatte er behauptet, dass es für Draco besser wäre unter Reinblütern zu leben und gleich noch die Dunklen Künste zu erlernen. Die Wahrheit aber war, dass er wusste, dass Snape inzwischen Lehrer in Hogwarts war. Er sorgte sich um Snapes zukünftige Beziehung zu Draco aber noch viel mehr befürchtete er, dass er ihn irgendwie treffen müsste. Und das würde geschehen, das war so sicher wie die Wiederkehr des Dunklen Lords. </p><p>Lucius trank sein Bier aus und bestellte sofort sein nächstes. Ganz nüchtern war er nicht mehr, leider auch noch nicht betrunken genug. Gut war, dass seine übliche Methode der Abwehr zuverlässig funktionierte. Er saß allein an einem der hinteren Tische, hatte die Tür im Blick und schaute offenbar so abweisend und hochmütig, dass es niemand wagte ihn anzusprechen, obwohl das hier unter Magiern durchaus üblich war und die meisten sicherlich auch gut wussten, wer er war. Reden wollte er ganz sicher nicht, denn es reichte schon, wenn er sich mit Narzissa oder seinem unfähigen Jungen unterhalten musste. Unwillkürlich musste er wieder über den wortkargen Severus nachdenken. Dessen Lebensweg hatte er immer im Auge behalten. Scheinbar war es für ihn, trotz seines großen Talentes nicht allzu gut gelaufen. Wenn man schon als Lehrer für Zaubertränke in Hogwarts endete, dann hatte man doch etwas falsch gemacht. Allerdings stand Snape auf Seiten der Todesser und das beruhigte ihn ein wenig. Mehr als einmal hätte er ihm begegnen können, doch hatte es vermieden. Denn noch immer war diese unerklärliche Furcht in ihm. Nur wenig später nach ihrer Begegnung in Hogwarts, hatte er Narzissa geheiratet. Der Grund war, dass er einen Namenserben wollte. Den hatte er nun, auch wenn Draco seinen Ansprüchen ganz und gar nicht gerecht wurde. Er hatte nur zwei Nächte gebraucht, um ihn zu zeugen und das allein, sagte schon alles über seinen Sohn aus. Weder vorher noch danach hatte er jemals wieder mit Narzissa geschlafen, denn diese Art Betätigung war nach wie vor für ihn ein Albtraum. Körperliche Nähe war nicht zu ertragen und Narzissa war zum Glück eine Frau, die sehr mit sich selbst beschäftigt war und ihn in Ruhe ließ. Wie sie sich ihre Befriedigung beschaffte, war ihm egal und das hatte sie auch schnell kapiert. Sie funktionierten als Familie, auch wenn sie beide wussten, dass es eine Farce war. Nur Draco war manchmal schwierig und er war sich nicht sicher, wie lange er ihm gegenüber seine Maske aufrecht erhalten konnte, wenn er älter wurde. Aber so talentlos wie der Junge war, würde er vermutlich vorher eines natürlichen Todes sterben.<br/>Was ihn wieder zu Snape brachte. Er müsste sich mit dem Gedanken abfinden, ihm demnächst wieder gegenüberzustehen. Es war machbar, denn die Erinnerung an dieses bizarre Abenteuer in den Gewölben unter Hogwarts war fast vollständig verblasst. Was niemals verblasste, war das unkontrollierte Stöhnen, welches Severus von sich gegeben hatte, als er ihn verwöhnt hatte. Es war ein haltloses, echtes Geräusch, was Lucius sagte, dass seine Liebe, die er in diesem Moment von ganzem Herzen gab, vollkommen angenommen und gewürdigt wurde. <br/>Auch Narzissa hatte beim Sex gestöhnt, doch das war kein Vergleich. Es war gekünstelt und vermutlich sowieso nur gespielt. Aber Snape, damals in seinen Händen, hatte sich völlig (wahrscheinlich in der Naivität seiner Jugend) auf ihn eingelassen. Trotzdem hoffte Lucius in manchen schlaflosen Nächten, dass der Schwarzhaarige vielleicht erkannt hatte, was ihm wiederfahren war.<br/>Niemals vorher und niemals danach hatte Lucius seine Liebe verschenkt. Nicht mal an seinen Sohn.<br/>Denn für ihn gab es nur eine Liebe, die an einen einzigen Menschen aus einem einzigen Grund gebunden war. So wie Snape diese Lily begehrte und geliebt hatte, so hatte er in diesen Augenblicken dasselbe für Snape gefühlt. Vor einigen Jahren hatte er von Lily Potters Tod gehört und war sich nicht ganz sicher, was er davon halten sollte. Damals musste er so intensiv an Severus denken, dass er ihn fast aufgesucht hätte, um zu sehen, wie er das verkraftet hatte. <br/>Leise seufzte er und sah hoch, als jemand sein Bier brachte. Sein Blick war auf die Tür gerichtet und er erstarrte. Alles in Lucius fror ein. Sein Atem, sein Herzschlag, sein Denken und sein Körper. Nur seine so gut verschlossenen Gefühle brachen augenblicklich über ihn herein, als er Severus Snape erkannte, der ihn direkt und auf seine düstere Art ansah. Nichts in seinem älter und nicht hübscher gewordenen Gesicht ließ erkennen, was der Schwarzhaarige gerade dachte. </p><p> </p><p>Snape hatte, im Gegensatz zu Lucius, mehr als einmal die Möglichkeit wahrgenommen ihn zu sehen. Dabei hatte er sich aber versteckt gehalten, weil er ein Zusammentreffen auf gar keinen Fall provozieren wollte. Im Grunde hatte er nur eine einzige Aufgabe, seit seine geliebte Lily ermordet wurde und die galt es zu erfüllen.<br/>Hin und wieder hatte er Malfoy aus der Entfernung gesehen. Was damals in den Gewölben passiert war, wusste Snape immer noch bis ins Detail. Ihm hatte sich alles eingeprägt. Angefangen von dem schwarzen Panther, bis hin zum Schlag mit dem Schlangenkopf. Er konnte mühelos Lucius damaliges Aussehen, seinen Geruch und das Gefühl, was er in ihm verursacht hatte, reproduzieren. Auch Lucius war älter geworden, doch seine Ausstrahlung war dieselbe geblieben. Stolz und hochmütig, bis weit über die Grenzen hinaus. Unnahbar und kalt wie ein König des ewigen Eises und doch konnte er Ifrit für kurze Zeit ein Heim geben, was viel über ihn aussagte. Das jedoch wussten nur Zauberer, die Schwarze Magie beherrschten, so wie er selbst. Doch all das hatte Snape erst viele Jahre später verstanden. Der Schmerz über Lilys Tod hatte ihn gefühllos gemacht. An manchen Tagen war er sich selbst nicht sicher, ob er am Leben oder irgendwo zwischen Tod und Leben gefangen war. An anderen Tagen hingegen, war nicht nur Lilys wundervolles Wesen zugegen, sondern auch die befremdliche Erinnerung an Lucius. Wenn er nicht aufpasste, durchströmte ihn beides warm und erregend. </p><p>Severus hatte sich die Liste der Frischlinge angesehen, die in ein paar Tagen nach Hogwarts kommen würden und den Namen Draco Lucius Malfoy entdeckt. Es war absolut keine Überraschung und doch war er ein paar Momente lang versucht irgendetwas dagegen zu unternehmen. Er kannte den Bengel nicht, doch wenn er nur ein bisschen wie sein eitler Vater war, würde er ihn vermutlich verabscheuen. Oder auch nicht. Es war problematisch. Letztlich entschloss sich Snape dem Jungen eine Chance zu geben. Er hatte ja nicht nur einen manipulativen, egozentrischen und hinterhältigen Vater, sondern auch eine Mutter, die allerdings nicht unbedingt edlere Charaktereigenschaften aufweisen konnte, als geborene Black.</p><p>Heute war er hier in der Winkelgasse unterwegs, weil er noch ein paar Besorgungen für die erste Unterrichtswoche machen wollte. Am Ende eines anstrengenden Tages, wollte er sich ein Glas Nesselwein gönnen und war in den Tropfenden Kessel gegangen, obwohl er das nicht gern tat. Zu viele wußten, dass er Lehrer in Hogwarts war und noch mehr konnten ihn aus vielerlei Gründen nicht ausstehen. Es hatte sich im Grunde nichts seit seiner Schulzeit geändert. Doch, etwas hatte sich geändert. Inzwischen konnte er damit umgehen, weil ihn nichts berührte. Er empfand kaum mal Mitgefühl und interessierte sich einen Dreck für die Angelegenheiten anderer Menschen. Häme, Spott und Hass prallten an seinem Panzer ab.<br/>Lucius hier zu treffen, zog ihm allerdings dann doch die Beine weg. Dessen Anblick war unerwartet, denn im ersten Moment erblickte er diesen Lucius von damals, der innerlich bewegt und ergriffen war. Die grauen, sonst so kalten Augen waren geweitet, voller Emotionen und sahen ihn in einer Mischung aus Verwunderung und Schock an. Die Lippen, die ihn so zärtlich und hingebungsvoll verwöhnt hatten, öffneten sich langsam, als wollte er etwas sagen, aber Malfoy atmete nur. Seine hellblonden Haare waren immer noch wie ein Heiligenschein um seinen Kopf, ließen ihn anziehender und wohlwollender erscheinen, als er war.<br/>Der blonde Magier war noch immer attraktiv und reizvoll. Doch bevor Severus eine Entscheidung treffen konnte, ob er zu ihm gehen sollte oder nicht, verschwand Malfoy vor seinen Augen.<br/>In Severus Ohren rauschte das Blut und sein Herz pochte wild, als er immer noch auf die leere Stelle sah, an der eben noch Malfoy gesessen hatte. Hatte er sich das eingebildet? Hatte er sich das erträumt? Weshalb? Weil er den Namen seines Jungen gelesen hat und sich sicher war, dass ein Zusammentreffen irgendwann passieren musste?<br/>Mit schwachen Beinen ging er zu dem Tisch und setzte sich auf den Stuhl, auf dem Lucius eben noch gesessen hatte. Er war noch warm und deshalb musste es real gewesen sein. Aufgewühlt sah er lange auf das volle Pint Bier und trank es dann aus.</p><p> </p><p>Lucius war vollkommen verstört, als er sich in sein Haus apparierte. Irgendwo im Haus hörte er Draco trotz der späten Stunde herumbrüllen. Vermutlich übte sein Sohn gerade wieder einen Zauber und bekam ihn nicht hin.<br/>Nach dem ersten Schock des Wiedersehens, kam schlagartig die Erregung. Ganz untypisch für ihn, legte er seinen Gehstock mit dem Schlangenkopf, der seinen Zauberstab enthielt einfach auf den Kaminsims und goss sich ein großes Glas Whisky ein, welches er auf einen Schluck austrank. In seinem Magen begann es zu brennen und mühsam versuchte er seine Gedanken zu bändigen. Es war gut, dass es außerhalb von Hogwarts geschehen war, weil er sich völlig verschätzt hatte.<br/>Nichts, aber auch gar nichts war verblasst. Alles war wieder da. Der Schmerz in seiner Schulter, als dieser dürre Kerl gegen ihn gerannt war, bis hin zu seiner unangenehm feuchten Hose, weil er seine Lust nicht unter Kontrolle bekommen hatte. Sein Verlangen spritzte hoch wie eine Fontäne. Trotz allerlei Tricks und Zauber, war er dagegen machtlos. Snapes Anblick hatte ihn angreifbar gebracht. Dabei war es nicht so, dass er diesen heutigen Severus begehrte, weil allein sein Anblick dazu reichte. Nur hatte der andere Mann damals in gewisser Weise die Büchse der Pandora geöffnet und würde ihm vermutlich den Rest geben. <br/>Wo verdammt ist Narzissa, dachte Lucius jäh extrem aufgebracht und lief durch das riesige Haus auf der Suche nach ihr. Er fand sie schließlich in ihrem eigenen Schlafzimmer, wo sie gerade ihre neu gekaufte Kleidung anprobierte.</p><p> </p><p>„Na, wie findest du das Kleid? Steht mit Dunkelgrün?“ fragte sie ein wenig abwesend, während sie sich im Spiegel betrachtete. Er konnte keine Antwort geben, denn die aufgestaute Hitze in seinem Inneren schien ihn zu verbrennen. Lucius wusste, dass Ifrit sie angefacht hatte und er damit leben musste. Solche mächtigen Zauber hatten immer ihren Preis. Wenn er ehrlich zu sich selbst wäre, würde er zugeben, dass die Erinnerung an Snape ihn zum Glühen brachte. Seine Männlichkeit versteifte sich immer mehr, obwohl er versuchte, das Verlangen zu unterdrücken.<br/>„Kannst du mir bitte eine Antwort geben, Lucius?“ forderte Narzissa nun verstimmt.<br/>„Zieh dich aus! Sofort!“ flüsterte er rau und starrte sie verlangend an. Er musste dieses drängende Feuer loswerden. Augenblicklich, denn sonst müsste er darin verbrennen. Auch die Erinnerung an Ifrit, den er unabsichtlich angerufen hatte, überrollte ihn und ängstigte ihn so viele Jahre später fast zu Tode. Der Schwarzhaarige hatte ihn gerettet, indem er ihn mit seinem Namen anrief, nur wusste Snape das nicht und würde es vermutlich auch nie erfahren.<br/>„Lucius?“ Seine Frau hielt inne und sah ihn merkwürdig an. Seine Forderung war für sie beunruhigend, doch würde er sich nicht erklären können. Alles was er schaffte, waren die folgenden Worte herauszupressen:<br/>„Zieh dich aus, verdammt nochmal!“<br/>„Nein, werde ich sicher nicht!“ sagte sie bockig und wich vor ihm zurück. Ihre Augen hatten sich argwöhnisch verengt und huschten zu ihrem Bett. Dort lag ihr Zauberstab, wie Lucius beim Hereinkommen bemerkt hatte. Er warf die Tür nun hinter sich zu und ging langsam auf sie zu.<br/>Sie würde den Zauberstab nicht gegen ihn erheben. Er selbst hatte diese Regel aufgestellt. Niemand innerhalb ihrer kleinen Familien würde jemals den Zauberstab einem anderen Mitglied gegenüber erheben. Draco hatte ein paar Strafen gebraucht, um es zu lernen. Nun beschränkte er sich auf die Hauselfen oder anderes Gesindel, wie die Hausmädchen.<br/>Noch immer war Lucius Verstand von einem Begehren beherrscht, welches unkontrollierbar und brennend war.<br/>Inzwischen war eindeutig Angst in Narzissas Blick. Sie stand mit dem Rücken am Schrank und er riss ihr ohne zu zögern ihr gerade neu gekauftes Kleid kaputt, indem er seine Hand in den Ausschnitt legte und den Stoff nach unten wegriss.<br/>„Verlierst du gerade den Verstand, Lucius?“ schrie sie mit überschlagender Stimme und begann zu schluchzen. Hysterisch versuchte sie ihn von sich wegzudrücken, doch sie war zu schwach.<br/>„Ich sagte, zieh dich aus. Tue einfach, was ich will!“ befahl er mit schneidender Stimme, die so gar nicht zu seinem sehnsüchtigen Verlangen zu passen schien. Aber so war es immer. Diese innere Dissonanz schwächte ihn und würde ihn wirklich um den Verstand bringen, falls er es zuließe. <br/>„Nein! Ich …“ Er ließ sie nicht antworten, sondern riss ihr grob den Rest der dünnen Kleidung vom Körper. Narzissa schrie leise auf, als er sie brutal zu Boden brachte und sich sofort auf sie warf. Während er allerdings versuchte seine Hose nach unten zu schieben, um in sie einzudringen, schlug sie ihm ziemlich fest die Faust gegen die Schläfe. Es reichte nicht, um ihn bewusstlos zu machen, doch er war einen Moment recht benommen. Narzissa kroch mühsam unter ihm hervor, robbte auf allen Vieren zum Bett und nahm ihren Zauberstab. Damit zielte sie nun auf ihren Mann und sah ihn vernichtend an.<br/>„Das … wagst du nicht!“, keuchte er rau. Sein unbefriedigtes Verlangen verursachte einen so heftigen Schmerz in seinem Leib, dass er sich am liebsten vor Qual krümmen würde.<br/>Dieses Weib hat keinen Respekt, dachte er noch, da sagte Narzissa leise aber mit fester Stimme:<br/>„Stupor!“ Dann traktierte sie ihn mit ein paar wirklich fiesen und schmerzhaften Blitzen, bis er das Bewusstsein verlor.</p><p> </p><p>Als er zu sich kam, lag er immer noch auf dem Boden in ihrem Schlafzimmer. Narzissa war weg und Lucius blieb einfach auf dem Teppich liegen. Seine Erregung und sein schreckliches Verlangen waren weg. Zurück blieben eine traurige Leere und eine abgrundtiefe Beschämung über sein scheußliches Verhalten seiner Frau gegenüber, die ihn derart ausfüllten, dass er leise zu weinen begann. Ihm war klar gewesen, dass ein Begegnung mit Snape nicht so glimpflich ablaufen würde, doch das hier, hatte er einfach nicht erwartet.<br/>Am liebsten würde er jetzt sterben wollen. Wie sollte er diese Schande über sein eigenes Wesen noch weitere 50 Jahre oder mehr ertragen können? Diese Liebe in ihm würde ihn zerstören. Ebenso wie Snape die Liebe zu dieser Lily zerstört hatte.</p><p> </p><p>„Vater? Alles in Ordnung?“ Sein 11jähriger Sohn hatte unbemerkt von Lucius die Tür geöffnet, war aber dort stehen geblieben und sah ihn nun verwundert an. Dracos größte Schwäche war seine Empfindsamkeit, die Lucius sehr gern aus ihm entfernen würde. Mit diesem kindlichen Mitgefühl sah sein Sohn ihn nun an, traute sich aber nicht zu ihm zu kommen. Ich habe alles falsch gemacht, dachte Lucius in diesem Moment, machte eine vage Handbewegung und ließ die Tür vor Dracos Nase zuschlagen. Sein Sohn hatte seine Tränen gesehen. Er würde sie zum Glück nicht verstehen, doch allein der Gedanke an seine eigene Schwäche bereitete Lucius Übelkeit.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17611514/chapters/42085286">Chapter 4</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Der nächste Morgen im Malfoy-Anwesen war eigenartig, wie es nicht anders zu erwarten war. Narzissa bestrafte ihn mit eisiger Verachtung, die darin gipfelte, dass sie ihm nicht mal Kaffee einschenkte. Draco wich seinem strengen Blick immer aus, beobachtete ihn aber in Momenten, wo er glaubte sein Vater würde es nicht merken. Mehr als einmal war Lucius in Versuchung in Narzissas und Dracos Gedanken einzudringen, um zu sehen, was sie über ihn dachten, doch er tat es nicht. So viel Anstand hatte er dann doch noch. Was Narzissa dachte, bekam er sowieso zu spüren. Vermutlich würde sie ihn noch tagelang auf diese Weise behandeln und sie hatte jedes Recht dazu. Schließlich hatte er versucht sie zu vergewaltigen. Unwillkürlich war er Dracos Blick begegnet. Sein Junge, der sonst um diese Zeit laut und nervtötend war, sah ihn eher gedankenvoll und ernst an. <br/>„Hast du nichts vorzubereiten?“ herrschte er ihn an und Draco sprang ausnahmsweise sofort hoch und verschwand in seinem Zimmer.<br/>„Narzissa, ich würde mich gern bei dir entschuldigen und …“<br/>„Spar es dir! Ich will es nicht hören. Ich werde gleich in die Stadt gehen und noch die letzten Besorgungen machen. In zwei Stunden holen die Goyles Draco ab, weil er zu dieser Verabschiedung geht. Wenn ich wiederkomme, vermutlich sehr spät, will ich dich nicht sehen, oder ich werde wieder meinen Zauberstab gegen dich erheben!“, zischte sie ihn böse an.<br/>„Du bist chancenlos gegen mich, das weißt du!“, erwiderte er überheblich.<br/>„Vielleicht. Trotzdem lagst DU Stunden bewusstlos auf dem Teppich.“<br/>„Weil du die Regel verletzt hast, Narzissa.“<br/>„Die Regel, die du aufgestellt hast und der ich gezwungenermaßen zustimmen musste.“<br/>„Die Regel war zum Schutz …“<br/>„Fick dich, Lucius!“ fauchte sie und ließ ihn einfach stehen.</p><p> </p><p>Nachdem Draco weg war, war Lucius allein mit Dobby im Haus. <br/>Seine frühere, innere Ruhe war weiterhin unerreichbar. Wie sollte er Narzissa beibringen, dass sie allein nach Hogwarts zu den Elternabenden gehen müsste? Undenkbar.</p><p> </p><p>„Herr, Herr!“ schrie Dobby und er hörte seine nackten Füße über den Marmorboden platschen. Abscheu stieg in ihm hoch. Für alles und jeden konnte Lucius diesen Ekel empfinden. Nur nicht für diesen schwarzhaarigen Teufel. Warum war das so?<br/>„Was?“ fragte er ungehalten den Hauself, als er an der Tür erschien.<br/>„Jemand steht vor der Tür und möchte zu dem Herrn“, piepste Dobby aufgeregt.<br/>„Jemand?“<br/>„Ein Mann, Herr.“ Lucius wurde schlecht. <br/>„Wie sieht er aus?“<br/>„Zum Fürchten. Schwarze Haare, schwarzer Umhang und dieser … Blick!“ Dobbys Augen waren noch weiter aufgerissen als sonst. Snape. Dieser Irre wagte es hier aufzutauchen? Hatte er den Verstand über den Tod von Lily Potter verloren? Lucius versuchte Zorn zu empfinden, fühlte jedoch nur diese erregende Sehnsucht in sich, endlich lieben zu können. Es war paradox, fatal und hoch explosiv.<br/>„Du wirst jetzt einen Spaziergang machen, Dobby, und zwar so lange, bis ich dich zurückrufe. Ist das klar?“ herrschte er den Elf an.<br/>„Was? Aber mein Herr, ich …“ Lucius schlug ihm mit der flachen Hand gegen den Hinterkopf, dass Dobby gegen die Tür klatschte und ein wenig benommen blinzelte.<br/>„Seit wann widersprichst du mir? Das war ein Befehl. Du verlässt das Haus und gehst weit weg. Es sei denn du möchtest sterben. Willst du das?“<br/>„Nein, Herr. Nein, Dobby möchte nicht sterben.“<br/>„Gut, dann verschwinde jetzt, ich kümmere mich allein um den Gast!“ Dobby nickte eifrig, schnippte mit den Fingern und war verschwunden. Lucius wollte keine Zeugen, wenn er Severus Snape gleich töten würde.</p><p> </p><p>Snape wartete, dass jemand zur Tür kam. Zwar hätte er sich auch direkt in den Salon begeben können, doch dann wäre der Hausherr vermutlich so verärgert, dass er mit ihm gar nicht sprechen konnte. Aber er musste sich mit ihm unterhalten, um die Sache mit Draco zu klären. Es hatte ihn große Überwindung gekostet hierher zu kommen und er hatte so lange hier unbemerkt herumgelungert, bis er sicher war, dass weder Narzissa, noch Draco anwesend waren. Obwohl er sich ein wenig lächerlich vorgekommen war, heiligte der Zweck in diesem Fall die Mittel. Keinesfalls wollte er sich vor der kompletten Familie Malfoy zum Narren machen, wollte aber auch Lucius nicht vor seiner Frau brüskieren. Auch wenn er sich wie ein Verbrecher vorkam, so hüllte er sich besser in Mantel der Deckung ein.<br/>„Komm rein, Snape!“ hörte er Lucius Stimme. Er sah ihn nicht und wusste, dass Malfoy seine Stimme mit Magie verstärkt hatte. Sie klang ein wenig rauer als früher, hatte jedoch immer noch den unsäglich blasierten Unterton. Langsam trat Severus durch die Tür. Seine gutgeschulten Sinne nahmen keine akute Gefahr wahr und auch nicht mehr die Anwesenheit von Hauspersonal. Vorsichtshalber murmelte er ein leises: „Homenum revelio“ um nichtsichtbare Personen zu entdecken, falls es sie gab. Lucius und er waren offensichtlich allein im Haus.<br/>Interessant, dachte er amüsiert und gleichzeitig dezent beunruhigt.<br/>Zielstrebig und selbstbewusst lief er in den Salon. Dort stand Lucius Malfoy am monströsen Kamin, hatte seinen Gehstock lässig über die rechte Schulter gelegt und sah ihn unergründlich an.<br/>„Ist das nicht ziemlich gefährlich, hier aufzutauchen, Snape?“<br/>„Weshalb? Ich bin der zukünftige Lehrer deines Sohnes. Von den anderen Dingen ganz abgesehen …“ Sein rechter Mundwinkel zuckte dabei unkontrolliert, als er näher zu Lucius ging. Er war inzwischen ein wenig größer als Malfoy, wie er dabei feststellte. Die grauen, harten Augen blickten ihn unnachgiebig an. Noch immer war Lucius anziehend schön. Vielleicht nahm er das auch nur so wahr, weil er in sein Wesen geschaut hatte und dort etwas entdeckt hatte, was niemand nur vermuten würde.<br/>„Andere Dinge? Wovon zum Teufel sprichst du?“<br/>„Ich muss dich doch jetzt nicht über die Dinge informieren, über die man nicht spricht und von denen du mehr Ahnung hast als ich“, sagte Snape geheimnisvoll, aber nicht ohne höhnischen Unterton. Die grauen Augen verengten sich und die Lippen pressten sich noch mehr aufeinander.<br/>„Worum geht es also?“ fragte Lucius nun kalt und versuchte ihn abschätzig anzusehen.<br/>„Um deinen Sohn. Er wird mein Schüler sein und ich will von dir wissen, wie ich mit ihm umgehen soll.“ Erleichterung huschte durch Lucius Augen, es war nur ein winziger Moment, dann sagte er schon kühl:<br/>„Draco ist ein Idiot. Lass es ihn spüren, vielleicht hilft es ja. Aber übertreibe es nicht damit, denn …“ Er brach ab und wich zum ersten Mal seinem Blick aus.<br/>„Denn …?“<br/>„Er ist weich. Zu weichherzig, wenn du mich fragst.“ Severus schwieg und fragte sich still, ob Draco diese immense Schwäche von seinem Vater geerbt hatte. Seit er in seinem Haus war, fühlte er sich selbst in seiner Nähe zunehmend schwächer. Schwach und empfänglich für ihn. Gerade auch, weil Lucius so verzweifelt versuchte, seinen kalten Panzer aufrechtzuerhalten, streifte ihn der Hauch seiner unmissverständlichen Liebe. Wie damals, da unten. Wie konnte es sein, dass ein durch und durch selbstbezogener, berechnender Mann diese so seltene Gabe der fanatischen Liebe in sich trug und so gut wie nie offenbarte? Es war wie bei ihm selbst, dachte Severus bekümmert und um die Qual wissend.<br/>„Warum bist du gestern Abend einfach verschwunden, als du mich im …“ wollte er fragen, doch Lucius zog unvermittelt seinen Zauberstab aus dem Gehstock und zielte auf ihn.<br/>„Nicht! Tu das nicht, Snape! Fordere dein Glück nicht heraus!“ zischte Malfoy böse und fixierte ihn mit wieder eisigem Blick.<br/>„Glück? Von welchem Glück sprichst du?“ fragte er ihn ganz ruhig.<br/>„Dein Glück am Leben und im Vollbesitz deiner geistigen Kräfte zu sein.“ Er legte den Kopf ein wenig schief und betrachtete Malfoy nachdenklich. Er wirkte streitlustig, mächtig und beherrschend. Aber da war etwas in seinen Augen, was ihm sagte, dass es Lucius einzig und allein darum ging, heil aus der Sache herauszukommen, ohne sein Gesicht zu verlieren. Dabei hatte er ihm doch längst in die Seele geschaut. Oder irrte er sich? War Malfoy noch besser darin geworden andere zu täuschen? <br/>Inzwischen beherrschte Severus selbst die Techniken der Legilimentik und der Okklumentik. Höflichkeiten und Anstand gab es zwischen den beiden Männern sowieso nicht, deshalb versuchte er nun in Lucius Gedanken einzudringen. Es blieb beim Versuch. Malfoy war zu stark und hatte sich viel zu gut geschützt. Snape prallte ab, als würde er gegen eine Eismauer fallen und daran hilflos nach unten rutschen. Es war vergeblich und als er aufgab, sah er das vergnügte Blitzen in Lucius Augen.<br/>„Netter Versuch, Severus. Manche Dinge sind nichts für dich. Jedes Kind kann dich darin besiegen.“ Er machte eine nachlässige Handbewegung und die Knöpfe von Snapes Weste sprangen einer nach dem anderen ab.<br/>„Das ist deine lächerliche Rache, Malfoy? Ich habe dich damals nicht verraten, wie du dir denken kannst!“ sagte Snape nun dunkel, weil etwas mit ihm passierte, mit dem er nur bedingt gerechnet hatte. Ein irres Machtgefühl entstand in ihm und nährte eine tief verborgene Lust, die er niemals zuließ. Eine hitzige Lust, die Malfoy in ihm geweckt hatte.</p><p> </p><p>Lucius schmunzelte verächtlich.<br/>„Ja, ich weiß. Du hättest es aber ruhig tun können. Es hätte nichts geändert. Erwarte von mir jetzt keine Huldigung dafür.“ Eindringlich musterte er Severus. Umso länger er hier war und er seine Gegenwart spüren musste, umso weiter schleuderte ihn das in seine Vergangenheit zurück. Bis zu dem einzigen Moment einer wundervollen Liebe. Aber Snape hatte versucht in seinen Verstand einzudringen, war kläglich gescheitert, und er müsste ihn zurechtweisen. Überraschend drang er augenblicklich in seine Gedanken ein. Snape wehrte sich, war stark, doch nicht stark genug. Nicht für ihn. <br/>Alles was er in Severus gefolterter Seele fand, war seine Trauer und seinen Weinen um Lily. Es gab nicht mehr. Nur das. Überall und immerzu. Erst ganz unten, am Grund eines schwarzen Tränensees voller Schmerz und Hass, fand er den Kopf seiner Schlange. <br/>Erschrocken und selbst gepeinigt, zog sich Lucius zurück. Sein Atem ging schnell und sein Herz pochte wild. Als er dem schwarzhaarigen Mann ins Gesicht blickte, sah er eine Träne über dessen bleiche Wange laufen. Die schwarzen Augen starrten ihn jedoch weiterhin herausfordernd an. <br/>„Zufrieden?“ flüsterte Severus zynisch. <br/>Wie konnte er zufrieden sein, wenn der einzige Mensch, den er jemals geliebt hatte, so litt?<br/>Lucius wandte sich ab, um seine Kontrolle wiederzufinden, ehe er noch einen großen Fehler beging und sein Mitgefühl und seine Hilflosigkeit bekundete. Es war eine kaum zu begreifende Analogie, dass Snape all die Jahre ebenso litt wie er. Sie waren Seelenverwandte, immer gewesen und waren es noch immer. Diese Erkenntnis raubt Lucius vollkommen die Kontrolle. Seine Hände zitterten plötzlich so sehr, dass er seinen Zauberstab einfach fallen ließ. Er hob ihn gleich wieder auf und hörte Severus näher kommen, doch war ebenso wehrlos wie damals. Die Gegenwart des Schwarzhaarigen war bedrohlich, ausfüllend und umfing ihn wie ein warmer, schwarzer Mantel. Snapes Finger waren ruhig und behutsam, als sie ihm die Haare von der Wange strichen. In seinem eigenen Haus, wie konnte er das zulassen? Er wollte ihn doch töten.</p><p> </p><p>„Ich habe dir meinen Ruf zu verdanken, Lucius …“, flüsterte Severus belegt. Sein Gesicht war nahe an seinem und die Hitze verbrannte ihn dabei fast. Wieder musste er an Ifrit denken. <br/>„Du … hast mir damals das Leben gerettet, als ich in Flammen stand!“, flüsterte er zurück, sah sich jedoch nicht in der Lage dem Blick der schwarzen Augen zu begegnen. Snape hatte seine flache, warme Hand an seine Wange gelegt und seine trockenen Lippen streiften wie zufällig über seine andere Wange. Lucius atmete nur, schnell und mit steigender Erregung.<br/>„Was du da unten mit mir getan hast, hat mich all die Jahre am Leben erhalten.“<br/>„Weshalb?“ fragte Lucius atemlos und schloss willenlos seine Augen, als Snapes Hand sich in seinen Nacken schob.<br/>„Weil ich so immer wusste, dass nicht nur ich so grundlos leiden muss. Ich wusste, da draußen ist jemand, der ebenso lieben kann, wie ich. Ein Mann, der diese Tiefe ebenso spüren kann und ebenso davon gequält wird, wie ich.“ Lucius seufzte leise und hob endlich den Kopf. <br/>Snapes schwarze Augen sahen ihn an. Für jeden anderen Menschen wären sie kalt, ohne Mitgefühl und durchdringend. Doch Lucius hatte am Boden seine eigene Liebe gefunden. Es war paradox, doch indem sie beide von denselben ungewöhnlichen tiefen Gefühlen geleitet und gefoltert wurden, waren sie sich näher, als jemand sonst.<br/>Wenn Snape ihn auf diese verbrennende Weise zurücklieben würde, wären sie ganz schnell Asche. So aber konnte Lucius jetzt seinen schmerzenden Kopf an Snapes Schulter lehnen und sich von ihm festhalten lassen. Es war so erleichternd, verstanden zu werden, dass bald darauf eine melancholische Euphorie durch sein Blut rauschte. Er hatte so gehofft und sich so danach gesehnt, dass dieser dürre Junge verstehen würde, was er ihm im Rausch der Situation geschenkt hatte, dass er nun davon vollkommen überwältigt wurde. </p><p> </p><p>Severus spürte genau, wie weich Lucius in seinen Armen wurde. Er hatte sich also nie getäuscht. Doch es hatte so viele Jahre gedauert, bis sein Verstand es begriffen hatte. Wie damals Lucius, legte er nun seine Hand unter Malfoys Kinn und hielt ihn fest, als er seine Lippen auf seine legte. Es war ein wenig anders, als beim ersten Mal, denn während des Kusses, der absurd schüchtern war, brachte sie Lucius in ein anderes Zimmer.<br/>Ab da trennten sich ihre Lippen nur noch, um sich hastig zu entkleiden. Ihre Küsse waren ungeübt und ihre Körper viel zu ungeduldig. Stöhnend, keuchend und verlangend drückten sie sich aneinander. Lucius hörte Snapes Stöhnen überdeutlich. Es war noch ein wenig tiefer und dunkler als damals, hatte aber dieselbe verehrende Wirkung auf ihn. Die Lust und seine unerfüllte Liebe schwollen in ihm an wie ein heißer Ballon. Bereit, jederzeit zu platzen. Lucius dachte nicht mehr und fühlte sich zu nichts anderem in der Lage, als gierig die fremde Haut zu berühren. Das tat er mit seinen Händen, seinem Mund und seiner eigenen Haut, vollkommen hingebungsvoll, weil er wusste, dass der Schwarzhaarige wie er war und nur er allein diese fatale, furchteinflößende Liebe verstehen und empfangen konnte. Jeder andere Mensch würde damit nicht umgehen könne. Worte gab es dafür sowieso nicht. </p><p> </p><p>Nicht ein Wort fiel, als Severus den blonden Mann nachdrücklich auf den Bauch zwang und sich dann auf ihn legte. Lucius war mehr als bereit für ihn und nahm ihn unter einem so lustvollen Stöhnen auf, dass er selbst wirklich ein paar Sekunden hart um Fassung ringen musste. Dann stöhnte er nur noch. Laut, total unkontrolliert und verzehrend. Er war beschwingt von seiner eigenen Liebe für Lily, die ihn immer noch so sehr ausfüllte.</p><p> </p><p>Lucius zitterte. Er hatte das Gefühl den Verstand zu verlieren, als die Hitze aus ihm herausbrach. Unwillkürlich öffnete er seine Beine noch weiter, um den anderen Mann so vollständig und so tiefe es ging zu spüren. Snapes Stöhnen machte ihn wehrlos, schutzlos und brachte diese Seite in ihm zum Vorschein, die er abgrundtief verachtete. Er war weich wie warme Butter und doch pulsierte dieser feurige Ball in seinem Unterleib. Die fremde, harte Macht in ihm, müsste schmerzen, doch das tat sie nicht. Sie verhinderte dass die Gier ihn von innen auffraß. Stattdessen pulsierte sie jäh und stoßweise aus ihm heraus. Lucius schrie heiser und ergab sich dann seinen lustvollen Zuckungen, die nicht nur seinen Körper betrafen, sondern auch etwas in seinem Verstand besänftigten, was er nicht begriff. Noch dreimal stöhnte Snape wieder auf diese animalische Weise, dann ergoss er sich in ihm. Sein lang gehütetes Feuer war gerade aus ihm herausgeströmt und Severus füllte ihn erneut mit dem Feuer seiner Liebe. Es war endlos, begriff Lucius in diesem Moment, der ihn geschwächt und doch gleichzeitig tief befriedigt hatte.</p><p> </p><p>Schwer atmend lagen sie noch eine Weile nebeneinander.<br/>„Sei nicht ganz so hart mit Draco, er ist ein guter Junge.“ Sagte Lucius irgendwann leise und schläfrig.<br/>Severus beugte sich über ihn. Es war fast nicht zu glauben, doch die schwarzen Augen enthielten Wärme und Verständnis, als er ihn ansah.<br/>„Ich werde ein bisschen auf deinen Jungen aufpassen …“, flüsterte der Schwarzhaarige und dann küsste er ihn so liebevoll und weich, dass Lucius die Augen schloss. Snape hatte verstanden. Er nahm seine Liebe an und befreite ihn so von einer unfassbaren schweren Last. Im Gegenzug erlaubte er Lucius, ihm ein wenig Heilung und Linderung zu verschaffen, weil nur er verstehen konnte, wie sehr Snape sich quälte, weil ihm das Ziel seiner Sehnsucht genommen wurde.</p><p> </p><p>Wenig später verließ Severus ihn, ohne dass sie über ein Danach gesprochen hätten. Lucius blieb in seinem Bett liegen, unfähig sich anzuziehen oder etwas Sinnvolles zu tun. So unerwartet und ungewollt den jungen Snape damals seine Liebe zu Lily überkommen hatte, so war es ihm in den Gewölben von Hogwarts passiert. Niemand wusste warum das geschah. Innerhalb von wenigen Momenten war etwas entstanden, was manche Liebe, manche Hass nannten. Er hatte sich in Severus verliebt. Dass Snape ihn niemals zurücklieben würde, tat nichts zur Sache. Wichtig war, er nahm seine Liebe an, verstand ihn und verschaffte ihm Erlösung. <br/>Das rührte Lucius so zu Tränen, dass er wieder anfing zu weinen. Halb aus Glück, halb aus Erleichterung darüber ein Ziel zu haben. Er weinte aber auch um Severus, der niemals mehr ein Ziel haben würde und er ihn nur ein bisschen trösten konnte. Lucius weinte, weil er weiterhin sein verlogenes Leben leben musste und er weinte, weil er sich schon jetzt wieder nach ihm sehnte.<br/>Lucius weinte, weil es schon wieder warm in ihm wurde, weil das Feuer wieder aufflammte. Er hörte nicht, wie sein Sohn in sein Zimmer kam.</p><p> </p><p>„Dad?“ fragte Draco leise und blieb unsicher vor dem Bett stehen. Lucius war zu schwach, um der zu sein, der er immer war. Verlegen zog er das Laken ein wenig weiter über seinen nackten Körper.<br/>„Warum bist du schon hier?“ fragte er nur matt und wischte sich über die Augen.<br/>„Ich hatte keine Lust mehr ...“ Draco wirkte immer noch so nachdenklich und verunsichert wie am Morgen. Ja, er war wohl ein guter, viel zu sensibler Junge. Vorsichtig kam Draco nun näher. Er setzte sich neben ihn auf das Bett und sah ihn wachsam und besorgt an. Vermutlich hatte er ihn schon wieder weinen sehen, zweimal innerhalb von zwei Tagen, und war verständlicherweise irritiert. Plötzlich beugte sich sein Sohn wortlos zu ihm und legte seine Arme ein bisschen unbeholfen um seinen Nacken. Er sagte nichts, doch allein diese Bezeugung seiner kindlichen Liebe besänftigte Lucius auf unerklärliche Weise.<br/>„Bist du krank?“ fragte Draco besorgt nach.<br/>„Vielleicht. Ein bisschen. Mache dir keine Sorgen, mein Junge!“ sagte er nach einer Weile und schob ihn sanft weg.<br/>Draco lächelte. Eindeutig erleichtert. Dann sprang er auf seine kindliche Art auf und rief:<br/>„Ich werde jetzt noch ein bisschen üben, damit ich besser bin, als die anderen Kinder!“<br/>Der blonde Junge verschwand und Lucius ließ sich wieder nach hinten fallen.<br/>Endlos, dachte er, immer und immer wieder, bis er erschöpft einschlief.</p><p> </p><p>Severus konnte sich nicht entscheiden, welchen der beiden Jungs er mit seinem Blick malträtieren sollte. Diesen widerlichen Sohn von James Potter oder Draco, der seinem Vater ziemlich ähnlich sah. Lucius hatte recht gehabt, sah er sofort. Der Junge war weich. Zu weich?<br/>Was vielleicht ansonsten kein Makel gewesen wäre, war es, wenn man im Haus Slytherin war und einen Vater wie Lucius Malfoy hatte. Aber auch, wenn Lucius ihm kategorisch und vehement widersprochen hätte, so offenbarte auch der blonde Junge unabsichtlich, wie ähnlich er seinem Vater war. Auch in seinem Gesicht war dieser Wunsch mit ganzem Herzen zu lieben, schon jetzt zu entdecken. Diese Gabe der fanatischen Liebe war ein Fluch und ein Segen. Er selbst liebte Lily weit über den Tod hinaus. Oder vielleicht sogar bis in den Tod hinein. Lucius liebte ihn, ganz gegen seine Ideale und seine eigenen Ansprüchen und hatte es ihm somit ermöglicht mit Lilys Tod umzugehen und Lily hatte all diese Liebe ihrem kleinen Sohn Harry geschenkt, um ihn zu beschützen. An dieser Stelle schloss sich dieser skurrile Liebesreigen, den vermutlich nur er allein durchschaute.<br/>Er würde Lucius wiedersehen, das war sicher. Das war wundervoll und bezaubernd wie dessen weißblondes Haar, welches doch nicht gelogen hatte, als es ihm zuflüsterte, ich gehöre einem Engel.<br/>Ihn wiederzutreffen, war aber ebenso schrecklich, denn finstere Zeiten würden kommen und alle und jeden prüfen. Da war er froh, dass er Malfoy doch noch den Gefallen getan hatte, den er eingefordert hat und er selbst hatte diesem Mann auf Augenhöhe begegnen können.</p><p> </p><p>Es würde immer Menschen wie Lucius und ihn geben, die zu viel, zu tief, zu intensiv liebten und deshalb Angst vor ihren Gefühlen haben mussten. Und dann gab es Idioten wie James Potter. Giftig sah er dessen Sohn, den kleinen Harry Potter an. Er hasste ihn schon jetzt und musste trotzdem tun, was er tun müsste. Ihn beschützen, wie seine wundervolle Mutter Lily es versucht hatte.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="oZSkbVo6GyE2jAgPFhdiJDdvfDh1BN7F4050XSdRbujXHyxETmrVZnFoJTIw05lzW2EFjkXxy1a39KH5NRiUIQ"/>
+          <input value="17611514" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=17611514">Comments (18)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Fleur_de_Lis394">Fleur_de_Lis394</a>, <a href="/users/EvangeIica">EvangeIica</a>, <a href="/users/BlackAlice84">BlackAlice84</a>, <a href="/users/VampireAngel4Life">VampireAngel4Life</a>, <a href="/users/Dragoons84">Dragoons84</a>, <a href="/users/JunglekinzMEWZ">JunglekinzMEWZ</a>, and <a href="/users/Trickster32">Trickster32</a>
+             as well as 
+          5 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_17611514">
+  <form class="new_comment" id="comment_for_17611514" action="/works/17611514/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="qm29LR1F5PDsEQe68o8XHoGeoIJ1rsw3k6idpo7KxOLc5jUECRUqt6v1KofUS-xJ7ZDZNEVb2aTHEkgCnIM-Kw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_17611514">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_17611514" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_17611514=new LiveValidation('comment_name_for_17611514',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_17611514.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_17611514">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_17611514" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_17611514=new LiveValidation('comment_email_for_17611514',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_17611514.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_17611514" class="landmark">Comment</label>
+        <textarea id="comment_content_for_17611514" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_17611514" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_17611514_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_17611514">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_17611514=new LiveValidation('comment_content_for_17611514',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_17611514.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_17611514.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_17611514" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/17611514/hit_count.json")})</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":81,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Ungewissheit - winchesterhuntress - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="7oZUCeEYrXTEF9KAIoqXbUWy-eiXbxiBZ2s-5SLuQEGTtX8PIiKy5ODNANQ-V4NRzuvpfSCVuRn2LveAucilgg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="2g4EEIcOJZOP4nQo6tkmbbO72Xs4EFKidsqO6ulCv8mnPS8WRDQ6A6s4pnz2BDJROOLJ7o_q8zrnj0ePcmRaCg"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/5856934/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/5856934/Ungewissheit.azw3?updated_at=1454179229">AZW3</a></li>
+          <li><a href="/downloads/5856934/Ungewissheit.epub?updated_at=1454179229">EPUB</a></li>
+          <li><a href="/downloads/5856934/Ungewissheit.mobi?updated_at=1454179229">MOBI</a></li>
+          <li><a href="/downloads/5856934/Ungewissheit.pdf?updated_at=1454179229">PDF</a></li>
+          <li><a href="/downloads/5856934/Ungewissheit.html?updated_at=1454179229">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Not%20Rated/works">Not Rated</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Major%20Character%20Death/works">Major Character Death</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Sirius%20Black*s*Original%20Female%20Character(s)/works">Sirius Black/Original Female Character(s)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Deutsch%20%7C%20German/works">Deutsch | German</a></li><li><a class="tag" href="/tags/this%20is%20not%20going%20to%20end%20well/works">this is not going to end well</a></li><li><a class="tag" href="/tags/I%20am%20so%20sorry/works">I am so sorry</a></li><li><a class="tag" href="/tags/Fluff/works">Fluff</a></li><li><a class="tag" href="/tags/Angst/works">Angst</a></li><li><a class="tag" href="/tags/Death/works">Death</a></li><li><a class="tag" href="/tags/happiness/works">happiness</a></li><li><a class="tag" href="/tags/Old%20Friends/works">Old Friends</a></li><li><a class="tag" href="/tags/reader%20-%20Freeform/works">reader - Freeform</a></li><li><a class="tag" href="/tags/Reader-Insert/works">Reader-Insert</a></li><li><a class="tag" href="/tags/I&#39;m%20Bad%20At%20Tagging/works">I&#39;m Bad At Tagging</a></li><li><a class="tag" href="/tags/I%20Don&#39;t%20Even%20Know/works">I Don&#39;t Even Know</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-01-30</dd><dt class="words">Words:</dt><dd class="words">10165</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">1</dd><dt class="hits">Hits:</dt><dd class="hits">174</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Ungewissheit
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/winchesterhuntress/pseuds/winchesterhuntress">winchesterhuntress</a>
+    </h3>
+
+
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>This is my first fic ever, so thank you for reading and sorry for the crappy writing. I wrote this like 2 or 3 years ago and fond it again so I thought I could share this with you. I'd appreciate comments and constructive criticism because I want to improve my writing for future works. Anyways sorry that this is in German but I don't think I am good enough to write to write in English.  So thanks again ando enjoy reading.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p>Es klingelte an der Tür meines Hauses. Ich hatte das Gefühl, dass etwas schreckliches passiert war. Langsam öffnete ich sie und mir standen zwei Männer gegenüber. Sie trugen Anzüge und sahen ziemlich wichtig aus. Sie schenkten mir einen mitfühlenden Blick und fragten höflich ob sie hereinkommen dürften. "Was ist passiert?", fragte ich nervös. Nach einem kurzen Zögern antwortete einer der Beiden "James und Lilly Potter sind tot. Voldemort hat sie umgebracht. Ihr Sohn hat überlebt. Es tut uns leid." Fassungslos starrte ich ihn an. " Voldemort ist besiegt", bemerkte der andere Mann doch ich beachtete diese Nebensächlichkeit kaum. "Warum?", flüsterte ich leise und erwartete keine Antwort. " Weil Sirius Black sie an den dunklen Lord verraten und Peter Pettigew ermordet hat." " Nein! Das würde er nicht tun. Sie lügen, oder? Sirius würde so etwas nie tun. Das ist ein schlechter Scherz, oder? Lills und James können nicht tot sein. Sie dürfen nicht tot sein.", meine Stimme wurde immer leiser. "Es tut uns leid.", erwiderteten sie nur. Mittlerweile rannen Tränen meine Wangen hinunter. " Könnten sie bitte gehen?", fragte ich und öffnete die Tür.  " Natürlich.  Wenn Sie irgenwelche Hilfe brauchen, lassen Sie es uns wissen Madam." "Sicher, auf Wiedersehen.", verabschiedete ich mich. Ich schloss die Tür und ließ mich rückwärts an ihr hinuntergleiten. Dann weinte ich lange. Als ich am morgen aufwachte befand ich mich noch immer an der gleichen Stelle. Ich spürte die salzigen Spuren, die die Tränen hinterlassen hatten. Es roch nach frisch gemachtem Kaffee. Das wunderte mich. Ich griff nach einem Regenschirm, der an der Wand lehnte und stieß mit ihm bewaffnet die Tür auf. Am Küchentisch saß Albus Dumbledore mit einer Tasse Kaffee vor sich und lächelte mich traurig an. "Ah Miss Allende. Wie ich sehe hatten sie eine ähnlich schlaflose Nacht hinter sich. Setzen sich sich doch." Er stand auf und deutete auf den zweiten Stuhl. Ich setzte mich und er schob mir einen zweiten, unberührten Kaffee zu. "Er war es nicht, oder?", fragte ich. "Was?" " Sirius. Er hat sie nicht verraten." "Nein das glaube ich nicht.", erwiderte Dumbledore und lächelte ermutigend. "Ich bin jedoch noch aus einem anderen Grund hier, denn der junge Harry Potter hat überlebt und wurde zu seinen Verwandten gegeben die sich um ihn kümmern werden. Ich möchte Sie darum bitten, dass Sie ein Auge auf ihn haben und sozusagen 'undercover' in die Nachbarschaft ziehen. Sie müssten sich eine Weile wie Muggel verhalten. Würden Sie das tun?" Ich zögerte einen Augenblick, das bedeutete wahrscheinlich, dass ich alles was ich hier hatte aufgeben musste. Doch ich willigte ein. Für Lilly und James. </p><p>---</p><p>Ich wohnte nun schon einige Jahre im Lingusterweg 12. Ich sah fast täglich, wie schlecht die Dursleys Harry behandeln aber Dumbledore hatte mir verboten einzugreifen. Hatte ich mit Mrs. Figg heimlich eine Vereinbarung getroffen. Jedes Jahr an Dudleys Geburtstag an dem Harry eigentlich zu ihr sollte, nahm ich ihn mit zu mir und wir unternahmen irgendetwas spannendes. Außerdem kam Harry manchmal zu mir um sich zur Abwechslung mit jemand nettem zu unterhalten. Nach einiger Zeit waren wir gute Freunde geworden und ich versuchte ihm so gut wie möglich bei seinen Problemen zu helfen. Harry bekam seinen Brief während ich ein paar Tage bei den Weasleys war und so bekam ich von dem Malheur kaum etwas mit. Dumbledore schrieb mir, dass Harry nun das ganze Jahr über in Hogwarts würde, weshalb ich mich auf den Weg dorthin machte um ihn zu treffen. Ich wusste dass er sich verraten fühlen würde weil ich ihn belogen hatte aber ich konnte nicht mehr länger mit dieser Lüge leben.</p><p>---</p><p>Die Tür zu Dumbledores Büro öffnete sich langsam und Harry betrat schüchtern den Raum. Er sah Dumbledore an und fragte: " Weshalb wollten sie mich - Catherine?" Er riss die Augen weit auf als er mich erblickte. "Was machst du hier? Bist du eine Hexe?" "Verzeih mir, Harry. Ich wollte es dir -" Er unterbrach mich laut: "Du hast es nicht für wichtig empfunden von all dem hier zu erzählen und jetzt kommst du hierher und..und willst dass ich dir mal eben so verzeihe, dass du mich fast elf Jahre lang belogen hast?" Ich konnte die Enttäuschung in seine Stimme deutlich hören. Ich hatte mir die Situation abertausende Male in unterschiedlichen Versionen durch den Kopf gehen lassen aber jetzt wusste ich nicht, was ich machen sollte. Nach einiger Zeit sagte ich nur: "Es tut mir wirklich leid und ich wünschte es wäre nicht so. Ich hoffe, dass du dich meldest wenn du bereit dazu bist. Deine Eule wird mich schon irgendwie erreichen." "Auf Wiedersehen", sagte Harry nur und verließ den Raum. Meine Augen füllen sich mit Tränen wütend wischte ich sie weg. In den letzten Jahren war mir der kleine Kerl wirklich ans Herz gewachsen und dass er seinen Eltern so ähnlich sah machte es auch nicht besser. "Er wird sich melden, meine Liebe. Warten sie nur ein wenig ab." ermutigte Dumbledore mich: "Nebenbei haben sie mittlerweile eine Bleibe gefunden? Ich nehme nicht an, dass sie länger bei den Muggeln leben wollen. " Ich verneinte. Überstürzt war ich aufgebrochen und habe nur ein paar wichtige Sachen schnell in einen Koffer geworfen. "Ich glaube Madame Malkins sucht eine Mitarbeiterin. Es ist eine Stelle inklusive Abeiterwohnung. Wenn sie wollen. Es ist alles organisiert. ", schmunzelte er. Ich musste grinsen. Dieser Mann überraschte mich jedes mal wieder. Dankend nahm ich  das Angebot an.</p><p>---</p><p>Es waren nun vier Wochen vergangenen seit ich Harry wiedergesehen hatte. Ich bereitete mir gerade mein Frühstück vor als ich es leise am Fenster klopfen hörte. Als ich nach draußen schaute sah ich eine Eule, Hedwig. Sie trug einen Brief bei sich der mir den Tag versüßen würde. Neugierig machte ich ihn auf:</p><p>Liebe Cat,<br/>
+das, was du getan hast war nicht richtig, mir gegenüber, aber ich weiß, dass du gute Gründe gehabt hast. Ich hätte dir das alles hier nicht geglaubt, aber es ist so unglaublich toll, dass ich gar nicht sauer sein kann. Außerdem fehlst du mir sehr, ich habe zwar schon einige Freunde hier gefunden, aber das ist anders. Egal. Du wirst mir nicht glauben, was alles passiert ist. Ich bin in Gryffindor (und ich finde, dass Haus ist das beste von allen) außerdem bin ich (und das ist das tollste) Sucher in der Quidditch-Mannschaft in Gryffindor! Ich meine das is so überwältigend. Ich hoffe du schreibst mir zurück.<br/>
+Dein Harry. </p><p>Ich freute mich so sehr über diesen Brief, dass ich den ganzen Tag strahlte. Ich konnte es kaum erwarten ihm auf den Brief zu antworten: </p><p>Lieber Harry,<br/>
+du glaubst gar nicht wie froh ich bin, dass du mir endlich schreibst. Alles gute nachträglich, unser Wiedersehen war ja ein bisschen kurz, da hab ich das glatt vergessen ein Geschenk kriegst du natürlich auch noch. Freut mich, dass es dir dort so wunderbar gefällt. Ich selbst war auch eine stolze Löwin und bin der Meinung, dass kein anderes Haus mithalten kann. Du bist Quiddich Sucher? Das ist ja toll. Dein Vater war auch Sucher in der Hausmannschaft, wusstest du das? Du musst mir alles genau berichten wenn wir uns wiedersehen!<br/>
+Auf bald<br/>
+Cat</p><p>Zufrieden mit der Antwort schickte ich Hedwig zurück zu Harry. Nach zwei  Tagen kam die Antwort: </p><p>Du kanntest meinen Vater?! Ich glaube wir sollten uns mal treffen und alles bereden bevor ich alles nur Stück für Stück herausfinde und jedes mal aufs neue schockiert bin. Wie wärs wenn du am Wochenende mal vorbeikommst? (Hat Dumbledore vorgeschlagen) Meld dich wenn du kannst.<br/>
+Harry</p><p>---</p><p>Einige Tage später stand ich vor dem Schloss. Albus Dumbledore lief mir freudig entgegen und bat mich höflich ins Schloss. Er führte mich in sein Büro wo Harry schon auf mich wartete. "Cat", rief er laut aus und stürmte auf mich zu um mich in eine feste Umarmung zu ziehen. "Hey, Kleiner nicht so stürmisch, du wirfst mich ja noch um", lachte ich. Harry schlug vor zum See zu gehen, damit wir uns dort unterhalten konnten. Schon zu Schulzeiten war der See mein Lieblingsort gewesen. Wir setzten uns und kaum dass ich den Boden berührt hatte fragte er mich auch schon woher ich seine Eltern kannte. Ich begann zu erzählen: " Ich war ein paar Jahre unter ihnen in Gryffindor. Schon bald hatte ich eine beste Freundin gefunden. Nymphadora Tonks. Manchmal gerieten wir wegen unserem Temperament heftig aneinander aber das änderte nichts an der Tatsache, dass wir uns wie Schwestern liebten. Ich hoffe du lernst sie irgendwann mal kennen sie ist beeindruckend. Auf jeden Fall war dein Vater mit seinen Freunden über mir aber ich himmelte sie fast schon an - außer Wurmschwanz, der war irgendwie so widerlich. Sie waren so lustig und unabhängig und so rebellisch. Sie waren die perfekten Freunde und wären füreinander durch die Hölle gegangen und wieder zurück. Ich wollte unbedingt auch so sein. Dann in meinem zweiten Jahr wurde ich Jägerin im Quidditch Team und so lernte ich sie mehr und mehr kennen und freundete mich mit ihnen an. Auch mit Lills. Wir blieben auch noch befreundet als sie die Schule verließen. Wir haben uns nie aus den Augen verloren. Es war alles so perfekt bis Volde.... bis zu diesem Abend an dem sie getötet wurden...", ich verstummte. "Danke, dass du mir das erzählt hast. So fühle ich mich ihnen irgendwie näher." "Weißt du was Harry? Ich glaube du bist ein sehr weiser Junge für dein Alter.", meine Stimme klang erstickt als ich das sagte. "Da du bist die einzige die so denkt", grinste er. </p><p>---</p><p>Harrys drittes Jahr</p><p>---</p><p>Ich träume von alten Zeiten. Immer und immer wieder. Ich laufe nachts durch den verbotenen Wald. Ich sehe Lilly, verschwommen, wie in einer Hülle aus Milchglas. Ich laufe weiter sehe James auf dieselbe Weise, dann sehe ich Remus, klar wie der Sternenhimmel, den ich durch die Lücken im Walddach sehen könnte, wenn ich meinen Blick von meinen Freunden wenden würde. Ich sehe Remus so deutlich, dass ich jede einzige der feinen Narben, die sein Gesicht zeichnen, erschreckend deutlich erkennen kann. Dann sehe ich Sirius, erst auch milchig, doch dann zerberstet die Hülle und ich sehe ihn so deutlich wie Remus. Dann bricht der Traum ab, jedes Mal an der gleichen Stelle.</p><p>---</p><p>In den nächsten Tagen passiert etwas, womit ich nach all den Jahren absolut nicht rechnete. Auf dem Weg zur Arbeit schlendere ich durch die Winkelgasse und mein Weg führt mich an Flourish und Blotts vorbei sie haben jeden Tag die neusten Zeitungen auf einem Stand vorm Laden ausliegen. Normalerweise bekomme ich täglich einen in meinen Briefkasten aber ich muss jeden Tag früher los als der Tagesprohet kommt und so sehe ich mir morgens nur die Titelseite mit den wichtigsten Nachrichten. Ich bin heute morgen früh dran weshalb ich gemächlich die Straße entlangflaniere. Als ich die Schlagzeile lese bleibe ich schlagartig stehen.<br/>
+'SIRIUS BLACK ENTKOMMEN'<br/>
+Mein Herz hört für den Bruchteil einer Sekunde auf zu schlagen. Wie in Trance bewege ich mich auf die Auslage zu. 'Gefürchteter Massenmörder bricht aus Azkaban aus' Ich fühle wie mein Herz sich zusammen zieht, sodass es schmerzt trotzdem zwinge ich mein Mund zu lächeln als ich die Zeitung bezahle. Ich drücke mich in eine enge Seitenstraße in der eine kleine Bank steht und lasse mich auf dieser nieder. Behutsam falte ich sie auf und sehe ein Foto auf dem er in die Kamera schreit, mit irrem Gesichtsausdruck und wirr zersaustem Haar. Langsam streiche ich mit meinen Fingern über das Bild. Es verwirrte mich dieses Foto nach all den Jahren wieder in den Zeitungen zu sehen. Es waren lange Jahre gewesen, mit niemandem, der mich über James' und Lillys Tod trösten konnte. Sirius war ja in Azkaban gewesen und Lupin hat sich immer mehr zurückgezogen, vielleicht aus Angst ich würde auch zur Verräterin werden oder aus Angst jemand könnte versuchen ihn zu trösten und er könnte nicht mehr in der Trauer versinken. Das mit Remus traf mich mindestens genau so sehr wie alles andere. Ich frage mich ob er auch an Sirius Unschuld geglaubt hatte. Immerhin kannte er Ihn besser als ich es tat aber vielleicht war genau das der Grund es nicht zu glauben. Das läuten der Uhr von Gringotts reißt mich aus meine Gedanken ich war viel zu spät. Ich stopfe diese verlogene Zeitung unsanft in meine Tasche und hetze zur Arbeit. </p><p>---</p><p> </p><p>Ich öffne die Haustür und finde mich inmitten der Winkelgasse wieder. Ich versuche mich in den Strom der Menschenmenge einzufädeln. Ich beobachte die Leute die mit ihm fließen. Viele sind in Eile und hasten von einem Geschäft zum nächsten. Andere sind entspannt und mit Freunden einkaufen, Eis essen und amüsieren sich. Der Samstag vor Schulbeginn ist immer am vollsten. Aber heute ist es anders. Die vielen Leute scheinen mich zu erdrücken, es ist viel zu laut und dröhnt in meinem Kopf. Ich sehe Familien, die letzten Einkäufe für die Schule erledigen, Freunde, die die letzten Tage der Ferien genießen und ich sehe einen Hund und dieser fängt meinen Blick. Er steht einfach nur groß und zottelig da und schaut mich an. Und ich schaue zurück. Er kommt mir bekannt vor - so vertraut. 'Sirius', flüstere ich und starre dem Hund direkt in die Augen, Sirius' sturmgraue Augen, unfähig mich zu rühren.  Dann wird der Blickkontakt plötzlich abgebrochen mein Schienbein fängt an zu schmerzen. Ich liege auf dem Boden. Ein Mann hilft mir unter tausenden Entschuldigungen auf. Ich bedeute ihm das alles in Ordnung ist. Ich schaue mich um. Der Hund ist verschwunden. </p><p>---</p><p> </p><p>In später am Tag treffe ich Harry in der Winkelgasse er erzählt mir, dass er Magda aufgebläht hatte und deshalb aus dem Lingusterweg flüchten musste. Bei dieser Nachricht fange ich lauthals an zu lachen da ich sie mir noch dicker als eh schon vorstellen musste. Wir setzten uns in ein nettes Café und er erzählt mir von der Fahrt im Fahrenden Ritter und davon, dass Fudge ihn so bemuttert hatte obwohl er gegen das Gesetz verstoßen hatte und vom Monsterbuch der Monster. Wir hatten sehr viel Spaß sodass ich Sirius vergaß. Aber auf dem Heimweg,  ich nahm Harry nicht mit zu mir, da ich wusste, dass die Weasleys kommen würden und ich ihn auf keinen Fall von seinen besten Freunden weghalten wollte, fällt mir alles wieder ein. Ich fange an mich zu fragen ob er mich vielleicht noch besucht aber als ich die Wohnungstür öffne ist alles dunkel und niemand ist dort. Ich bin ein wenig enttäuscht, da ein Teil von mir gehofft hatte dass der Hund wieder da wäre . </p><p>---</p><p> </p><p>Ich habe mittlerweile meinen Job in der Winkelgasse gekündigt und ein kleines Café in Hogsmeade eröffnet, auf das ich schon seit einiger Zeit sparte. Ich habe es sehr einladend gestaltet. Innen gibt es anstatt Stühlen bequeme Sofas und Sessel mit bauschigen Kissen und niedrige  Tischchen mit Blumenvasen. Alles ist in hellen Tönen gehalten. Auf der Terrasse gab es verschnörkelte Gartenstühle und hübsche Glastische. Das Café läuft besser als geplant und so kommt es, dass ich meine Halbschwester Heather dazu überreden kann mit mir zu arbeiten. Besonders beliebt ist unser Laden bei den Mädchen und frisch verliebten Pärchen aus Hogwarts und schon bald kennen Heather und ich all den Klatsch und Tratsch über alles was in Hogwarts passiert. Des öfteren kommen schließlich auch Harry, Hermine und Ron vorbei und so erfahre ich fast alles was es eben zu erfahren gibt. </p><p>---</p><p>Ich laufe in Richtung der heulenden Hütte. Regen prasselt vom Himmel herunter. Bei jedem Schritt werden meine Füße nasser, wenn das überhaupt noch  möglich ist. Das Wasser ist knöcheltief. Meine Haare kleben mir im Gesicht und ich bin nass bis auf die Haut. Doch irgendwie ist mir das egal, glaube ich, denn jedenfalls gehe ich langsam. In der Ferne sehe ich die schattenhafte Silhouette eines Menschen. Ich kann es nicht genau erkennen aber ich glabe er oder sie steht einfach nur da. Ich beeile mich, weil ich wissen will ob es jemand aus dem Dorf ist. Mittlerweile kann ich erkennen, dass es ein Mann ist. Sein Rücken ist mir zugekehrt. "Hallo?" frage ich höflich, "Entschuldigung aber darf ich fragen was sie hier machen?" Der Mann dreht sich um und mein Herz setzt eine Schlag aus. Er sieht noch genauso aus wie damals. Absolut nichts hat sich geändert. Er grinst aber es sieht ironisch aus so fies. "Cat", sagt er aber es klingt falsch "freut mich sehr dich zu sehen." "Sirius?" frage ich verwirrt. "Was ist los? Was machst du hier?" "Weißt du Kätzchen, ich wollte sehen was du so machst ohne Lilly und James." Die Verwirrung muss mir ins Gesicht geschrieben stehen denn er sagt "Was du gehört hast ist wahr Süße" er grinst süffisant "Und Remus hab ich auch schon einen Besuch abgestattet. Jetzt bist du dran Kätzchen." Er streicht langsam über meine Wange. In mir ist auf einmal so viel Hass. Ich hab das Gefühl zu zerspringen. "Nenn mich nicht so!" fauche ich und schlage seine Hand weg. "Du bist süß wenn du wütend bist, Kätzchen." meint er. Ich hasse ihn dafür umso mehr denn genau das hat er immer gesagt, als er noch kein Verräter gewesen ist. Er hatte mich immer Kätzchen genannt, weil er wusste, dasz ich mich darüber aufregen würde, dann hat er mir immer die Haare zerwuschelt. Und ich gebe zu es hat mir eigentlich gefallen. Dann wird mir erst klar was er eigentlich gesagt hat. Erst Lilly und James und jetzt Remus. Er hatte Remus getötet. Ich springe mit einem Aufschrei auf ihn zu und schlage außer mir auf ihn ein. Und Sirius steht einfach da und macht nichts. Es machte ihm nichts aus. Meine Schläge werden langsamer und kraftloser und ich sinke zu Boden. Ich spüre die Tränen die meine Wangen herunter laufen. Sirius umfasst meine schmalen Handgelenke mit seinen starken Händen und zieht mich unsanft auf die Beine. Ich bin deutlich kleiner und schwächer als er.  Früher war das kein Grund für mich nicht auf ihn loszugehen aber was konnte ich jetzt schon gegen ihn ausrichten. Es ist ihm klar, dass ich gerade so denke und das nutzt er vollkommen aus, denn nun lässt er mich los, weil er weiß, dass ich nicht weglaufen werde. Dazu bin ich zu stolz. Ich fange an zu kichern. Ich werde sterben weil ich zu stolz bin. Und mein Mörder kennt mich gut genug um das zu wissen. Sirius zieht seine Zauberstab und sieht direkt in meine Augen. "Wir sehen uns auf der anderen Seite, Kätzchen. Avada Kedavra! " das Letzte was ich sehe ist ein grüner Blitz, dann schrecke ich hoch. Ich ringe nach Luft. Auf meiner Stirn steht Schweiß und ich fühle mich schrecklich. Erst glaube ich, dass alles passiert ist. Dann bemerke ich, dass ich in meinem Bett sitzte und ich einfach nur den schlimmsten Albtraum aller Zeiten hatte. Ich schlage die Bettdecke zurück und schwinge meine Füße auf den kalten Boden. Ich tapse niedergeschlagen in die Küche und mache mir einen Kaffee, schlafen kann ich jetzt sowieso nicht mehr. Ich sehe auf die Uhr. Viertel vor vier. Was wenn der Traum eine Art Vorhersehung war? Ich fange an mir Sorgen über meine Ansichten zu machen. Was wenn Sirius wirklich Schuld ist? Was wenn ich indirekt Schuld bin und mir darüber nur nicht im klaren bin? Was wenn ich den Verstand verloren hab oder gerade dabei bin? Mein Kopf platzt fast vor all den verrückt spielenden Gedanken die orientierungslos in ihm herum schwirren. Ich presse meine Finger gegen meine Schläfen. Der Lärm der Muggel-Kaffeemaschine ist auf einmal unerträglich laut. Ich stürme aus der Küche ins Bad und sehe mein schmerzverzerrtes Gesicht im Spiegel. Jede farbe ist zu intensiv. Das Rot meiner Haare sticht in meinen Augen. Ich spüre wie jedes Haar an meinem Körper sich aufstellt. Ich werfe meinen Kopf zurück und schreie doch es hört sich nicht menschlich an. Ich falle auf alle Viere und sehe meine Tatzen als ich meine Augen öffne. Ich bin wieder eine Löwin. Das Letzte mal ist schon Ewigkeiten her aber ich fühle mich in meinem zweiten Körper richtig. Ich gleite elegant aus dem Fenster das ich mit einer geschickten Bewegung öffne und lande sanft auf dem hohen Gras im Garten meines kleinen Hauses. Und dann laufe ich los. Ich lasse mich einfach gehen und meine Füße tragen mich unbewusst in den verbotenen Wald. </p><p>---</p><p>Ich öffne blinzelnd meine Augen. Morgentliches Sonnenlicht wärmt mein Gesicht. Gras kitzelt meine nackten Beine – Moment mal. Nicht nur meine Beine sind nackt. Ich blicke an mir herunter und bin vollkommen entblößt. Peinlich berührt sehe ich mich hastig um. Zum Glück ist keine Menschenseele in der nähe. Dann fallen mir die Ereignisse der vergangenen Nacht wieder ein. Und ich frage mich wie ich unentdeckt nach Hause komme. Dann fällt mir ein, dass ich mich schlicht und einfach wieder verwandeln könnte.  Gedacht getan. Als ich durch den Garten und die glücklicherweise von Heather geöffnete Terrassentür ins Haus gelange, sieht Heather mich und schreit vor Schreck auf. Doch sie beruhigt sich schnell wieder da sie von meinem kleinen Geheimnis weiß. Ich verwandle mich schnell und springe unter die Dusche. Als ich mir schließlich etwas hübsches angezogen habe setze ich mich zu meiner Schwester auf die Terrasse. Dann erzähle ich ihr was passiert ist und sie schlägt vor, dass ich mir heute frei nehme und Remus in Hogwarts besuche. Nachdem ich mich mehrmals versichert habe, dass sie alleine zurechtkommt, beeile ich mich nach Hogwarts. Zum Glück ist Sonntag also hat Moony keinen Unterricht. Ich betrete Hogwarts und weiß automatisch den Weg zu seinen Zimmern. Als ich vor seiner Tür stehe zögere ich einen Moment, denn wir hatten seit dem Tod der Potters nicht mehr viel geredet. Dabei habe ich mich mit ihm immer großartig verstanden, er war wie der große Bruder, den ich nie hatte. Doch ich überwinde mich und klopfe zaghaft. Es dauert nicht lange und ein verwuschelter, schäbig angezogener Remus Lupin steht in der Tür. "Cat?" fragt er nicht wenig überrascht. "Hi" antworte ich verlegen und er mustert mich von oben bis unten als müsste er sich davon überzeugen, dass ich es wirklich bin. Dann schließt er mich in seine Arme und ich drücke ihn ganz fest an mich. In diesem Augenblick wird mir klar, wie sehr ich ihn vermisst habe. "Ich hab dich vermisst", flüstere ich in seine Schulter. "Ich dich auch, Cat." anwortet er. Er löst sich sanft von mir und bittet mich herein. "Willst du etwas trinken oder sonst irgendwas?" "Nein danke." Dann schweigen wir ein paar Sekunden und sprudeln beide auf einmal los: "Ich hätte-" wir müssen lachen. "Sag du zuerst." fordere ich ihn auf. "Nein, nein mach du." entgegnet er. "Ich hätte mich melden sollen, tut mir leid." entschuldige ich mich. " Nein. Ich hätte das machen sollen. Ich bin einfach abgehauen, ohne was zu sagen. Ich habe eine Weile Abstand gebraucht, aber ich hätte mich danach melden sollen." "Denkst du es stimmt?" frage ich. Die Frage ist mir einfach so rausgerutscht, ohne dass ich sie aufhalten konnte, weshalb ich mir die Hand vor den Mund schlage und ihn entsetzt über mich selbst, über meine ungehante taktlosigkeit, anstarre. "Tut mir leid" stammele ich. "Das muss es nicht, die Frage ist auf eine gewisse Art richtig. Ich weiß ehrlich gesagt nicht,  was ich glauben soll. Ich hätte das nie von ihm erwartet,  aber man kann sich sehr in Menschen täuschen. " meint er, "Was denkst du?" "Ich glaube immer noch nicht, dass er es getan hat aber das ernüchternde ist, dass alles was man so darüber hört gegen ihn spricht." Wir beide bringen es nicht übers Herz seinen Namen auszusprechen, warum weiß ich auch nicht. "Remus?" "Was ist?" "Ich hatte gestern einen Traum." beginne ich "Er hat zu mir gesagt, dass alles wahr ist. Und-" ich stocke, "-dass er dich auch getötet hat." Die Gefühle drohen mich wieder zu übermannen und Tränen steigen mir in die Augen. "Hey," Remus erhebt sich aus seinem Sessel und lässt sich neben mir auf der Couch nieder. Er zieht mich in eine Umarmung "nicht weinen, Löwin." Aber ich kann mich nicht mehr zurückhalten. Wir sitzen noch eine Weile so da und als ich aufhöre zu weinen, steht er auf und kramt eine Tafel Schokolade aus seiner Schreibtischschublade. "Iss, dann geht's dir besser." Ich musste schmunzeln. Früher hat er jedes mal dasselbe gemacht, wenn es mir dreckig ging. Wir unterhielten uns noch lange und als die Sonne schon längst untergegangen war, (die Zeit hatten wir vollkommen vergessen) machte ich mich auf den Weg zurück. Ich fühle mich so befreit wie schon lange nicht mehr. Endlich hatte ich mich mit jemandem unterhalten können, der das gleiche durch gemacht hatte. Endlich hatte ich einen meiner besten Freunde zurück. Nichts, absolut gar nichts, konnte mir den Abend verderben. Zumindest dachte ich das.</p><p>---</p><p>Es kommt mir gleich so komisch vor als ich unser Haus sehe. Es brennt nirgends Licht und es ist unheimlich still. Als ich näher komme, sehe ich gleich, dass die Hintertür aufgebrochen worden ist. Überall liegen Glassplitter auf der Terrasse und im Haus verteilt. Ich betrete das Haus. Es sieht aus wie ein Schlachtfeld. Überall sind Scherben, zerfetzte Polstermöbel, zerbrochene Stühle und der Inhalt jeder einzelnen Schublade ist auf dem Boden verteilt. "Heather!" flüstere ich tonlos. "HEATHER!" Panisch stürze ich in ihr Zimmer. Da liegt sie reglos, blass. Ich eile zu ihr. Ich weiß nicht wie ich überhaupt daran denken kann, aber ich fühle nach ihrem Puls. Ich kann nichts fühlen. Doch. Da. Ganz schwach. Und nochmal. Sie lebt! Ich appariere mit ihr im Arm direkt in die Eingangshalle des St. Mungos. Dann sind wir auf einmal von Ärzten und Krankenschwestern umgeben, die auf mich einreden, Heather wegbringen. Aber ich kann ihnen nicht antworten, der Schock sitzt noch zu tief. Sie setzen mich auf einen Stuhl im Wartezimmer und Heather wird sofort behandelt.</p><p>---</p><p>"Miss?"<br/>
+Gedämpft drängen sich Stimmen in meinen Kopf. "Miss?" Ich reiße die Augen auf. Vor mir stehen eine Krankenschwester und ein Arzt. "Was ist?" frage ich verschlafen. "Ihre Schwester, erinnern sie sich?", fragt der Arzt freundlich. Schlagartig kommen alle Erinnerungen an gestern Abend zurück. Mit großen Augen sehe ich vom Arzt zur Schwester und wieder zurück. "Was ist mit ihr?" "Es sieht nicht sehr gut für sie aus aber sie wird es schaffen. Sie hat anscheinend in einem ziemlich harten Kampf ohne Zauberstabeinwirkung hinter sich. Sie hat einen heftigen Schlag auf den Hinterkopf bekommen. Im Moment ist sie bewusstlos und das wird sie wahrscheinlich noch eine ganze Weile bleiben. Möglicherweise kann sie sich nicht mehr an viel erinnern wenn sie aufwacht. Es tut mir leid." Ich spüre schon wieder Tränen, die versuchen zu fließen doch ich blinzele sie weg. Seit dem Vorfall vor dreizehn Jahren war ich verdammt nah am Wasser gebaut und ich ärgerte mich jedes mal wenn die Tränen die Oberhand gewannen. "Darf ich sie besuchen?" frage ich vorsichtig nach. "Natürlich aber nur ein paar Minuten. Miss Gray wird sie begleiten, ich muss mich einem anderen Patienten widmen." sagt der Arzt freundlich. Miss Gray führt mich bis zu dem Zimmer in dem Heather untergebracht ist. Vor der Tür bleibt sie stehen und sagt mir, dass sie dort warten wird. Ich danke ihr und betrete das Krankenzimmer. Für ein Krankenhaus ist es relativ hübsch. Goldgelbe Vorhänge wehen sanft und die Sonne scheint durch sie ins Zimmer was dieses in ein warmes Licht hüllt. Ich blicke zu Heather. Sie liegt da als würde sie schlafen, ruhig aber nicht regungslos. Ihre Mundwinkel lassen ein leichtes Lächeln erahnen. Das einzigste was den Anblick zerstört ist der weiße Verband der Heathers Kopf mehr oder weniger ziert und kleine rote Kratzer auf ihrer sommersprossigen Stupsnase. Ich ziehe einen Stuhl an das Bett, setze mich und nehme ihre warme, weiche Hand. Ich weiß nicht, was ich sagen soll, deshalb beginne ich zu singen, erst ganz leise dann selbstbewusster. Es ist ein Lied, dass mir meine Mutter vor ihrem Tod immer gesungen hatte. Dann habe ich es immer Heather vorgesungen. Es handelt von der Freundschaft zwischen einem Fuchs und einem Hasen, die trotz aller Probleme die währenddessen aufkamen stand hielt bis über den Tod hinaus. Das Lied hatte mich immer mit Glück erfüllt und dem Wunsch nach so einer innigen Freunschaft. Langsam lasse ich es ausklingen. Ich drücke ihre Hand und wende mich zum gehen. An der Tür drehe ich mich noch einmal um. "Komm bald zurück. " flüstere ich ihr zu. Dann verlasse ich den Raum. "Sie können wundervoll singen." meint Miss Gray. "Ich singe schon lange nicht mehr." erwidere ich tonlos. "Sie sollten wieder damit anfangen" meint sie. Irritiert sehe ich sie an.</p><p>---</p><p> </p><p>Als ich Zuhause ankomme sehe ich das ganze Ausmaß der Zerstörung. Als ich das Wohnzimmer betrete, erschrecke ich mich halb zu Tode und kann einen Aufschrei nicht verhindern. Dann schlage ich mir verlegen die Hand vor den Mund, als ich bemerke, dass es Remus ist, der zusammengesunken auf der zerfledderten Couch sitzt. "Remus?" frage ich vorsichtig. Er blickt auf die Verzweiflung steht ihm ins Gesicht geschrieben. "Cat?" Seine Miene hellt sich schlagartig auf und er steht auf und zieht mich in eine feste Umarmung, als wäre ich plötzlich von den Toten auferstanden. "Geht es dir gut? Was ist passiert? Kann ich dir irgendwie helfen?" überschüttet er mich mit Fragen und mustert mich von Kopf bis Fuß um sicherzugehen, dass mir auch wirklich nichts fehlte. "Ich wollte dir heute Morgen deine Jacke bringen, die du vergessen hattest. Als ich dann das hier sah, hatte ich Angst, auch dich verloren zu haben." "Keine Sorge mir geht's den Umständen entsprechend gut, im Gegensatz zu meiner Schwester." Und aus mir sprudelt alles heraus was gestern Abend noch passiert war. Dann mache ich uns einen Kaffee und wir fangen an das Chaos mit einfachen Zaubersprüchen zu beseitigen unterdessen bemerke ich, dass absolut nichts fehlt, was mir sehr merkwürdig vorkommt. Aber ich habe nicht den Nerv mich damit zu befassen. Als wir fertig sind lassen wir uns auf der Couch nieder und betrachten zufrieden das Ergebnis. </p><p> </p><p>---</p><p> </p><p>"Was glaubst du? Wer könnte es gewesen sein?" frage ich Remus ein paar Tage später. Heather ist immer noch nicht aus ihrem komatösen Zustand erwacht. Doch ich habe sie trotzdem täglich besucht. Wir beide spielen mit dem gleichen Gedanken aber keiner will ihn aussprechen. Aber es funktioniert, er überwindet sich. "Es könnte ja sein, dass es Sirius war." Ich kann deutlich sehen wie unangenehm es ihm ist, das zu sagen aber mir geht es dabei nicht besser. Es kommt mir so vor als würden wir ihm in den Rücken fallen, als würden wir uns zu Verrätern machen und Remus empfindet das genauso. Das weiß ich einfach. "Aber wenn er gekommen ist um mich zu töten, hätte er doch gemerkt, dass es Heather war. Immerhin kenn er sie ja und so ähnlich sehen wir uns auch nicht, ich meine sie ist um einiges kleiner als ich." "Oder sie war ihm einfach im Weg, wir wissen ja nicht was Azkaban aus ihm gemacht hat." gibt Moony zu bedenken. "Vielleicht wollte er aber auch nur reden und meine Schwester hat ihn angegriffen, weil sie sich erschrocken hat." spekuliere ich weiter. "Oh Gott, es fühlt sich verdammt falsch an so etwas auch nur über ihn zu denken!" "Ich weiß mir geht es da nicht anders" beschwichtige ich ihn. "Aber ich denke wir sollten alle Möglichkeiten ihn betreffend in Betracht ziehen, sonst sind wir am Ende, wenn es sich als anders herausstellt, noch enttäuschter. " Ich glaube ich sage das nur um mir das selbst einzureden, damit ich nicht zu sehr hoffe. Aber ich muss leider einsehen, das es nicht im geringsten funktioniert. "Ja, das ist wohl das Beste." stimmt Remus mir zu aber sonderlich überzeugt klingt er nicht. </p><p> </p><p>---</p><p> </p><p>Ich höre ein sanftes klickern an der Fensterscheibe. Eine kleiner schwarz-grauer Waldkauz tippt mit seinen Krallen gegen die Fensterscheibe. Ein kleiner Zettel befindet sich in seinem Schnabel. Ich stehe auf und öffne es langsam, dann nehme ich den Brief und der Kauz bedient sich an den Trauben die auf dem Tisch stehen. Ich entfalte den Brief und lese:</p><p>Liebe Catherine,<br/>
+Ich schreibe dir in Eile, da ich sicher bin, dass dich das brennend interessieren wird. Ich will jetzt auch nicht länger drumrum reden. Deine Schwester ist aufgewacht! Ich nehme an, dass du unverzüglich hier auftauchen wirst.<br/>
+Amanda</p><p>Ich schnappe nach Luft. Das hatte ich nach den vergangenen Wochen nicht erwartet. Vor allem, da sich ihr Zustand erst verschlechtert hat. Schnell kritzele ich einen Nachricht an Remus und stecke ihn meiner Eule Cora in den Schnabel, dann appariere ich zum St. Mungos. Amanda Gray erwartet mich bereits und führt mich zu meiner Schwester. Als ich in ihr Zimmer stürze sitzt sie auf ihrem Bett und lächelt mich an. Ich werfe sie mit der Wucht mit der ich sie umarme rücklings aufs Bett und den Ärzten die mich davon abhalten wollen ignoriere ich gekonnt. Wir müssen vor Erleichterung lachen aber trotzdem stehen Tränen in meinen Augen. Ein paar Minuten liegen wir noch so da und können unser Glück kaum fassen, dann ziehen mich die Ärzte mit sanfter Gewalt von ihr weg. Amanda wischt sich verstohlen eine Träne aus dem Auge, anscheinend geht es ihr nahe aber sie hat mich ja auch andauernd bei Heather angetroffen.  Mittlerweile sind wir schon fast so etwas wie Freundinnen. Da sehe ich Remus in der Tür stehen. Lächelnd sieht er mich an. Ich umarme ihn fest und flüstere "Danke, dass du gekommen bist." Dann begrüßt er Heather und beglückwünscht sie zur Rückkehr ins Reich der Lebenden. "Entschuldigen sie die Störung aber Miss Allende wird noch ein Paar Tage aus Genesungszwecken im St. Mungos verbingen müssen. " meint einer der Ärzte. "Wie viele?!" frage ich entsetzt. "Keine Sorge nur drei." meint ein weiterer schnell als er meinen Gesichtsausdruck sieht.</p><p>---<br/>
+Und in diesen drei verdammten Tagen passiert so viel nur - ohne mich.<br/>
+---</p><p>Ich führe gerade Heather wieder ein und erkläre ihr was ich hier und da verändert habe, damit sie einen guten Start in den Alltag hat, als es an der Tür klingelt und ein abgehetzter Remus Lupin vor meiner Tür steht. Ich muss ihn eine ganze Zeit lang verwirrt angeschaut haben, denn er fragt :"Darf ich reinkommen?" Ich blinzele und langsam wird mein Kopf klarer "Jaja klar" murmele ich. Ich mache eine einladende Geste richtung Wohnzimmer, wo er sich auf der Couch plaziert. "Was gibt's? " frage ich neugierig. "Es ist gestern eine ganze Menge passiert." meint er immer noch etwas außer Atem. An meine Schwester gewand sagt er:" Darf ich mich mit Cat unter vier Augen unterhalten? Ich möchte, dass sie es zuerst erfährt." Fragend sieht meine kleine Schwester mich an ich nicke. Dann verlässt sie den Raum. "Also als erstes ich werde meinen Job als Lehrer aufgeben. Severus hat mein kleines Geheimnis verrraten, ich denke das ist besser so, niemand möchte einen Werwolf als Lehrer oder Kollegen." Ich merke an der art, wie er 'Werwolf' ausspricht, dass er sich noch immer nicht ganz damit abgefunden hat. "Aber was machst du dann? Du kannst mich doch nicht schon wieder alleine lassen?" "Ich weiß noch nicht, wie es weitergeht." sagt Remus ehrlich. "Aber ich verspreche, dass ich dich öfter mal besuchen komme. Ich kann mir ja nicht deinen Kuchen entgehen lassen" schmunzelt er. Erleichtert lächelte ich ihn an. Dann frage ich ihn :" Was ist das andere? Der zweite Grund, warum du hier bist?" "Ah" sagt er nur nachdenklich. Dann schweigt er einen Moment. "Nun ja wie soll ich da anfangen? ... Erinnerst du dich an die Karte des Rumtreibers?" Ich lache "Wie könnte ich die vergessen? Harry hat sie doch von Fred und George 'geerbt' oder?" "Genau aber mittlerweile hat Snape sie entdeckt, aber ich konnte ihn grade noch davon abhalten, sie zu zerstören. Und deshalb lag sie in meinem Büro auf dem Schreibtisch. Gestern Abend habe ich sie mir angeschaut und weißt du was ich gesehen habe? Oder besser WEN ich gesehen habe?" Fragend sehe ich ihn an. "Peter Pettigrew." Und dann erzählt er mir den restlichen Verlauf des Abends.</p><p>---</p><p> </p><p>"Du verarschst mich doch nicht, oder?" Mit prüfendem Blick sehe ich Remus an. "Nein." beharrt er und ich sehe, dass er recht hat. "Da kommt dieser Dreckskerl nach zwölf Jahren aus Azkaban und ihm kommt nicht in den Sinn, dass er zufälliger weise Freunde hat, bei denen er sich melden könnte!" beschwere ich mich lautstark. "Er ist geflohen" "Na und?!" Eine Blumenvase fiel meinem Ärger zum Opfer und zerbarst auf dem Boden. "Er wusste ja nicht ob er uns trauen kann. Geschweige denn ob wir an seine Unschuld glauben." verteidigt Remus ihn aber im Gegensatz zu mir bleibt er bei jeder Diskussion ruhig. Ich frage mich ernsthaft wie er das hinbekommt. "Aber ... aber..." stammele ich, weil mir kein Gegenargument einfällt "er hätte es ja wenigstens versuchen können." "Und riskieren, dass seine Rachepläne vereitelt werden? Und seine Freiheit aufs Spiel setzen? Wohl eher nicht." gibt Remus zu bedenken. "Aber er muss doch wissen, dass er uns Vertrauen kann!" rufe ich verzweifelt und lasse mich neben ihm auf dem Sofa nieder. "Nachdem was Peter ihm angetan hat?" "Warum bist du immer so schlau?" beklage ich mich, nicht ernsthaft beleidigt. "Einer von uns muss es ja sein." zieht er mich auf und wir beide müssen lachen. </p><p> </p><p>---</p><p>Einige Tage später kommt ein Brief während er Geschäftszeit. Und die Handschrift mit der er an 'Kätzchen' addressiert wurde, würde ich unter tausenden wiedererkennen. Heather sieht meinen Gesichtsausdruck und meint: "Geh ruhig." Dankend blicke ich sie an und verschwinde in der Küche. Dort lege ich den Brief auf den Tisch und setze mich davor. Ich starre ihn eine gefühlte Ewigkeit an, nicht sicher ob ich ihn aufmache oder nicht. Ich hab irgenwie Angst, vor dem was darin steht. Doch dann kann ich mich nicht mehr halten und reiße ihn auf.</p><p>Hey Kätzchen,<br/>
+Bevor du diesen Brief verbrennst ohne ihn zu lesen: Es tut mich leid, dass ich mich nicht gemeldet habe. Es war echt idiotisch zu glauben, dass ich dir nicht vertrauen kann.</p><p>Verächtlich schnaube ich. Das war alles geplant gewesen. Er hatte Remus hergeschickt, damit er sieht wie ich darauf reagiere um dann eine, der Situation angepasste, Entschuldigung zu schreiben. Das ist so lächerlich erbärmlich. Wut brodelt in mir hoch ich spiele mit dem Gedanken das Blatt zu zerreißen und zu verbrennen. Ich beschließe ihn erst fertig zu lesen und ihn dann wirklich zu verbrennen. Es folgten noch weitere Anspielungen auf mein Verhalten. Kurze Zeit später beobachte ich, wie die Flammen des Kamins den Zettel verschlingen. Ich hatte absolut nicht das Bedürfnis zu antworten. </p><p> </p><p>---</p><p> </p><p>Sirius kennt mich und deshalb weiß er, dass es keinen Sinn macht, wenn er mich mehrmals in Briefen um Entschuldigung bittet. Deshalb schreibt er auch nicht mehr. Er weiß, dass ich mich melde, wenn ich mich danach fühle. Zwar tat ich es aber ich wollte nicht klein beigeben, ich wollte ihn zappeln lassen, so wie er es mit mir getan hatte, obwohl es eigentlich lächerlich war. Aber das wollte ich mir nicht eingestehen. Also half ich Harry auch in seinem vierten Schuljahr, besonders da ja das trimagische Tunier stattfand außerdem machte ich viel mit Remus und stürzte mich in die Arbeit um mich abzulenken. </p><p> </p><p>---</p><p> </p><p>Ich hatte mir keine der Aufgaben entgehen lassen und jedes mal im Publikum gestanden und Harry angefeuert. Auch bei der letzten wollte ich nicht fehlen und so schmuggelten Dumbledore und Hagrid in die hinterste Reihe des Quidditchstadions. Ich bin aufgeregt wie sonst was und hüpfe nervös auf meinem Platz herum. Zum Glück ist mein Platz neben Hagrid und so falle ich nicht auf. Als Harry mit Cedric zurückkehrt sehe ich sofort was los und reiße schockiert die Augen auf. Ich komme nicht zu ihm durch und so erfahre ich alles erst später. Ich zweifle absolut nicht an der Rückkehr von Voldemort und bin der Meinung, dass das Ministerium sich lächerlich macht. Ein paar Tage später kommt Dumbledore wieder bei mir vorbei.</p><p> </p><p>---</p><p> </p><p>"Ich werde den Orden des Phönix wieder aufbauen und ich möchte, dass Sie wieder ein Teil davon sind." "Wirklich? " frage ich aufgeregt. "Natürlich. " antwortet er schmunzelnd "Sie haben letztes mal sehr viel dazu beitragen und ich bin mir sicher, dass sich alle freuen werden Sie wiederzusehen, Catherine." "Bei Merlins Bart! Natürlich bin ich dabei!" rufe ich aufgeregt. "Wann und wo ist das nächste Treffen?" "Ich freue mich, dass Sie mit solchem Eifer dabei sind aber genaures werden wir noch planen müssen. Remus wird ihnen dann genaueres mitteilen. Aber ich muss mich auch schon wieder verabschieden, ich habe noch ein paar Leute zu überzeugen. Auf Wiedersehen. " "Wiedersehen" murmele ich verwundert über den überstürzen Aufbruch aber ich konnte mich nicht viel länger wundern, ich war einfach zu aufgeregt.</p><p> </p><p>---</p><p> </p><p>Liebe Cat,</p><p>Wie ich gehört habe, trittst du dem Orden auch dieses Mal wieder bei. Dumbledore hat mir gesagt, dass ich dich in zwei Tagen abholen soll. Er hat auch gesagt, dass du für eine Weile im neuen 'Geheimversteck' wohnen wirst. Das wird bestimmt lustig. Naja ich hol dich dann um zwei Uhr ab.<br/>
+-Remus</p><p>In zwei Tagen? Früher hat man mir nicht Bescheid geben können? Und wo ich wohnen werde is dann ja natürlich auch egal! Wenigstens das hätte er mir ja sagen können. Trotzdem beeile ich mich und packe alles was ich brauchen würde in meinen Koffer.<br/>
+Zwei Tage später klopft es pünktlich um zwei an der Tür. "Na, bist du bereit?" fragt Remus mich als ich öffne. Dank meiner unendlich großartigen Pünktlichkeit bin ich es noch nicht. Also bitte ich ihn herein und er setzt sich während ich herumwusele um alles abreisebereit zu machen. Einige Zeit später bin ich schließlich fertig. "Wenn du mich helfen lassen hättest, wären wir schneller gewesen. " meint Remus nur und hält mir den Arm zum apparieren hin. Ich verdrehe die Augen und hake mich bei ihm unter.</p><p>---</p><p>"Willst du mich verarschen?!" flüstere ich Remus wütend zu als wir die Eingangshalle des Grimauld Platzes 12 betreten. Doch der grinst mich nur schief an. "Cat!" ruft jemand laut und von der Wucht mit der ich in die Arme geschlossen werde, kippe ich fast hinten über. "Tonks!" rief ich freudig aus. Ich hatte sie schon lange nicht mehr gesehen und freue mich deshalb um so mehr sie zu sehen. Als wir mit der freudigen Begrüßung fertig sind zieht sie mich hinter sich her. "Komm, ich zeig dir unser Zimmer." und rennt mit mir im Schlepptau die Treppe hoch. Dann stolpert sie in ihrem Eifer fast über Kreacher. Wir laufen den Gang entlang und sie stößt eine Tür zur linken auf. "Tadaa." strahlt sie "Willkommen in deinem neuen Heim." Der Raum ist relativ schlicht und dunkel aber das stört mich nicht im geringsten. Mit Tonks zusammen wird das bestimmt großartig. Sie zeigt mir schnell alles und erzählt mir was alles wichtiges bei ihr passiert war. Dann bin ich dran. Als ich geendet habe beginnt sie zu grinsen "Ich glaube unten in der Küche wartet jemand darauf dich wiederzusehen." meint sie. Ich grunze eine Art Zustimmung. Auf dem Weg nach unten rede ich mir immer wieder ein wie wütend ich bin. Die Küchentür steht offen und ich sehe ihn mit Remus in ein Gespräch vertieft. Ich versteh nicht was sie sagen, da sie ihre Stimmen dämpfen. Sirius hat sich verändert. Er sieht zwar immer noch ziemlich gut aus aber man sieht ihm seinen Aufenthalt in Azkaban an. Ich bin unendlich froh ihn wiederzusehen. Aber dann zwinge ich mich daran zu denken wie wütend ich bin und die Wut brodelt in mir hoch.</p><p>*Remus Sicht*<br/>
+"Meinst du sie ist noch wütend?" fragt Sirius mich und ich meine so etwas wie Verzweiflung in seinem Blick zu sehen. Ich will gerade zu einer beruhigenden Antwort ansetzen, als ich merke dass er sich weggedreht hat und etwas fasziniert anstarrt. Als ich seinem Blick folge sehe ich auch warum. Cat stürmt wütend auf uns zu. In dem Licht was auf sie fällt, sieht es aus als würden ihre Haare in Flammen stehen, ihre grünen Augen sind zu schlitzen verengt. "Du Dreckskerl!" schreit sie und gibt Sirius eine schallende Ohrfeige. Dann macht sie auf dem Absatz kehrt und läuft mit geballten Fäusten aus dem Raum. "Sie freut sich dich zu sehen." meine ich schmunzelnd. "Wow!" flüstert Sirius "Sie ist heiß." "Sirius," mahne ich ihn "Vergiss es, das ist Cat." "Aber sie ist heiß." Ich verdrehe nur die Augen.</p><p>*Deine Sicht*<br/>
+Das hat gut getan. Aber ich kann wirklich nicht lang sauer sein, eigentlich freue ich mich ja schon ihn wiederzusehen. Also mache ich erneut kehrt. Vorsichtig laufe ich zurück. Die beiden stehen noch genauso da wie ich sie verlassen habe. Sirius hat eine Hand an seiner Wange. Unter ihr kann ich die leichte Röte sehen, die sich langsam auf der Wange ausbreitet. Als ich schließlich vor ihm stehe lässt er sie sinken. Und wir schauen uns eine Weile an, als könnten wir es nicht glauben uns wirklich gegenüber zu stehen. Dann werfe ich ihn fast um, weil ich ihm in die Arme springe und meine Beine um seine Tallie schlinge. Aus dem Augenwinkel sehe ich wie Reumus die Küche verlässt aber ich bin zu abgelenkt. Ich atme seinen Geruch ein. Er riecht nach Sirius, Kaffe, Sommerregen und ein bisschen nach Hund. Aber gut nach Hund. Wie ich diesen Geruch vermisst habe. Vor Freude spüre ich wie erneut Tränen schnell versuche ich sie wegzuwischen. "Weinst du?" fragt er überrascht. "Nein!" erwidere ich viel zu schnell für die Wahrheit und muss über mich selbst grinsen. Ich löse mich von ihm und sehe, dass er genau das gleiche denkt wie ich. Er kennt mich einfach zu gut. Dann setzen wir uns in den Salon, imerhin haben wir uns ziemlich viel zu erzählen. </p><p>---</p><p>"Wie ist es gelaufen, Süße?", fragt Tonks, als ich einige Zeit später, genauer gesagt einige Stunden später in unserem Zimmer aufs Bett falle. "Das war kein Date, Dora." Und schaue sie leich genervt an aber ich kann meine gute Laune einfach nicht lange zurückhalten und grinse sie ein Sekundenbruchteil später an. "Großartig. Es ist großartig gelaufen. " platzt es aus mir raus. Lachend zieht sie mich hoch "Na los komm, wie wäre es wenn wir zur Feier des Tages ein riesiges Menü kochen?" Kochen ist eine der wenigen Leidenschaften die sie und ich teilen. Mein Tag schein mit jeder Minute besser zu werden, trotz der anfänglichen Schwierigkeiten. </p><p>---</p><p>Es gibt Tage an denen wünscht man sich, sie würden nie vorbei gehen. Und wenn sie es tun ist man zum einen Traurig, dass sie vorbei sind und zum anderen ist man unglaublich glücklich, weil man weiß, dass es immer etwas geben wird an das man sich gerne erinnert. Diese Tage lassen einen alles schlechte für eine kleine Ewigkeit  vergessen.<br/>
+Dieser Tag ist einer von ihnen gewesen und als ich nachts im Bett liege , nach einem wundervollen Abend, möchte ich nicht einschlafen,  weil ich befürchte, das dieses Glück vorbei geht wenn man die Augen schließt und es gehen lässt. Doch ich merke langsam, wie ich in den Schlaf sinke aber ich habe die Hoffnung noch nicht aufgegeben, dass es diesmal bleibt.</p><p>---</p><p>Die Tage, in denen wir zu viert sind, sind schnell vorbei, denn nach ein paar Wochen ist das Haus voller fröhlicher Rotschöpfe. Und noch weitere Tage später ist es soweit und wir können Harry endlich zu uns holen natürlich lasse ich es mir nicht entgehen, ihn mit abzuholen. (Obwohl Sirius mir echt leid tut, weil er nicht mit kann.) Aber auch das vergeht schnell, da die Kinder ja bald wieder in die schule müssen. Ich frage mich, warum es immer die schönen Tage sein müssen die schnell vorbeigehen.</p><p>---</p><p>Ich wache auf, mitten in der Nacht. So wie immer. Aber heute habe ich Durst und müde bin ich erst rech nicht mehr. Also schleiche ich mich an Dora vorbei in die Küche. Ich nehme mir ein Glas aud dem Schrank und halte es unter den Wasserhahn. Als es voll ist gehe ich zum Fenster. Draußen funkeln die Sterne. Ich drehe mich um und will mich auf einen der Stühle setzen. "Noch wach?" Vor Schreck entgleitet mir das Glas und ich kann mir einen leisen Aufschrei nicht verkneifen. "Gott verdammt, Sirius!" fauche ich. Er lacht leise. Sein Gesicht liegt im Halbdunkeln, was seine markanten Gesichtszüge betont. Dann steht er auf und hilft mir beim beseitigen der Scherben. "Also was führt sich hierher, zu so später Stunde?" fragt er. "Schlaflosigkeit. Und dich?" antworte ich. "Mein unstillbarer Drang dich zu sehen." Ich lache auf. "Und jetzt die Wahrheit?" Schlagartig wird er ernst. "Albtäume", erwidert er knapp. Dann schweigen eine Weile, da keiner weiß, was er sagen soll doch schließlich erzählt er, dass er diese Träume jede Nacht seit Azkaban hat und ich erzähle ihm, dass auch ich fast täglich Probleme mit dem Schlafen habe. Und wir 'verabreden' uns sozusagen hier unten. Dann unterhalten wir uns über alles mögliche bis wir uns irgenwann morgens verabschieden, weil wir todmüde sind. Auch in den nachfolgenden Nächten sehen wir uns fast regelmäßig und so wir unser Vertrauen immer stärker. Darüber bin ich unendlich dankbar, denn in den kommenden Zeiten wird Vertrauen schwer zu finden sein.</p><p>---</p><p>Es ist kurz vor den Weihnachtsferien und ich bin immer noch im Hause Black. Ich bemerke wie es für Sirius täglich schwieriger wird, im Haus zu bleiben. Draußen liegt ungefähr ein Fuß hoch Schnee.<br/>
+Als ich die Küche betrete, sehe ich Sirius, wie er sehnsüchtig auf die Schneedecke starrt. Plötzlich kommt mir eine Idee. "Sirius!" rufe ich aufgeregt "Schnapp dir deine Jacke und reich mir deinen Arm." befehle ich ihm. Ich sehe die Begeisterung in seinen sturmgrauen Augen aufblitzen aber schnell weicht sie einem bedauernden Ausdruck. "Aber Cat-" "Kein 'aber' '" sage ich streng. "Ich darf doch nicht raus." "Es muss ja keiner wissen. Du hast es doch sonst auch nicht so mit Regeln, also beweg' deinen hübschen Arsch hierher. " grinse ich. Dann lächelt er schief und macht was ich gesagt habe. Wie kann jemand so rebellisch und idiotisch sein und gleichzetig verdammt sexy. 'CAT!' denke ich mir vorwurfsvoll und gebe mir innerlich eine Ohrfeige.'Das ist dein bester Freund verdammt nochmal. Sowas sollte man da nicht denken, außerdem nicht von einem (ex-)Herzensbrecher' Aber da gibt es ein kleines Problem: Ich kann einfach nicht anders.<br/>
+Sirius reißt mich aus meinen Gedanken indem ich er eine warme Jacke um meine Schultern legt und eine Mütze auf meinen Kopf drückt. "Wohin geht's? " fragt er und greift nach meiner ausgestreckten Hand. Doch schon sind wir vor der Heulenden Hütte. "Es ist vielleicht nicht der geheimste Ort aber ein schöner. " meine ich. Und gehe ein paar Schritte um mich umzusehen. Ich drehe mich gerade wieder zu Sirus, als ein Schneeball mich an meiner Schläfe trifft. Gespielt empört sehe ich ihn an und er grinst mich schelmisch an doch kurz darauf trifft ein Schneeball meinerseits ihn mitten im Gesicht. Das ganze artet in einer lustigen Schneeschlacht aus. Doch plötzlich sehe ich ein paar Gestalten den Hügel hinauf kommen.</p><p> </p><p>*Sirius Sicht*</p><p>Cat hält plötzlich in der Bewegung inne, dann zieht sie mich mit sich. Doch auf dem Weg den Hügel hinunter in den Wald, stolpert sie und statt sie aufzufangen, werde ich mitgezogen und wir rollen die letzten Meter hinunter. Als wir schließlich den Waldrand erreicht haben, liege ich halb auf ihr, wodurch ich das Beben spüre, das durch ihren Körper fährt. Einen Augenblick befürchte ich, dass sie sich verletzt hat aber dann merke ich, dass es ein Lachen ist, dass nun immer lauter wird und einem erstickten Gackern gleicht, was so ansteckend ist, dass ich nicht anders kann als mitzulachen. Ich rolle mich auf den Rücken und stehe auf, dann reiche ich ihr die Hand und ziehe sie hoch. Cat blickt nach oben zum Hügel ich folge ihrem Blick und will gerade etwas sagen, da erblicke auch ich die schemenhaften Figuren. Schnell ziehe ich Cat hinter einen breiten Baum. Mit weitaufgerissenen Augen sieht sie mich an "Wer ist das?" flüstert sie leise. Aber ich lege meinen Zeigefinger auf die Lippen und bedeute ihr so, leise zu sein. Einige Augenblicke später lugt sie hinter dem Stamm hervor und anhand ihres Blicks kann ich erkennen, dass die Leute weg sind. Erleichtert atme ich auf. Sie dreht sich wieder zu mir. Ihre Wangen sind von der Kälte leicht gerötet und ihre Haare stehen wirr in alle Richtungen ab und der weiße Schnee, der hier und da in ihnen glitzert lässt sie noch roter wirken, als sie es eh schon waren. Das Grün ihrer Augen fesselt mich. Sie war so schön.  Ohne nachzudenken nahm ich vorsichtig ihr Gesicht in meine Hände und legte meine Lippen auf ihre leicht geöffneten. Langsam öffne ich meine Augen und sie schaut noch immer mit großen Augen. Ich runzele meine Stirn und wollte schon anfangen mich für meine Torheit entschuldigen aber sie versieglte meinen Mund mit ihrem Lippen. Der Kuss wird immer stürmischer und als wir uns atemlos lösen, kann ich sie eine Weile nur sprachlos anstarren.</p><p> </p><p>---</p><p> </p><p>Wir haben seitdem nicht mehr viel geredet und aus irgendeinem Grund gehen wir uns eher aus dem Weg. Auch nachts wenn ich nicht schlafen kann gehe ich nicht in die Küche sondern bleibe einfach liegen auch wenn es unangenehm ist. Keiner von uns spricht den Vorfall wieder an, was bei mir aber eigentlich daran liegt, dass er es mit keinem Wort erwähnt und ich befürchte, dass es ihm nicht gefallen hat oder er mich einfach nicht auf diese Weise mag. Und obwohl ich es niemals zugeben würde, zerfressen mich innerlich Zweifel. Doch bald würde das Haus wieder voller gutgelaunter Leute sein und es würde einfacher werden Sirius aus dem Weg zu gehen. Doch leider ist das Leben ein Miststück und so kommt es, dass ich diese Nacht nach einem der nicht gerade seltenen Albträume mit einer vollkommen ausgetrocknenten Kehle aufwache. Ich verfluche kurz mein Leben und mache mich betend für Sirius' Abwesenheit auf den Weg in die Küche. Doch bei meinem Glück kommt es wie es kommen muss und er sitzt mitten am Küchentisch. Doch zum Glück bemerkt er mich nicht und bevor ich den Raum gänzlich betreten habe befinde ich mich schon wieder im Flur. Ich werfe einen Blick auf die Uhr. 23:25. Hat der Kerl nichts besseres zu tun als dauerhaft am Küchentisch zu sitzen und poetisch in die Ferne zu schauen. Sofort bereue ich meine Gedanken, natürlich nicht immerhin ist er praktisch immernoch ein Gefangener. Fieberhaft überlege ich ob es noch einen anderen Ort in diesem gottverdammten Haus gibt an dem man nicht zwangsläufig Sirius trifft, doch das einzigste was mir einfällt ist der Salon und in dem gibt es nur verschiedene Sorten Hochprozentiger Getränke. 'Was solls besser als nichts' entscheidet sich die nächtlich-verneblete Hälfte meines Gehirns und frohen Mutes mache ich mich auf um meine Durst zu stillen. Dort angekommen enscheide ich mich für meinen bevorzugten Whisky und trinke etwas mehr als meine Nüchternheit erträgt. Beleidigt verabschiedet sich diese und an ihre Stelle tritt eine glückselige Heiterkeit, die leider vergisst, das Gläser nicht leise auf Böden zerspringen. 'Ups!' verkündige ich vergnügt und strahle die Scherben an.<br/>
+"Verdammt! Cat! Was machst du hier?" Sirius schaut mich entgeistert an. "Auch 'n Schluck?" frage ich ihn freudestrahlend. Er mustert mich während er den Whisky aus der halbvollen Flasche trinkt. "Bist du betrunken?" fragt er schließlich. "Und?" gebe ich schnippisch zurück. Er schnaubt ein Lachen lässt sich zu mir aufs Sofa fallen und nimmt noch einen Schluck. Ein paar weitere und einige Zeit später ist er ähnlich betrunken wie ich. Die Flasche haben wir mittlerweile gänzlich geleert. Unser Gespräch gerät ins stocken und plötzlich spüre ich seine rauhen Lippen auf meinen. Ich lasse mich darauf ein und ich kann nicht behaupten, dass es meinem betrunkenen Alter Ego missfällt. Der Kuss wird stürmischer und Sirius hebt mich von der Couch. Ich schlinge automatisch meine Beine um seine Taille. Er trägt mich in sein Zimmer und stößt die Tür hinter uns zu.</p><p>---</p><p> </p><p>Durch lautes Gepolter und Stimmengewirr werde ich wach. Ich bin zuerst etwas verwirrt, dass es nicht Tonks ist, was ich als erstes sehe doch die Tatsache, dass mich Sirius' starker Arm umschlingt lässt die Erinnerung an die vergangene Nacht ungnädig zurückkehren. Hastig winde ich mich unter ihm hervor und werfe mir meine Sachen über.  Dann rüttele ich unsanft an seiner Schulter. Als er soweit wach ist dass ich ihm zutraue von alleine mit dem aufstehen fertig zu werden gehe ich vorsichtig nach unten in die Küche.  "Was ist passiert?" frage ich als ich in die niedergeschlagenen Gesichter fast aller Weasleys schaue und werde von Tonks die ich bisher nicht bemerkt hatte aufgeklärt. "Arthur wurde angegriffen er ist jetzt im St. Mungos. Molly ist bei ihm und die Kinder wurden aus der Schule befreit." Ich nicke betroffen und hinter mir betritt ein verwuschelter Sirius den Raum. Die nächsten Stunden bin ich damit beschäftigt Rotschöpfe zu trösten, Zimmer zu organisieren und das weitere Vorgehen zu besprechen. Als ich schließlich ein paar freie Minuten habe ziehe ich Sirius zur Seite. "Wir müssen reden." wispere ich ihm unauffällig zu. Sirius schaut mich fragend an aber auf einen bedeutungsvollen Du-machst-was-ich-sage-sonst-trete-ich-dir-in-deinen-hübschen-Arsch Blick meinerseits führt er mich schweigend in sein Zimmer. "Was ist los?" fragt er vorsichtig, wissend das er für sein eigenes Wohlergehen besser geschwiegen hätte. "Was los ist?" fauche ich ihn mit gedämpfter Stimme an. "Ich sollte dich fragen was los ist! Im einen Moment küsst du mich im nächsten gibst du mir das Gefühl dir nichts zu bedeuten. Dann schläfst du mit mir und wechselst kein Wort mehr mit mir! Was soll ich da bitte denken? Warum machst du das?" Ersieht zu Boden und schweigt. Mir stehen Tränen in den Augen. Trotzig Baisse ich mir auf die Zunge um sie zu vertreiben. "Wenn es dir nichts bedeutet dann ist jetzt der richtige Zeitpunkt es mir zu sagen." Er schaut mich an: "Es hat mir nichts bedeutet." Dann geht er an mir vorbei aus dem Raum. Es fühlt sich an als hätte er eigenhändig mein Herz herausgerissen. Ich blinzele. Eine einsame Träne tropft vor mir auf den Boden. Dann beginne ich zu verstehen. Wie sollte es ihm auch etwas bedeuten für ihn war ich doch eh nur ein kleines Mädchen. Ein naives, kleines Mädchen, dass sich idiotische Hoffnungen macht. Ich schnaube. Vielleicht war es dem Leben nicht genug mir alles was ich hatte zu nehmen, um mir zu zeigen wie grausam es sein kann. Ich lächele bitter.</p><p>---</p><p>Ich beschloss wieder zu Heather zu ziehen. Zwar wollte ich Sirius nicht zeigen wie sehr seine Worte mich getroffen hatten aber ihn jeden Tag sehen zu müssen war reinste Folter. Also ging ich. Ich wartete nicht einmal mehr Weihnachten ab Remus und Tonks hatte ich für den Tag danach zu mir eingeladen und Sirius konnte mir sowas von gestohlen bleiben. Aber wegzukommen reichte mir nicht ich meldete mich zusätzlich für alle Einsätze des Ordens mit besonderer Vorliebe der lebensgefährlichen. Ich weiß nicht wem ich damit etwas beweisen wollte. Und so zog die Zeit an mir vorbei. Tage wurden zu Wochen, Wochen zu Monaten. </p><p>---</p><p>Ich setzte gerade zu einem neuen Brief an Dumbledore an als ich einen lauten Knall höre gefolgt von stolpernden Schritten und einem kreativen Fluch. Ich schmunzele ich öffne die Zimmertür und vor mir steht eine atemlose, zerzauste Tonks. "Was ist los?" Das schmunzeln ist einem entsetzten Blick gewichen. "Ministerium...Kampf...Jetzt" murmelt Tonks und greift nach meinem Arm. Ich kann gerade noch meinen Zauberstab nehmen bevor ich das altbekannte Ziehen im Bauch fühle.</p><p>---</p><p>Wir werden mitten in ein Gewirr aus Flüchen und Personen, die uns um die Ohren fliegen, geworfen. Schon bevor ich mich wirklich orientiert habe, muss ich mehreren Flüchen ausweichen. Auch ich beginne so gut es geht Gegner mir meinen unkoordinierten Zauberflüchen zu treffen und dabei keinen meiner Freunde zu treffen. Relativ bald habe ich mich an die Geschwindigkeit des Kampfes gewöhnt und finde mich in einem Duell mit Yaxley wieder. Dieser liegt jedoch einige Minuten später auf dem Boden, unfähig sich zu bewegen. Ich drehe mich um um mich dem restlichen Kampf zu widmen als meine Aufmerksamkeit auf den Streit um die Prophezeiung gelenkt wird. Alles scheint so friedlich und still als der grüne Fluch auf Sirius' Brust trifft.</p><p>Es ist komisch wie viel Zeit zu vergehen scheint bist man realisiert was geschehen ist, wo es doch in Wirklichkeit nur Bruchteile einer Sekunde braucht. Doch als ich auf die Stelle zustolpere an der er zuletzt gestanden hatte, war alles, was ich fühlen kann eine riesige, schmerzvolle Leere, die alles in sich aufsaugt bis auf meine unerfüllten Wünsche die nie erfüllt werden können. </p><p> </p><p>Ich wünschte, dass ich ihn hätte retten können, dass wir glücklich hätten werden können. Ich wünschte, dass die Dinge sich zum Guten hätten wenden können, wünschte, dass ich wenigstens noch ein wenig Zeit mit ihm gehabt hätte. Doch mehr als alles in der Welt wünschte ich ich hätte ihn noch ein einzigstes mal in meinen Armen halten können, noch einmal sein wolfisches Grinsen sehen können, noch einmal seine Lippen auf meinen fühlen können und mich für alle meine Fehler entschuldigen können. Doch nichts von dem würde mir je wieder gegönnt werden. Sirius Black ist tot.</p><p>---</p><p>Mein Herz ist leblos. Ich bin nicht mehr das, was ich war. Ich bin ein gebrochenes, verlorenes Mädchen in einer traurigen Welt, das vergessen hat wie man fühlt und ohne jemanden, der die Macht hat es ihm beizubringen. Ich sehe wie meine Freunde mich anschauen und hoffen, dass ich wieder auf die Beine komme und jedes mal bricht mein Herz noch ein wenig mehr unter der Last meiner Schuldgefühle. Erlösung finde ich bei der großen Schlacht, voller Hoffnung Sirius auf der anderen Seite wieder bei mir zu haben.</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="iPVJCvgjSiCjW6kTF_GUBTw87hX3q3CJxmCx8wkS1wX1xmIMOxlVsIeBe0cLLIA5t2X-gEBR0RFXJXiWkjQyxg"/>
+          <input value="5856934" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          1 guest
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_5856934">
+  <form class="new_comment" id="comment_for_5856934" action="/works/5856934/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="v0yJalfqbUkeH5mlH3Xu6i2fRcPIE06uLyb5ZT0JdDTCf6JslNBy2TrFS_EDqPrWpsZVVn_p7za-YzAApi-R9w"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_5856934">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_5856934" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_5856934=new LiveValidation('comment_name_for_5856934',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_5856934.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_5856934">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_5856934" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_5856934=new LiveValidation('comment_email_for_5856934',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_5856934.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_5856934" class="landmark">Comment</label>
+        <textarea id="comment_content_for_5856934" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_5856934" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_5856934_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_5856934">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_5856934=new LiveValidation('comment_content_for_5856934',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_5856934.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_5856934.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_5856934" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/5856934/hit_count.json")})</script>
+
+
+  </body>
+</html>

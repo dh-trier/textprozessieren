@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":106,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Weihnachten in Sydney - Elfenhexchen - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="lN5UfWzfdgaykBOjf4H-QTYvWOEffc_Cd0PwwVtcG_FKUpCM73vbpz_IOC1gofKTs1qrCL3qDHickXTucxuoAw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="U0z6FePzJwt1j2gQr3YaVOBJp34rUMiy7c2Q5xGzz3ONwD7kYFeKqvjXQ56wVhaGZTxUl4nHCwgGHxTIOfR8gQ"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: hetalia f/f sort:kudos</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/7725946/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/7725946/Weihnachten%20in%20Sydney.azw3?updated_at=1470782430">AZW3</a></li>
+          <li><a href="/downloads/7725946/Weihnachten%20in%20Sydney.epub?updated_at=1470782430">EPUB</a></li>
+          <li><a href="/downloads/7725946/Weihnachten%20in%20Sydney.mobi?updated_at=1470782430">MOBI</a></li>
+          <li><a href="/downloads/7725946/Weihnachten%20in%20Sydney.pdf?updated_at=1470782430">PDF</a></li>
+          <li><a href="/downloads/7725946/Weihnachten%20in%20Sydney.html?updated_at=1470782430">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Severus%20Snape/works">Hermione Granger/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-08-09</dd><dt class="words">Words:</dt><dd class="words">11403</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">8</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/7725946/bookmarks">1</a></dd><dt class="hits">Hits:</dt><dd class="hits">304</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Weihnachten in Sydney
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Elfenhexchen/pseuds/Elfenhexchen">Elfenhexchen</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Severus reist auf Wunsch Minerva McGonagalls mit Hermine nach Australien, um ihre Eltern wieder zu finden...</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+
+    <p class="jump">(See the end of the work for <a href="#work_endnotes">notes</a>.)</p>
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p>Es war ein kalter Dezembermorgen als Hermine am Fenster in ihrer Wohnung saß und nachdenklich auf die verschneiten Ländereien Hogwarts sah. Sie war nun seit dem neuen Schuljahr Professorin für Verwandlung und hatte somit Minerva McGonagall abgelöst, die sich jetzt nur noch um die Leitung der Schule kümmerte. Hermine hatte nach dem Krieg das letzte Schuljahr wiederholt und hatte natürlich mit Auszeichnung bestanden. Minerva hatte ihr noch am Abschlussball den Job als Professorin angeboten und Hermine sagte sofort zu. <br/>Nach dem Krieg war sie in ein tiefes Loch gefallen, da sie ihre Eltern nicht finden konnte, die sie damals nach Australien geschickt hatte und da kam ihr diese Ablenkung gerade recht. Nicht dass sie den Job nicht mochte, sie liebte Hogwarts und die Stelle als Professorin, aber sie sehnte sich trotzdem oft nach ihren Eltern. <br/>Nach der Geborgenheit in den Ferien und das Wissen, dass sie jederzeit für sie da sind und sie umarmen und lieben würden. <br/>Vor allem jetzt  in der Zeit um Weihnachten vermisste sie ihre Eltern besonders, da diese Jahreszeit mit vielen Erinnerungen aus ihrer Kindheit verbunden war. <br/>Hermine seufzte leise und beobachtete Hagrid, der gerade einen Tannenbaum aus dem verbotenen Wald zum Eingang trug. Später würde sie ihn mit Filius in der großen Halle schmücken um wenigstens eine kleine Tradition ihrer Familie aufrechterhalten, auch wenn sie alleine war und ihre Eltern nicht zusehen konnten. Jetzt aber musste sie sich erst einmal umziehen und in die große Halle zum Frühstück, da ihre Anwesenheit zu den Malzeiten verlangt war.<br/>Sie erhob sich gähnend aus ihrem Lesesessel, den sie aus dem Haus ihrer Eltern nach Hogwarts gebracht hatte und ging ins Badezimmer, wo sie eine heiße Dusche nahm, die ihre Lebensgeister wieder weckten. <br/>Nach der Dusche starrte sie einige Zeit in den Spiegel und betrachtete sich. Seit langem hatte sie tiefe Augenringe die nie ganz verschwinden wollten und ihr Haar war stumpf geworden und glänzte nicht mehr so wie früher. Ihre braunen Augen sahen immer etwas müde aus und ihre Wangen wirkten etwas eingefallen. Insgesamt befand sie, dass sie schrecklich aussah. Sie trocknete ihre Haare mit einem Zauber und flocht sie zu einem Zopf, den sie anschließend in einem Dutt hochsteckte. Anschließend zog sie sich eine schwarze Stoffhose und einen beigen Kaschmirpullover an, der ihre Figur hervorragend umschmeichelte. <br/>Hermine warf sich noch ihre Robe über und ging dann in die große Halle um mit den anderen zu frühstücken. <br/>„Morgen Mine, komm mal wieder auf einen Tee vorbei! Wir hab’n lang nicht mehr geredet“, grüßte sie Hagrid, der gerade den Weihnachtsbaum aufstellte. <br/>„Hallo Hagrid, ja werde ich machen. Vielleicht morgen? Heute habe ich leider keine Zeit, da ich mit Filius den Baum schmücke und dann noch Hausarbeiten verbessern muss“<br/>„Komm einfach vorbei. Fang wird dir schon Gesellschaft leisten wenn ich nicht gleich da bin. Der alte Junge is faul geworden und begleitet mich nicht mehr so oft!“, brummte Hagrid liebevoll und verschwand wieder durch die Tür. <br/>Hermine setzte sich an den Lehrertisch und genoss die Ruhe. Sie war wie so oft die erste und trank wie immer ihre erste Tasse Tee bevor sich die ersten Lehrer zu ihr gesellten. Minerva war heute die erste und sie setzte sich direkt zu Hermine und nicht auf den Platz des Schulleiters, den sie oft leer ließ. Sie hatte Hermine einmal erzählt, dass sie immer das Gefühl hatte auf Dumbledores Platz zu sitzen und das sie da nicht hingehört. Nach und nach kamen die anderen Lehrer und begrüßten die beiden mit einem Nicken oder einem freundlichen Wort.<br/>„Guten Morgen Hermine!“, grüßte Minerva sie ebenfalls freundlich als sie sich ein Croissant nahm. <br/>„Morgen Minerva.“, nuschelte Hermine noch verschlafen und trank einen weiteren Schluck Tee. <br/>Sie sah wie Minerva kurz seufzte und sich dann zu ihr wandte. „Ich weiß, dass du nicht gerne darüber redest, aber wie geht es dir wegen deiner Eltern? Gibt es etwas Neues?“<br/>Hermine lächelte Minerva traurig an. Sie waren Freundinnen geworden und Minerva war mit der Zeit auch ein Mutterersatz für Hermine geworden.<br/>„Wie immer nicht so gut, aber ich kann es nicht ändern. Ich vermisse meine Eltern unheimlich, aber ich kann wohl erst in den Sommerferien wieder nach ihnen suchen. Alleine schaffe ich es in kürzeren Ferien einfach nicht, da ich Hausaufgaben verbessern muss und meist Harry und Ron besuche. Außerdem hab mein ganzes erspartes schon für die erste Suche aufgebraucht.“ <br/>Minerva nickte ihr gefühlvoll zu und aß nachdenklich weiter. <br/>Hermine lag ihr sehr am Herzen und sie fand es schrecklich sie so leiden zu sehen. Sie musste sich etwas überlegen um ihr zu helfen. </p>
+<p>„Albus! Ich kann mir das nicht mehr mitansehen. Hermine geht es immer schlechter. Man sieht es von Tag zu Tag mehr. Sie muss unbedingt ihre Eltern wieder finden, aber ich weiß nicht wie ich ihr helfen kann.“, sagte Minerva verzweifelt zu Albus Dumbledores Portrait in ihrem Büro. Minerva war wirklich verzweifelt. Hermine war wie eine Tochter für sie geworden in den letzten Jahren und sie wünschte ihr alles Glück der Welt, nachdem sie so viel verloren hatte. Zuerst nahm ihr der Krieg ihre Jugend, dann verlor sie immer mehr den Kontakt zu Harry und Ron, da sie sich so zurückzog und zu allem Überfluss konnte sie ihre Eltern nicht mehr finden. Sie war ganz allein.<br/>„Minerva, meine Liebe, es gibt eine Person die ihr vielleicht helfen kann, aber ich befürchte, dass er nicht zusagen wird…“, sagte Dumbledore und sah Minerva nachdenklich an bevor er weitersprach. „Severus musste als Spion oft Personen aufspüren und Tom Riddle hatte keinen Skrupel um ihm dunkle Rituale zu zeigen. Ich denke nicht, dass er für Hermines Eltern schwarze Magie brauchen würde, aber er würde es im Notfall können. Ich denke aber, dass du-„ „Albus! Du bist fantastisch! Ich muss sofort mit Severus reden. Er muss mir helfen!“, rief Minerva erfreut und war schon durch die Bürotür gelaufen und auf dem Weg in die Kerker. </p>
+<p>Zur selben Zeit saß ein nachdenklicher Tränkemeister in seinen Kerkern und grübelte über eine braunhaarige Kollegin mit buschigen Haaren. Er hatte beim Frühstück mit einem Ohr Minerva und Miss Granger zugehört - ein Überbleibsel aus seiner Zeit als Spion war, dass er immer die Ohren offen hielt und unterbewusst alle Gespräche mitanhörte. Ihm war schon länger aufgefallen, dass es Miss Granger nicht sehr gut ging, sie hatte ihn sogar um Schlafränke gebeten, die er ihr äußerst unwillig überlassen hatte. Eigentlich hat er ihr die Tränke nur gegeben, weil sie diese sonst sicherlich in der Apotheke gekauft hätte und er zweifelte an der Qualität dieser Produkte. <br/>Er wusste nun endlich warum es ihr so schlecht ging. Er hatte immer vermutet, dass es etwas mit dem Krieg und der Spaltung des goldenen Trios zu tun hatte, aber er war sich nie sicher gewesen. Dass sie aber ihre Eltern nicht finden konnte und deswegen so unglücklich war, damit hatte er nicht gerechnet. Er wusste zwar, dass sie ihren Eltern Gedächtniszauber angehext hatte, aber dass sie diese nicht Rückgängig machen konnte ahnte er nie. Er hatte sich aber nie wirklich mit dem Leben seiner jungen Kollegin befasst. Ihm war es ehrlich gesagt egal gewesen.Wenn er so nachdachte konnte er allerdings sehen, dass sie keinen offensichtlichen Kontakt mehr zur Muggelwelt hatte. Sie blieb während ihres letzten Schuljahres ständig in der Schule und zog sich zurück. Er konnte in dem Jahr immer mehr von sich in ihr entdecken und er war besorgt, dass sie so werden würde wie er, auch wenn es keinen dunklen Lord mehr gab, der sie mit schwarzer Magie anlocken könnte. Das bräuchte sie auch nicht, sie wäre klug genug um sich selber dunkle Magie bezubringen. Trotzdem bemerkte er, dass sie immer trauriger wurde und sich immer mehr aus allem zurückzog. Sie ging nicht mehr nach Hogsmead mit ihren Gryffindor Freunden und sie war fast ständig mit einem Buch in der Hand anzutreffen. Sie lieferte sich nicht einmal mehr die legendären Wortduelle, die er insgeheim immer genossen hatte, da sie eine würdige Gesprächs- und Diskussionspartnern geworden war. <br/>Deswegen hatte er stets ein wachsames Auge gehabt und hatte sie beobachtet. Er hatte gemerkt wie Minerva sie unter ihre Fittiche genommen hatte und war unendlich erleichtert, als es ihr langsam besser zu gehen schien. <br/>Er wusste nicht warum, aber seit er sie beobachtete fühlte er sich immer mehr zu ihr hingezogen. Nicht auf diese Art und Weise, wie man jemanden sexuell anziehend findet, er fand ihre Intelligenz gepaart mit ihrem Wissensdurst faszinierend. Severus seufzte leise und verdrängte den Gedanken, da er sowieso nur die hässliche Fledermaus aus den Kerkern war. Er hatte sein trostloses Leben so gewählt und er konnte daran nichts mehr ändern. Er war ein Todesser gewesen und das Mal auf seinem Arm erinnerte ihn jeden Tag daran, was er aufgegeben hatte, als er sich dem dunklen Lord anschloss. „Die Schuld hört wohl nie auf“, sagte er in die Stille seiner Gemächer, als er daran dachte, dass er einen Verrückten unterstützt hatte, der Hermine indirekt so viel Leid angetan hat.<br/>Plötzlich klopfte es an seiner Tür und nach einem Schlenker mit seinem Zauberstab öffnete sich die Tür und eine heftig atmende Minerva stand in der Tür. <br/>„Ist etwas passiert, oder warum schnaufst du wie der Hogwarts Express?“, fragte er und beäugte die Frau misstrauisch. Wenn sie etwas von ihm wollte, zog er immer den Kürzeren. Es war, als ob sie die weibliche Version von Albus wäre und das ging ihm gehörig auf die Nerven.<br/>„Nein, nicht direkt. Ich muss mit dir reden. Dringend!“<br/>Minerva setzte sich unaufgefordert ihm gegenüber auf das Sofa und rief einen Elfen, der umgehend ein Tablett mit Tee brachte. <br/>„Fühl dich wie zu Hause“, sagte Severus sarkastisch und starrte die Frau an.<br/>„Danke Severus. Bitte trink eine Tasse mit mir.“<br/>Er nickte leicht und trank einen Schluck aus seiner Tasse, die ihm der Elf gebracht hatte. Wie immer trank er einen Schwarztee mit einem Stück Zucker. <br/>„Nun…was musstest du so dringend mit mir besprechen, dass du wie eine Wahnsinnige durchs Schloss rennst?“, durchbrauch er nach langen Sekunden die unangenehme Stille, die sich in seinen Räumen ausgebreitet hatte.<br/>„Es geht um Hermine. Ich muss dich um einen großen Gefallen bitten. Ich weiß nicht in wie weit du mit ihrer Geschichte vertraut bist, aber sie hat vor dem Krieg ihre Eltern mit veränderten Erinnerungen nach Australien geschickt. Letzten Sommer hat sie versucht ihre Eltern wieder zu finden, aber sie schaffte es nicht. Sie scheinen einfach verschwunden zu sein. Hermine ist totunglücklich darüber und es tut mir im Herzen weh, sie so zu sehen. Vor allem jetzt zu Weihnachten… Severus, ich weiß du schuldest mir nichts und du musst es nicht machen, aber kannst du Hermine bitte helfen ihre Eltern wieder zu finden? Am Mittwoch beginnen die Ferien und ihr beide könntet sofort nach Australien reisen. Ich würde mich um einen Portschlüssel kümmern und eure Ausgaben würde ich auch decken. Du bist der einzige, der ihr noch helfen kann.“ Die letzten Worte drangen nur noch leise an Severus Ohr. Wie immer hatte Minerva wieder einen Auftrag für ihn und da sie die arme-kleine-Hermine-Karte ausspielte, konnte er nicht nein sagen.<br/>Er sollte also mit Hermine nach Australien um ihre Eltern zu suchen. Sein verräterisches Herz machte einen kleinen Satz als er daran dachte mit ihr alleine zu reisen und endlose Gespräche zu führen. <br/>Er war auch leicht verwundert, da er eben noch darüber nachgedacht hatte Hermine zu helfen. Er wusste, dass es seltsam gewesen wäre, wenn er ihr plötzlich geholfen hätte, aber Minerva spielte ihm gerade wundervoll in die Karten und er fasste den Entschluss Miss Granger ihre Eltern wieder zurückzubringen – koste es was es wolle. Er tat es nicht für Minerva, er tat es um einen kleinen Teil seiner Schuld wieder gut zu machen, die er mit dem Annehmen des dunklen Mals auf sich genommen hatte. <br/>„Ich soll also meinen Urlaub mit einer nervigen Göre in Australien verbringen um ihre Eltern zu suchen? Und dazu noch Weihnachten mit ihr verbringen? Sehe ich so aus, als würde ich so etwas machen, Minerva?“, fragte er mit schneidender Stimme und beglückwünschte sich, sie so überzeugend angeschnauzt zu haben. Außerdem hatte er wie immer sehr überzeugend gespielt, dass ihn das alles nervte, obwohl er sich auf die Zeit mit Hermine schon freute. Mit leiser Genugtuung bemerkte er, wie Minerva leicht zusammenzuckte und tief Luft holte. „Bitte Severus, sag mir was du möchtest und du bekommst es. Nur bitte hilf ihr – auch wenn Weihnachten kommt!“ <br/>„Alles was ich möchte?“<br/>„Ja, nur hilf Hermine. Sie hat wieder etwas Glück in ihrem Leben verdient“<br/>Ohja das hat sie, dachte er und nickte leicht. „Da ich ihnen meinen Arbeitsplatz hier verdanke werde ich mich um Miss Grangers Eltern kümmern. Über meinen Wunsch werden wir später reden. Ist Miss Granger schon informiert?“<br/>„Nein. Soll ich das übernehmen?“<br/>„Nein. Ich kümmere mich um alles Weitere. Bitte stell uns einen Portschlüssel am Mittwoch zur Verfügung. Und wenn du mich nun entschuldigst, ich muss mich um alles Weitere kümmern.“<br/>Er wartete bis Minerva aus seiner Wohnung verschwunden war und setzte sich dann an seinen Schreibtisch um Miss Granger einen Brief zu schreiben, den er nur wenige Minuten später mit seiner Eule losschickte. Er trank einen Schluck von seinem Tee, der inzwischen kalt geworden war und lächelte. Für seine Schüler wäre dieser Blick wohl verstörend gewesen, aber er war nicht so kaltherzig wie er es immer zeigte.</p>
+<p>Hermine erwachte aus ihrem Traum als sie ein leises pochen an ihrem Fenster hörte. Sie stand auf und ging laut gähnend zu dem Fenster um es zu öffnen. Eine kleine schwarze Eule flog in den Raum und ließ einen Brief fallen. „Danke kleine Eule. Wem gehörst du denn? Ich kenne dich nicht“, fragte Hermine die Eule, als sie ihr einen Eulenkeks hinhielt. Die Eule krächzte und verschlang den Keks mit wenigen Happen. Kurz darauf flog sie auch wieder davon und hinterließ eine Hermine, die sich mit dem Brief wieder ins Bett verzog. <br/>Sie wunderte sich, dass sie überhaupt einen Brief bekommen hatte. Seit sie mit Ron Schluss gemacht hatte, hatte sie viele gute Freunde verloren und sie bekam nur noch geschäftliche Briefe oder Interviewanfragen, die sie aber immer ablehnte. Die einzigen wirklichen Freunde die sie noch hatte waren Minerva und Remus und Tonks, die geheiratet hatten und immer zu ihr gehalten haben, auch wenn sie sich kaum meldete und oft Briefe unbeantwortet ließ. Harry und Ginny waren sehr mit sich und ihrer Beziehung beschäftigt, die sie nun endlich so pflegen konnten wie sie wollten und Ron meldete sich sowieso nicht bei ihr. Sie hörte zwar ab und zu von Luna und Neville, aber die Freundschaft war nie sehr innig gewesen.<br/>Der Brief war weder aufwendig oder sonst irgendwie verziert. Er war auf schlichtem Briefpapier geschrieben und ein Wachssiegel hinderte das Papier daran, aufzuklappen. Sie brach es vorsichtig auf und sah eine schön geschwungene, gleichmäßige Handschrift. Die Schrift kam ihr sofort bekannt vor und Hermine war ratlos, weswegen er ihr geschrieben haben könnte. </p>
+<p>„Miss Granger, <br/>bitte kommen Sie, sobald Sie Zeit haben in mein Büro. <br/>Ich muss in einer dringenden Angelegenheit mit Ihnen sprechen,<br/>die keinen Aufschub duldet. <br/>S.S.“</p>
+<p>Sehr seltsam. Was konnte er von ihr wollen? Hermine überlegte fieberhaft, ob sie etwas falsch gemacht hatte weswegen er sie jetzt zu sich zitieren konnte, aber da grübeln nichts half krabbelte sie aus dem Bett, ordnete ihre Kleidung und machte sich auf den Weg in die Kerker. Sie hatte noch kurz Zeit, bevor sie mit Filius den Baum schmücken konnte also ließ sie sich Zeit. <br/>Hermine dachte daran, wie es war noch Schülerin zu sein. Sie war unzählige Male denselben Weg gegangen, immer mit Harry und Ron, die ihre besten und einzigen Freunde waren. Oft mussten sie laufen, da sie zu spät dran waren und umso öfter hörte Hermine zu, während Ron und Harry Professor Snape beleidigten. Sie hielt sich immer raus, da sie großen Respekt vor ihm hatte und ihn irgendwie verstehen konnte. Zaubertränke war ein gefährliches Fach und mit Spaß kam man nicht weit, außer man möchte sich in die Luft sprengen oder andere verletzen. Snape war sehr streng und unfair, vor allem den Gryffindors gegenüber, aber seit sie wusste, dass er auf der Seite des Lichts stand und ein Spion war, verstand sie sein Verhalten. Er durfte nur seine Slytherins bevorzugen, da sie sonst zu ihren Todessereltern gelaufen wären und sich beschwert hätten und das wäre nicht gut für seine Tarnung gewesen. <br/>Als er jedoch Dumbledore tötete verzweifelte Hermine fast daran. Sie konnte es nicht verstehen, wie er ihn umbringen konnte, obwohl er auf ihrer Seite war. Sie hatte ihm vertraut und er hat dieses Vertrauen ins Wanken gebracht.<br/>Jetzt, über ein Jahr nach dem Krieg verstand sie es, es war ein Plan gewesen, der funktioniert hatte. Ohne ihn würde sie jetzt nicht hier stehen können. Dumbledore hatte ihn mehr oder weniger gezwungen ihn umzubringen.<br/>Sie stand nun vor seiner Bürotür und klopfte sachte an. Sie hörte ein „Herein“ und trat durch die dunkle schwere Tür. <br/>„Guten Abend, Professor. Sie wollten mich sprechen“, begann Hermine leise. Sie nannte ihn immer noch Professor Snape, da er ihr nie das Du angeboten hatte und sie sich nicht traute ihn einfach zu Duzen. Im Gegenzug sprach er sie immer noch mit Miss Granger an und behandelte sie oft wie eine Schülerin oder einfach nur wie ein lästiges Wesen. Er war immer noch unfreundlich, aber seit er seine Verletzungen im Krankenflügel auskuriert hatte und eine Zeit lang nicht auffindbar war, hatte er sich gebessert. Es war trotzdem nicht seine Natur freundlich und offen zu sein. Vielleicht bei Menschen die er schon lange und gut kannte, aber sie zählte eindeutig nicht dazu. <br/>„Setzen Sie sich. Minerva bat mich vor etwa einer halben Stunde um einen Gefallen der mit ihnen zu tun hat.“<br/>„Wie bitte? Davon wusste ich nichts. Um was geht es denn?“, fragte Hermine verwundert. „Sie bat mich darum, Ihnen zu helfen Ihre Eltern zu finden. Am Mittwoch werden wir um 10 Uhr per Portschlüssel in Minervas Büro abreisen. Ich erwarte, dass sie pünktlich im Büro sein werden mit ihrem Gepäck. Ich empfehle nicht zu viel mitzunehmen, da wir eventuell weiterreisen müssen.“<br/>Hatte sie sich gerade verhört? Professor Snape wollte ihr helfen? Ihr? Der Besserwisserin, die ihn ständig nur genervt hatte, wie er immer betont hatte? <br/>Das konnte nicht mit rechten Dingen zugehen. Er wollte sicher irgendwas dafür und sie war sich nicht sicher, ob sie dieses etwas geben konnte oder wollte, da er so undurchschaubar war.<br/>Langsam realisierte sie, was es für sie heißen würde, wenn er ihr helfen würde. Professor Snape war Spion gewesen, er wusste sicher wie man Menschen aufspüren konnte und sie realisierte, wie nah sie ihren Eltern war mit diesem Angebot. Wenn sie zustimmen würde, obwohl es nicht so klang als hätte sie eine Wahl, würde sie bald wieder Eltern haben, die sie kannten und von ihr wussten.</p>
+<p>Miss Granger war der Mund leicht aufgeklappt und sie starrte ihn aus großen, warmen, braunen Augen ungläubig an. Severus unterdrückte ein schmunzeln, da sie so unschuldig verwirrt aussah. Seit sie Professorin war sah er sie fast täglich und er konnte schon lange nicht mehr diesen jungen Ausdruck in ihrem Gesicht sehen. Sie hatte in letzter Zeit immer sehr alt gewirkt. Älter als sie sein sollte. Er beobachtete ihre vollen Lippen, die sich langsam wieder schlossen und sich in ein strahlendes Lächeln verwandelten, welches irgendwas in seinem Inneren leicht anstieß.  <br/>„Professor Snape, ich danke Ihnen für dieses Angebot! Ich danke ihnen aus ganzem Herzen!“ <br/>Severus nickte ihr langsam zu und beobachtete wie sie nun aufsprang und sehr aufgeregt aus seinem Büro lief. Sicherlich würde sie jetzt zu Minerva laufen und mit ihr über die bevorstehende Reise sprechen. <br/>Er rief Winky, seine Hauselfe und bestellte bei ihr eine Tasse Tee in seinen Räumen. Winky war ein entzückendes kleines Ding, stellte er wieder einmal fest. Sie nannte ihn immer nur Professor Severus, da sie ihn nicht nur mit Professor ansprechen wollte, da ihr das respektlos vorkam, aber sie wollte ihn auch nicht beleidigen, da er ihr seinen Vornamen angeboten hatte. Severus mochte Winky wirklich. Sie war seit er unterrichtete für ihn zuständig und sie hatte sich nie daneben benommen, auch wenn sie manchmal überfürsorglich war und ihm immer wieder sagte, dass er eine Frau brauche. Lächelnd stand Severus auf und ging in seine Wohnung, wo er sich vor den Kamin setzte und seinen Tee trank, während er gedanklich durchging, wie er Miss Grangers Eltern wiederfinden wollte. </p>
+<p> </p>
+<p>Die paar Tage bis Mittwoch vergingen wie ihm Flug und Severus wartete schon in Minervas Büro auf Miss Granger und den Portschlüssel. <br/>Immer wenn er Miss Granger in den letzten Tagen beobachtet hatte, hatte sie ein leichtes Lächeln auf den Lippen und sie sah nicht mehr so müde aus wie noch vor einigen Tagen. Er konnte sich nicht unbedingt für sie freuen, da er nicht wusste, ob er Muggel genauso finden konnte wie Zauberer, die durch ihre Zauberstäbe und Unaufmerksamkeit  leicht verfolgbar waren, aber er wollte sein Möglichstes tun um sie zu finden. <br/>Genauso konnte er es nicht so wirklich verstehen, wie man seine Eltern so bedingungslos lieben konnte. Er hatte seine Eltern nie geliebt. Seine Mutter vielleicht, aber sie hatte ihn im Stich gelassen.<br/>In den letzten Tag hatte er einen Entschluss gefasst. Er wusste, dass er versuchen würde sich mit Miss Granger anzufreunden, da sie eine interessante Frau geworden war, die sicher gut mit ihm über Zaubertränke diskutieren konnte und sich dabei nicht langweilte. Sie war in seinem Unterricht immer sehr wissbegierig gewesen und sie hatte das über die Zeit sicher nicht abgelegt. <br/>Kurz bevor er ungeduldig wurde kam eine rotwangige Hermine in das Büro gestürzt. „Entschuldigung, bin ich zu spät? Ich musste noch die letzten  Aufsätze verbessern, da ich in Australien sicher keine Zeit haben werde!“<br/>„Wenn Sie zu spät wären, wäre ich schon weg, Miss Granger. Beeilen Sie sich. Der Portschlüssel aktiviert sich in einigen Sekunden!“<br/>Hermine lief schnell zu Severus und fasste den Portschlüssel gerade noch rechtzeitig an. Es war eine Kette mit einem schweren Medaillon. Er spüre ein reißen hinter dem Bauchnabel und die Welt verschwamm für einen Augenblick um ihn. Als die Welt wieder klar war, spürte er wie einen warmen Wind der ihm durch die Haare fuhr. Als er sich umsah, sah und hörte er das Meer und die Skyline von Sydney. Er war schon oft hier gewesen und deswegen war es für ihn nicht mehr besonders. Als er aber zu Hermine blickte, sah er erstaunte Augen. Er betrachtete die junge Frau eine Weile, während sie die Skyline beobachtete und fragte sich, wie es wohl wäre, der Mann an ihrer Seite zu sein. Er verdrängte schnell den Gedanken und räusperte sich. <br/>„Oh Entschuldigung, Professor. Wo müssen wir hin?“<br/>„Ich werde uns zu unserem Hotel apparieren. Wir haben gerade 21 Uhr. Ich schlage vor, dass wir ein Abendessen einnehmen und anschließend besprechen wie wir ihre Eltern zurückholen. Am besten versuchen wir die Zeitverschiebung durch einen Schlafrank auszutricksen.“, sagte Severus und bot Hermine seinen Arm an. </p>
+<p>Hermine nahm Professor Snapes Arm und fühlte seine Körperwärme durch den Stoff seiner Robe unter ihrer Hand. Sie schloss die Augen und wartete bis das Gefühl des Apparierens vorbei war, dass sie überhaupt nicht mochte. Als sie wieder die Augen öffnete, stand sie neben einem Hotel, in das der Professor sie sogleich zog, nachdem er seinen Koffer vergrößert hatte. Als sie in die Lobby trat, war sie kurz geschockt. Die Möbel sahen unheimlich hochwertig und teuer aus und der Mann an der Rezeption war auch mit einem edlen Anzug gekleidet, der ein Vermögen wert sein musste.<br/>„Guten Abend. Ich habe reserviert auf den Namen Snape“, hörte Hermine den Professor zu dem Mann an der Rezeption sagen, aber sie war zu beschäftigt um darauf zu achten, da sie erstaunt die Frauen in eleganten Kleidern und kunstvollen Frisuren beobachtete, die aus dem Hotel spazierten. Sie gingen sicher in die Oper und sahen sich dort ein Stück an. </p>
+<p>„Ah, Mister Snape! Ich freue mich sie im Four Seasons begrüßen zu dürfen. Ethan wird Sie in ihre Suite begleiten. Ich wünsche Ihnen und Ihrer Frau einen wundervollen Aufenthalt in Sydney. Bei Fragen stehen wir Ihnen jederzeit zur Verfügung.“<br/>Frau? Hermine hatte nur ein Wort gehört und sie drehte sich ruckartig um und sah den  Professor fragend an. Wieso wurde sie als seine Frau bezeichnet? Warum hatte er nicht einfach auf zwei Namen reserviert. Das war doch kein großer Aufwand und viel praktischer. <br/>Er schüttelte leicht den Kopf und zog sie mit sich, da sie immer noch an seinem Arm hing. <br/>Ethan war ein junger Mann mit blonden Haaren und strahlend blauen Augen. Er begleitete beide in die Suite in der sich Hermine staunend umsah. Sie konnte aus den Fenstern die Oper sehen, die wunderschön beleuchtet war. Sie hörte wie eine Tür zugemacht wurde und drehte sich um. <br/>„Wieso hat der Mann an der Rezeption mich als ihre Frau bezeichnet?“, fragte Hermine leicht empört. <br/>„Denken Sie nach, sie dummes Mädchen! Was würden Sie denken, wenn ein alter Mann mit einer jungen hübschen Frau in ein Hotel geht, die nicht mit ihm verheiratet ist! Oder wäre es Ihnen lieber, wenn man denkt Sie sind meine heimliche Geliebte?“, antwortete der Professor leicht genervt und legte seine Robe ab. <br/>Er stand nun in einem weißen Hemd vor Hermine, die kurz vergaß zu antworten, weil dieser Anblick sie so erstaunte. Sie hatte ihren Professor noch nie ohne Robe gesehen und sie fühlte sich gerade, als hätte er sich nackt vor sie gestellt.  Eigentlich war der Professor kein schlechter Anblick, wenn man über seinen grimmigen Gesichtsausdruck hinweg sah.<br/>„Genug gestarrt, Miss Granger?“<br/>Hermine wurde rot und senkte ihren Blick. „Entschuldigung, daran hatte ich nicht gedacht. Wäre es nicht angebrachter, wenn wir uns mit Vornamen ansprechen, jetzt wo ich…ihre Frau bin?“<br/>„Wäre es, Hermine.“<br/>Hermine bekam eine Gänsehaut, als sie seine samtige Stimme ihren Namen aussprechen hörte. Diese Stimme hatte sie schon zu ihrer Schulzeit fasziniert. Wie sie noch neu an der Schule war, fand sie seine Stimme einschüchternd, aber mit der Zeit erkannte sie, wie er mit ihr spielte und so manche Schüler in Angst und Schrecken versetzte. Jetzt aber klang er ganz anders. Er war noch nie ein Mann gewesen, der mit Komplimenten um sich warf, aber diese Stimme und dass er sie hübsch fand versetzte sie in eine Art Schockstarre. Sie schüttelte verwirrt den Kopf um zu antworten.<br/>„Gut…Severus. Was schlagen Sie, nein, was schlägst du nun vor? Was passiert als nächstes?“<br/>Sein Name war sehr ungewohnt auszusprechen, aber es fühlte sich trotzdem gut an. <br/>Severus setzte sich auf das gemütlich aussehende Sofa und schlug die Beine übereinander.  <br/>„Als nächstes ziehst du dir etwas Hübsches an, da ich nicht denke, dass das Restaurant dich so gerne hinein lässt, auch wenn ich persönlich nichts gegen diese Hose und diesen Pullover habe.“<br/>Hermine vergrößerte wortlos ihren Koffer, den sie bis jetzt in ihrer Hosentasche hatte und hob ihn hoch. Als sie merkte, dass sie nicht wusste wo sie schlafen würde, stellte sie ihn wieder ab und drehte sich zu Severus. „Wo wollen wir eigentlich schlafen?“<br/>„Du schläfst im Schlafzimmer und ich werde auf dem Sofa schlafen.“, antwortete er ruhig und sah Hermine an. <br/>Sie spürte ein Kribbeln auf ihrer Haut, als Severus sie betrachtete und mit ihr sprach. Sie schnappte sich nun ihren Koffer und trug ihn in das große Schlafzimmer. Das Zimmer hatte eine komplett verglaste Seite durch die sie die hell erleuchtete Oper sehen konnte. Sie schnappte sich ein Kleid aus ihrem Koffer und zog es sich schnell an, da sie langsam Hunger bekam, auch wenn in England noch nicht einmal Mittag war. Apparieren und Portschlüssel machten sie anscheinend hungrig. Dazu zog sie hohe Sandalen an, die ihre Beine unendlich lang wirken ließ, obwohl sie recht klein war. Sie bändigte noch ihre Haare mit einem Zauber, dass sie ihr in schönen großen Locken auf den Rücken fielen und betrat dann wieder das Wohnzimmer. </p>
+<p>Als Hermine wieder ins Wohnzimmer kam, stockte Severus der Atem. Sie hatte ein dunkelblaues kurzes Kleid an, dass ihrer Figur schmeichelte und einen tiefen Ausschnitt hatte und somit einen Blick auf die Ansätze ihrer Brüste zeigte. Dazu hatte sie hübsche silberne Sandalen an, die ihre Beine optisch verlängerten. Er räusperte sich kurz, stand auf und bot ihr seinen Arm an, den sie leicht lächelnd nahm. <br/>„Können wir gehen, Severs?“, fragte sie immer noch lächelnd, fast grinsend als er sie noch einmal von der Seite anstarrte.<br/>Er wusste nicht, ob er es aushalten würde, sie ständig so aufreizend zu sehen und zu wissen, dass sie nie mehr in ihm sehen würde als vielleicht einem Freund, ohne über sie herzufallen. Aber fürs erste musste er diese Gedanken in eine Ecke verbannen um sich auf die hübsche, intelligente Frau an seinem Arm zu konzentrieren. In seinen Gedanken fügte er noch ein verboten hinzu, ignorierte es aber großzügig. <br/>„Hermine, du siehst wundervoll aus“, flüsterte er mit rauer Stimme in ihr Ohr und spürte wie sie eine Gänsehaut bekam. Er lächelte leicht in sich hinein, da er wusste was seine Stimme bewirken konnte. Seine Stimme wirkte anscheinend auch bei ihr. <br/>Er führte Hermine in das Hotelrestaurant und schob ihr den Stuhl zurecht, als sie sich setzte. Das Restaurant war genauso edel eingerichtet wie die Lobby, hatte aber eine intimere Atmosphäre. Sie saßen in einem etwas abgelegenem Eck, das nicht für jeden im Restaurant einsehbar war.<br/>Der Ober kam sofort und Severus bestellte für beide eine Flasche Australischen Wein. Er besah sich die Speisekarte und blickte dann Hermine an, die etwas verzweifelt aussah. <br/>„Was ist los?“, erkundigte er sich leise und sah Hermine in die Augen, die leicht golden, im Kerzenlicht schimmerten. <br/>„Ich kann mich nicht entscheiden. Hier steht viel zu viel drauf, was lecker klingt!“, klagte sie leise und schürzte die Lippen. Er begann leise zu lachen, als er das sah. Diese hübsche Hexe in diesem tollen Kleid sah gerade aus wie eine 5 Jährige, der man den Lutscher weggenommen hatte. Zu allem Überfluss hatten ihre Haare gerade wieder begonnen wie ein Wischmopp auszusehen, der in eine Steckdose gegriffen hatte. <br/>„Lach mich nicht aus!“, brachte sie wenig überzeugend hervor und schmollte nun leicht. „Lass mich für dich bestellen“, meinte er schlicht und nahm ihr nicken mit einem leichten Lächeln zur Kenntnis. <br/>Der Ober kam mit dem Wein, den Severus verkostete und für gut befand. Gleichzeitig bestellte er zwei Mal die Empfehlung des Chefkochs und widmete sich dann wieder Hermine. <br/>Als die Hauptspeise kam, Kängurufilet mit einer Weinsoße, unterbrachen sie ihr Gespräch über Zaubertrankzutaten in Australien und genossen das köstliche Essen und den Wein. Severus beobachtete Hermine heimlich, als sie aß. Sie lächelte und schloss ab und zu genießend die Augen. Er hatte also richtig gewählt. Er hoffte, dass er in den kommenden Tagen wieder richtig wählen würde bei seinen Taten. </p>
+<p>Hermine wunderte sich über Severus. Den ganzen Abend schon war er unglaublich aufmerksam und freundlich und zuvorkommend. Er hatte ihr sogar ein Kompliment gemacht und er war überhaupt nicht so, wie sie ihn aus dem Unterricht in Erinnerung hatte. Sie hatte zwar bemerkt, dass er nach dem Krieg gerechter geworden ist und nicht mehr so viele Punkte abzog, aber ihr gegenüber war er wie immer gewesen. Er hatte sie aufgezogen und sich Wortgefechte mit ihr geliefert, die ihr eigentlich Spaß machten und die sie ab und zu absichtlich provozierte. <br/>Dieser neue Severus gefiel ihr trotz allem besser. Man konnte mit ihm unglaublich gut über Zaubertränke reden da er sie ernst nahm und ihre Meinung akzeptierte und nicht herunterspielte, weil sie noch so jung war. <br/>Das Essen und der Wein waren wundervoll und Hermine genoss jeden Bissen. Sie war Severus wirklich dankbar für dieses Hotel und dieses Essen, aber ihre Sehnsucht nach ihren Eltern wurde von Stunde zu Stunde immer größer.<br/>„Severus…ich möchte nicht undankbar sein. Das Essen war wundervoll, aber ich sehne mich so nach meinen Eltern. Wie wollen wir sie finden?“, fragte sie leise. <br/>„Ich verstehe dich Hermine, mach dir da keine Sorgen. Zuerst werden wir auf Muggelart deine Eltern suchen. Wir fragen auf Ämtern nach. Anschließend werde ich meine Methoden anwenden. Ich habe in meiner Zeit als Spion einen Zauber erfunden, der Menschen aufspüren kann. Leider funktioniert er nur, wenn sie sich in höchstens 30 Kilometern Entfernung  befinden. Vielleicht kann ich den Radius aber ausweiten, da du die Tochter bist und ihr Blutsverwandt seid. Das möchte ich aber vorerst nicht machen und wird vermutlich auch nicht von Nöten sein, da ich dafür ein schwarzmagisches Ritual durchführen müsste.“ <br/>„Das klingt gut! Aber die Ämter kannst du dir sparen. Sie wissen nichts. Ich habe es mit den falschen und den richtigen Namen versucht. Sie sagten immer, dass sie mir keine Auskunft geben dürfen, da ich nicht eindeutig nachweisen kann, mit ihnen verwandt zu sein. Das einzige was ich habe, ist ihre Adresse, aber sie wohnen dort nicht mehr und keiner der Nachbarn wusste wo sie hin sind. Von mir aus können wir gleich dieses Ritual durchziehen“<br/>„Das ist bedauerlich, aber lass es mich auf meine Art probieren. Wenn ich mich richtig erinnere hießen deine Eltern John und Grace Granger oder?“<br/>„Ja genau und ich gab ihnen die Namen Wendel und Monica Wilkins.“<br/>„Gut. Sehen wir morgen weiter. Wir sollten nun zu Bett gehen, da die nächsten zwei Tage anstrengend werden, wenn wir deine Eltern noch vor Weihnachten finden wollen.“</p>
+<p>Hermine und Severus gingen sofort in ihre Suite zurück und Severus gleich ins Badezimmer um zu duschen und sich für die Nacht fertig zu machen. Hermine setzte sich in der Zwischenzeit auf das Sofa und sah aus dem Fenster. Irgendwo da draußen waren ihre Eltern. Sie wusste zwar nicht wo, aber sie fühlte, dass sie ihnen näher war als noch in England und das war beruhigend. Sie dachte daran wie ihre Eltern immer wieder darüber geredet hatten, dass sie irgendwann einmal nach Australien wollten und dass sie aber bei Hermine bleiben wollten und so nicht weg konnten bis sie mit der Schule fertig war. Damals als sie die Gedächtnisse ihrer Eltern verändert hatte, wollten sie wenigstens einen Traum für die beiden wahr machen. Sie wollte, dass ihre Eltern glücklich sein konnten, falls sie im Krieg sterben sollte.<br/>Aber sie hatte überlebt. Sie hatte Verletzungen davongetragen die nun nur noch Narben waren und sie hatte oft Alpträume, aber sie hatte überlebt und das zählte. Sie hörte wie das Wasser in der Dusche abgestellt wurde und ein paar Minuten später kam Severus aus dem Bad. Hermine drehte sich zu ihm und ihr stockte zum zweiten Mal an diesem Tag der Atem. Er hatte nur eine schwarze Seidenschlafhose an, die tief auf seinen schmalen Hüften saß. Seine Robe ließ ihn immer sehr dürr wirken, aber wie sie sehen konnte war er eher drahtig, aber muskulös gebaut. Ein dünner Streifen dunkler Haare zog sich ab seinem Bauchnabel bis unter den Bund seiner Hose und  Hermine schüttelte leicht den Kopf um sich von seinem Anblick loszureißen. Sie stand auf um selber unter der Dusche zu verschwinden und um sich abzukühlen, da ihr ziemlich heiß geworden war bei seinem Anblick. <br/>Im großen Badezimmer zog sie sich langsam aus und stieg unter die Dusche. Das heiße Wasser rann ihren schlanken Körper hinab und umhüllte sie und ihre Gedanken, die bei dem dunklen Mann waren, der im Wohnzimmer saß und ihr half ihre Eltern zu finden. <br/>Nach einer gefühlten Ewigkeit und keinen Ergebnissen was ihre Gedanken über ihn betraf, stieg sie aus der Dusche und zog sich ihre Schlafshorts und ihr dünnes Hemdchen an. <br/>Als sie ins Wohnzimmer trat sah sie, dass Severus auf dem Sofa lag und an die Decke starrte. <br/>„Steht dort etwas Spannendes?“, fragte sie grinsend und lugte selbst kurz an die Decke. <br/>„Nein, ich habe auf dich gewartet. Möchtest du einen Schlaftrank oder kannst du so einschlafen?“<br/>„Ich denke nicht dass ich sofort einschlafen kann, aber ich habe auch noch eine Phiole Schlaftrank von dir, die ich gleich nehmen werde.“<br/>„Gut. Schlaf gut, Hermine“<br/>„Severus…“<br/>„Was gibt es?“<br/>„Komm und leg dich auch ins Bett. Es ist riesig und es hätte deine ganze Slytherin Quidditsch Mannschaft Platz. Außerdem ist es sicherlich viel bequemer als das Sofa!“, sagte Hermine, weil sie nicht wollte, dass Severus wegen ihr auf den Luxus dieser Suite verzichten sollte. Anscheinend zahlte er ja auch dafür. Darüber musste sie auch noch mit ihm reden, sagte sie sich in Gedanken. <br/>„Bist du dir sicher? Ich möchte dir nicht zu nahe treten. Und mit meinen Slytherins möchte ich sicher nicht ins Bett“, sagte Severus langsam und beobachtete Hermines Gesichtszüge, die bei dieser zweideutigen Bemerkung leicht rot wurde. <br/>„Ja. Komm jetzt und lass uns schlafen.“<br/>Hermine ging ohne abzuwarten ins Schlafzimmer und kuschelte sich unter die Decke. Sie beobachtete wie Severus zögernd den Raum betrat und sich neben sie legte. Sie hatte gebannt das Muskelspiel seines Oberkörpers beobachtet als er durch das Zimmer ging. Dieser Mann war wirklich gut trainiert. Seine Muskeln bewegten sich geschmeidig unter seiner Haut und Hermine hätte ihn gerne berührt um das Spiel der Muskeln tatsächlich zu spüren. Als sie diesen Gedanken zu Ende gedacht hatte stockte sie. Hatte sie sich gerade wirklich gewünscht Severus Snape zu berühren auf so eine intime Art und Weise? Sie musste zu viel Wein getrunken haben, anders konnte sie sich ihre Gedanken nicht erklären. Auch ihre Reaktion vorhin im Wohnzimmer war untypisch für sie gewesen.<br/>Hermine kuschelte sich tiefer in die Kissen und seufzte leise, nachdem sie den Schlaftrunk genommen hatte. <br/>„Danke…danke für alles, Severus“, flüsterte Hermine noch und war schon tief eingeschlafen. </p>
+<p>Severus lag noch lange wach, da er ständig an die junge, nur leicht bekleidete Hexe neben sich denken musste. Er konnte den Duft ihres Haares riechen und hörte ihre gleichmäßigen Atemzüge neben sich. <br/>Der Abend im Hotelrestaurant war sehr schön gewesen. Er hatte sich lange nicht mehr so gut mit jemandem unterhalten, der so jung und unvoreingenommen war. Er wurde zwar öfters zu Tagungen und Messen eingeladen, bei denen er bestimmte Tränke, meist schwarzmagische, erläutern sollte, aber dort wurde er immer allzu schnell als ehemaliger Todesser abgestempelt, und schnell abgewimmelt oder viel zu freundlich behandelt. Er war es Leid nur auf den größten Fehler seines Lebens reduziert zu werden. Hermine regte sich neben ihm und rutschte etwas mehr in die Mitte des Bettes und seufzte leise im Schlaf. Sie war so unvoreingenommen. Sie kannte seine Geschichte, wusste dass er Töten und Quälen musste, aber sie war trotzdem unvoreingenommen und behandelte ihn wie jeden anderen Menschen. <br/>Severus hoffte inzwischen, dass er ihre Eltern möglichst schnell finden würde, damit er schnell wieder in seine Kerker zurück konnte. Je länger er sie so sah und mit ihr Zeit verbrachte, desto mehr begann er sie wirklich gern zu haben und anziehend zu finden. Ihr knappes Schlafgewand war auch nicht von Vorteil. Er war ja schließlich auch nur ein Mann. <br/>Er betrachtete ihr junges Gesicht und konnte nicht wiederstehen, ihr eine Haarsträhne, die ihr ins Gesicht gefallen war, vorsichtig hinter das Ohr zu streichen. Hermine drehte leicht ihren Kopf und Severus hielt den Atem an, da er fürchtete, dass sie wach werden würde und seine Hand spüren würde. Allerding rechnete er nicht damit, dass sie ihr Gesicht an seine Hand schmiegte, die immer noch bei ihrer Wange lag. <br/>Ach, hübsche, junge, unschuldige Hermine, dachte er als er ihre warme weiche Haut in seiner Hand spürte. <br/>Er strich mit seinem Daumen einmal leicht über ihre Wange und entzog ihr seine Hand und schloss selbst die Augen. Er spürte immer noch ihre Wärme in seiner Hand als er schließlich einschlief. <br/>Am nächsten Morgen wachte er auf, da ihn etwas im Gesicht kitzelte. Als er seine Augen öffnete, sah er buschige Haare, die ihn anscheinend geweckt hatten. Langsam merkte er auch, dass ein warmer Körper an ihn gelehnt schlief. Hermine, schoss es ihm durch den Kopf. Er wunderte sich, dass sie im Schlaf so nah an ihn gerutscht war und er davon nicht aufgewacht war. Normalerweise wurde er bei dem leisesten Geräusch wach, ein Überbleibsel aus der Zeit als Spion. Früher hätte so eine Unachtsamkeit ihm das Leben kosten können, aber jetzt musste er nicht mehr so übervorsichtig sein. Er lauschte auf ihren Atem, der immer noch sehr gleichmäßig war und ihn langsam in den Schlaf wiegte.</p>
+<p>Hermine wachte auf, als sie eine Bewegung an ihrer Seite spürte. Sie gähnte und öffnete langsam die Augen und erschrak, als sie auf einen nackten Oberkörper sah. Sie setzte sich schnell auf und bekam rote Wangen. Sie sah wie Severus nun seine Augen öffnete und ihr direkt in die Augen sah. <br/>Sie versank in diesen dunklen Tiefen und vergaß, dass sie ihm so nahe gekommen war und er ihr Professor gewesen  ist. Sie sah ihn zum ersten Mal als Mann, der begehrt werden konnte und den sie augenblicklich begehrte. <br/>„Guten Morgen Hermine. Hast du gut geschlafen?“, fragte er leise mit verschlafener Stimme, die unheimlich sexy in ihren Ohren klang. <br/>Da Hermine ihrer Stimme nicht traute, nickte sie nur und stand schnell auf und verschwand ins Badezimmer um sich frisch zu machen. <br/>Sie putze sich schnell die Zähne und kämmte ihre Haare, bis sie wieder halbwegs ansehnlich war und trat dann ins Wohnzimmer. Severus saß schon angezogen auf dem Sofa und las den Tagespropheten. <br/>„Wo hast du den her?“, fragte Hermine und zeigte auf die Zeitung. Severus sah von der Zeitung auf und musterte Hermine. „Von einer Eule, die ihn gebracht hat.“, sagte er und lächelte ironisch. <br/>„Ha-ha-ha…“, grummelte Hermine und ging ins Schlafzimmer um sich umzuziehen. Sie entschied sich für eine kurze Hose schwarze Hose und eine leichte Bluse, da in Australien gerade Sommer war und die Temperatur in der Suite jetzt schon fast unerträglich war.<br/>Wieder zurück im Wohnzimmer ließ sie sich neben Severus auf das Sofa fallen und musterte ihn. <br/>„Gibt es ein Problem?“, fragte Severus und schaute nicht von seiner Zeitung auf. „Nein…ja. Wir sind in Australien und es ist Sommer. Zieht man sich da nicht luftiger an? Du wirst ziemlich auffallen in deiner Robe.“<br/>„Kühlungszauber. Und wäre es dir lieber, ich laufe in Sandalen, kurzen Hosen und Hawaiihemd herum?“<br/>„Nicht wirklich, nein. Wollen wir frühstücken gehen und dann meine Eltern suchen?“</p>
+<p>Eine halbe Stunde später waren beide mit dem Frühstück fertig und spazierten gemeinsam aus dem Hotel. Severus wollte zuerst zum Rathaus und so folgte sie ihm staunend. Er kannte sich anscheinend in Sydney aus und sie vertraute auch auf seine Orientierungskünste. Im Notfall konnten sie ja immer noch zaubern und sich selbst orten. <br/>Nach einer halben Stunde standen sie vor einem alt aussehenden Gebäude, das Severus ohne Zögern betrat.<br/>Er ging sofort zu einer Frau, die anscheinend die Besucher anmeldete.  <br/>„Guten Morgen, wie kann ich Ihnen helfen?“, fragte die hübsche braunhaarige Frau mit einer schönen Spange im Haar. <br/>„Ich bin extra aus England angereist und suche jemanden. Kann man mir hier Auskunft geben?“, fragte er mit seidiger Stimme und einem Lächeln im Gesicht, dass einem weiche Knie verursachte. <br/>„Na-Natürlich“, stotterte die Frau, die anscheinend fasziniert von diesem charmanten Lächeln war, so wie sie ihn mit Blicken anhimmelte. „Gehen Sie einfach in den ersten Stock, das zweite Zimmer rechts.“<br/>Hermine beobachtete, wie die Frau sich gerader hinsetzte und ein kokettes Lächeln aufsetzte. Sie  verspürte einen kleinen Stich, als sie das mitbekam und nahm Severus Hand und lächelte ihn strahlend an, als er sich kurz erstaunt umdrehte. „Wollen wir gehen, mein Schatz?“<br/>Aus den Augenwinkeln sah Hermine zufrieden, wie die Frau sie mit Blicken erdolchte.<br/>Severus nickte der Frau noch einmal zu und ging mit Hermine in den ersten Stock. Sie ließ seine Hand los, als sie außer Sichtweite waren, aber Severus ließ ihre nicht los. <br/>Auf dem Treppenabsatz blieb er stehen und sah sie an. <br/>„Was sollte das Hermine?“<br/>„Wenn ich schon deine Ehefrau spielen muss, möchte ich das ein wenig nutzen und dich…ärgern. In Hogwarts geht das ja nicht“, sagte Hermine und sah ihn aus großen unschuldigen Augen an. Sie beglückwünschte sich, so überzeugend geklungen zu haben, auch wenn sie weiche Knie hatte, was sie seiner Stimme und der Hitze zuschrieb. <br/>„Wolltest du mich ärgern oder die Frau, Hermine? Sei ehrlich!“, hauchte er und beugte sich leicht zu Hermine und strich ihr mit einer Hand eine verirrte Strähne aus dem Gesicht. <br/>Hermine hielt kurz die Luft an. Wollte er sie jetzt küssen? Er war so nah und sie spürte die Wärme, die sein Körper ausstrahlte. Sie schloss ihre Augen und zog die Luft tief in sich ein und roch gleichzeitig Severus einzigartigen Duft. Er riecht wundervoll, dachte sie und seufzte leise. <br/>„Ich kann auch spielen Hermine“, flüsterte Severus plötzlich in ihr Ohr, richtete sich auf und zog sie in das Zimmer, in das sie mussten. <br/>Hermine öffnete verwirrt die Augen und versuchte nicht zu stolpern. Was war das eben? Was meinte er damit, dass er auch spielen kann? <br/>Leider konnte sie nicht weiterdenken, da die beiden plötzlich in einem schicken Büro standen, an dem eine ältere Frau saß und etwas schrieb. <br/>Sie sah auf und deutete ihnen sich zu setzen. Severus rückte Hermine den Stuhl zurecht, was sie verwirrt aufnahm. <br/>Die Frau hatte zu Ende geschrieben und räusperte sich nun. <br/>„Guten Morgen, wie kann ich Ihnen helfen?“, fragte sie mit einer warmen Stimme, die sie irgendwie an Minerva erinnerte.<br/>„Guten Tag. Mein Name ist Severus Snape und das ist meine Ehefrau Hermine Snape. Wir sind auf der Suche nach den Eltern meiner Frau. Wendel und Monica Wilikns.“, sagte Severus mit derselben Stimme wie er vorher mit der Frau am Eingang geredet hatte. <br/>Die Frau lächelte Severus kurz an ehe sie an Hermine gewandt antwortete. „Ich möchte Ihnen nicht zu nahe treten, Mrs. Snape, aber wieso suchen sie ihre Eltern? Ihrem Akzent nach entnehme ich, dass sie Engländerin sind und wenn sie speziell in Sydney suchen müssen sie ja schon etwas über sie wissen.“<br/>Hermine war überfordert. Wie sollte sie sich jetzt schnell eine Geschichte ausdenken. <br/>„Nun…wir hatten eine Meinungsverschiedenheit…“ Hermine blickte hilfesuchend zu Severus der sie kurz betrachtete. „Wissen Sie, meine Frau spricht nicht gerne darüber. Sie bricht deswegen immer in Tränen aus und flutet damit unsere ganze Wohnung. Ich möchte das ihrem Büro nicht zumuten.“, sagte er lächelnd. Hermine wurde langsam sauer. Erst zwang er sie seine Frau zu spielen und jetzt stellte er sie als Heulsuse dar, die sie wirklich nicht war. Aber wenn er meinte Spiele spielen zu können, würde sie auch mitmachen. Severus fuhr fort. „Als Hermine ihren Eltern mitteilte, dass wir heiraten, waren sie empört, da ich einige Jahre älter bin, was sie sicher sehen und sie brachen den Kontakt völlig zu ihr ab und meinten, sie könne sich wieder melden, wenn sie zur Vernunft gekommen ist. Wie sie auch sehen sind wir trotzdem verheiratet, aber Hermine hat gerade erfahren, dass sie mit Zwillingen schwanger ist und sie wollte ihren Eltern wenigstens mitteilen, dass sie Großeltern werden, auch wenn sie mich nicht mögen. Hermine erfuhr nur durch Nachbarn, dass ihre Eltern nach Sydney ausgewandert sind, konnten aber keine genaue Adresse nennen.“<br/>Severus strahlte die nette Dame an, als er von der angeblichen Schwangerschaft erzählte. Hermine hatte sich an ihrer eigenen Spucke verschluckt, als sie selber zum ersten Mal von der angeblichen Schwangerschaft hörte. Sie versuchte strahlend zu lächeln, um den Schein zu wahren und beugte sich leicht zu der Frau, die laut Namensschild Teresa Mundy hieß. „Mein Mann, hat selber unsere Wohnung mit seinen Tränen geflutet als er von meiner Schwangerschaft erfahren hat. Er ist eigentlich ein richtiger Romantiker und tut immer nur so böse.“<br/>Sie spürte Severus bösen Blick und lehnte sich zufrieden zurück. Mrs. Mundy begann zu lachen und schüttelte leicht den Kopf. „Ich sehe schon, sie passen sehr gut zusammen und ich hoffe ihre Eltern werden das auch merken, wenn ich das anmerken darf. Lassen sie mich bitte erst einmal nachsehen, ob ich die Namen im Verzeichnis habe.“<br/>Mrs. Mundy stand auf und zog einen Ordner aus einem der Regale und begann zu blättern. Nach einigen Minuten klatschte sie in die Hände und drehte sich zu Hermine und Severus. „Hier habe ich Wendel und Monica Wendel. Könnten sie mir bitte die Geburtsdaten ihrer Eltern nennen um sie zu überprüfen?“ Hermine nannte die Daten und Mrs. Mundy trug den Ordner zum Schreibtisch. <br/>„Mrs. Snape, ich habe eine gute und eine schlechte Nachricht. Die gute ist, dass ich hier die Adresse ihrer Eltern habe und die schlechte Nachricht ist, dass sie anscheinend  wieder weggezogen sind. Laut Aufzeichnungen sind sie nach Canberra gezogen. Die genaue Adresse habe ich hier leider nicht.“<br/>Hermine realisierte nur langsam diese Nachricht. Sie hatte anscheinend ihre Eltern gefunden – nein, Severus hatte  sie gefunden. Sie sprang auf und fiel Severus um den Hals, der fast mit dem Stuhl nach hinten kippte. „Danke, danke, danke! Ich hab sie bald wieder“, flüsterte sie und hatte Freudentränen in den Augen, obwohl sie die genaue Adresse nicht kannte.<br/>Sie spürte Severus Arme, die sich um sie schlossen und kurz drückten. „Keine Ursache“, murmelte er leise. <br/>Nach einer halben Stunde verließen sie mit weiteren Informationen das Rathaus und schlenderten zum Pier um etwas zu Mittag zu essen. <br/>„Severus, warum konnte ich sie hier nicht finden? Ich war auch im Rathaus und sie konnten mir keine Auskunft geben.“, meinte Hermine irgendwann als sie gerade auf ein Restaurant zusteuerten. „Mrs. Mundy hätte uns keine Auskunft geben dürfen. Ich habe etwas nachgeholfen.“, meinte Severus nebenbei und klopfte leicht auf die Stelle, an der sein Zauberstab versteckt war. <br/>Als sie am Tisch saßen und bestellt hatten machten sie weitere Pläne. <br/>„Wann können wir nach Canberra? Und wie kommen wir dorthin?“, fragte Hermine gedankenverloren. Sie wollte so schnell wie möglich ihre Eltern wieder finden, aber sie genoss auch die Zeit mit Severus, was sie völlig überraschte. <br/>„Theoretisch sofort, aber praktisch morgen. Wir müssen noch ins Hotel unsere Sachen packen und uns überlegen welche Zauber du angewandt hast und wie wir sie umkehren. Deine Eltern brauchen ja auch wieder ihre alten Erinnerungen, nur finden reicht nicht.“<br/>„Okay. Du hast Recht. Wenn ich alleine unterwegs gewesen wäre, wäre ich schon ohne Plan auf dem Weg nach Canberra. Und über die Zauber hab ich mir schon Gedanken gemacht. Ich hab den Obliviate angewandt, aber da ich nicht wollte, dass alle Erinnerungen wirklich gelöscht werden, habe ich sie mit einem einfachen Alohomora in einer kleinen Ecke des Gehirns eingesperrt. Ich denke mit einem Legilimens müsste man diese Erinnerungen schnell finden und rauslassen können.“<br/>„Bist du Legilimentikerin? Falls nein, wie wolltest du die Gedächtnisse wieder herstellen?“<br/>„Soweit habe ich nicht gedacht um ehrlich zu sein…“, nuschelte Hermine nun. <br/>„Gut, dass ich dabei bin. Wenn wir Glück haben kannst du morgen um diese Zeit bei deinen Eltern sein und übermorgen mit ihnen Weihnachten feiern.“<br/>„Danke Severus. Ohne dich wäre ich nie so weit gekommen. Ich schulde dir so viel und werde das nie begleichen können!“<br/>„Wenn du möchtest kannst du mir ja im Labor helfen. Ich mache derzeit einige Versuche und es wäre ab und zu sehr entlastend eine Assistentin zu haben. Vor allem wenn die Gryffindors wieder so schwachsinnige Aufsätze fabrizieren. Dann kann ich dir vorlesen, was sie so schreiben und dann wirst du auch erkennen, dass deine Gryffindors doch nicht so toll sind.“, neckte Severus und grinste Hermine an.<br/>„Danke, das wäre toll, aber gib zu, dass auch die anderen Häuser Blödsinn fabrizieren. Es sind nicht immer nur wir Gryffindors!“<br/>„Na gut. Es sind auch die anderen.“, sagte Severus lachend, da Hermine sich wunderbar über seine kleinen Sticheleien aufregte. <br/>„Wieso bist du eigentlich Professorin geworden? Dir standen alle Türen offen“, fragte Severus nachdem sie gegessen hatten.<br/>„Ich wollte eigentlich Zaubertränke studieren, aber durch meine Eltern konnte ich nicht. Ich wollte sie erst wieder finden. Und jetzt ist es wohl zu spät. Um ehrlich zu sein hätte ich meine Ausbildung auch am liebsten bei einem Tränkemeister wie dir gemacht. Am liebsten sogar bei dir, aber du nimmst ja keine Lehrlinge, also war das sowieso für mich gelaufen. Ich mag meinen Beruf wirklich gerne und ich hab dadurch viel Zeit zu lesen, was mich glücklich macht, also möchte ich mich nicht beschweren“, meinte Hermine nachdenklich. <br/>„Zu spät ist es noch nicht. Wieso bewirbst du dich nicht für das nächste Semester?“<br/>„Weil du mich nicht nehmen würdest.“, sagte Hermine und lächelte leicht. <br/>„Dieser Meister muss ein Idiot sein. Du bist die beste Schülerin, die mir je untergekommen ist. Du lernst schnell und gerne und du verstehst auch die Zusammenhänge. Und dein Gespür für Tränke ist auch sehr gut ausgeprägt. Vielleicht solltest du es doch probieren?“, fragte Severus leise lächelnd. Hermine spürte seit dem Morgen, dass etwas anders war zwischen Severus und ihr. Ihr kam es so vor, als würde sie ihn schon ewig so privat kennen und sie hatten sich über den Tag immer wieder unabsichtlich berührt und waren nicht vor einander zurück geschreckt wie noch in Hogwarts. Wenn sie so nachdachte fand sie ihren ehemaligen Professor sogar sehr anziehend. Er war groß, gut gebaut, ein guter Gesprächspartner und das wichtigste für Hermine: Er war intelligent. Für sie machte Intelligenz sexy. <br/>„Er ist aber ein ziemlich launischer Zeitgenosse. Meinst du denn, dass er mir eine Chance geben würde?“, sagte Hermine und begann zu lachen, als sie den leicht erbosten Gesichtsausdruck auf Severus Gesicht sah.<br/>„Natürlich! Aber darüber reden wir noch in Hogwarts, wenn du möchtest“</p>
+<p>Am nächsten Morgen standen beide früh auf. Hermine hatte ihren Koffer schon gepackt und in ihrer Handtasche verstaut und Severus überprüfe noch einmal, ob sie alles mitgenommen hatten. <br/>Sie checkten aus dem Hotel aus und liefen in eine dunkle Seitengasse. Severus nahm Hermines Hand und apparierte beide sofort nach Canberra. Hermine war kaum darauf vorbereitet gewesen und sie spürte Übelkeit in sich aufwallen. Sie ließ schnell Severus Hand los und setzt sich auf den Randstein.<br/>„Was ist los?“, fragte sie Severus mit besorgter Stimme. <br/>„Mir ist schlecht. Ich appariere nicht gerne und du bist so schnell los. Das war zu unerwartet.“, klagte Hermine leise und versuchte tief ein und auszuatmen um die Übelkeit zu verdrängen. Severus hielt ihr schweigend eine Phiole unter die Nase und Hermine trank sie, ohne auf das Etikett zu schauen. Sie fühlte schon nach Sekunden, wie sich die Übelkeit in Luft auflöste. Severus half ihr auf und Hermine bekam eine Gänsehaut als sie so dicht an seinem Körper stand. Sie gab ihrer inneren Stimme nach und lehnte sich an ihn und vergrub ihr Gesicht in sein Hemd, das so wunderbar nach ihm duftete. Sie spürte wie Severus seine Arme um sie legte und ihr leicht über den Rücken strich. <br/>„Lass uns deine Eltern finden Hermine. Gib mir ein paar Minuten und ich weiß wo sie sind.“, flüsterte er mit rauer Stimme und löste sich von Hermine, die immer noch an ihn geschmiegt war. <br/>Sie sah ihm zu wie er komplizierte Zauberstabbewegungen machte. Sein Zauberstab begann an der Spitze blau zu glühen und dunkelrote Funken sprühten aus dem Stab. Die Funken blieben in der Luft hängen und begannen langsam herum zu wirbeln. Hermine spürte eine unsagbare Hitze auf ihrer Haut, die von den Funken zu stammen schien. Plötzlich stoben die Funken auseinander und veränderten rasend schnell ihre Farbe in alle Farben des Regenbogens. Zurück blieb ein blassgrüner Schleier, der eine Adresse zeigte. Severus ließ die Zeichen verschwinden und drehte sich zu Hermine. <br/>„Masson Street 20.“<br/>„Sind sie wirklich dort?“, fragte Hermine leise und fast verzweifelt. <br/>„Hoffentlich. Möchtest du sofort hin?“<br/>„Ja…ich denke schon, auch wenn ich Angst habe sie wieder zu sehen.“ Severus holte nun eine Straßenkarte vor und suchte den Weg in die Masson Street. Zu seiner Überraschung, war sie nur wenige Querstraßen entfernt und sie konnten zu Fuß hingehen. Hermine lief neben ihm her und er bereitete gedanklich schon eine Geschichte vor, die er ihren Eltern auftischen wollte. <br/>„Hermine, bevor du dich aufregen kannst werde ich dir jetzt ein paar Anweisungen geben, die du befolgen wirst – ohne Widerrede! Du wirst dich in dieses Café hier setzen und mich die Arbeit machen lassen. Wenn du deine Eltern siehst, wirst du überfordert sein, da sie dich nicht kennen und das können wir nicht gebrauchen. Ich brauche ihr Vertrauen, das heißt ich werde alleine zu ihnen gehen, das Gedächtnis wieder herstellen und dich dann holen. Und ich erwarte keine Widerrede“, sagte Severus streng, als beide an einem Café vorbeigingen und stehen blieben. „Aber Severus-“, begann Hermine aufgebracht und war den Tränen nahe. Er führte Hermine an einen Tisch und setzte sich neben sie. „Hermine, bitte glaub mir dass es so besser ist. Ich werde zu deinen Eltern gehen und sagen, dass ich aus England bin und etwas klären muss, was dort vorgefallen ist. Ich werde sie dann in einen Schlafähnlichen Zustand versetzen, die Gedächtnisse erneuern und wieder aufwecken. Das wird nicht lange dauern, aber ich muss dann kurz bei ihnen bleiben und darauf achten, dass der Schock sie nicht zu schwer trifft und ihnen schadet, wenn die Erinnerungen plötzlich wieder durch ihre Köpfe fließen. Vertrau mir. Bitte.“ </p>
+<p>Das letzte Wort raunte er leise nah an ihrem Ohr und überzeugten Hermine hier zu bleiben. Sie beobachtete ihn, wie er ihr einen Minz-Eistee und einen Eisbecher bestellte. Er war wirklich fürsorglich, dachte sie. Er kümmert sich um mich, auch wenn er es eigentlich nicht müsste. Er nimmt Rücksicht auf mich und auf meine Eltern passt er auch auf, schwebte ihr durch den Kopf. <br/>„Ich gehe nun“, vernahm sie seine Stimme, die sie aber nur nebenbei registrierte. Sie war zu sehr in ihre Gedanken vertieft. Würde er es schaffen und ihre Eltern zurück bringen?  Er musste einfach. <br/>Seine Bestellung für sie kam und sie begann automatisch das Eis zu essen. Sie merkte kaum, wie gut es war, da sie zu aufgeregt war um den Geschmack richtig wahrzunehmen. Die Minuten verstrichen quälend langsam und nach einer halben Stunde war sie richtig besorgt. Sie starrte nun unentwegt, auf ihre Fingerknöchel, die schon weiß waren, da sie so angespannt war. <br/>„Hermine?“, hörte sie plötzlich Severus Stimme neben sich und sah auf. Da stand er und lächelte sie an. „Hast du es geschafft?“, fragte sie atemlos und blickte ihn flehend an. Severus blieb still und trat einen Schritt zur Seite um den Blick auf ein Ehepaar freizugeben, dass Hand in Hand einige Meter entfernt stand. <br/>Ihre Eltern. <br/>Hermine stockte der Atem und sie stand langsam auf. Ihre Eltern gingen nun langsam auf sie zu und als ihre Mutter sie liebevoll anlächelte und einen Arm nach ihr ausstreckte brachen alle Dämme und sie lief ihnen schluchzend in die Arme. <br/>„Mama, Papa...“, flüsterte sie leise weinend und drückte sich in die Umarmung ihrer Eltern. „Ja wir sind da, meine kleine Hermine, wir sind da und wir bleiben bei dir“, sagte ihr Vater mit belegter Stimme und strich Hermine sanft über den Lockenkopf. </p>
+<p>Severus ging lächelnd im Café bezahlen um Hermine und ihren Eltern einen Moment für sich zu geben. Er hatte Hermines Eltern wie geplant das Gedächtnis erneuert und hatte ihnen erklärt, was passiert war und warum Hermine ihnen die Erinnerungen genommen hatte. Hermines Eltern waren erst sauer gewesen, aber sie verstanden nach und nach, dass sie ein Ziel Voldemorts gewesen sind und so geschützt worden sind. Er brachte die beiden dann sofort zu Hermine. Als er wieder das Café verließ, stand Hermine immer noch bei ihren Eltern und redete mit ihnen. Für ihn war alles getan und er wollte sich nur noch schnell verabschieden und dann Australien per Flohnetzwerk verlassen. <br/>Er trat zu Hermine und räusperte sich leicht. „Ich werde nun gehen Hermine. Wir sehen uns in Hogwarts wieder. Schöne Ferien.“ Er hatte sich schon umgedreht als Graces Stimme ihn aufhielt. „Warten Sie bitte, Professor Snape! Sie haben uns unsere Tochter wieder gegeben und falls sie keine anderen Verpflichtungen haben bleiben sie bitte und feiern Weihnachten mit uns. Für mich und meinen Mann wäre das eine große Ehre und Hermine würde sich sicher auch freuen, nicht wahr mein Schatz?“ <br/>Severus drehte sich um und überlegte. Sollte er hier bleiben und die Familienzusammenführung wirklich stören? Er hatte zwar nicht wirklich etwas vor, nur das Weihnachtsessen bei Lucius und Narzissa auf das er wenig Lust hatte, aber er war trotzdem unsicher. Er hatte noch nie in einer normalen Familie Weihnachten gefeiert und er wusste nicht, ob der das aushalten würde. Seine Weihnachten waren selten schön gewesen. Als er jedoch Hermines flehenden Blick sah entschied er sich. „Danke, ich nehme die Einladung an und bitte nennt mich Severus.“<br/>„Wunderbar, dann lasst uns nun heimgehen. Ich denke wir haben noch viel zu bereden.“, sagte Hermines Mutter und nahm Hermine bei der Hand. <br/>Die kleine Gruppe war bald darauf im Haus angekommen und saßen mit selbst gemachter Limonade auf dem Sofa. <br/>„Und nun erzähl mir bitte genau, was mit Harry, Ron und dir im letzten Jahr los war“, forderte Hermines Vater sie zum Sprechen auf, da er alles, was ihm Severus schon erzählt hatte, noch aus Sicht seiner Tochter sehen wollte. <br/>Und Hermine begann zu erzählen. </p>
+<p>Nach vielen Fragen und noch mehr Antworten hatten sich Hermine und ihre Eltern völlig ausgesprochen und wollten die Zeit der Gedächtnisveränderung hinter sich lassen. Trotzdem nahmen sie Hermine das Versprechen ab, so etwas nie wieder ohne ihre Zustimmung zu tun. Severus war die ganze Zeit dabeigeblieben und erklärte Hermines Eltern auch noch einmal seine Stellung im Krieg und erklärte manche Umstände, die Hermine selber nicht so gut erklären konnte, da ihr die Hintergrundinformationen fehlten. Er fand Hermines Eltern sehr angenehm, da sie ihn, wie ihre Tochter, akzeptierten, auch wenn er ein Todesser gewesen war und ihn nicht mit mehr unangenehmen Fragen löcherten als nötig gewesen wären. <br/>„Nun. Ich denke wir sollten ins Bett gehen. Morgen ist Weihnachten und wir werden sicher ausschlafen wollen, bevor der Stress beginnt, oder?“, sagte Grace und klatschte in die Hände. „Ja gut. Wo können Severus und ich schlafen?“, fragte Hermine ihre Eltern, da sie sich ja nicht im Haus auskannte. „Nun, das Gästezimmer ist noch nicht hergerichtet und wir können euch leider nur das Sofa anbieten, falls das okay ist“<br/>„Ja natürlich, Grace. Wir können es ja größer zaubern, sodass wir beide genug Platz haben und uns nicht gegenseitig im Schlaf stören“, meinte nun Severus mit seiner seidigen Stimme, die Hermine eine Gänsehaut verursachte. Grace nickte und zeigte den beiden das Bad, dass sie hintereinander benutzten. <br/>Severus war zuerst dran und hatte sich dann am Sofa zu schaffen gemacht, dass nun etwas größer als ein normales Doppelbett war. Er hatte zwei Kissen in weiche, dünne Decken verwandelt und auch zwei der Kissen vergrößert. <br/>Er lag mit dem Rücken gegen die Lehne gelehnt schon auf dem provisorischen Bett, als Hermine wieder ins Wohnzimmer kam. Sie hatte schon wieder diese kurze Hose an mit diesem dünnen Hemdchen, das viel zu viel zeigte. Hermine lächelte ihn an, als sie sich neben ihn legte und in das Kissen kuschelte. Sie hatte sich zu ihm gewandt und sah ihn gespannt an. <br/>„Wieso schaust du mich so an?“, fragte Severus leise. „Wie schau ich dich denn an?“<br/>„Wie ein Hund, der darauf wartet sein Fressen zu bekommen. Also was möchtest du?“, antwortete Severus trocken und amüsierte sich über ihren Gesichtsausdruck der zwischen nach Luft schnappendem Fisch und beleidigter Katze schwankte. <br/>„Tu ich gar nicht, Severus! Und ich wollte mich bedanken, dass du mir so geholfen hast und hier geblieben bist. Das bedeutet mir wirklich viel. …und darf ich dich umarmen?“ <br/>Severus lachte leise über diese seltsame Frage. Sie lag halb nackt mit ihm im Bett und sie fragte wirklich, ob sie ihn umarmen darf. „Hermine, du lässt dir doch sowieso nichts sagen. So warst du schon in deiner Schulzeit“, meinte er immer noch belustigt und sah Hermine zu wie sie sich aufsetzte und sich zu ihm lehnte um ihn zu umarmen. <br/>Sie schlang ihre Arme um seinen Hals und drückte sich leicht an ihn. Er spürte ihren warmen Körper an seinem und schlang seine Arme um ihre Taille und zog sie etwas näher. „Danke, danke, danke“, flüsterte Hermine leise in sein Ohr. <br/>Ihr Gesicht drehte sich zu seinem und sie lächelte ihn scheu an. <br/>Severus stockte der Atem da sie so nah war. Ihre warme Haut roch so gut und ihr Haar kitzelte weich seine Haut. <br/>Und ihre Lippen erst! Sie waren so nah und sahen so voll und süß aus. Er wollte unbedingt ihre Lippen kosten um zu wissen ob sie so gut schmeckten wie er es sich vorstellte. <br/>In dem Moment als er sich leicht vorlehnte um sie zu küssen, tat sie dasselbe und ihre Lippen prallten sanft gegeneinander. Der Kuss war anfangs sehr zurückhaltend und schüchtern, aber bald intensivierte sich ihr Spiel und sie küssten sich leidenschaftlich. Severus zog Hermine nun auf sich, sodass ihre Knie links und rechts von seiner Hüfte positioniert waren und sie auf seinem Schoß saß. <br/>Hermine löste sich vorsichtig von ihm und sah ihm liebevoll in die Augen. „Das wollte ich schon die ganze Zeit tun, Severus.“<br/>Als Severus sie anlächelte bekam sie eine Gänsehaut und  begann ihn wieder zu küssen, was er sofort erwiderte. Sie fühlte seine Hände, die sich unter ihr Hemdchen schoben und ihren Rücken streichelten und nach einiger Zeit auszogen. </p>
+<p>Am nächsten Tag wachte Hermine schon früh auf und streckte sich ausgiebig. Sie lag zusammen mit Severus auf dem magisch verbreiterten Sofa und ihr taten alle Muskeln weh. Sie betrachtete den schlafenden Severus und musste lächeln. <br/>Er hatte ihr das wieder gegeben, was sie sich so gewünscht hatte. <br/>Ihre Eltern. </p>
+<p> </p>
+<p> </p>
+<p>5 Jahre später<br/>„Severus! Komm sofort her und räum den Schreibtisch auf! Ich brauche hier Platz für meine Notizen!“, hörte man Hermines Stimme sauer durch die Wohnung schallen. Severus der am Kamin gesessen hatte, stand auf und beeilte sich zu seiner Frau in das Büro zu kommen. Wenn Hermine sauer war, sollte man sie nicht reizen. Das hatte er in den letzten Jahren auf die harte Tour gelernt. Sie hatte nachdem sie zurückgehrt waren sich sofort bei ihm beworben und er hatte sie natürlich als Lehrling aufgenommen. Minerva war entzückt gewesen, da Severus anscheinend versuchte auf die anderen mehr zuzugehen. Die vier Jahre der Ausbildung waren einfach nur verrückt aber wunderschön gewesen, wenn er so zurückdachte. Hermine und er hatten sich gestritten bis die Fetzen flogen, hatten sich immer wieder versöhnt und experimentierten mit Tränken und jagten Unmengen an Kesseln in die Luft und ließen Hogwarts Mauern nicht nur einmal so stark erzittern, dass die Schüler aufgeregt zu ihren Professoren liefen und fragten ob das ein Erdbeben sei.<br/>Das alles hatte sich aber ausgezahlt und Hermine bestand ihren Tränkemeisterabschluss mit Bravour.  <br/>Vor einem Jahr, kurz vor ihrem Abschluss, fragte er sie dann während eines heftigen Streits ob sie ihn heiraten würde, da ihm klar wurde wie sehr er sie eigentlich liebte. Hermine blieben die Worte, die sie ihm entgegenschleudern wollte im Hals stecken und sie nahm wutentbrannt einen Flubberwurm, den sie ihm entgegen warf. Er klatschte auf seine Stirn und das interpretierte er als ein „Ja“ auf seine Frage. Den Flubberwurm hatte er aus Spaß konserviert und er stand nun über ihrem Kamin, in seinen Gemächern.  <br/>Als die beiden Minerva verkündeten, dass sie heiraten wollen, hatte diese fast einen Herzinfarkt und beschuldigte Severus ihre Löwin verhext zu haben. Nach vielen Erklärungen und das eigentlich Minerva selbst dran schuld ist, gab Minerva klein bei und erlaubte den beiden am See zu heiraten.. <br/>Die Hochzeit war wunderschön gewesen, auch wenn Ron Trauzeuge wurde und er ihn nun öfters sah, als es ihm lieb war. Er liebte Hermine und er wollte sie einfach glücklich sehen. Selbst wenn er dafür von seinen ehemaligen Schülern genervt wurde.<br/>Er blieb im Türrahmen stehen und betrachtete seine junge Frau mit einem liebevollen Lächeln. Hermine stand über einem Kessel gebeugt und beäugte ihn kritisch, während sie Notizen schrieb. Ihre Haare standen wild vom Kopf ab und ein verirrter Stift steckte in dem Haarchaos und lugte frech hervor. <br/>„Schau mich nicht so an und räum den Tisch, Severus!“, forderte Hermine ihn auf ohne Severus nur eines Blickes zu würdigen. Er schwenkte leise lachend seinen Zauberstab und wenige Sekunden später war der Schreibtisch aufgeräumt. Hermine drehte sich um und verteilte schnell ihre Notizen, über die sie sich sofort beugte. <br/>Severus trat leise hinter sie und Umschlung mit seinen Händen ihre Taille. Er küsste ihren Hals und streichelte vorsichtig über den runden Bauch. „Hermine…du arbeitest zu viel. In deinem Zustand solltest du nicht mehr arbeiten und dich von mir verwöhnen lassen“, schnurrte er in Hermines Ohr, die sich leicht gegen ihn lehnte. „Ich bin nicht krank, ich bin schwanger Severus. Das ist kein Weltuntergang und es gibt viele Frauen die arbeiten trotz ihrer Schwangerschaft. Viele müssen sogar arbeiten bis die Fruchtblase platzt! Aber verwöhnen klingt trotzdem gut“, antwortete sie leise und drehte sich um, um Severus zu küssen.  Dieser zupfe ihr schnell den Stift aus den Haaren und legte ihn auf den Tisch. „Du musst es aber nicht. Mach eine Pause und komm lieber mit mir mit.“, flüsterte Severus und hauchte sanfte Küsse auf Hermines Hals. Hermine schnurrte nur noch zur Antwort und folgte ihrem geliebten Ehemann.</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--work endnotes-->
+<div id="work_endnotes" class="end notes module">
+  <h3 class="heading">Notes:</h3>
+  <blockquote class="userstuff"><p>Das hier war mein zweiter Oneshot, der sehr kurz nach dem ersten enstanden ist. Nachdem ich ihn geschrieben hatte, merkte ich erst wie viel Spaß mir das alles machte! Ich hoffe ihr hattet auch Spaß beim Lesen (=</p></blockquote>
+</div>
+<!--/work endnotes-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="-0d1PxImUbnEnN4ut1BFMGxXCPXZKtrPIjDExISOEREly7HOkYL8GEnE9aCocEni6SL7HHu9GXXJ4kDrrMmi4w"/>
+          <input value="7725946" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Neonlichtengel">Neonlichtengel</a>, <a href="/users/Mimekry">Mimekry</a>, <a href="/users/Julchen4512">Julchen4512</a>, and <a href="/users/mimia108">mimia108</a>
+             as well as 
+          4 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_7725946">
+  <form class="new_comment" id="comment_for_7725946" action="/works/7725946/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="L5uKyPjhJ4m09wkNFYe6cNeArD-fII24eveKD5n4W5bxF045e0WKKDmvIoMKp7aiUvVf1j23TgKRJQ4gsb_oZA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_7725946">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_7725946" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_7725946=new LiveValidation('comment_name_for_7725946',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_7725946.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_7725946">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_7725946" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_7725946=new LiveValidation('comment_email_for_7725946',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_7725946.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_7725946" class="landmark">Comment</label>
+        <textarea id="comment_content_for_7725946" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_7725946" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_7725946_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_7725946">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_7725946=new LiveValidation('comment_content_for_7725946',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_7725946.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_7725946.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_7725946" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/7725946/hit_count.json")})</script>
+
+
+  </body>
+</html>

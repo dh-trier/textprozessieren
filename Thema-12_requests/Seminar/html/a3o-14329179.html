@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":103,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        More than a Feeling - TeamSharma - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="HJulwYojHetVHOVF1hj8H5ED8D5RlAaYOjjr7bFYCYzkrFx3zRVh8cTPplqDhU2yvNUR2pZQRJrhJA0t_Txo6A"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="MDbyeB1ZDcyuG04TtSgfTmlofxt81lWZvLi9eNAB2r_IAQvOWm9x1j_IDQzgta7jRL6e_7sSF5tnpFu4nGW72w"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;sherlock (tv)&quot; m/m NOT &quot;sherlock holmes/john watson&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/14329179/chapters/33066213">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=14329179">Comments </a>
+  </li>
+
+
+    <li class="style">
+        <a href="/works/14329179?style=disable&amp;view_full_work=true">Hide Creator&#39;s Style</a>
+    </li>
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/14329179/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/14329179/More%20than%20a%20Feeling.azw3?updated_at=1541689064">AZW3</a></li>
+          <li><a href="/downloads/14329179/More%20than%20a%20Feeling.epub?updated_at=1541689064">EPUB</a></li>
+          <li><a href="/downloads/14329179/More%20than%20a%20Feeling.mobi?updated_at=1541689064">MOBI</a></li>
+          <li><a href="/downloads/14329179/More%20than%20a%20Feeling.pdf?updated_at=1541689064">PDF</a></li>
+          <li><a href="/downloads/14329179/More%20than%20a%20Feeling.html?updated_at=1541689064">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*F/works">F/F</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger%20*a*%20Minerva%20McGonagall/works">Hermione Granger &amp; Minerva McGonagall</a></li><li><a class="tag" href="/tags/Hermione%20Granger*s*Minerva%20McGonagall/works">Hermione Granger/Minerva McGonagall</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Minerva%20McGonagall/works">Minerva McGonagall</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Ron%20Weasley/works">Ron Weasley</a></li><li><a class="tag" href="/tags/Ginny%20Weasley/works">Ginny Weasley</a></li><li><a class="tag" href="/tags/Poppy%20Pomfrey/works">Poppy Pomfrey</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hurt*s*Comfort/works">Hurt/Comfort</a></li><li><a class="tag" href="/tags/Romance/works">Romance</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2018-04-15</dd><dt class="status">Completed:</dt><dd class="status">2018-04-15</dd><dt class="words">Words:</dt><dd class="words">17763</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="comments">Comments:</dt><dd class="comments">5</dd><dt class="kudos">Kudos:</dt><dd class="kudos">50</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/14329179/bookmarks">5</a></dd><dt class="hits">Hits:</dt><dd class="hits">907</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+    <style type="text/css">#workskin .indent{padding:0 5em 0 5em}#workskin .book{margin:0 auto;text-indent:3em}#workskin .dropcap{font-family:Georgia,serif;font-size:3em}#workskin .flashback{font-style:italic}#workskin .caps{font-variant:small-caps}#workskin .spoiler{background:#333;color:#333}#workskin .border{border:1px solid}#workskin .font-serif{font-family:Cambria,Constantia,Palatino,Georgia,serif}#workskin .font-sansserif{font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif}#workskin .font-monospace{font-family:consolas,courier,monospace}#workskin .font-big{font-size:120%}#workskin .font-small{font-size:80%}#workskin .align-right{text-align:right}#workskin .align-center{text-align:center}#workskin .align-justify{text-align:justify}#workskin hr.third{width:33%;margin:auto}#workskin hr.full{width:auto;margin:auto}#workskin .font-red{color:red}#workskin .font-orange{color:#ffa500}#workskin .font-yellow{color:#ff0}#workskin .font-green{color:green}#workskin .font-blue{color:#00f}#workskin .font-purple{color:purple}#workskin .font-white{color:#fff}#workskin .font-black{color:#000}#workskin .font-pink{color:#ffc0cb}#workskin .font-teal{color:#008282}#workskin .font-redbrown{color:#a15000}#workskin .font-cherryred{color:#e00707}#workskin .font-brickred{color:#a10000}#workskin .font-dimorange{color:#f2a400}#workskin .font-murkyyellow{color:#a1a100}#workskin .font-jade{color:#4ac925}#workskin .font-dimgreen{color:#008141}#workskin .font-leafgreen{color:#1f9400}#workskin .font-darkolive{color:#416600}#workskin .font-dimblue{color:#005682}#workskin .font-midblue{color:#0715cd}#workskin .font-mediumskyblue{color:#00d5f2}#workskin .font-darknavy{color:#000056}#workskin .font-lightpurple{color:#f141ef}#workskin .font-midviolet{color:#b536da}#workskin .font-verydarkpurple{color:#2b0057}#workskin .font-darkplum{color:#6a006a}#workskin .font-darkmaroon{color:#77003c}#workskin .font-reallydarkgray{color:#626262}</style>  
+
+  <!-- end cache for work skin -->
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      More than a Feeling
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/TeamSharma/pseuds/TeamSharma">TeamSharma</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>May 1999: Hermione Granger finds an unconscious child in the bushes and notices there’s something really weird about the girl.<br/><i>This story is written in German but I'll translate it to English and will post it chapter by chapter soon.</i><br/>Mai 1999: Hermine Granger findet ein bewusstloses Kind im Gebüsch und stellt fest, dass etwas an diesem Mädchen sehr seltsam ist.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Many thanks to my amazing beta-reader HeySlowpoke!</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/14329179/chapters/33066213">Chapter 1</a>: Kapitel 1
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <b>Kapitel 1</b>
+</p>
+<p> </p>
+<p>
+  <i>Mai 1999</i>
+</p>
+<p> </p>
+<p>Die altmodische Klingel über der Tür von Flourish &amp; Blotts bimmelte schrill in Hermine Grangers Ohren, als sie mit der neuesten Auflage von <i>Geschichte der Zauberei</i> den Laden verließ. In weniger als vier Wochen würden die UTZs beginnen und sie hatte noch jede Menge Stoff zu lernen, bevor sie einigermaßen zuversichtlich in die Prüfungen gehen konnte. Nicht dass Hermine nicht jetzt schon exzellent vorbereitet war, aber aus ihrer Sicht gab es noch viel zu tun.</p>
+<p>Durch die Suche nach den Horkruxen und den Kampf gegen Voldemort hatte Hermine ein ganzes Schuljahr verloren und sie vermisste ihre Freunde Harry und Ron schmerzlich. Die beiden hatten sich dagegen entschieden, wieder nach Hogwarts zurückzukehren, und Harry schrieb begeisterte Briefe über seine Ausbildung als Auror. Auch Ron war offenbar froh, die Schulzeit endlich hinter sich zu haben, allerdings schien ihm die Arbeit im Ministerium nicht sonderlich zu liegen. Er träumte davon, irgendwann einmal beim Scherzartikelladen seines Bruders George einzusteigen.</p>
+<p>Anders als ihre beiden Freunde sah Hermine ihrem Abschied von Hogwarts mit Sorge entgegen. Die Schule war längst ihr Zuhause geworden und die Zukunft lag vor ihr wie ein beängstigender, unergründlicher See. Sie würde Entscheidungen fällen müssen, Prioritäten setzen müssen, und sie fühlte sich dazu noch nicht bereit. Und als wären die Fragezeichen bezüglich ihrer beruflichen Laufbahn nicht schon zahlreich genug, hatte Ron ihr auch noch einen Heiratsantrag gemacht und wartete seit Monaten auf eine Antwort. </p>
+<p>Seit einem Jahr waren sie nun zusammen und Ron gab sich alle Mühe, Hermine ein guter Freund zu sein. Sie verbrachte gern Zeit mit ihm, besonders weil seine direkte Art ihn oft aus ihrer Melancholie herausriss. Im Gegensatz zu Ron träumte Hermine noch oft von den Schrecken des Krieges und von den Menschen, die ihn nicht überlebt hatten. Von Albus Dumbledore, Fred, Tonks, Lupin, Mad Eye Moody, Cedric Diggory und nicht zuletzt von dem Hauselfen Dobby. </p>
+<p>Manchmal waren die Bilder so übermächtig, dass sie Hermine am Lernen hinderten und selbst ihre Bücher konnten ihr dann keinen Trost spenden. Immerhin war sie jetzt mit Ginny in derselben Klasse, und auch Neville, Luna und andere Freunde hatten sich entschieden, das siebte Schuljahr nachzuholen. Sie war also nicht allein, aber im Vergleich zu den anderen fiel es Hermine besonders schwer, mit der Vergangenheit fertigzuwerden. </p>
+<p>Die anderen Schüler in ihrer Klasse hatten nicht ein Jahr lang permanent in Lebensgefahr geschwebt oder mit Voldemorts Nagini gekämpft, oder waren von Belatrix Lestrange mit dem <i>Cruciatus-Fluch</i> belegt worden. Ähnlich wie Hermine schien auch Harry oft geistesabwesend, aber seine Ausbildung zum Auror half ihm, sich auf die Gegenwart zu konzentrieren. Er steckte seine ganze Kraft in seine Ausbildung, die ihn dermaßen forderte, dass er kaum zum Nachdenken kam. </p>
+<p>Nachdem Hogwarts im letzten Sommer mühsam wieder aufgebaut worden war, schienen alle Schüler und Lehrer entschlossen gewesen zu sein, die grausame Vergangenheit hinter sich zu lassen. Der Schulbetrieb war wieder aufgenommen worden und allmählich war wieder Normalität in Hogwarts eingezogen. Lediglich Hermines ehemalige Lehrerin für Verwandlung, Minerva McGonagall, bemerkte offenbar, dass es Hermine nicht gut ging. Sie warf ihr zuweilen einen besorgten Blick zu, aber als Schulleiterin hatte sie nun kaum noch persönlichen Kontakt zu den Schülern. Folglich hatte Hermine in den letzten Monaten kaum ein paar Worte mit ihr gesprochen. </p>
+<p>Während des Wiederaufbaus von Hogwarts war das noch anders gewesen. Damals hatten sie oft Seite an Seite gearbeitet, hatten gemeinsam mit anderen die Trümmer weggeräumt und die alten Gemäuer wieder hergestellt. Zum Teil hatte Professor McGonagall dabei Formen der Magie verwendet, von der Hermine noch nie etwas gehört hatte, und die Lehrerin hatte ihr geduldig verschiedene Zaubersprüche beigebracht, mit denen Hermine ihr Arbeit abnehmen konnte.  </p>
+<p>Es war ein seltsames Gefühl gewesen, ausgerechnet mit der Professorin, die Hermine schon immer aus der Ferne zutiefst bewundert hatte, plötzlich so eng zusammenzuarbeiten. Es stellte sich heraus, dass auch eine Minerva McGonagall nicht 24 Stunden des Tages ihre Fassade als strenge Hauslehrerin von Gryffindor aufrechterhalten konnte. So manches Mal hatte Hermine sie hadern und zweifeln, fluchen und stöhnen sehen, und manchmal hatte die Professorin einfach irgendwo auf den Trümmern gesessen und ins Leere gestarrt. </p>
+<p>Trotzdem hatte die Zeit des Wiederaufbaus Hermines Bewunderung für die Lehrerin nur noch mehr verstärkt. Sie bekam hautnah mit, wie Professor McGonagall für das Wohl der Schule und ihrer Schüler kämpfte, wie sie jeden Tag ihr Letztes gab, und wie sie immer wieder überraschende Entscheidungen traf, die sich später als genau richtig herausstellten. Mehr als jeder andere stellte Professor McGonagall ihr eigenes Entsetzen und ihre Trauer zurück, um ihrer Verantwortung als neue Schulleiterin gerecht zu werden. </p>
+<p>Nicht ein einziges Mal hatten Hermine und Professor McGonagall über die vergangenen Erlebnisse gesprochen und dennoch war durch die gemeinsame Arbeit ein unsichtbares Band zwischen ihnen entstanden. Auch bei anderen Lehrern und Schülern führte das gemeinsame Arbeiten am Wiederaufbau zu einer Nähe, die unter normalen Umständen weder möglich noch angemessen gewesen wäre. Doch als der Schulbetrieb im September 1998 wieder aufgenommen wurde, schien all das wie weggeblasen. </p>
+<p>Sowohl den Lehrern als auch den Schülern war bewusst, dass sie zu ihren alten Rollen zurückkehren mussten, damit der Schulbetrieb reibungslos funktionieren konnte. Auch Hermine fügte sich selbstverständlich wieder in ihre Rolle als Schülern ein, aber es blieb eine stille Wehmut in ihr zurück. Sie vermisste die entstandene Nähe zu der Schulleiterin, die nun wieder streng und unerreichbar über den Schulbetrieb wachte. Lediglich die besorgten Blicke, die Professor McGonagall ihr von Zeit zu Zeit zuwarf, zeugten davon, dass sie Hermine besser verstand als so manche Freunde und Klassenkameraden um sie herum. </p>
+<p>Hermine warf einen flüchtigen Blick auf das neue Titelbild von <i>Geschichte der Zauberei</i>, bevor sie das Buch in ihrer Tasche verschwinden ließ. Die ursprüngliche Autorin Bathilda Bagshot war, wie Hermine nur zu gut wusste, nicht mehr in der Lage gewesen, die Neuauflage des Buches zu vollenden, was schließlich ein Neffe von ihr übernommen hatte. Im letzten Kapitel wurden Harry, Ron und Hermine mehrfach erwähnt, und auf der vorletzten Seite war sogar ein großes Foto von ihnen zu sehen. </p>
+<p>Das Kapitel, das Bathilda Bagshots Neffe hinzugefügt hatte, war gründlich recherchiert und gut geschrieben, aber Hermine wusste aus eigener Erfahrung, dass einige Ereignisse anders verlaufen waren als in dem Buch beschrieben. Aber so würden sie nun in die Geschichte eingehen, und Generationen nach Hermine würden auswendig lernen, was Harry, Ron und sie angeblich getan hatten, als sie auf der Suche nach den Horkruxen waren.</p>
+<p>Die Sonne war schon untergegangen, als Hermine vor das Gelände von Hogwarts apparierte. Es war noch hell genug, um ohne zusätzliches Licht zum Schloss zurück zu gelangen, und Hermine ging absichtlich einen kleinen Umweg, weil die Luft noch so mild war. Die schmalen Pfade waren mit Fackeln beleuchtet und die Umrisse des Schlosses sahen aus der Ferne aus wie eine mittelalterliche Burg. </p>
+<p>Ein dumpfes Geräusch ließ Hermine plötzlich zusammenschrecken und sie schlich, den Zauberstab gezückt, in das Gebüsch nahe dem Verbotenen Wald, wo das Geräusch hergekommen war. Es hatte sich angehört, als sei ein Körper aus größerer Höhe auf dem Boden aufgeschlagen, aber Hermine konnte in der Dämmerung nicht genug erkennen. <i>„Lumos“</i>, flüsterte sie leise, während sie den Boden nach einem Tier absuchte. </p>
+<p>Als ihr Fuß gegen ein Hindernis stieß, sah sie die Umrisse eines Kindes auf dem Boden liegen. Hermine hielt ihren Zauberstab näher an das Gesicht des etwa zwölfjährigen Mädchens und stellte fest, dass es bewusstlos war. Ihrer Gryffindor-Uniform zufolge musste es sich um eine Hogwarts-Schülerin handeln, allerdings konnte Hermine sich nicht erinnern, sie jemals gesehen zu haben. </p>
+<p>Beunruhigt hielt Hermine einen Finger an den Hals des Mädchens und registrierte erschrocken, wie schwach der Puls war. Das Kind musste auf der Stelle in den Krankenflügel, um die Nacht zu überleben. <i>„Wingardium Leviosa“</i>, raunte Hermine und dirigierte den schwebenden Körper des Mädchens so schnell sie konnte zur Schule. Auf den ersten Blick konnte sie keine äußeren Verletzungen an ihm erkennen, aber erst eine gründliche Untersuchung würde Aufschluss geben, ob das Kind wirklich unverletzt war.</p>
+<p>Madam Pomfrey kam Hermine eilig entgegen, als diese den Krankenflügel betrat. „Was ist passiert, Miss Granger?“ Sie tastete besorgt nach dem Puls der jungen Patientin. </p>
+<p>„Ich habe das Mädchen in einem Gebüsch gefunden“, berichtete Hermine und half Madam Pomfrey, den schlaffen Körper in eines der Krankenbetten zu legen. Da die anderen Betten leer waren, entschieden sie sich für den Platz, der am weitesten entfernt von der Tür war. „Vorher habe ich so etwas wie einen dumpfen Aufschlag gehört“, fügte Hermine hinzu, während sie dem Mädchen die Schuhe auszog. „So als wäre etwas aus größerer Höhe gefallen.“</p>
+<p>„Das ist unwahrscheinlich“, sagte Madam Pomfrey nachdenklich, als sie das Kind näher untersuchte. „Sie scheint keinerlei Knochenbrüche, Prellungen oder ähnliches zu haben…“ Sie hob vorsichtig ein Augenlid des Mädchens. „Offenkundig befindet sie sich in einer Art Koma.“</p>
+<p>„In einem Koma?“ Hermine schüttelte verwirrt den Kopf. Warum sollte jemand urplötzlich in ein Koma fallen? Und dazu noch ein so junger Mensch.  </p>
+<p>Madam Pomfrey traf einige magische Vorkehrungen, um basale Gehirnfunktionen wie Atmung und Herzschlag sicherzustellten. Dann zog sie dem Kind seine Gryffindor-Uniform aus und streifte ihm stattdessen ein Nachthemd über. „Ich informiere die Schulleiterin“, sagte sie anschließend und war schon auf dem Weg aus dem Zimmer. „Bleiben Sie am besten hier, Miss Granger, falls irgendetwas Unerwartetes passiert.“</p>
+<p>Mit einem leisen Seufzer stellte Hermine ihre Tasche ab und setzte sich vorsichtig auf die Bettkante. Obgleich sie sich sicher war, das Mädchen noch nie gesehen zu haben, kam es ihr vage bekannt vor. Vielleicht lag es daran, dass die Form des Gesichtes und etwas an der schlanken Figur sie an Professor McGonagall erinnerten. </p>
+<p>Hermine schüttelte den Kopf, um die irritierenden Gedanken aus ihrem Kopf zu vertreiben. Es war mehr als albern, dass sie dauernd irgendetwas an ihre Schulleiterin erinnerte. Mal war es eine Geste, mal eine Bemerkung, mal ein Lied-Vers. Und nun auch noch ein junges Mädchen, das dazu noch bewusstlos war. </p>
+<p>Nichtsdestotrotz wanderte Hermines Hand unwillkürlich zum Gesicht des Kindes und hob vorsichtig das Augenlid, so wie es eben Madam Pomfrey getan hatte. Die Augen des Mädchens hatten dasselbe Grün wie Professor McGonagalls.</p>
+<p>Hermine wich erschrocken zurück und betrachtete die schlafende Gestalt des Kindes. Auch die schmalen Hände ähnelten denen der Schulleiterin, aber ehe Hermine näher darüber nachdenken konnte, hörte sie Schritte im Flur. </p>
+<p>Kurz darauf wurde die Tür zum Krankenflügel aufgestoßen und Professor McGonagall näherte sich mit schnellen Schritten dem Krankenbett. „Sie haben das Mädchen gefunden, Miss Granger?“, fragte sie, während Madam Pomfrey ihr eilig ins Zimmer folgte. </p>
+<p>„Ja, sie lag im Gebüsch in der Nähe vom Verbotenen Wald“, antwortete Hermine und hielt inne, als sie die tiefe Falte auf Professor McGonagalls Stirn bemerkte. </p>
+<p>„Das ist keine unserer Schülerinnen“, sagte Professor McGonagall nachdenklich. „Ich kenne alle Hogwarts-Schüler, und ich habe dieses Mädchen noch nie gesehen.“</p>
+<p>„Vielleicht kommt sie aus der Nachbarschaft und jemand hat sie in diese Uniform gesteckt?“ schlug Hermine vor. </p>
+<p>„Dann müsste sie jemand vermissen, und mir ist nichts dergleichen gemeldet worden“, widersprach Professor McGonagall stirnrunzelnd. „Wir werden das trotzdem überprüfen“, fügte sie hinzu und wandte sich an Madam Pomfrey. „Gibt es Hinweise auf die Ursache des Komas, Poppy?“</p>
+<p>„Ich werde das Mädchen noch näher untersuchen müssen“, erklärte Madam Pomfrey ungewohnt vorsichtig. Offenbar spürte sie, dass Professor McGonagall nicht besonders gut aufgelegt war. „Aber zum jetzigen Zeitpunkt würde ich eine magische Ursache vermuten. Das Mädchen weist keinerlei äußere Verletzungen auf.“</p>
+<p>Professor McGonagall nickte wortlos. „Sie sieht Ihnen ähnlich, Miss Granger“, sagte sie plötzlich. </p>
+<p>„Was?“ Hermine war überzeugt, die Schulleiterin falsch verstanden zu haben. „Mir?“</p>
+<p>„Ja, Ihnen“, wiederholte Professor McGonagall schroff, als hätte Hermine eine Frage in ihrem Unterricht falsch beantwortet. </p>
+<p>„Ich muss Professor McGonagall zustimmen“, bestätigte Madam Pomfrey, um einen sanfteren Ton bemüht. „Schauen Sie doch, Miss Granger.“ Sie wies auf die buschigen braunen Haare des Kindes. „Und auch die Augenbrauen und die Stirnpartie… und der Mund…“</p>
+<p>Hermine folgte widerstrebend Madam Pomfreys Blick. „Ich finde eher, sie hat Ähnlichkeit mit… Professor McGonagall…“</p>
+<p>Stille trat ein. </p>
+<p>Keine der drei Frauen rührte sich, bis Madam Pomfrey schließlich einen Schritt auf das Bett zutrat und die Bettdecke höher über die Schultern des Mädchens zog. „Ich fürchte, ich muss auch Ihnen recht geben, Miss Granger“, sagte sie in bemüht neutralem Tonfall. </p>
+<p>Professor McGonagall starrte auf die junge Patientin. „Unsinn“, murmelte sie und wandte sich zum Gehen. „Ich werde gleich die Uniformen der Gryffindors überprüfen lassen“, erklärte sie, schon an der Tür. „Ich denke, ich kann mich darauf verlassen, dass Sie niemanden über die Anwesenheit des Mädchens informieren, Miss Granger?“ </p>
+<p>Mit diesen Worten verließ sie das Zimmer und ließ eine verwirrte Hermine zurück. Wieso wollte Professor McGonagall keine offizielle Meldung machen? Würde eine Eule ans Ministerium nicht die Chancen erhöhen, dass sich die Eltern des Mädchens melden konnten? </p>
+<p>Auch Madam Pomfrey war überrascht über Professor McGonagalls Entscheidung. „Das wird sich bestimmt rasch aufklären, Miss Granger“, versicherte sie und tätschelte Hermines Schulter. „Machen Sie sich keine Sorgen, meine Liebe.“</p>
+<p>Hermine nickte geistesabwesend. „Hat das Mädchen einen Zauberstab bei sich?“, fragte sie, obwohl sie sich nicht sicher war, ob sie die Antwort wirklich wissen wollte. </p>
+<p>Madam Pomfrey hob die Gryffindor-Uniform vom Boden auf und tastete den schwarzen Umhang ab. Nach einigem Suchen zog sie einen dunkelbraunen Zauberstab hervor. „Das Holz scheint aus Tanne zu sein“, murmelte sie. „Oder Fichte?“</p>
+<p>Hermine hörte ihr kaum zu. Sie hatte genug Zeit in der Gesellschaft von Garrick Ollivander verbracht, um zu erkennen, dass der Kern dieses Stabs aus Drachenherzfaser bestand – jenem Kern, der auch Hermines und Professor McGonagalls Zauberstab im Innern zusammenhielt. </p>
+<p>„Ich muss einem Erstklässler jetzt dringend seinen Trank verabreichen“, verkündete Madam Pomfrey. „Sie können gern noch bleiben, aber bitte nicht allzu lange. Das Kind braucht dringend Ruhe.“</p>
+<p>Hermine nickte und fühlte sich seltsam betäubt, als sie sich erneut auf die Bettkante der bewusstlosen Patientin setzte. Sie lag ganz friedlich da, als würde sie nur schlafen. Ihre Gesichtszüge waren entspannt und fast schien es, als ob sie lächelte. Hermine fühlte eine Welle der Zuneigung für dieses verletzliche Wesen und sie strich dem Mädchen sanft über die Wange, bevor sie sich einen Ruck gab und widerstrebend den Krankenflügel verließ. </p>
+<p>Zehn Minuten später saß Hermine in der Bibliothek, vor sich einen Stapel Fachbücher, die sich mit Stammbäumen und Vererbungslehre beschäftigten. Vielleicht waren Professor McGonagall und sie ja auf eine verrückte Weise verwandt? In einem der Bücher waren die Stammbäume von mehr als hundert Zaubererfamilien bis tief ins Mittelalter hinein aufgeführt. </p>
+<p>Als Hermine sich in die verschiedenen Chronologien vertiefte, stellte sie erstaunt fest, dass Professor McGonagalls Vater ein Muggel gewesen war. Vielleicht hatte ihre ehemalige Hauslehrerin deshalb immer so gut verstanden, wie anders Hermine sich oft als Kind von Muggeln fühlte.</p>
+<p>Professor McGonagall hatte nie über ihr Privatleben gesprochen und die Tatsache, dass eine der mächtigsten Hexen der Welt ebenfalls muggelstämmig war, hatte etwas sehr Tröstendes. Zwar hatte Hermine Voldemorts irre Ideen von der Reinblütigkeit nie geglaubt, aber trotzdem fühlte sie sich unter Menschen, die seit Generationen aus Zaubererfamilien kamen, oft fremd und minderwertig. </p>
+<p>Nach zwei Stunden legte Hermine frustriert die Bücher zur Seite. Wie nicht anders zu erwarten, gab es nicht den geringsten Hinweis auf eine nahe oder entfernte Verwandtschaft zwischen ihr und der Schulleiterin. Wieso sah die kleine Patientin ihnen beiden dann so ähnlich? Hermine kannte keinen Zauberspruch, mit dem man einen Menschen so verändern konnte, dass er einem anderen Menschen dauerhaft ähnlich sah. Höchstens einem Metamorphmagus würde dies über längere Zeit gelingen, doch diese Fähigkeit würde durch das Koma außer Kraft gesetzt werden. </p>
+<p>Und wenn eine Art Vielsafttrank die Ursache für die Ähnlichkeit war? Aber mit diesem konnte man lediglich das Aussehen eines anderen Körpers kopieren. Und selbst wenn es möglich wäre, die äußeren Eigenschaften von zwei Personen zu kopieren und zu vermischen, würde dabei eine Mischung aus Hermine und Professor McGonagall herauskommen und nicht etwa ein kleines Mädchen, das ihnen in vielerlei Hinsicht ähnlich war.</p>
+<p>Mit einem Seufzer zog Hermine ein Buch mit dem Titel <i>Fortschritte in der Vererbungstheorie</i> aus dem Regal und kämpfte sich durch wissenschaftliche Formeln und eine Reihe von Studien. Der Autor Oliver Peakes hatte als junger Erwachsener in einem Labor von Muggeln gearbeitet und über die Manipulation von Erbmaterial geforscht. Die Muggel hatten bereits vor Jahren damit begonnen, nicht nur die DNA von Pflanzen, sondern auch von Säugetieren zu manipulieren, um den Nutzen der Tiere für die Muggel zu vergrößern. </p>
+<p>Oliver Peakes war überzeugt davon, dass es mithilfe von Magie möglich sein müsste, sogar menschliche DNA zu manipulieren. Auf diese Weise könnten zwei oder noch mehr Zauberer bzw. Hexen gemeinsam Erben erzeugen, ohne dass dafür Geschlechtsverkehr nötig sei. Hermine war keineswegs verwundert, als sie las, dass das Zauberei-Ministerium die weitere Erforschung dieser Theorie strikt ablehnte. Das Ministerium bestritt nicht, dass das von Oliver Peakes beschriebene Vorgehen möglich war, aber es äußerte starke ethische Bedenken und fürchtete einen möglichen Missbrauch des Verfahrens. </p>
+<p>Doch was war, wenn Oliver Peakes oder jemand anderes heimlich Experimente zur Manipulation von Erbmaterial durchführte? Was war, wenn die DNA von Professor McGonagall und ihr ohne ihr Wissen dazu benutzt wurde? Doch warum ausgerechnet die Schulleiterin und sie? Und wann hätte das geschehen sollen? Wenn das Mädchen jetzt ungefähr zwölf Jahre alt war, musste es zu einem Zeitpunkt geboren sein, als Hermine und Professor McGonagall sich noch gar nicht gekannt hatten. Oder war das Mädchen vielleicht jünger als ihr Äußeres preisgab? In ihrem Krankenbett wirkte sie völlig normal und auch ihre medizinischen Daten unterschieden sich durch nichts von anderen Menschen. </p>
+<p>„Miss Granger?“</p>
+<p>Die hohe Stimme von Irma Pince riss Hermine aus ihren Gedanken. „Die Schulleiterin wünscht Sie zu sprechen“, informierte die Bibliothekarin sie, während sie versuchte, einen diskreten Blick auf Hermines Bücherstapel zu werfen. </p>
+<p>„Ich komme sofort.“ Mit einem hastig ausgeführten Schwebezauber platzierte Hermine alle Bücher wieder in ihren Regalen, um die Spuren ihrer Recherche zu beseitigen. Dann machte sie sich auf den Weg zum Wasserspeier. </p>
+<p>Gerade fragte sie sich, wie sie wohl an dem steinernen Wächter vorbeikommen sollte, da machte der Wasserspeier ihr ohne Passwort Platz. Verwundert bestieg sie die Wendeltreppe und wurde nach oben zum Büro der Schulleiterin transportiert. Die Wendeltreppe hatte den Krieg wie durch ein Wunder überstanden, auch wenn sie seit dem letzten Jahr deutlich mehr schleifende Geräusche von sich gab. </p>
+<p>Professor McGonagalls Bürotür stand offen, aber Hermine fand sie nicht an ihrem Schreibtisch. „Professor?“ Hermine wagte kaum, die Schulleiterin zu stören, als sie sie am Fenster entdeckte. Die Lehrerin schien tief in Gedanken zu sein. „Sie haben mich rufen lassen?“</p>
+<p>„Miss Granger.“ Professor McGonagall drehte sich zu ihr um und gebot ihr, auf einem Sessel vor dem Kamin Platz zu nehmen. „Ich nehme an, Sie haben schon zu recherchieren begonnen?“, fragte sie, als sie sich in den Sessel neben sie setzte. </p>
+<p>Hermine lief tiefrot an. „Ich dachte, ich könnte vielleicht helfen…“ Wahrscheinlich fand Professor McGonagall es ziemlich albern, dass sie die angebliche Ähnlichkeit des Kindes mit ihnen überhaupt ernst nahm. </p>
+<p>„Haben Sie eventuell eine Schwester oder einen Bruder, von denen wir in Hogwarts nichts wissen, Miss Granger?“, fragte Professor McGonagall, ohne auf Hermines Antwort näher einzugehen. </p>
+<p>Hermine schüttelte den Kopf. „Meine Mutter hatte nur eine Schwester, die leider ertrunken ist, als sie acht Jahre alt war. Mein Vater war Einzelkind.“ </p>
+<p>„Vielleicht eine verschollene Cousine oder ein heimlicher Cousin?“</p>
+<p>Abermals schüttelte Hermine den Kopf und es entstand eine längere Pause. Schließlich hielt Hermine, der noch die verschiedenen Theorien aus den Büchern im Kopf herumschwirrten, es nicht mehr aus. „Ich habe mir erlaubt, eine Stammbaum-Recherche unserer beider Familien vorzunehmen“, platzte sie heraus. „Und ich habe keinen Hinweis darauf gefunden, dass sich Ihre und meine Verwandten zu irgendeinem Zeitpunkt vermischt haben. Vielmehr könnte ich mir vorstellen, dass unsere DNA bewusst vereint worden ist…“</p>
+<p>„Sie gehen davon aus, dass das Mädchen eine Art genetisches Experiment ist?“, unterbrach Professor McGonagall sie missbilligend. „Selbst wenn Oliver Peakes große Pläne auf diesem Gebiet zu haben scheint, die ich im Übrigen höchst fragwürdig finde, waren wir zumindest vor zwölf Jahren noch weit davon entfernt, menschliches Erbmaterial beeinflussen zu können, geschweige denn, die DNA von zwei Frauen zu vermischen.“</p>
+<p>„Vielleicht war es ein inoffizielles Experiment?“ Hermine fand es nicht auszuschließen, dass in der Vergangenheit Untersuchungen stattgefunden hatten, von denen das Zauberei-Ministerium keine Ahnung hatte. „Allerdings sehe ich kein Motiv“, gab sie zu.</p>
+<p>„Ein Motiv gäbe es vielleicht schon.“ Professor McGonagall schaute stirnrunzelnd in das flackernde Kaminfeuer. Im Schloss war es noch empfindlich kalt, auch wenn draußen der Frühling ausgebrochen war. „Zum Beispiel der Versuch, die Fähigkeiten von zwei außerordentlichen Hexen zu vereinen. Allerdings wusste vor zwölf Jahren niemand, nicht einmal Sie selbst, dass Sie eine Hexe sind.“</p>
+<p>Hermine sah überrascht zu ihr auf. Meinte Professor McGonagall das ernst? Hielt sie Hermine tatsächlich für so begabt, dass sie es für ein ernstzunehmendes Motiv hielt, ihre Gene zu vereinen? </p>
+<p>Professor McGonagall lächelte, als sie Hermines Erröten bemerkte. „Seien Sie nicht so bescheiden, Miss Granger. Wir beide wissen, dass ich recht habe. Sie haben eine großartige Zukunft vor sich.“</p>
+<p>Hermine bemühte sich, das Lächeln der Schulleiterin zu erwidern, aber es gelang ihr nicht. Professor McGonagall konnte nicht ahnen, wie sehr sich Hermine mit ihren Gedanken um die Zukunft quälte. Womöglich würde sie es zu gar nichts bringen, weil sie sich niemals für etwas entscheiden konnte. </p>
+<p>„Ist alles in Ordnung mit Ihnen, Miss Granger?“, fragte Professor McGonagall besorgt. </p>
+<p>„Ja, natürlich.“ Hermine richtete sich tapfer in ihrem Sessel auf. „Übrigens habe ich den Zauberstab des Mädchens untersucht. Sein Kern ist aus Drachenherzfaser.“</p>
+<p>„Hmm.“ Die tiefe Falte auf Professor McGonagalls Stirn kam wieder zurück. „Vielleicht sollten wir einfach abwarten, bis das Mädchen aus dem Koma erwacht ist“, sagte sie schließlich. „Es hat wenig Sinn, sich in Spekulationen zu verlieren.“</p>
+<p>„Ja, natürlich.“ Hermine fand es bewundernswert, mit welcher Ruhe Professor McGonagall über etwas redete, das von immenser Wichtigkeit für sie beide sein könnte. Wie konnte sie bei diesen Aussichten einen so klaren Kopf bewahren? </p>
+<p>Erstaunlicherweise war die Stille, die sich zwischen ihnen ausbreitete, nicht unangenehm. Vielleicht lag es daran, dass sie wochenlang Seite an Seite die Trümmer von Hogwarts weggeräumt hatten und dabei oft wenig gesprochen hatten. Professor McGonagall saß bewegungslos in ihrem Sessel und sah weiter unverwandt ins Kaminfeuer. Ihr Gesicht hatte inzwischen einen besorgten, fast ängstlichen Ausdruck angenommen, und Hermine fragte sich, worüber sie wohl nachdachte. Möglicherweise hatte es mit dem zu tun, was Hermine auch insgeheim beunruhigte. Bisher hatte sie noch nicht gewagt, diesen Gedanken wirklich zu Ende zu denken.</p>
+<p>„Ihnen ist sicher bewusst, dass es auch eine ganz andere Erklärung geben könnte…“, begann Hermine so zaghaft, dass sie fürchtete, das Klopfen ihres Herzens würde ihre Worte übertönen.</p>
+<p>„Natürlich.“ Professor McGonagall nickte, ohne aufzusehen.</p>
+<p>„Und?“, fragte Hermine, als die Schulleiterin ihre Antwort nicht weiter ausführte.</p>
+<p>„Und was?“ Professor McGonagall hob abrupt den Kopf. „Das ist natürlich Unsinn!“</p>
+<p>„Warum?“ Die Selbstverständlichkeit, mit der Professor McGonagall ihre Idee abwies, verletzte Hermine. Ihre ganze Schulzeit hindurch hatte sie ihre Zuneigung für ihre Hauslehrerin als bloße Schwärmerei abgetan, aber was war, wenn mehr daraus würde? Was war, wenn ihre Gefühle über ihre Schulzeit hinaus bestehen und sich verändern und wachsen würden? Und was war, wenn ihre Gefühle nicht so einseitig waren, wie sie immer geglaubt hatte? </p>
+<p>„Das fragen Sie mich allen Ernstes?“ Professor McGonagall sah Hermine an, als hätte sie den Verstand verloren. „Sie sind eine Schülerin von mir, Miss Granger!“</p>
+<p>„Ich werde nicht mein Leben lang Ihre Schülerin sein, Professor.“ Hermine bemühte sich vergeblich, sich von der brüsken Art nicht verletzten zu lassen. „In vier Wochen werde ich Hogwarts verlassen.“</p>
+<p>„Dann werden Sie eben meine ehemalige Schülerin sein“, erwiderte Professor McGonagall zornig. „Ich werde dieses Thema nicht mit Ihnen diskutieren.“</p>
+<p>Hermine begriff, dass es wenig Zweck hatte, mit Professor McGonagall über diese Theorie zu sprechen. Aber je länger sie über alle Möglichkeiten nachdachte, desto wahrscheinlicher schien es ihr, dass das Mädchen aus der Zukunft kam. Vielleicht war in einem Jahrzehnt möglich, was heute noch utopisch schien? Es war nicht vollkommen auszuschließen, dass das Kind eine Art Tochter von ihnen war und mit einem Zeitumkehrer in die Vergangenheit gereist war. Diese Theorie würde sowohl das ominöse Koma der kleinen Patientin erklären als auch die Tatsache, dass sie offenbar eine wirkliche Gryffindor-Schülerin war, obgleich sie hier nicht zur Schule ging. </p>
+<p>„Ich denke, wir sollten unser Gespräch jetzt beenden, Miss Granger.“ Professor McGonagall machte eine vage Handbewegung. „Ich werde Sie über die Gesundheit der Patientin auf dem Laufenden halten.“ </p>
+<p>Hermine erhob sich niedergeschlagen. Auch wenn sie das Ansinnen verstehen konnte, sich nicht in Spekulationen zu verlieren, hätte sie sich etwas mehr Entgegenkommen von der Schulleiterin gewünscht. Schließlich ging sie diese Angelegenheit gleichermaßen an. „Gute Nacht, Professor McGonagall“, sagte sie förmlich und schritt zur Tür, ohne sich noch einmal umzudrehen.</p>
+<p>„Gute Nacht, Miss Granger“, hörte sie die gedämpfte Stimme der Schulleiterin, als sie schon auf der Wendeltreppe nach unten fuhr.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/14329179/chapters/33066246">Chapter 2</a>: Kapitel 2
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <b>Kapitel 2</b>
+</p>
+<p> </p>
+<p>An Schlaf war in dieser Nacht nicht zu denken. Andauernd sah Hermine das Gesicht des jungen Mädchens vor sich und fragte sich, wie es ihr wohl gehen mochte. Und was war nur die Ursache für die Ähnlichkeit? Hermine hatte alle Theorien in ihrem Kopf hin und her gewälzt und keine schien richtig zu passen. Die einzige Erklärung, die sie nicht von vornherein ausschließen konnte, war die Idee, dass das Mädchen tatsächlich eine Art Nachfahrin von ihr und Professor McGonagall war. Vielleicht war sie das Ergebnis eines genetischen Experiments? Oder das Ergebnis einer bewussten, in Liebe gewachsenen Entscheidung - ein Wunschkind?</p>
+<p>Aber was würde das für ihre Beziehung mit Ron bedeuten? Hatte es überhaupt Sinn, ihn zu heiraten, wenn sie wüsste, dass ihre Ehe irgendwann scheitern würde? Oder war sie gerade dabei, den größten Fehler ihres Lebens zu begehen, nur weil ein Mädchen in Hogwarts aufgetaucht war, die zufällig Ähnlichkeit mit ihr und Professor McGonagall aufwies? </p>
+<p>Hermine stöhnte, als sie sich im Bett auf die andere Seite drehte. Das war genau der Grund, warum es für das Verwenden von Zeitumkehrern strenge Regeln gab. Es galt nicht zufällig als schweres Verbrechen, sich auf Zeitreisen bemerkbar zu machen, das hatten Hermine, Harry und Ron am eigenen Leib erfahren. Allerdings konnte man dem Mädchen kaum vorwerfen, bewusstlos in einem Gebüsch gelegen zu haben. </p>
+<p>Wie es dem Kind jetzt wohl ging? Ob Madam Pomfrey einen Weg gefunden hatte, es aus dem Koma zu holen? Oder hatte sich der Zustand des Mädchens gar verschlechtert? Vielleicht wurde sein Puls immer schwächer und niemand war da, um es zu bemerken? Mit einer entschlossenen Bewegung schlug Hermine die Bettdecke zur Seite und tastete im Dunkeln nach ihrem Morgenmantel. Sie würde sowieso nicht mehr schlafen können, also konnte sie genauso gut nach der kleinen Patientin sehen. Hieß es nicht immer, dass Menschen im Koma ihre Umgebung oft registrierten, auch wenn sie nicht reagieren konnten? Sicher würde das Kind einen lieben Menschen um sich haben wollen, ob Hermine nun seine Mutter war oder nicht. </p>
+<p>Leise schlüpfte sie in ihre Puschen und warf einen prüfenden Blick auf die neben ihr schlafende Ginny. Die Freundin rührte sich nicht, als Hermine die Tür ihres Schlafraums einen Spalt öffnete und lautlos hinausschlich. </p>
+<p>In Momenten wie diesen wünschte Hermine sich Harrys Tarnumhang zurück. Damals hatte sie nicht bei jedem Schritt fürchten müssen, von Mrs. Norris entdeckt zu werden oder womöglich dem wachsamen Mr. Filch selbst in die Arme zu laufen. </p>
+<p>Aber es ging alles gut und Hermine gelangte ohne größere Probleme zum Krankenflügel. Aus dem Krankenzimmer war kein Laut zu hören, doch durch den Spalt am Fuß der Tür drang ein schwacher Lichtschein in den Korridor. Hatte ein Notfall Madam Pomfrey aus dem Bett geholt? War die Patientin in Gefahr?</p>
+<p>Lautlos drückte Hermine den Türdrucker herunter und öffnete die Tür so weit, dass sie in das Krankenzimmer spähen konnte, ohne entdeckt zu werden. In der Tat saß jemand am Bett der jungen Patientin, aber es war nicht Madam Pomfrey sondern Professor McGonagall. Offenbar konnte sie genauso wenig schlafen wie Hermine und war auf dieselbe Idee gekommen. Der Zauberstab in ihrer Hand warf ein blasses Licht auf das Gesicht des bewusstlosen Kindes und ihre andere Hand umschloss die viel kleinere des Mädchens. </p>
+<p>Hermine überkam ein so überwältigendes Gefühl der Zärtlichkeit, dass sie schnell die Tür wieder schloss und tief durchatmete. Ein seltsames Ziehen, das sie nicht zu beschreiben vermochte, hatte sich schwer auf ihre Brust gelegt, und sie schlich wie benommen wieder zurück in ihren Schlafraum. </p>
+<p>Mit einem leisen Seufzer schlüpfte sie wieder in ihr Bett, aber sobald sie die Augen schloss, erschien vor ihrem geistigen Auge wieder die Gestalt Professor McGonagalls, die am Bett des bewusstlosen Mädchens wachte. Hermine konnte schwer sagen, für wen sie bei dem Anblick mehr Liebe empfand, für das Mädchen oder für die Schulleiterin, aber etwas war geschehen in ihrem Innern, das sich nicht mehr rückgängig machen ließ. </p>
+<p>Noch vor dem Frühstück schickte Hermine zwei Eulen an Harry und Ron in der Hoffnung, dass die beiden am Nachmittag vorbeikommen und sie mit ihnen sprechen konnte. Natürlich hätte sie sich auch Ginny anvertrauen können, aber es war besser, wenn niemand anderes in Hogwarts von dem Vorfall wusste. Schließlich hatte Professor McGonagall strenge Geheimhaltung angeordnet. </p>
+<p>Die Schulleiterin sah blass und müde aus, als sie, für ihre Verhältnisse ungewöhnlich spät, beim Frühstück erschien. Doch weder ihre Miene noch ihre Gespräche mit der Lehrerschaft ließen darauf schließen, dass irgendetwas Ungewöhnliches vorgefallen war. Während des gesamten Essens schaute sie nicht ein einziges Mal in Hermines Richtung, weshalb diese beschloss, in der ersten Pause noch einmal ihr Büro aufzusuchen. Professor McGonagall konnte sie nicht einfach abweisen wie irgendeine dumme Schülerin, denn schließlich hatten sie vielleicht ein gemeinsames Problem.</p>
+<p>Die ersten zwei Schulstunden zogen sich in die Länge wie Druhbels Bester Blaskaugummi, aber schließlich gab Professor Flitwick doch das erlösende Pausensignal. Ginny schaute Hermine verwundert nach, als diese ohne weitere Erklärung ihre Sachen zusammenpackte und aus dem Klassenraum rannte, als sei ein Dementor hinter ihr her. </p>
+<p>Seltsamerweise gab der Wasserspeier vor dem Büro der Schulleiterin auch diesmal den Weg für Hermine frei, ohne dass diese ein Passwort präsentieren musste. </p>
+<p>„Miss Granger.“ Professor McGonagall stand schon in der Tür, als Hermine vor dem Büro ankam und schenkte ihr ein förmliches Lächeln. „Ich habe Sie schon erwartet.“</p>
+<p>„Erwartet?“ Hermine blieb verunsichert stehen. „Habe ich etwas falsch gemacht?“</p>
+<p>„Nein, nein.“ Professor McGonagall legte ihre eine beruhigende Hand auf die Schulter. „Ich habe mir nur gedacht, dass Sie wissen wollen, wie es der Patientin geht.“</p>
+<p>„Das ist richtig.“ Hermine nickte dankbar. „Ist sie inzwischen aufgewacht?“</p>
+<p>„Nein, aber Madam Pomfrey ist sehr zuversichtlich, dass sie auf dem Weg ist, ihr Bewusstsein wieder zu erlangen.“ Professor McGonagall bot Hermine an, vor ihrem Schreibtisch Platz zu nehmen. „Offenbar zeigt das Mädchen erste spontane Regungen.“</p>
+<p>„Das ist gut zu hören.“ Hermine atmete erleichtert auf. „Dann geht es offenbar aufwärts.“</p>
+<p>Professor McGonagall nickte zustimmend. „Das wollte ich Sie nur wissen lassen, Miss Granger“, sagte sie und schritt zur Tür, um Hermine zu entlassen. „Sie können jetzt wieder zum Unterricht gehen.“</p>
+<p>Aber Hermine zögerte. „Da ist noch etwas…“</p>
+<p>Professor McGonagall ließ die Türklinke los und in ihrem Gesicht erschien eine Spur von Ärger. „Geht es um den nächtlichen Zwischenfall?“</p>
+<p>Hermine hob erschrocken den Kopf. „Wie…“</p>
+<p>„Miss Granger, ich mag eine alte Frau sein, aber meine Ohren funktionieren noch ganz gut.“ Professor McGonagall seufzte, als sie ins Zimmer zurückging und hinter ihrem Schreibtisch Platz nahm. „Und wenn mich nicht alles täuscht, waren Sie es, die gestern Nacht die Tür zum Krankenzimmer geöffnet hat.“</p>
+<p>„Ja, ich…“ Hermine errötete unter dem prüfenden Blick der Schulleiterin. „Ich dachte, das Mädchen braucht vielleicht etwas Gesellschaft“, sagte sie zögernd. „Sie ist so allein. Und wer weiß, vielleicht bin ich…“</p>
+<p>„… ihre Mutter?“</p>
+<p>„Ja.“ Hermine schlug die Augen nieder. </p>
+<p>„Miss Granger.“ Professor McGonagalls Stimme hatte wieder einen strengen Tonfall angenommen. „Ich sagte Ihnen bereits, dass ich mich an derartigen Spekulationen nicht beteilige…“</p>
+<p>„Warum waren Sie dann dort?“, fragte Hermine heftiger, als sie beabsichtigte. „Wieso lagen Sie nicht im Bett und haben geschlafen?“</p>
+<p>Professor McGonagall zögerte, dann stand sie wieder auf und trat zum Fenster. „Als Schulleiterin…“, begann sie, aber Hermine unterbrach sie ungeduldig.</p>
+<p>„Warum leugnen Sie diese Möglichkeit?“ fragte sie zornig. „Das nennen Sie mir bitte eine andere Theorie, die ich glauben kann! Warum geben Sie nicht zu, dass Sie auch darüber nachdenken, dass ...“</p>
+<p>„Miss Granger“, sagte Professor McGonagall scharf. „Ich gestatte nicht, dass Sie in diesem Ton mit mir sprechen.“</p>
+<p>Hermine schwieg betreten. Schließlich stand sie auf und trat zu der Schulleiterin ans Fenster. „Entschuldigen Sie bitte, Professor…“, sagte sie einlenkend. „Ich weiß, dass es mir nicht zusteht, so etwas zu sagen…“</p>
+<p>„Aber?“ Professor McGonagall sah misstrauisch zu ihr herüber.</p>
+<p>Hermine fuhr sich nervös durch ihre buschigen Haare, während sie unten auf dem Gelände eine Gruppe spielender Schüler beobachtete. „Ist es denn so eine abstoßende Vorstellung für Sie, irgendwann in ferner Zukunft mit mir zusammen zu sein?“, fragte sie leise. „Für mich ist es das nicht. Ich finde Sie wundervoll. Und ich finde Sie wunderschön. Ich weiß, dass ich es in mir habe, Sie zu lieben. Vielleicht tue ich es längst… Und wenn irgendwann… vielleicht in ein paar Jahren… die Zeit reif ist und Sie meine Gefühle möglicherweise ein klein wenig erwidern würden… - wäre das denn so schlimm? Und wäre es so schlimm, wenn daraus eine gemeinsame Tochter entstünde?“</p>
+<p>Professor McGonagall starrte sie an, als wären ihr sieben Köpfe gewachsen, und Hermine wusste nicht, ob sie lachen oder weinen sollte. Mit einer abrupten Bewegung wandte Hermine sich um und eilte ohne ein weiteres Wort aus dem Büro. Insgeheim hoffte sie, dass Professor McGonagall sie zurückrufen würde, aber das geschah nicht. Auch als Hermine mit hochrotem Kopf auf der Wendeltreppe stand, drang kein Laut aus Professor McGonagalls Büro.</p>
+<p> </p>
+<p> </p>
+<p>*					*				*</p>
+<p> </p>
+<p> </p>
+<p>„Was ist denn passiert?“, fragte Harry ungeduldig, als er sich auf eine staubige Kiste in der Heulenden Hütte setzte. „Du hast es ja ziemlich eilig gemacht.“</p>
+<p>„Wir sind sofort nach Feierabend nach Hogwarts appariert“, ergänzte Ron. „Geht es um Hagrid?“ </p>
+<p>„Nein.“ Hermine sah nervös auf den hölzernen Fußboden der Hütte. „Ich musste einfach mal mit euch reden.“</p>
+<p>„Worüber denn?“ Harry legte besorgt den Arm um sie. „Hat es etwas mit deinen Eltern zu tun?“</p>
+<p>„Nein.“ Hermine schüttelte den Kopf. „Es geht um etwas, das ich eigentlich niemandem erzählen darf. Deshalb habe ich auch Ginny nicht eingeweiht.“</p>
+<p>Jetzt beugte sich auch Ron neugierig vor. „Was ist es?“, fragte er gespannt. </p>
+<p>Hermine war sich bewusst, dass Ron vielleicht nicht der beste Gesprächspartner für diese Unterhaltung war, aber er war nicht nur ihr Partner sondern mit Harry auch ihr bester Freund. „Vor zwei Tagen habe ich ein Mädchen auf dem Hogwarts-Gelände gefunden“, berichtete sie zögernd. „Das Mädchen war bewusstlos und ich habe es gleich zum Krankenflügel gebracht. Es scheint in einer Art magisch induziertem Koma zu liegen…“</p>
+<p>„Kennen wir sie?“, fragte Ron interessiert.</p>
+<p>„Nein.“ Hermine schüttelte erneut den Kopf. „Das Problem ist, dass sie zwar eine Gryffindor-Uniform trug, aber keine Schülerin von hier ist. Und das Problem ist außerdem, dass…“ Sie verschränkte umständlich die Arme vor der Brust. „… dass sie mir sehr ähnlich sieht und… und Professor McGonagall auch.“</p>
+<p>Harrys Augen weiteten sich ungläubig, während Rons sich verengten. „Eine entfernte Verwandte vielleicht?“, fragte Ron skeptisch.</p>
+<p>„Oder ein Metamorphmagus?“ bot Harry an. „Aber dann müsste sie sich zurückverwandeln, wenn sie bewusstlos ist, oder?“ Er legte die Stirn in Falten.</p>
+<p>„Genau“, nickte Hermine. „Ich bin allen möglichen Theorien nachgegangen und letztlich bleibt nur eine Möglichkeit übrig.“</p>
+<p>„Und die wäre?“ Ron packte sich ein Sandwich aus und biss herzhaft hinein. „Könnte es nicht einfach Zufall sein?“</p>
+<p>Hermine zuckte die Schultern. „Wenn du das Mädchen sehen würdest, glaubst du das nicht mehr…“</p>
+<p>„Also, was ist jetzt die Möglichkeit“, unterbrach Harry sie. „Nun sag schon, Hermine.“</p>
+<p>Hermine räusperte sich. „Ich denke an die magische Manipulation von Genmaterial.“ Sie schaute kurz hoch, aber Harry und Ron sahen sie nur verständnislos an. „Allerdings haben meine Recherchen ergeben, dass nach dem derzeitigen Wissensstand wohl niemand auf der Welt solche komplexen Manipulationen vornehmen könnte…“</p>
+<p>„Du meinst…“ Harry wischte sich eine Portion Staub vom Ärmel. „Das Mädchen kommt möglicherweise aus der Zukunft?“</p>
+<p>„Es macht am meisten Sinn.“ Hermine war erleichtert, dass die Worte nun heraus waren.</p>
+<p>„Und wieso hat es ausgerechnet die Gene von McGonagall und dir?“ Ron verputzte den Rest seines Sandwiches und ließ die Verpackung magisch verschwinden. „Wer denkt sich denn sowas aus?“</p>
+<p>„Keine Ahnung.“ Hermine zuckte die Schultern. „Vielleicht ein Wissenschaftler? Oder ein Betrüger?“ </p>
+<p>„Aber welchen Nutzen hätte jemand davon?“ Harry zog die Augenbrauen zusammen. „Das macht für mich keinen Sinn.“</p>
+<p>„Nun ja…“ Hermine zögerte. „Es gäbe noch eine dritte Möglichkeit…“ Sie sprach den Satz nicht zu Ende, aber ihr Erröten sprach Bände. </p>
+<p>„Oh je.“ Harry sah mitleidig zu Hermine herüber. </p>
+<p>„Das kannst du laut sagen“, murmelte Ron, dessen Gesichtsausdruck deutlich verriet, dass ihm die Richtung des Gesprächs überhaupt nicht passte. „Das sind ziemlich wilde Spekulationen ohne eine Spur von Fakten, Hermine.“</p>
+<p>„Glaubst du, das weiß ich nicht?“, fragte Hermine genervt. „Aber wie sollen wir die Wahrheit herausbekommen, wenn das Mädchen im Koma liegt?“</p>
+<p>„Was sagt denn McGonagall zu der Sache?“, erkundigte sich Harry. „Hat sie eine andere Theorie auf Lager?“</p>
+<p>Hermine wich seinem Blick aus. Wenn sie ehrlich war, hatte sie es bewusst vermieden, der Schulleiterin zu begegnen, schließlich hatte sie ihr in ihrem Büro fast so etwas wie eine Liebeserklärung gemacht. Harrys und Rons Besuch hatte ihr eine willkommene Ausrede gegeben, um dem Abendessen fernzubleiben, aber sie würde der Schulleiterin natürlich nicht für den Rest ihrer Schulzeit aus dem Weg gehen können. „Professor McGonagall sagte das Gleiche wie Ron“, antwortete Hermine zögernd. „Sie will sich nicht an Spekulationen beteiligen.“</p>
+<p>Ron grinste schief. „Das ist wohl das erste und letzte Mal, dass die alte Hexe und ich einer Meinung sind.“ </p>
+<p>Harry ging auf seinen Scherz nicht ein. „Wenn Hermines Theorie stimmt, dass das Mädchen aus der Zukunft kommt“, überlegte er laut, „wieso hast du dann keinen Zeitumkehrer bei ihr gefunden?“</p>
+<p>Natürlich hatte Hermine sich diese Frage auch schon gestellt, aber es war nicht unwahrscheinlich, dass der Zeitumkehrer verloren gegangen war. Schließlich hatte das Mädchen außer dem Zauberstab nichts weiter bei sich gehabt. </p>
+<p>„Wir sollten das Gelände absuchen“, beschloss Harry, und Ron nickte zustimmend. „Jetzt ist es schon zu dunkel, aber morgen Nachmittag kommen wir noch einmal her und machen uns an die Arbeit.“</p>
+<p>„Ich werde euch helfen“, bot Hermine sofort an. „Am Nachmittag habe ich keinen Unterricht mehr und ich kann euch die Stelle zeigen, wo ich das Mädchen gefunden habe.“</p>
+<p>„Musst du denn nicht für die Prüfung lernen?“ Harry hielt er es offenbar für besorgniserregend, dass sie es nicht vorzog, über ihren Büchern zu brüten.</p>
+<p>„Je eher wir das Rätsel lösen, desto eher kann ich mich wieder aufs Lernen konzentrieren“, gestand Hermine. </p>
+<p>„Glaubst du echt, dass du eine gemeinsame Tochter mit der alten McGonagall hast?“ raunte Ron Hermine zu, als sie durch den schmalen Gang zurück zur Peitschenden Weide krochen. „Du bist doch nicht… naja… Du stehst doch nicht auf Frauen, oder?“</p>
+<p>Hermine erhöhte ihr Tempo und tat, als hätte sie seine Frage nicht gehört. Bisher war sie auch dieser Meinung gewesen, aber seit zwei Tagen wusste sie überhaupt nicht mehr, was sie glauben sollte. Es war immer so selbstverständlich gewesen, dass ihre Gefühle für Professor McGonagall nichts als die Schwärmerei einer Schülerin für ihre Lehrerin waren. Aber seit die Möglichkeit im Raum stand, dass sie in irgendeiner fernen Zukunft in einer Partnerschaft mit Professor McGonagall leben könnte, spielten ihre Gefühle verrückt. </p>
+<p>Auf einmal nahm sie die Schulleiterin anders wahr. Ihr fiel auf, wie gern sie sie ansehen mochte und dass ihre Stimme ein seltsames Vibrieren in ihrem Innern erzeugte. Dass der Blick in ihre grünen Augen etwas in ihrer Magengrube zum Hüpfen brachte und dass ihr schwacher Duft nach Rosenöl sie tief einatmen ließ. Das alles war nicht neu, aber Hermine hatte es vorher nicht so bewusst registriert. </p>
+<p>„Du willst mich doch heiraten, oder?“ unterbrach Rons bange Stimme ihre Gedanken. </p>
+<p>„Ron…“ Hermine warf ihm einen flehenden Blick zu. „Können wir uns erstmal auf die Suche nach dem Zeitumkehrer konzentrieren, und danach sprechen wir nochmal in Ruhe?“</p>
+<p>„Vielleicht werde ich früh sterben und McGonagall ist so nett, dir dabei zu helfen, trotzdem ein Kind zu bekommen“, überlegte Ron und Hermine hörte die Angst in seiner Stimme.</p>
+<p>„Lass uns mit dem Spekulieren aufhören“, bat Hermine und blinzelte gegen das Sonnenlicht. „Drückst du auf die Wurzel der Peitschenden Weide? Sonst werden wir noch alle drei einen frühen Tod sterben.“</p>
+<p>Hermine verabschiedete ihre Freunde an der Weide und beeilte sich, zu ihrem Schlafraum zu gelangen, ehe die nächtliche Ausgangssperre einsetzte. Auf dem Weg durch das Schloss hörte sie schon von weitem die unverkennbaren Schritte von Professor McGonagall durch den Korridor hallen. Hermine warf einen hektischen Blick zu der hölzernen Tür auf der linken Seite, aber es war schon zu spät, um sich dahinter zu verstecken. Professor McGonagall trug einen Stapel von Pergamenten auf dem Arm und winkte ihr zu, als sie näherkam. </p>
+<p>„Miss Granger, ich habe Sie schon überall gesucht“, sagte sie, offenbar erfreut, und schob Hermine sachte durch die Tür, hinter der diese eben noch hatte verschwinden wollen. Sie standen nun in einer Art Lagerraum, in der zahlreiche Stühle gestapelt waren. An den Wänden hingen unterschiedliche Formen von Reisigbesen und auf dem Boden lagen verschiedene Gartengeräte. „Es gibt Neuigkeiten zu unserer kleinen Patientin“, erklärte Professor McGonagall mit gedämpfter Stimme. </p>
+<p>Hermines Herz machte einen Hüpfer. „Ist sie aufgewacht?“, fragte sie aufgeregt.</p>
+<p>„Nein, aber Poppy sagt, dass sie mehr und mehr Lebenszeichen von sich gibt.“ Professor McGonagall war offenbar genauso erleichtert über die Entwicklung wie Hermine. „Es ist davon auszugehen, dass sie in den nächsten zwei bis drei Tagen aufwachen wird.“</p>
+<p>„Das ist ja wunderbar!“ Hermine hätte Professor McGonagall am liebsten umarmt, so froh war sie über die Nachricht. Aber in Anbetracht ihrer letzten Unterhaltung folgte sie diesem Impuls lieber nicht. „Schon bald werden wir wissen, ob es ihr gut geht, Miss Granger, oder ob sie irgendwelche Schäden aus dem Koma davon getragen hat.“</p>
+<p>Der letzte Satz machte Hermines Freude ein jähes Ende. „Ich hoffe sehr, dass sie gesund ist, und dass wir sie dorthin bringen können, wo sie hergekommen ist“, sagte sie mit belegter Stimme. </p>
+<p>„Verlieren Sie nicht den Mut, Miss Granger.“ Professer McGonagall strich ihr tröstend über den Arm. „Es wird schon alles gutgehen.“</p>
+<p>„Hoffentlich.“ Hermine stieß scheppernd gegen eine Schaufel, als sie einen Schritt zurücktrat. „Gute Nacht, Professor McGonagall. Und vielen Dank für die Nachricht.“</p>
+<p>„Gute Nacht, Miss Granger.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/14329179/chapters/33066288">Chapter 3</a>: Kapitel 3
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <b>Kapitel 3</b>
+</p>
+<p> </p>
+<p>Auch in dieser Nacht fand Hermine keinen Schlaf. Unzählige Gedanken und Gefühle schwirrten in ihr herum wie emsige Bienen, und kurz nach Mitternacht fand sie sich schließlich erneut auf dem Korridor zum Krankenflügel wieder. Anders als in der vorherigen Nacht, drang kein Licht aus dem Krankenzimmer, und Hermine drückte beruhigt die Klinke herunter. </p>
+<p>Sie betrat leise das Zimmer und blieb abrupt stehen, als ihre Augen erneut die Silhouette eines Menschen am Bett des Mädchens wahrnahmen. Wie in der Nacht zuvor saß Professor McGonagall bei dem bewusstlosen Kind und hielt seine kleine Hand in ihrer. Sie schien sanft zu schlummern und Hermine zögerte einen Augenblick, ob sie wieder zurück in ihren Schlafraum gehen sollte. Aber sie würde eh kein Auge mehr zubekommen, also konnte sie die Nacht genauso gut hier verbringen. Niemand wusste, wann die junge Patientin aufwachen würde, und Hermine wollte für sie da sein, wenn es soweit war. </p>
+<p>„Miss Granger?“, murmelte Professor McGonagall, als Hermine sich behutsam auf der anderen Seite des Bettes niederließ. </p>
+<p>„Guten Abend, Professor“, flüsterte Hermine und fasste die andere Hand des Mädchens. „Lassen Sie sich durch mich nicht stören.“</p>
+<p>„Sie stören nicht“, erwiderte Professor McGonagall leise. Es waren die letzten Worte, die in den nächsten drei Stunden zwischen ihnen gesprochen wurden. Beide Frauen saßen still und regungslos am Bett des Mädchens, ab und zu döste eine von ihnen ein, und die andere war dafür umso wachsamer, falls sich unerwartet irgendwelche Anzeichen bei dem Kind bemerkbar machten.</p>
+<p>„Sie sollten zurück in Ihr Bett gehen, Miss Granger“, flüsterte Professor McGonagall, als endlich die Morgendämmerung einsetzte. „Sie sind mitten in den Vorbereitungen für die UTZs.“</p>
+<p>„Ich habe Angst, dass sie aufwacht und ich nicht da bin“, gestand Hermine und drückte sanft die zarte Hand des Kindes. Sie kam sich ziemlich albern vor, denn schließlich war das Mädchen ihr bis zum gestrigen Tag unbekannt gewesen. </p>
+<p>„Ich werde da sein, und ich kann Sie rufen, wenn sie aufwacht“, versicherte Professor McGonagall. </p>
+<p>Aber Hermine schüttelte den Kopf. „Sie brauchen auch Ihren Schlaf, Professor. Was halten Sie davon, wenn Sie sich jetzt hinlegen und ich Ihnen einen Patronus schicke, falls sie aufwacht?“</p>
+<p>Professor McGonagall lehnte ab, und so blieben sie beide am Bett des Mädchens sitzen, bis die Morgensonne in ihre Gesichter schien. </p>
+<p>„Ich habe heute Nachmittag einen Termin im Ministerium, den ich unter keinen Umständen verschieben kann.“ Professor McGonagall reckte vorsichtig ihre steifen Glieder, als sie vom Bett aufstand. „Würden Sie vielleicht…“</p>
+<p>„Natürlich“, versicherte Hermine rasch. „Ich werde hier sein, bis Sie zurückkommen.“</p>
+<p> </p>
+<p> </p>
+<p>*			*				*</p>
+<p> </p>
+<p>Zu Hermines Bedauern kollidierte ihr Versprechen gegenüber Professor McGonagall mit ihrem Plan, Harry und Ron bei der Suche nach einem Zeitumkehrer zu helfen. Schließlich blieb ihr nichts anderes übrig, als den beiden genau zu beschreiben, wo sie das Mädchen gefunden hatte und am Bett des Kindes die Stellung zu halten, während ihre Freunde das Gelände absuchten. </p>
+<p>Hermine hatte sich einen Stapel Bücher und Notizen ins Krankenzimmer mitgenommen und lernte fleißig Zaubertrank-Formeln auswendig, während ihre linke Hand auf dem Arm des Mädchens ruhte. Es fühlte sich beruhigend an, direkt vor Ort zu sein, sollte sich der Zustand des Mädchens ändern. Obgleich Hermine noch müde von der durchwachten Nacht war, fiel ihr das Lernen hier überraschend leicht und sie überlegte ernsthaft, ob sie ihren Arbeitsplatz für die nächsten Tage komplett ins Krankenzimmer verlegen sollte. </p>
+<p>Allerdings war es mit Hermines Konzentration sofort vorbei, als sie plötzlich eine Bewegung des Kindes bemerkte. Zuerst zuckte ein Fuß, dann ein Arm. „Madam Pomfrey!“, rief Hermine so laut sie konnte, und die Heilerin eilte schnaufend herbei.</p>
+<p>„Haben Sie eine Veränderung bemerkt, Miss Granger?“</p>
+<p>„Ihre Gliedmaßen haben gezuckt“, berichtete Hermine aufgeregt. „Erst ihr Fuß, dann ihr Arm.“</p>
+<p>„Oh, das hat nicht viel zu bedeuten“, erklärte Madam Pomfrey, nachdem sie wieder zu Atem gekommen war. „Unwillkürliche Muskelzuckungen sind normal, aber sie sind in der letzten Zeit tatsächlich häufiger geworden und…“ Madam Pomfrey verstummte, als das Mädchen den Kopf von einer Seite zur anderen drehte und dabei etwas murmelte. </p>
+<p>„Was bedeutet das?“ Auch Hermine hatte die Bewegung gesehen.</p>
+<p>„Ich bin mir nicht sicher.“ Madam Pomfrey hielt ihren Zauberstab über das Mädchen und lauschte. „Sie befindet sich immer noch im Koma“, stellte sie fest. „Aber es wird nun nicht mehr lange dauern, bis sie aufwacht. Uns bleibt weiterhin nichts anderes übrig, als abzuwarten.“</p>
+<p>Mit Hermines Lernmotivation war es nun vorbei und sie verstaute ihre Prüfungsunterlagen zurück in ihrer Tasche. Sie konnte es nicht abwarten, Professor McGonagall von der Neuigkeit zu erzählen und lauschte ungeduldig auf Schritte im Korridor. </p>
+<p>Tatsächlich tauchte Professor McGonagalls hohe Gestalt wenig später im Krankenflügel auf. Sie sah erschöpft aus, aber ihr Gang war noch immer energisch. „Gibt es etwas Neues?“, fragte sie, als sie zu Hermine ans Bett trat. </p>
+<p>„Sie hat den Kopf von einer Seite zur anderen gedreht und dabei etwas gemurmelt“, sprudelte es aus Hermine heraus. „Außerdem hat sie mit einem Arm und einem Fuß gezuckt.“</p>
+<p>„Wirklich?“ Professor McGonagalls Augen leuchteten auf, als sie sich zu der Patientin setzte. „Das sind gute Nachrichten“, sagte sie erleichtert. </p>
+<p>Die beiden Frauen zuckten zusammen, als sich die Tür zum Krankenzimmer mit einem Schwung öffnete, und Harry und Ron hereinstürmten. „Hermine!“, rief Ron schon von der Tür aus, blieb jedoch abrupt stehen, als er Professor McGonagall bemerkte. „Oh, Verzeihung, Professor…“</p>
+<p>„Mr. Weasley und Mr. Potter?“ Professor McGonagall sah erstaunt zwischen den beiden Männern hin und her. „Was tun Sie hier?“ Ihr Blick wanderte zu Hermine, die verlegen auf die Bettdecke starrte. </p>
+<p>„Hermine hat uns eingeweiht“, erklärte Harry überflüssigerweise. </p>
+<p>„Das sehe ich“, erwiderte Professor McGonagall trocken. „Das erklärt aber nicht, warum Sie unbefugt in ein Krankenzimmer eindringen.“</p>
+<p>„Wir haben das Gelände abgesucht“, berichtete Ron. „Und wir haben etwas gefunden.“</p>
+<p>„Gefunden?“ Professor McGonagall betrachtete überrascht den Gegenstand, den Harry ihr reichte. Er sah aus wie eine Halskette mit einem goldenen, kreisrunden Stein in der Mitte. „Was soll das sein?“</p>
+<p>„Möglicherweise ist es ein Zeitumkehrer, Professor“, erklärte Harry und drehte den Stein in McGonagalls Handfläche auf die andere Seite. Hier waren kleine Sterne eingestanzt, die kreisförmig um die Mitte herum angeordnet waren. </p>
+<p>„Wo haben Sie das gefunden?“ Professor McGonagall untersuchte das Gerät von allen Seiten. „Ich habe so etwas noch nie gesehen.“</p>
+<p>„In der Nähe vom Eingangstor des Schlosses“, erklärte Ron. „Zunächst haben wir die Gegend abgesucht, die Hermine uns beschrieben hat. Aber dort war weit und breit nichts zu sehen.“</p>
+<p>„Vielleicht hat es ein Tier zum Eingang getragen“, überlegte Hermine. </p>
+<p>„Oder es ist dem Mädchen aus dem Umhang gefallen, als du es ins Schloss getragen hat“, schlug Harry vor. </p>
+<p>„Oder es hat gar nichts mit dem Mädchen zu tun“, beendete Professor McGonagall ihre Überlegungen. „Vielleicht ist es ganz normaler Muggelschmuck.“</p>
+<p>„Das glaube ich nicht.“ Harry wies auf die Sterne in der Mitte des Steines. „Ich vermute, dass die Sterne sich zu drehen beginnen, wenn man den Zeitumkehrer aktiviert“, erklärte er. „In meiner Auroren-Ausbildung habe ich den Vortrag eines französischen Zauberers gehört, der sich mit der Entwicklung von Zeitumkehrern beschäftigt. Paul Foucault erzählte, dass man in Frankreich dabei sei, eine neue Form für Zeitumkehrer zu entwickeln, damit sie noch größere zeitliche Distanzen zurücklegen können. Die typische Form der Sanduhr, die meist im Innern unserer bisherigen Zeitumkehrer zu finden ist, scheint die Ausbreitung der Zeit entlang ihres Kontinuums einzuschränken.“</p>
+<p>„Tatsächlich?“ Professor McGonagall betrachtete den Gegenstand nun mit größerem Interesse. „Aber wie aktiviert man ihn?“ </p>
+<p>„Ich weiß es nicht, aber es wäre nicht auszuschließen, dass eine Art Sicherung eingebaut wurde. Unsere heutigen Zeitumkehrer können schnell zu unerwünschten Effekten führen, wenn man aus Versehen daran dreht.“</p>
+<p>„Kannst du vielleicht die Kontaktdaten zu diesem Paul Foucault herausfinden?“, fragte Hermine, die schon ein paar wichtige Fragen an den Mann im Kopf hatte. „Er könnte uns sicher weiterhelfen.“</p>
+<p>„Natürlich.“ Harry steckte den Gegenstand wieder in seine Tasche. „Ich habe seine Adresse sicher noch irgendwo in meinen Unterlagen.“</p>
+<p>„Sobald ich die Daten habe, appariere ich nach Frankreich und spreche mit Monsieur Foucault“, entschied Hermine, aber Professor McGonagall hielt sie zurück. </p>
+<p>„Ich würde es vorziehen, wenn Sie hierbleiben, Miss Granger“, sagte sie leise und wies mit dem Kopf auf die noch immer bewusstlose Patientin. </p>
+<p>„Oh, natürlich.“ Hermine sah zerknirscht zu ihren beiden Freunden herüber. Sie war es gewohnt, die Dinge selbst in die Hand zu nehmen, und es passte ihr gar nicht, Harry und Ron mit ihrer Aufgabe allein zu lassen. Aber natürlich war es das Wichtigste, dass sie hier war, wenn das Kind aufwachte.</p>
+<p>Ron machte einen Schritt auf den Krankenbett zu, um einen Blick auf die Patientin zu werfen, aber er wich zurück, als Professor McGonagall streng die Hand hob. „Wir machen uns gleich auf den Weg und melden uns, sobald wir etwas herausgefunden haben“, versprach er verlegen. </p>
+<p>„Ich danke euch.“ Hermine stand auf und ging zu ihm. „Ihr seid klasse.“</p>
+<p>Ron lachte und gab Hermine einen Kuss auf die Wange. „Du hältst hier so lange die Stellung, okay?“ </p>
+<p>„Okay.“ Hermine schloss ihre Freunde fest in die Arme. „Passt gut auf euch auf, ihr zwei. Das Apparieren über so weite Distanzen hat seine Tücken.“</p>
+<p>„Das musst du mir nicht sagen.“ Harry klopfte Hermine schmunzelnd auf die Schulter. „Du hörst von uns, sobald wir mehr wissen.“</p>
+<p>Die Abenddämmerung war inzwischen hereingebrochen, und in dieser Nacht versuchte Hermine gar nicht erst, sich in ihren Schlafraum zurückzuziehen. Stattdessen holte sie sich weitere Unterlagen von anderen Unterrichtsfächern aus dem Schlafraum und gab Ginny Bescheid, dass sie auf jemandem in Krankenzimmer aufpassen würde. Dann putzte sie ihre Zähne, duschte und zog sich frische Kleidung an. Als sie ins Krankenzimmer zurückkehrte, fühlte sie sich deutlich frischer und wacher. </p>
+<p>Auch Professor McGonagall hatte sich umgezogen und trug ein dickes Buch bei sich, offenbar ein historischer Roman, den sie während des Wartens zu lesen gedachte. <i>Die Päpstin</i>, stand in dicken Lettern auf dem Buchrücken und Professor McGonagalls lächelte, als sie Hermines Blick zu dem Buchtitel wandern sah. „Auch eine Schulleiterin braucht ab und zu ein gutes Buch zum Schmökern“, verkündete sie. </p>
+<p>„Es wird Sie hoffentlich gut durch die Nacht bringen, Professor“, lächelte Hermine zurück.</p>
+<p>„Und Sie haben sich noch mehr Lernstoff mitgebracht?“ Professor McGonagall deutete auf den hohen Bücherstapel, den Hermine neben dem Krankenbett aufgebaut hatte. </p>
+<p>„Ich kann tatsächlich besser lernen, wenn ich hier bin“, gestand Hermine etwas verlegen.</p>
+<p>„Das kann ich gut verstehen.“ Die Schulleiterin nickte ihr aufmunternd zu. „Legen Sie ruhig los und lassen Sie sich durch mich nicht stören.“</p>
+<p>„Sie stören nicht“, wiederholte Hermine Professor McGonagalls Worte von der vorigen Nacht und erntete damit ein amüsiertes Kopfschütteln. </p>
+<p>Eine lange Zeit saßen sie einfach still beieinander. Professor McGonagall hatte sich einen Stuhl neben das Bett gezogen und las in ihrem Buch, während sie mit ihrer rechten Hand die des Mädchens hielt. Hermine saß im Schneidersitz auf dem Fußboden, um sich herum verschiedene Fachbücher, und machte sich eifrig Notizen. </p>
+<p>Diesmal gelang ihr das Lernen nicht halb so gut wie noch am Nachmittag, denn die Anwesenheit Professor McGonagalls lenkte sie weitaus mehr ab als ihr lieb war. Obgleich die ältere Hexe ganz ruhig in ihrem Stuhl saß, war Hermine sich ständig ihrer Gegenwart bewusst. Vielleicht würden sie beide schon in wenigen Stunden wissen, ob das Mädchen das Ergebnis eines nüchternen genetischen Experiments war oder womöglich ihre leibliche Tochter. </p>
+<p>Während der Gedanke an eine Beziehung mit Professor McGonagall sie anfangs ziemlich geschockt hatte, spürte Hermine nun eine seltsame Hoffnung, dass genau diese Theorie sich als Wahrheit herausstellen würde. Die Vorstellung, ihr Leben in der Gegenwart dieses besonderen, von ihr so sehr verehrten und geliebten Menschen zu verbringen, hatte etwas Wundervolles, und die Idee, vielleicht sogar intim mit ihr zu sein, löste warme Wellen in Hermines Unterleib aus. </p>
+<p>„Sie sind verlobt mit Mr. Weasley, nicht wahr?“, fragte Professor McGonagall unvermittelt von der anderen Seite des Bettes. </p>
+<p>Hermine schrak zusammen und überlegte nicht zum ersten Mal, ob die Schulleiterin vielleicht doch Legilimentik beherrschte. „Ja, das bin ich.“ Hermine musste unwillkürlich an ihr Gespräch mit Professor McGonagall in ihrem Büro denken. Was die Schulleiterin jetzt wohl über sie dachte? Irgendwie fühlten sich die Worte, die Hermine im Büro zu ihr gesagt hatte, nun wie Betrug gegenüber Ron an. Wenn nur nicht alles so verwirrend wäre. </p>
+<p>„Sie sind sich nicht mehr sicher“, sagte Professor McGonagall so sachlich, als würde sie feststellen, dass es draußen regnete. </p>
+<p>„Um ehrlich zu sein, war ich mir noch nie wirklich sicher.“ Hermine erhob sich vom Fußboden und nahm auf ihrer Seite des Bettes Platz. </p>
+<p>Professor McGonagall nickte und blätterte eine Seite in ihrem Buch um. </p>
+<p>„Sie finden nicht, dass wir zusammen passen, oder?“, hakte Hermine nach. Dass Professor McGonagall keinen Versuch unternahm, sie in ihrer Beziehung zu bestärken, machte sie misstrauisch. </p>
+<p>„Es steht mir nicht zu, das zu beurteilen“, sagte Professor McGonagall, ohne von ihrem Buch aufzusehen. </p>
+<p>„Und wenn ich Sie explizit nach Ihrer Meinung frage?“</p>
+<p>„Auch dann werden Sie keine Antwort von mir bekommen.“ Professor McGonagall klappte ihr Buch zu und sah Hermine nun direkt an. „Das sind Dinge des Herzens. Die kann niemand anderes beurteilen als Sie selbst.“</p>
+<p>„Immerhin haben Sie es sich erlaubt zu beurteilen, dass Sie und ich nicht zueinander passen“, rutschte es Hermine heraus, und sie bereute die vorlaute Bemerkung auf der Stelle. </p>
+<p>„Das habe ich keineswegs getan“, widersprach Professor McGonagall ruhig. „Ich habe lediglich darauf hingewiesen, dass unsere Rollen nicht zulassen, was Ihre Theorie impliziert.“</p>
+<p>Hermine strich mit den Fingern über die Bettdecke, während sie über Professor McGonagalls Worte nachdachte. „Aber wir werden nicht ewig in diesen Rollen verharren“, sagte sie leise.</p>
+<p>„Da haben Sie recht.“ Professor McGonagall räusperte sich. „Ich habe neulich überreagiert und muss mich bei Ihnen entschuldigen, Miss Granger.“</p>
+<p>„Nein, ich war zu forsch“, sagte Hermine schnell. „Es tut mir leid.“</p>
+<p>„Nein, es war meine Schuld.“ Professor McGonagall schüttelte den Kopf. „Es ist nur… Die Vorstellung, dass eine Schülerin… oder eine ehemalige Schülerin…...“</p>
+<p>„Und dazu noch eine Frau“, ergänzte Hermine.</p>
+<p>„Das sowieso.“ Professor McGonagall fuhr sich müde über die Stirn. „In meinem ganzen Leben habe ich noch nie …“</p>
+<p>„Ich auch nicht“, versicherte Hermine hastig. Bisher hatte sie in der Tat wenig Gelegenheit gehabt, darüber nachzudenken, was es eigentlich bedeutete, dass sie sich vorstellen konnte, mit einer Frau zusammen zu sein. War das nur wegen Professor McGonagall? Oder war sie vielleicht prinzipiell mehr an Frauen als an Männern interessiert und hatte es bisher nur noch nicht begriffen? </p>
+<p>Hermine sah sich außerstande, diese Frage im Moment für sich zu beantworten. Alles, was sie wusste, war, dass sie sich gerade nichts Schöneres vorstellen konnte, als ihre Zukunft mit Professor McGonagall zu teilen. Auch wenn sie so viel älter war und die Blütezeit ihres Lebens bereits hinter sich hatte, fand Hermine sie in jeder Hinsicht atemberaubend. Allein die Tatsache, dass sie sich in demselben Raum aufhielten, machte es gerade sehr schwer, sich auf irgendetwas Vernünftiges zu konzentrieren.  </p>
+<p>Professor McGonagall schwieg eine Weile und betrachtete gedankenverloren das Gesicht des Mädchens, das so große Ähnlichkeit mit ihnen beiden aufwies. „Uns trennen Jahrzehnte…“ </p>
+<p>„Ich weiß.“ Hermine fragte sich, ob der Schulleiter eigentlich bewusst war, dass etwas in ihr immer jung geblieben war, auch wenn sie Hermine so viel Lebenserfahrung voraushatte. Wenn sie in den Pausen von Hogwarts‘ Wiederaufbau am See spazieren gegangen waren und leidenschaftlich über spannende Fragen diskutiert hatten, waren äußere Faktoren wie Alter oder Rollen in den Hintergrund getreten. Warum konnte das nicht auch in der Zukunft so sein? „Trotzdem“, sagte Hermine leise. „Trotzdem…“</p>
+<p>„Ja.“ Professor McGonagall vertiefte sich wieder in ihr Buch.</p>
+<p>Hermine spähte zu ihr herüber. Was meinte Professor McGonagall mit <i>Ja</i>? Aber die Schulleiterin machte keine Anstalten, von ihrem Buch wieder aufzublicken, und so setzte Hermine sich wieder auf den Fußboden und studierte weiter ihre Unterlagen. Es war inzwischen dunkel geworden, sodass beide Hexen ihre Zauberstäbe benutzen mussten, um für genügend Licht zu sorgen. </p>
+<p>„Miss Granger!“, flüsterte Professor McGonagall plötzlich, und Hermine sprang sofort vom Fußboden auf. </p>
+<p>„Was ist?“ </p>
+<p>„Sie hat eben kurz die Augen geöffnet.“</p>
+<p>Sofort nahm Hermine auf der Bettkante Platz und ergriff die kalte Hand des Mädchens. </p>
+<p>Aber es geschah nichts. Über eine Stunde warteten Hermine und Professor McGonagall auf ein weiteres Zeichen, aber das Kind schlummerte friedlich weiter, als wäre nichts gewesen. </p>
+<p>Hermine streichelte die blasse Wange des Kindes. „Sie ist ein schönes Mädchen, nicht wahr?“ </p>
+<p>„Ja.“ Professor McGonagall lächelte. „Sie sieht Ihnen schließlich ähnlich.“</p>
+<p>„Und Ihnen.“ Hermine war froh, dass Professor McGonagall ihr Erröten in der Dunkelheit nicht sehen konnte.  </p>
+<p>Professor McGonagall beugte sich vor und strich dem Mädchen liebevoll eine braune Locke aus dem Gesicht. Das buschige Haar war Hermines so ähnlich, dass diese sich unwillkürlich vorstellte, Professor McGonagall hätte die Geste an ihr vollzogen. Ein Zittern fuhr durch ihren Körper bei der Vorstellung, und sie fragte sich, wie sie Ron noch heiraten sollte. Selbst wenn sich herausstellte, dass dieses Mädchen überhaupt nichts mit ihr zu tun hatte, erschienen ihr ihre Gefühle für Ron auf einmal kraft- und farblos gegen die Wogen, die die Frau neben ihr in ihr auslöste. </p>
+<p>„Ich fürchte, es war falscher Alarm“, seufzte Professor McGonagall. „Es tut mir leid, dass ich Sie vom Lernen abgehalten habe.“</p>
+<p>Hermine bekam plötzlich Angst, dass sie vielleicht noch viele Nächte an diesem Bett verbringen würde, ohne dass irgendetwas geschah. Vielleicht würde es noch Monate dauern, bis das Kind aufwachte. Vielleicht würde es sogar nie aufwachen. Der letzte Gedanke fuhr wie ein scharfes Schwert durch Hermines Eingeweide. Auf eine seltsame Weise war ihr das Mädchen ans Herz gewachsen. Es musste einfach aufwachen. Es hatte doch sein ganzes Leben noch vor sich! </p>
+<p>Hermines Blick wanderte zu dem kleinen Tischchen neben dem Bett, auf dem sorgfältig zusammengefaltet die Gryffindor-Uniform des Mädchens lag, und auf einmal kam ihr eine Idee. Normalerweise befanden sich keine Namensschilder in den Umhängen der Hogwartsschüler, aber ob das in der Zukunft auch so war? Vielleicht war irgendwo in der Uniform ein Hinweis auf die Besitzerin versteckt?</p>
+<p>Hermine stand leise auf, um die in ihr Buch vertiefte Schulleiterin nicht zu stören und griff nach der Uniform auf dem Tischchen. Auf den ersten Blick unterschied sie sich durch nichts von Hermines Uniform, aber als sie den schwarzen Umhang vor sich auf dem Fußboden ausbreitete, entdeckte Hermine in der Innenseite eine kleine Fläche, deren Stoff etwas rauer beschaffen war als beim Rest des Umhangs. <i>“Aparecium“</i>, raunte sie und tatsächlich begann die Stelle heller zu leuchten.</p>
+<p>„Was tun sie da, Miss Granger?“,Professor McGonagall sah erstaunt von ihrem Buch auf. </p>
+<p>„Im Umhang des Mädchens scheint ein Name eingetragen zu sein.“ Hermine trat aufgeregt mit der Uniform zu Professor McGonagall. „Schauen Sie selbst.“</p>
+<p>Gespannt verfolgten sie, wie sich immer deutlicher goldene Buchstaben vom schwarzen Untergrund absetzten und schließlich drei Worte ergaben. „Jaqueline Mary Peasegood“, las Hermine laut. Das klang keineswegs so, als sei das Mädchen auch nur mit einer von ihnen beiden verwandt. </p>
+<p>Ein schmerzlicher Kloß formte sich in Hermines Kehle und sie sah zu Professor McGonagall, die sich wieder in ihr Buch vertieft hatte. Fast schien es, als wolle sie ihre Enttäuschung verbergen. Aber hätte sie nicht erleichtert sein müssen? War es nicht das, was Professor McGonagall die ganze Zeit gewollt hatte?</p>
+<p>Hermine setzte sich zurück zu ihren Büchern und kämpfte gegen die Tränen an. Also war das Mädchen wohl nicht ihre zukünftige Tochter. Und aus der Zukunft kam sie vielleicht auch nicht. Aber wieso fühlte Hermine dann so ein starkes Band zu ihr? Und was war mit Professor McGonagall? Wie hatte sie sich nur einbilden können, dass eine große Hexe wie sie auch nur einen Gedanken an sie verschwenden würde? All die Gefühle, die in den letzten Tagen in Hermine aufgekeimt waren, würden zu nichts anderem führen als zu Schmerz und Enttäuschung.</p>
+<p>„Was lernen Sie gerade, Miss Granger?“, fragte Professor McGonagall, offenbar bemüht, die Spannung in der Luft zu vertreiben. </p>
+<p>„Verwandlung“, antwortete Hermine ohne ihren üblichen Enthusiasmus für das Fach.</p>
+<p>„Wie gefällt Ihnen der Unterricht bei Professor Montgomery?“</p>
+<p>Hermine war sich nicht sicher, ob es klug war, die Frage zu beantworten. „Es ist nicht so leicht für ihn, schließlich ist er in sehr große Fußstapfen getreten“, sagte sie vorsichtig. „Es ist schwierig, Ihr Nachfolger zu sein, Professor.“</p>
+<p>Professor McGonagall lächelte. „Es ist nett, dass Sie das sagen, Miss Granger. Aber Hogwarts kann etwas frischen Wind gut gebrauchen.“</p>
+<p>Hermine zog es vor, dazu zu schweigen. Selbst wenn sie die Tatsache ignorierte, dass niemand auf der Welt das Fach so gut unterrichten konnte wie Professor McGonagall, war Professor Montgomery eine herbe Enttäuschung. Hermine fand ihn oft fahrig und unkonzentriert und seine didaktischen Fähigkeiten ließen ebenfalls zu wünschen übrig. </p>
+<p>„Darf ich Ihr Schweigen so deuten, dass Sie mit Professor Montgomery nicht ganz einverstanden sind?“, hakte Professor McGonagall nach. „Meine Frage war durchaus ernst gemeint. Das Schuljahr ist fast vorbei und ich muss entscheiden, welche neuen Lehrkräfte eine Vertragsverlängerung bekommen. Da ich beim Unterricht nicht anwesend bin, ist jeder Hinweis für mich hilfreich.“</p>
+<p>Hermine runzelte die Stirn. In ihrem Kopf hatte sie Professor Montgomery längst als Niete abgestempelt, aber sie wollte nicht für seine Entlassung verantwortlich sein. „Vielleicht könnte ein Gespräch mit ihm den Unterricht verbessern“, sagte sie vorsichtig. „Ich habe manchmal den Eindruck, dass er sich nicht besonders gründlich vorbereitet, und gerade Verwandlung braucht ja große Präzision.“ Sie wies auf die aufgeschlagene Buchseite vor sich. „Diese Formel hier müssen wir zum Beispiel für die Prüfung lernen, aber sie ist falsch.“</p>
+<p>„Sie ist falsch?“ Professor McGonagall hob erstaunt die Augenbrauen. „Vielleicht haben Sie etwas übersehen?“ Sie legte ihr Buch zur Seite und ging um das Bett herum zu Hermine. „Welche Formel meinen Sie denn?“ </p>
+<p>„Diese hier.“ Hermine hielt ihr das Lehrbuch hin. „Wenn ich den Zauber so ausführen würde, wie es hier steht, würde das verwandelte Objekt ein paar Zentimeter neben dem Ursprungsobjekt auftauchen. Der Autor hat die Gravitationskraft falsch berechnet.“</p>
+<p>Professor McGonagall hockte sich neben Hermine und las aufmerksam die Seite des Lehrbuches durch. „Sie haben recht, Miss Granger“, sagte sie kopfschüttelnd. „Diese Ausgabe ist erst im letzten Jahr erschienen und ich habe sie noch nicht so gründlich durchgearbeitet wie Sie.“ Sie zauberte einen Stift und ein Stück Pergament hervor und notierte sich die Seitenzahl des Buches. „Einer Lehrkraft sollte solch ein Fehler allerdings auffallen“, murmelte sie und ließ das Stück Pergament in ihrem Umhang verschwinden. „Sie wären sicher eine ausgezeichnete Professorin für Verwandlung“, stellte sie lächelnd fest. </p>
+<p>Hermine schoss die Röte ins Gesicht. Hatte Professor McGonagall gerade angedeutet, dass sie sich Hermine als Lehrerin vorstellen konnte? Vor ein paar Tagen hätte sie noch jubelnd zugesagt, aber nun hatte die Lage sich verändert und Hermine würde auf keinen Fall an der Schule bleiben und sich jedem Tag dem Schmerz von unerwiderten Gefühlen aussetzen. „Ich glaube, es ist besser, wenn ich etwas ganz anderes mache…“, sagte sie leise und legte das Lehrbuch wieder an seinen Platz zurück.</p>
+<p>„Ich verstehe.“ Professor McGonagalls Gesichtsausdruck verriet in der Tat, dass sie Hermine sehr genau verstanden hatte. „Das ist bedauerlich.“</p>
+<p>Hermine schaute in die grünen Augen, die ihr plötzlich so nahe waren, und war außerstande, sich zu rühren. Wenn Professor McGonagall nicht ihre Schulleiterin gewesen wäre, hätte sie sie auf der Stelle geküsst. </p>
+<p>Ein leises Murmeln riss die beiden Frauen aus ihrer Starre und in Sekundenschnelle waren beide wieder am Bett der kleinen Patientin. Das Mädchen hatte die Augen geöffnet und schaute benommen ins Leere. Professor McGonagall ergriff die kleine Hand und Hermine tätschelte die Schulter des Kindes, doch es reagierte nicht auf die Berührung, sondern schloss wieder die Augen. Dann war alles wieder still.</p>
+<p>„Oh, Merlin“, flüsterte Professor McGonagall und Hermine wusste, dass ihr dieselben furchtbaren Gedanken durch den Kopf gingen wie ihr. Was war, wenn das Gehirn des Mädchens Schaden genommen hatte? Womöglich würde eine geistige Behinderung zurückbleiben, oder eine Lähmung? </p>
+<p>In den Augen der Schulleiterin standen Tränen und Hermine drückte stumm ihre Hand, die nun nutzlos auf der Bettdecke ruhte. Professor McGonagall warf ihr einen dankbaren Blick zu und straffte die Schultern. Die dritte schlaflose Nacht war ihr nun deutlich anzumerken und auch Hermine fühlte sich inzwischen wie gerädert. Aber gerade jetzt mussten sie wach bleiben und Hermine traute sich kaum zu blinzeln, um ja keine Regung des Mädchens zu verpassen. </p>
+<p>Eine weitere Stunde passierte gar nichts, doch als sie schon fast aufgegeben hatten, kam wieder Bewegung in den kleinen Körper. „Sollen wir Madam Pomfrey wecken?“, fragte Hermine im Flüsterton.</p>
+<p>„Nein.“ Professor McGonagall schüttelte den Kopf. „Es reicht, wenn wir beide keinen Schlaf bekommen…“ Sie verstummte, als das Mädchen erneut die Augen aufschlug. Dieses Mal war ihr Blick klarer und ihre Augen wanderten unruhig durch den Raum. </p>
+<p>„Hallo und willkommen in Hogwarts“, begrüßte Hermine sie lächelnd und strich ihr über den Arm.</p>
+<p>Das Mädchen sah sie verwirrt an. „Tr… Trinken…“ Es musste ein paar Mal husten, um seine Stimme frei zu bekommen. „Ich hab‘ Durst.“</p>
+<p>„Oh, natürlich.“ Professor McGonagall reichte dem Kind ein Glas Wasser. </p>
+<p>Ohne aufzusehen, trank das Mädchen das Glas mit langsamen Schlucken aus. Allmählich schien es sich etwas besser orientieren zu können. </p>
+<p>„Du kannst mir dein Glas geben, Jaqueline“, sagte Hermine und nahm ihr das leere Glas wieder ab. „Hast du auch Hunger?“</p>
+<p>Das Mädchen schüttelte den Kopf. „Wer ist Jaqueline?“</p>
+<p>Hermine tauschte einen entsetzten Blick mit Professor McGonagall. Immerhin konnte das Kind normal sprechen, aber ganz offensichtlich wusste es nicht, wer es war. Hatte das Mädchen sein Gedächtnis verloren? Vielleicht doch eine Schädigung des Gehirns oder gar ein Vergessenszauber?</p>
+<p>Professor McGonagall streichelte die Hand des Kindes. „Das ist jetzt gar nicht wichtig“, sagte sie behutsam. „Du bist hier in Sicherheit, und das Wichtigste ist, dass du dich ausruhst.“</p>
+<p>Das Mädchen starrte sie verständnislos an und begann plötzlich zu kichern. „Ihr seid beide so jung!“, sagte sie mit ihrer hellen Mädchenstimme. „Das ist echt lustig.“</p>
+<p>„Es ist eine Weile her, dass mich jemand als jung bezeichnet hat“, bemerkte Professor McGonagall trocken. „Miss Granger hingegen…“</p>
+<p>„Miss Granger?“ Das Mädchen kicherte wieder. „Ich bin tatsächlich durch die Zeit gereist, oder? Wo bin ich denn gelandet?“</p>
+<p>Hermine warf ihrer Schulleiterin einen fragenden Blick zu. Offenbar wusste das Mädchen, dass es eine Zeitreise angetreten hatte, aber wieso erinnerte es sich dann nicht an seinen eigenen Namen? „Wir haben das Jahr 1999“, antwortete sie, als Professor McGonagall ihr zunickte.</p>
+<p>„Cool.“ Auf dem Gesicht des Mädchens breitete sich ein Lächeln aus, das Hermine sehr an sie selbst erinnerte. </p>
+<p>„Kannst du uns deinen Namen sagen, mein Kind?“, fragte Professor McGonagall, die nun die Taktik zu ändern schien. </p>
+<p>Das Mädchen sah sie verdutzt an, aber dann hellte sich ihre Miene auf. „Oh, ihr könnt mich ja noch gar nicht kennen“, erklärte sie grinsend. „Ich bin Jean.“</p>
+<p>„Jean?“ Hermines Herz begann so schnell zu klopfen, dass sie fürchtete, es würde aus ihrer Brust herausspringen. Neben ihr sog Professor McGonagall scharf die Luft ein. Auch ihr war sofort klar, dass das Mädchen Hermines zweiten Vornamen trug. </p>
+<p>„Genau.“ Das Mädchen nickte und schaute neugierig von einer Hexe zur anderen. „Jean Ginevra McGonagall.“</p>
+<p>„Oh mein Gott.“ Professor McGonagall sackte in ihren Stuhl zurück. </p>
+<p>Hermine erfasste ein plötzlicher Schwindel und sie hielt sich krampfhaft an der Bettkante fest. „Wer ist dann Jaqueline Mary Peasegood?“, fragte sie tonlos.</p>
+<p>„Keine Ahnung.“ Jean zuckte mit den Schultern. „Wieso soll ich so heißen?“</p>
+<p>„Er steht in deinem Umhang.“ Hermine wies zu der Schuluniform, die sie wieder sorgfältig zusammengefaltet hatte. </p>
+<p>„Oh, das ist nicht meine Uniform.“ Jean bewegte versuchsweise ihre Arme und Beine. „Ich habe mir meinen Umhang letzte Woche bei der Peitschenden Weide aufgerissen und Mum hat mir eine alte Ersatzuniform aus dem Fundus von Hogwarts geliehen.“ Sie wies mit dem Kopf zu Professor McGonagall, die zur Salzsäule erstarrt zu sein schien. „Nächste Woche werde ich mit Mummy eine neue besorgen, aber sie hat immer so viel zu tun, deswegen waren wir noch nicht in der Winkelgasse.“ Sie zeigte mit dem Finger auf Hermine. „Du bist viel im Ausland unterwegs, weißt du.“</p>
+<p>Hermine versuchte vergeblich, einen klaren Gedanken zu fassen. Ihr rasten tausend Fragen durch den Kopf, von denen jede verwirrender war als die nächste. Das Mädchen ging so vertraut mit ihnen um, dass ein genetisches Experiment definitiv ausgeschlossen werden konnte. Auch der Name des Kindes ließ keinen Zweifel daran, dass sie in der Zukunft eine Familie waren. Aber aus welchem Jahr war Jean zu ihnen gekommen? Offenbar eines, in dem Professor McGonagall noch immer Schulleiterin in Hogwarts war. Und welchen Beruf hatte Hermine ergriffen? Warum reiste sie angeblich so viel? Und ab wann war die magische Welt so weit, dass es möglich war, ein Kind aus den Genen zweier Frauen zu erzeugen? </p>
+<p>Gerade setzte Hermine an, etwas zu fragen, da spürte sie Professor McGonagalls Hand auf ihrem Arm. Der stumme Blick der Schulleiterin ließ keinen Zweifel, dass sie die Unterhaltung so schnell wie möglich in eine andere Richtung zu lenken gedachte. Tatsächlich wussten sie schon viel zu viel über ihre Zukunft, und jedes weitere Wort von Jean würde nur noch mehr Verwirrung stiften. </p>
+<p>„Wie du sicher weißt, Jean, ist es Zeitreisenden nicht erlaubt, Informationen über die Zukunft zu geben“, erklärte Professor McGonagall sanft. „Wir haben viele Fragen und du hast sicher viel zu erzählen, aber das wäre sehr falsch und außerdem gegen das Gesetz.“ Sie strich Jean zärtlich über die Wange, als diese ein enttäuschtes Gesicht machte. „Wir sollten uns jetzt lieber darauf konzentrieren, dass es dir schnell wieder besser geht. Und dann werden wir dich wieder zurück in deine Zeit schicken. Deine Mütter machen sich bestimmt schon Sorgen.“ </p>
+<p>„Deine Mum hat recht“, bestätigte Hermine. „Du hast mehrere Tage in einer Art Koma gelegen, und auch wenn unsere Heilerin Madam Pomfrey dafür gesorgt hat, dass dein Körper genug Flüssigkeit und Nährstoffe bekommt, musst du erst einmal wieder zu Kräften kommen.“</p>
+<p>„Ich fühle mich aber gut“, protestierte Jean. Offenbar machte das Zeitreisen nur noch halb so viel Spaß, wenn man seine Verwandten nicht mit verblüffenden Informationen versorgen konnte. „Aber ich muss mal aufs Klo.“ Sie schickte sie sich an, aus dem Bett zu steigen.</p>
+<p>„Hiergeblieben.“ Hermine drückte ihre zukünftige Tochter behutsam in ihr Kissen zurück. „Erst muss dich Madam Pomfrey gründlich untersuchen. Auch wenn du dich gut fühlst, bist du entkräfteter als du denkst.“ Sie strich Jean über den braunen Haarschopf. „Wir kommen dich so oft besuchen, wie wir können“, versicherte sie und Professor McGonagall nickte bekräftigend.</p>
+<p>„Lernst du etwa für deine UTZs?“, fragte Jean und schaute mit großen Augen auf das Arrangement von Büchern, die neben ihrem Bett auf dem Fußboden verstreut lagen.</p>
+<p>Hermine nickte nervös, als ihr schlagartig ihr Lerndefizit wieder einfiel. „In ein paar Wochen sind die Prüfungen“, bestätigte sie. </p>
+<p>„Cool!“ Jean schien das lustig zu finden. „Wenn du wüsstest, Mummy. Wenn du wüsstest…“</p>
+<p>„Denk an unsere Abmachung, Jean“, ermahnte Professor McGonagall sie. „Auch wenn es bitter ist, uns nichts erzählen zu dürfen, so kannst du immerhin deinen beiden Müttern alles berichten, wenn du wieder zurück bist.“</p>
+<p>Dieser Gedanke schien Jean zu gefallen und sie kuschelte sich wieder unter ihre Bettdecke, während Professor McGonagall nach Madam Pomfrey rief. </p>
+<p>Hogwarts Heilerin machte aus ihrem Unmut keinen Hehl, dass Professor McGonagall sie erst jetzt geweckt hatte, doch sie kümmerte sich gewohnt professionell um die junge Patientin. „Ich werde ihr einen Schlaftrunk geben, damit sie sich besser regenerieren kann.“</p>
+<p>„Ich möchte nicht, dass ihr geht“, protestierte Jean gähnend, als Hermine ihre Bücher vom Fußboden aufsammelte. „Ich fürchte mich hier allein.“</p>
+<p>Ohne zu zögern, verwandelte Hermine das kleine Tischchen neben Jeans Bett in ein bequemes Krankenbett. „Ich werde hier bei dir schlafen und du kannst mich jederzeit wecken.“ Sie machte sich daran, ihre Bücher neben dem Bett aufzustapeln.</p>
+<p>„Das kommt überhaupt nicht in Frage“, widersprach ihr Professor McGonagall, während sie anerkennend Hermines Bett begutachtete. „Sie brauchen Schlaf und Ruhe für Ihre Prüfungen, Miss Granger.“ Sie setzte sich besitzergreifend auf das Bett. „Ich befreie Sie hiermit von den ersten zwei Unterrichtsstunden und erwarte Sie morgen Mittag in meinem Büro.“</p>
+<p>Hermine blieb unschlüssig neben ihren Büchern stehen, aber der Blick Professor McGonagalls machte deutlich, dass sie nicht nachgeben würde. Also schloss Hermine ihre zukünftige Tochter in eine liebevolle Umarmung und gab ihr einen Abschiedskuss. „Schlaf gut, mein Liebes, und erhol dich gut“, sagte sie zärtlich. „Ich bin ungemein froh, dich einmal als Tochter zu bekommen.“ Sie zwinkerte Jean zu und drehte sich zu Professor McGonagall. </p>
+<p>Die Schulleiterin hatte gerührt die Szene zwischen Jean und Hermine mitangesehen, doch ihre Haltung versteifte sich, als Hermine sich zu ihr umdrehte. Kein Benimmbuch der Welt sagte einem, was in solch einer Situation zu tun war, und so tat Hermine einfach das, was ihr Herz ihr sagte. Sie zog Professor McGonagall in eine feste Umarmung, die diese schließlich zögernd erwiderte. „Gute Nacht, Professor McGonagall.“</p>
+<p>„Gute Nacht, Miss Granger.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/14329179/chapters/33066339">Chapter 4</a>: Kapitel 4
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/14329179/chapters/33066339#chapter_4_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <b>Kapitel 4</b>
+</p>
+<p> </p>
+<p>Hermine war gerade eingenickt, als sie ein gleißendes Licht wieder aus dem Schlaf riss. Mit großem Widerwillen öffnete sie die Augen und sah einen silbernen Hirsch elegant durch den Schlafraum galoppieren. </p>
+<p>„Was ist denn los?“, hörte sie neben sich Ginnys schlaftrunkene Stimme. „Ist Harry hier?“</p>
+<p>Der silberne Hirsch blieb von Hermines Bett stehen und sprach mit Harrys Stimme. „Wir haben Monsieur Foucault gefunden und ihn mitgebracht. Treffen in der Heulenden Hütte.“</p>
+<p>„Wieso schickt Harry dir einen Patronus?“ Ginny war im Gegensatz zu Hermine nun hellwach. „Was hat das zu bedeuten?“</p>
+<p>„Es hängt mit dem Mädchen im Krankenzimmer zusammen“, murmelte Hermine, noch immer benommen. Sie fühlte sich, als wäre der Hogwarts Express über sie herüber gefahren, aber es half nichts. Harry und Ron warteten in der Heulenden Hütte und hatten vielleicht Neuigkeiten über den Zeitumkehrer. </p>
+<p>„Wo gehst du hin?“, fragte Ginny misstrauisch, als Hermine sich im Zeitlupentempo anzuziehen begann. „Zur Heulenden Hütte?“</p>
+<p>„Ich darf dir leider nichts sagen.“ Hermine begab sich auf die Suche nach ihrer Haarbürste. Normalerweise musste sie nicht nach ihren Habseligkeiten suchen, aber im Moment war so einiges anders als gewohnt. „Es ist geheim, weißt du.“</p>
+<p>„Umso wichtiger ist es, dass ich mitkomme.“ Ginny hatte wie der Blitz ihre Sachen angezogen und wartete ungeduldig, dass Hermine fertig wurde. </p>
+<p>„Bitte, Ginny...“ Hermine fühlte sich zu müde, um mit ihr zu diskutieren. Sie wünschte sich nichts mehr als ein paar Stunden Schlaf, um all die Dinge, die in den letzten Tagen vorgefallen waren, irgendwie verarbeiten zu können. „Wir verstoßen gegen das Gesetz, wenn…“</p>
+<p>„Wieso darfst du dann davon wissen, aber ich nicht?“ Ginny stemmte die Hände in die Hüften. „Jahrelang habt ihr drei die großen Abenteuer abgefischt, während ich immer die Kleine war. Aber jetzt ist Schluss damit. Ich bin volljährig und ich werde dich begleiten.“</p>
+<p>„Ginny…“</p>
+<p>„Hör mir mal zu, Hermine.“ Ginny stand schon an der Tür. „Du bist meine beste Freundin, und Harry und ich werden bald heiraten. Ich mag es überhaupt nicht, wenn mein Verlobter Geheimnisse vor mir hat, und schon gar nicht meine beste Freundin.“</p>
+<p>Hermine gab es auf, gegen Ginnys Entschlossenheit anzukämpfen, und Ron und Harry rissen erstaunt die Münder auf, als Hermine mit Rons Schwester in der Heulenden Hütte erschien. </p>
+<p>„Sie ließ sich nicht abschütteln“, informierte Hermine die beiden und ging auf den Mann zu, den sie als Monsieur Foucault identifizierte. Er war etwa dreißig Jahre alt, hatte eine kreisrunde Glatze auf dem Kopf und schob einen runden Bauch vor sich her. „Bonjour, Monsieur Foucault.“ Sie schüttelte dem Wissenschaftler höflich die Hand. „Wie freundlich von Ihnen, hierher zu kommen.“</p>
+<p>„Guten Tag, Miss Granger“, antwortete er in fast akzentfreiem Englisch. „Es ist mir eine Ehre, Harry Potter und Ihnen helfen zu dürfen.“</p>
+<p>Harry begrüßte Ginny mit einem Kuss. „Hermine hat ein bewusstloses Mädchen auf dem Gelände gefunden“, erklärte er. „Und wir haben den Zeitumkehrer dazu entdeckt.“ Er kramte das kleine Gerät aus seiner Tasche und zeigte es Ginny. „Da er aus der Zukunft kommt, wissen wir nicht, wie er funktioniert und haben Monsieur Foucault um Hilfe gebeten. Er beschäftigt sich seit Jahren mit der Weiterentwicklung von Zeitumkehrern.“</p>
+<p>„Ist das Mädchen inzwischen aufgewacht?“, wandte Ron sich an Hermine, die auf der Stelle tiefrot anlief. </p>
+<p>„Was ist denn mit dem Mädchen?“, fragte Ginny neugierig, während sie zwischen Hermine und Ron hin und her blickte. „Ist sie eure Tochter aus der Zukunft?“</p>
+<p>Ron schnaufte verächtlich und Hermine legte ihm beschwichtigend die Hand auf die Schulter. „Ja, sie ist aufgewacht, aber darüber können wir später sprechen.“ Sie wollte Ron unbedingt die Schmach ersparen, vor allen Leuten zu erfahren, dass seine Verlobte in der Zukunft ein Kind von jemand anderem hatte.</p>
+<p>Doch Ron schüttelte ihre Hand ab. „Nun sag schon, habt ihr irgendetwas herausgefunden?“</p>
+<p>Hermine zögerte. „Es ist, wie ich vermutet habe“, sagte sie vage.</p>
+<p>Ginny schaute verständnislos zu Harry. „Wieso kümmert sich das Ministerium nicht um die Sache? Es ist doch Pflicht, Zeitreisen augenblicklich zu melden, oder?“</p>
+<p>Harry zuckte nur mit den Schultern und auch Ron wich ihrem Blick aus. </p>
+<p>„Professor McGonagall hat den Vorfall also nicht gemeldet?“ Ginny ließ sich auf eine Kiste fallen. „Was ist denn mit der auf einmal los? Sie pocht doch sonst immer so auf korrektes Verhalten.“ </p>
+<p>Harry beugte sich zu Ginny und flüsterte ihr etwas ins Ohr. „Oh Merlin!“, murmelte sie und starrte mit aufgerissenen Augen zu Hermine. </p>
+<p>„Wie auch immer.“ Hermine drehte sich schnell von ihr weg und wandte sich wieder an Monsieur Foucault. „Wir wollen nicht Ihre Zeit verschwenden.“ Sie nahm Harry den Zeitumkehrer aus der Hand und reichte ihn Monsieur Foucault. „Wir wissen inzwischen, dass das Mädchen aus der Zukunft kommt und wollen es natürlich so schnell wie möglich wieder dorthin zurückbringen.“</p>
+<p>„Ich habe mir das Gerät schon einmal angesehen und denke schon, dass ich Ihnen helfen kann.“ Monsieur Foucault trat mit dem Zeitumkehrer an das staubige Fenster der Heulenden Hütte. „Dieses Gerät ist viel weiter entwickelt als die Modelle, mit denen wir arbeiten“, sagte er anerkennend. „Zu schade, dass Sie mein Gedächtnis im Anschluss an unser kleines Abenteuer wieder löschen müssen“, fügte er lächelnd hinzu. „Es ist ein Jammer, denn dieses Modell würde unsere Forschung um Jahre voranbringen.“ </p>
+<p>„Wie aktiviert man das Gerät?“, fragte Ron und trat neben Monsieur Foucault ans Fenster. „Ist tatsächlich eine Sicherung eingebaut?“</p>
+<p>„Genauso ist es.“ Monsieur Foucault winkte auch die anderen zu sich ans Fenster. „Schauen Sie sich das zwölfte Glied der Kette an“, forderte er sie auf und zog eine Lupe aus der Tasche. Tatsächlich sah man dort eine winzige Sanduhr eingeritzt, die Monsieur Foucault nun mit der Zunge berührte. Sofort begann das Gerät leise zu summen und die Sterne auf dem goldenen Stein fingen an, sich umeinander zu drehen. Dabei dehnte sich der runde Stein aus, und als er etwa die Größe von einem Schnatz erreicht hatte, erschienen verschiedene Zahlenreihen. „Ich könnte jetzt ein Datum eingeben, inklusive der genauen Stunde und Minute, und dann auf den kleinen Punkt unter der Zahlenreihe tippen“, erklärte Monsieur Foucault. „Das tue ich jetzt nicht, sonst bin ich gleich nicht mehr bei Ihnen“, scherzte er. </p>
+<p>„Können Zeitreisen ein Koma auslösen, oder hätte das andere Gründe?“, erkundigte sich Hermine. Sie hatte zwar schon bei ihrer Recherche etwas dazu gelesen, aber einen Experten direkt zu befragen, war in jedem Fall sicherer.</p>
+<p>„Wir haben es bei unseren Experimenten des Öfteren mit komatösen Zuständen zu tun, insofern würde ich vermuten, dass das Kind ohne äußere Gewalteinwirkung das Bewusstsein verloren hat.“</p>
+<p>„Das erklärt, warum du an dem Mädchen keine äußeren Verletzungen gefunden hast“, mischte sich Ron ein. „Es passt alles zusammen.“</p>
+<p>„Hat es jemals größere Hirnschäden nach solch einem Koma gegeben?“ Auch wenn es unwahrscheinlich war, dass Jean einen Schaden davon getragen hatte, wollte Hermine diese Frage unbedingt noch beantworten haben. </p>
+<p>„Bisher nicht, Miss Granger.“ Monsieur Foucault fuhr sich über seine Glatze. „Aber bei einer Reise durch eine lange Strecke des zeitlichen Kontinuums würde ich das nicht ausschließen.“</p>
+<p>„Sehr gut.“ Hermine atmete auf. Durch besonders viele Jahre konnte Jean kaum gereist sein, wenn sie jetzt etwa zwölf war.</p>
+<p>„Aber wieso ist das Mädchen überhaupt hier?“, fragte Ginny.</p>
+<p>„Zeitumkehrer werden in der Regel in Hochsicherheitstrakten aufbewahrt“, stimmte Harry ihr zu. „Das wird in der Zukunft nicht anders sein.“</p>
+<p>Monsieur Foucault hob noch einmal den Zeitumkehrer hoch. „Ich kann Ihnen diese Frage nicht beantworten, aber wenn Sie sich dieses Gerät genau betrachten, dann werden Sie feststellen, dass es ein Modell ist, mit dem man zwar die Zeit einstellen kann, aber nicht den Ort. Dieser bleibt also derselbe.“</p>
+<p>„Sie meinen, das Mädchen muss hier in Hogwarts an den Zeitumkehrer gekommen sein?“, fragte Harry überrascht. </p>
+<p>„Es könnte im Rahmen einer Unterrichtsdemonstration passiert sein“, überlegte Hermine laut. „Vielleicht ein Unfall?“</p>
+<p>„Über all diese Dinge können wir jetzt natürlich spekulieren“, bemerkte Monsieur Foucault lächelnd. „Aber es wäre nicht zielführend. Ihnen ist sicher klar, dass alle hier im Raum diese gesamte Unterhaltung wieder vergessen müssen.“</p>
+<p>Die vier Freunde nickten bedrückt. Besonders Hermine behagte die Aussicht gar nicht, das Wissen der letzten Tage wieder zu vergessen, aber ihr war bewusst, dass sie schon mehr als genug mit der Zeit gespielt hatten. </p>
+<p>Gemeinsam verließen sie die Heulende Hütte und brachten Monsieur Foucault zum Ausgang des Hogwartsgeländes. Während sie durch die hügelige Landschaft schritten, fasste Ron Hermine am Arm und ließ sich absichtlich ein wenig zurückfallen. „Auch wenn wir uns bald an nichts mehr erinnern können, sollten wir unsere Verlobung vielleicht besser lösen“, sagte er mit gepresster Stimme. „Seit du mir von dem Mädchen erzählt hast, habe ich ziemlich viel darüber nachgedacht, ob wir wirklich zusammen passen.“ Er räusperte sich. „Ich meine… du weißt schon… so für immer.“</p>
+<p>„Ich weiß, was du meinst.“ Hermine warf ihm einen dankbaren Blick zu. „Für immer ist eine ziemlich lange Zeit, oder?“ </p>
+<p>„Vielleicht sind wir auch besser als Freunde“, schlug Ron vor, aber Hermine merkte ihm an, dass er es lieber anders hätte. </p>
+<p>„Wie wäre es, wenn wir heute entscheiden, dass wir uns gegenseitig loslassen?“, schlug Hermine vorsichtig vor. „Und wenn wir in ein paar Jahren der Meinung sind, für den Rest unseres Lebens füreinander geschaffen zu sein, dann heiraten wir, Zeitumkehrer hin oder her.“</p>
+<p>„Falls du dann nicht schon die alte McGonagall geheiratet hast“, sagte er bitter.</p>
+<p>„Oder du Fleurs kleine Schwester.“ Sie gab ihm einen Kuss auf die Wange. „Wir schauen einfach, was kommt, oder? Ich werde dich immer lieben, Ron. Aber vielleicht auf eine andere Weise.“</p>
+<p>„Gabrielle ist gar nicht mehr so klein“, protestierte Ron und erwiderte Hermines Kuss. „Komm jetzt, die anderen sind schon fast am Ausgang.“ </p>
+<p>„Nein, warte noch kurz.“ Hermine zog ein Stück Pergament unter ihrem Umhang hervor und schrieb eilig ein paar Zeilen darauf. Dann zog sie ihren Zauberstab: <i>“Geminio!“</i></p>
+<p>„Was machst du da?“ Ron sah misstrauisch zu, wie Hermine sich die Kopie des Pergaments wieder unter ihrem Umhang verschwinden ließ und ihm das Original reichte.</p>
+<p>„Ich habe ein paar Stichpunkte zu unserer Unterhaltung aufgeschrieben“, erklärte Hermine, während sie mit großen Schritten zu den anderen aufschloss. „Schließlich werden wir unser Gespräch bald vergessen haben.“</p>
+<p>Ron überflog das Pergament und steckte es dann ohne Widerworte in seine Tasche. Auch er schien nicht besonders erpicht darauf zu sein, diese Unterhaltung zweimal zu führen. </p>
+<p>Am Ende des Hogwarts-Geländes angekommen, drückte Hermine dem Franzosen so herzlich die Hand, dass dieser sie überrascht ansah. „Ich kann Ihnen gar nicht genug danken, Monsieur Foucault.“ </p>
+<p>„Gern geschehen, Miss Granger“, antwortete er gutmütig. „Es ist mir eine Ehre, Ihnen geholfen zu haben. Kaum jemand hat so viel für die magische Gemeinde getan wie Sie drei. Ich bedaure es sehr, mich gleich nicht mehr an unser Treffen erinnern zu können.“</p>
+<p>Harry wandte sich zu Hermine um. „Ich glaube, es ist das Beste, wenn du uns vier mit dem Gedächtniszauber belegst“, sagte er sachlich. „Du bist die einzige, die weiterhin Bescheid wissen muss.“</p>
+<p>Ginny zupfte Hermine diskret am Ärmel. „Ich finde es übrigens gut, dass du mit McGonagall zusammenkommst. Ron und du, ihr passt irgendwie nicht wirklich zusammen und ich fand schon immer, dass ihr glücklicher mit jemand anderem wärt“, flüsterte sie in Hermines Ohr. „Bestimmt werde ich mich in der Zukunft genauso für dich freuen wie jetzt.“</p>
+<p>„Das ist lieb von dir, Ginny.“ Hermine schloss ihre beste Freundin in eine Umarmung. „Ich weiß das zu schätzen, glaub mir.“</p>
+<p>„Verrätst du mir den Namen deiner Tochter?“, raunte Ginny. „Ich habe ihn ja eh gleich wieder vergessen.“</p>
+<p>„Jean Ginevra McGonagall“, flüsterte Hermine ihr ins Ohr.</p>
+<p>„Ehrlich?“ Ginny hüpfte vor Freude auf dem Rasen auf und ab. „Das ist so lieb von dir!“</p>
+<p>„Können wir jetzt endlich zur Sache kommen“, fragte Ron genervt. „Ich habe keine Lust, hier ewig herumzustehen, und Monsieur Foucault will bestimmt auch gern wieder nach Hause.“</p>
+<p>„Okay, okay.“ Ginny strahlte über das ganze Gesicht und stellte sich brav in die Reihe neben die anderen. </p>
+<p>Hermine stellte sich vor Ginny und hob ihren Zauberstab. <i>„Obliviate“</i>, sagte sie vernehmlich. Dann folgten Monsieur Foucault, Ron und schließlich Harry.</p>
+<p>„Ihr könnt nicht wissen, warum wir hier gerade stehen“, erklärte sie den vier Gefährten, als diese sie fragend ansahen. „Wir haben soeben eine Mission erfolgreich beendet, und da diese mit einem Zeitumkehrer zu tun hatte, musste ich bestimmte Inhalte eures Gedächtnisses löschen.“</p>
+<p>Wenige Minuten später trottete Hermine mit Ginny zum Schloss zurück. Im Gegensatz zu den anderen war Ginny mit Hermines knapper Erklärung nicht so leicht zufriedenzustellen. Den ganzen Weg über löcherte sie Hermine mit Fragen, aber diese ließ sich nicht zu einer weiteren Erläuterung hinreißen. Doch unter ihrem Umhang wanderte ihre Hand so manches Mal zu dem kleinen goldenen Gerät, um sich zu versichern, dass es noch da war. Bald würde sie von ihrer Tochter Abschied nehmen müssen und niemand würde ihr sagen können, ob sie wieder gut in der Zukunft gelandet war.</p>
+<p> </p>
+<p> </p>
+<p>*					*					*</p>
+<p> </p>
+<p> </p>
+<p>In den folgenden Tagen schritt Jeans Genesung stetig voran. Hermine verbrachte so viel Zeit mit ihr wie möglich, auch wenn sie dadurch mit ihrem Prüfungsvorbereitungsplan hoffnungslos ins Hintertreffen geriet. Immerhin schlief sie jetzt wieder besser und zu ihrem Erstaunen hatte sie zurzeit auch keine Alpträume mehr. Die neueren Entwicklungen schienen die Kraft zu haben, die Schrecken der Vergangenheit zu verjagen, und die Aussicht auf eine schöne Zukunft ließ viel Schweres in Hermine deutlich leichter werden. </p>
+<p>Auch Professor McGonagall besuchte Jean so oft sie konnte, und manchmal saßen sie einfach nur zu dritt zusammen und unterhielten sich über Belanglosigkeiten. Hermine merkte schon jetzt, wie schwer es ihr fallen würde, das Mädchen wieder gehen zu lassen, und die Idee, dass sie sie in einer fernen Zukunft immer um sich haben würde, war dabei nur ein schwacher Trost. Doch die Zeit schritt unerbittlich voran, und schließlich kam der Tag, an dem Hermine aus dem Unterricht heraus in Professor McGonagalls Büro gerufen wurde. Ihr war vollkommen klar, was das bedeutete. </p>
+<p>„Madam Pomfrey hat grünes Licht gegeben“, verkündete Professor McGonagall, sobald sie Hermine eine Tasse Tee eingegossen hatte. „Es ist Zeit, dass wir sie gehen lassen.“ Die Schulleiterin sah blass und erschöpft aus. Die Vorstellung, das Kind auf eine ungewisse Reise zu schicken, schien alle Kraft von ihr zu nehmen. </p>
+<p>„Ich weiß.“ Hermine nickte tapfer.</p>
+<p>Professor McGonagall schenkte sich ebenfalls etwas Tee ein und Hermine sah, dass ihre Hände dabei zitterten. „Um ehrlich zu sein, habe ich diesen Zeitpunkt schon zwei Tage hinausgezögert“, gestand sie. „Aber Jean muss zurückreisen. Möglicherweise gibt es ein Zeitfenster, in dem sie wieder zurück sein muss. Außerdem werden ihre Eltern sich bestimmt schon Sorgen um sie machen.“</p>
+<p>„Wir wissen nicht, ob die Zeit für ihre Mütter in der gleichen Weise vergeht wie unsere“, gab Hermine zu bedenken. „Möglicherweise sind für sie nur wenige Minuten vergangen.“</p>
+<p>„Ja, das mag sein.“ Professor McGonagall nickte zerstreut. „Ich…“ Sie stellte ihre Teetasse ab und tippte nervös mit ihren Fingern auf ihrem Oberschenkel. </p>
+<p>So niedergeschlagen hatte Hermine die Schulleiterin selten gesehen und sie begann, sich ernsthaft Sorgen zu machen. Instinktiv rückte sie ihren Sessel näher an Professor McGonagalls heran und forderte sie stumm auf weiterzusprechen. Die Schulleiterin kämpfte offenbar mit sich und Hermine bemühte sich, ihr die Zeit zu lassen, die sie brauchte. </p>
+<p>„Ich habe eine Bitte an Sie, Miss Granger“, sagte Professor McGonagall schließlich, und an der Art, wie sie den Satz aussprach, hörte Hermine, wie viel er sie gekostet hatte.</p>
+<p>„Natürlich.“ Hermine beugte sich ein wenig vor. „Was kann ich tun?“</p>
+<p>Professor McGonagall hielt sich für einen Moment die Hände vor das Gesicht, dann legte sie sie wieder in den Schoß und schaute auf den Fußboden. „Ich kann das Kind nicht gehen lassen“, sagte sie so leise, dass Hermine sie kaum verstehen konnte. „Ich schaffe es nicht.“</p>
+<p>Hermine ignoriert den schweren Kloß in ihrem Hals und griff behutsam nach Professor McGonagalls kalter Hand. „Es ist schwer, nicht wahr?“, sagte sie sanft und strich mit ihrem Daumen über den kühlen Handrücken.</p>
+<p>„Würden Sie das übernehmen?“ Professor McGonagall hob langsam den Kopf, die Augen mit Tränen gefüllt. </p>
+<p>„Selbstverständlich.“ Hermine hatte selbst keine Idee, wie sie die Aufgabe bewältigen sollte, aber sie spürte, dass sie jetzt stark für sie beide sein musste. „Wäre es nicht besser für Ihren Seelenfrieden, wenn Sie sich von ihr verabschieden würden, Professor?“, fragte sie vorsichtig.</p>
+<p>Professor McGonagall schüttelte den Kopf. „Ich werde mich nicht erinnern.“</p>
+<p>Hermine sah entsetzt in die tränennassen Augen. „Sie wollen wirklich, dass wir unsere Erinnerungen löschen?“</p>
+<p>„Von Wollen kann keine Rede sein.“ Professor McGonagall seufzte tief. „Aber wir müssen es tun. Wir wissen schon viel zu viel von der Zukunft, und das ist niemals gut.“</p>
+<p>Hermines Brustkorb zog sich schmerzhaft zusammen. „Aber ich möchte nicht vergessen, dass ich Sie lieben werde“, widersprach sie leise. „Dass ich Sie liebe“, verbesserte sie sich. </p>
+<p>„Sie hätten die Verbindung mit Ron nicht lösen sollen.“ Professor McGonagall sah an Hermine vorbei aus dem Fenster. „Damit haben Sie schon Konsequenzen aus einem Wissen gezogen, dass Sie gar nicht haben dürfen.“</p>
+<p>„Früher oder später hätte ich es eh getan“, rechtfertigte Hermine ihre Entscheidung. „Die letzten Tage waren lediglich eine Art… Katalysator.“</p>
+<p>Bei Hermines letztem Wort huschte ein Lächeln über Professor McGonagalls Gesicht. „Es ist seltsam, sich vorzustellen, dass…“ Sie hielt inne und errötete. „Nun ja, dass…“</p>
+<p>„… wir ein Paar sein werden?“ </p>
+<p>„Ja.“ Professor McGonagall wandte ihr Gesicht zu Hermine und die Zärtlichkeit, die darin stand, raubte Hermine den Atem. </p>
+<p>„Ich finde es die wundervollste Vorstellung, die ich mir überhaupt ausmalen könnte.“ Hermine schaute auf die ältere Hand, die noch immer in ihrer ruhte. „Und wenn ich diese Vision behalten könnte, würde es mir Kraft für die nächsten Jahre geben.“ </p>
+<p>„Ich weiß, was Sie meinen, Hermine.“ Es war das erste Mal, dass Professor McGonagall sie mit ihrem Vornamen ansprach. „Ich hätte nie erwartet, dass…“ Sie tastete gedankenverloren über die empfindliche Innenfläche von Hermines Hand. „Ich hatte längst abgeschlossen mit… mit der Idee…“</p>
+<p>Hermine nickte wortlos. Es war nicht nötig, es auszusprechen. Auch Professor McGonagall gab die Idee, noch einmal jemanden zu lieben, ja sogar eine Familie zu gründen, Kraft und Halt. „Ich wüsste zu gern, wie lange es noch braucht, bis ich Sie finden werde“, sagte Hermine mit Wehmut in der Stimme. „Wie lange wird es dauern, bis ich verstehen werde?“</p>
+<p>„Es wird jedenfalls früher sein als bei mir“, bemerkte Professor McGonagall trocken. „Sie haben ja gesehen, wie stur ich sein kann.“</p>
+<p>„Das habe ich durchaus schon vorher gewusst“, lächelte Hermine und holte tief Luft. „Ich habe ebenfalls eine Bitte an Sie, Professor.“</p>
+<p>Die Schulleiterin hob erstaunt den Kopf. „Und die wäre?“</p>
+<p>„Ich möchte einen Kuss.“</p>
+<p>„Miss Granger!“ Professor McGonagall ließ auf der Stelle Hermines Hand los und wich erschrocken zurück. „Sie sind immer noch meine Schülerin!“</p>
+<p>„Bitte, Professor. Bedenken Sie, dass wir in weniger als einer Stunde alles vergessen haben werden.“</p>
+<p>Aber Professor McGonagall schien das nicht für ein triftiges Argument zu halten. „Das kommt überhaupt nicht in Frage!“</p>
+<p>Aber so einfach mochte Hermine nicht aufgeben. In der letzten Ausgabe vom <i>Zauberkunstjournal</i> hatte sie gelesen, dass der Gedächtniszauber lediglich das die Erinnerungen an ein Ereignis löscht, nicht jedoch die Erinnerungen, die im Körper gespeichert sind, wie zum Beispiel Gefühle oder Körpersensationen. Hermine war überzeugt, dass ein Kuss ihr Kraft für die Zukunft geben würde, auch wenn sie sich nicht an das Geschehen erinnern könnte. Er würde ihre Zellen sehr glücklich machen, und vielleicht würde er sogar beschleunigen, dass sie und Minerva McGonagall irgendwann zueinander fanden. </p>
+<p>„Wir müssen uns an die Spielregeln halten wie jeder andere“, bekräftige Professor McGonagall und erhob sich energisch. </p>
+<p>„Ich verstehe das sehr gut, Professor.“ Hermine stand ebenfalls auf und trat zu Professor McGonagall. „Aber ich möchte Sie bitten, folgendes zu bedenken.“ Sie zog den Zeitumkehrer unter ihrem Umhang hervor. „Ich werde gleich zu unserer Tochter gehen und ihr helfen, in ihre eigene Zeit zurückzukehren. Ich hätte das gern mit Ihnen gemeinsam getan, denn ich weiß nicht, woher ich die Kraft dafür nehmen soll. Aber ich werde es vollbringen, weil es eine von uns beiden tun muss. Und dann werde ich in Ihr Büro zurückkehren und wir werden gleichzeitig an uns den Gedächtniszauber ausführen… Und dann ist alles vorbei.“ Hermine wischte sich mit dem Ärmel eine lästige Träne aus dem Gesicht. „Das sind sehr, sehr düstere Aussichten, und es würde mir die Kraft geben, die ich für all das brauche, wenn Sie mir einen einzigen Kuss gewähren würden. Diesen Einsatz finde ich nicht zu hoch. Sie brauchen keine Angst zu haben, ich werde dafür sorgen, dass es schnell geht.“</p>
+<p>Professor McGonagall sah sie derart verdattert an, dass Hermine lächeln musste. „So ist es doch nun einmal, oder etwa nicht?“, fügte sie verlegen hinzu. </p>
+<p>„Sie sind unglaublich, Miss Granger.“ Professor McGonagall sah zum Himmel auf, als könnten irgendwelche Gottheiten sie retten. „Ein Kuss“, sagte sie streng. „Nicht mehr.“</p>
+<p>„Jawohl, Professor.“ Ehe die Schulleiterin ihre Meinung wieder ändern würde, zog Hermine sie vom Fenster weg. Ihr Herz klopfte ihr bis zum Hals und ihre Knie waren so weich, dass sie fürchtete, die wenigen Meter nicht zu schaffen. Aber wie durch ein Wunder standen sie plötzlich neben dem Schreibtisch und Hermine legte unsicher ihre Hände um Professor McGonagalls Taille. Irgendwann würde der Tag kommen, da würden ihre Hände unter dieses grüne Kostüm dringen dürfen. Ihre Finger würden endlos langsam über die weiche Haut fahren und ihre Lippen den langen Nacken ertasten. Sie würde ihr Gesicht in dem dunklen Haar vergraben und seinen süßen Duft tief in sich aufnehmen. Sie würde die roten Lippen küssen und Minerva McGonagall leise seufzen hören. </p>
+<p>Aber nicht heute. </p>
+<p>Hermine wischte sich eine Träne von der Wange. Plötzlich fühlte sie Professor McGonagalls Arme um sich und ihr wurde sofort leichter ums Herz. Sie schloss die Augen, atmete den schwachen Duft von Rosenöl ein und schmiegte sich tiefer in die zärtliche Umarmung. Diesen Moment wollte sie für die Ewigkeit. </p>
+<p>Aber die Zeit schritt weiter voran und Hermines linke Hand wanderte zu Professor McGonagalls Haar und ihre rechte zu ihrem Nacken. Langsam und vorsichtig beugte sie sich zu den roten Lippen, so weich, wie sie es sich nie hätte vorstellen können. Wie von selbst öffnete sich ihr Mund und tastete sich weiter vorwärts. Professor McGonagall seufzte leise, als Hermine ihren Druck verstärkte und das Geräusch entfachte einen Sturm in ihrem Innern. Noch einmal fuhr Hermine mit ihrem Mund über die vollen Lippen, spürte sie antworten, und wich dann zurück. </p>
+<p>Professor McGonagall hielt ihre Augen noch geschlossen und Hermine sah, dass eine sanfte Röte ihr Gesicht überzogen hatte. Sie sah so schön aus, dass Hermine sie am liebsten gleich wieder in die Arme geschlossen hätte. Aber sie hatte ein Versprechen gegeben, das sie einhalten musste. „Danke“, flüsterte sie und strich mit ihren Fingerkuppen über Professor McGonagalls Wange. </p>
+<p>Bei der zarten Berührung öffnete Professor McGonagall ihre Augen, die denen von Jean so ähnlich waren. Sie waren dunkel und voller Sehnsucht und Hermine war kurz davor, den ganzen Plan hinzuschmeißen. </p>
+<p>Aber es wäre nicht das Richtige gewesen. „Ich werde jetzt zu Jean gehen“, verkündete sie widerwillig und nahm den Zeitumkehrer wieder an sich. „Soll ich ihr etwas von Ihnen ausrichten?“</p>
+<p>Professor McGonagall nickte, als ihr die Stimme versagte. „Richten Sie ihr viele Grüße von mir aus“, sagte sie endlich. „Und… dass ich sie liebe.“</p>
+<p>„Das werde ich.“ Hermine kämpfte mit den Tränen, als sie sich mit zittrigen Knien zur Tür begab. „Bringen wir es hinter uns“, sagte sie entschlossen und verließ das Büro, ohne Professor McGonagall noch einmal anzusehen. </p>
+<p> </p>
+<p> </p>
+<p>*				*				*</p>
+<p> </p>
+<p> </p>
+<p>„Warum ist Mum nicht da?“, fragte Jean sofort, als sie Hermine mit dem Zeitumkehrer auf sich zukommen sah. </p>
+<p>„Als Schulleiterin hat sie manchmal fürchterlich wichtige Termine, die sie nicht verschieben kann.“ Hermine hätte nicht gedacht, dass es ihr so schwer fallen würde, ihre Tochter anzulügen. „Aber wir können deine Reise nicht mehr weiter verschieben, mein Liebling.“ Sie setzte sich zu Jean ans Bett. „Du musst dringend wieder in deine eigene Zeit zurückkehren und deine beiden Mütter erwarten dich sicher schon sehnsüchtig.“ </p>
+<p>„Ich find’s aber schön hier“, protestierte Jean. „Kann ich nicht noch ein bisschen bleiben?“</p>
+<p>„Das könnte sehr gefährlich sein“, erklärte ihr Hermine geduldig. „Wir wissen einfach noch zu wenig über die Zeit.“</p>
+<p>Jean sah mit ihren großen, grünen Augen zu ihr auf. „Ich will ja auch wieder zurück, aber ich finde es gerade so interessant hier. Du bist mehr so etwas wie eine große Schwester und ich find’s lustig, dass Mum dich behandelt, als würdet ihr euch kaum kennen. Dabei liebt sie dich doch wie verrückt.“ </p>
+<p>„Tatsächlich?“ Hermines Herz machte so einen Sprung, dass sie vergaß, ihre Tochter für ihr loses Mundwerk zu rügen. „Und deine beiden Mütter lieben dich auch wie verrückt“, sagte sie und drückte Jean einen Kuss auf die Stirn. „Deswegen ist es auch so wichtig, dass du schnell zu ihnen zurückkehrst.“</p>
+<p>„Ich habe aber Angst.“ Jean schmiegte sich in Hermines Arme. „Durch die Zeit zu reisen ist ganz schön unangenehm.“</p>
+<p>„Ich weiß.“ Hermine strich ihrer Tochter über den Kopf. Sie konnte sich noch sehr gut an die ungebetenen Nebenwirkungen erinnern, als sie in ihrem dritten Schuljahr dauernd in der Zeit hin und hergereist war, um möglichst viele Unterrichtsfächer belegen zu können. Sie hatte sich fast ein Jahr lang wie im Jetlag gefühlt, dabei war sie immer nur wenige Stunden durch die Zeit gereist, und Jean hatte mindestens zwölf Jahre überbrücken müssen. </p>
+<p>„Kannst du nicht mitkommen, Mummy?“</p>
+<p>„Das würde ich gern, aber es wäre zu gefährlich.“ Hermine zog ein kleines Fläschchen aus ihrem Umhang hervor. „Immerhin hat Professor Slughorn dir einen speziellen Zaubertrank gebraut, der verhindert, dass du bei deiner Ankunft wieder bewusstlos wirst.“ </p>
+<p>Jeans schüttelte sich vor Ekel, als sie den braunen Saft sah. „Der schmeckt bestimmt grässlich“, maulte sie. </p>
+<p>„Ehrlich gesagt, fürchte ich das auch, aber es ist wichtig, dass du ihn trotzdem trinkst.“ Hermine legte den Zeitumkehrer in Jeans Hand. „Weißt du, wie das Gerät funktioniert?“</p>
+<p>Jean schüttelte den Kopf, was Hermines Vermutung bestätigte, dass das Mädchen nur aus Versehen durch die Zeit gereist war. </p>
+<p>„Dann zeige ich dir jetzt, wie du ihn bedienst.“ Hermine erklärte Jean die verschiedenen Symbole auf dem Zeitumkehrer und erläuterte, was sie zu bedeuten hatten. „Du bist nicht mit Absicht durch die Zeit gereist, oder?“</p>
+<p>„Nein.“ Jean schien das ein bisschen unangenehm zu sein. „Wir hatten einen Gast aus Frankreich im Zauberkunde-Unterricht, der uns verschiedene Zeitumkehrer vorgeführt hat.“</p>
+<p>„Im zweiten Schuljahr?“, unterbrach Hermine sie missbilligend. „Das ist aber reichlich früh für so einen Unterrichtsstoff.“</p>
+<p>„Mum hat aber angeordnet, dass Monsieur Foucault in alle Klassen geht“, widersprach Jean, sichtlich stolz auf ihre Mutter. „Nur bei den Erstklässlern war er nicht.“ </p>
+<p>Hermine schüttelte lächelnd den Kopf. Es entbehrte nicht einer gewissen Ironie, dass Monsieur Foucault vor wenigen Tagen versucht hat, seinen eigenen Zeitumkehrer aus der Zukunft zu verstehen. „Und du hast dann so ein Gerät in die Hand genommen?“, kam sie wieder auf Jeans Reise zurück.</p>
+<p>„Wir haben alle welche in die Hand genommen, aber bei den anderen ist irgendwie nichts passiert.“ Jeans Augen begannen zu strahlen, als ihr plötzlich ein Gedanke kam. „Ich habe den Zeitumkehrer bestimmt aus Versehen aktiviert, als ich mit der Zunge über die Kette gefahren bin“, sagte sie aufgeregt. „Und als ich versucht habe, das Gerät zu stoppen, habe ich versehentlich auf den Punkt unter den Zahlen gedrückt und wurde hierher katapultiert, oder Mummy?“</p>
+<p>„Das könnte sein.“ Hermine nickte, beeindruckt von der schnellen Auffassungsgabe ihrer Tochter. „Aber wieso hast du denn deine Zunge an die Kette gehalten?“ </p>
+<p>„Weil Lily Luna behauptet hat, dass die Kette nur aus Messing ist, aber ich war mir sicher, dass sie aus echtem Gold ist“, erklärte Jean, als sei es das Selbstverständlichste der Welt. „Also habe ich an der Kette geleckt, um es zu schmecken.“</p>
+<p>„Lily Luna?“, fragte Hermine mit hochgezogenen Brauen. </p>
+<p>„Oh, oh, oh!“ Jean hielt sich erschrocken die Hand vor den Mund. „Ich erzähle viel zu viel, oder?“</p>
+<p>„Nun ja, ich habe es eh gleich wieder vergessen“, lächelte Hermine nachsichtig und gab dem Mädchen einen Kuss auf die Wange. „Aber wir sollten uns jetzt wirklich lieber auf deine Reise konzentrieren“, sagte sie wieder ernst. „Offensichtlich ist der Zeitumkehrer nicht ganz präzise, was die räumliche Distanz angeht. Schließlich habe ich dich auf dem Gelände gefunden und nicht in einem Klassenraum. Es könnte also sein, dass du nicht wieder genau in eurem Klassenzimmer landest sondern irgendwo in der Nähe.“</p>
+<p>„Das wäre nicht so schlimm, Mummy.“ Jean tätschelte ihrer Mutter beruhigend den Arm. „James hat so eine besondere Karte, auf der man erkennen kann, wo sich alle in Hogwarts aufhalten. Falls ich irgendwo verloren gehen sollte, wird er mich bestimmt finden.“</p>
+<p>„So so.“ Hermine versuchte, ihr Schmunzeln zu verbergen. Irgendwie hatte sie das Gefühl, dass die Schulzeit in der Zukunft nicht so viel anders war als ihre eigene. </p>
+<p>„Mon Dieu, das Mädchen ist ja immer noch hier!“, schimpfte Madam Pomfrey, als sie eine verletzte Viertklässlerin in den Krankenflügel brachte. „Professor McGonagall hat mir versprochen, dass es heute reisen wird.“</p>
+<p>„Wir sind ja schon dabei“, beschwichtigte Hermine die entrüstete Heilerin und zog Jean von ihrem Bett. „Du ziehst jetzt deine Schuluniform wieder an, und dann geht’s los, okay?“</p>
+<p>Jean nickte traurig und zog sich brav ihre Schuluniform an. Auch den Saft trank sie gehorsam, wenngleich sie ein Gesicht zog, als wollte Hermine sie vergiften. </p>
+<p>Jetzt gab es nichts mehr, womit Hermine den Abschied noch herauszögern konnte, so sehr sie es sich auch wünschte. „Ich soll dir von deiner Mum ausrichten, dass sie dir alles Gute wünscht und dich ganz doll lieb hat“, erklärte sie, als Jean reisefertig vor ihr stand. „Und ich habe dich auch ganz doll lieb“, fügte sie hinzu und schloss ihre zukünftige Tochter in eine letzte Umarmung. „Ich kann dir gar nicht sagen, wie froh ich bin, dass es dich gibt“, flüsterte sie mit brüchiger Stimme.</p>
+<p>Jean wischte ihr mit ihren kleinen Fingern die Tränen von der Wange. „Wenn ich erst einmal geboren bin, wirst du mich nicht mehr vergessen, Mummy“, sagte sie tröstend und sah dabei dermaßen aus wie ihre ältere Mutter, dass es Hermine fast wehtat.</p>
+<p>„Das sind immerhin gute Aussichten“, lächelte Hermine tapfer und schaute weg, damit Jean das Jahr, den Tag, die Stunde und die geschätzte Minute ihrer versehentlichen Abreise einstellen konnte. Aber sie wäre nicht Hermine Granger, wenn nicht doch im letzten Moment die Neugier gesiegt und sie einen flüchtigen Blick auf die Anzeige geworfen hätte. Der Zeitumkehrer zeigte das Jahr 2019 an, also musste Jean etwa im Jahr 2007 geboren sein. </p>
+<p>Würde es etwa so lange dauern, bis sie und Professor McGonagall ein Paar würden? Hermine hatte nicht das Gefühl, dass sie noch acht Jahre warten konnte, auch wenn sie sich nicht an die letzten Tage erinnern würde. Aber vielleicht waren sie dann auch schon viele Jahre zusammen und erst im Jahr 2007 fand jemand einen magischen Weg, wie zwei Hexen Kinder bekommen können? Dieser Gedanke hatte zumindest etwas Tröstliches. </p>
+<p>„Ich habe alles eingestellt, Mummy“, berichtete Jean, und Hermine wurde bewusst, dass sie ihre helle Stimme nun jahrelang nicht mehr hören würde. </p>
+<p>„Sehr gut, mein Liebling.“ Hermine widerstand nur schwer dem Impuls, mit dem Kind auf und davon zu laufen. „Möchtest du, dass ich zusehe?“</p>
+<p>„Ja.“ Es war Jean anzusehen, dass sie eine gehörige Portion Angst hatte. Plötzlich warf sie sich wieder in Hermines Arme und flehte sie an, hierbleiben zu dürfen.</p>
+<p>Hermine musste all ihre Kraft aufbringen, um nicht schwach zu werden. „Es wird ganz bestimmt alles gut gehen“, versicherte sie und strich Jean über die Wange. „Monsieur Foucault hätte euch den Zeitumkehrer nicht gezeigt, wenn er nicht von seiner Zuverlässigkeit überzeugt gewesen wäre. Und wenn du erst einmal wieder zu Hause bist, freust du dich, alle wiederzusehen.“ Gegen ihren eigenen Instinkt schob Hermine das Kind von sich fort und stellte sich mit einigen Metern Sicherheitsabstand neben Jean. „Alles Gute, mein Liebling.“</p>
+<p>Jean nickte tapfer, tippte mit dem Zeigefinger auf die Stelle unterhalb der Zahlenreihe, und war plötzlich verschwunden. </p>
+<p>Hermine starrte noch minutenlang auf die Stelle, wo Jean noch eben gestanden hatte. Dann gab sie sich einen Ruck und entfernte mit mechanischen Bewegungen alle Spuren im Krankenzimmer, die darauf hindeuteten, dass Jean jemals hier gewesen war. </p>
+<p>Anschließend versah sie Madam Pomfrey mit einem Gedächtniszauber und schritt dann mit schweren Schritten zurück zu Professor McGonagalls Büro. In ihr fühlte sich alles leer und trostlos an.</p>
+<p>Professor McGonagall stand noch immer am Fenster, als hätte sie sich nicht von dort wegbewegt. Sie drehte sich um, als Hermine in ihr Büro trat und atmete sichtlich auf, als diese ihre stumme Frage mit einem Nicken beantwortete. „Dann ist es Zeit“, murmelte Professor McGonagall und trat zu ihr. </p>
+<p>Hermine musste daran denken, wie sich ihre schlanken Hände auf ihrem Rücken angefühlt hatten und der weiche Mund auf ihren Lippen. Ohne dass sie wusste, was sie tat, schlang sie ihre Arme um die ältere Frau, als wolle sie sie nie wieder loslassen. </p>
+<p>Professor McGonagall strich ihr sanft über den Rücken und eine Weile standen sie so da, ohne sich zu rühren. „Danke für alles“, sagte Professor McGonagall leise. „Ich freue mich sehr auf eine gemeinsame Zukunft mit Ihnen.“ </p>
+<p>Schließlich lösten die beiden Frauen sich aus ihrer Umarmung und stellten sich einander gegenüber wie zu einem Duell. Die Jüngere mit Tränen auf den Wangen, aber entschlossenem Gesichtsausdruck, die Ältere mit stolzer Haltung und bebenden Lippen. Zeitgleich und mit derselben ausladenden Bewegung, als ob ein unsichtbares Band sie zusammenhielt, hoben sie ihre Zauberstäbe und richteten sie aufeinander: </p>
+<p>
+  <i>“Obliviate.“</i>
+</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_4_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Danke fürs Lesen! Ich konnte diese Anmerkung nicht an den Anfang setzen, weil sie vorweg zu viele Informationen gegeben hätte: Die Idee einer Tochter aus der Zukunft für HGMM stammt nicht von mir sondern aus einer Geschichte namens „The Paradox named Siobhan“ von tanithw. Allerdings unterscheidet sich meine Geschichte sehr von dieser. Wie auch immer, vielen Dank für die Inspiration, tanithw, wer und wo auch immer du bist!</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="qJ2DSjp5qF8nwrCcYp3cMkSrWyKz1tKN4YS6xVXDPVxQqnr8fU_URbYR84M3AG2faX26xnQSkI86mFwFGadcOA"/>
+          <input value="14329179" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=14329179">Comments (5)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Zoe0122">Zoe0122</a>, <a href="/users/queencvb">queencvb</a>, <a href="/users/PolianaSnape">PolianaSnape</a>, <a href="/users/WitchSong">WitchSong</a>, <a href="/users/crycrycrytillyouknowwhy">crycrycrytillyouknowwhy</a>, <a href="/users/Starjumper76">Starjumper76</a>, <a href="/users/ThisUserNameIsTaken">ThisUserNameIsTaken</a>, <a href="/users/Arlyana">Arlyana</a>, <a href="/users/Lisa_Volturi">Lisa_Volturi</a>, <a href="/users/nikmood">nikmood</a>, <a href="/users/themdet">themdet</a>, and <a href="/users/Wyndnfyr">Wyndnfyr</a>
+             as well as 
+          38 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_14329179">
+  <form class="new_comment" id="comment_for_14329179" action="/works/14329179/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="3r-VvR4UFUTwR5OlNo4i3wE-ZnuNI-bm7vFfRWZkptgmiGwLWSJpXmGU0LpjE5NyLOiHn0rnpOQ17bmFKgDHvA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_14329179">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_14329179" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_14329179=new LiveValidation('comment_name_for_14329179',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_14329179.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_14329179">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_14329179" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_14329179=new LiveValidation('comment_email_for_14329179',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_14329179.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_14329179" class="landmark">Comment</label>
+        <textarea id="comment_content_for_14329179" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_14329179" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_14329179_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_14329179">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_14329179=new LiveValidation('comment_content_for_14329179',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_14329179.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_14329179.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_14329179" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/14329179/hit_count.json")})</script>
+
+
+  </body>
+</html>

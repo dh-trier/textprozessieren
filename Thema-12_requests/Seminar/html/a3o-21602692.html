@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":72,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Eine Romanze in drei Akten - KMZ - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="92kVGMYsgMwYKSkiak9h7ws0ad-V18rwhEKc4ofT4vzM0OeCEUyU2fLfKi5uaI4UMOQ5E1wbc3MCMJw3rhmQQA"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="H0PAXeH2QxFLlGiaBILqEjlSUp0uKe2jVRBzwlEwvDUk-jLHNpZXBKFia5YApQXpAoICUeflVCDTYnMXePrOiQ"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: words:100</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/21602692/chapters/51510409">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=21602692">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/21602692/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/21602692/Eine%20Romanze%20in%20drei.azw3?updated_at=1575201884">AZW3</a></li>
+          <li><a href="/downloads/21602692/Eine%20Romanze%20in%20drei.epub?updated_at=1575201884">EPUB</a></li>
+          <li><a href="/downloads/21602692/Eine%20Romanze%20in%20drei.mobi?updated_at=1575201884">MOBI</a></li>
+          <li><a href="/downloads/21602692/Eine%20Romanze%20in%20drei.pdf?updated_at=1575201884">PDF</a></li>
+          <li><a href="/downloads/21602692/Eine%20Romanze%20in%20drei.html?updated_at=1575201884">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Severus%20Snape/works">Hermione Granger/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Ron%20Weasley/works">Ron Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Voyeurism/works">Voyeurism</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-11-29</dd><dt class="status">Completed:</dt><dd class="status">2019-12-01</dd><dt class="words">Words:</dt><dd class="words">12778</dd><dt class="chapters">Chapters:</dt><dd class="chapters">3/3</dd><dt class="comments">Comments:</dt><dd class="comments">2</dd><dt class="kudos">Kudos:</dt><dd class="kudos">16</dd><dt class="hits">Hits:</dt><dd class="hits">264</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Eine Romanze in drei Akten
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/KMZ/pseuds/KMZ">KMZ</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Severus sieht gern zu und Hermione sorgt dafür, dass er was zu sehen bekommt. Obwohl beide so klug sind, haben sie bei diesem fiesen Spiel einen wichtigen Punkt übersehen. Was ist, wenn da Gefühle im Spiel sind? Ein Liebesdrama in drei Akten (ein etwas längerer OS) mit dem Paar: Hermione Granger / Severus Snape ---- HG/SS ----</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21602692/chapters/51510409">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Eifersucht und Verlangen</p><p>Schritt eins: Bringe die andere Person absichtlich oder gern auch unabsichtlich (nur für wahre Könner!) zur Verzweiflung, indem du dich überheblich gibst und etwaige Anzeichen für kommende Schwierigkeiten gekonnt ignorierst. Gratis Nebeneffekt: du wirst sicher selbst mit ins Chaos gezogen.</p><p> </p><p>Rons Zunge drang wieder in ihren Mund ein. Hermione war sich wirklich nicht sicher, was sie von dieser Art „Beschäftigung“ halten sollte. Sie mochte Ron sehr und war inzwischen mit ihm zusammen. Dass er sie nun küsste, war also vollkommen natürlich und folgerichtig. Es gefiel ihr auch ziemlich gut seine Erregung zu spüren. Sein Unterleib drückte sich schüchtern an sie und sein harter Penis war gut spürbar.<br/>Behutsam zog sie sich ein wenig zurück, denn schließlich standen sie nur in einem der vielen Durchgänge, die im Winter immer so zugig waren. Im Sommer hingegen, waren sie angenehm kühl. Die meisten Pärchen pilgerten allerdings lieber zu den Bäumen in den Innenhöfen oder stahlen sich gleich aus dem Schlossgebäude. Hermione hatte heute allerdings noch vor etwas in der Bibliothek zu lernen und so hatte sie sich nur mal schnell auf ein paar Küsse mit Ron getroffen.<br/>„Hm … du schmeckst so süß“, murmelte er andächtig. Sein Mund kam ihr nach und Hermione kicherte leise, als sie den Kopf zur Seite drehte und Rons Lippen nur ihre Wange streiften. Überhaupt kitzelte das Lachen immerzu in ihr, wenn sie sich mit Ron küsste und „fummelte“ wie Harry es so erheitert grinsend ausdrückte, als er sie mal überraschte. Ron und sie waren leicht zu überraschen, weil sie sich selten versteckten. Rons Zuneigung war auch sehr direkt und typisch impulsiv für sein Alter. Hermione amüsierte sich irgendwie und verstand nicht mal genau weshalb. Es war nicht so, dass ihr seine Küsse nicht gefielen, aber irgendwie nahm sie sie auch nicht ernst. Sie hatte sich einen Moment ablenken lassen und so traf ihr Freund wieder ihre Lippen und schob ihr auch gleich wieder seine Zunge in den Mund. Seine Hände legten sich auf ihr Hinterteil und zogen sie näher.</p><p> </p><p>Severus Snapes Augenbrauen flogen abrupt nach oben, als er um die Ecke bog und Weasley mit Granger knutschen sah. Es war für ihn jetzt kein außergewöhnliches Bild. Leider durfte er diesen Anblick in seinen Jahren als Lehrkraft schon öfter erleben und jedes einzelne Mal war er angewidert und verordnete die Höchststrafe, die so ein Vergehen erforderte. Meistens war es leider nur eine Strafarbeit.<br/>Allerdings hatte er noch nie Hermione Granger erwischt. Einen furchtbaren Augenblick stand er wie festgewurzelt da und sah den beiden zu. Weasley war ekelhaft, doch das überraschte ihn nicht. Ihn überraschte eher, dass Hermione den Rothaarigen küsste. Es sah jetzt nicht besonders begierig aus, doch auch nicht angewidert oder gemusst. Unwillkürlich wurde sein Geschlecht hart. Das schockierte ihn dann allerdings so, dass er fast ein Keuchen ausgestoßen hätte. Leise trat er hinter die Steinmauer des Zugangs zurück, wirkte einen Tarnzauber und lauschte verlegen auf sein schnell schlagendes Herz. Vorsichtig sah er wieder um die Ecke. Weasleys Hände lagen auf ihrem Hinterteil und er verspürte den Drang dem Jungen seine Hände abzuhacken, wie sie es früher mit Dieben gemacht haben. Wie konnte er es wagen dieses Mädchen zu berühren? Dummerweise erregte es ihn mehr als er gutheißen konnte. Hermione sah aus wie eine huldvolle Göttin, als Weasley sie total grobmotorisch küsste. Er erweckte den Eindruck eines Nilpferds, was erfolglos versuchte mit seinem Maul etwas vom Boden aufzusaugen.<br/>Severus sah im Grunde nur noch zu Hermione, deren Gesichtsausdruck ihn ziemlich aufwühlte. Er ertappte sich dabei, wie sich seine Hand auf seine Erektion gelegt hatte. Als er das merkte, erwachte er endlich aus seiner peinlichen Betrachtung. Unwillig drehte er sich um und ging weg.<br/>Das müsste dringend Konsequenzen haben!</p><p> </p><p>„Kommen sie mit, Miss Granger!“, sagte Professor Snape nach der Stunde Zaubertränke am nächsten Tag. Ron und Harry sahen sich besorgt fragend an, doch sie konnte auch nur ratlos die Schultern zucken. Sie hatte keine Ahnung, was geschehen war. Ohne sie zu beachten lief er vor ihr her bis zu seinem Büro. Dort hielt er ihr die Tür auf, damit sie eintrat. Sie tat es mit einem mulmigen Gefühl.<br/>„Ich nehme an, sie wissen nicht, warum sie hier sind …“, sagte er süffisant und sie schüttelte nur den Kopf. Man musste bei Snape aufpassen kein überflüssiges Wort zu äußern, denn das könnte er schnell zu seinen Gunsten drehen und gegen sie verwenden.<br/>„Ich habe sie gestern mit diesem unsäglichen Weasley im Westdurchgang gesehen“, sagte er sanft aber mit gut hörbar spöttischem Unterton. Leider wurde Hermione rot, obwohl sie es verhindern wollte.<br/>„Und?“, fragte sie zaghaft, weil es nicht verboten war zu knutschen. Nur andere Dinge waren es und das hatten sie ja nicht getan. Andererseits, dass Snape sie beobachtet hatte, löste ein merkwürdiges Gefühl der Verstörung in ihr aus.<br/>„Es war ekelhaft. Nichts gegen sie, Miss Granger aber einen Weasley bei so etwas …“<br/>„Verstehe. Was ist die Strafe?“, unterbrach sie ihn scharf, ehe er über Ron herzog. Seine funkelnden Augen deuteten das nämlich sehr stark an.<br/>„Kleinen Moment noch … Meines Wissens nach sind Küsse nicht verboten, aber wir wissen alle wohin es führt.“<br/>„Ach ja?! Wohin?“, sagte sie patzig und schob fest und provokant die Augenbrauen zusammen. Snapes Augen verengten sich drohend.<br/>„Ich finde diesen Kerl ihrer unwürdig, mehr wollte ich nicht dazu sagen.“<br/>„Das geht sie aber gar nichts an, Professor!“, erwiderte sie giftig.<br/>„Oh doch, wenn ich dabei zusehen muss, wie dieser Lümmel sie betatscht, geht es mich sehr wohl etwas an.“<br/>„Wir können ja nichts dafür, dass sie bei so was gern zusehen, Professor Snape …“ Gut, das war wohl ein Wort zu viel. Erst wurde er sanft rot, dann starr und bleich. Hermione wagte es nicht sich zu bewegen, weil sie befürchten musste, dass er gleich explodierte. Jetzt hatte sie doch Angst. Ihr Mund war ganz ausgetrocknet, in ihr brodelte eine furchterregende Mischung aus Ärger über ihr loses Mundwerk und Sorge über seine garantiert fürchterliche Entgegnung.</p><p> </p><p>Severus fehlten die Worte. Dass Granger ein vorlautes Miststück war, war ihm immer klar gewesen. Wie respektlos sie sein konnte, war erschreckend. Und erregend. Es begeisterte ihn so, dass er sie nur mit ihren eigenen Waffen demütigen und eventuell schlagen könnte.<br/>„Ja, Miss Granger …“, begann er leise und überdeutlich zu sprechen. Mühsam hielt er seine Euphorie im Zaum, die in ihm entstanden war, als ein Hauch der kommenden Ereignisse seine Gedanken streifte.<br/>„Es stimmt, ich sehe gern zu. Ich sehe ihnen gern zu wie sie küssen.“<br/>Er hatte es ausgesprochen und ihr Gesicht sprach Bände. Ihre Augen hatten sich geweitet, ihre Lippen waren ungläubig auseinander gegangen und sie war ganz still.<br/>„Ich würde deshalb das nächste Mal den Aufenthaltsraum im zweiten Stock empfehlen. Am besten kurz vor Mitternacht. Da wird sie niemand stören und mich natürlich auch nicht. Wie wäre es mit Morgen?“<br/>Hermione blinzelte erschüttert, drehte sich dann wortlos um und verließ sein Büro. Endlich atmete er aus. Wenn er alles richtig gemacht hatte, dann hatte er sie dermaßen schockiert, dass er so etwas nie wieder sehen musste, solange sie in Hogwarts war. Es hatte ihm nämlich viel zu gut gefallen und in ihm war der brennende Wunsch entstanden sie würde ihm gehören und er könnte sie küssen und berühren.<br/>Aber das hatte er nun definitiv zunichte gemacht. Absichtlich.</p><p> </p><p>Kopflos rannte Hermione über die Gänge und fragte sich, ob das eben wirklich passiert war. Hatte Professor Snape wirklich solche Worte gesagt? Hatte er etwa angedeutet, dass er sie … mochte? Oder war er nur auf seine hinterhältige Art gemein gewesen, die sie noch nicht ganz richtig verstanden hatte?<br/>Und dieses Angebot mit dem Aufenthaltsraum – war das ernst gemeint? Jeder wusste, dass man sich, wenn man jemanden hatte, nicht in den Häusern vergnügen konnte. Gerade der von Snape erwähnte Raum im zweiten Stock wurde nie genommen, weil dort garantiert immer die Lehrerwache vorbei ging. Was aber war, wenn er ihr durch die Blume angedeutet hatte, dass er die Wache war und es tolerieren würde, wenn sie sich dort mit Ron vergnügte? Und wenn er wirklich nur zusehen wollte? War das nicht irgendwie pervers? Und warum fühlte es sich so kribblig an nur darüber nachzudenken? Das seltsame Gespräch ließ sie nicht mehr los und auch nicht der Gedanken, den er ihr in den Kopf gepflanzt hatte. Hermione war neugierig, verspürte auch eine Art Trotz, es diesem scheußlichen Mann mal so richtig heimzuzahlen. Deshalb flüsterte sie Ron in der Unterrichtsstunde in Astrologie die Idee ins Ohr. Er wurde ein wenig rot, grinste schief und flüsterte zurück:<br/>„Ausgerechnet da? Da kommen die Lehrer doch am liebsten vorbei, Hermione.“<br/>„Ja, aber nicht, wenn ich weiß, wer Wache hat und wen ich … beeinflussen muss“, sagte sie zweideutig schmunzelnd. Rons Wangen glühten, denn er deutete ihr Engagement eindeutig als Hermiones überbordendes Interesse an seiner Person, bzw. in diesem Fall seines Körpers. Scheinbar war sie echt scharf auf ihn, wenn sie ihm solche verwegenen Vorschläge machte, die sicher gleich mal zehn Schulregeln auf einmal brachen. Natürlich nickte er eifrig und so war es beschlossene Sache. Sich später aus dem Gryffindorhaus zu schleichen, war nicht schwer. Darin hatten sie schon viel Übung. Nur mussten sie dann zwei Lehrern ausweichen, die auf den Gängen unterwegs waren. Sie trafen auch ein paar Geister, doch die meisten mochten Hermione und zwinkerten ihr neckisch zu, als sie demonstrativ nach Rons Hand griff. Im zweiten Stock war es totenstill.</p><p>„Welcher Lehrer ist denn zur Wache eingeteilt?“, fragte Ron ein bisschen ängstlich.<br/>„Ist doch egal, wir haben den Raum für uns. Siehst du …?“ Sie traten in den Raum und Hermione machte nur im Kamin ein Feuer an. Den Rest ließ sie in Dunkelheit. Die Tür hatte sie nur angelehnt, denn schließlich platzte sie nun beinah vor Neugier, ob Snape sich zeigen würde. Sie hatte noch immer nicht den Hauch einer Ahnung, wie er seine Worte gemeint hatte. War es eine Todesdrohung gewesen oder gar ein nettes Angebot an zwei Verliebte, mit denen er Mitgefühl hatte (haha, dachte sie bissig)? Heute hatte sie Professor Snape tagsüber nicht gesehen und fand es zum ersten Mal seit sie in Hogwarts war, schade. Vielleicht wäre sie klüger, wenn sie einen Blick auf ihn hätte werfen können. Andererseits war Snape jemand, dessen Gesicht nichts über ihn und seine Gefühlslage preis geben würde, wenn er das nicht wollte. Wahrscheinlich hätte er sie nur finster angestarrt wie immer.</p><p>„Bist du dir sicher?“, fragte Ron wieder als sie auf ihn zuging.<br/>„Leise sollten wir trotzdem sein. Aber du solltest mich jetzt wirklich langsam küssen“, sagte sie lächelnd und war es selbst, die Ron küsste. Er zögerte deutlich, begann sich aber nach ein paar kritischen Momenten zu entspannen. Hermiones Sinne waren allerdings abgelenkt. Sie lauschte ständig auf auffällige Geräusche und öffnete dann sogar die Augen, um an Ron vorbei auf die Tür zu sehen. Sie war noch immer angelehnt. Hatte Snape sie reingelegt und würde gleich mit Dumbledore oder im schlimmeren Fall mit McGonagall hier reinplatzen, während sie Ron gerade „befummelte“? Das wäre wohl der Supergau. Komischerweise erregte sie der Gedanke daran, dass Snape vielleicht doch nur heimlich zusehen wollte.<br/>Hermione dirigierte Ron zu einem der Sessel, in den er ein wenig unbeholfen sank. Sie hockte sich breitbeinig auf seinen Schoss, weil sie so am besten die Tür im Auge haben würde und küsste Ron wieder. Deutlich verlangend und viel offensiver als sonst.</p><p> </p><p>Severus schlich um den Aufenthaltsraum herum. Natürlich hatte er dieses Miststück und den Rotschopf kommen sehen. Das Mädchen widersetzte sich ihm nicht nur, sie provozierte und wusste es vermutlich auch noch sehr gut. Hermione hatte also durchaus kapiert, dass er heute hier langlaufen würde. Legte sie es auf einen Eklat an, um ihn vielleicht ihrerseits in den Abgrund zu schubsten? Wer wusste schon, welche Abscheulichkeit sich ihr kleines, schlaues Hirn ausgedacht hatte. Umso vorsichtiger war Severus. Er sicherte sich magisch und mit allen Sinnen eine ganze Weile ab, bevor er zur Tür ging. Alles, was zu hören war, war das leise Flüstern von Weasley und Granger, das Knistern des Feuers im Kamin und jetzt die nassen Geräusche von Küssen. Unwillkürlich erregte ihn allein das Geräusch und er hasste sich dafür wirklich sehr, weil er wie eine beschissene Ratte auf den Geruch von Abfall ansprang. Severus wirkte einen seiner besten Tarnzauber, der es ihm sogar erlaubte sich zu bewegen. Nur wenige andere Magier hatten diesen Zauber gemeistert. So leise er es vermochte öffnete er die Tür zum Aufenthaltsraum. Er würde auf jeden Fall draußen stehen bleiben, weil er von der Tür aus alles sehen konnte. Auch Ansichten, die ihm vielleicht nicht gefallen würden.<br/>Zuerst sah er Hermione, die auf Weasley hockte, der auf einem Sessel saß. Sie küsste ihn, viel hungriger als im Durchgang. Sofort begann sein Puls zu rasen und sein Magen zu flattern. Er fühlte, wie sich Hitze und ein so heftiges Verlangen in ihm ausbreitet, dass er fast die Tür aufgerissen hätte, in den Raum gestürmt wäre und sie von diesem Bengel runter gezerrt hätte. Es kostete alles, was er an Willenskraft hatte, um es nicht zu tun. Langsam bekam er sich wieder zu fassen.<br/>Seine Gedanken kämpften sich mühsam von einem besitzergreifenden „Sie gehört mir!“, zu einem sarkastischen „Na, was haben wir denn da?“. Aber sein Herz schlug immer noch wie wild, hinter seinen Augen brannte ein heißes Feuer und in seinem Schritt zog es lustvoll.<br/>Weasley wirkte ein wenig überfordert und hatte fast schon brav seine Hände an ihren Hüften. Während Hermiones Küsse im zweiten Moment sehr bemüht aussahen. Dann aber, öffnete sie die Augen. Sie sah direkt in seine Richtung, als würde sie ihn erwarten. Ausgeschlossen war das nicht, denn er hatte es schließlich selbst angekündigt. Was war er nur für ein Narr!<br/>Das Allerschlimmste aber war, dass er für Sekunden total handlungsunfähig war. Sein Zauber brach zusammen und sie sah ihn. Er erkannte es an ihren Augen, die sich wieder kurz weiteten. Jetzt ist alles zu spät, dachte er hysterisch, aber nichts passierte. Hermione schien zu schmunzeln, schloss dann genüsslich ihre Augen und küsste sich zu Rons Hals.<br/>Severus aktivierte seinen Tarnzauber wieder, obwohl ihm klar war, dass er spätestens jetzt fliehen musste. Aber er konnte gar nicht, weil er wie gelähmt war. Sie wollte also, dass er zusah. Weshalb? Um ihn zu demütigen? Ja, das hatte er wahrlich verdient. Mehr als das!</p><p> </p><p>Hermione flüsterte in diesem Moment Ron todesmutig ins Ohr, dass er ruhig ein wenig forscher sein durfte.<br/>„Du merkst doch, wir sind hier allein und wir sollten das wirklich ausnutzen!“, sagte sie lauter. In Rons Blick war genug Begehren, dass er nur brav nickte. Ein wenig hatte Hermione ein schlechtes Gewissen, dass sie ihren Freund schamlos ausnutzte, um es Snape mal richtig zurückzuzahlen, aber sie war sich sicher, wenn Ron es wüsste, hätte er auch mitgemacht. Doch dann würde die Natürlichkeit fehlen und Snape würde das merken. So war Ron so herrlich unbedarft. Seine Hände strichen nun über ihr Hinterteil. Hermione, die sich unweigerlich vorstellen musste, dass Snape das tun würde, stöhnte unterdrückt auf. Zuerst kam das Entsetzen, dann die Lust, die es auslöste. Wie anders würde Severus Snape sie küssen? Ron küsste nicht besonders gut, doch das würde sie ihm nie vorwerfen. Sie selbst war ja nicht gerade erfahren in diesen Dingen.<br/>Ron fühlte sich durch ihre Lautäußerung bestätigt. Seine Küsse wurden nun eindeutig mutiger und seine Hände schoben sich unter ihr T-Shirt bis hoch zu ihren Brüsten. Wieder kitzelte das Lachen in ihrem Hals und sie wusste nicht genau warum. Schnell öffnete sie die Augen. Snape war weg oder auch nicht. Vermutlich nutzte er einen Tarnzauber, was sie auch tun würde. Ewig würde er den aber nicht aufrecht erhalten können.</p><p> </p><p>Und sie hatte recht. Sich zu konzentrieren wurde von Minute zu Minute für ihn schwerer. Ihm war nie so klar gewesen, was ihm fehlte und vor allem nicht wie sehr es ihm fehlte. Weiterhin hatte er nie bemerken wollen wie gut ihm das Mädchen gefiel und er war regelrecht erschüttert darüber, wie heftig er begann sie zu wollen. Seine Erektion, die unangenehm und aufdringlich steinhart in seiner Hose drückte, war die eine Sache, die er noch einigermaßen im Griff hatte. Berühren könnte er sich später. Die andere Sache war sein Drang Hermione von diesem Weasley zu entfernen, als wäre der arme Junge eine tödliche Krankheit und er müsste sie dringend vor ihm in Sicherheit bringen. Wieder und wieder fragte er sich, was sie an diesem Idioten fand. Es gab keine Antwort. Er sah, wie Weasley gerade ihre Brust berührt und konnte nur mit Mühe ein Aufstöhnen unterdrücken.<br/>Das hier, war ja seine brillanteste Idee seit seinem Verrat der Prophezeiung an Voldemort, dachte er zynisch. Es geschah ihm recht, dass er nun litt wie ein Hund, weil ein pickliger Rothaariger ein bezauberndes Mädchen berühren durfte, was ihm gar nicht zustand und dessen Wert er gar nicht begriff. Als sich Hermione kurzerhand das Shirt über den Kopf zog, stöhnte Severus doch einmal leise auf. Sein Zauber entglitt ihm und sie sah ihn wieder an.<br/>„Hast du das gehört?“, flüsterte Ron panisch.<br/>„Nein. Da war nichts. Oder hast du Angst mich nackt zu sehen, Ron?“, fragte sie neckisch und wandte den Blick von ihm ab. Diese verfluchte Göre zahlte es ihm gerade so richtig heim, dachte er bitter, gefangen in Sehnsucht, Verlangen und Abscheu über sich selbst und Hass auf Weasley.<br/>Als sie auch noch ihren BH auszog, war es Weasley, der dumpf aufstöhnte und Severus, der die Augen schloss und die Luft anhielt. Er müsste dringend hier weg, wenn er sich doch nur bewegen könnte. Sein Wille weigerte sich einfach zu gehen. Er wollte sehen, was hier noch geschah und hielt ihn damit gefangen. Rons Hände legten sich auf Hermiones Brüste, die über Rons Kopf zu ihm sah.<br/>Und grinste. Erst da fiel Severus auf, dass sein Zauber nicht mehr wirkte. Schnell erneuerte er ihn. Immerhin ließ ihn die Magie nicht im Stich. Vielleicht wäre es auch möglich die beiden erstarren zu lassen, um dann zu fliehen. Ja, zu fliehen! Das dachte sich nicht besonders nett und eigentlich war er doch neugierig, oder nicht? Er wusste es nicht mehr, weil er kaum noch zu vernünftigen Gedanken in der Lage war. Seine Sinne wurden von Miss Granger eingesaugt, die nun wieder Ron küsste, der etwas unbeholfen an ihren kleinen, vollen Brüsten herum knete, wie ein Kind, das im Kindergarten mit Knete spielt und unbedingt eine Giraffe erschaffen will.<br/>Wieder stieg Zorn in Severus hoch und eigentlich verhinderte nur Hermione eine Eskalation, die plötzlich leise und sehr lustvoll aufseufzte.</p><p> </p><p>Ron war wirklich nicht besonders geschickt und feinfühlig und trotzdem gefiel es Hermione. Einmal, weil sie wusste Severus sah ihr zu, zum Anderen, weil sie sich vorstellte, wie er es tun würde. Sie glaubte seine finstere, destruktive Präsenz sehr deutlich zu spüren. Sie konnte sich sogar seine abfälligen Worte dabei vorstellen: Wehe sie stöhnen, wenn ich das hier tue, Miss Granger!<br/>Rons Daume rieb eher unabsichtlich über ihre harte Brustknospe und ihr Unterleib begann lustvoll zu pulsieren. Natürlich war Ron hart und deshalb könnte sie jetzt auch zum nächsten Punkt der Demütigung übergehen. Jäh stand sie auf, räkelte sich kurz und sagte gut hörbar:<br/>„Wollen wir einen Schritt weitergehen, Ron?“<br/>„W … Weiter?“, fragte er nervös mit viel zu hoher Stimme. An der Tür verdrehte Snape angewidert die Augen.<br/>„Dazu müsstest du deine Hose ein Stück nach unten schieben …“, sagte sie sanft. Ron wollte es, er sagte es ihr ständig und nicht gerade durch eine schöne Blume. Jetzt wurde er rot und grinste von einem Ohr zum anderen.<br/>„Aber Hermione, du warst doch immer so dagegen und …“<br/>„Heute nicht. Ich finde, jetzt passt es irgendwie … also was ist?“ Ron wurschtelte schon an seiner Hose herum, sah ihr dabei aber nicht in die Augen. Schließlich saß er mit entblößtem Unterleib im Sessel und war sehr schweigsam geworden. Hermione auch. Nicht, dass sie das nicht wollte, doch eigentlich hätte sie das lieber außerhalb von Hogwarts getan. Nicht gerade unter den Augen von Severus Snape. Andererseits, vielleicht war er gar nicht mehr da. Sie sah ihn im Moment zumindest nicht, was sie unerwartet schade fand.<br/>Fest entschlossen, rutschte sie zwischen Rons Beine.<br/>„Du … musst das nicht tun, Hermione!“, sagte Ron wieder und klang ein bisschen wehleidig.<br/>„Ich will aber …“, sagte sie dunkel und sah auf sein erigiertes Glied. Wollte sie? Würde sie das hier auch bei Snape tun? Heiße Wollust durchströmte sie und deshalb legte sie ihre Hand mutig an Rons Erektion. Schließlich hatte sie das bei Viktor auch schon getan und schlechter war Ron auf keinen Fall.</p><p> </p><p>Fest presste Severus die Kiefer aufeinander, um nicht frustriert aufzuschreien oder aufzustöhnen, vor Leid und Lust. Das hier, war Folter pur. Folter, die er sich selbst zufügte und in die er mit seinem Hochmut selbst hineingerannt war, wie ein Blinder in sein Verderben. Hermiones Gesicht war unschuldig wie das eines Engels und ebenso so willensstark, wie sie in allen anderen Bereichen war. Oh Gott, er würde den Verstand verlieren, wenn sie das bei ihm machen würde. Seine Männlichkeit zuckte verlangend und seine Beine hatten zu zittern begonnen. Severus befand sich in der Hölle und dem süßesten Paradies zur selben Zeit. Ihm war nie klar gewesen, wie berauschend und beherrschend Verlangen sein konnte. Wenn sie ihn jetzt unvermutet ansprechen würde, würde er auf der Stelle beichten, was er für sie empfand und welche Sehnsucht er nach ihr hatte. Mit dieser Aufführung brach sie seinen Willen, machte ihn zu einem Sklaven seiner Lust und ihres Willens. Wusste sie das?<br/>Oder war sie ganz und gar unschuldig in dem, was sie tat? Ein klarer Gedanken kam ihm dazu nicht. Erst recht nicht, als er sah, wie Weasley tiefer in den Sessel rutschte und erschrocken aufkeuchte, als das Mädchen seine Erektion mit ihren Lippen berührte. Severus‘ Gesicht glühte vor Zorn. Seine Hände ballten sich zu Fäusten und er war nur wenige Atemzüge davon entfernt Weasley einen tödlichen Fluch entgegen zu schleudern. Seine Kieferknochen knirschten bedrohlich, als er sie fest aufeinander presste, um sich aufzuhalten. Im letzten Moment schaffte er es sich zu zügeln.<br/>Hermione wurde mutiger. Ihre Lippen küssten die Spitze, ihre Hand lag selbstbewusst um den angeschwollenen Schaft und er selbst konnte kaum noch atmen. Es war eher ein hektisches, unterdrücktes Nachluftschnappen. Alles in ihm schien zu beben, ständig hockte ihm ein dunkles, begehrliches Stöhnen in der Kehle, was er auf keinen Fall entlassen durfte.<br/>Schließlich stülpte sie ihren Mund ganz über Weasleys Männlichkeit. Zum Glück stöhnte der Junge lauter als er selbst. Für Sekunden verlor er die Kontrolle und keuchte wie von Sinnen. Hermione nahm ihren Mund nicht weg, sah im selben Moment aber zu ihm. An ihrem Blick sah er, dass sein verdammter Tarnzauber schon wieder versagte, allein es ließ sich nicht ändern.<br/>Das Mädchen bewegte ihren Mund wieder und wieder über den steifen Penis ihres Freundes, bis Ron winselte, sie sollte lieber aufhören, bevor ein Unglück geschah.<br/>Gott, ja … hör auf, dachte Severus selbst mit verschwommenen Gedanken. Aber da kannte er Granger nicht gut. Sie schob energisch Rons Hände zur Seite und machte weiter, bis Weasley dunkler und dunkler stöhnte. Der Todesstoß war, dass Severus vor Weasley einen quälend süßen und irgendwie seltsam verzögerten Orgasmus hatte, ohne, dass er sich berührt hätte. Dabei zog er seine Unterlippe so fest in den Mund, dass er gleich Blut schmeckte. Nur nicht laut stöhnen, das war alles, was er denken konnte. Er erzitterte heftig und taumelte dann so, dass er sich am Türrahmen festhalten musste. Hermione, die gerade Weasleys Samen auf seinen Bauch tropfen ließ, sah zu ihm herüber. Ein wenig vorwurfsvoll, ein bisschen triumphierend und doch auch seltsam dunkel.<br/>Mühsam zog er seinen Tarnzauber wieder hoch, weil er jetzt dringend gehen musste.<br/>„Soll ich das … auch bei dir machen?“, hörte er Ron noch beschämt flüstern. Er hörte, wie sie ihn küsste und nicht sehr leise sagte:<br/>„Wenn mir irgendwann mal ein Penis gewachsen ist, gern. Ansonsten sollten wir unser Glück nicht zu sehr herausfordern und jetzt besser gehen.“ Severus ging schnell und als er außer Sicht- und Hörweite war, rannte er zurück in seine Wohnung.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21602692/chapters/51514165">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Verleugnung und Agonie</p><p>Schritt zwei: Sei ignorant, abweisend und am besten noch garstiger als sonst, damit niemand auf die Idee kommen könnte, man hätte mit der ganzen Sache irgendetwas zu tun, schon gar nicht mit dem lästigen Liebeskummer.</p><p> </p><p>Hermione war es am nächsten Tag ganz elend.<br/>Einmal schämte sie sich sehr ihren Freund Ron für solche Zwecke missbraucht zu haben, auch wenn er vielleicht sogar freiwillig mitgemacht hätte. Ihr Gewissen ihm gegenüber war so unterirdisch, dass sie all seine Kindereien anstandslos mitmachte. Snape gegenüber hatte sie allerdings kein schlechtes Gewissen. Er hatte es provoziert und hat hoffentlich bekommen was er wollte. Weder sah man es ihm an, noch sagte er irgendwas zu ihr. Im Gegenteil, niemals mehr hatte sie sich von ihm eiskalt ignoriert gefühlt. Wo auch immer sie sich trafen, er übersah sie. Nicht ein einziger Blick streifte sie. Nie sah er sie im Unterricht an oder nahm sie gar dran, auch wenn sie manchmal die Einzige war, die sich überhaupt meldete. Offensichtlich hatte sie es sich mit ihm total verscherzt. Irgendwie war das leider nur zu logisch und eigentlich sollte es ihr gar nichts ausmachen. Es war schließlich Snape, den sie alle nicht ausstehen konnten. Solange er sie weiterhin einigermaßen fair bewertete, dürfte sie sich nicht mal beschweren.<br/>Aber seine Ignoranz tat weh und es schien von Tag zu Tag schlimmer zu werden. Während Ron nun dachte eine geheimnisvolle Grenze überschritten zu haben und offensiv wurde, verspürte Hermione immer weniger Lust mit Ron zu knutschen und andere Dinge zu machen.<br/>Einmal lief sie am späteren Abend allein über den Gang. Sie kam aus der Bibliothek und wollte zurück ins Haus. Professor Snape kam aus der anderen Richtung auf sie zu. Für Sekunden begegneten sich ihre Blicke, doch dann sah er durch sie hindurch.<br/>„Professor … Snape?“, sprach sie ihn vorsichtig an, doch er lief einfach weiter, als würde es sie nicht geben. Erschüttert sah sie ihm nach und es kamen ihr sogar die Tränen. So schlimm war es nun auch nicht gewesen. Snape hatte eine perverse Ader, hatte es ihr gegenüber zugegeben und sie hatte sich einen Spaß daraus gemacht ihn zusehen zu lassen. Hat es ihm nicht gefallen? Zu sehr? Aber müsste er sie dann nicht anbetteln es wieder zu erleben? Sie würde diesen Mistkerl wohl nie begreifen, dachte sie deprimiert. Am meisten ärgerte sich Hermione über sich selbst, weil es sie eben nicht kalt ließ.<br/>Seine Ignoranz ihrer Person war so allumfassend, dass er für Ron einen anderen Partner suchte, als es darum ging einen eigenen Trank zu entwickeln.<br/>„Aber …Professor Snape, Hermione und ich …“, begann Ron verunsichert. Man konnte sagen was man wollte, bisher hatte Snape Rücksicht auf ihre Freundschaft genommen und nie etwas dagegen gehabt, wenn die sehr gute Hermione solche Arbeiten zusammen mit den schlechteren Schülern wie Ron oder Harry machte. Die Zeiten waren offenbar vorbei.<br/>Ron bekam die ebenso miese Ethel zugeteilt und Hermione musste den Trank zusammen mit Goyle machen, was ihr Gesicht vor Wut rot werden ließ. Aber selbst im Moment seiner gemeinen Entscheidung sah Snape sie nicht an, sondern nur zu Goyle, der eine Art Schnappatmung hatte.<br/>„Wenn sie sterben wollen, Mr Goyle, dann bitte draußen!“, sagte Snape kalt und wandte sich an Ron.<br/>„Und sie, Mr Weasley, sollten langsam lernen selbst zu denken! Jetzt fangen sie gefälligst an!“, blaffte er und wandte sich ab. Hermione ging störrisch zu Goyle und begann ihn herumzukommandieren, während sie Dracos gehässiges Lachen mit einem bösen Blick quittierte. Am liebsten hätte sie eine der Trankflaschen mit den giftigen Essenzen nach Snape geworfen. Sie verstand es einfach nicht. Erst machte er ihr quasi den Vorschlag und sah sogar zu (wobei er auf sie einen besorgniserregend labilen Eindruck gemacht hatte) und jetzt bestrafte er sie und Ron für alles?</p><p> </p><p>Miss Granger zu ignorieren, war sehr schwer, doch unabdingbar, wenn er sein Seelenheil aufrechterhalten und keine Dummheit begehen wollte. Nach wie vor drängte es ihn dazu ihr zu sagen, was sie ihm bedeutete und was das alles mit ihm machte. Er wollte ihr gern die Schuld an allem geben, auch wenn ihm klar war wie ungerecht das war. Beinah ununterbrochen sah er in Gedanken Hermione und Weasley vor sich. Dabei verspürte er seine eigene abgrundtiefe Beschämung, Lust und diesen ständigen Ärger. Aber er wusste auch zu genau, dass sämtliches Begehren aussichtslos wäre. Das Einzige, was gegen seinen Liebeskummer half, war das harte Nichtbeachten von Miss Granger. Allerdings hatte er auch da die Rechnung mal wieder ohne sie gemacht.<br/>Es war nachmittags und Severus starrte schon seit einer geschlagenen Stunde auf die Protokolle, die er zu korrigieren hatte, als es klopfte. Ungehalten riefe er Herein! Es war Granger. So finster er konnte, starrte er sie an.<br/>„Haben sie einen Moment Zeit, Professor?“, fragte sie zaghaft, doch mit typisch selbstsicherem Ausdruck im Gesicht.<br/>„Nein!“, sagte er harsch und sie trat ein.<br/>„Das ist gut, denn ich möchte sie …“<br/>„Ich sagte Nein!“, knurrte er dunkel. Aber sie kam näher, nachdem sie Tür hatte gut hörbar ins Schloss fallen lassen.<br/>„Ich denke, wir sollten ein paar Dinge klären. Diese Partnerarbeit mit Goyle, ist nicht tragbar, Professor Snape!“<br/>„Das ist mir ziemlich egal.“<br/>„Was ist eigentlich ihr Problem?“<br/>„Werden sie jetzt unverschämt, Miss Granger?“, fragte er sie scharf. Für Sekunden fiel die Maske der Selbstsicherheit. Ein nervöses Funkeln wurde in ihren braunen Augen sichtbar, in die er sehen musste, ob er wollte oder nicht.<br/>Sie kam näher und er hob den Zauberstab leicht an.<br/>„Noch einen weiteren Schritt und ich werde sehr unhöflich, Miss Granger!“, sagte er langsam und sehr eindringlich. Sie blieb gehorsam stehen, sah ihn jedoch so verblüfft an, dass er wenigstens leise seufzte, um sie zu beruhigen.<br/>„Ahhh …“, sagte sie plötzlich und schmunzelte überlegen. Dabei wurde ihm ganz flau im Magen.<br/>„Jetzt verstehe ich es. Sie haben mehr erwartet und was sie zu sehen bekommen haben, hat ihnen nicht gereicht, oder?“ Severus fühlte wie die Hitze in ihm aufschoss. Vermutlich wurde er rot.<br/>„Blödsinn!“, sagte er böse und fand doch kein weiteres Wort, um die Lage zu seinen Gunsten zu entschärfen.<br/>„Das verstehe ich. Vielleicht hätte ich erwähnen sollen, dass ich mit Ron noch nicht allzu weit bin. Es tut mir leid, wenn ich sie in die Irre geführt habe. Es war definitiv keine Absicht.“ Sie war frech und er kochte. Was dachte sich das dämliche Mädchen nur dabei ihn so herauszufordern?<br/>„Raus aus meinem Büro, Granger“, zischte er. Seine Finger krampften sich schon schmerzhaft um seine Waffe.<br/>„Ich habe sie enttäuscht und das tut mir leid. Kann ich es wieder gutmachen?“<br/>Natürlich, lass dich einfach nicht von diesem Widerling Weasley küssen und begrabschen, hätte er gern gesagt, doch er knurrte nur boshaft.<br/>„Raus! Oder es tut ihnen leid, dass sie am Leben sind!“ Seine Stimme war ganz dunkel und so drohend, dass selbst dieses aufsässige Ding die Warnung endlich verstand.<br/>„Sie sind sehr ungerecht, Professor Snape!“, sagte sie schnippisch, drehte sich um und ging. Absichtlich knallte sie seine Bürotür fest ins Schloss.<br/>Der Zauberstab fiel aus seiner zitternden Hand. Nur noch wenige Augenblicke und er hätte sie angefleht ihn statt Weasley zu lieben. Was war er nur für ein erbärmlicher Idiot?! Sie hatte ihm sogar Tränen der Wut in die Augen getrieben und das mochte wirklich etwas heißen.</p><p> </p><p>Hermione war verstört. Snape hatte sie bedroht und zwar nicht nur zum Schein und zur Abschreckung. Er hatte es ernst gemeint, sie hat das gefährliche Blitzen in seinen Augen gesehen. Wenn sie nur verstehen würde, was genau sein Problem war. Bereute er seine grandiose Idee sie und Ron beobachten zu wollen? Hat es ihm nicht gefallen oder zu sehr? Snape sah in jener Nacht reichlich durcheinander aus. So sehr, dass sie Mitgefühl verspürte. Seine Unfähigkeit mit ihr zu sprechen, war die eine Sache, die sie beschäftigte. Mal abgesehen davon, dass er sie rüde abgewiesen hatte, konnte sie sich kaum noch auf irgendwas konzentrieren. Ständig dachte sie über Severus Snape nach und wenn ihre Gedanken dabei schlüpfrig wurden, verspürte sie heißes Verlangen und ein wirklich mieses Gewissen Ron gegenüber. Sie waren doch ein Paar, wie konnte sie es wagen auf diese Weise an einen anderen zu denken? Und dazu noch ausgerechnet an Professor Snape! Mit ihr stimmte etwas nicht, so viel war sicher. Harry und Ron ging sie soweit es ging aus dem Weg, zumindest so lange, bis sich ihre Gedanken klären würden. Sie redete sich gut zu, dass das bald geschehen würde. Leider half es nicht allzu viel. Noch dazu nervte sie Ron, der ständig von einer nächtlichen Fortsetzung redete und nicht gerade subtile Andeutungen machte. Das alles brachte sie wirklich sehr auf und sie ahnte nicht, dass sie das mit Professor Snape gemein hatte.</p><p> </p><p>Eines Abends gab sie Rons Betteln nach. Sie hatte keine Ahnung, ob Snape Wache hatte und sie sagte auch offen, dass es ein Risiko wäre in den Aufenthaltsraum zu gehen. Ron war das egal, Ron war seit dieser Nacht total scharf darauf mit ihr allein zu sein.<br/>Weil sie Professor Snape wie Dreck behandelte und weit weg von einer Gesprächsbereitschaft war, gab sie ihrem Freund nach. Diesmal enterten sie ohne Probleme den Raum. Es war beinah zu einfach, meinte auch Ron, zog sich aber trotzdem gleich die Hose nach unten.<br/>Hermione musste unwillkürlich kichern.<br/>„Warte damit, Ron … ehrlich. Wir haben uns nicht mal geküsst und ich will erst ein kleines Feuer machen.“<br/>„Ja gut, aber beeile dich …“, maulte er.<br/>„Außerdem sollten wir mal kurz darüber sprechen.“<br/>„Sprechen? Über was?“<br/>„Na über uns.“ Irritiert sah Ron sie an und sie verstand ihn sogar.<br/>„Aber … wir sind doch zusammen, oder nicht? Worüber reden wir dann? Über eine Hochzeit oder so?“, fragte er mit dünner Stimme am Ende. Hermione sah ins Feuer und stocherte darin herum, weil sie Ron ungern in die Augen sehen wollte.<br/>„Nein, das nicht. Aber ich würde schon gern wissen, wie das hier … für dich ist.“<br/>„Das? Du meinst, wenn du … meinen Penis im Mund hast?“ Seine Stimme war ein bisschen rau vor Beschämung. Könnte aber auch die aufsteigende Lust sein.<br/>„Wahnsinn! Wenn du es genau wissen willst. Aber was genau meinst du?“</p><p> </p><p>Severus Snape erlag einer neuartigen Sorte von Zwang. Ein Zwang, der ihn jede Nacht mindestens zwei Mal an diesem Raum vorbei trieb. Natürlich hoffte er Hermione und Weasley hier zu überraschen, gleichzeitig fürchtete er sich davor. Gegen diesen Zwang kam er aber auch nicht an und deshalb lief er just in dem Moment auf die Tür zu, als Ron die Sache mit dem Penis sagte.<br/>Er erstarrte und wirkte dann einen Zauber, um die leise gesprochenen Worte besser zu hören.</p><p> </p><p>„Nicht nur das, Ron. Ich meine alles, was wir hier … tun.“<br/>„Verstehe ich nicht“, murmelte Weasley und Severus war geneigt mal ausnahmsweise dem Jungen recht zu geben.<br/>„Na ja, ich würde gern wissen, ob es an meiner Person liegt, dass du so erregt wirst, oder allgemein an meiner Weiblichkeit.“<br/>„Willst du damit … sagen, dass es egal ist, wer mich küsst, Hauptsache sie hat … Brüste?“ Zum ersten Mal in seinem Leben verspürte Severus Fremdscham (es war schrecklich). Eigentlich wäre das sein Stichpunkt, um zu verschwinden. Stattdessen drückte er nun lautlos die nur angelehnte Tür auf und wirkte gleichzeitig den Tarnzauber.<br/>Hermione hockte vorm Kamin und stocherte ziemlich aggressiv darin herum. Ron stand hinter ihr und er konnte von seiner Position aus nur einen Teil seines Gesichts sehen. Es war rot.<br/>„Ja, wenn du es schon so direkt ansprichst, so hatte ich es gemeint.“<br/>„Aber … Hermione! Wie kannst du das von mir denken …“, jammerte Ron.<br/>„Es ist nicht … so persönlich wie du es gerade nimmst, Ron. Ich versuche nur herauszufinden, wie Männer denken.“<br/>„Männer? Und welche wissenschaftliche Methode wendest du gerade auf mir an?“, fragte Weasley mit leicht verschnupften Unterton. Granger stand auf und sah ihren Freund nun nicht gerade huldvoll an.<br/>„Umso mehr man weiß, umso besser funktionieren manche Dinge, Ron Weasley. Nach so vielen Jahren Schule sollte dir das wirklich klar sein.“<br/>„Aber kürzlich … hier … hat es … sehr gut funktioniert. Auch wenn ich nichts … wusste“, flüsterte er verlegen. Hermione starrte Ron erst empört an, sah dann aber zur Tür. Sie könnte ihn definitiv nicht sehen, die offene Tür aber schon. Die bemerkte sie ganz sicher, lächelte und Ron stieß ein erleichtertes Seufzen aus.<br/>„Stimmt. Kürzen wir das Gespräch ab, weil ich den Eindruck habe, ich verwirre dich nur. Heute bist du dran. Ich habe zwar immer noch keinen Penis, doch ich denke, das ist dir ganz recht.“<br/>„Was?“, quiekte Ron überfordert, als sich Hermione schon die Hose aufknöpfte.<br/>Das war jetzt nicht ihr Ernst, dachte Severus panisch. Dass er sie überhaupt schon wieder hier erwischte, war Fluch und Segen zur selben Zeit. Sie ahnte vielleicht, dass er hier war und legte es schon wieder darauf an? Wozu? Um ihn zu zerstören? Oder wollte sie ihn bestrafen, dafür, dass er sie nicht beachtete und mies behandelte? Aber was sollte er denn sonst tun, um nicht seinen Sehnsüchten zu erliegen? Dieses unverschämte, ignorante Mädchen!<br/>„G… gut. Aber beschwer dich nicht, wenn ich deine Erwartungen nicht erfüllen …“, stammelte Weasley irgendwie unglücklich und gleichzeitig begierig. Er küsste sie, bevor sie sich die Hose nach unten geschoben hatte und Severus musste wieder mühsam ein verlangendes Stöhnen unterdrücken.</p><p> </p><p>„Keine Sorge, Ron …“, murmelte sie heiser. Seit sie wusste, dass Severus Snape vielleicht doch zusah, fühlte sie sich fiebrig an. Ron tat ihr ein wenig leid und sie hasste sich selbst für ihre schreckliche Art ihn zu benutzen. Zumal es irgendwie nicht mehr allein darum ging Snape zu beschämen. Das hatte sie schon vollbracht und es hatte so gut funktioniert, dass er sie ab sofort wirklich hasste und abweisender war wie je zuvor. Aber seine heimliche Anwesenheit erregte sie und sie kam nicht mehr darum herum zuzugeben, dass sie es am liebsten hätte, wenn er sie jetzt küssen würde. Hermione war sich sicher, dass seine Küsse viel fester, begehrlicher und selbstsicherer wären, als die von Ron.<br/>Sich selbst für diese ungerechten Gedanken hassen, könnte sie jedoch später immer noch. Jetzt war sie ganz durcheinander und merkte trotzdem, dass Ron gar nicht mehr so zurückhaltend war. Sie zog sich ihre Hose und ihre Unterhose gleich mit nach unten und legte Rons warme Hände auf ihr Hinterteil.<br/>„Hast du die Tür verschlossen?“, flüsterte Ron auf ihre Lippen.<br/>„Natürlich!“, sagte sie, öffnete die Augen und sah die Tür nun tatsächlich verschlossen. War Snape im Raum oder war er gegangen? Sie dachte kurz an Schrödingers Katze und schob diesen absurden Vergleich schnell zur Seite. Sie wusste es nicht, doch ihr jähes Verlangen deutete eher auf seine Anwesenheit hin. Es war schäbig so mit Ron und Snape zu spielen, weil ihr klar war, dass es keinen Gewinner geben würde. Aber ohne Risiko war das Leben doch langweilig. Allerdings war ihr gar nicht klar gewesen, dass sie scheinbar ein Adrenalinjunkie war, der den Kick brauchte. Oder lag es allein an Snape? Hatte sie etwa heimlich Gefühle für ihn, die ihr bisher nicht so bewusst waren?<br/>Hermione ließ sich von Ron zum Sessel schieben und fiel kichernd hinein. Wenn sie alles lustig fand, konnte ihr Freund viel besser damit umgehen, so gut kannte sie ihn und ihr Verhältnis. Ron war wieder sehr still geworden und begann dann ganz sanft die Innenseite ihrer Beine zu küssen. Es kitzelte und fast hätte sie wieder gelacht. Snape musste glauben in einem Kindergarten zu sein, andererseits schien ihn hieran irgendwas zu gefallen. Sie wusste es doch immer, er war ein Perverser.<br/>Eins musste man Ron lassen. Er legte eine unvermutete Ernsthaftigkeit an den Tag und es gefiel Hermione so gut, dass sie zwar den Kopf zur Tür drehte, um Snape in einem Moment zu sehen, wenn sein Zauber schwächelte, schloss jedoch immer öfter ihre Augen. Rons Berührungen waren feinfühlig. Seine Finger streichelten sie sanft, seine Zunge war zögerlich und warm und seine Lippen fühlten sich ziemlich gut an. So gut, dass sie leise begann zu stöhnen. Immer schwerer fiel es Hermione ihre Augen ab und zu mal zu öffnen.</p><p> </p><p>Severus war dieses Mal von Anfang an wehrlos. Er war in den Raum gekommen, lautlos bis zu einem Regal gegangen und blieb unsichtbar. Keine Geräusche der Lust zu machen, war schwer, wenn er sich nicht zeigen wollte. Falls doch, könnte er immer noch den „Hallo, was haben wir denn da?!“-Effekt nutzen und seine volle Autorität als Lehrer ausreizen. Sein Geschlecht war schon hart, da hatte sich Hermione noch nicht mal die Hose nach unten gezogen. Und besser wurde es natürlich auch nicht. Allerdings verzichtete Severus auf den Selbsthass und den Ärger vom letzten Mal und betrachtete einfach nur das Bild, was sich ihm bot. Er würde alles dafür geben Ron Weasley zu sein und die Schande über die Gedanken würde ihm später noch zu schaffen machen. Was genau der Junge tat, sah er nicht, doch er konnte Hermiones Gesicht betrachten. Manchmal öffnete sie die Augen und sah in Richtung Tür.<br/>Wusste Hermione, dass er hier war oder wünschte sie es sich nur? Ihr Blick war glasig, lüstern und ihre Lippen standen einen Spalt offen. Ein Hauch Rot lag auf ihren Wangen und ihre schlanken Finger krampften sich immer mehr in die Lehne des Sessels. Severus bestand im Grunde nur aus purem Verlangen und gepresstem Luftholen. Seine Erektion pulsierte aggressiv und nur unter großer Anstrengung konnte er verhindern sich selbst zu berühren. Warum tat er sich das an? Schon wieder?! War er nicht in der Lage zu lernen? Nein, gab er sich selbst die Antwort. Er lernte es nie. Er würde niemals lernen aufkeimenden Zuneigungsgefühlen gelassen gegenüber zu treten. Er hatte sich in Hermione Granger verliebt und musste das akzeptieren. Nicht erst heute, nicht gestern oder bei seinem ersten Besuch in diesem Raum. Nein, schon vor langer Zeit. Aber er war sich auch sicher, wäre es nicht hierzu gekommen, hätten sich diese Gefühle nie nach oben gekämpft. Sie hätten mit Granger zusammen Hogwarts verlassen.<br/>Jetzt war es zu spät. Jetzt war er verliebt und benahm sich selbstverständlich wie der letzte Trottel. Vermutlich benahm sich nicht mal Weasley dämlicher. Seine vielen schlechten Eigenschaften schienen sich zu verstärken, wenn er Gefühle hatte. Es war sein Fluch und den Segen konnte man darin vergeblich suchen.</p><p>Hermiones Keuchen wurde tiefer. Ob sie wollte oder nicht, Rons Zärtlichkeit hatte sie fest im Griff. Vielleicht lag es an Snapes eventueller Anwesenheit, vielleicht auch nicht. Tatsache war, sie explodierte beinah vor Lust und war fast ein wenig böse, dass Ron weiterhin so sanft und vorsichtig war. Ihr Unterleib zog sich schon lustvoll zusammen und Rons letzter Zungenstupser beendeten schließlich die Anspannung ihrer Muskeln. Sie stöhnte ihren Orgasmus nicht gerade leise in den Raum und öffnete gleich danach die Augen. Snape war nicht da und das trieb ihr die Tränen in die Augen.</p><p> </p><p>Severus war da, doch diesmal hatte er seinen Tarnzauber besser im Griff, weil er auf seine Hassgefühle verzichtet hatte und nur die Lust zugelassen hatte. Als sie kam und er in ihr Gesicht sehen konnte, erzitterte alles an und in ihm. Heißes Sperma verteilte sich ungehindert in seiner Hose, Blut in seinem Mund, weil er sich so fest auf die Lippen biss und die innere Hitze ließ ihn glühen. Seine Beine waren ganz schwach und er war froh, dass er sich gegen die Wand gelehnt hatte. Seine Hand um den Zauberstab bestand nur aus einem Krampf und er konnte anschließend noch nicht mal heftig Luft holen, wie er gemusst hätte. Sie in ihrem höchsten Rausch zu sehen, zu erleben, war unbeschreiblich. Er würde die Reste seiner Seele dafür geben, wenn er es wäre, der sie so befriedigen würde.<br/>Und das war es nicht allein. Seit langer Zeit hatte Severus Zukunftsgedanken.<br/>Und wenn er ihr sagen könnte, was er für sie empfand? Und wenn sie gar nicht abgeneigt wäre? Wenn sie zusammen sein könnten? Wenn das Leben doch nicht nur aus Dunkelheit und Schmerz bestehen würde? Was war, wenn es eine Chance gäbe, dass sie zusammen sein könnten?</p><p>Nicht, wenn er sich ihr gegenüber weiterhin so distanziert und wie ein Arschloch benahm. Und nicht, wenn er nicht wusste, ob ihr Motiv nur allein daraus bestand ihn zu demütigen. Hermione zog sich an und scherzte mit Ron, der ganz zufrieden aussah. Wer könnte es ihm verdenken! Als sie den Raum verließen und an seiner Position vorbei kamen, drehte Hermione den Kopf in seine Richtung.<br/>Severus hielt den Atem an. Auf keinen Fall wollte er jetzt noch im letzten Moment auffliegen, obwohl er sicher war, sein Herz schlug so laut, dass man es einfach hören musste.<br/>Aber er begriff auch nicht ganz, was er in Miss Grangers Miene sah. Er hatte Abscheu oder zumindest eine kühle Genugtuung erwartet, sah aber nur eine tiefe Verwirrung, Kummer und nicht die Euphorie, die ihr ekstatisches Keuchen hätte vermuten lassen.<br/>Wenn sie doch nur ihm gehören würde, dachte er wehmütig und schloss die Augen, um nicht doch noch seine Disziplin zu verlieren.<br/>Seine körperliche Schamlosigkeit reichte schon aus, um ihn zu erniedrigen.</p><p> </p><p>Wie geprügelt schlich sie mit Ron zurück ins Haus. Dabei flüsterte Ron die ganze Zeit Nettigkeiten und äußerte deutlich seine Zufriedenheit, über sich selbst aber auch über sie. Es war schon richtig, dass Hermione Wollust empfunden hatte und es lag sicher auch zum Teil an Rons Zärtlichkeit, doch das entsprach nicht der ganzen Wahrheit. Die Wahrheit wäre gewesen, dass sie ständig dabei an Snape denken musste. Es war so falsch und ungerecht gegenüber Ron, dass ihr Gefühl wirklich unterirdisch mies war. So verabschiedete sie sich auch nur wortkarg  und heulte dann in ihr Kopfkissen. Sie war sich nicht mal sicher, ob Snape wirklich anwesend gewesen war oder ob es nur auf einer Einbildung beruhte, ihn gefühlt zu haben. Konnte es sein? Fühlte sie sich zu ihm hingezogen? Gerade jetzt, wo sie mit Ron zusammen war und es eigentlich auch ganz nett war. Wie konnte sie da so plötzlich Gefühle für diesen abweisenden Mann entwickeln?! Sie war hilflos, ratlos und verspürte einen immensen Drang Professor Snape einfach zur Rede zu stellen. Doch wozu?<br/>Im besten Fall würde er sie auslachen und demütigen.<br/>Im schlechtesten Fall würde er richtig böse werden. Und sie wollte nicht herausfinden, was dann geschah.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21602692/chapters/51578281">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Versöhnung und Erlösung</p><p>Schritt drei: Denke nach, am besten gründlich und lang! Dann nimm all deinen Mut zusammen und sprich simple Tatsachen aus, ohne verführerische Lügen zu benutzen und ohne Rücksicht auf Verluste!</p><p> </p><p>Die nächste Zeit wurde ziemlich seltsam. Schon am folgenden Tag machte Hermione mit Ron Schluss, weil sie es einfach nicht mehr ertragen konnte ihn so auszunutzen. Es war nur die logische Konsequenz aus allem was passiert war. Hermione war sich ihrer Gefühle für Ron überhaupt nicht mehr sicher, weil sich da ein anderer in ihr Herz geschlichen hatte. Ron weiterhin etwas vorzuspielen, wäre furchtbar, ungerecht und unmoralisch. Natürlich verstand Ron nichts und es tat ihr unendlich leid so fies sein zu müssen. Ausgerechnet jetzt, wo es nach seiner Sicht „so gut“ lief, beendete Hermione die Beziehung, die eigentlich noch gar nicht richtig begonnen hatte. Sie versuchte ihm zu erklären, woran es lag, doch musste befürchten, dass es Ron nicht verstand oder nicht begreifen wollte.<br/>„Ich glaube, wir haben uns da in etwas rein gesteigert und im Grunde sind es doch nur sexuelle Erfahrungen, die wir sammeln.“<br/>„Aber … ich liebe dich Hermione!“<br/>„Ich dich auch, Ron. Aber als Freund. Leidenschaft gehört jedoch nun mal zur Liebe dazu.“<br/>„Aber … du hast letzte Nacht gekeucht vor Lust. Von welcher verdammten Leidenschaft sprichst du bitte?“, schnauzte Ron sie mit Tränen in den Augen an. Hermione sah zur Seite und fühlte sich furchtbar. Natürlich gab es die sexuelle Leidenschaft, doch die meinte sie gar nicht. Sie meinte die unbändige Sehnsucht jemand mit aller Macht zu wollen. Sie meinte diese Empfindung, die sie immer hatte, wenn sie an diesen verdammten Snape denken musste.<br/>„Stimmt, ich fand es … unglaublich und du warst toll, Ron. Aber ich denke nicht, dass das Liebe ist. Es ist nur ein körperliches Verlangen, das Befriedigen von Bedürfnissen“, versuchte sie eine Erklärung.<br/>„Seit wann bist du Expertin darin?“, knurrte er schroff.<br/>„Bin ich nicht. Ich sage nur, dass es sich für mich … nicht richtig anfühlt. Nicht so, wie es sein sollte, zumindest.“<br/>„Das liegt nur an deinen Erwartungen, die viel zu extrem sind. Keine Ahnung, welche Art Mann du dir so vorstellst, aber scheinbar reiche ich dir ja nicht“, giftete Ron und ließ sie stehen. Er hatte vollkommen recht und sie schämte sich. Aber so war es besser, ehe sie weiter nur mit ihm spielte und in Wahrheit an nichts anderes mehr denken konnte, als daran in Snapes Armen zu liegen. So absurd die Vorstellung am Anfang war, so aufdringlich blieb sie und wurde immer bunter und verführerischer. Hermione weinte, weil es ihr um Ron leid tat. Es würde Zeit brauchen, bis sie wieder nur Freunde sein könnten und die müsste sie ihm geben. Auf alle Fälle war sie erleichtert nicht mehr mit falschen Karten spielen zu müssen. Da wusste sie noch nicht, welche harten Tage auf sie zukommen würden.<br/>Ab sofort wurde sie von Ron eiskalt ignoriert und Harry, als Rons guter Freund, sprach mit ihr nur das Allernötigste.<br/>Schlimmer aber war, dass Severus Snape keinen Unterricht in Zaubertränke mehr gab und niemand genau wusste, warum das so war.<br/>Er ist tot, sagten die Einen. Nein, er war zu Voldemort übergelaufen, sagten die Anderen. Quatsch, er leidet unter einer unheilbaren Krankheit und Dumbledore hat ihn zum Sterben weggeschickt, sagten wieder Andere. Schockiert hörte Hermione die Gerüchte und wusste mit nichts davon etwas anzufangen. Wo war Snape und was zum Teufel tat er? Es lag doch nicht etwa an ihr?</p><p> </p><p>Es lag an ihr.<br/>Severus hatte in dieser Nacht aus lauter Verzweiflung und Selbsthass einen Zusammenbruch. Um sich irgendwie ruhig zu stellen, hatte er einen ziemlich starken Trank (überpotenzierten) genommen, der ihn nicht nur 48 durchgehend schlafen ließ, sondern auch noch anschließend in einer Art Umnachtung gefangen hielt. Am nächsten Tag fand ihn McGonagall, weil sie nach ihm sah, da er nicht zu seiner Unterrichtsstunde erschienen war. Sie alarmierte Dumbledore und Madam Pomfrey, die ihn kritisch begutachtete. Poppy gab grundsätzlich Entwarnung, merkte jedoch an, dass sich sein Zustand nur langsam wieder bessern würde.<br/>„Was hat er sich dabei nur gedacht?“, sagte McGonagall leise und vorwurfsvoll.<br/>„Vielleicht wollte er sich umbringen?“, warf Poppy Pomfrey süffisant ein. Sie mochte Snape nicht.<br/>„Unsinn. Vielleicht hatte er nur Schlafstörungen und war beim Einnehmen des Trankes nur ein wenig unaufmerksam“, unterbrach Dumbledore die trübe Stimmung und klang dabei übertrieben gutgelaunt. Madam Pomfrey hielt es für unbedenklich Snape in seinen eigenen vier Wänden ruhen zu lassen. Allerdings würde sie drei Mal am Tag vorbeischauen.<br/>Bei einem der drei Male wurde sie von Hermione Granger beobachtet. Hermione wanderte unruhig durch das Schloss. Es war ihre Schuld. Sie schaffte es nicht sich das auszureden. Noch immer wusste niemand genau, was mit Snape war. Natürlich versuchte man es herauszufinden, doch es war nicht so einfach wie es sich anhörte. Nur Harry kam auf die glorreiche Idee einfach mal McGonagall danach zu fragen. Hermione, die von den beiden Jungs noch immer schräg angeschaut wurde, stand nur zufällig in der Nähe, als Harry fragte.<br/>„Stimmt es, dass Professor Snape zum Dunklen Lord übergelaufen ist?“, fragte er mit kratzender Stimme. Minerva McGonagall kniff erst nur die Augen zusammen, dann erinnerte sie sich offenbar daran, dass Harry ja zu den Guten gehörte.<br/>„Das ist falsch. Er ist … krank, könnte man so sagen. Ich würde sagen, in ein paar Tagen wird er wieder unterrichten. Aber tun sie mir den Gefallen und behalten sie das für sich, damit die anderen Kinder noch ein paar nette Tage haben, weil sie glauben er hat Hogwarts verlassen“, flüsterte sie ihm nicht ganz so leise zu. Ron seufzte schwer enttäuscht und Harry bedankte sich brav und ließ es bleiben Besserungswünsche zu übermitteln.<br/>So ganz „krank“ schien er nicht zu sein, wenn er also bald wiederkommen würde, überlegte Hermione und merkte dabei nicht, wie die beiden Jungs sie aufmerksam musterten.<br/>„Hast du was damit zu tun?“, fragte sie Harry nun ganz direkt. Er klang neugierig und erfreut. Ron sah sie eher düster an. Hermione wurde unerwartet rot, schüttelte dramatisch ihre Haare und ging weg.<br/>Doch, hatte sie, dachte sie weinerlich und wischte sich die Tränen weg. Super, war es ihr gelungen einen Lehrer in den Selbstmord zu treiben? Irgendwie war sie davon ausgegangen, dass sie das untere anderen Umständen fertig bringen würde, zum Beispiel wenn ihr nur noch ein halber Punkt fehlen würde und sie würden die jeweilige Lehrkraft so lange nerven, bis sie ihr freiwillig den halben Punkt zur besseren Note gab. Andererseits, war es sicher lächerlich so etwas zu denken. Was ging sie Snapes Zustand an? Wie sollte sie damit etwas zu tun haben?<br/>Wenn er allerdings auch diese schmerzvolle Sehnsucht verspürte, war es nicht undenkbar, dass es ihm schlecht ging. Unsinn, schimpfte sie sich wieder. Sie beobachtete wenig später tatsächlich wie Madam Pomfrey aus Snapes Wohnung kam. Ihrem Gesicht war nicht anzusehen, um was es ging und auch nicht, wie schlecht es ihm ging. Hermione litt nun unter extremer Schlaflosigkeit und schlich nun die kommenden Tage auch nachts durchs Schloss wie ein Geist.</p><p>Nicht, dass sie da alleine wäre. Einmal traf sie Mauve aus dem Ravenclawhaus, die sich gerade mit einem Jungen aus dem Hufflepuffhaus treffen wollte.<br/>„Du verrätst mich doch nicht, oder?“, fragte Mauve panisch.<br/>„Aber nein. Geht nur nicht in den Aufenthaltsraum im zweiten Stock, da spukt es!“ Mauve kicherte.<br/>„Das würde mir nie einfallen. Jeder weiß, dass Snape da gern rumstreunt. Aber jetzt, wo er außer Gefecht gesetzt ist, wäre das bestimmt eine gute Idee.“ Aus rätselhaften Gründen hatte es sich sehr schnell herumgesprochen, dass Snape leider bald wieder unterrichten würde.<br/>„Ich habe vorhin McGonagall gesehen“, merkte Hermione besorgt an.<br/>„Ja, stimmt. Mist. Na ja, wir finden schon ein nettes Örtchen. Bis dann, Hermione.“ Mauve lief weiter und Hermione machte sich auf den Weg zum Aufenthaltsraum um zweiten Stock. Es zog sie da hin, wie ärgerlich es auch war. Leise schloss sie die Tür, machte Feuer und zog sich den Sessel dicht vor den Kamin. Noch immer fand sie es richtig sich von Ron getrennt zu haben, auch wenn es weiterhin weh tat. Aber sie vermisste ihre Küsse und sexuellen Spielchen nicht besonders. Ihre freundschaftlichen Gespräche aber schon. Das würde schon wieder werden. Warum war Liebe derart kompliziert?<br/>Sollte sie Snape besuchen und sich bei ihm entschuldigen? Aber weshalb eigentlich? Es war ja sein dubioser Vorschlag gewesen. Sie hatte sein Spiel doch nur mitgespielt. Die nicht eindeutigen Schuldzuweisungen waren die eine Sache. Die andere war ihre Sehnsucht. Inzwischen würde sie ihn wirklich gern sehen, noch viel lieber mit ihm sprechen. Ein paar Dinge müssten gerade gerückt werden und sie wollte wissen, ob es ihm gut ging.<br/>„Sie sollten nicht hier sein, Miss Granger!“ Snapes Stimme ließ sie so sehr zusammenfahren, dass sie einen kleinen Schrei ausstieß.</p><p> </p><p>Besonders gut ging es ihm noch nicht, doch er konnte einfach nicht mehr im Bett liegen. Seine Gedanken kreisten ständig nur um das Thema Hermione Granger, ohne nur annähernd einer Lösung nahe zu kommen. Die einzige Möglichkeit wäre, mit dem Mädchen zu sprechen. Morgen würde er wieder unterrichten und es würde sich bestimmt eine Chance auf ein paar Worte ergeben. Und wenn er sie am Ende in sein Büro zitieren müsste.<br/>Dass er jetzt doch hier war, lag an seiner Sturheit. McGonagall wollte seine Runde drehen, doch er bestand darauf es selbst zu tun, weil er sich dringend bewegen müsste, wie er ihr bestimmt fünf Mal sagen musste. Seufzend gab sie nach und gähnte, dankbar diesen nächtlichen Rundgang wieder loszubekommen. Ihm hingegen machte es nie etwas aus, denn nachts war es meistens still und friedlich im Schlossgebäude, abgesehen von kopulierenden Teenagern. Wie von selbst waren seine Füße in Richtung des Aufenthaltsraum gelaufen. Dass jemand hier war, ärgerte ihn aus Gründen, die er selbst nicht ganz nachvollziehen konnte. Vielleicht waren Weasley und Granger hier nun des Nachts fest eingezogen. Falls ja, würden sie gleich ihr böses Wunder erleben. Noch einmal würde sich Severus diese Grausamkeit nämlich nicht antun.<br/>Aber es war nur Hermione, die allein im Sessel vor dem Kamin saß. Er nahm alles an Strenge und Autorität zusammen und sprach sie an.<br/>„Professor …“, hauchte sie erschrocken und stand auf. Er hob nur auffordernd die Augenbrauen, als sie ihn besorgt musterte.<br/>„Sie …“, begann sie brüchig.<br/>„Ich … was? Ja, ich habe auch von meinem Tod gehört. Tut mir leid, dass ich sie enttäuschen muss. Würden sie jetzt bitte zurück in ihr Haus gehen!“, sagte er scharf, ehe sie die Unsicherheit in seiner Stimme hören konnte.<br/>„Ich habe mich von Ron getrennt“, sagte sie, anstatt zu gehen. Ihre Lider flatterten dabei nervös, doch sie sah ihm stur ins Gesicht.<br/>„Ist … das … so?!“, sagte er betont langsam, weil er nicht recht wusste, was er mit dieser Information anfangen sollte. Zu sehr spielten seine Gedanken sofort verrückt. Was bedeutete das?<br/>„Heißt das … ich werde hier des Nachts nun nichts mehr zu sehen bekommen?“, fragte er belegt und musterte sie intensiv. Warum konnte er einfach nicht damit aufhören ihr solche Vorlangen zu geben? Weil es ihn verdammt nochmal erregte, gab er sich selbst die Antwort. Hermione wirkte viel weniger überheblich und selbstsicher wie sonst.<br/>„Werden sie es vermissen?“, fragte sie sanft. Nun müsste er ein vehementes NEIN sagen und anfügen, dass es sowieso grundfalsch war und nie wieder passieren dürfte. Die Umstände sprachen aber ganz deutlich gegen diese Antwort, denn die Stimmung hatte sich irgendwie schleichend verändert. Von der anfänglichen Kälte seiner Distanz war nicht mehr viel übrig. Hermione sah ihn nun warm an und lächelte sogar entschuldigend. Alle Worte, die er sich für so einen Fall parat gelegt hatte, waren weg. Severus hatte das beklemmende Gefühl, dass sein Herz eine Stimme hatte.<br/>„Ja, das werde ich …“, entfloh es ihm wahrheitsgemäß. Sie kam vorsichtig ein paar kleine Schritte näher.<br/>„Es tut mir leid, dass ich es so … schamlos ausgenutzt habe, Professor Snape“, sagte sie schuldbewusst.<br/>„Nein, denn es war meine dumme Idee und ich bin nie davon ausgegangen, dass sie tun, was ich vorschlage, weil ich sie nicht für so …“<br/>„… dumm gehalten habe?“ Sie stand nun relativ dicht vor ihm und sah ihm in die Augen.<br/>„Genau. Dumm ist das richtige Wort.“<br/>„Weil ich nicht wusste, was ich damit anrichte?“<br/>„Was haben sie denn … angerichtet?“ Er konnte nur noch heiser flüstern, so sehr setzte ihm der Drang zu sie in seine Arme zu nehmen und zu küssen.<br/>„Ich habe sie beschämt und es tut mir leid. Ich habe Ron belogen und benutzt und es tut mir wirklich aufrichtig leid. Ich habe aber auch mich selbst betrogen und das tut mir auch leid.“ Sie sah ihn an, als erwartete sie von ihm eine Art Absolution. Aber er war ja nun der Allerletzte, der ihr so etwas geben könnte.<br/>„Miss Granger … sie müssen sich keine Schuld daran geben. Nicht daran, dass sie mir den Kopf verdreht und mein Herz gebrochen haben. Sie tragen auch keine Schuld daran, dass Mister Weasley sexuelle Befriedigung aus dieser Aktion gezogen hat. Auch, dass sie sich nun schlecht fühlen, ist nicht ihre Schuld. Wenn ich könnte, würde ich die Worte, die zu dieser Situation geführt haben, ungesagt machen. Ich wollte nur … gemein sein.“<br/>Ihre Augen hatten sich wieder geweitet und glänzten. Ihre Zunge glitt über ihre Lippe, bevor sie ihre Unterlippe ein wenig in den Mund zog.<br/>„Ich … habe ihr Herz gebrochen?“, fragte sie mit deutlicher Erregung in der Stimme nach. Severus konnte kaum noch atmen. Eigentlich war es witzig, denn im Grunde wollte er ihr nur sehr deutlich sagen, dass sie ihm am besten bis zum Ende ihrer Schulzeit aus dem Weg gehen sollte. Stattdessen beichtete er ihr unerwartet seine Gefühle. Es fühlte sich erschreckend und gut an. Er betrachtete begierig ihr Gesicht und durfte erleichtert feststellen, dass er keine Abscheu sah. Wenn er vielleicht noch ein wenig deutlicher werden würde, würde er vielleicht noch mehr sehen. Vielleicht Zuneigung?<br/>„Umschreibt man das nicht so, wenn man verliebt ist aber abgewiesen wird und niemals eine Chance bekommen wird?“ Seine Stimme war nun ganz dunkel und er sah sie bestürzt blinzeln. Dann drehte Hermione den Kopf zur Seite und schnappte ein paarmal überwältigt nach Luft. Wenn sie das Geständnis gegen ihn verwenden würde, müsste er das wehrlos geschehen lassen. Das war das Risiko dabei und er ging es nur allzu gern ein. Allein für ihren unsicheren Ausdruck auf ihrem schönen Gesicht hätte sich das gelohnt.<br/>„Wer … sagt, dass sie keine Chance haben?“, erwiderte sie endlich, wieder um einiges fester.<br/>„Miss Granger …“, sagte er tonlos, um sie zu stoppen, ehe sie sich hier um Kopf und Kragen redete und ihn vor allem mit in den Abgrund riss.<br/>„Professor Snape …!“, entgegnete sie kämpferisch und sah ihn provokant an.<br/>„Ich möchte wirklich nicht wieder irgendwas falsch verstehen und bitte verführen sie mich nicht wieder dazu unüberlegte, fragwürdige Angebote zu unterbreiten, die nur andere Personen verletzten, Miss Granger.“</p><p> </p><p>Still gab ihm Hermione recht. Doch nur darüber reden, würde zwischen ihnen nicht mehr ausreichen. Dazu war schon zu viel vorgefallen, als dass ein paar Worte alles gutmachen würden.<br/>Damit er es diesmal richtig verstand, hob sie langsam eine Hand und legte sie an seine Wange. Sein Blick war starr und seine Miene zeigte so viel Unglauben, dass sich ihr Herz schmerzhaft zusammenzog.<br/>„Du verstehst mich nicht falsch, Severus …“, flüsterte sie leise und sah, wie sich seine Lippen öffneten.<br/>„Ich soll … also nicht nur zusehen?“ Hermione schüttelte energisch den Kopf. Ihr Herz klopfte wie verrückt. Nicht nur, weil sie hier etwas Schamloses, Verbotenes tat, sondern weil es sich paradoxerweise richtig und gut anfühlte. Sie sah ihm an, wie sehr er sie wollte. In sich drin spürte sie deutlich die Antwort auf sein nonverbales Flehen. Auch sie wollte ihn.<br/>Doch anstatt eines Kusses, legte er jetzt nur seinen Daumen an ihre Lippen und schüttelte leicht den Kopf.<br/>„Nicht hier und nicht jetzt. Geh in dein Haus zurück, Hermione!“<br/>Es war kein Befehl, sondern ein liebevolles Raunen. Sie seufzte sehnsüchtig, begriff aber gleichzeitig, dass er Recht hatte. Nicht hier. Nur wo und wann dann? Sie nickte gehorsam und wendete sich ab.<br/>An der Tür blieb sie stehen und sah zu ihm zurück. Severus Snape wirkte nicht mehr wie der Mann, den sie mal kannte. Sein Gesicht war voller Wärme, seine Augen funkelten und auf seinen Lippen war tatsächlich ein sanftes Lächeln.<br/>„Gute Nacht!“, sagte er leise und sie lächelte zurück.</p><p> </p><p>Als Hermione weg war, setzte er sich mit schwachen Beinen in den Sessel. Er hatte es getan. Er hatte das Tor zur Hölle eigenhändig geöffnet, indem er ihr seine Gefühle gestanden hatte. So war das nie beabsichtigt, auch wenn es da diesen unbändigen Drang in ihm gab es tun zu müssen. Dass sie auch Gefühle für ihn hatte, war unfassbar. Es machte ihn glücklich, euphorisch aber auch ängstlich. Natürlich wollte er sie küssen und noch andere Dinge mit ihr machen. Aber nicht hier und nicht jetzt. Vielleicht war es ein Versehen, vielleicht würde sie morgen ihre Worte bereuen. Worte konnte man zurücknehmen und vergessen. Küsse niemals.<br/>Sie hatte ihn verstanden und das erfreute ihn fast noch mehr als ihr Eingeständnis. Wenn ihre Schulzeit doch bald vorbei sein würde … so lange könnte er nicht warten.</p><p> </p><p>Erst drei Wochen später küsste er sie. Bis dahin vergingen viele merkwürdige Tage voller Unruhe, Sehnsucht und Zweifel.<br/>Severus behandelte sie wieder normaler, erlöste sie aber nicht von ihrer Partnerarbeit mit Goyle. Manchmal trafen sich ihre Blicke. Seiner wirkte immer forschend und nachdenklich. Er sucht nach Ablehnung, wusste sie und lächelte ihn an, wenn sie sich unbeobachtet fühlte. Einen Tag nach ihrem Treffen im Aufenthaltsraum war sie ein wenig ungehalten, dass er ihr so wichtiges Zusammentreffen auf eine unbestimmte Zeit verschoben hatte. Sie war ungeduldig und sehnte sich so nach ihm, dass sie sogar eine theoretische Arbeit in Verwandlung total vergeigte, weil sie sich so schlecht konzentrieren konnte. Inzwischen verstand sie aber, was er tat. Er gab ihr die Möglichkeit es sich anders zu überlegen. Diese Art zu denken, unterschied ihn von Jungs wie Ron oder Harry. Severus war erwachsen genug weiter zu denken, als bis zum nächsten Tag. Wenn sie Zweifel hätte, dann hätte sie nun genug Zeit es ihm anzudeuten. Sie müsste noch nicht mal mit ihm sprechen, begriff sie. Es würde reichen, seinem Blick einfach nicht mehr zu begegnen und das verstohlene Lächeln wegzulassen. Und Hermione dachte nach. Über das, was sie wollte. Sie wollte gern wieder Rons und Harrys Freundschaft zurück. Das wurde auch schon besser. Ron war noch maulig, doch Harry brachte sei einander wieder näher, weil auch die Jungs nicht auf Hermione verzichten wollten.<br/>Allerdings wollte sie mit Ron sicher keine Beziehung mehr haben. Es war von Anfang an ein Fehler gewesen.<br/>Aber sie wollte Severus. Jedoch war ihr mehr als klar, dass es unbedingt geheim bleiben müsste, zumindest so lange, bis sie Hogwarts verlassen hatte. Das war ja nicht mehr so lang und wäre durchaus machbar, wenn sie sich etwas zu sagen hätten, wenn sie zusammen auskamen. Bisher war ihr Verhältnis eher schwierig, gepflastert mit vielen Gemeinheiten, Argwohn und Abneigung. War das wirklich zu ändern?</p><p> </p><p>Auch für Severus war diese Zeit schwierig. Wenn er gewollt hätte, hätte er sie schon längst haben können. Vielleicht sogar schon im Aufenthaltsraum. Es wäre aber weit weg von richtig gewesen. Trotz aller Intelligenz war Hermione nur ein Mädchen, was vielleicht doch nicht richtig wusste, was sie wollte und sich falsch eingeschätzt hatte. Auf sie zu verzichten fühlte sich heroisch an und tröstete ihn ein wenig über seine qualvolle Sehnsucht hinweg. Immer musste er sich vorstellen, wie er sie lieben würde, wie er ihr beweisen würde, dass er sie liebte. Wenn sie es schlau anstellte (und davon ging er aus), könnte sie alles von ihm bekommen, was auch immer sie wollte.<br/>Nach drei Wochen, in denen er ihr Zeit gegeben hatte, um zur Besinnung zu kommen, hielt er sie am Ende einer Stunde zurück.<br/>„Miss Granger, auf ein Wort wegen ihres grauenhaften Protokolls mit Mr Goyle!“, sagte er unheilvoll. Goyle war schon längst weg und nur noch Harry sah Hermione besorgt an. Sie nickte Potter zu und er zog die Tür hinter sich zu.<br/>„War es so schlecht?“, fragte sie leise und senkte den Blick. Vermutlich war es grottenschlecht, denn sie hatte Goyle die Hälfte der Arbeit überlassen.<br/>„Keine Ahnung, ich hab es noch nicht angesehen. Ich denke aber schon.“ Sie sah hoch und sah das Zucken seiner Mundwinkel und lächelte erleichtert, weil es nicht um das Protokoll ging.<br/>„Wenn die anderen am Samstag nach Hogsmeade gehen und du willst es, komm zu mir!“, flüsterte er dunkel.</p><p>Ihre Augen weiteten sich, auf ihren Wangen lag ein entzückender Hauch Rot und sie grinste breit.<br/>„Und ich dachte schon, du fragst nie.“<br/>„Nur, wenn du dir absolut sicher bist, Hermione.“ Jedes Wort sprach er so deutlich und gewichtig aus, dass sie begreifen musste, dass das hier kein Spiel mehr war und es kein Zurück gab, wenn sie einmal diese Grenze überschritten hatten. Sie verstand es, mehr als gut. Für diese Klugheit liebte er sie, unter anderem.<br/>„Bin ich. Wann?“<br/>„Wenn alle gehen …“ Sie nickte und er deutete mit den Augen zur Tür, obwohl er sie am liebsten berührt und geküsst hätte. Gehorsam ging sie und es war gut so, denn Harry wartete vor der Tür auf sie.<br/>„Was war denn?“<br/>„Es ging um das miese Protokoll mit dem dämlichen Goyle! Wir müssen es nochmal schreiben“, sagte sie verstimmt und verbiss sich mühsam ihr erleichtertes Grinsen. Jetzt war ihr schlecht vor Aufregung. Es schien Äonen zu vergehen, ehe es Samstag war. Dann endlich, am frühen Nachmittag war es so weit. Alle machten sich dazu bereit nach Hogsmeade zu pilgern.<br/>„Willst du nicht mit?“, fragte Ron sie verwirrt.<br/>„Nein, heute nicht. Mir geht es nicht so gut. Frauending, du weißt schon!“ Demonstrativ legte sie ihre Hände auf den Bauch und machte ein gequältes Gesicht. Ron wurde rot und nickte.<br/>„Wir bringen dir was mit!“, rief er, als er ging.<br/>„Müsst ihr nicht! Aber freuen würde ich mich schon …“, rief sie ihm nach. So langsam normalisierte sich ihre Beziehung wieder. Was vielleicht auch daran lag, dass sie Gorrm den Küchenmeister überredet hatte die Küche für zwei Stunden benutzen sie dürfen. Sie hatte Ron seine Lieblingskekse mit einem guten Schuss prickelnder Magie gebacken und sich aufrichtig entschuldigt, dass sie ihre Beziehung so überraschend beendet hatte.</p><p> </p><p>Nach etwa einer Stunde, als alle älteren Schüler sicher das Gebäude verlassen hatten, schlich sie unter extremer Vorsicht in den Trakt des Gebäudes, in denen die Lehrer ihre Wohnungen hatten. Es war recht still hier, weil die meisten Lehrer auch gern nach Hogwarts gingen, zumal heute das allerschönste Wetter dafür war. Sanft klopfte sie an Snapes Tür.<br/>Schwungvoll öffnete er sie und sagte nicht allzu leise:<br/>„Miss Granger?!“, als würde sie ihn mit irgendwelchen Schülerbanalitäten stören. Sie aber grinste, sah sich kurz um und sagte leise:<br/>„Lässt du mich rein, Severus?“ Endlich lächelte auch er und trat zur Seite.</p><p>Kaum hatte er die Tür geschlossen, umfasste er ihr Gesicht mit beiden Händen und küsste sie.<br/>Er hätte keine Sekunde länger warten können. Auch wenn sein Verlangen wie eine heiße Stichflamme in ihm nach oben schoss, auch wenn sie überrascht aufstöhnte, auch wenn er sich vorgenommen hatte sich Zeit zu nehmen.</p><p>Severus Snape küsste eindeutig anders als Ron und auch als Viktor. Seine Berührung war sehr bestimmend und eindeutig. Gleichzeitig aber so ungeübt und unschuldig, dass Hermione plötzlich darüber nachdachte, was wäre, wenn Snape noch nie jemanden geküsst hatte. Es war ein wirklich bizarrer und prickelnder Gedanke, der dazu führte, dass sie ihre Verlegenheit verlor. Sie legte ihre Arme fest um seinen Körper und zog ihn an sich. Nicht eine Sekunde lang war ihr nach Lachen zumute, wie so oft bei Ron.<br/>Ganz im Gegenteil. Sie verloren nicht ein einziges Wort, während er sie in Richtung seines Bettes schob und sie versuchte ihn auszuziehen. Wozu reden? Nie war Hermione etwas so klar gewesen, wie in diesem Moment. Sie wollte ihn, so unbedingt und mit einer Gier, dass ihr endlich klar wurde, dass es nicht erst seit ein paar Wochen so war. Irgendwas war wohl an ihm, was sie schon immer gereizt und angezogen hatte. Aber die Umstände hatten immer eine Annäherung verhindert. Doch nur ein Moment der unbedachten Äußerung brachte ein ganzes System zum Einsturz. Severus fragte nicht mehr, ob sie es wollte. Er ging nun davon aus und das war gut so, weil Hermione sich nicht mehr in der Lage fühlte nur ein vernünftiges Wort zu äußern. Sie selbst zog sich ihre Hose und ihr Shirt aus, weil es ihr viel zu langsam ging. Wieder drückte er sie an sich, küsste ihren Hals und seine Hände berührten sie an jeder Hautstelle, an die er kam.<br/>Obwohl es draußen sonnig war, war es im Raum angenehm halbdunkel. Severus hatte noch seine Hose an, als er sie sanft nach hinten aufs Bett stieß.</p><p>Bevor er seine Hose auszog, wirkte er einen Verhütungszauber. Erwartungsvoll und vollkommen angstfrei sah sie ihn an. Das Mädchen lächelte aufmunternd und war in diesen Augenblicken das schönste Wesen, was er je zu Gesicht bekommen hatte. Wie betäubt stand er neben dem Bett und sah sie nur an. Er konnte nicht vor und nicht zurück. Aber er würde sie nicht lieben für das, was sie war. Entschlossen zog sie ihn nun zu sich aufs Bett und begann ihm die Hose auszuziehen.<br/>Dann verschmolzen seine Gedanken zu einem heißen Brei, weil Hermione bei ihm das tat, was sie bei Ron gemacht hatte. Er hatte es geahnt, er verlor dabei den Verstand. Atmen, sich lustvoll zusammenkrümmen, atmen, seine Hände in das Laken verkrampfen, atmen. Zu viel mehr war er nicht in der Lage. Als er glaubte, dass es zu spät wäre, erlöste Hermione ihn und rutschte höher. Sie sah ihn aufmerksam an und flüsterte:<br/>„Mach es bei mir!“ Severus konnte nicht antworten. Ihm war schwindlig und er war so lächerlich glücklich, dass ihm beinah die Tränen kamen. Er küsste sie hungrig und so sehnsüchtig, dass er fast jetzt schon in sie eingedrungen wäre. Aber Hermione hatte recht, noch nicht. Er rutschte zwischen ihre Beine und begann sie überall zu küssen und zu berühren. Ihr lustvolles Seufzen wurde lauter und tiefer, ihr Becken hob sich ihm entgegen und ihre Beinmuskeln zitterten sanft unter seinen Händen.<br/>„Warte … warte …“, keuchte sie jäh. Für sonderbare Augenblicke sahen sie sich nur an. Voller Verlangen nacheinander, voller Angst und Entsetzen über das, was zwischen ihnen passierte aber auch voller fester Absichten nicht damit aufzuhören.</p><p> </p><p>Severus rutschte wieder höher, sie ließ ihn zwischen ihre Beine und war bereit. Wenn irgendjemand sie jetzt unterbrochen hätte, wäre es Hermione Granger, die einen Krieg angezettelt hätte. Und wieder war es unerwartet, wie Severus in sie eindrang. Nicht zögerlich und unsicher, wie es Ron bestimmt getan hätte. Er wollte sie, jetzt und so dringend, dass nur der Tod persönlich ihn davon abgehalten hätte. Hermione hatte wohlwissend verschwiegen, dass es ihr erstes Mal war, weil es im Grunde keine Rolle spielte. Der kleine Schmerz war wirklich kaum zu spüren, Severus Männlichkeit dagegen schon. Sie keuchte auf, weil ihr Blut plötzlich von Endorphinen nur so überschwemmt wurde. Allerdings bewegte sich Severus, jetzt wo er tief in ihr war, nicht. Er sah sie an, ein wenig erschrocken und verwirrt.<br/>„Warum sagst du mir das nicht …“, flüsterte er vorwurfsvoll. Hermione bildete sich ein Tränen in seinen Augen zu sehen.<br/>„Weil es unwichtig ist und ich es genau so wollte“, flüsterte sie heiser, legte ihre Hände in seinen Nacken und zog ihn enger zu sich heran. Er bewegte sich wieder und sie verlor sich in seinen Bewegungen. Das alles fühlte sich so ernst, so absolut und so erwachsen an, dachte sie verschwommen und zog ihre Beine ein wenig an, um ihn noch tiefer in sich zu spüren.<br/>Sie hätte die Zeit beim besten Willen nicht einschätzen können. Vielleicht waren es nur ein paar Minuten, vielleicht Stunden, in denen sie sich liebten. Hermione hatte einen wundervollen und ungewöhnlich langen Höhepunkt. Wie auch immer Snape es geschafft hatte, er hatte nur darauf gewartet und keuchte ihr nur wenig später seinen eigenen Rausch auf die Haut an ihrem Hals.<br/>„Bleib noch hier …“, sagte er gleich darauf, als hätte er große Angst, sie würde jetzt gleich gehen. Er rutschte von ihr runter und Hermione drehte sich ihm zu.<br/>„Natürlich bleibe ich noch hier“, flüsterte sie. Sie hatte eine Hand an seiner erhitzten Wange und sah ihn an. Dass sie Professor Snape, der quasi die Stellung des Antichristen von Hogwarts inne hatte, mal so verletzlich, glücklich und seltsam zufrieden sehen würde, hätte sie auch nie nur vermutet. Seine Augen glitzerten verdächtig und ein ständiges Schmunzeln lag auf seinen Lippen.<br/>Der Mann, den sie gerade ansah, war wunderbar und sie mochte ihn, entgegen aller Vorurteile (und davon gab es genug) und Geschehnisse. Zu ihm zu kommen, mit ihm zu kommen, war die beste Entscheidung, die sie je getroffen hatte. Sanft küsste sie ihn und er lächelte so aufrichtig, wie sie es bei ihm noch nie erlebt hatte.<br/>Sie blieb noch zwei Stunden, sie liebten sich ein weiteres Mal und konnten in keiner Minute die Finger voneinander lassen. Am Ende lag sie in seinen Armen und er streichelte sie liebevoll.<br/>„Das mit uns sollte geheim bleiben, Severus“, sagte sie vorsichtig, weil sie nicht wusste, wie er darauf reagieren würde.<br/>„Alles, was du willst“, sagte er nur und meinte es genauso.<br/>„Es wird immer Möglichkeiten und Wege geben, wie wir uns sehen und treffen können, solange ich hier Schülerin bin …“</p><p> </p><p>„Du hast recht“, erwiderte er sanft. Am liebsten würde er sie für immer und ewig hier behalten, doch das ging nicht. Deshalb würde er sich ihrem Willen beugen und alles tun, was sie verlangte. Solange sie zusammen sein konnten, hin und wieder, solange er sie sehen konnte und lieben konnte.<br/>Hermione richtete sich auf und betrachtete ihn aufmerksam.<br/>„Hast du keine Meinung dazu?“<br/>„Nein, du machst die Regeln und ich füge mich nur. Es ist einfacher so …“ Sie lächelte.<br/>„Sagst du das, weil ich so schön bin und weil es Spaß macht mit mir zu schlafen?“<br/>„So würde ich nie denken … ich sage das, weil du klug bist und es für mich besser ist dir die Regeln zu überlassen. Ach was, wenn du es wirklich wissen willst, Hermione Granger, du hast mich zu deinem Sklaven gemacht. Ich bin jedoch sicher, du nutzt deine Macht über mich weise.“ Jetzt sah sie ihn ernster an. Sie mochte es, wenn er die Wahrheit so unverblümt aussprach. Es berührte sie und es zeigte ihr seinen aufrichtigen Respekt für sie. Wer hätte gedacht, wie gut sie beide harmonieren würden? Es wäre schade drum gewesen, wenn sie es nie herausgefunden hätten.<br/>„Ich glaube, ich liebe dich, Severus“, flüsterte sie und gab ihm einen kleinen Kuss aufs Kinn.<br/>„Denke besser noch eine Weile drüber nach, ob das wirklich so ist. Mädchen. Du weißt ja, wo du mich immer finden kannst …“ Sie grinste, dachte an den Aufenthaltsraum im zweiten Stock und sah Severus an, dass er auch daran dachte. Sie kuschelte sich wieder in seine Arme und beschloss einfach mal nur glücklich für den Moment zu sein. Denn das war sie und er auch, wie er leise seufzend andeutete und ihr einen Kuss auf die Haare gab.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="FaDiKt04mWOsg4JRP9pbrTqbXzFg9NEraY62u2b8JwYuGRCwCliNdkZ1gV07_bRWAUsP_ak4aKjv_LZuTzZVug"/>
+          <input value="21602692" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=21602692">Comments (2)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Mimekry">Mimekry</a>, <a href="/users/Myc_Greg">Myc_Greg</a>, <a href="/users/Goldilocks92">Goldilocks92</a>, <a href="/users/Yaya3850">Yaya3850</a>, <a href="/users/Janimalfoy">Janimalfoy</a>, and <a href="/users/Jevan">Jevan</a>
+             as well as 
+          10 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_21602692">
+  <form class="new_comment" id="comment_for_21602692" action="/works/21602692/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="caiz2aKuQzEC1adWgeT0aZ_z5bsun845j7j3SIgTeplKEUFDdc5XJOgjpFqFwxuSpCO1d-dTd7oJyvedodkIJQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_21602692">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_21602692" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_21602692=new LiveValidation('comment_name_for_21602692',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_21602692.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_21602692">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_21602692" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_21602692=new LiveValidation('comment_email_for_21602692',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_21602692.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_21602692" class="landmark">Comment</label>
+        <textarea id="comment_content_for_21602692" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_21602692" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_21602692_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_21602692">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_21602692=new LiveValidation('comment_content_for_21602692',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_21602692.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_21602692.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_21602692" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/21602692/hit_count.json")})</script>
+
+
+  </body>
+</html>

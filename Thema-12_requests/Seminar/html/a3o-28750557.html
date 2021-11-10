@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":85,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Alles war gut? - KiraSnapeaddict - Harry Potter - Fandom [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="0jjhMzIHBI4CX6VpD8K67JxKHZGTuTOmtZJuTkyZrvSbtLBdIVtomo7sv2OzEkF1uL0I5MLUt0EXMu8T79M__g"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="TVEn4zQWZ6KGaSy9AA5g8sBBpP7ORZvB4TRvnJPYDzsE3XaNJ0oLtgraNre83ptr5Laxi58oHyZDlO7BMJKeMQ"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;sherlock (tv)&quot; m/m NOT &quot;sherlock holmes/john watson&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=28750557">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/28750557/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/28750557/Alles%20war%20gut.azw3?updated_at=1610625952">AZW3</a></li>
+          <li><a href="/downloads/28750557/Alles%20war%20gut.epub?updated_at=1610625952">EPUB</a></li>
+          <li><a href="/downloads/28750557/Alles%20war%20gut.mobi?updated_at=1610625952">MOBI</a></li>
+          <li><a href="/downloads/28750557/Alles%20war%20gut.pdf?updated_at=1610625952">PDF</a></li>
+          <li><a href="/downloads/28750557/Alles%20war%20gut.html?updated_at=1610625952">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20Fandom/works">Harry Potter - Fandom</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Kingsley%20Shacklebolt/works">Kingsley Shacklebolt</a></li><li><a class="tag" href="/tags/Minerva%20McGonagall/works">Minerva McGonagall</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Murder/works">Murder</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2021-01-14</dd><dt class="words">Words:</dt><dd class="words">13181</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="comments">Comments:</dt><dd class="comments">1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">3</dd><dt class="hits">Hits:</dt><dd class="hits">22</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Alles war gut?
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/KiraSnapeaddict/pseuds/KiraSnapeaddict">KiraSnapeaddict</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>"All was well" - Voldemort ist besiegt. Aber deshalb war nicht alles gut. Der Kampf hatte grosse Opfer gefordert, Lücken gerissen, Menschen verletzt und gezeichnet. Die Zeit danach war kaum weniger Herausforderung als der Krieg selbst. Und auch mit Medaillen behängte Helden brauchen manchmal Hilfe... Und warum sollte Snape, der jahrelang tollkühn den Dunklen Lord belogen hatte, warum sollte ausgerechnet er vor solch einer einfachen Herausforderung zurückschrecken? Der Herausforderung, weiterzuleben.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Diese Geschichte hat lange auf meinem PC "gereift". Das hier ist Snape, wie ich ihn mir gut vorstellen kann als Überlebenden. Es ist eben nicht einfach alles nur gut nach Voldemorts Tod. Und ich finde, Snape hat sich die Chance auf ein "Leben danach" hart verdient. Dieser Snape lag mir sehr am Herzen, weswegen es auch so lange dauerte, bis ich bereit war, ihn zu teilen...</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p>Vorsichtig setzte er sich in seinem Ledersessel zurecht. Die Wunde an seinem Hals machte immer noch grosse Probleme, schmerzte und nässte. Er musste den Verband ständig wechseln. Selbst jetzt hatte er sich an den Anblick nicht gewöhnt. Niemand hatte ihn je für gutaussehend gehalten, da kam es auf eine hässliche Narbe nun auch nicht an. Es gab schlimmeres. </p>
+<p>Er schlug den Daily Prophet auf. Es war ein Luxus, jeden Tag in Ruhe die Zeitung zu lesen. Und irgendwie konnte er der Versuchung nicht widerstehen. Zu erfahren, wie es nun weiterging. In der Welt. Und- auf Hogwarts. Ehemals seiner Welt.</p>
+<p>„Hogwarts im Wiederaufbau. Schulbetrieb für das nächste Schuljahr gesichert“</p>
+<p>So? Das war eine reife Leistung, nach all den Zerstörungen. Er hatte nur Teile davon mitbekommen, nur später davon gelesen. Er selbst war- woanders- beschäftigt gewesen. Er hatte den vollen Umfang der Zerstörungen nicht mehr mit eigenen Augen mitansehen müssen.</p>
+<p>„Totesser Prozesse kurz vor dem Abschluss“ </p>
+<p>So? Seine Mundwinkel zuckten. Er hatte die Namenslisten sorgfältig studiert. Wenn sie glaubten, alle erwischt zu haben, sassen sie einem Irrtum auf. Aber das war nicht mehr seine Angelegenheit. Naja, hoffentlich nicht. Für den Moment. Solange man Snape für tot hielte.</p>
+<p>„Severus Snape postmortem rehabilitiert! Harry Potter „the chosen one“ macht Aussage für den berüchtigten Potionsprofessor und Schulleiter. Nähere Informationen bis auf weiteres unter Verschluss“</p>
+<p>Er zog die Augenbrauen hoch. Hatten die nichts Besseres zu tun, als Tote zu rehabilitieren? Er hoffte dieser Potter erzählte nicht der ganzen Welt-also der Presse - Dinge die nicht zur Sache beitrugen. Unbehagen rührte sich in ihm. Natürlich hatte Rita Skeeter, diese Pressehyäne die Gelegenheit genutzt. In wenigen Tagen, so hatte sie angekündigt, würde ihr neues Buch herauskommen. </p>
+<p>„Severus Snape, Verbrecher oder Held?“ </p>
+<p>Er musste an sich halten, um dieser Frau nicht einen Besuch aus dem Totenreich abzustatten. Das Potter ihr etwas erzählt hatte, glaubte er nicht. Selbst der war nicht so töricht. Und hatte mit der Dame auch ein Hühnchen zu rupfen.<br/>Auf einem Beistelltisch lag ein Stapel weiterer Zeitungen. Alles Ausgaben des Daily Prophet. </p>
+<p>„Daily Prophet: EXTRA AUSGABE Teil1: Voldemort besiegt!“<br/>Lesen sie in unseren nächsten Ausgaben den umfassenden Bericht über die Schlacht um Hogwarts! Ihre Helden, alle Verbrecher, Nachrufe zu allen traurigen Opfern, Hintergründe etc. etc. ALLE Details! Verpassen sie keine Folge!</p>
+<p>„Daily Prophet: EXTRA AUSGABE Teil 2: HARRY POTTER – der HELD“<br/>Lesen sie in unserer mehrteiligen Ausgabe alles über the-chosen-one; den Jungen der lebte. Seine Kindheit, seine Schulzeit, Freunde und Feinde. Die Schlacht um Hogwarts und die Vernichtung Lord Voldemorts. Verpassen sie keine Ausgabe! </p>
+<p> </p>
+<p>„Daily Prophet: WANTED: Severus Snape, Mörder, Totesser“                 <br/>20000 Galleonen für die Ergreifung tot ODER lebendig oder Hinweise die zur Festnahme führen. Der Gesuchte ist gewalttätig, ein fähiger Zauberer und schreckt nicht vor dem Einsatz schwarzer Magie und verbotener Flüche zurück. Von dem Versuch ihn eigenhändig zu fassen wird dringendst abgeraten.                                                                        Merkmale: Gross, hager, Hakennase; Augenfarbe: schwarz Kleidung: meist schwarz; Merkmale: Totessermal am linken Unterarm </p>
+<p>Vor der Schlacht zu Hogwarts hatte Snape auf Platz 2 der Wanted Liste gestanden, direkt hinter dem dunklen Lord höchstselbst. Der Preis auf seinen Kopf war wöchentlich erhöht worden. Es war ihm nicht wirklich schwer gefallen nicht gefasst zu werden, zumal er bei den Malfoys immer willkommen war. Er hatte aber auch das Gefühl das die Bemühungen seitens des Ministeriums ihn zu fangen, eher halbherzig gewesen waren. Zu gross war offensichtlich die Angst den Dunklen Lord in seiner direkten Nähe zu finden. Er wäre ein schlechter Spion hätte er sich von mittelmässigen Auroren fangen lassen. Denn nur die zweite Riege war verrückt genug gewesen nach ihm zu suchen und hatte dafür zum Teil einen hohen Preis bezahlt.</p>
+<p> </p>
+<p>Er hatte Zeit gehabt- viel Zeit zum Lesen. Schliesslich war er erst vor kurzer Zeit dem Tod von der Schippe gesprungen. Und noch immer nicht in der Lage mehr als ein paar Schritte am Stück zurückzulegen. Die freundliche Frau aus dem benachbarten Haus kaufte für ihn ein. Sie kümmerte sich seit ein paar Jahren um dieses Haus. Und jetzt auch um ihn. Nicht das er derzeit wirklich eine andere Wahl hatte. Aber sie wusste nichts über ihn. Dabei sollte es bleiben. In Jeans und Pullover unterschied er sich in Nichts von anderen im Dorf hier. Muggle. Seine Sachen hatten nicht überlebt, und hätten ihn ohnehin nur verraten. Er trug seine Haare nun nur kinnlang und gepflegter. Trotzdem fielen sie ihm immer ins Gesicht, wie früher. Verbargen aber nicht die ausgeprägte Hakennase, wie ein Rabenschnabel. Eine breite weisse Strähne machte sich zu seinem Ärgernis nun in den sonst rabenschwarzen Haaren breit.</p>
+<p> </p>
+<p>Albus hatte ihn damals überredet. Sollte Severus den Krieg überleben, wartete ein Haus auf ihn. Und genügend Geld um nicht mehr arbeiten zu müssen. Severus hatte das nicht gewollt. War er doch sicher, den Krieg nicht zu überleben. Und nicht überleben zu wollen. </p>
+<p>Als der dunkle Lord ihn zu sich riefen liess. Das letzte Mal. Er hatte so eine Ahnung gehabt. Und Angst, seine letzte Aufgabe nicht erfüllen zu können. Noch immer hatte er Potter nicht gefunden. Fast wäre alles verloren gewesen. Da hatte er den vorbereiteten Trank genommen. Das stärkste Gegengift was er je gebraut hatte. Und etwas gegen grossen Blutverlust. Er wusste nicht, ob es genügen würde. Wie lange es helfen würde. </p>
+<p>Er hatte sich vorher nicht vorstellen können, dass der Schlangenbiss so schmerzhaft sein würde. Und dann war er da gewesen. Potter. Endlich, endlich hatte er ihm seine Erinnerungen geben können bevor ihm die Sinne schwanden. Natürlich hatten sie geglaubt er wäre tot. Sein Leben hatte am seidenen Faden gehangen. Doch dann war er aufgewacht, in seinem eigenen Blut liegend. Seit wann hatten Tote Schmerzen? Warum war er nicht endlich tot? Er wünschte sich Ruhe, Frieden, endlich auszuruhen. Dann erwachte plötzlich irgendwo ein Funke in ihm. Trotz. Warum jetzt sterben? Jetzt, wo er sein Versprechen eingelöst hatte? Wie wäre es zu leben? Zu leben in einer Welt ohne Totesser? Ohne- den dunklen Lord? LEBEN. Ob er das konnte?<br/>Sterben war leicht. Aber wann hatte er jemals den leichtesten Weg gewählt? Was auch immer er getan hatte um seine Schulden zu bezahlen, es würde sich nie befreien können, sich nie frei fühlen von seiner Schuld. Er würde nun endgültig lernen müssen, damit zu leben.</p>
+<p> </p>
+<p>Es kratzte an der Balkontür. Mit einem leichten Wisch seines Zauberstabes liess er die Tür aufschnappen. Herein kam ein imposanter Grautiger, der kam und schnurrend den felligen Kopf hingebungsvoll an seinem Bein rieb. Irgendwie hatte er sich in den Kopf gesetzt hier wohnen zu wollen. Und da er einen unaufdringlichen Gesellschafter abgab, liess er ihn gewähren. Die Katze tat ihm irgendwie gut.</p>
+<p>Auch jetzt noch schlief er sehr unruhig, wenn er denn überhaupt schlief. Wenn er nach durchwachten Nächten endlich erschöpft einschlief. Und selbst dann schreckte er oft auf. Schweissgebadet oder von seinen eigenen Schreien. Gut, dass niemand etwas davon mitbekam. Die Geister der Vergangenheit jagten ihn. Die alten und die neuen. Auch die neuen. Es half nicht, sich zu sagen, es sei für das grosse Ganze gewesen. Nein Albus, dachte er stumm. Meinem Gewissen hilft es schon lange nicht mehr. Jetzt nachdem es erwacht ist, schweigt es nicht mehr. So sehr er den alten Zauberer manchmal gehasst hatte für das was er von ihm einforderte. Manchmal fehlten ihm ihre Gespräche. Manchmal hatte er so etwas wie Weisheit ausgestrahlt. </p>
+<p>Wenn es denn gar nicht ging, kehrte er zurück ins Wohnzimmer. Starrte in das kleine Feuer was er entzündete hatte. Wärmte die eisigen Hände an dem grossen schnurrenden Kater. Das Schlangengift hatte massive Spätfolgen. Durchblutungsstörungen. Die nässende Wunde. Lähmungserscheinungen in den Beinen. Er bewegte sich wie ein alter Mann… <br/>Auch seine magischen Fähigkeiten waren extrem eingeschränkt. Alles was über geringste Magie hinausging forderte ihn aufs Äusserste. Forderte Energie die er derzeit nicht besass. Er hatte das vorher nicht vermutet. Aber Nagini war ja auch keine gewöhnliche Schlange gewesen. <br/>Er konnte nur hoffen, das alle ihn nun wirklich für tot hielten. Oder ihn nicht fanden. Ehemalige Totesser auf der Suche nach Rache. Oder Inspekteure und Auroren vom Zaubereiministerium. Er hatte ihnen derzeit nichts entgegenzusetzen. </p>
+<p> </p>
+<p>Einige Male war eine Patronus Botschaft bei ihm eingetroffen. Er hatte sie ignoriert, sich totgestellt. Offensichtlich fiel es Minerva schwer an seinen Tod zu glauben. Diese Erkenntnis bewegte ihn mehr, als er je geglaubt hätte.<br/>Es war ihm schwergefallen auch vor ihr die Fassade des brutalen, menschenverachtenden Todessers aufrecht zu erhalten. Er hatte es nicht riskieren können und wollen irgendjemand mit hineinzuziehen. Er wusste das sein Leben in höchster Gefahr war. <br/>Hasste sie ihn nun für immer? Hatte auch sie ihm seine Maskerade letztendlich geglaubt?<br/>Er schüttelte den Kopf. Warum sollte sie, warum sollte irgendwer ihm verzeihen, wenn er sich selbst nicht verzeihen konnte? Der Spion, ein Verräter an allen Seiten, mit so vielen Masken, das er selbst manchmal kaum noch wusste wer er eigentlich war. Er war und blieb in seinen eigenen Augen ein Verbrecher, mit all dem was aus Totesserzeiten auf seiner Seele ruhte. Doch Albus töten zu müssen, das war das Schlimmste. Wieder töten, wo er doch gedacht hatte das hinter sich zu haben. Seiner dunkle Seite abgeschworen zu haben… Er hätte es beruhigend gefunden, wäre es ihm schwergefallen. Aber es war leicht gewesen. Es war viel zu einfach gewesen, seinen aufgestauten Frust, seine Wut und seinen Hass hierfür zu nutzen.</p>
+<p> </p>
+<p>Eliza Miller war eine nette ältere Dame. Über Jahre schon hatte sie sich um das ungenutzte Nachbarhaus gekümmert. Und jetzt auch um den Mann der dort eingezogen war. Eingezogen? Nun ja. Er war auf einmal da gewesen. Sie wusste nicht viel über ihn. Er hatte sich als Tobias vorgestellt. Viel gesprochen hatte er nicht. Natürlich nicht. Er konnte nur unter Schwierigkeiten sprechen. Wegen dieser Halsverletzung, mit der er noch grosse Probleme zu haben schien. Und auch sonst ging es ihm nicht gut. Ein Autounfall, hatte er auf ihre Fragen gesagt, mit dieser tiefen und heiseren Stimme. Kaum laufen konnte er. Sie kümmerte sich gerne weiter um das Haus. Ging auch Einkaufen für ihn. Was er wohl von Beruf war? Sicher war er krankgeschrieben, nach diesem bösen Unfall. Aber er wirkte wie ein Mann, der gewohnt war Anordnungen zu geben. Ein Mann mit Authorität. Trotzdem war etwas an ihm seltsam. Eine Nase wie der Schnabel eines Raben, ein vom Leben gezeichnetes Gesicht. Aber diese Augen. Schwarz. Wie Tunnel, und manchmal funkelte in Ihnen eine Kälte die sie schaudern liess. Und doch war er immer nur äusserst höflich zu ihr. Auch wenn seine Höflichkeit ungelenk wirkte. Bemüht, aber ungeschickt wie ein Kind das solches Gebahren soeben gelernt hat. Nun- sie war es zufrieden sich zu kümmern.</p>
+<p>Letztens erst hatte sie ihn im Garten angetroffen. Wie er wohl dorthin gekommen war, so schlecht wie er noch zu Fuss war? Es musste ihn viel Mühe gekostet haben.<br/>Er sass in einer kleinen zugewachsenen Nische des Gartens, unter einem schattenspendenden kleinen Apfelbaum. Es war ein schöner, sonniger Tag. Ganz offensichtlich war er eingeschlafen, was ihr Zeit gab ihn in Ruhe zu betrachten. Blass war er, sehr hellhäutig, die pechschwarzen Haare hingen ihm wie Federn ins Gesicht und über die Augen. Auf seinem Schoss sass behaglich zusammengerollt der Grautiger und blinzelte sie zufrieden an. Eine Hand von Tobias ruhte auf seinem Fell. Tobias Augenlider zuckten, als träume er schlecht. Wie zufällig legte ihm der Grautiger eine Pfote auf die Hand. Eliza schmunzelte und ging sehr leise davon. Bisher hatte sie Tobias nur hellwach vorgefunden. Manchmal machte er gar den Eindruck, immer wach zu sein. Und auf der Hut. Wie ein Verfolgter. Sie schüttelte den Kopf. Welch unsinniger Gedanke. Doch die wenigen Male wo sie ohne Klopfen zu ihm hereinkam, wirkte er wie alarmiert. Hellwach. </p>
+<p>Am Abend schleppte Severus sich wieder mühsam ins Haus. Wie alt war er? 38 Jahre? Er fühlte sich wie ein Greis. Bevor er sich erschöpft von den wenigen Schritten auf die Couch fallen liess, fiel sein Blick auf ein Sideboard.<br/>Dort lehnte ein Brief. Adressiert an diese Adresse, mit seinem Namen, dem neuen. Tobias Miller. Keine Eulenpost. Mugglepost. Er zog die Augenbrauen hoch. Wer sollte ihm hier schreiben. „Accio“ seine Magie reichte gerade eben aus um den Brief herbeizuholen. Dann sah er die Schrift. Er nahm den Brief und warf ihn wütend an die Wand, wo er aufprallte und am Boden liegen blieb, um ein Eselsohr reicher. Dieser perfide alte Mann mit seinen Plänen! Sogar nach seinem Tod und fast nach ihrer beider Tod konnte er nicht aufhören andere zu kontrollieren und zu lenken. Offensichtlich hatte Dumbledore ihm noch vor seinem Tod geschrieben. Nein. Er würde den Brief nicht lesen. Nicht jetzt. Falls jemals. Was genug war war genug. <br/>Als Eliza in den nächsten Tagen kam um etwas zu putzen, stellte sie den Brief wieder sorgfältig auf das Sideboard. Wo er unberührt stehen blieb. Es ging sie nichts an. Es wunderte sie viel mehr, das nie irgendwelche weitere Post kam. </p>
+<p> </p>
+<p>Monate vergingen. Auf Tobias Wunsch hin hatte Eliza für ihn eingekauft. Severus hatte sich daran gemacht, den kleinen Garten umzugestalten. Ein kleines aber gut bestücktes Kräuterbeet befand sich jetzt dort. Sein ganzer Stolz. Als Potionsmaster musste er schliesslich auch in der Lage ein, Kräuter selbst anzubauen. Und es machte ihm Freude. Auch wenn sein Hauskater hier und dort ungefragt Löcher buddelte. Als er das das erste Mal sah, er stand in seinem Beet, mit hochgekrempelter Jeanshose und schmutzigem langärmeligen Hemd, der Schweiss rann ihm in die Augen. Da hatte er das erste Mal… er hatte gelacht. Wann hatte er das letzte Mal gelacht? Es schien viele Leben her zu sein. Fast erschreckt sah er sich um, doch es war niemand hier der ihn beobachten konnte. Nur der Grautiger sah etwas erschrocken auf. Rauh zerzauselte Severus ihm das Fell. Mit der Spur eines Lächelns im Gesicht wirkte er fast schön…<br/>Eliza hatte sich gewundert…von den Kräutern die sie für ihn besorgt hatte, hatte sie zum Teil nie zuvor gehört. Doch schien Herr Tobias einen grünen Daumen zu haben, alles blühte und gedieh.<br/>Auch jetzt noch hatte Severus weiter den Daily Prophet verfolgt. Es war ruhiger geworden. Keine Katastrophenmeldungen mehr. Die Zeit der Extra Ausgaben war vorbei. Und selbst von chosen-one Potter hörte man kaum etwas. Der Brief stand nach wie vor unberührt an seinem Ort. <br/>Langsam, sehr langsam besserte sich sein Gesundheitszustand. Seine Zauberkraft war fast vollständig hergestellt. Nur das Laufen fiel ihm immer noch schwer. Die Lähmungserscheinungen hielten sich hartnäckig.</p>
+<p> </p>
+<p>Die Zelle war klein, zugig und feucht. Der Boden war gestampfter Lehm, vermischt mit Kot und Knochen von Ratten und früheren Insassen. In einer Ecke labten sich Schmeissfliegen an den Resten von vergammeltem Brot. Die Dementoren waren nicht mehr da. Sie waren auch nicht nötig. Er hatte seine eigenen in sich. Nichts mehr war zu erkennen von dem immer gepflegten, gutaussehenden und arroganten Lucius Malfoy. Lumpen schlotterten um seinen mageren Körper. Die Fingernägel hatte er abgenagt bis aufs Fleisch. Mit den Resten davon kratzte er sich Arme und Beine Blutig. Die blonden, sonst so gepflegten Haare starrten vor Dreck. Sein Blick flackerte. Da öffnete sich überraschend die Zellentür. Wie eine Erscheinung aus einer anderen Welt stand dort seine Frau, Narcissa, edel und teuer gekleidet wie eh und je. „Lasst uns alleine“ herrschte sie den Wärter an. Erst dann gab sie Ihrem Entsetzen nach. „Lucius…!!“ Mit drei Schritten war sie bei ihm, nahm ihn in den Arm, so dreckig und verkommen wie er war. Er blieb passiv, wie ein Stück Holz. Sie löste sich von ihm um ihn anzusehen. Eine einzelne Träne verschmierte ihre Schminke.  „Ich..wir..brauchen dich!“ flüsterte sie. Ihr Tonfall berührte ihn. Mit einem Finger wischte er ihr sanft die Träne von ihrem Gesicht. „Nein“ sagte er dann hart. „Ich bin ein Versager. Ich habe dich und Draco nur in Gefahr gebracht. Ich habe Schande über uns gebracht. Wäre Severus nicht gewesen..“ seine Stimme brach. Er sah weg, doch hatte sie längst gesehen das auch er weinte. „Ist es.. ist es wahr?“ flüsterte er. „Ja“ sagte sie klar und hart. „Er ist tot. Sein Leichnam wurde nicht gefunden. Doch es gibt keinen Zweifel. Da war soviel Blut. Nagini…und Potter- er war dort“. Lucius gab einen leisen Schrei von sich wie ein waidwundes Tier. Er barg sein Gesicht in den Händen. Seine mageren Schultern zuckten. „ICH…habe meinen geliebten.. meinen besten Freund dem Tod überantwortet!“ stiess er hervor. Schluchzer entrangen sich ihm. „GEH! Lass mich allein“ befahl er, sein Befehlston eine schwache Spur seines alten Ichs. Narcissa betrachtete ihn. Es würde ihn zerstören. Wenn es nicht längst zu spät war. „Du kannst hier raus. In eine bessere Zelle. Wir können es uns leisten“ sagte Narcissa drängend.  Lucius sah auf. „NEIN“ sprach er scharf. „Das hier.. er sah sich um in der dreckigen Zelle. „Das hier ist, was ich verdient habe. Geh! Lass mich allein.“ Er wandte sich von ihr ab, drehte sich mit dem Gesicht zur Wand. Narcissa wusste, heute hatte es keinen Sinn mehr ihn überreden zu wollen. Die Tür schlug hinter ihr zu. Schwere Riegel wurden vorgeschoben. Lucius Malfoy war einer der Top Totesser-Insassen. Mechanisch kratzte Lucius sich die verschorften Wunden an seinen Armen wieder auf. Blut tropfte träge auf den Boden. Der erneute Schmerz schaffte ihm Erleichterung.</p>
+<p> </p>
+<p>Severus öffnete die Glastür zu dem Geschäft, die ihn mit so lautem Gebimmel begrüsste das er zusammenzuckte. Ein überwältigender Duft schlug ihm entgegen. „Kann ich ihnen helfen?“ fragte die Verkäuferin freundlich und lächelte ihn an. Er räusperte sich „Ich denke schon“ sagte er heiser. Ob sich seine Stimme wohl je erholen würde? „ich hätte gerne Lilien. Weisse Lilien“. Es war gerade das zweite Mal in seinem Leben in einem Blumengeschäft. Aber er wollte diese Blumen kaufen. So wie Freunde und Liebende das normalerweise taten. Und Trauernde… Er bezahlte die Blumen und beeilte sich aus dem Laden zu kommen. </p>
+<p>Von einem unbeobachteten Fleck apparierte er. Er war erleichtert, das es auch funktionierte. Immerhin das konnte er wieder. Über ihm ragte die Kirche auf. Die Sonne begann gerade hinter dem Horizont zu verschwinden und tauchte die Grabsteine noch in ein sanftes rötliches Licht. Niemand war um ihn herum zu sehen, die Strasse war leer. Er musste aufmerksam sein. Nicht für jeden mochte seine Mugglekleidung und die kurzen Haare ausreichend sein, ihn nicht als den, der er war zu erkennen. Zielstrebig ging er zu dem gesuchten Grab. „Lily + James Potter“ „der letzte Feind den es zu besiegen gilt ist der Tod“. Er war erst einmal hier gewesen und doch kannte er den Weg noch ganz genau. Eine Weile stand er vor dem Grabstein, Bilder der Vergangenheit vor Augen. Ihr Gesicht, ihr Lachen, als sei es gestern gewesen. Alle Tränen waren längst geweint. Nun mochte sie ruhig schlafen, Voldemort war tot, Harry von ihm und seiner Bedrohung befreit. Nur die Toten konnte niemand mehr zurückholen. Er kniete nieder und legte die weissen Lilien auf das Grab. Mittig. Auf beider Grab. Es war auch James Sohn gewesen, der zu guter Letzt den Mut bewiesen hatte Lord Voldemort unter Einsatz seines Lebens zu bekämpfen. Er verweilte noch einige Minuten kniend vor dem Grab bevor er sich aufrichtete und den Friedhof verliess.<br/>Als Ginny am nächsten Tag zur Grabpflege kam, sah sie überrascht die weissen Lilien. Wer die wohl niedergelegt haben mochte? Sowas kam vor. Aber eher selten. Wunderschön waren die Blumen.</p>
+<p> </p>
+<p>Er fluchte gotteslästerlich. Das konnte doch nicht wahr sein! Dieser Potter verfolgte ihn bis heute. Verdammt sollte er sein. Wütend warf er die Zeitung zerknüllt auf den Haufen. „Portrait des berüchtigten Totesser Schuleiters Severus Snape findet seinen Platz in Hogwarts… auf Wunsch des Chosen-one Harry Potter, Held der Schlacht zu Hogwarts…..“ der Rest verschwand hinter dem zerknüllten Teil der Titelseite. Wie kam der auf diese absolut unnötige Idee!? Und wo zum Teufel kam das verdammte Portrait her? Er hatte nie eins in Auftrag gegeben. Offensichtlich hatte man es irgendwo in Hogwarts gefunden. Das hatte er bestimmt Albus zu verdanken. Sein Blick fiel auf den immer noch ungeöffneten Brief von Albus. <br/>Er würde etwas tun müssen. Denn ohne sein Zutun würde das Portrait leblos bleiben. Und verraten das er eben NICHT tot war. Welch ein Desaster.</p>
+<p> </p>
+<p>Der erste Blick auf Hogwarts überwältigte ihn. Was hatte er erwartet? Ruinen? Nein, das Schloss zeigte sich in seiner Pracht als sei nie etwas vorgefallen. Ein Bild des Friedens. So sehr er den Grund für sein Hiersein verfluchte, so genoss er doch diesen Anblick. <br/>Unbemerkt huschte Snape durch die Eingangshalle zur Wäschekammer. Zum Glück war niemand hier. Auf einem Stapel lagen verschiedenste Schülerroben. Zu klein, auch zu klein…zuletzt blieb nur eine Hufflepuff Robe in passender Grösse übrig. Wenn es denn sein musste. Er zog sie an, die Kapuze über die immer noch kurzen schwarzen Haare. So mochte er als älterer Schüler durchgehen. Den Kopf gesenkt huschte er durch die Gänge aus denen gedämpft Gemurmel aus den Klassenräumen drang. Fast bildete er sich ein durch die Türen in die Klassenräume sehen zu können. „Jetzt aber hurtig“ rief ihm das Portrait einer buckligen Hexe meckernd hinterher. Er zog sich die Kapuze noch tiefer ins Gesicht. In dem Moment hörte er Schritte, bog schnell in den nächsten Gang ein.</p>
+<p>Harry war gerade auf dem Weg zu McGonagalls altem Büro, das sie ihm bei Bedarf zur Verfügung stellte. Vor ihm verschwand gerade ein Schüler in Hufflepuff Robe im nächsten Gang. Er hinkte leicht und die Robe wehte hinter ihm her. Harry stutzte. Sah er schon wieder Gespenster? Der Anblick hatte ihn an..an..Snape erinnert. Dramatische Auftritte waren immer seine Spezialität gewesen. Wenn er mit wehendem schwarzen Mantel durch den Gang schritt. Harry verzog das Gesicht. Ja, auch der verfolgte ihn. Energisch versuchte er den Gedanken abzuschütteln. Snape in einer Hufflepuffrobe. Absurd. Aber aus irgendeinem Grund verfolgte ihn das Bild noch den ganzen Tag.</p>
+<p>Snape betrat leise das Schulleiterbüro und sah sich um. Die Portraits schliefen. Oder zumindest gaben sie das vor. Er trat näher an den Schreibtisch, der einst mal seiner gewesen war. Ein Hauch von schottischem Whisky hing in der Luft. Tatsächlich. Neben Albus Portrait hing nun seines. Es zeigte auch ihn schlafend. In seinen unvermeidlich schwarzen Roben, mit langem Haar und ohne die weisse Strähne die jetzt das Schwarz unterbrach. Er zog den Zauberstab und begann…<br/>Zufrieden verliess er das Büro etwas später vorsichtig wieder. Nun schien das Portrait zu atmen. Er würde nun in der Lage sein, durch das Bild zu beobachten oder gar zu sprechen wenn er wollte. <br/>Bevor er die Tür schloss sah er noch wie Phineas Nigellus- der einzige Slytherin Schulleiter vor ihm-  ein Auge geöffnet hatte und ihm verschwörerisch zuzwinkerte…<br/>Als er an der grossen Halle vorbeikam stiegen ihm köstliche Düfte in die Nase. Das Essen war immer legendär gewesen, auch wenn er es seit seiner Studentenzeit selten hatte wirklich geniessen können. Der Stress war einfach zu gross gewesen, und essen wie schlafen nur lästige Notwendigkeiten. Er seufzte.<br/>An der Treppe hielt er kurz inne. Die Versuchung war gross zu den Verliesen hinunterzugehen. Sein Zuhause für so viele Jahre…er riss sich zusammen. Zu gefährlich. Was sollte er dort unten auch wollen?</p>
+<p>Tage später wunderte man sich wer am Tor eine Hufflepuff Robe vergessen hatte.</p>
+<p> </p>
+<p>Einige Tage später… Severus sass bei einer Tasse Kaffee sein Tigerkater schnurrend in einer Couchecke. Draussen sangen die Vögel. Ruhig war es hier, friedlich…widerstrebend fiel sein Blick auf den etwas vergilbten Brief Dumbledores. „Accio“ schon hatte er den Brief in der Hand und riss ihn auf. Der Brief war auf allerfeinstem Papier geschrieben, trug das Wappen von Hogwarts. Fast meinte Snape auch den Geruch wahrzunehmen aus Dumbledores Büro… Holzrauch vermischt mit dem Duft eines Süssigkeitenladens und etwas Moschus.</p>
+<p>Lieber Severus,<br/>wenn Du das hier liest, weiss ich das Voldemort besiegt ist und Du – wie ich hoffte- überlebt hast.<br/>Und, wie lange hat es gedauert, bis du den Brief öffnen konntest? Ich bin mir sicher, das Du nicht gut auf mich zu sprechen bist, nach all dem was ich Dir aufgebürdet habe. Ich konnte mir niemanden ausser Dir vorstellen, der auch nur hoffen konnte all das zu bewältigen.<br/>Es tut mir leid. <br/>Trotz dem ich mich immer für einen intelligenten Mann gehalten habe, fiel mir nichts Besseres ein, als Dich mit all dem zu belasten. Du warst einfach der einzige mit allen besonderen Fähigkeiten dazu. Der einzige der Voldemort gegenübertreten konnte, ihn belügen und es überleben. Ich habe Dir viele Menschenleben und mein eigenes anvertraut und Du hast mich nie enttäuscht. <br/>Nach all den Aufgaben, die ich Dir abverlangt habe, bleibt mir nun nur noch eine Bitte an Dich übrig: Bitte versuche, Dir Deine eigenen Fehler zu verzeihen. Begib Dich auf die Suche zurück ins Leben.<br/>Menschen mit grossen Fähigkeiten machen auch Fehler mit grossen Folgen, das musste auch ich lernen.<br/>Ich bin mir absolut bewusst, das ich nicht unschuldig daran bin, was aus Dir geworden ist.<br/>Wenn Du im Keller des Hauses etwas suchst, wirst Du eine verborgene Tür finden. Es wird Dir nicht schwerfallen, das nötige Wort zu finden um hereinzukommen. Ich hoffe, was Du dort vorfindest wird Dir den Weg zurück in das Leben erleichtern.<br/>Alles Gute, in Dankbarkeit<br/>Albus Dumbledore</p>
+<p> </p>
+<p>Severus knirschte mit den Zähnen. Noch immer fiel es ihm schwer, Dumbledore nicht wirklich zu hassen. Eine Entschuldigung reichte bei weitem nicht aus, um den Schaden an seiner Seele zu heilen. Das er für sein Versprechen wieder zum Verbrecher und Mörder geworden war. </p>
+<p>Als er im Keller ein paar Mal auf und abging, fand er schnell die verborgene Tür. Nur eine kurze Überlegung „Lily Evans“ und schon sprang die Tür auf. Er trat ein und staunte doch. Das hier war ein kleines, perfekt eingerichtetes Labor. Gut ausgestattet mit Gerätschaften und auch Zutaten. Ein kleines Bücherregal war da. In einer Ecke hing, tatsächlich, ein Kleiderbügel mit nagelneuen Roben vom gleichen Schnitt wie seine alten. Ein Zettel hing daran…. „falls Du doch nach Hogwarts zurückkehren möchtest“. Seine Mundwinkel zuckten, fast musste er schmunzeln. In der Ecke stand ein luxuriöses Schreibpult, darauf eine kleine Truhe. „Severus, ich befürchte, Du hast Deine Rolle als Spion so gut gespielt das Du nach meinem Ableben viele Feinde haben wirst. Jahrelange Haft in Azkaban wäre ein schlechter Dank für Deine Dienste. Hier wirst Du an Beweisen finden, was Du brauchst.“. Severus atmete tief durch. </p>
+<p> </p>
+<p>Ginny sass mit Harry am Tisch. „Nun iss schon. Oder schmeckt es dir nicht?“ fragte sie besorgt. Harry stocherte unmotiviert auf seinem Teller herum. „Doch, tut mir leid. Ich hatte wieder mehrere dieser Erscheinungen. Ginny, sie verfolgen mich. Die Toten.“ Er liess die Gabel klirrend auf den Teller fallen und barg sein Gesicht in den Händen. Ginny kam zu ihm, legte ihm die Hand auf die Schulter. Sie kannte das schon. „Wer war es denn diesmal“ „Snape“ murmelte er erstickt.<br/>Ginny seufzte. Harry hatte massive Probleme, auch jetzt, Monate nach der Schlacht. Er fühlte sich verfolgt, sah Menschen die nicht mehr lebten, schlief unruhig. Er versuchte das mit Arbeit, Beschäftigung zu bekämpfen. Die erste Zeit hatte er unzählige Einladungen zu den Post-Krieg-Prozessen gehabt, hatte Aussagen machen müssen. Das hatte alles immer wieder aufgewühlt aber ihn auch beschäftigt gehalten. Was ihm aber tatsächlich sehr beschäftigte, war Severus Snape. Das Verhältnis zu diesem schwierigen Professor war immer problematisch gewesen. Aber das sich herausstellte das er ihn all die Jahre meist völlig falsch verstanden hatte das lastete schwer auf Harrys Gewissen. Mit Toten konnte man nicht reden. Um das endlich aus der Welt zu räumen. Das sein Leichnam nie gefunden wurde machte es nicht besser. Aber immerhin hatte ein mysteriöser Brief Harry den Ort zu Snapes Portrait gewiesen. Es hatte Harry nicht viel Überzeugungsarbeit gekostet Kingsley-den neuen Minister im Zaubereiministerium und Mitglied des Orden des Phönix wie Snape- zu überzeugen sich für das Portrait einzusetzen. Und der hatte es geschafft. Snape war Schulleiter gewesen. Und hatte den Posten nur für eine wichtigere Aufgabe verlassen. Zwar zerriss die Öffentlichkeit sich das Maul darüber- aber das Portrait hing. Das es schwieg war ein anderes Problem…sie seufzte. Sie würde wieder einen Therapietermin machen für Harry. </p>
+<p> </p>
+<p>Kingsley Shacklebolt sass an seinem Schreibtisch, sortierte die Post. Der linke Haufen wurde höher und höher. Nur einige wenige dieser Briefe hatte er wirklich gelesen. Mit einem Gefühl der Erleichterung warf er sie in das kleine Feuer, welches zu diesem Zweck im Kamin brannte. Beschwerdebriefe. Darüber, dass Severus Portrait nun in Hogwarts hing. Sehr unfreundliche Briefe. Er seufzte. Snape war im Leben schon anstrengend gewesen, aber nicht weniger nach seinem Tod. Da sein Leichnam verschwunden war galt er als vermisst. Die Prozesse um seine Person ruhten bis man ihn (lebend?) fand oder für tot erklären konnte. Darum mussten auch die wenigen bekannten Fakten unter Verschluss bleiben. Allerdings hatte Harry dafür gesorgt, dass nun jeder wusste das er Albus auf seinen Wunsch getötet hatte. Und schon Jahre gegen den Dunklen Lord spioniert hatte. Das reichte den Leuten aber bei weitem nicht. Und viele glaubten es auch nicht. Snape hatte seine Rolle gut gespielt. Zu gut. Er selbst hatte nur wenig erfahren über Snapes Arbeit. Er hatte Albus vertraut. Das war genau das Problem. Der einzige, der alles über Snapes Aufgabe gewusst hatte, war Tot. Dumbledore. Aber was spielte es für eine Rolle? Snape war tot. Sobald er endgültig für tot erklärt werden konnte würde die Akte geschlossen. Die ganze Wahrheit über ihn würde wohl nie mehr herauskommen.</p>
+<p> </p>
+<p>Minerva betrat das Schulleiterbüro, jetzt das ihre. Schwer stützte sie sich auf einen Stock. Die Schlacht um Hogwarts hatte sie gesundheitlich sehr mitgenommen. Die „eiserne Lady“ von Hogwarts war müde. Nur widerwillig hatte sie der Funktion des Schulleiters zugestimmt. Aber lange würde sie kaum mehr durchhalten. Ihr Blick fiel auf das neue Portrait. Severus Portrait. Jedes Mal stiegen ihr die Tränen in die Augen wenn sie es ansah. Dieser sture, tapfere Dummkopf! Sie hätte ihm so sehr gewünscht, das er noch den Erfolg seiner Torturen erlebt hätte. Vielleicht…vielleicht wäre dann auch irgendwann einmal der wahre Severus zum Vorschein gekommen. Nicht der Mann der tausend Masken…Ja, zum Henker, sie vermisste ihn.  Selbst die Streitgespräche mit ihm. Unbequem, meist schlecht gelaunt. Aber immer ein intelligenter Gesprächspartner, und ein guter Zuhörer. Sie wünschte, zumindest sein Portrait würde mit ihr sprechen. Doch es blieb stumm. Immerhin konnte sie es atmen sehen. Schwer liess sie sich in den Stuhl fallen, das Portrait in ihrem Rücken. So entging ihr, das Snape kurz die Augen öffnete und genauso schnell wieder schloss… </p>
+<p> </p>
+<p>Des Nachts, alles war ruhig. Ginny erwachte aus unruhigem Schlaf. In letzter Zeit musste Harry jeden Abend stärkere Dosen Schlafmittel nehmen. Es half kaum noch. Die Geister der Schlacht verfolgten ihn. Freunde wie Feinde. Er fühlte sich verantwortlich für all die Toten, für die Verluste, für das Leid was ihnen folgte. Voldemort war besiegt, doch der Preis war hoch gewesen. Er wollte arbeiten, wollte sich ablenken, doch war er mangels Schlaf morgens wie gerädert. Ginny blickte neben sich und erschrak. Das Bett neben ihr war leer! Sie sprang auf, trat auf den Flur. Ein Rascheln, ein Klappern wies ihr den Weg in Harrys Arbeitszimmer. Schwaches Licht drang heraus. Sie sah in den Raum und beobachtete nur…Harry sass auf dem Boden, eine Mülltüte neben sich. Nach und nach pfefferte er wütend Dinge hinein die um ihn herum den Boden bedeckten. Ehrungen, Briefe, Ehrenauszeichnungen, Zeitungsartikel über den „Held“ Harry Potter. Man hatte ihn nach der Schlacht nur so in den Himmel gehoben. Überschüttet mit Dankbezeigungen, Briefen, Ehrenbürgerschaften… Einladungen zu allen möglichen Anlässen. Alle wollten ihm die Hand schütteln, ihm danken, mit ihm über die Schlacht reden. Er hasste es darüber zu reden. Er wollte verdrängen. „Harry…?“ fragte sie sanft. Er schien sie nicht zu hören, fuhr nur noch wütender fort. Dann plötzlich liess er alles fallen. Er stütze den Kopf in die Hände und weinte bitterlich. Ginny nahm ihn in die Arme und tröstete, gab ihm Halt. Nach einer Weile beruhigte sich Harry und seine Nöte brachen aus ihm heraus „ich…ich kann es einfach nicht ertragen. All der Plunder“ er sah zu der Mülltüte mit Urkunden, Medaillen. „All das für mich. Dabei habe ich… ich hatte einfach nur Glück. Immer immer wieder habe ich mich ins Abenteuer gestürzt und dabei andere mitgerissen..“ er schluchzte „Und Snape hat die ganze Zeit versucht, mich zu schützen, zu helfen. Ohne jede Aussicht auf einen Dank. Nur ein mieser grausamer, einsamer Tod. Und dann vermutlich irgendwo sang und klanglos verscharrt…Und wie oft, wie oft habe ich ihn verdächtigt, beschuldigt, verflucht. Verdammt!! Warum….WARUM hat er nie etwas gesagt? Mich zur Besinnung gebracht. Warum hat Dumbledore es mir nicht gesagt??“. Er sass da wie ein Häuflein Elend. „Ich war ein Narr. Ich bin genauso wie Snape immer gesagt hat. Wie mein Vater. Faul, arrogant. Blind.“ Nach und nach beruhigte er sich. Erschöpft schlief er endlich in Ginnys Armen ein.</p>
+<p>Der Buchladen war ein Novum. Vorne ein gewöhnlicher Mugglebuchladen, doch im hinteren Bereich ein Vorhang der nur für Zauberer durchgängig war. Dort verbarg sich eins der wenigen Zauberer Buchgeschäfte ausserhalb der Winkelgasse. Die Hauseigene kleine Bibliothek wurde ihm langsam zu knapp…er brauchte ein paar neue Bücher oder Fachzeitschriften. Eine Weile beobachtete er nun schon den Eingang des Buchgeschäfts. Aber niemand bekanntes hatte den Laden in der letzten Stunde verlassen oder betreten. Er würde es wagen. Seine Mugglekleidung würde hier niemand auffallen, alle hiesigen Zauberer versuchten möglichst nicht aufzufallen. Er durchquerte den normalen Laden, fand den magischen Vorhang und durchquerte ihn. Ein überraschend grosser Raum mit vielen Buchregalen empfing ihn. Er atmete tief durch. Bücher waren ihm immer wichtig gewesen. Ausgiebig studierte er die Regale und Buchauslagen. Fast vergass er dabei seine Umgebung, so sehr genoss er diesen Besuch. Nur einige wenige andere Kunden waren da. Interessiert vertiefte er sich in eine nagelneue Ausgabe über die Zaubertrankforschung im Gebiet der Heilkunst. Bis ihn jemand ansprach. „Ich kann ihnen gerne noch ein weiteres Buch empfehlen zu dem Thema, Professor Snape.“  Er sah auf, die Augenbrauen hochgezogen ob der Anrede. Luna Lovegood…. „die Sachen stehen ihnen“ sagte sie und wandte sich mit einem verträumten Lächeln ab. Er war zu verblüfft, um zu reagieren. Das Mädchen hatte es immer schon vermocht, ihn zu irritieren. Und Dinge durchschaut wie niemand anderes… Er glaubte irgendwie nicht, dass sie ihn verraten würde.</p>
+<p> </p>
+<p>Schwer fiel Minerva in ihren Stuhl. Merlin sei Dank, ihr Tee stand schon bereit. Mit zitternder Hand trank sie einen Schluck. Die Lehrer rannten ihr in den letzten Tagen die Bude ein. Immer wieder brachen Streitigkeiten aus zwischen den Studenten von Slytherin und den anderen Häusern. Studenten lieferten sich unerlaubte Duelle in den Gängen. Minerva war gesundheitlich nicht mehr in der Lage ständig Patrouille zu laufen, und die Lehrer wurden der Lage kaum Herr. Der junge Lehrer, der jetzt Potions gab und Slytherin Haus leitete war…nunja. Ein Weichei. Wenn er konnte entzog er sich jedem Zwist. Qualifikation war nicht alles. Ein tiefer Seufzer entrang sich ihr. Ihr Blick fiel wie so oft auf Snapes Portrait. Doch anders als schlafend hatte sie ihn nie gesehen. Mit ihm, würde die Lage hier nicht so eskalieren. Irgendwie-sie wusste nicht wie- hatte er es immer geschafft vor Ort zu sein wenn er gebraucht wurde. Und Disziplinlosigkeit unterbunden. „Verdammt nochmal!“ fluchte sie halblaut in den Raum hinein. „Severus Snape, ich könnte dich hier dringend gebrauchen!“ Einige der anderen Portraits erwachten und schauten auffordernd auf Snapes Portrait, welches nicht einmal zuckte. Müde sackte Minerva in ihrem Stuhl zusammen. So konnte es nicht weitergehen. Ganz bewusst hatte man die Slytherin Studenten aus der Schlacht um Hogwarts herausgehalten. Konnte man von Studenten verlangen gegen ihre eigenen Eltern oder Verwandte zu kämpfen? Sicher war es so besser gewesen. Das hatte aber dazu geführt das alle anderen Häuser sie jetzt der Feigheit bezichtigten und beschimpften. Wenn erstmal etwas Gras über die Sache wachsen konnte…Auch und besonders die Slytherins verdienten die Chance eine gute Ausbildung zu bekommen. Und aus den Fehlern der Vergangenheit zu lernen. Aber dafür müsste der Schulfrieden wieder einkehren.</p>
+<p> </p>
+<p>Severus zuckte zusammen. Stand es wirklich so schlimm um Hogwarts? Was nützte es, wenn der dunkle Lord besiegt war, wenn seine Nachfolger schon in Hogwarts auf ihre Gelegenheit warteten. <br/>Kingsley hatte sich seine Akten unter den Arm geklemmt und schritt die Strasse entlang. Der Nieselregen machte es ungemütlich. Aber er wollte sich dem nicht lange aussetzen. Endlich hatte er das von ihm bevorzugte Cafe erreicht. Er machte es sich in seiner Lieblingsecke gemütlich. Ein grosser Kaffee, ein paar Biskuits. Endlich mal raus. Im Ministerium hatte er nie Ruhe zum Arbeiten oder einfach zum Nachdenken. Er hoffte, seiner Funktion als Minister der Magie gerecht zu werden, aber es war doch sehr stressig. Die Turbulenzen nach der Schlacht um Hogwarts waren noch lange nicht bewältigt. Immerhin konnte der Schulbetrieb weitergehen. Allerdings lief er alles andere als reibungslos. Der Krieg und die Prozesse gegen die Totesser hatte die Kluft zwischen Slytherin und den anderen Häusern verstärkt. -  Jedoch…er konnte sich keine bessere Schulleiterin vorstellen derzeit als Minerva Mc.Gonagall. Doch hatte die Schlacht sie körperlich sehr mitgenommen und die zahlreichen Verluste belasteten sie sehr. Und sie war nicht die einzige die mit solchen Nachwirkungen zu kämpfen hatte. Alle Beteiligten. Er trank einen Schluck Kaffee. Und Harry Potter. Gefeiert als Held, doch innerlich völlig zerrissen und gequält. Er machte Kingsley wirkliche Sorgen. So ein junger Mann. Er fühlte sich persönlich verantwortlich für all die Todesopfer. Der Ruhm bedeutete ihm nichts. Er hatte nur mit grosser Mühe die Fassade des gefeierten sympathischen Helden aufrechterhalten. Kingsley konnte nur hoffen das Harry unter der Last des Erlebten nicht zerbrach. Kingsley seufzte. Mühsam raffte er sich auf an seinem Statusbericht über die Totesserprozesse weiterzuarbeiten. Draussen schüttete es nun wie aus Eimern, Muggel mit Regenschirmen hasteten vorbei. Die Tür des Cafes öffnete und schloss sich, aber er hob gar nicht erst den Kopf. „Darf ich mich dazu setzen?“ fragte jemand mit tiefer sehr heiserer Stimme. Hochkonzentriert nickte Kingsley nur.  „Gewiss“. Er blickte nur flüchtig hoch. Ein Mann, abgetragene Jeans, Lederjacke. Gross und hager, schwarze kurze Haare, ein schwarzes Halstuch. Kingsley runzelte die Stirn. Irgendetwas kam ihm bekannt vor an dem Mann. Nun sah er doch genauer hin. Fast klappte ihm die Kinnlade herunter vor Verblüffung. „Se…..“ er verstummte. Tote waren lebendig geworden. Severus einer Mundwinkel zuckte als sei er kurz davor zu lachen. Mit rauer und sehr heiserer Stimme bestellte auch er Kaffee. „Wie um alles in der Welt hast du überlebt?? Alle halten dich für tot.“  Severus trank einen Schluck Kaffee. „noch ist es nicht soweit“ sagte er trocken. Kingsley sah ihn richtig an. Trotz des Halstuches konnte er die Ansätze schrecklicher Narben unter dem Kinn sehen. Das sah ihm ähnlich, einfach tolldreist hier im Cafe zu erscheinen. „Du warst schon immer ein Überlebenskünstler. Aber diesmal war es wohl knapp…“ Kingsleys Blick ruhte auf Severus Hals, oder was davon zu sehen war. „Du weisst das du noch immer ein gesuchter Mann bist? Auf jeden Hinweis ist eine hohe Belohnung ausgesetzt. Die Anklageakten warten nur auf Dich. Oder Deine Leiche.“ Sagte Kingsley. „Ich bin ohnehin nicht an Dankbarkeit gewöhnt“ sagte Severus ironisch. „Wie gross sind meine Chancen ohne Azkaban Besuch ins Leben zurückkehren zu dürfen? Ich bin es müde mich zu verstecken. Und ich glaube, dass meine Hilfe noch gebraucht wird.“ Kingsley seufzte. „Es tut mir leid. Auch ich konnte zuwenig für dich aussagen weil nur Albus deine Aufgaben kannte. Deine Chancen stehen 50:50. Es sei denn, du kannst noch mehr Beweise deiner Unschuld bringen. Und ich bin sicher, Harry würde auch für dich aussagen. Kannst Du keine weiteren Beweise vorbringen?“ „Vielleicht“ antwortete Snape vage. Kingsley wühlte in seiner Aktentasche und holte einen Flyer hervor, den er Snape vor die Nase legte. „SNAPE, Heiliger, oder Verbrecher?“ von Rita Skeeter. Severus schnaubte abfällig. „Das ist nicht lustig. Sie formt die Meinung vieler! Du warst zu gut als Spion. Viele glauben bis heute, dass du Albus in Voldemorts Namen (noch immer schüttelte es ihn den Namen auszusprechen) getötet hast. Das du ein Mörder bist.“ Snapes Gesicht verschloss sich zu einer abweisenden Maske. „Nun, das bin ich. Aber kann ich einer Verurteilung entgehen?“ Kingsley betrachtete ihn aufmerksam. Er konnte Severus seinen Respekt nicht versagen. Auch wenn er oft ein unangenehmer, unbequemer Zeitgenosse war. Aber er hatte mehr getan und geopfert um Voldemort zu besiegen als die meisten anderen. Und um andere zu schützen. Er hatte dabei seinen eigenen Ruf und sein Leben völlig seiner Aufgabe geopfert. Man hatte im Orden des Phönix nur ahnen können, wie gefährlich es gewesen war unter Voldemorts Augen zu spionieren. Severus hatte nur die Informationen weitergegeben, die benötigt wurden. Von ihm war nie nur ein Wort der Klage gekommen. Aber ganz offensichtlich war auch er regelmässig der Bestrafung durch Folter unterzogen worden. Wie oft hatte er sich kaum auf den Füssen halten können. Doch immer hatte er jede Hilfe abgelehnt. Hatte das verhasste Haus seines Feindes Sirius so schnell verlassen wie er konnte. Kingsley schämte sich dafür, das er nie etwas gesagt hatte, um ihm zu helfen. Snape hatte es mehr als verdient, nun endlich zu leben. Wenn er schon keine Dankbarkeit zu erwarten hatte, so mindestens den Freispruch.</p>
+<p> </p>
+<p>Severus betrat die kleine Küche um Tee zu machen. Da spürte er etwas spitzes im Rücken, Atem in seinem Nacken. „Wag nicht dich zu rühren!“ sprach eine Stimme. Der Fremde hatte in der Tür gestanden, nun zog er ihm den Zauberstab aus der Jeanstasche. Wehrlos. „Du darfst dich jetzt herumdrehen. Verräter! Es hat mich viel Mühe gekostet dich zu finden. Alle hast du über Jahre genarrt. Es wird Zeit das du den Preis dafür bezahlst. Bellatrix hatte immer Recht. Sie hat dir nie getraut! Der Ratgeber des dunklen Lords! Ein Stück Dreck bist du! Es wird mir das allergrösste Vergnügen bereiten, dich hier genüsslich hinzurichten.“ Mit einer Hand riss er ihm das Tuch vom Hals weg. Die fast verheilte Narbe platzte schmerzhaft auf, Severus spürte wie ihm ein Rinnsal Blut in den Kragen lief. Ennys grinste breit. „Da hat Nagini ja schon ganze Arbeit geleistet“ sagte er angesichts der tiefen hässlichen Narben. „Aber nicht gut genug. Sobald ich dich ins Jenseits befördert habe, werde ich nach den anderen suchen. Auch nach Draco. Auch er hat einen Schwur geleistet. Wir werden die Macht übernehmen, als Erben des dunklen Lords. Aber du wirst es nicht mehr erleben! Du hast viel zu lange überlebt. Aber bevor du stirbst, will ich dich auf Knien um Gnade betteln sehn. Du dreckiger Halbblut-Verräter!“ Severus konnte sich an Ennys erinnern. Einer der unzähligen Liebhaber Bellas. Es stimmte, er hatte ihn immer im Blick gehabt, immer argwöhnisch beachtet. Doch Voldemorts Vertrauen hatte Snape geschützt. Bis jetzt. Ennys grinste in Vorfreude. Severus tastete in seinem Rücken herum. Riss den nächstbesten Gegenstand - den massiven Holzblock mit Küchenmessern- an sich und schlug ihn Ennys voll ins Gesicht. Überrascht ging der andere zu Boden, offensichtlich ohnmächtig. Severus griff sich beide Zauberstäbe, mit einem schnellen Spruch war Ennys gefesselt und geknebelt. Als der andere die Augen aufschlug stand Severus vor ihm. Er lächelte kalt. „Du brauchst gar nicht erst um Gnade zu winseln. Ich werde dir keine gewähren“ der andere wandte sich, die Augen entsetzt aufgerissen. Severus nahm prüfend eines der Küchenmesser zur Hand. Systematisch und gründlich begann er Ennys das Fleisch von den Knochen zu schälen. Sorgfältig, leidenschaftslos, kühl wie wenn er Wurzeln für einen Trank schnitte. Mit jedem Schnitt fühlte er sich befreiter. Befreit von den Fesseln, denen er sich hatte beugen müssen. Die Beleidigungen, die er sich hatte gefallen lassen müssen. Das man ihn für einen miesen Verräter gehalten hatte. Für einen Mörder an dem Mann dem er Treue versprochen hatte. Mit jedem Schnitt fiel eine Fessel, eine Last von ihm ab. Dieser kleine miese Totesser würde ihn nicht davon abhalten zu leben. Nicht jetzt wo er sich entschieden hatte zu leben. Das Messer war sehr scharf. Eine Stunde später schnitt er Ennys die Kehle durch. Der Küchenboden besudelt von Blut. Es wäre doch zu schade gewesen seinen Zauberstab so zu missbrauchen. Um so einen kleinen miesen Totesser auszumerzen. Die Hände noch rot von Blut, setzte er sich gelassen an den Tisch, zündete sich eine Zigarette an die er dem anderen abgenommen hatte. Er hatte sich immer beherrschen müssen oder Dinge getan die ihm widerstrebten um seine Aufgaben zu erfüllen. Das war nun vorbei. Nun war er nur noch sich selbst verpflichtet. All das, all der aufgestaute Hass, die Frustration, der Druck der Last der Aufgaben über all die Jahre hatte sich nun Bahn gebrochen. Der dunkle Lord war tot. Aber noch immer nicht sein Gedanke, sein Geist. Als er fertig geraucht hatte, säuberte er sich und die Küche mit einem Zauberspruch. Sein Opfer verwandelte er in einen Knochen. Den würde er im Garten vergraben. Vielleicht fand ihn mal ein verlaufener Streuner? Recht geschähe es diesem Abschaum. Der Tigerkater kam hinein, eine prächtige tote Maus im Maul. Blut tropfte von der Maus auf den Boden. Sanft strich Severus dem Tiger über den Kopf. „Sehr gut“.</p>
+<p> </p>
+<p>Kingsley sass schon an seinem Lieblingstisch, über Papieren brütend, als Severus hereinkam. Er bestellte Kaffee und schaute auf die Listen, die er gerade bearbeitete. Es war eine Statusliste von Totessern. ………….Severus Snape – vermisst, vermutlich tot……….Ennys Prance- flüchtig…….Lucius Malfoy-inhaftiert…….Draco Malfoy- vorläufig auf Kaution freigelassen……….und so ging es weiter. „Ennys Prance kannst du streichen. Er ist tot“ sagte Severus beiläufig. Kingsley sah auf „woher weisst du das?“ er runzelte die Stirn. Severus Mundwinkel zuckte. „Sagen wir mal, ich bin gut informiert. Frage mich nicht nach Dingen die du nicht wissen möchtest“ sagte er. Kingsley sah ihn argwöhnisch an, doch strich er den Namen. Dieses düstere Funkeln in Severus Augen hielt ihn zurück Fragen zu stellen. Er ahnte das ihm die Antwort nicht gefallen würde. Nach einigen weiteren Tassen Kaffee sprachen sie über die Einzelheiten von Severus Fall und die von Dumbledore vorbereiteten Beweise für Snapes Unschuld und Loyalität.</p>
+<p> </p>
+<p>Minerva McGonagall brütete wieder über diversen Papieren. Ihre Migräne meldete sich wieder. Automatisch fiel ihr Blick wie so oft auf Severus stummes Portrait. „Wenn du noch hier wärst, hätte ich wenigstens ein Mittel gegen meine Migräne. All diese Probleme jeden Tag bereiten mir schon genug Kopfschmerzen“ Statt aufzuwachen stützte Snapes Konterfei lediglich seinen Kopf auf die andere Hand um weiterzuschlafen. Seine überlangen verbargen seine Augen völlig. Sie seufzte hoffnungslos…Da klopfte es an der Tür. Der junge Potionslehrer und Hausleiter Slytherin. Eine halbe Stunde jammerte er ihr die Ohren voll. Über illegale Duelle seiner Schützlinge auf den Gängen und Beschwerden das sie gemobbt wurden. Eigentlich wäre es seine Aufgabe gewesen hier einzugreifen. Aber er war ein Angsthase und hatte soviel Authorität wie eine Feldmaus… Durch sein Portrait hörte Severus diesem Austausch zu. Durch die Nachwirkungen der Schlacht waren die Slytherins noch mehr in Verruf geraten als früher. Dabei hatte man sie nur schützen wollen und von der Schlacht ferngehalten. Und jetzt waren viele ihrer Familien ohne Vater und verarmt. Das sie jetzt arm wie Kirchenmäuse hier ankamen, erinnerte ihn an ihn selbst. Ein Grund mehr, von Mitschülern gehänselt zu werden. Gebrauchte Roben und Bücher, die ältesten Besen für Quidditch. Er wusste wie das war. Kinder konnten gnadenlos sein. </p>
+<p> </p>
+<p>Man hatte die Dementoren aus Azkaban entfernt. Trotzdem war die Atmosphäre bedrückend. Das Gefängnis alt und die Zellen- zumindest die alten- menschenunwürdig. Die Seeluft konnte den Gestank von Verwesung und Unrat nicht überdecken. Kingsley sah sich entsetzt um. Er hatte darauf bestanden, Severus zu begleiten. Es war besser das niemand erfuhr, welchen Gast er begleitete… Wenn man nicht aufgrund jüngerer Verdienste Gnade walten liesse, wäre Severus selbst ein lebenslanger Platz hier sicher. Nur an des Ministers Seite würde niemand seine falsche Identität hinterfragen. Severus betrachtete die Umgebung mit kühler Indifferenz. Vor einer mehrfach verriegelten Tür machte Kingsley halt. „Wir haben angeboten ihn gegen Zahlung einer Kaution in eine menschenwürdigere Unterkunft zu verlegen. Doch er hat entgegen dem Willen seiner Frau abgelehnt“ Kingsley runzelte die Stirn. „warum auch immer. Ich lasse Euch allein. Ich muss nach dir verriegeln. Vorschrift. Er ist DER Top Gefangene hier.“ Severus lächelte schwach. Das war Lucius nur, weil die Öffentlichkeit von seinem, Severus Snapes Überleben keine Ahnung hatte. Sein eigenes Tatenregister und der Ruf als Voldemorts Berater überstieg das von Lucius bei weitem. Lebenslang Azkaban wäre ihm sicher, wenn nicht gar die Todesstrafe, die selten verhängt wurde doch laut Gesetz bis heute legal war. Schwer schlug die Metalltür hinter Severus zu. Im Dämmerlicht- nur ein sehr hohes vergittertes Fenster liess Licht und Zugluft ein- erkannte er ein zusammengekauertes Bündel, auf der wackeligen Schlafstatt sitzend. Es stank. Der Insasse war nur mehr noch in Lumpen gehüllt. Mitleid regte sich in Severus. Es war ein harter weiter Weg gewesen vom arroganten Zaubereraristokraten bis zu diesem Moment. „Lucius..“ sagte er sanft, mit seiner heiseren Stimme. Lucius Kopf schoss ruckartig hoch. Diese Stimme hätte er überall erkannt. Auch wenn sie verändert war. Wie eine schlechte Marionette stand er ruckartig auf, machte zwei Schritte bis er vor Severus stand. Dann liess er sich hart vor ihm auf die Knie fallen und senkte den Kopf, zum Zeichen das er sich ihm völlig auslieferte. Dreckiges, verfilztes Haar verbarg Lucius Gesicht. „Töte mich. Ich habe dich dem sicheren Tod übergeben. Das ist unverzeihlich. Töte mich. Langsam und qualvoll, wie ich es mir verdient habe.“ Er sprach leise, doch entschlossen. Severus sah lange auf ihn herab. Dann griff er nach Lucius und zog ihn zu sich empor. „Ich habe Dir doch schon längst verziehen.“ Er ergriff die Unterarme des anderen. „Brüder der Finsternis“ murmelten beide, die formelle Begrüssung, gegenseitige Anerkennung und Respektserweisung von Totessern des inneren Kreises. Anschliessend umarmten sich beide. Lucius Schultern zuckten… er hatte den anderen tot geglaubt. Endlich wagte Lucius, Severus in die Augen zu sehen. Diese schwarzen Augen…dann fiel sein Blick auf das Halstuch das sein Freund trug. Seine Augen weiteten sich…mit zitternder Hand löste er das Tuch. Beim Anblick der hässlichen Wunde liess er das Tuch geschockt fallen. „Ich…“ stammelte er. Severus schüttelte den Kopf. „Shhh..“ Stumm und zart wie ein Lufthauch zog Lucius die Narben mit einem Finger nach. Seine Schuld. Es war ein Wunder.. Es klopfte an der Tür.  Schnell umarmten sich beide noch einmal. Severus bückte sich nach dem Halstuch um seine Narben  wieder zu verdecken. Schon rasselten die Türriegel. „Lass dich verlegen, Lucius. Versprich es mir. Du musst dich nicht um meinetwillen quälen“ Lucius nickte. Dann liess er sich auf das Bett fallen. Er war nicht zum Mörder.. seines Geliebten.. seines Freundes geworden. Merlin sei Dank…</p>
+<p> </p>
+<p>Das Apartment war schick, neben dem Kleiderschrank standen einige, eben eingetroffene Pakete. Sie hatte noch keine Zeit gehabt sie auszupacken. Neue Kleider! Der Geldregen musste gefeiert werden. Ihr neuestes Buch war wahrhaft eine Goldgrube! Natürlich. Die Menge liebte Skandale. Mord, Verrat, berühmt-berüchtigte Gestalten. All das hatte ihr Buch zu bieten. Ein echter Rita Skeeter! Was daran wahr war…was scherte es sie. Das Objekt des Buchs war tot. Ziemlich sicher. Umso besser. Er konnte nicht mehr widersprechen, was immer sie auch schrieb. Auch sonst wusste niemand mehr über diese berüchtigte Gestalt. So…sie musste noch etwas für ihr Äusseres tun. Das Kleid flog auf einen Stuhl, nur im knappen Unterkleid ging sie ins Bad. Sie drehte ihre Haare auf Lockenwickler. Cremte sich das Gesicht ein, dabei trällerte sie ein Liedchen. Noch einen Happen Essen, ein Glas Champagner. Jetzt würde sie nicht mehr jede Münze dreimal herumdrehen. Leichtfüssig kehrte sie ins Wohnzimmer zurück. Wie erstarrt blieb sie stehen. Ein Mann sass in einem ihrer bequemen Sessel. Gross war er und schlank, gekleidet in abgewetzte Jeans wie ein Muggel. Das Buch „Severus Snape: Verbrecher oder Heiliger“ verbarg sein Gesicht. „Faszinierend…“ Sagte er ruhig mit tiefer auffällig heiserer Stimme. Ein Ruck durchfuhr sie. Das durfte…das KONNTE nicht wahr sein. Er nahm das Buch herunter. Zum Vorschein kam Severus Snape. Ungewohnt in dieser Verkleidung. Sie hatte nicht oft mit ihm gesprochen. Er war ein unangenehmer Zeitgenosse und selbst ihr flösste er etwas Angst ein, die sie natürlich immer forsch überspielte. Diese kalten Augen…um den Hals trug er ein Halstuch, was vermutlich die Bisswunden der Schlange verbarg an denen er gestorben sein sollte. Angeblich. Sein schwarzes Haar war kurz, und fiel ihm doch ins Gesicht. Die Nase gebogen wie der Schnabel eines Raben. Ganz klar, er war es. Kein Geist. Er unterbrach ihre Musterung „Gibt es etwas zu feiern?“ sagte er spöttisch, sein Blick fiel auf den Champagner. „Anscheinend macht ihr Buch über diesen berüchtigten Verbrecher gute Gewinne“ er warf das Buch mit seinem Bild laut klatschend auf den Couchtisch, so dass sie erschreckt zusammenzuckte. Ihre Gedanken rasten. Es war das eine böse Gerüchte über ihn zu verbreiten. Ihn als Mörder und Verbrecher zu bezeichnen. Aber etwas anderes diesen Mann dann vor sich stehen zu haben. Ihr Herz schlug ihr bis zum Hals. Rita, reiss dich zusammen. Das ist DEINE Chance! Dachte sie. Wenn er dich nicht gleich umbringt…sagte eine kleine ängstliche Stimme in ihrem Kopf. „Professor Snape, welch eine Ehre“ sagte sie forsch, als habe sie ihn erwartet. Er betrachtete sie kühl, abwartend. „Die Leute lieben Helden. Helden wie sie“ sagte sie mit schmeichelnder Stimme. „Und Verbrecher? Wie mich?“ fragte er mit sarkastischem Unterton. „Ja, auch“ sagte sie etwas kleinlauter. Was wollte er hier? Die Flucht nach vorne. Das war das Beste. „Wunderbar das sie hier sind! Ich könnte eine Biographie über sie schreiben. Wie es wirklich war. Wir stehen gemeinsam auf der Bestsellerliste! Natürlich werden sie am Gewinn beteiligt“. Er erhob sich langsam, kam auf sie zu, sah auf sie herab. Kalte, schwarze, Augen. Und doch… Sie lächelte plötzlich kokett, sich bewusst wie leicht sie bekleidet war. Sie kam ihm etwas näher um ihm einen Blick in ihren Ausschnitt zu gewähren. „Und vielleicht bist Du nicht nur… am Gewinn interessiert?“ versuchte sie mit ihm zu flirten. So schlecht sah er nicht aus. Nur immer so unentspannt. Wer weiss über was für Qualitäten er sonst verfügte? Auf Hogwarts kannte man ihn nur als notorischen Einzelgänger. Frauengeschichten hatte sie bei aller Mühe keine gefunden. Aber vielleicht konnte sie ja so – persönlicheres- erfahren? Quasi aus erster – hm – Hand? Er runzelte unwillig die Stirn. „Nein, danke. Mein Geschmack hat nicht gelitten“. Unsanft packte er sie am Handgelenk und setzte sie auf den Stuhl am Schreibtisch. Der Bastard hatte sie nicht einmal genau angesehen, dachte Rita etwas entrüstet. „Unterschreiben sie das“ ein Blatt Papier lag vor ihr. Ein Vertrag. Sie las. „WAS? Ich soll 50% der Einnahmen für bedürftige Hogwarts Schüler überschreiben?? Wollen sie mir drohen?  Jemand dem eine Zelle in Azkaban sicher ist? Sie sind nicht in der Position anderen zu drohen“ Jetzt war sie wirklich ärgerlich. Er lächelte amüsiert. Es war kein angenehmes Lächeln. „Nein? Wer ist denn sonst noch hier? Glauben sie, es macht noch einen Unterschied für mich, sie verschwinden zu lassen? Ist der Ruf erst ruiniert…“ Er klingt so, als meine er es ernst! , schrie die ängstliche Stimme in ihrem Kopf. Mit zitternder Hand unterschrieb sie. </p>
+<p>Harry? Harry? Rief Ginny, als sie Harry nirgends erblickte. Wo war er? Sie machte sich Sorgen. Die ganzen Therapiegespräche schienen Harrys Seelenleben immer weiter zu destabilisieren. Endlich öffnete sie die Schlafzimmertür. „Lumos“ ihr Zauberstab tauchte den Raum in ein sanftes Licht. Die Rollos waren heruntergelassen, das Fenster zu, die Luft stickig. In der Ecke wie ein Häuflein Elend sass Harry, zusammen gekauert wie ein Kind. Mit schnellen Schritten durchquerte sie den Raum, legte ihm die Hand auf die Schulter. „Harry?“ fragte sie leise. „Was ist passiert?“ „Hast du es nicht gehört?“ Doch, hatte sie. Es gab Gerüchte, Severus Snape sei am Leben, vorgeladen vor Gericht. Es schien ihr unglaublich. Wie sollte er überlebt haben. Harry murmelte etwas. „Ich bin geladen. Vor Gericht“ murmelte er erstickt. War es also wahr? Fragte sie sich. „Entschuldige mich. Bitte!“ sagte er dringlich. „Ich kann da nicht hingehen“. So war es geschehen. Das Gericht hatte die Entschuldigung akzeptiert. Harry hatte seine Aussagen zum Thema Severus Snape längst getätigt. </p>
+<p> </p>
+<p>Kingsley hatte sich für Severus eingesetzt und seinen eigenen Ruf und seinen Ministerjob aufs Spiel gesetzt. Nun musste nur noch Severus selbst vor Gericht erscheinen. Und das tat er. Ein Raunen ging durch den Saal, als Severus ihn betrat, gekleidet wie ein Muggel, aber trotzdem merkwürdig eindrucksvoll, aufrecht und seinen Zauberstab in der Hand, der gewöhnlich vor Gericht abgegeben werden musste. Es war Severus Forderung gewesen. Er würde sich nicht kampflos festnehmen lassen, wäre die Verhandlungsentscheid gegen ihn. Es war eine klare Provokation für viele. Man hatte ihn für einen Verräter gehalten, einen Totesser und Mörder (nicht ohne Grund) man hatte ihn für tot erklärt. Doch selbst seine Gegner konnten ihm ihre Achtung nicht verweigern für den Mut sich dem Gericht zu stellen. Mit einem ironischen Lächeln ob der entgeisterten Blicke nickte er knapp dem Gericht zu und nahm Platz. „Fällen sie ihr Urteil anhand der ihnen vorliegenden Beweise. Ich möchte keine Dankbarkeit. Ich möchte nur in Frieden leben. Und ich möchte gerne weiterhin in Hogwarts lehren und wirken wenn man mich dort möchte. Das ist alles.“<br/>In der Pressecke sass Rita Skeeter. Hin und hergerissen von dem Bedürfnis, dieses denkwürdige Ereignis auszuschlachten. Und ihrer Angst. Der Angst vor dem Mann dort. Und wer weiss? Vielleicht liess er sich dann doch noch zu einer Biographie aus ihrer Feder hinreissen? Zuletzt schrieb sie einen Artikel. Den objektivsten, der je von ihr erschienen war…. <br/>Als Severus Snapes Freispruch verkündet wurde entstand ein Tumult im Gerichtssaal. Doch bevor sich dieser auch nur ansatzweise gelegt hatte, war Snape aus dem Gerichtsaal verschwunden wie ein Schatten. Die Vertreter der Presse, nicht zuletzt Rita Skeeter blieben verärgert und enttäuscht zurück.</p>
+<p> </p>
+<p>Severus stand vor dem Eingang zum Schulleiterbüro. „Dumbledore“ sprach er das Kennwort, welches er selbst als Schulleiter verwendet hatte. Wie die Todesser dachten, um seinen Triumph zu feiern. Er hatte es ausgewählt, da es dieser Name war, der ihn nun immer verfolgen würde. Der Mann, dem er Loyalität versprochen hatte, und den er sehenden Auges getötet hatte. Und erfüllt von Wut. Wut darüber, das er das hatte versprechen müssen. Ein gnadenvoller Tot? Nein. Er fühlte sich davon befleckt, beschmutzt bis heute.</p>
+<p>„Herein“ rief Minerva Mc.Gonagall. Sie stand auf. Sie wusste nicht…sie wusste nicht was sie denken sollte. Die schwere Holztür öffnete sich. Severus. Professor Severus Snape. Doch so sah er jetzt nicht aus, gekleidet wie ein Muggle. Er blieb wie erstarrt im Türrahmen stehen, musterte sie abwartend mit diesen schwarzen, kühlen Augen. „Minerva“ sagte er nur. Da löste sich ihre Erstarrung. Sie ging mit schnellen Schritten auf ihn zu, holte weit aus und schlug ihn mit der flachen Hand ins Gesicht. Er rührte sich nicht, machte nicht einmal den Versuch, ihr auszuweichen. Erschreckt zog sie ihre Hand zurück, Entsetzen im Blick. „Nur zu“ sprach er ruhig. Sie atmete schwer, liess den Arm fallen. „DU.VERDAMMTER.BASTARD!“ sagte sie nur, jedes einzelne Wort betonend. „Du hast mich, und alle anderen zum Besten gehalten“. „Ja. Das war mein Job.“ „Gott verdamme meine Seele, Severus. Ich habe es geglaubt! Ich habe geglaubt das du ein Verräter bist. Das Du für Voldemort arbeitest.  Bis Potter… einiges erklärt hat.“ Ihr Atem ging schwer, sie wankte. Snape nahm sie am Arm und half ihr zu ihrem Stuhl. Er füllte zwei Gläser mit schottischem Whisky und stellte ihr eines hin. Sie trank es mit einem Zug aus. Dann stand sie entschlossen auf, ging um den Schreibtisch herum und wies mit eindeutiger Geste auf den Sessel des Schulleiters. Einst Albus Sessel. „Nimm Deinen Platz ein.“ Severus schüttelte den Kopf. „Nein. Niemand möchte Professor Dumbledores Mörder auf diesem Platz sehen. Auch Du nicht, Minerva. Und zu Recht.“ Minerva seufzte, kehrte zu dem Sessel zurück und liess sich schwer in ihn fallen. „Die Last ist mir zu gross. Ich bin nicht mehr die jüngste.“ Nun erst nahm sie sich die Zeit, Severus näher zu betrachten. Eine breite weisse Strähne befand sich in seinem schwarzen Haar, die vorher nicht dagewesen war. Ein Halstuch verbarg offensichtlich die Wunde an seinem Hals. Er wirkte fahl, wie jemand der lange krank gewesen war. Und doch wirkte er- anders. Als sei eine Last, etwas der ständigen Anspannung von früher von ihm abgefallen. „Warum bist du gekommen? Auch wenn dein Name offiziell von Anklagen freigesprochen ist, wirst du trotzdem von vielen gehasst. Warum möchtest du nicht lieber woanders dein Glück versuchen, wo dich niemand kennt?“ Severus lächelte, traurig, bitter. „Natürlich. Aber das bin ich gewohnt. Ich hatte nur so eine Ahnung das meine Hilfe hier womöglich noch gebraucht wird?“ Minerva sah auf, dann lächelte sie. Manche Dinge änderten sich nie. Wenn er gebraucht wurde, dann war Severus Snape da. Ein Stein fiel ihr vom Herzen.<br/>Severus bekam seine Position als Hausleiter Slytherin wieder zurück, ausserdem den Posten Verteidigung gegen Dunkle Künste und übernahm gelegentlich den Potionsunterricht. Im Gegensatz zu früher allerdings nur für die älteren und fortgeschrittenen Studenten. Wenige Tage nach seiner Rückkehr hörten die Konflikte zwischen Slytherin und den anderen Häusern auf. Tatsächlich kehrte nach und nach wieder erstmalig nach der Schlacht wieder etwas vom alten Hogwarts Geist wieder.</p>
+<p>Severus Snape bezog wieder sein altes Wohnquartier, doch nahm er den imposanten Grautiger mit, der nun in den Gängen nach Mäusen sah und nachts Snapes Füsse wärmte. Es erwärmte Minervas Herz, wenn sie Severus mit seinem Kater sah. <br/>Minervas grosse Erleichterung wurde nur durch ein Ereignis getrübt. Zuvor hatte Harry Potter regelmässig Sonderkurse gegeben in Duellierkunst. Seitdem Professor Snape zurückgekehrt war hatte Harry sich von Ginny bis auf weiteres entschuldigen lassen…Minerva wusste, das Harry und Professor Snape nie gut klargekommen waren. Aber sie hatte gedacht, nun, nachdem Voldemort besiegt war und Snapes wahre Rolle aufgedeckt war…sie hatte gedacht die Lage würde sich normalisieren.<br/>Schon in kurzer Zeit hatte Severus Snape wieder in den Hogwarts Alltag zurückgefunden. Ohne den Dauerstress als Spion gestaltete sich seine Arbeitslast als leicht zu bewältigen. Er ertappte sich sogar dabei, gerne zu unterrichten. Nicht das er seine Art wesentlich geändert hätte. Er war nach wie vor streng und fordernd und bemüht besonders seine Slytherins zu unterstützen. Doch seine Noten waren fair und Strafarbeiten angemessen.</p>
+<p> </p>
+<p>Er lag dort wie eine zerbrochene Puppe. Der Mann den er so hasste…rabenschwarze Haare verschmiert von Blut. Soviel Blut, er war umgeben von einer dunkelroten Lache. Schwer ging der Atem von Snape, schon rasselnd. Es war ihm unmöglich ihn jetzt zu hassen. Mitleid war es…mit ihm, der auch der Halbblutprinz gewesen war. Harry legte seine Hand auf die Wunde im vergeblichen Versuch den Blutfluss zu stillen…-als er erwachte. Er fuhr im Bett so plötzlich auf, das das Bett wackelte. Der Schlafanzug klebte ihm klitschnass am Leib. Er stöhnte leise. Nicht schon wieder Snape. Ginny richtete sich schlaftrunken auf, legte ihm beruhigend den Arm um die Schultern. Langsam beruhigte sich Harrys Puls. Wie sollte er je wieder frei werden von diesen Bildern? Frei von den Schuldgefühlen für seinen masslosen und blinden Hass. Für seine Ignoranz aller Hinweise aller Ratschläge? „Komm, leg dich wieder hin“ riet ihm Ginny. Doch Harry war entschlossen aufgestanden. Der frühe Morgen fand ihn schon arbeitend, brütend über Schreibarbeiten in seinem Büro im Ministerium. Der Kollege mit dem er sein Büro teilte, brachte den aktuellen Daily Prophet mit. In der Kaffeepause warf Harry kurz einen Blick hinein. Ein winziger Artikel liess ihn aufmerken. „Professor Severus Snape wieder in Hogwarts.- Nach seinem Freispruch hat der höchst umstrittene Professor wieder seine alte Position in Hogwarts zurückerhalten. Bei einem Gespräch mit der derzeitigen Schulleiterin….etc etc“. Zum Glück war der Artikel ohne Bild. Er liess die Zeitung fallen, als habe er sich verbrannt.</p>
+<p> </p>
+<p>Severus betrat die ihm nun schon vertraute Buchhandlung. Er hatte nun deutlich mehr Zeit, seinen eigenen Interessen zu folgen, interessante Neuentwicklungen von Zaubertränken oder Neuentwicklungen der unterschiedlichsten Zauberkünste. In sich versunken stöberte er in der Ecke der Neuerscheinungen. Er mied die Winkelgasse. Zuviele erkannten ihn dort. Es lag nicht in seinem Interesse erkannt oder angesprochen zu werden. Und da die Öffentlichkeit nun um sein Überleben wusste, war auch seine Muggelkleidung kaum noch als Tarnung nützlich. Endlich hatte er sich für ein paar Bücher entschieden und ging damit zur Kasse. Ungeduldig strich er sich das schwarze Haar aus den Augen, das nun längst nachgewachsen war. Der Mann an der Kasse schaute dienstbeflissen auf, um dann nach Luft zu schnappen und rot anzulaufen. Im Nu kam er hinter seiner Kasse hervor umrundete den Tresen um sich vor Snape aufzubauen und ihn anzuschreien. „Sie, sie Mörder, Totschläger, Folterknecht….!! Meine halbe Familie habe ich verloren und sie laufen immer noch frei herum! Erschlagen sollte man sie!!“ Der Mann machte Anstalten ihm an den Kragen zu gehen. Als Snape ihn lediglich mit einer Hand auf Abstand halten wollte, schrak der Kassierer ängstlich zurück, offensichtlich in Angst er wolle ihn verhexen. Snape sah ihn nur kalt an, die Mundwinkel verächtlich herabgezogen. Soviel war so ein Freispruch also wert…In dem Moment drückte sich jemand an ihm vorbei. „Kommen sie, Mr. Horrell. Beruhigen sie sich. Ich übernehme die Kasse.“ Luna Lovegood. Sie brachte den älteren Mann weg, um ihn dann an der Kasse zu bedienen. „Entschuldigen sie, Professor Snape.“ „Es macht nichts. Danke Fräulein Lovegood.“ Sagte er nur schlicht. Er spürte die bohrenden hasserfüllten Blicke des alten Mannes noch als er hinausging. </p>
+<p> </p>
+<p>Ginny sass allein am Frühstückstisch, eine extragrosse Kaffetasse in der Hand und blickte nachdenklich aus dem kleinen Küchenfenster. Eine kleine Schnittlauchpflanze kümmerte dort etwas kläglich vor sich hin. Nein, sie hatte nicht bereut mit Harry zusammengezogen zu sein. Und doch- so hatte sie sich das nicht vorgestellt. Jetzt wo Voldemort besiegt war, hatte ihr Leben beginnen sollen. Doch nach all den Monaten, unzähligen Therapiegesprächen wurden Harrys Alpträume und Wahnvorstellungen und Schuldgefühle immer nur noch schlimmer. Mit einem Ruck stand sie auf. Entschlossen zog sie sich an. Gerade zur Essenszeit traf sie in der Grossen Halle ein, gleich erblickt von Minerva Mc.Gonagall. Diese kam zügig auf sie zu, wenn auch mit der Hilfe eines Gehstocks. Sie strahlte über das ganze Gesicht „Ms.Weasley! Wie schön“ Trotz der herzlichen Begrüssung entging es Ginny nicht, wie sehr Mc.Gonagall in letzter Zeit gealtert war. Sie wirkte…zerbrechlich. „Kommen sie, essen sie mit. Danach können wir uns im Büro weiter unterhalten.“ Sehr gerne nahm Ginny die Einladung an, herzlich wurde sie am Tisch der Gryffindors empfangen. Sie sah sich um. Nichts hatte sich hier verändert, man hatte nach der Grossen Schlacht alles wieder aufgebaut. Der riesige Kamin, in dem ein behagliches Feuer flackerte, die grossen Feuerschalen, gehalten von den Wappentieren der Häuser. Die langen Holztische mit den Spuren tausender Schüler. Dies würde immer ihr zweites Zuhause bleiben. Ihr Blick ging nach vorne zum Lehrertisch, doch waren einige der Stühle leer und das gesuchte Gesicht fand sie nicht. Noch nicht.</p>
+<p> </p>
+<p>Herein trat- Severus Snape. „Minerva. Du hast mich rufen lassen? Ms. Weasley“ knapp nickte er ihr zu, seine Augen verengt, er wirkte – kalt wie immer. Neugierig betrachtete Ginny ihn, ohne sich von seiner kühlen Begrüssung abschrecken zu lassen. Er trug schwarze Roben von gleichem Schnitt wie immer. Seinen Hals oder was dort zu sehen war, verbarg der hohe Kragen. Sein rabenschwarzes Haar war kürzer, gepflegter, mit einer weissen Strähne die sie noch nie wahrgenommen hatte. „Setz dich doch, Severus“ bat Minerva ihn. Etwas widerstrebend setzte sich Snape zu ihnen. „Miss Weasley hier hätte eine Bitte an dich.“ „So?“ fragte Snape, mit einer hocherhobenen Augenbraue. „Mr.Potter würde dich gerne sehen und mit dir sprechen. Wann würde es dir passen?“ Abrupt stand Snape auf. „Ich wüsste nicht, was ich mit..Potter..zu sprechen hätte. Entschuldige Minerva, ich habe zu tun“. In einem Wirbel seiner schwarzen Roben hatte Snape den Raum verlassen. Minerva sah etwas betreten auf die nun wieder geschlossene Tür. „Ms.Weasley, es tut mir leid. Ich dachte eigentlich, dass die zurückliegenden Ereignisse Professor Snapes Anspannung etwas gemildert hätte. Offensichtlich lag ich da nicht ganz richtig.“ Ginny seufzte. Sie war nicht überrascht.</p>
+<p> </p>
+<p>Einige Tage später erhielt Minerva hohen Besuch. Oder eher- einen alten Freund aus dem Orden des Phönix. Kingsley. „Minerva, schön dich wohlauf zu sehen!“ Sie seufzte. „Naja, was so wohlauf ist in meinem Alter. Und auch die Schlacht hat ihre Spuren hinterlassen.“ Ohne ihren Gehstock ging sie nirgendwo mehr hin. „Aber was bringt dich zu mir? Sicher nicht, das du dir das Gejammer einer alten Frau anhören möchtest.“ „Nana, Minerva, jetzt übertreibst du aber.“ Kingsley lächelte warm. „Wie du weisst, habe ich mich für Severus und seinen Freispruch verbürgt. Darum bin ich verpflichtet, mich nach ihm und seinem-untadeligen (er räusperte sich hier) Verhalten zu erkundigen. Oder hast du Beschwerden?“ Minerva schüttelte den Kopf. „Ganz im Gegenteil. Es ist als sei er nie weggewesen. Und seitdem er wieder hier ist gab es auch keinerlei Klagen mehr von und über die Slytherins. Ich weiss nicht was und wie er es gemacht hat. Aber Hogwarts ist wieder wie Hogwarts. Ich wünschte…ich wünschte ich dürfte ihm meinen Job überlassen.“ Kingsley zog die Augenbrauen skeptisch hoch. „Aber Severus will das nicht. Und vermutlich würde es auch einen Aufruhr von ausserhalb verursachen“ mit einem Ruck stand sie auf und warf eine Handvoll Briefe in das Kaminfeuer. „Beschwerdebriefe. Meist anonym. Darüber das ich einen Totesser beschäftige. Nein. Ich habe keine Klagen. Er erfüllt seine Aufgaben so gut wie eh und je. Er ist streng aber nicht unfair.“ Kingsley rümpfte die Nase. „Ich kenne solche Briefe nur zu gut. Es ist egal, was Severus nun tut oder auch nicht. Die Leute suchen einen Sündenbock. Es ist gut- es ist sicherer für ihn, hier zu sein. “ Minerva lächelte amüsiert. „Severus kann gut auf sich selbst aufpassen, wie wir wissen.“ „Ja. Aber es ist besser für uns alle, wenn er das nicht beweisen muss. So wie nach seinem Freispruch.“ Minerva sah ihn fragend an. „Was hat sich dabei wirklich zugetragen? Ich habe nur den Artikel dieser Zeitungshyäne Rita Skeeter gelesen. Aber diese Dame neigt doch immer zu gewissen Übertreibungen.“ Kingsley lächelte etwas verunsichert. „Tja, früher ja. Aber diesmal- das war seltsamerweise der erste vernünftige Artikel den ich je von ihr gelesen habe. Ich weiss nicht warum. Aber diesmal hat sie nicht übertrieben.“ Er verzog das Gesicht bei der Erinnerung daran. „Es gab einen Tumult bei der Verkündung des Freispruchs. Eine grosse Anzahl von Menschen verlangte eine Verurteilung. Ich hatte selbst Schwierigkeiten mich von dem Mob zu befreien.“ „Und Severus?“ „Ich weiss nicht wie er es gemacht hat. Aber er war auf einmal verschwunden. Und das war besser so. Ich hätte es dem Mob durchaus zugetraut, ihn einer Lynchjustiz zu unterziehen.“ „Es war gut so, das er seinen Zauberstab hatte. Ich weiss nicht, ob wir seine Sicherheit hätten garantieren können.“ Er wirkte ernüchtert. Als ob die billige Rache an Severus Snape ihre Angehörigen wiederbringen würde.</p>
+<p>In den nächsten Tagen begegnete Minerva Severus kaum. Egal wohin sie kam, entweder war er schon gegangen oder gerade dabei zu gehen. Dieser Fuchs…</p>
+<p>Doch einige Tage später betrat er ihr Büro, um die diesjährigen Prüfungen zu besprechen. „Einen Moment noch, Severus“. Nur widerstrebend wandte er sich ihr wieder zu, eine Augenbraue skeptisch hochgezogen. „Warum willst du nicht-zumindest einmal- mit Potter reden? Schliesslich hat er ja auch zu deinen Gunsten ausgesagt?“ Severus wandte sich abrupt von ihr ab, und sah zum Fenster hinaus. Erst nach einer Weile drehte er sich um. Sein Gesichtsausdruck wirkte…bitter. Sein Blick liess sie frösteln. „Potter weiss schon mehr über mich, als ich je jemand preisgegeben hätte, hätte ich nicht geglaubt, das…“ seine Stimme erstarb. Sie begriff. Er hatte geglaubt das er sterben würde. Nur unter dieser Voraussetzung hatte er so viel von sich preisgegeben. Und nun war es ihm unerträglich, das jemand- das besonders Harry soviel von ihm wusste. Er war immer eine sehr private Person gewesen. Nie hatte er um Hilfe gebeten oder um Verständnis oder gar Dank. „Ist es nicht genug…“ sprach er leise, und sie strengte sich an ihn zu verstehen, so leise sprach er. „Ist es nicht genug, das ich Jahre meinen Hals riskiert habe, genug das ich meine Seele geschändet und meinen Ruf zerstört habe. Alles für den-Jungen-der-lebte??“ Er sah sie an. Sein unmaskierter Blick erlaubte ihr einen kurzen Moment einen so tiefen Einblick in seine verletzte Seele, das es nur schwer zu ertragen war. Doch schon zog sich wieder seine Selbstbeherrschung wie ein Vorhang über sein Gesicht. Er drehte sich um und zog die schwere Bürotür sehr leise hinter sich zu.<br/>An diesem Abend erschien er nicht zum Essen in der Halle. Stattdessen sass er in seinem Wohnquartier, sein leerer Blick auf das kleine flackernde Kaminfeuer gerichtet. Seine Hände streichelten den grossen Tigerkater, der ihn mit einem leisen Schnurren belohnte…</p>
+<p> </p>
+<p>Der nächste Tag fand Severus Snape vor der Tür der Krankenstation, die er das erste Mal seit seiner Rückkehr besuchte. Poppy öffnete die Tür. „Professor Snape! Wie schön, das sie mich besuchen. Kommen sie herein.“ Er hatte sich von Minerva die Zustimmung erbeten, in Zusammenarbeit mit Poppy Heiltränke für die Krankenstation und auch für das St.Mungos Hospital zu brauen. Er hatte das schon immer getan, so er die Zeit dafür gefunden hatte. Nun würde er sich auch Zeit nehmen können, weiter zu forschen. Auch Poppy war hocherfreut von diesen Aussichten. Es erfrischte ihn, mit ihr über Zaubertränke zu reden und lenkte ihn ab, was genau das war, was er gut gebrauchen konnte. Poppys Blick blieb an seinem hohen Kragen hängen. Etwas ertappt schaute sie wieder weg. Er verzog spöttisch sein Gesicht. „Schon gut“. Er zog das schwarze Halstuch aus, welches er zusätzlich unter dem Kragen trug und öffnete seine Kragenknöpfe, so das sie seinen Hals sehen konnte. Seine Wunde war bis heute noch nicht ganz verheilt. Magische Wunden dieser Art waren schwierig, trotz all seiner Kenntnisse über Heiltränke. Poppy schaute erstaunt. Der Schüler Severus war ein widerwilliger Patient gewesen, den Professor hatte man hierhin nur bewusstlos gebracht. Es war ein Novum das er sie so nah an sich heranließ. Nur mühsam konnte sie ihr Entsetzen verbergen angesichts der furchtbaren Narben. Es war ein Wunder das er überlebt hatte. Die neuerdings rauhe Stimme würde er wohl nie mehr verlieren, aber das war wohl vergleichsweise ein kleiner Preis. „Du hast ganze Arbeit geleistet“ sagte sie anerkennend. „Ich hätte mir diese Behandlung nicht zu getraut.“ Noch eine ganze Weile blieb er bei Poppy, in ein anregendes Fachgespräch über Behandlungen verschiedenster Krankheiten und Zaubertränke vertieft. Zufrieden verliess er etwas später die Krankenstation. Es war ungewohnt, endlich eigenen Neigungen nachgehen zu können.</p>
+<p> </p>
+<p>Schon von fern sah Harry jemand an einem Grab-knien? Ja tatsächlich knien. Im Näherkommen stellte er überrascht fest, das es sich um das Grab seiner Eltern handelte. Der Mann war wie ein Muggle gekleidet, in Jeans und eine Lederjacke. Er hatte halblanges schwarzes Haar, welches sein Gesicht vollständig verbarg. Der Mann schien in Gedanken versunken, der Kopf gebeugt wie im Gebet. Auf die Mitte des Grabes hatte er einen Strauss wunderbarer Lilien gelegt. Langsam und zögernd kam Harry näher, seine Schritte waren kaum hörbar. Kurz vor dem Grab blieb er stehen. Er wagte kaum zu atmen. Er fühlte sich wie ein Eindringling in dieser Szenerie. Mit einer geschmeidigen Bewegung richtete sich der Mann auf, um sich dann zu ihm herumzudrehen. Harry sah in- die ihm so vertrauten und ehemals verhassten kühlen schwarzen Augen von Severus Snape. Dieser schien nicht im mindesten überrascht. „Mr.Potter“. Harry hatte es die Sprache verschlagen…trotzdem konnte er nicht umhin, jede Einzelheit an Snape wahrzunehmen. Das Halstuch was seine Narbe verbergen musste. Die breite weisse Strähne im schwarzen Haar. Snape wirkte fahl wie jemand der lange krank gewesen war. Und doch anders als früher…etwas dieser dauerhaften Angespanntheit schien von ihm gewichen zu sein. „Ich warte auf sie. Am Tor“ sagte Snape. Seine Stimme klang rauher als er sie von früher in Erinnerung hatte und er schien leicht zu hinken. Harry nahm sich nur kurz Zeit an Grab seiner Eltern. Er wollte diese Gelegenheit nicht verstreichen lassen. Tatsächlich erwartete ihn Snape am Tor. </p>
+<p>„Hogwarts?“ fragte er kurzangebunden. Kurze Zeit später standen beide vor den Toren von Hogwarts. Das Schloss leuchtete prächtig im Licht der Abendsonne. Beide sogen den Anblick einen Moment in sich hinein. Auf einen Wink folgte Harry Snape den vertrauten Weg zu seinem Büro. Offensichtlich war gerade Essenzeit und so trafen sie niemanden auf den Gängen. Ein paar der Portraits machten erstaunte Gesichter und tuschelten untereinander als sie die zwei erblickten. Snapes Büro hatte sich nicht im mindesten geändert. Harry konnte nicht umhin sich wieder schuldbewusst wie ein Schüler zu fühlen, als habe er wieder etwas angestellt. Ungeduldig aber gleichzeitig fast amüsiert wischte er die Empfindung beiseite. Snape wies ihm an sich zu setzen, während er selbst seine Jacke weglegte. Als er sich herumdrehte, setzte er sich nicht an seinen Schreibtisch sondern blieb stehen und lehnte sich Harry gegenüber nur an die Tischkante. „Nun?“ fragte er. Harry sortierte seine Gedanken, doch die Worte wollten nicht kommen. Hilflos starrte er in Snapes schwarze Augen. Snape reagierte so auf seine Gedanken, das Harry sich fragte, ob er sie doch laut ausgesprochen hatte. „Sie brauchen sich meinetwegen nicht schuldig zu fühlen, Potter. Ich habe sie beschützt um etwas meiner Schuld abzutragen. Nicht mehr, nicht weniger.“ Snape hatte schon früher bewiesen, das er nicht nur seine Gedanken abschirmen konnte, sondern auch die anderer lesen. Harry fand seine Stimme wieder. „Ich war blind. Ich war ein Idiot…“ stammelte er. „Sie haben nur gesehen was sie sehen sollten“ sagte Snape, ohne jede Spur von Spott.</p>
+<p> In dem Moment überwältigte es Harry wieder, diese schwarzen Wogen. Diese Welle von Schuldgefühlen. Snapes vermeintlicher Tod, das er ihn all die Jahre als Verräter auf Voldemorts Seite gesehen hatte. Und all die Toten, all die die seinetwegen bei der Schlacht gestorben waren. All die Familien die Angehörige um seinetwillen vermissten…wie ein Film sah er die Gesichter vor seinem inneren Auge….es war diese nimmer enden wollende Spirale aller schrecklichen Bilder des Leids und des Verlustes geliebter Menschen. „Mea culpa…“  </p>
+<p>„Hören sie auf!“ unterbrach ihn eine Stimme abrupt, nicht laut aber scharf wie ein Messer. Es war, als habe Harry jemand einen Eimer mit Eiswasser über den Kopf gegossen. Die Gedankenspirale, diese Gedanken mit denen er sich wieder und wieder selbst quälte zerbrachen in Stücke. Harry sah erzürnt auf. Wer wagte es, so in seine privaten Gedanken einzudringen?! Er blickte auf, nur um in die kalten durchdringenden Augen von Snape zu sehen. Eine Welle des alten Hasses stieg in ihm auf und brachte ihn endgültig in das hier und jetzt zurück. „Wo bleibt ihr berühmter…“ Snape zog das Wort höhnisch in die Länge „Heldenmut der Gryffindors? Dessen ihr Euch alle so rühmt? Oder wollen sie lieber weiter in ihrem Selbstmitleid schwelgen? Weil es so schön einfach ist“ Snapes Spott fand sein Ziel, so sicher wie immer. Harry lief rot an. Seine Niedergeschlagenheit war verflogen. „Gehen sie jetzt. Sie wissen wo ich zu finden bin.“ Snape schob ihn unsanft aus der Tür, mit energischem Klick fiel die schwere Tür hinter Harry ins Schloss. Harry stand noch eine Weile schweratmend wie vom Donner gerührt auf dem Gang. Dieser verdammte Bastard! Harry setzte sich in Bewegung. Er wollte nachhause zu Ginny. Was hatte er in letzter Zeit getrieben? Er fühlte sich wie aus einem Tiefschlaf erwacht.</p>
+<p>Severus Snape lehnte auf der anderen Seite an der geschlossenen Tür. Er atmete tief durch. </p>
+<p>Ginny hatte ihn mit dem Essen erwartet. „Bist du aufgehalten worden?“ Harry schüttelte den Kopf. Jetzt war nicht der Moment über diese Begegnung zu sprechen. Er wusste selbst diese Begegnung noch nicht einzuorden. Aber seine ewige Schwermut war auf geheimnisvolle Art verflogen. „Wir sollten hier mal renovieren. Oder vielleicht in ein Haus umziehen. Was ist eigentlich mit unserer Familienplanung?“ Ginny liess fast den Löffel in ihrer Hand fallen. Was war in ihn gefahren? Harry lächelte sie an, so wie er sie lange nicht mehr angesehen hatte. Warmherzig und ganz er selbst. Wortlos fiel sie ihm in die Arme.</p>
+<p> </p>
+<p>Er ist niemals gestorben<br/>Er lebt darin noch jetzt<br/>Er hat im Schloss verborgen<br/>Zum Schlaf sich hingesetzt<br/>(Barbarossa Sage)</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="gXvuzEZDUCdkGThVuWvIcggN9bLS5wpXWSZfEmhYAsTI97-iVR88M-iqIl8FuzPrLPrgx4OKjrD7ht5PyxKTzg"/>
+          <input value="28750557" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=28750557">Comments (1)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/onefour_one">onefour_one</a>, <a href="/users/Fleur_de_Lis394">Fleur_de_Lis394</a>, and <a href="/users/Trickster32">Trickster32</a>
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_28750557">
+  <form class="new_comment" id="comment_for_28750557" action="/works/28750557/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="FDIofuBxuy8Pq7EeLfgyJEZHOIKLTiyfDC3yf__o-oddvnkQ8y3XO4MYqxSRKMm9YrAt99ojqHiujXMiXKJrjQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_28750557">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_28750557" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_28750557=new LiveValidation('comment_name_for_28750557',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_28750557.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_28750557">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_28750557" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_28750557=new LiveValidation('comment_email_for_28750557',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_28750557.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_28750557" class="landmark">Comment</label>
+        <textarea id="comment_content_for_28750557" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_28750557" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_28750557_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_28750557">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_28750557=new LiveValidation('comment_content_for_28750557',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_28750557.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_28750557.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_28750557" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/28750557/hit_count.json")})</script>
+
+
+  </body>
+</html>

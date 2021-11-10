@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":104,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        At least he has great abs - Translation - Soccerismylife - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="t7vyxflRG5AXGkEgc5yRKv_zDWXhZ8dZwSIdXXvCaNbiZnXd6kUOdVakG9nbTgMYury4eA6U1IMk-lJ-1GcLBw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="GfOdCkSohKJa1FED8nCjY0Fdiki6_D-AZLTsO2mnE3FMLhoSV7yRRxtqC_paojFRBBI_VVUPLFqBbKMYxgJwoA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: words:100</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/23664853/chapters/56806966">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=23664853">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/23664853/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/23664853/At%20least%20he%20has%20great.azw3?updated_at=1587404627">AZW3</a></li>
+          <li><a href="/downloads/23664853/At%20least%20he%20has%20great.epub?updated_at=1587404627">EPUB</a></li>
+          <li><a href="/downloads/23664853/At%20least%20he%20has%20great.mobi?updated_at=1587404627">MOBI</a></li>
+          <li><a href="/downloads/23664853/At%20least%20he%20has%20great.pdf?updated_at=1587404627">PDF</a></li>
+          <li><a href="/downloads/23664853/At%20least%20he%20has%20great.html?updated_at=1587404627">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Percy%20Weasley*s*Oliver%20Wood/works">Percy Weasley/Oliver Wood</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Percy%20Weasley/works">Percy Weasley</a></li><li><a class="tag" href="/tags/Oliver%20Wood/works">Oliver Wood</a></li><li><a class="tag" href="/tags/Penelope%20Clearwater/works">Penelope Clearwater</a></li><li><a class="tag" href="/tags/Cedric%20Diggory/works">Cedric Diggory</a></li><li><a class="tag" href="/tags/Molly%20Weasley/works">Molly Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Alternate%20Universe%20-%20Modern%20Setting/works">Alternate Universe - Modern Setting</a></li><li><a class="tag" href="/tags/Alternate%20Universe%20-%20Soulmates/works">Alternate Universe - Soulmates</a></li><li><a class="tag" href="/tags/Soulmate-Identifying%20Marks/works">Soulmate-Identifying Marks</a></li><li><a class="tag" href="/tags/Social%20Media/works">Social Media</a></li><li><a class="tag" href="/tags/Politics/works">Politics</a></li><li><a class="tag" href="/tags/Football/works">Football</a></li><li><a class="tag" href="/tags/Celebrities/works">Celebrities</a></li><li><a class="tag" href="/tags/Percy%20Being%20an%20Idiot/works">Percy Being an Idiot</a></li><li><a class="tag" href="/tags/Angst/works">Angst</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-04-15</dd><dt class="status">Completed:</dt><dd class="status">2020-04-20</dd><dt class="words">Words:</dt><dd class="words">12435</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="comments">Comments:</dt><dd class="comments">1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">22</dd><dt class="hits">Hits:</dt><dd class="hits">386</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      At least he has great abs - Translation
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Soccerismylife/pseuds/Soccerismylife">Soccerismylife</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Es gibt nichts schöneres als aufzuwachen und zu sehen, dass deine Mutter dir ein Bild von den Bauchmuskeln deines Seelenverwandten geschickt hat.<br/>(Deutsche Übersetzung)</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+    <ul class="associations">
+
+
+        <li>
+            A translation of
+
+            <a href="/works/16322213">At least he has great abs</a> by <a rel="author" href="/users/Irisen/pseuds/Irisen">Irisen</a>.
+        </li>
+
+    </ul>
+
+    <blockquote class="userstuff">
+      <p>Dieses Werk gehört der Autorin Irisen. Ich bin lediglich für die Übersetzung vom englischen Original ins Deutsche verantwortlich.<br/>Lasst ihr doch Feedback da.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23664853/chapters/56806966">Chapter 1</a>: Eine furchtbar ungute Entdeckung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>Penny (1:45) PERCY</strong>
+</p><p>
+  <strong>Penny (1:45) Percy wach auf!</strong>
+</p><p>
+  <strong>Penny (1:46) PERCY</strong>
+</p><p>
+  <strong>Penny (1:48) Das ist wichtig!</strong>
+</p><p>
+  <strong>Penny (1:49) Jetzt ist nicht die Zeit, um zu schlafen, PERCY</strong>
+</p><p>
+  <strong>Penny (1:52) Wenn du die Nachrichten siehst, ruf mich an!</strong>
+</p><p>
+  <strong>Penny (1:55) Warte nein, doch nicht. Ich will nicht, dass du mich aufweckst.</strong>
+</p><p>
+  <strong>Penny (1:57) Wenn du das liest, schau auf Twitter</strong>
+</p><p>
+  <strong>Penny (1:59) Du weißt schon, die App mit dem kleinen, blauen Vogel</strong>
+</p><p>
+  <strong>Penny (2:00) Ich bin mir sicher du schaffst das</strong>
+</p><p>
+  <strong>Penny (2:02) Wie auch immer, MACH ES</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>Cedric (4:20) KUMPEL</strong>
+</p><p>
+  <strong>Cedric (4:25) Bist du wach???</strong>
+</p><p>
+  <strong>Cedric (4:26) Da ist Scheiße am Explodieren</strong>
+</p><p>
+  <strong>Cedric (4:28) Na ja, nicht wortwörtlich am explodieren</strong>
+</p><p>
+  <strong>Cedric (4:30) Scheiße, ruf mich an, wenn du auflachst</strong>
+</p><p>
+  <strong>Cedric (4:31) aufwachst*</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>Mama (6:00) Liebes, Ich denke, wir müssen reden.</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>---</strong>
+</p><p> </p><p>Als Percy an diesem Morgen aufwachte, hatte er mindestens ein halbes Dutzend an verpassten Anrufen und fast hundert Nachrichten von seinen Eltern. Aber auch seine Freunde hat ihm aus irgendeinem Grund mehrmals geschrieben. Dass er morgens als erstes Nachrichten beantwortete war nicht wirklich selten, da es Teil seines Jobs als Privatsekretär des Außenministers war, jederzeit mit jedem in und außerhalb seiner Abteilung in Kontakt zu stehen. So machte er das meiste von seinem Arbeitshandy aus.</p><p>Deshalb war er verständlicherweise verwirrt, als er, während des Schreibens einer höflichen Antwort auf eine zufällige Nachricht, die er bekommen hatte, realisierte, dass er sein eigenes Handy in der Hand hielt und, dass die Person, der er schrieb seine Mutter war und nicht irgendein nerviger Abgeordneter, wie er anfangs dachte. Er blinzelte sein Handy, welches hin und wieder immer noch wegen empfangener Nachrichten vibrierte, verschlafen an, um herauszufinden, dass irgendetwas passiert war und er sich wahrscheinlich Sorgen darüber machen sollte.</p><p>Gott, hätte das nicht warten können bis er seinen Kaffee getrunken hatte?</p><p>Müde stand er auf und machte sich auf den Weg in die Küche, darauf eingestellt sich einen dreifachen Espresso zu machen, der ihn dabei half auf die Menge von Texten einzugehen, welche er gerade erst entdeckt hatte. Laut den Nachrichten, die seine Eltern und älteren Brüder ihm geschickt hatten, musste in der Nacht etwas passiert sein. Etwas, das so dringend war, dass sie ihn <em>unbedingt</em> kontaktieren mussten, sobald sie es erfahren hatten. Da war es auch egal, dass es sein erster Urlaubstag war seit er als Sekretär des Ministers arbeitete.</p><p>Aber, angesichts der Tatsache, dass er seine Familie nur noch selten sah, war es sehr wahrscheinlich, dass sie nicht mal wussten, dass er frei hatte. Sie redeten nicht oft.</p><p>
+  <strong>&gt; Mama (7:11) Guten Morgen, was ist los? Alle schreiben mir.</strong>
+</p><p>Er sendete den Text an ein paar der Leute, die ihm in der Nacht geschrieben hatten und bemerkte dabei entfernt, dass, als er die die Nachricht an Cedric abschickte, ein Ton aus eben jenem Zimmer ertönte. Dies bedeutete, dass dieser wohl beschlossen hatte seine Clubtour zu Hause zu beenden. Percy entschied sich dazu ihn nicht aufzuwecken, da Cedric ihm noch sehr spät in der Nacht geschrieben hatte. Er war erst seit wenigen Wochen sein Mitbewohner und er wollte ihr Verhältnis nicht jetzt schon kaputt machen.</p><p>Nachdem er seine erste Tasse ausgetrunken hatte, welche komplett daran gescheitert war ihn aufzuwecken (er war bis ein Uhr in der Nacht aufgeblieben mit der Absicht am nächsten Morgen lange zu schlafen), machte er sich also eine Neue und beantwortete, während sein Kaffee kochte, einige arbeitsbezogene Nachrichten. </p><p>
+  <strong>Mama (7:25) Percy!</strong>
+</p><p>
+  <strong>Mama (7:26) Guten Morgen, wie geht es dir, Liebes?</strong>
+</p><p>
+  <strong>&gt; Mama (7:30) Alles gut. Danke der Nachfrage.</strong>
+</p><p>
+  <strong>&gt; Mama (7:31) Warum hast du mir geschrieben?</strong>
+</p><p>
+  <strong>Mama (7:35) Oh, du hast es noch nicht gehört?</strong>
+</p><p>
+  <strong>&gt; Mama (7:36) Was?</strong>
+</p><p>
+  <strong>Mama (7:40) Hier: <em>www.thesun.co.uk/news/9078674/oliver-wood-Seelentattoo-enthüllt/</em></strong>
+</p><p>Etwas unzufrieden damit, dass er einen Artikel lesen musste, der von allen Zeitungen ausgerechnet von <em>The Sun </em>veröffentlicht wurde, klickte er trotzdem auf den Link, während er den letzten Schluck seines Espressos austrank. Als die Seite geladen hatte wurde er mit einem großen Bild konfrontiert, auf dem faszinierende Bauchmuskeln zu sehen waren und eine Überschrift, welche lautete:</p><p align="center">
+  <strong>[BREAKING NEWS:] Oliver Woods Seelentattoo enthüllt!</strong>
+</p><p>Der Espresso hatte endlich gewirkt und so hatte er keine Probleme damit, die große Tinteneule zu erkennen, welche sich auf der Brust des Mannes entfaltete. Schließlich war es exakt die gleiche, welche er selbst trug. Am exakt gleichen Ort. Die zwei Tattoos waren bis auf die kleinste Feder perfekt identisch und in der Welt, in der sie lebten, konnte es nur eines bedeuten.</p><p>Oliver Wood war sein Seelenverwandter.</p><p>Während er das realisierte, war das erste, an das er dachte <em>‚Fuck‘</em>, denn als Politiker einen Seelenverwandten zu haben war ein zweischneidiges Schwert und eines welches er gerne vermieden hätte. Einerseits machte es einen in der Öffentlichkeit bekannter und als jüngster Abgeordneter im Parlament brauchte er jede öffentliche Unterstützung, die er kriegen konnte, aber, andererseits machte es einen verwundbarer.</p><p>Und da er erst 21 war, war er bereits ziemlich verwundbar, vielen Dank.</p><p>Das zweite, an das er dachte, war weniger kalkulierend und mehr ernst gemeint. Es war ziemlich simpel: <em>‚Wer ist überhaupt Oliver Wood?‘</em></p><p>Denn Percy, welcher noch nie in seinem ganzen Leben eine Boulevardzeitung geöffnet hatte (außer einmal, als er krank war und es das einzige war, was im Wartezimmer des Doktors auslag), wusste überhaupt nichts über Prominente, zumindest wenn sie kein Politiker waren. Er kannte nur ein paar berühmte Sänger und die Gesichter von vielleicht gerade so einem Dutzend Schauspieler. So sehr seine Freunde auch versuchten Zeit mit ihm zu verbringen, er ging selten ins Kino und hörte auch kaum Musik.</p><p>Trotz allem war er jetzt schon etwas neugierig, da es <em>sein Seelenverwandter </em>war, über den er nachdachte. Er gab den Namen des Mannes in die Suchleiste ein und sobald er die ungefähr zwanzig Artikel über die unabsichtliche Enthüllung des Seelentattoos auf einer Party (<em>wie dumm war das denn?</em>) weggescrollt hatte, fand er seine Wikipedia Seite. Der Fakt, dass sein Seelenverwandter eine hatte, war nicht wirklich beeindruckend. Jeder B-Promi hatte eine, zur Hölle, sogar <em>er </em>hatte eine. Und auch Fred und George. Und Rons Freund Harry. Wikipedia Artikel schienen in seinem Umkreis normal zu sein, vielmehr als eine Ausnahme.</p><p>
+  <strong>Oliver Wood</strong>
+</p><p>Oliver Wood (* 23 November 1997) ist ein englischer Fußballtorhüter, der bei <strong>Manchester United</strong> unter Vertrag steht und auch für die <strong>englische Nationalmannschaft </strong>spielt. Mit 21 Jahren, wird er bereits für einen der besten Torhüter der Welt gehalten (er wurde 2017 Welttorhüter) und wird als eine der wichtigsten, treibenden Kräfte bezeichnet, welche der englischen Nationalmannschaft zu alter Stärke verhalfen.  </p><p>Trotz seinem Alter wird Wood, wegen seinem strategischen Können und der Fähigkeit sein Team während eines Spieles zu ordnen, als nächster Kapitän der Nationalmannschaft gehandelt. Im Januar 2018 wurde er von der Guardian als “Bester Nachwuchsspieler der Welt“ bezeichnet und wurde weltweit für sein Talent anerkannt.</p><p><strong> Inhaltsverzeichnis</strong> [Verbergen]</p>
+<ol>
+<li><strong> Vereinskarriere</strong></li>
+</ol><p>
+  <strong>    1.1 FC Arsenal</strong>
+</p><p>
+  <strong>    1.2 Manchester United</strong>
+</p>
+<ol start="2">
+<li><strong> Nationalmannschaft</strong></li>
+</ol><p>
+  <strong>    2.1 Jugend</strong>
+</p><p>
+  <strong>    2.2 Olympia 2016</strong>
+</p><p>
+  <strong>    2.3 Weltmeisterschaft 2018</strong>
+</p>
+<ol start="3">
+<li><strong> Privatleben</strong></li>
+<li><strong> Karrierestatistik</strong></li>
+<li><strong> Auszeichnungen</strong></li>
+</ol><p>In Ordnung.</p><p>Also.</p><p>Sein Seelenverwandter war ein Profifußballer und ein berühmter noch dazu.</p><p>Na ja, seine Geschwister würden erfreut sein, sobald sie es erfahren würden. Was zumindest zwei hatten, wenn er an die empfangenen Nachrichten von Charlie und Bill früher am Morgen dachte. Glücklicherweise hatte er das Tattoo den jüngeren Familienmitgliedern nicht offen gezeigt und mit ein bisschen Glück würden Ron und Ginny sich vielleicht gar nicht daran erinnern, wie es aussah oder es gar nicht erst mit Woods Tattoo verbinden. Sie würden unerträglich werden, wenn sie erführen, dass er das gleiche Seelentattoo wie ein Fußballspieler hatte.</p><p>Mit Ärger stellte er, als er zum Teil der Seite runterscrollte, der vom Privatleben Olivers handelte, fest, dass bereits ein Bild von Woods Seelentattoo mitinbegriffen war. Es war wesentlich verschwommener, als im Artikel der Sun. Er starrte einen Moment verblüfft auf das Sixpack und war Gott dafür dankbar, dass wenigstens <em>etwas</em> an seinem Seelenverwandten attraktiv war. Dann öffnete er wieder seine Nachrichtenapp, wo seine Mutter ihn seit zwanzig Minuten mit Frage- und Ausrufezeichen belästigte.</p><p>
+  <strong>Mama (7:55) Er ist ziemlich gutaussehend, nicht?</strong>
+</p><p>
+  <strong>Mama (7:58) Ich kann es nicht erwarten ihn zu treffen!</strong>
+</p><p>
+  <strong>Mama (7:59) Er macht auf mich den Eindruck eines sehr höflichen jungen Mannes</strong>
+</p><p>
+  <strong>Mama (8:02) Wusstest du, dass er in Schottland lebte? :D</strong>
+</p><p>
+  <strong>&gt; Mama (8:05) Nein. Ist das wichtig?</strong>
+</p><p>
+  <strong>Mama (8:08) Natürlich! Schottland ist wunderschön! Fred und George waren letzten Sommer mit mir dort! :)</strong>
+</p><p>
+  <strong>&gt; Mama (8:10) Wie auch immer, wie geht es den beiden?</strong>
+</p><p>
+  <strong>Mama (8:15) Oh nein Liebes, hier geht es nicht um deine Brüder, hier geht es um dich! Ich brenne darauf es deinen Geschwistern zu erzählen.</strong>
+</p><p>
+  <strong>&gt; Mama (8:19) Bill und Charlie wissen es schon</strong>
+</p><p>
+  <strong>Mama (8:24) Schade :( aber Ginny und Ron wird es freuen :P</strong>
+</p><p>Als er daran erinnert wurde, dass sein jüngerer Bruder und seine Schwester bald über seine Situation informiert wurden, seufzte Percy laut und verbarg sein Gesicht in seinen Armen. Das sollte sein freier Tag sein und er hatte geplant ihn mit Lesen und dummen, romantischen Fernsehsendungen zu verbringen. Nicht mit seinen Geschwistern und ihrem gemeinsamen Wahnsinn. Oder, was das betrifft, mit seinem Seelenverwandten. Warum musste dieser überhaupt mit seinen Bauchmuskeln protzen? Es war ja nicht so, dass sein Seelentattoo an einer wirklich offensichtlichen Stelle war, wie an seinem Handgelenk oder in seinem Gesicht. Er hätte einfach sein Shirt anbehalten können und alles würde so viel besser sein.</p><p>„Ich will sterben“, flüsterte er. Sein Kopf lag immer noch auf dem Holztisch.</p><p>Dieses Gefühl hatte er normalerweise nur, wenn er mit anderen Abgeordneten zu tun hatte, die oft seine verborgenen Mordabsichten, genau wie seine depressiven Seiten, weckten. Aber diesmal war es viel, <em>viel </em>schlimmer. Während die Abgeordneten meist nur einen zeitlich begrenzten Teil in seinem Leben einnahmen, war sein Seelenverwandter zum Bleiben bestimmt oder zumindest sollte er das, gemäß all dem, dass er seit der Middle School gelernt hatte.</p><p>Warum musste es ein Fußballer sein? Warum konnte es kein Buchhalter, Lehrer oder jemand mit einem halbwegs angesehen Job sein? Fußballer waren verrückt, Fußballer waren...</p><p>Sie waren irgendwie heiß.</p><p>Sein Seelenverwandter war irgendwie heiß.</p><p>Irgendwie sehr, sehr heiß.</p><p>Er errötete und konnte nicht anders, als sich an das Foto von der Brust des Mannes zu erinnern. Der Kerl war eindeutig fit, was von einem professionellen Athleten erwartet wurde. Die Sorte, die man nur in Filmen oder Zeitschriften sah. In seinem ganzen Leben hatte Percy sich nie erträumen können mit jemanden zusammen zu sein, der so aussah. Vor allem wenn er selbst eine der am wenigsten verführerischen Personen war, die er kannte und das beinhaltete die mürrischen Abgeordneten des Unterhauses.  </p><p>Wood war es wahrscheinlich gewöhnt, dass Topmodels mit ihm flirteten. Was sollte er mit einem Typen wie <em>Percy</em>?</p><p>Verdammte Scheiße, das war so ein Durcheinander.</p><p>Als er feststellte, dass er immer noch seinen Pyjama trug, ging er zögerlich zurück in sein Zimmer, um sich umzuziehen. Auch wenn der Gedanke in seiner Trainingshose und einem großen Shirt auf dem Sofa zu liegen für eine Weile wirklich verlockend war. Aber er wollte wenigstens irgendeine Form seiner Würde zurückgewinnen, auch wenn es nur in Form einer Chinohose und eines Sweatshirts war. Er brauchte zumindest ein wenig das Gefühl, als wäre es ein normaler Tag und nicht der Beginn eines langen, schmerzhaften Leidensweges.  </p><p>Er erhaschte einen Blick auf sein Seelentattoo, als er sich auszog und das brachte ihn zum Zusammenzucken.</p><p> </p><p>---</p><p> </p><p>
+  <strong>Trend in Großbritannien</strong>
+</p>
+<ol>
+<li><strong> #Eulentattoo</strong></li>
+</ol><p>126k Tweets</p>
+<ol start="2">
+<li><strong> #OliverWood</strong></li>
+</ol><p>80k Tweets</p>
+<ol start="3">
+<li><strong> #MystischerSeelenverwandter</strong></li>
+</ol><p>13k Tweets</p><p> </p><p>---</p><p> </p><p><strong>Cactuslife</strong> @emy99</p><p>Können wir darüber reden, wie groß sein Tattoo ist <strong>#Eulentattoo</strong></p><p><strong>  United John</strong> @johnjohn</p><p>  @Emy99 ich meine es ist Wood über den du redest, der Typ ist eine Legende</p><p> </p><p><strong>ShanaOwO</strong> @shannna</p><p>Ich wette, es ist ein anderer Spieler!  Ein Französischer! Wie cool wäre das denn? <strong>#MystischerSeelenverwandter</strong></p><p><strong>  LilCxnt</strong> @succmefather</p><p>  @shannna Ich wette, es ist ein zufälliger Typ, der keine Ahnung hat, was los ist</p><p>  <strong>WilliamsJane</strong> @janewilliams20</p><p>  @shannna @succmefather Ich wette, es ist Theresa May</p><p>  <strong>LilCxnt</strong> @succmefather</p><p>  @shannna @janewilliams20 Ich wette, es ist deine Mutter</p><p>  <strong>WilliamsJane</strong> @janewilliams20</p><p>  @shannna @succmefather Nein, deine</p><p> </p><p><strong>Notice me</strong> @senpaiii</p><p>Ok, aber warum war der Typ oben ohne <strong>#OliverWood</strong></p><p>  <strong>Alan Roman</strong> @Alanaman</p><p>  @senpaiii Mit solchen Bauchmuskeln, warum sollte er nicht?</p><p>  <strong>Pam Pam Girl</strong> @pamtastic</p><p>  @senpaiii Ich glaube nicht, dass er erwartet hat, dass jemand ein Foto macht</p><p>  <strong>Papa Furanku</strong> @ripdanklord</p><p>  @senpaiii @pamtastic du bist ein Genie, nicht?</p><p> </p><p><strong>Hero Killer Bob</strong> @wetrasheb</p><p>[Foto]</p><p>Wenn du der Welt ausversehen dein Seelentattoo zeigst <strong>#Eulentattoo</strong></p><p>  <strong>John the panda</strong> @pandadd</p><p>  @wetrasheb Whoopsiiiie</p><p> </p><p><strong>Cray Gslist</strong> @funnyusername</p><p>Seien wir ehrlich, <strong>#MystischerSeelenverwandter </strong>klingt wie der Name einer dummen Fernsehsendung.</p><p>  <strong>Leah Darkseid</strong> @leleah3</p><p>  @funnyusername Oh Gott nein, bring sie nicht auf Ideen</p><p>  <strong>Lex Lothur</strong> @baldandproud</p><p>  @funnyusername Wenn wir Wood oben ohne sehen, würde ich es ansehen</p><p>  <strong>Hannah Abbots</strong> @hannahrobbots</p><p>  @funnyusername In Japan existiert sowas schon</p><p>  <strong>Susan Colins</strong> @arrowhead</p><p>  @funnyusername @hannahrobbots natürlich tut es das... </p><p>  <strong>Hannah Abbots</strong> @hannahrobbots</p><p>  @funnyusername @arrowhead Das ist eigentlich ziemlich lustig, sie besteht größtenteils aus weinenden Menschen und Umarmungen.</p><p>  <strong>Cook Adams</strong> @thatsraw</p><p>  @funnyusername @hannahrobbots Also ist es genau wie Fußball.</p><p> </p><p>---</p><p> </p><p>
+  <strong>Reaktion auf Oliver Woods SEELENTATTOO [Erschreckend]</strong>
+</p><p>802.969 Aufrufe</p><p> </p><p>[Kommentare]</p><p>Nutzen die ganze Scheiße schon für Clickbaiting</p><p><strong>Katie Lovet</strong> – vor 1 Stunde</p><p>
+  <em>23 Antworten ansehen</em>
+</p><p> </p><p>Lüb das vieo!!!!!!</p><p><strong>Dan Man Man</strong> – vor 1 Stunde</p><p> </p><p>Ich bin mir ziemlich sicher der Typ hat das mit Absicht gemacht, um kostenlose Werbung zu bekommen. Das würde mich überhaupt nicht überraschen.</p><p>
+  <strong>Andrew Wood</strong>
+</p><p>
+  <em>11 Antworten ansehen</em>
+</p><p> </p><p>Warum gibt jeder seinen Müll dazu ab? Er ist nur irgendein Fußballtyp, nicht berühmt oder so. Freaking Engländer</p><p>
+  <strong>Bobby Super</strong>
+</p><p>
+  <em>2 Antworten ansehen</em>
+</p><p>
+  <em> </em>
+</p><p>---</p><p> </p><p>
+  <strong>Die Wood Situation [Ernstes Gespräch]</strong>
+</p><p>100.022 Aufrufe</p><p> </p><p>[Kommentare]</p><p>Ich glaube nicht, dass es jemals “moralisch richtig” ist über das Privatleben eines Menschen zu reden, wie hier, aber Wood hat es selbst ins Gespräch gebracht. Ehrlich, der einzige, mit dem ich Mitleid habe ist sein Seelenverwandter, er muss auch mit dem Shitstorm klarkommen und er hat nicht danach gefragt. Und der einzige der Schuld daran ist, ist Wood, nicht die Menschen, die darüber reden. Wenn du in seiner Position bist solltest du vorsichtig sein mit dem was du tust, besonders wenn es Auswirkung auf das Leben deines Seelenverwandten hat, wie das hier.</p><p>
+  <strong>Jibor</strong>
+</p><p>
+  <em>50 Antworten ansehen</em>
+</p><p>
+  <em> </em>
+</p><p>
+  <em>---</em>
+</p><p> </p><p>
+  <strong>Wood Seelentattoo - Meme Compilation</strong>
+</p><p>995.761 Aufrufe</p><p> </p><p>---</p><p> </p><p>
+  <strong>Zehn Menschen, die möglicherweise Oliver Woods Seelenverwandter sind</strong>
+</p><p>Wie wir alle wissen wurde vor zwei Tagen Oliver Woods Seelentattoo vor der ganzen Welt enthüllt! Wie sich herausstellt ist er nicht der einzige Prominente, der sein Gegenstück noch nicht gefunden hat. Hier ist eine Liste über alle berühmten Leute, die in Frage kämen!</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>---</strong>
+</p><p> </p><p><u>In den Augen der Eule</u> by <u>Wood99</u></p><p>Soccer - RPF, Oliver Wood - Fandom</p><p><strong>No Archive Warnings Apply,</strong> Reader|You/Oliver Wood, Oliver Wood, Reader|You, Romance, Soulmate, News</p><p>Du entdeckst, dass du das gleiche Seelentattoo wie Oliver Wood hast und du konfrontierst ihn damit. Ihr zwei verbringt eine Nacht zusammen...</p><p>                                                                              Language: Deutsch  Words: 12665  Comments: 11  Kudos: 132  Bookmarks: 6  Hits: 208</p><p> </p><p>---</p><p> </p><p>
+  <strong>Penny (12:06) Percy, wir müssen darüber reden</strong>
+</p><p>
+  <strong>Penny (12:10) Es sind 3 Tage vergangen</strong>
+</p><p>
+  <strong>Penny (12:14) Wenn du nicht antwortest, komm ich zu dir</strong>
+</p><p>
+  <strong>&gt; Penny (12:30) Penny, ich arbeite.</strong>
+</p><p>
+  <strong>Penny (12:34) Mir egal, es geht um deinen Seelenverwandten!</strong>
+</p><p>
+  <strong>Penny (12:36) Du musst mit ihm reden</strong>
+</p><p>
+  <strong>&gt; Penny (12:45) Ich will nicht.</strong>
+</p><p>
+  <strong>Penny (12:48) Lüg nicht.</strong>
+</p><p>
+  <strong>Penny (12:51) Ich komme heute Abend vorbei.</strong>
+</p><p>
+  <strong>Penny (12:53) Ich bringe Kuchen mit.</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23664853/chapters/56869183">Chapter 2</a>: In dem Angst dazu kommt
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Na ja, das alles ist ein wenig beängstigend.</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Wie immer gilt es bei Irisen vorbei zu schauen, der Originalautorin. Geschichte ist verlinkt.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><u>Finding you</u> by <u>Alexxandra</u></p><p>Soccer - RPF, Oliver Wood - Fandom</p><p><strong>No Archive Warnings Apply</strong>, Oliver Wood/Reader|You, Oliver Wood, Reader|You, First Meetings, Soulmates, Romance, Fluff, One-Shot, Cute</p><p>Nach mehreren Monaten chatten, treffen sich Oliver und du in London, wo ihr einen romantischen Abend und eine leidenschaftliche Nacht verbringt.</p><p align="right">Language: Deutsch  Words: 3506  Comments: 2  Kudos: 15  Bookmarks: 3  Hits: 462                                   </p><p><u>Playing captain</u> by <u>GoalieLove</u></p><p>Soccer - RPF, Oliver Wood - Fandom</p><p><strong>No Archive Warnings Apply</strong>, Oliver Wood/Reader|You, Smut, PWP, One-Shot</p><p>Oliver muss lernen, wie man Befehle erteilt, um ein vernünftiger Kapitän zu werden. Du bist mehr als bereit zu helfen.</p><p align="right">Language: Deutsch  Words: 6399  Comments: 94  Kudos: 438  Bookmarks: 34  Hits: 5280                                 </p><p><u>Manchester (United) am Meer</u> by <u>Universal_Complaint</u></p><p>Soccer - RPF, Oliver Wood - Fandom</p><p><strong>No Archive Warnings Apply</strong>, Oliver Wood/Reader|You, Oliver Wood, Reader|You, Soulmates, SFW, Fluff, it's just a lot of fluff guys, a lot of cute stuff happens too</p><p>Es ist ein Jahr her seit du Oliver getroffen hast und heute, an eurem Jahrestag siehst du sein Tattoo zum ersten Mal, denn er fährt mit dir zum Strand.</p><p align="right">Language: English  Words: 5787  Chapters: 4/7  Comments: 12  Kudos: 90  Bookmarks: 8  Hits: 3020  </p><p> </p><p> </p><p align="center">
+  <strong>Manchester (United) am Meer</strong>
+</p><p align="center">Universal_Complaint</p>
+<hr/><p align="center"><strong>Chapter One: </strong>Erinnerst du dich an den Schnee?</p><p>
+  <strong>Summary:</strong>
+</p>
+<hr/><p>Es ist ein Jahr her seit du Oliver getroffen hast und heute, an eurem Jahrestag siehst du sein Tattoo zum ersten Mal, denn er fährt mit dir zum Strand.</p><p>
+  <strong>Notes:</strong>
+</p>
+<hr/><p>(See the end of the chapter for <u>notes</u>)</p><p> </p><p>Ihr zwei habt euch im Dezember getroffen.</p><p>Die ganze Sache mit seinem Seelentattoo war vor ein paar Monaten passiert. All der Rummel und die Entrüstung der Medien waren so gut wie vergessen, als du endlich genug Mut gesammelt hattest, um mit ihm zu reden. Er selbst wirkte ziemlich überrascht, dass du so lange mit dem Senden einer Nachricht gewartet hattest. Er hatte nicht realisiert wie schwer es für normale Menschen war mit ihm zu reden oder sich dazu fähig zu fühlen ihn zu kontaktieren.</p><p>Er war dein Seelenverwandter und das bedeutete, dass er genauso zu dir gehörte, wie du zu ihm. Aber manchmal hattest du das Gefühl, dass du ihn nicht verdient hattest. So absurd es erscheinen mochte, jedes Mal, wenn du neben ihm aufgewacht bist konntest du dich nur über den Fakt wundern, dass dein Seelenverwandter <em>Oliver Wood</em> ist. <em>Der </em>Oliver Wood. Dass er hier war. Dass er deiner war. </p><p>Ihr zwei habt euch im Dezember getroffen.</p><p>Es hatte geschneit, aber es war nicht die Art von Schnee, der binnen einer Stunde schmolz und innerhalb eines Tages eine wässrige, dreckige Unordnung hinterließ. Es war richtiger Schnee, wie in einem Weihnachtsfilm, weiß und flockig, einer der einen dazu brachte nochmals Kind sein zu wollen, um darin spielen zu können. Du warst kein Kind mehr, aber du genossest es immer noch deinen besten Freund mit ein paar Schneebällen abzuwerfen, bevor du zur Arbeit gingst und sobald du dort angekommen warst konntest du nicht anders, als ein schnelles Bild von der schneebedeckten Straße zu schießen, auf der du standest. Es war wunderschön.</p><p>Das Wetter reichte aus, um dich von etwas abzulenken, dass dich seit ein paar Monate beschäftigte. Etwas männliches, muskulöses, dass auf den Namen Oliver Wood hörte. Das Etwas, welches du vor kurzem kontaktiert hattest. Du hattest es geschafft ihm, nach Wochen des Zögerns und der Angst, eine Privatnachricht auf Twitter zu schicken. Nicht die romantischte Art jemanden zu kontaktieren, aber was solltest du sonst tun, wenn dein Seelenverwandter in <em>Manchester </em>lebte? Und vielleicht war es nicht romantisch, aber es hatte funktioniert. Keine zwei Stunden später hatte Oliver, mit vielen Fragen und einem etwas (sehr) süßem Selfie, auf dem er in die Kamera lächelte, geantwortet.</p><p>Ihr zwei habt angefangen zu schreiben.</p><p>Zu der Zeit warst du ein wenig traurig darüber, dass ihr zwei euch nicht persönlich treffen konntet, da euch eure Jobs davon abhielten euch zu sehen. Du wolltest nichts mehr, als die Hand deines Seelenverwandten zu halten, seine Wärme und seine Anwesenheit zu spüren. Du wolltest ihn küssen und als deines beanspruchen, denn er war deiner. Ihr beide wurdet füreinander geschaffen. Ihr wart füreinander bestimmt.</p><p>Und Oliver, Oliver wusste es.</p><p>Bis heute weißt du nicht, wie er es gemacht hatte, wie er es herausgefunden hatte. Vielleicht hatte er es der Bitterkeit deiner Nachrichten entnommen oder vielleicht sahst du auf den Bildern, die du ihm geschickt hattest, unglücklich aus. Aber irgendwie wusste er, wie du dich in dieser Situation gefühlt hattest. Und er hatte etwas dagegen gemacht.</p><p>Er war gut darin zu wissen, wenn du dich nicht so gut fühltest und konnte dir helfen es zu verarbeiten. An diesem Tag im Dezember würde er zum ersten Mal zeigen, wie sehr er sich um dich sorgte, aber es würde nicht der letzte sein.</p><p>Aus irgendeinem Grund waren deine Mitarbeiter aufgeregt, als du kamst, aber du warst zu abgelenkt, um zu fragen was mit ihnen los war. Stattdessen hattest du es Oliver erzählt, welcher aber nicht sofort antwortete. Dies ließ dich die Stirn runzeln. Dein Seelenverwandter hatte die Angewohnheit dir sofort zu antworten, sobald du ihm geschrieben hattest. Dass er das zum ersten Mal in den drei Wochen nicht machte, war ein wenig überraschend.</p><p>Du versuchtest den Tag so gut es ging rum zu bekommen, deine Gedanken waren allerdings damit beschäftigt über deinen Seelenverwandten nachzudenken und was ihr zwei tun würdet, wenn ihr euch endlich treffen würdet. Da waren so viele Dinge, welche du ihm zeigen wolltest, so viele Orte, welche du mit ihm besuchen wolltest, so viele Menschen, die er kennenlernen sollte...</p><p>Und gerade würdest du ihm nichts davon zeigen können.</p><p>Denn er lebte in Manchester und du nicht.</p><p>Darüber den ganzen Tag nachzudenken war genug, um deine Laune für den ganzen Tag zu dämpfen und du warst nahezu missmutig, als du deine Arbeit beendet hattest. Mittlerweile kicherten deine Mitarbeiter und ihr Flüstern war fast nicht zu ertragen. Es brauchte all deine Kraft sie nicht anzublaffen. Du warst schließlich ein vernünftiger Erwachsener. Stattdessen packtest du deine Sachen ein und verließt eilig das Gebäude, dabei holtest du dein Handy raus, um Oliver zu schreiben zu können, sobald du auf der Straße warst.</p><p>Du warst so damit beschäftigt auf den Bildschirm zu gucken, dass du fast in jemanden ranntest, als du rauskamst. Errötet stammeltest du eine Entschuldigung, während du deine Augen auf das Gesicht der Person richtetest, über die du fast gefallen wärst.</p><p> Du begriffst es sofort.</p><p>Die gleichen weichen, braunen Haare nach denen du dich jetzt schon seit Monaten sehntest, die gleichen liebevollen Augen, welche dich, während eurer endlosen Telefonate gegen Mitternacht, durch den Bildschirm angeschaut hatten. Er lächelte, während du nach Luft schnapptest und langsam deinen Arm ausstrecktest, um seine Wange zu berühren. Sein Gesichtsausdruck war weich und liebevoll, sogar wenn er sprach, klang er so glücklich, dass du Gefühl hattest, als müsstest du gleich weinen:</p><p>„Sorry, dass ich unangekündigt vorbeikomme.“</p><p>Er beugte sich ein klein wenig vor und flüsterte in dein Ohr:</p><p>„Ich wollte dich unbedingt sehen.“</p><p>Er wich zurück, aber bevor er weiter wegkonnte, griffst du nach dem Kragen seines Shirts und zogst ihn brutal vorwärts. Du hattest seit Monaten davon geträumt, warst vor nicht mal zehn Minuten noch verzweifelt deswegen gewesen. Da gab es keine Chance, dass du ihn gehen lassen würdest, wenn er hier war. So nah bei dir.</p><p>Du küsstest ihn.</p><p>Und es war wundervoll.</p><p> </p><p>[Comment as <strong>Hesperus</strong>]</p><p>
+  <strike>Das ist lächerlich</strike>
+</p><p>[Comment as <strong>Hesperus</strong>]</p><p>
+  <strike>Ich wünschte sowas wäre wirklich so leicht wie hier beschrieben</strike>
+</p><p> [Comment as <strong>Hesperus</strong>]</p><p>
+  <strike>Der Oliver Wood in dieser Story klingt wie der perfekte Gentelman. Irgendwie denke ich nicht, dass dies wirklich korrekt ist. Vergiss nicht der Typ wurde auf einer Party oben ohne erwischt. Darum ist diese Situation in erster Linie überhaupt erst entstanden. Wenn du für ihn schwärmen willst, dann ist es so, aber vielleicht schreibst etwas realistischer? Ich denke nicht, dass er sich so um seinen Seelenverwandten kümmern würde, sonst hätte er seinen Seelenverwandten bereits gefunden. Er hätte besser nicht von einer Kamera erwischt werden sollen, wenn er sein Tattoo zeigt. Ich meine, es ist eine Eule, auf seiner Brust. Nicht wirklich schwierig zu verstecken. Ich wäre bereit zu wetten, dass sein Seelenverwandter noch nie ausversehen sein Tattoo irgendjemanden gezeigt hat, da es auf seiner Brust ist. Es ist kinderleicht es zu verstecken. Oliver Wood ist nicht so eine großartige Person und du solltest nicht</strike>
+</p><p> [Comment as <strong>Hesperus</strong>]</p><p>
+  <strike>Die Story hat einen süßen Anfang, aber ich habe das Gefühl Oliver ist vielleicht etwas zu idealistisch dargestellt? Nur eine Idee, um das ein wenig mehr</strike>
+</p><p> [Comment as <strong>Hesperus</strong>]</p><p>
+  <strike>I</strike>
+</p><p> </p><p>
+  <strong>---</strong>
+</p><p> </p><p>
+  <strong>Penny (15:22) Immer noch kein Glück?</strong>
+</p><p>
+  <strong>&gt; Penny (15:30) Was meinst du?</strong>
+</p><p>
+  <strong>Penny (15:34) Mit Wood.</strong>
+</p><p>
+  <strong>&gt; Penny (15:36) Ah</strong>
+</p><p>
+  <strong>&gt; Penny (15:40) Nicht wirklich</strong>
+</p><p>
+  <strong>&gt; Penny (15:45) Ich sehe darin keinen Sinn.</strong>
+</p><p>
+  <strong>Penny (15:51) Wir haben darüber geredet!</strong>
+</p><p>
+  <strong>Penny (15:54) Es muss keinen Sinn haben, er ist dein Seelenverwandter. Du solltest wenigstens versuchen ihn zu kontaktieren!</strong>
+</p><p>
+  <strong>&gt; Penny (15:58) Vielleicht habe ich das ja.</strong>
+</p><p>
+  <strong>Penny (16:00) Mach dich nicht lächerlich. Ich weiß, dass du das nicht hast.</strong>
+</p><p>
+  <strong>Penny (16:02) Percy, du musst mit ihm reden!</strong>
+</p><p>
+  <strong>&gt; Penny (16:10) Ich will darüber nicht reden.</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>---</strong>
+</p><p> </p><p><strong>An:</strong> Oliver Wood</p><p>
+  <strike>Hallo!</strike>
+</p><p><strong>An:</strong> Oliver Wood</p><p>
+  <strike>Hallo, es tut mir leid dich so spät zu anzuschreiben, aber ich denke, dass ich dein Seelen </strike>
+</p><p><strong>An</strong>: Oliver Wood</p><p>
+  <strike>Hallo, ich bin Percy. Als vor einer Woche das Foto von dir viral ging, habe ich bemerkt, dass wir das gleiche Seelentattoo haben. Also dachte ich, dass es besser wäre dir zu schreiben, um es dich wissen zu lassen. Wenn du darüber reden willst, zögere nicht mir zurück zu schreiben, ich gebe dir sogar meine Telefonnummer. Ich bin ehrlich gesagt etwas besorgt mit dir darüber zu reden, vor allem nach all der Zeit, die ich damit verbracht habe Menschen zu zuhören, wie sie über dich reden. </strike>
+</p><p><strong>An:</strong> Oliver Wood</p><p>
+  <strike>Ich hoffe, ich belästige dich nicht</strike>
+</p><p><strong>An</strong>: Oliver Wood</p><p>Hallo!</p><p align="center">
+  <strong>[Es tut uns leid, aber der User hat Privatnachrichten deaktiviert]</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>---</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>Mama (11:20) Also, wie läuft die Sache mit Oliver? Wir haben schon länger nichts mehr von dir gehört! &gt;:(</strong>
+</p><p>
+  <strong>Penny (13:12) Hast du mit ihm geredet?</strong>
+</p><p>
+  <strong>Madeleine (13:30) Percy, wir werden dich morgen als erstes brauchen. Wenn du jemanden von der Presse siehst, rede nicht mit ihnen. </strong>
+</p><p>
+  <strong>Bill (14:46) Kommst du am Samstag?</strong>
+</p><p>
+  <strong>Mama (15:38) Perce???</strong>
+</p><p>
+  <strong>Andrew (16:20) Hast du die Datei gelesen, welche ich dir gerade geschickt habe? Ich brauche deine Meinung so bald wie möglich</strong>
+</p><p>
+  <strong>Arthur Weasley (16:35) Percy, deine Mutter macht sich Sorgen. Kannst du sie bitte zurückrufen?</strong>
+</p><p>
+  <strong>Bill (17:01) Fred und George haben mir gesagt, dass sie kommen und ich denke Charlie wird auch hier sein. Es wäre schön einmal alle zu Hause zu haben. </strong>
+</p><p>
+  <strong>Bill (17:10) Was sagst du?</strong>
+</p><p>
+  <strong>Bill (17:13) Es würde Mama glücklich machen</strong>
+</p><p>
+  <strong>Bill (17:17) Percy, das ist wichtig.</strong>
+</p><p>
+  <strong>Cedric (17:43) Hey Kumpel, ich hab heute Abend irgendwie Lust auf Chinesisch. Ist es ok, wenn ich Essen mitbringe?</strong>
+</p><p>
+  <strong>&gt; Cedric (17:45) Chinesisch klingt gut.</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>---</strong>
+</p><p>
+  <strong> </strong>
+</p><p>
+  <strong>Oliver Wood über sein Seelentattoo [Komplettes Interview]</strong>
+</p><p>129.370 Aufrufe</p><p>[<em>Das Video startet mitten in einer Talkshow, gerade als Oliver den Raum betritt, bekleidet mit einer Hose und einem weißen T-Shirt. Die Kamera folgt ihm, während er sich auf die Couch gegenüber der Reporterin, die berühmte Rita Kimmkorn, setzt, und zoomt auf sein Gesicht, als er sie anlächelte</em>]</p><p>RITA: Oliveeeer. Gut siehst du aus!</p><p>OLIVER: Danke. Aber ich hatte ein wenig Hilfe.</p><p>RITA: Bescheiden wie immer! Sag mir, wie fühlt es sich an, der begehrteste Junggeselle in ganz Großbritannien zu sein?</p><p>OLIVER: [<em>es ist ihm sichtlich unangenehm</em>] Na ja... Ich kann nicht sagen, dass ich ein Junggeselle bin, schließlich habe ich trotz all dem einen Seelenverwandten.</p><p>RITA: Einer, der möglicherweise jetzt weiß wer du bist! [<em>sie lacht</em>]</p><p>OLIVER: Ja, wahrscheinlich. Ich meine, das Bild wurde mittlerweile so ziemlich überall gezeigt. Ich glaube, sogar die Queen hat es gesehen.</p><p>RITA: Oh, das hat sie definitiv! Um fair zu bleiben, es ist ein sehr gutes Bild. Wir können erkennen, dass du ein Athlet bist.</p><p>OLIVER: Dankeschön?</p><p>RITA: Also! Hat dein Seelenverwandter dich schon kontaktiert?</p><p>OLIVER: Na ja...</p><p>RITA: Lass mich raten, er oder sie hat sich nicht getraut sich bei dir zu melden? Vielleicht hat er oder sie Angst vor deinem Bekanntheitsgrad, zu schüchtern den ersten Schritt zu machen? Denkst du, er oder sie guckt uns gerade zu? Wenn ja, ist da etwas, dass du ihm oder ihr sagen willst?</p><p>OLIVER: Na ja, in der Tat möchte ich das...</p><p>RITA: Hm?</p><p>OLIVER: Es haben sich tatsächlich viele Leute bei mir gemeldet.</p><p>RITA: Wirklich?</p><p>OLIVER: Vielleicht sogar ein wenig zu viele.</p><p>RITA: Hoppla. Wie kann das sein? Möchtest du nicht erfahren wer dein Seelenverwandter ist?</p><p>OLIVER: Ich möchte es, ja! Es ist nur, dass die meisten Menschen, die mir Nachrichten schicken gar nicht wirklich mein Seelenverwandter sind.</p><p>RITA: Ooooh, das ist eine wirklich verzwickte Situation.</p><p>OLIVER: Glaube ich auch.</p><p>RITA: Wurden dir gefälschte Bilder geschickt?</p><p>OLIVER: Ziemlich viele.</p><p>RITA: Tattoos?</p><p>OLIVER: Jap.</p><p>RITA: Das ist wirklich bedauerlich! Du musst sicher sehr enttäuscht sein.</p><p>OLIVER: Ein wenig, ja. Zuerst dachte ich wirklich, dass sie ehrlich wären und es wäre wirklich mein Seelenverwandter oder jemand der ihn kennt und versucht mich zu kontaktieren. Es hat sich herausgestellt, dass die Welt nicht so ist.</p><p>RITA: Also, auch wenn dein Tattoo weltweit bekannt ist, denkst du nicht, dass es dir dabei hilft deinen Seelenverwandten zu finden?</p><p>OLIVER: Ich denke, das macht es sogar noch schwieriger, ehrlich gesagt. Ich fange an, bei jedem, der gerade versucht mir zu schreiben, misstrauisch zu werden. Diese Leute... Na ja. [<em>er dreht sich so, dass er direkt in die Kamera gucken kann</em>] Wenn irgendwer von euch gerade zuhört, bitte hört auf mir falsche Fotos zu schicken.</p><p>RITA: Denkst du, das wird genügen?</p><p>OLIVER: Ich hoffe es. Glaube es aber nicht.</p><p>RITA: Die Leute sind wirklich entschlossen dich in ihre Hände zu bekommen. Eine Idee warum?</p><p>[<em>Das Video geht noch weitere fünf Minuten, in denen Rita Oliver Fragen über sein Liebesleben stellt und seinen möglichen Aufstieg zum Kapitän der englischen Nationalmannschaft</em>]</p><p> </p><p>---</p><p> </p><p>
+  <strong>Pyrustales</strong>
+</p><p>Stellt euch vor Oliver Woods Seelenverwandter zu sein.</p><p>Stellt euch vor morgens aufzuwachen und euer Tattoo zu sehen, sobald ihr den Fernseher an macht, auf der Titelseite der Zeitung, überall auf Twitter und Tumblr.</p><p>Stellt euch vor Angst davor zu haben mit ihm zu reden, weil er so attraktiv, lustig und berühmt ist. Stellt euch vor ihn endlich zu benachrichtigen. Stellt euch vor zugleich ängstlich und glücklich zu sein, als er antwortet. Stellt euch vor die ganze Nacht mit ihm zu schreiben.</p><p>Dann stellt euch vor ihn zu treffen. Stellt euch vor ihn zu umarmen, mit ihm Zeit zu verbringen, zu seinen Spielen zu gehen, seine Mitspieler kennen zu lernen. Stellt euch vor ihn in Manchester zu besuchen, ins Ausland zu reisen, wenn er gegen die Nationalmannschaft eines anderen Landes spielt.</p><p>Stellt euch vor Oliver Woods Seelenverwandter zu sein.</p><p>
+  <strong>Thanosspersonalbinch</strong>
+</p><p>Stellt euch vor so verzweifelt zu sein, dass ihr lieber bei dem Seelenverwandten eines anderen seid als bei eurem eigenen.</p><p>
+  <strong>Hyrulesmaster</strong>
+</p><p>Stellt euch vor, dass ihr so genervt seid, dass ihr nach Bildern von Oliver Wood sucht, um dann die Leute zu haten, die diese posten.</p><p>
+  <strong>Thanosspersonalbinch</strong>
+</p><p>Lol ihr seid verrückt</p><p> </p><p>---</p><p> </p><p><strong>An</strong>: Oliver Wood</p><p>
+  <strike>Bitte antworte mir</strike>
+</p><p><strong>An</strong>: Oliver Wood</p><p>
+  <strike>Ich bin</strike>
+</p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23664853/chapters/56964163">Chapter 3</a>: Percys Erlebnistag
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Das epische, sich steigende Ende dieses ganzen Durcheinanders.<br/>(Aber es wird auch noch einen Epilog geben.)</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Wie immer bei Irisen vorbei gucken.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Trotz Bills Hartnäckigkeit, dass er kommen sollte, trat Percy an diesem Samstag nicht den Weg zum Mittagessen bei den Weasleys an. Stattdessen nahm er sich einen Tag frei und machte sich, ungeachtet seiner lauten Beschwerden und der teils verborgenen Gefahren, auf den Weg nach Manchester. Penny würde einen Mordsspaß haben, wenn sie erstmal von dem was er tat erfahren hatte und er konnte kaum glauben, was er sich gerade selbst antat. Es war als wäre sein Körper auf Autopilot. Er hatte nicht überlegt bevor er in den Zug gestiegen war, nicht darüber nachgedacht was seine Aktion für Konsequenzen haben würde und den Fakt ignoriert, dass es, so wie er vor dem Verlassen des Gebäudes mit seinem Boss geredet hatte, zweifellos Auswirkungen auf seine Karriere hätte. Er hatte einfach gehandelt.</p>
+<p>Während er sich setzte und zwischen seinen verschiedenen Social Media Accounts wechselte, die er erstellt hatte, um sich über sein ständig wandelndes, leider, sehr öffentliches und aus der Kontrolle geratenes Liebesleben auf den neusten Stand zu halten, fragte er sich, was zur Hölle er sich dabei gedacht hatte, alles hinter sich zu lassen, um einen Mann zu treffen, den er noch nie zuvor getroffen hatte und den er nur oberkörperfrei auf einem Selfie und auf verkaufsfördernden Bildern in Zeitschriften gesehen hatte. Man konnte die Tatsache, dass er sein Seelenverwandter war, nicht missverstehen, schließlich bewies es ihr Tattoo, aber er konnte noch immer nicht anders, als zu fürchten, dass er einen fatalen Fehler machte und er sobald es möglich war wieder zurückfahren sollte.</p>
+<p>Aber wenn er das machte, bedeutete es mindestens einen weiteren Monat, in dem sein Seelentattoo überall zu sehen war, in dem er Leuten zuhören musste, wie sie über seine wahre Identität spekulierten, während er <em>direkt vor ihnen</em> stand. Es würde einen weiteren Monat bedeuten, in dem er peinlich berührt, mit einer kichernden Penny neben ihm, Oliver Woods Interviews ansehen musste und in dem seine Mutter ihm unangenehme Nachrichten schickte. Er wollte mit dem Stress und der Unsicherheit, nicht mehr länger zu tun haben. Also entschied er, als er an diesem Morgen, dass er das alles vor Einbruch der Dunkelheit richten würde und, dass er nicht zurückkommen würde, bis er sein Ziel erreicht hatte.</p>
+<p>Percy war äußerlich vielleicht nicht so leichtsinnig, wie sein jüngster Bruder und seine einzige Schwester, die beide anfällig dafür waren in komischen und entfernt gefährlichen Situationen zu enden. Und er war auch nicht die Art von Mensch, der auf dem Weg zum Erfolg sein ganzes Leben riskierte, wie es Fred und George gemacht hatten als sie ihre Firma gestartet und die Highschool mitten im Jahr abgebrochen hatten. Er war nicht wie Charlie, der kein Problem damit hatte wilde Tiere zu zähmen und dabei zu helfen die Biester wieder einzugliedern, die einen Menschen mit einem Biss oder einem Schlag ihrer Pfoten töten konnten. Er war nicht wie Bill, der im Krankenhaus gelandet war, nachdem er einen Überfall auf seine zukünftige Frau verhindert hatte, obwohl sie sich noch nicht mal kannten. Er war nicht so, aber er war mutig auf seine eigene Art und Weise.</p>
+<p>Man musste in der Politik mutig sein oder man würde niemals irgendwo Erfolg haben. Irgendwann musste man sich dort rausstellen, um für sein Überleben kämpfen und das hatte Percy in den letzten Jahren getan. Seit er sich dafür entschieden hatte neben dem Schreiben seiner Masterarbeit eine frühe, politische Karriere zu starten. Er hatte es versucht und Erfolg gehabt. Und jetzt hoffte er, dass das Wunder erneut möglich war, dass er diese Dummheit mit ein wenig Mut und einem Hauch des Markenzeichens seiner Familie, Kampfgeist, beenden konnte.</p>
+<p>Darum war er hier, im Zug von London nach Manchester, nervös auf sein Handy blickend und verzweifelt hoffend, dass er gerade nicht den größten Fehler seines ganzen Lebens beging.</p>
+<p>Das Abteil, in dem er saß, war voller Reisender. Die meisten davon waren kaum wach, da es erst sechs Uhr morgens war und sie jetzt schon seit über einer Stunde, aber Percy fühlte sich, ungeachtet dessen, dass er diese Nacht keinen Augenblick Schlaf bekommen hatte, perfekt aufgewacht und aufmerksam. Er war durch den Stress, der Sehnsucht und der Verunsicherung der vergangenen an seine Grenzen gestoßen, was ihn nervöser als sonst, werden ließ. Um seine Nerven zu beruhigen, versuchte er etwas zu lesen, jedoch bemerkte er, dass er in seiner grenzenlosen Dummheit nur ein Buch mitgenommen hatte, eine Romanze, die von zwei Seelenverwandten handelte, welche zueinander fanden. Und so endete es damit, dass er wieder an sein Handy ging, wo den Reddit Thread aufrief, auf dem er sich zuvor schon aufgehalten hatte. Darin wurde lebhaft darüber diskutiert, ob das am Anfang der Seite gepostete Bild gefälscht war oder nicht.</p>
+<p>r/Eulenmark wurde am Morgen nach der weltweiten Veröffentlichung des mittlerweile berüchtigten Fotos von Oliver Woods Seelentattoo erstellt und wie sein Name vermuten ließ, war es vollends der Diskussion über Olivers möglichen Seelenverwandten gewidmet. Die meisten Beiträge waren allerdings ziemlich schlecht gephotoshopte Bilder oder Fotos eines gefälschten Seelentattoos. Folglich waren die meisten Kommentare irgendein Blödsinn, der an die Person gerichtet war, die das gefakte Seelentattoo hochgeladen hatte. Aber es waren auch einige wenigen Diskussionen dabei, in denen es darum ging, welcher Prominente am besten zu Oliver passte. Diese Themen interessierten Percy jedoch nicht wirklich.</p>
+<p>Was ihn interessierte waren die gefälschten Tattoos, unter denen er kommentieren konnte, unter denen er seine Meinung preisgeben konnte. Denn Percy Weasley, der höfliche und noble Percy Weasley, würde niemals dabei erwischt werden, wie er diesen Unsinn auf gemeine Art und Weise totredete oder jemanden beleidigte. Aber in einer Zeit, wie dieser, in der er Dampf ablassen musste, schien Reddit, der perfekte Platz, um sich ein wenig zu entspannen. Vor allem, da die Admins des Forums über das Eulentattoo mehr als bereit waren, dass ihre User die Bilder der falschen Tattoos gnadenlos schikanierten und Percy hatte keine Bedenken es selbst auch zu tun. Er war wütend, er war total gestresst und noch mehr als das, fühlte er sich extrem angegriffen. Was fiel diesen Leuten ein sich als ihn auszugeben und dabei seine und Woods Zeit zu verschwenden? Alles wäre so viel einfacher, wenn sie es einfach sein lassen würden und die Natur der Seelentattoos ihren Lauf nehmen konnte, so wie es vorherbestimmt war.</p>
+<p>[Foto]</p>
+<p> </p>
+<p>⇧ Vote ⇩</p>
+<p>
+  <strong>
+    <em>Best Comments </em>
+  </strong>
+</p>
+<p>
+  <strong>AloeVerapa • 2h</strong>
+</p>
+<p>Wie wärs mit -- nein?</p>
+<p>
+  <strong>OlàThere • 2h</strong>
+</p>
+<p>Jabba?? Bist du das?</p>
+<p> </p>
+<p><strong>MrCanniballoon • 1h</strong> </p>
+<p>Ein weiteres Beispiel dafür, dass du deine Kinder nicht ins Internet lassen solltest.</p>
+<p>
+  <strong>ultimaweaponxx • 1h</strong>
+</p>
+<p>Mama?? Bist du das?</p>
+<p>
+  <strong>VindictiveStrigiforme • 5m</strong>
+</p>
+<p>Da ist so viel verblendet, dass es ein verdammter Smoothie sein könnte.</p>
+<p> </p>
+<p> </p>
+<p>Er war damit beschäftigt ein weiteres Bild von der Brust eines Fremden wütend anzustarren und darüber zu klagen, wie falsch diese vermeintlichen „Seelentattoos“ doch waren, als er etwas realisierte, dass für jeden anderen außer ihm ziemlich offensichtlich schien. Sicher, jetzt da einige Wochen vorüber gegangen waren und irgendwelche Künstler die Zeit hatten sich an die berühmte Zeichnung der Eule zu gewöhnen, tendierten viele der gefakten Tattoos dazu wirklich wie das Echte auszusehen, fast wie perfekte Kopien. Hätte er sich am Tag nach dem Erscheinen von Woods Foto in der Zeitung mit seinem vollkommen identischen Tattoo geoutet, wäre er höchstwahrscheinlich ernst genommen worden und das ganze Durcheinander wäre früher vorbei sein gewesen.</p>
+<p>Aber selbst, wenn er gegen ein wenig Werbung nichts einzubringen hatte (er musste ein Auge auf die Presse haben, das war schließlich sein Job), war er sich nicht sicher, ob er zu dieser Zeit für den Ansturm der Medien bereit war, der über Wood hereingebrochen war, sobald das Foto hochgeladen wurde. Zuzüglich des Entblößens seiner Brust vor der ganzen Welt. Etwas von dem er nicht angetan war, es zu tun. Im Gegensatz zu seinem Seelenverwandten war er eher schlanker gebaut und hatte keine gut definierten Bauchmuskeln oder kräftige Arme, mit denen er angeben konnte. Oh, und außerdem würden seine Brüder es ihn niemals vergessen lassen, dass er sich vor der ganzen Nation ausgezogen hatte.</p>
+<p>Mit einem Seufzen schloss er Reddit und wechselte auf Tumblr, wo er den seine kläglichsten Fanboy-Inhalte fand. Er hatte viel zu viele Gifs von Wood beim Fußball spielen auf seinem eigenen Handy, als er sich traute zu zugeben. Des Weiteren hatte er die Übersicht über die Anzahl an Fotos, die er ebenfalls gespeichert hatte, verloren. Die Situation war wahrlich außer Kontrolle geraten.</p>
+<p>Eine Stunde und eine beschämende Anzahl an maßlosen Fanfiktions später, stand Percy außerhalb des Bahnhofs von Manchester und fragte sich, warum er seinen Seelenverwandten, statt bei romantischen Schneefall, von dem er vor einigen Tagen in einer dummen Fanfiktion gelesen hatte, an einem regnerischen Tag treffen musste. Es war nicht irgendeine Art von Regen, es war die Art, die einen, sobald man darinstand, innerhalb einer Sekunde durchnässen würde. Die Art, die so dicht war, dass man Probleme hatte zu sehen wohin man lief und bei der kein Regenschirm, Mantel oder Anderweitiges einen vor dem Wasser schützte, das vom Himmel fiel.</p>
+<p>Echt, er hasste sein Leben.</p>
+<p>Er fand eine Bushaltestelle, an der er sich unterstellen konnte, um zu warten bis der Regen entweder aufhörte oder sich ein wenig beruhigt hatte. Nach zehn minütigem Frösteln beschloss er, dass er mit dem ganzen hier fertig war und er das tun würde wovon er sich selbst stoppen wollte seit er dieses verdammte Foto gesehen hatte und gelernt hatte, wie sehr es die Welt um ihn herum beeinflusste. Er öffnete seinen Twitteraccount, seinen offiziellen, der, auf dem er ein paar Tausend Follower hatte, die meisten davon waren Kollegen oder Wähler und schrieb:</p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Zurzeit in <strong>#Manchester</strong> <strong>@OliverWood</strong></p>
+<p> </p>
+<p>Da er die Auswirkungen seiner spontanen Entscheidung nicht sehen wollte, stopfte er sein Handy zurück in die Tasche und blickte sich in den Straßen nach einem Café um, in dem er sich verkriechen und den Rest des Tages planen konnte. Seit er aus einer Laune heraus einfach nach Manchester gefahren war hatte er keine Idee, was er in der Praxis tun sollte, stattdessen nur die schwammige Grundlage eines Plans, der folgendermaßen lautete:</p>
+<ol>
+<li>Oliver finden</li>
+<li>Ihm klar machen sein Seelenverwandter zu sein</li>
+<li>Ins Gesicht zu schlagen. Solide wie immer.</li>
+</ol>
+<p>Letztendlich fand er ein kleines Café, welches leer genug wirkte, um darin herum zu gammeln. Jetzt ein wenig müde wegen seines Schlafmangels, bestellte er einen dreifachen Espresso und suchte sich einen Platz so weit wie von den Fernstern entfernt wie möglich. Er stellte seinen Rucksack neben sich auf einen freien Stuhl und öffnete seinen Computer auf dem Holztisch vor ihm. Es fühlte sich ein wenig an, als würde er während seiner Mittagspause arbeiten, dachte er während er durch seine Mails blätterte und seine Nachrichten checkte, außer, dass er diesmal die ganze Nacht nicht geschlafen hatte und er auf der selbst auferlegten Mission war seinen Seelenverwandten vor Sonnenuntergang zu treffen.</p>
+<p>Na ja, er hatte in Drucksituationen schon immer besser gearbeitet.</p>
+<p>Ein kurzer Blick auf seinen Twitteraccount zeigte ihm, dass in den dreißig Minuten seit er seinen Tweet gepostet hatte, sich einige Antworten angesammelt hatten. Mehr, als er erwartet hatte. Verblüfft las er einige Kommentare, während er gestresst auf seinem Daumennagel herum biss.  </p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Zurzeit in <strong>#Manchester</strong> <strong>@OliverWood</strong></p>
+<p>  |<strong>Penelope Clearwater</strong> @PennyLemy</p>
+<p>   Nein. Nie im Leben. Du Arsch! Nicht mal vorgewarnt hast du mich!</p>
+<p> </p>
+<p>  |<strong>Bill Weasley</strong> @BilliamWeasliam</p>
+<p>   Ich entnehme daraus, dass du heute nicht kommst...</p>
+<p> </p>
+<p>  |<strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>  Percy? Triffst du... eine voreilige Entscheidung? Bist du sicher, dass alles ok ist?</p>
+<p>  <strong>#besorgt</strong> <strong>#geradebeiMama</strong> <strong>#dusolltesthierseinBruder</strong></p>
+<p>     <strong>IGnarly</strong> @SkySkater</p>
+<p>     warte-- gehört dieser Percy zu eurer Familie?</p>
+<p>     <strong>HollowKnightess</strong> @shovelandchill</p>
+<p>     Ich kann nicht glauben, dass Gred und Forge einen Bruder haben, der POLITIKER ist</p>
+<p>         <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>         Verständlich, so eine Enttäuschung, so eine Schande für den Familiennamen! Und das schlimmste ist, er kommt samstags nicht mal zum Mittagessen!</p>
+<p>              <strong>HollowKnightess</strong> @shovelandchill</p>
+<p>              Und trotzdem nennt ihr ihn immer noch euren Bruder, wie gnädig von euch.</p>
+<p>     <strong>Furiouser Stranger</strong> @speedrunningdisgrace</p>
+<p>     Heeeeyyy euer Bruder schließt sich den Meme Game an</p>
+<p>         <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>         Das Schlimmste ist, in Wirklichkeit nicht, er meint es ernst. Er meinte es tatsächlich immer ernst, dass es ist fast ein wenig gruselig ist.</p>
+<p>              <strong>Johnny P</strong> @johnnynny</p>
+<p>              Warte was</p>
+<p>              <strong>Amanda Brown</strong> @amandabrown267</p>
+<p>              Ist er einer von denen, die glauben Woods Seelenverwandter zu sein?</p>
+<p>                   <strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>                   Genau genommen bin ich sein Seelenverwandter.</p>
+<p>                         <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>                         Heilige Scheiße! Percy! Du! Hier! Wie? Warum?</p>
+<p>                                 <strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>                                 Das ist mein Twitteraccount, ihr Idioten, natürlich bin ich hier.</p>
+<p>                        <strong>Amanda Brown</strong> @amandabrown267</p>
+<p>                        Warte was? Du bist wirklich sein Seelenverwandter? Gred? Forge? Ist euer Bruder verrückt geworden?</p>
+<p>                                 <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>                                 Yas lol</p>
+<p> </p>
+<p>  |<strong>Amanda Bones</strong> @OfficialAmandaBones</p>
+<p>   Mr. Weasley, was soll das heißen?</p>
+<p> </p>
+<p>  |<strong>Stitch Phone</strong> @imcallinghome</p>
+<p>   Oh prima, ein weiterer, verrückter Stalker</p>
+<p> </p>
+<p>Nachdem er einige Zeit damit verschwendet hatte online mit seinen Brüdern zu diskutieren, gab Percy die Hoffnung auf, dass sie es unterbinden würden sich über seine Situation lustig zu machen. Er schloss seinen Computer, während er mit einem niedergeschlagenen Seufzen feststellte, dass er seinen Kaffee bereits geleert hatte und er mehr, sehr viel mehr brauchen würde, wenn er mit einem funktionierenden Verstand durch den Tag kommen wollte. Die Barista musterte ihn mit einem leicht besorgten Blick, als sie seine Bestellung, einer großen Tasse gefüllt mit so vielen Espresso Shots, wie physikalisch möglich waren, hörte. Aber er ignorierte sie. Er fühlte sich innerlich bereits tot und wollte sicherstellten, dass sein Körper sich dem anpasste.</p>
+<p>Zurück auf seinem Stuhl fuhr er seinen Computer erneut hoch ignorierte diesmal allerdings seine Social Media Accounts völlig, während er die Adresse des Trainingsgelände von Manchester United googelte. Er blickte finster drein, als er feststelle, dass es anscheinend außerhalb der Stadt, neben einer Ortschaft namens Carrington, lag. Er erlaubte es sich, sich eine ganze Minute lang in Selbstmitleid zu suhlen, sein Kopf lag auf seinen Unterarmen und sein ganzer Körper war gegen den Tisch gesackt, bevor er sich wieder aufrichtete und nach seiner Tasse voller Espresso Shots griff, um sie mit zwei Schlucken auszutrinken, während die Barista ihn mit fasziniertem Entsetzen anstarrte.</p>
+<p>Es war jetzt fast zehn Uhr morgens und Wood hatte wahrscheinlich schon Training, was es für Percy schwieriger machen würde ihn direkt zu kontaktieren. Er hatte immer noch keine Idee, was er außer einem sehr ehrlichen und aufrichtigem „Fick dich!“ (Er würde vielleicht ein „Arsch“ oder auch zwei hinzufügen. Das war von seiner Laune zu dieser Zeit abhängig.), zu dem Mann sagen sollte, wenn er ihn traf. Aber er wusste, dass er nicht nur dastehen und darauf warten konnte, dass sich das alles hochschaukelte. Er war den ganzen Weg nach Manchester gekommen, um das Arschloch Oliver Wood zu sehen und er würde ihn sehen, egal was er tun musste, um zu ihm zu kommen.</p>
+<p>Sein Uber-Fahrer starrte ihn mit einem langen, leidenden Blick an, als er ihm erklärte, wo er hinwollte und hielt ihn eindeutig schon für einen weiteren verrückten Stalker. Percy, der erschöpft und gleichzeitig auch extrem aufgeregt war, dank der unzumutbaren Menge an Kaffee, den er getrunken hatte, fühlte sich nicht dazu in der Lage ihm zu widersprechen. Der Kerl würde ihm wahrscheinlich sowieso nicht glauben, dafür hatten die ganzen Faker gesorgt.</p>
+<p>Die ersten fünf Minuten der Fahrt vergingen verhältnismäßig reibungslos, sobald er erstmals die Tatsache ignorieren konnte, dass sein Fahrer glaubte, dass er ein besessener Stalker war, aber die ganze Sache wurde ein wenig schwieriger als sie, auf halben Weg zum Trainingsgelände, im Stau stecken blieben. Die Autos standen dicht nebeneinander, was es für Percy unmöglich machte auszusteigen, um den Rest des Weges zu gehen und das Ganze hielt für den Rest ihrer vermeintlich kurzen Fahrt an und so dauerte sie statt fünfzehn Minuten, fünfundvierzig Minuten.</p>
+<p>Percy zahlte dem Fahrer trotzdem was er ihm fällig war, da er das Gefühl hatte zumindest dies dem armen Mann zu Schulden und ging dann langsam zur nächsten Bushaltestelle, welche zu seiner Überraschung bis zum Zerbersten gefühlt war. Voller Unmut bemerkte er, dass die meisten Menschen, die sich dort vor dem Regen schützten, Mädchen im Teenageralter waren. Manche von ihnen wurden sogar von ihren Eltern begleitet und eine alarmierende Anzahl trug Oliver Wood Fanartikel. Ein der Mädchen hatte sogar ein Shirt an auf das Woods Bauchmuskeln gedruckt waren, direkt über ihrer eigenen Brust. Etwas, auf das sie offensichtlich stolz war. Sein eigenes Tattoo auf diese Art ausgestellt zu sehen, ließ Percy das Gesicht verziehen und zerstreut über seine eigene Brust reiben, wo immer noch die Zeichnung seiner vorhanden war.</p>
+<p>Er schaffte es sich unter das Dach der Haltestelle zu drängen und drückte seinen Körper an eine der Glasplatten, immer noch auf dem künstlichen Energiedosis, den die Espressos verursachten. Er wollte vorübergehend Luft holen und beschloss darum seine Twitterseite auf den aktuellen Stand zu bringen. Aus irgendeinem Grund fühlte er sich, jetzt wo er den ersten Teil seiner Reise hochgeladen hatte, dazu verpflichtet auch den Rest der Geschichte hier zu posten. Vielleicht hoffte ein kleiner Teil von ihm, törichterweise, dass Wood darüber stolpern würde. Vielleicht war es auch nur ein Weg, um mit seiner Familie und Freunden zu kommunizieren, ohne sie anrufen zu müssen. Vielleicht war er auch nur genervt, weil dies davor jeder gemacht hatte und er, als Woods echter Seelenverwandter, auch dazu berechtigt sein wollte.</p>
+<p> </p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Ich bin jetzt in der Nähe von <strong>#Carrington</strong> warum sind hier so viele weibliche Teenager? <strong>@OliverWood</strong></p>
+<p> </p>
+<p>Diesmal schien es, als wartete jeder nervös auf einen neuen Tweet, da die Antworten sofort hereinkamen, sobald er die <strong>[Twittern]</strong> Schaltfläche betätigt hatte. Mit einem Lächeln bemerkte er, dass die meisten seiner Familienmitglieder sich daran beteiligten, was er als jetzt als lebendiges Ende auf seinen Monat voller Leid betrachtete und mit den Tweets beschrieb. </p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Ich bin jetzt in der Nähe von <strong>#Carrington</strong> warum sind hier so viele weibliche Teenager? <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>  </strong>|<strong>Penelope Clearwater</strong> @PennyLemy</p>
+<p>   Oh mein Gott, ich schwöre ich würde dich am liebsten umbringen, aber im gleichen Moment... Los Percy!!!!!</p>
+<p> </p>
+<p>  |<strong>Charlie "dragon tamer" Weasley</strong> @beastboi</p>
+<p>   Percy, jeder hier ist an seinem Handy und das ist deine Schuld</p>
+<p>     <strong>Charlie "dragon tamer" Weasley</strong> @beastboi</p>
+<p>     Warum tust du uns das an?</p>
+<p>         <strong>Charlie "dragon tamer" Weasley</strong> @beastboi</p>
+<p>         Ich will dir nur sagen, dass Fred und George Wetten darüber abschließen ob du von einem Sicherheitsmann festgenommen wirst oder nicht</p>
+<p> </p>
+<p>  |<strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>   Entfessle dein inneres Fangirl, Percy. Kämpfe dir deinen Weg zum Stadion frei, überwältige einen Bodyguard und greife auffällig nach Woods Schwanz</p>
+<p>     <strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>     Wenn ich zurück in London bin, werde ich euch töten</p>
+<p>         <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>         Dazu musst du uns erst fangen!</p>
+<p>             <strong>Amazing Tim</strong> @timsparkles</p>
+<p>             Was zur Hölle passiert hier überhaupt???</p>
+<p> </p>
+<p>  |<strong>Ron Weasley</strong> @cardiffhero</p>
+<p>   pErCy du wirst oliver wood treffen wtf</p>
+<p>     <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>     Komm runter, Ron. Wir können dich sabbern sehen</p>
+<p>         <strong>Ron Weasley</strong> @cardiffhero</p>
+<p>         percy bring mir ein autogramm mit</p>
+<p>             <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>             Das einzige, dass er bekommt ist dheuhjfdzushcnsk,c</p>
+<p>                     <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>                     Hallo, das ist Fred und Georges Mutter, Molly. Ich entziehe ihnen ihre Smartphones, weil sie unverschämte Wörter benutzen. Viel Glück, Percy ^^ !!!!!!</p>
+<p>                            <strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>                            Danke Mama.</p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Anscheinend verweigern sie den Zutritt zum Gelände und keiner kommt rein<strong> @OliverWood</strong></p>
+<p> </p>
+<p>  |<strong>Penelope Clearwater</strong> @PennyLemmy</p>
+<p>   Brich ein.</p>
+<p> </p>
+<p>  |<strong>Ron Weasley</strong> @cardiffhero</p>
+<p>   brich ein</p>
+<p> </p>
+<p>  |<strong>Charlie "dragon tamer" Weasley</strong> @beastboi</p>
+<p>   Brich ein lol</p>
+<p> </p>
+<p>  |<strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>   Percy, brich auf keinen Fall ein!!!!! Hier ist deine Mutter</p>
+<p>     <strong>Ron Weasley</strong> @cardiffhero</p>
+<p>     das wird niemals nicht lustig sein</p>
+<p>         <strong>Bill Weasley</strong> @BilliamWeasliam</p>
+<p>         Ich stimme zu, brich nicht ein.</p>
+<p> </p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Das ist so nervig... zahllose lügende Arschlöcher durften rein, aber jetzt, wo ICH hier bin ist es für die Öffentlichkeit geschlossen? <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Tötet mich, bitte <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Ich meine, wie wenig Glück kann man in seinem Leben nur haben?? <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Zuerst schafft es Wood, der Idiot, dass ein Foto von seinem Tattoo gemacht wird, welches überall in den Zeitungen zu sehen ist <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Danke du Arsch <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Und dann versucht jedes Arschloch, dass die Photoshop-Anleitung für Anfänger gelesen hat mein verdammtes Tattoo zu kopieren <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Wie schwer ist es denn sich um sein eigenes Zeug zu kümmern??? Und andere Leute in Ruhe zu lassen? <strong>@OliverWood</strong></p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Und dann DAS. Wenn es einen Gott gibt, dann töte mich bitte jetzt. Mein Leben ist sinnlos und ich bin verdammt müde. Wenn sich diese Tür in den nächsten zehn Minuten nicht öffnet, klettere ich über den Zaun <strong>@alleArschlöcherdadraußen</strong></p>
+<p> </p>
+<p>  |<strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>   Aus allen Sachen, von denen wir dachten, die heute passieren würde, ist dies mit Abstand das Letzte, dass wir erwartet hätten und bis jetzt das Beste.</p>
+<p>     <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>     Wirst du dir die Haare abrasieren, Percy?</p>
+<p>         <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>         Mach dir keine Sorgen, selbst wenn du einen Zusammenbruch in den sozialen Medien erleidest, wird er dich immer noch wollen dhfjebdscnjksld</p>
+<p>              <strong>Weasley Wonderful Wheezes</strong> @Gred&amp;Forge</p>
+<p>              Hallo ihr! Hier ist wieder Molly, Fred und Georges Mutter. Klettere nicht auf den Zaun, Percy! Das ist eine schlechte Idee!</p>
+<p>                  <strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>                  Leckt mich mal am Arsch</p>
+<p>                         <strong>Percy Weasley</strong> @Percy Weasley</p>
+<p>                         Nicht du Mama, ich rede mit Fred und George</p>
+<p> </p>
+<p>  |<strong>Marcus Flint</strong> @officialmarcusflint</p>
+<p>   Ok, ich mag Wood echt nicht, aber das ist bei weitem die beste Seifenoper, die ich je gesehen habe</p>
+<p>     <strong>Alisson Starz</strong> @footballsoccerlover</p>
+<p>     Wow OwO was ist das </p>
+<p>     <strong>Flint n1 Fan</strong> @woodsuxx</p>
+<p>     omgggg was passiert in carrington</p>
+<p>     <strong>Joey Pusheen</strong> @catcatcattactac</p>
+<p>     Ich weiß nicht was passiert, aber ich will, dass er auf den Zaun klettert <strong>#ErklimmedenZaun</strong></p>
+<p>         <strong>Lukas Vador</strong> @pshpshluke</p>
+<p>         <strong>#ErklimmedenZaun</strong> !!!!!</p>
+<p>               <strong>Maohi Aka</strong> @redmanredbull</p>
+<p>               <strong>#ErklimmedenZaun</strong> lasst uns das ist die trends bringen jungs</p>
+<p>                     <strong>Bubble Tea Princess</strong> @princessSara</p>
+<p>                     <strong>#ErklimmedenZaun</strong></p>
+<p> </p>
+<p>  |<strong>G. Weasley</strong> @betterthanyou</p>
+<p>   Percy, was ist passiert? Du bist in den Trends</p>
+<ol>
+<li>   <strong> Weasley</strong>@betterthanyou</li>
+</ol>
+<p>     Percy, du bist eine Twitter Berühmtheit!</p>
+<ol>
+<li>       <strong> Weasley</strong>@bettertanyou</li>
+</ol>
+<p>         Das ist der beste Tag in meinem Leben, ich kann nicht aufhören zu lachen</p>
+<p> </p>
+<p>  |<strong>Alan Walkman</strong> @backtoalan</p>
+<p>   Wenn er wirklich auf den Zaun klettert, meint ihr er realisiert, dass er es gerade im ganzen Internet angekündigt hat? Er wird erwischt werden</p>
+<p> </p>
+<p>  |<strong>Dolores Umbridge</strong> @UndersecretaryUmbridge</p>
+<p>   Was hat das zu bedeuten?</p>
+<p>     <strong>Dolores Umbridge</strong> @UndersecretaryUmbridge</p>
+<p>     Ich kann nicht glauben, dass ein Mitglied des PARLAMENTS sich selbst so blamieren kann</p>
+<p>         <strong>Marcus Flint</strong> @officialmarcusflint</p>
+<p>         Warte-- der Typ ist ein Abgeordneter??? omg <strong>@chochangofficial</strong> das ist zu lustig</p>
+<p>              <strong>Cho Chang</strong> @chochangofficial</p>
+<p>              Flint, was zur Hölle ist das?</p>
+<p> </p>
+<p><strong>Percy Weasley</strong> @PercyWeasley</p>
+<p>Ich klettere auf den verdammten Zaun. <strong>@OliverWood</strong></p>
+<p> </p>
+<p>  |<strong>Marcus Flint</strong> @officialmarcusflint</p>
+<p>   Macht das nicht Leute, das ist gruselig. Auf der anderen Seite ist der Typ mein verdammter Held</p>
+<p>     <strong>Gentle Pepe</strong> @strokemefriend</p>
+<p>     Ich kann die ganze Scheiße nicht glauben</p>
+<p> </p>
+<p><strong>Oliver Wood</strong> @OliverWood</p>
+<p>Was ist los? Warum twittern mich alle wegen einem Zaun an?</p>
+<p> </p>
+<p>  |<strong>Marcus Flint</strong> @officialmarcusflint</p>
+<p>   WOOD LAUF, ER WIRD DICH HOLEN</p>
+<p> </p>
+<p>---</p>
+<p> </p>
+<p>Auf Zäune zu klettern gehörte nicht zu Percys täglichen Angewohnheiten, aber er wurde von einem leistungsfähigen und ziemlich ungesunden Mix aus schwerem Schlafmangel und Koffein (er hatte es geschafft einen Becher Kaffee zu bekommen, während er vor dem Gelände wartete), sowie der Frustration, die sich innerhalb eines Monats angesammelt hatte, den er damit verbracht hatte seinen Seelenverwandten zu beobachten und in dem er nicht dazu fähig sich mit ihm zu treffen oder ihm zu schreiben. Folglich hatte er auch keinen Plan was er da tat. Wie ferngesteuert hievte er sich über den Zaun, seine Gliedmaßen angetrieben von purer Bosheit. Unter ihm hatte sich eine kleine Gruppe versammelt und einige ihre Anhänger hatten damit begonnen ihm rhythmisch „Erklimme den Zaun“ zu zurufen. Als er das Ende erreicht hatte, drehte er sich zu ihnen um und salutierte ihnen mit zwei Fingern, sich seiner Straftat komplett bewusst, bevor er sich auf die andere Seite fallen ließ und dort im Rasen landete. Überglücklich begannen sie zu jubeln und jemand rief sogar voller Inbrunst seinen Namen (den er oder sie von seinem Twitteraccount haben musste). Verärgert, entschied er sich sie zu ignorieren und begann stattdessen damit seinen Seelenverwandten zu suchen.</p>
+<p>Ihm noch unbekannt, dass das Video von ihm, wie er auf den verfluchten Zaun kletterte, um sich dann zurück zur Menge zu drehen, sofort zur Internetsensation, mit über 15 Millionen Aufrufen auf YouTube werden würde.  Sogar ein Shirt würde von dem aufrichtigen Salut, den er seinen „Unterstützern“, wie sie sich später nennen würden, gegeben hatte, gemacht werden. Und auch wenn der Wirbel um Oliver Woods Seelentattoo bald nachlassen würde, würde Percy Weasley niemals vollständig seinem unglücklichen Internetruhm entkommen können.</p>
+<p>Als er jedoch um den Gebäudekomplex herumging um überall nach seinem Seelenverwandten zu suchen, konnte sich Percy nicht weniger für den Fakt interessieren, dass er dabei war das bekannteste Meme 2018 zu werden oder, dass seine Brüder ihr Bestes geben würden, damit die „Erklimme den Zaun“-Bewegung niemals ganz in Vergessenheit geriet. Stattdessen war er allein auf das Finden von Wood konzentriert, um ihm ein für alle Mal zu beweisen, dass er sein Seelenverwandter war. Jetzt war es zu spät, um umzukehren. Er hatte Hausfriedensbruch begangen und war dabei auf Kamera aufgenommen worden. Vor allem in Anbetracht der Anzahl an Handys, die auf ihn gerichtet waren, als er eingebrochen war. Seine Arbeit war jedenfalls schon nach seinem peinlichen Zusammenbruch auf Twitter getan. Vielleicht würde auch seinen Seelenverwandten nach diesem ganzen Chaos zu bekommen</p>
+<p>Trotz des Regens, der vor einer guten Stunde aufgehört hatte, war ihm immer noch ziemlich kalt und noch dazu nass, dabei half es auch nicht draußen zu sein. Er konnte auch nicht in das Gebäude gehen, da die Sicherheitsmänner vermutlich schon wussten, dass ein Eindringling auf dem Gelände war und er wäre sehr viel einfacher zu fangen, wenn er das eigentliche Gebäude betrat. Er würde draußen bleiben und hoffen, dass Wood letztendlich rauskam, um vielleicht auf einem der Felder zu train-</p>
+<p>Abrupt stoppte er und seine Augen weiteten sich. Er war gerade um die Ecke eines Gebäudes gebogen und ging direkt auf ein Fußballfeld zu, auf dem ziemlich viele Spielern beschäftigt waren. Manche von ihnen dehnten sich, einige standen am Feldrand auf ihr Handy oder unterhielten sich. Ein wenig eingeschüchtert, trotz der Tatsache, dass er sich an diesem Tag bereits oft genug für ein ganzes Leben blamiert hatte, suchte Percy schnell die Gesichter der Männer vor ihm ab, dankbar, dass diese ihn noch nicht bemerkt hatten. Mit ein bisschen Glück würde einer von ihnen-</p>
+<p>Ja. Hier</p>
+<p>Er konnte ihn sehen.</p>
+<p>Er war hier.</p>
+<p> </p>
+<p>---</p>
+<p> </p>
+<p>
+  <strong>[LIVESTREAM] Der Zaunmann ist auf der Jagd</strong>
+</p>
+<p>264.000 Zuschauer</p>
+<p>[<em>Das Video wird von einem Handy gefilmt, welches hochkant gehalten wird. Der Kameramann lacht, was die Aufnahme verwackeln. Um ihn herum kann man einige Leute sehen. Die meisten davon standen, mit Sportklamotten bekleidet, in der Mitte des Fußballfeldes. Während einige von ihnen deutlich amüsiert schienen, andere hatten keine Ahnung was los war. Irgendwann dreht der Mann, der die Kamera hält, diese, um Oliver zu filmen und zoomt auf sein Gesicht, dabei lacht die ganze Zeit.</em>]</p>
+<p>MICHAEL: Er weiß es nicht, aber er sein Leben ist in großer Gefahr...</p>
+<p>ETHAN: [<em>bemerkt, dass irgendetwas los ist und kommt in die Nähe der Kamera. Das Handy ist auf ihn gerichtet und zoomt auf sein Gesicht</em>] Mike... Mike... Filmst du das?</p>
+<p>MICHAEL: Jap, ich mache einen Livestream, denn ich würde es nicht verpassen wollen.</p>
+<p>CORMAC: Was verpassen?</p>
+<p>MICHAEL: Halt den Mund! [<em>er zeigt mit seiner freien Hand auf Oliver</em>] Er kann uns nicht hören!</p>
+<p>CORMAC: Warum nicht?</p>
+<p>ETHAN: Junge, vertrau uns und halt den Mund, das wird großartig werden.</p>
+<p>CORMAC: Sicher...</p>
+<p>MICHAEL: [<em>er richtet die Kamera wieder auf Oliver und zoomt dramatisch auf seine Augen</em>] Wie ich bereits sagte, weiß er nicht, dass sein Leben in großer Gefahr ist. Meine Damen und Herren, Oliver Wood, der großartige, der bildhübsche wird zurzeit gejagt von-</p>
+<p>ETHAN: Scheiße, Mike!</p>
+<p>MICHAEL: Was denn?</p>
+<p>ETHAN: Guck mal nach links, aber mach es nicht so auffällig.</p>
+<p>MICHAEL: [<em>richtet die Kamera nach links, wo Percy zu sehen ist, wie er auf die Gruppe zugeht</em>] Heilige Scheiße.</p>
+<p>ETHAN: Ich sagte unauffällig, du Idiot.</p>
+<p>MICHAEL: Kumpel, das ist er. Der Zaunmann.</p>
+<p>CORMAC: Wer zum Fick ist der Zaunmann?</p>
+<p>MICHAEL und ETHAN: Halt den Mund, Cormac.</p>
+<p>[<em>Die Kamera fokussiert Percy, der nicht auf sie achtet, während er an den drei Männern vorbeiläuft, die Hände in seinen Hosentaschen vergraben und mit einem Blick, der wirkt, als würde er gleich jemanden töten. Er hat dunkle Schatten unter seinen Augen und sein Haar ist unordentlich. Es war offensichtlich, dass er bis jetzt keinen guten Tag hatte.</em>]</p>
+<p>[<em>Die Kamera wird wieder auf Oliver gerichtet, der anfängt zu bemerken, dass etwas los ist. Er guckt hoch und runzelt die Stirn, als er, den ihm unbekannten, Percy näherkommen sieht.</em>]</p>
+<p>MICHAEL: Shit, ich muss das aufnehmen!</p>
+<p>[<em>Das Bild der Kamera bebt, als er losläuft, um sich so zu platzieren, dass er die Unterhaltung perfekt filmen kann: Ein paar Meter von Oliver entfernt, auf seiner linken Seite, so dass man das Profil der beiden sehen kann. Seines und Percys. Er hat kaum Zeit die beiden Männer zu fokussieren, bevor Oliver seinen Mund öffnet.</em>]</p>
+<p>OLIVER: Wer...</p>
+<p>[<em>Percy lässt ihm keine Chance auszureden. Stattdessen atmet er tief ein und schließt seine Augen, um ihn dann mit all seiner Kraft ins Gesicht zu schlagen.</em>]</p>
+<p>MICHAEL: Heilige Scheiße!</p>
+<p>[<em>Oliver fällt zu Boden und fasst sich an die Wange, während Percy seine Hand hält und vor lauter Schmerz das Gesicht verzieht. Michael entscheidet auf Oliver zu zoomen, um seine Reaktion einzufangen. Sein Mund ist geöffnet und seine Augen weit aufgerissen. Komplett geschockt starrt er Percy an, als würde er nicht verstehen, wie ihm gerade geschieht.</em>]</p>
+<p>OLIVER: Warum hast du das getan?</p>
+<p>PERCY: Ich bin dein Seelenverwandter, du Arschloch.</p>
+<p>OLIVER: Wa...</p>
+<p>PERCY: Halt deinen Mund. Ich habe genug davon dich reden zu hören. Hör zu.</p>
+<p>OLIVER: Uh...</p>
+<p>PERCY: Hör zu! Du bist ein Arsch. Du Weichei hast verdammt nochmal mein Leben ruiniert. Der einzige Grund warum ich dich gerade nicht erwürge ist wegen diesem Kerl [<em>er zeigt zu Kamera und auf Michael</em>]. Kapiert?</p>
+<p>OLIVER: Es tut mir leid?</p>
+<p>PERCY: Das reicht mir nicht.</p>
+<p>[<em>Nachdem er Oliver ein letztes Mal wütend anstarrt, dreht Percy sich rasch um und entfernt sich von der Gruppe, um hinter einer Gebäudeecke zu verschwinden. Die Kamera filmt noch einige Sekunden die Ecke, bevor sie wieder zu Oliver schwenkt, der immer noch sichtlich überrascht</em>]</p>
+<p>MICHAEL: Heilige Scheiße.</p>
+<p>OLIVER: Was... was war das?</p>
+<p>ETHAN: Ich glaube der Typ ist wirklich dein Seelenverwandter.</p>
+<p>MICHAEL: Kumpel, du musst ihm hinterher!</p>
+<p>OLIVER: Shit, du hast recht.</p>
+<p>[<em>Die Kamera folgt Oliver, als er aufspringt und Percy hinterherläuft, während er ihn ungeachtet des Problems, dass er seinen Namen nicht kennt, ruft. Als er ebenfalls hinter dem Gebäude verschwindet, dreht Michael sein Handy zum Rest seiner Mitspieler, die mindestens genauso überrascht wie Oliver, noch vor ein paar Sekunden, wirken. Er entscheidet sich dazu auf Cormacs Gesicht filmen und so nah ran zu zoomen, bis nur noch seine Augen, die Nase und der Mund sichtbar sind.</em>]</p>
+<p>CORMAC: Was zum Fick ist gerade passiert?</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/23664853/chapters/57055489">Chapter 4</a>: Die Familienwerte der Weasleys (Epilog)
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Das Ende dieser epischen Reise.</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Wie immer bei Irisen vorbeigucken. Das ist schon das letzte Kapitel und ich hoffe euch hat die deutsche Übersetzung gefallen.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <ul>
+<li><strong> Familienspaß mit Gred und Forge • 11:30</strong></li>
+</ul><p><strong>Nicht-Fred:</strong> [https://www.youtube.com/watch?v=xxxxx]</p><p><strong>Nicht-Fred:</strong> Seht und lernt, fam</p><p><strong>Mama:</strong> ب_ب</p><p><strong>Mama:</strong> Was ist das, Fred?</p><p><strong>Nicht-Fred:</strong> Ich bin <strong>Nicht-Fred<em>, </em></strong>wie oft muss ich dir das noch sagen, alter Mann?</p><p><strong>Mama:</strong> Nenn mich nicht alter Mann, Jungspund.</p><p><strong>Nicht-Fred: </strong>Und um deine Frage zu beantworten, es ist ein Youtube Video</p><p><strong>Nicht-Fred:</strong> Aber es ist nicht irgendein 08/15 Youtube Video</p><p><strong>Nicht-Fred:</strong> In Wahrheit ist es Kunst</p><p><strong>Nicht-Fred:</strong> Es ist der Picasso des Contents</p><p><strong>Nicht-Fred:</strong> Der Van Gogh der Comedy</p><p><strong>BallisLife.uk:</strong> Seit wann weißt du wer Van Gogh ist?</p><p><strong>BallisLife.uk:</strong> Und woher weißt du wie man seinen Namen schreibt?</p><p><strong>Nicht-Fred:</strong> Woher weißt DU wie man seinen Namen schreibt?</p><p><strong>BallisLife.uk:</strong> Ich bin mit Luna befreundet?</p><p><strong>BallisLife.uk:</strong> Sie weiß alles über jeden, auch über tote, verworrene, spanische und niederländische Künstler.</p><p><strong>Papa:</strong> Ich glaube nicht, dass man Van Gogh und Picasso ‚verworren‘ nennen kann, Süße.</p><p><strong>BallisLife.uk:</strong> Tut mir leid, dass ich dich enttäuscht habe, Papa.</p><p><strong>Nicht-George:</strong> Bin ich nicht.</p><p><strong>Scarface:</strong> Könnt ihr-- das nicht jetzt machen?</p><p><strong>Nicht-George:</strong> Warum nicht? Drama zu schaffen ist das wofür ich geboren wurde.</p><p><strong>Mama:</strong> Du wurdest geboren, weil dein Vater und ich dachten, dass wir ein weiteres Kind handhaben könnten.</p><p><strong>Nicht-Fred:</strong> Und habt ihr es geschafft?</p><p><strong>Mama:</strong> Schatz, wir hatten zwei weitere Kinder nach euch, ihr wart kaum eine Herausforderung für uns.</p><p><strong>BallisLife.uk:</strong> Gott Mama, ich liebe dich.</p><p><strong>Nicht-Fred:</strong> Obwohl das wirklich süß ist, können wir zurück zu der Stelle kommen, an der ich euch das beste Youtube Video geschickt habe, dass jemals gemacht wurde und ihr alle darüber weint, wie schön und perfekt es ist?</p><p><strong>Scarface: </strong>Ist es eine Zaunmeme Compilation?</p><p><strong>Nicht-Fred:</strong> ...</p><p><strong>Nicht-Fred:</strong> neeeeeeeein?</p><p><strong>Nicht-Fred:</strong> Ich verspreche, das ist die beste von allen, die ich bis jetzt geschickt habe.  </p><p><strong>Nicht-George:</strong> Bruder, ich liebe dich, aber zum Wohle dieser Familie haben wir mit solchen Memes aufgehört.</p><p><strong>Nicht-Fred:</strong> was</p><p><strong>Nicht-Fred:</strong> Ich fühle mich gerade echt betrogen</p><p><strong>Nicht-Fred:</strong> ???</p><p><strong>Nicht-Fred:</strong> Forge???</p><p><strong>Nicht-Fred:</strong> Du solltest verantwortungsvolle Erwachsene ruinieren, nicht sich ihnen anschließen.</p><p><strong>Nicht-Fred: </strong>Ich habe dich wie einen Bruder geliebt</p><p><strong>Nicht-George:</strong> Ich habe dich auch geliebt, aber ich liebe auch Oliver Wood und will unbedingt ein Autogramm von ihm</p><p><strong>Nicht-George:</strong> Und Percy wird ihn uns niemals treffen lassen, wenn wir uns nicht benehmen</p><p><strong>Nicht-George:</strong> Der böse, böse Mann.</p><p><strong>Nicht-Fred:</strong> :(</p><p><strong>Three Lions:</strong> Wartet mal</p><p><strong>Three Lions:</strong> Du hast ihn Forge genannt</p><p><strong>Three Lions:</strong> Ist <strong>Nicht-George</strong> in Wirklichkeit George? Oder ist er Fred?</p><p><strong>BallisLife.uk:</strong> Oh nein</p><p><strong>BallisLife.uk: </strong>Sie haben es schon wieder getan </p><p><strong>Nicht-Fred:</strong> Ron, Ginny, euer mangelndes Verständnis bei der Identität eurer Brüder, <em>mit denen ihr aufgewachsen seid, </em>ist enttäuschend, aber andererseits gerade nicht das Problem.</p><p><strong>Nicht-Fred:</strong> das auf der Hand liegende Problem ist, dass niemand meinen Erklimme-den-Zaun Meme Zusammenschnitt sehen will</p><p><strong>BallisLife.uk:</strong> Ich habe die alle schon gesehen.</p><p><strong>Nicht-Fred:</strong> Ich wusste, dass du meine Lieblingsschwester bist, Ginny</p><p><strong>BallisLife.uk:</strong> Ich bin deine einzige Schwester, all die anderen haben es geschafft diesem Haus voller Verrückter zu entkommen.</p><p><strong>Mama:</strong> Danke.</p><p><strong>BallisLife.uk:</strong> Sorry Mama</p><p><strong>Mama:</strong> Oh, es ist ok, Liebling. Ich habe mich gerade nur daran erinnert all deine Weihnachtsgeschenke deinem Freund zu geben.</p><p><strong>BallisLife.uk:</strong> Mama! Nein!</p><p><strong>Nicht-Fred:</strong> Warte</p><p><strong>Nicht-Fred:</strong> Ginny hat einen Freund?</p><p><strong>Nicht-George:</strong> Ginny?</p><p><strong>Three Lions:</strong> Wer ist der Kerl?</p><p><strong>Scarface:</strong> Die Unterhaltung wird wieder interessant.</p><p><strong>Beastboi:</strong> ( ⚆ _ ⚆ )</p><p><strong>Beastboi:</strong> Leute, ihr seid viel zu sehr in Ginnys Liebesleben verstrickt. Ihr wisst schon, dass sie kein mehr Baby ist? </p><p><strong>BallisLife.uk:</strong> Danke Charlie!</p><p><strong>Three Lions:</strong> Jetzt aber ernsthaft, wer ist es?</p><p> </p><ul>
+<li><strong> Familienspaß mit Gred und Forge • 17:20</strong></li>
+</ul><p> </p><p><strong>Nicht-Fred:</strong> Hat jetzt jemand von euch das Video geguckt?</p><p><strong>Three Lions:</strong> Sorry Kumpel, ich gucke nicht alles Percy Bezogene</p><p><strong>Three Lions:</strong> Ich fühl mich dann irgendwie schlecht</p><p><strong>Nicht-Fred:</strong> Ich glaub es nicht</p><p><strong>Nicht-Fred:</strong> Ich lebe in einer Familie voller Verräter</p><p><strong>Nicht-George:</strong> Bro. Chill...</p><p><strong>Nicht-Fred:</strong> Wenn du es sagst Bro...</p><p><strong>Nicht-George:</strong> Ok, ich liebe dich Bro...</p><p><strong>Nicht-Fred:</strong> Bro...</p><p><strong>Papa: </strong>Was ist ein 'Bro'?</p><p><strong>Three Lions:</strong> zjehldiauzj</p><p><strong>Three Lions:</strong> pApA Nein</p><p><strong>Nicht-Fred:</strong> Ein Bro ist Liebe</p><p><strong>Nicht-George:</strong> Ein Bro ist Leben</p><p><strong>Nicht-Fred:</strong> Ein Bro ist das Gefühl, wenn du nach zehn Bier in einer vollen Kneipe mit einem kleinen Iren um etwas Kleingeld kämpfst</p><p><strong>Three Lions:</strong> Bro ist die Kurzform für Bruder, Papa.</p><p><strong>Papa:</strong> Ich weiß</p><p><strong>Papa:</strong> Ich wollte euch nur testen</p><p><strong>Papa:</strong> *Zwinkersmiley*</p><p><strong>Three Lions:</strong> ...</p><p><strong>Nicht-Fred:</strong> ...</p><p><strong>Nicht-George:</strong> ...</p><p><strong>Beastboi:</strong> wat</p><p> </p><p>
+  <strong>BallisLife.uk hat den Betreff von „Familienspaß mit Gred und Forge“ zu „Kümmert euch um euer eigenes Liebesleben“ geändert.</strong>
+</p><p> </p><ul>
+<li><strong>Kümmert euch um euer eigenes Liebesleben • 20:36</strong></li>
+</ul><p> </p><p><strong>BallisLife.uk:</strong> Endlich, die Dämonen sind offline</p><p><strong>BallisLife.uk: </strong>Jetzt können wir über normale Sachen reden </p><p><strong>Beastboi:</strong> Ich habe letztens eine Tarantel gegessen.</p><p><strong>Three Lions:</strong> warum macht man sowas</p><p><strong>Beastboi:</strong> Du frittierst sie und isst sie dann</p><p><strong>BallisLife.uk:</strong> Ich sagte „wir können jetzt über normale Dinge reden“</p><p><strong>Beastboi:</strong> Ich weiß, ich rede nur über Essen</p><p><strong>Beastboi:</strong> Essen ist normal</p><p><strong>Beastboi:</strong> Oder verstehe ich etwas falsch</p><p><strong>Three Lions:</strong> EINE TARANEL ZU ESSEN IST NICHT NORMAL</p><p><strong>Beastboi:</strong> Vielleicht, aber es ist zumindest <em>interessant</em>.</p><p><strong>Three Lions:</strong> Nein es ist ekelhaft</p><p><strong>BallisLife.uk:</strong> Charlie hat irgendwie recht</p><p><strong>Three Lions:</strong> istg, wenn du mama frägst, ob sie taranteln kocht, WERDE ich deinen Freund jagen und umbringen</p><p><strong>BallisLife.uk:</strong> Bro</p><p><strong>BallisLife.uk:</strong> Ich könnte deine Wirbelsäule wie einen Leuchtstab brechen</p><p><strong>Three Lions:</strong> Nein könntest du nicht</p><p><strong>BallisLife.uk:</strong> Wir werden es nicht wissen, wenn wir es nicht ausprobieren</p><p><strong>Scarface:</strong> Kids, hört auf zu streiten</p><p><strong>Scarface:</strong> Und, Charlie, Fleur denkt, dass du komische Essgewohnheiten hast</p><p><strong>BallisLife.uk:</strong> Natürlich. Sie ist Französin. Sie denkt wahrscheinlich, dass jede Küche, die nicht französisch ist, fu<em>rrrrrrrrr</em>chtbar ist, oder?</p><p><strong>Scarface:</strong> Nein, sie liebt indisch.</p><p><strong>Scarface:</strong> Und mexikanisch.</p><p><strong>Scarface:</strong> Sie liebt scharfes Essen.</p><p><strong>Scarface:</strong> Aber keine Taranteln.</p><p><strong>Scarface:</strong> Ich denke nicht, dass Taranteln sehr scharf sind.</p><p><strong>Nicht-George:</strong> Vielleicht sind sie es nicht, aber ich bin es</p><p><strong>BallisLife.uk:</strong> Oh nein, der Dämon ist zurück</p><p><strong>BallisLife.uk:</strong> Warum oh warum hast du ihn herbeigerufen?</p><p><strong>Nicht-Fred:</strong> Es ist die Schärfe, wir können sie fühlen, wir können sie riechen, wir können sie schmecken</p><p><strong>Nicht-George:</strong> Schärfe ist Leben, Baby</p><p><strong>BallisLife.uk:</strong> Ich kann nicht glauben, dass wir verwandt sind</p><p><strong>Scarface:</strong> Fleur kann auch nicht glauben, dass sie mit den meisten von euch verwandt ist.</p><p><strong>BallisLife.uk:</strong> Na ja, sie ist es ja auch nicht wirklich</p><p><strong>Scarface:</strong> ┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴</p><p><strong>Scarface:</strong> Rede dir das nur weiter ein</p><p><strong>Three Lions:</strong> Was ist das?</p><p><strong>Scarface: </strong>Das bin ich wie ich über die Grenze spähe</p><p><strong>Scarface:</strong> Euch beurteilend</p><p><strong>Nicht-Fred:</strong> Du kannst uns nicht beurteilen, wenn du selbst Brot isst, dass wie ein Schwanz geformt ist </p><p><strong>Scarface:</strong> Man nennt es auch <em>Baguette</em>, du unkultiviertes Schwein.</p><p><strong>Nicht-Fred:</strong> Du wirst es noch erkennen</p><p><strong>Scarface:</strong> Baguette sieht aus, wie ein wunderschöner Speer und ich werde dich damit erstechen.</p><p><strong>Scarface:</strong> Das ist natürlich nur ein Scherz.</p><p><strong>Scarface:</strong> Lasst uns nicht über solche Dinge zanken.</p><p><strong>BallisLife.uk:</strong> Gott, ich vermisse dich, Bill.  </p><p><strong>Scarface:</strong> Ich vermisse dich auch &lt;3</p><p><strong>BallisLife.uk:</strong> &lt;3</p><p><strong>Nicht-George:</strong> Oh nein, langsam wird es hier unbedenklich</p><p><strong>Nicht-George:</strong> Schnell, ich muss aus diesem Gruppenchat verschwinden</p><p><strong>BallisLife.uk:</strong> Und so, meine Damen und Herren, vertreibt man ein Dämon.</p><p> </p><ul>
+<li><strong>Kümmert euch um euer eigenes Liebesleben • 21:54</strong></li>
+</ul><p> </p><p><strong>Percy:</strong> Ich würde das YouTube Video ansehen.</p><p> </p><ul>
+<li><strong>Kümmert euch um euer eigenes Liebesleben • 22:31</strong></li>
+</ul><p> </p><p><strong>Nicht-Fred:</strong> Wie bitte-- was?</p><p><strong>Percy:</strong> Hi! :)</p><p><strong>Percy:</strong> Ich würde das YouTube Video ansehen.</p><p><strong>Nicht-Fred:</strong> wirklich?</p><p><strong>Percy:</strong> Natürlich!</p><p><strong>Percy:</strong> ^^</p><p><strong>Nicht-Fred:</strong> [https://www.youtube.com/watch?v=xxxxx]</p><p><strong>Nicht-Fred:</strong> Ich habe das Gefühl, dass du mich danach töten wirst, aber das ist ok</p><p><strong>Scarface:</strong> Leute, manche von uns versuchen zu schlafen.</p><p><strong>Scarface:</strong> Warte ist das Percy?</p><p><strong>Scarface:</strong> Guckt er deine Meme Videos?</p><p><strong>Scarface:</strong> Hast du ihm Drogen gegeben?</p><p><strong>Nicht-Fred:</strong> nein</p><p><strong>Nicht-Fred:</strong> aber vielleicht ist er betrunken</p><p><strong>Nicht-Fred:</strong> außerdem würde ich meinem eigenen Bruder niemals Drogen geben</p><p><strong>Nicht-Fred:</strong> mein eigenes Fleisch und Blut</p><p><strong>Scarface:</strong> Ihr habt ihm einmal Weed-Brownies gegeben und gesagt es wäre Mamas Schokokuchen.</p><p><strong>Nicht-Fred:</strong> oh stimmt, dass war echt lustig</p><p><strong>Scarface:</strong> Nein, es war gefährlich. Man gibt anderen gegen ihr Einverständnis keine Drogen.</p><p><strong>BallisLife.uk:</strong> haltet alle euren Mund ich versuche zu schlafen</p><p><strong>Nicht-Fred:</strong> schläfst du mit deinem Freund?</p><p><strong>BallisLife.uk:</strong> halt dein Maul du Arsch</p><p><strong>BallisLife.uk:</strong> warte mal</p><p><strong>BallisLife.uk:</strong> wardas perrcy?</p><p><strong>Scarface:</strong> Ja.</p><p><strong>Nicht-Fred:</strong> Jep.</p><p><strong>Percy:</strong> Nein :D</p><p><strong>Nicht-Fred: </strong>[<em>sarcastically suprised kirk meme</em>]</p><p><strong>Percy:</strong> Das Video war lustig x)</p><p><strong>Percy: </strong>Aber es war auch ein wenig komisch</p><p><strong>BallisLife.uk:</strong> wartet wenn das nicht percy ist</p><p><strong>BallisLife.uk:</strong> bist du sein mitbewohner?</p><p><strong>Percy:</strong> Nein, ich bin nicht Cedric ^^"</p><p><strong>BallisLife.uk:</strong> Penelope?</p><p><strong>Percy:</strong> Auch nicht :P</p><p><strong>BallisLife.uk:</strong> Oh</p><p><strong>BallisLife.uk:</strong> Mein</p><p><strong>BallisLife.uk:</strong> Gott</p><p><strong>Percy:</strong> Was? :1</p><p><strong>BallisLife.uk:</strong> Ich brauche Zeit, um das zu verarbeiten</p><p><strong>Three Lions:</strong> OLIVER WOOD</p><p><strong>Percy:</strong> :)</p><p><strong>Percy:</strong> Jep</p><p><strong>Percy:</strong> Das bin ich</p><p><strong>Percy:</strong> Percy ist eingeschlafen und sein Handy hat immer wieder vibriert, da habe ich draufgeguckt und gesehen, dass ihr es seid</p><p><strong>Percy:</strong> Sorry</p><p><strong>Three Lions:</strong> ENTSCHULDIGE DICH NICHT</p><p><strong>Three Lions:</strong> ENTSCHULDIGE DICH NIEMALS</p><p><strong>BallisLife.uk:</strong> Ron...</p><p><strong>Percy:</strong> Haha... ok?</p><p><strong>Three Lions:</strong> Hey Torwart, ich bin auch ein Oliver!  </p><p><strong>Nicht-Fred:</strong> oh</p><p><strong>Nicht-Fred:</strong> oh <em>ja</em></p><p><strong>Three Lions:</strong> Ah!</p><p><strong>Three Lions:</strong> Ich meinte</p><p><strong>Three Lions:</strong> Hey Oliver, ich bin auch ein Torwart!</p><p><strong>Percy:</strong> Cool!</p><p><strong>Percy:</strong> Ich wusste nicht, dass Percys Geschwister Fußball mögen</p><p><strong>BallisLife.uk:</strong> Oh, wir mögen Fußball nicht</p><p><strong>BallisLife.uk:</strong> Wir <em>sind </em>Fußball</p><p><strong>Percy:</strong> Hm.</p><p><strong>Percy:</strong> Jetzt verstehe ich warum Percy gesagt hat, dass ihr überschwänglich seid.</p><p><strong>Nicht-Fred:</strong> Sieht so aus als würde Percy viel über uns reden?</p><p><strong>Percy:</strong> Manchmal</p><p><strong>Percy:</strong> Also mögt ihr Fußball?</p><p><strong>Nicht-Fred:</strong> Ja</p><p><strong>BallisLife.uk:</strong> Offensichtlich.</p><p><strong>Three Lions:</strong> Jaaa!!!!</p><p><strong>Percy:</strong> Was haltet ihr von Marcus Flint?</p><p><strong>Nicht-Fred:</strong> Er ist ein Arsch.</p><p><strong>BallisLife.uk:</strong> Er ist ein Schwachkopf.</p><p><strong>Three Lions:</strong> Hey! Er ist nicht soooo schlimm</p><p><strong>BallisLife.uk:</strong> Du bist Cardiff Fan, Ron. Deine Meinung ist wertlos.</p><p> </p><p>
+  <strong>Percy benennt sich in "Percy (and Oliver)" um</strong>
+</p><p> </p><p><strong>Percy (and Oliver):</strong> Ich habe das Gefühl, dass wir gute Freunde werden :)</p><p> </p><p>---</p><p> </p><p>[<em>Bild: Ein Foto eines langen Tisches, um den die Weasley-Familie sitzt. Fred hält das Handy, während er mit seiner freien Hand ein Peace-Zeichen macht, hinter ihm steht ein missmutiger Percy, der aussieht, als würde er ihm gleich das Handy aus der Hand reißen. Neben ihm hat Oliver einen Arm über seine Schulter gelegt und sieht aus, als würde er versuchen ihn davon zu überzeugen seinen Bruder nicht zu strangulieren. Die anderen Familienmitglieder wirken glücklich hier zu sein und lächeln in die Kamera, bis auf Ginny, die über Percys Frustration lacht.</em>]</p><p><strong>gredweasley:</strong> Endlich trifft der Mann das Meme.</p><p>
+  <strong>23.538 Likes</strong>
+</p><p><strong>oliverwood:</strong> Schön euch alle zu treffen!</p><p><strong>j4yl33n:</strong> ein passendes Ende für eine spannende Geschichte</p><p><strong>beastboi:</strong> Percy sieht aus, als würde er dich gleich ermorden</p><p><strong>supahman:</strong> Meine Babys sind alle erwachsen geworden, was soll ich denn jetzt tun?</p><p><strong>9yobb:</strong> wundervoll, ich zittere gerade</p><p><strong>forgeweasley:</strong> Die schönste Liebesgeschichte des XXIsten Jahrhunderts.</p><p><strong>percyweasley:</strong> Ich habe nur hierfür diesen Account gemacht. Bitte sterbe.</p><p> </p><p>---</p><p> </p><p>„Was sollen wir unseren Kindern erzählen?"</p><p>Bereits im Halbschlaf, brauchte Oliver länger, als er zugeben würde, um Percys Frage zu verstehen und sobald dies geschehen war konnte er nicht anders, als die Stirn zu runzeln. Er rollte sich auf die Seite, um seinen Seelenverwandten anzuschauen, der trotz der späten Stunde immer noch topfit war, und fragte:</p><p>„Was meinst du?“</p><p>Percy biss sich auf die Lippe und murmelte ein wenig peinlich berührt:</p><p>„Ich meine... Was sollen wir ihnen erzählen, wenn sie wissen wollen wie wir uns getroffen haben?“</p><p>„Ah. Du meinst eine Tattoo Geschichte?“</p><p>Er beobachtete wie der andere Mann nickte, die Bewegung in der Dunkelheit des Schlafzimmers fast unmöglich zu erkennen. Trotz der Tatsache, dass seine Wohnung mitten in London lag schaffte Percy es das Licht der Straßenlaternen, welches in der Stadt unvermeidbar war, nicht hereinscheinen zu lassen. Etwas, dass Oliver ihm in Manchester nicht nachmachen konnte.</p><p>„Haben wir nicht schon eine?“, wunderte er sich und dachte an ihr erstes Treffen und wozu es geführt hatte. Es lag jenseits allem, dass er sich in beiden, gutem und schlechtem, Wege vorgestellt hatte.</p><p>„Ja schon-- sie ist-- ich meine“</p><p>„Ich finde, dass es eine großartige Geschichte ist“, meinte Oliver und zuckte ein wenig verwirrt mit den Schultern. Klar, die Story über ihr Treffen war nicht normal und er wirkte die meiste Zeit wie ein Arsch, aber es war <em>ihre </em>Story und sie war einzigartig. Ganz ehrlich, er würde das für nichts in der Welt aufgeben.</p><p>„Findest du?“</p><p>Percy klang ziemlich überrascht, als hätte er nicht wirklich erwartet, dass Oliver die Art und Weise wie sie sich das erste Mal getroffen hatte perfekt fand, mehr als perfekt, seiner Ansicht nach. Der Fußballer konnte nicht anders, als darüber zu schmunzeln. Wenn er nicht so müde gewesen wäre, hätte er seinen Seelenverwandten jetzt wahrscheinlich geküsst. </p><p>Ach, scheiß drauf.</p><p>Er lehnt sich zu Percy und küsste sein Gesicht. Aber da es so dunkel war, war das Zielen etwas schwierig und es würde wahrscheinlich damit enden, dass er eher seine Wange als seinen Mund, wie er es eigentlich vorhatte, küsste. Aber der Wille zählte, nicht?</p><p>„Ich denke unser Treffen war fantastisch.“</p><p>„Obwohl ich dich geschlagen habe?“</p><p>„Besonders weil du mich geschlagen hast.“</p><p>Percy lachte, klang jetzt aber müder als vorher.</p><p>„Du bist komisch.“</p><p>Oliver wollte etwas entgegnen, als Percys Handy plötzlich vibrierte. Seit er im Außenministerium arbeitete musste er es in der Nacht anlassen, falls ein Notfall eintrat. Was dazu geführt hatte, dass sie schon öfters zu gottlosen Uhrzeiten aufgeweckt wurden. Mit einem Seufzen versteckte Oliver seinen Kopf unter einem Kissen, während sein Seelenverwandter die Nachricht las, nicht ohne den müden Seufzer zu verpassen, den er von dieser gab, als er gelesen hatte, was ihm geschickt worden war.</p><p>„Notfall?“, wollte er wissen.</p><p>„Nein“, klagte Percy, „nur Fred.“</p><p>Im Licht, dass das Handy auf sie warf, war der scharfe Blick, der sich auf Olivers Gesicht breit machte, leicht zu erkennen. Es sah aus, als würde er ihn für was auch immer vorfiel beschuldigen.</p><p>„Er hat dir ein weiteres Meme Video geschickt.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="O1FFTO77ggsU1FsjQd-E10FIugfrlf-agDXgwQ-MIplujMJU_e-X7lVqAdrpDRblBAcPGgRm7EBl7a_ioClBSA"/>
+          <input value="23664853" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=23664853">Comments (1)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/friendly_neighbourhood_german">friendly_neighbourhood_german</a>, <a href="/users/Mariella_Malfoy">Mariella_Malfoy</a>, <a href="/users/Faeyette">Faeyette</a>, <a href="/users/papierflieger">papierflieger</a>, <a href="/users/vaindumbass">vaindumbass</a>, <a href="/users/RemTaku">RemTaku</a>, <a href="/users/Selenicere">Selenicere</a>, and <a href="/users/Irisen">Irisen</a>
+             as well as 
+          14 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_23664853">
+  <form class="new_comment" id="comment_for_23664853" action="/works/23664853/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="-gQNHDToWPb4t4eoG2Q7ig9gybQY2skBSgiUPq2AiDWv2YoEJ_xNE7kJ3VGztqm4Si98qfcp2tuv0NsdAiXr5A"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_23664853">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_23664853" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_23664853=new LiveValidation('comment_name_for_23664853',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_23664853.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_23664853">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_23664853" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_23664853=new LiveValidation('comment_email_for_23664853',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_23664853.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_23664853" class="landmark">Comment</label>
+        <textarea id="comment_content_for_23664853" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_23664853" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_23664853_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_23664853">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_23664853=new LiveValidation('comment_content_for_23664853',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_23664853.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_23664853.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_23664853" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/23664853/hit_count.json")})</script>
+
+
+  </body>
+</html>

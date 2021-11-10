@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":89,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        The Wolf - Rosethouartsickxx - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="j6wiGAD4s7l52bTfTn1nYvnzqGjiF2ipqFxueU99svi13B7xYT4BQdzakHZOkhLPyMJjgv_4nIVL0q4SxszDYw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="kWi12aIDtKT7rQue4Sg5bJCWBS_UxxjplHA7FMf1DoyrGIkww8UGXF6uLzfhx0zBoafOxcko7MV3_vt_TkR_Fw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/28672947/chapters/70291506">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/28672947/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/28672947/The%20Wolf.azw3?updated_at=1620855436">AZW3</a></li>
+          <li><a href="/downloads/28672947/The%20Wolf.epub?updated_at=1620855436">EPUB</a></li>
+          <li><a href="/downloads/28672947/The%20Wolf.mobi?updated_at=1620855436">MOBI</a></li>
+          <li><a href="/downloads/28672947/The%20Wolf.pdf?updated_at=1620855436">PDF</a></li>
+          <li><a href="/downloads/28672947/The%20Wolf.html?updated_at=1620855436">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lavender%20Brown*s*Blaise%20Zabini/works">Lavender Brown/Blaise Zabini</a></li><li><a class="tag" href="/tags/Daphne%20Greengrass*s*Blaise%20Zabini/works">Daphne Greengrass/Blaise Zabini</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Lavender%20Brown/works">Lavender Brown</a></li><li><a class="tag" href="/tags/Blaise%20Zabini/works">Blaise Zabini</a></li><li><a class="tag" href="/tags/Daphne%20Greengrass/works">Daphne Greengrass</a></li><li><a class="tag" href="/tags/Pansy%20Parkinson/works">Pansy Parkinson</a></li><li><a class="tag" href="/tags/Horace%20Slughorn/works">Horace Slughorn</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Romance/works">Romance</a></li><li><a class="tag" href="/tags/Blavender/works">Blavender</a></li><li><a class="tag" href="/tags/Deutsch%20%7C%20German/works">Deutsch | German</a></li><li><a class="tag" href="/tags/Post-Canon/works">Post-Canon</a></li><li><a class="tag" href="/tags/Lavender%20Brown%20Lives/works">Lavender Brown Lives</a></li><li><a class="tag" href="/tags/Past%20Lavender%20Brown*s*Ron%20Weasley/works">Past Lavender Brown/Ron Weasley</a></li><li><a class="tag" href="/tags/POV%20Blaise%20Zabini/works">POV Blaise Zabini</a></li><li><a class="tag" href="/tags/Gryffindor*s*Slytherin%20Inter-House%20Relationships/works">Gryffindor/Slytherin Inter-House Relationships</a></li><li><a class="tag" href="/tags/Easter/works">Easter</a></li><li><a class="tag" href="/tags/Fluff/works">Fluff</a></li><li><a class="tag" href="/tags/Kissing/works">Kissing</a></li><li><a class="tag" href="/tags/Falling%20In%20Love/works">Falling In Love</a></li><li><a class="tag" href="/tags/Sexual%20Tension/works">Sexual Tension</a></li><li><a class="tag" href="/tags/Mild%20Sexual%20Content/works">Mild Sexual Content</a></li><li><a class="tag" href="/tags/The%20Owlery%20(Harry%20Potter)/works">The Owlery (Harry Potter)</a></li><li><a class="tag" href="/tags/Short%20*a*%20Sweet/works">Short &amp; Sweet</a></li><li><a class="tag" href="/tags/Rare%20Pairings/works">Rare Pairings</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/31052894">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 2 of the <a href="/series/2291588">Blavender-Liebe [Blaise Zabini x Lavender Brown]</a> series</span></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2021-01-10</dd><dt class="status">Completed:</dt><dd class="status">2021-01-10</dd><dt class="words">Words:</dt><dd class="words">13552</dd><dt class="chapters">Chapters:</dt><dd class="chapters">5/5</dd><dt class="hits">Hits:</dt><dd class="hits">10</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      The Wolf
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Rosethouartsickxx/pseuds/Rosethouartsickxx">Rosethouartsickxx</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Weil Weihnachtspartys eine abgeschmackte Sache und sowieso ein ganz alter Hut sind, lädt Horace Slughorn am Tag vor Karfreitag zu einer kleinen Feierlichkeit ein. Blaise Zabini beweist Kreativität und Schicksalsergebenheit bei der Wahl seiner Begleitung. Lavender Brown weiß nicht so recht wie ihr geschieht und hat sowieso ganz eigene Probleme. Im Hintergrund sind weibliche Slytherins und Gryffindors in unterschiedliche Gebete vertieft. Post-Canon. Blaise Zabini x Lavender Brown.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Five-Shot. Der Geschichte vorangestellt sind einige Zeilen aus "The Wolf" by Fever Ray.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/28672947/chapters/70291506">Chapter 1</a>: Gründonnerstag
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    
+<p></p><div class="user_center" align="center">
+  <p>
+    <strong>
+      <span class="user_bold">The Wolf </span>
+    </strong><br/>
+<span></span><br/>
+<strong>
+      <span></span>
+      <em><span class="user_italic">You are the sound that I hear<br/>
+<span></span></span>You are the sound that I hear<br/>
+<span></span>We are not standing<br/>
+<span></span>We are falling</em>
+    </strong><br/>
+<span></span><br/>
+<span></span><br/>
+<strong>
+      <span></span>
+      <span class="user_bold">1 – Gründonnerstag</span>
+    </strong>
+  </p>
+</div><p><br/>
+<span></span><br/>
+<span></span>In Hogwarts ist die Osterwoche seit jeher eine komische Sache. Es sind keine richtigen Ferien, der Unterricht endet einfach am Mittwoch der Karwoche und wird am Dienstag nach Ostern wieder aufgenommen. Es gibt keine Hausaufgaben, obwohl die Prüfungen nicht mehr so weit weg sind wie beispielsweise an Weihnachten und an Weihnachten lieben es die Lehrer, die Schülerschaft mit Aufgaben zu überschütten. Ostern ist das höchste, christliche Fest -  das weiß Blaise Zabini, obwohl er keine besonders gläubige Familie und dementsprechend keine besonders religiöse Erziehung genossen hat. Erst in Hogwarts hat er gelernt, dass Ostern einigen Menschen etwas bedeutet – und den meisten rein gar nichts.<br/>
+<span></span><br/>
+<span></span>Für Horace Slughorn, seines Zeichens Hauslehrer von Slytherin, Meister der Zaubertränke und eine behäbige Nervensäge allererster Güte, scheint die Osterwoche, eine Woche ohne Pflichten und Regeln und Gründe, eine gute Gelegenheit zu sein, um zu feiern. Sicher, man spricht vom Osterfest, aber Blaise kam die ganze Geschichte von Anfang an merkwürdig und irgendwie verhängnisvoll vor. Doch es spielt gar keine Rolle wie ihm das alles vorkommt, denn er kommt in Professor Slughorns Osterplanung ganz eindeutig vor. Das beweist die Einladung auf seinem Nachttisch und die nachdrückliche Ermunterung nach dem Unterricht, doch noch jemanden mitzubringen. Als wäre ein ominöses Abendessen am grünsten aller Donnerstage, bei dem vermutlich der Osterhase als Ehrengast auftritt, eine Angelegenheit, die man irgendjemandem zumuten möchte, der einem am Herzen liegt.<br/>
+<span></span><br/>
+<span></span>Trotzdem hat er Daphne gefragt. Daphne, die schöne Daphne, die schon längst irgendwie seine Freundin sein könnte, wenn sie das länger als zwei Tage hintereinander wirklich wollen würde. Daphne, das schöne Rabenaas, das sich gestern noch mit einem großzügigen Lächeln dazu bereiterklärt hat, ihn zu begleiten – und ihn jetzt vor verschlossenen Türen stehen lässt.<br/>
+<span></span><br/>
+<span></span>Es ist unaussprechlich demütigend vor der Tür eines Mädchenschlafsaals zu stehen, an ebenjene Tür zu klopfen und dabei zu wissen, dass mindestens drei Paar Mädchenohren dieses Klopfen hören und ihn bemitleiden, weil Daphne, die schöne Daphne, sich nicht rührt. Schließlich erbarmt sich Pansy, die schon immer ein mitleidiges Naturell hatte und öffnet ihm. Sie hat, genau wie Millicent, einen ungerechtfertigten Respekt vor Daphne, die ihre sogenannten Freundinnen nach acht Jahren des Zusammenlebens lesen kann wie Bilderbücher. Theo, der schon genauso lange wie er selbst beobachtet, wie diese ungesunde Konstellation sich weiterentwickelt, spottet manchmal und nennt Pansy und Milicent nur die tanzenden Mäuse. Mit ihrer roten Haarschleife, die ein Geschenk von Daphne war und ein Symbol ihrer Sympathie darstellen soll, sieht Pansy auch wirklich ein bisschen wie eine Tanzmaus aus.<br/>
+<span></span><br/>
+<span></span>„Daphne betet.“ Manchmal muss man sich ein Lachen aus Gründen des Anstands verkneifen, aber in diesem Fall tut er sich schwer. Und er sieht es nicht ein. Das hier ist lächerlich. Eins von Daphnes lächerlichen, kleinen Spielen, die ihm allmählich zum Hals raushängen.<br/>
+<span></span><br/>
+<span></span>„Wir sind verabredet.“ Diese Worte scheinen keinen Eindruck auf Pansy zu machen. Das wundert ihn mehr als es sollte. Pansy ist jede Woche verabredet. Verabredungen sind in  ihrer Welt nichts Besonderes, kein Durchbruch – und erst recht nichts, was man nicht absagen könnte.<br/>
+<span></span><br/>
+<span></span>„Daphne kann nicht mitkommen. Sie muss beten.“<br/>
+<span></span><br/>
+<span></span>„Dann sei so gut und bitte sie darum, dass sie meine Seele in ihre Gebete miteinschließt!“ Am Ende des Satzes hebt er die Stimme und er meint, ein Kichern zu hören. Pansys bedrückte und ein wenig verschreckte Miene verschwindet wieder hinter der Tür und er kann nicht anders als seine Faust gegen das massive, alte Holz donnern zu lassen. Auch wenn er Daphne, der schönen, britischen Daphne damit nur ein weiteres Argument liefert, das gegen ihn spricht. Gerne rümpft sie die Nase und beklagt sich über sein Temperament, seine Unvernunft – natürlich nur, wenn sie sich nicht gerade an seiner Sperrigkeit, seiner hölzernen Freundlichkeit stört und ihm unterstellt, dass er kein Herz hat. Vielleicht sollte er sich Daphne aus dem Kopf schlagen. Vielleicht sollte er Ostern, dieses schwarze Loch im Frühling, als einen Wendepunkt betrachten. Fort von Daphne. Für den Rest des Schuljahres. Dann fort von Hogwarts. Er würde schon irgendwann, ehe er alt und grau war, über ein Mädchen stolpern, das ihm gefiel.<br/>
+<span></span><br/>
+<span></span>Voller Unbehagen und mildem Zorn über die Welt und wie die Welt eben zu sein pflegt, macht er sich auf den Weg zu den Räumlichkeiten von Professor Slughorn, die in den letzten drei Jahren eine wiederkehrende Kulisse albtraumartiger Veranstaltungen gewesen sind. Er geht kleine Umwege, die ein pünktlicher Mensch vor sich selbst rechtfertigen kann und auf einem dieser Umwege stolpert er wahrhaftig über etwas. Über einen bösen Gedanken und ein blondgelocktes Mädchen, das ihm den Rücken zugewandt und den Kopf beinahe in ihrer Schultasche vergraben hat.<br/>
+<span></span><br/>
+<span></span>Warum sollte er alleine zu Sloghorns Veranstaltung gehen? Warum sollte er Daphne nicht einfach ersetzen? Warum sollte er Daphne nicht einfach durch dieses x-beliebige Mädchen ersetzen, das ihr schon von hinten kein bisschen ähnlich sieht? Weil er einen Ruf zu verlieren hat? Weil es Erwartungen zu erfüllen galt? Weil Berechenbarkeit etwas Wunderbares sein konnte? Ein schlichter, herrlicher, böser Gedanke. Warum nicht?<br/>
+<span></span><br/>
+<span></span>„Was machst du heute Abend noch so?“ Das blondgelockte Wesen gibt ein Quieken von sich, das ihn an Meerschweinchen denken lässt und ihn daran erinnert, dass er nicht ohne Grund über Jahre hinweg nur sehr ausgewählten Umgang mit dem weiblichen Geschlecht gepflegt hat. Die meisten Mädchen sind einfach dämlich. Und quieken. Und der Rest von ihnen ist aasig und boshaft wie Daphne.<br/>
+<span></span><br/>
+<span></span>„Meinst du mich?“ Das Mädchen zeigt sein Gesicht und er erschreckt. Auf dem ersten Schritt seines nicht besonders gut durchdachten Rachefeldzugs, ist er ausgerechnet an Lavender Brown geraten. Lavender Brown. Wenn ein Mädchen im Schloss nicht geeignet ist, um Daphne erblassen zu lassen, dann ist es wohl Lavender Brown.<br/>
+<span></span><br/>
+<span></span>„Ja, ich meine dich, Lavender.“ Er hat ihren Vornamen noch nie bewusst ausgesprochen und er ist selber ganz erstaunt über das Gefühl der Buchstaben in seinem Mund. Lavender. Eigentlich ein schöner Name. Für ein nicht ganz so schönes Mädchen. Aber der Überraschungseffekt zählt schließlich auch etwas. „Hast du heute noch irgendwas vor?“ Sie schüttelt den Kopf und verzieht das Gesicht. Und dieses kleine Verziehen, diese kaum merkliche Bewegung, die hält ihn fast auf. Er kann ihre Mimik nicht deuten, ja er weiß nicht einmal, was sie von ihm hält und ob er sich nicht gerade zu einer außerordentlichen Lachnummer macht. „Professor Slughorn veranstaltet ein kleines Abendessen oder so etwas in der Art. Willst du mitkommen?“<br/>
+<span></span><br/>
+<span></span>„Mit dir?“ Er hat nicht erwartet, dass er sich so unwohl dabei fühlen könnte, von ihr angesehen zu werden, aber sie mustert ihn von oben bis unten. Möchte sie sichergehen, ob er der ist, für den sie ihn hält und nicht vielleicht doch nur jemand, der dem Blaise Zabini ähnlich sieht, mit dem sie seit acht Jahren im Unterricht sitzt? „Okay.“ Er kann es hören. Das lautlose Warum nicht, das in der Luft liegt.<br/>
+<span></span><br/>
+<span></span>„Schön.“<br/>
+<span></span><br/>
+<span></span>„Ich sollte mich aber vermutlich umziehen.“ Sie unterzieht ihn einer zweiten Musterung und betrachtet sein Hemd, das schon ein wenig gewählter ist als der graue, ausgeleierte Pullover, den er an einem gewöhnlichen Ferientag getragen hätte.<br/>
+<span></span><br/>
+<span></span>„Musst du nicht.“ Sollst du nicht, wäre eine ehrlichere Antwort. Die Vorstellung zum zweiten Mal innerhalb von kürzester Zeit vor verschlossenen Türen auf ein Mädchen zu warten, das sich alles noch einmal anders überlegen konnte, behagt ihm nicht. Je weniger Zeit sie hat, darüber nachzudenken, was das hier werden soll, wenn es fertig ist, umso besser. Aber vielleicht ist Lavender Brown nicht so selbstreflektierend. Das wäre auch gar nicht übel. „Das sieht doch gut aus.“ Der Moment, in dem er das sagt, ist der Moment, in dem er zum ersten Mal darauf achtet, was sie eigentlich trägt. Und er muss zugeben, es könnte schlimmer sein. Ihre Haare sind nicht mit irgendwelchen albernen Zopfbändern oder Anhängern verflochten, sondern nur ein bisschen zerzaust, aber das kann auch von ihr so gewollt sein. Der Rock aus einem blauen Stoff und der helle Pullover sehen ordentlich aus und sie muss sich wirklich nicht umziehen. Im Vergleich zu Melinda Bobbins, dem unaufgeregtesten Liebling von Slughorn, sieht sie zurechtgemacht aus.<br/>
+<span></span><br/>
+<span></span>„Danke.“ Sie murmelt. Lavender Brown ist ihm als ein eher lauter Mensch im Gedächtnis und etwas zu murmeln, passt nicht in das Bild, das er von ihr hat. Aber er ist kein besonders aufmerksamer Mensch, wenn es um den Großteil seiner Mitschüler geht und deshalb kann er nicht behaupten, dass er allzu viel über sie weiß. Nur das, was man eben zwangsläufig so weiß.<br/>
+<span></span><br/>
+<span></span>Lavender Brown kommt aus einer nicht magischen Familie. Lavender Brown ist eine Gryffindor. Lavender Brown hatte mal ein Kaninchen, das gestorben ist und durch seinen Tod eine Unterrichtsstunde von Professor Trelawney rapide verkürzt hat. Lavender Brown wurde höchstwahrscheinlich vor circa zwei Jahren von Ronald Weasley entjungfert. Und er muss wirklich den Verstand verloren haben.<br/>
+<span></span><br/>
+<span></span>Weiterzugehen und sie neben sich herlaufen zu sehen ist befremdlich. Es kommt ihm ein bisschen so vor als hätte er eine zerrüttete Straßenkatze angefüttert, die ihm nicht mehr von der Seite weicht, aber ihm dabei doch misstraut. Der Gedanke bringt ihn fast zum Lachen. Solange er nicht anfängt sie hinter den Ohren zu kraulen, ist alles im grünen Bereich.<br/>
+<span></span><br/>
+<span></span>„Gibt es irgendeinen Anlass für…“ Für dieses unwahrscheinliche Benehmen seinerseits? „… für dieses Abendessen? Hat Professor Slughorn Geburtstag oder so?“ Darüber hat er noch nie nachgedacht. Er hat aber auch aufgehört das Verhalten des Professors zu hinterfragen. Es ist zu ermüdend sich Gedanken darüber zu machen, warum jemand, der vielleicht schon über 100 ist, sich mit seinen Schülern anfreunden will.<br/>
+<span></span><br/>
+<span></span>„Nicht dass ich wüsste.“<br/>
+<span></span><br/>
+<span></span>„Okay.“ Es erscheint nicht ausgeschlossen, dass „okay“ ihr Lieblingswort ist. Er widersteht dem Drang sich zu räuspern und die Stille zu füllen. „Ich bin gespannt, ob Professor Slughorn mich überhaupt erkennt. In der sechsten Klasse hat er mich immer Loreley Bright genannt und ich glaube nicht, dass ich seitdem besonders Eindruck auf ihn gemacht hat.“ Lavender Brown sitzt gar nicht mehr im Zaubertrankunterricht. Das hat er eigentlich gewusst, aber sich nicht daran erinnert, weil es keine wertvolle Information für ihn ist.<br/>
+<span></span><br/>
+<span></span>„Ich bin sicher, ab sofort wird er deinen Namen wissen. Seine Veranstaltungen sind normalerweise sehr übersichtlich.“ Die grauenerregende Weihnachtsparty aus dem Jahr 1996 war eine Ausnahme. Damals waren Menschen aller Altersklassen durch das magisch vergrößerte Büro flaniert, doch Blaise bezweifelt ganz stark, dass sich an Ostern irgendwelche alten Bekannten von Slughorn freinehmen, um ihn zu beehren. An Ostern feiert man einfach nicht. „Es sind eigentlich immer dieselben Leute da.“<br/>
+<span></span><br/>
+<span></span>„Und wer ist das so?“ Die Frage verwundert ihn, denn aus irgendeinem Grund ist er wohl davon ausgegangen, dass alle Schüler wissen, wer zu Slughorns Opfern zählt und wer nicht. Besonders von den Gryffindors hat er eigentlich mehr herdentierartige Geschwätzigkeit erwartet.<br/>
+<span></span><br/>
+<span></span>„Die meisten sind aus deinem Haus. Hermine Granger, Ginny Weasley und Neville Longbottom sind eigentlich dabei, seitdem Slughorn wieder in Hogwarts unterrichtet, auch wenn Longbottom kurzzeitig ausgemustert und dann wieder eingeladen wurde. Dann ist da noch Melinda Bobbin aus Hufflepuff. Seit diesem Schuljahr sind auch Astoria Greengrass, Luna Lovegood und Laura Madley dabei.“<br/>
+<span></span><br/>
+<span></span>„Wer ist Laura Madley?“<br/>
+<span></span><br/>
+<span></span>„Hufflepuff. Viertklässlerin. Und die Nichte von Kingsley Shacklebolt.“ Seiner Meinung nach ist Laura eine der angenehmsten Teilnehmerinnen von Slughorns Veranstaltungsreihen. Das mag daran liegen, dass sie durch ihr Alter irgendwie eine Außenseiterin ist und er das angesichts der Übermacht der verbliebenen Freunde von Harry Potter und generell dem Ungleichgewicht von Gryffindor und den anderen Schulhäusern nur zu gut nachempfinden kann. Astoria Greengrass ist zwar die kleine Schwester von Daphne, aber sie wurde von dem Sprechenden Haus nach Ravenclaw geschickt und wirkt nicht undankbar dafür. Ein Leben lang in Daphnes Reichweite zu sein und dabei in ihrem Schatten zu stehen, ist auch nicht unbedingt angenehm, vermutet er.<br/>
+<span></span><br/>
+<span></span>„Das sind fast nur Mädchen.“ Am Ende des Korridors erkennt er bereits die dezente Tür hinter der sich das lächerliche, feierlustige Altherren-Grauen verbirgt. Er schenkt Lavenders Worten nicht die Aufmerksamkeit, die nötig wäre und gibt deshalb eine sehr unüberlegte Antwort zum Besten.<br/>
+<span></span><br/>
+<span></span>„Stimmt, aber heute dürfen ja alle ihren Freund mitbringen.“ Die Röte, die sich auf ihrem gesamten Gesicht ausbreitet, ist schlicht und ergreifend umwerfend. Obwohl sie keine Miene verzieht und ihre Augen sich nur ganz leicht geweitet haben, gibt sie ein verlegenes Gesamtbild ab. Die schräge Konsequenz liegt in der Luft und es reizt ihn zu sehr, es laut auszusprechen als dass er es nicht tun könnte. „Und ich bringe dich mit.“ Man darf keine Angst vor Gedanken haben, sonst beißen sie sich nur fest. Und dann hat man irgendwann Löcher im Gehirn und stirbt an seinen eigenen, blöden, unausgesprochenen Sorgen, Fehlern und Problemen. Außerdem kann Lavender das schon vertragen. Wer sich Ronald Weasley so weit nähern kann und sich in die Schusslinie von Hermine Granger begibt, der muss ein bisschen was abkönnen. Und so zerbrechlich sieht sie nicht aus.<br/>
+<span></span><br/>
+<span></span>„Warum eigentlich?“ Slughorns Tür ist zum Greifen nah und er tritt ein Stück weit aus sich selbst heraus, als er klopft und Lavender Browns Hand in seine nimmt. Es ist Wahnsinn. Honigsüßer Wahnsinn.<br/>
+<span></span><br/>
+<span></span>„Warum eigentlich nicht?“ Falls Lavender ein gutes Argument dagegen einfällt, bekommt sie keine Chance es zu sagen, denn die Tür öffnet sich augenblicklich und der Bauch von Horace Slughorn schiebt sich zur Begrüßung in den Türrahmen. Die Augen des alten Mannes funkeln zufrieden und er begutachtet Lavender mit einem wohlwollenden Lächeln, das in Blaise einen Anflug von Ekel hervorruft.<br/>
+<span></span><br/>
+<span></span>„Blaise, ich dachte schon, Sie versetzen mich!“ Mit einem Augenzwinkern – er weiß, dass Blaise ihn vor seinen UTZ-Prüfungen keinesfalls versetzen wird, dass niemand das tun wird – lässt er ihn eintreten und er spürt einen leichten Gegendruck von Lavender ausgehen. Sie hält sich an ihm fest. „Und wer ist Ihre zauberhafte Begleitung, wenn ich fragen darf? Mein Namensgedächtnis lässt mich bedauerlicherweise einmal mehr im ungünstigsten Moment im Stich…“ Horace Slughorn vergisst es nie zu lächeln und einen leichtfertigen Tonfall anzuschlagen, wenn er über seine eigenen Defizite spricht.<br/>
+<span></span><br/>
+<span></span>„Loreley Bright.“ Lavender hat den Mund geöffnet und schweigt nun, weil er ihr zuvorgekommen ist.<br/>
+<span></span><br/>
+<span></span>„Aber natürlich!“ Slughorn klatscht enthusiastisch in die Hände. „Loreley, Sie haben versucht an meiner UTZ-Klasse teilzunehmen, aber Professor McGonagall hat mich darüber in Kenntnis gesetzt, dass Sie sich dem Stoff nicht gewachsen fühlen und bei Ihrem Stundenplan einen neuen Schwerpunkt setzen möchten. Richtig?“<br/>
+<span></span><br/>
+<span></span>„Richtig.“ Dank seinem fehlenden Schamgefühl bemerkt Slughorn gar nicht, dass er Lavender gerade irgendwie bloßgestellt hat und winkt sie bedenkenlos weiter in den Raum hinein. In der Mitte steht nicht der runde Tisch, an dem Slughorn seine Lieblinge nebeneinander aufreiht, um sie hintereinander ausfragen zu können. Es sind mehr Menschen anwesend als er vermutet hätte und er entdeckt doch den einen oder anderen silbrigen Haarschopf. Es gibt mehrere kleine, hohe Tische, an denen man stehen kann. Gläser und kleine Schüsseln mit überzuckertem Inhalt fliegen über die Köpfe der Anwesenden und es gibt in dem hinteren Teil des Raumes eine kleine, improvisierte Tanzfläche vor dem Kamin. Dort stehen normalerweise zwei Sofas, auf denen man sitzen darf, wenn Slughorn in besonderer Redelaune ist und die Ausgangssperre überstrapaziert.<br/>
+<span></span><br/>
+<span></span>Zu seiner großen Erleichterung eilt Slughorn prompt zurück zu dem Tisch, an dem Hermine Granger und Ginny Weasley stehen. Zu seinem kleinen Unglück richtet sich dadurch die Aufmerksamkeit der beiden Gryffindors, die ihm nicht unbedingt die massivsten Sympathien entgegenbringen, auf ihn und Lavender. Während Hermine Granger nur die Stirn in Falten legt und augenscheinlich darüber nachdenkt, sich eine Brille zuzulegen, hüstelt Ginny Weasley vornehm in ihren Elfenwein. Er lässt Lavenders Hand los und weil er heute anscheinend in Stimmung für echte Katastrophen ist, legt er gleich seinen ganzen Arm um sie und dirigiert sie zu dem letzten noch freien Tisch, in dessen Nähe Laura Madley nervös auf die Schuhe ihrs Begleiters schaut, der zwei Köpfe größer ist als sie, aber nicht weniger unruhig aussieht.<br/>
+<span></span><br/>
+<span></span>Lavender wirkt empört und sie hat allen Grund dazu. Immerhin hat ein Professor ihren Namen vergessen, sich gleichzeitig an ihre mangelhaften Leistungen erinnert – und sie wurde von einem weitgehend Fremden etwas zu vertraulich angefasst. Er reißt sich zusammen, unterdrückt sein Bedürfnis Gryffindors aus dem Konzept zu bringen und nimmt seine Hände wieder an sich.<br/>
+<span></span><br/>
+<span></span>„Was möchtest du trinken? Elfenwein?“<br/>
+<span></span><br/>
+<span></span>„Gibt es auch Kürbissaft? Ich trinke keinen Alkohol.“ Das hätte er nicht von ihr gedacht, aber es muss wohl eine neue Angewohnheit sein, dass er sich überhaupt einbildet, irgendetwas über sie zu wissen. Er schreibt auf eine der dezenten Karten ihren Wunsch, wirft den Wunsch auf den Boden und beobachtet wie der kleine Zettel in Richtung von Slughorns Getränkeauswahl flattert. Im Handumdrehen landen zwei Gläser vor ihnen und Lavender schluckt. „Ich komme mir ein bisschen albern bei der Frage vor, aber baggerst du mich gerade irgendwie an? Falls ja, wüsste ich das gerne jetzt gleich, bevor ich so verwirrt bin, dass ich Kopfschmerzen kriege.“<br/>
+<span></span><br/>
+<span></span>„Wäre das denn so schlimm, wenn ich dich <span class="user_italic">anbaggern</span> würde?“ Ihre Ausdrucksweise entspricht nicht seinem normalen Wortschatz, aber da sie ja grundsätzlich doch dieselbe Sprache sprechen, wird es schon gehen. Sie starrt ihn an und in ihren Augen flackert Unsicherheit auf und eine Neugierde, die ihm ein bisschen Angst macht. Er muss an blaue Glühbirnen denken, in denen der Draht jede Sekunde durchbrennen könnte.<br/>
+<span></span><br/>
+<span></span>„Weiß nicht. Tust du’s denn?“<br/>
+<span></span><br/>
+<span></span>„Weiß nicht. Wäre es denn so schlimm?“ Wenn sie sich im Kreis drehen will, dann wird er sich einfach mitdrehen. Er nippt an dem Elfenwein, der einer der Gründe ist, warum er Abenden wie diesen nicht nur mit Lustlosigkeit entgegensieht. Bisher ist es auch ziemlich unterhaltsam und das liegt an Lavender. Er hat sich in den letzten zehn Minuten nicht gelangweilt. Das muss er ihr lassen.<br/>
+<span></span><br/>
+<span></span>„Ich denke nicht. Aber ich wäre doch sehr überrascht. Wir kennen uns nicht wirklich.“<br/>
+<span></span><br/>
+<span></span>„Das ist richtig.“ Er nippt noch einmal an dem Wein und ärgert sich darüber, dass Slughorns Zusammenkünfte so regelmäßig sind, sodass zwei Schlucke Wein keinerlei Effekt haben.<br/>
+<span></span><br/>
+<span></span>„Und du hast mir an den Arsch gepackt.“ Dafür hat Lavender einen Effekt auf ihn und er verschluckt sich. Er hustet  und stellt das Glas mit einem Klirren vor sich ab. Wenn ihn nicht alles täuscht, dann zucken ihre Mundwinkel verdächtig.<br/>
+<span></span><br/>
+<span></span>„Das ist ebenfalls richtig.“ Er räuspert sich noch einmal. „Nachdem jetzt alle potenziellen Missverständnisse aus dem Weg geräumt sind, tanzt du mit mir? Oder willst du mich ersticken sehen?“<br/>
+<span></span><br/>
+<span></span>„Kommt drauf an.“ Allmählich beschleicht ihn die Vermutung, dass Lavenders Gemüt nicht ganz so schlicht ist wie er vermutet hat. Er will nicht ausschließen, dass sie dämlich ist, aber sie ist ganz sicher nicht ausschließlich dämlich. Auch wenn die blonden Locken und das runde Gesicht nicht so wirken als würden sie ein teuflisches Gehirn kaschieren.<br/>
+<span></span><br/>
+<span></span>„Worauf kommt es an?“<br/>
+<span></span><br/>
+<span></span>„Wo deine Hände dann landen.“<br/>
+<span></span><br/>
+<span></span>„Ich kann nichts versprechen. Möchtest du im Voraus eine Entschuldigung?“ Diesmal ist Lavender diejenige, die mit einem Schluck Kürbissaft das Fortlaufen dieser zunehmend interessanten Unterhaltung verzögert. Er selbst hat Skrupel etwas zu trinken. Er will erst sichergehen, dass die Konversation in gemäßigtem Fahrwasser unterwegs ist, ehe sie ihm noch betulich auf den Rücken klopfen muss.<br/>
+<span></span><br/>
+<span></span>„Ich mache mir nichts aus Entschuldigungen … und ich würde auch gerne tanzen, aber die Sache ist die … ich bin mir nicht sicher, ob ich Ginny und Hermine heute Abend oder spätestens irgendwann im Laufe des morgigen Tages erklären möchte, warum ich mit dir tanze. Ich mag nämlich keine Fragen, die ich nicht beantworten kann.“<br/>
+<span></span><br/>
+<span></span>„Aha.“<br/>
+<span></span><br/>
+<span></span>„Wenn du mir also doch nochmal erklärst, warum du mit mir tanzen willst, oder warum ich eigentlich hier bin, dann wäre ich dabei.“ Warum um Himmels Willen kommen diese Fragen erst jetzt? Das hätten sie alles in einem leeren Korridor klären können.<br/>
+<span></span><br/>
+<span></span>„Ich wollte nicht alleine herkommen. Es war Zufall, dass gerade wir uns über den Weg gelaufen sind. Und wo wir schon mal hier sind, können wir doch auch das Beste daraus machen. Erzähl deinen Freundinnen von mir aus, ich hätte dich dem Imperius unterworfen oder dich irgendwie anders schändlich verhext, das glauben sie dir bestimmt.“<br/>
+<span></span><br/>
+<span></span>„Sie sind nicht meine Freundinnen, aber gut.“ Sie macht einen Schritt vom Tisch weg und hält ihm ihre Hand auffordernd hin, als wäre es nicht 1999, sondern 1899 … oder 1799 oder wann auch immer man mit so einer förmlichen Geste zum Tanz gebeten hat. Nicht ganz unbegeistert nimmt er ihre Hand und führt sie in Richtung der improvisierten Tanzfläche, die genauso gut eine gut ausgeleuchtete Bühne sein könnte. Noch nie konnte er die anderen Mitglieder des sogenannten Slug-Clubs so sehr für sich interessieren wie an diesem Abend mit Lavender Brown an seiner Seite.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/28672947/chapters/70291707">Chapter 2</a>: Gründonnerstagnacht
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="user_center" align="center">
+  <p>
+    <strong>2 – Gründonnerstagnacht</strong>
+  </p>
+</div><p><br/><span></span><br/><span></span>Lavender beweist unerwartet viel Ausdauer und Taktgefühl. Über ihre Schulter hinweg hat er schon die ersten glücklichen Gesichter gesehen, die sich von Horace Slughorn verabschieden. Er hat seit einer gefühlten Ewigkeiten mit niemandem mehr sprechen müssen und darüber wäre er heilfroh, wenn Lavender nicht mit jedem Liedwechsel einen Millimeter näher gerückt wäre und mittlerweile so viele Lieder durchgelaufen sind, dass er sich ein wenig bedrängt fühlt. Sie legen keine besonders aufregende Darbietung hin, sondern bewegen sich in einem sauber abgesteckten Viereck, das nur dann unterbrochen wird, wenn er es mal für eine Sekunde nicht ertragen kann, diese eigentlich doch so fremde Gesicht anzusehen und sie deshalb dreht. <br/><span></span><br/><span></span>Mit ihr zu reden ist erstaunlich leicht und sie scheut keine belanglosen Themen. Sie besprechen ihre Pläne für den Sommer, ihre Ideen für die Zeit nach dem Abschluss und den üblichen Hogwartsbrei. Wenn er sich vorstellt, dass sie ihm von Slughorn als Tanzpartnerin aufgedrängt worden wäre so wie Laura Madley und Astoria Greengrass in anderen Leben, dann ist an der Gesamtsituation nichts zu hinterfragen. <br/><span></span><br/><span></span>„Meine Füße tun weh.“ Es ist eine ganz dämliche Reaktion, dass sein Blick direkt zu ihren Füßen wandert, die in unauffälligen, schwarzen Schuhen stecken, die weder irrsinnig bequem, noch besonders unpraktisch wirken. „Und ich würde gerne zurück zu meinem Kürbissaft.“<br/><span></span><br/><span></span>„Natürlich.“ Er lässt sie los, obwohl seine linke Hand an ihrer Hand und seine rechte Hand an ihrer Taille festgewachsen sein müssten. Es ist ein komisches Gefühl und er ist kurz davor, seine Hände zu Fäusten zu ballen und in seinen Hosentaschen zu verbergen, weil er auf einmal nicht mehr weiß wohin damit. Sie geht in Richtung des Tisches, auf dem ihre Getränke verwaist, wer weiß wie lang, zurückgeblieben sind. Er ertappt sich dabei wie er ihre Rückseite betrachtet und sich an den Moment erinnert, in dem er nur den blondgelockten Hinterkopf gesehen und keinerlei Assoziationen hatte. Jetzt weiß er fast mehr über sie als ihm lieb ist – und hat doch gleichzeitig keine Ahnung, mit wem er es zu tun hat.<br/><span></span><br/><span></span>Ihm fällt auf, dass sie weniger weit von ihm weg steht als zuvor. Ihre Beine zittern ein bisschen und als sie sich gegen ihn lehnt, zuckt er ein bisschen zusammen. Das hat er nicht kommen sehen. Das kann er ihr aber schlecht verbieten, deshalb schlingt er einen Arm um sie, damit es wenigstens für Außenstehende nicht so verkehrt aussieht. Dieses vertrauliche Bild lockt Astoria Greengrass an, deren Begleiter schläfrig aussieht und sich mit Neville Longbottom und Hannah Abott unterhält.<br/><span></span><br/><span></span>Astoria sieht aus wie eine weniger auffällige, blassere Ausgabe von Daphne und das ist sie auch, soweit er das beurteilen kann. Durch außerordentliche Nettigkeit ist sie ihm wenigstens noch nie aufgefallen – und sie hat dieselbe unnahbare Ausstrahlung wie ihre Schwester. Ein Mädchen wie Astoria würde man nie unaufgefordert anfassen. Aber wenigstens scheint sie heute Abend nicht ins Gebet vertieft. „Ich dachte, du wolltest mit Daphne herkommen? Wenigstens hat sie mir das gestern noch erzählt.“ Rücksichtslosigkeit in ihrer reinsten Form. Lavenders einzige Reaktion auf Astorias Auftauchen ist es, einen Schluck Kürbissaft zu trinken und ihren Körper unaufgefordert gegen seinen zu drücken. Heftig.<br/><span></span><br/><span></span>„Spontane, notwendige Änderung der Pläne.“<br/><span></span><br/><span></span>„Das kann ich sehen.“ Astoria lächelt und er vermutet irgendwie, dass Lavender zurücklächelt, auch wenn er es nicht sehen kann, weil sie ihren Kopf gegen seine Schulter lehnt. Die Situation eskaliert und er bemerkt es, aber er kann nichts dagegen tun. Und er will es auch nicht. „Ich wollte euch auch gar nicht lange stören, sondern mich nur verabschieden, wenn wir uns schon nicht begrüßt haben. Damian ist müde und ich wollte noch ein bisschen lernen. Man muss es ausnutzen, wenn man ausnahmsweise mal keine Hausaufgaben hat.“ Sie lächelt wieder und er registriert, dass Astoria ihn nicht mehr so mitleidvoll ansieht wie in den vergangenen Wochen. Im Gegenteil. Sie scheint grundlos begeistert und wenn sie sich ein wenig näher stünden, dann könnte er fragen, ob das daran liegt, dass sie ihre große Schwester insgeheim doch etwas hasst. „Wie auch immer … gute Nacht.“<br/><span></span><br/><span></span>„Gute Nacht.“ Astoria verschwindet aus seinem Blickfeld und selbst dann weicht Lavender kein Stück zurück. Aber sie dreht sich so zu ihm um, dass er seine Hand automatisch ein Stück nach oben bewegt, damit es nichts zu beanstanden gibt. „Das war Astoria Greengrass.“ Ihr leichtes Kopfschütteln verrät ihm, dass das keineswegs die Antwort auf die Frage ist, die sie ihm stellen wollte.<br/><span></span><br/><span></span>„Ich weiß, wer das war. Du hättest mir ruhig sagen können, dass du mich benutzt, um Daphne Greengrass eifersüchtig zu machen.“<br/><span></span><br/><span></span>„Ich bezweifle, dass sie eifersüchtig sein wird.“ Das bezweifelt er wirklich. Er will ja gar nicht leugnen, dass Lavender eigentlich recht hübsch ist oder behaupten, dass ihre Gegenwart auf ihn so gar keinen Eindruck macht, aber sie ist trotzdem niemand, der bei Daphne irgendwelche heftigen Gefühlsregungen hervorrufen würde. Außerdem ist Neid eine Sünde und jemand, der am Tag vor Ostern betet, würde sich ja wohl nicht an Ostern selbst versündigen. <br/><span></span><br/><span></span>„Seid ihr irgendwie zusammen?“<br/><span></span><br/><span></span>„Wenn schon, dann sind wir irgendwie nicht zusammen.“ Mit einer irrationalen Handbewegung streicht er ihr eine Haarsträhne aus dem Gesicht und sie sieht darüber milde entsetzt aus. <br/><span></span><br/><span></span>„Was tust du?“ Sie flüstert nicht einmal. Sie bewegt ihre Lippen und spricht lautlos. Als würde sie befürchten, dass er ebenso lautlos antworten könnte, schließt sie die Augen und verbirgt sein Gesicht an seiner Schulter. „Mir ist schwindelig.“ <br/><span></span><br/><span></span>„Dann sollten wir vielleicht auch gehen.“ <br/><span></span><br/><span></span>Und dann gehen sie. Lavender stellt sich wieder auf ihre eigenen Füße und trinkt ihren Kürbissaft aus, während er zu dem Tisch, an dem Slughorn und Hermine Granger stehen, herüberschlendert und sich an einem freundlichen, unangreifbaren Gesichtsausdruck versucht. Er verabschiedet sich und spricht dabei für sich und „Loreley“, was ihm einen kritischen Blick von Hermine Granger einbringt, die ihn aber ohnehin selten anders ansieht. Slughorn nickt verständig, wünscht ihnen einen schönen Abend und ein seliges Osterfest. Als er sich wieder umdreht sieht er wie Lavender einen sehnsüchtigen Blick auf sein immer noch halb gefülltes Weinglas wirft. <br/><span></span><br/><span></span>„Nur zu.“<br/><span></span><br/><span></span>„Nein, ich sollte heute wirklich nicht trinken … ich sollte ins Bett.“<br/><span></span><br/><span></span>„Wie du meinst.“ Sie nimmt ihre Tasche, die den ganzen Abend über an das Tischbein gelehnt hat, hängt sie sich über die Schulter und sieht damit wieder mehr wie das Mädchen aus, das einen bösen Gedanken entfacht hat und weniger wie das Mädchen, mit dem er getanzt hat. <br/><span></span><br/><span></span>Das Büro, das mit all seinem Pomp und seiner Behaglichkeit und seiner altmodischen Einrichtung für gewöhnlich eine sedierende Wirkung auf ihn hat, könnte kein schärferer Kontrast zu dem leeren, steinernen Korridor sein. Aus einem entlegenen Winkel des Schlosses ertönt ein Heulen und Lavender schnappt leise nach Luft.<br/><span></span><br/><span></span>„Das Schloss ist nachts irgendwie unheimlich.“<br/><span></span><br/><span></span>„Es ist eine Schule.“ Seine Antwort mag lapidar klingen, aber so einfach erscheint ihm die Welt nicht gerade. Er versteht nicht genug von Mädchen, um zu wissen, ob sie eine Aussage gemacht hat oder ob es eine Aufforderung an ihn war. „Ich bringe dich noch zurück zu deinem Gemeinschaftsraum.“ Sie sieht irgendwie erleichtert aus und nickt. „Aber du musst vorgehen, ich habe keine Ahnung, wo eure Räume sind.“ <br/><span></span><br/><span></span>„Du gehst seit acht Jahren hier zur Schule und du weißt nicht, wo die anderen Schulhäuser untergebracht sind?“ Sie setzt sich in Bewegung und er folgt ihr in Richtung einer der schwingenden Treppen.<br/><span></span><br/><span></span>„Ich weiß nicht, wo die Gryffindors untergebracht sind.“ Das klingt irgendwie so unangenehm bedeutsam und weil es eigentlich egal ist, setzt er noch einen drauf. „Ich habe eigentlich noch nie wirklich mit jemandem aus Gryffindor geredet.“<br/><span></span><br/><span></span>„Was für eine Ehre.“ Ist das Spott? Normalerweise hat er ein feines Gehör dafür, wann sich jemand über ihn lustig macht, aber Lavender ist irritierend. Er kann sie nicht einordnen. Und er kann auch nicht so recht mit der Lücke zwischen ihnen leben. Man hört wieder ein Heulen und ihm entgeht nicht, dass sie einen Schlenker in seine Richtung läuft. „Du hörst das auch, oder?“<br/><span></span><br/><span></span>„Ehm … ja.“<br/><span></span><br/><span></span>„Okay.“<br/><span></span><br/><span></span>„Kommt wahrscheinlich aus dem Wald. Oder von ein paar Fünftklässlern, die gerade Werwölfe durchnehmen und sich gegenseitig darin überbieten, wer besser mit dem Mond kommunizieren kann.“ Er ist es nicht gewohnt jemanden beruhigen zu wollen und das Bedürfnis jemanden zum Lachen zu bringen zu wollen ist ebenfalls neu. Doch Lavender lacht nicht, sondern sieht unbehaglich drein. „Gruselt dich das wirklich? Das sind nur Kinder. Oder große Hunde.“<br/><span></span><br/><span></span>„Ich mag keine großen Hunde.“ Sie hüpft über eine fehlende Stufe und verschränkt die Arme vor ihrem Oberkörper. <br/><span></span><br/><span></span>„Ich auch nicht so besonders.“ Das Heulen ertönt wieder und diesmal kommt es eindeutig nicht von draußen, sondern von unten. Lavender stolpert über die zweite Trickstufe und hält sich am Geländer fest. Sie starrt in die Dunkelheit unter ihnen. Slughorns Räume sind im vierten Stock und die Eingangshalle ist wirklich weit weg, auch wenn das lang gezogene Heulen durch die hervorragende Akustik des alten Gemäuers deutlich näher klingt als es vermutlich ist. „Vielleicht beeilen wir uns einfach ein bisschen?“ Sie nickt und dann ist sie auf einmal nicht mehr auf der Treppe, sondern schon auf der nächsten und er muss sich beeilen, um sie nicht aus den Augen zu verlieren. Erst als sie im sechsten Stock sind, hat er sie eingeholt, obschon ihre Beine ein gutes Stück kürzer sind als seine eigenen. Sie keucht leise und ihre Knie zittern. „Hey, keine Panik, wir sind doch gleich da … oder?“<br/><span></span><br/><span></span>„Sind wir nicht. Ich … wir sind im falschen Stockwerk.“<br/><span></span><br/><span></span>„Was?!“<br/><span></span><br/><span></span>„Ich hatte Panik und … wir müssen noch höher. Aber auf den Treppen kann er uns hören und zum Turm gibt es noch einen anderen Zugang über eine der Nebentreppen, die nicht über den Eingangshalle sind. Du kannst auch zurückgehen, ich finde den Rest schon.“ Das meint sie nicht ernst und das kann er ihr ansehen. <br/><span></span><br/><span></span>„Schon gut.“ Es fühlt sich ganz selbstverständlich an ihre Hand wieder in seine zu nehmen und sie versucht auch nicht ihn abzuschütteln, sondern geht zielstrebig weiter. „Wahrscheinlich ist es Peeves, der sich einen Spaß erlaubt.“ <br/><span></span><br/><span></span>„Das glaub ich nicht.“<br/><span></span><br/><span></span>„Aber du glaubst, dass du unten ein Wolf herumschleicht oder was? Wie soll der denn reingekommen sein? Alle Türen werden nachts abgeschlossen und Filch patrouilliert durch das Schloss. Nachts ist noch nie irgendetwas aus dem Wald ins Schloss gekommen – und schon gar kein Wolf. Das hier ist doch kein Dorf, das aus Zelten und Zäunen besteht.“ <br/><span></span><br/><span></span>„Vielleicht lebt er ja im Schloss.“ Ihm bleibt für einen Augenblick die Luft weg, als er den Zugang zum Astronomieturm wiedererkennt. Sternenhimmel und Verschwörungstheorien mit Lavender Brown. Vielleicht hätte er sich doch besser den ganzen Abend über Daphne und ihr Getue geärgert. Dann läge er längst im Bett, anstatt eine Weltreise durch das Schloss zu unternehmen. <br/><span></span><br/><span></span>„Wir kennen uns ja nicht so besonders gut, also versteh das jetzt nicht falsch, aber du spinnst.“ Sie sieht nicht gekränkt aus, aber auch nicht weniger beunruhigt als eben noch. Auf der Plattform des Astronomieturms stehen zu bleiben und diese Argumentation unter dem Nachthimmel fortzusetzen, erscheint ihm nicht sinnvoll, aber irgendwie kann er seinen Blick nicht von der schreienden Dunkelheit um sie herum lösen. Am Himmel strahlt der Mond, der eine perfekte Kugel ist. Sie zieht an seiner Hand, zieht ihn weiter und er folgt ihr eine beengte Wendeltreppe hoch in das siebte Stockwerk des Schlosses. Sie schweigt weiter, geht schneller und bleibt schließlich abrupt stehen. Im Hintergrund hüstelt das Gemälde einer alten,  adipösen Dame im Schlaf.<br/><span></span><br/><span></span>„Wir sind da.“<br/><span></span><br/><span></span>„Also ich meinte nicht wirklich, dass du spinnst, also nicht allgemein, aber du spinnst dir da was zusammen. Es gibt keine Wölfe im Schloss. Selbst wenn wir heute Vollmond haben.“ Ihre Augen, die blauen Glühbirnen, leuchten auf dem dunklen Gang und ihr Mund verzieht sich zu einem kleinen, allwissenden Lächeln. <br/><span></span><br/><span></span>„Danke für die Begleitung. Und dafür, dass ich deine Begleitung sein durfte. Es war nett.“ Sie löst ihre Hand aus seiner, stellt sich auf die Zehenspitzen und drückt einen Kuss neben seinen Mundwinkel.<br/><span></span><br/><span></span>Und da setzt es dann irgendwie bei ihm aus. Lavender zu küssen ist trotz der ungewohnten Nähe keine konkrete Option für ihn gewesen. Er hat es sich nicht einmal für den Bruchteil einer Sekunde vorgestellt und deshalb ist er umso schockierter von sich selbst, als er sie an sich zieht und sie mitten auf den Mund küsst. Überrascht erwidert sie den Kuss und das ist der Moment, in dem er eigentlich darüber nachdenken sollte, was er da tut. Aber er denkt nicht nach, er kann an gar nichts denken – nicht einmal daran wie merkwürdig das alles ist und wie schön das ist, dass sie sich an ihn schmiegt – bis er auf einmal ein stechender Schmerz durch seine Unterlippe geht. Sie hat ihn gebissen. Sie hat ihn echt <span class="user_italic">gebissen</span>.<br/><span></span><br/><span></span>Er weiß nicht, ob er seinen Schmerz irgendwie laut zum Ausdruck gebracht hat, aber in seinen Ohren dröhnt auf einmal ein pikiertes Räuspern und er schiebt sie automatisch von sich weg. Er rechnet mit dem Schlimmsten – und das Schlimmste wäre in diesem Fall Professor McGonagall. Als er niemanden entdecken kann und sein Blick auf das Porträt fällt, das die Augen geöffnet hat und ihn vorwurfsvoll ansieht, ist er maßlos erleichtert.<br/><span></span><br/><span></span>„Möchte Miss Brown in Ihren Schlafsaal oder möchte Sie die Nacht auf dem Korridor verbringen?“ Die Stimme der gemalten Dame ist unangenehm hoch und die Haare auf seinen Armen stellen sich auf. Lavender weicht von ihm zurück in Richtung des Bildes, das ungeduldig zur Seite schwingt. Sie sieht ihn ratlos an und er bringt gerade noch so ein knappes „Tschüss“ hervor, ehe das Porträt wieder zurückschwingt. „Möchte Mr. Zabini die Nacht auf dem Korridor verbringen oder möchte er zu Seinem Schlafsaal zurückkehren?“ Sein Gehör für hämische Untertöne schlägt wieder aus und ehe das auf Leinwand verewigte Schwergewicht sich ernsthaft auf seine Kosten amüsieren kann, macht er sich auf den Weg in Richtung seines eigenen Bettes.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/28672947/chapters/70291764">Chapter 3</a>: Karfreitag
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="user_center" align="center">
+  <p>
+    <strong>3 – Karfreitag</strong>
+  </p>
+</div><div class="user_center" align="center">
+  <p> </p>
+</div><p><br/><span></span>„Du siehst ja zum Fürchten aus.“ Theodore Nott ist eine sehr direkte Person und das ist neben seinem Vermögen nichts allzu ernst zu nehmen, die Eigenschaft, die Blaise wirklich an ihm schätzt. Als Theo allerdings so früh am Morgen vor seinem Bett steht und mit seinem Zeigefinger Kreise vor seinem eigenen Mund malt, da sehnt er sich nach ein bisschen Schonung. Nach sanften Kniffen mit Samthandschuhen anstelle des üblichen Frontalangriffes. Neben Theodore ist in diesem Jahr nur Gregory Goyle in ihrem Schlafsaal verblieben und Gregory ist ein konsequenter Frühaufsteher, den man nach acht Uhr morgens entweder im Unterricht oder in dem Raum des Koboldsteinclubs findet. „Hat Daphne dich gestern aufgefressen?“ <br/><span></span><br/><span></span>Er tastet sein Gesicht ab und erinnert sich schlagartig an die seltsamen Ereignisse der Nacht. Wenn es nicht so furchtbar daneben klingen würde, dann müsste man sagen, er hat irgendwie Lavender Brown aufgerissen – und sich dafür im Gegensatz die Lippe aufreißen lassen. Er hat keinen Blick mehr in den Spiegel geworfen, ehe er ins Bett gegangen ist, und das stellt sich nun als Fehler heraus. Er macht eine abwinkende Bewegung und Theos Augenbrauen schießen nach oben. „Kleiner Unfall.“<br/><span></span><br/><span></span>„Soso.“ Ehe Theo, der sicher mehr als zwei Silben auf Lager hat, ein ernsthaftes Verhör einleiten kann, hämmert es gegen die Tür. Die imposante Lautstärke der Schläge lassen auf einen wütenden Besucher schließen und Blaise hat eine ganz üble Vermutung, die bestätigt wird, als Theo die Tür öffnet und Daphne an ihm vorbeistürmt. „Ich geh dann mal.“ Mit diesen Worten lässt Theo ihn alleine und er kann sich bloß aufsetzen, während Daphne sich vor ihm aufbaut. Sie trägt einen Rollkragenpullover in einem dunklen Blau und ihre Haare, die fast schwarz sind, umrahmen ihr Gesicht bedrohlich. <br/><span></span><br/><span></span>Obwohl er sich der Sinnlosigkeit dieser Handlung bewusst ist, fährt er sich mit dem Ärmel seines Oberteils über den Mund. Daphnes Augen glühen beinahe. „Und <span class="user_italic">das</span> tust du mir an. Die gottverdammte Lavender Brown? Du hintergehst mich mit der dämlichsten, billigsten, blödesten Kuh, die du finden konntest.“  Sie schreit nicht, aber dieser beherrschte, gemäßigte Ton ist in gewisser Weise schlimmer als es ein richtiges Brüllen wäre. „Du bist für mich gestorben.“ <br/><span></span><br/><span></span>„Ist das so viel schlimmer als dir egal zu sein?“<br/><span></span><br/><span></span>„Du warst mir nie egal.“<br/><span></span><br/><span></span>„Du hast mich versetzt.“<br/><span></span><br/><span></span>„Du hast mich ersetzt! Und dich nicht mal angestrengt, einen würdigen Ersatz zu finden. Ich meine, Lavender Brown? Das klingt schon wie ein schlechter Witz. Sie ist … bei Gott, ich finde gar keine Worte für dieses Mädchen. Sie ist einfach furchtbar.“ Wieso geht sie nicht einfach? Ist das ihre Art, ihm noch eine Chance zu geben? Oder hört sie sich selbst doch so gerne reden? <br/><span></span><br/><span></span>„Ist sie nicht.“<br/><span></span><br/><span></span>„Du magst sie also? Echt jetzt? Die Glückliche. Kann sie sich deiner ewigen Liebe und deiner unaufhörlichen, guten Laune sicher sein? Welch ein Wunder dieses Mädchen sein muss! Man sollte eine Parade für sie veranstalten.“<br/><span></span><br/><span></span>„Du regst dich künstlich auf, mein Schatz.“ Daphne hasst Kosenamen und er liefert ihr gerne ihre Vorlagen, denn es ist immer ein Trost, wenn er weiß, was sie als nächstes sagen wird.<br/><span></span><br/><span></span>„Dein Schatz bin ich ganz bestimmt nicht mehr. Du kannst dein Glück herzlich gerne bei Lavender versuchen. Ich bin mir sicher, dass Ronald Weasley die Messlatte nicht zu hoch gelegt hat.“ Ron Weasley ist der letzte Mensch auf Erden, an den er heute denken möchte – und das kann sich Daphne wohl denken. Sie wirft sich vor ihm in eine gespielte Verbeugung und er kann durch den dunklen Schleier ihrer Haare ein boshaftes Lächeln sehen, das verschwunden ist, als sie sich wieder erhebt. „Du kommst in die Hölle.“ <br/><span></span><br/><span></span>„Bis dann.“ Mit wiegenden Hüften und hoch erhobenem Kopf stolziert sie aus dem Schlafsaal. Die Vorstellung sich einfach wieder hinzulegen und für den Rest des Tages die Augen vor der Wirklichkeit zu verschließen, ist verlockend, doch er zwingt sich aufzustehen und wenigstens zum Frühstück unter Menschen zu gehen. Danach kann er sich ja immer noch vor Daphne und ihren tanzenden Mäusen verstecken. <br/><span></span><br/><span></span>Doch er kommt nicht weit, er kommt ganz und gar nicht weit und wird schon in der Eingangshalle mit den weitreichenden Schatten des letzten Tages konfrontiert. Hermine Granger, die es meisterlich beherrscht sich aus dem Nichts zu manifestieren, steht zwischen ihm und den Pforten der Großen Halle. <br/><span></span><br/><span></span>„Hast du einen Moment?“ Hauptsächlich hat er Hunger, aber er will niemanden mit seinen Befindlichkeiten langweilen, deshalb nickt er. Er hatte Lavender Brown über eine Tanzfläche geschleift. Es wäre albern zu glauben, dass so etwas keinerlei Konsequenzen hatte. Er kann sich schon glücklich schätzen, dass nur ein gemaltes Augenpaar Zeuge des Kusses gewesen ist. „Du weißt, dass sie Lavender heißt, oder?“<br/><span></span><br/><span></span>„Was?“<br/><span></span><br/><span></span>„Du hast sie Loreley genannt und ich dachte … na, es wäre das Mindeste, wenn du ihren Namen kennen würdest.“<br/><span></span><br/><span></span>„Selbstverständlich kenne ich ihren Namen. Ich bin doch nicht … also ich weiß ja nicht, was du von mir denkst, aber ich weiß, dass ihr Name Lavender Brown ist. Keine Ahnung, ob sie einen zweiten Vornamen hat, aber ich hoffe, das ist verzeihlich.“ Hermine Granger starrt ihn an und guckt so, als wollte sie ihm unbedingt Lavenders zweiten Vornamen verraten. „Das war ein Witz. Slughorns Namensgedächtnis setzt bei ihr aus.“ <br/><span></span><br/><span></span>„Oh, ach so, ich dachte-“<br/><span></span><br/><span></span>„Du dachtest, ich sammele Mädchen auf, deren Namen ich nicht mal kenne. Danke für die freundlichen Vorurteile zu meiner Person. Sonst noch was?“ Es ist das erste Mal seit er denken kann, dass Hermine Granger auf ihn zugeht und er ist wirklich nicht in der Stimmung für neue, nicht besonders wertfreie Bekanntschaften. Außerdem ist Hermine nicht dämlich, dementsprechend wird sie wohl einige Gemeinsamkeiten mit Daphne haben und die ist er ja nun mal gerade erst losgeworden. <br/><span></span><br/><span></span>„Ich dachte, du hättest eine Freundin.“ Das könnte eine Frage sein, aber so lässt sie es nicht klingen und er fragt sich ein bisschen, woher sie die Sicherheit nimmt, zu wissen, was in seinem Leben vor sich geht. Natürlich weiß er auch, dass sie mit Ronald Weasley zusammen ist oder wenigstens so etwas ähnliches, aber bei den beiden handelt es sich neben Harry Potter ja auch um akute Hogwartsprominenz. „Daphne Greengrass?“ <br/><span></span><br/><span></span>„Ein Gerücht, nehme ich an.“<br/><span></span><br/><span></span>„Ich weiß ja nicht, ob du ein schlechtes Gedächtnis hast, aber ich musste euch vor zwei Monaten Hauspunkte abziehen, weil ihr nach der Ausgangssperre noch unterwegs gewesen seid.“ Hermine Granger, die reizende Schulsprecherin – wie hatte er das so schnell verdrängen können? Daphne hat einen ihrer großzügigen Tage gehabt und darauf bestanden, dass sie „einen Spaziergang“ machen. Mit Daphne in einem leeren Klassenzimmer zu knutschen, ist theoretisch nicht allzu romantisch, aber in der praktischen Ausführung etwas, das ihn ziemlich widerstandslos macht. Bedauerlicherweise hat ebendieses Klassenzimmer auf der Route der Mitternachtspatrouille der Schulsprecherin gelegen. <br/><span></span><br/><span></span>„Ja, ich erinnere mich. Dann stammen die Gerüchte vermutlich von dir?“ <br/><span></span><br/><span></span>„Lavender hat es nicht verdient, dass so mit ihr umgegangen wird. Menschen sind keine Spielzeuge. Deine Mutter hat dir das wohl nicht beigebracht, also sage ich es vielleicht nochmal.“<br/><span></span><br/><span></span>„Hey hey hey, ruhig, es gibt keinen Grund, die Erziehung meiner Mutter zu kritisieren.“<br/><span></span><br/><span></span>„Ich kritisiere dich.“<br/><span></span><br/><span></span>„Mit welchem Recht, frag ich mich? Hast du Lavender auch so zugesetzt? Oder ist es alleine mir verboten, Slughorns Abendessen mit moralischer Unterstützung beizuwohnen?“ Wenn ihn nicht alles getäuscht hat, dann ist sie selbst gestern mit Dennis Creevey aufgetaucht, obwohl ihr eigener Freund in seinem Scherzartikelladen hockt. Gut, Dennis Creevey ist erst in der fünften Klasse und es ist vermutlich nur eine nette Geste gewesen, aber trotzdem. <br/><span></span><br/><span></span>„Nach moralischer Unterstützung sah das nicht aus.“ Es mag der Hunger sein, aber Hermine Granger und ihr hohes Ross gehen ihm reichlich auf die Nerven. Er macht einen Schritt auf sie zu, aber sie weicht nicht zurück, sodass sie lächerlich nahe voreinander stehen. Sein Fehler. Er hätte sich denken können, dass man Harry Potters beste Freundin nicht so leicht einschüchtern kann. <br/><span></span><br/><span></span>„Ist Lavender deine beste Freundin? Oder seid ihr irgendwie miteinander verwandt?“ Sie schüttelt ratlos den Kopf. „Was geht es dich dann an, ob ich ihr zusetze oder nicht? Sie ist volljährig, oder? Ich glaube, sie braucht keinen Babysitter – oder den Segen der Schulsprecherin.“ Sie schluckt. Ist so viel Ehrlichkeit dann doch schwer verdaulich? „Ich hätte nicht mal vermutet, dass du sie leiden kannst. Immerhin bist du ja mal fast vor Eifersucht wegen ihr gestorben.“ Jetzt klingt er schon wie Daphne, aber ihre Gesichtsfarbe ändert sich schlagartig und sie tritt den Rückzug an.<br/><span></span><br/><span></span>„Du bist ein Arschloch.“ Er schenkt ihr sein bestes, kurzweiliges Lächeln und betritt dann ausgehungert die Eingangshalle. Am Slytherintisch sitzen erfreulicherweise ziemlich wenige Leute und die Einzige, die ihn jetzt noch nerven könnte, ist Pansy, die in ihrem Müsli herumstochert. <br/><span></span><br/><span></span>Pansy Parkinson ist ein gut erzogenes Mädchen, das nicht mit vollem Mund spricht und deshalb sind ihm himmlische dreißig Sekunden Ruhe vergönnt, ehe sie etwas sagt. „Daphne ist ziemlich sauer auf dich.“ <br/><span></span><br/><span></span>„Ich weiß.“<br/><span></span><br/><span></span>„Ich an deiner Stelle würde mich entschuldigen.“<br/><span></span><br/><span></span>„Und ich an deiner Stelle würde mir langsam mal ein eigenes Leben zulegen. Was willst du nach unserem Abschluss machen? Bei Daphne einziehen und sie 24 Stunden am Tag beweihräuchern?“ Das Grinsen auf Pansys Gesicht bringt ihn aus dem Konzept.<br/><span></span><br/><span></span>„Ich meine ja nur, sich die letzten Wochen von Daphne die Hölle heiß machen zu lassen, ist dämlich. Und ich für meinen Teil, ich werde im Juli zu meiner Tante nach Amerika fliegen und vielleicht für immer dort bleiben, weil das Leben da nicht so scheiße ist – und Menschen wie Daphne als manisch-depressiv eingestuft und mit Zaubertränken vollgestopft werden.“ Wow. Die Tanzmaus hat gesprochen. Und die Tanzmaus hat definitiv keinen Bock mehr. Begeistert beobachtet Pansy seine Verblüffung und wickelt eines der Pfefferminzbonbons, die niemand freiwillig isst, aus seinem grünen Papier. „Aber ganz im Ernst? Lavender Brown? Ist dir nichts Besseres eingefallen?“ <br/><span></span><br/><span></span>„Ganz im Ernst? Nein, ist es nicht. Nicht so spontan.“ Pansy fängt an zu kichern und sieht ihn kopfschüttelnd an. Und das ist vielleicht der Moment, in dem er mal etwas für seine Ehre tun sollte. „Sie ist eigentlich ganz niedlich.“ Wenn sie nicht gerade bissig ist. <br/><span></span><br/><span></span>„Niedlich?“ Über Adjektive sollte er in Zukunft vielleicht länger als einen Bissen nachdenken. „Du findest Lavender Brown niedlich? Hast du vielleicht einen Hirnschaden? Oder ist dir entgangen, dass sie quasi ein halbes Jahr an Ronald Weasleys Gesicht festgeklebt hat?“<br/><span></span><br/><span></span>„Das ist ja nun schon eine Weile her…“ Da sollte eine Ergänzung kommen, aber mit dem Ende des Satzes tut er sich schwer und das gibt Pansy eine ungünstige Lücke.<br/><span></span><br/><span></span>„Ihr hattet was miteinander, oder?“<br/><span></span><br/><span></span>„Nein!“<br/><span></span><br/><span></span>„Oh mein Gott! Du bist ein verboten schlechter Lügner!“ Das Pfefferminzbonbon gibt ein Knirschen von sich, als sie den Mund erst auf und wieder zuklappt. „Ihr hattet wirklich was miteinander.“<br/><span></span><br/><span></span>„Das ist ein bisschen übertrieben – wir haben uns nur geküsst.“ Das Glänzen in ihren Augen gefällt ihm gar nicht. „Und das wollte ich eigentlich gar nicht mit dir besprechen. Wäre nett, wenn du es nicht gleich der ganzen Welt erzählst.“ Die Empörung steht ihr ins Gesicht geschrieben.<br/><span></span><br/><span></span>„Ich kann ein Geheimnis für mich behalten! Und ich renne damit bestimmt nicht zu Daphne, denn Daphne würde nur den Boten töten. Und ich habe keine Lust, der tote Bote zu sein. Den Part kann gerne jemand anders übernehmen … aber sag mal, wie geht es jetzt weiter?“<br/><span></span><br/><span></span>„Wie meinst du das?“<br/><span></span><br/><span></span>„Na ja, was ist jetzt mit Lavender? Willst du nie wieder mit ihr reden und das Ganze im Sande verlaufen lassen? Bist du so einer? Der Mädchen nicht sagt, dass er sie „niedlich“ findet?“ Er hätte sich zu dem Koboldsteinclub oder zu irgendwelchen angsterfüllten Zweitklässlern setzen sollen. „Je länger ich darüber nachdenke, umso romantischer finde ich es.“<br/><span></span><br/><span></span>„Romantisch? Daran ist nichts romantisch, glaub mir.“<br/><span></span><br/><span></span>„Und ob! Das ist Schicksal! Wie oft begegnet man schon mal quasi zufällig jemandem, den man seit Jahren kennt und nie beachtet hat – und findet ihn dann niedlich?“<br/><span></span><br/><span></span>„Könnten wir uns darauf einigen, das Wort „niedlich“ heute nicht mehr zu verwenden?“<br/><span></span><br/><span></span>„Vergiss es. Du musst mit ihr reden.“ Pansy beugt sich über die halbe Tischplatte, nur um ihn eindringlich anzusehen. Ihre Haarspitzen schweben gefährliche nahe über ihrem Müsli. „Du musst mit ihr reden!“ Auf einmal erinnert er sich. An die dritte Klasse. An die beharrlichen Versuche von Pansy ihn mit jemandem zu verkuppeln. An Millicents euphorische Unterstützung. Das war eine Zeit, in der Daphne noch nicht so mächtig war, weil sie alle noch klein waren, weil alle noch fettige Haare und ein paar Pickel im Gesicht hatten und weil noch nicht offensichtlich war, dass Daphne immer die schöne Daphne sein würde, während Pansy notorisch pausbäckig und tiefenblass war – und Millicent die Knochenstruktur einer Halbriesin hatte. Es konnten nur ein paar Wochen oder lange Monate gewesen sein, in denen Daphne irgendwie nicht existiert hatte, weil sie damit beschäftigt war, mit Adrian Pucey auszugehen, die Pansy damit verbracht hatte, das ganze Schloss nach geeigneten „Freundinnen“ für ihn abzusuchen. Der Name Lavender Brown war dabei nie gefallen. Und kurz danach hatte er beschlossen, dass er sich von Mädchen zukünftig lieber fernhalten würde. „Blaise? So eine Chance kriegt man nicht ständig. Das meine ich ernst.“<br/><span></span><br/><span></span>„Das ist doch keine Chance.“<br/><span></span><br/><span></span>„Du magst sie irgendwie, oder?“<br/><span></span><br/><span></span>„Ja, irgendwie schon. Sie ist eben nett. Na und?“<br/><span></span><br/><span></span>„Du hast fast sieben Jahre gebraucht, um Daphne irgendwie genug zu mögen, um echtes Interesse an ihr zu zeigen. Wenn du nach einem Abend über Lavender Brown sagen kannst, dass sie nied- entschuldige, dass sie irgendwie attraktiv ist, dann ist das doch vielleicht beachtlich? Du musst mit ihr reden.“<br/><span></span><br/><span></span>„Wann hab ich eigentlich behauptet, dass ich nicht mit ihr reden will?“ Pansy gibt ein ohrenbetäubendes Quietschen von sich, das vermutlich ein Laut des maßlosen Entzückens ist. Aber das ist jetzt auch egal. Jetzt steckt er eh schon zu tief drin. Und er will irgendwie wirklich mit Lavender reden. So einen Abend, den kann man doch nicht einfach für sich stehen lassen. Das geht doch nicht. <br/><span></span><br/><span></span>Im Laufe des Tages stellt sich heraus, dass es gar nicht so einfach ist mit Lavender zu sprechen. Es sieht nämlich ganz stark aus, als würde Lavender Brown gar nicht existieren. Bei sämtlichen Mahlzeiten glänzt sie durch Abwesenheit, obwohl er immer so lange sitzen bleibt, bis er gefühlt ganz Hogwarts bei der Nahrungsaufnahme beobachtet hat. Den Nachmittag verbringt er damit mehr oder weniger ziellos durch das Schloss zu laufen, seine Karteikarten für Zauberkunst durchzublättern und seinen eigenen Gemeinschaftsraum zu meiden. Beim Abendessen rutscht Pansy zu ihm herüber, nachdem Daphne, die so tut als wäre er unsichtbar, und Millicent aufstehen und gehen. <br/><span></span><br/><span></span>„Und? Irgendwelche Fortschritte?“ Er schüttelt den Kopf. Pansy macht einen Schmollmund, aber da sie bei den Mahlzeiten ihre Blicke ebenfalls hat schweifen lassen, kann sie ihm keinen fehlenden Einsatz vorwerfen. „Schade.“<br/><span></span><br/><span></span>„Ich weiß, wo ihr Gemeinschaftsraum ist.“ Pansy macht große Augen. Wahrscheinlich nicht wegen seiner Kenntnisse der Baupläne des Schlosses. „Ich überlege hinzugehen … selbst wenn sie mir aus dem Weg geht, wäre es ja schon irgendwie sinnvoll mit ihr zu reden, oder?“<br/><span></span><br/><span></span>„Ist das eine ernstgemeinte Frage? Ich hätte nicht gedacht, dass du … so viel Engagement überrascht mich irgendwie. Das hab ich nicht von dir erwartet. Ich dachte immer, dir ist so was ziemlich egal.“<br/><span></span><br/><span></span>„So was? Was meinst du denn mit so was?“<br/><span></span><br/><span></span>„Mädchen? Was Mädchen über dich denken? Nichts für ungut, ich kann verstehen, dass man Daphnes Ego nicht zu viel Futter geben will, aber du hast dich nie besonders um sie bemüht.“ Diese Ansicht teilt er nicht. Das bringt er mit einer Bewegung seiner Augenbrauen zur Kenntnis, die sie zum Weitersprechen bewegt. „Klar, ihr seid zusammen nach Hogsmeade gegangen, du hast ihr was zu Weihnachten geschenkt, du hast ihr nicht widersprochen, aber du warst nie so … keine Ahnung, irgendwas ist heute mit deinem Gesicht anders. Du bist nicht so gleichmütig wie sonst.“ Gleichmütig? Er wusste gar nicht, dass Pansy solche Wörter kennt. Beinahe entschuldigend zuckt sie mit den Schultern. „Sorry, aber das ist nur die Wahrheit. Du guckst anders als sonst – und jetzt denkst du darüber nach mit der „Fetten Dame“ zu reden.“<br/><span></span><br/><span></span>„Wer ist die fette Dame?“ Noch während er diese Frage stellt, erscheint die adipöse Gestalt in Öl auf Leinwand vor seinem inneren Auge. Er winkt ab und Pansy zwinkert fröhlich, als er aufsteht und sich einer Gruppe geschwätziger Zweitklässlerinnen in identischen, roten Kordröcken an die  Fersen hängt. <br/><span></span><br/><span></span>Eines der Mädchen dreht sich immer wieder skeptisch zu ihm um und flüstert ihrer Freundin etwas ins Ohr, die daraufhin einen Blick über die Schulter riskiert und einen ganz roten Kopf bekommt. Im siebten Stockwerk verschwinden die Mädchen mit einer atemberaubenden Geschwindigkeit hinter dem Porträt, das die Augen verdreht, als es ihn wiedererkennt.<br/><span></span><br/><span></span>„Keine Chance, Zuckerstück. Ich habe in meiner gesamten Dienstzeit nicht ein einziges Mal einen Slytherin in diesen Turm gelassen und ich werde nicht bei dir anfangen.“ Was aus der förmlichen Anrede geworden ist, würde ihn ja schon interessieren, aber er bekommt keine Gelegenheit zu fragen, denn das Porträt schwingt auf und er steht Seamus Finnigan gegenüber. <br/><span></span><br/><span></span>Von allen Gryffindors ist Seamus nicht gerade sein Favorit, aber er hat eigentlich keinen Favoriten und er ist ja schon froh, dass er kein zweites Mal mit Hermine Granger oder – Gott bewahre – Ginny Weasley reden muss. Oder mit Parvati Patil und ihrem bösen Blick. Seamus öffnet fragend den Mund und er beschließt, es hinter sich zu bringen. Kurz und schmerzlos. In drei Monaten sieht er Seamus Finnigan nie wieder.<br/><span></span><br/><span></span>„Ich würde gerne mit Lavender sprechen. Könntest du ihr das vielleicht sagen?“ Seamus sieht ihn einen Augenblick so an, als hätte er ihn darum gebeten Einhornblut zu trinken oder sich vom Astronomieturm zu werfen. Dann bekommt er seine Mimik in den Griff.<br/><span></span><br/><span></span>„Lavender ist heute unpässlich.“ Das riecht nach einer Verschwörung. Anscheinend will sie ihm wirklich aus dem Weg gehen. Das enttäuscht ihn mehr als er vermutet hätte. Und es tut auch irgendwie ein bisschen weh. Offenbar sieht man ihm an, dass ihn diese Antwort nicht besonders glücklich macht und Seamus seufzt. Nicht ganz mitleidig, sondern irgendwie … aufrichtig gequält. „Sie ist krank, ok? Soll sie dir morgen selber erklären. Da geht es ihr bestimmt besser … ich sag ihr Bescheid, dass du mit ihr reden willst.“<br/><span></span><br/><span></span>„Musst du nicht.“ Auf einmal kann er Seamus Gesichtsausdruck deuten und er fragt sich, warum ihm das nicht vorher klar geworden ist. Sein Gegenüber kann ihn nicht ausstehen. Und wurde anscheinend von einer höheren Macht dazu gezwungen trotz dieses Umstands mit ihm zu kommunizieren. Er will gar nicht wissen, was die Gryffindors alle miteinander gerade von ihm halten. Und was Lavender ihnen erzählt hat. <br/><span></span><br/><span></span>Seamus geht einfach an ihm vorbei und dann sieht er sich wieder mit der Porträtdame konfrontiert, die seine unentschlossene Unzufriedenheit belächelt. </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/28672947/chapters/70291875">Chapter 4</a>: Ein ganz normaler Samstag
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="user_center" align="center">
+  <p>
+    <strong>4 – Ein ganz normaler Samstag</strong>
+  </p>
+</div><p><br/><span></span><br/><span></span>Am nächsten Morgen ist er sich nicht ganz sicher, ob er über Nacht zu einer Lachnummer in Gryffindor geworden ist – oder ob die Welt noch dieselbe ist wie vor seinem nicht besonders fruchtbaren Gespräch mit Seamus Finnigan. Seamus <em><span class="user_italic">Gottverdammtnocheins</span></em> Finnigan. Er ist innerhalb von 48 Stunden tief gesunken und unsanft gelandet und er ist fast wieder soweit sich Lavender und diesen eigentümlichen, bezaubernden Abend aus dem Kopf zu schlagen, als sie plötzlich wie aus dem Boden gewachsen vor ihm steht.<br/><span></span><br/><span></span>Ohne jede Erwartungen ist er an diesem Tag zum Frühstück gegangen und als er die Große Halle verlässt, ist er nicht einmal besonders enttäuscht, weil er am Gryffindortisch nur Ginny Weasley entdecken konnte, die mit Neville Longbottom ihren Pudding geteilt hat. Umso perplexer ist er, als er bei seinem Rückweg in den Gemeinschaftsraum fast in Lavender hineinläuft, die zu allem Überfluss auch noch alleine ist. Er wirft ihr einen fragenden Blick zu. Mehr duldet sein Stolz heute nicht. Sie lächelt. „Ich habe wirklich Hunger, aber in einer halben Stunde muss ich einen Brief in die Eulerei bringen.“ <br/><span></span><br/><span></span>Nachdem sie ihm diese brauchbare Information hat zukommen lassen, während diese blau leuchtenden Glühbirnen, die sich bei anderen Leuten einfach Augen nennen, ihn quasi versteinert haben, geht sie einfach zu ihrem Platz. Direkt neben Neville Longbottom.<br/><span></span><br/><span></span>Da er dreißig Minuten Zeit für eine Sinnkrise hat, wählt er einen ausnehmend umständlichen Weg zur Eulerei und hat dort trotzdem eine Viertelstunde, in der er einfach nur atmen und dem schäbigen Krächzen der Schuleulen zuhören kann. Er redet sich ein, dass er nicht nervös ist, aber das ist natürlich eine Lüge. Er ist zutiefst verunsichert. Und nur dafür hasst er sie ein bisschen. Und sich selbst mehr als nur ein bisschen. <br/><span></span><br/><span></span>Als die Tür zur Eulerei sich mit einem tiefen Quietschen öffnet, ist er ein Nervenbündel und hofft, dass man ihm das nicht ansehen kann. Er weiß gar nicht warum er so ist. Normalerweise macht er sich nicht so viel aus anderen Menschen und lässt sich auch nicht so einfach aus dem Konzept bringen. Normalerweise macht er aus einem Kuss keinen Staatsakt, auch wenn die Anzahl der Mädchen, die er geküsst hat, eher überschaubar ist. Und er gibt Fremden nicht so viel Macht über seine Gedanken.<br/><span></span><br/><span></span>„Also so ganz unaufdringlich bist du ja nicht.“ Sie lacht ihn an und lehnt sich ein paar Schritte von ihm entfernt gegen das Geländer des Turms. <br/><span></span><br/><span></span>„Bist du wieder gesund?“<br/><span></span><br/><span></span>„Ich war nicht wirklich krank.“ Sie kaut auf ihrer Unterlippe herum und scheint nicht ganz sicher zu sein, wie sie weitermachen soll. „Es geht dich eigentlich nichts an, weißt du? Aber irgendwie doch. Ich bin etwas verwirrt. Du hast mich verwirrt.“<br/><span></span><br/><span></span>„Dieses Kompliment kann ich wirklich nur zurückgeben.“ Er würde sogar darauf pochen, dass er derjenige war, der verwirrter war, aber eine Diskussion darüber schien ihm nicht lohnenswert.<br/><span></span><br/><span></span>„Ich war vorgestern nicht ganz ich selbst. Eigentlich bin ich nicht so … direkt.“ In wohlwollenden Umschreibungen war sie aber auch eine ganz Große. Da konnte man ja fast neidisch werden.<br/><span></span><br/><span></span>„Also kann ich gehen? Weil du „eigentlich“ nicht mal mit mir reden würdest?“ Ihre Reaktion überrascht ihn. Sie streckt ihre Hand nach ihm aus, so als wollte sie ihn zurückhalten, aber er hat sich gar nicht vom Fleck gerührt und deshalb zieht sie ihren Arm wieder zurück. Erst jetzt bemerkt er, dass sie – und er will ihr einfach mal unterstellen, dass sie das nicht mit Absicht getan hat – wie ein Mädchen angezogen ist, das ihn unter anderen Umständen ausschließlich irritieren würde. Sie trägt einen rosafarbenen Pullover, auf dem winzige Häschen abgedruckt sind. Und eine Weste, die absurd flauschig aussieht. Und zu der Weste passende Kniestrümpfe. Eigentlich sieht sie insgesamt aus wie ein Häschenmensch. Jemand, der sich als Häschen verkleiden oder ein Häschen auf dem Arm haben könnte. <br/><span></span><br/><span></span>„Ich kann mich schlecht ausdrücken.“ Das ist eine beinharte Lüge – und ihn interessiert die Wahrheit fast weniger als der Grund für diese Lüge. Er sagt nichts, sondern sieht sie nur aufmerksam an. Lavender Brown. Ein ungeahntes Mysterium. Wenn er geahnt hätte, dass hinter den blonden Locken und dem netten Gesicht so viel „eigentlich“ steckt, dann hätte er Abstand gehalten. Oder sich mit noch mehr Enthusiasmus auf ein Mädchen gestürzt, das offensichtlich nicht so wirklich was von ihm wollte. „Ich komm mir ein bisschen billig vor, weil ich mich von dir einfach so hab einsammeln und präsentieren lassen. Und ich komm mir ein bisschen peinlich vor, weil ich dich mit meinem Wolf-Wahn angesteckt habe. Und ich komm mir ein bisschen pervers vor, weil ich dich gebissen habe. Und billig, peinlich und pervers ist nicht gerade eine goldene Dreifaltigkeit für mein Selbstwertgefühl.“ <br/><span></span><br/><span></span>„Nachvollziehbar.“ Sie verschränkt die Arme vor der Brust und  weicht einem Kauz aus, der versucht an einer Locke zu knabbern. „Nur zur Information, wenn ich dich billig, peinlich oder pervers fände, würde ich dir nicht nachrennen. Dann wäre ich ganz unaufdringlich wie du so schön gesagt hast.“ <br/><span></span><br/><span></span>„Du bist nicht so leicht abzuschrecken.“<br/><span></span><br/><span></span>„Willst du mich denn abschrecken?“<br/><span></span><br/><span></span>„Nein. Aber ich sollte es. Du bist keine besonders gute Entscheidung. Und mein Vorsatz für dieses Jahr war, nicht immer nur das zu tun, was ich will, sondern das, was ich sollte.“ Ohne Vorwarnung kichert sie. „Oh mein Gott, das klang vielleicht hochgestochen. Und echt albern. Ich weiß nicht wie Hermine solche Kalendersprüche überzeugend rüberbringen kann. Ich kann’s jedenfalls nicht.“ Sie seufzt und sieht ihn mit großen Augen an. „Ich raste bei Vollmond immer ein bisschen aus. Ich hatte eine sehr prägende Begegnung mit Fenrir Greyback … mir wachsen keine Krallen oder Fell oder so was Abgefahrenes, aber ich bin auch nicht ganz ich selbst. Ich kann nicht schlafen. Und ich tue Dinge, die ich sonst nie tun würde. Zu meiner eigenen Sicherheit gehe ich an dem Tag vor und nach Vollmond deshalb eigentlich nicht zum Unterricht oder sonst wohin, aber vorgestern … ich hatte einen guten Grund in dem Korridor zu sein, wo wir uns getroffen haben. Und ich dachte, du bist vielleicht sogar dieser Grund.“<br/><span></span><br/><span></span>„Und gerade dachte ich mal eine Sekunde, ich könnte dir irgendwie folgen.“ Das ist alles viel zu seltsam und viel zu verdreht und er kann die Komik der Situation einfach nicht mehr übersehen. Ungläubig schüttelt er den Kopf und sie sieht fasziniert aus. Wahrscheinlich weil er immer noch nicht abgehauen ist.<br/><span></span><br/><span></span>„Ich bekomme manchmal Briefe. Seit letztem Herbst schon. Meistens ein paar Tage vor Vollmond. Ziemlich merkwürdiges Zeug. Und der Verfasser unterschreibt immer nur mit „Der Wolf“ … und zuletzt hat er geschrieben, wir würden uns bald treffen. Um genau zu sein stand da so was wie „das Schicksal wird uns einander in die Arme treiben“  und dann … du kamst eben aus dem Nichts. Und es hätte ja sein können.“ <br/><span></span><br/><span></span>Ok. Auszeit. Er will gar nicht wissen, ob er gerade so aussieht als wäre er vom Hogwarts-Express überrollt worden oder ob er sich nur so fühlt. „Ich hoffe, ich sehe nicht wie ein Typ aus, der Dinge schreibt wie „das Schicksal wird uns einander in die Arme treiben“ … so will ich wirklich nicht auf andere Menschen wirken.“<br/><span></span><br/><span></span>„Tust du nicht! Aber ich war so … ach keine Ahnung, es war irgendwie leicht zu sagen, dass ich mitgehe, weil ich herausfinden will, ob die Briefe von dir kommen. Das war leichter als zuzugeben, dass ich mich einfach nur extrem geschmeichelt gefühlt habe, auch wenn es wahrscheinlich absolut beliebig war, dass du gerade mich gefragt hast?“ <br/><span></span><br/><span></span>„Geschmeichelt?“<br/><span></span><br/><span></span>„Ja, geschmeichelt. Ich fühle mich auch ehrlich gesagt immer noch geschmeichelt, weil du dich von mir hierherbestellen lässt. Und wegen mir mit Seamus redest. Das ist … wow, keine Ahnung was das ist, aber mein 13-jähriges Ich, das eine Woche lang sehr verknallt in dich war, ist quasi ohnmächtig.“<br/><span></span><br/><span></span>„Du bist sehr ehrlich.“ Das ist eine Erkenntnis, die er einfach mal laut aussprechen muss. Hat sie eben noch behauptet, sie wäre nicht so direkt? Blaise kennt niemanden, der direkter ist.<br/><span></span><br/><span></span>„Fürchterlich, oder?“  Im Gegenteil. Es ist womöglich überfordernd, aber irgendwie auch beruhigend. Es ist genau die Art von Unterhaltung auf die er insgeheim gehofft hat. <br/><span></span><br/><span></span>„Und was hat es mit diesem Heulen auf sich? Das haben wir uns ja wohl nicht eingebildet.“ Wir. Jesus Christus. Er hat „wir“ gesagt. Was ist er eigentlich für ein Mensch? Wer tut so was? Wer geht so dermaßen nachlässig mit Pronomen um, wenn Nachlässigkeit kein bisschen angesagt ist? Sie sieht ebenfalls überrascht aus, aber sie geht nicht auf die Feinheiten seiner Ausdrucksweise ein.<br/><span></span><br/><span></span>„Ich weiß es nicht. Vielleicht war das der Typ, der sich selbst als Wolf bezeichnet … deshalb bin ich womöglich etwas ausgerastet. Dafür wollte ich mich eigentlich entschuldigen. Ich hab mich unmöglich benommen. Du wolltest wahrscheinlich einfach nur einen Puffer für Professor Slughorn haben oder Daphne Greengrass eins auswischen – und ich hab da eine richtige Szene draus gemacht. Das war nicht der Plan.“ Ihre Mundwinkel gehen ein bisschen nach oben. „Ich wollte dich auch nicht küssen, aber leid tut mir das nicht. Außer es stimmt, was Hermine mir einreden will und du bist wirklich mit Daphne zusammen. Dann würde ich mich gerne bis zu den UTZ-Prüfungen begraben.“ <br/><span></span><br/><span></span>Und noch ein Mensch mehr, der einen ungerechtfertigten Respekt vor Daphne hat. „Ich würde mich freuen, wenn du dich nicht begräbst.“ Er macht so langsamen einen Schritt in ihre Richtung, dass sie genug Zeit hat, um das Weite zu suchen. Aber sie betrachtet ihn ganz ruhig. Wartend. Auf eine klare Aussage. „Daphne und ich haben irgendwie schon versucht zusammen zu sein, aber letzten Endes hat es an Begeisterung gefehlt. Auf beiden Seiten. Besitzansprüche sind keine vorhanden.“ Er bleibt stehen und sie ist nicht mal mehr eine Armeslänge von ihm entfernt. „Und bei dir?“<br/><span></span><br/><span></span>„Bei mir?“<br/><span></span><br/><span></span>„Na hast du einen Freund oder so?“ Sich noch weiter in so eine potenziell emotionale Katastrophe mit einem Mädchen, das einen Freund hatte, zu verstricken, das kam gar nicht in Frage. Er hatte zwar das irrationale und furchtbar dringende Bedürfnis sie wieder zu küssen, aber er würde den Teufel tun und diesem Bedürfnis nachgeben, falls sie bei einem anderen Weasleybruder oder bei sonst wem gelandet war. <br/><span></span><br/><span></span>Sie schüttelt den Kopf. „Hast du Interesse an dem Posten?“ Das ist eine Gegenfrage, die ihn einigermaßen entsetzt. Sie setzt echt alles daran ihn zu schockieren. Und er muss an seinen Fluchtreflexen arbeiten. Er … der Freund von Lavender Brown? Das ist ein ziemlich wahnsinniger Gedanke. Ein kaum denkbarer Gedanke. Er bringt nicht mal ein Kopfschütteln oder sonst eine Regung zustande und sie lächelt, als hätte sie einen Preis gewonnen. „Dachte ich mir. Ich will nicht wie eine Spielverderberin klingen, aber ich mag es nicht, wenn ich nicht weiß, was etwas werden soll, wenn es fertig ist. Und ich kann dich nicht nochmal küssen und mir dann wieder einreden, dass es bedeutungslos ist. So was pack ich nicht und wenn du an so etwas interessiert bist, dann musst du leider gehen. Wenn du mich jetzt küsst, dann gibst du mir die offizielle Erlaubnis mich in dich zu verknallen und meine Probleme zu deinen Problemen zu machen.“<br/><span></span><br/><span></span>„Okay.“ Er sollte wirklich darüber nachdenken, was er da tut. Er sollte wirklich nicht so tun, als wäre es gar kein Ding, Lavender Brown „zu erlauben“ sich in ihn zu verknallen. Er sollte nicht so tun als wäre es nicht gefährlich sich selbst zu erlauben, sich in Lavender Brown zu verknallen. Aber wenn er nicht in sie verknallt wäre, dann wäre er ja nicht hier. So gut kennt er sich. Wenn er nicht irgendwie doch ein bisschen bereit für diesen Irrsinn wäre, dann wäre er nicht hier, sondern in seinem Bett mit fest geschlossenen Augen. <br/><span></span><br/><span></span>Er ist nicht darauf vorbereitet Lavender zu küssen, aber er tut es trotzdem. Ganz vorsichtig. Nur für den Fall, dass sie eigentlich doch diejenige ist, die wegrennen will. Oder falls es doch noch mehr zu sagen gibt. Die Weste ist wirklich so absurd flauschig wie er sich das vorgestellt hat, aber weil eigentlich alles absurd daran ist, Lavender Brown zu küssen, sie an sich zu ziehen und sie zwischen sich und dem Geländer der Eulerei festzuhalten, sollte er vielleicht nicht so einen Aufstand machen. <br/><span></span><br/><span></span>Er ist darauf vorbereitet, von ihr gebissen zu werden und deshalb könnte er überraschter sein, als sich ihre Zähne in seine Unterlippe bohren und er sein eigenes Blut schmecken kann. Es ist nicht ausschließlich schmerzhaft und komisch, sondern auch eigenartig erregend. Als ihr Mund auf einmal nicht mehr auf seinem liegt, sondern auf seinem Hals, stöhnt er leise und weiß nicht, was er davon halten soll, dass er solche Geräusche von sich gibt. Noch viel weniger kann er allerdings mit der Erregung, die allmählich auch den Weg in seine untere Körperhälfte findet, anfangen. <br/><span></span><br/><span></span>Es ist alles höchst bedenklich, wenn nicht wenigstens fragwürdig, aber als er versucht Abstand zu gewinnen, merkt er, dass ihre Arme sich um seinen Hals geschlungen haben. Sie drückt sich weiter an ihn und er fragt sich, was das werden soll. Er hat ein bisschen Angst davor, was es werden könnte, denn bei aller Liebe, bei aller Nicht-Liebe und bei all der Verschwendung von Zeit, Schlaf und Kraft: so weit sind Daphne und er einfach nicht gegangen.<br/><span></span><br/><span></span>Weil er vor ungefähr fünf Minuten gerade mal beschlossen hat, irgendwie damit zu leben, dass er eine Schwäche für Lavender hat, bedeutet das nicht, dass er gleich maßlos übertreiben muss. Er versucht ein zweites Mal sich von ihr zu lösen und diesmal gibt er sich wirklich Mühe. Der Anblick ihrer geröteten Wangen und glänzenden Augen erschüttert ihn. Wahrscheinlich sieht er auch so aus als hätte er Fieber. Immerhin fühlt er sich so.<br/><span></span><br/><span></span>„Entschuldige, ich … das ist alles etwas viel.“ Er hatte noch nie eine Erektion, die von dem Mädchen bemerkt wurde, das sie ausgelöst hat. Und irgendwie kommt ihm eine Entschuldigung nicht so unangebracht vor. Aber auch nicht so richtig angebracht. <br/><span></span><br/><span></span>„Ist schon gut.“ Das ist nicht so unangenehm wie es sein könnte und überhaupt fühlt er sich immer noch außerordentlich wohl. Auch wenn er nicht ganz sicher ist wie er in diesem Zustand einen klaren Gedanken fassen soll. Seine Finger haben sich in ihren Haaren verloren und es ist irgendwie faszinierend dieses blonde Durcheinander anfassen zu können, ohne dabei ein extrem seltsamer Mitschüler zu sein. Na gut, vielleicht ist er ein extrem seltsamer Mitschüler, aber sie scheint es nicht zu stören. Sie scheint auch nicht unbedingt etwas sagen zu wollen, obwohl er Lavender Brown für schwer geschwätzig gehalten hat und sie seinen Erwartungen zumindest eben noch gerecht worden ist. „Ich kann nicht fassen, dass das gerade wirklich passiert … ich dachte, spätestens wenn ich von den Briefen anfange, bist du weg. Ich meine, das ist doch ein bisschen drüber.“<br/><span></span><br/><span></span>„Hast du es dir ausgedacht?“ Der Gedanke ist neu, aber was weiß er den schon, was in dem Kopf dieses Mädchens vor sich geht. Er weiß nur, dass wegen ihr in seinem Kopf nicht mehr allzu viel los ist und er die denkbar simpelsten und naheliegendsten Dinge ausspricht. Vehement schüttelt sie den Kopf.<br/><span></span><br/><span></span>„Ich bin keine gute Lügnerin. Und ich mag keine Geheimnisse. Trotzdem kann ich mir nicht vorstellen, was ich sagen soll, wenn Hermine mich nach dir fragt. Oder Seamus. Oder Dean. Oder Parvati … nicht dass du mich für jemanden hältst, der gar nichts für sich behalten kann, aber wenn alle miteinander reden … man kann das nicht aufhalten.“<br/><span></span><br/><span></span>„Ich kenn das.“ Pansy wird fragen. Und wenn er gerade nicht alles falsch versteht, dann ist er gerade irgendwie mit Lavender Brown zusammengekommen – und Lavender Brown mag keine Geheimnisse. Sein Kopf dreht sich und er tröstet sich damit, dass er sie küssen kann und nicht weggeschubst wird. Zu seiner eigenen Sicherheit macht er schließlich einen ganzen Schritt zurück und betrachtet sie eingehend.<br/><span></span><br/><span></span>Es ist doch irgendwie ganz erstaunlich wie wenig vertraut es ist sie anzusehen. Obwohl er sich nicht gerne als oberflächlich bezeichnet, denn mal ehrlich, wer tut das schon, muss er zugeben, dass er eine ganze Menge mehr über Daphnes „Oberfläche“ weiß als über Lavenders. Er hat die Form von Daphnes Schultern vor Augen, ihren Hals, ihre Wangenknochen, die kleine Mulde an ihrem Kinn, die Größe ihrer Brüste, die Form ihrer Hüften und den kleinen Spalt zwischen ihren Oberschenkeln. Er weiß sogar wie ihre Zehen aussehen, weil sie im Sommer gerne barfuß läuft. Einen Blick zu Lavenders Brüsten zu riskieren fühlt sich verboten an, auch wenn sie sich eben so an ihn gedrückt hat, dass er mit Bestimmtheit sagen kann, dass unter ihrer Weste nicht wenig versteckt ist. Außer die Weste ist sehr gut gepolstert. Überhaupt ist sie besser „gepolstert“ als Daphne. Zwischen ihren Beinen ist kein Spalt und auch wenn er miserabel in solchen Schätzungen ist, würde er doch tippen, dass sie zwanzig Pfund schwerer ist als Daphne. Vielleicht sogar dreißig. Aber irgendwie passt bei ihr alles zusammen, es passt sogar zu dieser unmöglichen Weste und wahrscheinlich sind das die Hormone, die durch seinen Körper rauschen, aber er findet sie gerade verdammt schön.  Dabei kann es ja wirklich nicht die Möglichkeit sein, dass er noch nie einen genaueren Blick auf Lavender Brown geworfen und sich irgendwas dabei gedacht hat. Aber er kann sich an keine nennenswerten Eindrücke erinnern. <br/><span></span><br/><span></span>„Warum guckst du mich so an?“<br/><span></span><br/><span></span>„Du bist hübsch.“<br/><span></span><br/><span></span>„Gewöhnst du dir diesen überraschten Unterton noch ab?“ Hübsch. Irgendwie ein blödes Wort. Genau wie niedlich. Warum kann er nicht einfach sagen, dass sie schön ist? Ach ja, weil das hoffnungslos übertrieben wäre. Nicht nur ein bisschen zu viel des Guten. Und weil dieser absolut langweilig angedachte Samstag inmitten des schwarzen Osterlochs sowieso schon eskaliert ist.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/28672947/chapters/70291944">Chapter 5</a>: Osternacht
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="user_center" align="center">
+  <p>
+    <strong>5 - Osternacht</strong>
+  </p>
+</div><p><br/><span></span><br/><span></span>Es fühlt sich so an als würde er in ein tiefes, magnetisches Nichts fallen und Schuhe aus Metall tragen. Weil man nicht den ganzen Tag in der Eulerei knutschen und sich den Tod holen kann, kommt irgendwann von irgendwem der vernünftige Vorschlag, an einen wärmeren Ort zu gehen. Lavenders Nähe ist kaum auszuhalten und er ist immer noch ein bisschen fertig mit der Welt, als sie irgendwie wieder unweit des Gryffindorturms stehen und es keine gesetzte Sache ist, was als Nächstes passiert. <br/><span></span><br/><span></span>„Was wolltest du heute eigentlich machen?“ Es gibt ja Menschen, die sind bekennende Hasser von relativierenden Vokabeln wie „eigentlich“, „rein theoretisch“, „hypothetisch“ und „eventuell“, aber da sie mit dem großen Eigentlich angefangen hat, scheut er sich nicht dieselbe, vage Sprache zu sprechen. <br/><span></span><br/><span></span>„Hausaufgaben.“<br/><span></span><br/><span></span>„Du hast Hausaufgaben?“ Das erschüttert ihn aufrichtig. Ostern ist eine Zeit ohne Hausaufgaben. Und nur die ganz Harten bereiten sich ernsthaft auf die Prüfungen vor. So viel akademischen Ehrgeiz hat er ihr auch mal wieder nicht zugetraut, aber ihm schwant, dass er in den nächsten Minuten, Stunden, Tagen, Wochen, Monaten, Jahren, Gott bewahre, eine ganze Menge über sie erfahren wird, auf das er so nicht gewettet hätte. (Und dank ihm geht es bestimmt einigen Menschen bei ihr nicht anders. Er will die Person kennenlernen, die immer gewusst hat, dass Lavender Brown und er es mal für eine gute Idee halten werden, einander eine Chance zu geben.)<br/><span></span><br/><span></span>„Ja, leider.“ Sie schneidet eine kleine Grimasse. „Professor McGonagall hat es toleriert, dass ich an meinen „instabilen“ Tagen nicht zum Unterricht muss – und dafür an Ostern etwas aufhole. Anscheinend ist diese Pseudo-Freiheit für Fälle wie mich gedacht, die irgendwas innerhalb des Schuljahres versäumt haben. Gibt ja auch Leute, die eine Woche im Krankenflügel liegen und gar nix machen können.“ Darüber hat er aufgrund fehlender Begegnungen mit Madame Pomfrey noch nie nachgedacht. Sein Immunsystem ist ziemlich gut und er kann sich an genau zwei Erkältungen während seiner Zeit in Hogwarts erinnern. Dafür hat es ihn beinahe jedes Jahr in den Sommerferien erwischt, aber das schiebt er auf die toxische Gegenwart seiner Mutter.<br/><span></span><br/><span></span>„Schade.“ Obwohl er Fenrir Greyback noch nicht mal gewunken hat, fühlt er sich ebenfalls nicht ganz wie er selbst. Der gute, alte Blaise ohne Knistern im Kopf, der sich nichts aus Mädchen mit felligen Westen gemacht hat, setzt heute anscheinend aus. Sie sieht belustigt aus, als er sie wieder an sich zieht. „Aber ich will ja nicht direkt ein schlechter Einfluss sein. Deshalb verabschiede ich mich jetzt und stelle mich unangenehmen Fragen. Wenn du heute Abend nur noch einen Finger von mir findest, bestatte meine Überreste bitte feierlich.“<br/><span></span><br/><span></span>„Natürlich. Ich werde eine Kerze anzünden.“ Er redet Unsinn, aber sie genauso und deshalb ist das sinnentleerte Gebrabbel gar nicht so schlimm. Einfach aus Prinzip, einfach weil es möglich ist und weil er ehrlich gesagt nicht widerstehen kann, küsst er sie noch einmal. Irgendwie wirkt sie sogar noch belustigt, als sie ihn zurückküsst und es ist gar nicht so leicht zu seinem Wort zu stehen und sich wirklich zu verabschieden.<br/><span></span><br/><span></span>Außerdem ist er immer noch herrlich aufgedreht und mittlerweile hat er gar keine richtige Kontrolle mehr über seine Hände. Natürlich hatte Hermine Granger Recht und seine Mutter hat keine astreine Erziehungsarbeit geleistet, aber er weiß sehr wohl, dass es sich nicht schickt, ein Mädchen, das man kaum kennt und mit dem man vielleicht gerade eine knappe Stunde zusammen ist, zu begrabschen. Aber es ist extrem schwer sie nicht anzufassen und sie tut auch nichts, um sich ihm zu entziehen. Also ist es nicht allein seine Schuld, dass seine Hände über ihren Rockbund gerutscht sind. <br/><span></span><br/><span></span>Er hat keine Ahnung, was sie von ihm denkt, aber er will eigentlich nicht so wirken, als wäre er hochgradig verzweifelt und sehr körperbetont, denn das ist er eigentlich überhaupt nicht. So wie er sich heute aufführt, führt er sich in der Regel nicht auf. Aber in ihrer Gegenwart gibt es keine Regeln mehr, wie es scheint. Aber seinen Stolz, sein Gehirn, das gibt es unter dem überwältigenden Lavender-Brown-Koma, das seinen Verstand befallen hat, irgendwie doch noch und deswegen nimmt er sich ein bisschen zurück und schafft es schließlich sogar sie ganz normal anzugucken. Nur zu gucken. Und zuzuhören.<br/><span></span><br/><span></span>„Ich weiß nicht, warum ich das jetzt sage, aber ich habe noch nie mit jemandem geschlafen. Und ich werde Zeit brauchen.“ Er starrt sie an und zum ersten Mal sieht er wie Lavender verlegen wird. So richtig verlegen. Mit niedergeschlagenen Augen und roten Flecken am Hals. „Ich nehme an, das freut dich jetzt nicht so besonders.“<br/><span></span><br/><span></span>„Ich … also ich … das … es ist okay.“ Offensichtlich bringt er seinen Text nicht überzeugend rüber, denn sie beginnt an ihrem Ärmel zu zupfen. Eine universelle Geste für Nervosität. <br/><span></span><br/><span></span>„Ich hab versucht mit Michael zu schlafen, also mit Michael Corner. Irgendwie wollte ich es hinter mir haben und ich dachte früher immer, mit 18 ist man so richtig erwachsen und ich wollte keine Jungfrau mehr sein, aber ich war total unsicher und es ging alles so schnell und dann bin ich abgehauen. Deshalb hab ich eben auch gesagt, ich kann so was nicht. Ich bin … langsam.“ So sah das bei ihr und Ronald Weasley nie aus, aber in der sechsten Klasse war es auch eine extrem große Sache, wenn man die Zunge von irgendjemandem in seinem Mund gehabt hat und Blaise hat sowieso irgendwie den Moment verpasst,  in dem das für die meisten seiner Mitschüler ganz normal geworden ist und schon mehr passieren muss, damit man irgendwie platt sein darf. „Sorry. Ich rede zu viel. Immer.“<br/><span></span><br/><span></span>„Nein, das ist … irgendwie beruhigend.“ Sie runzelt die Stirn und er merkt schon, dass das hier ein ganz neuer Abschnitt in seinem Leben wird. Eine Phase, in der er Dinge laut ausspricht, die er lieber nur ganz leise denkt. „Für mich wäre es auch das erste Mal … und ich bin gar nicht so scharf darauf, dass das so schnell wie möglich passiert. Ich würde gerne erstmal mit der Gesamtsituation klarkommen. Wir müssen also nicht gleich … du brauchst Zeit, ich habe Zeit. Das meine ich.“<br/><span></span><br/><span></span>„Das klingt gut.“<br/><span></span><br/><span></span>„Find ich auch.“ Sie lächelt zu ihm hoch und die nervösen Flecken verflüchtigen sich allmählich wieder. „Dann sehen wir uns … morgen? Oder später?“<br/><span></span><br/><span></span>„Ich glaube, ich werde mich den Rest des Tages in regelmäßigen Abständen kneifen, um ganz sicher zu gehen, dass das kein abgefahrener Traum ist.“  <br/><span></span><br/><span></span>„Gleichfalls.“ Und dann ist irgendwie alles gesagt, aber das macht es nicht weniger seltsam dieses Beieinander zu beenden. Zu sehen wie Lavender hinter dem spöttischen Gemälde verschwindet ist nicht real. Wie sie sich umdreht, eine nicht vorhandene Haarsträhne hinter ihr Ohr schiebt und ihn ein bisschen verlegen anlächelt, ist nicht real. Sein Herz, das so fest gegen seine Rippen schlägt, sodass man es eigentlich von außen sehen müsste, ist nicht real. Das Lächeln in seinem Gesicht, das sich fast schmerzhaft anfühlt, ist nicht real.<br/><span></span><br/><span></span>Aber Pansy, die sich ohne Rücksicht auf Verluste, auf ihn stürzt sowie er einen Fuß in den Gemeinschaftsraum gesetzt hat, Pansy ist sehr real. Sie hat neben Millicent und Theo gesessen, die eine unbeholfene Partie Umbridge-explodiert spielen und es dabei vermeiden einander in die Augen zu sehen. Selbst aus der Ferne ist erkennbar, dass es eine peinliche Angelegenheit ist und ihm ist klar, dass Pansy ihn gerade zu einer dankbaren Ablenkung ernennt. Sie ist so halb aufgestanden, winkt ihn zu sich und er nimmt ergeben neben ihr auf einem der eingesessenen Sofas Platz.<br/><span></span><br/><span></span>„Und? Gibt es Neuigkeiten?“ <br/><span></span><br/><span></span>„Kann man so sagen.“ Theo hält inne und unterbricht seinen Spielzug, sodass die Karten-Umbridge anfängt zu zetern und durch einen Fauststoß von Millicent zerlegt werden muss. Super. So viel ungewollte Aufmerksamkeit ist herzerwärmend. Blaise räuspert sich und das ist alles so förmlich. Als müsste er verkünden, dass er schwul ist oder eine schlimme Krankheit hat. „Ich habe eine Freundin – und es wäre toll, wenn ihr das nicht komischer als nötig machen würdet.“ So nötig ist es nämlich nicht. So komisch ist es doch wohl nicht. Millicent zieht die Knie an und legt den Kopf zur Seite. Theos Knie zuckt und er räuspert sich ebenfalls. <br/><span></span><br/><span></span>„Darf man vielleicht den Namen erfahren oder müssen wir raten?“ Raten. Ein Spiel daraus machen. Das wäre vielleicht gar nicht so verkehrt, es würde die Stimmung sicher lockern. Aber es würde die ganze Sache auch in die Länge ziehen und er ist nicht undankbar dafür, dass Daphne gerade mal nicht da ist. Kaum hat er an Daphne gedacht und den Teufel an die Wand gemalt, springt der Teufel auch schon von der Wand ins Zimmer und bleibt gleich neben ihm stehen. Das Lächeln auf ihrem Gesicht gefällt ihm gar nicht. Dass ihre Finger durch seine Haare gehen, schockiert ihn und er merkt selber wie er sich versteift. Theo grinst. „Also ist Daphne schon mal raus.“<br/><span></span><br/><span></span>„Was ist mit mir?“ Daphne hat gute Laune. Und sie macht ein reumütiges Gesicht. Er weiß, was jetzt kommt. Eine Einladung für die nächste Runde auf dem Zuckerbrot-und-Terror-Karussell von Daphne Alisha Greengrass. Er schiebt ihre Hand, die neben seinem Ohr auf seiner Schulter liegen geblieben ist, vorsichtig bei Seite. Ungefähr so wie man ein hochexplosives Gebräu in eine Phiole abfüllt. „Was ist? Warum guckt ihr mich alle so an? Na egal, Blaise, wir müssen unbedingt miteinander reden.“ Sie legt demonstrativ eine Hand auf ihr Herz. „Aber ich kann es auch einfach hier sagen. Ich habe mich wirklich nicht nett verhalten und das tut mir aufrichtig leid. Ich wollte dich wirklich nicht so aufregen, dass du dich mit Lavender Brown abgeben musst. Ich war in den letzten Tagen wirklich nicht ich selbst.“ Immer diese Mädchen, die im falschen Augenblick nicht sie selbst sind. Oder im richtigsten aller Augenblicke? Die Stimmung ist reichlich seltsam und es tut ihm irgendwie fast leid, dass Daphne so selbstbewusst auftritt. Er hätte sie lieber ohne Publikum vor den Kopf gestoßen … andererseits ist es so vielleicht sicherer. Und er muss nicht mit einem Mord im Affekt rechnen.<br/><span></span><br/><span></span>„Eigentlich gebe ich mich ganz gerne mit Lavender ab.“ Sie macht ein verdutztes Gesicht und Millicent entfährt ein leises „Oha“, während Theo sehr reserviert wirkt. Um nicht zu sagen gelangweilt. Das ist ja auch ein vorhersehbares Theater, das er hier zum Besten gibt. „Ich bin sogar irgendwie froh, dass du nicht so aufopferungsvoll bist und einen Abend mit Slughorn nicht einem Zwiegespräch mit Gott vorgezogen hast.“<br/><span></span><br/><span></span>„Du bist ein Trottel.“ Ihr nüchterner Tonfall ist unheimlich und das düstere Leuchten in ihren Augen würde bei einem emotional weniger gefestigtem Menschen als ihm sicher zu einem Panikschub führen. Ein bisschen Gänsehaut hat er, aber es geht. So fühlt sich wahrscheinlich eine Maus, die aus Versehen den Ausgang zum Labyrinth entdeckt. „Du denkst wohl, du bist schlau und mit einem Mädchen wie Lavender würdest du es dir furchtbar leicht machen.“ Sie beugt sich zu ihm vor und ihr Gesicht ist so nahe an seinem, dass ihre Haare ihn wie ein Vorhang von den Anderen abschirmen. „Du hast keine Ahnung, was sie ist. Ich weiß gar nicht, warum so etwas überhaupt noch zur hier zur Schule gehen darf. Muggelstämmige sind eine Sache, aber Monster?“<br/><span></span><br/><span></span>„Monster? Du meinst, das Schicksal hat mich in die Arme eines Monsters getrieben?“ Sie reißt die Augen überrascht auf und stolpert sichtlich über ihre eigene Formulierung. Er kann sich ein Lächeln nicht verkneifen, als sie von ihm zurückweicht. „Wir werden ja sehen, ob es mich umbringt.“ <br/><span></span><br/><span></span>„Wir? Also ich für meinen Teil werde die Augen fest verschließen.“ <br/><span></span><br/><span></span>„Versprochen?“ Fasziniert beobachtet er wie sie ihm ein reizendes, gereiztes Lächeln schenkt und verschwindet. Das fühlte sich etwas zu einfach an und den Blicken seiner Mitschüler zufolge, haben sie auch mit einer etwas dramatischeren Szene gerechnet. Theo räuspert sich erneut und Millicent baut die Umbridge-Karten wieder auf. Pansy tätschelt sein Knie.<br/><span></span><br/><span></span>Und vielleicht, ganz vielleicht, wurde Daphne Greengrass gerade entthront. Weil Wölfe im Tageslicht eigentlich nur große Hunde sind und keine tödlichen Bestien. <br/><span></span><br/><span></span><br/><span></span></p><p></p><div class="user_center" align="center">
+  <p>
+    <strong>Ende</strong>
+    <br/>
+    <span></span>
+  </p>
+</div><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/31052894">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 2 of the <a href="/series/2291588">Blavender-Liebe [Blaise Zabini x Lavender Brown]</a> series</span><span class="divider"> </span><a class="next" href="/works/31298129">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="shqPsofOaLQp11SnTt1LH-Z83DB93B6ZikKY_HtG4UyIarNb5gjaTIzUcA5OMj6y100X2mAz6rVpzFiX8veQ1w"/>
+          <input value="28672947" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_28672947">
+  <form class="new_comment" id="comment_for_28672947" action="/works/28672947/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="WLmsaDF8FaubBcfihJvtG9a-VcjN25vvG61AhnQAPa1iyZCBULqnUz4G40uEdJi254-eItA0b8P4I4Dt_bFMNg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_28672947">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_28672947" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_28672947=new LiveValidation('comment_name_for_28672947',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_28672947.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_28672947">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_28672947" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_28672947=new LiveValidation('comment_email_for_28672947',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_28672947.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_28672947" class="landmark">Comment</label>
+        <textarea id="comment_content_for_28672947" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_28672947" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_28672947_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_28672947">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_28672947=new LiveValidation('comment_content_for_28672947',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_28672947.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_28672947.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_28672947" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/28672947/hit_count.json")})</script>
+
+
+  </body>
+</html>

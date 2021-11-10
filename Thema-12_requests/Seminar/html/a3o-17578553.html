@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":109,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Verzweiflungstat - Phoenixwriteres - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="2sirOjpcxQdq3AtdIk29cEUZXBibIDEVPgpOlXNVgjYNMUjk1BPXlCHC9E-nCegz3RJIia-nX1QEFGBRNhs3Zg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="OzAv4Hqy9PZr9Z-tFe6WWduZEUb7pGXc8ryDVCbVjjPsycw-lP3mZSDrYL-QqsMaQ5IF188jC53Ioq2QY5s7Yw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: buffy gen teen AND &quot;no archive warnings apply&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/17578553/chapters/41431430">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=17578553">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/17578553/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/17578553/Verzweiflungstat.azw3?updated_at=1584708907">AZW3</a></li>
+          <li><a href="/downloads/17578553/Verzweiflungstat.epub?updated_at=1584708907">EPUB</a></li>
+          <li><a href="/downloads/17578553/Verzweiflungstat.mobi?updated_at=1584708907">MOBI</a></li>
+          <li><a href="/downloads/17578553/Verzweiflungstat.pdf?updated_at=1584708907">PDF</a></li>
+          <li><a href="/downloads/17578553/Verzweiflungstat.html?updated_at=1584708907">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Harry%20Potter/works">Hermione Granger/Harry Potter</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-01-28</dd><dt class="status">Completed:</dt><dd class="status">2020-03-20</dd><dt class="words">Words:</dt><dd class="words">19250</dd><dt class="chapters">Chapters:</dt><dd class="chapters">15/15</dd><dt class="comments">Comments:</dt><dd class="comments">5</dd><dt class="kudos">Kudos:</dt><dd class="kudos">2</dd><dt class="hits">Hits:</dt><dd class="hits">218</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Verzweiflungstat
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Phoenixwriteres/pseuds/Phoenixwriteres">Phoenixwriteres</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Überleben ist unwahrscheinlich. Sie sind alleine, bar jeder Hoffnung und wollen sich nur den einen Wunsch erfüllen, doch was ist wenn sie doch überleben, es doch ein Happy End gibt? AU Epilog und Teile DHs werden ignoriert bzw sind abgewandelt.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/41431430">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <b></b>
+</p>
+<p></p><center>
+  <p>
+    <b>Prolog</b>
+  </p>
+</center><p>Die dunkelste Stunde war vergangen, vorbei und die ersten Minuten eines neuen, befreiten Lebens standen bevor. Lord Voldemort, der die magische Welt, so lange ins Verderben gezogen hatte, war nicht mehr und Harry Potter war der Grund für diesen Wandel. Er allein hatte dieser Welt eine neue Chance gegeben in dem er alles was er hatte bereitwillig aufgeopfert hatte.</p><p>Während andere diesen Kampf mit ihrem Leben bezahlten, hatte er überraschender Weise mit einigen wenigen Verletzungen überlebt. Trotzdem bestand Poppy Pomfrey darauf den jungen Helden auf der Krankenstation von Hogwarts zu behandeln, sehr zum Missfallen von Ginny Weasley.</p><p>Sie hatte noch vor wenigen Stunden geglaubt ihre große Liebe tot auf dem Boden liegen zu sehen und wollte nun nichts mehr als ihn endlich nach einem Jahr, des Wartens, in die Arme schließen aber die Oberin wollte von all dem nichts wissen.</p><p>„Madame Pomfrey, ich bitte sie, lassen sie mich zu Harry, ich muss ihn sehen.", versuchte Ginny es zum wiederholtem Male.</p><p>Die rothaarige junge Frau stand gleich neben ihrem Bruder Ron vor den Türen des Krankenflügels und taten ihr bestes um Madam Pomfrey umzustimmen. Doch die resolute Frau wollte davon nichts hören, sie ließ keinen zu Harry Potter, der Junge brauchte nun einmal Ruhe.</p><p>„Ich verstehe, ja, dass sie zu ihm wollen aber Mister Potter braucht dringend ruhe.", beharrte sie darauf.</p><p>„Nein, sie verstehen offensichtlich nicht. Ich habe ihn für tot gehalten, mein Bruder ist gestorben. Ich will doch nur sehen, dass es ihm gut geht." Ginnys Stimme wurde immer schriller.</p><p>Jetzt da alles vorbei war, verstand sie nicht wieso sie gegen solche Hindernisse immer noch anrennen sollte. Es sollte doch endlich alles besser werden.</p><p>„Es tut mir leid, aber nur Angehörige können im Moment zu ihm.", erwiderte Madame Pomfrey nun kühl.</p><p>„Bitte? Harry hat keine Verwandte, zumindest keine, die ihn besuchen würden.", hielt Ginny ihr entgegen.</p><p>Da es offensichtlich zwecklos war, drehte Ginny sich von der älteren Frau ab, gerade rechtzeitig um im Korridor jene Frau zu sehen, die vielleicht noch im Stande war um Madame Pomfrey zur Vernunft zu bringen.</p><p>Hermione Granger kam langsam auf die zwei Weasleys zu, nickte ihnen entgegen und war kurz davor das Wort zu ergreifen, doch Madam Pomfrey kam ihr zuvor.</p><p>„Sie können natürlich zu ihm, Miss Granger oder sollte ich – „</p><p>„Danke, ich geh schon.", unterbrach Hermione sie barsch und ging in den Krankenflügel.</p><p>Erst als die große Türe zu fiel, kam wieder Leben in Ginny.</p><p>„Wieso darf Hermione denn zu ihm, sie ist genauso wenig mit ihm Verwandt?", war es aber Rons entrüsteter Ausruf bevor sie überhaupt die Gelegenheit hatte sich zu beschweren.</p><p>„Ich versichere ihnen, alles hat seine Richtigkeit, dass Mrs Potter zu Mr Potter darf. Nun, wenn sie mich entschuldigen, ich habe noch weitere Patienten."</p><p>Nur vereinzelnde Schritte waren zu hören. Ginny als auch Ron waren in eine Art Schockstarre verfallen, es konnte schlicht nicht wahr sein. Madame Pomfrey hatte sich sicherlich geirrt oder es musste sich um einen Streich handeln.</p><p>„Sagte sie gerade, Mrs Potter?", fragte Ginny mit leiser Stimme nach.</p><p>Ron konnte nur nicken, er war viel mehr damit beschäftigt, zu überlegen wann Hermione zu Mrs Potter geworden ist, er ahnte die Antwort bereits.</p><p>„Aber wann, wie und wieso? Du warst doch bei ihnen die ganze Zeit, du hättest doch gewusst wenn sie ein Paar geworden wären, oder Ron?", verzweifelt sah sie ihren Bruder an in der Hoffnung von ihm beruhigt zu werden, doch sein Blick verriet, dass es durchaus möglich war.</p><p>„Ich war nicht die ganze Zeit dabei, " Ginny schloss entsetzt die Augen, „Wir waren bestimmt drei Monate getrennt nachdem Streit, nachdem ich sie wütend verließ."</p><p>„Du hast sie einfach zurückgelassen?", flüsterte sie anklagend.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/46930621">Chapter 2</a>: Dem Abgrund so nah
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>"Da Vergänglichkeit für uns gleichbedeutend ist mit Schmerz, klammern wir uns verzweifelt an die Dinge, obwohl sie sich ständig ändern. Wir haben Angst loszulassen, wir haben Angst, wirklich zu leben, weil leben lernen loslassen lernen bedeutet. Es liegt eine tragische Komik in unserem Festhalten: Es ist nicht nur vergeblich, sondern es beschert uns genau den Schmerz, den wir um jeden Preis vermeiden wollten. " -Sogyal Rinpoche, Das tibetische Buch vom Leben und vom Sterben</i>
+</p>
+<p>
+  <i>
+    <br/>
+  </i>
+</p><p>
+  <b></b>
+</p>
+<p></p><center>
+  <p>
+    <b> Dem Abgrund so nah</b>
+  </p>
+</center><p>Die Tage waren kürzer geworden, oft wurde es schon am Nachmittag dunkel. Der immerwährende graue Himmel verhinderte zunehmend, dass es überhaupt wirklich Tag wurde. Er wusste nicht mehr wann er das letzte Mal die strahlende Sonne überhaupt gesehen hatte. Die Stimmung war auf einem Tiefpunkt angelangt.</p><p>Hier im herbstlichen Wald, etliche Bäume hatten längst das Laub verloren und der Winter stand kurz vor der Tür, wirkte alles noch wesentlich hoffnungsloser auf ihn. Harry wusste nicht mehr weiter, sie waren nichtklüger als noch vor drei Wochen als Ron, sein bester Freund, sie in Stich gelassen hatte.</p><p>Weder er noch Hermione hatten eine Ahnung wo sie noch nach den Horcruxe suchen sollten, sie hatten viel zu wenige Informationen mit denen sie arbeiten konnten. Es wurde Tag für Tag schwieriger sich zu verstecken, sie wurden überall gesucht und irgendwann, davon war Harry überzeugt würde sie das Glück verlassen.</p><p>Zu allem Überfluss kam bei all der ständigen Angst, dieses verfluchte Medaillon hinzu, es machte beide nur noch emotionaler. Harry wusste nicht was für einen Effekt es auf Hermione hatte, bei ihm jedoch schürte es Wut aber vor allem Hoffnungslosigkeit.</p><p>Sie waren nur zwei Teenager, die gegen eine ganze Armee ausgebildeter Zauberer antraten mit kaum Informationen, immer weniger zu Essen, es war, wenn er drüber nach dachte tatsächlich aussichtlos. Sie hatten nur noch sich. Harry schluckte schwer, in was für einen Albtraum hatte er Hermione da nur hinein gezogen?</p><p>Entschlossen nahm er das Medaillon, was um seinen Hals hing, ab und ging ins geräumige Zelt. Eigentlich war Hermione mit der Wache dran, doch saß sie völlig niedergeschlagen über ihre Bücher gebeugt und suchte nach irgendetwas was ihnen helfen könnte. Sie war noch weniger als er in der Verfassung wache zu halten oder gar das Medaillon zu tragen, was ihr nur noch mehr zusetzen würde.</p><p>„Hermione.", krätzte er, sie hatten kaum miteinander geredet in den letzten Stunden.</p><p>Müde drehte sie sich zu ihm um, auch in diesem schlechten Licht, kam er nicht umhin zu bemerken wie leblos ihre Augen wirkten, wie dünn sie eigentlich geworden war. Er sah wahrscheinlich nicht besser aus und doch störte es ihn wesentlich mehr sie so zu erleben, wie ein langsam sterbendes Feuer, vielleicht das letzte in seinem Leben.</p><p>Wortlos stand sie von der Holzbank auf und ging zu ihm um das Slytherinmedaillon entgegen zu nehmen, doch er gab es ihr nicht. Fragend sah sie zu ihm auf.</p><p>„Wir müssen reden.", erklärte er leise.</p><p>Seit Tagen hatte es in ihm gearbeitet, immer wieder hatte er den Mut verloren, weil er wusste, dass Hermione nichts davon wissen wollte aber, dies wurde ihm mehr und mehr bewusst, er musste es aussprechen sonst würden ihn die Ängste auffressen.</p><p>„Was ist –„</p><p>„Ich will davon nichts hören!", zischte sie und wandte sich energisch ab, setzte sich wieder auf die Bank.</p><p>Natürlich, sie ahnte bereits worauf Harry hinaus wollte, er hätte es wissen müssen.</p><p>„Wenn wir es nicht schaffen?", sprach er unbeirrt weiter er setzte sich gleich neben ihr hin.</p><p>„Wir werden alle Horcruxe finden und zerstören, dann Du-weißt-schon-wen für immer besiegen.", entgegnete sie ihm halbherzig.</p><p>„Glaubst du das wirklich, Hermione?" Er suchte den Blickkontakt, doch wich sie ihm aus.</p><p>„Ich muss daran glauben, was bleibt mir sonst übrig?" Als sie das sagte, hatte sie Tränen in den Augen.</p><p>Wieder atmete er schwer durch, seine Befürchtungen so auszusprechen, machte sie nur noch wirklicher und, so glaubte er, würde auch bei Hermione die Hoffnung auf ein glückliches Ende schmälern. Aber er kannte sie, Hermione war nicht dumm, sie musste doch ähnliche Gedanken haben wie er selbst auch nur hielt sie ihre Fassade aufrecht.</p><p>„Ich glaube nicht daran, ehrlich gesagt, denke, ich dass wir verdammt viel Glück haben wenn wir dieses Jahr noch überleben." Völlig nüchtern sprach er es endlich aus.</p><p>„Oh, Harry, bitte!" Mit Entsetzen hielt sie eine zitternde Hand vor ihren Mund.</p><p>„Wir werden weder Ginny noch Ron lebend wieder sehen." Seine Stimme brach ein wenig und wie zum Trost legte Hermione ihre Hand auf seine.</p><p>Einerseits war es schrecklich so zu reden doch andererseits, erleichterte es ihn so unglaublich. Sie wussten beide zu gut, dass ihre Chancen denkbar schlecht standen.</p><p>„Wir haben nur noch uns und wer weiß wie lange noch." Die Vorstellung sie auch noch zu verlieren, am Ende alleine zu sterben, ging ihm wesentlich näher als erwartet.</p><p>Ihm standen selbst die Tränen in den Augen, er, nein, sie waren viel zu jung dafür.</p><p>Hermione legte ihre Arme um ihn, lehnte sich gegen ihn.</p><p>„Wir werden es schaffen, ich tue alles dafür.", leise aber bestimmt sagte sie dies.</p><p>„Ich bewundere dich dafür, aber selbst die cleverste Hexe kann das unvermeidliche nicht verhindern.", beharrte Harry.</p><p>„Aber wir können doch nicht einfach aufgeben." Seine Hoffnungslosigkeit färbte nun auch auf sie ab, sie hatte keine Gegenargumente mehr.</p><p>„Nein, aber wir können das Beste aus der Zeit machen die uns bleibt. Ich wollte immer eine eigene Familie haben.", fast träumerisch sagte er dies.</p><p>Harry spürte wie Hermione ihn mitfühlend ansah, sie wusste um seinen Herzenswunsch umso mehr tat es weh, vorzustellen, dass er dies vielleicht nie haben würde. Aber es war auch ihr eigener Traum, irgendwann wieder eine Familie zu haben.</p><p>Von einer ungewohnten Ruhelosigkeit beseelt drehte sich Harry zu ihr hin, die Lösung war so naheliegend.</p><p>„Heirate mich, Hermione!", hörte sie ihn plötzlich sagen und zuu ihrem entsetzen schien es sein völliger ernst zu sein.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/54729460">Chapter 3</a>: Unerwarteter Nebeneffekt
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Die ersten beiden Kapitel wurden von mir noch einmal hochgeladen, da einige kleinere Fehler drin waren. Es sind nun bestimmt fünf Jahre her, dass ich DH das letzte Mal gelesen habe und dann auch nur im Englischen, daher wusste ich nicht wie nun Horcruxe geschrieben werden. Ich hab es in der englischen Schreibweise belassen, genauso wie ich Hermione wie im Orginal schreibe, hat etwas damit zu tun, dass ich nichts davon halte Eigennamen so zu verändern. Hinzu kommt Horcruxe, dürfte aus dem lateinischen kommen und da wird es wohl auch da mit c geschrieben.</p><p>Zur Geschichte selbst: Fay Dunbar ist eines der unbekannten bzw. weniger bekannten Mädchen aus dem Mädchenschlafsaal von Hermiones Jahrgang.</p><p>Generell werde ich mich eher an die Filme anlehnen, da sie mir schlicht eher im Gedächnis sind als die letzten beiden Bücher und die Beziehung besser dem Verlauf meiner kleinen Geschichte passen.</p><p>~ PhoenixWriteres</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>„Das worauf es im Leben am meisten ankommt, können wir nicht voraussehen. Die schönste Freude erlebt man immer da, wo man sie am wenigsten erwartet hat." - Antoine de Saint-Exupéry, Wind, Sand und Sterne</i>
+</p><p>
+  <b></b>
+</p>
+<p></p><center>
+  <p>Unerwarteter Nebeneffekt</p>
+</center>Erwartungsvoll sah Harry Hermione an, doch sie schwieg, hoffte wohl, dass sie ihn falsch verstanden hatte. Die Wendung von völliger Hoffnungslosigkeit hin zu einem Antrag war ihr zu viel, sie begriff ihn nicht.<p>„Harry –„ , begann sie in ihrer bekannten, strengen Tonlage.</p><p>„Nein, hör mir zu, ich möchte nichts bereuen, nicht das Gefühl haben etwas verpasst zu haben. Wir wissen doch beide, wie unwahrscheinlich es ist, dass wir am Ende erfolgreich sind.", unterbrach er sie.</p><p>Die Idee etwas zu tun um sich einen alten Traum zu erfüllen, schien ihm bei aller Niedergeschlagenheit aufzubauen, ihm auftrieb zu verleihen.</p><p>„Aber du liebst mich nicht.", konterte sie mit einem traurigen Lächeln.</p><p>Als Harry daraufhin nichts erwiderte, er war viel mehr damit beschäftigt seine Überlegungen zu ordnen, war das Thema für Hermione erledigt und sie macht sich daran nach einem Hinweis in dem Buch, was ihr Dumbledore überlassen hatte, zu suchen.</p><p>Minuten lang sah Harry ihr dabei schweigend zu. Sie hatte recht, er war nicht in sie verliebt aber das war kein Hinderungsgrund für ihn, um nicht dennoch diesen Schritt zu gehen. Die vergangenen Jahre, aber vor allem die letzten Wochen, hatten mehr als deutlich gezeigt, dass sie unlängst unzertrennlich waren, sie dem Verständnis einer Familie denkbar am nächsten kamen, wenn auch nicht offiziell. Harry wollte doch nur, dass sie in den letzten Wochen ihres Lebens, auch tatsächlich eine Familie waren. Dazu brauchten sie nicht verliebt in einander zu sein, es klang entsetzlich logisch für ihn.</p><p>„Ich bin vielleicht nicht in dich verliebt, aber ich liebe dich, Hermione. Du bist einer der wichtigsten Menschen in meinem Leben.", ließ er nicht locker.</p><p>„Du schmeichelst mir.", flüsterte sie, sah ihn aber demonstrativ nicht an.</p><p>„Ich würde dich nicht fragen, wenn es mir nicht ernst wäre, Hermione. Erlaub uns etwas Schönes, was uns die Angst nimmt wenn wir scheitern.", bat er sie eindringlich, während er ihr Gesicht zu sich drehte.</p><p>„Du würdest es später bereuen und überhaupt, was ist wenn doch alles gut wird, dann bist du mit der falschen Frau verheiratet?" Sie sah ihn nun endlich wieder an.</p><p>Harry lächelte, er wusste, dass er so gut wie ihre Zustimmung hatte.</p><p>„Wieso sollte ich es jemals bereuen, meine beste Freundin geheiratet zu haben?"</p><p>Wie konnte sie ihm diesen einen Wunsch abschlagen, wenn er sie mit so einer Entschlossenheit ansah und sie, genauso wie er, kaum Hoffnung hatte? Ron war weit weg und wenn sie ehrlich war, würde sie ihn wahrscheinlich nie wieder sehen. Sie hatte nur noch Harry, sonst niemanden in der ganzen Welt. Der Gedanke mit einem geliebten Menschen auf dem letzten Weg so verbunden zu sein, war tröstend.</p><p>„Also gut.", sie traute ihren eigenen Worten nicht, sie ahnte, dass sie im Begriff war sich wieder einmal mehr in ein Abenteuer mit ihm zu stürzen.</p><p>„Ist das ein, ja?", fragte er vorsichtig nach, als ob sie ihre Entscheidung noch einmal rückgängig machen würde.</p><p>„Ja.", antwortete sie kräftiger.</p><p>Stürmisch küsste er ihre Wange und umarmte sie.</p><p>„Du weißt nicht was mir das bedeutet.", hörte sie ihn sagen und wunderte sich gleichzeitig worauf sie sich da eigentlich eingelassen hatte.</p><p>Das stoische Leben, das sie in den vergangenen Wochen gelebt hatten, war mit den Geschehnissen an diesem Abend zu Ende. Paradoxer Weise gab die ungewöhnliche Entscheidung ihnen etwas zu tun, etwas anderes womit sie ihren Tag füllen konnten, obgleich die Suche nach spärlichen Hinweisen um ihre Hauptaufgabe zu erfüllen nicht vergessen war.</p><p>Hermione hatte zwar gehofft aber auch befürchtet, dass am nächsten Tag, Harry es sich anders überlegen würde aber er plante im Gegenteil die baldige Vermählung. Es schien wie ein Anker für ihn zu sein, an dem er sich klammerte. Desto mehr sie darüber redeten, tatsächlich die Durchführbarkeit zu planen, umso mehr wurde die anstehende Heirat auch ein Strohhalm für Hermione.</p><p>Nur eine magische Heirat kam überhaupt in Frage, da Harry in der Mugglewelt noch nicht volljährig war. Durch den Krieg gab es erstaunlich viele Zauberer und Hexen, die die Erlaubnis des Ministeriums hatten eine Vereinigung durchzuführen. Allerdings würden Todesesser oder Fänger im Nu auftauchen sobald irgendwer Harry oder Hermione erkennen würde. Sie mussten sich tarnen, den Zauberer oder die Hexe in Frage im Nachhinein verzaubern oder während der Zeremonie und doch bei all dem sollte die Hochzeit keiner weiteren Mission ähneln.</p><p>Zwei Tage später hatten sie alle Eventualitäten durch gespielt und auch einen älteren Zauberer ausfindig gemacht, der in diesen Zeiten es sich zur Aufgabe gemacht hatte Paare zu verheiraten und wohl sich ein kleines Nebenverdienst damit versprach. In einer stillen, dunklen Gasse von Plymouth in Devon standen versteckt Harry und Hermione.</p><p>„Hast du alles?", fragte Harry zum wiederholten Male nach.</p><p>Hermione wühlte noch einige Sekunden in ihrer Tasche, als ob sie was suchen würde, schloss sie dann aber und nickte Harry zu. Er warf den Tarnumhang über sich, sie zog gleichzeitig die Kapuze ihres dunklen Mantels tiefer ins Gesicht. Sie hatten sich gegen den Vielsafttrank entschieden, obwohl das ganze Unterfangen dadurch nur schwieriger wurde. Sie mussten nicht weit gehen und Hermione würde in dieser Gegend alleine wenig auffallen, das zumindest hofften sie.</p><p>Aus der Ferne wehte der salzige Geschmack des Meeres, getragen durch den leichten Nieselregen, zu ihnen herüber. Hin und wieder frischte der Wind etwas auf, drückte den dünnen Stoff des Tarnumhangs nur noch fester an Harry. Wenige Meter vor ihm ging Hermione, das widrige Wetter ließ ihre Erscheinung nur noch düsterer wirken.</p><p>An einem älteren grauen Haus wurde sie langsamer und ging zur schäbigen Eingangstür, klopfte eindringlich mit den Knöcheln gegen. Es war wohl eine Eigenart geworden, dass Mitglieder der magischen Welt sich in ungastlichen Gegenden Unterschlupf suchten. Aus dem inneren konnte man näher kommende Schritte hören, dann schließlich das entriegeln der Tür.</p><p>Kleine, misstrauische Augen kamen zum Vorschein, dann je mehr Licht ins dunkle Innere fiel, ein älteres Gesicht was von einem bräunlichen zerzausten Bart umrahmt war.</p><p>„Wer ist da?", fragte er lallend.</p><p>Erst jetzt sah Harry, wie der ältere Mann einen Zauberstab im Türschlitz auf Hermione gerichtet hielt.</p><p>„Sind sie William Brennan?", wollte Hermione wissen, sie hatte irgendetwas mit ihrer Stimme gemacht, sie klang anders, dunkler.</p><p>„Was wollen sie?", die aufkeimende Angst war unüberhörbar in Mr. Brennans Stimme, selbst der Zauberstab zitterte nun leicht.</p><p>„Ich bin an eine Verheiratung interessiert, " während sie sprach, drehte sie sich leicht zur Seite, so dass Harry sich neben ihr hinstellen konnte, „Fay Dunbar, mein Name."</p><p>„Gut, kommen sie rein.", entgegnete er und öffnete die Tür zögerlich weiter, trat erst einen Schritt heraus und sah von links nach rechts.</p><p>Erst als er sich sicher war, dass Hermione alleine war, machte er den Weg frei und Harry ging wie verabredet zuerst ins Innere während sie sich ebenfalls misstrauisch umsah, ihm dann aber folgte.</p><p>Hermione zog die Kapuze von ihrem Kopf, knöpfte ihren Mantel auf, all dies lenkte Mr. Brennan so ab, dass er nicht bemerkte wie eine weitere Person im Flur stand und mit einer kleinen Zauberstabbewegung ihn verhexte.</p><p>„Hervorragend.", sprach Harry und sah wie unfokussiert Mr. Brennans Blick durch ihn hindurch ging.</p><p>„Sie sind?", jegliche Argwohn war aus seiner Stimme verschwunden.</p><p>„Longbottom, Neville Longbottom.", antwortete Harry und sah zu Hermione rüber.</p><p>Sie trug das rote Kleid, was sie auch auf Bill und Fleurs Hochzeit an hatte auch er hatte seine Robe von damals an.</p><p>„Wollen wir?" Harry hielt ihr seine Hand entgegen, die sie ergriff.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/54729547">Chapter 4</a>: Grenzüberschreitung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Ich weiß nicht ob ihr es kennt, aber es gibt Ideen, die einen selten alleine lassen, vielleicht liegts gerade daran, dass es mir recht leicht fällt diese Geschichte niederzuschreiben. Oder, ganz gewagt, die Aussicht, dass es definitiv ein anderes Ende haben wird als meine orginale Geschichte, an der ich eigentlich arbeiten sollte.</p><p>Zum Kapitel, vieles was hier erwähnt wird, passiert hat eine gewisse Wichtigkeit für den späteren Verlauf. Vor allem später in diesem Kapitel, dürfte das Lied: The Blower's Daughter - Damien Rice recht gut passen.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>"Wird die Grenze des Leidens überschritten, gerät die unerschütterlichste Tugend auf Abwege. "</i>
+</p><p>
+  <i>- Victor Hugo, Die Elenden</i>
+</p><p>
+  <i>„Es gibt keine Grenzen. Nicht für den Gedanken, nicht für die Gefühle. Die Angst setzt die Grenzen."</i>
+</p><p>
+  <i>- Ingmar Bergman</i>
+</p><p>
+  <b></b>
+</p><center>
+  <p>Grenzüberschreitung</p>
+</center>Der karge Raum, mit nur einem einfachen Tisch und wenigen Sitzgelegenheiten, war alles andere als passend für den gegebenen Anlass. Von den drei Personen, die um den Tisch standen, wirkten zwei völlig fehl am Platz. Sie waren viel zu feierlich angezogen.<p>Sowohl Harry als auch Hermione waren überaus nervös. Er spürte wie ihre Hand leicht zitterte, ermutigend drückte er sie, woraufhin Hermione ihn mit einem zaghaften Lächeln ansah.</p><p>Noch vor Monaten hatten sie gemeinsam die erste magischen Hochzeit miterlebt nun standen sie selbst kurz davor sich gegenseitig das Versprechen zu geben. Es kam ihm vor wie aus einem anderen Leben.</p><p>Vor ihnen stand auf der anderen Seite des Tischs, William Brennan, der weder Harry noch Hermione bewusst wahr nahm und dennoch seinen Text sprach. Zwar mit einer leichten Firewhiskeyfahne aber doch mit der nötigen Erhabenheit in der Stimme, die man diesem Mann nicht zu getraut hätte.</p><p>„Darum Frage ich dich, Harry James Potter, willst du, Hermione Jane –„,</p><p>Überrascht über den Zweitnamen, sah Harry zu ihr und sprach Stumm den Namen nach, sie zuckte nur leicht die Schultern.</p><p>„Zu deiner angetrauten Frau nehmen?", fuhr der Zauberer unbeirrt fort.</p><p>„Ja, ich will.", antwortete Harry während er Hermione ansah, zu seiner Verwunderung, klang seine eigene Stimme fest und zitterte überhaupt nicht.</p><p>„So frag ich auch dich, willst du, Hermione Jane Granger, Harry James Potter zu deinen Mann nehmen?"</p><p>Anders als bei Harry, kam ihre Antwort zögerlicher, emotionaler.</p><p>„Ja, ich will.", hörte er sie leise sagen.</p><p>Zu seiner Erleichterung in der ihm bekannten Stimme, aber er kam nicht umhin zu bemerken wie ihre Augen leuchteten und sie sich zum ersten Mal seit langem mit einem wirklichen Lächeln ansahen.</p><p>„Reichen sie mir beide die linke Hand.", bat Mr. Brennan sie nun.</p><p>Er legte Harrys Hand auf die von Hermione, dann nahm er den Zauberstab, sprach: „Coniuncti in aeternum."</p><p>Die Hände wurden in ein gelblich, goldenes Licht getaucht. Als das Licht nachließ konnte man am jeweiligen linken Ringfinger einen feinen goldenen Reif finden. Sie waren nun tatsächlich verheiratet.</p><p>„Sie dürfen sich nun küssen.", unterbrach die leicht amüsierte Stimme von Mr. Brennan die kurzweilige Stille.</p><p>Diesen Teil der Trauung, hatte wohl weder Harry noch Hermione bedacht aber mittlerweile hatte all das eine eigene Dynamik angenommen. Es war fast so als ob sie eine Rolle spielten, eine in der sie für sich selbst, die Schrecken und Ängste kurzweilig ausschlossen. Sie sahen sich skeptisch an.</p><p>Doch dann fast wie selbstverständlich, gab Harry Hermione einen Kuss auf den Mund und stellte verblüfft fest, dass es sich ganz und gar nicht wirr oder gar falsch anfühlte.</p><p>„Darf ich gratulieren, Mr und Mrs Potter?", entzauberte Mr Brennan den flüchtigen, viel zu kurzen Moment.</p><p>„Es tut mir leid, Mr. Brennan, aber es geht nicht anders. Obliviate."</p><p>Der Effekt war direkt spürbar, der Hermiones Zauberspruch auf William Brennan hatte. Er verstummte und nahm weder Harry noch Hermione wahr. Harry nahm die Gelegenheit und apparierte sie beide aus dem Haus, weg in ein entferntes Waldstück.</p><p>Viele, viel zu viele Gedanken gingen Harry durch den Kopf. Der goldene Ring an seinem Finger erinnerte ihn, dass sie nun tatsächlich verheiratet waren, so unwirklich es sich auch im Augenblick anfühlte. Hermione schien sich damit zu beschäftigen, verschiedene Schutzzauber rund um deren Nachtlager aufzusagen. Bei aller Geschäftigkeit, konnte Harry nur schwerlich seinen Blick von Hermione abwenden.</p><p>Es war, als ob sie über Nacht eine andere Person geworden wäre, etwas das auch teilweise zutraf. Sie war nun Hermione Potter und Harry kam nicht umhin so etwas wie Stolz, Freude zu verspüren so abwegig es auch klang.</p><p>Als alles fertig war, ging Hermione ohne ein weiteres Wort zu verlieren ins Zelt. Es gab ihm die Gelegenheit zu überlegen wie es nun weiter gehen sollte. Zwar konnten sie nicht einmal annähernd eine Feier haben, wie es bei Hochzeiten üblich war, doch wollte Harry, dass der Tag anders endete als andere zuvor.</p><p>Beim Betreten des Zelts bemerkte er als erstes wie das Radio im Hintergrund lief, dann im schwachen Schein der Laterne, dass Hermione in einem alten Sessel saß, Löcher in die Luft starrte. Zuerst hatte sie sein Eintreten nicht registriert, dann aber wohl wie sein Blick auf sie fixiert war.</p><p>Zögerlich, ja, schüchtern, er kannte sie so gar nicht, sah sie zu ihm auf und für einen Moment glaubte er, dass er einen Anflug von einem Lächeln ausmachen konnte. Vor ihr angelangt, hielt er ihr seine linke Hand entgegen, darauf wartend dass sie ihre in seine legen möge. Fragend sah sie ihn an, doch ging sie auf seine Aufforderung ein.</p><p>Harry Potter war vielleicht einer der besten Sucher, die Hogwarts erleben durfte, für die Zaubererwelt ein Held aber ein unsäglich schlechter Tänzer. Hier und jetzt war es ihm entsetzlich gleichgültig, was zählte war dass er mit seiner Ehefrau tanzte so unbeholfen es auch war, so machte es ihn glücklich. Er konnte sich nicht mehr daran erinnern wann er so das letzte Mal empfunden hatte. Die Welt wirkte nicht mehr ganz so schwarz, hoffnungslos. Harry dachte nicht einmal daran was sie morgen erwarten könnte. Eine Woge von Dankbarkeit überschwemmte ihn und er wusste ihr kein Ventil zu bieten.</p><p>„Meine Frau.", flüsterte er kaum hörbar und doch trafen sich ihre Blicke, hielten inne.</p><p>Unbemerkt, standen sie nun eng bei einander, musterten sich. Er überwand die Distanz und seine Lippen berührten zum zweiten Mal an diesem Tag, die ihren. Kurz ließ er ab nur damit sie es war, die ihn nun auf die leicht zitternden Lippen, diesmal wesentlich inniger, küsste. Wie durch einen Damm brachen die unterdrückten Gefühle hindurch, die Nähe versprach Trost. Seine Arme wanden sich um ihre Hüften, während ihre sich um seinen Nacken legten.</p><p>In wenigen Stunden würden sie nebeneinander im spartanischen Bett wieder erwachen, entscheiden dass es an der Zeit war nach Godric Hollow zu reisen, völlig schleichend zurück in ihre Wirklichkeit tauchen und mit Erstaunen feststellen, dass sie trotz allem überleben würden. Vielleicht, im Nachhinein, waren es eben diese Stunden, die es überhaupt erst möglich machten.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/54729625">Chapter 5</a>: Bittere Konsequenzen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Da ich nicht alles umschreibe, euch nicht mit Kapiteln langweilen will wo in etwa das passiert was man aus den Filmen/Büchern kennt, hier eine kleine Notiz was in der Abfolge nicht passiert ist:</p><p>- Ron kehrt zurück, aber nicht weil er Hermione gehört hat wie sie seinen Namen sagt, sondern wie Harry und Hermione ihn sagen.</p><p>- Der Kuss zwischen Ron und Hermione, findet nicht statt.</p><p>Hmm, dürfte eigentlich alles soweit sein, was ich ignoriere bis auf die Änderungen, die ich schon vorgenommen habe. Ich hoffe das es nun nicht zu verwirrend war. Zum letzten Kapitel, wirklich zufrieden bin ich damit nicht, aber die Details, die fehlen werde ich in späteren Kapitel nachreichen.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>Aus kleinen Missverständnissen gegenüber der Wirklichkeit zimmern wir uns Glaubensvorstellungen und Hoffnungen zurecht und leben von den Brotrinden, die wir Kuchen nennen, wie arme Kinder, die Glücklichsein spielen.</i>
+</p><p>
+  <i>- Fernando Pessoa, Das Buch der Unruhe</i>
+</p><p>
+  <b></b>
+</p><center>
+  <p>Bittere Konsequenzen</p>
+</center>Bleiern schwer lag die Stille zwischen den Geschwistern. Mehrfach versuchte Ginny zu begreifen, was Ron angedeutet hatte, was Madame Pomfrey nur vor wenigen Minuten gesagt hatte, doch so sehr sie es auch versuchte, sie konnte es nicht glauben. Es war unmöglich, es konnte schlicht nicht sein.<p>Entschlossen ging Ginny auf die Tür zum Krankenflügel zu, sie brauchte Gewissheit.</p><p>„Was machst du da, Madame Pomfrey hat uns doch gesagt wir dürfen da nicht rein?", kam Rons Einwand.</p><p>„Siehst du sie hier vielleicht irgendwo?", raunzte sie ihn an und öffnete die Tür entgegen seinem Protest ein kleines Stück.</p><p>„Nein, sie wird wohl unten in der großen Halle sein bei den anderen.", erwiderte er nur schwach.</p><p>Der Angriff auf Hogwarts hatte zu unzähligen Verletzten geführt, dass man sie gleich in der großen Halle versorgte. Die Krankenstation war bis auf Harry verwaist, nachdem bekannt wurde, dass er Voldemort besiegt hatte, war es McGonagall gewesen, die auf eine eindringliche Untersuchung von Harry bestanden hatte. Fern von anderen, damit er zur Ruhe kommen konnte, sie wusste zu gut was ihn in den nächsten Tagen und Wochen erwarten würde.</p><p>Vor 17 Jahren wurde Harry, noch als Baby, zu einem Helden gemacht, kaum auszudenken was jetzt da Voldemort für immer besiegt war auf ihn einbrechen könnte.</p><p>„Kommst du, oder was?" Ohne auf eine Antwort zu warten ging sie weiter.</p><p>Ron hatte die vergangenen Monate zahlreiche Regeln gebrochen und doch war es unbehaglich zu Mute, gegen eine klare Anweisung von Madame Pomfrey zu verstoßen.</p><p>Etliche Betten waren links und rechts von Ginny verwaist, aber dafür hatte sie im Moment kein Auge. Ihre Aufmerksamkeit hatte stattdessen das Paar, was wie selbstverständlich eng umschlungen am anderen Ende der Station stand. Schon von weitem konnte Ginny Hermione ununterbrochen reden hören.</p><p>Immer wieder löste die braunhaarige junge Frau die Umarmung und schien Harry zu begutachten nur um ihn wieder fest an sich zu drücken.</p><p>„Hermione, mir geht es gut, wirklich.", unterbrach Harry sie amüsiert.</p><p>„Ich bin nur so froh, dass du am Leben bist.", hörte Ginny sie entschuldigend sagen.</p><p>„Harry.", mehr kam Ginny nicht über die Lippen.</p><p>Sie war viel zu sehr aufgewühlt ihn endlich zu sehen. Hermione ließ von Harry ab, als sie Ginny und weiter hinten Ron stehen sah.</p><p>Willkürlich wanderte Ginnys Blick von Harrys Gesicht hinab zu seinen Händen, doch waren sie entweder zu dreckig oder von Hermiones rechten Hand verdeckt. Dafür konnte sie es an Hermiones linken Hand glitzern sehen.</p><p>Es war offensichtlich, dass ihr nicht entgangen war wie Ginny und Ron sie beide anstarrten. Es war längst zu spät, dennoch zog sie ihre linke Hand aus dem direkten Blickfeld weg. Hoffte vielleicht, dass sie nicht die richtigen Schlüssen zogen.</p><p>„Ginny.", sagte Harry überrascht, machte aber keine Anstalten ihr näher zu kommen.</p><p>„Also stimmt es?" Es war eine rhetorische Frage, da sie es nicht nur am Ring sehen konnte sondern es an den Gesichtern ablesen konnte.</p><p>Wortlos sahen sich Harry und Hermione an, dann drehte sie sich von ihm ab und Ginny den Rücken zu.</p><p>„Ich versteh es nicht, liebst du sie, Harry?" Erstaunlich gefasst blieb Ginny, nur ihre Augen verrieten was wirklich in ihr vorging.</p><p>In tausend Scherben zerbrach ihr Herz bei dem Gedanken, dass ihr Harry sich in eine andere verliebt hatte, während sie hier in Hogwarts auf ein Wiedersehen gehofft, ja, darum gebetet hatte. Aber dann ausgerechnet in Hermione, jenen Frau, der sie ihr über Jahre all ihre Träume erzählt hatte. Eigentlich, im Nachhinein, hätte sie es befürchten müssen Hermione war mit Harry viel zu vertraut, es ging über normale freundschaftliche Beziehung weit hinaus.</p><p>„Moment, ihr seid wirklich miteinander verheiratet?" meldete sich Ron zu Wort, dem entsetzen wich bald Wut.</p><p>Demonstrativ hob Harry seine linke Hand, obwohl sie dreckig war konnte man einen goldenen Ring schimmern sehn.</p><p>„Ihr habt was miteinander am Laufen, heiratet und sagt mir von alle dem Nichts?" Rons Stimme wurde immer lauter.</p><p>„Ron!", unterbrach Hermione ihn laut.</p><p>„Was? Du hast mit mir monatelang gespielt, kaum bin ich weg, heiratest du meinen besten Freund.", schrie er sie an und kam immer näher.</p><p>„Sie ist nicht in mich verliebt, genauso wenig wie ich in sie.", sagte Harry hitzig.</p><p>„Aber –„ Ginny verstand nun gar nichts mehr.</p><p>„Wir waren verzweifelt – „</p><p>„Dachten nicht, dass wir überleben." Nahezu gleichzeitig versuchten Harry und Hermione es zu erklären.</p><p>Schweigen setzte ein und alle sahen sich reih um an.</p><p>„Oh.", huschte Ron über die Lippen, ihm dämmerte, dass er nicht ganz unschuldig war.</p><p>„Harry, aber gleich Heiraten, ich verstehe dich, euch nicht." Abwechselnd sah Ginny von Harry zu Hermione herüber.</p><p>„Ich wollte nicht sterben ohne jemals eine wirkliche Familie gehabt zu haben und Hermione, " begann Harry und nahm Hermione bei der Hand, "hat mir diesen Wunsch erfüllt."</p><p>Ginny öffnete den Mund um etwas zu sagen, doch Harry ließ sie nicht zu Wort kommen.</p><p>„Und, nein, ich bereue es nicht, niemals."</p><p>„Wir können uns sicherlich wieder scheiden lassen.", sagte Hermione leise.</p><p>Ginny lachte, zu Harrys Verwunderung, fast hysterisch bei diesen Worten während Ron fragend zu Hermione sah, als hätte sie etwas in einer anderen Sprache gesagt.</p><p>„Scheiden?" verstand Ron nicht.</p><p>„Unfassbar.", rief Ginny aus, „Scheidung, wie es bei Mugglen üblich ist, gibt es bei uns nicht. Wenn wir Heiraten, dann für immer. Ich glaub es nicht, dass ihr das nicht wisst. Oder kennt ihr nur einen einzigen Zauberer oder Hexe, in Scheidung lebend?"</p><p>„Aber da gibt es –„</p><p>„Nein, du verstehst es nicht, Hermione. Es gibt kein Zurück –„</p><p>„Doch gibt es.", unterbrach Ron mit einem hoffungsvollen Gesichtsausdruck seine Schwester, "Wenn die Heirat nicht vollzogen wurde."</p><p>Ein kleines Geheimnis, was weder Harry noch Hermione ihnen je erzählen wollten, war kurz davor gelüftet zu werden. Hilflos sah Harry zu Hermione, der die Schamesröte im Gesicht stand. Er konnte sich noch allzu gut daran erinnern, wie sie die Nacht vor Monaten verbracht hatten, wie sie sich berührt hatten.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/54729733">Chapter 6</a>: Ungewollte Selbstlosigkeit
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Nun mir sind einige Ungereimtheiten aufgefallen wie z.b. dass Harry in dieser Geschichte nicht Hermiones Zweitname gewusst hat. In DH wird er bei der Testamenteröffnung von Dumbledore erwähnt, wir könnten also sagen Harry hat damals schlicht nicht darauf geachtet wegen der Umstände. Es ist in der ersten Auflage Jean (so stehts auch in meinem Exemplar) bin mir aber ziemlich sicher, dass es ein Fehler war, da ich mich erinnere wie die Autorin die Verbindung zu Jane Austin gesucht hat.</p><p>Auch dürfte es für den ein oder anderen schwer zu verstehen sein, dass Harry und Hermione darauf pochen platonische Freunde zu sein, aber doch bewusst Grenzen überschreiten. Das dürfte unter Selbsttäuschung durch gehen, vor allem aber der Situation geschuldet. Es ist für mch zumindest unglaubwürdig, dass zwei Menschen, die sich so Nahe stehen über Monate in einer verzweifelten Situation stecken, kein echtes Vorrankommen besteht...und da nichts in dieser Extreme passieren soll, sich nichts in der Freundschaft zu einander ändern soll. In dieser Beziehung waren die Filme wesentlich glaubwürdiger. Von dem was darauf passiert, will ich im Moment noch nicht einmal eingehen...es macht für mich noch viel weniger sinn.</p><p>Zu der Kapitellänge, richtig, sie sind was kurz allerdings find ich als Leser kurze, prägnante Kapitel unterhaltsamer. Das spiegelt sich dann auch im Schreibstil ab, es ist direkt auf den Punkt oder so zumindest ist die Absicht, statt lang drum herum beschreibend. Denke aber, dass einige spätere Kapitel etwas länger ausfallen dürften. Nu denn...etwas mehr Drama, bitte.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>"Hüte dich vor Selbstlosigkeit! Sie basiert auf Selbsttäuschung, der Quelle allen Übels." - Robert A. Heinlein, Time Enough For Love</i>
+</p><p>
+  <b></b>
+</p><center>
+  <p>Ungewollte Selbstlosigkeit</p>
+</center>Bilder, Erinnerungen überschwemmten ihn und wenn er zu Hermione rüber sah, konnte er es erahnen, dass es ihr ähnlich erging. Wie könnte er es vergessen, wie rasant aus zaghaften Küssen, Liebkosungen der Dankbarkeit, zum Trost eine Liebesnacht entstanden war? Erst heute, so viele Monate später, da er sich Ginny und Ron konfrontiert sah, verspürte er einen Anflug von Unbehagen, Scham. Damals hingegen, nachdem sie am nächsten Morgen nackt neben einander aufwachten, war von all dem nichts vorhanden gewesen. Sie hatten unlängst die Grenze überschritten in dem Augenblick als sie bereitwillig geheiratet hatten.<p>Hermione blick wanderte zur Decke, wünschte sich weit fern an einem anderen Ort zu sein. Ginny hingegen glaubte, dass die Problematik nun doch gelöst werden konnte, sie doch noch gemeinsam mit Harry eine Zukunft hatte.</p><p>Bemerkenswerter Weise war es Ron, dem als erstes Auffiel, wie das Paar auf seine Worte reagierte und lachte nur hämisch. Als er das Medaillon zerstört hatte, bei seiner Rückkehr, hatte er noch geglaubt, gehofft, dass es ihm Lügen eingeflößt hatte nun aber wusste er, dass es Wahrheiten waren von denen er nichts wissen wollte.</p><p>„Nun, es ist so – „</p><p>„Hör auf, hört beide auf mit euren Lügen.", rief Ron nun entrüstet dazwischen, bevor Harry ausreden konnte.</p><p>„Hab ich dir so wenig bedeutet?", Ginnys Stimme brach leicht als ihr klar wurde worauf Harry hinaus wollte und zu ihrem Horror sah Hermione sie mitfühlend an, dabei hatte sie ihr doch den Freund gestohlen.</p><p>Mehrmals öffnete Harry den Mund um etwas zu sagen, aber fand nicht die richtigen Worte.</p><p>„Wenn –„</p><p>„Es gibt kein wenn, kein aber wie oft noch?", schrie Ginny.</p><p>„Aber Affären, es gibt so viele Ehen, die nur auf dem Papier existieren.", wandte Hermione ein ohne zu bemerken wie angewidert Ron und Ginny daraufhin das Gesicht verzogen, selbst Harry schien mit einer solchen Idee nicht wirklich einverstanden zu sein.</p><p>„Du willst, dass wir wegen eurer Dummheit in Sünde leben? Die gesamte magische Welt würde uns, mich hassen."</p><p>Hermione setzte sich niedergeschlagen auf einen Stuhl, verschränkte die Arme vor der Brust. Sie hatte völlig verkannt, wie rückständig die magische Welt war und somit in was für ein Unglück sie sich manövriert hatten. Es waren Ginnys Worte, die ihr das eindringlich verdeutlichten. Aufgebracht ging Ginny hin und her, schüttelte hin und wieder ihren Kopf im Unglauben was sich in den letzten Minuten abgespielt hatte.</p><p>„Wieso musstet ihr auch –„</p><p>„Du willst wissen wieso? Weil er sie haben musste, deshalb.", ging Ron dazwischen und zeigte beschuldigend auf Harry.</p><p>„Ron, bitte.", flehte Hermione fasst.</p><p>„Lass ihn, für ihn geht es nur ums Ego. Es ist schon bedauerlich, dass ich gegen alle Erwartungen überlebt habe oder, Ron?", reichte es Harry.</p><p>„Das bringt doch alles nichts, mit haltlosen Beschuldigungen kommen wir nicht weiter.", hörte er Hermione sagen und es brachte ihn zum Schweigen, doch funkelte er weiterhin Ron an.</p><p>Es war schließlich Ginny, die wie von einer Idee beseelt, stehen blieb und zu Hermione starrte.</p><p>„Wieso hab ich nicht schon eher dran gedacht?", fragte sie sich selbst und griff sich an die Stirn.</p><p>Ihr Ausbruch löste Verwirrung aus, keiner wusste worauf sie hinaus wollte.</p><p>„Es ist eine alte Klausel um rein blutige Familien vor einer falschen Heirat zu schützen –„</p><p>„Das ist nicht dein ernst, Ginny!", unterbrach Ron seine Schwester geschockt.</p><p>„Sie haben das Recht von dieser Möglichkeit zu erfahren.", entgegnete sie scharf und brachte ihn zum Schweigen.</p><p>„Also, sollte einer der Eheleute im Blutstatus geringer stehen als der andere dann gab es die Möglichkeit die Ehe zu beenden. Ich bin mir ziemlich sicher, dass diese Klausel nie geändert wurde –„</p><p>„Sie hätte keinerlei Rechte mehr, es ist barbarisch.", brüllte Ron mit hochrotem Kopf.</p><p>„Harry könnte aber Hermione verstoßen und dem ganzen Unsinn ein Ende setzen.", zischte Ginny empört, immerhin gab es eine Lösung und wenn das der Preis war, dann war es für sie hinnehmbar.</p><p>Hoffnungsvoll sah Hermione zu Harry, doch er schüttelte nur den Kopf.</p><p>„Denk nicht einmal daran, Hermione.", warnte er sie, doch hatte sie unlängst Beschlossen, dass sie dem zustimmen würde, ja, ihn darum beten würde.</p><p>„Harry, du könntest –„ Stand sie nun wieder.</p><p>„Nein, das kommt nicht in Frage." Unterbrach er sie wütend.</p><p>„Würdet ihr uns alleine lassen, ich muss mit Hermione alleine reden?", fragte er die Geschwister, doch sie reagierten nicht, blieben stattdessen demonstrativ mit verschränkten Armen ungerührt stehen.</p><p>„Okay, wenn ihr nicht geht, gehen wir.", damit griff er nach Hermiones Hand und marschierte mit unterdrückten Zorn aus dem Krankenflügel.</p><p>„Harry, was hast du vor?" Sie hatte Mühe Schritt zu halten.</p><p>Doch antwortete er ihr nicht, vielmehr war er damit beschäftigt einen Ort zu finden wo er ungestört mit ihr reden konnte. Sie brauchten nicht weit zu gehen, keines der Klassenräume war besetzt, schon die erste Tür brachte sie in einen Raum, der für seine Zwecke ausreichte.</p><p>Harry ließ die Tür hinter sich ins Schloss fallen. Minutenlang starrte er sie nur Wortlos an, während sie nervös auf ihre Lippe biss.</p><p>„Bist du von allen guten Geistern verlassen, wie kannst du das überhaupt nur in Erwägung ziehen?", fragte er sie schließlich leise.</p><p>Die Wut über sie war verflogen, war draußen im Flur zurück geblieben. Angestrengt schloss Hermione ihre Augen und atmete tief durch.</p><p>„Es ist die einzige Möglichkeit, Harry. Nur so hast du eine echte Chance glücklich zu werden und das willst du doch, oder?", sagte sie mit Tränen in den Augen.</p><p>„Ja, aber –„</p><p>„Verstoß mich dann bist du frei für Ginny, bitte, Harry."</p><p>„Hast du nicht gehört was Ron gesagt hat, verstehst du nicht was das bedeutet? Deine gesamte Zukunft wäre zu Nichte, du könntest niemals einen vernünftigen Beruf ausüben.", sprach er eindringlich auf sie ein.</p><p>„Alles besser, als daran schuld zu sein, dass du nicht endlich deine Träume verwirklichen kannst.", flüsterte sie während sich die ersten Tränen ihren Weg über ihre Wangen bahnten.</p><p>„Glaubst du, ich bin es etwa wenn ich weiß, dass du wegen mir ein Leben führen musst, was deinen Fähigkeiten in keinster Weise gerecht wird?"</p><p>Harry stand ihr direkt gegenüber und versuchte ihre Tränen weg zu wischen.</p><p>„Harry.", sie sah ihn eindringlich an, doch war es offensichtlich zwecklos.</p><p>Er schüttelte nur den Kopf und umarmte sie.</p><p>„Wir werden schon eine Lösung finden, eine mit der wir beide leben können.", sagte er mit der Absicht sie zu beruhigen, doch hatte es einen gegenteiligen Effekt.</p><p>„Es gibt keine andere, das hast du doch eben gehört.", vorwurfsvoll sagte sie es und drückte ihn von sich.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615399">Chapter 7</a>: Magie gebannt
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/17578553#chapter_7_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>Solange wir die Wahrheit nicht entdecken, gibt es keinen Ausweg aus unseren Problemen und unserem Leiden. Die Lösung ist die direkte Erfahrung der Wahrheit in der Stille des Geistes, in der Ruhe vollkommener Aufmerksamkeit, in der Offenheit äußerster Empfindsamkeit.</i>
+</p><p>
+  <i>- Krishnamurti, Jiddu Krishnamurti - Freiheit und wahres Glück<br/>
+</i>
+</p><p>
+  <b></b>
+</p>
+<p></p><center>
+  <p> Magie gebannt</p>
+</center>Das merkwürdige am Leben sind die unerwarteten Wendungen, die Zwischenstationen, von einer Phase in die Nächste. Es hätte alles so einfach sein können, so wunderbar Vorausplanend, stattdessen war alles wirr und Harry konnte nicht einmal Hermione Fragen, die sonst immer einen Ratschlag wusste. Sie war Teil des Durcheinanders. Harry verstand nicht, wieso sie von ihm verlangte, dass er sie nach einer uralten Klausel verstoßen sollte. Allein die Idee war ihm zu wider, noch mehr dass sie so bereitwillig auf ihre Rechte als Hexe verzichten wollte.<p>Die Fronten waren verhärtet, er konnte ihr das nicht antun und sie konnte und wollte nicht der Grund für sein Unglück sein. Sie vermied es mit ihm allein zu sein, mit ihm zu reden. Ginny oder Ron waren genauso wenig auf ihn zu sprechen. So trennten sich ihre Wege bald als sie Hogwarts verließen nach den unzähligen Beerdigungen. Während die Weasleys zum Fuchsbau zurückkehrten, nicht ohne dass Mrs Weasley ihm anbot mit ihnen zu gehen und Harry es ihr abschlug, war er nun in Grimmauld Place 12.</p><p>Dieser Ort war genauso wie bei seinem letzten Besuch, vielleicht etwas sauberer, da Kreacher sich merkwürdiger Weise mehr Mühe gab, doch änderte es nichts an seiner Grundstimmung. Harry fühlte sich elend, dabei war erst einige Stunden hier, doch graute es ihn was die nächsten Tage bringen würden. Er würde mit Hermione nochmal reden müssen, sie waren schließlich verheiratet und auf lange Sicht mussten sie sich mit dieser Tatsache arrangieren.</p><p>Die Küche war der einzige gastliche Raum in dem großen Gebäude, doch so alleine hörte Harry alle möglichen Geräusche. Das Holz knarrte und ätzte. Kaum Licht fand seinen Weg ins Innere des Gebäudes. Am liebsten wäre Harry gleich wieder aus dem Haus geflüchtet, doch wusste er nicht wohin. Draußen erwarteten ihn nur unzählige Menschen, die einen Blick auf ihn erhaschen wollten, Interviews mit ihm halten oder noch schlimmer an etliche weiteren Beerdigungen teilnehmen.</p><p>Die anklagenden Blicke von Ron aber vor allem von Ginny waren auch keine Option, die Harry wählen wollte. Im Nachhinein, wenn er an Ginny dachte, so war es an eine Zeit, die ihm völlig surreal vor kam, nicht zu vergleichen mit dem womit er heute konfrontiert wurde. Sie wollte, dass er sich zwischen ihrem Glück und dem Unglück von Hermione, seiner besten Freundin, die immer zu ihm gestanden hatte und es wohl immer noch tun würde wenn er sie ins Verderben stürzte, entschied. Es war keine Frage des für oder wider für Harry, da für ihn feststand, dass er sich niemals gegen Hermione entscheiden könnte.</p><p>Mühsam versuchte er sich in dem allzu stillen Haus zu beschäftigen, als im Kamin in der Küche es grün aufflammte. Erschrocken, drehte er sich gerade rechtzeitig um und sah wie ein allzu bekannter brauner buschiger Lockenkopf zum Vorschein kam und sich suchend umsah.</p><p>„Harry, endlich –„ rief sie, als sich ihre Blicke trafen</p><p>Bevor er reagieren konnte, war sie auch wieder verschwunden.</p><p>„Hermione?", fragte er unsicher und näherte sich dem Kamin, sah hinein.</p><p>Noch einmal entflammte in dem großen Kamin ein grünliches Feuer, wesentlich größer nun. Harry konnte gerade rechtzeitig den Kopf aus der Kaminöffnung ziehen, bevor er mit Hermiones kollidierte. Sie stand direkt vor ihm im Kamin, war aber so erschrocken, dass sie dabei war rücklings in die Mauer zu fallen, doch er reagierte schnell und zog sie mit dem rechten Arm zu sich.</p><p>„Danke.", hörte er sie sagen, während er spürte wie ihre Augen sein Gesicht musterten.</p><p>Es trennte sie nur wenige Zentimeter, so nah waren sie sich lange nicht mehr gewesen.</p><p>„Du musst mir helfen.", begann sie nachdem sie sich wieder gefangen hatte.</p><p>„Wo kommst du überhaupt her?", wollte Harry wissen, als sie sich von ihm löste um endlich weiter in die Küche zu gehen.</p><p>Jetzt im helleren Licht fiel ihm erst auf wie sie aussah. Die Haare waren zerzaust, sie trug ein gelbes Sommerkleid, dabei waren draußen gerade einmal frühlingshafte Temperaturen, vom Regen ganz zu schweigen.</p><p>„Nichts hat geholfen, egal welchen Spruch ich versucht habe. Aber das ist unmöglich, ich hab doch alles richtig gemacht.", plapperte sie drauf los und ging hektisch im Raum auf und ab, während sie mit den Händen gestikulierte.</p><p>„Hermione, beruhig dich doch erst mal.", sagte Harry und griff nach ihrer Hand um sie zum Innehalten zu bewegen.</p><p>Sie war völlig durch den Wind.</p><p>„Bitte, du musst mit mir kommen.", redete sie weiter.</p><p>„Vielleicht erklärst du mir vorher wovon du redest, dann komm ich gerne mit dir.", versuchte er es erneut, kam aber nicht umhin leicht amüsiert zu sein, das war so typisch für sie.</p><p>„Entschuldige, ich komm grad aus Darwin. Ich hab meine Eltern gesucht.", erzählte sie zögerlich.</p><p>„Du warst in Australien, warum hast du mir nichts davon gesagt?", Harry war unangenehm überrascht, „Hast du sie denn gefunden?"</p><p>„Ja, hab ich, sogar recht schnell aber ich kann ihr Gedächtnis nicht wiederherstellen. Es funktioniert einfach nicht, sie wissen nichts mit mir anzufangen." An dieser Stelle wurde ihre Stimme zittrig.</p><p>„Kannst du uns hin apparieren?"</p><p>Sie atmete tief durch um sich zu beruhigen und nickte anschließend, näherte sich ihm.</p><p>„Nicht sofort, Ich muss erst noch was holen.", hielt er sie zurück und eilte aus der Küche.</p><p>Es dauerte keine fünf Minuten und Harry kam mit einem Rucksack zurück bei seinem Eintreten, eilte sie zu ihm.</p><p>„Bereit?", fragte sie hastig.</p><p>„Bist du sicher, dass du das schaffst?", vergewisserte er sich.</p><p>Hermione nickte energisch und nahm seine Hand. Gleich darauf spürte er das bekannte unangenehme Gefühl was nur durch den Schraubstockhartengriff den Hermione an seiner Hand hatte, gemildert wurde. Das Apparieren dauerte wesentlich länger als gewöhnlich und Harry überlegte kurz ob es überhaupt eine gute Idee war solch eine lange Strecke so hinter sich zu bringen.</p><p>Die unheimliche Wärme war das erste was Harry auffiel, als sie endlich angekommen waren, er war eindeutig falsch angezogen. Sie standen auf einem staubtrockenen Weg, über ihnen erstreckte sich der Sternenhimmel und in der Ferne konnte Harry ein erleuchtetes Haus ausmachen.</p><p>Hermione ließ ihm kaum Zeit sich zu orientieren, lotste ihn stattdessen schnellstens zum nahen Gebäude.</p><p>„Wir müssen uns beeilen, es ist schon sehr spät und meine Eltern werden bestimmt nicht begeistert sein über so eine Störung. Vor allem weil ich doch heut schon da war.", erklärte sie ihm hastig.</p><p>Ehe Harry sie fragen konnte, was sie ihren Eltern überhaupt erzählt hatte, standen sie schon vor der hölzernen Haustüre. Sie klopfte fest gegen die Tür. Mit einem leisen quietschen öffnete sie sich und ein großgewachsener Mann ende vierzig stand vor ihnen. Er hatte dunkelbraun, melierte Haare und war braungebrannt. Es waren die unverwechselbaren Augen, teilweise die Gesichtszüge, die Harry an Hermione erinnerten.</p><p>„Sie schon wieder, Miss, haben sie irgendwas vergessen?", fragte er argwöhnisch aber nicht unfreundlich.</p><p>„Nein, nichts, Mr Welkins. Ich hab meinem Mann erzählt wie sie und ihre Frau mir geholfen haben und da wollte er sie gleich persönlich kennenlernen.", erklärte Hermione ihm.</p><p>„Aber das war doch nicht der Rede wert." Ihr Vater war sichtlich geschmeichelt das zu hören.</p><p>„Man trifft nicht jeden Tag so hilfsbereite Leute und wollte mich nur bei ihnen herzlich bedanken.", spielte Harry mit wenngleich er keine Ahnung hatte was genau passiert war.</p><p>„Kommen sie doch rein, dann lernen sie auch meine Frau kennen. Verzeihen sie, wie war ihr Name nochmal gleich?"</p><p>„Harry und Hermione Potter." Bemerkenswert leicht ging ihr der Name über die Lippen, zur überraschenden Freude von Harry.</p><p>Immer noch, trotz aller Umstände löste allein der geänderte Name ein Wohlbehagen, eine Wärme in ihm aus.</p><p>„Sie haben einen schönen Name.", komplimentierte Mr Granger sie.</p><p>„Danke.", strahlte sie ihn an während sie das Haus betraten.</p><p>„Schatz, wer ist denn da?", hörten sie eine weibliche Stimme und Harry konnte Hermione ansehen, wie sehr sie mit sich kämpfte.</p><p>„Mrs Potter, die junge Frau, der wir mit dem Wagen geholfen haben. Sie hat ihren Mann mitgebracht.", rief er zurück.</p><p>Der Wohnraum war nicht weit von der Eingangstür entfernt, auf einem hellen Sofa saß eine Frau mit kinnlangen dunkelblonden Haaren und schien gerade mit dem lesen eines Buchs beschäftigt zu sein. Gerade rechtzeitig stand sie auf und begrüßte sie.</p><p>„Das ist aber eine Überraschung, haben sie irgendetwas vergessen, Mrs Potter?", fragte sie Hermione nun auch.</p><p>Es kam ihnen entgegen, dass das Zimmer schwach beleuchtet war, so konnte Harry unbemerkt den Zauberstab aus dem Rucksack, den er nur über eine Schulter trug, holen während Hermione mit ihrer Mutter sprach. Zum ersten Mal war Harry froh darum, dass er den Elderstab nicht zurück ins Grab von Dumbledore gelegt hatte. Zwar wusste er, dass er sich sehr bald um den Verbleib des Stabs kümmern musste, doch wusste er auch wie leicht er oder jemand anderes den Stab aus Dumbledores Grab zurückholen konnte, sobald etwas passierte um mit dieser Macht etwas wieder gerade zu biegen und der ganze Wahnsinn würde wieder von vorne beginnen.</p><p>Ein bekanntes Machtgefühl durchströmte Harry, sobald er den Stab in der Hand hielt. Mit einer neuen Leichtigkeit bewegte er den Stab in Richtung von Mr Granger, gleich darauf auch bei Mrs Granger und hob den Zauber auf, der über ihnen lag. Noch während beide verwirrt blinzelten, steckte Harry den Elderstab wieder weg und wusste, nun würde es keine Gründe mehr geben, ihn zu behalten.</p><p>„Hermione, bist du das?" War es Mrs. Granger schließkich, die sich als erstes erholte.</p><p>„Mum?", ängstlich fragte Hermione nach, kam ihrer Mutter nur zögerlich näher.</p><p>Sie hatte hingegen die Distanz zwischen ihnen längst verkürzt und schloss ihre nun schluchzende Tochter ganz fest in die Arme.</p><p>„Hey, kleines, was ist denn nur los?", wollte Mr Granger besorgt wissen und legte ihr tröstend eine Hand auf die bebenden Schultern.</p><p>Hermione löst sich aus der Umarmung und nahm nun stattdessen ihren Vater in den Arm.</p><p>„Och, Mäuschen, alles wird wieder gut.", brach seine Stimme leicht.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_7_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Dieses Kapitel ist eine kleine Premiere, zum ersten Mal überhaupt schreib ich über die Grangers bzw. das Verhältnis zu einander. Ich habe mich dazu entschieden ein sehr offenes, ehrliches und nicht zu letzt herzliches Verhältnis zwischen Hermione und ihren Eltern zu zeichnen. Das nächste Kapitel wird eine Fortsetzung zu diesem hier sein und noch mehr auf die Grangers eingehen.</p><p>Der Sprung von Hogwarts nach Australien mag für den ein oder anderen ein recht großer sein, aber ich find es so unheimlich unnötig Beerdigungen zu beschreiben, ich war selbst schon auf genügend und es würde für mich schlicht den Ton dieser Geschichte zu düster machen, hatten ja schon genug Drama fürs erste. Es ist schließlich dies Mal nicht meine Absicht ein durch und durch dramatische, traurige Geschichte zu schreiben sondern auch Lösungen, Hoffnung und das ein oder andere Happy End zu bieten.</p><p>Bevor ich es vergesse: Nein, Hermione hat Harry nicht von Australien übers Flohnetzwerk erreichen wollen...sondern vom tropfenden Kessel. Alles weitere sollte das nächste Kapitel klären.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615441">Chapter 8</a>: Blind
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>Gib blind, nimm sehend.</i><br/>
+  <br/>
+  <b></b>
+</p>
+<p></p><center>
+  <p> Blind</p>
+</center>Mrs Granger wischte sich die Tränen weg, dann aber sah sie Harry, wie er im Hintergrund stand, hin und wieder sich über die Wangen fuhr.<p>„Harry, du auch hier, dann bedeute das ihr habt diesen Voldemort besiegt, ja?", fragte sie und sah ihn an als ob er ein Weltwunder war.</p>
+<p>Hermione hatte tatsächlich, sehr viel ihren Eltern von Harry erzählt. Bevor er sich versah, umarmte Mrs Granger auch ihn und er wusste gleich woher Hermione es her hatte.</p>
+<p>„Ich bin so froh, dass du am Leben bist. Hermione hatte so eine Angst dich zu verlieren.", sagte sie, so dass nur Harry sie verstehen konnte.</p>
+<p>„Danke, dass du unsere Tochter heil zurück gebracht hast.", fügte sie noch hinzu bevor sie von ihm abließ.</p>
+<p>„Ich wüsste nicht was ich ohne sie tun würde.", entgegnete Harry ihr und sie lächelte nur.</p>
+<p>„Kommt, lass uns hin setzen und dann erzählt ihr uns was passiert ist, ja?", meldete sich Mr Granger zu Wort, der immer noch seine Tochter im Arm hielt.</p>
+<p>Doch hatte sie sich wieder beruhigt und sah um so vieles friedlicher aus, ja, glücklich. Gemeinsam setzten sie sich. Hermione zwischen ihren Eltern und Harry nebendran, so erzählten sie ihnen was passiert war. Ihre Eltern waren exzellente Zuhörer, sie waren so sehr bei der Sache, dass sie bei den besonders schlimmen Ereignissen wütend wurden oder Trost spendeten. Harry war angetan von dem offenem und vor allem ehrlichen Verhältnis, was sie mir Hermione hatten. Sie erzählte ihnen sogar von der Folter, die sie über sich ergehen lassen musste.</p>
+<p>„Es gibt da noch eine Sache." Es war schon weit nach Mitternacht, als Hermione endlich begann ihren Eltern von ihrer Heirat zu erzählen.</p>
+<p>„Was ist es, Liebes?", fragte Mrs Granger nach.</p>
+<p>„Harry und ich, nun, wie soll ich es sagen –„</p>
+<p>„Wir sind verheiratet.", war es Harry, der es endlich aussprach.</p>
+<p>Schweigen setzte ein. Eigentlich hatte Harry nun mit einer Predigt gerechnet aber Mr und Mrs Granger sahen sich nur an, nickten kurz.</p>
+<p>„Sicher, wir hätten uns gewünscht, dass du wesentlich später heiratest, aber unter diesen Umständen. Schatz, ihr seid durch die Hölle gegangen, es ist normal, dass man diese Zeit nicht alleine verbringen will. Und Harry hier scheint ein richtig feiner Kerl zu sein. Es ist deine Entscheidung und solange du glücklich bist, sind wir es auch.", sagte Mr Granger.</p>
+<p>Harry und soweit er es Hermione ansehen konnte, sie auch, war völlig überrascht von der Reaktion. Jedes Mal wenn er es mit Eltern zu tun gehabt hatte, haben sie ihn beraten, ihm Vorwürfe gemacht umso mehr war er über diese Akzeptanz erstaunt.</p>
+<p>„Ich weiß nicht was ich sagen soll, Mr Granger.", stotterte Harry</p>
+<p>„Am besten du gewöhnst dir an mich Joshua zu nennen und meine Frau Jane.", entgegnete er mild.</p>
+<p>„Habt ihr vielleicht Hunger, verzeiht, dass ich erst jetzt Frage aber da war so vieles, was wir erfahren wollten?", unterbrach Hermiones Mutter die aufkeimende Ruhe und entschuldigte sich für ihre schlechte Gastfreundlichkeit.</p>
+<p>Aber keiner hatte an Essen oder Trinken gedacht bei all den Emotionen, doch nun da sich die Gemüter beruhigt hatten, war es mehr als Willkommen.</p>
+<p>„Wisst ihr was, ich mach uns einfach schnell einen kleinen Snack.", entschied sie bevor irgendwer antworten konnte.</p>
+<p>„Ich helf dir, Mum."Folgte ihr Hermione in die Küche.</p>
+<p>„Und ich hol uns was zum Trinken, du kommst doch für einen Moment alleine zu Recht oder, Harry?", wollte Joshua wissen.</p>
+<p>„Sicher.", entgegnete Harry nur knapp und Hermiones Vater nickte ihm zu bevor auch er den Raum verließ.</p>
+<p>Nachdenklich fuhr Harry sich durchs Haar, der Elderstab ging ihm einfach nicht aus dem Kopf. Er hatte ihn bis nach Australien gebracht, es war an der Zeit dass er ihn endlich los wurde. Er stand auf, sah sich kurz um aber die Grangers waren alle gut beschäftigt. Dies Mal als Harry die Eingangstür öffnete, machte sie keinerlei Geräusche und er konnte ohne weiteres das Haus verlassen.</p>
+<p>Aus dem Rucksack, den er mit genommen hatte, holte er den Stab, der so viel Unheil über die Zauberwelt gebracht hatte. Die Struktur, überhaupt alles an ihm fühlte sich großartig an, verführerisch gar doch sehnte sich Harry nach nichts mehr als nach Frieden, endlich ein normales Leben führen zu dürfen. Entschlossen nahm er den Stab in beide Hände und brach ihn durch. Er musste etwas zerren aber zum Schluss hatte er ihn in zwei Teile.</p>
+<p>„Harry, hier bist du, ich dachte schon du wärst gegangen." Brachte ihn Hermiones besorgte Stimme zurück in die Gegenwart.</p>
+<p>Ruckartig drehte Harry sich um und da stand sie in ihrem gelben Sommerkleid, was ihr bemerkenswert gut stand und mehr als deutlich zeigt, dass aus ihr eine junge begehrenswerte Frau geworden war.</p>
+<p>„Ich hatte nicht vor zu gehen.", sprach er während sie näher trat.</p>
+<p>„Danke, für alles.", hörte er sie sagen, bevor sie sich zu seiner Verwunderung an ihn schmiegte, nicht ohne ihn auf die Wange zu küssen.</p>
+<p>„Hab ich dir eigentlich schon gesagt, dass du hübsch aussiehst in dem Kleid?", fragte er fast beiläufig.</p>
+<p>Unterdessen im Haus waren Joshua und Jane damit beschäftigt die Sachen für den Mitternachtsnack ins Wohnzimmer zu tragen oder zumindest war es die Idee wenn nicht Jane immer wieder nachdenklich inne gehalten hätte.</p>
+<p>„Schatz, alles in Ordnung?", Joshua klang besorgt.</p>
+<p>„Josh, was hältst du wirklich von der ganzen Sache?", fragte sie ihn plötzlich.</p>
+<p>Joshua stellte erst die Platte mit den Sandwichen auf den Tisch bevor er sie ernst ansah.</p>
+<p>„Ehrlich? Ich bin alles andere als begeistert.", gab er schließlich zu.</p>
+<p>„Manchmal erkenne ich sie gar nicht wieder.". Jane setzte sich müde auf das Sofa.</p>
+<p>„Eigentlich haben wir es doch schon länger geahnt. Spätestens nachdem vierten Jahr, als wir überlegten sie von der Schule zu nehmen, weißt du noch?" Joshua setzte sich zu ihr.</p>
+<p>„Hermione hatte uns mehr als deutlich gemacht, dass sie Harry nicht in Stich lassen würde und nicht davor zurückschrecke sich gegen uns und für ihn zu entscheiden. Ich kann mich ganz gut daran erinnern.", seufzte Jane und sah aus dem Fenster.</p>
+<p>„Obwohl es mir nicht wirklich gefällt, aber sie würde alles für den Jungen tun, ich bin nur froh dass er wohl das gleiche auch für sie tun würde."</p>
+<p>„Aber Josh, sie ist doch unser kleines Mädchen.", warf sie ein als ob er sie nicht verstehen würde.</p>
+<p>„Was durch die Hölle gegangen ist. Vertraust du Hermione?" Joshua nahm die Hand seiner Frau in seine.</p>
+<p>„Blind.", sie lächelte.</p>
+<p>„Ich auch und deshalb ist es in Ordnung."</p>
+<p>Vor dem Haus hatte Hermione zwischenzeitlich den zerbrochenen Zauberstab in Harrys Hand entdeckt.</p>
+<p>„Was ist das? Ist das nicht Dumbledores Zauberstab?" Sie griff nach den Stücken, doch Harry wich ihr aus.</p>
+<p>„Er war es.", erwiderte er nur knapp.</p>
+<p>Mit ehrlicher Bewunderung sah sie ihn nun an.</p>
+<p>„Die Bruchstücke sind immer noch mächtig.", flüsterte sie, während sie es ihm ansah, dass er überlegte was nun zu tun war.</p>
+<p>„Ja und deshalb werde ich sie verbrennen.", erwiderte er und bevor sie reagieren konnte, hatte er die zwei Hälften auf den staubtrocknen Boden gelegt und war dabei einen Spruch mit seinem eigenen Zauberstab zu sprechen.</p>
+<p>„Nicht!", doch war es längst zu spät, die Bruchstücke fingen Feuer und ein ohrenbetäubendes Geräusch war zu hören.</p>
+<p>Es sprühte wild, krachte als ob Harry ein riesiges Feuerwerk angezündet hatte. Zu seinem Glück waren keine weiteren Sträucher in der Nähe, die verbrennen konnten.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615477">Chapter 9</a>: Sein oder Nicht Sein
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/17578553#chapter_9_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    
+<p></p><center>
+  <p>
+    <b>Sein oder Nicht Sein</b>
+  </p>
+</center>In dem Licht sah seine Haut ungesund bleich aus, er passte so wenig nach Australien wie seine Klamotten, die er noch trug. Helle grüne Augen sahen ihn nachdenklich an, es war sein eigenes Spiegelbild, die schwarzen Haare waren wie immer unkontrollierbar. Für einen Moment fragte er sich was Hermiones Eltern wohl von ihm dachten, während er mit dem Zähneputzen inne hielt. War er für sie auch dieser merkwürdige Typ, der ihnen ihre Tochter entfremdet hatte, der an all dem Unheil Schuld hatte? Dann aber besann er sich, die Grangers waren nicht die Dursleys. Harry fühlte sich fehl am Platz, eigentlich sollte er in dem alten, düsteren magischen Haus in London sein und nicht in Darwin. Nicht hier in einem normalen, hellen Haus, als sei all das erlebte nur ein entfernter Traum gewesen.<p>Das Badezimmer war geräumig und in einem strahlenden Weiß gehalten. Auf dem Toilettendeckel hatte er die Schlafsachen gelegt, die ihm Jane gegeben hatte. Immer noch verstand Harry nicht wieso sie darauf bestanden hatte, dass Hermione und er hier übernachten sollten noch weniger warum sie darauf eingegangen waren. Vielleicht, so überlegte er, war es nicht verkehrt etwas Abstand von der magischen Welt zu gewinnen. Gerade jetzt war Harry in England nicht vor seinem unfreiwilligen Ruhm gefeit und nach dem Jahr was hinter ihm lag, wollte er eigentlich nur eine Atempause. Doch dabei hatte er sicherlich nicht an Australien gedacht oder gar an die Mugglewelt.</p>
+<p>Wie auf Autopilot zog er sich um und ging über den Flur in das Gästezimmer was er mit Hermione teilen würde. Für die Grangers schien es selbstverständlich zu sein, dass Harry und Hermione in einem Bett schlafen würden. Sie hatten keine Ahnung, dass die Heirat weniger auf Verliebtheit basierte sondern vielmehr auf Angst, Verzweiflung und dass es kein wirkliches Zurück gab, etwas was sie auch nie erfahren würden wenn es nach Harry ginge.</p>
+<p>Mit dem Rücken zu ihm gedreht, saß Hermione im Schneidersitz auf dem Bett und, das überraschte ihn ganz und gar nicht, las als er die Tür öffnete. Sie trug jetzt ein graues T-Shirt, klemmte sich hin und wieder eine lose Haarsträhne hinters Ohr. Ihre kurze Hose war nur zu erahnen. Zwar hatten sie über Monate ein Zelt geteilt und miteinander sogar eine Nacht, so war der Anblick, die Situation völlig anders. Harry fühlte wie er nervös wurde.</p>
+<p>„Ich versteh dich einfach nicht.". Hörte er sie sagen und schon am Ton wusste er, dass er in Schwierigkeiten war.</p>
+<p>„Bitte?", verstand er nicht worauf sie hinaus wollte.</p>
+<p>Harry ging ins Zimmer und schloss die Tür hinter sich während Hermione frustriert das Buch zu klappte und vom Bett aufstand.</p>
+<p>„Dass du immer etwas auf eigene Faust tun musst gegen jede Vernunft.", zischte sie und ihre Augen funkelten.</p>
+<p>„Das sagt gerade die richtige.", entgegnete er und wusste, dass er ihr unrecht tat.</p>
+<p>„Ich?", fragte sie gefährlich und ging auf ihn zu, „Ich habe nicht gerade einen Zauberstab in einem Gebiet verbrannt wo es seit Wochen nicht mehr geregnet hat."</p>
+<p>„Oh.", und er musste Grinsen, „Dafür war es ein schönes Feuerwerk."</p>
+<p>„Nur weil du Glück hattest.", klang sie nun was milder.</p>
+<p>„Hab ich das nicht immer?", feixte er und zauberte ihr ein Lächeln auf die Lippen.</p>
+<p>Harry setzte sich auf das Bett und fand das Buch was sie vorhin gelesen hatte.</p>
+<p>„Was liest du da überhaupt?", neugierig griff er nach dem Buch, was mit dem Cover zur Bettdecke lag.</p>
+<p>Gerade hatte er es mit den Fingerspitzen berührt, da sah er im Augenwinkel wie Hermione es wegnehmen wollte doch war Harry schneller.</p>
+<p>„Harry, gib es her!" Und sie versuchte es immer wieder aus seiner Hand zu nehmen.</p>
+<p>Er musste ihr ausweichen, es außer Reichweite halten. Jetzt war er erst recht daran interessiert was für ein Buch das war. Doch hatte er nicht mit Hermione gerechnet, sie gab nicht so schnell auf. Erst setzt sie nur neben ihn auf das Bett, versuchte um ihn zu greifen, da er es in der rechten Hand hielt und immer wieder versucht war den Titel von dem gelb schwarzen Cover abzulesen dann aber hatte sie genug und ging auf Frontalangriff über. Über seinen Schoß hinweg griff sie nach seinen Arm um ihn zu sich zu ziehen, doch Harry war eindeutig stärker, so zog sie sich selbst an seinem Arm hoch und saß nunmehr rittlings auf seinem Schoß.</p>
+<p>„Es ist doch nur ein Buch.", sagte er amüsiert.</p>
+<p>„Dann kannst du es mir ja auch geben.", atmete sie schwerer und versuchte immer noch vergeblich es ihm weg zu nehmen.</p>
+<p>Er hatte es mittlerweile hinter seinem Rücken, knapp konnte er das Buch in die Linke nehmen da hatte sie schon um ihn herum gegriffen wieder war er ihr zuvorgekommen. Mit einer Armlänge von ihr entfernt hielt er nun das Corpus Delicti in seiner linken Hand.</p>
+<p>„Harry!", rief sie nun frustriert, versuchte gleichzeitig an das Buch heran zu kommen.</p>
+<p>Er hingegen streckte seinen Arm soweit er konnte nach hinten mit ihr in seinem Schoß, verlor er irgendwann jedoch die Balance und beide fielen rücklings aufs Bett. Trotzdem kam Hermione immer noch nicht an seine linke heran. Also robbte sie sich was näher, war nun mit Harry auf Augenhöhe. Sie war auch schon mit ihren Fingerspitzen am Buch dran.</p>
+<p>„Oops.", lachte er und ließ es auf den Boden fallen.</p>
+<p>Für Sekunden funkelte sie ihn wütend an bevor ihr bewusst wurde wie nah sie sich waren. Sie fühlte wohl genauso wie er den Atem des anderen auf der Haut, wie die Augen auf und ab wanderten. Vor allem aber wie seine Hand auf ihrem unbekleideten Oberschenkel lag. Die Zeit schien still zu stehen. Es war schließlich Harry, der mit der linken ihr eine Haarsträhne hinters Ohr wischte.</p>
+<p>„Wir sollten, ", Harry schluckte, "schlafen gehen."</p>
+<p>„Ja, du hast recht.", gab sie zerknirscht zu und stieg von ihm ab.</p>
+<p>Er stand vom Bett auf, zeitgleich nahm er ein Kissen und eine Decke an sich.</p>
+<p>„Am besten ich schlaf auf den Boden.", meinte er und richtete sich ein provisorisches Bett her.</p>
+<p>Alles ging so plötzlich, dass Hermione nur dümmlich nicken konnte und ihn machen ließ. Minuten später, das Licht war erloschen, lag sie wach im Bett während Harry sich auf den Boden wälzte.</p>
+<p>„Also wirklich, das ist so idiotisch.", rief sie unerwartet aus.</p>
+<p>„Harry, komm her.", lehnte sie sich über die Kante zu ihm und zupfte an seiner Decke.</p>
+<p>„Was?", fragte er verwundert aber müde.</p>
+<p>„Du sollst her kommen.", sagte sie nun streng und zog an seinem Arm.</p>
+<p>Mühsam stand er auf, doch als er schon mit einem Knie auf der Matratze war, hielt er inne.</p>
+<p>„Hermione?", sagte er vorwurfsvoll.</p>
+<p>„Um Gottes Willen, Harry. Wir sind Freunde, haben Monate allein miteinander verbracht. Du bist mein Ehemann und wir hatten Sex, dann kannst du mit mir auch in einem Bett schlafen.", entrüstete sie sich und zog Harry zu sich ins Bett.</p>
+<p>Geschlagen ließ er sich auf die Matratze nieder und sie kuschelte sich an ihn.</p>
+<p>„Gute Nacht, Harry.", flüsterte sie.</p>
+<p>„Gute Nacht, Mrs Potter.", sagte er was ihm einen leichten Schlag gegen die Schulter einbrachte aber nicht das Grinsen aus dem Gesicht tilgen konnte.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_9_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Karneval kam bzw. kommt mir immer noch leicht in quere, so dass ich weniger Zeit habe zu schreiben. Aber einige Punkte dürfte ich nun abgearbeitet haben, wie der Verbleib des Elderstabs. Die Lösung im Buch war mir zu schwammig, bei allen Edelmut nicht einmal Harry würde davor gefeit sein, den Stab zu nutzen wenn es um seine KInder oder Lieben ginge. Daher hab ich die Filmlösung etwas ausgebaut...zwar ist es unwahrscheinlich dass ein einfaches Feuer ausreichte aber wir tun einmal so.</p>
+<p>Ich gehe absichtlich langsam vor, da Gefühle aber vor allem die Akzeptanz dieser sich erst entwickeln müssen. In späteren Kapiteln werde ich sicherlich auch auf die R/HR und H/G Geschichten kommen und erklären warum die überhaupt stattfanden. Nein, kein Liebestrank oder andere manipulationen...viel mehr liegt es an den Eigenschaften, die so typisch für Harry und Hermione sind, zu mindest in meinen Augen. Hier bei wird dann die Heirat, im Nachhinein, als etwas gewertet was es im ersten Anschein nicht war. Vielleicht bringt es den ein oder anderen ins Grübeln ob was wir tun nicht zu oft zum gefallen des anderen geschieht und weniger wegen unserer selbst.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615501">Chapter 10</a>: Zaghaftes Erwachen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/17578553#chapter_10_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><center>
+  <p>
+    <b> Zaghaftes Erwachen</b>
+  </p>
+</center>Streifenweise fand das goldene Licht der Sonne den Weg ins Zimmer und schien Harry zunehmend ins Gesicht. Es war für ihn ungewohnt so wohlig ausgeruht in dieser Wärme aufzuwachen. Als sei all dies nicht schon außergewöhnlich genug spürte er einen warmen Körper neben sich. Ein Arm lag quer über seiner Brust, spürte wie jemand gleichmäßig gegen seinen Nacken atmete.<p>Harry blinzelte verwirrt, wo war er überhaupt? Nicht, dass er sich beschweren wollte, selten zuvor war er aus solch einem ruhigen, erholsamen Schlummer erwacht aber gerade darin lag das Problem. Es passte schlicht nicht in sein Leben sich so zu fühlen. Langsam sah er an sich herunter und entdeckte neben braunen Locken, die über das Kissen verteilt lagen, das völlig entspannte, friedliche Gesicht von Hermione. Fasziniert von diesem Anblick konnte er seine Augen nicht von ihr nehmen. Viel zu sehr war er damit beschäftigt zu begreifen, wie sehr sich alles geändert hatte.</p><p>Vor Monaten noch, er konnte sich allzu gut daran erinnern, hatte sie tiefe schwarze Augenringe gehabt, ihre Haut eine unnatürliche Blässe heute hingegen war von all dem nichts mehr zu sehen. Das tragische, das lebensentziehende war verschwunden aus ihren Gesichtszügen und ihre natürliche Schönheit war nun mehr völlig ungetrübt. Unwillkürlich, völlig unbewusst strich Harry ihr über die Wange immer noch versucht zu begreifen was geschehen war. Langsam, ja zaghaft begannen Hermiones Augenlider an zu flattern, kurz darauf trafen sich ihre Blicke. Er wollte gerade seine Hand zurückziehen, da hielt sie ihn davon ab in dem sie ihre Hand auf seine legte.</p><p>„Hey.", flüsterte er.</p><p>„Selber hey.", schmunzelte sie.</p><p>Sie drehte sich und streckte sich dann ausgiebig zu seinem Amüsement.</p><p>„Und wie hast du geschlafen?", wollte sie wissen als sie nun aufrecht saß und zu ihm sah.</p><p>„Gut, wirklich gut." Saß auch er auf.</p><p>„Besser als auf dem Boden.", begann sie selbstzufrieden, „Und wenn ich dich so ansehe hab ich dich nicht gebissen."</p><p>„Zum Glück.", konterte er, „Und bevor du es dir anders überlegen kannst, steh ich besser auf und geh ins Bad."</p><p>Damit stand er auf und ließ eine Sprachlose Hermione zurück, die sich wieder auf die Matratze legte.</p><p>„Schlafmütze.", kommentierte er.</p><p>Harry konnte sich gerade noch ducken um dem heranfliegenden Kissen auszuweichen. Herzhaft lachend ging er raus auf den Flur und schloss die Tür hinter sich. Gerade hatte er die Hand auf die Klinke zum Bad gelegt da sah er Jane auf sich zu kommen.</p><p>„Guten Morgen, Harry. Hast du gut geschlafen?", sagte sie als sie näher kam.</p><p>Überrascht nickte er nur.</p><p>„Schön, hast du vielleicht einen Moment für mich?"</p><p>„Natürlich, Mrs, ich meine, Jane.", stotterte er, sie machte ihn nervös.</p><p>„Nun, ich mach mir ehrlich gesagt Sorgen. Ihr seid beide noch so jung für eine Ehe.", begann sie und Harry konnte es ihr ansehen, dass es ihr Schwierigkeiten bereitete.</p><p>„Ich weiß.", und insgeheim ließ es ihn schuldig fühlen.</p><p>„Versteh mich nicht falsch, Harry. Es ist nicht gegen dich oder dass ich dir irgendwelche Vorwürfe machen wollte. Immerhin bist du auch noch jung, viel zu jung um solchen Schrecken ausgesetzt zu sein.", fügte sie rasch zu als sie sah, wie schuldbewusst dieser junge Mann den Blick senkte.</p><p>„Ich habe nur Angst, dass ihr irgendwann diesen Schritt bereuen könntet und ich weiß nicht was Hermione macht, wenn sie dich dann irgendwann auch als Freund verlieren würde."</p><p>Erstaunt sah Harry auf.</p><p>„Ihre Sorge ist es, dass Hermione mich verlieren könnte?", völlig überrascht fragte Harry nach.</p><p>Jane lächelte ihn mild an, er hatte so offensichtlich keine Ahnung wie wichtig er für ihre Tochter unlängst geworden war.</p><p>„Du hast wirklich keine Ahnung, wie viel du ihr bedeutest, oder?", fragte sie rhetorisch.</p><p>„Doch, natürlich.", verlegen kratzte sich Harry am Hinterkopf, „Sie bedeutet mir auch sehr viel, sonst hätte ich sie nicht gefragt."</p><p>Jane seufzte, vielleicht würde ihr niemand die Befürchtungen nehmen. Sie drückte kurz seine Schulter und machte sich daran runter zu gehen.</p><p>„Jane!", besann er sich als er sie weggehen sah, „Egal was passieren sollte, Hermione wird immer meine beste Freundin bleiben."</p><p>„Danke, Harry.", sagte sie von Herzen.</p><p>„Nicht dafür."</p><p>Für einige Sekunden sah Harry ihr noch nach, das Gespräch hatte ihn nachdenklich werden lassen.</p><p>„Harry!", holte ihn Hermiones Stimme zurück in die Wirklichkeit.</p><p>Er ging den Flur zurück, bevor er die Tür zum Gästezimmer erreicht hatte, wurde sie aufgerissen.</p><p>„Harry, da bist du ja. Das musst du dir ansehen.", rief eine aufgeregte Hermione und ging wieder zurück ins Zimmer.</p><p>Jetzt da das Blickfeld frei war, fiel ihm als erstes unzählige bräunliche Federn auf die im Zimmer herumflogen dann das geöffnete Fenster. Bis er schließlich Hermione sah, die sich um einen entkräfteten Falken kümmerte.</p><p>„Ein Australien-Baumfalke, sie bringen hier die Post.", erklärte sie.</p><p>Vom Boden hob sie einen edlen Brief auf und reicht ihn Harry.</p><p>„Was ist das?", fragte Harry und nahm ihn entgegen.</p><p>Mit einer schwarzen Tinte stand auf den Umschlag:</p><p>Mr&amp;Mrs Potter, Australien, Darwin.</p><p>Harry zog eine Braue hoch und sah zu Hermione.</p><p>„Du musst ihn schon öffnen.", sie klang amüsiert.</p><p>Energisch brach Harry daraufhin das Siegel und entnahm den Brief. Im Umschlag war noch mehr, doch beließ er es erst dabei und sah sich lieber den Zettel näher an.</p><p>„Der ist von Hogwarts.", stellte Harry verblüfft fest und damit hatte er Hermiones Neugier vollends entfacht.</p><p>„Bitte?", ließ sie vom Falken ab und ging zu Harry.</p><p>„Ähm, ja.", stammelte Harry und sah vom Blatt zu Hermione.</p><p>„Worum geht es?", wollte sie wissen und sah nun über seine Schulter, überflog selbst Zeile um Zeile.</p><p>Bevor er die Chance hatte es heraus zu finden, hatte Hermione ihn den Brief aus der Hand genommen und hielt die andere Hand über den Mund.</p><p>„Und?", fragte Harry sie nun, er war nicht wirklich weit in den Text vorangekommen zu perplex war er über das vertraute Emblem.</p><p>Hermione reagierte nicht, da erinnerte er sich an den Umschlag, den er immer noch in der Hand hielt. Er schüttete den verbliebenen Inhalt auf seine Handfläche aus. Zwei silberne Anstecker kamen zum Vorschein auf einem konnte er ganz deutlich die Buchstaben HG ausmachen.</p><p>„Wir sind zum Headboy und Headgirl gewählt worden.", sagte sie schließlich leise.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_10_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Es ist erstaunlich schwierig, zumindest für mich, diese absolut typischen Ausrufe von Hermione ins Deutsche zu bringen. Sachen wie "Üh honestly, this is so stupid" oder ähnliches sind bei mir fast wie eingebrannt, dass es sich schier komisch, fremd anfühlt sie etwas ähnliches nur im Deutschen sagen zu lassen. Diese kleinen Phrasen machen da irgendwo doch den Unterschied.</p><p>Nun aber zu diesem Kapitel, ich hoffe, dass ich die wirklich größte Sorge Hermiones Mutter ausreichend deutlich gemacht habe. Ich werde wohl mit den Titeln: Headboy und Headgirl arbeiten, da sie mir besser entgegen kommen als Schulsprecher. Die Idee eine Hermione Granger mit einem Anstecker wo HG draufsteht hat nun mal wesentlich mehr als mit S oder wie es in den deutschen Übersetzung abgekürzt wurde.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-11">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615534">Chapter 11</a>: Irren ist menschlich, vergeben ist göttlich.
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/17578553#chapter_11_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><center>
+  <p>
+    <b>Irren ist menschlich, vergeben ist göttlich.</b>
+  </p>
+</center>Dicke graue Rauchschwaden konnte man an der Decke der Bahnhofshalle ausmachen als die rote Lok einfuhr. Trotz des Dampfes und dem Auflauf von Menschen war sie unverkennbar und wies ihnen den Weg. Harry fühlte sich wie in einem entfernten Traum, nie hätte er geglaubt, dass er noch einmal mit dem Hogwarts Express fahren würde doch hier waren sie in London am berühmten Bahnsteig 9 3/4. Durch den Krieg und deren Verluste waren mehrere Jahrgänge zusammen gelegt worden. Die neue Schulleiterin Professor McGonagall hatte es wohl zu ihrer Aufgabe gemacht das vergangene Schuljahr anders zu bewerten als es üblich war, da der Betrieb in Hogwarts nicht nur gestört gewesen war sondern die Kinder am Lernen gehindert wurden.<p>Zwar wurde vielen Schülern der höheren Jahrgängen eingeräumt ihre OWLs oder NEWTs formal im Ministerium zu machen doch fehlten vielen der Schulstoff um sie auch erfolgreich zu bestehen. Hinzu kam dass Mugglegeborene überhaupt keine Gelegenheit gehabt hatten Hogwarts zu besuchen. Daher hatte man sich dazu entschlossen die Jahrgänge zusammen zu legen, das bedeutete dass Ginny nun im gleichen Jahrgang sein würde wie Harry und Hermione. Nur eine weitere Tatsache, die Harry dazu brachte eine Rückkehr nach Hogwarts abzulehnen wäre nicht Hermione gewesen. Sie zählte ihm alle Gründe auf weshalb er dieses Angebot annehmen sollte und er musste zugeben, sie hatte Recht.</p><p>Er wollte nie wegen seines Ruhms in der Zaubererwelt etwas erreichen und ohne einen Abschluss wäre dies unmöglich. Um Auror zu werden waren NEWTs zwingend, vermutlich würde er in einigen Fächern auch ohne einen Besuch in Hogwarts sie erhalten aber nicht in Zaubertränke oder Geschichte um nur zwei Fächer zu nennen. Auch war es eine gute, wenn auch teilweise schmerzhafte Weise um zurück ins normale Leben zu kommen, mit einer Struktur wie Hermione es zu betonen liebte, Zwar fragte sich Harry ob ähnliche Gründe bei ihr überhaupt zutrafen, immerhin hatte sie sicherlich genug Kenntnisse in allen Fächern um ohne weiteres die NEWTs zu bestehen aber er nahm es gerne an, dass sie mit ihm zusammen wieder in Hogwarts sein würde.</p><p>Nun standen sie hier mit ihrem Gepäck und waren kurz davor den Zug zu betreten. Die Grangers waren in Australien geblieben, wo Harry und Hermione die vergangenen Wochen verbracht hatten. Sie hatten die Zeit genutzt um die Gegend zu erkunden, ihren Eltern zu helfen unter ihrer wahren Identität dort zu bleiben und nicht zuletzt um zu vergessen in was für einer vertrackten Situation sie eigentlich waren. Ohne Ron oder Ginny im Umkreis gelang dies ihnen bemerkenswert gut. Es war schlicht wie ein langer Urlaub gewesen unter Freunden, dies zumindest redeten sie sich ein.</p><p>Es machte Harry unruhig zu wissen, dass sie auf Ginny treffen würden und was es bei Hermione auslösen würde. Während sie in Australien waren, hatte sie die Verstoßung kein einziges Mal mehr erwähnt gehabt. Das Verhältnis zwischen ihnen war bestens, sie waren sich näher als je zuvor und Harry wusste nicht mehr ob er bereit war das wieder aufzugeben. Hatte er sonst immer wieder das Gefühl gehabt außen vor zu stehen, wie das fünfte Rad am Wagen so hatte er sich in Australien dazugehörig gefühlt. Eine neue Erfahrung für ihn.</p><p>„Kommst du?", holte Hermiones Stimme ihn aus den Gedanken.</p><p>Er nickte und bückte sich um ihr mit dem Koffer zu helfen, doch bevor er überhaupt anpacken konnte, sprach sie einen Spruch und das Gepäck schwebte vor ihnen.</p><p>„Daran hätten wir auch in Darwin öfters denken können.", schmunzelte Harry.</p><p>„An was?", fragte sie perplex während sie den Zug endlich bestiegen.</p><p>Sie waren absichtlich weiter hinten, wo viel weniger Schüler und Eltern waren. Durch die Sommerbräune und den längeren Haaren war es allerdings schwieriger Harry als den Außerwählten sofort zu erkennen. Trotzdem konnte man nie vorsichtig genug sein.</p><p>„Na, dass wir zaubern können." Er lachte.</p><p>Tatsächlich hatten beide erst Tage später daran gedacht, dass sie für Harry ein weiteres Bett hätten herzaubern können oder das Zimmer vergrößern. Etliche weitere Begebenheiten kamen noch hinzu, wo sie die einfachste Lösung schlicht vergaßen. Im Nachhinein war es gleichgültig gewesen, sie hatten die Mugglelösung vorgezogen, wohl auch mit der Ausrede, dass sie beide Abstand von der Zaubererwelt brauchten und weniger weil sie die Nähe genossen.</p><p>„Dieses Abteil müsste noch frei sein." Hermione öffnete die Tür und tatsächlich saß keiner drin.</p><p>Harry hatte gerade sein Gepäck verstaut, da spürte er wie jemand hinter ihm in der Tür zum Abteil stand.</p><p>„Granger, bist du es wirklich?", hörte er eine männliche Stimme sagen und er drehte sich um.</p><p>Vor ihm stand Terry Boot schon in seiner Schuluniform und starrte Hermione an, die damit beschäftigt war ihre Jacke auszuziehen.</p><p>„Terry, was machst du denn hier?", wollte sie überrascht wissen.</p><p>Harrys Blick verfinsterte sich als Terry sie herzlich umarmte aber ihn völlig ignorierte, er war wohl viel zu sehr damit beschäftigt Hermione anzuhimmeln.</p><p>„Ich hab wie du wohl auch das Angebot von McGonagall angenommen.", erklärte er aufgeregt.</p><p>Als er dann sah wie Hermione ihren Koffer auf die Gepäckablage schaffen wollte, machte er sich daran ihr zu helfen doch Harry war schneller.</p><p>„Ich mach das schon.", meldete Harry sich ruppig zu Wort und schob Terry bei Seite um den Koffer mühsam mit einem lauten Krachen auf das Gestell zu heben.</p><p>„Potter, ich hab dich gar nicht erkannt. Schön einige vertraute Gesichter wiederzusehen." Das Lächeln aus Terrys Gesicht verschwand als er Harrys Reaktion sah.</p><p>„Nun, ich geh besser wieder zurück in mein Abteil. Wir sehen uns, Granger?", verabschiedete er sich daraufhin hastig.</p><p>„Was war das bitte?", stellte Hermione Harry zu Rede nachdem sie wieder alleine waren,</p><p>„Ich weiß nicht was du meinst.", erwiderte er kühl und setzte sich.</p><p>„Das weißt du ganz genau.", sah sie ihn wütend an und setzte sich ihm gegenüber hin.</p><p>Ein weiteres Mal ging die Abteiltür auf erst kamen rote Haare zum Vorschein, bevor sie in ein alt bekanntes Gesicht sahen, das von Ron Weasley. Verblüfft hielt er inne und starrte von Harry zu Hermione, wo sein Blick kurz verweilte nur um wieder zu Harry zurück zu wandern.</p><p>„Hey.", brachte er hervor.</p><p>Harry schluckte, mit der Begegnung hatte er nicht gerechnet. Über Wochen hatte er jeglichen Gedanken an seinen besten Freund verdrängt gehabt, es war überraschend einfach gewesen, immer hin hatte er sich mittlerweile an solche Trennungen gewöhnt und doch musste er sich eingestehen, hatte er Ron vermisst. Nicht seine Eifersucht, das Verlangen über Harry stehen zu müssen um wer zu sein sondern dieser herzliche Junge, der mit ihm über alles Mögliche redete mit dem er Spaß haben konnte. So vieles war in vergangenen Jahren passiert, dass Harry sich manchmal sehnlichst die Zeit zurückwünschte als sie nichts trennen konnte.</p><p>„Ist hier noch was frei?", völlig verunsichert fragte Ron.</p><p>Es war fast so als ob sie wieder auf der ersten Zugfahrt wären.</p><p>„Natürlich, komm rein.", antworte Hermione und Harry nickte nur zustimmend.</p><p>Langsam betrat Ron das Abteil, verstaute sein Gepäck und setzte sich schließlich neben Harry.</p><p>„Wo seid ihr gewesen?", brach Ron schließlich das Schweigen.</p><p>„Australien, bei Hermiones Eltern.", sprach Harry das erste Mal etwas zu Ron.</p><p>„Ihr habt sie gefunden?", freute er sich.</p><p>„Und sie wissen wieder wer ich bin, dank Harry.", strahlte Hermione.</p><p>Verwundert sah Ron zu Harry, doch er zuckte nur die Schultern. Er hatte sich nicht wirklich damit beschäftigt warum Hermione nicht in der Lage gewesen war um den Zauber von ihren Eltern selbst aufzuheben.</p><p>„Nun", begann sie und biss sich auf die Lippe, „ich war emotional nicht in der Lage den Zauber zu brechen. Ihr wisst ja umso mehr Wille hinter einem Spruch steht desto stärker ist er."</p><p>„Wie bei den unverzeihlichen?" Sie nickte Harry zu.</p><p>„Damals als ich den Vergessenszauber sprach, war logischer Weise mehr Wille, Klarheit im Spiel als später beim aufheben, da ich ja alles darum tun wollte damit sie in Sicherheit sind und kein Todessesser sie ausfindig machen könnte um an Informationen über Harry zu kommen.", versuchte sie es näher zu erklären doch Ron grinste nur Harry an, beide dachten das gleiche.</p><p>Das war die typische Situation in der sie ihnen was erklärte wie millionen Mal zuvor.</p><p>„Als ich dann nach dem Krieg den Zauber wieder aufheben wollte, nun da war die Angst viel größer, so dass mir der Spruch nicht gelang.", schloss sie.</p><p>„Dann kam Harry ins Spiel und hat das für dich erledigt und ihr seid dann in Australien geblieben?", schlussfolgerte Ron und sah von einem zum anderen.</p><p>„Ja, Mr und Mrs Granger hatten es mir angeboten zu bleiben und Hermione hatte einiges aufzuholen.", bestätigte Harry ihn.</p><p>Eine Pause entstand in der Ron offensichtlich überlegte in der Zwischenzeit hatte der Zug längst London verlassen.</p><p>„Wissen deine Eltern denn, dass ihr, na du weißt schon?", siegte schließlich die Neugier.</p><p>Als Hermione nickte, sah sie Ron nicht an sondern war viel mehr damit beschäftigt ihre Hände zu betrachtet, ihr war das Thema sichtlich unangenehm.</p><p>Rons Gesicht war gerötet, doch schien er nicht verärgert zu sein. In den vergangenen Wochen war in ihm eine Veränderung vor sich gegangen, Harry sah es ihm zumindest an und wunderte sich im Stillen.</p><p>„Ich", stotterte Ron, "ich möchte mich bei euch beiden entschuldigen. Mittlerweile ist mir klar geworden, dass ich mich wie ein Idiot aufgeführt habe."</p><p>„Ist schon in Ordnung –„</p><p>„Nein, ist es nicht, Harry.", unterbrach Ron ihn bestimmt, „Es hat zwar erst ein Gespräch mit Dad nötig bevor ich es selbst einsah, aber ihr beide seid das Beste was mir passieren konnte und ich sollte das nicht zerstören mit meinen Selbstzweifeln. Der Krieg hat mir mehr als deutlich gezeigt, wie schnell es zu spät sein kann."</p><p>Unsicher sah Harry zu Hermione, die mittlerweile mit den Tränen kämpfte.</p><p>„Du hast mit deinem Dad darüber geredet?", fragte er leise nach.</p><p>„Ja", nickte Ron, „über alles und obwohl er nicht besonders begeistert war zu hören wie ich wieder einmal davon gelaufen war, hat er mich überraschend gut verstanden. Es hat bemerkenswert gut getan über all dies zu reden."</p><p>„Die letzten Wochen müssen schwierig gewesen sein.", sprach Hermione zaghaft.</p><p>Ron schluckte, schien merklich mit sich zu kämpfen.</p><p>„Es waren die härtesten in meinem ganzen Leben.", sagte er kaum hörbar.</p><p>Bevor Harry nur blinzeln konnte, war Hermione zu Ron geeilt, saß neben ihn und umarmte ihn.</p><p>„Mir tut es unendlich leid, dass wir nicht für dich da waren.", hörte er sie immer wieder sagen.</p><p>Ron löste sich von ihr und sah mit einem wässrigen Lächeln Harry an.</p><p>„Ich bin nur so froh euch zu sehen.", sagte er herzlich und umarmte schließlich auch Harry.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_11_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Ich werde sicherlich nicht ein ganzes Schuljahr beschreiben, eher einzelne Szenen um zu dem Schluss dieser Geschichte zu gelangen. Mir war eigentlich sehr wichtig die Freundschaft der Drei nicht zu beenden oder die Dynamik da herraus zu nehmen, etwas was JKR in meinen Augen getan hat. Nachdem ganzen Medailllion-Fiasko ist es eigentlich nur logisch, dass Harry immer das Gefühl haben würde...Ron könnte die Freundschaft zwischen Harry und Hermione als eine Gefahr ansehen. Daher geh ich klar davon aus, dass aus dem Trio im Epiloge zwei Paare geworden sind und die einstige innige Freundschaft auf der Ebene schlicht nicht mehr gibt.</p><p>Nun denn Rons Sicht hat sich in den Wochen verschoben, nicht zu letzt durch Freds Tod und der Erkenntnis, dass er nicht auch noch seine besten Freunde verlieren will.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-12">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615567">Chapter 12</a>: Aufziehender Sturm
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <i>"Eine nur schwache Flamme verlöscht der Sturm, hat sie schon um sich gegriffen, facht er sie nur stärker an." - Sophie Mereau, Betrachtungen<br/></i>
+</p><center>
+  <p>
+    <b>Aufziehender Sturm</b>
+  </p>
+</center>In den letzten Stunden hatte Harry sich mehr als einmal gefragt, was in ihn gefahren war? Die ersten Wochen zurück in Hogwarts waren erstaunlich leicht gewesen. Zwar hatte er oder besser Hermione mit den tödlichen Blicken von Ginny zu kämpfen aber sie mied beide, was Harry nur recht sein konnte. Das Verhältnis zu Ron hatte sich auch normalisiert, man konnte fast behauptet es war besser als zuvor. Harry brauchte nicht mehr nebendran sitzen und mit ansehen wie Ron und Hermione über ihn stritten, Ron nahm sich zurück und schien merkwürdig erleichtert darüber zu sein ihr nicht länger was beweisen zu müssen. Hermione war für ihn offenbar unerreichbar geworden. Etwas was er einem gewissen Ravenclaw Prefect voraus hatte. Terry Boot war es schließlich gewesen, der daran Schuld hatte, dass Harry nun überhaupt in dieser prekären Situation war.<p>Nur wenige wussten, dass Hermione und Harry verheiratet waren, da noch viele alte Lehrer sie mit Miss Granger ansprachen. Die Magie hingegen in Hogwarts war da weniger rückständig, das Headquartier war für ein Ehepaar eingerichtet, zum ersten Mal seit mehreren Jahrzehnten wie Professor McGonagall betonte. Es hatte nur ein großes Schlafzimmer mit einem Himmelbett für zwei. Durch die Zeit in Australien waren beide daran gewöhnt ein Bett zu teilen, Harry war gar erleichtert, dass er nicht allein in einem Zimmer schlafen musste. Aber von all dem bekam der gemeine Schüler nichts mit, da das alles hinter verschlossenen Türen ablief. Niemand konnte von außen erahnen, wie das Headquartier tatsächlich aussah.</p><p>Vielleicht lag es auch gerade an dieser ständigen Nähe zu Hermione, dass es Harry jeden Tag mehr störte wie Terry Boot ihr schöne Augen machte. Egal wie die Gründe lagen, eins wusste Harry, er war in Schwierigkeiten.</p><p>„Sie wird dich umbringen, Harry.", stellte Ron wiederholt äußerst gut gelaunt fest, als er 1001 Aufhebungszauber schloss und es zurück ins Regal stellte.</p><p>„Danke für die Erinnerung. Es wäre hilfreicher wenn du mir dabei hilfst irgendwas zu finden um den Zauber aufzuheben am besten bevor Hermione ihn bemerkt.", grollte Harry.</p><p>Sie waren beide in der Bibliothek hatten schon unzählige Bücher auf einem Tisch abgestellt und durchsucht, waren aber nicht fündig geworden.</p><p>„Bevor? Wen machst du hier eigentlich was vor, sie weiß längst davon, sie trägt das Abzeichen jeden Tag." Ungläubig schüttelte er den Kopf.</p><p>„Ron!", warnte Harry ihn und schlug ein weiteres Buch laut zu.</p><p>„Das ist ein Zauber von den Zwillingen, der ist nicht so einfach aufzuheben –„</p><p>„Verdammt.", zischte Harry und zog Ron hinter das Bücherregal.</p><p>Gerade so hatte er Hermione gesehen, wie sie sichtlich verärgert die Bibliothek betreten hatte.</p><p>„Was zum Teufel macht sie hier?", flüsterte Harry.</p><p>„Harry, das ist Hermione von der wir reden, sie geht immer in die Bibliothek.", antwortete Ron rhetorisch.</p><p>Sie hatte gerade ein Regal erreicht und begonnen nach hilfreichen Büchern zu suchen, da schien sie sich an dem lauten Kichern einiger Fünftklässlerinnen zu stören.</p><p>„Ruhe, das ist eine Bibliothek!", raunzte sie die Gruppe an, die schlagartig verstummte.</p><p>„Sagt wer?", kam eine gelangweilte Stimme, die zu einer Slytherinschülerin gehörte.</p><p>Es waren relativ wenige vom Haus Slytherin zurück nach Hogwarts gekehrt, sie hatten einen denkbar schlechten Stand nach dem Krieg.</p><p>„Ich sag das." Hermione näherte sich dem Tisch an dem neben dem Mädchen aus Slytherin noch einige aus Gryffindor und Huffelpuff saßen und zeigte auf ihr Abzeichen.</p><p>„Oh oh, du steckst so was von im Schlammassel.", entfuhr es Ron, doch bevor er nur noch ein Wort sagen konnte, hielt Harry seinen Mund zu.</p><p>„Sie ist Headgirl, komm lass uns lieber hier verschwinden, Cecilia, bevor Granger uns Punkte abnimmt oder schlimmer Nachsitzen lässt.", meldete sich ein Gryffindor Mädchen zu Wort und war schon im Begriff zusammenzupacken.</p><p>„Warte, da steht aber was anderes auf dem Abzeichen.", sagte Cecilia und starrte auf das silberne Emblem auf Hermiones Robe.</p><p>„Tatsächlich", bestätigte ein weiteres Mädchen.</p><p>„Hermione Potter", las Cecilia, "und das soll uns genau was sagen?"</p><p>Harry schloss die Augen als das Mädchen das sagte. Das konnte nicht gerade passieren, dachte er nur.</p><p>„Bist du irgendwie mit Harry Potter verwandt?", wollte eine andere Stimme wissen.</p><p>„Ach quatsch, ich sagte euch doch, das ist Granger. Glaub beste Freundin von Potter.", wusste wer anders.</p><p>„Vielleicht sind sie ja verheiratet.", spekulierte eine verträumte Stimme.</p><p>„Du bist hoffnungslos romantisch, Susie. Ist doch offensichtlich, dass sie wohl sein Fangirl ist.", warf Cecilia ein und wandte sich dann zu Hermione, „Bist du für so was nicht etwas zu alt?"</p><p>„Bin ich froh, dass ich nicht in deiner Haut stecke.", nuschelte Ron während Harry in nur wütend ansah.</p><p>„Das reicht jetzt, verschwindet bevor ich euch alle Nachsitzen lasse!", zischte Hermione gefährlich.</p><p>„Das würdest du dich nicht wagen.", entgegnete Cecilia plötzlich eingeschüchtert.</p><p>„Versuch mich."</p><p>„Komm, lass uns gehen." Damit gingen die Mädchen.</p><p>Hermione blieb eine Zeitlang wütend stehen, bevor sie sich zurück zum Regal drehte um ein Buch heraus zunehmen, entschied sich dann aber doch anders und stürmte ebenfalls aus der Bibliothek.</p><p>„Was hast du dir nur dabei gedacht, Kumpel?", brach Ron das Schweigen.</p><p>„Alles nur wegen Boot.", presste Harry hervor.</p><p>Unverständlich schüttelte Ron den Kopf.</p><p>„Du bist doch schon mit ihr verheiratet, was willst du denn noch?" Es war ihm wirklich ein Rätsel.</p><p>„Ron, wir sind nur –„</p><p>„Freunde, oh ja, das sehe ich. Wen willst du eigentlich damit überzeugen mich oder dich selbst?", unterbrach er Harry.</p><p>Doch er hatte längst nicht mehr zugehört, viel mehr war er damit beschäftigt eine Lösung zu finden für das Problem.</p><p>„George.", murmelte er.</p><p>„Was hat denn jetzt mein Bruder damit zu tun?", entrüstete sich Ron.</p><p>„Wir müssen mit ihm reden, da hilft nichts anderes."</p><p>„Ich weiß nicht ob das so eine gute Idee ist, seit Fred, nun er ist wirklich kaum ansprechbar.", stotterte Ron während Harry ihn hinter sich herzog.</p><p>Unterdessen vor dem Schloss hatte die Dämmerung längst eingesetzt. Leuchtend rot ging am Horizont die Sonne unter und tauchte die Silhouette in ein diffuses Licht. Die Narben im Mauerwerk, die Gerüste, die immer noch an den Krieg erinnerten, verloren ihre schärfe. Weiter draußen schmiegte sich der kleine See in die Landschaft und es war fast so als ob alles in bester Ordnung war und nicht nur die Ruhe vor einem aufziehendem Sturm. Im Osten kamen dunkle, bedrohlich wirkende Wolken näher. Es war nicht mehr zu leugnen, der Herbst stand kurz bevor und mit ihm alle Unannehmlichkeiten, die er mit sich brachte.</p><p>Immer noch außer sich trat Hermione aus dem Portal, sie musste an die frische Luft, sei es nur um Gedankenlos um den See zu laufen, In der Verfassung war sie in der Bibliothek völlig unnütz. Jedoch bevor sie auch nur in die Richtung gehen konnte, wurde sie von hinten an die Schulter gepackt und herum gewirbelt. Eine fuchsteufelswütende Ginny stand ihr gegenüber. Ihre lange rote Mähne flatterte im aufkeimenden Wind nach hinten während Hermione Mühe hat ihr eigenes Haar aus dem Gesicht zu halten.</p><p>„Macht es dir irgendeine sadistische Freude mich so zu quälen?", schrie sie Hermione entgegen.</p><p>Sie war völlig sprachlos.</p><p>„Musst du mir das so unter die Nase reiben. Ich rede mit dir, Hermione?"Ginny packte sie zornig an die Oberarme und schüttelte sie.</p><p>„Ich tue nichts dergleichen.", entgegnete Hermione immer noch perplex.</p><p>„Nein und was ist das?", dabei deutete Ginny wild auf das Abzeichen, „Wohl ein schiefgelaufener Scherz oder wie?"</p><p>Ihr griff wurde immer härter.</p><p>„Ginny lass mich los, du tust mir weh.", versuchte Hermione sich von ihr loszureißen doch das jüngere Mädchen war erstaunlich stark.</p><p>„Du bist so eine gottverdammte Schlampe. Du verdienst jemanden wie Harry nicht, der bereitwillig wegen eine wie dir sein Glück aufopfert.", schrie Ginny hysterisch.</p><p>Die Worte verfehlten nicht ihre Wirkung, Hermione wollte nur noch mehr von Ginny weg. Als ob sie selbst all das nicht längst wüsste, sie brauchte nicht Ginny um zu erahnen, dass Harry mit seinem Retterkomplex seinem eigenem Glück im Wege stand.</p><p>„Ginny!", hörte Hermione eine männliche Stimme und sah auf, durch unvergossene Tränen konnte sie Neville im Eingangsportal ausmachen, wie er im schnellen Schritt von hinten auf Ginny zu ging.</p><p>„Lass Hermione los!", befahl er ihr und zu Hermiones Überraschung tat sie das auch.</p><p>Fast wie in Trance wich Hermione von den beiden hin zurück ins Schloss.</p><p>„Ich wünschte Bellatrix hätte dich umgebracht.", rief Ginny mit tränenerstickender Stimme ihr hinter her.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-13">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615603">Chapter 13</a>: Erhöre mein Flehen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Wir sind eigentlich auf der Zielgrade, bedeutet diese Geschichte wird auf jedenfall zu Ende erzählt werden. In den letzten Tagen ging mir so einiges durch den Kopf besonders was die liebe Liebe angeht und mein wiederholtes wundern wie furchtbar kompliziert es sein kann. Eigene Erfahrung prägt und dazu braucht es nicht ein mal ein offizielles Zusammensein. Wo fängt es an, wo hört es eigentlich auf? Mir hat mal ein Mann gesagt, man solle nicht die Worte beurteilen sondern die Taten... wie unwahrscheinlich korrekt.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><center>
+  <p>
+    <b>Erhöre mein Flehen</b>
+  </p>
+</center>Das Bild konnte nicht absurder und doch zugleich vertrauter sein. Im großen Kamin des Gemeinschaftsraums vom Headquartier schwebte über grünlichen Flammen der Kopf von George Weasley. Herzhaft lachte er, die roten Haare fielen dabei zurück so dass es mehr als sonst sichtbar war, dass ihm ein Ohr fehlte. Auf dem Boden vor dem Kamin saßen Ron und Harry, die sich hilflos ansahen. Mit jeder Reaktion hatten sie gerechnet von Ablehnung bis hin zu Desinteresse, aber die offensichtlichste war völlig überraschend. Der Tod des Zwillingsbruders hatte George in einen Schatten seiner selbst verwandelt. Lachen war das letzte gewesen was man mit dem jungen Mann in Verbindung brachte und doch hier saßen sie und sahen wie George sich prächtig amüsierte.<p>Für einen winzigen Augenblick war Harry tatsächlich froh, dass er das Headgirlabzeichen von Hermione derart verzaubert hatte ohne zu wissen wie er es rückgängig machen konnte.</p><p>„Du hast wirklich das Abzeichen von Hermione Granger verzaubert? Oh man, was würde ich darum geben ihr Gesicht zu sehen oder wenn sie es dir heimzahlt, Harry.", gluckste er.</p><p>„Nicht witzig.", grollte Harry.</p><p>„Sogar wahnsinnig witzig. Nicht einmal wir wären darauf gekommen sie reinzulegen." George lachte wieder los und schüttelte den Kopf.</p><p>„Der Gegenzauber wäre hier vielleicht hilfreicher, George.", raunzte Ron.</p><p>„Nur mal langsam, Ronnilein, glaubst du wirklich, dass ihr euch damit aus der Affäre ziehen könnt?", fragte George rhetorisch.</p><p>„Ich hab damit nichts zu tun." Ron hob abwehrend die Hände in die Luft was ihm einen strafenden Blick von Harry einbrachte.</p><p>„Es wird sie zumindest etwas besänftigen.", seufzte Harry und fuhr sich durchs Haar.</p><p>„Nun gut, um den Zauber aufzuheben musst du revidere ineptia sprechen dann sollte dein kleiner Scherz beendet sein. Viel Glück und bei Merlin, ihr werdet es brauchen.", lachend und mit einem grünen aufflammen der Feuerstelle verschwand Georges Gesicht.</p><p>Ron öffnete den Mund als ob er was sagen wollte, schloss ihn wieder nur um einen weiteren Versuch zu starten.</p><p>„Glaubst du auch, dass Hermione denkt ich hätte was damit zu tun?", fragte er schließlich, Harry schnaubte nur ungläubig.</p><p>„Warum solltest ausgerechnet du ihr Headgirlabzeichen so verzaubern, dass man Hermione Potter drauf ablesen kann?"</p><p>Miserable stand Harry auf.</p><p>„Das ist gut, sogar sehr gut!", gab Ron ihm recht doch dann verzog er wieder nachdenklich das Gesicht, „Wieso solltest du das eigentlich tun?"</p><p>Harry ignorierte ihn und ging stattdessen zu der großen bequemen roten Couch herüber und ließ sich auf ihr nieder. Die beste Maßnahme war hier auf Hermione zu warten und zu hoffen, dass der Sturm bald vorüber ginge.</p><p>„Weshalb genau sollteste du Interesse daran haben, dass jeder weiß, dass Hermione mit dir verheiratet ist?", bohrte provokativ Ron unbeirrt weiter und stand ebenfalls auf, gesellte sich zu ihm auf die Couch.</p><p>„Ron!", warnte Harry ihn, er wollte nicht darüber reden.</p><p>„Vielleicht sollest du dir klar werden was du willst. Ich wusste von Anfang an, dass ihr nicht allein wegen der Angst diesen Weg gewählt habt, nicht nur. Vielleicht bin ich nicht so clever wie Hermione oder so selbstlos wie du aber als Hermione sich für dich entschieden hatte, dir sogar bis in den Tod gefolgt wäre war mir bewusst, dass da mehr ist zwischen euch, Harry, viel mehr.", sprach Ron eindringlich weiter und Harry fragte sich wann sein bester Freund so sensibel geworden war?</p><p>„Das ist nicht so einfach.", wehrte sich Harry,</p><p>„Ganz im Gegenteil, es ist einfach. Du liebst sie, oder?" Es war weniger eine Frage als eine Feststellung.</p><p>Harry schwieg beharrlich, aber das schien Ron auszureichen. Als Harry zu ihm rüber sah und ein selbstzufriedenes Lächeln entdeckte, fuhr er sich erneut frustriert durchs Haar. Alles war völlig verdreht, völlig wirr und mehr als einmal kam Harry der absurde Gedanke, wann sie diesen Weg eingeschlagen hatte, wann genau seine Gefühle für Hermione sich geändert hatten und vor allem wie Ginny da hinein passte?</p><p>Ihm schwante, dass es noch viel komplizierter war als ohnehin schon. Es war nie Ginny gewesen, die ihn herausforderte, durch ihn hin durchdrang wenn es darauf ankam. Sie war allenfalls seine Flucht gewesen im sechsten Schuljahr, nachdem er von der Prophezeiung wusste, nachdem Sirius wegen seiner Dummheit gestorben war. Es war so leicht, so obskur leicht gewesen mit ihr zu tun als ob nicht die Welt auf seinen Schultern lastete. Er brauchte nicht zu kämpfen, sie von nichts überzeugen sondern tun was immer er glaubte richtig zu sein.</p><p>Hermione hingegen, er brauchte sie nur anzusehen während des sechsten Schuljahrs und wusste, dass er Unrecht gehabt hatte, er sie fast auch verloren hätte nur weil sie wider besseren Wissens ihm gefolgt war. Sie war die schmerzhafte Realität gewesen, vor der er flüchten wollte. Nachdem vergangenen Jahr wusste Harry, dass er nie wieder flüchten könnte, zu viel war passiert als dass er je wieder ein so unbeschwertes, vorgegaukeltes Leben führen konnte.</p><p>„Du solltest ihr sagen was du für sie empfindest.", drang Rons Stimme durch, Harry blickte auf.</p><p>„Hey, ich bin nicht das Problem, ich habe es akzeptiert, dass Hermione zu dir gehört, Harry. Wenn dann ist Ginny eins, sie glaubt noch immer, dass ihr wieder zusammen kommen werdet, dass du dich für sie entscheiden wirst.", hob Ron abwehrend die Hände.</p><p>Bevor Harry etwas sagen konnte, wurde es für einen Moment taghell im Gemeinschaftsraum und man konnte durch eines der Fenster sehen wie der Blitz durch mehrere Wolken zog ehe es laut donnerte. Das tiefe Grollen daraufhin übertönte alle weiteren Geräusche, die sie beide eventuell gehört hätten.</p><p>Erst ein weiteres Wetterleuchten was den Gemeinschaftsraum erneut erhellte, zeigte eine weitere Person im Raum. In dem kurzen Moment war ersichtlich, dass Hermione in einem schlechteren Zustand war, als Harry es überhaupt befürchtet hatte.</p><p>„Harry, wir müssen reden, alleine." Ihre Stimme war kaum über dem Grollen zu hören und doch ließ sie Ron zusammenzucken, aufspringen und das Weite suchen.</p><p>Angestrengt versuchte Harry in der Dunkelheit, welche nur von den Blitzen in Intervallen völlig durchbrochen wurde und sonst nur das langsam sterbende Feuer im Kamin eine Lichtquelle bot, das Gesicht von Hermione auszumachen. Sie hielt den Kopf gesenkt und das schwache rötliche Licht vom Kamin bot mehr Schatten als wirkliche Erleuchtung.</p><p>„Es kann nicht mehr so weiter gehen, es geht nicht mehr.", ihre Stimme brach und er wusste, dass sie geweint hatte und wohl noch immer mit den Tränen kämpfte.</p><p>Dann sah sie endlich auf und er wünschte sie hätte es nicht. Nie zuvor hatte er sich so miserable gefühlt, wie in diesem Augenblick als er sah wie aufgelöst, hilflos sie aussah und das nur wegen ihm.</p><p>„Ich wollte das nicht.", versuchte er und wusste egal was er ihr sagen würde, heute wäre alles vergebens um den Tag noch zu retten.</p><p>Frustriert stand er auf und ging auf sie zu, sie rührte sich keinen Zentimeter. Schemenhaft sah er wie sie ihre Hände bearbeitete, mit ihren einzelnen Fingern spielte.</p><p>„Ich halte das nicht mehr aus.", flüsterte sie kaum hörbar und wisch sich mit der linken Hand über die Wange.</p><p>Harry hielt den Atem, irgendwas musste passiert sein, es ging gar nicht um den Streich.</p><p>„Hermione, was ist passiert?", fragte er besorgt und war drauf dran nach ihrer Hand zu greifen, sie wich zurück und er griff ins Leere.</p><p>„Alles was ich je wollte, war, dass du glücklich bist, das musst du mir glauben, Harry.", redete sie plötzlich drauf los, "Stattdessen steh ich dir im Weg, bin der Grund, warum du immer noch auf dein Happy End warten musst."</p><p>„Hermione –„</p><p>„Sie hat recht.", flüsterte sie nun mehr zu sich als zu ihm, „Es wäre tatsächlich besser gewesen wenn Bellatrix –„</p><p>„Was redest du da?", unterbrach Harry sie nun verärgert, griff nach ihrem Kinn, hob es an so dass sie ihn endlich in die Augen sah.</p><p>Sekunden lang starrten sie sich nur an. Harry versuchte sie zu lesen, verstehen dabei ahnte er längst, dass Ginny eventuell ihr Schweigen gebrochen hatte, sie vielleicht das Abzeichen gesehen hatte.</p><p>„Bitte, bitte mach dem ein Ende, Harry.", drang Hermiones flehen zu ihm durch obgleich der Donner, wenn möglich noch lauter durch den Raum schallte als zuvor.</p><p>„Ich kann es nicht.", erwiderte er kleinlaut woraufhin sie ihn mit einem entäuschten Blick strafte bevor sie sich abwandte und in ihn stehen ließ.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-14">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615642">Chapter 14</a>: Herz vergeben, Herz verschenkt
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/17578553#chapter_14_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><center>
+  <p>
+    <b>Herz vergeben, Herz verschenkt</b>
+  </p>
+</center><i><br/>"To love at all is to be vulnerable. Love anything and your heart will be wrung and possibly broken. If you want to make sure of keeping it intact you must give it to no one, not even an animal. Wrap it carefully round with hobbies and little luxuries; avoid all entanglements. Lock it up safe in the casket or coffin of your selfishness. But in that casket, safe, dark, motionless, airless, it will change. It will not be broken; it will become unbreakable, impenetrable, irredeemable. To love is to be vulnerable."</i><p><i>― C.S. Lewis, The Four Loves<br/></i><br/>Der Wind ließ die welken Blätter an den Bäumen rascheln. Nicht lange und sie regneten farbenfroh hinunter und begannen den Rasen, die Lande von Hogwarts zu bedecken. Die langsam golden aufsteigende Sonne tat ihr übriges um den Morgen nach dem Sturm einen eigenen Zauber zu verleihen.</p><p>Es war recht kühl aber gerade das brauchte er. Dieses Zusammenspiel von der leicht feucht kalten Luft, der wärmenden Sonne und dem Geruch von Erde, Laub. Einzelne Blätter wurden sogar bis zum Quidditch Feld getragen.</p><p>Mit hoher Geschwindigkeit flog Harry seine Runden. Das erste Mal seit mehr als einem Jahr saß er wieder auf einem Besen um nur das Fliegen an sich genießen zu können. Er hatte fast schon vergessen wie es sich anfühlte in der Luft so zu fliegen mit nichts außer dem Boden in weiter Tiefe unter sich. Vollkommende Freiheit, wie hatte Harry dies vermisst. Nirgends woanders konnte er sich besser entspannen, nachdenken als hier.</p><p>Vor Monaten hatte er nicht einmal damit gerechnet die nächsten Tage zu überleben und jetzt hatte er nicht nur Voldemort besiegt sondern sah sich einem Umbruch in seinem Leben gegenüber mit dem er alles andere als klar kam. Aber nicht nur um ihn herum gab es Veränderungen, er selbst war ein anderer. Sein Leben und die Menschen darin hatten eine andere, teils tiefere Bedeutung bekommen. Eigentümlich wie innerhalb eines knappen Jahres lange geglaubte Wahrheiten, Gefühle einfach übern Haufen geworfen werden konnten.</p><p>Der Stiel des Feuerblitzes begann zu vibrieren, unbemerkt war er immer schneller geflogen. Harry machte keine Anstalten das Tempo drosseln zu wollen, zu sehr war er in seinem Gefühlschaos gefangen. Von jetzt auf gleich hatte ihn die Wut gepackt. Im ersten Moment wusste er selbst nicht worüber, doch als es ihm bewusst wurde, lehnte er sich nur noch entschlossener in den rasanten Flug.</p><p>Währenddessen betrat eine weitere Person den Spielfeldrand. In der Hand einen Besen, das feuerrote, lange Haar wirbelte hinter ihr. Der Wind blies ihr von vorne ins Gesicht, dennoch konnte sie weit oben Harry fliegen sehen.</p><p>„Ginny!", rief Harry sobald er sie sah, doch hatte sie bereits auf dem Absatz kehrt gemacht.</p><p>„Ginny, warte." Unbeirrt ging sie weiter den Weg zurück den sie gekommen war.</p><p>Im halsbrecherischen Tempo landete Harry wenige Meter vor ihr. Seine Beine konnten gerade so die Wucht des Manövers abfedern ohne dass er stürzte.</p><p>„Wir müssen reden.", sprach er Außeratem.</p><p>„Es gibt nichts zu bereden, solange du noch verheiratest bist.", entgegnete sie kalt und war dabei an ihm vorbei zu gehen.</p><p>„Glaubst du etwa, das ist alles so einfach?", hielt Harry sie zurück und ließ seinen Besen auf den Boden fallen.</p><p>„Meinst du das ist es für mich? Während ich hier auf dich gewartet habe, hattest du was mit Hermione.", wurde sie lauter.</p><p>„Ich habe dich nie darum gebeten, im Gegenteil ich hab mich von dir getrennt.", er ließ sie los.</p><p>„Es änderte aber nichts an meinen Gefühlen für dich, Harry. Sogar jetzt noch, nach allem was gewesen ist, will ich mit dir zusammen sein. Ich weiß, dass du in einer Notlage warst aber du hast gesiegt, Voldemort gibt's nicht mehr.", ging Ginny auf ihn zu.</p><p>„Alles was du tun musst –„</p><p>„Ist Hermiones Leben zu Nichte machen.", unterbrach Harry sie bitter.</p><p>„Es gibt sicherlich Mittel und Wege ihr zu helfen, wenn nötig, aber sie kann genauso gut auch in der Mugglewelt ein normales Leben haben.", versuchte Ginny ihn zu beruhigen.</p><p>Harry lachte ohne Humor, schüttelte den Kopf bevor er sie wieder ansah.</p><p>„Zum Glück wird sie das nicht nötig haben.", entschlossen ballte er die Fäuste, sah aber nicht zu Ginny auf.</p><p>„Wie meinst du das jetzt?", fragte sie ihn perplex.</p><p>„Hermione ist meine Frau und das wird sie auch bleiben.", bestimmte Harry und sah ihr nun in die geschockten, verständnislosen Augen.</p><p>„Aber du liebst sie nicht, ich verstehe nicht wie du dein Leben so wegwerfen kannst?" Ginnys Stimme wurde unsicherer, während sie von ihm zurückwich.</p><p>„Ich werfe nichts weg. Im Gegenteil, ich stehe zu der einzigen, wirklich eigenen Entscheidung, die ich in meinem ganzen bisherigen Leben getroffen habe.", er lächelte bitter bei dem bloßen Gedanken an die Erinnerungen von Snape.</p><p>„Immer hat sie an mich geglaubt, zu mir gehalten, selbst als es völlig hoffnungslos war.", begann er, zu Ginnys Horror, seine Entscheidung zu rechtfertigen</p><p>„Aber ich doch auch, wenn du mich –„</p><p>„Du verstehst nicht, Ginny.", unterbrach er sie kopfschüttelnd, „Sie wäre für mich, mit mir gestorben. Nie hat sie versucht mir zu gefallen, es mir leicht zu machen wenn sie der Meinung war es wäre das Beste für mich."</p><p>„Über deinen Kopf hinweg bestimmen, wohl eher." Widersprach Ginny ihm.</p><p>„Dafür liebe ich Hermione.", leise sprach Harry die neue Wahrheit zum ersten Mal aus.</p><p>„Warum gerade jetzt, Harry?", fragte Ginny entsetzlich traurig und entäuscht nach.</p><p>All das was sie damit sagen wollte, konnte er ablesen. Wieso ausgerechnet jetzt, nachdem sie geglaubt hatte sein Herz wäre ihr?</p><p>„Der Krieg, die Flucht hat mich verändert, Ginny. Ich bin nicht mehr der selbe, wie vor einem Jahr, der einfach nur normal sein wollte.", begann Harry zu antworten.</p><p>„Ich hätte es wissen müssen." Ihr liefen ungehindert die Tränen die Wangen herunter, jetzt da ihr bewusst wurde, dass Harry nie wirklich ihr war und es nie sein würde.</p><p>„Es war nie meine Absicht –„</p><p>„Erspar mir das. Ich hoffe nur für dich, dass du mit deiner Entscheidung glücklich wirst.", unterbrach Ginny ihn wütend und wandte sich von ihm ab.</p><p>Das letzte was er von ihr an diesem Morgen sah, war ihre feuerrote Mähne, bevor er sie allein ließ um Hermione zu finden. Erstaunlich wie einfach Ginny seine Worte hingenommen hatte, aber es passte, schon bei Dumbledores Beerdigung hatte sie ähnlich reagiert. Ihn einfach gehen lassen, etwas das Harry bei Hermione nie gekannt hat.</p><p>Früher hatte es ihn immer entsetzlich gestört, dass sie einfach nicht nach gab, auf ihre Sicht bestand, doch jetzt war es anders. Eben diese Verbohrtheit, der unbeirrbare Glaube den sie in ihn gesetzt hatte, zu ihm stand, hatte es erlaubt, dass sie überhaupt überleben konnten. Die Momente in denen sie dann doch nachgab und wider besseren Wissens ihm folgte, waren umso beeindruckender.</p><p>Harry musste umgehend mit Hermione reden, die Situation klären, ihr bewusst machen, was er wirklich für sie empfand. Nur wusste er nicht wie er dies erfolgreich umsetzen sollte. Hermione Granger, Potter, war alles andere als naiv und würde glauben, dass er abermals seinem Rettungs-Syndrom nachgehe als dass seine Gefühle tatsächlich ehrlich waren.</p><p>In der großen Halle war Frühstückszeit, innerhalb der nächsten Minuten würden die ersten Schulstunden des Tages beginnen, dem entsprechend voll war es noch. Am Gryffindortisch angelangt fand Harry allerdings nur Ron an deren üblichen Platz wieder. Auf der Nase trug er eine kaum durchsichtige Brille von Luna, die neben ihm saß und bestens gelaunt erklärte was für wundersame Dinge er durch diese Brille sehen könne.</p><p>„Du hast recht, Luna.", gluckste Ron fast, „Man sieht den Leuten regelrecht an wonach sie suchen."</p><p>Harry war kurz davor seine Frage zu formulieren, doch Ron kam ihm zuvor.</p><p>„Falls du Hermione suchst, sie ist schon auf dem Weg zu Verwandlungen."</p><p>Für Sekunden starrte Harry von Ron zu Luna bevor er sich eines besseren besann und die Halle in schnellen Schritten verließ. Mit etwas Glück würde er Hermione noch abfangen können.</p><p>In den Gängen zu den Unterrichtsräumen kamen ihm einzelne Schüler, der verschiedenen Jahrgänge entgegen. Vor ihm lief eine Gruppe Fünftklässler, die es unmöglich machten den Gang weiter vorne ein zusehen. In zügigen Schritten lief Harry fast an ihnen vorbei, er wusste selbst zu gut, dass das Laufen in den Gängen verboten war aber dies war ein Notfall.</p><p>Erst als er fast schon den Unterrichtsraum von Verwandlungen erreicht hatte, konnte er Hermione nur wenige Meter vor sich her laufen sehen. Zielsicher griff er nach ihrer Hand und zog sie in einen leeren Raum, schloss die Tür hinter ihr.</p><p>„Harry?", rief sie geschockt aus, sie stand mit dem Rücken zu Tür.</p><p>Alle Worte die er sich zu Recht gelegt hatte, waren verschwunden, sprachlos starrte er sie an. Die Vorstellung nicht mehr länger anderen gefallen zu müssen, allein auf sein Herz zu hören, war neu und wundervoll.</p><p>„Gleich fängt Verwandlungen an und ich hab nicht vor zu spät zu kommen. Was es auch ist, sag es mir besser gleich.", sprach sie auf sein Schweigen hin, vermied es aber ihn direkt anzusehen.</p><p>Vielleicht befürchtete sie, dass er seine Meinung geändert hatte, überlegte Harry während er die Distanz zwischen ihnen verringerte. Monate war es her, dass er ihr so nahe war, ihren Atem auf seiner Haut spüren konnte, doch als er ihre bebenden Lippen gegen die seine spürte, wusste Harry, dass er nicht mehr so einfach ablassen konnte.</p><p>„Du kannst mich nicht einfach in einen leeren Klassenraum ziehen und –„</p><p>Abermals küsste er sie und brachte sie so zum Schweigen. Erst zaghaft, dann immer bestimmter erwiderte sie die Zärtlichkeiten. Es war wie damals im Zelt als ob ein Damm geborsten wäre und all die Gefühle nun ungehindert zum Vorschein kamen.</p><p>„Was hat das alles zu bedeuten?", wollte Hermione schwer atmend wissen, während er ihren Hals liebkoste.</p><p>Harry ließ einen Moment ab, sah sie ernsthaft an.</p><p>„Ich liebe dich.", flüsterte er und schluckte, „Das ist was ich dir sagen wollte."</p><p>Entsetzt sah sie ihn an. Er küsste sie wieder doch beendete sie den Kuss. Legte ihre zitternden Fingerspitzen gegen seinen Mund um ihn zurückzuhalten.</p><p>„Sag so etwas nicht, wenn du es nicht wirklich meinst.", warnte sie ihn mit brüchiger Stimme.</p><p>Mit einem intensiven Blick sah Harry sie daraufhin an.</p><p>„Jedes einzelne Wort meine ich so wie ich es gesagt habe.", sprach er leise aber mit Nachdruck, nahm dabei ihre Hand von seinen Lippen und presste sie gegen seine Brust, „Hermione, ich habe mich in dich verliebt."</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_14_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Ausführlich habe ich das Internet nach der deutschen Übersetzung zum Zitat bemüht, fand bzw. das gefundene war nicht so aussagekräftig wie das Original, daher verzeiht, dass ich euch hier mit etlichen englischen Zeilen folter.</p><p>Vieles wollte ich in diesem Kapitel klären, wieso und weshalb Gefühle sich ändern, habe mich allerdings teilweise dagegen entschieden. Die Gründe sind eigentlich offensichtlich, mir selbst gefällt der Gedanke nicht wenn alles erklärt wird, Geschehnisse aus den Büchern bemüht werden wenn man es unter Umständen zwischen den Zeilen längst erahnen kann. Diese eigene Fantasie macht, nach meiner Meinung, eine Geschichte authentischer. Es ist allerdings auch ein schmaler Grad zwischen zu wenig erklären und zu viel. Ich hoffe, dass es mir gelungen ist, einen Mittelweg zu finden.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-15">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/17578553/chapters/55615771">Chapter 15</a>: Es kommt so anders als man denkt
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/17578553#chapter_15_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><center>
+  <p>
+    <b>Es kommt so anders als man denkt</b>
+  </p>
+</center><i><br/>Liebe ist geduldig und freundlich. Sie kennt keinen Neid, keine Selbstsucht, sie prahlt nicht und ist nicht überheblich.<br/>Liebe ist weder verletzend noch auf sich selbst bedacht, weder reizbar noch nachtragend.<br/>Sie freut sich nicht am Unrecht, sondern freut sich, wenn die Wahrheit siegt.<br/>Diese Liebe erträgt alles, sie glaubt alles, sie hofft alles und hält allem stand.</i><p><i>- Paulus erster Brief an die Korinther<br/></i><br/>Die Tür zu der Mädchenumkleide fiel laut ins Schloss, während gleichzeitig eine junge Frau drinnen sich mit dem Rücken an die nahe Wand lehnte und sich an ihr hinunter rutschen ließ. Das lange feuerrote Haar diente wie ein Schleier, der die unaufhörliche Tränenflut über das schmerzverzerrte Gesicht verdeckte. Bei jedem Schluchzen bebte ihr gesamter zierlicher Körper.</p><p>„Ginny?", rief eine männliche Stimme.</p><p>Schwer atmend lehnte Ginny ihren Kopf gegen die Wand. Sie hatte Harry endgültig verloren und sie wusste nicht einmal warum. Hatte sie irgendwas verkehrt gemacht, war sie nicht attraktiv genug? Egal was es letztendlich war, die Gewissheit ihre große Liebe verloren zu haben, schmerzte unsagbar. Über Wochen hatte sie gehofft, dass Harry sich endlich wirklich für sie entscheiden würde. Aber vielleicht lag es auch gerade an den Entscheidungszwang, der ihn in die Arme von Hermione getrieben hatte.</p><p>„Ginny, bist du hier drin?", kam erneut die überaus besorgte Stimme von Neville, dies Mal jedoch direkt von der anderen Seite der Tür.</p><p>Ein weiterer Schluchzer kam ungehindert ihr über die Lippen.</p><p>„Ich komm jetzt rein.", warnte er und die Klinke wurde betätigt.</p><p>„Geh weg!", sie wollte nicht, dass sie irgendwer so sieht.</p><p>Doch Neville schien auf dem Ohr völlig taub zu sein. Für einen Augenblick war es als käme seine alte Unsicherheit bei ihm durch, sobald er die Tür geöffnet hatte und Ginny völlig aufgelöst auf dem Bodensitzen sah. Doch er besann sich eines besseren und eilte zu ihr, wie so viele Male zuvor auch, zu Seite. Sobald er saß, legte er einen Arm um ihre Schultern und sie lehnte sich in seine Umarmung.</p><p>„Harry?", unterbrach er die Stille.</p><p>Ginny nickte nur gegen seine Brust, viel zu aufgewühlt war sie.</p><p>„Was ist es dieses Mal?" Unterschwellig schwang Wut mit in seiner Stimme.</p><p>Es war möglicher Weise, diese leise Entrüstung, was sie am meisten tröstete. Wie kaum ein anderer war Neville ihr im vergangenen Jahr, oft auch gegen ihren Willen, zur Seite gestanden.</p><p>„Er hat sich für Hermione entschieden.", begann sie und sah ihn nun an.</p><p>„Endlich.", flüsterte Neville zwar aber Ginny hörte ihn trotzdem.</p><p>Verletzt, dass selbst er offenbar gegen sie war, wollte sie ihn wegstoßen, von ihm weg. Doch hielt er ihre Hand fest.</p><p>„Endlich hast du Gewissheit und die Chance wieder glücklich zu werden.", setzte er nach und sie beruhigte sich für einen Moment.</p><p>„Ich versteh es aber nicht, Neville? Bin ich denn so unausstehlich, was habe ich denn falsch gemacht?", verzweifelt fragte sie ihn während frische Tränen ihr über das Gesicht schossen.</p><p>„Nichts", Neville lächelte traurig, „rein gar nichts, Ginny."</p><p>„Aber-„</p><p>„ Man kann gewisse Dinge nicht mit jemanden durchleben ohne am Ende zu erkennen, dass man ohne diesen Menschen nicht mehr sein will." Unterbrach Neville sie bestimmt.</p><p>Feste schloss Ginny ihre Augen, nickte widerwillig. Sie verstand was er sagte und konnte es sogar nachempfinden, trotzdem änderte es nichts an ihrem Schmerz. Tröstend drückte Neville sie an sich und sie ließ es zu.</p><p>Fingerweise strahlte das Sonnenlicht durch die Fenster in das Klassenzimmer, so dass man die einzelnen Staubpartikeln leicht erleuchtet sah während sie sich allmählich durch die Luft bewegten. Fast als ob Hermione gerade dabei wäre aus einem Traum zu erwachen, blinzelte sie mehrere Male. Ganz deutlich hatte sie Harrys Worte vernommen, nur begreifen konnte sie es nicht. Immer noch hielt er ihre Hand gegen seine Brust, sah sie eindringlich an.</p><p>Alle Gedanken, alle Sorgen waren aus ihrem Gedächtnis verschwunden. Sie sah es ihm an, dass er es völlig ernst meinte und doch fiel es ihr so unsagbar schwer es zu glauben. So lange hatte sie sich selbst davon überzeugt, dass Harry niemals mehr für sie empfinden könnte als Freundschaft. Aufgegeben hatte sie ihn, sich für Jungs geöffnet, die sich für sie interessierten und nun stand er ihr gegenüber, sprach die Worte, die sie für völlig unmöglich hielt. Monate, Jahre lang hatte sie diesen Teil ihres Herzens weg gesperrt, im festen Glauben, dass all ihre Liebe für ihn für ewig ungehört bleiben würde.</p><p>„Hermione?", er strich ihr mit der anderen Hand sanft übers Gesicht.</p><p>Sie presste seine Hand gegen ihre Wange.</p><p>„Wirklich?", verunsichert wie ein kleines Kind klang sie.</p><p>„Ja, wirklich.", bestätigte Harry mit einem milden Lächeln.</p><p>Vorsichtig, als ob er jeden Augenblick verschwinden könnte, drehte sie ihren Kopf leicht und küsste die Innenfläche seiner Hand.</p><p>„Ich liebe dich, Harry, schon so lange.", flüsterte sie endlich und sah wie daraufhin tiefe Erleichterung durch ihn strömte.</p><p>Sein ganzes Gesicht erstrahlte und er wirkte um so vieles jünger als noch vor einigen Stunden. Der Kuss, der folgte, war zärtlicher, liebevoller als die vorrangegangen leidenschaftlichen.</p><p>„Komm mit mir.", hörte sie Harry ausgelassen sagen, dann spürte sie wie er ihre Hand in seine viel größere nahm ganz so als ob er mit ihr weggehen wollte.</p><p>„Warte, wir haben doch Unterricht.", protestierte sie halbherzig.</p><p>Amüsiert grinste er sie über die allzu typische Reaktion von ihr an.</p><p>„Ich will den Tag mit dir verbringen nicht in irgendeinem Klassenraum.", erwiderte Harry.</p><p>„Aber, aber wir sind Vorbilder." Ein rebellischer Teil in ihr rollte die Augen bei ihren eigenen Worten und sie wusste, dass sie an diesen Tag ganz sicher nicht mehr eine Schulstunde besuchen würde.</p><p>Unbeeindruckt führte Harry sie aus dem Klassenzimmer, durch die verschiedenen Korridore hin zum Geheimgang, der sie nach Hogsmeade führte.</p><p>„Wir brechen so viele Regeln.", seufzte sie, als die Statue den Weg für sie frei machte.</p><p>„Du liebst es sie zu brechen.", säuselte Harry, während er sie in den dunklen Gang führte und sie an sich heran zog.</p><p>„Nur für dich.", erwiderte sie grinsend als sie in sein vom Zauberstab erleuchtetes Gesicht sah, was nur wenige Zentimeter von ihrem eigenen war.</p><p>Im Hintergrund hörte sie noch wie die Statue laut den Weg wieder versperrte, sie in tiefe Finsternis sperrte, doch machte ihr das wenig aus. Hermione hatte nur Augen für Harry, Ängste oder Sorgen zählten nicht. Zum wiederholten Male spürte sie seine Lippen auf die ihren und wusste nicht ob sie jemals genug davon haben konnte. Es war jedes Mal auf neue ein Beweis, dass dies ihre Wirklichkeit nun war und sie brauchte mehr und mehr eine Bestätigung dieser.</p><p>Die Straßen aber auch die Läden waren um diese Zeit völlig verwaist, bis auf einzelne Bewohner oder gar Besucher von außerhalb. Zum ersten Mal zahlte es sich aus, dass Harry, wohl der berühmteste Zauberer seiner Zeit war. Keiner tadelte das Paar, der Besitzer vom Honigtopf war ganz im Gegenteil höchst begeistert den Retter, der magischen Welt, in seinem Laden zu wissen. Auch wenn er es sich nicht erklären konnte woher die zwei her kamen, vergaß er diese Sonderbarkeit bei der ganzen Aufregung.</p><p>Lachend und mit Tüten voll mit Süßigkeiten verließen sie das Geschäft. Der Tag, der noch leicht stürmisch begonnen hatte, entwickelte sich zu einem wunderschönen Herbsttag. Die Bäume mit dem bunten Laub, die noch wärmende Sonne wirkten wie Balsam.</p><p>„Gib mir deine Tüte, ich pack die mit in meine Tasche.", bat Hermione.</p><p>Erst jetzt, da sie draußen waren, sah Harry, dass sie ihre alte Schultasche dabei hatte. Sie war voll mit Büchern.</p><p>„Du hast die immer noch?", fragte er verwundert, sie hätte bequem die verzauberte Tasche von der Horcrux-Jagd nehmen können.</p><p>„Nenn mich ruhig sentimental, aber ich habe die seit dem ersten Schuljahr und ich verbinde die schönsten Erinnerungen mit ihr.", sie lächelte verlegen.</p><p>„Verständlich.", erwiderte Harry ernsthaft und reichte ihr die Tüte, „Aber lass mich die Tasche tragen."</p><p>„Harry, das ist wirklich nicht nötig.", sprach sie.</p><p>„Ich bestehe darauf."</p><p>„Also gut, meinet wegen." Damit reichte sie ihm die überaus gut gefüllte Tasche.</p><p>„Merlin, was hast du da drin, Steine?"</p><p>Hermione lachte nur und bewegte ihren Zauberstab in Richtung Tasche, sogleich viel es Harry erheblich leichter diese zu tragen.</p><p>„Danke.", er nahm ihre Hand in seine und küsste sie.</p><p>„Es hilft nicht zu vergessen, dass man zaubern kann.", neckte sie ihn, erwiderte den Kuss, der nicht enden wollte.</p><p>Gemeinsam verbrachten sie den restlichen Tag in Hogsmeade, was zwar durch den Krieg stark beschädigt wurde aber nur noch wenige Stellen erinnerten an die Kämpfe, die hier vor Monaten tobten. In diesen Stunden waren sie keine Kriegshelden mehr, sondern einfach ein verliebtes Paar, das freudig die Straße entlang ging, die Geschäfte mit hellen Gelächtern füllte.</p><p>Die Sonne stand am Horizont schon tief, doch es fühlte sich weder für Harry noch für Hermione so an als ob der Tag sich dem Ende neigte. Die Stunden waren wie in einem Wimpernschlag vergangen, aber was waren das für glückliche, unbeschwerte Momente gewesen? Hermione konnte sich nicht daran erinnern, sich jemals ähnlich gefühlt zu haben. Widerwillig machten sie sich auf um durch eines der Geheimgänge zurück ins Schloss zu gelangen.</p><p>Zwar mit einigen Unterbrechungen, die den überschäumenden Gefühlen geschuldet waren, machten sie ihren Weg ohne nennenswerte Unterbrechungen, unbeschadet zurück in die Korridoren des Schlosses. Sie waren auf dem besten Weg zum Gryffindorturm, als Hermione ihre Schultasche von Harry endlich wieder haben wollte. Bevor er ihr sie jedoch überreichte, wollte er seine Süßigkeitentüte heraus holen Er öffnete die Tasche und hielt inne. Ein schwarzgelbes Buch befand sich neben unzähligen anderen drinnen. Doch keines hatte das Interesse von Harry so erweckt wie dieses, es war unzweifelhaft das gleiche wie das in Australien, welches Hermione ihm nicht zeigen wollte. Fasziniert holte er es aus der Tasche und las zum ersten Mal den Titel.</p><p>„Glücklich verheiratet für Dummies.", las Harry laut, zu sehr war er verblüfft, als dass ihm bewusst war, was er tat.</p><p>Vergeblich versuchte eine zu tiefst rot angelaufene Hermione ihm das Buch aus der Hand zu reißen, doch er hielt es außerhalb ihrer Reichweite. Mit großen Augen sah Harry sie nun an, sie vermied den Augenkontakt, zu peinlich war ihr das Ganze.</p><p>„Ein Buch über das verheiratet Sein?", Harrys Stimme brach leicht.</p><p>„Nach dem du nichts von einer Verstoßung wissen wolltest, habe ich halt versucht mich zu informieren, was eine Ehe glücklich macht.", verteidigte Hermione sich hilflos.</p><p>Er steckte das Buch hastig zurück in ihre Tasche, die er auf den Bodenfallen lies, bevor er sich ihr wieder zu wandte. Mit beiden Händen griff er nach ihrem überraschten Gesicht und sah sie mit glänzenden Augen an.</p><p>„Das ist mit Abstand das verrückteste und zugleich selbstloseste was jemals ein Mensch für mich getan hat, Hermione.", presste Harry hervor.</p><p>Er schloss die Distanz und küsste ihre zitternden Lippen.</p><p>„Mr", Professor McGonagall räusperte sich, „und Mrs Potter, ich nehme an, sie haben sich für das Eheversprechen entschieden?"</p><p>Vergeblich versuchte die Schulleiterin streng und resolut zu wirken, doch das wässrige Lächeln gab die wahre Natur ihres seelischen Innenlebens all zu gut preis.</p><p>Erschrocken ließen Harry und Hermione von einander ab, ihnen war allzu gut bewusst, dass sie zweifelsohne eine Strafe drohte.</p><p>„So sehr mich das freut für sie, ändert es nichts an der Tatsache, dass sie in keinem der Unterrichtsstunden des heutigen Tages anwesend waren und das als Headgirl und sie Mr Potter, als Headboy. Ein Verhalten das unakzeptabel ist." Obgleich Professor McGonagall äußerst ernst klang, war das immer wieder auftauchende Grinsen, so kurz es auch war, nicht zu wiederlegen.</p><p>„Nun, sehen sie es als verspätetes Hochzeitsgeschenk an, dass ich ihnen den Tag nachträglich frei gebe."</p><p>Weder Harry noch Hermione brachten einen Ton hervor.</p><p>„Aber das sie dies nicht wieder tun, in solch einem Fall werde ich sicherlich nicht mehr zwei Augen zudrücken. Merlin weiß, sie haben etwas Glück verdient.", sprach die Schulleiterin erst äußerst streng, wurde aber immer emotionaler, "Nun gehen sie schon in ihr Gemeinschaftsraum und geben dem Tag, das Ende was er verdient, Nochmals alles Gute ihnen beide."</p><p>„Ja, Madame.", erklang wie aus einer Kehle die Antwort von Harry und Hermione.</p><p>Völlig verblüfft, sahen sie Professor McGonagall weg gehen.</p><p>„Weißt du, sie hat recht, wir sollten wirklich in unseren Gemeinschaftsraum und tun was verliebte Eheleute so tun.", brach Harry die Stille und zauberte Hermione tief pinke Wangen ins Gesicht.</p><p>„Harry!", tadelte sie ihn halbherzig, folgte ihn dennoch den restlichen Weg zum Turm.</p><p>Nicht jeder Tag endete so glücklich wie dieser eine im Leben von Harry und Hermione. Es gab kein immerwährendes Happy End, höchstens Phasen voll Glück, Zufriedenheit gemischt mit vielen dunklen, schweren Zeiten. Glück begreift man nur als solches, wenn man von tiefster Traurigkeit weiß und jeden Tag lobt, an dem man nicht am Abgrund stand. Hat man einen geliebten Menschen während diesen dunklen Stunden an der Seite, dann weiß man um sein Glück.</p><p>Harry und Hermione wussten um den Umstand auch wenn sie am Ende aller Tage, den letzten Weg trotz allem getrennt gehen würden.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_15_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Gestern war der 40. Hochzeitstag meiner Eltern, der mit abstand traurigste überhaupt. Seit Jahren ist es um die Gesundheit meines Vaters nicht gut bestellt. Ich glaube, wenn man all dies verfolgt dann erlangt man eine andere Einstellung was Glück ist. Welche Ereignisse Menschen näher bringt, sie eventuell auf ewig trennt. Dieser kleinen Geschichte wollte ich unbedingt ein Happy End geben, obwohl jeder weiß ein solches Ende hängt eher davon ab wann man eine Geschichte aufhört zu erzählen.</p><p>Harry und Hermione, eine Paarung wenn nicht die Paarung für mich in HP, hat nach dem was in den Büchern passiert, in Filmen IMO immer ein glückliches Ende verdient. Obwohl ich win furchtbarer Fan von Dramen, Tragödien bin, so ist ein Happy End nach sovielen Hindernissen eigentlich das einzige gerechte.</p><p>Ich hoffe, ich bin dem Ziel gerecht geworden, die Weasleys nicht in einem schlechten Licht zu zeigen. Ginnys Reaktion ist für mich, mehr als verständlich, wenn nicht tragisch. Absichtlich habe ich Rons als auch Ginnys romantische Zukunft offen gelassen...etwas was ich mir von JKR auch gewünscht hätte...und hab dennoch Spuren gelegt, die der Leser aufnimmt oder eben nicht. Auch sollte ich alle offenen Fragen geklärt haben.</p><p>Eine interessante, intensive Reise geht hier nun zu Ende, bgonnen aus der blanken Not einfach was zu schreiben was ein glückliches Ende haben würde und am Ende so vieles mehr wurde. Ein Stück Weisheit, ein weiteres Puzzel in meinem hoffentlich nie aufhörenden lernenden Geist.</p><p>Vielen Dank fürs Lesen.</p><p>~ PhoenixWriters</p><p>P.S. Obgleich die Geschichte von mir bereits vor einigen Jahren veröffentlicht wurde, habe ich meine Notizen größenteils unverändert übernommen.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="RxtQClAuJ3napp9No_Z_7uGt-FhK_2vNxGUdB7oWBKqQ4rPUvmE16pG4YF8msiqteabsyX54BYz-ezPD_1ix-g"/>
+          <input value="17578553" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=17578553">Comments (5)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/RexCaldoran">RexCaldoran</a>
+             as well as 
+          1 guest
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_17578553">
+  <form class="new_comment" id="comment_for_17578553" action="/works/17578553/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="rvtxhmGAYqs_63ENYZXZPeSDksW1jCBMdrpmns9pToR5ApJYj89wOHT1jh_k0Yx-fIiGVIELTg1MpEhaiif71A"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_17578553">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_17578553" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_17578553=new LiveValidation('comment_name_for_17578553',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_17578553.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_17578553">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_17578553" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_17578553=new LiveValidation('comment_email_for_17578553',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_17578553.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_17578553" class="landmark">Comment</label>
+        <textarea id="comment_content_for_17578553" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_17578553" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_17578553_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_17578553">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_17578553=new LiveValidation('comment_content_for_17578553',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_17578553.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_17578553.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_17578553" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/17578553/hit_count.json")})</script>
+
+
+  </body>
+</html>

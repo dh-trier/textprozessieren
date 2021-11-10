@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":77,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        One of us - KMZ - Fantastic Beasts and Where to Find Them (Movies) [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="h3w8d2NReAyIcYkfp0ktBUsaBE0apDA9PhYLYqoBiX9ujL-NqNJTsBiEKMG0ckCrQ7zOt6vK0hUqGtea6WpSew"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="GsWfFsaX7j8fXIcSgqi67IP_BNlaL-LKuMep3EqiR4PzNRzsDRTFg4-pJsyRk9dCi1nOI-tBAOKsy3UkCcmchw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: hetalia f/f sort:kudos</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/21131726/chapters/50288873">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/21131726/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/21131726/One%20of%20us.azw3?updated_at=1572338147">AZW3</a></li>
+          <li><a href="/downloads/21131726/One%20of%20us.epub?updated_at=1572338147">EPUB</a></li>
+          <li><a href="/downloads/21131726/One%20of%20us.mobi?updated_at=1572338147">MOBI</a></li>
+          <li><a href="/downloads/21131726/One%20of%20us.pdf?updated_at=1572338147">PDF</a></li>
+          <li><a href="/downloads/21131726/One%20of%20us.html?updated_at=1572338147">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Explicit/works">Explicit</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Fantastic%20Beasts%20and%20Where%20to%20Find%20Them%20(Movies)/works">Fantastic Beasts and Where to Find Them (Movies)</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Albus%20Dumbledore*s*Gellert%20Grindelwald/works">Albus Dumbledore/Gellert Grindelwald</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Percival%20Graves%20%7C%20Gellert%20Grindelwald/works">Percival Graves | Gellert Grindelwald</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Bathilda%20Bagshot/works">Bathilda Bagshot</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-10-22</dd><dt class="status">Completed:</dt><dd class="status">2019-10-29</dd><dt class="words">Words:</dt><dd class="words">14832</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="kudos">Kudos:</dt><dd class="kudos">4</dd><dt class="hits">Hits:</dt><dd class="hits">204</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      One of us
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/KMZ/pseuds/KMZ">KMZ</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Der Boden einer alten Scheune ist normalerweise dreckig und staubig, wenn er nicht gerade mit Rattenblut besudelt ist. So ein Boden kann aber noch viel mehr als nur eklig sein. Er kann um Vergebung bitte, er kann demütigen und Lust bringen und er kann Hoffnung erzeugen, wo vorher keine war.--- Albus Dumbledore/Gellert Grindelwald --- AD/GG</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21131726/chapters/50288873">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>80<br/>
+Achtzig.<br/>
+Nur eine Ziffer und trotzdem ein Provokation, ein Angriff auf seine geistige Stabilität.<br/>
+Albus starrte ein wenig entrüstet auf die fette 80 auf der Vorderseite der Einladung.<br/>
+100 wäre eine Apokalypse. 80 war vielleicht noch zu übersehen. Könnte er Batty absagen? Überhaupt, wie kam sie nur auf die Idee ausgerechnet ihn zu ihrem 80. Geburtstag einzuladen?! Weil sie Ewigkeiten nebeneinander gewohnt hatten? Weil sie sich mochten? Weil er alle ihre Bücher gelesen hatte? Weil er ihren Großneffen geliebt und verführt hatte? Batty war die Einzige, die wusste, dass er es war, der Gellert überredet hatte diese „Dinge“ mit ihm zu machen. Sie wusste es, weil sie die beiden in der Scheune überrascht hatte. Weil der clevere Gellert gleich gesagt hat: „Das war Albus‘ Idee, Tantchen!“ Dieser verschlagene Mistkäfer, dachte Albus liebevoll und wütend zur selben Zeit.<br/>
+Er drehte die Phiole in der Hand, die ihm Newt Scamander gerade gebracht hatte. Wie gut konnte er sich vorstellen, dass sein einstiger Geliebter Paris hasste. Jetzt erst recht. Die Blutteilchen tanzten umeinander und „liebten sich“, wie es Gellert einst so poetisch ausgedrückt hatte. Sie liebten sich, so wie sie sich einst geliebt hatten. Albus war sich nicht sicher, ob Gellert es nicht sogar absichtlich zugelassen hatte, dass man ihm diese Phiole stahl. Im Grunde war das undenkbar, denn selbst wenn Grindelwald von Scamander wusste (und das war recht sicher), dann doch sicher nicht von seinem ungehorsamen Niffler, der bei jeder Gelegenheit ausbüxte und auf Beutezug ging. Noch hatte er nicht herausgefunden, ob die Phiole echt war, was an sich schon beschämend war. Das könnte er erst in Angriff nehmen, wenn sich sein Gemüt beruhigt hätte. Und da ihm gerade die Einladung von Bathilda Bagshot auf den Tisch geflattert war, könnte das unter Umständen noch ein paar Momente dauern.<br/>
+Das Problem war, dass er große Angst hatte, dass Grindelwald auch in Godric’s Hollow auftauchen würde. Alles sprach dagegen, doch Albus kannte ihn so gut, dass er es trotzdem nicht zu Einhundert Prozent ausschließen konnte. Aber es war Batty Bagshot. Eine liebe Frau, die ihn so oft getröstet und unterstützt hatte. Nicht zu kommen, würde sie kränken und es wäre sehr unhöflich von ihm. Batty würde ihn außerdem nicht einladen, wenn sie wüsste, dass Gellert kommen würde. Also würde er das Risiko eingehen. Bis zum Samstag musste er das Problem mit der Phiole allerdings ruhen lassen. Vielleicht war er anschließend klarer im Kopf.</p><p>Samstagmorgen war ihm ahnungsvoll schwindlig, als er aufstand. Gegen Mittag war ihm übel und er bekam keinen Bissen runter. Am frühen Nachmittag begann er sich selbst paranoid mit Zaubern zu präparieren, nur um sie alle zehn Minuten, bevor er sich zu Batty begab, wieder aufzulösen. Er schämte sich für seine Furcht, denn er war es doch, der den blonden Jungen gegeißelt und überredet hatte. Wäre er nicht so offensiv gewesen, hätten sie sich beide nicht in dieses Liebesdrama gestürzt, sondern hätten es vielleicht beim Austausch von Magischem Wissen belassen. Es war seine Schuld, dass sie begonnen hatten sich körperlich zu begehren.<br/>
+Schuldbewusst bis in die kleine Zehe, begab er sich nach Godric’s Hollow. Würde schon schiefgehen, dachte er noch bitter und klopfte an Battys Haustür.</p><p>Bathilda Bagshot sah mit ihren achtzig Jahren besser aus denn je. Sie strahlte, kniff ihm in die Wange, wie früher, mokierte sich kurz über seinen Bart und zerrte ihn dann nach hinten in den Garten zu ihren anderen Gästen. Albus sah auf den ersten Blick, dass Grindelwald nicht da war. Erleichterung und eine absurde Enttäuschung durchströmten ihn. Batty musste ihn den meisten Gästen nicht vorstellen, denn natürlich kannten alle Albus Dumbledore. Sie überhäufte ihn mit Kuchen und zwei ältere Herren traten gleich zu ihm, die sich als Connor Cabaus und Ian-Julius Kadaver vorstellten. Beiden waren Historiker, wie Bathilda und informierten ihn über die gefühlten letzten hundert Jahre der Magie. Es war nicht so, dass er all die Informationen nicht wusste, aber Albus war kultiviert und hörte sich alles freundlich ergeben an. Schon allein, um sich zu beruhigen.<br/>
+Zum Glück rettete ihn Batty nach einer Weile und zog ihn ein wenig abseits.<br/>
+„Ich hätte nicht gedacht, dass du kommst, Albus“, sagte sie sanft und betrachtete ihn ausführlich. Sie hatten sich sehr lange nicht gesehen, weil Albus es vermied an diesen Ort zu kommen. Hier, wo ihm sein Herz aus der Brust gerissen wurde, in absolut jeder Hinsicht.<br/>
+„Na ja, 80 ist eine große Zahl, Batty.“<br/>
+„Ist es nicht. Ich weiß, dass du nicht kommen wolltest, weil du dachtest, er würde kommen. Aber natürlich kommt er nicht. Wer weiß schon, wo er sich gerade rumtreibt … und was er zerstört“, fügte sie bekümmert an. Albus rieb ihr sanft über den Arm und verschwieg besser, was Gellert in Paris angerichtet hatte. Batty wusste es sicher schon längst.<br/>
+„Dass du trotzdem gekommen bist, freut mich sehr, Albus. Wie geht es dir?“, fragte sie schon wieder gefasster. Er erzählte ihr belanglose Sachen aus Hogwarts und umschiffte jedes Thema, was Grindelwald auch nur namentlich involvieren würde.<br/>
+„Ich habe gehört, dieser Scamanderjunge arbeitet für dich?“<br/>
+„Newt. Na ja, arbeiten würde ich nicht dazu sagen. Er hilft mir, weil er es kann und ein guter Mann ist.“<br/>
+„Das ist gut, Albus. Wirklich … Darf ich dich um etwas bitten?“ Albus rutschte das Herz in die Hose. Er könnte sich nicht erklären, weshalb.<br/>
+„Natürlich“, erwiderte er tonlos.<br/>
+„Du erinnerst dich sicher an meine Büchersammlung?“ Er nickte. Er hatte sie alle gelesen, mehrmals.<br/>
+„Ich habe sie nun aus dem Haus verbannt, damit ich mehr Platz habe. Leider habe ich sie bisher nur in die Scheune geschafft. Könntest du mir da ein nettes Regal zaubern, indem sie sich alphabetisch geordnet selbst einsortieren? Meine Magie ist leider mittlerweile zu schwach. Du bist der Einzige, der weiß, was mir meine Bücher bedeuten. Aber wie es mit Kindern ist, so niedlich sie auch sind, irgendwann müssen sie aus dem Haus raus. Hier ist einfach zu wenig Platz.“ Erleichtert nickte Albus. Wenn das alles war …<br/>
+„Selbstverständlich. Ich kümmere mich gleich darum.“ Batty tätschelte ihm die Wange.<br/>
+„Rede dir keine Schuldgefühle ein, mein Junge.“ Jetzt wurde er doch rot. Seine ehemalige Nachbarin, mit der er viel Zeit verbracht hatte, kannte ihn einfach zu gut.<br/>
+„Aber es ist meine Schuld. Ich habe ihn zu dem gemacht, der er ist, Batty.“<br/>
+„Unsinn. Nur weil du ihn … verführt hast, hast du ihn nicht gleich zu diesem Monster gemacht“, sagte die alte Dame fest. Seine Antwort war ein deprimiertes Seufzen. Nur er wusste, was er mit ihm angestellt hatte. Batty hatte sie damals nur beim harmlosen Vorspiel erwischt.<br/>
+„Kein Grund rot zu werden, Albus“, kicherte sie und er verabschiedete sich besser in die Scheune, um ihr das Bücherregal zu zaubern.</p><p>Mit dieser heftigen Erinnerungswelle hatte Albus nicht gerechnet. Er hatte die Scheunentür noch nicht ganz auf, als er innerlich zu zittern begann. Ihm nahm es die Luft und er blickte in die Scheune, als würde er sie zum ersten Mal sehen.<br/>
+Hier hatte es angefangen. Hier hatte er Gellert bei einem ziemlich widerlichen Schwarzmagischen Zauber überrascht, bei dem einige Ratten ihr Leben lassen mussten. Hier hatte er ihn gefragt, ob er nicht ganz richtig im Kopf ist. Hier hatte Gellert ihm geantwortet: Finde es doch raus, Albus.<br/>
+Sein Herz schlug hart und schwer in seiner Brust. Wie hatte er sich nur darauf einlassen können? Der Blutgeruch schien noch immer in der Luft zu hängen, was natürlich Unsinn war. An der östlichen Wand sah er die Unmengen an Bücher und machte sich besser an die Aufgabe, ehe er in bösen und süßen Erinnerungen schwelgte.<br/>
+Schnell hatte er mit Magie das Regal erschaffen. Das war eine der leichteren Übungen. Gemächlich ließ er die Bücher sich selbst sortieren und schwelgte doch in Erinnerung. Gellert war so unverschämt und provozierend gewesen. So jung und so skrupellos. So selbstbewusst, um ihn ständig herauszufordern, bei allem was sie taten.<br/>
+„Habe gehört, du wärst ein großartiger Zauberer, Dumbledore, ist das wahr?“, hatte er ihn kämpferisch beim ersten Treffen angesprochen.<br/>
+„Vielleicht“, war seine trockene Antwort gewesen, nicht recht wissend, was er von diesem bezaubernden Jungen mit der destruktiven Ausstrahlung halten sollte. Nichts Gutes, wie sich bald herausstellen sollte. Das sagte er ihm auch bald, weil er den Drang hatte das Gute in ihm hervorzuholen. Grindelwalds Antwort war typisch für ihn:<br/>
+„Niemand hat bisher versucht mich zu verändern. Aber nur zu, versuche dein Glück, schöner Albus!“<br/>
+Er hatte es versucht. Jeden Tag. Jede Nacht. In jeder Sekunde ihres Zusammenseins hatte er versucht ihn für sich zu gewinnen, bis Gellert eines Tages lachend gesagte hatte:<br/>
+„Du hast mich doch längst, du Narr!“<br/>
+Hatte er? Es hatte sich nie so angefühlt. Nie, obwohl Grindelwald auf den Knien war und ihn angefleht hatte. Nie, obwohl er geweint und alles versprochen hatte.</p><p> </p><p>„Wie ich höre, hast du meine Nachricht erhalten, schöner Albus!“, hörte er plötzlich eine Stimme hinter sich, die ihn innerlich erstarren ließ.<br/>
+„Gellert“, sagte er nach einem Moment tonlos, ohne sich umzudrehen. Die Bücher waren an Ort und Stelle. Grindelwald musste hinter ihm im Türrahmen stehen und er war zu feige, sich umzusehen.<br/>
+„Ja, ich. Denkst du, ich komme nicht zum 80sten Geburtstag meiner Lieblingstante?“<br/>
+„Du hast nur eine Tante.“<br/>
+„Immer diese Kleingeistigkeit, Albus.“ Er hörte Schritte, doch Grindelwald blieb hinter ihm stehen.<br/>
+„Ist das dein Geburtstagsgeschenk an Batty? Ein Bücherregal? Du warst schon immer sehr kreativ gewesen“, hörte er seine spöttischen Worte, dicht hinter sich. Nur mühsam hielt er sich an Ort und Stelle. Noch schwerer fiel es ihm, nicht seinen Zauberstab zu ziehen und ohne Sinn und Verstand auf seinen einstigen Geliebten loszugehen.<br/>
+„Was ist dein Geschenk? Deine attraktive Anwesenheit?“ Gellert lachte leise und volltönend. Albus konnte nicht verhindern, dass Erregung ihn durchströmte, wie ein heißer Saharawind. Bis tief in seine Eingeweide ging der Sturm.<br/>
+„Auf mich hat sie nie so große Stücke gehalten, wie auf dich, Liebster.“ Mit diesen zärtlichen Worten trat er vor Albus. Der hatte trotzig den Blick gehoben, um nicht zaghaft und ängstlich zu wirken. Leider merkte er trotzdem, wie er weiche Knie bekam, als er Grindelwald endlich, nach so vielen Jahren wieder direkt gegenüber stand. Ihn im Spiegel des Begehrens zu sehen, war die eine Sache. Ihn zu fühlen, war eine ganz andere. Unter Androhung der allerschlimmsten Folter hätte er nicht Gellerts Blick ausweichen können.<br/>
+„Hallo Albus …“, sagte der Blonde leise und betrachtete ihn ungeniert.<br/>
+„Sie weiß nichts von deiner Anwesenheit, oder?“<br/>
+„Nein, tut sie nicht. Vielleicht klaue ich mir nachher noch ein Stück vom Kürbiskuchen. Vielleicht …“ Gellerts verstummte. Sein Blick wurde intensiver, beinah schon sezierend.<br/>
+„Vielleicht lass ich mich aber auch lieber von dir demütigen. Wie sieht es aus, Albus? Waffenstillstand für ein paar Stunden?“ Ein Lächeln erschien auf Gellerts Gesicht und es geschah das, was immer geschah. Es machte ihn von einem mörderischen Geist zu einem intelligenten, witzigen Burschen, der mit seinem Charme nicht nur alte Tanten, sondern auch den Nachbarjungen einfangen konnte. Sogar Ariana war verliebt in ihn. Nur Aberforth war wohl der Klügste von allen. Sein Bruder war von Anfang an misstrauisch gewesen und hatte recht behalten.<br/>
+„Allein, dass du dich traust, hier zu erscheinen, sagt mir, dass du krankhaft überheblich und anmaßend bist.“<br/>
+„Sieh es als neutralen Boden an. Apropos Boden. Erinnerst du dich noch, wie du mein Gesicht in den Dreck gedrückt hast? Hier war es, oder?“ Gellert war ein paar Schritte zurückgewichen und zeigte mit der Stiefelspitze auf den Boden. Albus sah gar nicht hin. Er wollte weg. Er wollte aber auch hier sein. Er wollte ihn küssen, ihn töten und nebenbei lieben. Mit dieser Verwirrung war zu rechnen, doch wie schlimm sie ausfallen würde, erschreckte ihn über alle Maßen.<br/>
+„Albus? Du willst doch nicht einfach so gehen?!“ Wollte er. Er war auf dem Weg zur Tür, doch Grindelwald versperrte sie mit Magie. Sie seinerseits magisch zu öffnen, würde zu genau dem führen, was Albus so gern vermeiden würde, einem magischen Duell. Hier war weder der richtige Ort, noch der richtige Zeitpunkt.<br/>
+„Mach dich nicht lächerlich, Gellert. Wir haben uns nichts mehr zu sagen“, fuhr er ihn an. Seine Disziplin entglitt ihm wie ein glitschiger Fisch. Gellert lächelt wieder so bezaubernd, dass sein Herz wie wild zu klopfen begann.<br/>
+„Albus, Albus … ich habe deine Aufmerksamkeit und deine Mühe mich zu einem besseren Menschen machen zu wollen, immer so geschätzt. Du bist gescheitert, doch es ist nicht deine Schuld. Manche Dinge müssen vielleicht sein, wie sie sind, um etwas zu erschaffen, was sonst niemand kann. Ich bin nun mal nicht aufzuhalten.“<br/>
+„Ist das deine Ausrede? Nicht zu ändern? Unaufhaltbar?“ Gellert verengte die Augen und kam wieder langsam näher.<br/>
+„Hm, vielleicht hast du es auch nicht richtig angestellt, Albus. Vielleicht war es zu viel Zuckerbrot und zu wenig Peitsche?“<br/>
+„Das ist absurd. Du hast mich dazu gebracht, dir weh zu tun. Stell es nicht so dar, als wäre ich es allein gewesen!“, knurrte er und versuchte nicht vor dem Blonden zurückzuweichen.<br/>
+„Und ich gebe zu, es gab Momente, da war ich wirklich davon überzeugt, deine Erziehung könnte erfolgreich sein. Ich wollte es dir so gern recht machen …“ Während er die Worte sprach, die leise und wohlklingend in der Scheune schwebten, wie eine Wolke aus Zuckerwatte, begann sich Grindelwald seinen Mantel auszuziehen. Skeptisch sah Albus ihm zu.<br/>
+Das Spannende an Gellert war, dass er unberechenbar war und immer für eine Überraschung oder einen hinterlistigen Trick gut war.<br/>
+Das Beängstigende an Gellert Grindelwald war, dass er unberechenbar war und immer für eine Überraschung oder einen hinterlistigen Trick gut war.<br/>
+„Meinst du, dieser Zeitpunkt ist günstig, um alte Spiele zu spielen?“, fragte Albus rau und versuchte so viel kühle Distanz in seine Worte zu packen, wie ihm möglich war. Es war allerdings zu befürchten, dass Grindelwald ihn durchschaute.<br/>
+„Könnte es nicht nur sein, dass ich deine Vergebung will, Albus?“<br/>
+„Für was? Für deine vielen Opfer auf dem Weg zur Macht?“<br/>
+„Dafür, dass ich dich noch immer liebe“, sagte Gellert einfach so dahin. Er begann seine Weste aufzuknöpfen und ließ sie einfach zu Boden fallen. Seine Finger knöpften einen Knopf seines Hemdes nach dem anderen auf und Albus konnte nur hilflos zusehen.<br/>
+„Das … zwischen uns, war nicht richtig. Ich hätte dich nicht … manipulieren sollen und …“<br/>
+„Ich will deine nichtssagenden Entschuldigungen nicht!“, herrschte ihn Gellert jäh und sehr scharf an.<br/>
+„Aber es ist wahr, es ist meine Schuld, dass du bist, was du bist!“ Der Blonde lachte wieder leise und auf diese beklemmende Art, dass Albus unweigerlich eine Erektion bekam.<br/>
+„Das hättest du gern. Aber es ist nicht so. Dein einziger Fehler war, mich ändern zu wollen, damit ich besser zu dir passe. Du hast es versucht, niemand kann dir das verübeln, und ich habe mich bemüht. Es hat nicht funktioniert, Albus. Das ist nicht schlimm, wirklich. Ich liebe dich auch so. Gut, edelmütig mit gewissen Tendenzen zur Selbstverleugnung und sadistischen Anwandlungen. Jeder hat so seine Leichen im Schrank, das weißt du doch …“<br/>
+„Spar dir deinen Großmut und lass mich gehen, ehe hier gleich etwas geschieht, was wir beide bereuen!“, zischte er. Albus war aufgebracht, denn Grindelwald hatte recht.<br/>
+„Was könnte das nur sein?“, fragte Grindelwald aufgeräumt. Albus schaffte es nicht an seiner nackten Brust vorbei zu sehen. Er wusste genau, was Gellert vorhatte. So hatte es immer begonnen. Und er wusste auch noch sehr gut, wo es endete. Aber das war er nicht mehr. Er war doch nicht mehr der verbissene Junge, der sich so sehnlichst wünschte, dass sein Liebster zu den Guten gehörte, dass er ihn zwingen wollte sich zu ändern.<br/>
+„Bist du dir jetzt zu fein dazu, oder liegt es an deiner schicken Weste?“, foppte Gellert ihn, wie früher. Doch Albus hörte darunter deutlich den Ton der Gefahr.<br/>
+„Nein. Ich habe nur den Glauben an dich verloren“, flüsterte er rau. Es war die Wahrheit. Eine Wahrheit, die er Grindelwald nie gesagt hatte. Und er sah es in seinen Augen. Gellert glaubte ihm nicht nur, er spürte es. Sein dunkles Augen begann zu glitzernd und in seinen Gesichtszügen war unübersehbar der Hauch von Schwermut. Albus war nach Weinen zumute. Wie oft hatte er ihm wehgetan, in der Hoffnung ihn zu läutern? Wie oft hatte der Blonde ihn angebettelt, härter zu sein? Wie oft hatten sie danach in neu erwachter Hoffnung beieinander gelegten. Ineinander. Versunken in den Geist des Anderes. Nutzlos. Erfolglos.<br/>
+„Du lügst!“, hauchte Gellert und zog sich seine Hose nach unten. Albus schluckte mühsam und hatte einen Augenblick Angst, er würde den Zauberstab in seiner Hand entweder gleich zerbrechen oder ihn Gellert einfach in die Brust rammen, wie einen Dolch. Einen vergifteten Dolch, denn mit seinem Gift hatte der Blonde ihn unwiderruflich kontaminiert. Noch versuchte Albus durch die Nase Luft zu holen, was nicht ganz einfach war, weil Aberforth sie ihm nachhaltig zertrümmert hatte. Völlig zurecht.<br/>
+Ein nackter Gellert Grindelwald, war der endgültige Beweis. Allein diese Dreistigkeit am 80sten Geburtstag seiner Tante hierher zu kommen, sich ihm zu nähern, obwohl beide wussten, dass nur noch ein Duell die Sache bereinigen könnte und ihn auch noch zu ermuntern in alte Verhaltensmuster zu verfallen, war grotesk. Grindelwald drehte sich um und Albus sah die Zeichen seiner Liebe. Scharf zog er die Luft ein. Ihm wurde ganz elend und zu kaum einem Zeitpunkt in seinem Leben hat er sich mehr gehasst, als jetzt, wo er all die Narben sah, auf die Grindelwald stolz war. Das Symbol der Heiligtümer des Todes war überall auf Gellerts Rücken verewigt. Ihr Ziel, ihre Vision, ihre gemeinsame Idee verband sie ebenso wie ihr Blut und ihre gegensätzliche Sehnsucht nacheinander.<br/>
+Albus konnte sich nicht mehr aufhalten. Seine Hand hob sich und seine Fingerspitzen glitten sanft über die Narben auf Gellerts Rücken. Er erinnerte sich plötzlich an jede einzelne davon. Jede Narbe, jede Wunde, die er ihm zugefügt hatte, sollte sein eigenes Gewissen bereinigen. Schon damals wusste er genau, dass es nicht gut war sich in einen Jungen wie Gellert Grindelwald zu verlieben. Aber es war nicht aufzuhalten oder gar zu kontrollieren gewesen.<br/>
+„Es tut mir leid …“, flüsterte er schmerzerfüllt.<br/>
+„Das muss es nicht.“ Auch Gellerts Stimme klang nun ganz dunkel und vibrierte stark.<br/>
+„Wärst du überrascht, wenn ich dir sagen würde, dass ich oft daran zurückdenke und mich frage, ob du nur hättest ein klein wenig härter sein müssen, um mich zu läutern?“ ohne, dass es Albus gemerkt hatte, war ihm eine Träne über die Wange gelaufen. Seine Lippen legten sich zärtlich auf eine seiner vielen Versuche ihn zu ändern.<br/>
+„Es ist zu spät, Liebster“, flüsterte er auf Gellerts Haut. Der blonde Mann seufzte ganz leise und doch klang es so aufrichtig, wie kaum eines seiner Worte. Wie von selbst legten sich seine Hände auf Grindelwalds Schultern. Seine Haut war warm und erzitterte leicht unter seiner Berührung. Seinen Nacken liebkosend, drückte er ihn zu Boden, bis er vor ihm kniete. Wie früher.<br/>
+„Sag es!“, befahl Albus belegt. Es war wirklich zu spät. Zu spät, um der eigenen Sehnsucht zu entkommen. Zu spät, um es besser zu wissen. Zu spät um das Gegengift zu nehmen, was sowieso nie gewirkt hat. Sein ganzer Geist war ab dem Moment vergiftet, als er ihn gesehen hatte, vor so vielen Jahren.<br/>
+„Bitte, hilf mir, Albus!“, keuchte Gellert, plötzlich rau und intensiv verlangend. Wie damals schossen Tränen der Rührung in seine Augen. Der Blonde wollte es sehnlichst und vollkommen aufrichtig. Er wollte gut sein, er wollte es ihm recht machen, er wollte zu ihm gehören, für immer und ewig. Grindelwald wollte sich immer nur seiner Liebe als würdig erweisen.<br/>
+Albus schluckte seine Ergriffenheit nach unten und zog sich seine Weste aus. Gleich fühlte er sich freier und leichter. Warum hatte Gellert immer mit Banalitäten recht?<br/>
+„Weshalb?“, brummte er dunkel. Sein körperlicher Aufruhr nahm bedenkliche Formen an. Seit Grindelwald hatte er sich nie wieder die Freude von körperlicher Lust gestattet. Damit bestrafte er sich selbst. Musste nun aber feststellen, dass es mitunter fatal war über viele Jahre Verzicht zu üben.<br/>
+„Ich will wie du sein …“, flüsterte der andere Mann und senkte den Kopf ganz tief. Bewegungslos stand er hinter Grindelwald und sah auf seinen demütig gesenkten Nacken. Wie oft hatte er ihn so gesehen? Wie oft hatte er Hoffnung gehabt? Ebenso oft, wie sie zerstört wurde. Endgültig an dem Tag, an dem Ariana starb. Seinetwegen. Weil er so unbedingt hoffen wollte, wo es nichts zu hoffen gab.<br/>
+Und jetzt waren sie wieder hier.<br/>
+„Ich bin ein Monster!“, sagte er hart und zog die Spitze seines Zauberstabs sanft über Gellerts Nacken. Sofort trat Blut aus und der Blonde zuckte keuchend zusammen. Gleich darauf stöhnte er. Albus wusste, ohne, dass er ihn ansehen musste, dass auch Grindelwalds Geschlecht hart wurde.<br/>
+„Du … versuchst das Richtige zu tun“, flüsterte Gellert belegt.<br/>
+„Mit allen Mitteln. Wie richtig kann das sein?“<br/>
+„Richtiger, als das, was ich tue …“ Albus formte mit der Magie aus seinem Zauberstab einen Kreis auf Gellerts Haut, was den anderen Mann dunkel und schmerzerfüllt stöhnen ließ.<br/>
+„Hätte ich dich sein lassen, wie du warst, wäre es vielleicht nie soweit gekommen. Es ist meine Schuld“ Albus hatte Tränen in den Augen, die nun auf Gellerts vernarbte Haut tropften, als er ein perfektes Dreieck in den Kreis formte. Grindelwald bebte dabei leicht und stöhnte gedämpft.<br/>
+„Du kannst mich heilen, Albus. Ich weiß es …“<br/>
+„Nein, ich habe dich doch nur vergiftet“, erwiderte er voller Selbstvorwürfe und fügte den vertikalen Mittelstrich, der den Elderstab und ihre Lust aufeinander symbolisierte in das Dreieck ein.<br/>
+„Gib mich nicht auf. Hör nicht auf mich zu lieben …“, begann Gellert nun inständig zu betteln. Er fiel nach vorn auf seine Hände und drückte seine Stirn in den Boden der Scheune. Wie ein bitterer Rächer stand er über dem Blonden und sah ihm bei seiner Erniedrigung zu. Mit dem alleinigen Ziel der wahren Erlösung, nach der er sich so sehr sehnte und die er Grindelwald so lange verweigern würde, bis er sich geändert hatte. Demzufolge würden sie niemals zusammenkommen und immer wie Sonne und Mond sein, die um ein gemeinsames Lieben und Leben kreisten, wie auch die Erde der Mittelpunkt dieser Welt war. So lange, bis das Leben selbst Erbarmen hatte und ihnen den natürlichen Tod schenken würde.</p><p>„Es ist schon zu viel geschehen …“, sagte er tonlos und setzte sich einfach neben Grindelwald in den staubigen Scheunenboden.<br/>
+„Wir können es rückgängig machen, wir können es ändern. Nur hör nicht auf an mich zu glauben …“, weinte Gellert herzzerreißend. Niemand ahnte, was hier geschehen war, niemand wusste von ihrem bizarren Verhältnis. Niemand wusste von Albus Vergnügen ihn so zu sehen. Niemand wusste von Grindelwalds Bedürfnis sich wie der letzte Dreck zu fühlen.<br/>
+Aber alle würden die Auswirkungen spüren. Schon bald.<br/>
+„Ich liebe dich“, sagte Albus matt. Er hatte sich auf seine Unterarme gelehnt und wartete. Gellert hob den Kopf. Seine rechte Gesichtshälfte war dreckig vom Scheunenboden. Früher hatten sie darüber gelacht, heute nicht mehr. Seine unterschiedlichen Augen schwammen noch immer in Tränen. Gellert fühlte. Niemand konnte ihm das absprechen. Nur zog er leider oft die falschen Konsequenzen.<br/>
+„Nach allem, was ich getan habe?“<br/>
+„Natürlich. Wie könnte ich das ändern? Nichts kann irgendwas ändern. Das alles ist nur eine Illusion. Du solltest das doch am besten von allen wissen.“ Der Blonde kam nun näher gekrochen und legte dann seinen Kopf auf seine Brust. Albus sank nach hinten, legte einen Arm um Grindelwalds Nacken und zog ihn mit nach unten.<br/>
+„Töte mich einfach. Jetzt und hier. Ich habe es dir leicht gemacht. Du hast unseren Pakt. Du musst ihn nicht mal zerstören, um mich zu töten.“<br/>
+„Ich weiß“, sagte Albus nur leise.<br/>
+„Du kannst es nicht, weil du dich schuldig fühlst.“ Er gab ihm keine Antwort und Grindelwald begann ihn zu berühren. Seine Hand strich über sein Bein nach oben zu seiner Mitte. Albus schloss die Augen und konnte nicht mehr unterscheiden, ob es damals war oder heute. Lippen schoben sich auf seine Haut, als Gellert ihm das Hemd Knopf für Knopf weiter öffnete. Was sollte er schon dagegen tun? Alles, was er war, hatte er heute ein weiteres Mal verraten. Für ihn, für den Jungen, den er immer noch liebte.<br/>
+Sie hatten sich gegenseitig vergiftet und würden nie wieder gesund werden, sondern ihr Leben lang unter den Folgen dieser Liebe leiden müssen. Sie konnten nicht miteinander, doch auch nicht ohneeinander, wie Albus gerade deutlich merkte. Sein Verlangen schwappte so urplötzlich nach oben, dass er sich schnell aufrichtete und Gellert neben sich auf den Boden drückte. In seinen Augen sah er den eindeutigen Ausdruck des Genusses und der Vorfreude, bevor er ihn hart und verlangend küsste. Er war verloren, sofort. Ab da folgte nur noch die Lust sich in diesen überaus sinnlichen Rausch fallen zu lassen. Nur wenig später wälzten sich beide nackt auf dem Scheunenboden hin und her. Als Albus in den Blonden eindrang, stöhnte dieser so tief erlöst, dass er erschauerte. Aber Grindelwald hatte recht. Es fühlte sich nach absoluter Befreiung an. Schnell wurden seine Bewegungen intensiver und schneller. Sein lustvolles Stöhnen war nicht mehr zu unterdrücken und er dachte nicht eine Sekunde an eventuelle Zuhörer. Alles, was er wahrnahm, war Gellert. Er drang nicht nur mit seinem Penis in ihn ein, sondern auch mit seinem Geist in seinen. Wie immer, war es warm und dunkel in ihm, erregend eng, geheimnisvoll und verführerisch wie der Tod.<br/>
+Gellert lag mit weit geöffneten Lenden unter ihm, drückte sein Gesicht ganz freiwillig und begierig in den Schmutz und stöhnte. Seine Augen waren halboffen, doch vollkommen blicklos. Albus wusste auch wieso. So wie er in ihm war, so war Gellert in ihm. Er spürte ihn. Es machte ihm Angst und gleichzeitig war es berauschend. Sie hatten nicht nur Sex. Sie hatten nie nur Sex gehabt. Sie ergaben sich einander. Er hatte es eingefordert und Grindelwald dazu gebracht. Jetzt gehörte er ihm und damit auch die Verantwortung. Jede Seele, die Grindelwald folterte oder auslöschte, ging auf sein Konto. Weil er ihn zu dem gemacht hatte.<br/>
+Im Gegenzug hatte er Gellerts aufrichtigste Liebe und seine Anbetung. Wenn er könnte, würde er es ungeschehen machen. Aber sie waren jung und dumm gewesen. Die Liebe hatte sich zu sehr und zu tief in ihre Herzen gebrannt.<br/>
+Gellert schrie heiser, als er kam und Albus erlaubte sich der alten Zeiten wegen ihm gleich zu folgen. Zusammen fielen sie in einen Abgrund, auf dem sie wieder aufstiegen, wie Fawkes, nach einem seiner Tode.</p><p>Albus fand sich wieder, mit der Hand in Gellerts Haaren und schwer atmend auf seinem Körper.<br/>
+„Ich weiß nicht, ob sich deine Tante über dein Geburtstagsgeschenk freuen wird, Liebster“, sagte er versöhnlicher und stand auf. Mit einem letzten Blick auf Grindelwalds Rücken, was seine ganz persönliche Anklageschrift war, zog er sich an.<br/>
+„Vielleicht ist es besser, ich sage ihr nicht Hallo. Wie ging es ihr denn?“<br/>
+„Ganz gut, denke ich.“ Gellert lag noch immer auf dem Bauch. Nackt und wie geschändet. Dabei hatte er gerade vor Glück geschrien, wie Albus nicht nur wusste, sondern deutlich gefühlt hatte.<br/>
+„Versuche mir irgendwann zu verzeihen, Albus“, murmelte der Blonde in den Dreck.<br/>
+„Das kann ich nicht. Denn dann müsste ich mir selbst verzeihen. Wir sehen uns, Gellert“, sagte Albus sanft, sah ihn ein letztes Mal an und war froh, dass Grindelwald es klugerweise für besser hielt seinem Blick nicht zu begegnen. Der Blonde schwieg. Alles an ihm wirkte deprimiert und trostlos. Besser er verschwand, ehe er sein Glück doch noch herausforderte.</p><p>Wenig später, in Hogwarts, stand er ewig auf einem der Türme und sah Fawkes beim Fliegen durch die Nacht zu.<br/>
+Grüß mir den Drachen, dachte er leise und wusste, dass sein Wunsch ankommen würde. Feuer und Eis kamen nun mal nicht zusammen, nicht dauerhaft, nicht auf Wunsch und nicht, indem man die Elemente änderte. Sie konnten sich ausschließlich gegenseitig vernichten.<br/>
+Oder sich fernbleiben.</p><p>In diesem Moment des größten Kummers und der tiefsten Sehnsucht musste Albus Dumbledore an seinen guten Freund Nicolas Flamel denken. Flamel war ein exzellenter Alchemist, wenn nicht sogar der Beste. Und war das wichtigste Kennzeichen der Alchemie nicht, dass sie Stoffe zusammenbrachte, die auf natürliche Weise nicht zusammen kommen konnten und in etwas Dauerhaftes umwandelte?<br/>
+Gab es also trotz allem Hoffnung für ihre so verdrehte Liebe?<br/>
+Er wollte es so gern glauben.<br/>
+So gern.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21131726/chapters/50386805">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Noch über eine Stunde lag Gellert fast regungslos auf dem kalten Scheunenboden. So lange es ging, wollte er Albus in sich fühlen und von seiner Gegenwart kosten, nach der er so schmerzhaft hungerte. Eigentlich war es lustig. Ständig taten sie sich gegenseitig weh, verletzten und manipulierten sich und wollten doch nie etwas anderes, als sich zu lieben. Aber sie waren so verschieden, dass sie nicht zusammen sein konnten, wie gewöhnliche Paare. Ihre gemeinsame Vision von einer gerechteren Zukunft für Magiebegabte und Muggel hatte sie für kurze Zeit in purer Euphorie geeint und wenn das mit Ariana nicht geschehen wäre, hätte es auf den ersten Blick vielleicht sogar funktioniert. Gellert schmunzelte, als er an ihre Zeit hier in der Scheune dachte. Es hatte so harmlos angefangen. So lächerlich simple, das niemand hätte ahnen können, was daraus entstehen würde: ein Feldzug bei dem es nur um Unterwerfung ging. Albus und er wollten sich die Liebe selbst Untertan machen. Ein aussichtsloses Unterfangen, wenn man ein Normalsterblicher war. Sie aber waren nicht gewöhnlich, ganz im Gegenteil. Sie beide waren geboren um zu herrschen. Geben konnte es aber nur Einen.</p><p>Dabei war Gellerts Leben bisher keineswegs einfach gewesen. Mit elf Jahren kam er in das Durmstrang-Institut. Seine Eltern waren sicher heilfroh gewesen ihn endlich loszuwerden. So froh, dass er oft nicht mal in den Ferien nach Hause durfte, sondern mit anderen Schülern in der Festung bleiben musste. Was an sich nicht so übel wäre, denn wissbegierig wie er war, hatte er sich durch alle Bücher gelesen, die er in die Finger bekam. Konnte er nicht lesen, testete er Zauber in den Katakomben der Festung.<br/>Das würde sich gar nicht so schlecht anhören, wenn man nicht noch gleichzeitig seinen Schimpfnamen erwähnen müsste, denn die anderen Kinder sich für ihn ausgedacht hatten.<br/>„Dämon, Dämon!“, riefen sie immer, wenn sie ihn sahen. Der Grund war banal. Seine unterschiedlichen Augen machten den Kindern schon immer Angst. Vielleicht lag es aber auch nicht an der Heterochromie, sondern an seinem teuflischen Wesen, was auf Ablehnung mit Aggression und Hass reagierte und nicht mit Rückzug, wie es üblich war. So war es nur eine Frage der Zeit, bis er es sich mit nahezu jedem Lehrer und allen Mitschülern verscherzt hatte. Im Grunde störte es ihn noch nicht mal, weil er in keiner anderen Person eine verwandte Seele erkannte. Alle Gesichter waren für ihn leere Masken, ohne Inhalt und vollkommen bedeutungslos. Die reale Welt war für Gellert in diesen Jahren uninteressant, seine imaginäre Welt war dafür umso spannender. Wie besessen lernte er Zauber und testete sie unentwegt. In den Katakomben gab es Ecken, da stapelten sich die Tierkadaver und selbst einen der Hauskobolde hatte er hier „bestatten“ müssen.<br/>Grnk hatte ihn dabei erwischt, wie er einen Blutzauber an einem Rattenrudel getestet hatte. Er wollte die Seele der einen Ratte auf eine tote Ratte übertragen und sie somit wieder zum Leben erwecken. Kurzerhand nahm er Grnk als Testobjekt, nach dem Motto: umso größer, umso besser. Der Zauber funktionierte nicht und Grnk brach tot zusammen. Wie gelähmt betrachtete Gellert ihn, unfähig es zu verstehen. Seine Magie war beeindruckend und machtvoll und doch fehlte ihm noch der Fokus. Grnk hatte er zwar nie gemocht, doch es tat ihm leid. Nicht, weil er ihn getötet hatte, sondern, weil sein Zauber nicht funktioniert hatte und der Kobold deshalb sterben musste. Er verscharrte ihn und stand dann eine Weile vor seinem Grab.<br/>„Sorry, Kumpel, war nicht persönlich“, waren seine letzten Worte für den Hauskobold Grnk.</p><p>Obwohl alle Kinder wussten, wie gefährlich er sein konnte, wie skrupellos und impulsiv, hörten sie niemals auf ihn zu ärgern. Meistens war es ein leises Flüstern, was seine Ohren erreichte:<br/>„Der Dämon wandert wieder…“<br/>„Auf Suche nach Opfern …“<br/>„Sieh ihm nie in die Augen, er verdirbt dich!“<br/>„Blödsinn! Er versteinert dich …“<br/>„Nein, er verflüssigt dein Inneres … los, schnell, dreh dich weg!“<br/>„Mir ist kalt, sieh ihn dir an. Er lässt mit seinem einen Auge alle zu Eis erstarren …“<br/>„…und mit dem andere Auge lässt er alles in schwarze Flammen aufgehen“, fügte eine andere Stimme gehässig an. Böses Kichern. Oft versuchte er es zu überhören. Alle Personen um ihn herum, waren unwürdig. Nicht dazu erschaffen unter seine Augen zu treten. Es waren nur uninspirierte und dumme Rudeltiere, die einander brauchten, um stark zu sein. Er war anders. Er war ein Dämon. Er war Feuer und Eis in Einem. <br/>Ein einsamer Dämon. <br/>Der letzte Drache auf Erden.</p><p> </p><p>„Gellert?“ <br/>Bathilda Bagshot, seine Großtante, die ihn damals netterweise aufgenommen hatte (und es vermutlich den Rest ihres Lebens bereute), weckte ihn aus seiner müßigen Betrachtung. Noch immer lag er nackt auf dem Bauch im Dreck der Scheune. Wie sehr er fror, merkte er erst jetzt.<br/>„Tantchen. Alles Gute zum Geburtstag. Eigentlich wollte ich dir …“<br/>„Würdest du bitte aufstehen und dich anziehen!“, zischte sie ihm zu. Die Scheunentür knallte hart ran. Gellert stand ächzend auf und zog sich an, während seine Tante großzügig wegsah und sich stattdessen ihr neues Bücherregal bewunderte.<br/>„Ihr habt euch also doch getroffen. Das wollte ich nicht. Wie konntest du nur …“<br/>„Wie konnte ich es wagen, dich besuchen zu wollen? Auch noch an deinem Geburtstag, wie unverschämt von mir!“, säuselte er sarkastisch, während er sich die Hose hochzog.<br/>„Lüg nicht, Gellert. Du warst wegen ihm hier, nicht wegen mir!“ Jetzt, wo er angezogen war, ging er zu Bathilda und nahm sie vorsichtig in die Arme. Die alte Frau seufzte, schmiegte sich in seine Umarmung, schob ihn dann aber gleich wieder von sich.<br/>„Was habt ihr getan?“<br/>„Nach was sah es denn aus?!“, fragte er erheitert.<br/>„Das weiß ich. Aber ich meine, darüber hinaus. Ihr solltet damit aufhören euch gegenseitig zu jagen und euch zu verletzen, Gellert.“<br/>„Das geht nicht, das weißt du doch. Albus muss wissen, wie mächtig er ist und nur ich kann es ihm zeigen.“ Tantchen sah ihn mit trüben Augen an.<br/>„Warum kannst du ihn nicht einfach in Ruhe lassen?“<br/>„Weil es sonst nicht funktioniert. Es gibt nur eine Seite, Tante. Eine! Nicht zwei. Gäbe es zwei Seiten, kann es immer wieder kippen und sich umdrehen. Das Gleichgewicht kann jederzeit gestört werden. Ich habe es dir doch erklärt, Batty und ich hoffe doch, du hast es für dich behalten?“ Sie grummelte in ihr behaartes Kinn.<br/>„Aber ja. Denkst du, irgendjemand würde mir so einen Blödsinn glauben. Du verrennst dich in eine absurde Idee und viele Menschen müssen dafür mit ihrem Leben bezahlen, Junge.“ Gellert betrachtete seine Tante kühl. Sie war eine kluge, weitsichtige Frau, wenn auch genau so lächerlich ehrenhaft, wie die meisten anderen. Nur Albus war anders. Nur Dumbledore war genau das was er gesucht hatte, würdig und nützlich. Darüber hinaus, stark und machtvoll. Und er hatte Schwächen, die Gellert mehr als einmal zu spüren bekommen hatte. Aber waren es nicht Dumledores eigene Worte? Für das größere Wohl?! Was war da schon ein bisschen Schmerz und Erniedrigung? Nichts!<br/>Genau so sah er es.<br/>„Ist noch Kuchen übrig?“<br/>„Bestimmt. Aber du bleibst hier, verstanden?! Ruiniere mir ja nicht meine Feier!“ Gellert lächelte und gab seiner alten Tante einen Kuss auf die runzlige Wange.<br/>„Tue ich nicht. Beeile dich, ich habe Hunger!“ Hunger auf Albus. Hunger, der wieder viel schlimmer war, seit er in ihm gewesen war. </p><p> </p><p>Batty kam schnell wieder und brachte ihm einen großen Teller voller unterschiedlicher Kuchenstücke.<br/>„Albus ist weg“, sagte sie traurig. <br/>„Ja, ist er. Feige wie immer.“<br/>„Er ist nicht feige, sondern vernünftig“, knurrte Batty ihn an. Nur sie durfte so mit ihm reden. Ihr würde er niemals etwas tun. Nicht, weil sie Familie und nett zu ihm war, sondern weil sie unbedeutend war und ihn an ein wenig an seine Mutter erinnerte. So, wie sie früher gewesen war, bevor der Unfall geschah, der seinen Vater für den Rest seines Lebens gezeichnet hatte und ihn die Liebe seiner Mutter gekostet hatte.<br/>„Ach Batty, er rennt vor sich selbst weg. Wenn er zugeben könnte, dass er ebenso ein Ungeheuer ist, wie ich, dann wäre alles einfacher. Aber solange er darauf beharrt ausschließlich zu den Guten zu gehören, nur weil er daran glauben möchte, hört es niemals auf. Nicht nur er will mich überzeugen, sondern ich auch ihn. “<br/>„So ist es nicht, Gellert. Du irrst dich. Albus ist ein guter Mensch mit den allerbesten Absichten. Mit dir geht er nur um, wie du es verdienst, mein Lieber.“ Leise lachte er und stopfte sich ein großes Stück Kürbiskuchen in den Mund. Seine Lügen waren noch immer die allerbesten. So gut, dass er sie selbst unheimlich gern glaubte.<br/>„Sag mal, ich habe Aberforth gar nicht gesehen. Wohnt er nicht mehr nebenan?“ Bathilda schwieg ein paar Augenblicke und sah ihn vorwurfsvoll an.<br/>„Was hast du vor, Junge?“<br/>„Nichts. Wenn ich schon mal hier bin, in der Talsohle meines Lebens, wollte ich ihm wenigstens Hallo sagen.“<br/>„Aberforth hasst dich!“<br/>„Ich weiß. Das ist aber kein Grund für Unhöflichkeiten.“<br/>„Gellert, ich bitte dich.“ Er seufzte leise und nickte dann.<br/>„Gut. Heute ist dein Geburtstag und ich möchte gern artig sein, so wie es Albus immer verlangt hat. Aber dafür musst du mir einen Gefallen tun, ja?“ Batty kniff ihre runzligen Lippen zusammen.<br/>„Ich mache nichts für dich, was Chaos, Tod und Unheil mit sich bringt.“<br/>„Nein, nein. So etwas würde ich von dir nie verlangen, Tantchen!“, sagte Gellert so inbrünstig, dass seine Tante ihn erneut länger schweigend ansah.<br/>„Versprich es mir!“<br/>„Meine Versprechen sind nichts wert, das weißt du doch. Aber ich sage dir, dass es um Liebe geht. Nur um Liebe, nicht mehr. Ich möchte mich gern mit Albus aussöhnen und dafür müssen wir uns treffen. Noch einmal. Weil er aber feige, ähm … ich meine selbstverständlich zu vernünftig ist, wird er nicht kommen, deswegen muss ich ein wenig … tricksen …“ Skeptisch sah seine Tante ihn an. Sie kannte ihn, nicht allzu gut, doch gut genug, um argwöhnisch zu sein.<br/>„Reicht es nicht, was du in Paris getan hast?“ Gellert hob die Brauen und lächelte einschmeichelnd.<br/>„Derartige Ausmaße hat meine Bitte nicht, Tante. Ich wollte dich nur bitten herauszufinden, wie und wo ich Aberforth treffen kann. Er wird mich mit Albus zusammenbringen können. Keine Sorge …!“ Er hob gewichtig eine Hand.<br/>„Ihm wird nichts geschehen, denn er spielt in meinem Plan keine Rolle.“ Was nicht unbedingt stimmte, doch das musste Tantchen ja nicht wissen.<br/>„Ich weiß nicht … Aberforth wird dich nicht treffen wollen.“<br/>„Doch, wenn ich ihm sage, dass ich seinen Bruder freigeben will. Das wird ihm gefallen. Aber ich brauche dazu Aberforths Hilfe, denn wir sind dummerweise aneinander gefesselt.“<br/>„Warum der Sinneswandel, Gellert? Deshalb?“ <br/>Batty stieß empört ihre Schuhspitze in den Staub des Scheunenbodens. Himmel, nein, hätte er fast gelacht. Gefesselter Sex war so viel besser, als alles andere und natürlich könnte er Albus auch nicht einfach so freigeben, selbst, wenn er gewollt hätte. Aber heute, als Albus in ihm war, hatte er etwas gespürt. Einen Riss in der Schale, einen Hauch Hoffnung, dass er seinen einstigen Geliebten doch noch auf seine Seite bringen könnte. Wenn er demütig genug war, wenn er noch mehr wollte, dass Albus ihn liebte, wenn er sich noch mehr anstrengte seine Gnade zu erlangen. Vielleicht war es Albus klar und er wehrte sich deswegen so sehr dagegen. Umso mehr versuchte Gellert gut zu sein, umso schlimmer wurde alles. Es war ein unlösbares Paradoxon, in dem sie beide gefangen waren. Für alle Zeiten. Im Gegensatz zu Albus fand er Gefallen daran, weil es weh tat. Weil es so herrlich schmerzte Dumbledores Verachtung zu spüren. Weil es ihn so anfeuert und ihn so motivierte sich selbst das Gegenteil zu beweisen. <br/>Er wollte nur noch eine Chance. Eine Chance vor Albus auf die Knie zu gehen, vielleicht zu weinen und darum zu betteln, dass er ihn liebte. Wenn er sich dafür auch vor Aberforth demütigen musste, würde er das machen. Weshalb nicht? Aberforth war seit jeher sein größter Kritiker gewesen, allerdings schlau genug, um sich in diesen Zeiten zu verstecken. Oder wusste der Teufel, was der Mann tat.<br/>„Ja, deshalb. Albus liebt mich, immer noch und du Tantchen, wirst verstehen, dass ich das nicht ignorieren kann. Wenn es nur eine winzige Chance gibt, dass wir dieses schreckliche Dilemma lösen können, dann muss ich die doch nutzen. Dafür muss ich aber mit ihm sprechen können und das hier … war kein Sprechen!“ Auch er stupste mit dem Stiefel in den Dreck der Scheune und grinste mit vollem Mund.<br/>„Du benutzt mich. Schäm dich, Gellert!“, zischte sie, schwankend zwischen Nachsicht und Ärger.<br/>„Das tue ich und es tut mir leid. Aber du kannst sicher sein, dass Albus mich dafür bestrafen wird. Für alles! Und ich habe es verdient. Also, wo finde ich Aberforth?“<br/>Batty seufzte dramatisch.<br/>„Wenn du nicht mein Neffe wärst, würde ich dich verdammen …“, flüsterte sie und sah ihn traurig an. Gellert kamen die Tränen. WENN … wie er diese Einschränkung verabscheute. Immer diese Bedingungen. Selbst seine Tante, die Familie war, hatte Bedingungen für ihre Liebe.<br/>„Bitte“, sagte er rau. Batty kam wieder zu ihm, küsste seine Wange und streichelte ihn.<br/>„Aberforth ist in Hogsmeade, Kürbisgasse 2. Lass es mich nicht bereuen, hörst du? Versprich mir, dass du ihm nichts tust.“<br/>„Versprochen!“, sagte Gellert. Sie beide wusste, dass es bedeutungslos und nur eine hohle Phrase war.<br/>Fest umarmte Batty ihn und riss ihm anschließend unwirsch den leeren Teller aus der Hand.<br/>„Sieh zu, dass du dich ein bisschen besser ernährst, Junge. Du sieht krank aus.“ Gehorsam nickte Gellert. Als er wieder alleine war, legte er sich wieder auf den Boden der Scheune und erinnerte sich an das erste Mal, wo sein Gesicht derart im Dreck lag, wie gerade. <br/>Bevor er zu Aberforth ging, müsste er das tun, denn Aberforth war vielleicht nicht so klug wie Albus und auch nicht so mächtig, aber ihm fehlte die rosarote Brille der Liebe. Aberforth hatte ihn immer so gesehen, wie er war. Und er hatte ihn abgelehnt, von der ersten Sekunde an.<br/>Bevor er ihm gegenüber trat, musste er klar im Kopf sein und dafür musste er einen Moment lang seine Erinnerung erleben, um sie wegpacken zu können.</p><p> </p><p>Noch immer bekam er den Seelentransfer-Zauber nicht hin. Als die Scheunentür aufging, zuckte er zusammen, denn er hatte sie mit mächtiger Magie versiegelt, wie er geglaubt hatte. Natürlich war es Albus Dumbledore, er nette Nachbar, den ihn Bathilda ans Bein band, wie einen Köter.<br/>„Nicht jetzt, Albus …“, sagte er abweisend, weil er wollte, dass er wieder ging.<br/>„Hast du den Verstand verloren?“, fragte Albus unüberhörbar schockiert, als er all die blutigen Rattenleiber vor seinen Füßen sah. Gellert verkniff sich ein Grinsen.<br/>„Los, finde es doch raus, Albus!“, erwiderte er scharf. Die leuchtend blauen Augen sahen ihn vorwurfsvoll an.<br/>„Warum tust du das? Deine Magie ist so stark und du setzte sie … für so was ein?“<br/>„Für so was?“, fragte Gellert amüsiert, weil er begriff, dass Dumbledore keine Ahnung hatte, was er hier tat und es darüber hinaus auch vielleicht gar nicht wissen wollte, weil es die Dunklen Künste waren.<br/>„Für etwas Schlechtes!“<br/>„Warum sagst du das?“<br/>„Weil es nicht richtig ist, wenn Ratten für etwas sterben müssen, zu dem sie nicht bestimmt sind!“<br/>„Möchtest du, dass ich lieber mit Muggeln experimentiere?“, fragte Gellert lächelnd, doch Albus lächelte nicht zurück.<br/>„Ich würde mir wünschen, dass du das sein lässt, Gellert. Bist du nicht wegen solcher Sachen aus dem Durmstrang-Institut geflogen?“<br/>„Du willst also, dass ich brav und artig bin, richtig? Weshalb? Fändest du mich dann noch anziehender oder wenige anziehend?“ <br/>Albus Verlegenheit wurde sehr deutlich. Er senkte den Blick und ein Hauch Röte hatte sich auf seine Wangen geschlichen. Bis jetzt hatten sie sich nur geküsste und alles, was geschah, war im Grunde von Dumbledore ausgegangen. Nicht, weil er der Ältere war oder Erfahrung hatte (die hatte er ebenso wenig wie Gellert), sondern weil Gellert an solchen Nebensächlichkeiten wenig Interesse hatte. Doch zunehmend gefiel es ihm von Albus begehrt zu werden. Albus‘ Küsse waren eindrucksvoll, seine Hände neugierig und seine Augen krochen begehrlich in seine. Zum ersten Mal in seinem einsamen Leben wurde Gellert wirklich gewollt. Am Anfang konnte er es kaum glauben, doch Dumbledore war unerbittlich in der Bezeugung seines Begehrens. Sobald sie allein waren, küsste er ihn. Manchmal neckisch und zärtlich, manchmal nur still und aufmerksam und manchmal voller Leidenschaft und Feuer. Nie hatte er Gellert ausdrücklich gefragt, ob es das war, was er auch wollte. Weil er es nicht abgewehrt hatte, war Albus der Meinung, dass er das auch genauso wollte. Schuldbewusst sah er sich nun um. <br/>„Diese Frage verdient keine Antwort!“, sagte Albus dunkel. <br/>„Du hast recht. Ich sollte das nicht tun. Aber ist es nicht so, dass Fortschritt Opfer verlangt?“ Mit gerunzelter Stirn sah Albus ihn nun an. Seine Hände spielten mit seinem Zauberstab. Er hatte ihn ständig in der Hand, als würde er sich nicht trauen, ihm ohne Waffe entgegen zu treten. <br/>„Ich glaube, dabei geht es eher um persönliche Opfer, mein Lieber. Und nicht um Opfer von unschuldigen Lebewesen.“ Es war nicht so, dass er Albus nicht verstand, ganz im Gegenteil. Aber er stimmt ihm längst nicht in allem zu. Wenn er dem hochgelobten Dumbledore, den ihm seine Tante jeden Tag schmackhaft machte (und damit sogar das gar nicht so kleine Zugeständnis machte, dass sie Unzucht betrieben – was in diesen Zeiten keineswegs ein kleines Vergehen war), allerdings widersprach, würde er den einzige Menschen vertreiben, der würdig war. <br/>Alles, was Gellert je wollte, war frei sein. Frei, zu tun und zu denken, was er wollte, ohne an jeder Ecke auf Menschen wie Aberforth zu treffen, die ihn kritisierten und verurteilten. Albus Dumbledore konnte ihm dabei behilflich sein, denn seine Magie war seiner ebenbürtig, sein Geist war grenzenlos und bunt, sein Wille war stark und seine Sprache exzellent. Albus hatte nur eine eklatante Schwäche. Er konnte keine Meinung dulden, die seinen moralischen Werten widersprach. Diese Intoleranz brachte einen Wesenszug zum Vorschein, den Gellert als nichts anderes als eine gut versteckte Despotie erkennen konnte. Geheimnisse ließen sich ausnutzen und waren die Grundlagen für alle Manipulationen. <br/>„Verachte mich nicht dafür, Albus. Ich versuche nur auf meine Weise … etwas zu erreichen …“ Nebenher zog sich Gellert aus. Bisher hatte Albus höchsten mal seine Hände unter sein Hemd geschoben, während seine Zunge in seinem Mund war. Es wurde Zeit für Fortschritt, dachte Gellert amüsiert und genoss Dumbledores missbilligenden Blick. <br/>„Was wird das …?“, fragte Albus mit rauer Stimme. <br/>„Ich gebe dir recht und versuche deine Forderung nach meiner charakterlichen Rechtschaffenheit zu verinnerlichen.“<br/>„Indem du dich … ausziehst?“ Gellert zog sich wirklich aus. Nacktheit hatte ihn noch nie gestört. Das war ebenso nebensächlich wie ein paar tote Ratten. Er gab Albus keine Antwort, sondern zog sich bis auf die Schuhe aus. Es war sehr deutlich, dass den anderen Jungen seine Nacktheit nicht kalt ließ. Die blauen Augen waren ganz dunkel geworden und Albus presste seine Lippen viel zu fest aufeinander.<br/>„Gefällt dir, was du siehst, Albus?“ Albus schluckte nur und versuchte ihm ausschließlich ins Gesicht zu sehen.<br/>Gellert brauchte keine Antwort, er sah sie sehr deutlich. In Dumbledores Schritt war eine unübersehbare Beule, die ihn erfreute. Natürlich mochte der andere Junge ihn, nackt oder nicht, völlig egal. In gewisser Weise war Albus ebenso einsam wie er. Weder Aberforth, sein störrischer und ungeselliger Bruder, noch seine durchgeknallte Schwester teilten Dumbledores absurde Fantasiewelt, in der er sich perfekt idealisierte Luftschlösser baute und der unumstößlichen Meinung war, dass andere Menschen sie ebenso gut finden, wie er selbst. Sie hatten sich gesucht und gefunden aber noch war ihre Beziehung zu unverbindlich. Jeder war frei zu gehen, frei Nein zu sagen.<br/>Gellert ging langsam ein paar Schritte auf Albus zu. Dessen Augen weiteten sich, als er sich vor ihn in den staubigen Boden der Scheune kniete. <br/>„Versuche mich zu ändern, Albus. Ich möchte sein, wie du. Gut und anständig, mit ehrenhaften Absichten und mit moralischen Prinzipien.“<br/>„Wie soll ich das schaffen?“, fragte Albus mit rauer Stimme. Gellert, der die Augen und den Kopf gesenkt hatte, erschauerte heftig. Nie hatte sich Erniedrigung so köstlich angefühlt. Dabei musste er Dumbledore nicht mal in die Augen schauen. Er spürte seine Macht überall um sich herum. <br/>„Indem du mich bestrafst, wenn ich solche Dinge tue und mich vergessen habe. Du musst mich daran erinnern, dass ich anders sein kann. So wie du …“, flüsterte er und er glaubte seine eigenen Worte. Wenn ihn jemand ändern konnte, dann Albus Dumbledore. Er hatte die Macht dazu, er wusste sie nur noch nicht zu benutzen. Dumbledore glaubte immer noch, seine flache, verbale Liebesbezeugung wäre seine Waffe. Das war falsch, denn allein sein machtvoller Wille könnte ihn läutern, ihn heilen und unterwerfen. Albus‘ Liebe nahm er aber trotzdem auch gern mit. Sie abzulehnen wäre dumm und eine Verschwendung.<br/>Dass Dumbledore ziemlich verwirrt war, konnte er überdeutlich spüren. Ihm selbst war nicht klar gewesen, wie sehr er sich nach einer höheren Instanz gesehnt hatte, bis jetzt. Bis er vor ihm kniete und ängstlich und gleichzeitig sehnsüchtig auf seine Bestrafung wartete.<br/>„Du denkst, das hilft, dich zu einem besseren Menschen zu machen?“, fragte Albus ein wenig ratlos. <br/>Oder dich zu einem schlechteren Menschen, dachte Gellert pragmatisch und ohne Vorfreude.<br/>„Versuche es. Nur so, werden wir herausfinden, ob es funktioniert. Ich kann mein bisheriges Leben nicht ändern. Wie du weißt, war es nicht so besonders angenehm. Doch man könnte dafür sorgen, dass sich Verhaltensmuster ändern. Du wirst mich nicht überreden können und mich auch nicht überzeugen können, indem du mir tief in die Augen siehst, oder deine Zunge in meinen Mund schiebst. Aber wenn du mich bestrafst, könntest du Erfolg haben, das spüre ich ganz deutlich.“<br/>„Das ist verrückt“, keuchte Albus leise. Die innerliche Ergriffenheit war deutlich in seiner Stimme zu hören. Dumbledore war nicht nur scharf auf ihn und hatte Gefühle für ihn. Darunter war noch etwas Anderes, was erst jetzt ans Licht kam. Die Aussicht auf totale Machtausübung war für diesen so starken Mann überaus erregend. Sein Nachbar war langsam um ihn herum gelaufen.<br/>Als Gellert begriff, dass sie füreinander geschaffen waren, in jeder Hinsicht, war es ganz leicht loszulassen. Er ließ sich nach vorn auf seine Hände fallen, beugte den Kopf so weit nach vorn, dass seine Stirn den Boden berührte und wartete. Würde Albus ihn wirklich verstehen? Wenn ja, dann war das schönste Liebeserklärung, die er je bekommen hatte und vermutlich jemals bekommen würde. Ob Mann oder Frau, war ihm immer schon egal gewesen. Es war wie Ratte oder Gnrk. Manche Details waren absolut bedeutungslos.<br/>Schon spürte er den ersten, magischen Peitschenhieb. Der Schmerz raste durch ihn hindurch, machte ihn erst atemlos und dann ließ er ihn scharf die Luft einziehen. Köstlich. Albus Dumbledore liebte ihn wirklich. Nicht nur mit seiner Zunge, seinen Augen und vielleicht seinem Penis. Er begriff, was er brauchte und wollte und war in der Lage es ihm zu geben.<br/>Ob ihn das zu einem besseren Menschen machen würde? Es käme auf einen Versuch an, oder zwei oder drei.</p><p>Es waren nur drei Schläge und Albus kam gegen seine Selbstzweifel und Selbstvorwürfe nicht mehr an.<br/>„Wie soll das helfen? Steh auf, das ist Unsinn.“<br/>„Ich kann nicht …“, keuchte Gellert und wimmerte leise. Der warme Schmerz auf seinem Rücken, der gar nicht so schlimm war, war die eine Seite. Die andere, war seine hammerharte Erektion. Irgendwie hatte er damit nicht gerechnet. Ihm ging es um eine mentale Unterwerfung, darum Albus zu demonstrieren, dass er gewillt war sich seinem Willen zu unterwerfen. Dass es pure Lust erzeugte, war beängstigend.<br/>„Ich … habe ich dich verletzt. Ich wollte das nicht. Oh, Gellert, bitte verzeih mir, steh auf, ja? Ich werde deine Verletzungen heilen und …“ Gellert drehte sich um und Albus konnte nicht an seiner Erektion vorbei sehen.<br/>„Oh … so ist das …“, sagte er tonlos und rieb sich mit der Hand übers Gesicht.<br/>„Was hast du erwartet, Albus? Wie bei dir, so auch bei mir. Hattest du jemals Zweifel, dass wir nicht füreinander geschaffen sind, dann sind die damit wohl erledigt, oder?“<br/>„Ich finde das nicht gut. Weder, dass du deiner Grausamkeit freien Lauf lässt, noch, dass du sie mit Wissensdurst entschuldigst. Und auch nicht, dass ich es erregend finde dir weh zu tun, ebenso wenig, wie du mit Lust darauf reagierst. Steh auf und zieh dich an!“<br/>„Manche Dinge sind unaufhaltbar und nicht änderbar.“ Gellert blieb auf dem Rücken im Dreck liegen. Albus schnaubte nur empört, sah ihn dann aber wieder an.<br/>„Können wir uns nicht küssen, so wie es andere, normale Menschen tun?“ Jetzt lachte Gellert und er konnte nicht mehr aufhören.<br/>„Hör auf damit!“, herrschte ihn Albus scharf an, doch es ging nicht. Er war in einem heftigen Lachanfall gefangen. Plötzlich hockte Dumbledore auf seinem Körper und schlug ihm fest mit der flachen Hand ins Gesicht.<br/>„Aufhören! Sofort!“ Er verstummte und sah Albus neugierig an. Seine blauen Augen versprühten Funken des Selbsthasses und der Wut auf ihn.<br/>„Ich liebe dich, Albus Dumbledore“, sagte Gellert einfach und meinte es genau so. Was er sah, gefiel ihm. Es erregte ihn Albus so unkontrolliert und voller Zweifel zu sehen, so halt- und ratlos, so unsicher, wer er wirklich war. <br/>„Weil ich dich sehe. So, wie du bist …“, flüsterte Gellert rau vor lauter Emotionen, die er sonst meistens wegsperrte, um sich auf das Wesentliche zu konzentrieren. Albus beugte sich über ihn küsste ihn. Sanft, als wolle er ihn verspotten, und ihm zeigen, dass er falsch lag. Es machte nichts. Der Augenblick der Wahrheit war schon vorbei. Er hatte den großen Dumbledore in alle seiner Pracht gesehen, die schillerte wie ein Regenbogen. Wie Albus sich selbst darüber belügen konnte, war ihm ein Rätsel. Allein die Tatsache, dass er sich so zu einem verrufenen Jungen wie ihm hingezogen fühlt, müsste ihm doch klar machen, wer er wirklich war.<br/>Der Kuss wurde intensiver und Gellert half seinem Freund nun seine Kleidung loszuwerden. Sie liebten sich direkt auf dem Scheunenboden, ohne Umstände, ohne romantische Albernheiten. Es war ekstatisch, erschreckend und intensiv, wie nichts, was Gellert bisher erlebt hatte. Gegen seinen Willen, war er vollkommen offen und willig, wie ein Stück lebloses Fleisch. Albus in ihm brachte sein Herz fast zum Bersten. Der staubige Dreck vom Boden gelangte durch sein heftiges Atmen in Nase und Mund. Sein eigenes Stöhnen bescherte ihm immer wieder ein Schaudern und er tat alles, um Albus so tief es ging in sich zu fühlen. Niemals hatte er sich einem Gott näher gefühlt. War er sich bis dahin nicht sicher, wusste er nun, dass der Albus Dumbledore für alle Zeiten anbeten und lieben würde, so absurd und unbedeutend die Tatsache auch war.<br/>Der Moment war unwirklich und gleichzeitig schmerzhaft real.<br/>Würde ihn Albus Dumbledores Liebe zu einem besseren Menschen machen? Würde es helfen, wenn er sich ihm unterwarf? Würden sie dann für immer Eins sein können? Würden sie dann irgendwann endlich gleich sein?<br/>Er wollte es glauben. Er wollte es so gern glauben.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21131726/chapters/50493443">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Als es am späten Nachmittag klopfte, öffnete Aberforth Dumbledore grummelnd die Tür und erstarrte. <br/>„Grindelwald“, sagte er kalt. Er war verblüfft, jedoch nicht handlungsunfähig vor Angst und bei allem, was Grindelwald ihm angetan hatte, erstaunte ihn das sogar selbst.<br/>„Hallo Aberforth, ich war gerade in der Gegend und dachte ich schau mal bei dir vorbei.“<br/>„Spar dir das und verschwinde!“, sagte Aberforth und wollte die Tür schließen. Grindelwald machte nur eine schwache Handbewegung ohne Zauberstab und die Tür riss sich aus seiner Hand. Sie öffnete sich weit und bat den Gast in das kleines Haus.<br/>„Danke, deine Einladung nehme ich sehr gern an. Ich könnte tatsächlich einen Tee gut vertragen“, sagte er todernst und schloss die Tür höflich und leise hinter sich.<br/>„Was soll das? Denkst du, ich habe Angst mit dir zu kämpfen?“, fuhr er Grindelwald an. Der war gemächlich in seine Küche gelaufen, sah desinteressiert in eine Keksdose und setzte sich dann auf einen Stuhl.<br/>„Kämpfen. Wozu? Ich könnte dich mit meinen Gedanken töten, doch dafür bin ich nicht hier.“ Aberforth gab ein spöttisches Schnauben von sich. Wie er den blonden Irren hasste. Ihm gab er die Schuld an Arianas Tod, obwohl das nicht eindeutig zu beweisen war. Zu beweisen war, dass Gellert ihm Albus gestohlen hatte. Bis Gellert nebenan eingezogen war, kam er mit seinem Bruder einigermaßen gut miteinander aus. Jetzt nicht mehr. <br/>„Dann bist du also für Tee hier, setze dich doch, ich mache dir gern Tee!“, zischte Aberforth bissig. Er hatte keine Angst vor Grindelwald. Das hatte er aber nur nicht, weil er nichts zu verlieren hatte. Ariana war tot, Albus hatte sein eigenes Leben und er konnte ihm nie verzeihen, dass er diesen Irren in ihr Leben gebracht hatte. Er hatte nur sein Bedauern und das würde ihn sicher nicht vom Sterben abhalten.<br/>Aberforth machte wirklich Tee und wartete.<br/>„Ich brauche deine Hilfe, Aberforth.“<br/>„Wobei? Dir die Schlinge um den Hals zu legen? Sehr gern. Zeig mir den Baum und ich werde sogar vor dir da sein.“<br/>„Du musst Albus zu mir bringen.“ Kalt lachte Aberforth.<br/>„Bist du noch ganz dicht? Wenn du ihn töten willst, kümmere dich doch selbst darum. Grüß ihn vorher von mir und sag ihm, dass ich es ihm nie verzeihe, dass er dich in unser Haus gebracht hat.“<br/>„Warum hasst du mich so?“ Gellert sah ihn tieftraurig an, doch er ließ sich davon nicht täuschen. Grindelwald war ein Monster und er scheute sich nicht, es ihm zu sagen.<br/>„Weil du ein einsamer, bösartiger Junge warst, als du nach Godric’s Hollow kamst und es geschafft hast, nicht nur meinen Bruder mit Lügen und Manipulationen zu vergiften und in dein Drama hineinzuziehen, sondern nebenbei auch noch unserer Familie zerstört hast. Du bist durch und durch verdorben und meiner Meinung nach für alle Zeiten verloren, auch wenn Albus etwas anderes behauptet hat.“<br/>„Das hat er. Er hat daran geglaubt, weißt du?! So wie ich auch. Wir beide haben daran geglaubt, dass man sich ändern kann und haben – jeder für sich – wirklich alles getan, um den Beweis zu liefern.“<br/>„Willst du damit sagen, dass Albus versagt hat? Überraschung, das weiß ich schon.“ Gellert lächelte leise.<br/>„Deinen Zynismus habe ich schon immer geschätzt, aber vielleicht wundert es dich, wenn ich dir sage, dass wir beide versagt haben. Ich liebe ihn noch immer und auch Albus liebt mich. Und ganz ehrlich, das ist ein wenig … lästig. Irgendwie steht er mir meinen Plänen immer im Weg herum, deshalb … bin ich hier, bei dir. Kannst du mir folgen?“ Gellert sprach ganz leise, beinah sanft und unaufgeregt. So wie er immer mit Ariana gesprochen hatte, wie zu einem Kind.<br/>„Was habe ich damit zu tun?“, fragte Aberforth unwillig. Nicht nur, dass dieses Monster in seiner Küche saß und seinen Tee schlürfte, er stellte auch noch Forderungen. Dabei müsste er ihn unverzüglich angreifen, auch wenn es sein sicherer Tod wäre. <br/>„Du musst Albus zu mir bringen. Er wird nicht zu mir kommen, selbst, wenn ich ihm eine dieser lächerlichen Eulen nach Hogwarts schicke.“<br/>„Ach, ich verstehe gar nicht weshalb. Kann es sein, weil du Ariana getötet hast?“<br/>„Habe ich nicht!“, zischte Gellert ihn scharf an. Sein Blick war fast tödlich und Aberforth fühlte seine Macht, die plötzlich seine kleine Küche ausfüllte, wie tiefschwarze Schatten. <br/>„Und dann? Was hast du vor? Willst du ein Duell?“<br/>„Nein. Ich will, dass Albus die Fesseln löst … und ich tue es bei ihm.“ </p><p> </p><p>Skeptisch sah Aberforth ihn an. Albus hatte sich sehr verändert, als Gellert Grindelwald nach Godric’s Hollow gekommen war. War er vorher ein Tagträumer, ein kindischer, manchmal naiver Kerl, der überall das Gute und Schöne sah, wurde er zunehmend verschlossener, umso länger er mit Grindelwald Zeit verbrachte.<br/>„Er tut dir nicht gut!“, sagte Aberforth eines Tages zu seinem Bruder. Albus tat so, als wüsste er gar nicht, was er meinte.<br/>„Ich denke nur mehr über die Dinge und die Welt selbst nach …“, sagte Albus, nachdem er seinem älteren Bruder ausführlich dargelegt hatte, worauf seine Beobachtungen beruhen.<br/>„Du begibst dich zu sehr in seine Welt, in die Welt der Dunklen Künste.“<br/>„Unsinn, wir schlafen nur miteinander“, erwiderte Albus frech, in der Hoffnung seine Bedenken mit Scham zu vertreiben. <br/>„Wenn‘ s nur das wäre …“, hatte er gemurmelt. Sie taten mehr, doch Aberforth wollte es gar nicht genau wissen. Die beiden hatte eine ungute, giftige Beziehung. Aber diese Erkenntnis war eher ein Gefühl, was ihn immerzu skeptisch machte. So freundlich und nett Gellert auch zu ihm und Ariana war, er traute ihm nie. So sehr Albus beteuerte, dass es ihm gut ging und alles in Ordnung war, umso weniger glaubte er das. Aber Albus war nicht aufzuhalten. Es gab einen neuen Zug an ihm, der Aberforth zunehmend besorgte. Dieser unbändige Wille alles nach seinem Geschmack zu gestalten, war beängstigend. Würde Albus auch eines Tages über Leichen gehen, wie es Grindelwald ganz sicher tun würde?<br/>Es war nicht so, dass Gellert nicht charmant und liebenswert sein konnte. Ganz im Gegenteil. Ariana vergötterte ihn, weil er ihr ständig witzige und spannende Geschichten erzählte, ihr immer Geschenke mitbrachte und sich stundenlang mit ihr unterhalten konnte. Er machte ihr den Kasper, unterhielt sie und sie liebte ihn dafür. Er war gut zu Ariana, das stand nicht nur Diskussion. Aber gut zu sein und Gutes zu bewirken, waren nicht unbedingt dieselben Dinge.</p><p> </p><p>„Welche Fesseln?“<br/>„Das geht dich nichts an, Aberforth. Aber ich bin gewillt sie zu lösen. Das ist es, was zählt. Albus wird befreit sein, glaub mir.“<br/>„Ich glaube dir garantiert nichts. Es ist eine Falle und so sehr ich es Albus auch gönnen würde, seine Strafe zu bekommen, so will ich bestimmt nicht seinen Tod.“ Gellert seufzte leise und rieb sich über die Augen. Er sah müde aus, doch Aberforth verspürte kein Mitleid. Im Gegenteil, er war wachsamer als je zuvor.<br/>„Ja, so würde ich an deiner Stelle auch reagieren. Aber ich sage dir was, Albus ist mir ähnlicher, als dir lieb ist. Ich zeige dir etwas und bitte dich, mir zu glauben, dass es zwischen uns eine Verbindung gibt, die nur er oder ich lösen kann. Erlaube es mir und Albus ist frei. Wir haben uns damals zu eifrig zu viel versprochen. Komm schon, Abe … wir waren jung und dumm.“ Während er sprach, begann Gellert sich auszuziehen. Aberforth hatte seinen Zauberstab fester in die Hand genommen, um gewappnet zu sein. Gellert zog sich noch das Hemd aus und verließ endgültig seinen Blick, als er sich umdrehte.<br/>Aberforth sah wie betäubt auf die Narben auf Grindelwalds Rücken. Jede einzelne symbolisierte das Zeichen der Heiligtümer des Todes. Eines davon war sogar sehr frisch.<br/>„Das … war nicht mein Bruder, du lügst!“, sagte er mit trockenem Mund, wusste es in selben Moment aber besser.<br/>„Doch, er war es. Natürlich mit meinem Einverständnis, doch ja, was du siehst, ist dein überall verehrter Bruder. Du weißt, dass er auch eine andere Seite hat, Abe …“<br/>„Nenn mich nicht so!“, keuchte Aberforth rau und schloss die Augen, um Gellerts vernarbten Rücken nicht sehen zu müssen.<br/>„Was du siehst, ist die Liebe deines Bruders für mich. Mit jeder Wunde hat er mich daran erinnert, welches Ziel wir haben und dass wir es nur gemeinsam schaffen können und nur, wenn wir das Selbe wollen! Leider entwickeln sich manche Dinge anders und Albus hat Angst bekommen. Angst, vor sich selbst. Niemand darf ihm das verübeln, ich als Allerletzter. Deswegen bin ich hier, um ihn frei zu lassen. Die Alternative wäre ein brennendes Hogsmeade, inklusive aller Einwohner“, fügte er ganz sanft und beiläufig an, als fragte er nach Sahne für den Tee.<br/>Scharf zog Aberforth die Luft ein. Grindelwalds Drohung kam keineswegs unerwartet und doch hatte er gehofft, dass er seine Rache wenigstens nur auf ihn konzentrieren würde. Noch zu gut erinnerte er sich an die Minuten, in denen Grindelwald ihn mit dem Crutiatus-Fluch gequält hatte. Ihm war immer klar, dass das dicke Ende noch kam. Grindelwald war nach Arianas Tod einfach verschwunden und Albus hatte nicht mal versucht ihn zu finden, um ihn für das zu bestrafen, was er über ihre Familie gebracht hatte. Tod und Hass. Er war sich sicher, dass Albus diesem Psychopathen standhalten konnte und doch würde es ganz bestimmt Opfer kosten. So uneinig sie sich auch waren, er liebte seinen Bruder Albus doch und konnte ihn nicht Grindelwald einfach so zum Fraße vorwerfen.<br/>„Wie wäre es mit einem Whiskey?“, fragte er dumpf, um Zeit zu schinden und zu verdauen, was er gesehen hatte und damit begreifen musste. Albus war das, was Gellert sagt. In gewisser Weise waren sich die beiden Liebenden sehr ähnlich. Es unterschied sie nur der Glaube. Albus glaubte an das Gute und Gellert glaubte nur an sich selbst.<br/>„Gut, lass uns beten, Abe …“, sagte Gellert aufgeräumt und zog sich an.</p><p> </p><p>Sein Brief an Nicolas Flamel war gerade fertig geworden, als ihm eine Nachricht auf den Tisch geflattert kam. Er erkannte die Handschrift sofort, obwohl er sie seit Jahren nicht gesehen hatte. Aberforth.<br/>„Ich brauche umgehend deine Hilfe, Albus. Bin in Hogsmeade, du weißt wo!“ <br/>Als ob er nicht wüsste, wo sein kleiner Bruder war. Seufzend drehte und wendete er die kurze Nachricht hin und her, ob sie sich als etwas anderes entpuppen würde. Aber sie blieb, was sie war. Eine Aufforderung zu seinem Bruder zu kommen. Aberforth bat ihn nie um Hilfe. Selbst, wenn er im Sterben liegen würde, wäre er vermutlich die letzte Person, an die er sich wenden würde. Wenn er also nun wollte, dass er zu ihm kam, dann konnte das nur einen einzigen Grund haben.<br/>Gellert Grindelwald!<br/>Er hätte standhaft bleiben müssen. Es war ein Fehler gewesen seiner Sehnsucht nach seinem Liebsten nachzugeben. Dass Grindelwald das schamlos ausnutzte, war seine gerechte Strafe. Es über Abe zu tun, war schlau, weil er sich seinem Bruder gegenüber wahrscheinlich für immer und ewig schuldig fühlen würde. <br/>Albus fühlte in sich hinein. Er war nicht mal überrascht. Nicht ängstlich, nicht beunruhigt. Nur ergeben und darum wissend, dass sich die Ereignisse steigern würden, bis es auf der anderen Seite steil nach  unten ging. Was genau Gellerts Absicht war, ihn erneut zu treffen, war ihm schleierhaft. Sie hatten sich erst vor ein paar Tagen in Godric’s Hollow getroffen.<br/>Aber so war Gellert. Unberechenbar und nicht aufzuhalten. Er machte sich auf den Weg, weil es unvermeidlich war.</p><p> </p><p>Aberforth hörte Albus kommen. Gellert offensichtlich auch, denn er lächelte. Seine Beine lagen auf dem Tisch und er trank inzwischen das dritte Glas Whiskey. Vielleicht half es etwas, dachte Aberforth ratlos und öffnete Albus die Tür, bevor er klopfte.<br/>„Dein Liebhaber ist hier …“, sagte er trocken. Albus sah ihn nicht mal an. Sein Blick kreuzte sich allein mit Gellerts.<br/>„Was will dieser Verrückte hier?“, fragte Aberforth unbeeindruckt von der eisigen Wortkargheit seines Bruders.<br/>„Ein Duell, was sonst?“, sagte der ältere Dumbledore finster, doch Gellert kicherte leise.<br/>„Unsinn. Ein Duell würdest du verlieren. Mag deine Magie meiner sicherlich das Wasser reichen, so habe ich immer noch den hier …“ Dabei legte er den Elderstab an seine Lippen.<br/>„Bist du sicher, dass dir der Elderstab zuverlässig gehorcht? Immerhin hast du Gregorowitsch damals nicht getötet. Du hast ihm den Stab nur gestohlen.“ Jetzt lachte Gellert leidenschaftlich und wirklich amüsiert. Gegen seinen Willen fand Aberforth ihn plötzlich schön und sehr reizvoll.<br/>„Ich denke, für dich reicht meine Macht noch, schöner Albus!“<br/>„Könnt ihr das nicht ohne Magie lösen? Mit einer Prügelei, wie echte Männer?“, brummte Aberforth in die Stille, die sich an Gellerts Lachen anschloss. Aus dem Augenwinkel nahm er noch viel deutlicher wahr, wie angespannt sein Bruder war. Albus rechnete hier und jetzt mit dem Endkampf. Doch das würde er nicht zulassen. Hogsmeade war sein Zuhause und seine Heimat. Die Einwohner waren seine Familie und seine Freunde. Wenn hier jemand etwas zerstören wollte, dann nur über seine Leiche.<br/>Albus sah ihn seltsam irritiert an.<br/>„Meinst du das ernst?“<br/>„Ja, warum eigentlich nicht? Ohne Magie!“, warf Gellert ein und stand endlich auf. <br/>„Ich bin sowieso nicht hier, um irgendwen zu töten. Ich wollte nur etwas loswerden. Meine Fesseln und dazu ist mir jedes Mittel recht. Also versteht mich nicht falsch, ich habe auch nichts gegen ein nettes Feuerchen, meine Absicht ist es jedoch nicht.“<br/>„Von welchen Fesseln spricht er, verflucht nochmal?“, fragte Aberforth seinen Bruder. Der gab ihm keine Antwort, sondern sah Grindelwald nur sonderbar und eindringlich an.<br/>„In Ordnung. Abe … die Magische Schatulle!“, befahl Albus atemlos, dabei ließ er den Blonden nicht eine Sekunde aus den Augen. Er holte schnell die Schatulle, welche die beiden Zauberstäbe und seinen eigenen so lang einschließen würde, wie der Kampf dauerte. Mit einem blechernen Geräusch stellte er sie auf dem Tisch ab.<br/>„Ihr geht doch nach draußen, oder?“ Aberforth war sich nicht sicher in welche bizarre Aufführung er hier geraten war.<br/>„Nein, das geht nicht. Wenn uns jemand dabei zusieht, ist mein Ruf ruiniert“, sagte Gellert und sah Aberforth todtraurig an.<br/>„Er hat recht, Abe. Die Menschen würden nur in Panik geraten, wenn sie sehen, dass Grindelwald hier ist. Mach den Ort sicher, schließe die Zauberstäbe ein und verschwinde mit der Schatulle. Ich finde dich danach schon“, befahl Albus. Noch immer sah er ihn nicht an.<br/>„Oder ich!“, rief Gellert gutgelaunt und siegessicher. Ungern würde Aberforth es gerade eingestehen, doch er kam sich ein wenig verschaukelt vor. Hatten die beiden größten Zauberer der Welt wirklich gerade vor sich in seiner Küche zu prügeln? Um irgendwelche imaginären Fesseln zu lösen, von denen er keine Ahnung hatte und die vielleicht noch nicht mal real waren? Sah ganz so aus. Wenn er eins über Gellert Grindelwald wusste, dann das, dass er Publikum und Aufmerksamkeit über alles liebte. Wenn er sich also dazu herabließ sich eine primitive Schlägerei mit seinem ehemaligen Geliebten in seiner Küche, ohne Zuschauer zu liefern, dann konnten seine Absichten nicht beinhalten die ganze Welt zu unterjochen. Es ging wirklich nur um Albus und ihn. <br/>Als der Elderstab in die Schatulle fiel, konnte er es kaum glauben. Was hatte Grindelwald vor? Er spielte doch ganz sicher nicht fair. Selbst Albus hob beunruhigt die Augenbrauen, legte seinen eigenen Zauberstab dann jedoch dazu. Er hatte vorher seine Küche präpariert und einen Geräuschschutz gezaubert und legte nun auch seinen eigenen Zauberstab in den Kasten. Würde der Deckel zuklappen, würden sie ihn erst in frühestens sieben Stunden wieder öffnen können.<br/>Gellert klappte den Deckel ungeduldig runter und zischte ihm zu:<br/>„Und jetzt verschwinde, Abe, ehe ich mich noch vergesse!“ Albus deutete mit dem Kopf zur Tür und versuchte zuversichtlich zu wirken. Allerdings sah er deutlich, dass sein Bruder nervös war, was daran lag, dass er nicht unbedingt der Schläger war und auch für Sport nie allzu viel übrig hatte. Sollte er ihm viel Glück wünschen? Glück wäre vermutlich angebracht, denn mit Können würde er nicht überzeugen können. Andererseits, vielleicht war Grindelwald auch kein geübter Kämpfer, so bleich und krank, wie er aussah. </p><p>Schweren Herzens ließ Aberforth die beiden allein. Hoffentlich ging alles gut. Hoffentlich konnte Albus die Fesseln lösen, auch wenn er nicht wusste, was es bedeutete. Vielleicht war sein Bruder dann endlich wieder frei.<br/>Er wollte so gern daran glauben.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21131726/chapters/50530229">Chapter 4</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Wie kannst du es wagen schon wieder meine Familie in deine Spielchen mit hineinzuziehen?“, knurrte Albus, kaum dass Aberforth weg war. Seine Augen lagen unablässig auf Grindelwald, um zu sehen, was er vorhatte, bevor er es tat.<br/>„Dein knurriger Bruder gehört nun mal dazu, das weißt du auch. Du bist gekommen und weißt damit auch, dass wir uns gegenseitig freigeben müssen. Auch wenn ich ein anderes Ende bevorzugen würde, so kann ich meine Ziele – die übrigens mal unsere waren – nicht erreichen, wenn du mich ständig kritisierst und wie einer dieser Kistenclowns ständig vor meine Füße springst.“ <br/>Wut stieg in Albus nach oben. <br/>„Es waren nie unsere Ziele sich über die Muggel zu erheben! Ich kritisiere dich auch nicht, ich will, dass du das beendest!“<br/>„Und du glaubst, dass du das ohne Magie hinbekommst?“, provozierte Gellert ihn. Er kam näher und tippte ihn fest mit den Fingern an. Albus, seit dem Moment auf dem Scheunenboden innerlich wund und verärgert über sein Begehren, verlor die Beherrschung. Seine Faust traf die linke Kieferseite des Blonden. Nicht sehr fest und auch nicht besonders zielsicher. Grindelwald lachte noch auf, während sein Kopf ein bisschen zur Seite flog.<br/>„Das ging schnell, Albus. Damit habe ich sogar die Wette gegen mich selbst verloren. Ich hatte dir mindestens drei Sätze Vorsprung …“ Der nächste Schlag traf ihn, direkt in den Magen.</p><p> </p><p>Gellert ging zu Boden, halb lachend, halb vor Schmerz keuchend, hielt er sich die Arme vor den Bauch. Eine banale Schlägerei sollte ihr Dilemma lösen? Warum nicht? Er war der letzte, der nicht an die absurdesten Lösungen glaubte. Ein Zaubererduell könnte es immer noch geben. Dieser Narr Aberforth glaubte doch nicht ernsthaft, dass er sich mit dem echten Elderstab aus dem Staub gemacht hatte. <br/>„Ich will das hier nicht tun, Gellert, und ich hasse dich, dass du mich dazu gemacht hast. Ich bin niemand, der an Schmerz und Leid Vergnügen findet. Es liegt nur an dir und deiner Perversität und du weißt das genau.“ Albus hatte nicht unrecht, allerdings würde er das im Moment garantiert noch nicht zugeben. Ohne aufzustehen, hechte er sich nach vorn und riss Dumbledore von den Beinen. Im nächsten Moment rollten sie sich über den Küchenboden. Mal hatte der Eine die Oberhand, mal der andere. Beide waren in derartigen Aktivitäten ziemlich ungeübt, hatten aber so viel angestaute Emotionen in sich, dass ein baldiges Ende ihrer Schläge und Tritte nicht abzusehen war. <br/>Die Zeit bestand nur aus Schmerz, so viel Zorn und angestrengtem Keuchen.</p><p> </p><p>Albus war mit dem Kopf schmerzhaft gegen das Tischbein geknallt und Blut lief ihm ins Auge. Gellert versuchte ihn gerade auf den Rücken zu bekommen, um mit seiner Faust sein Gesicht zu treffen. Im letzten Moment schaffte er es den Blonden wieder abzuwerfen. Auch Gellert blutete irgendwo und hatte aufgehört zu lachen. Inzwischen kämpften sie mit verbittertem Ernst. <br/>„Aber ich wollte, dass du mir weh tust …“, keuchte Grindelwald und schaffte es ihm das Knie in den Magen zu drücken.<br/>„Weshalb?“ Albus hätte sich fast übergeben.<br/>„Weil … ich nur so deine vollkommene Aufmerksamkeit hatte. Das Gewöhnliche, so wie andere Leute sich küssen … das reicht mir nicht!“, keuchte Gellert und holte zum Schlag aus. Albus schaffte es noch einigermaßen den Kopf herum zu drehen, so dass der Schlag nur seine Schläfe traf. Es reichte, um ihn stöhnen zu lassen.<br/>„Was? Du hattest Angst, dass ich dich gewöhnlich finde?“<br/>„Ja“, gab Gellert unumwunden zu und atmete einen Moment nur schwer. Er nutzte das und schubste ihn hart von sich runter.<br/>„Ich hatte Angst, du hättest mich schnell über, wenn du entdeckst, dass ich nichts Besonderes bin.“<br/>„Aber das bist du!“ Schwer atmend lagen sie beide nebeneinander. Keiner der beiden wusste, ob es schon vorbei war, oder ob sie nur eine kleine Atempause einlegen mussten.<br/>„Und wie soll ich deine Erektion verstehen?“, flüsterte Albus rau und wischte sich das Blut aus dem Auge.<br/>„Das lag an dir, du Idiot. An deiner intensiven Aufmerksamkeit. Ich habe dich zu etwas gemacht, was du gern sein wolltest, aber nicht bist und auch nie sein wirst. So einfach ist das.“ Gellert richtete sich ächzend auf und kam bis auf die Knie. Albus beobachtete ihn argwöhnisch. Sein Eingeständnis könnte eine Lüge sein, alles konnte ein fauler Zauber und eine Illusion sein. Man wusste bei Grindelwald nie, was gespielt oder echt war. Aber mit einer Sache hatte Gellert recht. Er selbst konnte sich nie damit abfinden, dass er ein Sadist sein sollte, den es erregte und erfreute, anderen Schmerzen zuzufügen. Falls Grindelwald das alles nur gespielt hatte, dann wirklich ziemlich überzeugend.<br/>„Das heißt … du hast mich von Anfang an von vorn bis hinten belogen?“ Sag ja, dachte Albus flehend. Wieder kam der Blonde auf den Knien zu ihm. Obwohl ihm jeder Knochen im Leib weh tat, flammte Erregung auf.<br/>„Vielleicht über meine angeblich masochistischen Neigungen aber nicht über meine Gefühle. Ich liebe dich, Albus Dumbledore. Inzwischen solltest du aber wissen, dass Liebe für mich etwas anderes ist, als für dich. Du magst es gewöhnlich, meine Sache ist das nicht. Ich will alles. Aber … und deswegen bin ich hier, biete ich dir an, dich zu befreien. Zerstöre von mir aus die Phiole, das hat keine Bedeutung und du weißt das. Dein Problem ist, dass du dich selbst an mich gefesselt hast. Es ist lösbar, mit reiner Willenskraft und … ein bisschen Gewöhnlichkeit. Du wirst sehen, wir beide sind stinklangweilig, ohne unsere Magie und unsere Attitüden.“</p><p> </p><p>Er hatte Dumbledore fast soweit. Nur noch ein klein wenig aufrichtige Demut und Albus würde einknicken. Aberforths alberner Vorschlag war brillant gewesen. So gut, dass er ihn aufnehmen musste, weil er selbst daran glaubte, dass er seine Fesseln sprengen konnte, wenn Dumbledore in seinen Augen zu einem vorhersehbaren Durchschnittstyp mutierte. Solange er ihn anbetete, und auf einen Thron setzte, könnte er niemals frei sein. Solange Albus ihn für etwas Besonderes hielt, würde Dumbledore nie sein volles Potenzial ausschöpfen. Aber das musste er, denn sonst kam es doch nie zum wahrhaftigen Zaubererduell, bei dem es nur EINEN geben könnten. Ihn. Gellert Grindelwald!<br/>Nur ein besiegter Dumbledore war ein guter Dumbledore.<br/>Behutsam rieb er seine Stirn an Albus‘ Brust.</p><p> </p><p>Albus knurrte missbilligend, hielt ihn aber auch nicht auf. Begriff er das richtig? Gellert wollte, dass sie sich ganz gewöhnlich liebten, um ihrer verdrehten Beziehung den Zauber und damit die Macht zu nehmen? Es war ein verlockendes Angebot und doch war er sich keineswegs sicher, ob das Ergebnis den Erwartungen standhalten konnte.<br/>„Hör auf damit!“, brummte er, weil er sich an das letzte Mal vor wenigen Tagen erinnerte und daran, wohin es geführt hatte. An harten, schmutzigen Sex auf dem Boden einer Scheune.<br/>„Wir können uns immer noch duellieren, schöner Albus?“ Gellerts Stimme klang ganz weich und warm. In seinen Augen war ein euphorisches Leuchten.<br/>„Gehe ich davon aus, dass du nicht den echten Elderstab in die Schatulle gelegt hast?“ Der Blonde nickte nur.<br/>„Und? Was sagst du? Hat dein Bruder vielleicht ein Bett?“ Albus musste unwillkürlich lächeln.<br/>„Er würde uns beide unverzüglich töten.“<br/>„Damit können wir doch umgehen, oder?“ Gellerts Gesicht hing über ihm, wie ein Mond. Er spürte seine Neugier, seine Ungeduld und auch seine Ergebenheit. Nein, es war nie gelogen. Gellerts höchstes Glück war nach wie vor von ihm besiegt zu werden. War es wahre Liebe, dass er ihm anbot ihn freizugeben, bevor sie den letzten Kampf kämpften?<br/>„Oben gibt es ein Bett“, erwiderte er dunkel. Falls seine Vermutung richtig war, dann würde er ihm geben, was Gellert wollte. Weil er es ihm schuldig war, so wie Grindelwald ihm die Wahrheit gesagt hatte. Er war nicht das brutale Monster, zu dem Grindelwald ihn mit all seiner Manipulationsmacht gemacht hatte.</p><p> </p><p>Grindelwald half ihm sogar hoch.<br/>Aberforths Schlafzimmer war nicht der Rede wert. Es gab ein Bett, einen Schrank, einen Tisch, einen Stuhl und nebenan ein winziges Bad.<br/>„Enttäuschend“, sagte Gellert dunkel, als er auf die bieder karierte Bettwäsche sah.<br/>„Na, das wollten wir doch, oder?“ Albus zögerte, weil er gar nicht recht wusste, wie er anfangen sollte. Die spielerischen Küssen vom Anfang ihrer Beziehung hatten sich rasant in eine furchtbare Gewaltorgie verwandelt. Dabei hätte er doch wissen müssen, dass man Gewalt niemals mit Gewalt bekämpfen konnte. Aber der Sex anschließend, war so allumfassend und legendär, dass keiner der beiden darauf verzichten wollte. Außerdem konnten sich so beide einreden, dass es Sinn hatte.<br/>Aber auch Gellert stand ein wenig planlos neben ihm. Er wirkte absurd verlegen und beinah schüchtern. Albus dachte darüber nach, ob es so hätte richtig laufen müssen und ob sich alles anders entwickelt hätte, wenn er den Mut gehabt hätte, darauf zu beharren, was und wer er war. Die Angst Gellert dadurch zu verlieren, war allerdings von Anfang an präsent gewesen.<br/>Albus drehte sich ihm zu und sah ihn direkt an. Der Blonde blinzelte und hatte jegliche Überheblichkeit verloren.<br/>„Es tut mir leid, Gellert, wie es gelaufen ist, auch wenn ich dir und mir die Sache mit Ariana niemals verzeihen werde“, sagte er ganz leise. Endlich sah der Andere ihn an. <br/>„Ihr Tod war nie meine Absicht …“, flüsterte Gellert belegt. Albus sah es zwar nicht, doch er spürte, dass es die Wahrheit war. Ganz sanft berührte er mit dem Daumen seine Lippen, bevor er ihn küsste. Sie schmeckten beide nach Blut und stöhnten leidend auf, als sie sich behutsam auszuziehen begannen. Es fühlte sich keineswegs leicht an.<br/>Draußen war es inzwischen stockdunkel und nur Alberforths magische Wandbeleuchtung schenkte ihnen genug warmes Licht, um sich zu betrachten. Sie sahen sich so zum ersten Mal.</p><p> </p><p>Gellert bekam kaum Luft. Wieder hatte er ihn dazu gebracht, doch das war in Ordnung. Wenn es nur funktionieren würde. Wenn er ihn danach nicht mehr als das sah, was er bis dahin für ihn gewesen war. Beim letzten Mal hatte er Albus‘ nackten Körper nicht wirklich zu Gesicht bekommen. Jetzt berührte und betrachtete er ihn ganz ausführlich. Er war kräftiger und männlicher geworden, war nicht mehr der schlaksige Junge. Ihm gefiel, was er sah und berührte. Ganz still sah ihm Albus dabei zu, wie seine Finger über seine Brust strichen, seine Brustknospen berührte, sich aber nicht aufhielt. Seine Fingerspitzen tasteten seine Schlüsselbeine ab, schoben sich weiter hoch, zu seinem Kehlkopf und berührten dann seinen Kiefer. Er hob den Blick und begegnete Albus‘ Augen, die warm und glänzend waren. Darin sah er, dass der große Dumbledore genau das bevorzugte, eine wahrhaftige aber ganz gewöhnliche Liebe. Enttäuschend und gleichwohl kaum überraschend für ihn. Trotzdem fühlte es sich berauschend an, als Albus sich zu ihm beugte und ihn küsste. Es war ärgerlich, dass er den Schmerz zuvor nicht brauchte, um hart und verlangend zu werden. Viel zu gut fühlten sich Dumbledores warme Hände auf seiner Haut an. Behutsam drängte er ihn nach hinten zu Aberforths Bett (der nie wieder hier schlafen würde, wenn er erfuhr, was sie gleich tun würden. Er würde sich irgendwann mal den Spaß machen und es den alten Grummel wissen lassen).<br/>Aberforths Bett ächzte protestierend, als er sich darauf legte. Albus kniete über ihm und begann ihn überall zu küssen. Dabei ließ er sich alle Zeit der Welt und Gellert bekam das Gefühl nicht los, dass sein Liebhaber es bis in die letzte Sekunde auskosten wollte, weil sie sich vermutlich niemals wieder auf diese Weise nahe sein würden. Die Erregung und das Verlangen nach Albus hatten ihn schon längst überspülte. Es war überhaupt nicht schwer seine sanften Lippen und die kleinen Bissen ertragen zu müssen. Im Gegenteil. Wärme und ein Wohlgefühl, was er bis dahin noch nie hatte, durchströmte ihn unkontrollierbar. Hatten sie sich gegenseitig nur verletzt und manipuliert, war alles, was Gellert verspürte nur sein eigenes Befinden. Er war wütend, geil, rachsüchtig und grausam. Doch niemals hatte er sich einfach nur gewollt und gut gefühlt wie jetzt. Nie hatte er den anderen Mann so deutlich wahrgenommen. Immer wieder konnte er Albus‘ Erektion an seinem Körper merken und berührte seine hart gewordene Lust mit seiner Hand. Albus keuchte kurz auf und sah ihn an. Ungern würde es Gellert zugeben, doch was er sah, war der wahre Albus Dumbledore und er gefiel ihm. Er war ein großartiger, schöner Mann mit vielen Facetten. Talentiert, mit edlen Absichten, doch ebenso wies er grausame Züge auf, wie sie jeder andere Mensch auch hatte. Ihm war es gelungen den anderen Mann dazu zu bringen, diese Züge auszuleben. Aber das war Albus nicht. Albus war so großzügig, um endlich zu verstehen, dass es nie in seiner Macht stand ihn, Gellert Grindelwald, wirklich zu ändern. <br/>Albus Dumbledore war weise und liebend.<br/>Gellert küsste ihn und beschloss dann, dass er all seine Pläne für die Minuten in Aberforths Bett unbeachtet lassen würde. Er würde nur diese Zärtlichkeit erwidern und sich von Albus lieben lassen, wie es sein musste. Gewöhnlich und sanft.</p><p> </p><p>Als sich Gellert unter ihm drehte und er wusste, dass er es nicht mehr hinauszögern konnte, war Albus nach Weinen zumute. Es würde enden, doch nicht das Ende sein. Gellert hatte ihn freigegeben und er war ihm mehr als dankbar dafür. Behutsam bereitete er ihn vor und drang dann langsam in seine hitzige Enge vor. Sofort war er in ihm, so wie Gellert in ihm war. Das war nicht zu ändern. Überwältigt keuchte er auf. So tief es ging, drang er in ihn vor. Der Blonde stöhnte leise und war auf eine ganz neue, sehr weiche Art empfänglich. Albus verstand, dass auch Grindelwald gewöhnlich lieben konnte, nur war es für den Blonden viel verachtenswerter als für ihn. Um es so lang es ging hinauszuzögern, bewegte sich Albus nur leicht. Tränen liefen ihm übers Gesicht, als er sich fragte, ob es seine Schuld war. Hätte er sich nicht von Grindelwald zu so etwas überreden lassen, hätte nichts von all dem geschehen müssen. Sie hätten sich ganz herkömmlich geliebt und vielleicht auch wieder entliebt. So aber, hatten sie sich Fesseln angelegt, die Gellert gerade löste. Nur wie konnte er ihn freigeben? Wie in Trance bewegten sie sich. Es war berauschend und ekstatisch wie nichts vorher. Sie waren eine einzige Person, ihre Körper und ihre Seelen ineinander verschränkt wie Puzzleteile. <br/>Dabei waren sie so perfekt, dass sie sich gleichzeitig erheben konnte. Schon längst dachte Albus nichts mehr, fühlte nur noch ihn. </p><p> </p><p>Gellert wusste nicht mehr, wer er überhaupt war. Er würde alles sein, was Dumbledore von ihm erwartete, in jeder Sekunde seines Lebens. Tat man nicht alles, um sich einer höheren Macht zu unterwerfen. Ihre Finger verkrampften sich ineinander, als sie keuchend und stöhnend fielen. Sehr tief, sehr schnell – hinab in eine Dunkelheit, die nur einer von beiden sehr gut kannte. <br/>Aber es war Albus, der ihm anschließend hoch half, indem er ihm die Tränen von der Wange küsste. Er legte sich neben Gellert und sie sahen sich sehr lange voller Liebe an.<br/>Als Gellert sprach, war seine Stimme ganz rau.<br/>„Du wirst mich niemals vergessen können, du wirst nie an mir vorbei schauen können, Albus.“<br/>„Ja, aber nicht, weil du etwas Besonderes bist. Nicht, weil du bist, der du bist, sondern WEIL ich dich liebe!“<br/>„Und für mich wirst du mein Leben lang der Größte und die Superlative sein, auch wenn du gerade ziemlich langweilig warst.“ Niemals hatten sie deutlichere Worte füreinander gehabt. Der empfindliche Moment erforderte es einfach.<br/>Albus lächelte nachsichtig und Gellert erwiderte sein Lächeln aufrichtig und war dabei schön wie die strahlende Sonne selbst. Zu schön, um ihn anzusehen. Zu gefährlich, um ihn zu begehren und sich in ihm verlieren zu wollen.<br/>„Hat es funktioniert?“, fragte er leise und griff nach Albus Hand, um seine Handfläche zu küssen.<br/>„Ja, ich weiß nun ganz sicher auf welcher Seite ich stehe. Nicht auf deiner. Danke dafür.“ <br/>„Gern geschehen. Jetzt steht unserem echten Duell nichts mehr im Wege.“ Albus seufzte, wusste aber, dass nichts daran vorbei führen würde.<br/>„Was ist mit dir, Liebster, habe ich meine Macht über dich verloren?“ <br/>Gellert richtete sich auf. Er beugte sich über den anderen Mann, strich ihm behutsam eine Haarlocke aus der Stirn und küsste ihn zärtlich. <br/>„Das wird sich zeigen …“, schmunzelte er.<br/>„Lass es mich richtig machen, Gellert …“<br/>„Nur zu …“ Albus stieß ihn sanft von sich und stand auf. Irritiert sah er ihm dabei zu.<br/>„Komm, ich koche dir etwas … ich wette Batty hat dir gesagt, dass du besser auf dich achten sollst.“ Gellert brach in ehrliches Lachen aus. Ja, alltäglicher und trivialer ging es kaum noch. Albus‘ Angebot war der Gnadenschuss.<br/>„Ich komme gleich nach …“, brachte er mühsam heraus und fiel nach hinten, als Albus den Raum verlassen hatte. War er seine Fesseln losgeworden? Er war sich keineswegs sicher. Albus hatte es versucht, er wollte ihm den Gefallen tun und so mittelmäßig wie möglich sein.<br/>Leider hatte es sich nur gut und richtig angefühlt. Was war, wenn das Liebe war? Was war, wenn es vollkommen egal war, wie der andere war? Was war, wenn nur zählt, was man selbst in seinem Gegenüber sah? Was war, wenn er Albus Dumbledore immer abgöttisch lieben würde, egal wie langweilig und gut er war?<br/>Die Zeit würde es zeigen. Gut war, dass sich Albus gelöst hatte. Jetzt war es möglich ernsthaft gegeneinander zu kämpfen und sich zu töten. Ohne Rücksicht, ohne Gefühle.<br/>Einer musste verlieren, weil es nur eine Seite geben könnte.<br/>Seufzend und in dem endgültigen Wissen, dass er für die Ewigkeit liebte, zog sich Gellert langsam an.</p><p> </p><p>Albus machte sein Versprechen wahr. In Schürze stand er am Herd und bruzelte irgendwas mit Ei und Würstchen. <br/>„Gut, du hast es endgültig geschafft. Ich finde dich schrecklich abstoßend“, witzelte Gellert und setzte sich an den Tisch. Dumbledore hatte tatsächlich in gewisser Weise seinen Zauber verloren – gleichzeitig einen anderen dazu gewonnen. Ein paar Sekunden dachte er ernsthaft darüber nach, wie schön so ein normales Leben mit Albus hätte sein können. Aber dazu glaubte Gellert viel zu sehr an sich selbst, an sich und seine unermessliche Macht sich alles und jeden, inklusive der Liebe Untertan zu machen.</p><p> </p><p>Später, als Aberforth kam und vorsichtig in sein Haus sah, glaubte er seinen Augen nicht zu trauen. <br/>Sein Bruder und Grindelwald saßen zusammen am Tisch, aßen Berge von Rührei und tranken seinen Whiskey.<br/>„Ihr seid nicht ganz dicht, oder?“, fragte er perplex.<br/>„Komm, setz dich zu uns, ist genug für alle da!“, befahl Grindelwald heiter und sogar Albus deutete mit den Augen auf den freien Platz am Tisch. Beklemmung machte sich in Aberforth breit. Aber es war sein Bruder. Trotz allem, was gewesen war, liebte und vertraute er ihm. Wenn Albus andeutete, dass es im Moment sicher in Grindelwalds Nähe war, dann war es das auch. Was auch geschehen sein mochte, für ein paar helle Augenblicke, gab es einen Waffenstillstand.<br/>„Ach, was soll’s …“, grummelte Aberforth und gehorchte dem Schicksal, was in seiner Küche saß.<br/>Heute liebten sie sich, morgen töteten sie sich.<br/>So war der Lauf der Dinge. So war wohl die Liebe, von der er keine Ahnung hatte. Enden würde es mit dem Tod.<br/>Dabei hatte er doch immer nur das Beste gehofft.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="Km8AHbGHhlTzNEL2p9CrOaTxrgEjpzm2sUzMiViNJG7Dn4PnegSt6GPB4yi068aXrFdk-5LJ256lQBBxG-b_ag"/>
+          <input value="21131726" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Thenara">Thenara</a>, <a href="/users/s7sense">s7sense</a>, and <a href="/users/Jevan">Jevan</a>
+             as well as 
+          1 guest
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_21131726">
+  <form class="new_comment" id="comment_for_21131726" action="/works/21131726/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="030wbtT-kKzZfEDM1oWvbHC_e0UIqgA50kMoku1UJbo6jbOUH327EEmJ4RLFvsLCeBmxv7nE4hHGT_Rqrj_-vg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_21131726">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_21131726" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_21131726=new LiveValidation('comment_name_for_21131726',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_21131726.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_21131726">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_21131726" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_21131726=new LiveValidation('comment_email_for_21131726',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_21131726.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_21131726" class="landmark">Comment</label>
+        <textarea id="comment_content_for_21131726" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_21131726" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_21131726_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_21131726">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_21131726=new LiveValidation('comment_content_for_21131726',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_21131726.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_21131726.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_21131726" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/21131726/hit_count.json")})</script>
+
+
+  </body>
+</html>

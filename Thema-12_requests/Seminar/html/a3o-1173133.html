@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":88,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        [Translation] Der Preis von Flügeln - Frayach, Vaysh - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="4_wfpZ7iXTKwc9xLvbPffr_rhqIJAZyoeSr5apFGPddI7tE5qf4w7SrZvksFxUQuVKrPsZlJ0mFbjcQ7kHVU_A"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="NfZvRwF4gccep1aZIkpe9kCkKSR7Uq82KSNPpvwn_W-e5KHbNmTsGIQNNJmaPMWmq-VgN-sa4f8LhHL3_RSURA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: buffy gen teen AND &quot;no archive warnings apply&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/1173133/chapters/2389583">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=1173133">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/1173133/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/1173133/Translation%20Der%20Preis.azw3?updated_at=1588380516">AZW3</a></li>
+          <li><a href="/downloads/1173133/Translation%20Der%20Preis.epub?updated_at=1588380516">EPUB</a></li>
+          <li><a href="/downloads/1173133/Translation%20Der%20Preis.mobi?updated_at=1588380516">MOBI</a></li>
+          <li><a href="/downloads/1173133/Translation%20Der%20Preis.pdf?updated_at=1588380516">PDF</a></li>
+          <li><a href="/downloads/1173133/Translation%20Der%20Preis.html?updated_at=1588380516">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Mature/works">Mature</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Major%20Character%20Death/works">Major Character Death</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Draco%20Malfoy*s*Harry%20Potter/works">Draco Malfoy/Harry Potter</a></li><li><a class="tag" href="/tags/Scorpius%20Malfoy*s*Albus%20Severus%20Potter/works">Scorpius Malfoy/Albus Severus Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Albus%20Severus%20Potter/works">Albus Severus Potter</a></li><li><a class="tag" href="/tags/Scorpius%20Malfoy/works">Scorpius Malfoy</a></li><li><a class="tag" href="/tags/Lily%20Luna%20Potter/works">Lily Luna Potter</a></li><li><a class="tag" href="/tags/James%20Sirius%20Potter/works">James Sirius Potter</a></li><li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Ginny%20Weasley/works">Ginny Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/%C3%9Cbersetzung/works">Übersetzung</a></li><li><a class="tag" href="/tags/Translation/works">Translation</a></li><li><a class="tag" href="/tags/Deutsch%20%7C%20German/works">Deutsch | German</a></li><li><a class="tag" href="/tags/Not%20Epilogue%20Compliant/works">Not Epilogue Compliant</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><span class="position">Part 1 of the <a href="/series/1249268">Vaysh's Translations</a> series</span><span class="divider"> </span><a class="next" href="/works/1160087">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2014-02-07</dd><dt class="status">Completed:</dt><dd class="status">2014-02-07</dd><dt class="words">Words:</dt><dd class="words">13591</dd><dt class="chapters">Chapters:</dt><dd class="chapters">3/3</dd><dt class="comments">Comments:</dt><dd class="comments">3</dd><dt class="kudos">Kudos:</dt><dd class="kudos">20</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/1173133/bookmarks">1</a></dd><dt class="hits">Hits:</dt><dd class="hits">632</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      [Translation] Der Preis von Flügeln
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Frayach/pseuds/Frayach">Frayach</a>, <a rel="author" href="/users/Vaysh/pseuds/Vaysh">Vaysh</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Bücher haben die Kraft, das Leben von jungen Menschen zu verändern. Wenigstens ist das die Hoffnung des anonymen Autors einer Serie von Bestsellern über einen Muggel-Jungen und seinen besten Freund, die in einer Welt am Vorabend eines neuen Weltkrieges aufwachsen. Doch Geschichten verändern nicht nur die Zukunft, sie können auch die Wunden der Vergangenheit heilen. Nur manchmal ist es dafür schon zu spät ...</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+    <ul class="associations">
+      <li>For <a href="/users/Frayach/gifts">Frayach</a>.</li>
+
+
+        <li>
+            A translation of
+
+            <a href="/works/608957">The Price We Pay for Wings</a> by <a rel="author" href="/users/Frayach/pseuds/Frayach">Frayach</a>.
+        </li>
+
+    </ul>
+
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1173133/chapters/2389583">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p><small></small><i>So lag der Adler getroffen auf der Erde,</i><br/>
+<i>nie wieder würde er emporsteigen durch die Wolkenbänke.</i><br/>
+<i>Die eigene Feder am tödlichen Pfeil streckte ihn darnieder</i><br/>
+<i>und verlieh Flügel der Spitze, die in seinem Herzen steckte.*</i><br/>
+Lord Byron</p><p> </p><p>Einen Bogen Pergament vor ihm auf der Schreibunterlage, nimmt der Schriftsteller eine Feder aus der Schublade. Er hält sie gegen das zarte Licht der Wintersonnwende, das durch das Fenster in die Bibliothek scheint. Die Feder ist weiß wie Schnee. Sie wurde mit der Hand, nicht mit Magie, aus dem Flügel einer schwarzen Weihe gerissen. Der Schriftsteller lächelt. Es hat ihn einiges gekostet, diese Feder zu bekommen. Er weiß, es ist arrogant, sich die weiße Feder eines Vogels zu wünschen, der bekannt ist für sein schwarzes Gefieder. Für gewöhnlich gibt er solch anmaßenden Impulsen nicht nach, diesen Luxus erlaubt er sich nicht. Doch dieser eine anmaßende Wunsch schien ihm zu perfekt, um ihn aufzugeben. Und mit einer gewissen Vorsicht, die er heutzutage immer an den Tag legt, wird niemand außer ihm jemals davon erfahren.</p><p>Im schwächer werdenden Licht des zur Neige gehenden Jahres wirkt die Feder fast blau. Kein kräftiges Himmelblau wie die Schale eines Rotkehlcheneis, auch nicht azurblau wie ein wolkenloser Herbsttag, sondern ein bläuliches Schimmern wie im Inneren von Austernschalen, deren messerscharfe Ränder vom ständigen Gezeitenwechsel weich wie Seife geworden sind. Noch nie hat der Schriftsteller diesen kaum sichtbaren Farbton wahrgenommen – das letzte Mal hat er die Feder in dem brennend heißen Licht einer namibischen Sonne gesehen, unter der <i>alles</i> ausgebleicht wirkt wie Knochen. Sein Ruf hatte die Stille zerrissen, und aus den verdorrten Ästen eines Strauchs in der Nähe war die Weihe aufgestoben, wie ein Fetzen Nacht inmitten eines niemals endenden Tages, wie eine Muggel-Plastiktüte, die sich im Wind verfangen hat. Die Sonnenstrahlen brachen sich im Schwarz ihrer Federn. Er hob den Zauberstab und visierte sein Ziel an. Genau in dem Moment, als der <i>Stupor</i> den Vogel traf, sah er das brillante Weiß seiner Flugfedern, die unter dem dunklen Gefieder verborgen waren. Eine weiße Flagge der Unterwerfung, doch die Weihe hatte sie zu spät zur Schau gestellt. Der Vogel fiel lautlos zu Boden. Als er sich ihm näherte, vibrierte die Luft von den lauten Schritten seiner Stiefel und dem heißen, klagenden Zirpen der Heuschrecken. Der Vogel lag im Staub, mit offenen, starren Augen.</p><p>Die besten Schreibfedern werden aus Federn gemacht, die von einem lebenden Vogel stammen. Die Tatsache war ihm schon lange bekannt, doch den Grund dafür hatte er erst viel später verstanden. Erst musste er am eigenen Leib spüren, dass man für alles, was es wert ist zu haben, einen hohen Preis zahlen muss. Als er die Feder mit Gewalt aus dem Fleisch des Vogels riss (das Wort "rupfen" muss jemand erfunden haben, der es nie gemacht hat), rollte ein Tropfen Blut von ihrer Spitze. Die Erde, auf die der Tropfen fiel, hat nie Kälte gespürt, nie lag hier Schnee. Doch das ist es, an was er sich erinnert. Blut auf Schnee. Tinte auf Pergament.</p><p align="center">*</p><p>Scorpius Draconis Eltanin Malfoy las das erste Buch der <i>Alford Ocamy</i>-Serie in den Weihnachtsferien, als er elf Jahre alt war. Nun, eigentlich "las" er es nicht, er verschlang es. Immerhin brauchte er drei Tage dafür. Keine geringe Leistung angesichts der Tatsache, dass das Buch über sechshundert Seiten dick war. Als er am dritten Tag, immer noch in das Buch vertieft, zum Frühstück herunterkam, roch seine Mutter an ihm, rümpfte die Nase und befahl ihm, sich zu duschen und einen frischen Schlafanzug anzuziehen. Er hatte die Zeit nur noch mit essen, schlafen und lesen verbracht, seit er das steife silberne Papier aufgerissen und das Buch zum ersten Mal aufgeschlagen hatte. Duschen und frische Kleider waren ihm als nebensächliche Störungen erschienen, als unerträgliche Unterbrechungen.</p><p>"Aber ich bin fast fertig", protestierte er. "Bitte! Nur noch ein paar Stunden, und ich verspreche, dann dusche ich und zieh mich um und räume mein Zimmer auf und mach alles, was du willst …"</p><p>"Warum um alles in der Welt willst du dein Zimmer aufräumen? Dafür haben wir doch Hauselfen", sagte seine Mutter im Ton ehrlicher Verwunderung.</p><p>Scorpius' Vater faltete die Zeitung und legte sie neben seinen Teller. Dann griff er nach der Platte mit pochierten Eiern und Schinken. "Gutes Buch?", fragte er, wobei er immer noch auf einen Artikel in der Zeitung schaute.</p><p>"Gut? Das Buch ist nicht bloß gut, es ist klasse, total super", sprudelte es aus Scorpius heraus. Er hatte seinen Toast noch nicht geschluckt und spuckte feuchte Brotkrumen auf die Seiten.</p><p>"Liebling, kannst du bitte das Buch zumindest von deinem Teller nehmen", sagte seine Mutter und reichte ihm eine Serviette.</p><p>Scorpius nahm die Serviette und wischte sich damit schnell um den Mund herum ab. "Es ist genial, Dad. Lies es doch. Es würde dir auch gefallen!"</p><p>"Mmmmm", kam die unentschlossene Antwort seines Vaters. Er hatte nicht von der Zeitung aufgeblickt, aber seine Lippen zuckten leicht, und in seinen Augenwinkel zeigten sich winzige Fältchen.</p><p>Dadurch ermutigt, beschloss Scorpius, ihn weiter zu drängen. "Es würde dir gefallen, Dad, ich weiß, dass es dir gefallen würde."</p><p>"Na, dann spann mich nicht weiter auf Folter", sagte sein Vater. "Warum geht es in dem Buch?"</p><p>"Es geht … es geht …" Scorpius stockte. Wie sollte er nur beschreiben, um was es in dem Buch ging? Es ging um alles, was er jemals gedacht und gehofft, geträumt oder sich vorgestellt hatte. Es ging um Freundschaft, um Mut und um Treue. Aber auch um stille Dinge, von denen er bis jetzt gedacht hatte, dass nur er allein sie spürte. Dinge wie Einsamkeit und Sehnsucht und dieses seltsam erhebende Glücksgefühl, das manchmal wie eine heiße Flamme am Rand seines Bewusstseins aufflackerte.</p><p>Sein Vater blickte auf, als Scorpius plötzlich schwieg, und hob eine lange, elegante Augenbraue. "Nun?", fragte er.</p><p>Scorpius holte tief Luft. "Es geht um einen Jungen. Einen Jungen, der Alford heißt. Ein Muggel-Junge. Er ist elf, genau wie ich, und er geht auf eine besondere Schule für begabte Muggel-Kinder. Die Schule ist weit oben in den Bergen, dort schneit es im Oktober, und er hat solche Fächer wie Englisch und Mathe und Chemie. Er hat viele Freunde, aber sein bester Freund ist ein anderer Junge, der Raph heißt. Er und Raph haben sich in dem Flugzeug kennen gelernt, das ist so ein großes Muggel-Schiff, das durch die Luft fliegt. Alford hat Raph da sitzen sehen, neben einem anderen Jungen. Die Familie von dem Jungen mochte Alfords Eltern nicht, aber er ist trotzdem zu Raph hin, weil er Raph mochte und er gerne mit ihm befreundet sein wollte. Aber der andere Junge war gemein und hat gesagt, dass Alford nicht nett sei. Da hat Alford gesagt, 'Nein, das stimmt nicht!', und Raph hat ihm geglaubt und sie sind Freunde geworden …"</p><p>"Ich weiß nicht", sagte sein Vater. "Für mich klingt das wie ein Kinderbuch."</p><p>Scorpius konnte seine Enttäuschung nicht verbergen. "Ja schon, aber es ist mehr als ein Kinderbuch", sagte er, und ein bittender Ton lag in seiner Stimme. "Es ist nicht wie <i>Erville die Eule</i> oder <i>Gus Gusington geht zur Weltmeisterschaft</i>. Es ist … es ist <i>real</i>."</p><p>"Liebling", sagte Scorpius' Mutter, "es ist eine Geschichte, eine erfundene Geschichte. Es ist nicht real."</p><p>Vielleicht lag es daran, dass er höchstens vier Stunden am Stück geschlafen hatte, oder vielleicht daran, dass die Weihnachtsferien fast vorüber waren, und er bald wieder zurück in die Schule musste, doch mit einem Mal spürte Scorpius, wie ihm Tränen in die Augen schossen. Er senkte den Kopf und versuchte, sie vor dem ruhigen Blick seines Vaters zu verbergen. Aber ein verschlucktes Schluchzen verriet ihn.</p><p>"Ich <i>weiß</i>, dass es erfunden ist", sagte er heftig. "Aber das heißt doch nicht, dass es nicht real ist. Für mich."</p><p>"Liebling …", begann seine Mutter, doch in diesem Moment legte sein Vater die Hand auf Scorpius' Arm, mit dem er das Buch bedeckte.</p><p>"Natürlich ist es real", sagte sein Vater und brachte damit seine Mutter zum Schweigen.</p><p>Der ungewöhnliche Tonfall seines Vaters überraschte Scorpius, und er blickte auf, wobei er die Tränen zwischen seinen Wimpern wegzwinkerte. Doch was immer sich gerade zwischen seinen Eltern abgespielt hatte, war schon wieder vorbei, und auf beiden Gesichtern zeigte sich die vertraute Maske ruhiger Gelassenheit. Er schaute mit fragendem Blick von einem zum anderen, doch seine Mutter lächelte ihn nur warm an, und sein Vater hatte sich wieder dem <i>Sonntagspropheten</i> zugewandt.</p><p>Scorpius wusste, was von ihm erwartet wurde. Er holte tief Luft und stellte sich mit geschlossenen Augen eines der Bilder vor, wie es sein Vater ihm beigebracht hatte, damit er seine Gefühle besser kontrollieren konnte: ein Kamin voll glühender Holzscheite, die mit einem Krug klaren, kalten Wassers gelöscht wurden. Er stellte sich das Zischen vor und dann die emporsteigende Dampfwolke und schließlich das Häufchen nasser Asche, das nur durch einen sehr starken Zauber wieder entzündet werden konnte. Nur er konnte diesen Zauber aussprechen oder – und das war noch wichtiger – nicht auszusprechen.</p><p>Er atmete aus und war wieder vollkommen ruhig.</p><p>"Guter Junge", murmelte sein Vater, wobei er den Blick nicht von der Zeitung nahm. Aber seine Hand lag immer noch auf Scorpius' Fingern, und die bedächtigen, eindrücklichen Bewegungen, mit denen er über Scorpius' Knöchel strich, verrieten, dass seine volle Aufmerksamkeit ihm gehörte. Seine volle Aufmerksamkeit und sein stiller, unerschütterlicher Stolz.</p><p>Und obwohl ihm noch Tränen in den Augen standen, lächelte Scorpius.</p><p align="center">*</p><p>Der Schriftsteller legt die Feder zur Seite, greift in seinen Umhang und tastet nach dem Gürtel. Zwischen seiner rechten Hüfte und dem Oberschenkel liegt die schmale Scheide, in der sein Balisong steckt. Er öffnet die steife Lederlasche und lässt die Waffe in seine Handfläche gleiten. Das kalte Metall erwärmt sich rasch durch die Hitze seiner lebendigen Haut. Er bringt das Messer hoch über die Schreibfläche, schließt den Umhang. Mit einer scharfen Bewegung seines Handgelenks öffnet er mühelos die zusammengeklappte Klinge. In dem wässrigen Licht erscheint der titanüberzogene Stahl fast schwarz. Nur, wenn er das Messer leicht dreht, kann er den typischen kobaltblauen Stich erkennen, der so sehr an eine schwüle Hochsommernacht erinnert – eine Nacht so drückend heiß wie jene, als er das Messer von einem gut aussehenden Filipino auf einem Tsim-Tsui-Markt gekauft hatte, während seines kurzen Aufenthalts als Fluchbrecher in Hongkong.</p><p>Aus Respekt vor der scharfen Klinge legt der Schriftsteller das Messer zur Seite auf den gepolsterten Rand der Schreibunterlage. Erst dann greift er wieder zu der Feder. Schon am gestrigen Abend hat er den Schaft in heißem Wasser und noch heißerem Sand erhitzt. Die transparente Färbung der hohlen Spitze hat sich in das opake Weiß einer Perle verwandelt – ein Weiß, das fast so rein und fleckenlos ist wie die Feder selbst. Mit den Fingerspitzen drückt er den Schaft leicht zusammen und überzeugt sich, dass er weich und biegsam ist. Die Feder kann nun angeschnitten werden.</p><p>Doch bevor er den ersten Schnitt macht, entfernt er mit der stumpfen Kante der Klinge den Teil der Fahne, der der Federspitze am nächsten liegt, um Platz zu schaffen für seine Hand. Die winzigen weißen Nadeln fallen sanft auf das leere Pergamentpapier, und das Blut schießt ihm heiß durch die Adern, wie er es schon seit vielen Jahren nicht mehr gespürt hat. Er hat soeben den ersten Schritt auf einer langen und sorgfältig geplanten Reise getan, und er weiß, er kann nicht mehr zurück. Der Moment erinnert ihn an den Tag vor vielen Jahren, als er von seiner Welt Abschied nahm und in einen Muggel-Zug nach Heathrow Airport stieg, in seiner Tasche Flugtickets zu weit entfernten Städten, über die er nur in Büchern gelesen hatte. In den langen schlaflosen Nächten des Krieges waren diese fremden Städte ihm auf eine Art vertrauter geworden als seine Heimat. Als der Krieg zu Ende war und er England verließ, war es, als dürfe er endlich nach Hause gehen.</p><p>Der Schriftsteller hält seine Hände ruhig und schließt die Augen, als er sich an das heftige, rüttelnde Schaukeln des Zuges erinnert. Zwischen den vorbeiziehenden Feldern und Ortschaften tauchten immer wieder Bahnhöfe auf – strategisch platzierte Fingerzeige, dass rastlose Bewegung nicht der Natur des Menschen entspricht, und ein erfülltes Leben mit einem geruhsamen Alter belohnt wird. Wenn der Zug bei der Anfahrt der Städte, die auf seiner Strecke lagen, langsamer wurde, hatte der Schriftsteller Dinge gesehen, die er zuvor nie wahrgenommen hatte: Wäscheleinen, die wie die Nähte einer Wunde in winzigen Hinterhöfen von Mauer zu Mauer gespannt waren; Frauen mittleren Alters, die sich in den Pausen an den Hintereingänge von Fabriken und Lagerhallen trafen, rauchten und den vorbeipolternden Zügen nachsahen; die mit Müll übersäten Bahndämme und mit Graffiti besprühten Unterführungen – in weißer Farbe erschien plötzlich <i>Ich liebe dich noch immer</i> in der Düsternis, wie der Untertitel eines ausländischen Muggel-Films oder eine Textzeile, die der Bühnenregisseur panisch auf eine Karte kritzelt, weil die Schauspieler sie vergessen haben.</p><p>
+  <i>Ich liebe dich noch immer.</i>
+</p><p>Der Schriftsteller öffnet die Augen und richtet seine Gedanken wieder auf die Aufgabe, die vor ihm liegt. Er hat sich ein Kapitel pro Tag zum Ziel gesetzt, und die Sonne ist schon von ihrem höchsten Sitz in den winterlich kahlen Ästen Richtung Nachmittag gerutscht.</p><p>Er wird später mehr als genug Zeit haben für seine Erinnerungen. Doch zuerst – zuerst wird er dieses Buch schreiben.</p><p align="center">*</p><p>Der zwölfjährige Albus Severus Potter lag nach einem Quidditch-Sturz im Krankenflügel, als er das zweite Buch der <i>Alford Ocamy</i>-Serie las. Er war froh, dass er der Versuchung widerstanden und <i>Der Kerker der Verdammnis</i> nicht schon in den Weihnachtsferien gelesen hatte. Ohne das Buch, da war er sich sicher, würde er es sonst jetzt vor Langeweile und Missmut nicht aushalten. Er zwang sich, langsam zu lesen und es nicht zu verschlingen wie den ersten Band. Es <i>musste</i> reichen, bis er entlassen wurde. Und wer wusste schon, wie lange Madam Lannon ihn noch hier im Krankenflügel herumliegen ließ?</p><p>Doch er musste aufpassen, denn außer ihm hatte jeder in Hogwarts <i>Der Kerker der Verdammnis</i> schon gelesen. Deshalb wies er alle Besucher darauf hin, dass er noch nicht damit durch sei und man ihm nichts verraten solle. Bei den meisten hatte er mit diesem direkten Vorgehen Erfolg. Nur sein Bruder James platzte natürlich irgendwann damit heraus, dass Alford am Ende sterben würde, um Raph zu retten, als die Decke eines der unzähligen, uralten Gänge unter ihrer Schule einstürzte, während die beiden Jungen eine Erstklässlerin retten wollten, die von einem bösen Lehrer in die geheimnisvollen, unterirdischen Kellergewölbe gelockt worden war.</p><p>Albus starrte seinen Bruder fassungslos an. "Das ist nicht dein Ernst", sagte er. "Wie kann es sieben Bücher der Serie geben, wenn Alford schon im zweiten stirbt?"</p><p>James zuckte nur mit den Schultern und griff nach der extragroßen Weihnachtspackung Schokoladenfrösche, die Albus' Freund Scorpius mitgebracht hatte. Er stopfte sich eines der zappelnden Tierchen in den Mund. "Vielleicht kommt er als Geist zurück", sagte er und gewährte dabei Albus, Scorpius und der immer anwesenden Lily einen unappetitlichen Blick auf die zermalmte Schokoladenmasse.</p><p>"Sei doch nicht so gemein", rief Lily. Sie drehte sich zu Albus. "Hör nicht auf ihn", sagte sie. "Alford stirbt nicht und Raph auch nicht. Ganz im Gegenteil, Raph …"</p><p>"Hört ihr <i>bitte</i> mal auf, über das Buch zu reden", stöhnte Albus und hielt sich, so gut es ging, die Ohren zu. "Ich hab nur noch ein paar Kapitel, dann bin ich fertig."</p><p>"Können wir wenigstens über die Teile reden, die du schon gelesen hast?", fragte Scorpius.</p><p>"Klar, bloß verratet mir nichts", gab Albus nach.</p><p>"Ich fand das so toll, als Alford und Raph das kleine Bärenjunge aus der Schule herausgeschmuggelt haben", sagte Lily. "Sie haben gewusst, dass sie echt Schwierigkeiten kriegen können, aber trotzdem haben sie ihrem Lieblingslehrer geholfen."</p><p>"Aber es war wirklich idiotisch von dem Lehrer, überhaupt einen Bären in die Schule zu bringen", war eine Stimme von der Tür her zu hören. Die Kinder schauten hoch. Ihre Freundin Rose kam über Vierecke aus Sonnenlicht durch den Raum auf sie zugelaufen. Das Licht fiel durch die Fenster, die nach Westen gingen und verlieh dem stumpfen Dielenboden einen honigfarbenen Glanz.</p><p>"Stimmt schon", sagte Scorpius, "aber der Lehrer hatte das Bärenjunge nun mal in die Schule gebracht, und das Wichtigste ist doch, dass Alford und Raph zu ihm gehalten haben und ihm helfen wollten und ihn nicht an die Schulleiterin verraten haben. Immerhin hätte man den kleinen Bär wahrscheinlich umgebracht, wenn er entdeckt worden wäre."</p><p>"Ich hätte geholfen, das Bärenjunge zu retten", sagte Lily.</p><p>James gähnte und nahm sich noch einen Schokoladenfrosch.</p><p>"He, lass mir auch noch ein paar!", fuhr Albus ihn empört an.</p><p>"Reg dich ab", sagte James, und sein Mund war schon wieder voll von zermalmter Schokomasse. "Das sind doch sicher nicht die Letzten. Scorpius bekommt jede Woche so viel Taschengeld von seinen Eltern, dass er sich <i>hundert</i> Packungen mit Schokoladenfröschen kaufen kann …"</p><p>"Wir etwa nicht?", erwiderte Albus in einem warnenden Tonfall.</p><p>Scorpius schüttelte nur den Kopf und lachte. "Ist schon in Ordnung, Al", sagte er. "James hat recht. Ich hab noch mehr."</p><p>"Das stimmt ja vielleicht", sagte Al, doch er blitzte seinen Bruder immer noch an. "Aber hier geht es ums <i>Prinzip</i>." Er hatte diesen Ausdruck erst vor kurzem während der Ferien von seinem Vater gelernt und fand, dass er ziemlich gut ausdrückte, was ihn so oft an der Welt störte. Doch er musste aufpassen – wenn er den Satz zu oft sagte, dann würde ihn James hundertprozentig damit aufziehen.</p><p>"Bist du schon bei dem wichtigen Fußballspiel?", fragte Rose, die einen Stuhl vom Nachbarbett herangezogen und sich zwischen James und die inzwischen halb leere Packung mit Schokoladenfröschen gequetscht hatte.</p><p>"Ich bin gerade damit fertig", erwiderte Albus. "Ich hab mich echt gewundert, dass Alford nicht auf die Position des Mittelstürmers gewechselt ist. Er hätte das Angebot annehmen sollen, auch wenn er dann nicht neben Raph spielen kann. Als Verteidiger wird er keine Tore schießen, selbst wenn sie als offensive Außenverteidiger eingesetzt werden."</p><p>"Aber genau darum geht es doch, oder?", sagte Scorpius, wobei er sich auf eine bestimmte Art nach vorn beugte, wie immer, wenn er bei einer Diskussion recht behalten wollte. "Tore zu schießen ist für Alford nicht so wichtig, er will lieber bei seinem besten Kumpel spielen. Raph musste in den Sommerferien so viel durchmachen bei seinen bösen Pflegeeltern, er braucht seine Freunde jetzt noch viel mehr. Das hat Alford gewusst."</p><p>Albus blickte ihn skeptisch an. "Aber wenn Alford für ihre Mannschaft Tore geschossen hätte – vor allem gegen Clifton Prep –, dann hätte das Raph bestimmt auch total aufgebaut. Merlin, das sind vielleicht Wichser, diese Jungs von Clifton!"</p><p>"Andere in der Mannschaft haben ja Tore geschossen", sagte Scorpius und fuhr mit dem Finger über Albus' Bettdecke, als wolle er die Skizze eines Quidditchfelds – oder wohl eher eines Muggel-Fußballfelds – zeichnen. "</p><p>"Das war meine Lieblingsstelle, als der Kapitän von Clifton im Schlamm ausgerutscht ist", sagte James. "Al hat recht, diese Typen sind absolute Wichser."</p><p>"Nicht solche Ausdrücke." Die müde Stimme von Madam Lannon war zum x-ten Mal an diesem Nachmittag durch ihre halboffene Bürotür zu hören.</p><p>"Entschuldigung", riefen die Kinder zusammen.</p><p>"Was ist ein Wichser?", flüsterte Lily. Sie mussten alle lachen, und da merkte Albus, dass ihm die Rippen schon seit heute Morgen nicht mehr wehtaten. Er warf Scorpius einen Blick zu und grinste ihn an, worauf dieser, ohne einen Moment zu zögern, zurückgrinste.</p><p align="center">*</p><p>Der Schriftsteller nimmt die unbeschnittene Feder in die Hand und hält sie, als wolle er sie in ein Tintenfass eintauchen. Es ist fast unheimlich, wie sich die natürliche Biegung der Feder an seine Finger schmiegt, als gehöre sie in seine Hand und sonst nirgendwo hin. Es ist offensichtlich, in welchem Winkel er die Spitze anschneiden muss.</p><p>Schierer, sinnlicher Genuss durchfährt seinen Körper beim Anblick seiner eigenen Haut so nah neben etwas so vollkommen anderem – etwas, das so eindeutig <i>nicht er selbst</i> ist. Die Weihe hat dieses Ding voller Schönheit geschaffen, durch die geheimnisvollen Prozesse ihres Körpers. Es ist nicht Teil von ihm, und diese Erkenntnis rührt und weckt etwas im Herz des Schriftstellers, das er fast vergessen hat. Plötzlich kommt ihm eine Erinnerung in den Sinn, so lebendig und gleichzeitig so schmerzhaft, dass er laut aufstöhnt in der Stille der Bibliothek: seine jugendliche Hand, noch nicht gezeichnet von den Spuren eines halben Lebens, liegt auf milchweißer Haut, weit gespreizt und besitzergreifend auf der Brust seines Geliebten. Der Daumen berührt das dunkelviolette Fleisch der einen Brustwarze und das Ende seines kleinen Fingers die andere. Unter seiner Hand hebt und senkt sich die Brust seines Geliebten mit solch heftigem Verlangen, wie es – das <i>weiß</i> der Schriftsteller – nur er auslösen kann. Eine Welle der Ehrfurcht und Dankbarkeit durchströmt ihn, und er beugt sich vor, küsst den Mund seines Geliebten und will nur noch in diesem Kuss ertrinken. Dieser Mensch unter ihm lässt zu, dass er ihn berührt – dass er sein Gesicht in dem schweißnassen Haar unter seinen Achseln vergräbt, lässt ihn von der dunklen Feuchtigkeit seines Mundes trinken, lässt zu, dass er sexuelle Befriedigung sucht und auf seinem geheimnisvoll bleichen, spermaverschmierten Bauch kommt. Sogar mitten beim Sex, als sie zum ersten Mal miteinander schliefen, wusste der Schriftsteller, dass er nie mehr so glücklich sein würde. So überwältigt. So verloren in dem glorreichen, angstvollen Schmerz, weil er mit diesem einen Menschen schlief, den er seit Jahren begehrte und sich doch nie hatte vorstellen können, dass er seiner würdig sein konnte. Als er bei diesem ersten Mal kam, bedeckte sein Samen Brust und Hals seines Geliebten, so als wäre dieser Körper ein Altar zu Ehren eines bislang schweigenden Gottes, der ihn endlich, nach unzähligen Stunden inbrünstiger Gebete, erhört und dies einfach zugelassen hatte.</p><p>Damals hatte er nicht ahnen können, wie schnell – und wie unbarmherzig – derselbe Gott ihm alles wieder nehmen würde, was er ihm gegeben hatte. Doch für eine kurze Weile hatte der Schriftsteller sein Glück gefunden. Glück und, nachdem sein ganzes bisheriges Leben von Krieg bestimmt gewesen war, Frieden.</p><p align="center">*</p><p>Ginevra Molly Weasley-Potter runzelte die Stirn, als sie die letzte Seite des dritten Bandes der <i>Alford Ocamy</i>-Serie las, und sie wunderte sich selbst, wie durcheinander sie war. An dem Buch konnte es nicht liegen. Wie seine Vorgänger war es gut und wohl überlegt geschrieben, voll von nützlichen Lektionen über das Leben für junge Leserinnen und Leser. Auch war sie sich vollkommen sicher, dass ihre drei Kinder mit allen Themen, die im Buch angesprochen wurden, gut umgehen konnten. Mehr noch als die beiden ersten Bände, beschäftigte sich dieses Buch mit der zentralen Bedeutung von Freundschaft. Aus Feigheit einen Menschen, den man liebte, im Stich zu lassen, wurde als fast unverzeihliche Sünde dargestellt. Wie der anonyme Autor der Serie glaubte auch sie an diese Werte. Warum dann hatte die Lektüre sie so aus dem Gleichgewicht gebracht, als wäre eine Grundfeste ihres Lebens erschüttert worden?</p><p>In diesem Band tauchten zum ersten Mal deutlich erwachsenere Themen auf. Der Serienheld Alford Ocamy und sein Freund Raph Troyert mussten erfahren, dass Alfords Vater gemeinsame Sache machte mit einer Gruppe von Faschisten, die langsam, aber unaufhaltsam an Macht gewannen. In einem erst kürzlich entdeckten Brief von Raphs toten Eltern hatten diese ihren letzten Wunsch niedergeschrieben, nämlich, dass Raph zum Widerstandskämpfer ausgebildet werden solle. Fast über das gesamte Buch hinweg schien es, als ob die beiden besten Freunde auf verfeindeten Seiten eines Konflikts stehen würden, der vor Jahren von der Generation ihrer Väter begonnen worden war. Alford war sogar so weit gegangen, dass er in die Jugendorganisation des faschistischen Führers eingetreten war. Aber im Schlusskapitel hatte Alford sich nach einer letzten großen Auseinandersetzung, die Ginny zu Tränen gerührt hatte, von seinem Vater losgesagt und war aus dem Herrenhaus der Familie Ocamy geflohen. Er fand Unterschlupf bei Raph und den anderen jungen Widerstandskämpfern, die sich im Verbietenden Wald versteckten. Als er ihn erblickte, war Raph zu seinem Freund gestürzt und hatte ihn in die Arme genommen. Das Buch endete mit seinen Worten. <i>"Ich wusste, dass du zurückkommst", flüsterte Raph in Alfords Haar. "Niemand wollte es mehr glauben, aber ich wusste es."</i></p><p>Ginny erhob sich von der Couch und ging langsam in die Küche, wo sie das Wasser im Teekessel mit einem abwesenden Schnippen des Zauberstabs zum Kochen brachte. Vielleicht waren ihre Gefühle eine Reaktion auf die erschütternde Wendung der Geschichte. Oder vielleicht waren es die Erinnerungen, die das Buch in ihr aufgewühlt hatte – die Erinnerung daran, wie ihr Bruder und sie Harry während des Kriegs im Stich gelassen hatten. Ron hatte sich verängstigt und frustriert von seinem besten Freund und seiner zukünftigen Frau losgesagt, als sie alle schon in großer Gefahr waren. Sicher, er war zu ihnen zurückgekehrt (eine wichtige Tatsache!), doch erst hatte er sich davongemacht. Bei dem Gedanken daran fühlte Ginny eine solche Scham in ihrem Herzen, als stecke diese Schuld in ihren Genen, als wäre sie etwas Biologisches, das sie mit ihrem Bruder verband.</p><p>Und was war mit ihr? Trug sie weniger Schuld? Sicher, Harry hatte ihre Beziehung beendet und war ohne sie losgezogen, doch war es nicht auch die Wahrheit, dass sie ihn hatte ziehen <i>lassen</i>? Sie hätte sich wehren, mit ihm streiten, ihn beschimpfen, brüllen und weinen können, bis er nachgab. War er nicht immerhin ihr zukünftiger Mann gewesen? Der Mann, mit dem sie Kinder haben wollte? Die Liebe ihres Lebens? Doch sie hatte ihn einfach gehen lassen. Hatte zugelassen, dass er dem Tod entgegentrat ohne sie …</p><p>Mit der Teetasse in den Händen setzte sich Ginny in den Stuhl bei dem Frühstückstisch am Fenster und schaute hinaus in den Garten. Morgen war Weihnachten, doch der bleierne Himmel verweigerte jeden Schnee. Bei der Vorstellung eines schneelosen Weihnachtsfests fühlte sie schon wieder einen Kloß im Hals. Merlin, sie war aber auch nahe am Wasser gebaut in letzter Zeit! Vielleicht hatte sie deshalb ein Buch (ein <i>Kinder</i>buch, um Demeters Willen!) in diese seltsame, verletzliche Stimmung versetzen können. Sie legte die Hände noch enger um die Teetasse und atmete den Hagebuttenduft ein. Er erinnerte sie an den Sommer, und sie schloss die Augen und stellte sich das Häuschen vor, das sie im Westen von Irland gemietet hatten – der warme Sand der versteckten Bucht und der Dunstschleier, der sich an manchen Tagen wie ein feines graues Tuch über die Welt und über sie legte. Sie hatte in diesem Monat ständig diesen Hagebuttentee getrunken, und mit dem Duft in der Nase und geschlossenen Augen konnte sie Harrys große Gestalt vor sich sehen, wie er in einem der alten Lehnstühle beim Feuer saß. Die Lesebrille war ihm halb von der Nase gerutscht, und seine normale Brille lag vor ihm auf dem niedrigen Tischchen, wo sich das Licht des glühenden Torffeuers in den Gläsern spiegelte. Im Sessel gegenüber las Hermione irgendeinen Muggel-Roman, wobei ihr Gesicht gleichzeitig absolut konzentriert und vollkommen zufrieden wirkte. Albus und der Malfoy-Junge saßen am Tisch, die knochigen, schon nicht mehr kindlichen Ellbogen aufgestützt, ganz vertieft in eine ihrer endlosen Schachpartien. Von den Zimmern oben war das Geräusch von James' Magiefunkgerät zu hören und ab und zu Jubelrufe von James, Lily oder Hugo, wenn ihre Mannschaft ein Tor geschossen oder einen Gegenspieler vom Besen gestoßen hatte. Regen prasselte leise gegen die Fenster, und irgendwo in der Ferne bellte der Hund eines Schäfers, der die ihm schutzbefohlenen Schafe von einer steilen – und im Nebel unsichtbaren – Meeresklippe wegtrieb.</p><p>Sie hatten eine stille und friedliche Zeit in Irland verbracht und die fernen, aber nicht minder beunruhigenden Nachrichten aus London fast vergessen können. Dieser Tage waren im <i>Propheten</i> oft Andeutungen zu lesen über verschwundene Ministeriumsangehörige und verdeckte Aktivitäten der Auroren. Ginny wusste, dass diese Nachrichten der Grund waren für die vielen, beunruhigenden Feueranrufe von Harry und Hermione …</p><p>Als ob Ginnys Gedanken sie gerufen hätte, erschien plötzlich Hermiones Gesicht im Küchenfeuer.</p><p>"Hallo", sagte sie müde.</p><p>"Hallo", sagte Ginny. "Ist alles in Ordnung?"</p><p>Hermiones Kopf hob und senkte sich, vielleicht hatte sie nur mit den Schultern gezuckt. Ginny war sich nicht sicher, aber Hermiones Schweigen sprach Bände.</p><p>"Rose und Hugo geht es gut", sagte sie. "Sie können heute Abend gerne hier bleiben. Und ich sehe zu, dass Ron was zu essen kriegt, wenn er sie abholt."</p><p>"Danke", erwiderte Hermione, doch sie schien in Gedanken woanders zu sein. "Harry lässt ausrichten, dass es später wird."</p><p>"Das habe ich mir schon gedacht, wenn du dich meldest, und nicht er."</p><p>"Er steckt seit Mittag in Debriefing-Sitzungen."</p><p>Ginny nickte nur.</p><p>"Aber ich glaube nicht, dass es bis in den Abend geht", fügte Hermione rasch hinzu. "Hoffentlich muss niemand von uns an Weihnachten arbeiten."</p><p>Ginny bemühte sich zu lächeln, doch es gelang ihr nicht. "Ich habe Plätzchen gebacken", sagte sie, als das Schweigen zwischen ihnen unerträglich wurde.</p><p>Hermione atmete tief ein, und für einen Moment schlossen sich ihre Augen. "Mmmm. Und Lebkuchen. Sie riechen einfach wundervoll."</p><p>Die beiden Freundinnen schwiegen wieder, und Ginny hatte wie so oft in letzter Zeit das Gefühl, dass etwas in ihrer Welt überhaupt nicht mehr in Ordnung war, und dass die anderen es ihr nicht sagen wollten, um sie davor zu schützen. Am liebsten hätte sie Hermione gezwungen, ihr die Wahrheit zu sagen. Sie wollte wissen, warum Harry seit Wochen mit tiefen Sorgenfalten auf der Stirn nach Hause kam, und wie Hermione ihren alljährlichen Einkaufstrip in der Winkelgasse hatte vergessen können. Immerhin waren sie jedes Jahr seit Voldemorts Niederlage am Tag vor Weihnachten zusammen einkaufen gewesen, sogar in der Zeit, bevor Ginny und Harry wieder miteinander gegangen waren, und sogar dann, als eine von ihnen oder sie alle beide hochschwanger waren und sie jede öffentliche Toilette auf dem Weg zwischen Ollivander und Eeylops mindestens zweimal aufsuchen mussten …</p><p>"Hör mal, ich geh besser wieder", sagte Hermione. "Danke, dass du Hugo und Rosie nimmst. Ich hoffe, sie sind keine zu große Belastung für dich …"</p><p>"Du weißt genau, dass sie überhaupt keine Belastung sind", erwiderte Ginny, wobei ihr Ton schärfer ausfiel als beabsichtigt.</p><p>Hermione seufzte. "Natürlich. Das weiß ich. Tut mir leid, Gin."</p><p>"No worries", antwortete sie. Es war eine der vielen irischen Redewendungen, in die sie sich während des Urlaubs in Galway verliebt hatte. <i>Gott mit ihm. Sláinte. No worries. </i> "Ach", sagte sie in einem leichteren Tonfall. Sie wollte das Gespräch nicht in dieser düsteren Stimmung beenden. "Ich habe endlich <i>Der Häftling der Île du Diable</i> zu Ende gelesen. Wenn du möchtest, kann ich es dir gerne ausleihen."</p><p>Hermione musste lachen, und es war das erste Mal seit Tagen, dass Ginny sie wieder richtig lachen hörte.</p><p>"Das Buch muss ich mir nicht ausleihen! Weißt du, dass ich es am Ende vier Mal gekauft habe? Eines für jedes der Kinder, eins für mich und eins für Ron. Mit nur einem Buch wie letztes Jahr hätten wir uns gegenseitig umgebracht."</p><p>Ginny lachte aus Dankbarkeit, dass sich wenigstens <i>eine</i> Sache nicht ändern würde – am zweiten Weihnachtsfeiertag würden sie alle, Kinder wie Erwachsene, um den Kamin sitzen, Becher mit Tee, Eierlikör oder heißer Schokolade neben sich und die Nase im neusten <i>Alford Ocamy</i>-Band. Spontan streckte sie die Hand nach Hermione aus, als wäre die Freundin bei ihr im Raum und nicht nur eine Illusion in den Flammen.</p><p>"Pass auf dich auf, du", sagte sie, und die Tränen von vorhin traten ihr in die Augen und schnürten ihr die Kehle zu. "Und sag auch meinem Mann, dass er aufpassen soll."</p><p>Hermione nickte, doch ihr Gesichtsausdruck war ernst und tröstete Ginny nicht. Ohne eine Antwort zu geben, verschwand sie.</p><p align="center">*</p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1173133/chapters/2389606">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Das Messer ist so scharf, dass es ohne jeden Druck und ohne die Zuhilfenahme von Magie den Schaft der Feder durchtrennt. Allein die Schwerkraft genügt, und der Schriftsteller wundert sich, dass die Feder ihm keinen Widerstand bietet, dass sich dieses Schreibgerät so einfach anfertigen lässt. Ein befreundeter Hobbybildhauer, der, obwohl er aus einer Reinblüter-Familie stammt, auf die Überlegenheit von Hammer und Meißel gegenüber dem Zauberstab schwört, hatte ihm einmal beschrieben, wie es sich anfühlt, lebendige Muskeln aus dem harten Stein hervorzuholen. <i>Materie und Geist sind nicht so verschieden, </i>hatte er gesagt. <i>Sie wollen beide zu etwas Größerem geformt werden – zu etwas … für das sie bestimmt sind.</i> Damals hatte der Schriftsteller gelacht und seinen Whiskey geschwenkt, so dass sich Lichtstrahlen in dem Kristallglas brachen und tanzten. Dass diese Künstler immer so hochtrabende Sprüche klopfen mussten! Doch er hatte die Bemerkung nicht vergessen, und aus irgendeinem Grund kam sie ihm in den seltsamsten Augenblicken in den Sinn. So wie jetzt, da er vorsichtig mit der Klinge den Startpunkt einer Reise markiert, die seine Bestimmung zu sein scheint.</p><p>Doch was im Leben ist wirklich dem Zufall geschuldet? War alles, was er getan hat, eine freie Entscheidung seines Willens gewesen? Oder war alles Schicksal? War er einfach nur für eine Weile mitgeflogen und hängen geblieben wie ein Insekt in einem zähflüssigen Faden aus Harz, der ihn nun auf einer langsamen Reise in die Ewigkeit trug?</p><p>
+  <i>… sie wollen beide zu etwas Größerem geformt werden … </i>
+</p><p>
+  <i>… zu etwas, für das sie bestimmt sind.</i>
+</p><p>Der Schriftsteller hält die frisch beschnittene Feder ins Licht und drückt mit dem Finger auf den Schlitz an ihrer Spitze, die gespalten ist wie die Zunge einer Schlange. Sie wird einen Tropfen ebenholzfarbener Tinte halten wie einen urzeitlichen, sprachlosen Wunsch, der sich vielleicht noch in Worten ausdrücken wird, aber ebenso durch Taten sprechen kann. Durch einen vorwärts schnellenden Faustschlag oder durch das Schnappen eines Zauberstabs, schnell wie das Zucken im Auge eines Vogels. Oder vielleicht noch sprechender, durch das Wasser, das einem erwartungsvoll im Mund zusammenläuft, bevor die Zunge sich vorwärtstastet, um den Kuss des Geliebten zu erspüren. Um die Form der Worte zu erspüren, Worte wie <i>immer</i> und <i>für ewig</i> und <i>geh nicht fort</i>.</p><p>Wie sehr hatte er sich nach all dem gesehnt, was diese Worte versprachen, und nichts bereute er so sehr wie das Schweigen, mit dem er geantwortet hatte.</p><p align="center">*</p><p>Als sie den vierten <i>Alford Ocamy</i>-Band zu Ende gelesen hatte, war sich Hermione Granger-Weasley ziemlich sicher, wer der anonyme Autor der Serie war. Der Verdacht war ihr schon im dritten Band gekommen, in dem aufgedeckt wurde, dass Alfords Vater ein Verbündeter des Führers der faschistischen Nationalpartei war. Doch sicher war sie sich erst nach dem vorletzten Kapitel von <i>Alford Ocamy und das goldene Medaillon</i>.</p><p>Wie eine Katze lag der sechshundert Seiten schwere Wälzer noch in ihrem Schoß. Hermione klappte das Buch zu und setzte ihre Lesebrille ab. Langsam wurde ihr bewusst, wie still es war – nur das Ticken der Uhr und das vertraute Brummen von Harry und Ginnys Muggel-Kühlschrank waren zu hören. Es musste schon nach drei Uhr morgens sein. Sogar James hatte sein Magiefunkgerät ausgeschaltet und war ins Bett gegangen. Sie war so vertieft in das Buch gewesen, dass sie nicht bemerkt hatte, wie es nach und nach in den Zimmern des weitläufigen Bauernhauses der Weasley-Potter-Familie ruhig geworden war. Kurz meinte sie Stimmen zu hören, und sie lauschte angestrengt, ob sie ein mädchenhaftes Kichern aus Lilys Eckzimmer oder schwere Schritte hörte, wenn einer der Männer aufs Klo ging. Aber alles blieb still, und Hermione überkam das merkwürdige Gefühl, dass sie Geister hörte – Geister oder das leise Flüstern von Alford und Raph, als sie nebeneinander in Alfords breitem Federbett lagen, Fluchtpläne schmiedeten und sich schworen, für immer zusammen zu bleiben.</p><p>Hermione seufzte und fuhr sich über die Augen. Sie empfand es immer als eine Art Verlust, wenn sie ein gutes Buch zu Ende gelesen hatte, doch dieses Mal fühlte es sich anders an als sonst. Vier Tage lang war sie in die Geschichte eingetaucht und hatte für diese Zeit die immer deutlicher werdenden Anzeichen des drohenden Krieges vergessen können. Auroren waren Opfer von Anschlägen geworden. Die Familie eines hochrangigen Ministeriumsangehörigen war entführt worden, um Lösegeld zu erpressen. Sie rechnete jede Woche damit, dass der Ausnahmezustand ausgerufen wurde und die Welt zum zweiten Mal in ihrem Leben aus den Fugen geriet. Und wie sie mussten nun auch ihre Kinder viel zu früh erfahren, was Angst, Leid und Tod bedeuteten.</p><p>Hermione öffnete die Augen und fuhr mit den Fingern die goldenen Buchstaben auf dem Umschlag des Buches nach. <i>Anonymus</i>. Ja, vielleicht dachte er, dass niemand wusste, wer er war. Doch sie wusste es. Sie kannte ihn inzwischen zu gut, kannte den gequälten Blick in seinen Augen, wann immer sie ihn aus dem einen oder anderen Grund in seinen luxuriösen Büroräumen in einer Seitenstraße der Brompton Road aufsuchte. Als sie ihn das erste Mal getroffen hatten, war er noch nicht lange aus Istanbul zurück und hatte gerade seine Beraterfirma gegründet. Sie hatte den Blick in seinen Augen für Schuldgefühle gehalten. Doch dann hatte er ihr eine Frage gestellt. Nur eine einfache Frage, die er mit vorgetäuschter Nonchalance äußerte. Doch Hermione war in diesem Moment etwas klar geworden, so glasklar, als wäre ihr ein Schleier von den Augen gerissen worden. </p><p>
+  <i>Und Harry Potter? Wie geht es ihm?</i>
+</p><p>Als ob sie an einem Zeitumkehrer gedreht hätte, war sie zurücktransportiert worden in ihr letztes Jahr in Hogwarts. Dieses wundersame Jahr, das fast nicht Wirklichkeit geworden wäre – und das es für diejenigen, die den Krieg nicht überlebt hatten, nie gegeben hatte …</p><p>Im September nach Voldemorts Niederlage war Hogwarts wieder eröffnet worden, und sie waren zurückgekehrt. Doch die Schülerinnen und Schüler wurden nicht mehr in getrennte Häuser, Gemeinschaftsräume und Quidditch-Teams sortiert. Die Opfer des Krieges waren zu groß gewesen, und niemand wollte erneut dieselben Fehler wie vor dem Krieg machen. Weder das halb zerstörte Schloss noch die brüchigen Allianzen zwischen den älteren Schülern, die im Krieg gekämpft hatten, ließen diese Art von Aufteilung zu. Stattdessen hatte der Beirat der Schule beschlossen, alle Schüler über siebzehn in Hogsmeade unterzubringen. Hermione war überzeugt, dass einige ihrer Mitschüler nur wegen dieser Entscheidung wieder gekommen waren, trotz der Erinnerungen an den letzten Kampf und an die blutbesudelte Halle. Die Gasthäuser des Ortes wurden in provisorische Schülerwohnheime verwandelt, und die Namen der Zimmergenossen per Zufall aus einem Kessel gezogen. Und so war es gekommen, dass Harry Potter und Draco Malfoy sich die kleine, blau tapezierte Dachkammer über dem <i>Eberkopf</i> teilten, in die man nur über eine Falltür im Boden gelangen konnte. Damals fanden das alle, außer ihnen selbst natürlich, irrsinnig komisch.</p><p>Der Herbst war wie im Flug vergangen. Hermiones einzige deutliche Erinnerungen waren wie Schnappschüsse in einem Muggel-Fotoalbum: Ron mit Herbstblättern im Haar; Dean an der Theke in den <i>Drei Besen</i> mit seinen Buntstiften um ihn herum verstreut wie Splitter eines Regenbogens; Harry auf einem gefährlich weit nach hinten gekippten Stuhl, der lachend eine neue Episode aus der Mein-Leben-mit-Malfoy-Saga zum Besten gibt. Später versuchte sie sich zu erinnern, ob es Hinweise gegeben hatte, und natürlich war ihr einiges eingefallen. Da war die Tatsache, dass Harry und Malfoy schon Ende September fast jeden Tag miteinander Zweier-Quidditsch spielten. Und nicht einen Monat später saß Malfoy, der sich Samstagabends im Pub zuerst zu den Slytherins gesellte, am Ende des Abends immer neben Harry am Tisch der Gryffindors. Und dann kam der Abend im November, als alle Hogsmeader (wie sie vom Rest der Schülerschaft genannt wurden) nach einem späten Abendessen zurück ins Dorf in ihre Unterkünfte gingen. Malfoy hatte Harry den Arm um die Schulter gelegt und ihn forsch auf die Wange geküsst.</p><p><i>Bringst du mich heim, Liebling?</i>, sagte er gedehnt, worauf Harry im Licht seines <i>Lumos</i> knallrot anlief. Doch dann zwinkerte Malfoy und grinste, und alle lachten sich halbtot, weil, Merlin, allein schon die Vorstellung von Harry und Malfoy als Paar so vollkommen abwegig war.</p><p>Doch nach den Ferien war etwas anders geworden. Die beiden spielten nicht mehr Zweier-Quidditch. Sowohl Harry wie Malfoy gingen kaum noch mit ihren Freunden in den Pub, und wenn doch einmal, dann setzte sich Malfoy nicht mehr an ihren Tisch. Harry erzählte keine Geschichten mehr über Malfoy, und – was noch auffälliger war – er lachte nicht mehr, wenn jemand von den anderen einen Malfoy-Witz zum Besten gab. Überhaupt wurden schlagartig keine Malfoy-Witze mehr erzählt, als Justin Finch-Fletchley an einem Abend im Februar mutmaßte, Malfoy sei heute nicht gekommen, weil er im Dunkeln Angst habe. Harry sprang so abrupt auf, dass sein Stuhl umkippte, und packte Justin am Kragen und schüttelte ihn, bis er den Mund hielt.</p><p><i>Der Idiot ist doch ein verdammter Feigling …</i> hatte Justin noch gesagt, doch dann brachte ihn der Ausdruck in Harrys Gesicht so abrupt zum Schweigen, als hätte er einen Dementor vor sich.</p><p>Im Nachhinein war offensichtlich, was geschehen war. Doch Hermione war so mit den Halbjahresklausuren beschäftigt und selbst so verliebt gewesen, dass sie den Moment nicht mitbekommen hatte, als auch Harry sich verliebt hatte. Es musste direkt vor den Weihnachtsferien passiert sein. Vielleicht war es wegen der bevorstehenden Rückkehr zu ihren unterschiedlichen Leben zum ersten Gespräch, zum ersten Geständnis, zum ersten Kuss gekommen. Harry hatte Ginny während den Ferien im Fuchsbau eindeutig auf Distanz gehalten. Die gesamte Zeit über hatte Hermione angenommen, es wäre aus Rücksicht auf Ginnys Eltern oder sogar auf Ron, aber im Nachhinein betrachtet war es eindeutig, dass seine Zurückhaltung einen tieferen Grund gehabt hatte. Es war fast so, als wären er und Ginny zwei sich abstoßende Magnete: Wann immer sie in einen Raum trat, fand er einen Grund, warum er ihn verlassen musste. Damals dachte Hermione, es läge daran, dass er Ginny zu sehr wollte. Später wurde ihr klar, dass es Malfoy war, den Harry zu sehr wollte.</p><p>Aber Harry und Malfoy waren sehr diskret. Dass zwei achtzehnjährige Jungen, die aufeinander scharf waren, so viel Diskretion an den Tag legen konnten, war schwer vorstellbar. Doch Hermione zweifelte, ob sie jemals etwas mitbekommen hätte, wäre da nicht diese Nacht gewesen, als sie bis spät im Schloss geblieben war, um Madam Pince dabei zu helfen, die Magische Theorie-Abteilung neu zu ordnen. Es war eine dieser Nächte im frühen April genau am Wendepunkt zwischen Winter und Frühling. Noch lag Schnee, doch der Feldweg war matschig und wand sich wie ein dunkles Band unter den Bäumen. Die Luft war mild, und es wehte ein leichter Wind. Der Mond schien so hell, dass ein <i>Lumos</i> unnötig war, und sie ging langsam, genoss das Alleinsein und die Stille und das Gefühl, dass die Welt jeden Moment zu neuem Leben erwachen würde. Sie kam zu der scharfen Kurve im Feldweg, noch ein paar Schritte, dann waren die Lichter des Dorfs durch die Bäume hindurch zu sehen. Da hörte sie eine Stimme, die sie überall erkannt hätte.</p><p>
+  <i>Draco, bleib doch mal stehen. Bitte, bleib stehen.</i>
+</p><p>Auch heute konnte Hermione nicht mit Gewissheit sagen, warum sie Harry nicht gerufen und sich bemerkbar gemacht hatte. Stattdessen hatte sie einen Verblendungszauber ausgesprochen und sich hinter den Stamm einer mächtigen Buche gedrückt. Vielleicht hatte sie damals schon geahnt, was Harry in Wirklichkeit mit Draco verband, und sie hatte wissen wollen, ob sie recht hatte. Oder vielleicht war es ihr peinlich gewesen, dass sie auch nur einen kleinen Teil dieses offensichtlich sehr emotionalen Gesprächs überhört hatte. Doch warum auch immer, sie hatte sich versteckt und beobachtet, wie die beiden Jungen einander mitten auf dem matschigen Weg wie Preisboxer im Ring umkreisten.</p><p><i>Ist doch egal, ob ich stehenbleibe oder nicht</i>, hatte Malfoy erwidert, und er klang vollkommen anders als sonst. Seine Stimme war so verändert, dass Hermione sogar für einen Augenblick dachte, sie täusche sich. Vielleicht war es ja ein anderer großer, dünner Junge mit blondem Haar. <i>Ich komm ja eh nicht weg von dir. Immerhin schlafen wir verdammt noch mal im selben Bett!</i></p><p>
+  <i>Willst du das? Weg von mir?</i>
+</p><p>Harrys Stimme klang so verloren, dass sie am liebsten zu ihm gerannt wäre. Stattdessen ballte sie die Hände zu Fäusten und presste die Nägel in die Haut, um sich nicht zu verraten.</p><p>Draco hatte bitter aufgelacht. <i>Glaubst du das etwa?</i>, fragte er scharf.</p><p><i>Ich weiß es nicht</i>, erwiderte Harry. <i>Ich weiß es nicht, Draco, und das ist das Problem.</i></p><p>Sogar in dem schwachen Licht und trotz der Schatten der tanzenden, blattlosen Äste konnte Hermione sehen, dass Malfoy schwer atmete. Als Kind hatte sie einmal erlebt, wie ein Reh von Jagdhunden eingekreist worden war. Malfoys Anblick erinnerte sie an den panischen Blick, das blitzende Weiß an den Augenrändern des Tiers.</p><p><i>Was soll ich denn noch sagen?</i>, rief er mit erstickter Stimme. <i>Was soll ich denn tun? Reicht es denn nicht, wenn ich es dir sage? Wenn ich dich – ?</i></p><p>Er brach ab, und auch Harry musste etwas in Malfoys Worten gehört haben, denn er zog ihn plötzlich zu sich und schlang die Arme um seinen Körper.</p><p><i>Geh nicht</i>, sagte er heftig. <i>Verlass mich nicht.</i></p><p><i>Aber ich kann nicht …</i> Dracos Gesicht war dicht an Harrys Hals, und seine Stimme war gedämpft. Dennoch konnte Hermione hören, wie gebrochen, wie verloren er klang. <i>Ich kann nicht hier bleiben. Ich halte das nicht aus, wie sie mich anschauen. Du weißt nicht, wie das ist …</i></p><p><i>Aber kapierst du denn nicht? Das ist egal! Ist doch schnuppe, was die anderen über dich denken. Was ich von dir halte, darum geht's. Ich bin es, auf den es ankommt, Draco, und ich</i> weiß,<i> was für ein Mensch du bist. Gott. Sieh mich an, Draco!</i> Harry trat etwas zurück, berührte Malfoys Kinn und zwang ihn hochzuschauen. <i>Ich überleb das nicht, wenn du gehst.</i></p><p><i>Und was, wenn ich es nicht überlebe, weil ich bleibe?</i>, fragte Draco, und in seiner Stimme hatte fast so etwas wie Trotz gelegen.</p><p>Teenager, dachte Hermione, wann immer ihr in den kommenden Jahren diese Worte durch den Kopf gingen. Melodramatische Jungs. Aber als sie mehr als zehn Jahre später Malfoy das erste Mal wieder gesehen hatte, in seiner professionellen, emotionslosen Stimme dieses unverkennbare Zittern … In diesem Moment war es ihr klar geworden. Er hatte sich nie von der Verletzung erholt, die er sich selbst zugefügt hatte.</p><p>Genauso wenig wie Harry, in dessen Augen ein Licht verloschen war, als er am Tag ihrer Abschlussfeier auf seinem Bett gesessen und Malfoy beim Packen zugesehen hatte. Hermione war die Treppe hochgestiegen, um ihn abzuholen. Durch die halb geöffnete Falltür hatte sie gesehen, wie Harry Tränen übers Gesicht liefen. Sie hatte leise kehrt gemacht und war wieder nach unten geklettert. Ron und seinen Eltern hatte sie gesagt, Harry wäre noch nicht da und vielleicht sei er ja auf dem Rückweg vom Schloss noch auf ein Bier in eine Kneipe gegangen.</p><p>Nie hatte sie jemandem erzählt, was sie beobachtet hatte. Weder das Gespräch auf dem Feldweg noch den stummen Abschied in der Kammer über dem <i>Eberkopf.</i> Denn am nächsten Tag hatte Malfoy England verlassen und nach einer gewissen Zeit war Harry wieder Rons bester Kumpel und Ginnys Freund geworden. Und Hermiones schuldbeladenes Geheimnis.</p><p>Noch einmal fuhr sie nachdenklich über die Buchstaben.</p><p>
+  <i>Anonymus.</i>
+</p><p>Doch wie lange noch?</p><p align="center">*</p><p>Wenn der Schaft richtig angewärmt und der Schnitt korrekt durchgeführt ist, muss die Feder kaum öfter als alle zehn Seiten neu beschnitten werden. Der Schriftsteller überprüft die Festigkeit der Spitze, indem er mit ihr über die Linien und Muskeln seiner Handfläche fährt. Kopf-, Herz-, Lebenslinie. Sie sind zu tief eingegraben, als dass man sie mit Tinte überschreiben könnte, nicht einmal mit Blut. Wille. Logik. Lebenskraft. All das kann man allein am Daumen ablesen. Stärke. Ausdauer. Moralische Überzeugung.</p><p><i>Kind des Mondlichts</i>, hatte die dunkeläugige Sintifrau gesagt, während sie seine Hand in ihren Fingern hielt. Sie hockte bei einer Feuerstelle aus alten Wagenrädern, in Männerstiefeln und etlichen Röcken, die sich unzüchtig um ihre Hüften bauschten. <i>Kind des Winds. Du bis ein ewig Reisender und immer ziehst du weiter. Was du suchst, hast du schon gefunden. Was du fliehst, brauchst du nicht zu fürchten. Du wirst länger leben als alle, die dich lieben. So lange, bis das Leben dir unerträglich wird. </i></p><p>Doch das hatte er damals natürlich schon gewusst.</p><p>Der Schriftsteller öffnete die Hand und schloss sie wieder, im Licht der Straßenlaterne blitzte der Ehering an seinem Finger auf. Seiner Frau hatte er gesagt, sie solle mit dem Abendessen nicht auf ihn warten. In London hatten sie ein spätes Lunch gegessen, nachdem sie aus King's Cross gekommen waren, doch er hatte kaum etwas angerührt. Es war schwer genug gewesen, sich von seinem Sohn zu verabschieden, nachdem er nirgends auch nur einen Spur gesehen hatte von …</p><p>Der Schriftsteller seufzte und schloss die Augen. Wie nur konnte dieses Gefühl nach all den Jahren wieder Besitz von ihm ergreifen – dieses verzweifelte, berauschende, unsagbare Verlangen? Als würden die Fluten mit Gewalt zurückschießen in die Mulden, aus denen sich das Wasser doch längst zurückgezogen hatte. Es war lächerlich! Er war ein erwachsener Mann im besten Alter. Ein Ehemann. Ein Vater. Ein Mitglied des Hohen Rats und der Internationalen Konföderation der Zauberer. Ein Aristokrat mit Adelstitel, ein gefragter Experte in seinem Feld. In jeder Hinsicht eine Erfolgsgeschichte, lebender Gegenbeweis für alle, die an ihm gezweifelt, für alle, die ihn seine Schande nie hatten vergessen lassen. Er musste niemanden mehr um Verzeihung bitten. Niemanden, außer vielleicht, sich selbst.</p><p>Und, natürlich, Harry.</p><p>Harry.</p><p>Sein wunderschöner, dunkelhaariger, rosenwangiger, strandglasäugiger, bleichhäutiger Harry. Sein wunderschöner, aufbrausender, verletzlicher, großzügiger Harry, der ihm alles gegeben und ihn dafür nur um eines gebeten hatte. </p><p>
+  <i>Bleib bei mir. </i>
+</p><p>Nur das eine, und selbst das war zuviel gewesen für einen Feigling und Sklaven. Man kann einen Titel vor einen Namen stellen und einen akademischen Grad dahinter, doch man kann die Essenz eines Menschen nicht ändern. Blei wird nicht zu Gold, und was man nicht verdient, kann man nicht behalten. Zumindest nicht, solange Gott zusieht.</p><p align="center">*</p><p>Harry James Potter beendete das fünfte Buch der <i>Alford Ocamy</i>-Serie am Tag, nachdem der Krieg erklärt worden war. Es kam nicht von ungefähr, dass er an Draco Malfoy denken musste.</p><p>Langsam, vorsichtig, klappte er das Buch zu und legte es auf den Couchtisch, der übersät war mit leeren Tassen, Bonbonpapierchen und benutzten Tellern. Um ihn herum saßen alle Menschen, die ihm auf dieser Welt etwas bedeuten sollten – seine Frau, Kinder, Freunde und die ganze Familie. Alle hatten die Nasen tief in ihre eigenen Exemplare von <i>Die Gesellschaft der Schlange</i> vergraben. Harry verkündete, dass er einen Spaziergang machen würde, aber sie waren alle so vertieft, dass niemand hochschaute. Von zwei, drei Sesseln war ein Brummen zu hören, immerhin hatte wohl jemand mitbekommen, was er gesagt hatte.</p><p>Es war fast amüsant, dass er in diesem Moment mit keinen Menschen außer mit Draco zusammen sein wollte. Nein, nicht amüsant. Es war wirklich <i>witzig</i>, so wie alle ironischen Dinge auf eine Art fundamental witzig waren.</p><p>Das Blut pochte ihm plötzlich in den Adern, und ohne groß zu überlegen, ging er in sein und Ginnys Schlafzimmer und zog einen Weasley-Pullover über, dazu Mütze, Schal und Handschuhe, die nicht zusammenpassten. Es war ihm egal, wie er aussah. Er wollte nur diese <i>Gewissheit</i> nicht mehr spüren, die ihn heiß durchflutete – und darunter dieser Zorn, der jeden Moment in die Angst vor Verrat und Verlust umschlagen konnte. Schon sein ganzes Leben begleiteten ihn diese beide Empfindungen, doch nie hatte er sie so deutlich gespürt wie nach dem Jahr in der Kammer mit dem Bett, das aus zweien gezaubert war, und der Tapete, blau wie ein Rotkehlchenei …</p><p>Einen Moment hatte er Schwierigkeiten, den Riegel zurückzuschieben (er musste einen von Rons Handschuhen erwischt haben, der ihm mindestens zwei Nummern zu groß war), dann öffnete Harry die Tür des Geräteschuppens und streckte die Hand aus.</p><p>"<i>Accio</i> Harrys Besen", flüsterte er und spürte zufrieden, wie das feste Holz in seiner Handfläche aufschlug. Letzte Woche war Harry nur knapp einem Attentat entgangen, und weil er nicht wirklich entdeckt werden wollte, sprach er schnell einen Verblendungszauber. Er war in einer draufgängerischen Stimmung, aber er konnte nicht riskieren, dass Ginny am Sylvesterabend in St. Mungo seine Leiche identifizieren musste.</p><p>Der Himmel war grau wie Schiefer, und in der Luft um ihn herum flatterten lustlos Schneeflocken. Die Luft war zu klirrend kalt für einen richtigen Schneesturm. In seiner jetzigen Stimmung konnte Harry sich fast den Wettergott vorstellen, der mit jeder Prise Schnee geizte und die Flocken rationsweise in den Wind streute wie Salzzuteilungen in Kriegszeiten. Mit zusammengekniffenen Augen schaute er zur Sonne, die schwach schien wie eine Laterne, deren Docht sehr niedrig brannte. Er lehnte sich gegen den Besen und wünschte sich Tempo. Erst als die Welt an ihm vorbeiraste wie in einem Zug bei Höchstgeschwindigkeit, ließ er den Gedanken zu. </p><p>Warum hatte er gestern Nacht schon wieder von Draco Malfoy geträumt? Warum jetzt, wo es schon seit Jahren viel zu spät war?</p><p>Die Vorstädte von Kent boten wenig Herausforderung, und Harry flog einen weiten, langsamen Bogen in der dunkler werdenden Dämmerung und richtete den Besen nach Westen. Es war Jahre her, seit er so etwas gemacht hatte, aber die tief hängenden Brücken und verführerisch schmalen Abstände zwischen den Gebäuden in Londons Finanzdistrikt schienen ihn magisch anzuziehen. Wie damals, als er achtzehn war. Für einen Augenblick schien die Zeit wie Wachs wegzuschmelzen, und sein Körper barst vor Energie, verwegen, zu allem bereit. Das Gefühl erinnerte ihn an Sex mit Draco.</p><p>
+  <i>Fang mich, wenn du mich kriegst, Potter! </i>
+</p><p>Auf ihren mitternächtlichen Flügen hatte Harry einiges riskiert, doch Draco hatte mit seinem Leben gespielt. Einige Male war Harry das Herz vor Schreck fast stehengeblieben, als Dracos Ellbogen und Schenkel haarscharf an der Ecke eines Gebäudes vorbeischrappten. Und in einer Nacht hatte er sich vor Angst fast übergeben. Er schluckte bittere Kotze, als Draco mit mindestens 130 Kilometern gerade noch rechtzeitig den Kopf einzog, bevor sein weißblonder Schopf, den die dunkle Kapuze längst freigegeben hatte, in der Düsternis unter einem der breiten, gusseisernen Spannbogen der Southwark-Brücke verschwand.</p><p><i>Willst du dich umbringen?</i>, hatte er ihn angefahren, als er ihn endlich eingeholt und ihm Zeichen gegeben hatte, dass er auf dem Dach eines frei stehenden Mietshauses östlich von Charing Cross landen wollte. Draco stieg vom Besen, als ob alles vollkommen in Ordnung wäre, doch Harrys Glieder zitterten vor Schock und Wut, er bekam kaum Luft und war so zornig. Dracos Augen glitzerten übermütig, als er sich vorbeugte, um Harry zu küssen. Seine Lippen waren kalt wie die Nachtluft um sie herum.</p><p><i>Bäh</i>, sagte er und wischte sich mit dem Handrücken über den Mund. <i>Du schmeckst nach Kotze, Potter. </i></p><p>Harry erinnerte sich nicht, was dann passiert war. War es ihm peinlich gewesen, hatte er sich abgewandt? Oder hatte er Draco gepackt und ihn noch einmal geküsst – hatte er den Idioten mit Gewalt fühlen, wissen, <i>schmecken</i> lassen, was er Harry antat? Hatte Draco diese Angst und diese Begierde gespürt, die schon seine bloße Gegenwart in Harry auslöste. Draco in seinem Bett, in seinen Armen, war eine verdammte Offenbarung. Hatte Draco denn nicht begriffen, dass Harry ihn jetzt nicht mehr verlieren konnte?</p><p>So sehr er sich auch anstrengte, Harry konnte sich nicht erinnern. Aber was auch immer er getan hatte, offensichtlich war es nicht genug gewesen.</p><p>Nach und nach gingen die eckigen Felder und Gärten in schlängelnde Adern aus roten und weißen Autolichtern über, und dann erschien mit einem Mal London unter ihm wie eine seltsame Blume, die in der Dämmerung erblühte. Harry packte den Besenstiel fester und stürzte sich Kopf voran in kreisenden Spiralen nach unten. Er wurde erst langsamer, als ihm Angst die Kehle hochstieg, und er den beißenden Rauch der Industrieanlagen in die Nase bekam. Der Geschmack in seinem Mund erinnerte ihn wieder daran, wie er Draco geküsst hatte. Kies und zerbrochenes Glas knirschte unter ihren Stiefeln, als sie auf dem Dach des verlassenen Mietshauses standen, kaum ein Jahr nach dem Ende des letzten Krieges. Es war Anfang Mai gewesen, daran erinnerte er sich. Anfang Mai in einem langen, kalten Frühling, der, so hatte er damals gedacht, nie in einen Sommer übergehen würde. Aber der Sommer war gekommen. Und kurz danach hatte Draco ihn verlassen.</p><p>
+  <i>"Wie weiß man es?", fragte Alford voller Angst und fast ehrfürchtig, was jeder, da war er sich sicher, ihm ansehen konnte.</i>
+</p><p>
+  <i>"Wie weiß man was?", fragte Raph zurück.</i>
+</p><p>
+  <i>"Ob man verliebt ist?", fragte Alford.</i>
+</p><p>
+  <i>"Ach, ich glaube, das weiß man einfach", erwiderte Raph.</i>
+</p><p>
+  <i>Und danach schwieg Alford, weil ihm in diesem Moment klar wurde, dass er es wirklich wusste. Dass er es schon immer gewusst hatte seit dem Tag, als sie sich zum ersten Mal getroffen hatten.</i>
+</p><p>
+  <i>"Hast du dich schon einmal verliebt?", hauchte er in die Dunkelheit, wo sein bester Freund neben ihm einschlief.</i>
+</p><p>
+  <i>"Ja", sagte Raph. "Und ich bin es immer noch."</i>
+</p><p>
+  <i>Erst dann, in einem alten Zelt aus Segeltuch, am Vorabend des Krieges, verstand Alford, was er tun musste. </i>
+</p><p>"Das war jetzt echt nicht nötig, dass es kitschig und schwul wird", hatte James gebrüllt und das Buch zugeschlagen. Doch alle anderen hatten ihn böse angestarrt, und er war aus dem Zimmer gestampft und hatte sich zu seinem Magiefunkgerät verzogen. Er war siebzehn und hatte furchtbare Angst vor dem Krieg, der über seiner Zukunft hing wie ein Sommersturm am Horizont. In diesem Moment ähnelte James so sehr seinem Onkel. Harry erinnerte sich an eine Nacht in einem anderen Krieg, in der Ron aus einem anderen Zelt gestampft war. Ihn erfasste ein fast berauschendes Schwindelgefühl, als sich Fakt und Fiktion, Vergangenheit und Gegenwart um ihn herum zusammenschoben wie ein Teleskop. Auf der anderen Seite des warmen, vom Feuer erhellten Zimmers saß Dracos Sohn gegen Albus gelehnt, den Kopf auf Albus' Schulter. Ohne dass sie es merkten, blätterten die beiden Jungen gleichzeitig die Seiten ihrer Bücher um.</p><p>Wer immer der anonyme Autor der Serie war, er besaß ein geradezu <i>unheimliches</i> Einfühlungsvermögen, und vielleicht war er sogar ein recht begabter Seher.</p><p>Als das letzte Tageslicht aus dem farblosen Himmel schied, drehte Harry um und flog nach Osten. Zurück nach Hause. Die Erinnerungen an Draco schmerzten nicht mehr, sondern lagen wie warme Hände um sein Herz, wo sie eine flackernde Flamme schützten. Sie hatten überlebt, ihre Kinder würden überleben. Tief in seinem Innern wusste Harry, dass es so war. Damals hatte er mit ebensolcher Sicherheit gewusst, dass Draco sich im letzten Moment ducken und an den Schatten der Brücke vorbeifliegen würde, auch wenn sie sein weißblondes Haar berührten wie Finger, die bedauerten, dass sie ihn am Ende doch gehen lassen mussten.</p><p align="center">*</p><p>Mit der Erinnerung an die handlesende Sintifrau kommt dem Schriftsteller eine andere Prophezeiung in den Sinn. Er erhebt sich von seinem Sessel und bewegt sich mit leisen, andächtigen Schritten um den Schreibtisch herum. Seit zehn Jahren hat er keinen Blick darauf geworfen. Er musste es nicht sehen. Die Gravur ist wie mit glühendem Eisen in sein Gedächtnis eingebrannt. Aber es scheint ihm wichtig, es jetzt bei sich zu haben, wenn er mit dem Schreiben beginnt.</p><p>Die Rune liegt eingeschlossen in einer verzauberten Schatulle. Die Schatulle hat keine Verzierungen, sie ist nichts Besonderes. Ein Besucher oder ein neugieriges Kind würde sich wohl kaum für das einfache, handgeschnitzte Holzkästchen interessieren. Vorsichtig nimmt er es aus dem Regal. Er selbst hat es dorthin gestellt vor all den Jahren, als er mit seiner Familie nach Wiltshire zurückkam, nachdem er vier Jahre lang als Blutfluch-Spezialist für das türkische Zaubereiministerium gearbeitet hatte. Die polierte Oberfläche liegt unter einer dünnen Staubschicht verborgen. Selbst den Hauselfen ist es verboten, die Schatulle zu berühren.</p><p>Nicht einmal seine Frau weiß von ihrer Existenz. <i>Vor allem</i> vor seiner Frau muss er sie geheim halten.</p><p>Seit unzähligen Generationen befragen die reinblütigen Patriarchen in seiner Familie immer kurz vor der Geburt ihres einzigen Sohns und Erben dieselbe uralte Schule von Magiern. Es ist ein einfaches Ritual, das alles in allem nicht viel länger als eine Stunde dauert. Der frisch gebackene Vater wäscht sich Hände und Füße, setzt sich im Schneidersitz auf eine Matte aus Schilfrohr und trinkt einen fast geschmacklosen Tee. Wenn die Tontasse leer ist, verlassen die Schüler ihren Meister, und der Vater und der Magier bleiben allein in dem Raum zurück. Keiner spricht ein Wort, doch der Magier reicht dem Vater einen Lederbeutel und bedeutet ihm mit Gesten, diesen auf der Matte auszuleeren. In dem Beutel sind ungefähr zwei Dutzend Tontäfelchen, nicht größer als der Daumenabdruck eines Mannes. In jedes ist eine einzelne Rune eingraviert – eine Rune für eine Eigenschaft. Da ist Schönheit und Reichtum, Treue und Macht, da ist Besonnenheit und Barmherzigkeit. Da ist Weisheit und Gerechtigkeitssinn und Stärke und Mut und Stolz. Als der Schriftsteller sie alle, eine nach der anderen, zur Kenntnis nahm, wurde ihm klar, was sein Vater gewählt haben musste. <i>Stolz.</i> Und im selben Moment wusste er, ohne jeden Zweifel, welche Rune er für seinen Sohn wählen würde.</p><p>
+  <i>Liebe.</i>
+</p><p>Er würde dem Kind, das er gezeugt hatte und das im Bauch seiner Frau heranwuchs, das Geschenk der Liebe geben.</p><p><i>Würdet Ihr Eure Wahl überdenken</i>, sagte der Magier mit einer Stimme, die knarrte wie eine alte, selten benutzte Tür, <i>wenn ich Euch sagte, dass diese Wahl das Ende Eurer altehrwürdigen Familiendynastie bedeutet? </i></p><p>Er hatte geantwortet ohne zu zögern.</p><p>
+  <i>Nein. </i>
+</p><p align="center">*</p><p>Scorpius Draconis Eltanin Malfoy war sechzehn, als er das sechste Buch der <i>Alford Ocamy</i>-Serie las. Wie die Bände davor hätte er es in einem Rutsch durchgelesen, doch dieses Mal teilte er sich das Buch mit Albus Potter. Die Familie von Albus hatte ihr Bauernhaus so schnell evakuieren müssen, dass Albus sein eigenes Buch nicht hatte mitnehmen können. Die <i>Incendios</i> der maskierten Söldner von Vainamoinens Geißel hatten das Haus, in dem er aufgewachsen war, in Schutt und Asche gelegt.</p><p>Scorpius strecke sich auf der dünnen, harten Matratze aus. Er zählte die Quadrate im Metallgeflecht des Stockbetts über ihm, wo Lily und Rose schliefen, die eine mit dem Kopf am Fuß-, die andere mit den Füßen am Kopfende. Sie hatten alles in Betten Verwandelt, auch ihre Reisekoffer, und ihre Klamotten lagen in Haufen auf dem Boden. Trotzdem hatte es nicht für alle gereicht, so dass die Mädchen und kleineren Jungs sich jeweils ein Bett teilen mussten. Vorsichtig, damit er die Schlafenden über ihm nicht weckte, drehte sich Scorpius auf die Seite.</p><p>"Bist du schon da, wo Alford und Raph in das Museum einbrechen und die ägyptischen Artefakte finden?", flüsterte er Albus zu, der im Nachbarbett las. Das weiche Licht des <i>Lumos</i> beschien sein Gesicht.</p><p>"Fast. Sie fahren gerade mit einer Rikscha vom Palast des Präsidenten weg."</p><p>"Was ist eine Rikscha?", flüsterte Hugo, der das Stockbett oberhalb von Albus mit einem Ravenclaw-Jungen aus der dritten Klasse teilte. </p><p>"Das ist dieses Ding wie so eine Art Lastenfahrrad", antwortete Albus abwesend. "Merlin, ich kann einfach nicht fassen, dass Herzogin Trixiebelle wirklich dachte, sie könnte Alford und Raph auseinanderbringen! Wo hat sie eigentlich in den letzten fünf Büchern gesteckt?"</p><p>"Na ja, sie ist ziemlich verrückt, oder nicht?", war die Stimme des kleinen Ravenclaw-Jungen zu hören. "He, Hughie, jetzt rück mal. Du machst dich total breit auf der Matratze."</p><p>"Nicht so laut", sagte Scorpius. "Lily und Rose schlafen."</p><p>Albus ließ das Buch für einen Moment sinken und lehnte den Kopf zurück, damit er hoch zu seiner Schwester und seiner Kusine schauen konnte.</p><p>"Gut", flüsterte er. "Sie sollen sich ausruhen, nach allem, was heute Morgen passiert ist." Er wandte den Kopf und blickte Scorpius an. "Ich habe mich noch gar nicht richtig bei dir bedankt", flüsterte er leise. "Dafür, dass du sie rausgeholt hast, meine ich."</p><p>"Nicht nötig", sagte Scorpius und schenkte seinem Freund ein weiches Lächeln.</p><p>"Ich mein das ernst", sagte Albus. "Das war wirklich total mutig, dass du da noch mal zurück bist."</p><p>"Na, du kennst mich doch", sagte Scorpius. "Allzeit bereit."</p><p>Albus verdrehte die Augen und wandte sich wieder dem Buch zu. "Ich bin fast durch mit dem Kapitel", sagte er.</p><p>"No worries", sagte Scorpius.</p><p>Albus lächelte, aber als Scorpius ihn von der Seite betrachtete, rollte Albus eine Träne aus dem Augenwinkel und tropfte auf den Mantel, den er sich als Kissen unter den Kopf geschoben hatte.</p><p>"Meine Ma hat das immer gesagt", sagte Albus. "No worries. Ich glaube, das hat sie sich in Irland angewöhnt, als wir da in den Ferien waren. Vor dem Krieg."</p><p>"Ich weiß", sagte Scorpius. "Daher hab ich es. Von deiner Ma, meine ich."</p><p>Ohne Einladung und ohne um Erlaubnis zu fragen, stand Scorpius auf und trat zu Albus' Bett. </p><p>"Schieb mal deinen Arsch zur Seite", sagte er liebevoll.</p><p>Albus legte das Buch weg und rutschte an den Rand des engen Betts.</p><p>"Schmusen wir jetzt wie Alford und Raph?", fragte er und flüsterte ein leises <i>Nox</i>. Er drehte sich zu Scorpius, der sich neben ihn legte.</p><p>"Ich weiß nicht", erwiderte Scorpius. "Aber wenn wir miteinander schmusen wollen, dann fangen wir jetzt besser damit an."</p><p>Albus starrte ihn mit großen grünen Augen an, doch das nervöse Lachen, das Scorpius kurz aufblitzen sah, verschwand sofort, als sich ihre Blicke trafen.</p><p>"Fuck", hauchte Albus. "Es ist soweit. Wir werden sterben, oder?"</p><p>"Ich weiß nicht", sagte Scorpius noch einmal. Er hatte Albus noch nie angelogen, und er würde es auch jetzt nicht tun.</p><p>"Aber du glaubst nicht, dass wir davonkommen, oder?</p><p>"Ich weiß nicht", sagte er zum dritten Mal. "Ich weiß auch nicht mehr als du, Al. Ich hab meine Eltern nicht mehr gesehen, seit wir am King's Cross von ihnen getrennt wurden. Keine Ahnung, ob sie noch leben oder tot sind. Aber ich weiß genau, dass es nicht mehr lang dauert, bis …"</p><p>"Bis sie uns finden und umbringen. Scorpius, wenn mein Dad noch am Leben wäre, dann hätte er uns inzwischen sicher gefunden."</p><p>"Scht, das kannst du nicht wissen. Vielleicht lebt er noch, aber sie haben ihn irgendwo eingesperrt. Nur weil er nicht hier ist, heißt das noch lange nicht, dass er tot ist."</p><p>"Und James? Wo ist James?"</p><p>Sanft nahm Scorpius seinen besten Freund in die Arme. Die ganze Zeit hatte Albus die Panik nicht zugelassen, doch jetzt schluchzte er heftig und zitterte am ganzen Körper.</p><p>"Alles, alles ist kaputt. Oh Gott, was sollen wir bloß machen? Wir sind doch nur Kinder", weinte er. "Wir sind nur Kinder."</p><p>Scorpius strich mit den Händen über Albus' Rücken und flüsterte ihm ins Ohr: "Alford und Raph waren auch nur Kinder."</p><p>Albus wurde so von Weinkrämpfen geschüttelt, dass er sich noch enger in die Umarmung seines Freundes presste. "Aber … aber sie sind nicht <i>real</i>", schluchzte er. "Es ist nur eine Geschichte. Sie sind nicht real!"</p><p>Scorpius wusste mit einem Mal genau, was er tun musste, und er packte Albus am Kinn und zwang ihn, ihm in die Augen zu schauen.</p><p>"Für mich sind sie real", sagte er wild. "Für <i>uns</i>." Und dann, ohne jede weitere Einleitung, tat er, was er schon seit Jahren tun wollte. Er küsste Albus Potter direkt auf den Mund.</p><p>"Du bist Raph, und ich bin Alford", sagte er. "Und ich werde nicht zulassen, dass dir irgendetwas zustößt. Verstehst du mich? Ich verspreche es dir, Al. Und wenn sie mich zuerst töten, ich lasse nicht zu, dass dir etwas passiert.</p><p>"Scorpius?", flüsterte Albus an seinem Hals.</p><p>"Ja?"</p><p>"Bleibst du bei mir?"</p><p>Scorpius holte tief Luft und atmete den heißen, salzigen, vertrauten Geruch von Albus' Haut ein. Er fragte sich, ob Albus nach all dieser Zeit wirklich noch ernsthaft daran zweifeln konnte.</p><p>"Natürlich", erwiderte er. "Die Frage war echt überflüssig."</p><p>Die beiden Jungen lagen eng umschlungen, als ein Zauberstab nach dem anderen in der Höhle verlöschte, und die Kinder, die den Anschlag auf den Hogwarts Express überlebt hatten, einschliefen. Selbst diejenigen, die sich für zu erwachsen hielten, um ein Bett zu teilen, krochen nun zu ihren Freunden und Mitschülern und sogar zu ihren Feinden unter die Decke. Denn was zählten Schulstreitereien angesichts des Hasses, mit dem ihre <i>wirklichen</i> Feinde gegen sie vorgingen? Draußen heulte und jammerte der Neujahrswind, und unter den Baumstämmen wurden die Schneewehen immer höher. Doch im Innern berührten sich Hände, und Lippen fanden zueinander, und Herzen schlugen im selben Rhythmus. Irgendwo in der Dunkelheit sang ein Mädchen ihrer Freundin ein Muggel-Lied vor. Scorpius hatte die Melodie einmal in der warmen, gemütlichen Weasley-Potter Küche gehört, als die Mutter von Rose und Hugo sie beim Lebkuchenbacken vor sich hinsummte. Es schien eine Ewigkeit her zu sein. </p><p>
+  <i>When I was a child, small and wee,<br/>
+My sad-eyed mother said to me …</i>
+</p><p>Er lag auf seinem einen Arm, und der kribbelte unangenehm, doch den anderen hatte er um Albus' Schulter gelegt. Albus bedeckte seinen Hals mit Küssen und murmelte Worte, die Scorpius sicher schon einmal in einem Traum gehört hatte. Oder er hatte sie in einem Buch gelesen.</p><p>
+  <i>Listen in the quiet of the snowy morn </i><br/>
+<i>For that lovely sound that’s so forlorn,</i><br/>
+<i>Because every time the church bell rings,</i><br/>
+<i>It means another angel’s got his wings.</i>**
+</p><p>Als er sich tiefer in die Wärme kuschelte, die von dem Körper neben ihm ausging, und die Augen zumachte, erinnerte sich Scorpius an seinen Vater, wie er ihn am Tag vor Weihnachten gesehen hatte. In einem blassblauen Umhang, fast so weiß wie das Innere von Austernschalen, hatte er am Fenster seiner Bibliothek gestanden, mit einer zerbrochenen Feder in der Hand. Glitzernd wie Eis, kalt und schön und stolz. Unnahbar, als wäre er ein Teil des Winters, dem das züngelnde Feuer im Kamin hinter ihm nichts anhaben konnte. Und Scorpius flüsterte ein Gebet in Albus' rabenschwarzes Haar, ein Gebet an den Gott, der die Gebete von kleinen Jungen für ihre Väter erhört: <i>Mach, dass er es weiß</i>, flüsterte er. <i>Mach, dass er weiß, dass ich es aus Liebe getan habe.</i></p><p>
+  <i>Dass ich es aus Liebe getan habe, und dass ich keine Angst hatte. </i>
+</p><p align="center">*</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/1173133/chapters/2389621">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/1173133#chapter_3_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Das einfache Tontäfelchen mit der eingravierten Rune liegt auf dem Pergamentbogen vor ihm, als der Schriftsteller die Feder in die Tinte taucht und zu schreiben beginnt.</p>
+<p>Draußen bricht die Nacht herein, schnell wie ein Raubvogel, der sich auf sein Opfer stürzt. Seit sieben Jahren verbringt er jeden Herbst in diesem Raum und schreibt ein Kinderbuch. Was er tun wird, wenn dieses Buch vollendet ist, weiß er nicht. Er hat nie über diesen Moment hinaus gedacht. Nicht seit dem Tag vor siebzehn Jahren, als er das Tontäfelchen umdrehte, das er für seinen Sohn gewählt hatte, und die Zahlen "eins" und "sieben" auf der Rückseite sah. Genau so alt war er gewesen, als er entschied, dass er lieber als Voldemorts Sklave leben denn in Freiheit sterben wollte. Als er jedes Recht, einmal von Harry geliebt zu werden, verwirkte und diese Zukunft aufgab wie eine Frucht, die erfroren waren, bevor sie reifen konnte.</p>
+<p>Wie sich gezeigt hatte, war siebzehn nicht zu jung zum Sterben.</p>
+<p>Aber so sehr er es auch versucht, er bereut es nicht, dass er überlebt hat. Nicht, wenn überleben hieß, dass er Harrys Lachen auf seiner Zunge spüren durfte, dass er sehen durfte, wie die Sterne zu Lichtstreifen wurden, als er und Harry unter ihnen durch den Himmel flogen – jung und verwegen und frei. Nicht, wenn überleben hieß, dass er seinen kleinen Sohn in den Armen halten und erleben durfte, wie er zu einem jungen Mann heranwuchs, der, auch wenn er nur wenige Wochen vor seinem achtzehnten Geburtstag gestorben war, ein erfülltes und gutes Leben gehabt hatte.</p>
+<p>Vor zwei Tagen hatte der Schriftsteller beim Packen für seinen bevorstehenden Umzug nach Ulaanbaatar eine Schatulle entdeckt, die der, in der er die Rune seines Sohnes aufbewahrte, ziemlich ähnlich war. Nach mehreren Versuchen hatte er den Schließzauber gebrochen und sie öffnen können. Es überraschte ihn nicht, als er im Innern ebenfalls ein Tontäfelchen fand. <i>Stolz</i> war darauf eingraviert, und er hatte lange Zeit darüber nachgedacht, wem die Rune wohl gehörte. Ihm? Seinem Vater? Seinem Großvater? Wie lange schon zog sich dieser seltsame, selbst auferlegte Fluch durch seine Familie? Doch als er das Täfelchen umdrehte, hatte er es sofort gewusst. Es war seine Rune. Die Zahl auf der Rückseite war einfach zu hoch. Nur er konnte zu so einem langen Leben verdammt sein, denn nur er war zu stolz, um sich aus freien Stücken so etwas Gewöhnlichem und Barmherzigen wie dem Tod zu unterwerfen.</p>
+<p>Vor ihm füllt sich das schneeweiße Pergament langsam mit den schwarzen Tintenworten, während draußen die schwarzen Glieder der Bäume langsam unter den pergamentweißen Girlanden aus Schnee verschwinden. Weihnachten steht vor der Tür, und damit die Jahrestage des Todes seiner Frau und seines Sohnes. Nicht zum ersten Mal in seinem Leben ist er vollkommen allein. Und ganz auf sich selbst gestellt, ist es inzwischen nicht mehr wichtig, ob er weiterhin anonym bleibt oder nicht.</p>
+<p>Mit einer abschließenden schwungvollen Bewegung der Feder unterschreibt der Schriftsteller mit seinem Namen.</p>
+<p align="center">*</p>
+<p>Harry James Potter ist umgeben von seinen Kindern und einem Berg halb geöffneter Weihnachtsgeschenke. Er starrt auf den Namen auf dem siebten und letzten Band der <i>Alford Ocamy</i>-Serie. Etwas schnürt ihm plötzlich die trockene Kehle zu, und er schluckt, als er das Buch langsam öffnet.</p>
+<p>
+  <i>Für Scorpius, in Liebe und mit Stolz, von deinem dich liebenden Vater. Ruhe in Frieden.</i>
+</p>
+<p>Er reicht das aufgeschlagene Buch wortlos seinem mittleren Sohn, der es still entgegennimmt und die Fingerspitzen auf die Seite mit der Widmung presst, als schlage unter der Tinte und dem Pergament ein Puls, den nur er spüren kann. Das letzte Jahr war überschattet von Trauer und Tod. Zuerst Ginny und Hugo. Dann später, kurz vor Kriegsende, Hermione. Und natürlich – als ob Albus' Augen es ihn jemals vergessen ließen – der anmutige, stille, sanfte Junge. Scorpius. Dracos Sohn. Der gestorben war, um Harrys eigenen Sohn zu retten.</p>
+<p>In dem Buch überleben Alford und Raph den Krieg in ihrer Welt und sind sich noch so nah wie immer. An den meisten Tagen kann Harry sich nicht vorstellen, dass er und Draco sich wieder einmal so nah sein werden. Doch vielleicht ist das ja der wahre Sinn einer Geschichte – uns zu leiten wie ein Stern im Nebel, wenn wir halbblind durch die Dunkelheit stolpern. Uns zu trösten und uns daran zu erinnern, dass wir, auch wenn es manchmal so scheinen mag, nicht allein sind.</p>
+<p>Allein.</p>
+<p>Das Wort sinkt wie ein Stein in Harrys Gedanken. Auch wenn er seine Frau verloren hat, sind Harry doch seine Kinder geblieben. Draco hat niemanden mehr. Alle, die er liebte, sind vor ihm gestorben. Das heißt, alle außer Harry. Falls er Harry wirklich jemals geliebt hat …</p>
+<p>Plötzlich und unerwartet taucht eine Erinnerung auf: Ein Jungenzimmer, in dem Bücher und Schuhe und schmutzige Quidditch-Klamotten herumliegen. Das Rollo an dem einzigen Dachfenster ist hochgeschnappt und hat sich schief zusammengerollt, weil einer von ihnen es zu schnell aufgezogen hat. Eine Sternenkarte ist mit Reißnägeln an die Wand gepinnt, doch einer fehlt, und die rechte Ecke steht steil ab, als ob sie möglichst viel Distanz zwischen sich und die kitschige blaue Tapete bringen will. Ein Lampe mit einem schief hängenden Schirm. Zwei verwühlte, ungemachte Betten. Ein Goldfischglas mit einem einzigen, einsamen Goldfisch, den jemand (nicht sie) auf einem Muggel-Markt gewonnen hat. Ein Arithmantikbuch hängt über der Lehne eines schäbigen, mit Kleidern übersäten Sofas, das unter der Dachschräge steht. Draußen leuchten die Sterne hell und klar, sie tauchen den Dielenboden in ein unwirkliches Licht und werfen Schatten durch die blattlosen Äste. Der schwache Hof um den Mond verheißt Schnee, und frostige Eisblumen bedecken die Fensterscheibe. Morgen ist Heiligabend.</p>
+<p>Draco sitzt in seinem Stuhl mit dem Rücken zum Schreibtisch und zieht sich die Stiefel aus. Harry sieht ihm dabei zu. Sie haben kein Wort gewechselt, seit sie die Weihnachtsparty in Anthony und Seamus' Zimmer in den <i>Besen</i> verlassen haben. Beide haben sie noch die immergrünen Kunstgirlanden umhängen, die Lavender allen, kaum waren sie zur Tür herein, überwarf. Wie mit einem Lasso zog sie alle Jungs damit zu sich, für einen Kuss unter dem Mistelzweig. Es erinnerte Harry an Cho, und dann musste er an Ginny und die bevorstehenden Weihnachtsferien im Fuchsbau denken. Und dann ging ihm durch den Kopf, dass der einzige Mensch, mit dem er die ersten Sekunden des ersten Jahres in der Welt ohne Voldemort verbringen wollte, Draco war.</p>
+<p>
+  <i>Machst du das Licht noch an, Potter, oder wollen wir einfach im Dunkeln sitzen bleiben? </i>
+</p>
+<p>In den ersten Wochen des Schuljahrs hatte Dracos Stimme Harry den letzten Nerv geraubt. Inzwischen hatte sich das geändert, sehr sogar. Während der letzten Monate hatte Harry immer mehr den darunterliegenden Humor in Dracos Sticheleien gehört, die leicht spöttische Herausforderung. Er verstand allmählich, dass Dracos Stimme nicht so sehr <i>über</i> ihn lachte, sondern Harry dazu einlud, <i>mit</i> ihm zu lachen. Fast alles an Draco kam Harry inzwischen wie eine Einladung vor. Eine Einladung, Verteidigung gegen die Dunklen Künste zu schwänzen und stattdessen zu fliegen. Eine Einladung, Ernies Schulranzen in ein vietnamesisches Hängebauchschwein zu Verwandeln. Eine Einladung, am letzten sonnigen Tag vor den Prüfungen eine Flasche Feuerwhiskey zu kaufen und das Zeug am Seeufer aus Pappbechern zu trinken, wenn sie eigentlich hätten lernen sollen. Ein Einladung, wieder zu lachen. Zu vergeben. Eine Einladung, in der Zukunft und nicht in der Vergangenheit zu leben, und eine Einladung, das Zimmer in drei Schritten zu durchqueren, Dracos Kinn anzuheben und ihn weich zärtlich <i>furchtlos</i> auf den Mund zu küssen. Und einfach so die letzte Grenze auf dem Kontinuum von Mitbewohner zu Freund zu Geliebtem unwiderruflich aufzuheben.</p>
+<p><i>Heißt das, du vögelst in den Ferien nicht mit der Wieselin?</i>, flüstert Draco, als Harry sich von Dracos feuchten Lippen losreißt und sich aufrichtet, weil sein Rücken in der vornübergebeugten Stellung anfängt weh zu tun.</p>
+<p><i>Ich hab nie mit Ginny gevögelt</i>, sagt er und setzt sich auf sein Bett, lehnt sich mit dem Rücken gegen das Kopfbrett. Er spreizt die Beine mit leicht angewinkelten Knien und spricht damit seine eigene Einladung aus. Draco hat eindeutig kein Problem, Harrys Einladung zu verstehen, denn er klettert auf das Bett und macht es sich zwischen seinen Schenkeln bequem, wobei er genüsslich und ungeniert die Hüften gegen ihn presst.</p>
+<p><i>Gut</i>, sagt er und beugt sich über ihn, um ihn noch einmal zu küssen. <i>Es wird dich vielleicht überraschen, aber ich kann ziemlich unangenehm werden, wenn ich eifersüchtig bin.</i></p>
+<p>Harry lacht an Dracos Mund, weil … nun, weil es ihn nicht <i>wirklich</i> überrascht, dass Draco besitzergreifend und dominant und unglaublich überzeugt von sich ist. Angesichts von Dracos impliziten Besitzansprüchen fasst Harry erneut Mut, und er entschließt sich, das Risiko einzugehen.</p>
+<p><i>Wenn mir vielleicht jemand ein verfrühtes Weihnachtsgeschenk machen würde, dann würde das sicher … meine Standhaftigkeit erhärten</i>, sagt er und drückt dabei seine Hüften nach oben gegen Dracos. Harry wird kaum rot, obwohl er Draco so unverschämt anmacht. Über ihm grinst Draco ihn an, und seine Zähne leuchten im winterlichen Mondlicht, doch als er spricht, klingt er atemlos.</p>
+<p>
+  <i>Zieh diesen furchtbaren Pullover aus. </i>
+</p>
+<p>Sie lieben sich die ganze Nacht. Sie ficken nicht, keine Penetration. Wenigstens jetzt noch nicht. Harry hat Angst, dass es schmerzhaft und eklig und peinlich werden könnte, und er nimmt an, Draco geht es genauso. Was nicht bedeutet, dass er Angst davor hat, Draco <i>dort</i> zu berühren. Ganz und gar nicht. Er berührt Draco überall: die weiche Haut hinter seinen Ohren und zwischen seinen Zehen; seinen Scheitel in dem hellen Haar auf seinem Kopf und die empfindliche Stelle unter dem genauso hellen Haar unter seinen Achsel; das Fleisch seiner Augenlider, das dünn wie Krepppapier ist, und das irgendwie reptilienartige Fleisch an seinen Fußknöcheln und Ellbogen; die Sehnen in seinem Nacken, an seinem Hals und in seinen Kniekehlen; die leichten Vertiefungen zwischen seinen Rippen; Dracos zitternder, von Sperma feuchter Bauch, der aussieht, als wäre eine Schnecke darauf herumgekrochen und hätte einen glitzernden mondbeschienenen Pfad hinterlassen; und natürlich, seinen steifen, heißen Schwanz, der schockierend dunkel wirkt gegen seine bleichen Schenkel; die seltsam haarlose Haut seines Hodensacks und dahinter die warme, nachgiebige Spalte zwischen den süßen, weichen Rundungen seines Arschs, der sich unter Harrys Händen anfühlt wie ein sonnengereifter Pfirsich. Harry merkt, dass sich seine Finger und seine Zunge wieder und wieder dorthin verirren, weil er hinein will in Dracos Körper und Zutritt zu etwas sucht, das die Essenz von <i>Draco</i> ist. Wenn Harry es endlich findet, werden alle Grenzen zwischen ihnen verschwinden und sie werden ineinander verschmelzen wie zwei Muggel-Wachsstifte, die jemand auf einem Heizkörper vergessen hat. Gott, wie sehr er das will! Dieses Verschmelzen. Dieses wiegende, schwankende, atemraubende Verschmelzen. Jedes Mal, wenn es fast soweit ist, kommt er und wünscht sich, in einem fernen, halb bewussten Ort in seinem Kopf, dass er seinen Orgasmus irgendwie zurückhalten und so durch diese letzte Grenze der Lust stoßen könnte. Wie ein Efeustrang, wie einer von Jupiters ölverschmierten, farbigen Ringen möchte er sich um Dracos Kern wickeln. Um sein Herz. So dass eines Tages, wenn sie alt sind, Harry ganz und gar mit den Fäden und Mustern von Dracos Leben verwoben ist als wären sie ein Aquarell, auf dem jemand aus Versehen eine Tasse Tee verschüttet hat. Das Blau, das Grün und das Grau fließen ineinander und werden noch schöner, weil sie sich miteinander vermischt haben.</p>
+<p>Nach dieser Nacht – und zumindest bis zum Juni, als es Draco ihm endlich in seinen sturen Schädel gehämmert hatte, dass er gehen und nie wiederkommen würde – hätte sich Harry niemals vorstellen können, dass er Draco mit vierundvierzig einmal so vor sich sehen würde: unberührt und ungeschätzt, ungeliebt und unumsorgt. </p>
+<p>Allein.</p>
+<p>Harry muss die Augen schließen, als die beiden Silben des Wortes hohl in seinem Herzen widerhallen.</p>
+<p>Er steht auf und tritt vor den Kamin. Er hat gehört, dass Draco seine Beraterfirma verkauft hat und in eine Stadt zieht, die so weit weg ist, dass sie, wäre die Erde wirklich eine Scheibe, an ihrem äußersten Rand hängen würde wie eine Galleone, die auf der Tischkante balanciert. In der Mongolei, meint er sich zu erinnern. Harry wäre nicht überrascht, wenn es wirklich so wäre. Draco hat sich immer nach fernen Orten gesehnt. Einmal hat Harry im Fernsehen einen Muggel-Dokumentarfilm über Kraniche gesehen. Jemand hatte eine winzige Kamera an den Körper eines Vogels geschnallt und sie nach Monaten (ein Wunder!) wieder gefunden. Die Aufnahmen zeigten blaue und grüne Sprenkel, einen Blick auf die Erde aus großer Höhe. Selbst die größten Städte waren nur verwischte graue Flecken, halb verborgen unter dem Rauch der Fabriken. Bei Nacht leuchteten sie, und die Lichter sahen aus wie die verstreuten Holzscheite eines verlassenen Lagerfeuers. Ab und zu kam kurz die schneeweiße Flügelspitze des Vogels ins Bild, und das hatte Harry an Draco erinnert. In dieser Nacht hatte er von ihrer Kammer über dem <i>Eberkopf</i> geträumt, nur dass der Raum statt der steilen Dachschrägen gar kein Dach gehabt hatte. Über ihnen war nur der Himmel, an dem Tausende von Sternen funkelten. Er und Draco lagen zusammen in dem breiten Bett, das sie in der ersten Nacht für sich gezaubert hatten. Durch die Äste schauten sie hoch in die Nacht, als wäre das Bett und die ganze Kammer in Wirklichkeit ein Kranichnest. Am nächsten Morgen war Harry mit Federn in der Hand erwacht, als ob er einen davonfliegenden Vogel hatte festhalten wollen. Nach einem Moment, in dem sich alles um ihn drehte, wurde Harry klar, dass irgendwann in der Nacht sein Daunenkissen aufgeplatzt sein musste.</p>
+<p>Draco, geht es ihm durch den Sinn, du brauchst nicht mehr zu fliegen.</p>
+<p>Oder nimm mich dieses Mal wenigstens mit.</p>
+<p>Harry lächelt nacheinander James, Albus und Lily an, dann dreht er sich zum Kamin und steckt den Kopf ins Feuer. Dabei ruft er den Namen, den er vor wenigen Minuten auf dem Cover des diesjährigen Bestsellers, <i>Alford Ocamy und die tödlichen Heiligtümer</i>, berührt hat.</p>
+<p>"Draco Malfoy", ruft er in die lodernden Flammen. "Ich bin's. Raph."</p>
+<p align="center">
+  <i>fin</i>
+</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_3_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p><b>*</b> Original des Byron-Zitats aus <i>English Bards and Scottish Reviewers</i><br/><i>So the struck eagle, stretch’d upon the plain,</i><br/><i>No more through rolling clouds to soar again,</i><br/><i>View’d his own feather on the fatal dart,</i><br/><i>And wing’d the shaft that quiver’d in his heart.</i><br/> </p>
+<p><b>**</b> Wörtliche Übersetzung des Muggel-Liedes:<br/><i>Als ich noch ein winzigkleines Kind war,</i><br/>sagte meine Mutter mit traurigen Augen zu mir,<br/>Hör in der Stille des verschneiten Morgen,<br/>auf den lieblichen, wehmütigen Klang,<br/>denn immer, wenn die Glocken klingen,<br/>bekommt ein neuer Engel seine Flügel.<br/></p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><span class="position">Part 1 of the <a href="/series/1249268">Vaysh's Translations</a> series</span><span class="divider"> </span><a class="next" href="/works/1160087">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="DEkZE0LLat4BuR4fUL9nw1iql6Hx6ZYQ2MIy_CEaDL6nW9ePddcHAZsTfB_oyfyTs-vesmGh2Nn6ZQ-tIClllQ"/>
+          <input value="1173133" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=1173133">Comments (3)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/LLAP115">LLAP115</a>, <a href="/users/Lynix77">Lynix77</a>, <a href="/users/TinavomHeiderand">TinavomHeiderand</a>, and <a href="/users/Peachilii">Peachilii</a>
+             as well as 
+          16 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_1173133">
+  <form class="new_comment" id="comment_for_1173133" action="/works/1173133/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="EcwqNVqxClYW9cijE4QAu095erAqsOeQUKzAP7iXKoS63uSpba1niYxfqqOr8pvrpDgzo7r4qVlyC_1uuaRDrw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_1173133">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_1173133" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_1173133=new LiveValidation('comment_name_for_1173133',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_1173133.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_1173133">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_1173133" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_1173133=new LiveValidation('comment_email_for_1173133',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_1173133.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_1173133" class="landmark">Comment</label>
+        <textarea id="comment_content_for_1173133" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_1173133" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_1173133_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_1173133">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_1173133=new LiveValidation('comment_content_for_1173133',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_1173133.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_1173133.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_1173133" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/1173133/hit_count.json")})</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":89,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Die Nachtschwärze zwischen den Sternen - Ginada - Harry Potter and the Cursed Child - Thorne &amp; Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="b0T4P2t7dc352nIT7MgrL9x2wlQoOMOkEBQHzT-D0_GtEPpefIq5Kz4rG8VL2PYATrr7Enc1KNGUh3bRZ7A7BQ"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="ltbImWdsHHk0hik3_M_SQ_HDT-U8hKi2ha2z1H_jc0tUgsr4cJ3Qn_N3QOFb3w9sYw92o2OJQ8MBPsLIJ9Cbvw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/27328087/chapters/66768775">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=27328087">Comments </a>
+  </li>
+
+
+    <li class="style">
+        <a href="/works/27328087?style=disable&amp;view_full_work=true">Hide Creator&#39;s Style</a>
+    </li>
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/27328087/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/27328087/Die%20Nachtschwarze.azw3?updated_at=1617966384">AZW3</a></li>
+          <li><a href="/downloads/27328087/Die%20Nachtschwarze.epub?updated_at=1617966384">EPUB</a></li>
+          <li><a href="/downloads/27328087/Die%20Nachtschwarze.mobi?updated_at=1617966384">MOBI</a></li>
+          <li><a href="/downloads/27328087/Die%20Nachtschwarze.pdf?updated_at=1617966384">PDF</a></li>
+          <li><a href="/downloads/27328087/Die%20Nachtschwarze.html?updated_at=1617966384">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandoms:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20and%20the%20Cursed%20Child%20-%20Thorne%20*a*%20Rowling/works">Harry Potter and the Cursed Child - Thorne &amp; Rowling</a></li><li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Draco%20Malfoy%20*a*%20Andromeda%20Black%20Tonks/works">Draco Malfoy &amp; Andromeda Black Tonks</a></li><li><a class="tag" href="/tags/Teddy%20Lupin%20*a*%20Andromeda%20Black%20Tonks/works">Teddy Lupin &amp; Andromeda Black Tonks</a></li><li><a class="tag" href="/tags/Delphi%20*a*%20Andromeda%20Black%20Tonks/works">Delphi &amp; Andromeda Black Tonks</a></li><li><a class="tag" href="/tags/Draco%20Malfoy%20*a*%20Scorpius%20Malfoy/works">Draco Malfoy &amp; Scorpius Malfoy</a></li><li><a class="tag" href="/tags/canon%20background%20relationships/works">canon background relationships</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Andromeda%20Black%20Tonks/works">Andromeda Black Tonks</a></li><li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li><li><a class="tag" href="/tags/Delphini/works">Delphini</a></li><li><a class="tag" href="/tags/Teddy%20Lupin/works">Teddy Lupin</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Scorpius%20Malfoy/works">Scorpius Malfoy</a></li><li><a class="tag" href="/tags/Black%20Family%20(Harry%20Potter)/works">Black Family (Harry Potter)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Family/works">Family</a></li><li><a class="tag" href="/tags/Family%20Drama/works">Family Drama</a></li><li><a class="tag" href="/tags/Angst/works">Angst</a></li><li><a class="tag" href="/tags/Canon%20Compliant/works">Canon Compliant</a></li><li><a class="tag" href="/tags/Family%20Bonding/works">Family Bonding</a></li><li><a class="tag" href="/tags/Harry%20Potter%20and%20the%20Cursed%20Child%20Compliant/works">Harry Potter and the Cursed Child Compliant</a></li><li><a class="tag" href="/tags/Post-Harry%20Potter%20and%20the%20Cursed%20Child/works">Post-Harry Potter and the Cursed Child</a></li><li><a class="tag" href="/tags/Implied*s*Referenced%20Torture/works">Implied/Referenced Torture</a></li><li><a class="tag" href="/tags/Wakes%20*a*%20Funerals/works">Wakes &amp; Funerals</a></li><li><a class="tag" href="/tags/Trials/works">Trials</a></li><li><a class="tag" href="/tags/Azkaban/works">Azkaban</a></li><li><a class="tag" href="/tags/Malfoy%20Manor/works">Malfoy Manor</a></li><li><a class="tag" href="/tags/POV%20Andromeda%20Black%20Tonks/works">POV Andromeda Black Tonks</a></li><li><a class="tag" href="/tags/Implied*s*Referenced%20Character%20Death/works">Implied/Referenced Character Death</a></li><li><a class="tag" href="/tags/Canonical%20Character%20Death/works">Canonical Character Death</a></li><li><a class="tag" href="/tags/Narzissa%20Malfoy%20ist%20schon%20verstorben/works">Narzissa Malfoy ist schon verstorben</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-11-01</dd><dt class="status">Completed:</dt><dd class="status">2020-11-26</dd><dt class="words">Words:</dt><dd class="words">13104</dd><dt class="chapters">Chapters:</dt><dd class="chapters">5/5</dd><dt class="comments">Comments:</dt><dd class="comments">16</dd><dt class="kudos">Kudos:</dt><dd class="kudos">7</dd><dt class="hits">Hits:</dt><dd class="hits">126</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+    <style type="text/css">#workskin .Brief{background:#fcf8df;color:#0b1773;font-family:'Lucida Handwriting','Monotype Corsiva',Zapfino,'URW Chancery L',cursive;text-align:justify;padding:15px;width:80%;margin:0 auto 25px;display:block;box-shadow:0 3px 6px rgba(0,0,0,.16) , 0 3px 6px rgba(0,0,0,.23)}</style>  
+
+  <!-- end cache for work skin -->
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Die Nachtschwärze zwischen den Sternen
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Ginada/pseuds/Ginada">Ginada</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Blut ist dicker als Wasser, sagt man, aber gilt das auch, wenn Blut Blut vergossen hat? Andromeda Tonks erwacht am 1. November 2020 nicht nur zu der Nachricht, dass Albus und Scorpius gerettet sind, sondern sie hat auch eine bisher unbekannte Nichte. </p><p>Die Folgen der Ereignisse aus „Harry Potter und das Verwunschene Kind“ aus Andromedas Sicht.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Beta: <a href="https://www.fanfiktion.de/u/In+dubio+pro+coffee" rel="nofollow">In dubio pro coffee</a></p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27328087/chapters/66768775">Chapter 1</a>: Gute Neuigkeiten
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong><em>Sonntag, 1. November</em> <em>2020</em></strong>
+</p><p align="justify">Im ersten Moment wusste Andromeda nicht, was sie geweckt hatte. Sie setzte sich langsam auf und horchte in das stille Haus, sicher, dass sie nicht von allein aufgewacht war. „Es ist viertel vor drei“, murmelte der Wecker auf ihrem Nachttisch verschlafen, als sie ihn antippte.</p><p align="justify">Dann wiederholte sich das Geräusch, ein rasches, tackerndes Klopfen gegen das Fenster, und Andromeda wurde klar, dass es eine Eule war, die Einlass begehrte. Das war höchst ungewöhnlich, zu dieser unchristlichen Stunde schickte man normalerweise keine Eulen, es sei denn es war sehr dringend. Andromedas Gedanken flogen sofort Harry, dessen Sohn seit Tagen verschwunden war. Harrys Sohn Albus und sein Freund Scorpius, der ihr Großneffe war, wie ihr Gehirn ungebetenerweise automatisch hinzufügte. Gab es Neuigkeiten?</p><p align="justify">Eilig, mit einem Gefühl böser Vorahnung, schlug sie ihre Decke zurück und stand mit leisem Ächzen auf. Sie war jetzt siebenundsechzig Jahre alt, da hatte ihr Körper nur noch wenig Verständnis für plötzliche nächtliche Bewegungen.</p><p align="justify">Ein Schwall kalter Nachtluft schlug Andromeda entgegen, als sie den Vorhang zur Seite schob und das Fenster öffnete, um die Eule hereinzulassen. Es war tatsächlich die der Potters, wie sie jetzt erkennen konnte. „<em>Lumos</em>“, wisperte sie, und konnte jetzt auch sehen, dass <em>Teddy + Andromeda</em> eilig in Harrys Schrift auf die kleinen Pergamentrolle gekritzelt war. Mit fliegenden Fingern öffnete Andromeda die Rolle, während die Eule schon wieder lautlos in der Nacht verschwand.</p><p align="justify"><em>„Jungen sind zurück. Alle soweit gesund. H.“</em>, stand darin, und Andromeda ließ sich tief ausatmend zurück auf die Bettkante sinken. Sie starrte auf den Satz, las ihn wieder und wieder, und spürte, wie Erleichterung nach und nach durch ihren ganzen Körper flutete. Was für ein Glück, angesichts der Umstände. Ihr entging nicht, dass Harry „gesund“ geschrieben hatte, nicht, dass es ihnen gut ging. Aber sie lebten, und waren wieder in ihrer richtigen Zeit. Alles andere würde schon werden.</p><p align="justify">Andromeda stand auf, warf sich ein wollenes, gestricktes Tuch über die Schultern und schlüpfte in ihre Pantoffeln. Sie musste es Teddy gleich sagen, er hatte sich noch mehr Sorgen gemacht als sie. Albus war wie ein kleiner Bruder für ihn und er stand natürlich auch Harry viel näher als sie. „Ich glaube nicht, dass Harry es verkraftet, wenn Al nicht zurückkommt“, hatte Teddy völlig verzweifelt zu ihr gesagt.</p><p align="justify">Sie schlurfte mit etwas steifen Knien über den Flur zu Teddys Zimmer, öffnete die Tür und trat an sein Bett. Sanft strich sie ihm mit der Hand entlang seines Haaransatzes – sie waren hellbraun, wie meistens wenn er schlief – bis sie auf seiner Wange liegen blieb, eine vertraute Geste, mit der sie ihn als Kind unzählige Male geweckt hatte. Er schlug die Augen auf und blinzelte verschlafen.</p><p align="justify">„Nan? Ist was passiert?“</p><p align="justify">Teddy setzte sich ruckartig auf, die Decke verrutschte und neben ihm kam eine verstrubbelte Menge blonder Haare zum Vorschein. Victoire, seine Freundin. Andromeda hatte keine Ahnung gehabt, dass sie hier schlief. Aber das war jetzt egal.</p><p align="justify">„Harry hat geschrieben“, sagte sie leise. „Sie sind zurück und gesund!“</p><p align="justify">„Wirklich?“ In der Aufregung war Teddys stimme ziemlich laut und Victoire neben ihm begann sich zu regen. Teddy drückte Andromedas Hand. „Na Gott sei Dank. Ich bin ja so froh!“</p><p align="justify">„Ich auch, Teddy. Ich dachte, du solltest es gleich wissen. Aber schlaf ruhig weiter.“ Sie beugte sich vor und gab ihm einen Kuss auf die Stirn.</p><p align="justify">„Teddy? Was ist los?“, murmelte Victoire verschlafen, während sie sich aufsetzte. Ihr Blick fiel auf Andromeda und sie wurde ein wenig rot. „Oh. Hallo, Mrs Tonks“, murmelte sie verlegen.</p><p align="justify">Einen Augenblick war Andromeda versucht zu fragen, ob ihr Vater wisse, wo sie sei, aber sie war viel zu froh über die gute Nachricht, um streng zu sein, ganz davon abgesehen, dass sie in Victoires Alter schon selbst Mutter gewesen war, wie Teddy sie gern erinnerte.  </p><p align="justify">Teddy erzählte seiner Freundin rasch von der Nachricht. „Meint ihr, Harry hat auch in den Fuchsbau geschrieben?“, fragte sie. Albus war ihr Cousin, ihre ganze Familie war wahnsinnig vor Sorge gewesen.</p><p align="justify">„Bestimmt“, versicherte Andromeda. Sie gähnte. „Ich leg mich wieder hin. Wir sehen uns beim Frühstück.“</p><p align="justify"> </p><p align="justify">Victoire hatte sich nach einem schnellen Toast und einer Tasse Tee verabschiedet, weil sie angesichts der Neuigkeiten zu ihrer Familie wollte. Deshalb saßen jetzt nur noch Teddy und Andromeda am Frühstückstisch in der ein wenig heruntergewohnten, aber sehr sauberen und gemütlichen Küche. Andromeda war schon längst satt und betrachtete wohlwollend, wie Teddy, jetzt mit seinen üblichen türkisen Haaren, Honig auf eine gebutterte Scheibe Toast tropfte, sein üblicher Abschluss des Frühstücks. Eigentlich stand er ja längst auf eigenen Beinen, sie wusste, dass er mit seinen zweiundzwanzig Jahren nur ihr zu liebe noch bei ihr wohnte, auch wenn er es hartnäckig abstritt und meinte, dass er ohne sie hilflos, einsam und hungrig in einem Berg Schmutzwäsche leben würde. Außerdem war er als Fluchbrecher beruflich oft lange unterwegs, da lohnte es sich wirklich kaum für ihn, auszuziehen.</p><p align="justify">Im Tagespropheten stand natürlich noch nichts von der Sache, aber kurz nachdem die Zeitung angekommen war, erschien die Eule der Potters wieder mit einem Brief. Sie sah schon reichlich zerzaust und erschöpft aus und Andromeda stand auf, um ihr etwas Wasser und einen Eulenkeks zu holen.</p><p align="justify">Teddy hielt ihr kauend den geöffneten Brief hin, als sie zurück zum Tisch kam. Sie stellte der Eule das Wasserschälchen hin und las.</p><p> </p><p> </p><p></p><div class="Brief">
+  <p align="right">„<em>London, 1.11.20</em></p>
+  <p>
+    <em>Lieber Teddy, liebe Andromeda,</em>
+  </p>
+  <p>
+    <em>könntet ihr so bald wie möglich bei uns vorbeischauen? Am besten noch heute Vormittag. Ich würde gerne etwas mit euch besprechen.</em>
+  </p>
+  <p align="center">
+    <em>Harry</em>
+  </p>
+  <p><em>PS: Keine Sorge, es geht allen gut</em>.“</p>
+</div><p align="justify">Andromeda sah auf in Teddys fragendes Gesicht. „Ich weiß auch nicht“, murmelte sie nachdenklich.</p><p align="justify">„Meinst du, es hat was mit Albus‘ Verschwinden zu tun?“, überlegte er.</p><p align="justify">„Möglich. Warum sonst sollte er uns gerade jetzt so dringend sprechen wollen. Aber ich habe keine Ahnung, was es sein könnte.“ Geflissentlich ignorierte Andromeda den Hauch eines Verdachts, der versuchte, sich in einem Winkel ihres Geistes einzunisten. „Am besten, wir brechen sofort auf, wenn du fertig bist.“</p><p align="justify">Teddy nickte und trank eilig seinen Tee aus. „Ich geh zuerst ins Bad.“</p><p align="justify">Andromeda las weiter den Tagespropheten, während sie auf ihren Enkel wartete. Wie abgelenkt sie eigentlich war, merkte sie erst, als Teddy sagte: „Bad ist frei“, und sie mitten in einem Artikel über ein bedeutungsloses Quidditchtestspiel zwischen Wales und Deutschland war.</p><p align="justify">Da Andromeda sich niemals erlauben würde, unfrisiert und in nachlässiger Kleidung zu frühstücken, waren sie wenige Minuten später bereit zum Aufbruch. Nach Teddy griff sie in die kleine Porzellandose mit Blumenmuster auf dem Kaminsims, in der sie das Flohpulver aufbewahrte, warf es ins Feuer, sagte laut „Grimmauldplatz Nummer Zwölf“ und trat in die grünen Flammen, die sie zum Haus der Potters brachten.</p><p align="justify">Inzwischen war es nur noch ganz selten seltsam für Andromeda, in das Haus am Grimmauldplatz Nummer Zwölf zu kommen, das einmal ihrer Familie gehört hatte. Nur dann und wann dachte sie an die unangenehmen Stunden, in denen ihre bösartige Tante Walburga am Teetisch ihre muggelfeindlichen Tiraden über Andromeda, ihre Mutter, Schwestern, das Gebäck und die Sahne ergossen hatte und die angenehmen Stunden mit ihrem Lieblingscousin Sirius. Jetzt war es einfach das Haus der Potters, in dem Teddy, als Harrys Patenkind, einen beträchtlichen Anteil seiner Kindheit verbracht hatte. Er hatte sogar ein eigenes Zimmer und natürlich war auch Andromeda oft hier gewesen.</p><p align="justify">Teddy und Harry umarmten sich schon fest, als Andromeda mit der ihr anerzogenen Leichtigkeit und Eleganz aus dem Kamin trat. Wenn sie richtig wach und die Steifheit der Nacht verflogen war, bewegte sie sich immer noch geschmeidig.</p><p align="justify">Sie küsste Harry rasch zur Begrüßung auf beide Wangen und trat dann einen Schritt zurück, um ihn betrachten zu können, die eine Hand noch auf seinem Arm. Er sah erschöpft aus. Tiefe Schatten lagen unter seinen Augen, die Falten um seine Augen und Mundwinkel waren tiefer geworden. Obwohl das Verzweifelte aus seinem Blick verschwunden war, das Andromeda beim einzigen Treffen nach Albus‘ Verschwinden darin gesehen hatte, erschrak sie ein wenig über die Leere, die jetzt darin lag.</p><p align="justify">„Was ist passiert? Wo ist Albus?“, fragte Teddy, was auch Andromeda wissen wollte.</p><p align="justify">„Albus und Ginny schlafen oben, es war sehr spät gestern. Aber es geht ihm gut.“ Harry rieb sich die Augen unter der Brille. „Und was passiert ist? Kurz gesagt, wir, das heißt Ginny, Ron, Hermine, Draco und ich, sind ins Jahr 1981 gereist, haben Albus und Scorpius gerettet, zugesehen, wie meine Eltern gestorben sind, und sind wieder zurückgekommen.“</p><p align="justify">„Großer Gott!“, flüsterte Teddy und Andromeda umarmte Harry. Kein Wunder, dass er mitgenommen aussah.</p><p align="justify">„Ich kann euch später alles genauer erzählen. Aber ich wollte euch wegen was anderem sprechen. Gut, dass ihr gleich kommen konntet. Wollen wir uns hierhin setzen oder lieber in die Küche?“</p><p align="justify">„Ist Ginny noch auf ihrem Anti-Zucker-Kreuzzug? Dann hier“, befand Teddy, und sie setzten sich auf das gemütliche Sofa vor dem Kamin. Der Couchtisch war ein chaotisches Durcheinander von Zeitungen, Zeitschriften, Büchern und Grammophonplatten. Beez, der Hauself, bestand darauf, ihnen Tee und Obst zu bringen, als Harry schwach protestierte, sah er ihn streng aus seinen großen Augen an und sagte: „Mister Potter ist müde. Mister Potter <em>muss</em> Beezes starken schwarzen Tee trinken!“</p><p align="justify">„Hast du eigentlich Kontakt mit Draco?“, fragte Harry, als sie jeder mit einer Tasse Tee versorgt waren.</p><p align="justify">Andromeda warf ihm einen wachsamen Blick zu. „Kommt darauf an, was du darunter verstehst. Wir schreiben uns Karten zu Weihnachten und zu Geburtstagen. Aber ich habe ihn seit Narzissas Tod nicht getroffen. Und schon lange zuvor waren er und Astoria sehr zurückgezogen. Weshalb fragst du?“</p><p align="justify">„Ich glaube, er ist einsam“, murmelte Harry ziemlich leise. „Er kommt nicht gut mit dem Tod seiner Frau klar.“</p><p align="justify">Andromeda zog eine Augenbraue hoch und versteckte ihr Lächeln hinter ihrer Teetasse. „Sorge um Draco Malfoy? Aus deinem Mund? Ich habe mir sagen lassen, das kriege ich erst zu hören, wenn die Hölle zufriert. Oder ihr erwachsen werdet.“ Aber dann seufzte sie und sagte: „Ich mochte Astoria wirklich gern, weißt du. Obwohl ich sie gar nicht so oft getroffen habe. Sie hatte so eine Art, dass jeder sich sofort willkommen und aufgehoben gefühlt hat, und es wirkte so echt bei ihr, nicht wie diese aufgesetzte Höflichkeit. Wirklich tragisch, dass sie so früh sterben musste. Ich glaube, Draco wollte einfach alle Zeit, die sie noch hatten, so intensiv wie möglich nur mit ihr und ihrem Sohn verbringen. Jedenfalls haben wir uns seit Narzissas Tod nicht mehr gesehen, er hat sich ja völlig zurückgezogen. Auch vorher hatte ich im Grunde nur mit Narzissa Kontakt, und er war manchmal mehr oder weniger zufällig auch da.“</p><p align="justify">Sie war sehr froh, dass sie sich mit ihrer verbleibenden Schwester versöhnt hatte. Es hatte zwar immer noch Themen gegeben, die sie sorgfältig vermieden hatten, aber es war gut gewesen, wenigstens noch ein bisschen Familie zu haben und sie vermisste Narzissa auch nach drei Jahren noch schmerzlich.</p><p align="justify">Draco und sein Sohn waren außer Teddy ihre einzigen verbliebenen engeren Blutsverwandten. Eigentlich eine gute Frage, warum sie nicht mehr Kontakt hatten. Es war nicht so, dass sie Draco seine Vergangenheit übel nahm, er war viel zu jung gewesen, als das sie das könnte. Aber irgendwie fühlte sie sich immer etwas unwohl in seiner Gegenwart. Vielleicht lag es daran, dass sie von Narzissa zu viel darüber erfahren hatte, was er unter Voldemort erlitten hatte, nachdem er und seine Familie dessen Gunst verloren hatten. Sie hatte ihm danach nie mehr völlig unbefangen gegenüber treten können. Rückblickend hatte sie vielleicht nicht besonders energisch versucht, Treffen zu organisieren.</p><p align="justify">Andromeda sah nachdenklich zu Teddy. Vielleicht sollten sie das ändern, es war schließlich auch seine letzte Familie, und sie würde nicht ewig leben.</p><p align="justify">„Ich habe mal überlegt, ob ich ihm schreiben soll. Scorpius meine ich“, sagte Teddy zu ihrer Überraschung. „Ich wusste von Al, oder eigentlich eher James, dass er es nicht leicht hat in der Schule, und dann gibt es ja noch diese dummen Gerüchte er sei Voldemorts Kind.“</p><p align="justify">Andromeda bemerkte, wie Harry dabei das Gesicht verzog.</p><p align="justify">„Aber irgendwie bin ich nie dazu gekommen“, fuhr Teddy fort. „Und dann war er weg.“ Er nahm sich einen Apfelschnitz und seufzte. „Ich bin froh, dass er wieder da ist, auch wenn ich ihn kaum kenne. Er und Draco sind immerhin unsere einzigen Verwandten.“</p><p align="justify">Andromeda zuckte innerlich ein wenig zusammen, als Teddy das erwähnte. Sie hatte nicht gewusst, dass er auch darüber nachdachte.</p><p align="justify">„Hm, ja. Deswegen wollte ich mit euch sprechen“, sagte Harry mit leicht gequältem Gesichtsausdruck, als ob ihm eine sehr unangenehme Aufgabe bevorstünde, was Andromeda ein wenig beunruhigte.</p><p align="justify">„Es hat sich nämlich ergeben, dass Draco und Scorpius nicht die einzigen verbliebenen Black-Nachfahren sind, neben euch natürlich. Du hast noch eine Nichte, Andromeda.“</p><p align="justify">Eigentlich wusste sie es da schon, einen Augenblick blitzte die Erkenntnis klar durch ihren Geist, bevor sie sie mit letzter Hoffnung wieder beiseiteschob.</p><p align="justify">„Wie kann das sein?“, fragte sie entgeistert. „Narzissa hätte nie …“ Narzissa hätte Lucius nie betrogen. Und doch <em>musste</em> das die Lösung sein, denn sonst …</p><p align="justify">„Nein, nicht Narzissa. Sie ist Bellatrix‘ Tochter.“</p><p align="justify">Harry rieb sich über das übernächtigte Gesicht und spätestens jetzt wusste Andromeda ganz sicher, worauf es hinauslief. Sie hatte ihre Schwester Bellatrix schließlich gekannt. Bellatrix, die Nymphadora getötet hatte. Bellatrix, die ihr schon als junges Mädchen vom „Dunklen Lord“ vorgeschwärmt hatte. Bellatrix, die immer nur Voldemort geliebt hatte. Vielleicht hatte sie es schon seit Jahren geahnt, irgendwo in einem verschlossenen Winkel ihres Geistes, zumindest dass die Möglichkeit bestand</p><p align="justify">„Und Voldemorts. Die Tochter Voldemorts, von der Hermine berichtet hat und die Al und Scorpius entführt hat, ist auch die Tochter von Bellatrix Lestrange.“</p><p align="justify">Teddy keuchte auf. Natürlich war er überrascht, dachte Andromeda traurig. Er hatte seine Tante Bellatrix ja nicht gekannt. Sie fühlte sich seltsam leer. Was sollte sie von der Mitteilung halten? Sie wusste es nicht. Dass Bellatrix alles, <em>alles</em>, für Voldemort tun würde, hatte sie immer gewusst und sie hatte ihr ihre eigene Tochter, das Wertvollste überhaupt, genommen, noch mehr hassen konnte sie sie nicht.</p><p align="justify">„Was ist jetzt mit ihr?“, fragte sie vorsichtig. „Lebt sie?“</p><p align="justify">Harry nickte. „Ja. Sie ist im Ministerium in Untersuchungshaft. Aber sie wird wohl eine lange Zeit nach Askaban müssen. Sie hat einen Schüler, Craig Bowker, umgebracht und den Cruciatus-Fluch verwendet, ganz davon abgesehen, dass sie versucht hat, Voldemort zurückzubringen.“</p><p align="justify">„Sieht also nicht nach einer fröhlichen Familienzusammenführung aus“, murmelte Teddy düster.</p><p align="justify">„Nein“, bestätigte Harry. „Eher nicht. Aber ich dachte, ihr solltet es wissen, bevor Hermine es heute Nachmittag öffentlich macht. Ihr wisst ja, wie das ist, wir können leider nicht ausschließen, dass ein paar Idioten das negativ auf eure Familie beziehen werden.“</p><p align="justify">Andromeda machte eine abweisende Geste mit der Hand. „Damit kommen wir klar, die Leute beruhigen sich immer wieder. Aber danke, dass du es uns gesagt hast.“</p><p align="justify">„Deswegen habe ich wegen Draco gefragt“, sagte Harry. „Ihn geht es ja mehr an als mich, und wahrscheinlich werden er und Scorpius mehr Ärger davon haben als ihr beide, auch wenn ich hoffe, dass zumindest die Gerüchte um Scorpius jetzt ein Ende haben. Aber selbst wenn ihr mehr Kontakt hättet, wäre er wohl nicht die richtige Person gewesen, um die Nachricht zu überbringen. Er ist nicht besonders gut auf sie zu sprechen, gelinde gesagt.“</p><p align="justify">Er sah ihre fragenden Gesichter und sagte mit einem tiefen Seufzen: „Es war Scorpius, den sie mit dem Cruciatus gefoltert hat.“</p><p align="justify">Andromeda spürte, wie ihr das Blut aus dem Gesicht wich beim Gedanken an ihren vierzehnjährigen Großneffen unter dem Cruciatus-Fluch und Teddy murmelte düster, dass er sie bis jetzt nicht besonders sympathisch finde.</p><p align="justify">Harry stand auf. „Ich muss zur Arbeit, tut mir Leid, dass ich nur so kurz Zeit habe, aber ich wollte es euch persönlich sagen. Ihr könnt gerne noch hierbleiben, wenn ihr wollt, Ginny und Albus wachen bestimmt bald auf.“</p><p align="justify">Andromeda und Teddy standen ebenfalls auf und verständigten sich mit einem stummen Blick. „Vielen Dank, aber ich glaube Mutter und Sohn können ein paar Stunden Ruhe gebrauchen“, sagte sie und Harry nickte dankbar. „Wann ist die Pressekonferenz?“</p><p align="justify">„Um fünfzehn Uhr dreißig, im Atrium“, sagte Harry. Sie verabschiedeten sich.</p><p align="justify"> </p><p align="justify"> </p><p align="justify">Andromeda beschloss, die U-Bahn zu nehmen, um zum Ministerium zu fahren. Es dauerte kaum länger, als wenn sie zur Winkelgasse flohen und von dort zu Fuß gehen würde und ab und zu war sie gern in der Muggelwelt, es erinnerte sie an ihren verstorbenen Mann. Im letzten Moment dachte sie daran, ein Tuch einzupacken, mit dem Sie Mund und Nase bedecken konnte, wie es bei den Muggeln jetzt üblich war.</p><p align="justify">Sie stieg am Leicester Square aus und ging erst einige Meter durch die einst blitzende Hauptstraße, unheimlich menschenleer wegen des Virus' in der Muggelwelt, bis sie in die heruntergekommene Seitengasse abbog, wo der Besuchereingang des Ministeriums lag, die genau so leer war wie immer. Sie trat in den als kaputte Telefonzelle getarnten Eingang und sagte leise die Ziffern vor sich her, die sie eingeben musste. Sechs – zwei – vier – vier – drei. Erleichtert hörte sie die kühle, amtliche Frauenstimme, die sie begrüßte und folgte ihren Anweisungen.</p><p align="justify">Es war nicht zu übersehen, wo die Pressekonferenz stattfand.  Obwohl Sonntag war und heute kaum jemand hier arbeitete drängten sich in dem Bereich des Atriums so viele Menschen, dass die genervten Sicherheitszauberer schon einen gesonderten Bereich für die Journalisten direkt vor dem Rednerpult abgetrennt hatten, um ihnen trotz der vielen schaulustigen Besucher die Arbeit zu ermöglichen. Andromeda hielt sich im Hintergrund und zog sich ihren mit violettem Seidenkrepp überzogenen Hut etwas tiefer ins Gesicht. Nicht, dass sie sich verstecken wollte, aber sie musste es ja auch nicht herausfordern, erkannt zu werden. Immer wieder schaute sie, ob sie Draco irgendwo entdecken konnte, aber er war anscheinend nicht gekommen.</p><p align="justify">Die Menge begann aufgeregt zu Summen, als Hermine und Harry zusammen an das Rednerpult traten und verstummte dann, als Hermine ihre Stimme magisch verstärkte und die Anwesenden zur dritten außerordentlichen Konferenz begrüßte. Sie trug eine seriöse dunkelblaue Robe aus schwerem Wollstoff und einen dazu passenden traditionellen Spitzhut, der ihre buschigen Haare völlig verdeckte und Andromeda fragte sich kurz, ob sie sich absichtlich so unmuggelhaft wie möglich angezogen hatte, um nicht noch mehr Angriffsfläche in dieser schwierigen Situation zu liefern.</p><p align="justify">„Sehr geehrte Hexen und Zauberer, Sie haben vermutlich schon Gerüchte gehört und ich bin sehr froh, bestätigen zu können, dass Delphini Lestrange, Tochter von Voldemort und Bellatrix Lestrange, gefasst und in unsere Zeit zurückgebracht werden konnte. Die beiden Schüler, die sie entführt hatte, sind ebenfalls wohlbehalten zurück bei ihren Familien und die Gefahr, dass etwas mit unserer Zeit geschieht, gebannt“, las Hermine ihr vorbereitetes Statement. „Miss Lestrange befindet sich zurzeit in einer Gewahrsamszelle des Ministeriums, wo sie bis zu ihrem Prozess bleiben wird.“</p><p align="justify">Lestrange, natürlich war ihr offizieller Nachname Lestrange, nicht Black, warum hatte sie nicht daran gedacht? Das war Bellas Nachname gewesen und damit der ihrer Tochter, ob nun Rodolphus der Vater war oder nicht. Doch es fühlte sich seltsam an. Sie sollte nur erleichtert sein deswegen, aber mischte sich womöglich ein Hauch Enttäuschung darunter?</p><p align="justify">Harry nannte ein paar Eckpunkte über den Ablauf von Delphinis Verhaftung, ohne zu erwähnen, dass er seine Eltern hatte sterben sehen und dann durften die Journalisten Fragen stellen. Andromeda beobachtete, wie die Fragen auf Harry und Hermine einprasselten und war sich plötzlich nicht mehr sicher, warum sie überhaupt gekommen war. Das einzige Neue, das sie erfuhr, war, dass Delphini von Euphemia Rowle aufgezogen worden war. Sie erinnerte sich vage an eine verbitterte kinderlose Frau, die ab und zu ihre Mutter besucht hatte. Ihr Bruder und seine Familie waren später Todesser geworden und im Krieg gestorben, der Bruder im ersten, sein Sohn im zweiten Krieg. Dieser Frau war ein Kind anvertraut worden?</p><p align="justify">Die Journalisten hatten sich inzwischen auf den Zeitumkehrer eingeschossen. „Wie ist eine so lange Zeitreise möglich? Das galt als technisch ausgeschlossen. Die Öffentlichkeit verdient eine Erklärung!“, rief ein dicker, schwitzender Mann, dessen Schreibblock und Gänsefeder seinen weiten Rücken als Schreibunterlage benutzten.</p><p align="justify">„Der Zeitumkehrer wurde von Theodore Nott entwickelt, der dafür zurzeit eine Haftstrafe absitzt. Wie genau der Zeitumkehrer funktioniert kann ich Ihnen auch nicht sagen, er befindet sich jetzt bei den Unsäglichen in der Mysteriumsabteilung, die dazu gegebenenfalls später etwas veröffentlichen werden.“ Es gab unterdrückte Protestrufe, die Unsäglichen waren nicht gerade dafür bekannt, sehr mitteilungsfreudig zu sein. „Wenn Sie mich nach meiner persönlichen Meinung fragen, ist es eine völlige Neuentwicklung, die höchstens entfernt auf den alten Zeitumkehrern aufbaut.“</p><p align="justify">Andromeda war sich sicher, dass Hermine diese Frage selbst brennend interessierte und sie sich am liebsten persönlich in die Untersuchung stürzen würde. Aber natürlich hatte sie als Zaubereiministerin diese Freiheit nicht.</p><p align="justify">„Wie ist es möglich, dass niemand von der Existenz von Voldemorts Kind gewusst hat?“ Wenn es nicht seine Stimme eh verraten hätte, hätte Andromeda spätestens an der Unbekümmertheit, mit der er „Voldemort“ sagte gewusst, dass dieser Reporter nicht älter als Mitte Zwanzig war. „Mindestens die engsten Vertrauten von Bellatrix Lestrange müssen es doch gewusst haben. Was ist mit ihrer Schwester und ihrer Familie?“</p><p align="justify"><em>Hat Narzissa etwas gewusst? </em>Diese Frage nagte schon die ganze Zeit an ihrem Unterbewusstsein. Delphini war am 6. Juni 1997 geboren worden, das hatte Harry gerade gesagt. Damals hatte Bella bei Zissy gewohnt. Wie konnte es sein, dass Zissy nichts gemerkt haben sollte? Sie hatte sich mit Narzissa versöhnt. Sollte jetzt herauskommen, dass sie so etwas vor ihr geheim gehalten hatte, bekäme das einen bitteren Nachgeschmack.</p><p align="justify">Andromeda beschloss, zu gehen, bevor sie doch noch jemand erkannte. Sie musste mit Draco sprechen, sie würde ihm von zuhause sofort eine Eule schicken.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27328087/chapters/66822970">Chapter 2</a>: Frühstück mit Draco
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <em><strong>Montag, 2. November 2020</strong> </em>
+</p><p align="justify">Draco hatte prompt auf ihre Eule geantwortet und sie für den nächsten Tag zum Frühstück eingeladen. Es war ihr ganz recht, denn Teddy musste mal wieder los, um irgendwelche Flüche zu brechen, in Nordschweden diesmal, und der erste Tag ohne ihn war immer ziemlich einsam.</p><p align="justify">Sie nannte ihren Namen und ihr Anliegen der geschmiedeten Krokodilschnauze an der eisernen Pforte des Manors, woraufhin es sein zahniges Gesicht zu einem Lächeln verzog und das Tor aufschwang. Andromeda war lange nicht mehr hier gewesen, seit Narzissas Tod genau genommen. Alles sah unverändert aus, der gepflegte Rasen leuchtete grün, obwohl schon November war – allerdings war dazu bei den inzwischen immer wärmeren Wintern vielleicht gar keine Magie mehr nötig. Nur die Pfauen die sonst über das Gelände spaziert waren gab es nicht mehr, die waren Lucius‘ Steckenpferd gewesen.</p><p align="justify">Draco und Scorpius wohnten immer noch in dem kleineren westlichen Nebengebäude, auch nach dem Tod seiner Eltern war er nicht in das Hauptgebäude gezogen. Natürlich nicht, dachte Andromeda. Dort hatte Voldemort sein Hauptquartier errichtet und  sie wusste zwar nicht alles, was dort passiert war, aber Narzissa hatte ihr genug erzählt, dass sie sich wunderte, wie Draco überhaupt hatte hierbleiben können. Vielleicht kam ihr deshalb das große Hauptgebäude mit seinen dunklen, verhangenen Fenstern so drohend vor. Sie war froh, als sie es passiert hatte.</p><p align="justify">Draco empfing sie an der Haustür. Sie begrüßten sich mit den förmlichen Wangenküssen, die sie beide als Kind gelernt hatten. Er führte sie an den gedeckten Tisch im Esszimmer und erst als sie saßen hatte sie Zeit, ihn richtig anzusehen. Andromeda hatte ihren Neffen einige Jahre nicht gesehen und erschrak etwas, wie schlecht er aussah. Da waren nicht nur die offensichtliche Müdigkeit und die tiefen Schatten unter seinen Augen, die auf akuten Schlafmangel deuteten. Nein, er war mehr gealtert, als die Jahre rechtfertigen konnten, war dünner und hagerer geworden, hatte Falten auf der Stirn und neben dem Mund bekommen. Außerdem hatte er seine Haare wachsen lassen und erinnerte sie jetzt unangenehm an seinen Vater. Vor allem aber lag in seinen Augen eine Traurigkeit, die sie erschreckte. Vielleicht hatte Harry Recht mit seiner Sorge.</p><p align="justify">„Wie geht es Scorpius?“, fragte sie, während eine Hauselfe ihr Tee einschenkte. ‚Wie geht es dir?‘, wollte sie eigentlich fragen, aber sie war sich sicher, nur eine Floskel als Antwort zu bekommen und sparte sich deshalb die Frage. Sie hatten sich nie nahe gestanden, auch nicht nach ihrer Versöhnung mit Narzissa, er war immer zurückhaltend geblieben.</p><p align="justify">„Den Umständen entsprechend gut, wie man so sagt“, sagte Draco. Er nippte an seinem Tee. „Bitte, fang an zu essen“, bat er, als er sah das Andromeda ebenfalls bisher nur Tee genommen hatte. Er legte sich ein Croissant auf den Teller und zupfte ein Stück ab, ohne es zu Essen. „Harry hat dir schon erzählt, was passiert ist?“</p><p align="justify">„Im Groben, ja.“ Sie nahm sich Speck und Bohnen.</p><p align="justify">„Dann weißt du, dass diese … Person … Scorpius mit dem Cruciatus belegt hat. Die Heilerin sagt, er hat keine körperlichen Folgen, aber wir warten noch auf ein paar Testergebnisse. Und ich weiß, dass er geschockt und erschüttert ist, auch wenn er nicht wirklich darüber geredet hat. Er hat gesehen, wie ein Mitschüler ermordet wurde. Eigentlich drei Menschen, auch wenn wir die Potters zum Glück nicht direkt sehen konnten und die kannte er ja nicht.“</p><p align="justify">Er zerrupfte das Croissantstück in kleinere Croissantstückchen. Ohne sie anzusehen sagte er: „Ich fühle mich wie ein Versager als Vater. Wegen meiner Fehler leidet er unter bösartigen Gerüchten, seine Mutter ist tot, er ist keine fünfzehn Jahre alt und weiß, wie sich der Cruciatus anfühlt und hat den Tod gesehen, nicht mal davor konnte ich ihn schützen. Er ist sogar noch jünger, als <em>ich</em> bei den Erfahrungen war, und es war wirklich nicht gut für mich. Er hat alles erlebt, das ich ihm ersparen wollte.“</p><p align="justify">Harry hatte Recht, Draco <em>war</em> einsam, dachte Andromeda, während sie zuhörte, was er sagte. Er erzählte ihr das, obwohl sie sich seit drei Jahren nicht gesehen hatten.</p><p align="justify">„Nichts davon ist deine Schuld“, sagte sie beschwichtigend. „Du warst fast noch ein Kind im Krieg, du kannst nichts für Astorias Blutfluch und die jüngsten Ereignisse sind allein Delphinis Schuld.“</p><p align="justify">Er öffnete den Mund und sie wusste, er wollte widersprechen, also redete sie schnell weiter: „Außerdem können wir unsere Kinder nicht vor allem beschützen, sie treffen irgendwann ihre eigenen Entscheidungen. Glaub mir, ich weiß das. Scorpius ist gesund, er lebt, er wird darüber hinwegkommen. Es ist Frieden, anders als bei dir damals. Ihr werdet noch viele schöne Erlebnisse haben.“</p><p align="justify">Draco klappte den Mund wieder zu und schluckte. „Entschuldige“, sagte er mit belegter Stimme. „Ich habe nicht daran gedacht, dass du deine Tochter verloren hast.“</p><p align="justify">Der alte Schmerz, der sie durchflackerte, hatte auch nach über zwanzig Jahren seine Schärfe nicht ganz verloren, aber Andromeda winkte ab. „So war das gar nicht gemeint.“</p><p align="justify">„Wie hast du es überlebt? Wie konntest du weitermachen?“, fragte Draco mit plötzlicher Intensität in der Stimme. „Du hast deinen Mann und dein Kind verloren. Woher hattest du die Kraft? Ich kann es mir gar nicht vorstellen … Astoria zu verlieren war schon unendlich hart, und ich hatte Zeit, mich darauf einzustellen. Wenn Scorpius etwas zustößt …. ich glaube nicht, dass ich damit leben könnte.“</p><p align="justify">„Es war hart“, gab Andromeda zu. Manchmal wusste sie selbst nicht, wie sie die erste Zeit nach dem Krieg überstanden hatte. Oder doch, eigentlich wusste sie es schon. Sie zwang ein wenig Leichtigkeit in ihre Stimme. „Aber ich hatte Teddy. Er war ja noch winzig, erst zweieinhalb Wochen alt. Er brauchte mich, er brauchte meine ganze Aufmerksamkeit. Ich musste stark sein für ihn.“ Sie sah Draco an. „Scorpius ist älter, aber er braucht dich trotzdem, das weißt du, ja?“</p><p align="justify">Draco seufzte. „Ja, ich weiß. Ich wünschte nur, Astoria wäre hier, sie war so viel besser im Umgang mit so was. Wird das jemals besser?“</p><p align="justify">Seine grauen Augen fixierten ihren Blick und sie wusste, dass ihm die Antwort wichtig war. Sie seufzte ebenfalls. „Ja, wird es. Versteh mich nicht falsch, ich vermisse meinen Mann immer noch. Weil ich ihn liebe und weil ich oft einfach gern seinen Rat hätte. Aber ich glaube nicht, dass Teddy deshalb ein schlechtes Leben hatte, er ist wunderbar. Ich hatte auch Glück, dass ich Hilfe hatte, Harry ist ja sein Pate und mit ihm kam Ginny und damit eine ganze Großfamilie.“ Sie musterte Draco. „Was ist eigentlich mit Astorias Seite der Familie?“</p><p align="justify">„Queenie lebt in Frankreich und Daphne spricht nicht mit mir“, sagte Draco kurz, das war anscheinend kein Thema, worüber er sprechen wollte.</p><p align="justify">„Ah. Aber ich und Teddy sind da. Und ich glaube auch Harry und Ginny, wenn du möchtest“, sagte sie. „Immerhin sind eure Söhne beste Freunde.“</p><p align="justify">Draco verzog das Gesicht. „Ich weiß. Sie kommen sogar heute Abend zum Essen. Ich habe zugestimmt, weil ich denke dass es gut ist für die Jungen, miteinander über das Geschehene zu sprechen, aber es fällt mir gerade noch sehr schwer, nicht sauer auf Potter zu sein.“ Er nahm noch einen Schluck Tee und steckte endlich ein Stück des Croissants in den Mund. „Und Granger“, fügte er hinzu. „Ehrlich, wie kann man so leichtsinnig sein und so schlecht auf etwas so Gefährliches wie einen neuartigen Zeitumkehrer aufpassen, dass ein paar Viertklässler ihn stehlen können. Granger ist die Zaubereiministerin und Potter der Chef der magischen Strafverfolgung, da erwarte ich einen halbwegs verantwortungsbewussten Umgang mit solchen Gegenständen! Und wenn Potter seine Zunge unter Kontrolle gehabt hätte, wäre der Streit mit Albus nie so eskaliert. Wirklich, um Scorpius Willen versuche ich, nicht zu wütend zu sein, aber es fällt mir schwer.“</p><p align="justify">„Ich denke sie wissen, dass sie Fehler gemacht haben“, sagte Andromeda.</p><p align="justify">Draco schüttelte den Kopf, nicht zu ihrer Aussage, sondern zu den Geschehnissen. „Trotzdem. Wenn ich mir vorstelle, wie viel Glück wir gehabt haben, Scorpius und Albus zurückzubekommen … und ich bin mir sicher, Craig Bowkers Eltern denken anders darüber.“</p><p align="justify">Ja, da hatte er Recht. Andromedas Herz schmerzte für die Bowkers, sie wusste, wie es sich anfühlte, ein Kind zu verlieren.</p><p align="justify">„Ich versuche, so gut es geht, nicht wütend auf Albus zu sein“, sagte Draco, ein wenig erschöpft von seiner Tirade. „Obwohl er Scorpius in das ganze Elend reingezogen hat. Aber er ist sein bester und einziger Freund und ich bin wirklich froh, dass er ihn hat. Außerdem weiß ich, wie es ist, dumme Entscheidungen zu treffen, um einer übermächtigen Vaterfigur zu gefallen, da bin ich in keiner Position zu urteilen. Ich habe ähnliche dumme Wege mit schlechteren Intentionen eingeschlagen.“</p><p align="justify">Seine Selbstreflektion überraschte sie, eigentlich das ganze Gespräch. Das war mehr, als sie bisher je gesprochen hatten, zumindest mehr Inhalt. Wenn er da gewesen war, als sie Narzissa besucht hatte, hatten sie sich meist auf Smalltalk oder unverfängliche Themen wie Musik und Kunst beschränkt, fast alles, was sie über ihn wusste, wusste sie von ihrer Schwester.</p><p align="justify">„Es ist geschehen, was geschehen ist, es hilft auch nichts, sich jetzt zu ärgern“, sagte sie. „Du könntest auch auf Nott wütend sein, dass er den Zeitumkehrer überhaupt entwickelt hat, oder auf Scorpius, dass er Albus gefolgt ist. Nicht, dass ich das empfehlen würde.“</p><p align="justify">„Theo kann nichts dafür, wenn es nach ihm gegangen wäre, hätten die Kinder den Zeitumkehrer nie in die Hände gekriegt“, sagte Draco und Andromeda erinnerte sich, dass Narzissa gesagt hatte, dass die beiden eng befreundet waren. Leider ein Freund, der Draco nicht helfen konnte, denn er saß in Askaban.</p><p align="justify">„Aber du bist nicht gekommen, um über meine Probleme zu sprechen“, sagte Draco jetzt. „Entschuldige. Wir haben Familienangelegenheiten zu besprechen, so unangenehm das in diesem Fall auch ist.“</p><p align="justify">Andromeda konnte nicht an sich halten und fragte: „Hast du etwas gewusst? Oder geahnt, dass Bella ein Kind hat?“</p><p align="justify">„Nein, absolut nicht. Glaub mir, ich hätte <em>alles</em> genutzt, um diese Gerüchte um Scorpius loszuwerden.“ Er sah sie aufmerksam an. „Du fragst dich, ob Mutter etwas gewusst hat.“</p><p align="justify">Beklommen nickte sie.</p><p align="justify">„Darüber habe ich mir auch den Kopf zerbrochen, wieder und wieder. Aber ich glaube es nicht. Sie hätte es mir gesagt, spätestens nach dem Krieg. Ich weiß nicht wie, aber irgendwie hat Tante Bella alle getäuscht. Es wussten ja anscheinend nur sie, er, Onkel Rodolphus und Euphemia Rowle.“</p><p align="justify">Nachdenklich rührte er Milch in seine frische Tasse Tee. „Sie soll im Juni siebenundneunzig geboren sein. Das erklärt, warum sie damals nicht in der Schule war bei“ – er räusperte sich. „Nun ja, Dumbledores Tod. Ich erinnere mich, dass ich mich gefragt habe, warum.“ Er senkte den Blick, sah Andromeda nicht mehr an sondern auf seine Hände. „Naja, danach wurde meine Situation hier rapide schwieriger und ich hatte nicht viele Möglichkeiten, etwas zu bemerken, es hätte mich wohl auch nicht gekümmert. Meinen Eltern dürfte es ähnlich ergangen sein. Und ich vermute, dass das Kind gleich nach der Geburt zu Euphemia gebracht wurde. Tante Bellatrix war ja nun wirklich nicht der mütterliche Typ.“</p><p align="justify">Er sah wieder hoch und lächelte leicht. „Mutter hätte das nicht geheim gehalten, auch nicht vor dir. Ich weiß, dass ihr eure Versöhnung sehr viel bedeutet hat.“</p><p align="justify">Andromeda atmete tief aus. „Gut. Danke.“ Sie schob ihren Teller ein Stück von sich. Es war sehr gut gewesen und der Tisch immer noch übervoll mit Essen, von den Madeleines hatte sie noch nicht mal probiert, aber sie war satt. „Aber was unternehmen wir jetzt ihretwegen? Delphini meine ich.“</p><p align="justify">„Wir halten den Ärger der Öffentlichkeit aus, distanzieren uns wenn nötig und ansonsten nichts?“, schlug Draco vor. „Ist dein Haus gut gesichert? Auch gegen Heuler und Stinkbomben?“</p><p align="justify">Nein, war es nicht, dafür hatte es nie einen Grund gegeben. Sie war sich auch nicht sicher, ob das jetzt so sein würde, sie konnte ja nichts für ihre Schwester, dass würde die große Mehrheit der Öffentlichkeit sicher auch so sehen, auch wenn Draco anders zu denken schien.</p><p align="justify">Er lachte trocken auf. „Kannst du dir den Skandal vorstellen, der das wäre, wenn der Name Black noch irgendeinen Wert hätte? Oder Lestrange oder Malfoy, wenn wir schon dabei sind. Ein außereheliches Kind, mit Wissen und Billigung des Ehemanns! Aber hier ist es wohl ausnahmsweise mal gut, wie es ist. Ich warte schon auf den Brief der verbliebenen Lestranges, die wollen, dass sie ihren Nachnamen ablegt.“</p><p align="justify">Es tat weh, ein wenig zumindest. Sie war aufgewachsen in dem Bewusstsein, zu etwas Großem zu gehören und obwohl sie sich losgesagt hatte war es immer noch merkwürdig, dass ihre Familie, uralt und in ihrer Kindheit scheinbar unzerstörbar, nicht mehr existierte.</p><p align="justify">„Ich weiß nicht …“, fing sie an. „Sie ist ja trotzdem, nun ja, Familie. Sie gehört irgendwie zu uns. Und weder du und ich, noch Teddy und Scorpius haben Familie im Übermaß.“</p><p align="justify">Dracos Mund verzog sich zu einem harten Strich. Er schüttelte den Kopf. „Von mir aus kann sie in Askaban verrotten. Diese Frau hat meinen Sohn gefoltert, es ist mir egal, ob sie meine Cousine ist oder sonst was.“</p><p align="justify">„Ich verstehe natürlich, dass du wütend bist“, sagte Andromeda beschwichtigend. Aber Familie war Familie. Das blieb, auch nach Jahrzehnten der Wut und des Ärgers. Sie hatte es selbst erlebt und die späte Versöhnung mit ihrer Schwester war ein großes Glück für sie beide gewesen. Doch vielleicht war es zu früh für Draco, darüber nachzudenken, die Wunden waren noch zu frisch.</p><p align="justify">„Würde es dich stören, wenn ich Kontakt zu ihr aufnehme?“, fragte sie deshalb nur.</p><p align="justify">Draco stieß die Luft durch die Nase aus und fiel ein wenig in sich zusammen. „Nein“, sagte er schließlich. „Sie <em>ist</em> unsere Verwandte, sie <em>hat</em> unser Blut. Aber ich kann und will nichts mit ihr zu tun haben.“</p><p align="justify">Sie wurden unterbrochen, als Scorpius in den Raum getapst kam. Barfuß, mit verstrubbelten Haaren und im Schlafanzug war offensichtlich, dass er geradewegs aus dem Bett kam. Verlegen blieb er in der Tür stehen.</p><p align="justify">„Oh. Guten Morgen, Tante Andromeda. Ich wusste nicht, dass du da bist, sonst wäre ich ordentlich gekleidet.“ Er wurde ein wenig rot. Andromeda hatte ihn seit Narzissas Beerdigung vor drei Jahren nicht mehr gesehen und war überrascht, wie groß er geworden war. Scorpius musste inzwischen so groß wie sie sein. Natürlich, schalt sie sich innerlich, er war fast fünfzehn, Teddy war in dem Alter sogar noch größer gewesen. Wieso merkte man immer erst so richtig, wie schnell die Zeit verging und wie alt man geworden war, wenn man die Kinder betrachtete? Die drei Jahre hatten kaum einen Unterschied für sie gemacht, aber Scorpius war in dieser Zeit von einem schmalen Kind zu einem spillerigen Jugendlichen geworden, dessen markante Kieferknochen seinem Gesicht einen erwachsenen Ausdruck gab, der noch nicht so recht zu seinen schmächtigen Schultern passen wollte.</p><p align="justify">„Also meinetwegen brauchst du keine Umstände zu machen“, beruhigte sie ihn. Tatsächlich erleichterte es sie irgendwie, Draco und Scorpius wirkten oft so steif im Umgang miteinander, da war sie froh zu sehen, dass er zumindest für seinen Vater nicht den Drang zur Förmlichkeit hatte, den sie aus ihrem Elternhaus noch gut kannte. „Ich bin sehr froh, dass du heil zurück bist, Scorpius.“ Sie lächelte ihn an und er lächelte vorsichtig zurück.</p><p align="justify">„Danke.“ Er ließ sich auf den Stuhl neben Draco fallen, ignorierte seinen besorgten Blick und lud sich Rührei und Speck auf den Teller. Er nahm aber den Trank, den Draco ihm wortlos in ein Wasserglas träufelte.  „Ihr sprecht über Delphini?“ Trotz seines fragenden Tonfalls war es keine Frage, das wusste Andromeda. Sie erinnerte sich wieder, dass er schon als kleiner Junge sehr intelligent gewesen war und es war ja auch die naheliegende Erklärung, warum sie nach Jahren zum ersten Mal wieder hier war.</p><p align="justify">Sie nickte. „Ja. Ich habe es gerade schon deinem Vater erzählt. Ich würde gerne mal mit ihr sprechen, sie ist immerhin meine Nichte. Aber wenn du dich schlecht damit fühlst, lasse ich es. Und auf keinen Fall darfst du denken, dass ich in irgendeiner Weise entschuldigen würde, was sie getan hat. Besonders nicht, was sie dir angetan hat.“</p><p align="justify">Scorpius kaute eine Weile, schluckte dann sorgfältig bevor er antwortete. „Nein, es ist in Ordnung denke ich. Aber sei vorsichtig, Tante Andromeda. Sie ist sehr manipulativ.“</p><p align="justify">Sie unterdrückte ein Lächeln, er sprach mit ihr wie ein Erwachsener. „Danke, Scorpius. Ich werde vorsichtig sein. Ich bin nur neugierig.“</p><p align="justify">„Sie kann sehr nett sein“, sagte er etwas gequält und Draco legte beruhigend seine Hand auf Scorpius‘ Arm.</p><p align="justify">Andromeda verabschiedete sich bald, auch hier hatte sie das Gefühl, dass die beiden die private Zeit gebrauchen konnten. Eltern sahen ihre Hogwarts-Kinder selten genug.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27328087/chapters/66920896">Chapter 3</a>: Craig Bowkers Beerdigung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/27328087#chapter_3_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <em><strong>Mittwoch, 4. November 2020</strong> </em>
+</p><p align="justify">Sie trafen sich alle auf der Beerdigung wieder. Andromeda, Draco, Ginny, Harry, Hermine und Ron. Andromeda hatte lange überlegt, ob sie gehen sollte. Sie wollte die Familie nicht stören, hatte aber gleichzeitig das Gefühl, dem ermordeten Jungen diese Respektbezeugung schuldig zu sein. Sie sollte inzwischen wissen, dass es zwecklos war, sich für die Taten ihrer Verwandten schuldig zu fühlen, aber irgendwie war es etwas anderes, wenn es nicht Bellatrix sondern jemand anderes war. Eine Abwechslung, auf die sie hätte verzichten können. Sie hatte sich entschieden, hinzugehen und im Hintergrund zu bleiben.</p><p align="justify">Ihre Sorge, aufzufallen, stellte sich sowieso als völlig unbegründet heraus. Schon auf dem Friedhof im Londoner Osten, der für die Muggel verlassen und verfallen wirkte aber in Wirklichkeit ein gepflegter Zaubererfriedhof war, wimmelte es von Leuten und der Saal, in dem die Trauerfeier stattfand, war gepackt voll.</p><p align="justify">Harry und Hermine nahmen in offizieller Funktion teil und mussten daher vorne in der zweiten Reihe, gleich hinter den Angehörigen sitzen. Als Andromeda sie fand, fragte Ginny gerade Albus und Scorpius, ob sie sich nach vorne zu den Slytherins aus Craigs Jahrgang setzten wollten, die geschlossen an der Beerdigung teilnahmen. Die beiden schüttelten einhellig den Kopf. Ginny wechselte einen resignierten Blick mit Draco und sie alle quetschten sich in die drittletzte Reihe, wo Ron ihnen Plätze freigehalten hatte. Ginny saß neben ihm, dann Albus und Scorpius, natürlich zusammen, dann Draco und zuletzt Andromeda.</p><p align="justify">Es fühlte sich seltsam natürlich an, neben den Malfoys der Trauerfeier zu folgen. So wäre es schon früher gewesen, wenn Lucius‘ und Narzissas Ansichten, die Vorurteile ihrer Eltern und der Krieg sie nicht voneinander fern gehalten hätte. Lieber nicht zu viel darüber nachdenken, dass dann auch Ted und Nymphadora hier wären, lieber den Augenblick auskosten.</p><p align="justify">Natürlich war es trotzdem sehr traurig. Hinter dem Sarg, in dem Craig vorne in der Mitte aufgebahrt war, hing ein großes Portrait, von dem er lachend winkte und stolz sein Vertrauensschülerabzeichen präsentierte. Es wirkte so sorglos, wie er das schwarze Haar zurückwarf, dachte Andromeda bedrückt. Diese Generation hatte den Krieg nicht gekannt, und doch war das Undenkbare passiert. Ein Schüler war ermordet worden.</p><p align="justify">Craigs Vater versuchte, etwas zu sagen, schluchzte aber so sehr, dass er von einer Verwandten wieder weggeführt wurde, ohne ein Wort herausgebracht zu haben. Aber seine Vertrauensschülerkollegin hielt eine so ergreifende Rede, in der sie seine Eigenschaften lebendig werden ließ, dass Andromeda danach fast das Gefühl hatte, ihn gekannt zu haben. Flora Flint hieß sie und Andromeda dachte, dass es immer noch Reinblutfamilien gab, die die Vertrauensschüler in Slytherin fast automatisch besetzten. Auch Craigs Hauslehrer hielt eine Rede und als besondere Anerkennung für den Verlust der Familie Hermine als Zaubereiministerin.</p><p align="justify">Jemand spielte „Hector the Hero“ auf dem Dudelsack, als der der Sarg nach draußen getragen wurde und die Menge sich langsam in Bewegung setzte. Es erinnerte Andromeda an Teds Beerdigung und beinahe kamen ihr die Tränen. Als der Sarg die Tür passiert hatte, änderte sich die Melodie zu einem Popsong, den sie nicht kannte, aber anscheinend Craigs Freunde und Kameraden. Sie hoffte, es war ihnen ein Trost. Sie blieb mit Draco und Scorpius im Saal zurück, unausgesprochen war klar, dass die Familie wohl auf ihre Beileidsbekundungen verzichtete, weshalb sich nur Ginny, Ron und Albus dem Zug anschlossen.</p><p align="justify">Scorpius schniefte und Draco legte etwas unbeholfen einen Arm um seine Schulter und drückte ihn an sich. Scorpius presste sein Gesicht in den schwarzen Umhang seines Vaters und Draco schloss Beide Arme um ihn, um ihn richtig zu umarmen.</p><p align="justify">„Ich mochte ihn noch nicht mal“, sagte Scorpius belegt, als er sich gesammelt hatte. „Ich meine, er war okay, es gab Schlimmere, aber trotzdem …“</p><p align="justify">„Du musst ihn nicht mögen, um traurig über seinen Tod zu sein“, sagte Draco fest. „Es war einfach zu früh, wer weiß, was noch hätte kommen können.“</p><p align="justify">„Ich hoffe einfach, sie geben mir nicht die Schuld“, murmelte Scorpius und dass sowohl Draco, als auch Andromeda ihm sofort versicherten, dass er sich absolut nichts vorzuwerfen hatte, schien ihn nicht besonders zu beruhigen.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_3_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Jap, das Kapitel ist viel kürzer als die anderen. Sorry. Hat einfach nicht anders gepasst und ich wollte gern dabei bleiben, die Ereignisse jeweils am richtigen Tag zu veröffentlichen.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27328087/chapters/67501273">Chapter 4</a>: Delphinis Prozess
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong> <em>Montag, 16. November 2020</em> </strong>
+</p><p align="justify">Der Prozess gegen Delphini begann in Rekordzeit, nur gut zwei Wochen nach den Ereignissen. So schnell ging das normalerweise nicht, Andromeda vermutete – und Harry bestätigte – dass der Fall allerhöchste Priorität hatte. Die Tatsache, dass Voldemort eine Tochter hatte war schon an sich geeignet, die Zaubererwelt in Unruhe zu versetzen und Delphini war außerdem eine Mörderin und hatte den Sohn des Chefs der Magischen Strafverfolgung entführt. Von der Sache mit dem Zeitumkehrer ganz abgesehen, die auch noch viele Fragen aufwarf.</p><p align="justify">Natürlich ging Andromeda zum Prozess. Sie versuchte erst, es vor sich zu leugnen, aber sie brannte darauf, Bellatrix‘ Tochter zu sehen. „Glaubst du, sie sieht mir ähnlich?“, fragte sie Teddy, als sie sich in ihrem Hausflur fertig anzogen und ihr Blick auf sich selbst im Garderobenspiegel mit dem geschnitzten Rahmen aus Walnussholz fiel. Sie war immer noch unleugbar eine Black mit den typischen Gesichtszügen. Schön, aber mit zu schweren Lidern. Ihre Haare waren inzwischen ergraut, aber ihre Augen hatten immer noch das typische Black-Grau, einen Hauch dunkler als das der Malfoys.</p><p align="justify">„Ich weiß nicht“, sagte Teddy. Er trat neben sie, schon lange überragte er sie um einen halben Kopf, obwohl sie immer die Größte ihrer Geschwister gewesen war. Jetzt war sie die einzige. Teddy sah sie konzentriert an und veränderte dann seine Gesichtszüge, bis er wie eine jüngere, männliche Version von Andromeda aussah. Ein beinahe perfektes Abbild ihrer Cousins, die Teddy nie kennengelernt hatte. „Ich habe gehört, sie ist ein Metamorphmagus?“</p><p align="justify">Andromeda schüttelte den Kopf. „Nein, ich glaube nicht.“</p><p align="justify">„Hm“, machte Teddy. „Sehe ich dir ähnlich?“ Seine Gesichtszüge veränderten sich wieder, bis sie ihre natürliche Form und Farbe trugen, die er fast nie zeigte. Glatte hellbraune Haare, schmales Gesicht, grünliche Augen.</p><p align="justify">Andromeda gab ihm einen Kuss auf die Wange. „Du sieht vor allem deinem Vater ähnlich. Aber ich kann mich schon in dir entdecken.“ Weniger im Gesicht, aber in ein paar anderen Kleinigkeiten. Die Form seiner Hände, wie er die Arme bewegte beim Gehen. Die Grübchen wenn er lachte hatten Ted und Nymphadora auch gehabt.</p><p align="justify">„Gehen wir, es wird bestimmt voll.“</p><p align="justify">Voll war untertrieben, das öffentliche Interesse war riesig. Kurz nachdem sie den Gerichtsaal im zehnten unterirdischen Stockwerk des Ministeriums betreten hatten, wurden keine weiteren Zuschauer mehr eingelassen. Teddy erspähte zwei nebeneinanderliegende freie Plätze in einer der obersten der steilen, halbkreisförmigen Sitzreihen und Andromeda folgte ihm durch das Gedränge. Dort war es sicher besonders heiß und stickig, aber immer noch besser als die ganze Zeit zu stehen. Andromeda bereute, kein Omniglas mitgenommen zu haben, als sie sich gesetzt hatte und sah, wie klein die hochlehnigen gepolsterten Stühle, auf denen die Prozessleiter gleich sitzen würden, von hier oben aussahen. Immerhin hatte sie an ihre Brille gedacht.</p><p align="justify">Ein Wispern ging durch den Raum, als Delphini hineingeführt wurde. Von ihrem Platz weit oben auf den Rängen konnte sie sie auch mit Brille Brille nicht besonders gut erkennen, aber sie war überrascht. Delphini sah völlig normal aus. Ihre innere Unruhe legte sich ein wenig.</p><p align="justify">Delphini trug die schwarz-weiß gestreifte Gefangenenkleidung, in der sie regelrecht versank, sie war zierlicher als Bellatrix. Ihr Gesicht zeigte keine Regung, als die metallenen Ketten ihre Hände und Füße geschmeidig an den Anklagestuhl fesselten und zumindest aus der Entfernung erkannte Andromeda kaum Ähnlichkeit. Ihre Haare waren auf jeden Fall völlig anders, aschblond und ganz glatt. Die blauen Spitzen, die sie sich gefärbt hatte, waren das einzig auffällige an ihr. „Das ist sie also“, murmelte Teddy.</p><p align="justify">Die Menge erhob sich, als die Mitglieder des Zaubergamots in ihren eindrucksvollen pflaumenblauen Roben eintraten und ihre Plätze hinter dem Tisch einnahmen, an den sich gleich darauf die Prozessleiter setzten. Andromeda konnte sehen, wie die Frau in der Mitte, eine kräftige Hexe in ihrem Alter, die ebenfalls die violette Zaubergamotrobe trug, ihren Zauberstab auf ihre Kehle richtete. Gleich darauf schallte ihre Stimme magisch verstärkt durch den Saal.</p><p align="justify">„Sehr geehrtes Zaubergamot, sehr geehrte Hexen und Zauberer, ich eröffne den Prozess gegen Delphini Lestrange, angeklagt des Mordes, der Anwendung von zwei Unverzeihlichen Flüchen, der Entführung, der Verschwörung zum Umsturz des britischen Zaubereiministeriums und des gefährlichen Eingriffs in die Zeit. Ich bin Cornelle Macmillan, Vorsitzende und Großmeisterin des Zaubergamots und leite den Prozess zusammen mit Mrs Ethel Baddock, Erste Untersekretärin von Zaubereiministerin Hermine Granger“ – sie wies auf die jüngere Frau zu ihrer Rechten – „und Mrs Hestia Davies, Chefin der Aurorenabteilung, in Vertretung für den Leiter der Abteilung für magische Strafverfolgung, Minister Harry Potter.“ Sie deutete auf die schwarzhaarige Frau zu ihrer Linken. Harry, der sonst als Leiter der magischen Strafverfolgung selbst auf der Richterbank saß, durfte wegen Befangenheit an diesem Prozess nicht teilnehmen.</p><p align="justify">„Sie sind Delphini Lestrange, geboren am sechsten Juni neunzehnhundertsiebenundneunzig in Wiltshire, England?“, fragte Macmillan Delphini. Die hob das Kinn und sagte mit klarer Stimme: „Nein.“ Ihre Stimme klang nicht wie Bella.</p><p align="justify">„Wie bitte?“, fragte Mamillan, sichtlich irritiert.</p><p align="justify">„Ich bin nicht Delphini Lestrange, ich bin Delphini Black Gaunt“, sagte Delphni. Andromeda lief es kalt über den Rücken. Da war keine Spur von Zögern, ungehemmt bekannte sie sich zu zwei großen, gefürchteten Namen. Einzig der Trotz in ihrer Stimme, der fast kindlich wirkte, nahm dem Satz etwas von seiner Wirkung.</p><p align="justify">„Ist etwa nicht Bellatrix Lestrange, geborene Black, ihre Mutter?“, hakte Macmillan stirnrunzelnd nach.</p><p align="justify">„Doch, das ist sie“, bestätigte Delphini.</p><p align="justify">„Dann sind sie nach dem Gesetz und für die Prozedere in diesem Prozess Delphini Lestrange. Sollten Sie eine Namensänderung wünschen, können Sie einen Antrag an der zuständigen Stelle einreichen.“</p><p align="justify">Eine Frau aus den Reihen des Zaubergamots, die schon eine Weile mit ihrem Nebenmann getuschelt hatte, rief etwas nach vorne, das Andromeda nicht verstehen konnte. „Um eine Sache klarzustellen“, sagte Macmillan, deren magisch verstärkte Stimme für alle hörbar durch den Saal klang. Sie hatte einen leichten, aber deutlichen schottischen Akzent. „Wer Miss Lestranges Vater ist, ist für diesen Prozess vollkommen irrelevant, hier geht es einzig um Miss Lestranges Taten. Da der Punkt aber von großem öffentlichem Interesse ist kann ich ihnen versichern, dass das Ministerium das überprüft hat und es keine Zweifel gibt, dass Tom Riddle Junior, bekannt als V-Voldemort, Miss Lestranges Vater ist.“</p><p align="justify">Delphini reckte trotzig das Kinn vor – oder war es Stolz? – als daraufhin überall im Saal die Zuschauer zu tuscheln begannen. Andromeda fragte sich, was sie wohl von ihrem Vater denken würde, wenn sie ihn tatsächlich gekannt hätte. Geliebt hätte er sie ja sicher nicht. Noch heute verbreitete sein Name so viel Schrecken, dass die Großmeisterin des Zaubergamots ihn nicht ohne zu Stocken aussprechen konnte.</p><p align="justify">„Mrs Davies wird jetzt die Anklage verlesen.“ Das dauerte den ganzen Vormittag, Delphini hatte wirklich eine geradezu beeindruckende Liste an Verbrechen vorzuweisen mit ihren dreiundzwanzig Lebensjahren.</p><p align="justify">„Was denkst du?“, fragte Andromeda Teddy, als sie sich in der Mittagspause in der Cafeteria Sandwiches holten.</p><p align="justify">Teddy zuckte die Achseln. „Ich denke, ich sollte mich eher an die Malfoys halten oder nach unbekannten Lupins suchen, wenn ich mehr Familie will. Sie hätte beinahe unsere ganze Welt in den Abgrund gestürzt. Und Albus!“ Andromeda lächelte über seine Empörung zugunsten seines So-Gut-Wie-Bruders, wurde aber gleich wieder ernst. Albus hatte wirklich Schlimmes erlebt, hoffentlich verkraftete er alles gut. Sie wollte Teddy gerade fragen, ob Albus ihm geschrieben hatte, als er kauend sagte: „Sie ist aber wirklich schlau, das muss man ihr lassen. Ich bin ausgebildeter Fluchbrecher und hätte das nicht so hinbekommen.“</p><p align="justify">„Wer weiß, worin diese Euphemia Rowle sie unterrichtet hat. Und wie lange war Rodolphus noch mal entlaufen? Mehrere Monate, oder?“</p><p align="justify">„Stimmt.“ Teddy spülte den Rest seines Sandwiches mit Kürbissaft hinunter. „Es war ja auch ihr einziges Ziel und Hobby, Voldemort zurückzubringen. Ihr ganzer Lebensinhalt.“</p><p align="justify">Die erste Zeugin die befragt wurde war Minerva McGonagall. „Soweit ich weiß, wird die Geburt eines jeden magisch begabten Kindes in Großbritannien und Irland in Hogwarts registriert“, begann Ethel Baddock die Befragung. „Ist das richtig?“</p><p align="justify">„Ja, das ist korrekt“, bestätigte die alte Schulleiterin.</p><p align="justify">„Wie ist es dann möglich, dass die magische Welt nichts von Miss Lestranges Existenz wusste?“, fragte er weiter.</p><p align="justify">„Die Registrierung geschieht automatisch, ohne das Zutun eines Menschen“, erklärte McGonagall. „Die Feder der Aufnahme schreibt den Namen des Kindes in das Buch der Zulassung. Zwei sehr alte, sehr mächtige magische Gegenstände. Wir verschicken dann die Einladungen nach Hogwarts an die Kinder auf der Liste.“</p><p align="justify">„Und Sie haben sich nichts dabei gedacht, eine Einladung an eine Delphini Lestrange zu schicken?“</p><p align="justify">„Nein“, sagte McGonagall. „Auf der Liste steht nur der Name, nicht die Eltern. Vermutlich dachte ich, ein anderes Mitglied der Familie Lestrange habe noch ein Kind bekommen, von dem ich nichts wusste. Ich kann mich nicht erinnern, um ehrlich zu sein. Wir schreiben jedes Jahr weit über hundert Briefe und meine Aufmerksamkeit gilt eher möglichen Muggelgeborenen, weil wir denen einen Hausbesuch abstatten müssen.“</p><p align="justify">Nach McGonagall wurde Rodolphus Lestrange befragt, der extra aus Askaban hergebracht worden war. Andromeda erkannte ihren Schwager kaum wieder, auf der Straße hätte sie ihn wahrscheinlich gar nicht erkannt. Sein inzwischen graues Haar stand in alle Richtungen ab und er hatte einen ungepflegten Vollbart, der sein faltiges Gesicht fast ganz bedeckte. Genau wie die anderen Zuschauer hätte sie natürlich liebend gern erfahren, wie es zu Delphinis Existenz gekommen war und was er davon hielt, aber die Befragung beschränkte sich auf ihre Interaktionen während seiner Flucht aus Askaban.</p><p align="justify">Damit war der erste Prozesstag auch schon vorbei. Teddy war etwas enttäuscht, weil Delphini kaum etwas gesagt hatte. Obwohl er sie nicht kennenlernen wollte war er doch neugierig auf sie, wie er zugab, und er konnte leider nur heute den Prozess beobachten, weil er dann wieder arbeiten musste.</p><p align="justify">Im Fahrstuhl trafen sie auf Draco und erfuhren, dass er auch dagewesen war. Natürlich. Andromeda bereute sich ein wenig, nicht daran gedacht zu haben und fragte ihn, ob er morgen wieder da sein würde.</p><p align="justify">„Schon, aber nicht im Zuschauerraum. Scorpius' Aussage ist für morgen Nachmittag angesetzt und ich darf mit ihm in den Aufenthaltsraum der Zeugen, weil er minderjährig ist.“</p><p align="justify">„Oh, verstehe“, sagte Andromeda. „Sag ihm, ich wünsch ihm alles Gute, er macht das bestimmt toll.“</p><p align="justify">Draco verzog das Gesicht. „Mach ich. Aber das ist noch so eine Erfahrung, die ich ihm gern erspart hätte.“</p><p align="justify">„Na, immerhin sitzt er nicht auf dem Anklagestuhl“, sagte Teddy leichthin und Andromeda hielt kurz den Atem an, weil sie nicht wusste, wie Draco reagieren würde. Aber der nickte bloß und murmelte etwas davon, dass es auch nicht angenehm war, auf der Zeugenbank zu sitzen.</p><hr/><p align="justify"> </p><p align="center">
+  <em><strong>Dienstag, 17. November 2020</strong> </em>
+</p><p align="justify">Scorpius machte es wirklich gut, genau wie Albus. Andromeda war stolz auf sie und um ihretwillen froh, dass sie es geschafft hatten. Scorpius hatte Tränen in den Augen gehabt und gezittert und Albus war es sichtlich unangenehm gewesen, vor so vielen Leuten zu erzählen, wie er auf Delphini hereingefallen war, aber keiner verwickelte sich in Widersprüche oder brach völlig zusammen. Am Vormittag hatten schon Euphemia Rowle und Amos Diggory ausgesagt und damit war schon wieder ein Tag vergangen, an dem Andromeda kaum etwas von Delphini gesehen und gehört hatte.</p><p align="justify">Andromeda wusste jetzt zwar, dass Euphemia Rowle sie aufgezogen hatte, ohne ihr von ihre Abstammung zu erzählen, fast komplett isoliert von der Außenwelt. Ihren wenigen Nachbarn hatte sie gesagt, sie sei ein illegitimes Kind ihres Großneffen Thorfinn. Erst, nachdem sie Rodolphus getroffen hatte, hatte sie Delphini gesagt, was die große Aufgabe war, deren Erfüllung ihr Schicksal sein sollte, von der sie immer gesprochen hatte. Andromeda hätten eher Delphinis Aussagen dazu interessiert, aber das war heute nicht an der Reihe. Sie saß nur die ganze Zeit da, hörte mit gerade durchgedrücktem Rücken zu, was über sie gesagt wurde und zupfte ab und zu an ihren blauen Haarspitzen.</p><hr/><p align="justify"> </p><p align="center">
+  <strong><em>Mittwoch, 18. November</em> </strong>
+</p><p align="justify">Dafür redete sie am nächsten Tag umso mehr. Zuerst mussten Macmillan, Davies und Baddock ihr jede Antwort aus der Nase ziehen, aber irgendwann redete sie ganz von selbst. Andromeda hatte den Eindruck, sie <em>wollte</em>, dass die Welt ihre Sicht der Dinge erfuhr. Sie bewegte lebhaft ihre Hände, trotz der schweren Ketten, und ihre melodiöse Stimme trug durch den ganzen Raum. Doch, Andromeda konnte verstehen, wie sie die Jungen hatte um den kleinen Finger wickeln können. Mit Unbehagen wurde ihr klar, wie sehr sie sich von Bella unterschied. Bella hatte die Leute mit ihrer Weiblichkeit verführt und durch rohe Gewalt eingeschüchtert, nicht mit ihrem Charme verzaubert. Das passte eher zu dem, was sie über den jungen Tom Riddle gehört hatte.</p><p align="justify">Sie flüsterte ihre Beobachtung zu Draco, der heute, da Scorpius wieder in Hogwarts war, neben ihr im Zuschauerraum saß. Es war schon deutlich leerer, die meisten hatten wohl nur mal einen Blick auf Voldemorts Tochter werfen wollen.</p><p align="justify">Draco hob die Schultern, sie konnte sehen, dass allein der Gedanke ihm unbehaglich war. Er nickte jedoch. „Ja, kann sein. Ich kannte ihn ja nur am Schluss, da war er alles andere als charmant.“ Mit Grauen dachte Andromeda an das, was sie von Narzissa über die Zeit wusste. Delphini hatte Glück gehabt, Waise zu sein, musste man wohl sagen. Wenn sie nur von ihr gewusst hätten, wenn sie nur nicht bei dieser schrecklichen Rowle aufgewachsen wäre. Dann säßen sie jetzt nicht in einem Mordprozess gegen sie.</p><p align="justify">Delphini wurde zu einer lebenslangen Freiheitsstrafe von mindestens dreiundzwanzig Jahren verurteilt.</p><p align="justify"> </p><p align="justify">Weil sie ziemlich aufgewühlt war und sah, dass es Draco ähnlich ging, lud sie ihn zum Essen in den Tropfenden Kessel ein.</p><p align="justify">„Jetzt kannst du sie also besuchen, ab morgen ist sie in Askaban“, sagte Draco nachdem sie bestellt hatten.</p><p align="justify">„Ich würde es immer noch lassen, wenn du etwas dagegen hast. Oder Scorpius“, sagte Andromeda. „Ich will sie kennen lernen, aber ihr seid wichtiger.“</p><p align="justify">Das Lächeln auf Dracos Gesicht hob zwar kaum seine Mundwinkel, aber es war echt. „Danke. Aber es ist ok. Ich glaube nach wie vor nicht, dass ich sie je treffen will, aber das soll dich nicht abhalten. Es fällt mir schwer genug, nach Askaban zu gehen, dass mache ich vielleicht für Theo, aber sicher nicht für sie.“ Er wartete kurz, als die blonde Wirtin ihnen das Essen hinstellte und fischte sich Besteck aus dem ledernen Becher in der Mitte des Tisches. Der Tropfende Kessel war noch nie besonders schick gewesen.</p><p align="justify">„Ehrlich gesagt tut sie mir fast ein wenig Leid“, sagte er nachdenklich nach seinem ersten Bissen Roastbeef. „Alles, was sie wollte, war ihren Vater zu retten und ihm zu gefallen. Ich bin der Letzte, der darüber urteilen sollte, eigentlich sind wir uns ähnlich. Aber ich kann ihr trotzdem nicht verzeihen.“</p><p align="justify">„Du warst viel jünger“, wandte Andromeda ein. „Ich weiß wirklich nicht, ob man das vergleichen kann. Aber ich glaube auch, dass sie nicht so hätte sein müssen. Sie ist nicht inhärent böse, sie wurde mit den falschen Werten erzogen und sehnt sich verzweifelt nach Liebe.“ Es war wirklich ziemlich deprimierend, es wäre leichter, wenn Delphini einfach böse wäre, dann könnte Andromeda sich bestimmt überzeugen, sie zu hassen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/27328087/chapters/67851602">Chapter 5</a>: Besuch in Askaban
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong> <em>Donnerstag, 26. November 2020</em> </strong>
+</p><p align="justify">„Ich hab übrigens die Besuchsgenehmigung bekommen“, sagte Andromeda und beobachtete genau Dracos Reaktion. Aber er paffte mit völlig unverändertem Gesichtsausdruck gleichmäßige Rauchstöße aus seiner Porzellanpfeife.</p><p align="justify">„Ich kann nicht leugnen, dass es Vorteile hat, auf Potters guter Seite zu stehen“, sagte er schließlich. „Wahrscheinlich schafft Potter es sogar, mir Folgen wegen Vaters Zeitumkehrer zu ersparen.“ Andromeda unterdrückte ein Lächeln. Ja, er hatte zwar Recht, dass sie nur dank Harrys Bürgschaft die Genehmigung, Delphini in Askaban zu besuchen erhalten hatte. Sie galt als so gefährlich, dass der Zugang zu ihr streng reglementiert war, das Ministerium wollte unbedingt verhindern, das Ex- und Neo-Todesser zu ihr pilgerten und sie zur Gallionsfigur machten. Aber sie war sich sicher, dass Draco nicht nur deshalb zu den Potters ging.</p><p align="justify">„Du warst also nur bei ihnen zum Essen letzte Woche, um dir politische Vorteile zu verschaffen, ja?“, zog sie ihn auf. Sie saßen in Dracos Salon in Malfoy Manor vor dem Kamin, wo sie den Rest des Rotweins tranken, den sie beim Essen nicht geschafft hatten. Es fühlte sich so normal an, dass es beinahe seltsam war, aber Andromeda genoss es sehr. Es erinnerte sie an ihre Kindheit, bevor alles kompliziert und schmerzhaft geworden war. „Und hattest gar keinen Spaß dabei?“</p><p align="justify">„Zugegeben, der Hauself kocht ganz gut“, murmelte Draco. Er klopfte die Asche aus seiner Pfeife in den Aschenbecher auf dem Beistelltischchen und griff nach seinem Glas. „Sie laden mich aus Mitleid ein“, murmelte er bitter nach einem Schluck.</p><p align="justify">„Vielleicht ein wenig“, gab Andromeda zu, es war zwecklos, es zu leugnen. „Wobei ich es eher Fürsorge als Mitleid nennen würde. Und glaub mir, Ginny gibt sich nicht einfach so mit Leuten ab, die sie langweilen. Wenn sie es nicht gern tun würden, würden sie es lassen.“</p><p align="justify">„Sie haben mich gebeten, auf Albus Acht zu geben“, sagte Draco nachdenklich.</p><p align="justify">Andromeda nahm noch einen Schluck Wein. Sie musste zugeben, dass der Elfenwein besonders gut war, vielleicht sollte sie auch mal wieder welchen kaufen. „Siehst du, du kannst auch was für sie tun. Wegen dem Besuch in Askaban …“</p><p align="justify">„Ich habe schon gesagt, dass ich kein Problem damit habe, wenn du hingehst, Tante. Scorpius auch nicht. Nur wir selbst haben keinen Bedarf, sie zu treffen. Ich vor allem.“</p><p align="justify">„In Ordnung. Dann nehme ich morgen den Termin war.“ Ein Teil von ihr hatte vielleicht gehofft, dass Draco sie bitten würde nicht zu gehen und deshalb noch einmal gefragt. Ein nagendes Gefühl irgendwo in ihrem Unterbewusstsein warnte sie, dass es gefährlich war, aber sie wusste nicht, was genau, schließlich saß Delphini sicher gefangen in Askaban. Vielleicht hatte sie Angst, zu sehr an ihre Schwestern erinnert zu werden. Was sie verloren hatte, die Chancen auf ein glückliches Zusammenleben, die sie nie gehabt hatten und die sie mit Delphini ein zweites Mal verloren hatte.</p><p align="justify">Draco nahm noch einen Schluck Wein. „Ich war vorgestern dort“, sagte er zu Andromedas Überraschung. Sie wusste nichts Genaues, weil auch Narzissa nichts Genaues gewusst hatte, aber sie wusste das er schwer verletzt von seinem kurzen Aufenthalt nach dem Krieg von dort zurückgekommen war. Es konnte nicht leicht sein für ihn, dorthin zurückzukehren. Er rutschte unruhig hin und her und wich ihrem Blick aus. „Hab Theo besucht. Er hat sie gesehen, hat er erzählt. Er will unbedingt mit ihr sprechen, weil er wissen will, wie sein Zeitumkehrer in der Praxis funktioniert hat, er hat ihn nie selbst benutzt.“ Draco warf ihr einen unbehaglichen Blick zu. „Er sagt, Rodolphus fragt überall nach ihr und will sie unbedingt treffen.“</p><p align="justify">Hoffentlich verhinderten die Wärter, dass die beiden sich begegneten, das musste eine brandgefährliche Kombination sein. Sie war jedenfalls schon sehr gespannt, ihre Nichte aus der Nähe zu sehen und sich einen eigenen Eindruck zu verschaffen.</p><p>
+  <em> </em>
+</p><p align="center">
+  <strong> <em>Freitag, 27. November 2020</em> </strong>
+</p><p align="justify">Schon als sie vor das trostlos aussehende Verwaltungsgebäude am Nordseestrand apparierte, in dem man sich für die Fahrt nach Askaban anmelden musste, fing sie an zu frieren. Der eisige Wind war feucht und leicht salzig und schien ihr direkt bis auf die Knochen zu dringen, da half auch ihre warme Robe aus hellrosa Wollstoff wenig. Sie hatte der Tristheit, die sie erwartete, eine helle, fröhliche Farbe entgegensetzen wollen, aber jetzt bereute sie, nicht den winddichten Lederumhang genommen zu haben.</p><p align="justify">„Andromeda Tonks, ich möchte Delphini Lestrange besuchen“, sagte sie zu der dicken, ältlichen Sicherheitshexe hinter dem Tresen in dem Verwaltungsgebäude. Hatte es von außen komplett wie ein Muggel-Industriebau ausgesehen, war innen klar, dass es von der magischen Bevölkerung genutzt wurde. Obwohl es keinen Schornstein gab, prasselte an der Wand rechts neben der Sicherheitshexe ein Feuer in einem großen offenen Kamin. „<em>Vorsicht vor ankommenden Flohern, bitte Abstand halten!</em>“ stand auf einem rußverschmierten Emailschild über dem Kaminsims. In ausreichendem Abstand standen drei Reihen Holzstühle mit verschlissenen schwarz-rot gemusterten Kordbezügen, die aber bis auf eine verhärmt aussehende Hexe in einem blau-weiß gestreiften Umhang alle leer waren. Email Emaille</p><p align="justify">„Da brauchen Sie aber eine Genehmigung, die ist höchste Sicherheitskategorie“, sagte die Sicherheitshexe mürrisch.</p><p align="justify">„Natürlich, Madam“, sagte Andromeda und setzte ihr freundlichstes Lächeln auf. Vielleicht konnte sie ihr ja ein schlechtes Gewissen für ihre schlechten Manieren machen. „Hier bitteschön. Und da ist die Terminbestätigung.“ Sie reichte die gestempelten und gesiegelten Pergamentbögen der Sicherheitshexe über den Tresen.</p><p align="justify">Die studierte sie lange und ausführlich. Entweder sie konnte nur sehr langsam lesen, oder, und das war eher Andromedas Vermutung, sie genoss es einfach, sie warten zu lassen.</p><p align="justify">„Zauberstab“, forderte sie endlich kurzangebunden und fischte in einer Schublade nach einem Dokument, das sie Andromeda wortlos hinschob. Sie überflog es, anscheinend musste sie die Details ihres Zauberstabs eintragen. <em>Einhornhaarkern, Ulme, elfeinhalb Zoll</em>, schrieb sie in die entsprechenden Felder und unterschrieb schwungvoll. Die Sicherheitshexe streckte erwartungsvoll ihre Hand aus und Andromeda legte ihren Zauberstab hinein. Obwohl sie gewusst hatte, dass das kommen würde – aus Sicherheitsgründen durften Besucher keine Zauberstäbe mit nach Askaban bringen – fühlte es sich seltsam an. Eigentlich fühlte es sich schlicht falsch an, ein Zauberer gab seinen Zauberstab so gut wie nie aus der Hand. Sie versuchte, das Unbehagen zu unterdrücken, während sie beobachtete, wie die Sicherheitshexe ein Stück mit einer Nummer von ihrem Zettel abriss, den Zauberstab in den Rest einwickelte und in einem der zahlreichen kleinen Schließfächer hinter ihr verschloss. Sie unterschrieb auf dem Abriss und schob ihn zu Andromeda hinüber.</p><p align="justify">„Das geben Sie mir nachher, dann kriegen Sie ihren Stab wieder. Das Boot kommt in fünf Minuten, Sie können da warten.“ Sie machte eine vage Handbewegung in Richtung der verschlissenen Stühle.</p><p align="justify">Andromeda setzte sich. Wie vertraut wäre ihr dieses Prozedere, wenn sie gewusst hätte, dass Sirius unschuldig gewesen war. Sie machte sich nichts vor, sie hätte es nicht geschafft, ihn herauszuholen, aber wie viel mehr Zeit hätten sie zusammen gehabt. Wenn Bella nicht so fanatisch gewesen wäre und ihr verziehen hätte, sie hätte auch sie besucht. Vielleicht wäre Nymphadora dann noch am Leben. Gerade, als sie sich einreden wollte, dass sie hier war, damit bei Delphini alles anders lief fiel ihr ein, dass damals vor dem letzten Krieg Askaban noch von Dementoren bewacht worden war und die Gefangenen damals nicht so einfach besucht werden durften.</p><p align="justify">Es kamen keine weiteren Besucher, sie und die verhärmte Frau im gestreiften Umhang waren die einzigen Passagiere, die in das selbstfahrende schwarze Schiff stiegen, das gleich darauf ablegte und sie über die Nordsee brachte. Über ganz Askaban lag selbstverständlich die stärkste Appariersperre, die das Ministerium errichten konnte, weshalb man nur mit dem Boot auf die Insel gelangen konnte.</p><p align="justify">Die See war ziemlich aufgewühlt, Andromeda konnte die Gischt auf ihren Wangen schmecken und der Wind zerrte an ihrem Umhang und ihren Haaren, aber das Boot musste magisch stabilisiert sein, denn es schaukelte zu ihrer Erleichterung kaum. Trotzdem war sie beinahe erleichtert, als sie endlich den schwarz aufragenden Turm des Zauberergefängnisses im Dunst erblickte. Sie konnte nicht leugnen, dass es beeindruckend war. Bisher kannte sie nur Bilder und sie hatte es sich höher, aber weniger breit vorgestellt. Beeindruckend, aber auch bedrückend. Hier hatten schon mehrere ihrer Familienmitglieder große Teile ihres Lebens verbracht und jetzt war ein weiteres hinzugekommen.</p><p align="justify">Ein junger, breitgebauter Sicherheitszauberer nahm sie in Empfang und führte sie durch einen kurzen Gang in den Besucherraum. Zum Glück konnte sie sich anscheinend allein mit Delphini treffen, Andromeda hatte schon kurz befürchtet, nebenbei der verhärmten Frau und ihrem Angehörigen lauschen zu müssen. Allerdings würde sie durch Gitterstäbe von Delphini getrennt sein, erklärte der Mann ihr, weil Delphini derzeit in die höchste Sicherheitskategorie eingestuft war. Es war ein wenig barbarisch, fand Andromeda, aber wenn sie ehrlich war, war sie auch ein wenig erleichtert.</p><p align="justify">Der Besucherraum im Hochsicherheitsbereich war nicht groß und fast völlig kahl. Wände, Boden und Decke waren aus dem gleichen dunkelgrauen Stein wie anscheinend das ganze übrige Gebäude, nur die beiden Stühle, die sich gegenüber standen, waren aus Holz. Zwischen ihnen befand sich ein eisernes Gitter, das sie trennte.</p><p align="justify">„Ein Hauself kann Ihnen Tee bringen, wenn Sie möchten“, bot der Sicherheitszauberer an. „Aber unter uns gesagt, ich würde es nicht empfehlen, trinken Sie lieber einen anständigen Tee, wenn Sie wieder zu Hause sind. Durch die Plörre hier kann man das Askabanlogo am Tassenboden erkennen.“</p><p align="justify">Noch bevor Andromeda ihm danken konnte, wurde Delphini auf der anderen Seite des Gitters hereingeführt und all ihre Aufmerksamkeit richtete sich auf ihre unbekannte Nichte, die von einem weiteren Wärter hereingeführt wurden. Delphinis Augen weiteten sich für einen Moment, als sie Andromeda erblickte. Ob sie Bilder ihrer Mutter kannte und die Ähnlichkeit bemerkte? Gleich darauf zeigte ihr Gesicht nicht mehr als eine Art neutrale Neugier. Sie beobachtete Andromeda aufmerksam und schenkte dem Wärter, der ihre Fußfessel an einer dafür vorgesehenen Öse in der Wand verkettet keinerlei Aufmerksamkeit.</p><p align="justify">Andromeda räusperte sich. „Hallo, Delphini. Weißt du, wer ich bin?“</p><p align="justify">Ihre Augen trafen sich und Andromeda stockte der Atem. Sie waren grau. Black-Grau. Da war Bella, da war Sirius, da war ihr Vater, da war <em>sie</em>. Auch wenn sie nicht daran gezweifelt hatte, dass sie wirklich ihre Nichte war, spürte Andromeda, wie sich etwas in ihr verschob, als sie diese Verbindung sah. Es war fast das einzige an Delphinis Äußerem, das an ihre Schwester erinnerte, aber es war da. Sie war schlanker, als Bellatrix es gewesen war, sportlicher, mit weniger Kurven, ihr Gesicht war länglicher und nicht rund, sie hatte nicht die typischen schweren Augenlider. Ihre Haare waren fein, glatt und aschblond, kein Vergleich mit Bellas schwarzer Fülle. Die Art, wie sie sich bewegte, erinnerte Andromeda schrecklich an die Bilder des jungen Tom Riddle, die sie in seiner Biografie gesehen hatte. Aber Delphinis Augen, die waren ihr vertraut.</p><p align="justify">„Nein. Aber Sie sehen meiner Mutter ähnlich. Ich habe Fotos von ihr gesehen.“ Delphinis Stimme war freundlich und melodiös.</p><p align="justify">„Das ist kein Wunder, denn sie war meine Schwester“, sagte Andromeda. „Ich bin deine Tante.“</p><p align="justify">„Oh.“ Delphinis Mund formte sich zu einem erstaunten Kreis und Andromeda konnte regelrecht sehen, wie sie nachdachte.</p><p align="justify">„Narzissa? Sie sahen auf den Fotos ganz anders aus. Und ich dachte, Sie seien tot!“</p><p align="justify">Andromeda seufzte. Immer noch die alte Geschichte. „Nein, nicht Narzissa. Narzissa war unsere jüngste Schwester und ist leider vor drei Jahren verstorben. Und sie war Scorpius‘ Großmutter, der Junge, den du gefoltert hast. Du erinnerst dich hoffentlich. Ich bin Andromeda.“</p><p align="justify">Delphini ignorierte ihre Bemerkung zu Scorpius völlig und fragte: „Andromeda? Wie kommt es, dass ich nie von Ihnen gehört habe? Tante Euphemia hat mir die Stammbäume aller Unantastbaren Achtundzwanzig beigebracht und auf die Blacks besonderen Wert gelegt!“ Der Trotz in ihrer Stimme ließ sie sehr kindlich wirken und erinnerte Andromeda daran, dass sie nie richtig unter Menschen gelebt hatte.</p><p align="justify">„Die Blacks haben mich verstoßen, weil ich mich für mein halbblütiges Kind und seinen muggelgeborenen Vater entschieden habe.“ Nach all den Jahren war keine Bitterkeit mehr in ihrer Stimme, auch wenn sie nicht ganz aus ihrem Herzen verschwunden war. Sie beobachtete Delphinis Reaktion genau. Auch wenn sie in ihrem Prozess ausführlich zu ihrer Haltung zu Muggelgeborenen befragt worden war, war sie nicht so recht schlau aus ihren Antworten geworden. Sie hatte zwar eine Menge muggelfeindliches Zeug gesagt, aber es hatte gewirkt wie auswendig gelernt. Wirklich leidenschaftlich hatte sie nur von ihrem Vater gesprochen.</p><p align="justify"> „Ach. Interessant“, war das einzige, das Delphini dazu sagte. Dann, nach einem Moment des Nachdenkens: „Habe ich noch mehr Verwandte, von denen ich nichts weiß?“</p><p align="justify">„Meinen Enkel, Edward. Ansonsten keine Lebenden, auch wenn dir eine ganze Reihe an Verstorbenen vorgehalten wurde, zum Beispiel deinen Onkel Sirius, meinen Cousin, der auch zwölf Jahre hier in diesem Gefängnis verbracht hat.“</p><p align="justify">Delphini fragte nicht, wie alt Teddy war, was er machte, oder was aus seinen Eltern geworden war, obwohl ihr aus Andromedas Satz klar sein musste, dass ihr Kind nicht mehr lebte. Ob es ihr überhaupt etwas bedeutete, Familie zu haben? Konnte es jemandem, der so aufgewachsen war wie sie überhaupt etwas bedeuten? Sicher, sie war buchstäblich über Leichen gegangen, um ihren Vater zurückzuholen, aber das war ja auch das gewesen, für das sie ihr Leben lang konditioniert worden war.</p><p align="justify">„Hast du gewusst, dass du mit Scorpius verwandt bist?“, fragte sie.</p><p align="justify">„Es ist mir erst spät klargeworden“, sagte Delphini leichthin. „Er hat mich nicht besonders interessiert, aber er klebte nun mal an dem Potter-Jungen.“</p><p align="justify">„Aber du hast es gewusst, als du ihn mit einem Unverzeihlichen Fluch gefoltert hast.“ Es war leider keine Frage.</p><p align="justify">Delphini zuckte die Schultern. „Ja, natürlich, das war ja ganz am Schluss. Glauben Sie, ich wäre so weit gekommen, wenn ich mich nicht gründlich vorbereitet hätte?“ Sie klang stolz und es machte Andromeda krank. Scorpius war ein Kind! Warum konnte ihre Familie nicht einmal normal sein? Oder wenigstens die gleichen Probleme haben, wie andere Familien? Erbschaftsstreitigkeiten, Ehebrüche oder so etwas. Aber nein, Bellatrix hatte vermutlich mit Rodolphus‘ enthusiastischer Zustimmung die Ehe gebrochen und eine Tochter gezeugt, die skrupellos Kinder folterte und tötete.</p><p align="justify">„Und es war dir egal?“ Eigentlich hatte Andromeda sich vorgenommen, nicht dieses Gespräch mit Delphini zu führen. Sie wollte nur mal sehen, wie sie so war, sie nicht erziehen. Dazu war es wohl sowieso zu spät.</p><p align="justify">Delphini zuckte wieder mit den Schultern, sie wirkte wie ein Teenager, obwohl sie Mitte zwanzig war. „Ich habe einfach getan, was nötig war.“</p><p align="justify">„Das war nicht nötig!“, konnte Andromeda sich nicht beherrschen auszurufen. „Du hättest Craig und Scorpius auch mit Schockzaubern außer Gefecht setzen können!“</p><p align="justify">Delphinis Lächeln war beinahe herablassend. „Doch, es war nötig, Albus hätte sonst nie getan, was ich wollte. Man merkt, dass Sie keine Ahnung von so etwas haben, Tante, wenn ich das sagen darf.“</p><p align="justify">Andromeda atmete tief durch und entschied sich, das Thema zu wechseln. Was sollte sie auch für einen moralischen Kompass bei einer Frau erwarten, die von einer Todesserin erzogen war mit dem erklärten Ziel, Voldemort zurückzuholen?</p><p align="justify">„Nun, es hat jedenfalls nicht funktioniert und sieh, wohin es dich gebracht hat.“ Sie machte eine Bewegung mit der Hand, die die Zelle, die Kette um Delphinis Fußgelenk und die ganze Insel Askaban umfasste.</p><p align="justify">„Nun ja, das ist natürlich bedauerlich“, sagte Delphini und Andromeda merkte erstaunt, dass trotzdem so gut wie kein Bedauern in ihrer Stimme lag. „Aber so ist es nun.“</p><p align="justify">„Was willst du jetzt tun?“, fragte Andromeda.</p><p align="justify">Delphini sah sie mit Bellatrix grauen Augen erstaunt an. „Wie meinen Sie das, Tante? Was soll ich denn tun? Ich bin jetzt hier.“ Sie kopierte Andromedas allumfassende Geste.</p><p align="justify">„Du musst doch irgendwie deine Zeit nutzen“, sagte Andromeda. „Hast du deine Prüfungen extern gemacht? Ich weiß, dass du nicht in Hogwarts warst.“</p><p align="justify">„Nein, natürlich nicht, das hätte nur Fragen zu meiner Herkunft nach sich gezogen“, sagte Delphini mit einem herablassenden Kopfschütteln. Ihre Haare waren gewachsen, die blauen Spitzen sahen nur noch wie ein trauriger Rest und nicht mehr wie ein Modestatement aus.</p><p align="justify">„Tante Euphemia hat mir alles beigebracht, was ich wissen muss. In Hogwarts verschwenden sie sowieso zu viel Zeit und Ressourcen mit unnötigem Quatsch wie Muggelkunde und die Schüler lenken sich nur gegenseitig ab, anstatt sich auf den Unterricht zu konzentrieren. Wer will, dass aus seinem Kind was wird, muss es von anderen Kindern fernhalten.“ Sie klang ein wenig altklug und Andromeda hatte das Gefühl, dass sie eins zu eins wiederholte, was Euphemia Rowle ihr gesagt hatte. „Ich kenne siebenhundert Flüche und Gegenflüche inklusive der sogenannten Unverzeihlichen, kann Tränke brauen und die Zutaten erkennen und finden, Verwandlungen bis zu Mensch-Tier Verwandlungen, Menschen lesen und ihr Verhalten vorhersagen und kenne die Geschichte der magischen Welt.“</p><p align="justify">„Tust du das?“, fragte Andromeda mit hochgezogenen Augenbrauen.</p><p align="justify">Der sarkastische Unterton schien völlig an Delphini vorbeizugehen und erinnerte Andromeda wieder daran, wie isoliert sie aufgewachsen war, denn sie sagte: „Natürlich. Ich habe mit Bagshots Buch gelernt und die neuere Geschichte, für die es noch keine Bücher gibt, hat Tante Euphemia mir selbst beigebracht, sie hat ja das alles erlebt und kannte meinen Vater persönlich. Du siehst, Tante, dass ich alles nötige beherrsche, auch wenn ich gerade keinen Gebrauch davon machen kann.“</p><p align="justify">„Da siehst du es doch schon, Delphini. Hast du dich nie gefragt, ob es gut ist, sich nur auf eine Quelle zu verlassen und alles von der gleichen Person zu lernen? Es gibt jede Menge Bücher über den letzten Krieg, schon bald danach waren die Buchläden voll davon. Mit Biografien über deine Eltern übrigens auch, vielleicht würde dich das ja zumindest interessieren?“</p><p align="justify">Delphini schüttelte heftig den Kopf. „Nein. Sie lügen alle. Davor hat Tante Euphemia mich gewarnt. Die Leute wissen nicht, wie sie wirklich waren und verbreiten bösartige Verleumdungen. Aber Tante Euphemia weiß es besser, sie kannte sie ja.“</p><p align="justify">Andromeda fühlte sich plötzlich schrecklich müde. Wollte sie wirklich gegen diese Indoktrination anreden? Was erhoffte sie sich davon? Sie sollte einfach gehen, und Delphini hier zurücklassen. „Weißt du, was dein Vater getan hat, warum so viele Leute ihn hassen?“</p><p align="justify">„Er wollte den Untergang der Zauberer verhindern und die Unterdrückung durch die Muggel beenden!“</p><p align="justify">„Und er ist seit zweiundzwanzig Jahren endgültig tot, trotzdem sind wir immer noch nicht untergegangen. Und was soll das mit der Unterdrückung durch die Muggel? Wann hat <em>dir</em> je ein Muggel gesagt, was du tun sollst?“</p><p align="justify">Delphini rümpfte ihre Oberlippe. Genau wie Narzissa es immer getan hatte, wenn sie sich ärgerte. „Muggel verbrennen Hexen!“, rief sie aufgebracht.</p><p align="justify">„Delphini, das war vor Jahrhunderten und dir muss doch klar sein, dass die allermeisten Hexen sich mit Leichtigkeit dagegen wehren und entkommen konnten. Du würdest dich doch auch nicht einfach so verbrennen lassen? Siehst du. Und glaub mir, wir Zauberer stehen den Muggeln da in nichts nach. Es ist vermutlich menschlich, Menschen zu töten, ob magisch oder nicht.“ Andromeda blickte plötzlich scharf auf. „Das solltest du wohl wissen, Delphini. Auch du hast einen Menschen getötet. Einen Zauberer noch dazu, keinen Muggel.“</p><p align="justify">Delphini zuckte die Achseln. „Wie gesagt, es war nun mal notwendig“, sagte sie leichthin und obwohl sie schon die ganze Zeit so gewesen war, machte es Andromeda plötzlich unheimlich wütend.</p><p align="justify">„Das einzige, was dein Vater erreicht hat, war Leid und Tod in die magische Gemeinschaft zu bringen. Die Muggel haben kaum etwas gemerkt vom Krieg, es waren wir, die gelitten haben, die gestorben sind. Es war magisches Blut, das vergossen wurde. Meine Tochter war eine Hexe. Mein Mann war ein Zauberer. Mein Schwiegersohn war ein Zauberer. Cedric Diggory war sogar ein Reinblüter, aber glaub mir, dass hat V-Voldemort nicht interessiert. Er war trotzdem ‚überflüssig‘.“ Sie atmete tief durch und versuchte, sich zu beruhigen. Jetzt war nicht der richtige Moment, den Schmerz über ihre Verluste zu spüren. „Craig Bowker war ein Zauberer.“</p><p align="justify">Delphini sagte nichts. Nichts mehr zu ihrer Verteidigung, auch kein Wort des Beileids zu Andromeda. Sie zuckte wieder mit den Schultern. Eine trotzige Bewegung, die Andromeda anfing, auf die Nerven zu gehen.</p><p align="justify">„Nun ja, du hast ja jetzt genug Zeit, darüber nachzudenken“, sagte sie und strich die Robe auf ihrem Schoß glatt. Sie sollte aufbrechen. „Ich hoffe, du lernst irgendwann, nicht alles zu glauben, was Euphemia Rowle dir erzählt hat.“ Ihr fiel noch etwas ein. „Hast du Kontakt zu ihr?“, fragte sie. Euphemia Rowle war auch hier in Askaban und während sich Andromeda ziemlich sicher war, dass sie Rodolphus im Männerbereich nicht einfach so treffen konnte, war das bei Rowle eine andere Sache.</p><p align="justify">„Nein, nein. Wir dürfen uns nicht sehen“, sagte Delphini eilig und ihr beinahe erleichterter Tonfall ließ Andromeda, die schon dabei gewesen war, aufzustehen, noch einmal innehalten.</p><p align="justify">„Vermisst du sie nicht? Du bist immerhin bei ihr aufgewachsen“, fragte sie.</p><p align="justify">„Nein. Sie hat mich ja nur vorbereitet“, erklärte Delphini, als wäre es das Normalste der Welt. „Sie ist ja nicht meine Mutter, deshalb konnte sie mich nicht lieben. Sie musste sehr streng mit mir sein, um mich bereit zu machen, meine richtigen Eltern zu retten.“ Plötzlich klang Delphini sehr klein. „Es hat aber nicht geklappt. Jetzt habe ich niemanden.“</p><p align="justify">„Delphini …“, fing Andromeda an. Sie wollte erklären, dass man Kinder lieben konnte, die nicht die eigenen waren aber sie wusste nicht, wie sie mit einer Frau, die sich verhielt wie ein Teenager und die ohne Reue tötete über Liebe reden sollte. Sie hatte es deshalb getan, wurde ihr plötzlich klar. Sie hatte ihre Eltern gewollt, damit jemand sie liebte. Ihr fiel wieder ein, was Draco nach dem Prozess gesagt hatte: <em>„Ehrlich gesagt tut sie mir fast ein wenig leid.“</em> Sie verstand jetzt, was er gemeint hatte. Aber es machte absolut nichts besser. Delphini war wie eine Gefangene aufgewachsen und würde auch die nächsten Jahrzehnte im Gefängnis verbringen, es gab keine realistische Aussicht, dass aus ihr ein Mensch mit normalen Gefühlen wurde.</p><p align="justify">Bis eben hatte Andromeda nicht gewusst, dass es das war, was sie sich erhoffte. Die Hoffnungslosigkeit für Delphini schlug über ihr zusammen wie eine Welle und drohte, ihr die Luft zu nehmen. Ohne ein weiteres Wort wandte sie sich um und klopfte an die Tür, damit der Wärter sie herauslies.</p><p align="justify">„Tante Andromeda, warte doch!“, sagte Delphini hinter ihr und Andromeda blieb entgegen ihrem Willen in der offenen Tür noch einmal stehen. „Wann kommst du wieder?“, fragte Delphini mit schwacher, verletzlicher Stimme.</p><p align="justify">Wann. Nicht ob. Hatte sie doch so etwas wie Familiensinn? Fühlte sie die Verpflichtung, die Andromeda fühlte, sich um sie zu kümmern, am Ende doch? Das geteilte Blut, das sie aneinander band? Vermutlich nicht, sagte Andromeda sich. Trotzdem. Sie konnte sie doch nicht ohne Aussicht auf Besuch zurücklassen, niemand außer ihr würde das tun.</p><p align="justify">„Ich werde dir schreiben“, würgte sie hervor bevor sie aus dem Besuchszimmer floh. Sie hatte das Gefühl, Delphinis Blick mit Bellas Augen noch spüren zu können, als der Wärter schon den Riegel vor die Tür schob.</p><p align="justify">„Folgen Sie mir, Mrs Tonks“, sagte er und sich brachte nur zu gern Abstand zwischen sich und ihre Nichte. Mit jedem Meter, den das Boot sie über die zugige Nordsee weiter von Askaban wegbrachte, fühlte sie sich mehr wie sich selbst, eine gesetzte Frau Mitte sechzig, die sich nicht von Anfang Zwanzigjährigen verunsichern ließ. Trotzdem wusste sie schon auf dem Boot, wo sie an die durch das salzverschmierte Fenster der kleinen Kabine, in die sie sich vor dem Wind und der Gischt geflüchtet hatte, die Möwen beobachtete, dass sie wieder kommen würde. Ab jetzt würde sie immer wieder in diesem Boot sitzen und zu Delphini nach Askaban fahren.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="yW3_vThmE6N8qqU2HTexBfI0c2cBvLe-r3MdzT0t1-ELOf3cL5ffRbtbzOC6J2wqYPhKIV6xXMsr4GzRZR4_FQ"/>
+          <input value="27328087" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=27328087">Comments (16)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/emrldapplejuice">emrldapplejuice</a>, <a href="/users/peachyparkkk">peachyparkkk</a>, and <a href="/users/Nickmoretti">Nickmoretti</a>
+             as well as 
+          4 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_27328087">
+  <form class="new_comment" id="comment_for_27328087" action="/works/27328087/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="tEAMKhBk2PMCrmCS9Co1wHClDJyxF6oD0EMCIePJpJR2FA5LB5UUFcVfCURTOujv4mk12u4aQXZU0HM9u_pMYA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_27328087">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_27328087" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_27328087=new LiveValidation('comment_name_for_27328087',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_27328087.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_27328087">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_27328087" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_27328087=new LiveValidation('comment_email_for_27328087',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_27328087.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_27328087" class="landmark">Comment</label>
+        <textarea id="comment_content_for_27328087" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_27328087" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_27328087_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_27328087">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_27328087=new LiveValidation('comment_content_for_27328087',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_27328087.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_27328087.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_27328087" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/27328087/hit_count.json")})</script>
+
+
+  </body>
+</html>

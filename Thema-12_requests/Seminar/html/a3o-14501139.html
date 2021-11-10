@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":79,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Reinkarnation - kessM - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="otECV39sY_SRbNITvHwNw1qu6hPJ2n7G8ibpBB9y2_SSexU8NEeeVup5xC2ZjMeVooauKnvANVsiCHtIQ0tdeg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="et-ZQIcMVTDhM3eIVgijBPzV1VSIYuJ89oCZRbNdQZNKdY4rzCeokpomYbZz-GlSBP2RbTp4qeEmrgsJ72THHQ"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/14501139/chapters/33499482">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/14501139/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/14501139/Reinkarnation.azw3?updated_at=1525173950">AZW3</a></li>
+          <li><a href="/downloads/14501139/Reinkarnation.epub?updated_at=1525173950">EPUB</a></li>
+          <li><a href="/downloads/14501139/Reinkarnation.mobi?updated_at=1525173950">MOBI</a></li>
+          <li><a href="/downloads/14501139/Reinkarnation.pdf?updated_at=1525173950">PDF</a></li>
+          <li><a href="/downloads/14501139/Reinkarnation.html?updated_at=1525173950">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Not%20Rated/works">Not Rated</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/main%20Draco%20Malfoy*s*Harry%20Potter/works">main Draco Malfoy/Harry Potter</a></li><li><a class="tag" href="/tags/Draco%20Malfoy*s*Voldemort/works">Draco Malfoy/Voldemort</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Voldemort%20(Harry%20Potter)/works">Voldemort (Harry Potter)</a></li><li><a class="tag" href="/tags/Winky%20(Harry%20Potter)/works">Winky (Harry Potter)</a></li><li><a class="tag" href="/tags/Dobby%20(Harry%20Potter)/works">Dobby (Harry Potter)</a></li><li><a class="tag" href="/tags/Hogwarts%20School%20of%20Witchcraft%20and%20Wizardry%20(Harry%20Potter)/works">Hogwarts School of Witchcraft and Wizardry (Harry Potter)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Romance/works">Romance</a></li><li><a class="tag" href="/tags/Hurt*s*Comfort/works">Hurt/Comfort</a></li><li><a class="tag" href="/tags/Character%20Death/works">Character Death</a></li><li><a class="tag" href="/tags/Happy%20Ending/works">Happy Ending</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/14501085">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 8 of the <a href="/series/1011147">Umzug ff.de</a> series</span><span class="divider"> </span><a class="next" href="/works/14501172">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2018-05-01</dd><dt class="status">Completed:</dt><dd class="status">2018-05-01</dd><dt class="words">Words:</dt><dd class="words">11327</dd><dt class="chapters">Chapters:</dt><dd class="chapters">2/2</dd><dt class="kudos">Kudos:</dt><dd class="kudos">8</dd><dt class="hits">Hits:</dt><dd class="hits">349</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Reinkarnation
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/kessM/pseuds/kessM">kessM</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Älteres Werk - Umzug von ff.de</p><p>Der Tag an dem Harry James Potter hingerichtet wurde, war nicht nur das Ende der Hoffnung aller...</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Eine Warnung gleich vorneweg:<br/>Es wird etwas komplett anderes sein, als Ihr bereits von mir kennt und es wird düster werden. Verdammt düster. <br/>Wer mit düsteren HP- FFs nicht klar kommt, den möchte ich bitten, an dieser Stelle wegzuklicken. <br/>Alle anderen heiße ich wie immer zu einem Ausflug in die Abgründe meiner Phantasie Herzlich Willkommen^.^</p><p> </p><p>Disclaimer: <br/>Wie immer nix meins und Geld bekomm ich auch keins.<br/>(Dieser Disclaimer gilt auch für das nächste Kapitel)</p><p> </p><p>Zum Verständnis:</p><p>~~~Traum/Vision~~~</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/14501139/chapters/33499482">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Prolog</p><p> </p><p>~~~Wie um dem Geschehen zu spotten, schien die Sonne strahlend auf sie hernieder. Erleuchtete die Große Halle mit ihrem freundlichen Licht und versuchte so etwas Freude zu verbreiten. <br/>Doch heute scheiterte sie kläglich. <br/>Denn nicht eine Menschenseele, die sich heute hier eingefunden hatte, war danach der Sonne ihr Lächeln zu erwidern. <br/>Die einzige Kreatur, die so etwas wie Glück verspürte, hatte schon vor langer Zeit verlernt zu lächeln.<br/>Selbst heute, der Tag, an dem all seine Wünsche in Erfüllung gingen, konnte er seine starren Gesichtsmuskeln nicht dazu bringen seiner Freude Ausdruck zu verleihen. <br/>Denn heute war der Tag, an dem er es endlich geschafft hatte, das uneinnehmbare Hogwarts zu erstürmen, Harry Potter gefangen zu nehmen und die unvergleichliche Veela- Schönheit namens Draco Malfoy für sich zu vereinnahmen. Nichts und Niemand kam an die Schönheit und Zerbrechlichkeit dieses jungen Mannes heran. <br/>Dennoch war es eben jene Schlange, die es ihm ermöglicht hatte, Hogwarts einzunehmen und Harry Potter- seinen einzigen Gegner und Träger aller Hoffnungen der Zaubererwelt- gefangen zu setzen. <br/>Erst würde er Harry Potter vernichten und damit auch die letzte Hoffnung auf Sieg zerschmettern und dann würde er Draco Malfoy zu seinem Eigentum machen. Bis der Veela ihm einen Bluterben schenkte und darüber hinaus. <br/>Doch zunächst galt es das Rückrat des Wiederstandes zu zerbrechen und so seine Herrschaft zu untermauern. <br/>Voll versteckter Vorfreude schaute er auf die Plattform, welche inmitten der Großen Halle aufgebaut war und auf der alle Blicke ruhten. <br/>Hier und da konnte er ein Schaudern wahrnehmen, wenn sie sich vorstellten welchen Zweck der Richtblock und die große Axt erfüllten. <br/>Dann endlich war es soweit.<br/>Die Wachen führten den jungen Retter in die Halle. <br/>Nur das er jetzt derjenige war, der Rettung brauchte. <br/>Die Hände auf dem Rücken zusammengebunden, der Oberkörper bar jeder Kleidung, damit auch ja jeder erkennen konnte, dass er nähere Bekanntschaft mit der Neunschwänzigen Katze gemacht hatte, hielt dieser junge Mann seinen Kopf immer noch hoch. Seine moosgrünen Augen leuchteten immer noch voller Leben. <br/>Stolz und ohne seinen Wachen auch nur die geringsten Schwierigkeiten zu bereiten schritt er scheinbar furchtlos zum Podest. <br/>Erklomm dessen Stufen mit Leichtigkeit und stellte sich ohne zu zögern neben den Richtblock.     <br/>Dabei hielt sein Blick immer den seines Mörders gefangen. <br/>Und langsam wich die Vorfreude aus Voldemort. <br/>Selbst im Angesicht des eigenen Todes war dieses gottverdammte Balg einfach nicht zu brechen. <br/>Stattdessen klang seine Stimme klar und ruhig. <br/>Zeigte durch keine Nuance, dass es sich hier um seine letzten Minuten handelte oder das ihm durch die Folter eigentlich jeder einzelne Knochen im Leib wehtat. <br/>„Voldemort,“, wagte er es den Dunklen Lord anzusprechen. „Selbst wenn du mich hier und heute umbringst, wird das nichts an der Tatsache ändern, dass du irgendwann gestürzt wirst.“ Der Todeskandidat ignorierte die fassungslose Stille, welche sich gleichermaßen über Freund und Feind legte. „Nicht morgen und auch nicht übermorgen. Aber irgendwann wird sich eine Seele finden, die ihre Rache deiner Grausamkeit gegenüber erfolgreich durchführen wird... Ich hoffe, dass du dann an den heutigen Tag zurück denkst und erkennst, dass du heute den Grundstein für deinen eigenen Untergang gelegt hast.“<br/>Die Sicherheit mit der diese Worte vorgetragen wurden, kroch jedem der Anwesenden in die Knochen. <br/>Die Hilflosen würden sich in den kommenden Jahren daran klammern wie an eine Rettungsleine und seine Feinde würden sich noch eine Weile darüber amüsieren und dann vergessen. <br/>Mit einer ungeduldigen Geste forderte der Dunkle Lord die Wachen dazu auf, den Jungen in die Knie zu zwingen. <br/>Aber auch diese Freude nahm ihm der Bengel indem er der stummen Aufforderung selbst nachkam und seinen Kopf auf dem Richtblock ablegte. Erstaunlicherweise hatte er es so arrangiert, dass er immer noch Voldemort im Blick hatte. <br/>Der Henker hob in der Zwischenzeit sein grausames Arbeitsinstrument und in dem Moment, in dem Harry die schwere Waffe hinuntersausen hörte, bewegte er seine Augen wenige Millimeter, sodass er auf das strahlende Geschöpf neben der grotesken Gestalt Voldemorts blicken konnte. <br/>Und schon erhellte ein sanftes Lächeln sein Gesicht. <br/>Mit einem Ausdruck absoluten Friedens starb der sogenannte Held der Zaubererwelt. <br/>Wenn die Anwesenden in der Lage gewesen wären seinem Blick zu folgen, hätten sie gesehen, wie Draco Malfoy, der zukünftige Gefährte ihres neuen Herrschers, in einer kurzen behütenden Geste über seinen immer noch flachen Bauch strich und wie sich grenzenloser Schmerz, absolute Reue und Liebe, abgrundtiefe Liebe in einem gewaltigen Crescendo in den kobaltblauen Augen trafen. <br/>Nur um in der Sekunde, in der der schwarze Schopf von den kräftigen Schultern rollte, in sich zusammenzubrechen und nichts weiter als hoffnungslose Verzweiflung zurückzulassen, die langsam aber sicher jeden Funken Leben aus den einst so strahlend blauen Augen zog und nichts weiter zurück blieb als eine atmende Puppe. <br/>Aber es folgte niemand seinem Blick, da alles viel zu schnell gegangen war. Stattdessen würde mit der Zeit die Legende entstehen, das ihr Held in dem Wissen gegangen war, dass auch die Herrschaft Voldemorts irgendwann mal ihr Ende finden wird. Das es diese Gewissheit war, die ihn hat so friedvoll lächeln lassen...~~~</p><p> </p><p>Mit einem Schrei, der aus den tiefsten Tiefen seiner Seele zu kommen schien, schreckte Dorian auf.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/14501139/chapters/33499506">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Hier kommt der Rest und ich warne noch einmal:<br/>Wer weder mit düsteren noch mit traurigen HP-FF klar kommt, bitte wegklicken. <br/>Für jeden anderen Leser gebe ich jetzt schon zu Beginn eine ganze Box Kleenex aus- da selbst ich, als Autorin mitunter Schwierigkeiten hatte den Bildschirm durch den Tränenschleier auszumachen*drop*</p><p>Zum Verständnis:</p><p>~~~Traum/Vision~~~</p></blockquote>
+            <p>
+            (See the end of the chapter for  <a href="/works/14501139/chapters/33499506#chapter_2_endnotes">more notes</a>.)
+            </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Anfang und Ende</p><p> </p><p>Gedankenverloren stand Dorian in der privaten Familienbibliothek. <br/>Er hatte bereits versucht Bilder seines Ur- Großvaters in den Fotoalben zu finden, die er von seinem Vater geerbt hatte. <br/>Doch überall konnte er nur einen weißen Schemen ausmachen. <br/>Ein weißer Schemen, der seine Großmutter auf dem Arm trug, umarmte oder mit ihr spielte. <br/>Manchmal konnte er auch Voldemort, seinen Lord und Ur- Großvater neben dem weißen Schemen stehen sehen. Aber von Draco selbst war nicht ein Detail auszumachen.<br/>Jetzt versuchte er in den Geschichtsbüchern einen Blick auf ihn zu erhaschen. Doch es schien wie verhext. Auch hier fand er nur weiße Schemen. <br/>Er konnte sich auch nicht auf irgendwelche Erinnerungen stützen, da er ihn nie kennen gelernt hatte. Es hieß, Draco wäre an genau dem Tag gestorben, an dem Lady Erysium die Bindung mit ihrem Gefährten eingegangen war. <br/>Warum er sich die ganze Mühe machte?<br/>Nun, der Traum, der ihm Draco Malfoy neben Lord Voldemort gezeigt hat, hatte ihm Draco Malfoy als sein eigenes Spiegelbild gezeigt. <br/>Es war, als ob er selbst neben seinem Ur- Großvater gestanden hätte. <br/>Ein Schaudern rieselte ihm den Rücken entlang. <br/>Kein angenehmer Gedanke. <br/>Man konnte Voldemort zwar eine Menge nachsagen, aber Inzest war eine der wenigen Sünden, die er nicht begangen hatte. Noch nicht. <br/>Erneut kroch es ihm eiskalt den Rücken hinunter.<br/>Kurz schüttelte er den Kopf, um ihn wieder frei zu bekommen. <br/>Aber es schien als hätten seine Gedanken ein Eigenleben entwickelt und kehrten, wie auch in der vergangenen Woche, immer wieder zu dem Traum zurück. <br/>Dem Traum, der ihn immer ruheloser werden ließ. <br/>Er hatte gehofft, wenn er ein Bild seines Ur- Großvaters fand, könnte er sich selbst davon überzeugen, dass es sich dabei um ein reines Hirngespinst handelte. <br/>Doch je mehr weiße Schemen er fand, um so unruhiger wurde er. <br/>„Dorian?“<br/>Erschrocken wandte er sich um. Klappte dabei das Buch mit lautem Knall zu, in welches er ohne etwas zu sehen hineingestarrt hatte.  <br/>Neigte kurz seinen Oberkörper:<br/>„Mylord.“<br/>„Dein Sekretär meldete mir, dass du die letzte Woche ein wenig zerstreut schienst. Gibt es irgendwelche Probleme?“, verengten sich die roten Augen zu Schlitzen. <br/>Dorian wusste, es war nicht Sorge um ihn als Person, die Voldemort dazu trieb diese Frage zu stellen. Sondern einfach und allein die Tatsache, dass es vorher seine Großmutter die Lady Erysium und nach ihrem Tod sein Vater, Lord Berian und nun er, Lord Dorian, die einzigen waren, denen Lord Voldemort mit allen Belangen seines Imperiums vertraute. Schließlich floss in ihren Adern dasselbe Blut.<br/>Er hatte sich seine Tochter und später seinen Enkel und Urenkel als die perfekten Untergebenen herangezogen. Jemand, der seinen Befehlen ohne zu Fragen und bis auf den letzten Punkt nachkam, aber dennoch selbstständig genug denken konnte, dass er falls nötig auf unvorhergesehene Ereignisse reagieren, beseitigen und dann den Befehl trotzdem durch führen konnte. <br/>Alle anderen regierte er durch Furcht. Angst. Und Tod. <br/>Er saß in seiner Schlangengrube, wie sein übermächtiges Fort genannt wurde, und regierte mit blutiger Faust das Land, welches er vor etwa 200 Jahren in einer blutigen und grausamen Schlacht dem damaligen Zauberer- Rat entrissen hatte. <br/>Sein Sieg war in dem Moment besiegelt gewesen, als es ihm möglich gewesen war Harry Potter, dem sogenannten Jungen- der- lebte, prophezeiter Gegner und einziger Hoffnungsträger der freien Zauberer- Welt, in dem Durcheinander der Schlacht einzufangen und vor den Augen aller, die sich in dem Moment auf dem Schlachtfeld befanden zu töten. <br/>In allen Geschichtsbüchern stand es so drin. <br/>Warum also brachte ihn ein Traum, welcher ihm zeigte, dass Voldemort es lediglich durch feigen Verrat so weit gebracht hatte, dermaßen durcheinander?<br/>Es konnte nicht stimmen.    <br/>Dieser Traum konnte einfach nicht stimmen. <br/>Überall konnte man nachlesen, dass es eine blutige Schlacht in einem mächtigen Herbsturm gewesen war. Das selbst die Elemente zu  Voldemorts Sieg beigetragen haben, da ein Blitz genau auf die Stelle hingedeutet und erleuchtet hatte, an der sich Harry Potter befunden hat.<br/>Das Voldemort den jungen und unerfahrenen, gerade aus der Schule entlassenen Jungen in einem Zaubererduell schlug. <br/>Warum also diese Unruhe?<br/>„Nein Mylord, keine Probleme.“ <br/>An dieser Stelle zögerte er kurz. <br/>Entschied dann aber, dass er es ruhig riskieren konnte: <br/>„Verzeiht Mylord, aber warum gibt es nirgendwo ein Bildnis von Ur-Großvater Draco?“<br/>Dorian wollte fast seinen Augen nicht trauen, doch er konnte ganz deutlich sehen, wie die unbewegte, starre Maske, die das Gesicht seines Lords darstellte, bei der Erwähnung seines verstorbenen Gefährten weicher wurde. <br/>Es hielt nur für einen flüchtigen Moment ehe sie wieder zu ihrer kalten Schlangenmaske zurückkehrte. <br/>Dorian befürchtete, zu weit gegangen zu sein und stellte sich gedanklich schon darauf ein, die Nacht auf der Streckbank im Kerker zu verbringen, als ihm sein Lord doch noch zischelnd antwortete: <br/>„Der Tod nahm sich nicht nur Draco, sondern auch alle seine Bilder. <br/>In dem Moment, in dem er seinen letzten Atemzug tat, verschwand er aus allen Photos, Bildern und Porträts. Auf dem gesamten Erdenrund wirst du nicht ein Bild mehr von ihm finden.“<br/>Und dann tat er etwas, was Dorian richtig Angst einjagte. <br/>Sein Lord trat an ihn heran und hob mit Zeige- und Mittelfinger sein Kinn an, so dass er seinem Lord genau in die blutroten Augen schaute. <br/>Er spürte, wie ihm der Daumen in einer fast zärtlichen Geste über die Wange strich. <br/>„Du bist mehr das Kind Dracos, als es deine Großmutter oder Dein Vater je gewesen sind.“, zischte Voldemort fast selbstvergessen auf Parsel. <br/>Mit einem plötzlichen Ruck gab seine Lordschaft ihn wieder frei. <br/>Benommen taumelte Dorian ein, zwei Schritte nach hinten, ehe er sich fangen konnte. <br/>Mit unbewegter Miene stand er erneut vor seinem Lord.<br/>Das Geschichtsbuch lag geschlossen zwischen ihnen auf dem Boden. </p><p> </p><p>~~~ „Malfoy?“, hörte er jemanden verwundert fragen.<br/>Statt einer Antwort, schüttelte es ihn am ganzen Leib. <br/>Er hatte eben seinem ganz persönlichen Albtraum gegenüber gestanden und war dann ins nächstbeste leere Klassenzimmer geflüchtet. <br/>In der hintersten Ecke hatte er sich zusammengekauert. <br/>In der vergeblichen Hoffnung, dass ihn der Albtraum hier nicht fand. <br/>Stattdessen hatte ihn sein Rivale gefunden. <br/>Ein Rivale, der sich jetzt neben ihm zitternden Bündel nieder ließ und ihn in eine behütende Umarmung zog. <br/>Verzweifelt vergrub er das Gesicht in dessen Roben. <br/>Verkrallte sich im weichen Baumwollstoff. <br/>Spürte die unbeholfenen Bewegungen mit denen der andere ihm in einen Versuch ihn zu beruhigen über den Rücken strich- als ob er es nicht gewohnt wäre jemanden im Arm zu halten. <br/>Immer wieder und wieder sah er das Erlebte vor seinem inneren Auge ablaufen.   <br/>Hörte immer und immer wieder die Worte, die sein Schicksal besiegelten. <br/>„Wenn er seinen Körper... zurück hat... will er mich... zu seinem Gefährten... machen... Bitte... lass ihn niemals den Stein finden... Bitte... lass ihn niemals... seinen... Körper... finden...“, brach es nach einer Weile, immer wieder von heftigen Schluchzern unterbrochen, aus ihm hervor. „Ich will nicht... ich will nicht...“, wiederholte er immer wieder, bis er von Erschöpfung übermannt in den Armen seines Rivalen einschlief. <br/>Die Wangen tränennass...~~~ </p><p> </p><p>Dorian spürte nicht, wie ihm die Tränen still und leise über die Wangen rannen und sich schließlich im seidigen Bezug seines Kissens verloren. <br/>Immer noch tief in der Umarmung Morpheus gefangen, rollte er sich auf die Seite, zog die Knie an den Körper und schlang die Arme drum herum.<br/>Denn es war niemand da, der ihn in eine Umarmung ziehen konnte.  </p><p> </p><p>~~~Er schlich sich mitten in der Nacht auf die Krankenstation. <br/>Er musste wissen, wie es seinem Retter, dem Zerstörer des Steins der Weisen, ging. <br/>Leider hatte er warten müssen bis Hogwarts schlief. <br/>Denn er konnte nicht wie der Rest der Welt einfach in die Station marschieren und sich nach dessen Befinden erkundigen.<br/>Schließlich fragte ein Slytherin nicht nach dem Gesundheitszustand eines Gryffindor. Schon gar nicht, wenn der Slytherin Malfoy hieß und der Gryffindor Potter.~~~</p><p> </p><p>Erneut schreckte Dorian aus seinem Schlaf. <br/>Verwundert fuhr er sich über die Wangen, als er die Nässe auf ihnen spürte. <br/>Dann kehrte die Erinnerung an die zwei Träume zurück.  <br/>Seit seinem ersten Traum waren inzwischen mehr als 2 Monate vergangen und er hatte es endlich geschafft ihn aus seinem bewussten Denken zu streichen.</p><p>Das Rätsel um die neuen Träume musste warten, da er von Voldemort an die irische Westküste geschickt wurde- ein Rebellennest ausräuchern. <br/>Als er am besagten Ort eintraf, konnte er lediglich vier windschiefe, schlechtgezimmerte Hütten vorfinden, in denen zwei alte Greise, eine schwindsuchtkranke Mittvierzigerin mit ihrem kleinen Sohn und ein halbverhungerter Ziegenhirte hausten. <br/>Zudem konnte er keinerlei magische Aktivität in diesem Teil Irlands feststellen. In diesen armseligen Figuren steckte nicht ein Funken Magie. <br/>Vorsichtig tastete er sich mit „Legillemes“ in die Gedanken dieser bemittleidenswerten Kreaturen. <br/>Konnte jedoch nicht einen Funken Verrat in ihnen finden. Lediglich der Gedanke wo und wie man die nächste Mahlzeit finden könnte. <br/>Aufseufzend zog er sich aus seinem letzten „Opfer“ zurück. <br/>Ihm blieb keine Wahl, er musste dem Befehl seines Lords nachkommen. <br/>Zudem würde er den armseligen Kreaturen einen Gnadendienst tun.<br/>Mit fünf schnellen „Avada Kedavra“ hatte er sie in die Unterwelt geschickt. <br/>Sein Kommandant zog an dieser Stelle wie immer eine Augebraue hoch. Sagte aber nichts mehr. <br/>Denn tot war tot- nicht wahr? <br/>Erst nachdem das erledigt war, zündete er wie befohlen die Hütten an, damit alles bis auf die Grundmauern niederbrennen konnte. <br/>Schweigend stand Dorian mit seinem Kommandanten Seite an Seite um den Flammen bei der Arbeit zu zusehen. <br/>Erst als die letzten Reste in sich zusammenfielen, wandte er sich um. <br/>Ja, er befolgte die Befehle Voldemorts. <br/>Doch wie schon seine Großmutter und sein Vater vor ihm hielt er sich an das Motto, welches sie von Draco übermittelt bekommen haben: <br/>„Erfülle dem Lord jeden Befehl und dann nutze den Deckmantel der Treue damit du denen helfen kannst, die du erreichst.“<br/>Dieses Motto war alles, was ihm half in dem Wahnsinn aus knietiefen Seen angefüllt mit Blut, ungerechtfertigter Folter und brutalen Morden bei Verstand zu bleiben. <br/>Sollte der Lord jemals hinter dieses kleine Geheimnis kommen, würden ihn auch nicht mehr ihre Verwandtschaftsbande retten.</p><p> </p><p>~~~Voll verzweifelter Hoffnung blickte er hinunter auf die Kreatur, die vor ihm kauerte. Konnte er es wirklich wagen? Würde er damit nicht alles riskieren? Schließlich handelte es sich bei dieser Kreatur um einen der persönlichen Elfen seines Vaters. <br/>„Dobby, du musst mir schwören, dass du über den Auftrag, den ich dir jetzt gebe, mit niemanden sprichst. Ihn niemanden verrätst. Ihn ganz und gar für dich behältst. Kannst du das machen?“<br/>Große, kugelrunde Augen schauten voller Erstaunen zu ihm auf. <br/>Mussten sich vergewissern, dass er das eben Gesagte auch ernst meinte. <br/>Nachdem sie in ihm keinen Fehl ausmachen konnten, sondern lediglich ängstliche Beklommenheit, nickte die kleine Kreatur feierlich: <br/>„Dobby schwören jungen Master Draco keiner Menschenseele etwas zu verraten.“<br/>Er atmete erleichtert auf, als er das Ziehen in seiner Herzgegend wahrnahm, welches deutlich anzeigte, dass der Schwur wahr gesprochen und von der Magie als bindend gesehen wurde. <br/>„Ich weiß, das Vater dieses Jahr irgendwas gefährliches in Hogwarts geplant hat. Bitte...“, er schluckte schwer an dieser Stelle. „... bitte kannst du Harry so gut beschützen... wie du kannst?“<br/>Die Augen der Elfe wurden noch größer: <br/>„Master Draco Sir meinen Harry Potter Sir? Den Harry Potter Sir?“<br/>Sein knappes Nicken reichte, dass der Elf sich respektvoll vor ihm verneigte: <br/>„Dobby versprechen Harry Potter Sir zu beschützen und ihm und Master Draco Sir immer treu zur Seite zu stehen.“<br/>Nachdem Dobby das gesagt hatte, verschwand er um wieder seinen Aufgaben als Lucius’ Hauself nachzukommen. <br/>Aber er konnte aufatmen. <br/>Er hatte alles in seiner Macht stehende getan um seinem wahren Gefährten jede Hilfe fürs zweite Schuljahr zu kommen zu lassen- soweit wie er es wagen konnte...~~~  </p><p> </p><p>Erleichterung floss durch Dorian als er seine Augen aufschlug und von der stockfinsteren Nacht begrüßt wurde. <br/>Kurz darauf setzte er sich verwirrt auf. <br/>Mit einem schweren Seufzer lehnte er sich gegen das gepolsterte Kopfteil seines Bettes. <br/>Warum hatte er Erleichterung gespürt bei dem Gedanken, dass sich der Hauself bereit erklärt hatte, Harry Potter zu beschützen?<br/>Stirnrunzelnd versuchte sich an die wenigen Fakten zu erinnern, die noch von der Familie Malfoy bekannt waren. <br/>Zum einen totale Reinblut- Fanatiker, die sich ohne Wenn und Aber der Sache Voldemorts verschrieben hatten. <br/>Zum anderen war das damalige Oberhaupt Lucius in Ungnade gefallen, so dass Voldemort keinen Finger rührte, als der Patriarch in Askaban landete und schließlich den Kuss der Dementoren bekam.<br/>Es war auch innerhalb der Familie bekannt, dass Voldemort sobald er den elfjährigen Draco zu Gesicht bekommen hatte, mit Lucius einen Vertrag aufsetzte, der ihm zusicherte, dass er Draco am Tage seines Abschlusses zu seinem Gefährten nehmen konnte.<br/>Ergebener Diener der er war, hatte Lucius natürlich zugestimmt und so das Schicksal seines einzigen Erben besiegelt.<br/>Hat ihm trotzdem nichts gebracht, als das damalige Ministerium ihm die Dementoren auf den Hals gehetzt hat. <br/>Außerdem war bekannt, dass Lucius Harry Potter mit einer Inbrunst gehasst hatte, die nur noch von Voldemort selbst übertroffen wurde. <br/>Er konnte sich nicht vorstellen, dass Lucius diesen Hass nicht auch an seinen Sohn weitergegeben hatte. <br/>Warum also sollte Draco Malfoy, zukünftiger Gatte des Dunklen Lords, sich Sorgen um seinen eigentlichen Erzfeind machen?<br/>Seine Gedanken kehrten zum Traum zurück. <br/>Was hatte er zum Schluss gedacht? <br/>Sein WAHRER Gefährte...<br/>Trocken würgend hechtete Dorian ins Bad nur damit sein Abendessen Bekanntschaft mit der Toilettenschüssel machen konnte. <br/>Bei Merlin, wenn in Draco soviel Veela vorhanden gewesen war, dass er als Mann Kinder austragen konnte, dann war es auch genug, dass er wie jeder Vollblut- Veela eine Gefährtin oder auch Gefährten von Venus selbst zugeteilt bekommen hatte. Und ausgerechnet dieser Gefährte war Harry James Potter!<br/>Dorian würgte nur noch Galle hoch.<br/>Seine Kehle brannte schon. <br/>Aufgrund der Tatsache das seine Mutter eine Voll- Veela gewesen war und sein Vater ebenfalls das Blut jenes eigentlich friedvollen Volkes in sich fließen hatte, vereinte er wieder genug Veela in sich, das er die Sehnsucht nach seinem vorherbestimmten Gefährten ganz tief in sich spürte. Sie steckte ihm sozusagen in den Knochen. <br/>Schon allein der Gedanke an jemand anderen gebunden zu werden als an den ihm von Venus zugewiesenen Gefährten oder Gefährtin, trieb ihm erneut bittere Galle hoch.  <br/>Nach einer Weile beruhigte er sich soweit, dass er sich auf wackeligen Knien zum Waschbecken schleppen und den Mund ausspülen konnte. </p><p>Nachdem er diese Erkenntnis hinter sich hatte, träumte er jede Nacht. <br/>Nichts weltbewegendes. <br/>Nur Szenen aus dem alltäglichen Schulleben der beiden. <br/>Doch eines fiel ihm auf, bei Draco träumte er immer aus der Sicht des Slytherin, bei Harry aus der Sicht eines Dritten. <br/>Die Versuche Dobbys Harry aus Hogwarts rauszuhalten oder wieder zu vertreiben schafften es mehr als einmal ihn lachend aus dem Schlaf zu holen. <br/>Im Gegenzug dazu, wenn er dieselben Vorfälle aus Dracos Sicht beobachten konnte, schlug ihm das Herz mehr als einmal bis zum Hals. <br/>Im nachhinein konnte er jedoch nur darüber schmunzeln. Schließlich hatte Dracos eigene Bitte zu diesen „Unfällen“ geführt. </p><p>Er wurde von Voldemort nach Frankreich geschickt, um die Handelsverträge zu erneuern. <br/>Er vermisste die Träume. </p><p> </p><p>~~~Draco und Harry standen sich in einem Übungsduell gegenüber. <br/>Draco wollte nicht. <br/>Doch um die Fassade zu wahren, musste er gegen seinen Gefährten antreten. <br/>Um es schnell hinter sich zu bringen, rief er eine Schlange. <br/>Es sah gut aus für ihn als Slytherin einen Gryffindor mit ihrem Hauszeichen zu erledigen. <br/>Sein Plan ging nach hinten los, als Harry anfing Parsel zu sprechen.~~~</p><p> </p><p>Er wurde von Voldemort nach Südengland geschickt um ein paar aufmüpfige Werwölfe zum schweigen zu bringen. <br/>Er vermisste die Träume.</p><p> </p><p>~~~Nachdem er die Hetzjagd auf Harry eröffnet hatte, lud er ihn anonym zu einem Treffen ein. <br/>Nachdem er im ersten Jahr dermaßen in seinen Armen zusammengebrochen war, hatten sie einander nur noch in der Öffentlichkeit gegenüber gestanden. <br/>Er hatte wenig Hoffnung, dass Harry auf einen anonymen Brief regieren würde. Dennoch hatte er sich hier eingefunden. In dem leeren Klassenzimmer vom letzten Jahr. <br/>Jetzt hieß es warten. <br/>Selbst wenn er die ganze Nacht hier saß.<br/>Er würde warten. <br/>Ein Schütteln an seiner Schulter weckte ihn. <br/>Schlaftrunken schaute in das vom Lumos erhellte Gesicht seines Gefährten. <br/>„Du bist gekommen.“, meinte er vollkommen erstaunt.<br/>„Ich war neugierig.“, zuckte der Harry die Schultern. „Außerdem, wie groß ist die Wahrscheinlichkeit das noch jemand außer uns dieses Klassenzimmer kennt?“<br/>Wie schon damals ließ sich Harry neben ihm nieder. <br/>Löschte das Lumos damit sie keine Aufmerksamkeit auf sich zogen. <br/>Wer auch immer sich in diesen verwaisten Teil des Schlosses verirren sollte. <br/>Eine Weile saßen sie im einvernehmlichen Schweigen nebeneinander. <br/>Bis Draco den Mut aufbrachte, über das zu sprechen, was ihm auf dem Herzen lag. <br/>„Ich habe genügend Veela- Blut in mir, um den Ruf eines Gefährten zu hören.“ <br/>Harry ließ ihn seine Gedanken sammeln.<br/>„Vater weiß das. Er weiß das sein verdünntes Veela- Blut und Mutters verdünntes Veela- Blut sich in mir zu einem Cocktail vermischt, der mich den Ruf meines Gefährten hören lässt...“<br/>Draco zog seine Beine an den Körper und schlang die Arme drum herum. <br/>„Dieser Gefährte bist du...“, wisperte er fast unhörbar. Die Augen starr geradeaus gerichtet. <br/>Er rechnete mit allem möglichen. Nur nicht damit, dass Harry ihn wie auch das Jahr zuvor in seine Arme zog.<br/>„Du hast eine verdammt verquere Art das zu zeigen- weißt du das?“, seufzte der Gryffindor auf. <br/>„Ich bin der Sohn Lucius Malfoys.“, kam es bitter zurück.<br/>Dann, als der vorherige Satz in den Platinblonden eingesunken war, schaute Draco ungläubig auf:<br/>„Du glaubst mir?“<br/>Harry lächelte auf ihn hinab:<br/>„Dieses Zimmer scheint die Wirkung auf dich zu haben, dich mir ohne deine alltägliche Maske zu präsentieren.“<br/>Daraufhin konnte Draco nichts mehr erwidern. Er wusste, dass Harry recht hatte. Seufzend legte er den Kopf zurück auf die Schulter des Schwarzhaarigen und entrollte seinen Körper, so dass er jetzt der Länge nach an den anderen Jungen geschmiegt lag. <br/>„Wenn ich deine Worte vom letzten Jahr nehme und die von heute, dann gehe ich davon aus, dass Lucius den Ruf deiner Natur ignoriert und dich bereits an jemand anderen versprochen hat.“<br/>Draco verkroch sich weiter in die Umarmung seines Gefährten. <br/>„Letztes Jahr... Quirell... Voldemort... der Vertrag sagt, sobald er es schafft sich einen neuen Körper zu besorgen... er hat das Recht mich an seine Seite zu holen, sobald ich meinen Abschluss gemacht habe... der Vertrag ist für alle Parteien magisch bindend... wenn er von einer Partei nicht eingehalten wird, hat das Konsequenzen, dagegen sieht der Tod noch schön aus...“~~~</p><p> </p><p>Er wurde von Voldemort nach London geschickt, um die Hinrichtung eines seiner korrupten Minister zu überwachen. <br/>Er vermisste die Träume.  </p><p>Und Dorian fiel noch etwas auf. <br/>Er hatte die Träume nur, wenn er sich in der Schlangengrube aufhielt. <br/>Jetzt stellte sich die Frage: Warum?<br/>Das es Visionen waren, die ihm von einem Feind geschickt wurden, daran glaubte er nicht. <br/>Dazu waren die Einblicke zu tief, zu persönlich. <br/>Es hatte nichts konstruiertes.<br/>Und nach und nach kam er zu der Überzeugung, dass er die Wahrheit träumte. Die Wahrheit, wie sie sich wirklich zugetragen hatte. <br/>Und ihm fiel der alte Muggel- Sinnspruch ein: <br/>„Der Sieger schreibt die Geschichte.“<br/>Es sah für Voldemort um einiges besser aus, wenn in die Geschichte einging, dass er seinen Sieg in einer richtigen Schlacht errungen hatte, statt durch Verrat und Meuchelmord.<br/>Aber warum zeigte sich die Wahrheit erst nach 200 Jahren?<br/>Und warum ihm?<br/>Vielleicht fand er die Antworten in Hogwarts? <br/>Schließlich hatte die Schule eine große Rolle in der Beziehung der Beiden gespielt. Die Schule war die Bühne auf der sie die Öffentlichkeit davon überzeugten, dass sie nicht mehr als Hass für einander übrig hatten. <br/>Die Schule war der Unterschlupf wo sie vor allen Augen verborgen ihre Liebe zum blühen bringen konnten. <br/>Wo sie sie hegten und pflegten. <br/>Aber Hogwarts war wie vom Erdboden verschluckt. <br/>Es gab niemanden mehr, der sich daran erinnern konnte, wo die Schule zu finden war. <br/>Bis auf sein Ur- Großvater: Voldemort. <br/>Das war die einzig lebende Kreatur, die die Wahrheit wusste und ihm alle Fragen beantworten konnte- falle er denn Lebensmüde war. <br/>Und das war Dorian nicht. <br/>Er musste einen anderen Weg finden an seine Antworten zu kommen. </p><p>Voldemort schickte ihn hinunter in die Kerker um herauszufinden, ob seine Foltermeister inzwischen zufriedenstellende Antworten aus dem Rebellenführer herausbekommen hatten. <br/>Ausdruckslos blickte er auf den Haufen wimmernden Fleisches, welches einmal einen Mensch dargestellt hatte. <br/>„Irgendwelche brauchbaren Informationen?“<br/>Der Foltermeister schüttelte den Kopf: <br/>„Nein Mylord. Alles was wir aus ihm rausbekommen konnten, war, dass Voldemort fallen wird. Nicht morgen und auch nicht übermorgen. Aber er wird fallen.“<br/>Beinahe wäre Dorian zusammengezuckt. <br/>Das waren in etwa die Worte, die auch Harry in seinem ersten Traum benutzt hatte. <br/>Stimmte es tatsächlich, dass die Unterdrückten sich an diese Worte klammerten um mit ihrem jämmerlichen Leben unter Voldemorts Herrschaft klar zu kommen? Stimmte es tatsächlich, dass Harrys Feinde diesen einen Augenblick in der Geschichte vergessen hatten?<br/>Oder war da der Grund zu suchen, warum Voldemort so rigoros gegen Rebellen, beziehungsweise gegen die Gerüchte von Rebellion vorging?<br/>Konnte er sich immer noch daran erinnern? <br/>Fürchtete er jene Worte so sehr, dass er es zu ließ, dass Nachbar gegen Nachbar hetzte und bereits seit mehr als 200 Jahren eine richtige Hexenjagd auf jedes Gerücht gemacht wurde, in dem es um Rebellion ging? Das jeder, der beschuldigt wurde Folter oder Schlimmeres erwarten durfte?<br/>Er wusste es nicht. <br/>Aber er nahm sich vor, dass er heute Nacht zu einigen Antworten kommen würde.<br/>Ohne jede weitere Regung schickte er einen „Avada“ auf den Klumpen rohen Fleisches. <br/>„Schafft es fort!“, befahl er kühl und wandte sich um. </p><p> </p><p>~~~Es war das Finale des Trimagischen Turniers. <br/>Draco hat es schon die beiden Aufgaben davor immer wieder die Kehle zugeschnürt, wenn er gesehen hatte, welch gefährlichen Aufgaben auf seinen Gefährten warteten. <br/>Am liebsten wäre er bei Albus Dumbledore ins Büro gestürmt um ihn an der Kehle zu packen, zu schütteln und zu fragen, wieso beim Großen Merlin er nicht interveniert hat, als der Kelch Harrys Namen ausgespuckt hatte. Er war schließlich der Direktor und Veranstalter dieses dreimal verfluchten Turniers. <br/>Seit sein Gefährte ins Labyrinth eingetaucht war, konnte er kaum ruhig auf seinem Platz sitzen. Ein absolut ungutes Gefühl hatte ihn in dem Moment beschlichen, in dem er das erste Mal einen Blick auf das grüne Heckenmeer geworfen hatte. <br/>Er sollte recht behalten. <br/>Sein Gefährte tauchte blutüberströmt und vollkommen erschöpft mit der Leiche Cedrics im Arm wieder auf.~~~</p><p>~~~ „Bitte verzeih... verzeih mir... durch mein Blut... Voldemort... wieder auferstanden... verzeih...“, hielt er seinen verzweifelt schluchzenden Gefährten in seinen Armen. <br/>Draco wusste was vorgefallen war. <br/>Sein Vater hatte ihn einen Tag nach dem verhängnisvollem Finale in Hogwarts aufgesucht und ihm alles minutiös berichtet. <br/>So wusste er auch, dass sein Gefährte sich wie ein verletztes Löwenjunges gewehrt hatte. Das von Anfang an klar gewesen war, dass Voldemort derjenige war, der die Oberhand in diesem verhängnisvollen Zusammenstoß behalten würde.<br/>Und sein Vater hatte ihm auch klar gemacht, dass er in den Sommerferien Voldemort offiziell als Verlobter vorgestellt werden würde. <br/>Jedoch würde es erst zur Vereinigung kommen, wenn er die Schule beendet hatte. Genauso wie es im Vertrag stand. Denn dann war er endlich alt und reif genug, dass er als Partner hinter seinem Gefährten stehen konnte. <br/>Draco verstärkte die Umarmung um Harry:<br/>„Scht... ganz ruhig... dich trifft keine Schuld... scht...“<br/>Er hielt den Schwarzhaarigen bis dieser erschöpft eingeschlafen war.<br/>Erst da erlaubte er es sich, sich ebenfalls zu entspannen. <br/>Die Umarmung um seinen Gefährten löste er auch dann nicht, als Morpheus ihn in seinem Reich willkommen hieß. <br/>Er bekam nicht mehr mit, wie Dobby mit hängenden Ohren in den Raum apparierte um über seine beiden jungen Master eine Decke auszubreiten.<br/>Wie er sich mit traurigen Augen kurz in dem ehemalig unbenutzten Klassenzimmer umschaute, dass er mit Hilfe der Mistress und Winky in einen Zufluchtsort für die beiden Gefährten verwandelt hatte, in dem sie geschützt vor der Öffentlichkeit ihre Bindung festigen und vertiefen konnten...~~~ </p><p> </p><p>Nachdem er erneut aus diesen erschütternden Träumen hochgeschreckt war, warf er sich einen Umhang über die Schulter und zog sich die Kapuze tief ins Gesicht. Schließlich war sein platinblondes Haar selbst in der stockfinsteren Düsternis des Kerkers nicht zu übersehen.<br/>Im schützenden Mantel der Nacht schlich er sich zurück in die tiefsten Gewölbe der Schlangengrube. <br/>Geschickt wich er jedem Wächter aus. <br/>Bis er vor den Zellen mit den angeblichen Rebellen stand. <br/>Mit einem kurzen Spruch in Parsel öffnete er die schwere Tür, schlüpfte hindurch und zog sie hinter sich wieder zu. <br/>Da er Parsel benutzt hatte um die Tür zu öffnen, würde Voldemort nicht alarmiert werden. <br/>Der Dunkle Lord verließ sich eindeutig viel zu sehr darauf, dass er der Einzige sein sollte, der diese Gabe besaß. Beziehungsweise, er vertraute zu sehr darauf, dass er seinem eigen Fleisch und Blut die Giftzähne gezogen hatte. <br/>Trotzdem weder er oder die Tür nicht einen Laut verursacht hatten, waren die Insassen in dem kleinen Raum bereits wach. Erwarteten ihn bereits.<br/>Dorian sah sich drei müden, verhärmten, von Trauer und Verlust gezeichneten Gesichtern gegenüber. <br/>„Was wünscht Ihr?“, fragte die junge Frau mit dem buschigen roten Haar erschöpft. „Reicht es nicht schon, dass Ihr uns während des Tages foltert? Müsst Ihr uns jetzt auch noch die wenigen friedlichen Stunden während der Nacht nehmen?“<br/>„Ich habe Fragen. Und ich glaube, ihr seid die Einzigen, die mir die Antworten geben können.“, brachte Dorian nach einer Weile stockend hervor.<br/>„Ach? Und was ist daran so neu?“, meinte einer der jungen Männer verächtlich. <br/>„Mich interessiert nicht die Gegenwart, sondern die Vergangenheit.“<br/>Damit hatte er die Aufmerksamkeit der Gefangenen. <br/>„Was möchtet Ihr hören?“, fragte die junge Frau, die zuerst gesprochen hatte.<br/>„Die Wahrheit.“<br/>Diesmal schnaubte der junge Mann auf der rechten Seite der jungen Frau auf. Dorian erkannte erst jetzt, dass die beiden jungen Männer Zwillinge sein mussten. Jedoch konnten sie genau dasselbe flammendrote Haar ihr eigen nennen wie die junge Frau. <br/>„Wahrheiten gibt es viele.“<br/>Die junge Frau erhob ihre Hand und brachte die Zwillinge- aller Wahrscheinlichkeit nach ihre Brüder- zum schweigen.    <br/>„Ich möchte die wahre Geschichte.“, bat er die junge Frau. <br/>Erneut brachte sie die Männer neben sich zum Schweigen. <br/>Sie legte fragend ihren Kopf schief und sagte dann:<br/>„Es gibt Geschichte und Geschichten. Was ist es, das Ihr hören möchtet?“<br/>Da er sich jetzt sicher sein konnte, dass sie bereit waren mit ihm zu reden, ließ er sich den dreien gegenüber ins muffige Stroh gleiten. <br/>„Die „wahre“ Geschichte ist mir bekannt. Doch ich glaube nur ihr könnt mir auf der Wahrheit basierende Geschichten geben...“<br/>„Was möchtet Ihr hören?“, wiederholte die junge Frau ihre Frage. <br/>„Wie kam Voldemort an die Macht?“<br/>Eine Weile herrschte geschocktes Schweigen in der kleinen Zelle. <br/>Erneut war es die junge Frau, die sich zuerst fing.<br/>„Das ist ungewöhnlich...“, murmelte sie leise vor sich her. <br/>„Könnt ihr mir antworten?“, erkundigte er sich leise. <br/>„Wir können Euch eine Geschichte erzählen, wie sie uns von unseren Eltern weitergeben wurde.“, lenkte der linke Zwilling ein.<br/>Auf Dorians Nicken hin, fing der rechte Zwilling an: <br/>„Unser Ur- Ur-Großvater befand sich gerade in seinem Abschlussjahr in Hogwarts. Es war zwei Wochen vor den Sommerferien und traditionell der Tag an dem die Siebtklässler ihren Abschluss überreicht bekamen...“ <br/>„... Wie jedes Jahr,“, fuhr der andere Zwilling fort. „bereitete sich die gesamte Schule darauf vor pünktlich beim Frühstück zu erscheinen, damit ein jeder die Abgänger mit donnerndem Applaus verabschieden konnte...“<br/>„Als sie jedoch diese Mal die Große Halle betraten,“, übernahm die junge Frau die Geschichte. „Wurde ihnen ganz schnell klar, dass es dieses Mal keine Diplome geben würde... <br/>Denn niemand geringeres als der Dunkle Lord erwartete sie anstelle Dumbledores. Sie konnten seinen Leichnam an ein Kreuz genagelt hinter dem Scheusal ausmachen. Doch was sie am meisten brach, war die Tatsache, dass sie Draco Malfoy, einen der ihren, hinter dem Dunklen Lord stehen sahen. <br/>Damit war allen klar, wer die verräterische Schlange gewesen sein musste, die Voldemort Zugang in ihren sicheren Hafen gewährt hatte. <br/>Und ihr Hass auf ihn war fast noch größer als der auf den Dunklen Lord...“, hier seufzte die junge Frau auf. Auch Dorian brauchte kurz eine Pause um sich zu sammeln. Wenn er nicht aufpasste, dann würde er noch zu einer flammenden Verteidigungsrede für seinen Ur- Großvater ansetzen. Doch das würde mit Sicherheit zum Schweigen der Gefangenen führen. <br/>„Nachdem Voldemort es den Kindern und Lehrern großzügigerweise gestattet hatte ihrem Frühstück nachzukommen, erschien in der Mitte der Halle, ziemlich nahe zu der Stelle an der er saß, ein hohes Podest auf dem ein Richtblock und eine ziemlich große Axt auszumachen waren. <br/>Er erklärte mit großen Worten, dass er sich freue das sie alle heute den Weg hierher gefunden hätten, denn sie konnten jetzt gemeinsam mit ihm und seinem zukünftigen Gemahl einem historischen Moment beiwohnen: Dem Tod Harry Potters.“<br/>Der rechte Zwilling erzählte weiter, da es schien das der jungen Frau in ihrer Verzweiflung die Stimme weggebrochen war. Auch ihm fiel es sichtlich schwer die Geschichte fortzusetzen und Dorian hatte Mühe die leise Stimme zu verstehen: <br/>„Absolute Stille legte sich über die Große Halle, die erst durchbrochen wurde, als die großen Flügeltüren aufgestoßen wurden und Harry Potter, gepeinigt und gefoltert, aber immer noch aufrecht gehend hineingeführt wurde...“<br/>„Es heißt,“, führte der Bruder weiter. „Er soll aus unzähligen Wunden geblutet haben. Die Folter, durch die ihn Voldemort ohne jeden Zweifel gejagt hatte, für jeden klar ersichtlich. Dennoch schien sein Geist noch nicht gebrochen zu sein. <br/>Im Angesicht seines entgültigen Todes soll er vollkommen ruhig gewesen sein...“<br/>Die junge Frau war wieder in der Lage ihre Stimme zu benutzen: <br/>„Es war kurz bevor er geköpft wurde, als er die Worte sprach, die all denen die Hoffnung gibt, die gegen Voldemort sind, aber nicht über genügend Kraft verfügen, sich gegen ihn aufzulehnen:<br/>‚Selbst wenn du mich hier und heute umbringst, wird das nichts an der Tatsache ändern, dass du irgendwann gestürzt wirst... <br/>Nicht morgen und auch nicht übermorgen. Aber irgendwann wird sich eine Seele finden, die ihre Rache deiner Grausamkeit gegenüber erfolgreich durchführen wird... Ich hoffe, dass du dann an den heutigen Tag zurückdenkst und erkennst, dass du heute den Grundstein für deinen eigenen Untergang gelegt hast.’...“<br/>„Danach ging alles ganz schnell.“, beendete der linke Zwilling die Geschichte. „Der Junge- der- lebte wurde geköpft und keine Sekunde später wurde Draco Malfoy mit dem Dunklen Lord vermählt.“<br/>Nachdem die letzten Worte nachgeklungen waren, herrschte eine schwere Stille in der Zelle. <br/>Es wurde nach ein paar Minuten durch das leise amüsierte Lachen der jungen Frau unterbrochen: <br/>„Es heißt, dass Voldemort seine Machtbasis in Hogwarts aufbauen wollte. Doch das Schloss schien andere Pläne zu haben. Denn nach der Zeremonie, die Draco und Voldemort aneinander band, fand sich jeder Schüler, Lehrer, Todesser, Hauself- einfach jeder vor den Toren Hogwarts wieder. Und es soll seitdem auch nicht eine Menschenseele mehr in der Lage gewesen sein, das Schloss zu betreten... Voldemort soll einen gewaltigen Wutanfall bekommen haben, nachdem ihm aufging, dass er von einem alten Steinhaufen ausgetrickst worden war...“<br/>An dieser Stelle konnte selbst Dorian ein Glucksen nicht unterdrücken. <br/>Oh ja, er kannte diese Wutausbrüche seines Ur-Großvaters nur zu gut. <br/>Merlin sei Dank, befand er sich dann immer hinter seinem Lord und nicht vor ihm, in der Schusslinie. <br/>„Verzeiht bitte, wenn ich vielleicht den Bogen überspanne,“, tastete sich Dorian vorsichtig an seine nächste Frage heran. Doch nachdem er die offenen Gesichter der Gefangenen erblickte, fuhr er leichteren Herzens fort: <br/>„Könnt ihr mir vielleicht noch verraten, wo sich Hogwarts befindet?“   <br/>Darauf hin schauten ihn die Drei dermaßen verblüfft an, dass er richtig unsicher wurde. Hatte er denn eine so dumme Frage gestellt? <br/>„Es heißt,“, antworte ihm die junge Frau fast tonlos. „Das er verhindern wollte, dass sich andere Zutritt zu solch einem mächtigen, magischen Objekt wie Hogwarts verschafften und deswegen habe er sein Fort um das Schloss herumgebaut... Der Kern der Schlangengrube ist Hogwarts...“<br/>„Merlin...“, brach es vollkommen geschockt aus ihm hervor.<br/>Hogwarts stellte den Kern der Schlangengrube dar?<br/>Aber warum wusste er nichts davon?<br/>Er stand dem Lord schließlich am Nächsten!<br/>Warum war er niemals über diesen Umstand informiert worden?<br/>Ohne darüber nachzudenken, sprach er seine Verwirrung aus:<br/>„Warum wusste ich das nicht?“<br/>„Es scheint, dass Hogwarts aus den Gedanken jener verschwindet, die in der Schlangengrube arbeiten und leben oder sonst wie dem Dunklen Lord treu ergeben sind.“, erklärte der rechte Zwilling. „Man ist sich auch nicht sicher, ob der Lord selbst noch weiß, warum er ausgerechnet hier seine Machtbasis aufgebaut hat.“<br/>„Er erinnert sich...“, lehnte sich Dorian kraftlos an die feuchte Kerkerwand. „Glaubt mir, er hat nichts, aber auch gar nichts vergessen...“<br/>Damit zog er seine Knie an den Körper, schlang die Arme drum herum und lehnte mit der Stirn dagegen. „... gar nichts...“<br/>Er konnte die geschockten Blicke der Gefangen auf sich spüren.<br/>Um seinen Kopf einigermaßen frei zu bekommen, lehnte er ihn nach hinten gegen die kühle Wand. Ließ seine Träume noch einmal Revue passieren.<br/>Nach einer Weile meinte Dorian tonlos:<br/>„Ronald Weasley und Hermione Granger mögen die besten Freunde Harrys gewesen sein, doch auch sie wussten nicht alles.“<br/>Das scharfe Einatmen zeigte ihm, dass er ins Schwarze getroffen hatte. <br/>Dafür brauchte er seinen Blick noch nicht mal von der Finsternis abwenden, die die Decke der kleinen Zelle darstellte. <br/>„Wer seid Ihr?“, fragte einer der Zwillinge fast schon aggressiv. <br/>Jetzt schaute er doch zurück auf die Gefangenen. <br/>Mit einer Schwere in den Gliedern, als würde er das Gewicht der Welt auf seinen Schultern tragen, erhob er sich schließlich wieder. <br/>Mit einer leichten Bewegung seines Kopfes rutschte die Kapuze nach hinten und gab seine Identität seinen Gegenübern preis. <br/>„Ihr seid...“, keuchte die junge Frau geschockt auf während sie gleichzeitig versuchte sich an ihre Brüder zu klammern. <br/>„... der Ur- Enkel der verräterischen kleinen Schlange- ja.“, nickte Dorian. Und bestätigte ihnen das es sich bei ihm tatsächlich um die rechte Hand Voldemorts handelte.<br/>Zu ihrem großen Erstaunen, verneigte er sich vor ihnen. <br/>Er, der große Lord, verneigte sich vor drei dreckigen Gefangenen. <br/>„Danke, das ihr mir meine Fragen beantwortet habt.“<br/>Er hielt seinen Arm in ihre Richtung.<br/>Selbst in der Dunkelheit konnten sie erkennen, wie sich eine Schlange unter seinem Ärmel hervorschlängelte. <br/>„Leider ist das alles, was ich euch als Dank anbieten kann.“, meinte er bitter.<br/>Wie hypnotisiert starrten die drei auf die kleine Giftnatter. <br/>Wieder war es die junge Frau, die sich als erste fing.<br/>Sie suchte seinen Blick und hielt ihn eine Weile gefangen. <br/>Als sie gefunden hatte, was sie suchte, nickte sie lächelnd:<br/>„In diesen Kerkern ist ein schneller Tod ein Segen.“<br/>Ohne ein weiteres Wort zu sagen, warf er sich die Kapuze erneut über seine hellen Haare. Drehte sich um und verließ die Zelle genauso leise, wie er sie betreten hatte. <br/>Er konnte sich sicher sein, dass die kleine Natter, nachdem sie ihr Werk vollbracht hatte, durch eine der vielen kleinen Ritzen nach draußen schlüpfen und sich dann nie wieder hier blicken lassen würde. <br/>Also würde auch dieser Akt der Gnade als unglücklicher Zufall in die Geschichte der Kerkeranalen eingehen. </p><p> </p><p>~~~Es schien, als wäre Harry in den letzten Wochen nur noch in seiner Nähe in der Lage ein wenig zur Ruhe zu kommen. <br/>Ansonsten konnte Draco schon von weitem die Augenringe erkennen, die die einzige Farbe in dem ansonsten bleichen und eingefallenen Gesicht darstellten. Dazu die ein wenig nach vorn gesunkenen Schultern.<br/>Die neue Foltermethode Voldemorts, seinem Gefährten Visionen und Alpträume zu schicken schien aufzugehen. <br/>Wenn nicht bald ein Wunder geschah, sah er seinen Gefährten zum Ende des Jahres unter der Erde. Ein absolut undenkbarer Gedanke, da ihm schon allein bei der Vorstellung die Luft zum Atmen fehlte. <br/>Und genau hier und jetzt, wo er seinem erschöpften Gefährten in das entspannte Gesicht schaute, welches neben ihm auf den Kissen ruhte, entschied Draco, dass es an der Zeit war, ihre Beziehung auf ein neues Level zu heben. <br/>Mit einem leisen Lächeln ließ er einen wahren Schauer aus sanften Küssen auf Harrys Gesicht hinabregnen... <br/>Später, als Harry mit einem glücklichen kleinen Lächeln auf den Lippen wieder eingeschlafen war, wurde Draco klar, dass er diesen Schritt niemals bereuen würde. Selbst wenn das hieß, dass der Abschied später noch schwerer fallen würde. Er bereute nichts.~~~</p><p> </p><p>Schluchzend wachte Dorian auf.<br/>Es schmerzte ihn zu wissen, das Dracos und Harrys gemeinsame Zeit  nur so kurz gewesen war. <br/>Vollkommen fertig stand er auf. <br/>Nach diesem kurzen Einblick in dieses perfekte, doch so zerbrechliche Glück konnte er eh nicht mehr weiterschlafen. <br/>Innerlich vollkommen zerrissen streifte er durch die verlassen Korridore der Schlangengrube.<br/>Längst schon hatte er jene Flure hinter sich gelassen, die ihm bekannt waren. <br/>Er lief einfach weiter. <br/>Folgte seinen Füssen. <br/>Wie in Trance öffnete er die Tür, welche ihm den Weg zu seinem Ziel versperrte.<br/>Mit einer Erleichterung, die er sogar durch die gedämpften Sinne der Trance mitbekam, kuschelte er sich in ihr gemeinsames Bett. </p><p> </p><p>~~~ „Er will, dass ich die Schilde von innen heraus Schwäche. <br/>Er will, dass ich einen der Hauselfen bedrohe, damit er dir einen starken Schlaftrunk ins Abendessen kippt. <br/>Er will, dass ich ihm den Weg nach Hogwarts und zu dir weise...“, rollte sich Draco schaudernd neben seinem Gefährten ein. <br/>Dieser schaffte es trotzdem ihn in seine starken Arme zu ziehen und ihm einen Kuss in den Nacken zu hauchen. <br/>„Wann?“, war die einzige Frage, die Harry ihm stellte. <br/>„In der Nacht vor der Diplomübergabe... Gleich nachdem er Hogwarts erobert hat, will er quasi auf deinem Grab die Bindungszeremonie abhalten...“, verstärkte sich das Schaudern. <br/>Sein Gefährte verstärkte die Umarmung um ihn herum und vergrub dann die Nase in seinem Nackenhaar. <br/>Auch das bescherte Draco eine Gänsehaut. Wenn auch aus ganz anderen Gründen, wie die Gedanken an die Rolle, die er in Harrys Verrat spielen sollte. <br/>Harry, der das Schaudern gespürt hatte und wusste, dass diesmal er der Grund war und nicht die verdammte Angst, lachte leise in sich hinein. <br/>Rollte Draco zurück auf den Rücken. <br/>Umschloss sein Gesicht mit beiden Händen. <br/>Meinte mit fester Stimme: <br/>„Wir haben noch ein ganzes Jahr uns darüber den Kopf zu zerbrechen- mmh?“<br/>Dann verschlossen die zärtlichen Lippen seines Gefährten die seinigen und es dauerte nicht lange, bis er sich der kräftigen Gestalt Harrys leidenschaftlich entgegenbog...~~~</p><p>~~~Eine Woche vor der Diplomübergabe. <br/>Von verzweifelten Schluchzern geschüttelt saß Draco auf dem Bett. <br/>Kaum war Harry über die Schwelle zu ihrem Raum geschritten, ließ er alles stehen und liegen um die schmale Gestalt seines Gefährten zu sich zu ziehen.<br/>„Scht... ruhig... was auch immer es ist, wir werden eine Lösung finden...“, fuhr er dem Veela in beruhigenden Bewegungen über den Rücken. <br/>„Ich bin schwanger...“, wisperte Draco in das inzwischen tränennasse Shirt seines Gefährten. Er spürte die Hand auf seinem Rücken stocken.<br/>Dann, wie sich sein Gefährte ein wenig von ihm löste, damit er das Gesicht Dracos mit beiden Händen umfassen und mit den Daumen die tränenfeuchten Wangenknochen entlang streichen konnte.<br/>„Ist das dein Ernst?“, fragte ihn Harry fast atemlos. <br/>Nachdem Draco genickt hatte, fand er sich unter einem überglücklichen Gefährten wieder, der ihm ganz genau zeigte, wie glücklich er über diese Nachricht war.<br/>Als sie wieder ein wenig zu Atem gekommen waren und Draco schon kurz vorm wegdämmern war, wisperte ihm Harry eine weitere Frage ins Haar: <br/>„Wie weit...?“<br/>„Irgendwann letzte Woche...“, hauchte Draco seinerseits einen Kuss auf die sonnengebräunte Haut von Harrys Hals. <br/>Die Umarmung verstärkte sich kurz.<br/>„Und weißt du auch schon...?“, hier brach dem Schwarzhaarigen die Stimme. <br/>Draco verstand ihn auch so.<br/>„Ein Mädchen...“, lächelte er verträumt. Er hoffte, dass sie die schönen moosgrünen Augen ihres anderen Vaters erben würde. <br/>Erneut spürte er, wie Harry sich von ihm löste und sich stattdessen in die Kissen zurücklehnte. <br/>Verwirrt setzte sich Draco ebenfalls auf. <br/>In einer fast ehrfürchtig zu nennenden Geste strich ihm sein Gefährte über seinen natürlich immer noch flachen Bauch. <br/>„Unsere Tochter...“, flüsterte er liebevoll. <br/>Es brach Draco fast das Herz als er die tiefe Liebe und Ergriffenheit in den Augen seines Gefährten erkannte.<br/>Er legte eine Hand über die Harrys und drückte sie kurz.<br/>„Ja,“, lächelte er nicht minder liebevoll. „Unsere Tochter.“<br/>Harry legte seine andere Hand an die Wange Dracos, welcher sich auch vertrauensvoll in die Handfläche hineinschmiegte.<br/>„Wir können den Plan nicht durchziehen.“, meinte Harry fest. <br/>Erst war Draco verwirrt. Dann begriff er.<br/>„Was?... Wieso?...“<br/>„Draco, wenn wir die Auroren und den Orden des Phönix alarmieren und sie Voldemort hier erwarten, wird es zum Kampf kommen. Einen Kampf, der dich und unserer Kleinen das Leben kosten kann. Und ich bin nicht dazu bereit das zu riskieren.“<br/>„Aber...“, hilflos wollte Draco darauf hinweisen, dass das ihre einzige Möglichkeit schien. Die einzige Möglichkeit ihre gemeinsame Zukunft zu sichern.<br/>Sie konnten den beiden Institutionen nicht schon vorher bescheid geben, da sie die allgegenwärtigen Spione des Dunklen Lords fürchteten. <br/>Sie konnten erst Alarm schlagen, wenn sich Voldemort schon auf dem Vormarsch befand. <br/>Ihnen war klar, dass es nur blutig enden konnte. <br/>Aber es war der einzige Weg Voldemort zu zeigen, dass er hier keineswegs erwünscht war. Und es war früh genug vor der Diplomübergabe, dass der Vertrag, der Draco an das Monster band, diese Handlung noch nicht als Verrat auslegen konnte. <br/>Denn erst wenn er der entgültige Gefährte des Dunklen Lords war, war er ihm zu absolutem Gehorsam verpflichtet. <br/>Nicht, dass er die letzten Jahre den Eindruck erweckt hätte, er würde den Befehlen dieses... Scheusals nicht Folge leisten...    <br/>Harry löste seine Hand aus der verzweifelten Umklammerung Dracos und legte sie an seine andere Wange. <br/>„Nein, ich werde das bisschen Glück, welches du mir beschert hast, nicht riskieren. Ich werde nicht daneben stehen und zu sehen, wie die Eifersucht Voldemorts dich und unsere Kleine tötet. Denn genau das wird passieren, wenn ihm klar wird, dass du dich auf meine Seite geschlagen hast.“, verzweifelt flehte ihn das Moosgrün seines Gefährten an, zu verstehen. „Vorher wäre ich mit einem Lächeln neben dir gestorben und hätte das Monster mit mir in den Abgrund gerissen... Aber jetzt... du trägst den Beweis unserer Zusammengehörigkeit in dir... das werde ich um nichts in der Welt riskieren...“, schüttelte Harry entschlossen den Kopf. <br/>„Aber...“, warf Draco hilflos ein. Wollte irgendetwas sagen, was seinem Gefährten zeigte, dass egal welchen Weg sie gingen, der Tod auf sie wartete. Sein Einwand wurde durch die sanften Lippen Harrys bereits im Keim erstickt. Der Kuss war nicht leidenschaftlich. Er war einfach nur ein Streifen ihrer Lippen. Dennoch spürte Draco all die Liebe und Zuneigung und das grenzenlose Vertrauen, welches sein Gefährte ihm gegenüber fühlte. <br/>Aufschluchzend fiel er in die starken Arme Harrys zurück. <br/>Sie waren sein einziger Anker in diesem Strudel aus Verzweiflung und bodenloser Angst.<br/>„Bitte versprich mir... bitte versprich mir, dass du am Leben bleibst... das du unserer Kleinen das Leben schenkst und sie die ersten Jahre ihres Lebens leitest... ihr zeigst, dass es noch etwas anderes als die Grausamkeit Voldemorts gibt...“, hier brach auch die kräftige Stimme seinen Gefährten. <br/>„Bitte versprich es mir...“, presste Harry ihm in einer verzweifelten Geste einen Kuss auf die Stirn. <br/>„Bis zu ihrer Bindung... bis ich sicher sein kann, dass sie einen Gefährten an ihrer Seite stehen hat...“, versprach Draco seinem wahren Gefährten immer wieder von heftigen Schluchzern unterbrochen. Seine schmale Gestalt schien nicht mehr in der Lage die Gewalt seiner Gefühle zu bändigen. Ein unkontrolliertes Zittern erfasste ihn, als ihm die Tragweite seines Versprechens bewusst wurde.<br/>Er würde seinen einzigen Gefährten verraten, um an dessen Stelle ein Monster zu setzen. Er würde am Leben bleiben, während er mit ansehen musste, wie seine Seele ihr Leben aushauchte. Er würde ihre Tochter über ihren anderen Vater anlügen müssen. Sie würde niemals wissen, dass sie einen Vater gehabt hat, der sie so sehr geliebt hat, dass er sie eher am Leben, aber unter der Obhut seines größten Feindes sah- als das er sie sterben sah, bevor ihr Leben überhaupt angefangen hatte.<br/>Der lieber sein eigenes Leben opferte um ihre gemeinsame Sicherheit zu gewährleisten und damit ein gesamtes Land in ein finsteres Zeitalter fallen ließ...~~~</p><p> </p><p>Wimmernd beugte er sich über den Bettrand und übergab sich. <br/>Immer und immer wieder. Bis er nur noch trocken würgen konnte. <br/>Aber selbst dann konnte er noch nicht aufhören. <br/>Starker Schüttelfrost hatte seinen gesamten Körper fest im Griff. <br/>Kalter Schweiß ließ seine Sachen klamm an seiner noch kälteren Haut kleben. <br/>Als er sich endlich wieder aufrichten konnte, tastete er blind auf den Nachttisch, bis seine kraftlosen Finger an den Bilderrahmen stießen. <br/>Fast schaffte er es nicht das Photo an sich zu ziehen.<br/>Fast war er nicht in der Lage durch den Tränenschleier hindurch die zwei glücklichen Gestalten zu erkennen, die in inniger Umarmung vor dem Kamin saßen. <br/>Fast hätte er nicht erkannt, dass es sich dabei um Harry Potter und Draco Malfoy handelte.<br/>Das Bild fest an seine Brust gepresst und in sich zusammengerollt schlief er wieder ein. <br/>Spürte nicht die vom alter geschrumpelten aber nicht minder geschickten Hände, die alle Spuren seines Missgeschickes beseitigten. Die ihm mit einem feuchten Lappen über die Stirn strichen und dann die Decke fest um ihn herum steckten.    </p><p> </p><p>~~~Mit einem letzten Kuss verabschiedete sich sein einzig wahrer Gefährte von ihm. Legte noch in einer letzten zärtlichen Geste kurz die Hand über den flachen Bauch ab. Als ob er bereits in der Lage wäre, das Leben, welches dort heranwuchs zu spüren. <br/>Verzweifelt klammerte sich Draco an ihn. Wollte ihn nicht gehen lassen. <br/>Mit einem herzzerreißenden Lächeln, löste Harry die Finger, die ihn gefangen halten wollten. Wischte noch einmal sanft über die tränennassen Wangen. <br/>„Lächle- ja? Schenk mir dein Lächeln, damit ich weiß, dass ich durch euch weiterlebe. Selbst nach meinem Tod.“, bat Harry mit fester Stimme. <br/>Nun, das war das mindeste was er für seinen Gefährten tun konnte. <br/>Auch wenn es ihm jedes bisschen Energie abverlangte, aber er schaffte es das gewünschte Lächeln auf sein Gesicht zu zaubern. <br/>Und das war auch das Bild, welches Harry auf dem langen Weg zu seinem Tod begleitete: das tränenreiche, lächelnde Gesicht seines Geliebten, Gefährten, seiner Seele. <br/>Er wusste nicht, dass es sich dabei um Dracos letztes Lächeln handelte.<br/>Er sagte nichts mehr, als er beobachtete, wie Harry ihr gemeinsames Zimmer verließ. <br/>Erst als die Tür hinter ihm ins Schloss fiel, gestattete er es seinem vollkommen entkräftigten Körper auf dem Bett zusammenzubrechen. <br/>Für Tränen hatte er keine Kraft mehr. <br/>Ein paar Minuten später spürte er, wie die zwei treuen Seelen, die sein und Harrys Geheimnis mit ihrem Leben hüten würden, ihm halfen, sich aufzusetzen. Mit einem feuchten Tuch auch die letzten Tränenspuren aus seinem Gesicht entfernten. Und ihm einen Stärkungstrank an die Lippen hielten. Ohne sich zu wehren, schluckte er den Trank.<br/>Danach spürte er kühles Glas in seinen Fingern. <br/>Sein Blick senkte sich und er konnte die leere Phiole ausmachen, in der sich der Schlaftrunk für Harry befunden hatte. <br/>Das hieß, Harry hatte sich in seiner üblichen Ecke in der Bibliothek niedergelassen, seine Bücher um sich herum ausgebreitet, damit es so aussah, als ob ihn der Schlaf mitten in einer Recherche erwischt hätte, dann den Trank hinunter geschluckt und die geleerte Phiole Dobby überreicht. Es sah schließlich nicht allzu gut aus, wenn Voldemort seinen eigenen Trank in den Händen seines Opfers fand.<br/>Ihr Sterben hatte begonnen.<br/>Vollkommen benommen schaute er auf. <br/>Blickte geradewegs in die wässrigen Augen der beiden Hauselfen. <br/>Er wusste, dass es diese zwei treuen Seelen zerriss, ihn und seinen Gefährten dermaßen leiden zu sehen. Aber auch sie konnten nichts weiter tun. Sie konnten lediglich ihr Bestes geben, damit sie ihren schweren Weg ein wenig leichter gehen konnten. <br/>In einer spontanen Geste kniete er sich vor den beiden Wesen hin, schloss sie in seine Arme und drückte sie dankbar an sich: <br/>„Habt Dank für alles, was ihr für Harry und mich getan habt.“<br/>Dann erhob er sich. <br/>Streckte seinen Rücken durch und legte jene undurchdringliche Maske auf, für die die Malfoy so bekannt waren. <br/>Wenn sein Vater noch in der Lage wäre, ihn so zu sehen, wäre er zweifellos stolz auf ihn. Schließlich hatte er es endlich geschafft alle seine Gefühle hinter jenen gefühlsstarren Maske zu verbannen. <br/>Wie gut, dass der Bastard bereits in der untersten Hölle schmorte. <br/>Aber das war der einzige Weg, der es ihm ermöglichte diesen einen Verrat zu begehen und das Leben an der Seite dieses Monsters zu leben. <br/>Und er dankte Merlin tausendmal, das der junge Tom Riddle und Harry sich dermaßen ähnlich sahen, dass Voldemort nicht misstrauisch werden würde, sollte ihre Tochter mit schwarzen Haaren oder grünen Augen geboren werden. Selbst Parsel würde sie sprechen können.<br/>Warum also sollte Voldemort Verdacht schöpfen? <br/>Winky reichte ihm den Samtbeutel der das Artefakt enthielt mit dem er an einer Stelle die Schilde Hogwarts dermaßen schwächen und dadurch Voldemort und einer handvoll handverlesener Leute Zutritt zum Schloss verschaffen konnte. <br/>In einer entschuldigenden Geste legte er seine Hand auf der Steinmauer ab: <br/>„Bitte vergib mir...“, wisperte er fast unhörbar. <br/>Und ihm war fast so, als würde er eine warme mütterliche Umarmung spüren, die ihm mitteilte, dass sie verstehe. <br/>Bevor er den Raum entgültig verließ, wandte er sich noch einmal um. <br/>Nahm jede Kleinigkeit ihres kleinen sicheren Hafens auf. <br/>Bis sein Blick an Winky und Dobby hängen blieb. <br/>„Passt gut auf euch auf.“<br/>Und mit dem Zufallen der Tür schloss auch er entgültig mit diesem Teil seines Lebens ab. <br/>Er wusste, dass er dieses Zimmer niemals wieder betreten würde.~~~</p><p>~~~Er sah, wie Harry mit einem sanften Lächeln aus dem Leben schied.<br/>Er wusste, dass es einzig und allein aus der Gewissheit geboren war, dass sein eigenes Opfer die Sicherheit von ihm und ihrer Tochter gewährleistete. <br/>Er wusste, dass er von heute an genauso verhasst sein würde, wie das Ungeheuer welches neben ihn stand. <br/>Es machte ihm nichts. <br/>Er hatte seinem einzig wahren Gefährten ein Versprechen gegeben. <br/>Ein Versprechen, dass er unter allen Umständen halten würde.<br/>Selbst wenn es ihn zerbrach.~~~</p><p>~~~Er hatte der kleinen Zeremonie beigewohnt, die seine Tochter vollkommen in die Hände ihres Gefährten übergab. <br/>Jetzt konnte er sich sicher sein, dass sie auf all ihren Wegen immer jemanden an ihrer Seite haben würde. Sie brauchte ihn nicht mehr. <br/>Er hatte in ihren Augen erkennen können, das sie wusste, dass heute ihr letzter gemeinsamer Tag sein würde. Er wusste nicht, woher sie diese Gewissheit nahm, aber es erleichterte ihn, dass sie nicht versuchte ihn aufzuhalten oder Voldemort warnte. <br/>Er zog sich in sein privates Tränkelabor zurück.<br/>Das war der einzige Ort an dem Voldemort seine Zurückgezogenheit respektierte. Ihn niemals störte, sondern immer geduldig wartete, bis er von selbst in die Welt zurückkehrte. <br/>Schon vor Wochen hatte er das Gift hergestellt.<br/>Ein Gift basierend auf den Schlaftrunk, der auch Harry in den Tod geschickt hatte. <br/>Ohne auch nur eine Sekunde zu zögern, stürzte er ihn hinunter. <br/>Wisperte die Worte, die gewährleisten würden, dass nicht ein Bild von ihm zurückbleiben würde. Er wollte noch nicht mal in Form von Bildern für Voldemort erreichbar sein.<br/>Erst als das getan war, gestatte er dem Gift seine zerstörerische Arbeit zu vollziehen. Nur seine Sachen würden zurückbleiben.<br/>Nichts weiter. Kein Körper, keine Bilder. <br/>Nur die Sachen, die er am Leibe trug.     <br/>Das war alles...<br/>Dunkelheit umfing ihn...~~~</p><p>~~~ „Mylord, Euer Urenkel!“<br/>Und das Erste was er nach der langen Dunkelheit zu sehen bekam, war das Blutrot eines Monsters...~~~</p><p> </p><p>Wie ein Ertrinkender, der nach langem Kampf doch noch die Wasseroberfläche durchbrechen konnte, schnappte er nach Luft. <br/>Kurz danach war er in der Lage seine kobaltblauen Augen zu öffnen.<br/>Das sanfte Kerzenlicht, welches den Raum erhellte, ermöglichte es ihm auch die zwei Gestalten neben dem Bett auszumachen. <br/>„Dobby? Winky?“, fragte er dumpf. <br/>Das Nicken der beiden Kreaturen zeigte ihm, dass er richtig gelegen hatte.<br/>Verwirrt setzte er sich auf. <br/>Bemerkte erst da, dass er etwas fest an seine Brust gepresst hielt. <br/>Die Verwirrung wurde nur noch größer, als er bemerkte, dass es sich um ein Photo handelte. <br/>Vollkommen geschockt blickte er hinab. <br/>Konnte selbst noch durch die Zeiten hindurch den Frieden spüren, den das Bild so perfekt eingefangen hatte. <br/>Denn kein geringerer als Harry Potter lehnte mit den Rücken an einen Sessel, während zwischen seinen Beinen Draco Malfoy saß. Das Kinn hatte der Schwarzhaarige auf der Schulter des Platinblonden abgelegt. Die Arme sicher um die Hüften des Anderen geschlungen. <br/>Gemeinsam beobachteten sie vollkommen entspannt das flackernde Spiel des Kaminfeuers. <br/>Mit zitternden Fingern strich Dorian über die Oberfläche des Glases hinter der das Photo für alle Zeiten gesichert war. <br/>Die Puzzlestücke fielen endlich an ihren Platz. <br/>„Ich...“, er schluckte. „Ich bin... Draco...“<br/>„Junger Master,“, spürte er wie auf seinem linken und rechtem Knie die Hauselfen ihre flatternden Hände ablegten. „Mistress hat gewusst, dass deine Seele zurückkehren wird.“, hörte er die hohe Stimme Winkys.<br/>„Sie war in der Lage dieses eine Bild vor deinem Fluch zu retten. Da sie auch wusste, dass du es brauchen würdest um dich wieder zu erinnern.“, erklärte Dobby weiter, während er in einer fast zärtlich zu nennenden Geste den Bilderrahmen nachzeichnete.<br/>Ja, Dorian erinnerte sich wieder.<br/>An alles. <br/>Auch daran, dass dies das einzige Bild war, auf dem Draco und Harry in trauter Gemeinsamkeit abgebildet waren. Und das sie dieses kleine Wunder den kleinen Kreaturen verdankten, die sich ihnen beiden so vollkommen verschworen hatten.<br/>Eines Tages hatten Dobby und Winky ziemlich betreten vor ihnen gestanden und hatten ein ziemlich unbeholfen eingewickeltes Päckchen auf dem Tisch abgelegt, auf dem noch die Hausaufgaben von ihm und Harry ausgebreitete gewesen waren. <br/>Er und Harry waren im ersten Moment zu verblüfft gewesen um überhaupt zu reagieren. <br/>Ihre verzögerte Reaktion musste Dobby dazu bewogen haben, eine Erklärung ab zu liefern: <br/>„Winky und Dobby wollen jungen Mastern ein Geschenk machen. Als Dank für ihre Güte. Das Bild haben Dobby mit Kamera von Colin- Jungen gemacht. Den Bilderrahmen haben Winky gemacht...“<br/>Das hatte es dann doch geschafft sie aus ihrer Starre zu reißen. <br/>Sprachlos hatten sie auf das kleine Wunder gestarrt, welches die beiden Hauselfen geschaffen hatten. Sie waren nicht in der Lage gewesen ihre Dankbarkeit ausreichend in Worte zu fassen. Dazu waren sie viel zu überwältigt. <br/>Aber ihre Dankbarkeit musste sich auch so gezeigt haben. Schließlich hatten sich die Ohren der Elfen wieder aufgerichtet und die Augen wieder angefangen zu strahlen. Mit einem gemeinsamen: <br/>„Gern geschehen.“, verabschiedeten sich die Hauselfen und hatten ihn und Harry allein zurückgelassen. <br/>Ein gebrochenes: „Danke...“, schlich sich über Dorians Lippen. <br/>Er wusste nicht bei wem er sich bedankte. Nur das es angebracht schien. Und erneut schien ihm, als ob ihn jemand in eine warme mütterliche Umarmung ziehen würde. <br/>Doch diesmal verschwand das Gefühl nicht, sondern zog sich nur soweit zurück, dass er es immer noch am Rande seines Bewusstseins wahrnahm. <br/>„Was?“, fragte er durcheinander.<br/>„Mistress sagt: Gern geschehen.“, lächelte Winky ihn warm an. <br/>„Mistress?“, erkundigte er sich überhaupt nichts mehr verstehend. <br/>„Hogwarts.“, deutete Dobby auf den Boden zu ihren Füssen. <br/>Am Rande seines Bewusstseins konnte Dorian Amüsement ob seines Versuches das alles zu verstehen und dabei nicht den Verstand zu verlieren, spüren. <br/>„Ja,“, nickte Dobby bestätigend. „Mistress hat Master Harry und Master Draco in diesem Raum eine Zuflucht geschaffen und sie hier vor allen Augen versteckt. Niemand hat sie hier jemals finden können. Egal, wie geschickt eure Hauskameraden euch gefolgt sind, um herauszufinden, wo ihr euch fast jede Nacht hinschleicht.“, endete der alte Hauself glucksend. <br/>Geschockt lauschte Dorian den Erklärungen der Elfen. <br/>„Mistress hat uns auch gebeten bei ihr zu bleiben.“, erzählte Winky weiter. „Und uns um sie zu kümmern während sie die Welt aus ihren Mauern verbannt.“ <br/>„Also seit ihr geblieben? All die Jahre wart ihr hier eingeschlossen? In diesem... Schlangennest?“<br/>Kopfschüttelnd berichtete Dobby ihn: <br/>„Wir waren in der Nähe eurer Kinder und Kindeskinder. <br/>Mistress hat eurer Tochter in einem Traum gezeigt, was du deinem wahren Gefährten versprochen hattest...“<br/>„Deshalb... deshalb hatte sie diesen wissenden Blick... Deshalb hielt sie mich nicht auf...“<br/>Die Hand Winkys verstärkte den Druck auf sein Knie:<br/>„Ja, und sie wusste auch, dass sie nicht einen Tropfen Blut mit Voldemort gemein hatte. Das hat sie vor dem Verrücktwerden bewahrt. So wie es euren Enkel davor bewahrt hat, sich von den Zinnen des Schlangennests zu stürzen.“<br/>„Merlin!“, keuchte Dorian schmerzgepeinigt auf. <br/>Wie viel Schmerz hatten sie über diese Familie gebracht? <br/>Wäre es da nicht besser gewesen, im Kampf an der Seite Harrys zu sterben?<br/>Erneut wurde er in die tiefe mütterliche Umarmung gezogen. <br/>Doch es half kaum seinen Schmerz zu lindern.<br/>„Master,“, flehte ihn Dobby fast schon an. „Mistress sagt, dass du dir keine Vorwürfe zu machen brauchst. Die Zeit für den Tod Voldemorts sei noch nicht heran gewesen. Euer ursprünglicher Plan hätte vielen, vielen Menschen das Leben gekostet. So starben lediglich Dumbledore und Master Harry. Und eure Kinder haben euch niemals einen Vorwurf gemacht. Stattdessen haben sie das Versprechen geehrt, welches du deinem Gefährten gegeben hast und sie lebten ihr Leben erhobenen Hauptes. Bitte Master, gräm dich nicht.“, flehte Dobby. <br/>Diese Worte waren es auch, die ihn in seiner Verzweiflung erreichten. <br/>Nicht das er Dobby nicht glaubte, aber er brauchte Gewissheit: <br/>„Wirklich?“, fragte er mit kleiner Stimme nach. <br/>Enthusiastisch nickten die beiden kleinen Kreaturen. <br/>Auch Mistress verstärkte ihre warme Umarmung, wie um ihm zu zeigen, dass es wirklich so war. <br/>„Du sagtest, die Zeit war noch nicht reif. Ist sie es denn jetzt?“<br/>Erneut nickten beide Elfen. <br/>„Ja,“, beantwortete Winky seine Frage. „Mistress hat in den letzten 200 Jahren einen Weg gefunden, seine schwarze Seele von seinem Körper zu trennen und auf ewig zu zerstören.“</p><p>Mistress hatte ihn gebeten in der Großen Halle zu warten. <br/>Sie würde sich um alles weitere kümmern. <br/>Dorian wanderte voll nostalgischer Melancholie durch die Gänge Hogwarts. Dobby und Winky hatten einen guten Job getan ihre Mistress Instand zu halten. <br/>Hogwarts hatte sich nicht ein bisschen verändert. <br/>Das einzige was fehlte, war: Leben. <br/>Man spürte, dass Hogwarts seit 200 Jahren keine Menschenseele beherbergt hatte. <br/>Und lediglich zwei kleine Elfen konnten so ein großes Gebäude einfach nicht mit der Lebendigkeit füllen die unzählige Kinder und Professoren verbreiteten. <br/>Vor den großen Flügeltüren hielt er zögernd inne. <br/>Hier... hier war der Ort, an dem er seinen Gefährten das letzte Mal gesehen hatte. <br/>Er spürte wie ihm Mistress einen kleinen aufmunternden Schupps gab.<br/>Tief einatmend stieß er die Flügel auf und betrat die Halle.<br/>Nichts hatte sich verändert. Aber auch rein gar nichts. <br/>Selbst das Podest stand noch. <br/>Wie in Trance bewegte sich Dorian auf das stabile Holzgebilde zu. <br/>Legte seine Hand auf der dicken Plattform ab. <br/>Er spürte, wie Mistress ihm scheinbar eine warme Decke über die Schultern legte und so den Schmerz milderte. <br/>Dann erschien unter seiner Hand das Schwert, welches Harry in seinem zweiten Jahr bereits einmal das Leben gerettet hatte. <br/>Dobby hatte ihm erklärt, dass Mistress die letzten Jahrzehnte damit verbracht hat, Unmengen von Magie in das Schwert zu speisen. <br/>Und zwar in einer dermaßen hohen Konzentration, dass die Magie ausreichen würde, die Seele Voldemorts entgültig zu zerreißen und sie so an einer Rückkehr zu hindern. <br/>Er musste es nur schaffen Voldemort das Schwert in den Körper zu rammen. <br/>Es war wirklich ironisch, dass Voldemort nach all der Zeit auch sein Ende hier finden sollte. Wirklich ironisch. <br/>„Was...?“,hörte er es hinter sich in diesem charakteristischen Zischeln, welches nur Voldemort sein eigen nannte. <br/>Kaum war der letzte Buchstabe verklungen, wurde Dorian von einer tiefen <br/>Ruhe erfasst. Leise lachte er amüsiert in sich hinein:<br/>„Weißt du, Voldermort? Es ist doch wirklich ironisch... so verdammt ironisch...“<br/>„Dorian!“, zischte Voldermort bedrohlich. <br/>Der junge Mann drehte sich zu dem Monster um, welches sein letztes und auch dieses Leben so vollkommen beherrscht hatte. <br/>„Weißt du,“, fuhr Dorian weiterhin furchtlos fort. „Harry hatte recht. Du hast an dem Tag tatsächlich den Grundstein zu deiner eigenen Zerstörung gelegt. Möchtest du wissen was der Mörtel war?“<br/>Voldemort verengte die Augen zu gefährlichen Schlitzen. Wartete aber wie eine Kobra ab, bevor er zuschlug. <br/>Dorians Stimme nahm einen harten Ton an: <br/>„Die Sekunde, in der du mich als Verräter auserkoren hattest. Die Sekunde, in der Harrys Kopf rollte. Die Sekunde... in der du mich an dich bandest. Selbst die Schwüre eines Hochzeitsschwur binden eine Veela an jemanden, der nicht ihr Gefährte ist, sobald der eine wahre Gefährte tot ist. Diese Schwüre sind uns heilig. Dabei spielt es keine Rolle ob sie erzwungen wurden, oder nicht. Einmal gesprochen, machen sie es der Veela unmöglich Hand gegen ihren Angetrauten zu erheben... All das zusammen ergibt den Mörtel, der den Grundstein zu deiner Zerstörung hält.“<br/>Und das erste Mal, seit Dorian Voldemort kannte, sei es als Draco oder als Dorian, zeigte das Gesicht der Schlange eine Regung- grenzenloses Erstaunen. <br/>„Draco?“, erkundigte er sich fast vorsichtig. So als könne ein zu lautes Geräusch die Erinnerung an seinen Gefährten für immer zerstören. <br/>Dorian nickte:<br/>„Wiedergeboren als mein eigener Ur- Enkel.“, lachte er leise in sich hinein. „Ich bin sicher irgendwo amüsiert sich irgendwer ganz kräftig darüber.“ <br/>„Du meinst... unser Ur-Enkel...“, berichtigte Voldemort gedankenverloren. <br/>„Nein.“, griff Dorian nach hinten, zog das Schwert aus seiner Scheide und stieß es einem vollkommen überraschten Voldemort in den dürren Leib. <br/>„Mein Ur- Enkel. Meiner und Harrys.“ <br/>Voldemorts Augen weiteten sich unmerklich. <br/>Dann formte er mit seiner Hand eine Kralle und stieß sie Dorian direkt ins Herz. Dorian sackte nach vorn. Stieß das Schwert bis zum Heft in den Leib Voldemorts. <br/>„Wenn ich es nicht besitzen kann, dann soll es niemand jemals zu Gesicht bekommen.“, zischte die Schlange und zog seine Hand aus dem Brustkorb Dorians. Das noch schlagende Herz sicher zwischen seinen langen, skelettartigen Fingern. <br/>„Du kannst nichts besitzen... was niemals dein gewesen ist...“, keuchte Dorian. Dann konzentrierte er sich und signalisierte so dem Schwert, dass es mit seinem Job beginnen konnte. <br/>Aber selbst in der darauf folgenden Agonie war Dorian in der Lage Voldemort: „Und ich habe dieses Leben... dieses eine Leben ohne weitere Verbindungen... oder Schwüre... oder Verpflichtungen dir gegenüber gebraucht... um Harry... und auch... mich rächen zu können...“ ins Ohr zu flüstern. <br/>Dann verließ ihn das letzte bisschen Kraft und er starb. <br/>In genau der Halle in der vor all den Jahren sein Gefährte sich für ihn geopfert hatte. Genau neben dem Podest auf dem er sich hat köpfen lassen. Und er starb mit einem Lächeln. <br/>Der gepeinigte Wutschrei Voldmorts drang durch die Mauern Hogwarts, durch die Mauern der Schlangengrube hinaus in das Land welches er solange gequält hatte. <br/>Aber es würde niemals jemand erfahren, dass er in seinen letzten Sekunden erkannte, dass Harry Potter in der Sekunde gesiegt hatte, in der er auf seinen Befehl hin geköpft worden war. <br/>Denn er hatte Voldemort nichts gelassen. Weder das göttliche Wesen, welches er für sich begehrt hat seit er das erste Mal ein Auge auf es geworfen hatte. Noch das Kind welches er sich eingebildet hatte mit diesem Wesen gezeugt zu haben. <br/>Alles, aber auch alles hatte bereits Harry Potter gehört. <br/>Und auch der letzte Rest der rabenschwarze Seele Voldemorts löste sich auf während es vor tiefen Hass auf Harry Potter verglühte. </p><p>In der Sekunde, in der Voldemort seinen letzten Atemzug tat, fing die Schlangengrube an in sich zusammenzufallen. <br/>Sie begrub all jene unter sich, die treu zu ihrem Dunklen Lord gestanden hatten. <br/>Und Hogwarts erblickte nach 200 Jahren Dunkelheit erneut das Licht. </p><p>Vorsichtig lösten Dobby und Winky die verkrampften Finger ihres Master vom Schwertgriff.<br/>Säuberten ihn, verschlossen seine Wunden und apparierten ihn in die Gruft, welche sich tief im Herzen Hogwarts versteckte. <br/>Dort legten sie ihn neben seinem verstorbenen Gefährten in einen steinernen Sarkophag und zogen den schweren Deckel über ihre beiden Master. <br/>Sie wussten, dass ihre Mistress es niemals gestatten würde, dass die Ewige Ruhe der beiden jemals gestört würde. <br/>Wie kleine Wächter stellten sie sich links und rechts neben dem Sarg auf und Mistress kam der Bitte ihrer kleinen Freunde nach und versteinerte sie. So waren Winky und Dobby auch im Tode in der Lage ihre Master zu bewachen. </p><p>Doch diesmal war es nicht Dunkelheit die ihn empfing, sondern sein einer wahrer Gefährte, der ihn überglücklich in Grund und Boden küsste...</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_2_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>So, sagt bitte nicht, ich hätte Euch nicht gewarnt^^“*und zum Abschied noch einmal jeden Leser n Kleenex in die Hand drük*</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/14501085">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 8 of the <a href="/series/1011147">Umzug ff.de</a> series</span><span class="divider"> </span><a class="next" href="/works/14501172">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="GR9sM7RFc2Wg0t8jX2bL1_xSQ3btaG2PgXhs7KQSVVkptXtY_26Ox9vHyR16lgGBBHoHT19yJhJRVv6g-CvT1w"/>
+          <input value="14501139" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          7 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_14501139">
+  <form class="new_comment" id="comment_for_14501139" action="/works/14501139/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="f3wAt84QJO0-KoC9lUD9mJbpPLm7M5bUkTyne5huJCFP1hfchTvZT0U_loOwsDfObsF4gAkp3UlBEjU3xFeirw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_14501139">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_14501139" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_14501139=new LiveValidation('comment_name_for_14501139',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_14501139.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_14501139">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_14501139" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_14501139=new LiveValidation('comment_email_for_14501139',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_14501139.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_14501139" class="landmark">Comment</label>
+        <textarea id="comment_content_for_14501139" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_14501139" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_14501139_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_14501139">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_14501139=new LiveValidation('comment_content_for_14501139',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_14501139.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_14501139.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_14501139" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/14501139/hit_count.json")})</script>
+
+
+  </body>
+</html>

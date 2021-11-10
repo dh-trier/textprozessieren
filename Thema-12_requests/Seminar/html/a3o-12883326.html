@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":84,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+      <meta name="robots" content="noindex"/>
+      <meta name="googlebot" content="noindex"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Ein Baby per Post - MissJinx - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="C3Tkn78SahWoN4pHouRZqIVNLx1yu5RjMlUfQpYtZcbT7wd7KkNvX4fQG4kVBvgThuRTp8aDCE9u7Hj9-uzK9A"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="Tooi6GOuW-XjPFI8x7U_GGf9Al-69LKl3XludXnHeYmWEcEM9v9er8zbw_JwV56jZFR-5Q7MLomBwAnKFQbWuw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;sherlock (tv)&quot; m/m NOT &quot;sherlock holmes/john watson&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/12883326/chapters/29430777">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=12883326">Comments </a>
+  </li>
+
+
+
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/12883326/Ein%20Baby%20per%20Post.azw3?updated_at=1558296695">AZW3</a></li>
+          <li><a href="/downloads/12883326/Ein%20Baby%20per%20Post.epub?updated_at=1558296695">EPUB</a></li>
+          <li><a href="/downloads/12883326/Ein%20Baby%20per%20Post.mobi?updated_at=1558296695">MOBI</a></li>
+          <li><a href="/downloads/12883326/Ein%20Baby%20per%20Post.pdf?updated_at=1558296695">PDF</a></li>
+          <li><a href="/downloads/12883326/Ein%20Baby%20per%20Post.html?updated_at=1558296695">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20*a*%20Severus%20Snape/works">Harry Potter &amp; Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Remus%20Lupin/works">Remus Lupin</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Alternate%20Universe%20-%20Canon%20Divergence/works">Alternate Universe - Canon Divergence</a></li><li><a class="tag" href="/tags/Father-Son%20Relationship/works">Father-Son Relationship</a></li><li><a class="tag" href="/tags/Snape-adopts-Harry/works">Snape-adopts-Harry</a></li><li><a class="tag" href="/tags/Kid%20Fic/works">Kid Fic</a></li><li><a class="tag" href="/tags/Christmas/works">Christmas</a></li><li><a class="tag" href="/tags/Humor/works">Humor</a></li><li><a class="tag" href="/tags/Past%20Child%20Abuse/works">Past Child Abuse</a></li><li><a class="tag" href="/tags/Past%20Child%20Neglect/works">Past Child Neglect</a></li><li><a class="tag" href="/tags/Graphic%20Description/works">Graphic Description</a></li><li><a class="tag" href="/tags/Hurt*s*Comfort/works">Hurt/Comfort</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2017-12-01</dd><dt class="status">Completed:</dt><dd class="status">2017-12-21</dd><dt class="words">Words:</dt><dd class="words">10544</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="comments">Comments:</dt><dd class="comments">7</dd><dt class="kudos">Kudos:</dt><dd class="kudos">147</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/12883326/bookmarks">2</a></dd><dt class="hits">Hits:</dt><dd class="hits">943</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Ein Baby per Post
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/MissJinx/pseuds/MissJinx">MissJinx</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Jedes Jahr an Weihnachten will Harry die Geschichte hören, wie er in Spinner's End gelandet ist... per Post.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+    <ul class="associations">
+
+
+        <li>
+            A translation of
+
+            <a href="/works/593693">Baby In A Box</a> by <a rel="author" href="/users/Sita_Z/pseuds/Sita_Z">Sita_Z</a>.
+        </li>
+
+    </ul>
+
+    <blockquote class="userstuff">
+      <p>Vorwort der Übersetzerin: </p><p>Diese Geschichte ist mein Weihnachtsgeschenk an euch, meine lieben Leser. Es ist die Übersetzung der wirklich wunderbaren Geschichte "Baby In A Box" von Sita_Z, die so freundlich war, mir ihre Erlaubnis für eine deutsche Übersetzung zu erteilen. Das englischsprachige Original ist oben verlinkt. </p><p>Ich möchte die Geschichte in Form eines wöchentlichen Adventskalenders veröffentlichen, um euch die Zeit bis zu den Feiertagen zu versüßen. </p><p>In diesem Sinne, viel Spaß beim Auspacken, Lesen, Genießen - und einen schönen ersten Advent :)</p>
+    </blockquote>
+
+    <p class="jump">(See the end of the work for <a href="#work_endnotes">more notes</a>.)</p>
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/12883326/chapters/29430777">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p>
+<p>Der goldene Trank simmerte heftig, er stand kurz vor dem Siedepunkt. Kleine Stückchen gemahlener Stechpalmenbeeren wirbelten in der blubbernden Flüssigkeit umher, winzige rote Pünktchen im Auge eines honigfarbenen Sturms. Kombiniert mit einer Phiole Immernett-Elixier und einer Prise Feenstaub würden sie die Wirkung des Tranks um einen Faktor von 2,5 verstärken, wenn seine Berechnungen korrekt waren. Für gewöhnlich waren sie es, aber wie jeder Zaubertränkemeister wusste, offenbarte die Magie sich nicht in der Theorie, sondern erst während des Brauvorgangs. <br/><span></span><br/><span></span>Snape griff nach seinem Rührstab (Größe 5, rosa Andenopal), tauchte ihn in einem Winkel von exakt siebzig Grad in den Trank ein und begann zu rühren. Vier Mal im Uhrzeigersinn, sechs Mal gegen den Uhrzeigersinn, drei Mal im Uhrzeigersinn. Eine Duftwolke stieg aus dem Kessel auf. Der Geruch war so stark, dass seine Nase zuckte, trat aber weder überraschend auf noch war er ihm unwillkommen. Sein Trank hatte die Phase der Verschmelzung erreicht, in der die einzelnen Wirkstoffe ihre magischen Kräfte freigaben und mit den Zutaten um sie herum reagierten. Dies führte normalerweise zu einer Art Absonderung, sei es ein Geruch, ein Geräusch oder sogar eine übernatürliche Erscheinung. Snape spürte, wie die Magie sich im Trank ausbreitete und seinen Arm hinaufglitt; seine Haut kribbelte. Das Gefühl war bei jedem Trank anders, einige der schwarzmagischen Zaubertränke verlangten sogar Schmerz, um ihr volles Potential zu entfalten. Nicht so dieses kleine Gebräu, ein sanftes Kitzeln war alles, was dazu gehörte. <br/><span></span><br/><span></span>Nachdem das Gefühl nachgelassen hatte, nahm er den Rührstab vorsichtig heraus und legte ihn wieder in seine Haltevorrichtung. Der Trank musste nun zwei Tage lang ruhen und langsam auf niedriger Flamme köcheln. Was die Testphase betraf ... <br/><span></span><br/><span></span>"Severus?"<br/><span></span><br/><span></span>Er drehte die Flamme unter dem Kessel herunter und wandte sich um. Die Person, die in seiner Labortür stand, überraschte ihn ebenfalls nicht (und war ihm genauso wenig unwillkommen), obwohl er gehofft hatte, nach Beendigung seines kleinen Experiments noch eine weitere Charge Anti-Kater-Trank beginnen zu können. Zu dieser Jahreszeit war die Nachfrage danach hoch. <br/><span></span><br/><span></span>"Severus, die Sterne sind fertig, aber ich hab einen Schnatz fallen lassen und da war eine Menge Schokolade drauf und nun ist sie auf dem Teppich vor dem Ofen und geht nicht mehr ab. Ich bin irgendwie reingetreten, aber nur ein bisschen, und ich hab sowieso nur meine alten Socken an." <br/><span></span><br/><span></span>Diese Worte sprudelten so schnell hervor, dass Snape nur die Hälfte von ihnen verstand, aber andererseits war der schokoladenbeschmierte Sechsjährige, der vor ihm stand, Erklärung genug. <br/><span></span><br/><span></span>"Habe ich dir nicht gesagt, dass du am Küchentisch sitzenbleiben sollst?" <br/><span></span><br/><span></span>"Ja, bin ich ja auch, aber ich brauchte mehr grüne Streusel und die lagen auf der Theke." <br/><span></span><br/><span></span>Snape fragte nicht, warum der Junge die Plätzchen nicht auf dem Tisch hatte liegen lassen; jahrelange Erfahrung hatte ihn gelehrt, dass Logik ihn nicht weit brachte, besonders nicht bei dem jungen Harry Potter. Hinter ihm konnte er eine Spur aus Schokoladenfußabdrücken erkennen, die die Kellertreppe herabführte. <br/><span></span><br/><span></span>"Warum hast du deine Socken nicht ausgezogen, bevor du hergekommen bist?" <br/><span></span><br/><span></span>Der Junge drehte sich um und sah überrascht auf die Schokoladenspur. "Oh."<br/><span></span><br/><span></span>"Ja, genau, 'oh'." Snape seufzte. "Zieh sie aus und lass sie hier. Ich werde sie später holen, wenn ich die Wäsche erledige. Du findest ein frisches Paar im Korb neben der Treppe. Warte!" Er packte den Jungen um die Taille, bevor er davonstieben konnte. "Du wirst nur wieder in die Schokolade treten. Tergeo!" <br/><span></span><br/><span></span>Die Fußabdrücke verschwanden und Snape ließ ihn wieder los. Als er zusah, wie Harry die Treppe hinaufsprang, war er wieder einmal erstaunt über die unbändige Energie des Jungen. Sie hatten den Vormittag in der Winkelgasse verbracht und nachmittags war Harry größtenteils draußen gewesen und auf seinem Besen durch den Garten geflogen, aber er schien wacher zu sein als je zuvor. Er selbst dagegen hätte ein schönes Nickerchen vor dem Kamin vertragen können. <br/><span></span><br/><span></span>Er folgte dem Jungen die Treppe hinauf in die Küche. Sie war klein, zugegeben, aber der Ruß und der Dreck aus seinen Kindertagen waren Vergangenheit. Es verblüffte ihn immer noch ab und an, wie sehr eine Instandsetzung und gründliche Reinigung das Haus in Spinner's End Nummer 37 verändert hatte. Seinerzeit hatte Tobias jegliche Magie in seinen eigenen vier Wänden verboten, Eileen hatte sich geweigert, auf Muggelart zu putzen, und Snapes Vater hatte sich natürlich nicht herabgelassen, "Frauenarbeit" zu machen. Der fettige Schmutz und der Staub hatten sich dementsprechend angesammelt, aber nach einem langen Arbeitstag (oder einem langen Tag in der Kneipe) hatten weder Eileen noch Tobias sich sonderlich dafür interessiert. Damals hatte Snape sich nicht einmal vorstellen können, dass dieses Haus tatsächlich sauber aussehen und riechen könnte. <br/><span></span><br/><span></span>Natürlich war "sauber" nicht der richtige Terminus, um den Zustand der Küche nach Harrys Schokoladenmissgeschick zu beschreiben. Snape musste kein Meisterdetektiv sein, um die Geschichte zu lesen, die die dunklen Hand- und Fußabdrücke erzählten. Hier hatte ein grausames Verbrechen stattgefunden und die Opfer waren ein Küchenläufer, zwei Geschirrhandtücher und so wie es aussah mindestens vier Liter flüssige Schokolade.<br/><span></span><br/><span></span>"Kannst du ihn sauber zaubern?", fragte Harry, während er ohne große Hoffnung auf den kleinen Teppich blickte. <br/><span></span><br/><span></span>"Sehr unwahrscheinlich." Snape bückte sich, um die beiden ruinierten Geschirrhandtücher aufzuheben. "Um genau zu sein, werde ich es nicht einmal versuchen, da es nichts weiter als eine Verschwendung magischer Energie wäre. Und was den Rest dieses ... Kriegsschauplatzes ... angeht ..." <br/><span></span><br/><span></span>Er schwenkte seinen Zauberstab und der größte Teil der Schokolade verschwand auf Nimmerwiedersehen – ein sehr nützlicher Zauber, den Molly Weasley ihm beigebracht hatte. Leider verschwand auch die Schokolade auf Harrys sorgfältig dekorierten Plätzchen. <br/><span></span><br/><span></span>"Meine Plätzchen!" Harry schaute mit vor Entsetzen offen stehendem Mund zum Küchentisch. "Du hast die Schokolade von meinen Plätzchen weggezaubert!" <br/><span></span><br/><span></span>"Und du hast meinen Küchenläufer auf dem Gewissen!"<br/><span></span><br/><span></span>Sie starrten einander einen Moment lang an, bevor Snape entschied, dass er – als der Erwachsene von ihnen – vermutlich der Klügere sein und die Situation klären sollte.<br/><span></span><br/><span></span>"Ich habe die Schokolade nicht absichtlich von deinen Plätzchen verschwinden lassen. Es liegt in der Natur des Zaubers, alle Flächen in der Nähe von der Schokolade zu befreien ..."<br/><span></span><br/><span></span>Harry schniefte. "Ich ha-habe die Kessel extra für dich gemacht und es hat Ewigkeiten gedauert, die Streusel draufzutun."<br/><span></span><br/><span></span>Snape konnte den Wahrheitsgehalt dieser Aussage auf einen Blick ersehen, die Streusel, die den gesamten Tisch und den größten Teil des Küchenfußbodens bedeckten, bewiesen es. Er räusperte sich. "Es tut mir leid, Harry." <br/><span></span><br/><span></span>Mittlerweile fühlte es sich nicht mehr seltsam für ihn an, sich bei einem kleinen Jungen zu entschuldigen, der ihm kaum bis zum Bauchnabel reichte. Natürlich, niemand hatte sich je bei dem kleinen Severus entschuldigt, seinen Unmut zur Kenntnis genommen oder seine Kümmernisse respektiert. Es hatte eine Weile gedauert, bis Snape begriffen hatte, dass er von Harry keine guten Manieren verlangen konnte, wenn er nicht bereit war, mit gutem Beispiel voranzugehen. <br/><span></span><br/><span></span>"Ist schon gut." Harrys Schniefen verebbte. "Un' mir tut es leid, dass ich so eine Unordnung gemacht habe."<br/><span></span><br/><span></span>Das war noch etwas, an das er sich erst hatte gewöhnen müssen: Harrys Bereitwilligkeit zur Vergebung. Snape hielt an seinem Groll fest wie andere an geliebten Erinnerungsstücken, er drehte und wendete ihn in Gedanken und prüfte jedes seiner Details. Er hatte nicht einmal gewusst, dass man auch anders damit umgehen konnte, bis er Harry begegnet war.<br/><span></span><br/><span></span>"Nun, dann lass uns doch mal einen Blick auf diese Kessel werfen."<br/><span></span><br/><span></span>Die Plätzchen hatten sie gemeinsam gebacken, bevor Snape in sein Labor gegangen war und Harry das Dekorieren überlassen hatte. Tabletts mit hunderten Kesseln, Sternen, Monden, Weihnachtsbäumen, Katzen, Schnatzen und Hippogreifen lagen in der Küche, alle hergestellt mittels der von Harry in der Winkelgasse handverlesenen Ausstechförmchen. <br/><span></span><br/><span></span>"Guck, ich hab grüne Streusel für das Zahnputzwasser genommen und blaue für den Anti-Kopfschmerztrank und rote und gelbe für diesen neuen Trank, den du gerade machst." <br/><span></span><br/><span></span>Snape nickte anerkennend. Der Junge hatte sich die Farben korrekt gemerkt. "Sehr gut, Harry. Was hältst du davon, wenn wir noch einen Topf Schokolade schmelzen und die Plätzchen gemeinsam dekorieren?" <br/><span></span><br/><span></span>Harry grinste so breit, dass seine Ohren Besuch bekamen. "Wirklich? Du hilfst mir?"<br/><span></span><br/><span></span>Snape hob eine Augenbraue. "Vertraust du meinen Verzierungskünsten etwa nicht?"<br/><span></span><br/><span></span>Ein kräftiges Nicken und ein Kichern. "Ich vertraue dir!"<br/><span></span><br/><span></span>Dieser Junge würde kein Slytherin werden, dachte Snape, als er den Topf auf den Herd stellte. Der Gedanke wurmte ihn jedoch nicht mehr so sehr wie noch vor ein paar Jahren. Wenn Harry in Ravenclaw glücklich werden würde, in Hufflepuff oder – Merlin behüte – in Gryffindor, dann würde Snape ihm seine Hauszuordnung nicht übelnehmen. Aber, sagte er sich schnell, es war noch lange hin, bis Harry nach Hogwarts gehen würde. <br/><span></span><br/><span></span>Harry kletterte auf den Hocker neben Snape und sah zu, wie die Schokolade langsam im Topf schmolz. "Kann ich umrühren?" <br/><span></span><br/><span></span>Snape reichte ihm den Löffel. "Aber sei vorsichtig. Verbrenn dich nicht."<br/><span></span><br/><span></span>Harry nickte. "Zehnmal im Uhrzeigersinn", sagte er ernsthaft, ohne die Bewegungen des Löffels aus den Augen zu lassen. "Und fünfmal gegen den Uhrzeigersinn. So braut man Schokolade." <br/><span></span><br/><span></span>"Ach, tut man das?" Snapes Mundwinkel zuckten verräterisch.<br/><span></span><br/><span></span>"Oh ja", antwortete Harry. "Ich werde ein Zaubertränkemeister, wenn ich groß bin. Kann ich nachher deinen neuen Trank sehen?"<br/><span></span><br/><span></span>"Du darfst. Nachdem wir hier saubergemacht haben."<br/><span></span><br/><span></span>"Ist er denn schon fertig?"<br/><span></span><br/><span></span>"Noch nicht ganz", erwiderte Snape, "er muss noch zwei Tage ruhen, bevor ich ihn testen kann."<br/><span></span><br/><span></span>"Können wir ihn selbst testen?", fragte Harry aufgeregt. Snape hatte bereits verschiedene Tränke an sich selbst getestet, zum Teil mit recht überraschenden Ergebnissen. "Kann ich helfen?"<br/><span></span><br/><span></span>"Erst nachdem ich sicher bin, dass er ungefährlich ist", sagte Snape fest. Harry hatte schon früher einmal helfen wollen. Er hatte an diesem denkwürdigen Tag einen Finger in ein Federleicht-Elixier getaucht und ihn abgeleckt, bevor Snape ihn aufhalten konnte. Der damals Vierjährige schwebte daraufhin sechs Stunden an der Zimmerdecke, bis Snape das Gegenmittel fertig gebraut hatte. <br/><span></span><br/><span></span>"Schmeckt er gut? Wie wirkt er?"<br/><span></span><br/><span></span>"Der Geschmack sollte akzeptabel sein", antwortete Snape. "Er geht in Richtung Toffee und Zimt, wenn er wie geplant ausfällt. Und ich habe dir schon gesagt, wie der Trank wirkt." <br/><span></span><br/><span></span>Harry nickte wichtigtuerisch. "Er macht, dass die Leute an Weihnachten nett zueinander sind." <br/><span></span><br/><span></span>Eine grobe, aber prägnante Zusammenfassung, dachte Snape. Sein Hauptkunde, Mr. Pendergraft von Pendergrafts Zaubertränke in der Winkelgasse, hatte ihn um einen speziell angefertigten Trank gebeten, der gereizte Nerven beruhigen und Familienstreitigkeiten während der Feiertage verhindern sollte. Nachdem er einige Recherchen angestellt hatte, hatte er das goldene Gebräu entwickelt, das gerade in seinem Labor vor sich hinbrodelte und hoffentlich den Bedürfnissen all dieser erschöpften Eltern und leidenden Ehepartner gerecht werden würde. <br/><span></span><br/><span></span>"Wie soll er heißen?", fragte Harry.<br/><span></span><br/><span></span>"Ich habe mich noch nicht entschieden. Wie würdest du ihn denn nennen?"<br/><span></span><br/><span></span>Nachdenklich neigte Harry seinen Kopf zur Seite, während er weiter die Schokolade umrührte. "Der Grinch-Killer", sagte er schließlich. "Weil er die Menschen nett macht und nicht gemein wie Mr. Grinch."<br/><span></span><br/><span></span>Snape blinzelte. "Das ist ... sehr gut, Harry." Und das war es wirklich, besser als alles, was ihm bisher eingefallen war. Pendergraft würde den Namen lieben, so viel stand fest.<br/><span></span><br/><span></span>Harry strahlte ihn an. "Ist die Schokolade jetzt fertig?"<br/><span></span><br/><span></span>Snape nickte, gedanklich immer noch bei dem frisch getauften Trank. Harry hatte schon häufiger Namensvorschläge für neue Zaubertränke gemacht und nicht wenige davon waren echte Volltreffer gewesen – wenn er das so sagen durfte. Merlin behüte, dass er wie Narzissa klang, die ständig von Dracos herausragenden Leistungen schwafelte, aber Harry hatte <em><span class="user_italic">wirklich</span></em> ein Talent für Sprache. Wenn er es recht bedachte, könnte Ravenclaw tatsächlich das Richtige für ihn sein.<br/><span></span><br/><span></span>"Du kannst die Kessel machen, wenn du willst!" Harry ging zum Tisch und schob einen Stuhl für Snape zurecht. Die Augen des Jungen glänzten vor Aufregung. "Ich mache die Schnatze, ich hab noch ganz viele gelbe Streusel übrig!" <br/><span></span><br/><span></span>Snape setzte sich und betrachtete die Tabletts mit den noch unfertigen Plätzchen. Er konnte sich nicht erinnern, so viele gebacken zu haben. Es sah ganz so aus, als würden sie in den nächsten Wochen hauptsächlich von Schokoladenkesseln und -schnatzen leben ... jedoch, bei nochmaliger Überlegung, vielleicht auch nicht. Harry hatte ihm so lange in den Ohren gelegen, bis er einem Besuch des jüngsten Weasley-Burschen nach den Feiertagen zugestimmt hatte und Snape hatte keinerlei Zweifel, dass diese zwei alle bis dahin übriggebliebenen Süßigkeiten mühelos vernichten würden. <br/><span></span><br/><span></span>"Severus?"<br/><span></span><br/><span></span>Snape schaute von dem kesselförmigen Plätzchen auf, das er gerade mit Schokolade überzog. "Ja?"<br/><span></span><br/><span></span>"Morgen ist Weihnachten, aber es gibt noch keine Geschenke, stimmt's?"<br/><span></span><br/><span></span>Snape nickte. Dieses Thema hatten sie schon mehrmals besprochen. "Ja, morgen ist der vierundzwanzigste Dezember, auch Heiligabend genannt. Es ist Tradition unter Zauberern und Muggeln, die Geschenke, die sie vielleicht oder vielleicht auch nicht unter dem Weihnachtsbaum vorfinden, am Morgen des fünfundzwanzigsten zu öffnen." <br/><span></span><br/><span></span>Er verzog keine Miene und beobachtete den Jungen aus dem Augenwinkel. Harry kaute auf seiner Unterlippe, während er seinen Pinsel nochmals in die Schokolade tauchte. <br/><span></span><br/><span></span>"Severus?"<br/><span></span><br/><span></span>"Hmm?"<br/><span></span><br/><span></span>"Glaubst du, es werden Geschenke unter unserem Baum sein?"<br/><span></span><br/><span></span>Snape hielt eines seiner Kesselplätzchen hoch und tat so, als würde er es gewissenhaft begutachten. "Ich nehme an, Hekate wird bestimmt einige Katzenminzedrops vorfinden."<br/><span></span><br/><span></span>"Und ... und ich?" <br/><span></span><br/><span></span>"Ich wusste nicht, dass du eine Vorliebe für Katzenminzedrops hast."<br/><span></span><br/><span></span>Ein Grinsen erschien auf dem Gesicht des Jungen. "Du nimmst mich auf den Arm!"<br/><span></span><br/><span></span>Snape schmunzelte in sich hinein und wandte sich wieder seinen Kesseln zu. Er war kein geborener Künstler, entschied er, aber Harry und der Weasley-Junge würden sich selbst dann noch über die Dinger hermachen, wenn sie potthässlich wären. Und, nicht zu vergessen, Albus ebenso. Er würde zum Weihnachtsessen bei ihnen sein und Harry mit Sicherheit wieder schamlos verwöhnen. Snape hatte noch kein Weihnachten erlebt, an dem der alte Mann sich an das Limit von zwei Geschenken gehalten hatte, das sie vereinbart hatten.<br/><span></span><br/><span></span>"Severus?"<br/><span></span><br/><span></span>Anscheinend war heute Abend Fragestunde. Kein Wunder, die vielen "stillen Aufgaben", die Molly Harry und ihren Söhnen während des Hausunterrichts auferlegt hatte, forderten ihren Tribut. Die Weasley-Jungen waren seit Tagen hyperaktiv. Snape vermutete, dass sie ihren Eltern praktisch rund um die Uhr auf die Nerven gehen mussten.<br/><span></span><br/><span></span>"Severus?"<br/><span></span><br/><span></span>"Ja?"<br/><span></span><br/><span></span>"Wenn ich ins Bett muss, erzählst du mir dann die Geschichte, wie ich zu dir gekommen bin?"<br/><span></span><br/><span></span>Die Bitte überraschte ihn nicht. Harry liebte es, die Geschichte zu hören, besonders zu dieser Jahreszeit. Es war fast schon eine Tradition geworden, sie an Weihnachten zu erzählen.<br/><span></span><br/><span></span>"Nur wenn du bis dahin noch nicht zu müde bist."<br/><span></span><br/><span></span>Harry grinste. "Bin ich bestimmt nicht."<br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>Snapes Kinderzimmer war trostlos und öde gewesen, die Fenster permanent mit dem Ruß aus der nahegelegenen Stahlfabrik verschmutzt. Ein einfacher staubabweisender Zauber hätte sie sauber halten können, aber Snape vermutete, dass Eileen es den Streit nicht für wert erachtet hatte, der unweigerlich gefolgt wäre. Jeder hatte verrußte Fenster, wenn die dieser merkwürdigen Snape-Frau plötzlich blitzblank wären, würden die Nachbarn reden ... zumindest laut Tobias. <br/><span></span><br/><span></span>Das Stahlwerk war in den siebziger Jahren geschlossen worden und damit hatten auch der ständige Lärm und der allgegenwärtige Ruß ein Ende gehabt. Heutzutage zogen die verlassenen Gebäude abenteuerlustige Kinder an, sie warfen Steine durch die Fenster oder bauten ihre Höhlen in den alten Produktionshallen. Auch Harry hatte sich einmal eines Nachtmittags heimlich mit den Nachbarskindern dorthin geschlichen. Es war eines der wenigen Male gewesen, dass er Hausarrest erhalten hatte. Dennoch vermisste Snape die Fabrik nicht. Wenigstens benötigte er keine Magie mehr, um die Fenster sauber zu halten. <br/><span></span><br/><span></span>Heute sah Snapes Jugendzimmer gänzlich anders aus – einschließlich der Fenster, durch die man tatsächlich hindurchsehen konnte. Eine hellblaue Tapete bedeckte den Rohputz, die Vorhänge sahen <em><span class="user_italic">nicht</span></em> wie verdreckte Putzlumpen aus, in den Regalen befanden sich Spielsachen, an den Wänden Bilder und es gab einen kleinen Schreibtisch, an dem Harry oft saß und malte. Es hatte eine Zeit in Snapes Leben gegeben, zu der ihn diese Veränderung verbittert hätte – warum sollte Potters Bengel so viel mehr verdient haben als er selbst in seiner Kindheit? Potter, verfluchter Potter, mit seinem erstklassigen Besen und seinen neuen Umhängen und seinem arroganten Lächeln. <br/><span></span><br/><span></span>Doch heute war James Potter nicht mehr als eine verblassende Erinnerung; eine schwache Erinnerung an einen Ort und an eine Zeit, die Snape längst hinter sich gelassen hatte. Jetzt gab es nur noch Harry, und Harry verdiente, was jedes Kind verdiente. Selbstverständlich tat er das! Sein früherer idiotischer Vater hatte nichts damit zu tun. <br/><span></span><br/><span></span><em><span class="user_italic">"Du</span> <span class="user_italic">hast</span> <span class="user_italic">wirklich</span> <span class="user_italic">bedeutende</span> <span class="user_italic">Fortschritte</span> <span class="user_italic">gemacht,</span> <span class="user_italic">Severus"</span></em>, hatte Albus vor ungefähr einem Jahr zu ihm gesagt. Snape hatte lediglich mit den Schultern gezuckt und gebrummt. Viel lieber hätte er damals seine Zeit damit verbracht, Rattengehirne einzulegen oder sogar Harrys Badezimmerchaos aufzuräumen, als dem alten Mann bei seinen rührseligen Gefühlsduseleien Gesellschaft zu leisten. <br/><span></span><br/><span></span><em><span class="user_italic">Wenn</span> <span class="user_italic">man</span> <span class="user_italic">vom</span> <span class="user_italic">Teufel</span> <span class="user_italic">sprach ...</span></em><br/><span></span> <br/><span></span>"Habe ich dir nicht schon tausend Mal gesagt, dass du dein Handtuch aufhängen sollst, nachdem du es benutzt hast?"<br/><span></span><br/><span></span>Harry steckte seinen Kopf durch die Badezimmertür. "Hab ich doch!"<br/><span></span><br/><span></span>"Aha. Und warum liegt es dann bitte auf dem Boden?"<br/><span></span><br/><span></span>"Oh." Harry kam herein, hob das Handtuch auf und hängte es ordentlich über den Handtuchständer. "Es muss runtergefallen sein, nachdem ich es dort hingelegt habe."<br/><span></span><br/><span></span>"Das passiert, wenn du es wirfst, anstatt es richtig aufzuhängen."<br/><span></span><br/><span></span>"Ich hab's nicht geworfen!" <br/><span></span><br/><span></span>Snape seufzte. "Ab ins Bett mit dir und keine Süßigkeiten mehr nach dem Zähneputzen! Glaub ja nicht, ich hätte nicht gesehen, dass du heimlich die Plätzchen eingesteckt hast!" Um ehrlich zu sein, seine Slytherinseite hatte dem Jungen applaudiert, als dieser sich verstohlen die Plätzchen in die Tasche geschmuggelt hatte, aber als – Merlin hilf – Vater konnte er nicht so tun, als hätte er nichts gesehen.<br/><span></span><br/><span></span>"Welche Plätzchen?" Harry grinste und floh in sein Zimmer, wo er sich wie jeden Abend mit Karacho auf sein Bett schmiss.<br/><span></span><br/><span></span>Snape hatte <em><span class="user_italic">keine</span></em> <span class="user_italic">Ahnung</span>, warum dieser kleine Teufelsbraten immerzu Krach machen musste. Abermals seufzend hob er Harrys Jeans und Pullover auf, bevor er ihm in sein Zimmer folgte. Harry hatte sich bereits unter seine Decke gekuschelt, Hekate lag zusammengerollt auf seinen Füßen. <br/><span></span><br/><span></span>"Severus?"<br/><span></span><br/><span></span>Snape legte die Kleidung des Jungen über die Lehne des Schreibtischstuhls. "Ja?"<br/><span></span><br/><span></span>"Ich bin überhaupt nicht müde."<br/><span></span><br/><span></span>"Nein?"<br/><span></span><br/><span></span>"Nei-hein. Ich werde wahrscheinlich noch stundenlang wach sein."<br/><span></span><br/><span></span>"Das ist Pech, in Anbetracht der Tatsache, dass du nicht viel mehr tun kannst, als im Bett zu liegen und die Decke anzustarren", erwiderte Snape gedehnt.<br/><span></span><br/><span></span>"Aber du hast versprochen, mir die Geschichte zu erzählen, wenn ich nicht zu müde bin!" <br/><span></span><br/><span></span>"Das habe ich wirklich, nicht wahr?" Snape setzte sich in den Sessel neben dem Bett. "Nun, ich denke, ein Versprechen muss man halten."<br/><span></span><br/><span></span>"Juhu, eine Geschichte, eine Geschichte!" Harry hüpfte aufgeregt hin und her, woraufhin Hekate ihren Kopf hob und ihn missbilligend ansah.<br/><span></span><br/><span></span>"Komm jetzt zur Ruhe und leg dich hin." Wie viel Zucker hatte der Junge während ihres kleinen Backabenteuers heute eigentlich gegessen? Wenn es so viel war, wie Snape vermutete, würde er tatsächlich noch stundenlang wach sein. Bei diesem Gedanken seufzte er ein weiteres Mal, bevor er sich nach vorn beugte und Harry die Decke bis unters Kinn zog. "Und zapple nicht so viel herum, sonst könnte Hekate auf den Gedanken kommen, dass deine Zehen wie ein netter, kleiner Imbiss aussehen." <br/><span></span><br/><span></span>Harry kicherte. "Erzählst du mir jetzt die Geschichte?"<br/><span></span><br/><span></span>"Geduld ist eine Tugend, Harry."<br/><span></span><br/><span></span>"Das hat Onkel Albus auch zu dir gesagt, als du auf deine Bücher gewartet hast."<br/><span></span><br/><span></span>Snape hob eine Augenbraue. "Willst du die Geschichte nun hören, oder nicht?"<br/><span></span><br/><span></span>Harry nickte energisch mit dem Kopf und presste seine Lippen fest aufeinander, um zu zeigen, dass er bereit war zuzuhören, ohne dazwischenzureden.<br/><span></span><br/><span></span>"Also dann", begann Snape zu erzählen, "du weißt ja, wie alles anfing ..."</p>
+<p> </p>
+<p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/12883326/chapters/29610003">Chapter 2</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/12883326#chapter_2_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p>
+<p><em><span class="user_italic">24. Dezember, 1981</span></em><br/><span></span><br/><span></span>Die Küche roch nach Alkohol. Das war nichts Neues, in dem kleinen Raum wurden dereinst viele Whiskyflaschen geöffnet. Als Kind war Snape so sehr an diesen Geruch gewöhnt gewesen, dass er sogar seine Abwesenheit bemerkt hatte, als er das erste Mal bei Lily zum Tee eingeladen war und sich in seinen schäbigen, schlecht zusammenpassenden Kleidern unbehaglich fühlend in ihrer sauberen Küche saß. <em><span class="user_italic">Ihre</span></em> Küche hatte lediglich nach selbstgekochtem Essen und frisch gebackenen Keksen gerochen; Whiskyflaschen, die ihren Weg in den Evans-Haushalt fanden, wurden im Wohnzimmerschrank aufbewahrt und nur zu besonderen Anlässen herausgenommen. <br/><span></span><br/><span></span>Aber nun ja, jeder Tag war ein besonderer Anlass für Tobias Snape gewesen, der mit einem oder eher vier Schnäpsen gefeiert wurde (und vielleicht auch einem Angriff auf seine Frau, wenn er besonders schlecht gelaunt war). Es war kein Wunder, dass der Geruch sich derart hartnäckig gehalten hatte, doch selbst damals war es nie so schlimm gewesen wie jetzt. <br/><span></span><br/><span></span>Und das war keine Überraschung, dachte Snape und starrte auf die Pfütze in der Ecke. Sein Vater hatte seinen Whisky viel zu sehr geliebt, um eine ganze Flasche davon gegen die Wand zu schmettern. <br/><span></span><br/><span></span>Vielleicht war es die Erinnerung an seinen Vater gewesen, die ihn hatte glauben lassen, der Whisky würde helfen. Eileen und ihr Sohn hatten immer insgeheim erleichtert aufgeseufzt, wenn Tobias auf der Couch im Wohnzimmer einschlief. In gewisser Weise war der Schnaps auch ihr Freund und Helfer gewesen. <br/><span></span><br/><span></span>Doch nachdem Snape ein halbes Glas des übel schmeckenden Gesöffs geleert hatte, kapitulierte er vor der Wahrheit: Dieses Mal war es ihm keine Hilfe. Egal wie viel er trank, den bohrenden Schmerz, der sich seit dem letzten Oktobertag wie Gift durch seine Eingeweide fraß, konnte er nicht vertreiben. Er war viel zu stark, viel zu <span class="user_italic">lebendig</span>. Und er schien Gefallen an Snape gefunden zu haben, da er ihn nicht für eine Minute verließ, nicht einmal für eine einzige verdammte Sekunde. Er liebte ihn gar so sehr, dass er ihn des Nachts weckte und in der Dunkelheit wisperte wie ein aufreizender Liebhaber: <em><span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich</span> <span class="user_italic">an</span> <span class="user_italic">ihr</span> <span class="user_italic">Gesicht?</span> <span class="user_italic">Bleich,</span> <span class="user_italic">mit</span> <span class="user_italic">nur</span> <span class="user_italic">einem</span> <span class="user_italic">Tupfen</span> <span class="user_italic">Blut</span> <span class="user_italic">an</span> <span class="user_italic">ihrem</span> <span class="user_italic">Mundwinkel,</span> <span class="user_italic">wo</span> <span class="user_italic">sie</span> <span class="user_italic">sich</span> <span class="user_italic">gebissen</span> <span class="user_italic">haben</span> <span class="user_italic">muss,</span> <span class="user_italic">als</span> <span class="user_italic">es</span> <span class="user_italic">geschehen</span> <span class="user_italic">war.</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich?</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich</span> <span class="user_italic">daran,</span> <span class="user_italic">wie</span> <span class="user_italic">du</span> <span class="user_italic">die</span> <span class="user_italic">Treppe</span> <span class="user_italic">hochgegangen</span> <span class="user_italic">bist,</span> <span class="user_italic">nachdem</span> <span class="user_italic">du</span> <span class="user_italic">über</span> <span class="user_italic">Potters</span> <span class="user_italic">Leiche</span> <span class="user_italic">gestiegen</span> <span class="user_italic">warst,</span> <span class="user_italic">im</span> <span class="user_italic">Wissen,</span> <span class="user_italic">was</span> <span class="user_italic">du</span> <span class="user_italic">vorfinden</span> <span class="user_italic">wirst</span> <span class="user_italic">und</span> <span class="user_italic">doch</span> <span class="user_italic">in</span> <span class="user_italic">keinster</span> <span class="user_italic">Weise</span> <span class="user_italic">darauf</span> <span class="user_italic">gefasst?</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich</span> <span class="user_italic">daran,</span> <span class="user_italic">wie</span> <span class="user_italic">es</span> <span class="user_italic">sich</span> <span class="user_italic">anfühlte,</span> <span class="user_italic">sie</span> <span class="user_italic">dort</span> <span class="user_italic">auf</span> <span class="user_italic">dem</span> <span class="user_italic">Boden</span> <span class="user_italic">liegen</span> <span class="user_italic">zu</span> <span class="user_italic">sehen?</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich?</span></em> <br/><span></span><br/><span></span>Er erinnerte sich. Es schien, als täte er dieser Tage nichts, <em><span class="user_italic">außer</span></em> sich zu erinnern. Er erinnerte sich an ihr Lächeln, ihre Haare, ihre <em><span class="user_italic">Augen</span></em>. Oh ja, der alte Mann hatte recht gehabt, er würde weder die Form noch die Farbe von Lily Evans' Augen jemals vergessen. Nie. Aber in seiner Erinnerung würden sie für immer in einem leeren Blick erstarrt bleiben, das Grün stumpf und leblos. <em><span class="user_italic">Er</span></em> hatte ihnen das Leben entrissen. Die nächtens wispernde Stimme liebte es, diese spezielle Tatsache zu erwähnen und einschmeichelnd zu säuseln, während sie sich unablässig wiederholte: <em><span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich</span> <span class="user_italic">daran,</span> <span class="user_italic">wie</span> <span class="user_italic">du</span> <span class="user_italic">an</span> <span class="user_italic">der</span> <span class="user_italic">Tür</span> <span class="user_italic">im</span> <span class="user_italic">Eberkopf</span> <span class="user_italic">gelauscht</span> <span class="user_italic">hast?</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich,</span> <span class="user_italic">wie</span> <span class="user_italic">zufrieden</span> <span class="user_italic">Er</span> <span class="user_italic">mit</span> <span class="user_italic">dir</span> <span class="user_italic">war</span> <span class="user_italic">und</span> <span class="user_italic">wie</span> <span class="user_italic">stolz</span> <span class="user_italic">du</span> <span class="user_italic">warst?</span> <span class="user_italic">Welch</span> <span class="user_italic">ein</span> <span class="user_italic">bedeutendes,</span> <span class="user_italic">folgenschweres</span> <span class="user_italic">Ereignis –</span> <span class="user_italic">deine</span> <span class="user_italic">erste</span> <span class="user_italic">erfolgreiche</span> <span class="user_italic">Mission</span> <span class="user_italic">als</span> <span class="user_italic">Todesser.</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich?</span> <span class="user_italic">Erinnerst</span> <span class="user_italic">du</span> <span class="user_italic">dich?</span></em> <br/><span></span><br/><span></span>Es war lachhaft, wie sollte Whisky in der Lage sein, ihm zu helfen und seinen Schmerz zu stillen? Und doch hatte er es versucht, wie so viele andere verzweifelte Männer und Frauen vor ihm. Dumbledore hatte ihn davor gewarnt, sein Heil in derartigen Mitteln zu suchen: <em><span class="user_italic">"Begehen</span> <span class="user_italic">Sie</span> <span class="user_italic">diesen</span> <span class="user_italic">Fehler</span> <span class="user_italic">nicht,</span> <span class="user_italic">Severus.</span> <span class="user_italic">Sie</span> <span class="user_italic">werden</span> <span class="user_italic">sehen,</span> <span class="user_italic">dass</span> <span class="user_italic">der</span> <span class="user_italic">größte</span> <span class="user_italic">Trost</span> <span class="user_italic">darin</span> <span class="user_italic">liegt,</span> <span class="user_italic">das</span> <span class="user_italic">Richtige</span> <span class="user_italic">zu</span> <span class="user_italic">tun.</span> <span class="user_italic">Es</span> <span class="user_italic">ist</span> <span class="user_italic">das</span> <span class="user_italic">einzige,</span> <span class="user_italic">das</span> <span class="user_italic">uns</span> <span class="user_italic">im</span> <span class="user_italic">Diesseits</span> <span class="user_italic">zur</span> <span class="user_italic">Gnade</span> <span class="user_italic">gereichen</span> <span class="user_italic">und</span> <span class="user_italic">uns</span> <span class="user_italic">erlösen</span> <span class="user_italic">kann."</span></em><br/><span></span><br/><span></span>Wie sehr er den alten Mann für diese Worte gehasst hatte! Genauso sehr, wie er sich selbst dafür hasste, nicht seiner ursprünglichen Entscheidung gefolgt zu sein, dem "Diesseits" zu sagen, es könne ihn mal kreuzweise. Dumbledore hatte ihm seinen Entschluss ausgeredet; er hatte ihn manipuliert und ihm erklärt, es wäre seine Pflicht und Schuldigkeit <em><span class="user_italic">ihr</span></em> gegenüber, ihr nicht nachzufolgen, nicht zu vergessen ... noch nicht. <em><span class="user_italic">"Ihre</span> <span class="user_italic">zukünftige</span> <span class="user_italic">Marschrichtung</span> <span class="user_italic">liegt</span> <span class="user_italic">auf</span> <span class="user_italic">der</span> <span class="user_italic">Hand."</span></em>  Ja, Albus war ein manipulativer, alter Mistkerl, aber in einer Sache hatte er recht: Der Junge war mit Abstand das Wichtigste in Lilys Leben gewesen. Sie würde unbedingt wollen, dass er beschützt wird. Also ja, er nahm an, dass seine zukünftige Marschrichtung <em><span class="user_italic">tatsächlich</span></em> auf der Hand lag. Jedenfalls so lange, wie er gebraucht wurde.<br/><span></span><br/><span></span>In ein Angebot hatte er jedoch nicht eingewilligt, und zwar als Lehrer nach Hogwarts zurückzukehren. Der alte Mann hatte es versucht, oh ja. Er hatte ihm sein eigenes Zaubertranklabor offeriert, ein großzügiges Anfangsgehalt und den besonderen Schutz der uralten Zauberbanne der Schule. Es war mehr, als jeder bankrotte und verwaiste Einundzwanzigjährige sich erhoffen konnte, und Snape hätte es beinahe – beinahe – angenommen. Doch als er sich vorgestellt hatte, wie es sein würde, an den Ort zurückzugehen, dem er vor vier Jahren nur zu gern den Rücken gekehrt hatte, an den Ort, in dessen Fluren auf ewig Gelächter auf seine Kosten widerhallen würde, scheute er davor zurück. Snape machte sich keine Illusionen über sich selbst. Er war kein besonders sympathischer Mensch und würde es auch nie sein, ganz gleich was er tat. Eine Rückkehr an seine alte Schule jedoch könnte ihn womöglich in eine Zaubererversion seines Vaters verwandeln, süchtig nach seinem Groll und seiner Verbitterung, so wie Tobias süchtig nach Whisky gewesen war. Er wollte das nicht für sich. Er konnte so nicht leben. Und Dumbledore hatte, nach einigen Diskussionen, nachgegeben. "Ich nehme an, das Unterrichten ist möglicherweise doch nicht Ihre wahre Berufung", hatte er in seiner verharmlosenden Art und Weise eingeräumt. "Ich habe sehr gute Beziehungen zu einigen Zaubertränkeverkäufern in London. Ihr Talent wäre dort höchst gefragt." <br/><span></span><br/><span></span>Und das war es, vermutete Snape. Immerhin bezahlte das Tränkebrauen die Rechnungen. Und jedes Mal, wenn er die elfjährigen Gören sah, die von ihren Eltern durch die Winkelgasse geschleift wurden, dankte er Merlin, dass es nicht seine Aufgabe war, sie bei ihren ersten ungeschickten Brauversuchen anleiten zu müssen. Er würde jede Sekunde davon hassen und sie würden, ohne jeden Zweifel, schließlich wiederum ihn hassen. Es war besser, allen den Kummer zu ersparen. <br/><span></span><br/><span></span>Also, Spinner's End und Zaubertrankherstellung. Und Kummer, ja, aber von anderer Art, einer, die mit den Jahren leichter zu ertragen sein würde ... zumindest laut Dumbledore. Er hatte sich geweigert, Weihnachten zusammen mit dem alten Mann in der Schule zu verbringen. Einsamkeit mochte für jemanden in seiner Situation Gift sein, aber vielleicht war ja ein bisschen Gift genau das, was er brauchte. <br/><span></span><br/><span></span>Snape schwenkte seinen Zauberstab und die Whiskylache in der Ecke verschwand. Der Geruch blieb zurück; es würde wahrscheinlich noch einen oder zwei Tage dauern, bevor er verflog. <br/><span></span><br/><span></span>Er schaute aus dem Fenster. Dieses Jahr hatte es früh geschneit und den Muggeln der Nachbarschaft die "weiße Weihnacht" beschert, die sie sich erhofft hatten; Snape hatte gehört, wie sie im Eckladen darüber geredet hatten. Warum jemand sich die glatten Bürgersteige und das Verkehrschaos ersehnte, die mit dem Schnee einhergingen, war ihm zwar ein Rätsel, doch es kümmerte ihn nicht im Geringsten. Das Flohnetzwerk war unabhängig von jeglichen Witterungsverhältnissen und die Winkelgasse wurde mittels eines fortwährenden Wärmezaubers schneefrei gehalten. Es war derselbe Zauber, den er über den Gehweg vor seiner Haustür gelegt hatte, und es war ihm völlig gleichgültig, was die Nachbarn dachten. Sollten sie doch tratschen und sich wundern, warum dieser Snape-Typ niemals Schnee schippen musste.<br/><span></span><br/><span></span>Draußen jagten zwei Jugendliche einander die Straße entlang. Der Junge griff mit beiden Händen in den Schnee und begann, das Mädchen damit zu bewerfen. Kreischend und lachend versuchte sie, sich hinter einem geparkten Auto zu verstecken. Seine zweite Salve traf ihr Ziel und schlug ihr den Hut vom Kopf. Rotbraune Haare ergossen sich über ihre Schultern. Das Mädchen schrie ihrem Freund etwas zu, der seinen Angriff sofort abbrach und auf die Straße trat, um den Hut zurückzuholen. Sein Mantel war schäbig und viel zu groß, seine Schuhe zu abgenutzt, um bei dem kaltem Wetter wirklich von Nutzen zu sein.<br/><span></span><br/><span></span>Snape wandte sich ruckartig vom Fenster ab. Pendergraft hatte eine neue Ladung Stärkungstränke und viereinhalb Liter Murtlap-Essenz bestellt – wie es schien, war beides nach Weihnachten sehr gefragt. Er sollte sich besser an die Arbeit machen. <br/><span></span><br/><span></span>Er verbrachte den Vormittag und den Großteil des Nachmittags damit, Zutaten auf seinem riesigen Holzarbeitstisch systematisch abzumessen, zu schneiden sowie zu mahlen und Tränke zu brauen. Der Keller hatte sich als praktischer Ort für ein Zaubertranklabor erwiesen, zumindest nachdem er ihn gründlich gereinigt hatte. Die Kälte hielt seine Zutaten frisch und die kleinen, schießschartenartigen Fenster hielten neugierige Nachbarn fern. Die Decke hatte er verzaubert, so dass sie die Dämpfe absorbierte, und an den Wänden hatte er Regale aufgestellt, um seine Flaschen und Gläser lagern zu können. Zugegeben, der Raum war ein bisschen klein, aber ein Ausdehnungszauber hier und da bot immer eine Möglichkeit, den Stauraum zu vergrößern. Und da Pendergraft ihm einen Rabatt auf seine Ausrüstung gegeben hatte, hatte er sich Schrumpfkessel leisten können, die, zusammengeschrumpft, alle in eine einzige Schublade passten. Es war ein gutes Labor, für den Anfang, und von allen Räumen im Haus in Spinner's End Nummer 37 bevorzugte Snape den Keller bei weitem. Die einzigen Gerüche hier unten resultierten aus brodelnden Kesseln oder frisch geöffneten Gläsern. <br/><span></span><br/><span></span>Er füllte gerade den fertigen Stärkungstrank in Kristallphiolen, als ein schrilles Geräusch die Stille durchbrach. Es kam aus dem Erdgeschoss und ertönte einen Moment später erneut, länger als beim ersten Mal, und diesmal wurde ihm klar, was es war: Jemand klingelte an seiner Tür. Ziemlich nachdrücklich sogar. Es hörte sich fast so an, als ob die Person, wer immer es auch war, sich förmlich gegen den Knopf lehnte. <br/><span></span><br/><span></span>Wenn diese Kinder beschlossen hatten, ihm einen Klingelstreich zu spielen ... oder – Merlin hilf – vielleicht waren es wieder irgendwelche Weihnachtssänger. Die letzte Gruppe hatte sich nach einem wohl platzierten Confundus von dannen getrollt, doch er durfte nicht zu viele von ihnen verhexen, sonst hätte er das Ministerium am Hals, wegen Muggelhetze. Muggelhetze, ha! Und was war bitte mit Zaubererhetze? Immerhin klopften die an seine Tür und erwarteten, dass er ihrem Gegröhle lauschte. Während Snape die Treppe hinaufstapfte, tastete er nach dem Zauberstab in seinem Ärmel. <em><span class="user_italic">Wenn</span></em> es tatsächlich Weihnachtssänger waren, könnte er einfach kurzen Prozess machen und einen weiteren Confundus durch das Schlüsselloch abfeuern. Schließlich hatte er zu arbeiten!<br/><span></span><br/><span></span>In der Erwartung, das dümmliche Lächeln und die von der Kälte geröteten Gesichter dieser singenden Nachbarschaftsplage zu sehen, linste er durch den Spion. Doch vor seiner Tür stand nur ein einzelner in eine rote Uniformjacke gekleideter Mann, der einen Karton von gewaltigen Ausmaßen umklammerte. Und er lächelte definitiv nicht. <br/><span></span><br/><span></span>Snape öffnete die Tür. "Ja?"<br/><span></span><br/><span></span>Der Postbote lugte um das riesige Paket in seinen Armen herum. "Severin Snape?"<br/><span></span><br/><span></span>"Sever<em><span class="user_italic">us</span></em>. Und ich erwarte keine Pakete."<br/><span></span><br/><span></span>"Tja, dann wird's wohl eine Weihnachtsüberraschung sein, nehm' ich mal an, und eine verflucht schwere noch dazu. Könnt' ich mal ...?" Er deutete auf die offene Tür und Snape trat zögernd zur Seite, um ihn vorbeizulassen. Der Mann schwankte in die kleine Küche, ließ das Paket auf den Tisch fallen und schüttelte danach seine Arme aus. "Ich brauch' nur noch 'ne Unterschrift, Kumpel. Hier."<br/><span></span><br/><span></span>Snape nahm das Klemmbrett entgegen. Der Platz für "Rücksendeadresse" war leer. Merkwürdig. Er wusste, dass die Muggelpost bei solchen Dingen ziemlich pedantisch war. Er platzierte seine Unterschrift an der vorgesehenen Stelle und gab dem Postboten das Klemmbrett zurück. "Mir war nicht bewusst, dass Sie auch anonyme Lieferungen durchführen."<br/><span></span><br/><span></span>Der Mann zuckte mit den Schultern. "'s scheint, als wär' das verdammte Ding vor einem Postamt in Surrey abgestellt worden. Ohne Rücksendeadresse. Ich mach' einfach nur meinen Job." <br/><span></span><br/><span></span>"Ja, ja." Snape ignorierte das oberflächliche "Frohe Weihnachten" und geleitete ihn aus dem Haus. Schneeflocken trieben durch die kalte Luft und blieben auf den Zäunen und den geparkten Autos liegen.<br/><span></span><br/><span></span>"Ich wette, auf der Autobahn ist wieder das totale Chaos", murmelte der Mann mit einem griesgrämigen Blick zum Himmel. Snape ignorierte dies ebenfalls und wartete, bis er in seinen roten Lieferwagen geklettert war und die Straße hinunter in die hereinbrechende Dunkelheit davonfuhr. Dann sprach er rasch einen Homenum Revelio. Nichts. Wenn <em><span class="user_italic">sie</span></em> dieses Paket gesendet hätten, dann würde auch einer von ihnen noch in der Nähe sein ... zumindest nahm er das an. Die Getreuen des Dunklen Lords zogen es vor, nichts dem Zufall zu überlassen. <br/><span></span><br/><span></span>Also doch keine unschöne Weihnachtsüberraschung für den vor kurzem enttarnten Verräter. Dumbledore war zwar überaus zuversichtlich, dass der ehemalige Kreis der Todesser vollkommen ahnungslos war, aber Snape hütete sich dennoch, in seiner Wachsamkeit nachzulassen.<br/><span></span><br/><span></span>Er ging wieder ins Haus, schloss die Tür und sprach zur Sicherheit noch einen Überwachungszauber. Das Paket stand auf dem Tisch, genau dort, wo der Postbote es fallengelassen hatte, und ... bei allem, was heilig war, es sah aus wie ein kleiner Sarg. Auf jeden Fall hatte es ungefähr die passende Größe; es war in etwa so lang wie Snapes Arm und circa vierzig Zentimeter breit. Jemand hatte es mit reichlich Tesafilm gesichert, so als ob derjenige dafür sorgen wollte, dass es keinesfalls zufällig aufgehen konnte. Seine Adresse, geschrieben in ordentlichen, spitzen Druckbuchstaben, stand auf der Oberseite. Aber es war etwas an der Seite des Pakets, das Snapes Aufmerksamkeit auf sich zog. Er schaute genauer hin. Eine Reihe von Löchern war in den Karton gestanzt worden.<br/><span></span><br/><span></span>Das war ... nicht gut. Snape fielen mehrere Gründe ein, warum jemand Löcher in ein Paket bohren sollte, und nicht einer von ihnen war sonderlich beruhigend. Vielleicht wäre es das Beste, das verdammte Ding an Ort und Stelle mittels eines Zaubers in Luft aufzulösen.<br/><span></span><br/><span></span>Er packte seinen Zauberstab fester und trat näher an den Tisch heran. "Viventem revelio!"<br/><span></span><br/><span></span>Ein rotglühender Lichtschein umgab das Paket und bewies, dass tatsächlich ein Lebewesen darin war. Oder zumindest ein Wesen, das vor nicht allzu langer Zeit noch am Leben gewesen war. <br/><span></span><br/><span></span>Es war töricht, doch er war einfach neugierig. Wenn sich herausstellen sollte, dass es sich hierbei um einen Geistesblitz Pendergrafts handelte und er eine Lieferung frisch getöteter Kröten in dem Paket fände, dann würde er den alten Narren wissen lassen, was er von dessen Liefermethoden hielt. Ein Heuler oder zwei sollten genügen. <br/><span></span><br/><span></span>Snape wappnete sich innerlich und sprach einen Schneidezauber. Er schnitt fein säuberlich durch das Klebeband. Mit gezücktem Zauberstab streckte er die Hand aus, um eine Seite des Pappdeckels anzuheben. <br/><span></span><br/><span></span>Und starrte in das Paket. Und setzte sich auf seinen Küchenstuhl. Und starrte weiter.<br/><span></span><br/><span></span>In dem Paket befand sich ein Baby, ein menschliches Baby, eingewickelt in eine blaue Fleecedecke. Und es war ganz offensichtlich tot. <br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>"Das war ich, stimmt's?"<br/><span></span><br/><span></span>"Ja, aber das wusste ich damals noch nicht."<br/><span></span><br/><span></span>"Und in Wahrheit war ich am Leben!"<br/><span></span><br/><span></span>"Ja, das warst du." <em><span class="user_italic">Gerade</span> <span class="user_italic">eben</span> <span class="user_italic">noch</span> <span class="user_italic">so</span></em>, fügte Snape in Gedanken hinzu. Teile dieser Geschichte waren nicht für Harrys Ohren bestimmt ... zumindest noch nicht.</p>
+<p> </p>
+<p> </p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_2_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Ich wünsche allen meinen Lesern einen schönen zweiten Advent :)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/12883326/chapters/29792070">Chapter 3</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/12883326#chapter_3_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p>
+<p>Snapes erster Gedanke war, dass es doch Todesser gewesen sein mussten, die ihm das Paket hatten zukommen lassen. Einem Verräter ein totes Muggelbaby zu senden, entsprach ganz ihrem Stil. Die Botschaft dahinter war klar: Severus, wir haben nicht einmal Skrupel, ein Baby zu ermorden, und dieser Muggelbengel ist friedlich gestorben – im Vergleich zu dem, was <em><span class="user_italic">dir</span></em> bevorsteht.<br/><span></span><br/><span></span>Aber sie würden wohl kaum die Muggelpost nutzen, oder? Sie hätten das Baby einfach vor seiner Haustür zurücklassen oder via Eulenpost senden können. Trotzdem ... wer in aller Welt, wenn nicht sie, könnte dafür verantwortlich sein? <br/><span></span><br/><span></span>Als er aufstand, weigerte er sich, seine weichen Knie zur Kenntnis zu nehmen. Er würde dieser Sache auf den Grund gehen und dafür musste er das Baby aus dem Paket holen. Er konnte es ohnehin nicht darin lassen; wenn er sonst schon nichts tun konnte, würde er wenigstens eine Möglichkeit finden, den kleinen Leichnam zu seinen Eltern zurückzubringen. Vielleicht wäre es eine gute Idee, ihn zur Muggelpolizei mitzunehmen. Er könnte ihn einfach an der Türschwelle des Reviers ablegen und verschwinden.<br/><span></span><br/><span></span>Um das Baby waren einige zerknüllte Zeitungen gestopft worden – vermutlich, damit es nicht in dem Paket hin und her rutschte – als wäre es eine verdammte viktorianische Vase. Snape bemühte sich, es nicht anzustoßen, als er das Papier vorsichtig entfernte. Es war absurd, schließlich konnte es nichts mehr spüren. Aber er konnte es nicht über sich bringen, das Kind wie eine Sache zu behandeln – so wie die Person, die es per Post geschickt hatte. Er hatte den starken Verdacht, dass es zu dem Zeitpunkt, als das Paket versiegelt worden war, noch gelebt hatte, und er konnte sich kaum vorstellen, wie sehr dieses kleine Wesen gelitten haben musste, als es langsam und qualvoll starb. Warum hatten diese idiotischen Muggel nicht bemerkt, dass etwas nicht in Ordnung war? Das Baby hatte doch bestimmt irgendwann geweint. Beförderten Muggelpostbeamte routinemäßig Pakete, die Klagelaute von sich gaben? <br/><span></span><br/><span></span>Snape schob eine Hand unter den Kopf des Babys, die andere unter dessen Rücken und hob es behutsam aus dem Karton. Es fühlte sich eigenartig in seinen Armen an, zerbrechlich und gleichzeitig ziemlich robust. Ein echter Mensch, aus Fleisch und Blut. Diese ganze Situation war einfach nur der reinste <em><span class="user_italic">Irrwitz</span></em>.<br/><span></span><br/><span></span>Das Baby war kein Säugling mehr; es hatte einen dunklen, unordentlichen Haarschopf und die runden Wangen eines jungen Kleinkindes. Snape schätzte, dass es ungefähr ein Jahr alt war. <br/><span></span><br/><span></span>Er legte es sanft auf den Tisch und begann, es aus der Fleecedecke zu wickeln. Er war sich nicht sicher, warum er das tat, eine Untersuchung des winzigen Körpers würde ohnehin zu nichts führen. Die Todesursache war ziemlich offensichtlich. Das Baby war entweder erstickt, erfroren oder schlicht an dem Schock gestorben, in eine Schachtel gestopft worden zu sein. Bei dem Gedanken verzog Snape das Gesicht. Sein anfänglicher Eindruck eines kleinen Sarges war zutreffender gewesen, als ihm lieb war. <br/><span></span><br/><span></span>Unter der Fleecedecke trug das Baby lediglich ein übergroßes, fadenscheiniges T-Shirt und eine Windel, sonst nichts. Seine Arme und Beine waren nicht besonders pummelig; Snape vermutete, dass sie für sein Alter zu dünn waren. Ein saurer Geruch stieg ihm in die Nase und als er genauer hinsah, erkannte er, dass der Rand der Windel zwischen den Beinen bräunlich verfärbt war. Das arme Ding hatte in seinen eigenen Exkrementen gelegen, als es starb. Wer auch immer dafür verantwortlich war, verdiente eine Runde des Cruciatusfluches. Zur Hölle mit dem Trost, der darin lag, das Richtige zu tun. Snape hatte das Gefühl, dass sogar der alte Mann seine Meinung teilen könnte. <br/><span></span><br/><span></span>Er konnte es nicht so lassen, entschied er. Er hielt sich für einen rationalen Menschen, der selten Gefühlswallungen unterlag, aber er konnte ein totes Baby nicht in seiner eigenen Scheiße liegen lassen. Zumindest <em><span class="user_italic">dieses</span></em> Detail würde den Eltern erspart bleiben, wenn sie den kleinen Leichnam im Leichenschauhaus identifizierten. Immer vorausgesetzt, dass sie es nicht gewesen waren, die das Paket versendet hatten. <br/><span></span><br/><span></span>Snape begann, die Klettverschlüsse zu lösen, und bereitete sich innerlich auf den Geruch vor, bevor er den vorderen Teil der Windel herunterklappte. Es stank furchtbar – Merlin, ja – aber das, was er unter der Windel vorfand, lenkte ihn von dem abscheulichen Geruch ab. Die Oberschenkel, der Po und der kleine Penis des Babys waren mit einer verkrusteten, gelbbraunen Schicht bedeckt, eindeutig das Ergebnis von mehr als einer Darmentleerung. Selbst ein völlig unerfahrener Mann wie Snape konnte erkennen, dass dieser kleine Junge schon sehr lange nicht mehr gewickelt worden war. Die Haut unter den Verunreinigungen war rot und entzündet, voller offener Wunden und Geschwüre. Das Kind musste entsetzliche Schmerzen gehabt haben. <br/><span></span><br/><span></span>Der Cruciatusfluch, dachte Snape, während er den Jungen von der ekelhaften Windel befreite, wäre als Bestrafung möglicherweise zu kurz, zu sauber ... Vielleicht stattdessen lieber eine Dosis von Voldemorts bevorzugtem Gedärm-Verdreh-Fluch ... <br/><span></span><br/><span></span>Er verbrannte die Windel auf der Stelle und sprach einen Reinigungszauber über den Tisch sowie das T-Shirt des Jungen. Der Gestank verschwand dadurch nicht vollständig, aber er wurde erträglich – zumindest für einen Tränkemeister. Jemand, der nicht an widerliche Gerüche gewöhnt war, hätte vermutlich immer noch das Bedürfnis, sich zu übergeben.<br/><span></span><br/><span></span>Snape ging zum Spülbecken, füllte eine Schüssel mit warmem Wasser und trug sie zurück zum Tisch. Er tauchte einen weichen Lappen hinein und begann, den Jungen sanft und gründlich zu säubern. Die Haut des Babys war warm, also konnte es noch nicht lange tot sein. Genau genommen ...<br/><span></span><br/><span></span><em><span class="user_italic">"H'tschi!"</span></em><br/><span></span><br/><span></span>Snape schlug das Herz bis zum Halse, er ließ den Lappen fallen und schlüpfte mit der Hand unter das T-Shirt des Babys. Und da war es. Das leise Schlagen eines Herzens, das noch nicht ganz aufgegeben hatte. <br/><span></span><br/><span></span>Das Baby war von seinem Niesen nicht aufgewacht, seine Augen waren nach wie vor geschlossen und seine Arme und Beine lagen schlaff an den Seiten. War es ohnmächtig oder ... Snape betrachtete die bläulich verfärbten Lippen des Jungen, die er vorher der Kälte zugeschrieben hatte. Aber vielleicht steckte noch mehr dahinter. <br/><span></span><br/><span></span>"Accio Teststreifen!"<br/><span></span><br/><span></span>Snape fing eine Art kleinen Pergamentstreifen, der durch die Luft auf ihn zusegelte, und schob ihn vorsichtig zwischen die leblosen Lippen des Kindes. Er wurde beinahe sofort grün. Jemand, zweifellos die Person, die das Paket geschickt hatte, hatte ihm ein starkes Schlafmittel eingeflößt. <br/><span></span><br/><span></span>Snape war kein Heiler, aber er wusste, dass solcherart Muggelgifte für ein geschwächtes Immunsystem tödlich sein konnten. Der Junge könnte aufhören zu atmen oder seine Magie die unbekannte Substanz abstoßen und sein Nervensystem in einen Schockzustand versetzen. Denn dies war ein magisches Kind; Snape hatte es in dem Moment gewusst, als der Teststreifen seine Farbe verändert hatte. Der Zauber funktionierte nicht bei Muggeln. <br/><span></span><br/><span></span>Er hielt seine Hand vor den Mund des Jungen. Zumindest schien er normal zu atmen, obwohl sein Herzschlag ein wenig unregelmäßig war. Es gab mehrere Zaubertränke, die Snape einem erwachsenen Patienten in den Magen hätte zaubern können, doch keinen davon wagte er, einem so jungen Kind zu verabreichen. Und das Baby sah aus, als hinge sein Leben an einem seidenen Faden, der jeden Moment reißen könnte. Was wäre, wenn es hier stürbe, hier, mitten auf Snapes Küchentisch?<br/><span></span><br/><span></span>"Was mache ich nur mit dir?", flüsterte er. Ohne zu merken, was er tat, streckte Snape die Hand aus und strich das widerspenstige, dunkle Haar des Jungen beiseite. Auf seiner Stirn befand sich ein Pflaster, das aussah, als würde es schon ewig dort kleben. Zweifelsohne hatten die Personen, die sich ehemals um ihn "kümmerten", es einfach vergessen. <br/><span></span><br/><span></span>Für den Moment beließ er das Pflaster an seinem Platz und widmete sich wieder seiner Aufgabe, das Baby zu säubern. Es war kaum zu glauben, wie viel Dreck und Schmutz an ihm hafteten. Als der kleine Po endlich sauber war, hatte Snape mehrere Lappen und vier Schüsseln Wasser verbraucht. Nicht, dass das Ergebnis wesentlich besser aussah. Nach der Beseitigung der Schmutzschicht waren die entzündeten Wunden und nässenden Geschwüre nur allzu deutlich zu erkennen. Wahrscheinlich war es eine Gnade, dass der Junge so tief schlief, denn wäre er wach, würde er vor Schmerzen schreien. <br/><span></span><br/><span></span>"Accio Diptam-Essenz, Murtlap-Essenz und Mega-Power-Trank!"<br/><span></span><br/><span></span>Die herbeigerufenen Phiolen legte Snape auf den Tisch, bevor er mit dem langwierigen Prozess begann, die Wunden zu behandeln. Er benutzte ein Wattestäbchen, um jeden kleinen Riss und jede einzelne schmerzhafte Verletzung mit den verschiedenen Tränken zu benetzen. Der Mega-Power-Trank betäubte und sterilisierte die entzündeten Stellen, die Diptam-Essenz schloss die schlimmsten Wunden und die Murtlap-Essenz beruhigte die gereizte Haut. Mehr konnte er für den Jungen nicht tun, nur ein Heiler wäre imstande zu entscheiden, ob invasivere Maßnahmen vonnöten wären.<br/><span></span><br/><span></span>"Jetzt sollte es besser sein", murmelte Snape. "Du bist eine echte Kämpfernatur. Es braucht mehr als eine Reise in einem Karton, um dir den Garaus zu machen, nicht wahr?" <br/><span></span><br/><span></span>Der Junge schlief weiter, aber Snape wähnte, dass seine Atmung sich leicht beruhigt hatte. Möglicherweise hatte er ja sogar im Tiefschlaf gespürt, dass der kontinuierlich scheuernde Schmerz an seinem Po endlich ein wenig nachgelassen hatte.<br/><span></span><br/><span></span>Snape verwandelte etwas Küchenkrepp in eine Windel (was mehrere Versuche erforderte, da er keine genaue Vorstellung davon hatte, wie eine Windel aussah). Das Ergebnis war nicht besonders überzeugend, aber er ging davon aus, dass es vorerst seinen Zweck erfüllen würde. Das schmuddelige T-Shirt konnte allerdings nicht bleiben. Nach kurzer Überlegung verwandelte Snape es in einen weichen, locker sitzenden Overall, wie er ihn an Kleinkindern in der Winkelgasse gesehen hatte. <br/><span></span><br/><span></span>"Jetzt siehst du wie ein anständiger Zauberer aus, Kleiner." <br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>"Hattest du Angst?"<br/><span></span><br/><span></span>Snape antwortete, ohne zu zögern. "Ja, hatte ich. Große Angst sogar."<br/><span></span><br/><span></span>"Weil du dachtest, dass ich sterben könnte?"<br/><span></span><br/><span></span>"Ja. Und weil ich nicht wusste, wer dich geschickt hat, und warum."<br/><span></span><br/><span></span>"Erzähl mir von dem Brief."<br/><span></span><br/><span></span>Der Brief, richtig. Er hatte so versteckt unter dem ganzen zerknitterten Zeitungspapier gelegen, dass er ihn fast übersehen hätte ...<br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>Das schlafende Kind lag geborgen an seiner Brust, während Snape auf den Briefumschlag starrte. Er hatte ganz unten in dem Pappkarton gelegen, und so hatte er ihn erst jetzt bemerkt. Anscheinend doch nicht ganz und gar anonym. Der Absender hatte einen Brief beigelegt. Wenn derjenige völlig übergeschnappt war (ein Verdacht, der sich Snape langsam aufdrängte), dann würde er darin nur eine unpersönliche Weihnachtskarte finden. Wenn nicht ... nun, wenn nicht, dann würde er vielleicht in Erfahrung bringen, wie ein Mensch auf Merlins grüner Erde auf die Idee kommen konnte, ein Baby per Post zu verschicken.<br/><span></span><br/><span></span>Er nahm sowohl den Brief als auch das Baby mit in sein Wohnzimmer und setzte sich so auf die Couch, dass der schlafende Junge auf seiner Brust lag. Der kleine Körper fühlte sich beruhigend warm an. Magie hatte dieses Kind gerettet und am Leben erhalten. Ein Muggelbaby wäre mit Sicherheit gestorben.<br/><span></span><br/><span></span>"Nun, dann schauen wir mal, was hier drin steht, hmm?" Snape riss den Umschlag auf. Die affektierte, irgendwie übergenaue Handschrift war die gleiche wie die auf dem Paket. Nachdem er jedoch die ersten Zeilen gelesen hatte, dachte Snape nicht mehr daran. Einen Moment lang vergaß er sogar das Baby auf seiner Brust. Was immer er auch erwartet hatte, das sicher nicht.<br/><span></span><br/><span></span><br/><span></span><em><span class="user_italic">Snape,</span> </em><br/><span></span><br/><em><span></span><span class="user_italic">ich weiß nicht,</span> <span class="user_italic">ob diese Adresse noch aktuell ist,</span> <span class="user_italic">aber du bist der einzige Du-weißt-schon-was,</span> <span class="user_italic">den ich kenne.</span> <span class="user_italic">Dieser Mann,</span> <span class="user_italic">Dumbledore,</span> <span class="user_italic">hat keine Absenderadresse in seinem Brief hinterlassen</span> <span class="user_italic">(ohne Zweifel mit Absicht).</span> <span class="user_italic">Es gibt keinen normalen Weg,</span> <span class="user_italic">mit einem von euch in Kontakt zu treten,</span> <span class="user_italic">daher ist dies meine beste Option.</span> <span class="user_italic">Ich hoffe,</span> <span class="user_italic">es geht dir einigermaßen gut</span><span class="user_italic"> (und dass du nüchtern bist).</span></em><br/><span></span><br/><em><span></span><span class="user_italic">Du weißt vielleicht,</span> <span class="user_italic">oder vielleicht auch nicht,</span> <span class="user_italic">dass Dumbledore den Jungen meiner Schwester zu mir und meiner Familie gebracht hat.</span> <span class="user_italic">Um genau zu sein,</span> <span class="user_italic">hat er ihn an unserer Türschwelle abgeladen,</span> <span class="user_italic">einen Tag nach ihrem Tod.</span> <span class="user_italic">In einem beigelegten Brief erklärte er,</span> <span class="user_italic">dass irgendein verrückter Freak hinter ihm her sei und der einzige Ort,</span> <span class="user_italic">an dem er sicher wäre,</span> <span class="user_italic">seie bei uns,</span> <span class="user_italic">in unserem Heim.</span> <span class="user_italic">Uns wurde keine Wahl gelassen,</span> <span class="user_italic">wir wurden nie gefragt,</span> <span class="user_italic">ob wir bereit wären,</span> <span class="user_italic">unser Leben in Gefahr zu bringen –</span> <span class="user_italic">und das unseres Sohnes! –</span> <span class="user_italic">indem wir einen verwaisten Jungen aufnehmen,</span> <span class="user_italic">den ich noch nie zuvor zu Gesicht bekommen hatte.</span> <span class="user_italic">Ich bin mir sicher,</span> <span class="user_italic">ich weiß, warum,</span> <span class="user_italic">schließlich sind wir nur "Mugel"</span> <span class="user_italic">(so hast du mich doch immer genannt,</span> <span class="user_italic">all die Male,</span> <span class="user_italic">die du an unserem Tisch gesessen und unser Essen gegessen hast,</span> <span class="user_italic">nicht wahr?).</span> </em><br/><span></span><br/><em><span></span><span class="user_italic">Wie dem auch sei,</span> <span class="user_italic">Snape,</span> <span class="user_italic">du kannst Dumbledore sagen,</span> <span class="user_italic">dass es nicht funktionieren wird.</span> <span class="user_italic">Ich werde nicht so tun,</span> <span class="user_italic">als ob ich irgendetwas von dieser albernen "Blutschutz"-Geschichte verstünde,</span> <span class="user_italic">aber ich weiß eines –</span> <span class="user_italic">dieser Junge wird <span class="user_underlined">niemals</span> ein Zuhause bei uns haben.</span> <span class="user_italic">Mein Mann wird es nicht zulassen und,</span> <span class="user_italic">offen gesagt,</span> <span class="user_italic">ich ebenso wenig.</span> <span class="user_italic">Wir haben nie darum gebeten,</span> <span class="user_italic">ein Teil eurer Welt zu sein,</span> <span class="user_italic">und dieser Junge wird genauso abartig und unnatürlich werden wie seine Eltern.</span> <span class="user_italic">Ich wüsste nicht einmal,</span> <span class="user_italic">wie ich ihn großziehen soll,</span> <span class="user_italic">und ich werde bestimmt nicht daneben stehen und zusehen,</span> <span class="user_italic">wie mein Dudley darunter leidet,</span> <span class="user_italic">einen Freak in der Familie zu haben.</span> <span class="user_italic">Also sag Dumbledore danke,</span> <span class="user_italic">aber nein danke.</span> <span class="user_italic">Ihr habt ihnen die Suppe eingebrockt –</span> <span class="user_italic">ihr löffelt sie aus.</span> <span class="user_italic">Wir,</span> <span class="user_italic">mein Mann und ich,</span> <span class="user_italic">werden es ganz sicher nicht tun.</span> </em><br/><span></span><br/><em><span></span><span class="user_italic">Und was diese lächerlichen schreienden Briefe betrifft,</span> <span class="user_italic">er kann sich die Mühe sparen,</span> <span class="user_italic">uns einen zu senden,</span> <span class="user_italic">da wir in Kürze das Land verlassen werden.</span> <span class="user_italic">Mein Mann hat ein Stellenangebot im Ausland angenommen und wir werden sehr bald abreisen.</span> <span class="user_italic">Wenn ihr versucht,</span> <span class="user_italic">den Jungen zu uns zurückzubringen,</span> <span class="user_italic">werden wir ihn aussetzen –</span> <span class="user_italic">das ist eine Warnung.</span> <span class="user_italic">Wir werden uns nicht erpressen lassen.</span> </em><br/><span></span><br/><em><span></span><span class="user_italic">Ich lege diesem Brief eine Decke und ein wenig Kleidung bei;</span> <span class="user_italic">das ist alles,</span> <span class="user_italic">was er bei sich hatte.</span></em><br/><span></span><br/><em><span></span><span class="user_italic">Petunia</span> </em><br/><span></span><br/><em><span></span><span class="user_italic">PS: Ich habe ein paar Temazepamtabletten in sein Fläschchen getan,</span> <span class="user_italic">um ihn ruhigzustellen.</span> <span class="user_italic">Sie sollten zu gegebener Zeit ihre Wirkung verlieren.</span></em><br/><span></span><br/><span></span><br/><span></span>Snape starrte auf das Blatt Papier, bis die Buchstaben vor seinen Augen verschwammen. Dann zerknüllte er es, schleuderte es durch den Raum und boxte die Rückenlehne der Couch mit voller Wucht. <br/><span></span><br/><span></span>"Du elendes <em><span class="user_italic">Dreckstück!"</span></em><br/><span></span><br/><span></span>Das Baby zuckte nicht einmal, es lag noch immer tief in seinem medikamenteninduzierten Schlaf. Snape starrte auf den dunklen Schopf unter seinem Kinn. Dieses ... kleine halbtote Ding war Harry Potter, der Junge-der-lebt. In eine Pappschachtel gestopft und per Post verschickt wie ein altbackenes Früchtebrot. Petunia musste ihren Verstand verloren haben ... jedenfalls das bisschen, das sie besessen hatte.<br/><span></span><br/><span></span>Er setzte sich auf und schob das Baby in seinen Armen zurecht, damit er ihm in das winzige Gesichtchen schauen konnte. Ja, das unordentliche dunkle Haar war das seines Vaters, aber etwas an der Lippenform des Jungen erinnerte Snape an ein anderes Gesicht, an das einer Frau, ein Gesicht, welches er niemals vergessen würde. Und dieses Pflaster ... die Narbe musste darunter verborgen sein, die berühmte Narbe, die Voldemorts Fluch auf der Stirn des Jungen hinterlassen hatte. Der Tagesprophet hatte wilde Vermutungen über ihr Aussehen angestellt, da er kein Foto von ihr hatte ergattern können.<br/><span></span><br/><span></span>Snape begann, vorsichtig eine Ecke des Pflasters abzuziehen, doch es klebte zu fest. Wenn er es abriss, könnte er den Jungen verletzen. Es wäre wohl besser, es behutsam mit warmem Wasser zu lösen. Aber das hatte Zeit. Zuerst musste er einen Anruf erledigen.<br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>"Du hast Onkel Albus über den Kamin angerufen."<br/><span></span><br/><span></span>Snape nickte. "Ich musste ihm Bescheid sagen, dass du nicht mehr im Haus deiner Tante warst."</p>
+<p> </p>
+<p> </p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_3_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Ich wünsche allen meinen Lesern einen schönen dritten Advent :)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/12883326/chapters/29957433">Chapter 4</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/12883326/chapters/29957433#chapter_4_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p>
+<p>"Das ist ... bedauerlich, Severus." Dumbledores Profil in den Flammen wirkte höchst besorgt, in einem Ausmaß, wie Snape es noch nie zuvor an ihm gesehen hatte. "Darf ich hinüberkommen?"<br/><span></span><br/><span></span>Snape nickte stumm und entfernte sich vom Kamin, um dem Schulleiter Platz zu machen. Das Baby in seinen Armen rührte sich nicht. Harry schlief noch immer fest; ohne dessen Körperwärme hätte Snape das Gefühl gehabt, ein Lumpenbündel durch die Gegend zu tragen.<br/><span></span><br/><span></span>Dumbledore trat aus dem Kamin und ließ den Ruß auf seinem Umhang mit einem Schlenker seines Zauberstabes verschwinden.<br/><span></span><br/><span></span>Snape räusperte sich. "Der Schornsteinfeger ist schon eine Weile nicht mehr hier gewesen ..."<br/><span></span><br/><span></span>Dumbledore winkte ab. "Kein Problem, mein Junge. Wie geht es Harry?"<br/><span></span><br/><span></span>"Er schläft", antwortete Snape wahrheitsgemäß. "Petunia hat ihn betäubt. Eine Art Muggelpillen, wie es scheint ..."<br/><span></span><br/><span></span>"Gefährlich?"<br/><span></span><br/><span></span>"Ich bin nicht sicher." Snape wünschte, er könnte Dumbledore beruhigen, doch dieser würde es wissen, wenn er log. "Er scheint stabil zu sein, aber ich habe nur wenig Erfahrung mit Muggelmedikamenten."<br/><span></span><br/><span></span>"Dürfte ich den Brief sehen?"<br/><span></span><br/><span></span>Snape rief das zerknitterte Blatt Papier herbei und reichte es weiter. Während Dumbledore es rasch überflog, verriet sein Gesichtsausdruck nichts. Das hatte natürlich nichts zu bedeuten, dieser Mann konnte seinen Zorn genauso gut hinter einer unbewegten Miene verbergen wie ein Slytherin.<br/><span></span><br/><span></span>Schließlich sah er von dem Brief auf. "Die arme Petunia."<br/><span></span><br/><span></span>Snape blinzelte. "Wie bitte?"<br/><span></span><br/><span></span>Dumbledore seufzte. "Sie scheint das Gefühl zu haben, dass ich die Sicherheit ihrer Familie weniger wertschätze, weil sie ein Muggel ist. Gewiss, das war immer ihr wunder Punkt ..." <br/><span></span><br/><span></span>"Ihr wunder Punkt?" Snape hatte seine Stimme erhoben und bemühte sich, in einem gemäßigteren Tonfall fortzufahren. "Sie hätte den Jungen töten können!" <br/><span></span><br/><span></span>"Das ist wahr." Dumbledore wirkte eher traurig als wütend, was Snape wiederum verärgerte. Er hatte gehofft, dass der alte Mann wenigstens ein Mal seine Gefühle teilen würde, anstatt wie üblich Verständnis und Vergebung an den Tag zu legen. Seine nächste Frage geriet daher etwas schnippischer als beabsichtigt. <br/><span></span><br/><span></span>"Und was jetzt? Vergessen wir es einfach?"<br/><span></span><br/><span></span>"Nein, natürlich nicht." Dumbledore sah ihn wieder einmal auf diese ganz bestimmte Art an, so als würde er ihm direkt in die Seele schauen. Snape zwang sich, seinem Blick standzuhalten. "Es scheint, als müssten wir uns Harry betreffend etwas anderes einfallen lassen." <br/><span></span><br/><span></span>"Diesmal keine Muggel", sagte Snape nachdrücklich und fragte sich innerlich, seit wann ihn diese ganze Angelegenheit dermaßen kümmerte. Andererseits, er <em><span class="user_italic">hatte</span></em> versprochen, den Jungen zu beschützen. <br/><span></span><br/><span></span>"Nicht alle Muggel sind ungeeignete Eltern, mein Junge ..."<br/><span></span><br/><span></span>"Vielleicht sind es ja nur die, die ich kenne", blaffte Snape, doch als er den enttäuschten Ausdruck auf dem alten Gesicht ihm gegenüber sah, wünschte er, er hätte es nicht getan. "Wie dem auch sei ... warum kann er nicht bei einer Zaubererfamilie unterkommen? Ich bin mir sicher, dass viele überglücklich wären, den Jungen-der-lebt zu adoptieren." <br/><span></span><br/><span></span>"Aber genau das ist es doch", erwiderte Dumbledore. "Sie würden den Jungen-der-lebt bei sich aufnehmen und keinen kleinen Jungen, der einfach nur eine Familie braucht."<br/><span></span><br/><span></span>"Nun, er braucht ganz sicher keine Familie, die ihn in einen Karton stopft und ihn vor einem Postamt zurücklässt." <br/><span></span><br/><span></span>"Nein, das tut er nicht." Erneut dieser Blick. Dieser Blick, der es jedes Mal schaffte, Snape zu verunsichern. Was sah der alte Mann nur, wenn er ihm in die Augen schaute? "Er braucht jemanden, der ihn beschützt."<br/><span></span><br/><span></span>"Und ... haben Sie jemand Bestimmten im Sinn?"<br/><span></span><br/><span></span>Mit einem seltsamen Glitzern in den Augen wandte Dumbledore schließlich seinen Blick ab. "In der Tat, das habe ich. Aber in der Zwischenzeit möchte ich Sie bitten, ein Auge auf ihn zu haben. Das Medikament könnte Nebenwirkungen haben und mir wäre wirklich wohler, wenn ich ihn in professionellen Händen wüsste."<br/><span></span><br/><span></span>"Ich ... habe noch nie ein Baby versorgt ..."<br/><span></span><br/><span></span>"Das Los aller neuen Eltern, soweit ich gehört habe." Dumbledore musste den Ausdruck auf Snapes Gesicht bemerkt haben, denn er fügte hinzu: "Es ist nur vorübergehend, Severus. Nur bis ich sicher bin, dass die Person, die ich im Kopf habe, ihn aufnehmen kann." <br/><span></span><br/><span></span>Snape schaute auf den schlafenden Jungen hinunter. "Was ist mit dem Blutschutz? Hat Lily noch andere Verwandte?" <br/><span></span><br/><span></span>Dumbledore schüttelte den Kopf. "Petunia ist die einzige, die noch lebt. Und sie hat natürlich recht, der Schutz funktioniert nicht, wenn er nicht aus freien Stücken gewährt wird. Was Harrys unmittelbare Sicherheit angeht, werden wir uns vorerst mit dem Fidelius-Zauber zufriedengeben müssen." <br/><span></span><br/><span></span>"Was meinen Sie mit 'vorerst'?"<br/><span></span><br/><span></span>Dumbledore lächelte. "Ein Blutschutz wirkt auf viele Arten, Severus. Vielleicht kommt der Tag, an dem jemand bereit ist, sein Blut mit dem Jungen zu teilen, und ihn so zu seinem eigen Fleisch und Blut zu machen. Dann hätten wir die Möglichkeit, erneut einen Blutschutz zu errichten. Einstweilen wird der Fidelius-Zauber völlig ausreichen." <br/><span></span><br/><span></span>Snape kniff die Augen zusammen. "Blutadoption? An wen denken Sie, Dumbledore?" <br/><span></span><br/><span></span>Wieder dieser seltsame Blick, und ein Lächeln, obwohl Snape keine Ahnung hatte, was der alte Mann so erheiternd fand. "Es reicht wohl, wenn ich sage, dass es jemand ist, dem ich mein eigenes Leben anvertrauen würde, Severus." <br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>"Onkel Albus war dein Geheimniswahrer, stimmt's?"<br/><span></span><br/><span></span>Snape nickte. Sie hatten den Zauber gleich am nächsten Tag durchgeführt, mit McGonagall als ihrer Zeugin. Sie hatten niemandem sonst davon erzählt ... zumindest am Anfang nicht.<br/><span></span><br/><span></span>"Wen wollte Onkel Albus denn wegen der Blutadoption fragen?", wollte Harry wissen. "Ich dachte, er wollte, dass ich bei dir bleibe."<br/><span></span><br/><span></span>Snape seufzte. "Lass dir eines über deinen Onkel Albus gesagt sein, Harry: Gehe immer <em><span class="user_italic">– immer –</span></em> davon aus, dass er Hintergedanken hat, sogar dann, wenn er dich lediglich am Esstisch darum bittet, ihm das Salz zu reichen." <br/><span></span><br/><span></span>"Was sind Hintergedanken?"<br/><span></span><br/><span></span>"Ein geheimer Plan."<br/><span></span><br/><span></span>"Oh." Harry dachte einen Moment darüber nach. "Und hat sein geheimer Plan funktioniert?"<br/><span></span><br/><span></span>Snape musste beinahe lächeln. "Schlussendlich, ja."<br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>Harry schlief achtzehn Stunden am Stück, sicher und geborgen in einer Decke, die mit einem fortwährenden Wärmezauber versehen war. Währenddessen hatte Snape einen seiner Stühle in ein Gitterbettchen verwandelt und dieses in seinem Schlafzimmer aufgestellt, um den Jungen des Nachts besser im Blick haben zu können. Tagsüber würde er ihn ab sofort in einem Tragetuch umhertragen, so wie Poppy Pomfrey es ihm empfohlen hatte. Sie war schnellstmöglich zu ihnen gekommen, um sich Harry anzusehen, und hatte verkündet, er wäre "auf dem Weg der Besserung, aber viel zu dünn". <br/><span></span><br/><span></span>Die permanente Anwesenheit eines anderen Menschen war neu für Snape, selbst wenn dieser Mensch nichts anderes tat als zu schlafen. Er ertappte sich dabei, dass er mit dem Jungen redete, ihm die Nachrichten aus dem Tagespropheten vorlas und sich bei ihm über Pendergraft beschwerte, der Ende Dezember Sonnenschein-Elixier bestellt hatte. Er trug mehrere Male am Tag Heiltränke auf Harrys wunden Po auf und zauberte Nährtränke in seinen Magen und er war höchst erstaunt über den Wandel, den der Junge in diesen wenigen Stunden durchgemacht hatte. Harrys Haut war nicht mehr blass und klamm, seine Wangen hatten einen schwachen rosigen Ton angenommen und seine langen, dunklen Wimpern ließen ihn aussehen wie einen Engel – jedenfalls laut Madam Pomfrey. Snape fand, dass er wie ein zotteliges, dürres Kätzchen aussah, das in den Regen gekommen war ... mit einem Blitz auf der Stirn. Die berühmte Narbe war in der Tat wie der Runenbuchstabe "S" geformt, was zweifellos der Grund war, weshalb Petunia sie mit einem Pflaster abgedeckt hatte. Etwas, das derart offensichtlich magischen Ursprungs war, musste vor der "normalen" Welt verborgen werden. <br/><span></span><br/><span></span>Am Weihnachtsmorgen saß Snape an seinem Küchentisch und trank wie üblich eine Tasse Kaffee. Obwohl es ein Grund zur Schwermut sein müsste, diese Zeit des Jahres allein zu verbringen – das St. Mungo meldete während der Weihnachtsfeiertage doppelt so viele Selbstmordversuche wie sonst – war ihm nicht melancholisch zumute. Es lag ein gewisser Frieden darin, hier einfach nur mit dem schlafenden Kind auf seinem Schoß zu sitzen und zu wissen, dass sie beide später in den Keller gehen und noch eine Ladung Magenberuhigungstrank brauen würden (immer ein Verkaufsschlager nach Weihnachten).<br/><span></span> <br/><span></span>"Wenigstens quasselst du nicht so unerträglich viel wie dein seliger Vater", bemerkte Snape, während er mit einer Hand den Rücken des Jungen abstützte und gleichzeitig die neueste Ausgabe von <em><span class="user_italic">Angewandte</span> <span class="user_italic">Zaubertrankkunde</span></em> überflog. "Die Studierstunden in der Großen Halle waren immer die reinste Hölle, weil er und dieser kläffende Köter ständig geschnattert haben wie die Elstern."<br/><span></span><br/><span></span>"Da."<br/><span></span><br/><span></span>Snape hätte beinahe seine Tasse umgestoßen. Er schaute nach unten, geradewegs in ein Paar hellgrüne Augen. <br/><span></span><br/><span></span>"Da ba", sagte der Junge leise. "Widelibubwablahbla."<br/><span></span><br/><span></span>"Ja, in der Tat ..."<br/><span></span><br/><span></span>"Hawwy."<br/><span></span><br/><span></span>Snape blinzelte. "Ja, das bist du. Ich bin froh, dass du deinen Namen kennst." <br/><span></span><br/><span></span>"Hawwy Heia."<br/><span></span><br/><span></span>"Du hast gerade geschlafen", erwiderte Snape und fragte sich, ob Harry irgendetwas von dem verstand, was er sagte ... Wie sprach man mit einem achtzehn Monate alten Kind? Redete man überhaupt richtig mit einem? "Aber jetzt bist du wach." <br/><span></span><br/><span></span><em><span class="user_italic">Und</span> <span class="user_italic">du</span> <span class="user_italic">klingst</span> <span class="user_italic">wie</span> <span class="user_italic">ein</span> <span class="user_italic">Idiot,</span> <span class="user_italic">Snape.</span> <span class="user_italic">Teilst</span> <span class="user_italic">einem</span> <span class="user_italic">Baby</span> <span class="user_italic">das</span> <span class="user_italic">Offensichtliche</span> <span class="user_italic">mit.</span></em><br/><span></span><br/><span></span>"Hawwy Aam?"<br/><span></span><br/><span></span>Snape dachte eine Weile darüber nach, dann riet er: "Du möchtest auf meinem Arm bleiben?"<br/><span></span><br/><span></span>"Awabwada."<br/><span></span><br/><span></span>"In Ordnung."<br/><span></span><br/><span></span>Der Junge sah sich in der Küche um und verzog das Gesicht, als er die unbekannte Umgebung erblickte. Einen Moment lang dachte Snape, er würde anfangen zu weinen. Doch er schaute lediglich wieder zu ihm hoch und klammerte sich mit einem Händchen an seinem schwarzen Umhang fest.<br/><span></span><br/><span></span>"Bublublu."<br/><span></span><br/><span></span>"Nein."  Snape schüttelte den Kopf. "Severus. Ich heiße Severus."<br/><span></span><br/><span></span>"Hawwy."<br/><span></span><br/><span></span>"Severus."<br/><span></span><br/><span></span>"Ewwu."<br/><span></span><br/><span></span>Snape nickte. "Fast richtig. Also, Harry ... wollen wir nach unten gehen und für die unerträglichen Dummköpfe da draußen einen Magenberuhigungstrank brauen?" <br/><span></span><br/><span></span>"Ewwu."<br/><span></span><br/><span></span>Er sah auf das Kind hinab und stellte fest, dass es nicht so weh tat, wie er vermutet hätte, wieder in diese katzenartigen Augen zu schauen. Im Gegensatz zu denen, an die er sich erinnerte, waren Harrys Augen äußerst lebendig, und sie schienen ihn auf eine Art und Weise zu <em><span class="user_italic">sehen</span></em> wie nur wenige Menschen vor ihm. <br/><span></span><br/><span></span><em><span class="user_italic">Hör</span> <span class="user_italic">dich</span> <span class="user_italic">nur</span> <span class="user_italic">an,</span> <span class="user_italic">du</span> <span class="user_italic">wirst</span> <span class="user_italic">noch</span> <span class="user_italic">genauso</span> <span class="user_italic">rührselig</span> <span class="user_italic">wie</span> <span class="user_italic">der</span> <span class="user_italic">alte</span> <span class="user_italic">Mann.</span></em><br/><span></span><br/><span></span>Snape schüttelte den Gedanken ab und stand mit dem Kind auf dem Arm auf. Doch anstatt sofort zur Kellertreppe zu laufen, ging er zunächst zum Fenster, zog die Vorhänge zur Seite und enthüllte den Blick auf einen strahlend blauen Himmel und die mit glitzerndem Schnee bedeckte Straße. Ganz in Weiß sah Spinner's End nicht so heruntergekommen aus wie sonst, eigentlich war es fast hübsch. <br/><span></span><br/><span></span>"Siehst du?", sagte Snape und hob das Baby höher, damit es besser gucken konnte. "Heute ist Weihnachten." <br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center">
+  <hr/>
+</div><p><br/><span></span>"Und dann bin ich bei dir geblieben."<br/><span></span><br/><span></span>Snape streckte eine Hand aus, um Harry eine verirrte Strähne aus der Stirn zu streichen. "Das bist du."<br/><span></span><br/><span></span>"Und dann hast du dein Blut mit mir geteilt und mich adoptiert."<br/><span></span><br/><span></span>"Das habe ich."<br/><span></span><br/><span></span>Harry sah nachdenklich aus. "Was wäre, wenn du nicht zu Hause gewesen wärst, als der Postbote kam?" <br/><span></span><br/><span></span>"Ich nehme an, dann hätte er das Paket vor meiner Haustür liegen lassen", sagte Snape. <em><span class="user_italic">In</span> <span class="user_italic">der</span> <span class="user_italic">Eiseskälte</span></em>, fügte er nicht hinzu. Verdammte Petunia. Diese Rechnung war noch immer offen und getreu seiner Natur hielt Snape an seinem Groll fest. Im Laufe der Jahre war sein Zorn eher noch gewachsen. Wenn er dieser Frau jemals wieder begegnen sollte ... nun, dann sollte Albus tunlichst wegschauen. <br/><span></span><br/><span></span>"Was wäre, wenn du mich nicht gemocht hättest?"<br/><span></span><br/><span></span>Snape hob eine Augenbraue. "Du meinst, was wäre, wenn du dich als ein kleines Monster entpuppt hättest, das meine Küche mit Schokolade volltropft und Plätzchen stiehlt?"<br/><span></span><br/><span></span>Harry kicherte. "Ich hab das nicht mit Absicht gemacht." <br/><span></span><br/><span></span>"Ich bin mir sicher, dass die Plätzchen nicht von allein in deine Tasche gehüpft sind."<br/><span></span><br/><span></span>"Nein, das mit der Schokolade. Die Plätzchen wollte ich mopsen. Aber das mit der Schokolade war ein Unfall."<br/><span></span><br/><span></span>"So wie der Unfall, den ihr, du und Mr. Weasley, letzte Woche im Badezimmer hattet?"<br/><span></span><br/><span></span>Harry nickte. Der Sarkasmus ging weit über seinen sechsjährigen Horizont hinaus. "Ja, genau."<br/><span></span><br/><span></span>"Nun", sagte Snape, "jetzt ist es zu spät, um dich zurückzusenden, oder?" <br/><span></span><br/><span></span>Poppy Pomfrey und Molly Weasley hätten diese kleine Bemerkung zweifellos missbilligt, aber Harry grinste nur. "Ich würde sowieso nicht mehr in das Paket passen." <br/><span></span><br/><span></span>"Leider nicht." Snape zog die Bettdecke über den Jungen und stellte sicher, dass auch seine Füße richtig zugedeckt waren. "Und nun wird geschlafen, Harry. Lupin kommt morgen vorbei und ich bin mir sicher, dass du ausgeruht sein willst, für die vielen Runden Zaubererschnippschnapp, die du ihm abnötigen wirst."<br/><span></span><br/><span></span>"Onkel Moony?", schrie Harry und Snape hätte sich am liebsten selbst geohrfeigt, weil er diese aufregende Neuigkeit so kurz vor dem Schlafengehen enthüllt hatte.<br/><span></span><br/><span></span>"Nur, wenn du jetzt schläfst", ergänzte er hastig (und log wie gedruckt. Es wäre auch zu schön, wenn ein so simpler Grund wie Harrys mangelnder Nachtschlaf den Wolf davon abhalten könnte, hierher zu kommen.) <br/><span></span><br/><span></span>"Okay." Harry lächelte. "Nacht, Severus. Wir sehen uns an Weihnachten!"<br/><span></span><br/><span></span>Snape stand auf und schaute auf den in seine Decke eingewickelten Jungen hinunter. "Gute Nacht, Harry." <br/><span></span><br/><span></span>Er hob auf dem Weg zur Tür noch ein paar verstreut herumliegende Socken auf, bevor er leise das Zimmer verließ. Lupin hatte darauf bestanden vorbeizukommen, so wie jedes Jahr zu Weihnachten. Und zu Ostern, zu Harrys Geburtstag und wann immer er es zwischendurch einrichten konnte. Nun, dachte Snape, als er die Strümpfe in den Wäschekorb fallen ließ, es könnte schlimmer sein. Wenn er sich nicht gerade in eine blutrünstige Bestie verwandelte, war Lupin durchaus erträglich ... nicht, dass er ihm das jemals sagen würde. <br/><span></span><br/><span></span>Er schaute gerade rechtzeitig aus dem Fenster in den Garten, um zu sehen, wie eine einzelne Schneeflocke auf den vereisten Rasen fiel und liegenblieb. Kurz darauf folgte ihr eine weitere und dann noch eine, die im nächtlichen Wind hin und her tanzte. Harry würde begeistert sein, er liebte es, im Schnee zu spielen. <em><span class="user_italic">Und</span> <span class="user_italic">wenn</span> <span class="user_italic">Lupin</span> <span class="user_italic">derjenige</span> <span class="user_italic">ist,</span> <span class="user_italic">der</span> <span class="user_italic">ihn</span> <span class="user_italic">auf</span> <span class="user_italic">seinem</span> <span class="user_italic">Schlitten</span> <span class="user_italic">herumziehen</span> <span class="user_italic">muss,</span> <span class="user_italic">und</span> <span class="user_italic">nicht</span> <span class="user_italic">ich,</span> <span class="user_italic">umso</span> <span class="user_italic">besser.</span></em> Andererseits würde Harry wahrscheinlich darauf bestehen, dass sie ihm beide Gesellschaft leisteten ... und, Merlin bewahre, zusammen einen Schneemann bauten. Snape seufzte bei dem Gedanken. Seiner Meinung nach war Schnee am schönsten, wenn man ihn durch ein Fenster hindurch betrachtete.<br/><span></span><br/><span></span>Genau wie Kinder, natürlich. Und doch lebte eines in seinem Haus, buk Schokoladenplätzchen, setzte sein Badezimmer unter Wasser und bat um Gutenachtgeschichten.<br/><span></span><br/><span></span>Albus hatte ihn gründlich an der Nase herumgeführt, damals vor fünf Jahren, und er war darauf hereingefallen wie ein naiver Hufflepuff-Erstklässler.<br/><span></span><br/><span></span><em><span class="user_italic">"Nun</span> <span class="user_italic">ja,</span> <span class="user_italic">ich</span> <span class="user_italic">nehme</span> <span class="user_italic">an,</span> <span class="user_italic">es</span> <span class="user_italic">wäre</span> <span class="user_italic">unhöflich,</span> <span class="user_italic">ein</span> <span class="user_italic">Weihnachtsgeschenk</span> <span class="user_italic">zurückzugeben"</span></em>, hatte der alte Mann gesagt, als Snape ihn kurz und bündig informiert hatte, dass Harry in Spinner's End bleiben würde. Selbst Snapes finsterster Blick hatte es nicht vermocht, das Lächeln aus dem faltigen Gesicht zu wischen. Dieser sentimentale, alte Narr. <br/><span></span><br/><span></span>Er würde nicht zu ertragen sein, sollte er jemals von der Pappschachtel erfahren, die in Snapes Büro verstaut war, der Schachtel, die eine alte blaue Fleecedecke enthielt, der Schachtel, die Snape jedes Jahr am Weihnachtsabend hervorholte ... einfach so. Nicht, dass er Tränen über dieses ramponierte, alte Ding vergoss, oder irgend so einen gefühlsduseligen Mist. Er wollte es sich nur ansehen. Und sich daran erinnern, wie ein Baby darin angekommen war, ein Baby, das ein leeres Haus und eine leere Seele mit neuem Leben erfüllt hatte.<br/><span></span><br/><span></span>Nur einmal im Jahr. Weil Weihnachten war.<br/><span></span><br/><span></span><br/><span></span><br/><span></span></p>
+
+<p></p><div class="user_center" align="center">
+  <p>*** ENDE ***</p>
+</div><div class="user_center" align="center">
+  <p> </p>
+</div><div class="user_center" align="center">
+  <p> </p>
+</div>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_4_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Ich wünsche allen meinen Lesern einen schönen vierten Advent - und frohe Weihnachten!</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--work endnotes-->
+<div id="work_endnotes" class="end notes module">
+  <h3 class="heading">Notes:</h3>
+  <blockquote class="userstuff"><p>Ich freue mich wie immer sehr über euer Feedback und eure Gedanken, auch Kudos sind natürlich willkommen :)</p></blockquote>
+</div>
+<!--/work endnotes-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="W7h4_ZhLEunaPs6K3JSu6kES_Qd-GmUSIJLxJBhUDHCDI5sZDRoXo_XZX0Rrdg9RQruBvcoi-T58K5abdJWjQg"/>
+          <input value="12883326" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=12883326">Comments (7)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Aurum_Ann">Aurum_Ann</a>, <a href="/users/Swiebodka92">Swiebodka92</a>, <a href="/users/RedRonja">RedRonja</a>, <a href="/users/Vemanuelle">Vemanuelle</a>, <a href="/users/Wolfangel25">Wolfangel25</a>, <a href="/users/EllieAllisonJohnson">EllieAllisonJohnson</a>, <a href="/users/Akade">Akade</a>, <a href="/users/onefour_one">onefour_one</a>, <a href="/users/Froggy84">Froggy84</a>, <a href="/users/crycrycrytillyouknowwhy">crycrycrytillyouknowwhy</a>, <a href="/users/Kimtae1">Kimtae1</a>, <a href="/users/Maxyxpumpkinpie">Maxyxpumpkinpie</a>, <a href="/users/Adapink123">Adapink123</a>, <a href="/users/DoctorDisco13">DoctorDisco13</a>, <a href="/users/Helianthus_Saulegraza_MB">Helianthus_Saulegraza_MB</a>, <a href="/users/LadyRiddle26">LadyRiddle26</a>, <a href="/users/DecemberNight">DecemberNight</a>, and <a href="/users/mssn">mssn</a>
+             as well as 
+          129 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_12883326">
+  <form class="new_comment" id="comment_for_12883326" action="/works/12883326/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="ZwTxtalNN_Jg_QNwBXnzlIVe_jniT4ZMYTa4dvFVoF2_nxJRPBwyuE8akr6ym1IvhveCg1Z3GmA9j9_JnZQPbw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_12883326">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_12883326" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_12883326=new LiveValidation('comment_name_for_12883326',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_12883326.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_12883326">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_12883326" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_12883326=new LiveValidation('comment_email_for_12883326',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_12883326.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_12883326" class="landmark">Comment</label>
+        <textarea id="comment_content_for_12883326" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_12883326" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_12883326_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_12883326">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_12883326=new LiveValidation('comment_content_for_12883326',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_12883326.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_12883326.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_12883326" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/12883326/hit_count.json")})</script>
+
+
+  </body>
+</html>

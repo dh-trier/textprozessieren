@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":66,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Lost Souls - KiraSnapeaddict - Harry Potter - Fandom [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="6iqA92hYhevPG-AiccN0GATICagjhIBrurngKp-0oe-93J-pbgnndkeC6w9ffq9NgTGbDZKC8k2AczwoBYTuZw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="XZ0iIy5Z5oeBad7kgfckxY2GpQIKMM8T6SGxbLfDQqgKaz19KAiEGgnw1cmvSv-QCH83p7s2vTXT621uLfMNIA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/28149255/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/28149255/Lost%20Souls.azw3?updated_at=1608291353">AZW3</a></li>
+          <li><a href="/downloads/28149255/Lost%20Souls.epub?updated_at=1608291353">EPUB</a></li>
+          <li><a href="/downloads/28149255/Lost%20Souls.mobi?updated_at=1608291353">MOBI</a></li>
+          <li><a href="/downloads/28149255/Lost%20Souls.pdf?updated_at=1608291353">PDF</a></li>
+          <li><a href="/downloads/28149255/Lost%20Souls.html?updated_at=1608291353">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Explicit/works">Explicit</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warnings</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li><li><a class="tag" href="/tags/Major%20Character%20Death/works">Major Character Death</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20Fandom/works">Harry Potter - Fandom</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape*s*Ron%20Weasley/works">Severus Snape/Ron Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Ron%20Weasley/works">Ron Weasley</a></li><li><a class="tag" href="/tags/Voldemort%20(Harry%20Potter)/works">Voldemort (Harry Potter)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Male%20Slash/works">Male Slash</a></li><li><a class="tag" href="/tags/Torture/works">Torture</a></li><li><a class="tag" href="/tags/First%20Time/works">First Time</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-12-18</dd><dt class="words">Words:</dt><dd class="words">11458</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">16</dd><dt class="hits">Hits:</dt><dd class="hits">212</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Lost Souls
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/KiraSnapeaddict/pseuds/KiraSnapeaddict">KiraSnapeaddict</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Lord Voldemort hat Snape seines Verrats überführt. Doch es widerstrebt ihm, seinen langjährigen Vertrauten allzu schnell hinzurichten. Und so findet sich Snape im Kerker Malfoy Manors wieder, nach wie vor im Dienst seines Herrn, den er verriet. Doch ist er nicht der einzige, der überlebt hat.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+
+    <p class="jump">(See the end of the work for <a href="#work_endnotes">notes</a>.)</p>
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p>Diese schlangengleichen, farblosen Augen bohrten sich in pechschwarze. Längst spürte er den harten Boden unter seinen Knien nicht mehr. Der brennende Schmerz in seinem Kopf, seinen Hirnwindungen liess alles andere vergessen. Und die Tatsache, dass er alle verfügbare Kraft aufwenden musste, seinem Herrn akzeptable Gedanken zu präsentieren. Sein ewiger Hass und die Verachtung für Potter, geboren aus den nie vergessenen Demütigungen in seiner Jugend. Der glühende Hass und der flammende Moment der Befreiung, als er Albus getötete hatte. Die kalte Genugtuung für die Anerkennung und den Respekt, den ihm dieser Mord im inneren Kreis seines Herrn verschafft hatte. Dracos bleiches Gesicht, dem dieser furchterregende Snape plötzlich fremd vorkam. Lucius ängstlicher, bittender Blick, später, in seinem verzweifelten Bemühen, sich im Schatten seines mächtigen Freundes zu verbergen.</p>
+<p> </p>
+<p>Des Dunklen Lords Eingriff war vergleichsweise sanft. Und Snape war müde, so müde. Und plötzlich sah er das Bild, für einen Augenblick, sich selbst, als er das Schwert von Gryffindor in den Weiher warf. Snape zuckte zusammen, entsetzt riss er die Augen auf. Und im gleichen Moment schien eine glühende Axt seinen Schädel zu spalten, riss ihn auseinander und zerrte jeden einzelnen Gedanken brutal aus seinem Kopf. Es fühlte sich an, als würde sein Inneres nach aussen gestülpt, und durch die Mangel gedreht.<br/>Der gellende, gequälte Schrei, der ihm in den Ohren schmerzte, war sein eigener. <br/>„Severuss… Du bisssst ein Verräter“</p>
+<p>All die Jahre, all die vielen Stunden auf des Messers Schneide. All die Schmerzen. Es war vorbei, umsonst gewesen, sein Leben verwirkt. Mit diesem letzten Gedanken verlor er das Bewusstsein. </p>
+<p>Voldemort sah herab auf diese gequälte Kreatur, voller Wut, das dieser, sein Diener, es gewagt hatte ihn so zu hintergehen. Das Snape geglaubt hatte, er könne ihn, Lord Voldemort hinters Licht führen! Ausgerechnet Snape.</p>
+<p>Ron rannte und sprang, neben ihm gab es eine Explosion, die ihn von den Füssen riss. Er rappelte sich wieder auf und humpelte weiter. Er konnte nicht fassen, was er eben noch erfahren hatte- das Snape, das Dumbledores Mörder immer auf ihrer Seite gestanden hatte. Das er nur Albus Wunsch erfüllt hatte. Es war einfach unglaublich, das dieser bittere, schwierige Bastard auf ihrer Seite gewesen war. Plötzlich traf Ron etwas wie eine Kanonenkugel, er sah Sterne vor Augen und wusste nichts mehr von sich. <br/>Den triumphalen Schrei Voldemorts, der über das Schlachtfeld hallte und damit alle Kämpfe stoppte, den hörte er längst nicht mehr. </p>
+<p> </p>
+<p>Voldemort sass in Malfoy Manor an einem reichgedeckten Tisch und liess es sich schmecken. Nach einem Klopfen öffnete sich die Tür und zwei Getreue brachten ihn herein. „Na endlich, mein Ehrengast! Severus, welche Freude!“ Voldemorts Stimme klang amüsiert. Wie konnte er anders als gut gelaunt sein, nachdem er gesiegt hatte und seine Feinde tot waren oder geschlagen zu seinen Füssen? </p>
+<p>Severus trug nur noch ein paar Fetzen an Kleidung, dafür einen massiven Eisenring um den Hals, den seine Begleiter an der Wand befestigten. Seine Lippe blutete von einem Schlag ins Gesicht, doch abgesehen davon war er unverletzt. Und zu seinem eigenen Bedauern noch am Leben nach dem Folterexzess, der der Entdeckung seines Verrats gefolgt war. Seine überreizten Nerven erinnerten ihn auch noch jetzt bei jeder Bewegung daran. Schweiss stand ihm auf der Stirn, in der Erwartung, dass ähnliches ihm auch jetzt bevorstand. Er hatte einige Tage gebraucht, sich vom letzten Foltermarathon zu erholen. </p>
+<p>„Severusss… wunderst du dich, was ich für dich plane? Wünschst dir gar deinen Tod? Keine Angst, der erwartet dich natürlich. Aber ich dachte, Vorfreude ist die schönste Freude? Also wird der Tod noch etwas auf dich warten, und ich werde mich an dir erfreuen. Zudem kannst du mir bis dahin noch beratend zur Seite stehen. Tse tse, eine Schande, dass ich in Bälde ohne dich auskommen muss.“ Voldemort klatschte in die Hände „aber noch nicht“. </p>
+<p>Die Tür öffnete sich. Herein trat Lucius. Sein Gesicht war grau, er sah Severus nur kurz an, dann sah er zu Boden. Severus Blick hing an seinem langjährigen Freund, doch dieser sah weg. Severus Blick haftete sich wieder auf Voldemort. Er wusste, er konnte von Lucius keine Hilfe erwarten. Das traf ihn mehr, als es sollte. Lucius Gesicht war eingefallen, er wirkte gedemütigt und verstört.<br/>Und Severus hatte sie gesehen, die mehrschwänzige Lederpeitsche in Lucius Hand.<br/>„Ah, Lucius. Nicht so voreilig. Zunächst willst du deinem alten Freund hier doch noch etwas demonstrieren, nicht?“ Lucius nickte gehorsam. Er legte die Peitsche weg, zog etwas aus dem Gürtel und trat auf Severus zu, der ihm – mit dem Rücken an der Wand- entgegensah. Dann stand Lucius vor ihm, er hielt ein kleines scharfes Messer in seiner Hand. Sein Blick klebte nach wie vor am Boden.<br/>„Du kannst anfangen, Luciussss. Ach Severus. Besser du bewegst dich nicht. Ein Messer, das in deinen Innereien steckt, das ist ein langsamer Tod. Wenn auch unterhaltsam. Lucius wird dir nur andeuten, welcher Tod dich erwartet.“</p>
+<p>Lucius Gesicht wirkte eingefallen, die Augen umschattet. Er schien Severus stark gealtert in kurzer Zeit. Lucius wich ganz klar seinem Blick aus, als er das Messer ansetzte, oben mittig direkt unter Snapes Halsansatz. Das Messer durchstach die Haut nur wenig, dann zog er es langsam, ganz langsam in einer geraden Linie nach unten. Blut quoll träge aus der flachen, länger werdenden Wunde. Severus atmete nur flach, während das Messer an ihm herunterglitt und knapp, sehr knapp über seiner Scham erst endete. Fast hatte er gedacht, man würde ihn hier und jetzt entmannen. Er atmete einmal tief auf, als dies nicht geschah. Auf die gleiche Weise schnitt Lucius ihm noch zwei gerade Linien quer über den Oberkörper. Der Schmerz war nicht wirklich schlimm. Viel schlimmer war, dass Lucius dies tat. Auch wenn er ganz klar keine Wahl hatte, wollte er nicht selber sterben. Blutstropfen rannen aus den Wunden, als Lucius sich aufrichtete und beiseitetrat. Sein Gesicht war grau.  Voldemort lächelte raubtierhaft. „Gut gemacht. Dich erwartet eine sehr alte und exquisite Todesart, Severus, auf die du dich wahrlich freuen kannst. An diesem Tag werden wir dich genau dort aufschneiden, und deine Innereien herausholen. Wir kehren dein Innerstes nach Aussen. Und geben sie dir in die Arme, sie zu halten, bis du stirbst.“ Voldemort hob das Weinglas und prostete Severus zu. Dann trank er. </p>
+<p>Als er das Glas absetzte gab er Lucius einen Wink. Dieser nahm nun die Lederpeitsche in die Hand. „Sei so gut, Severus, und dreh dich um, damit dein Freund anfangen kann“ Voldemort fletschte die Zähne amüsiert. Severus tat wie ihm geheissen. Angekettet an die Wand gab es ohnehin kein Entkommen. Und für den Hauch eines Moments sah er die Erleichterung in Lucius Gesicht, das er Severus nicht ansehen musste, während er ihn schlug. Severus legte die Hände an die Wand und spannte sich an, um sich gegen die Schläge zu wappnen. </p>
+<p>Voldemort ass ungerührt und mit Genuss, während die Peitsche unter Klatschen immer und immer wieder Severus Haut traf. Severus biss die Zähne zusammen. Es schien eine Ewigkeit zu dauern, bis Lucius stoppte. Severus drehte sich herum. Seine Lippe blutete, weil er sich darauf gebissen hatte. Sein Körper stand in Flammen. Er atmete heftig, genauso wie Lucius. Sein Freund… Nur einen kleinen Blick schenkte Lucius seinem Freund, und er war voller Scham. Severus schenkte ihm ein kleines Kopfschütteln- es war nicht Lucius Schuld. Er versuchte nur zu überleben. Und seine Familie zu retten. </p>
+<p>„Du kannst nun gehen, Lucius“ Voldemorts Stimme klang amüsiert.<br/>Lucius verliess den Raum ohne noch einen Blick zurück auf seinen Freund. Voldemort speiste weiter. „Ach, hatte ich es erwähnt? Du wirst Lucius nicht wiedersehen. Ich kann und werde auf ihn verzichten. Ich finde einen neuen Mann für seine Witwe. Ich kann ihm nicht mehr trauen und er hat seine besten Zeiten schon lange hinter sich.“<br/>Severus Augen brannten. Er hätte geweint, hätte er es gekonnt. </p>
+<p>Erstaunlicherweise schien Voldemort es tatsächlich nicht eilig zu haben mit dem Tod seines untreuen Spions. Hatte er ihn wirklich so sehr geschätzt, das er zögerte, Snape zu verlieren? Severus verbrachte den überwiegenden Teil dieser Zeit in einer düsteren, kleinen Zelle. Abgesehen von den Zeiten, wo sein Herr seine Anwesenheit wünschte, und er, angekettet an seinem Halsring, ihm aufwarten musste. Um ihm Rat zu geben oder nur als Gesprächspartner. Oder auch Opfer, wenn Voldemort jemand brauchte, um sich durch Folter seiner Wut zu entledigen. Severus verlor jedes Gefühl für Zeit und Raum. Selbstredend drangen auch keine Neuigkeiten zu ihm. Harry Potter war tot, Voldemort an der Macht und er würde sterben. Was gab es sonst auch zu wissen? Er hatte glorreich versagt, sein Leben war zu Recht verwirkt. <br/>Seine Zelle war klein. Doch erstaunlicherweise gab es Wasser, sogar zum Waschen, ein Bett mit einer Decke, er hatte Kerzen und kalt war es auch nicht. Essen wurde ihm regelmässig gebracht. Und all das war mehr, als was er erwartet hatte, nach Entdeckung seines Verrats. </p>
+<p> </p>
+<p>Snape hatte gedacht, für diesen Tag Ruhe zu haben, als unerwartet die Türschlösser rasselten und die Tür aufschlug. Er sass auf dem Bett, kurz davor schlafen zu gehen. Nur aus den Zeiten, wann er Essen bekam zu schliessen, musste es spätabends sein. „Snape. Du bekommst Gesellschaft. Ist weniger Arbeit für uns.“ Der Wächter schob eine schmale Gestalt hinein, die allerdings direkt in sich zusammensackte. Mit einem Knall wurde die Tür zugezogen und verschlossen.</p>
+<p>Snape sass auf seinem Bett, gelinde erstaunt was oder eher wen man ihm da gebracht hatte. Er beugte sich vor und stutzte bei dem Anblick eines schmutzigen Schopfes roter Haare. Er war im Nu vom Bett auf und bei der Gestalt, deren Körper immer wieder zuckte, unkontrolliert wie unter wiederholten Stromstössen. Er drehte den jungen Mann herum, der nur sehr leise stöhnte. Es war tatsächlich Ronald Weasley. Er war nicht bei Bewusstsein und litt ganz offensichtlich unter den Folgen der Cruciatofluchs, die Snape viel zu vertraut waren. Er fluchte leise. Natürlich hatte er hier nichts, womit er dem Jungen helfen konnte. Heilende Magie konnte er jetzt auch nicht wirken. Snape packte den Jungen und hievte ihn auf das Bett. Die Glieder des Jungen zuckten, und sein Gesicht war verzerrt. Normalerweise hätte er starke Schmerzmittel bekommen. Die Snape nicht hatte.</p>
+<p>Er seufzte. Dann zog er den jungen Mann ganz aus und machte sich ans Werk. Es war das Einzige was er tun konnte für ihn. Er selbst hatte selten in derselben Lage jemand in seiner Nähe gehabt, und so hatte Snape immer auf starke Schmerzmittel zurückgegriffen. Einmal hatte Lucius ihm die Wirksamkeit dieser Methode demonstriert. Lucius…</p>
+<p>Rons Gehirn, sein ganzer Körper schien in Flammen zu stehen. Wie konnte es nur solange dauern zu sterben? Jede Zelle seines Körpers schrie um Gnade, als plötzlich etwas passierte. Die Schmerzen schienen nachzulassen. Starb er nun? Oder war es blosse Hoffnung? Doch tatsächlich liess der unglaubliche Schmerz nach, langsam, ganz langsam. Er wagte einen vorsichtigen, tieferen Atemzug, der lange nicht mehr so schmerzte wie zuvor. Noch einen. Ein Hauch von Entspannung kehrte in die gequälten Glieder zurück. </p>
+<p>Erst nach und nach liess sein Körper nun wieder andere Empfindungen zu. Er lag auf einer halbwegs angenehmen Unterlage-ein Bett? Und jemand strich über seine Haut, immer und immer wieder. Die Hände waren unermüdlich. Die Finger stark und geschickt, die Haut der Finger war rau. Mit jeder Bewegung schwand ein bisschen des furchtbaren Schmerzes, beruhigten sich seine gequälten Nerven. Ron seufzte leise. Ein Heiler? Doch war er nicht… mit einem Mal fuhr er hoch, doch die starken Hände hinderten ihn, drückten ihn herunter. „Lass das, du Narr“ rügte ihn eine sehr bekannte Stimme scharf. Das war der Moment in dem Ron die verklebten Augen aufriss und in ein anderes Paar Augen starrte- die pechschwarzen, bodenlosen Augen von Severus Snape! „Halt still!“ Ron liess sich zurückdrücken. Mit aufgerissenen Augen starrte er auf Snapes Vorhang von schwarzen, ungepflegten Haaren, als dieser über ihn gebeugt weitermachte. Sein Gesichtsausdruck war kühl, doch konzentriert. </p>
+<p>Es war nicht von der Hand zu weisen, das half, was er tat. Die Schmerzen schwanden mehr und mehr. Ron stieg unwillkürlich Röte ins Gesicht, als Snapes Hände verdächtig nah an seinem Schritt hantierten. Er spürte, wie sein Glied sich füllte... Zum Glück sah Snape zumindest sein Gesicht nicht durch den Vorhang seiner langen Haare. Ron zuckte zusammen als dieser plötzlich sprach „rumdrehen, Weasley“. Nur zu gerne kam Ron der Anweisung nach, legte sich auf den Bauch. So war die ihm sehr peinliche Reaktion seines Körpers besser zu verbergen. Snape machte auch nun gründlich weiter. Ron rührte sich unangenehm, als Snapes Hände energisch seine Pobacken bearbeiteten. „Halt still. Oder willst du nicht schmerzfrei sitzen? Idiot“ schnarrte Snape über ihm. Ron biss die Zähne zusammen, spürend das sein Glied nun hart war, unter ihm. Das er nur in einer floddrigen Unterhose hier lag, machte es kein Stück besser… Sein bestes Stück interessierte die absolut ungünstige Situation absolut nicht. Er spürte seinen hochroten Kopf. Wie sollte er…. Plötzlich realisierte er, dass die Hände verschwunden waren. „Ich bin fertig“ bemerkte Snape kühl. </p>
+<p>Ron atmete tief durch. Dann rappelte er sich hastig auf. Snape kniete neben ihm auf dem Bett und musterte ihn. Seine gewohnt einschüchternde Aura war nur dadurch etwas abgeschwächt, das auch er fast nackt war. Doch dachte Ron in diesem Moment nur an seine eigene, überdeutliche Erektion und seinen hochroten Kopf. „Äh… ich muss..“ er drehte sich von Snape weg, so das er auf der Bettkante sass und dieser nur seinen Rücken sah. Ron blickte verzweifelt um sich. Doch die Zelle war klein und ohne jede Nische oder Ausweichmöglichkeit. Tolle Aussichten. „Mr.Weasley, ich bin mit den Eigenarten des männlichen Körpers vertraut“ Snapes Stimme war trocken und spöttisch. Doch interessierte das Rons Erektion null. „Tun sie, was sie müssen“. „Uh…okay“ murmelte Ron, peinlichst berührt. Hastig ergriff er sein Glied, um sich möglichst schnell Erleichterung zu verschaffen und dieser sehr unangenehmen Situation zu entfliehen.</p>
+<p>In der Tat war auch Snape selbst nicht unberührt geblieben von den Nebenwirkungen seiner Behandlung. Er biss sich auf die Lippen, als er Rons gedämpftes Stöhnen hörte. Doch war er schon älter, und zum Glück schaffte er es, die eigene Erregung in die Schranken zu weisen. Er hatte jahrelange Übung darin, die Bedürfnisse seines Körpers zu ignorieren.<br/>Mit einem letzten Ächzen kam Ron zum Höhepunkt. <br/>„Dort in dem Bottich ist Wasser“ sagte Snape hinter ihm kühl. <br/>Hastig wusch sich Ron, immer weggedreht von Snape. Erst danach warf er ihm einen Blick zu, bevor er sich wieder auf das Bett setzte. Snapes Augen waren kein Stück weniger stechend als früher. Und das dieser ihm beim Masturbieren zugehört hatte machte es nicht besser. „Danke“ stammelte Ron, den Kopf immer noch hochrot. Konnte es peinlicher werden als sich in Snapes Gegenwart einen runterzuholen…?</p>
+<p>Snape zuckte nur stumm die Schultern. Erst jetzt sah Ron die roten Striemen, die quer durch Snapes Gesicht liefen.  Trotz seiner Verlegenheit entging es Ron nicht, wie schmal, nein, dünn Snape war, sein Rücken eine Karte alter und neuerer Narben. Ohne die voluminösen schwarzen Roben wirkte er jünger und sein Körper mehr wie der eines Soldaten. Was wohl nicht so ganz falsch war. Ron schreckte auf aus seiner Betrachtung, als Snape vor seinen Augen mit den Fingern schnippte. „Fertig mit Fleischbeschau?“ fragte er spöttisch. Dann griff er nach einer alten, dünnen Decke. „Wir müssen uns Bett und Decke teilen.“ Ron stieg Hitze ins Gesicht. Das Bett teilen mit Prof…. äh Snape?? „Ich kann auf dem Boden..“ Snape fiel ihm harsch ins Wort. „Ihr Körper braucht die Ruhe, Weasley“. Ron nickte unbehaglich. Nebeneinander legten sie sich auf das schmale Bett, Snape zog die Decke über sie. Mit einem Wink und zauberstabfreier Magie erlosch das Licht.</p>
+<p>Ron lag stocksteif, ohne jede Idee wie er so dicht an dicht mit Snape- Snape! Schlafen sollte.<br/>Er hörte ein leises Schnauben. „Sie sollten nicht vergessen Luft zu holen“ sagte Snape sanft und spöttisch. Dann drehte er sich, so dass er Ron den Rücken zudrehte. <br/>Noch eine Weile lag Ron stocksteif da, doch forderte sein Körper Ruhe ein, und endlich schlief er ein… und erwachte mit einem Ruck, als sich die Tür mit einem Knall öffnete, eine Schüssel klappernd hineingestellt wurde, und die Tür wieder zuknallte. Ron hatte sich wie ein verschrecktes Kaninchen an die Wand verkrochen und konnte sein Zittern nicht unterdrücken. Er drehte den Kopf, als er eine warme Hand auf seiner Schulter spürte.</p>
+<p>„Ruhig“ sagte Snape überraschend sanft neben ihm. Ron sackte in sich zusammen, doch sein Herz schlug immer noch rasend schnell. „Das ist nur, was man unser Frühstück nennt. So früh morgens kommt niemand, um mich oder dich zu holen“. Ron hatte die Augen geschlossen. Erstaunt stellte er fest, das Snapes Ruhe sich auf ihn übertrug. <br/>Dieser nahm die Hand weg und stand auf, die Schüssel zu holen. Darin war eine kleinere Schüssel mit lauwarmer Pampe-Porridge? Und ein paar Kanten Brot. Snape setzte sich aufs Bett und reichte Ron die Schüssel mit Porridge. „Iss“. Jetzt erst bemerkte Ron seinen knurrenden Magen, er nahm die Schüssel und begann zu löffeln. Erst als die Schüssel nahezu leer war, fiel ihm auf, das… „Und Sie- äh-Prof…äh Snape?“ Snapes Mundwinkel zuckte verdächtig. „Schon gut“. Snape kauerte sich ans Kopfende des Bettes und kaute auf einem Brotkanten. Er zog die Decke zu sich, seine langen Beine bedeckend. </p>
+<p>„Das erste Mal Cruciatus?“ fragte Snape. „Ja“. Ron schauderte. „Glückwunsch. Der Dunkle Lord scheint noch Pläne mit ihnen zu haben, Weasley. Sonst wären sie nun tot. Oder wahnsinnig“. Ron wurde leicht grün im Gesicht. „Ich…ich weiss nicht was…was er will… Ich habe ihm schon alles erzählt was mir einfiel. Warum fragt er nicht einfach was er wissen will? Er kann doch Gedanken lesen?“. Snape schnaubte. „Es ist leicht, Antworten auf Fragen zu bekommen. Doch die Gedankenwelt eines Menschen ist vielschichtig. Wenn man zuviel Gewalt anwendet bei der Suche, richtet man zuviel und dauerhaften Schaden an und verliert wertvolle Informationen. Wenn er auf ihr gesamtes Wissen zugreifen will, muss er vorsichtig sein. Zumindest, solange er sie noch braucht…“<br/>Ron kauerte sich eng zusammen, Knie unters Kinn gezogen. „Ich weiss nicht… was will er? Ich bin -ich…ich war doch nur der farblose Freund Harry Potters…“</p>
+<p>„Was machen sie überhaupt hier?“<br/>Snape sah weg, seine eine Hand spielte mit der Decke, drehte ein Ende ein, wieder und wieder. „Ich warte auf meinen Tod“ Ron sog scharf die Luft ein. „Mein Herr hat mich als Verräter entlarvt. Er wird noch eine Weile mit mir spielen bis dahin“. Snapes Stimme war gleichgültig, als spräche er über das Wetter. Ron blickte Snape an. „Kommen daher diese Striemen in ihrem Gesicht? Von diesen… Spielen?“ „Ja“. Beide schwiegen.</p>
+<p>„Haben sie- keine Angst?“ Snape starrte irgendwohin ins Nichts, so lange, das Ron glaubte, keine Antwort zu bekommen. „Nicht vor dem Tod. Vor dem Weg dorthin. Nur ein Narr hat keine Angst vor dem Sterben, weil er zu wenig Fantasie hat… Diese Welt hier kommt gut ohne mich aus. Ein Verräter und Versager weniger.“<br/>„Ohne sie? Ohne sie wären mehr Leute gestorben! Wer ausser ihnen hätte hoffen können, so lange unter Voldemorts Augen zu spionieren? Niemand sonst hätte das geschafft.“</p>
+<p>Snape schnaubte. „Nichtsdestotrotz habe ich versagt. Harry ist tot. Nichts hat sich durch meinen Einfluss geändert… nichts“. <br/>Ron sah Snape an, dessen Gesichtsausdruck bitter war und hart. „Aber sie haben es versucht. Sie sind doch nicht allein für unser Scheitern verantwortlich!“<br/>Snape zuckte die Schultern. „Und?“<br/>Ron suchte nach Worten. „Sie… sind ein Held. Jemand, der versucht hat, einen Fehler gutzumachen. Dagegen bin ich- ein Nichts. Ein mässiger Zauberer. Ein lausiger Freund. Leute wie sie können die Geschichte ändern. Oder gehen in die Geschichte ein.“<br/>Snape schüttelte den Kopf. „Sie haben zuviel Heldengeschichten gelesen. Ich bin kein Held. Das Gegenteil eher. Sie dagegen… Sie wissen gar nicht, was es bedeutet, auf sich gestellt zu sein. Was es bedeutet, keinen Freund zu haben. Wie es ist, wenn man sich niemandem anvertrauen kann. Harry Potter war ein Glückspilz, jemand wie sie und Granger an seiner Seite zu haben…“ Snapes Stimme war immer leiser geworden. Mit einem Ruck drehte er sich von Ron weg. Das Gespräch war offensichtlich beendet. </p>
+<p> </p>
+<p>Es war später am „Tag“- nicht das Ron es gewusst hätte ohne Snape- als die Tür wieder aufging. „Snape. Unser Herr verlangt nach dir“. Ohne zu zögern zog Snape die Robe an, die man ihm zu diesem Zweck gegeben hatte. Der Wächter zog eine Kette durch seinen Halsring und führte Snape ab. Wie ein… wie ein wildes Tier. Die Wachsamkeit in den Augen des Wächters war Ron nicht entgangen. Er hatte Snape keinen Moment aus den Augen gelassen, Ron nur kurz mit einem nachlässigen Blick gestreift. Kein Zweifel, wen er als Gefahr sah. Und wen nicht…</p>
+<p>Ron schluckte. Er fühlte sich nicht erleichtert, dass man nicht ihn geholt hatte. Stattdessen fühlte er sich seltsam allein. Schutzlos. Hilflos. Wie konnte Snape sich so ungerührt geben, wenn er, Ron, jedes Mal davor war, um Gnade zu bitten zu betteln? Verloren setzte Ron sich aufs Bett.</p>
+<p>Es musste mitten in der Nacht sein, als man Snape zurückbrachte. Oder eher-hineinwarf. Er landete schmerzhaft auf den Knien, als die Tür schon zuschlug. Ron hatte die brennende Kerze nicht gelöscht.<br/>Mit einer Hand wischte Snape sich Blut aus einem Mundwinkel. Dann stand er auf, zog die Robe aus und hängte sie weg. Er hob erstaunt die Augenbrauen. „Weasley? Sie haben nicht etwa auf mich gewartet?“ Ron zuckte die Schultern. Er rückte auf dem Bett beiseite um Snape Platz zu machen und hob die Decke, als dieser sich neben ihn legte. „Geht… alles in Ordnung mit ihnen?“ Snape warf ihm einen prüfenden Blick aus den Augenwinkeln zu. „Schlafen sie“. Snape schnippte mit den Fingern und es wurde stockdunkel. Die Dunkelheit war so vollständig, das keinerlei Konturen zu erkennen waren.</p>
+<p>Ron atmete möglichst lautlos tief durch. Er war froh, das Snape zurück war. Auch wenn sie beide in auswegloser Lage waren, und doch… Sein Gleichmut beruhigte Ron und spendete ihm seltsamerweise Trost. </p>
+<p>Mitten in der Nacht erwachte Snape. Sinnlos starrte er in das undurchdringliche Dunkel. Ohne sich zu rühren bemerkte er, was ihn geweckt hatte. Ein Körper lag dicht hinter ihm. Ron strahlte Wärme aus. Es fühlte sich an, als lehnte sein Kopf an Snapes Schulter- er spürte die Haare, die etwas kitzelten. Eine Hand lag auf Snapes Hüfte. Sein Unterkörper berührte Snapes Gesäss. Ron atmete so ruhig, dass er wohl schlief. Snape entspannte sich wieder. Es war lange her, dass er mit jemand das Bett geteilt hatte. Wenn es dem Jungen- jungen Mann half. Er redete sich ein, dass das der einzige Grund war, Ron nicht zu stören. Nach einer Weile schlief er wieder ein.</p>
+<p>Ron erwachte. Er hatte tief und fest geschlafen, besser als die Nächte zuvor. Warum? Und wo war er? Die Dunkelheit war undurchdringlich und ruhiger Atem drang an sein Ohr. Ein warmer Körper wärmte seine Seite und- Moment! Mit einem Ruck hob er den Kopf. Der gestrige Tag kehrte in seine Erinnerung zurück. War das- war das Snape an den er hier geschmiegt lag?? Entsetzt trat er den Rückzug an und brachte Abstand zwischen sie. Dann hielt er den Atem an und horchte. Snapes Atem ging ruhig und er bewegte sich nicht. Schlief er noch? Es musste wohl so sein, denn der Snape den er kannte hätte ihn wohl hochkant aus dem Bett geworfen, wäre er erwacht mit Rons Hand auf seiner Hüfte. Ron lag bewegungslos und wartete. </p>
+<p>Es war geraume Zeit später als Snape sich rührte. Ron hörte ein Schnippen und die einzige Kerze im Raum entzündete sich, tauchte den Raum in gedämpftes Licht. Snape nickte ihm nur stumm zu, dann stand er auf, sich zu waschen. Erleichtert atmete Ron auf. Anscheinend hatte Snape seinen Fauxpas nicht bemerkt… </p>
+<p> </p>
+<p>In den nächsten Tagen wurde Ron noch zweimal abgeholt. Es war absurd, doch es fühlte sich plötzlich bedrohlicher an. Oder es war vielmehr so, dass er sich in Snapes Nähe völlig unberechtigt sicherer fühlte als allein. Als ob es in Snapes Macht stände, ihm zu helfen. Und doch. </p>
+<p>Am ersten Tag war Ron lediglich todmüde, ein Veilchen zierte nun auch noch sein Gesicht. <br/>Snape rückte beiseite und deckte ihre dünne Decke über sie beide, im Nu war Ron eingeschlafen. Einen Moment betrachtete Snape noch das müde, gequälte Gesicht des jungen Mannes. Ein seltsames Gefühl rührte sich in Snape, welches ihn etwas irritierte. Erst nach einem kurzen Moment realisierte er selbst, was es war- Mitleid. Ron hatte etwas anderes, besseres verdient, als hier mit ihm auf den Tod zu warten. Mit einem Wink löschte er das Licht. Er rührte sich nicht, als Ron des Nachts an ihn heranrückte und den Kopf an Snapes Schulter barg. Wenn er daraus Trost spenden konnte, würde er ihm das nicht verweigern. </p>
+<p>Am nächsten Tag, als Ron zurückgebracht wurde, war er abermals ein zitterndes Bündel überreizter Nerven. Snape brauchte diesmal länger, Rons Muskeln zu entspannen. Es machte ihm Sorgen. Würde der Dunkle Lord so weitermachen, würde der junge Weasley dauerhafte Schäden erleiden. Über Snapes schroffes Gesicht glitt der Schatten eines Lächelns, als Rons Gesicht sich entspannte, bevor er endlich die Augen öffnete. </p>
+<p>Snapes kräftige Hände waren Ron nun schon vertraut. Er erhaschte einen Blick in Snapes Gesicht, während dieser seine Muskeln knetete. Konzentration lag in Snapes Gesichtsausdruck, und es gab keinerlei Anzeichen, das ihm diese Tätigkeit mehr bedeutete, oder gar etwas persönliches beinhaltete. Snape musste seinen Blick bemerken, doch fuhr er ungerührt fort, den Schmerz aus Rons gequälten Muskeln herauszumassieren. Ron öffnete den Mund. Dann krächzte er bloss „..wa..warum?“ Snape hob eine Augenbraue. „Warum was?“ „Warum machen sie das?“ Snapes Hände waren auf seiner Bauchdecke angelangt und näherten sich langsam seinem Intimbereich. Snape zuckte die Schultern, ohne seine Tätigkeit zu unterbrechen. „Soll ich aufhören?“ fragte er völlig ungerührt. „Nei..ein“. Snape machte weiter, Rons schon wieder halbhartes Glied völlig ignorierend. Ron sah betreten weg. „Dreh dich um“. Nur zu gerne folgte Ron der Anweisung. Verdammt, warum war ihm das so unangenehm? Seine Ohren glühten und er war froh, das Gesicht verbergen zu können. „Ich weiss- wie sich das anfühlt. Ich kenne den Schmerz“. Snapes Stimme hörte sich nicht so an, als spräche er nur über diesen, über physischen Schmerz. </p>
+<p>Ron atmete tief durch und entspannte sich. Abgesehen von einem gewissen Körperteil. Verdammt. Snape gab ihm einen leichten Klaps auf die Schulter als er fertig war. Als Ron sich aufrichtete, sah er das Snape sich weggedreht hatte, ganz offensichtlich, um ihm Privatsphäre zu ermöglich. Er- Wusste. Ron knirschte mit den Zähnen. Er musste am Rande des Wahnsinns sein. Wirklich. Wie konnte sein Körper bei Folter und Lebensgefahr… „das ist krank!“ sagte er halblaut, mehr zu sich. „Was, Weasley?“ Ron errötete. Doch er wollte es wirklich wissen. Und wen sollte er wohl sonst fragen? „Das ist krank, das ich ständig einen Ständer bekomme, wo ich in Lebensgefahr bin, gefoltert werde und vermutlich bald sterbe. Professor, sagen sie es mir, werde ich wahnsinnig??“. Ron setzte sich abgewandt von Snape auf die Kante und starrte auf sein hartes Glied herunter als könne er das Problem wegstarren. </p>
+<p>Er hörte ein leises, amüsiertes Schnauben hinter sich. „Das werden sie nicht, Weasley. Wussten sie nicht, dass man unter Lebensgefahr häufig den besten Sex hat? Es ist ihr Körper, der sich mit aller Macht gegen das drohende Ende wehrt. Er gibt ihnen die Chance, sich vor ihrem Tod noch fortzupflanzen“. <br/>„Das IST krank“ wiederholte Ron. Auch wenn es logisch klang. </p>
+<p> </p>
+<p>Die Bilder drängten sich Severus auf. Es sah sie wieder vor sich, die Gestalten im Wald, als sei es gestern gewesen. Es war ein alter Wald. Doch nicht verwunschen und märchenhaft. Sondern alt, unheimlich. Die Bäume wirkten krank und verformt, es roch stark nach Moder, Schimmel und auch- Verwesung. Und es roch nach Angst. Severus kannte den Geruch. Er haftete an allem und war ansteckend, wie eine Seuche. Befiel auch Mutige und machte nervös. Es kostete viel Kraft, davon nicht ergriffen zu werden. Jeder der Anwesenden kannte ihn. Viel zu gut. Alle Gestalten waren verhüllt, schwarze Mäntel, Jacken, mit Silber bestickt das dunkel schimmerte im Mondlicht. Einzig hellere Flecken waren die unheimlichen Masken, die aus ihrem Inneren zu leuchten schienen. Jede Maske mit einem besonderen, unheilvollen Muster. Masken, nur für den einen Träger bestimmt. Sie würden jeden töten, der das Dunkle Mal nicht am Körper trug. Nicht jeder wusste, wer unter welcher Maske steckte. Die Stimmung war wie aus Glas. Glas unter Spannung, bedroht bei einer einzigen falschen Bewegung zu zersplittern. Sie standen im grossen Kreis, eine gekrümmte, sich windende Gestalt in der Mitte. Ein dunkler Fleck um sie herum. Der Waldboden sog alles auf. Wie konnte ein Mensch so viel Blut verlieren und leben? Die Gestalt wand sich, die gellenden Schreie waren zum Krächzen geworden. Doch Voldemort kannte keine Gnade. Er fuhr fort und betrachtete jeden seiner Getreuen mit Argusaugen. Jedes Anzeichen von Schwäche in ihren Gedanken- er brauchte keine Gesichter zu sehen. Er nicht. Jeder, der sich verriet, würde hier und jetzt dem ersten Opfer folgen. </p>
+<p>Das Schauspiel zog sich über Stunden, und das Opfer zuckte und wimmerte noch immer. Als Voldemort sprach, war es Schock und Erlösung zugleich. „Nun gut. Meine… Freunde“ Das letzte Wort lief ihnen wie ein Schauer den Rücken hinunter. „Meine Getreuen Totesser. Zerstreut euch“. Sie wagten sich, die Glieder zu rühren. Für heute- würden sie leben. „Severus“. Eine Gestalt erstarrte, die schlanke schwarze Gestalt trat in den Kreis und beugte das Knie, den Kopf in eleganter Geste. „Mein Herr?“. Voldemort streckte ihm ein Messer entgegen. Es war aus Stein und sehr sehr alt. „Nimm es“. Die Gestalt nickte, knapp. „Ihr ehrt mich“. „Mit Recht, mit Recht“. Voldemort lächelte kalt und gab Snape einen Wink. Snape nahm das Messer. In wenigen Schritten war er bei dem Opfer, schnitt diesem die Kehle durch mit sicherem Schnitt. Wenig Blut trat aus der Wunde. Snape drehte sich herum, kniete nieder und reichte Voldemort das Messer zurück. Er nahm es. Ein kalter Blick traf Snape, dann verschwand Voldemort in einem Lichtblitz.</p>
+<p>Die anderen Totesser folgten dem Beispiel, begierig, diesem Platz des grausamen Schauspiels zu entkommen. Eine Hand hielt Severus auf, griff ihn am Oberarm. Er sah den kalten Schweiss auf Lucius Stirn, doch auch etwas anderes in seinem Gesicht, welches er so gut kannte. Zusammen stolperten sie durch den düsteren Wald. Plötzlich hielt Lucius inne, er presste Severus gegen einen Baumstamm. Heftig küsste er ihn, so dass ihre Zähne gegeneinanderschlugen. Der Kuss wandelte sich, wurde leidenschaftlich, Lucius Körper presste ihn gegen den alten Baumstamm. Snape spürte Lucius Erregung durch all die Schichten von Stoff deutlich. Atemlos lösten sie sich voneinander. Lucius ergriff Severus rechte Hand und hielt sie ins Mondlicht. Frisches Blut schimmerte fast schwarz auf der hellen Haut. Lucius zog die Hand zu sich, dann leckte er das Blut ab. Langsam, genüsslich säuberte er die besudelte Hand, seine Augen beobachteten Snapes Gesicht dabei genau. Snapes bisher so ungerührtes Gesicht wandelte sich, sein Atem beschleunigte sich, seine Nasenflügel blähten sich. Die schwarzen Augen glühten. Ein kleines, zufriedenes Lächeln zeigte sich auf Lucius schönem Gesicht, befriedigt, als er die Zeichen von Lust in Snapes sonst so kontrolliertem Gesicht bemerkte. Er presste sich eng an Snapes Körper, seine Belohnung erahnend. Snapes Lippen zitterten nun, und Lucius fing ihn in einem neuen Kuss, der nach Blut schmeckte. Snape stöhnte leise, als er Lucius pralles Glied an dem seinen fühlte. Er schlang ein Bein um Lucius Hüfte, ihn näher an sich ziehend. Lucius Hand suchte nach nackter Haut, glitt hinter den Hosenbund und seine Finger kneten Severus Pobacke fast schmerzhaft. Atemlos trennten sich ihre Münder. Severus stemmte sich in die gewaltsame Umarmung, während Lucius seine Kehle küsste. „Wir… wir leben“ murmelte er, während eine Hand durch Snapes rabenschwarzes Haar fuhr. „Ja“ murmelte Snape. Mit beiden Händen griff er Lucius Hüften um sich an ihm zu reiben. Er knurrte leise, als Lucius Hand seine Pobacken spreizte, die Finger dazwischen fuhren. </p>
+<p> </p>
+<p>Es war nach ihrem knappen Frühstück, als sie Snape abholten. Noch etwas später kamen sie, Ron zu holen.<br/>Voldemort sass in einem Thronähnlichen Stuhl, er wechselte einige Worte mit Snape. Dieser stand an der Wand, mit seinem Halsring angekettet. In krassem Gegensatz zu diesem Bild war der Ton zwischen den beiden der von Menschen, die sich schon lange kannten. Fast vertraut. Fast…</p>
+<p>Voldemort drehte sich herum, als er Ron mit seinem Wächter in der offenen Tür bemerkte. „Ah, Ronald Weasley!“ Snapes Blick traf für den Hauch eines Moments den von Ron, etwas wie Bedauern lag darin. Fast glaubte Ron sich getäuscht zu haben, als Snape seine übliche Miene aufsetzte und Ron mit eisigem Spott betrachtete. „Mein Herr, ihr solltet nicht soviel eurer kostbaren Zeit sinnlos an diesen Blutsverräter verschwenden. Sein marginaler Wert definierte sich immer nur durch seine Freundschaft mit Potter“. Voldemort sah zu Snape. „Severus, soll ich dir das nun glauben? Oder ist das auch wieder nur eine deiner schönen Lügen?“ Ron war zusammengezuckt unter Snapes scharfzüngiger Herabsetzung. Auch wenn ihm klar war, das Snape versuchte, von ihm abzulenken, den Fokus seines Herrn auf sich zu lenken. Voldemort drehte sich zu Ron „komm näher. Wir beide sind noch nicht fertig miteinander“. Snapes Herr brauchte nicht lange, und Ron lag vor ihm auf den Knien, winselnd. Wie durch einen dichten Nebel hörte er Snapes Kommentare dazu, spöttisch. Er hätte ihn umbringen mögen, doch war Ron froh, das er überhaupt noch lebte, atmete. „Mein Herr, es ist ganz offensichtlich müssig, Eure wertvolle Zeit weiter an diesen Verräter und Dummkopf zu verschwenden. Der Junge weiss nicht mehr. Er war nur ein Mitläufer“. Snapes Stimme war kalt und grausam. </p>
+<p>Voldemort drehte sich zu Snape „Ich denke du hast Recht, Severus. Ich bin fertig mit ihm“. Noch einmal drehte er sich herum. „Vielleicht solltest du einmal sehen, Weasley, wie lächerlich du wirkst, im Gegensatz zu jemandem wie… Snape.“ Ron sah das Funkeln in Voldemorts Augen und der Magen drehte sich herum. Snape schauspielerte um ihm zu helfen. Als Ron wenig später herausgeführt wurde, hörte er Snapes gequälten, unterdrückten Schrei und sah noch den gequälten Körper sich auf dem Boden winden, die Lippen blutig zerbissen.  Und er wusste, was Voldemort ihm angetan hatte, war nur ein Hauch von dem, was er Snape antat. </p>
+<p>Als Snape später zurückkehrte war er bleich. Wortlos legte er sich zu Ron und löschte das Licht.<br/>Es war mitten in der Nacht, als Ron erwachte. Snape rührte sich, auch er konnte offensichtlich nicht gut schlafen. „Warum tut er das? Ich meine V…Vol… Euer Herr“. Snape drehte sich im Bett. „Er geniesst es, andere zu erniedrigen“. „Warum…?“ Snape seufzte. „Er fühlt sich mächtiger, wenn er andere kontrollieren kann. Ich soll dafür bezahlen, dass ich ihn jahrelang hinters Licht geführt habe“. Stille trat wieder ein. </p>
+<p> </p>
+<p>Ron rührte sich unbehaglich. „Pro.. äh..Snape?“ Snape seufzte. „Mhm?“ „Ist es wahr, das bei Voldemorts Anhängern jeder mit jedem und so..äh..“. Ron spürte, das Snape sich zu ihm gedreht hatte, er hörte den Atem nun deutlicher. „Jeder mit jedem ins Bett gegangen ist. Also auch…ähm.. Männer mit Männern..?“  Ron hörte Snape leise schnauben „Es gibt viele wilde Gerüchte. Schön zu hören, dass manche davon sich an Tatsachen orientieren. Ja, es war und ist- nichts ungewöhnliches“. Ron räusperte sich leise. Er war froh, dass es dunkel war. Doch würde er sich nicht trauen… nun, vielleicht wäre dies seine letzte Chance. Er wusste das er ein hochrotes Gesicht hatte, sein Magen verkrampfte sich vor Nervosität. „Ähm… und…und sie?“ Lange war es still. Dann seufzte Snape hörbar. „Es ist nicht meine Gepflogenheit über solche Dinge mit jedermann zu sprechen, Ronald. Aber ich vermute du willst wissen, ob ich schon mit einem Mann geschlafen habe- die Antwort ist ja. Warum willst du das wissen?“ Ron schwieg. Dann holte er tief Luft. „Ich…“ Ein langes, betretenes Schweigen. „Ronald. Sollen wir nun beide die ganze Nacht wachliegen und auf deine Frage warten?“ Ron konnte förmlich den Spott in Snapes Gesicht sehen und seine verärgert gerunzelte Stirn. Doch was sollte schon passieren? Ausser das Snape ihn anschrie. „Ichwillnichtsterbenohnejemals… Sex gehabt zu haben“. Ron schnappte nach Luft. Er hörte ein Schnippen und die Kerze erhellte den Raum wieder mit sanftem Licht. Snape hatte sich auf einen Ellbogen aufgestützt und betrachtete ihn mit gerunzelter Stirn. Kein Zweifel, das er Rons Gestammel richtig interpretiert hatte. „Was war denn mit Granger?“ Ron verzog das Gesicht. „Nicht viel. Ich mein, irgendwie steckte sie immer mit der Nase in einem Buch. Ein bisschen Fummelei und zuletzt waren wir meist schlicht mit Überleben beschäftigt.“</p>
+<p>Snape betrachtete ihn mit unbewegtem Gesicht. „Mhm.“<br/>Ron fühlte sich in der Bringschuld unter Snapes unbewegtem Blick. „Und Mädchen sind so…naja…kompliziert? Männer sind anders. Und sie sind ein Lehrer, und…“ Snape schnaubte amüsiert. „Ich war ein Lehrer, aber nicht auf DEM Gebiet, Weasley“. „Aber…aber… naja, ich dachte es ist besser, es das Erste Mal mit jemand zu machen, der Erfahrung hat. Und…und…naja. Vielleicht ist es ja das erste UND das letzte Mal. Und vielleicht… naja.. vielleicht tut es ihnen auch gut?“</p>
+<p>Spätestens jetzt war Ron tomatenrot, und Snape sah es sicherlich. Eine furchtbare Ewigkeit tat sich nichts, nicht einmal Snapes Gesichtsausdruck änderte sich. Es kam fast als Schock, als er sich doch bewegte. Er zog ihre Decke weiter herunter. Er schenkte Ron einen langen, prüfenden Blick, dann sah er an ihm herunter. Sein Blick fiel auf seinen Oberkörper. Snape hob seine freie Hand, und liess diese über Rons Gesicht gleiten, dann über seine Kehle, dann glitt sie weiter bis zu seiner linken Brust. Seine Finger umfuhren seine Brustwarze, das Ron schauderte. Die Hand wanderte weiter, zu seiner anderen Brust, um dort die Brustwarze zu streicheln und zu reizen. „Ohh“ machte Ron, er sah unangenehm berührt weg, und spürte wie ihm Blut in sein Glied strömte. Sein Atem beschleunigte sich erheblich, als Snapes schwere Hand über seinen Bauch glitt und knapp über seinem Schritt zur Ruhe kam. Geschickte, raue Finger zogen Kreise auf der Haut. Ron riskierte einen Blick. Snapes Gesicht hatte sich verändert, es war nun weicher, längst nicht mehr so angespannt, seine Augen unglaublich schwarz. Ron war nie aufgefallen, welch schönen Mund Snape besass. Ron stöhnte unterdrückt und presste sich angestrengt aufs Bett um sich nicht einfach Snapes Hand entgegenzuschieben, wie ein Welpe der Streicheleinheiten will. „Ronald Weasley, du könntest mein Sohn sein… ich will sicher wissen, das du ernst meinst, was du dir von mir wünschst. Ich gebe dir einen Vorgeschmack. Wenn ich in der nächsten Nacht noch lebe- und du das wirklich noch willst, bekommst du deinen Willen.“</p>
+<p> </p>
+<p>Im nächsten Moment war Snapes Hand tiefer gerutscht und schob Rons Unterhose herunter. Eine grosse Hand legte sich bestimmt auf Rons längst hartes Glied und spielte damit das Ron jeder klare Gedanke floh. Er drückte den Rücken durch und hörte Snapes leises Lachen. „Das ist der angenehme Teil, mein Lieber, oder?“ Das Lachen war leise und rauh, und erhöhte Rons Erregung noch. Snapes Lachen war irgendwie- sexy. Die offensichtlich  geübten Finger fuhren Rons Schaft auf und ab, der sein Stöhnen nicht unterdrücken konnte. Snape richtete sich auf und kniete sich über Ron, um beide Hände frei zu haben. Die zweite Hand legte sich auf seine Hoden und zusammen brachten sie Ron um den Verstand. Snapes Gewicht hielt ihn auf die Matraze gepresst, während Ron sich der süssen Folter entgegenstemmte. Seine Gedanken waren nur Watte und er wollte das das nie aufhörte. Und er wollte mehr. Als er in Snapes Gesicht sah, sah er sein sonst so harsches Gesicht weich, sinnlich, da war eine gewisse Gier, ein Hunger in seinem Blick. Zusammen mit den wilden Haaren, wirkte er auf Ron wie ein Gott. Die geschickten Hände Snapes waren Welten entfernt von dem ungeschickten Versuchen hinter Vorhängen und in Wandschränken Hogwarts. Ron hätte schon lange vorher jemand Erfahrenes finden sollen, als an seinen letzten Lebenstagen. Er wurde aus seinem Höhenflug gerissen und gab einen enttäuschten Laut von sich als er gewahrte, das Snapes Hände verschwunden waren. Er packte Ron an den Hüften und nötigte ihn, sich auf den Bauch zu drehen. Snapes Hände fuhren ihm nun sanft über den Rücken und Rons Herz machte einen Satz, als je eine Hand eine Pobacke fasste und diese knetete. Dabei hatte sich Snape über ihn gebeugt. „Das ist nur die Vorbereitung für den wahren Akt… ich kann nicht versprechen, das es nur angenehm wird… sie sollten das wissen“ sagte er leise, nahe an Rons Ohr „Mhm…“ machte Ron noch, sich in Snapes Hände schmiegend. Snapes Hände waren nicht nur im Labor geübt, soviel war klar. </p>
+<p>Snape spreizte Rons Pobacken auseinander, das diesen ein Schauer überlief, während ein Finger durch den Spalt glitt über seine Analöffnung, was Ron zusammen zucken liess. Doch der Finger liess sich nicht abschrecken, zart glitt er darüber und zog ausdauernd Kreise darum. Als Rons Atem sich beruhigt hatte, schob sich der nun feuchte Finger in ihn, was Rons Atem schlagartig wieder beschleunigte. Er horchte auf, als Snape hinter ihm begann, leise eine Melodie zu summen, die seltsam einschläfernd wirkte und half, das Ron sich entspannte. Er errötete heftig, als er spürte, das der Finger eindrang – und er das seltsame Gefühl genoss. Langsam und sacht erkundete der Finger das Terrain. Als Ron sich etwas beruhigt hatte, kam ein weiterer hinzu, und er spürte wie er gestretcht wurde, doch war der Schmerz kaum zu unterscheiden von einen unbekannten aber nicht unangenehmen Gefühl. Ein weiterer Finger kam hinzu, so dass sich ein leichtes Brennen einstellte. Ron verlor sich in unbekannten Gefühlen in seinem Inneren, während Snape weiter summte, seine Finger begannen aus und ein zu gleiten, aus und ein in einem magischen Rhythmus der Ron unendlich langsam vorkam. Sein Körper entspannte sich, öffnete sich willig der neuen Erfahrung. Er spreizte die Beine weiter und schob Snape seine Hüften entgegen, als dieser plötzlich einen bestimmten Punkt traf, der direkt in Rons längst hartes Glied drang, er stiess einen seltsam quietschenden, hellen Schrei aus. Ab und zu streiften die rein und rausgleitenden Finger diesen Punkt, was sein hartes Glied unter ihm zucken liess und ihn wollüstig stöhnen. „Oh… bitte… schneller… oh… ah..“ er winselte innerlich, als er realisierte das er um mehr bettelte. Doch konnte er sich nicht durchringen, es Nicht zu tun. Er stöhnte und ächzte während die Finger schneller wurden tiefer gingen, seinen Punkt mehr und mehr reizten. Snape hatte aufgehört zu summen, und so war Rons Stöhnen das einzige Geräusch im Raum. Snape erhöhte die Geschwindigkeit seiner Finger- rein-raus und wieder und tiefer bis „Aaaah“ Ron aufschrie und zum Orgasmus kam. Zuckend ergoss er sich unter sich, während Snapes Finger nach und nach langsamer wurden, und zur Ruhe kamen. Seine andere Hand strich über Rons Rücken, der schweissnass war und noch heftig atmete, sein Gesicht ins Kissen gedrückt. Er fühlte sich peinlich berührt aber auch seltsam entspannt. Snapes Hände zogen sich zurück, und die Matratze bewegte sich, als der ältere Mann sich von ihm löste. </p>
+<p> </p>
+<p>Erst nach einer Weile fühlte sich Ron soweit, Snape ins Gesicht zu sehen. Dieser sass auf dem Bett, ans Kopfende gelehnt, er sah ins Nichts, die Decke bedeckte seine langen nackten Beine und seinen Unterkörper. Nur Snape konnte es fertig bringen, solch einen Gesichtsausdruck aufzusetzen, so emotionslos und Snape-isch. Nachdem er Das mit Ron gemacht hatte. Und der Mann hatte deutlich geschicktere Finger, und erfahrenere – als jeder der Freunde, mit denen Ron experimentiert hatte. </p>
+<p>Ron stützte sich auf die Ellbogen. Er kämpfte mit sich. Verdammt, er war ein Gryffindor und hatte Mut! Er streckte die Hand aus und schob sie unter die Decke, langsam bis in Snapes Schritt. Neue Röte stieg ihm ins Gesicht aber auch Erleichterung, das Snape einen Harten hatte. Snapes Gesichtsausdruck hatte sich kaum gewandelt, er betrachtete Ron unbewegt, mit einer hochgezogenen Augenbraue wie ein seltsames Tierwesen. Und der Mann war doch menschlich, dachte Ron erleichtert und umfasste etwas zaghaft Snapes pralles, von Stoff bedecktes Glied. Snape griff nach seinem Arm, doch Ron liess nicht los. „Sie müssen das nicht“ meinte Snape, es hörte sich schwach amüsiert an.</p>
+<p>„Nein…. Aber… aber… ich dachte, damit wir beide gut schlafen können“ Snape nickte unmerklich und liess Rons Arm los. Ron wurde mutiger, er rieb Snapes Glied und Hoden. Snape stöhnte nur leise, er hatte die Augen geschlossen. Warum hatte Ron nie bemerkt, wie sinnlich seine Lippen waren, und das Snape lange, schöne Wimpern hatte? Snapes Gesicht wirkte weniger harsch, und Ron spürte, das seine Bemühungen fruchteten. Mit einer Hand zog Snape die Decke von sich, während Ron ihm die knappe Unterhose hinunterschob und sein Glied befreite. Ein seufzendes „ach“ entrang sich Snape, als Rons Hand warm auf nackte Haut traf. </p>
+<p>Plötzlich öffnete Snape die Augen. Er griff mit beiden Händen nach seiner Unterhose und zog sie in einer geschmeidigen Bewegung ganz aus. Ron beneidete ihn, das Snape das kein bisschen peinlich schien, ganz im Gegenteil. Dann warf Snape ihm einen kurzen Blick zu aus tiefschwarzen Augen und legte sich wieder hin. Er spreizte die Beine, und Ron nahm die Einladung an, ihm näher zu kommen. Er umfasste Snapes Glied, die andere ertastete seine Hoden. Snapes Lippen zitterten und er seufzte. Ron stockte kurz, als er nun tatsächlich die Grösse und Länge von Snapes Glied in erigierter Form sah. DAS sollte… nun… in ihn passen? Er schluckte nervös. Snape öffnete kurz die Augen und schien seine Gedanken klar zu lesen. „Weasley… Sie werden nicht daran sterben…“ die Worte klangen gelinde amüsiert. Snape schloss wieder die Augen. Ron schüttelte seine Bedenken für den Moment ab. Er war ein Gryffindor. Und er würde jetzt keinen Rückzieher machen! Schon gar nicht nach der Ekstase, von der er eben noch gekostet hatte.</p>
+<p> </p>
+<p>Ron machte weiter, doch war er sich bewusst weder so erfahren noch so verdammt geschickt zu sein wie Snape. Und an Snapes Gesichtsausdruck sah man so verdammt wenig. Plötzlich stoppte Snapes Hand ihn. „Weasley. Ich bin übrigens nicht aus Porzellan. Du darfst mich ruhig fester anfassen. Das solltest du sogar… Ron“. <br/>Ron entspannte sich etwas, als Snape seine Augen wieder schloss. Es war leichter, dies nicht unter dem scharfen Blick Snapes zu tun. Entschlossen widmete er sich seiner Aufgabe. Er tat so, als hole er sich selbst einen runter. Mit dem Unterschied, das er deutlich fester anpackte. Jeden Moment rechnete mit einer scharfen Zurechtweisung, doch das tiefe Stöhnen aus Snapes Kehle bewies, das er wohl das rechte Mass gefunden hatte. Snape fuhr ihm mit beiden Händen durch sein Haar, als Rons Hände seinen Schaft verwöhnten und kneteten. Ein kurzer Blick in Snapes Gesicht zeigte ihm dessen Erregung. Snapes Lippen zitterten. In Ekstase warf er den Kopf nach hinten und ergoss sich endlich in Rons Hände. Snape zog ihn in seine Arme, während er von seinen Hoch auf die Erde zurückkehrte. Beide atmeten schwer.<br/>Überraschend sanft machte sich Snape dann von ihm los. Er wies zur Waschschüssel. „Nach ihnen.“ Snape schloss wieder die Augen, ganz offensichtlich um Ron ein Mindestmass an Privatsphäre zu geben.</p>
+<p>Am nächsten Morgen holten sie Snape. Sie liessen ihm gerade Zeit, seine einzige Robe überzuziehen, dann zogen sie eine Kette durch den Halsring und führten ihn ab. Es waren zwei Totesser, und ihre Wachsamkeit und Blicke gaben ein deutliches Zeugnis, das sie Snape nicht trauten. Ron schenkten sie nur verächtliche Seitenblicke. Eine Weile starrte er auf die geschlossene Tür. Ohne Snape drohten ihn all seine Ängste wieder zu überwältigen. Und so vergingen die nächsten Stunden im Schneckentempo. Zwischendurch brachte jemand etwas zu essen, doch Snape kehrte nicht zurück. Ron hoffte, er hoffte so sehr, sie würden ihn zurückbringen. Ohne ihn fühlte er sich völlig verlassen. </p>
+<p>Erst viel viel später- abends vermutlich?- schlug die Tür wieder auf und sie schubsten Snape herein. Er strauchelte, geschwächt, und schlug dann der Länge nach hin. Er stöhnte leise. Ron stürzte zu ihm, doch Snape schob seine helfenden Hände weg. Mit grösster Mühe richtete er sich in eine sitzende Position auf. Er hielt die Augen geschlossen und umklammerte seinen Kopf. „…nicht…brauch…brauche Zeit“ murmelte er durch zusammengebissene Zähne.</p>
+<p>Es dauerte noch eine Stunde, bis Snape sich vorsichtig bewegte. Bedächtig stand er auf, zog seine Robe über den Kopf, um sie vorsichtig wegzuhängen und setzte sich auf Bett. Soweit Ron sehen konnte, wies er keine offensichtlichen Verletzungen auf. Snape hatte seinen Blick bemerkt. „Er hat mich nicht verletzt. Er muss das nicht, wenn er mir Schmerzen zufügen will. Und er will, das ich meine Hinrichtung morgen bei bester körperlicher Gesundheit durchlebe.“</p>
+<p>Ron schluckte. Snape würde sterben. Was würde aus ihm? Würde er auch bald sterben? Oder hier vergessen, hier unten, weggeschlossen und allein. Überraschend fühlte er eine sanfte Berührung, Snapes Hand die durch Rons Gesicht fuhr. Peinlich berührt merkte Ron, wie ihm eine Träne durchs Gesicht lief. Trotz der Berührung blieb Snapes Gesicht unbewegt, die Augen unlesbar. Doch seine leise Stimme war weich wie Samt „Du bist zu jung. Und trägst wenig Schuld an all dem. Vielleicht lässt er dich leben. Ich wusste immer, das ich von seiner Hand sterben würde. Ich allein habe es verschuldet. Und er- er wusste es wohl auch immer. Es ist nicht mehr, als ich verdiene.“ Ron schluckte. „Verdienen? Das ist nicht wahr! Ohne sie wären viel mehr Menschen gestorben!“. Snape zuckte die Schultern. „Mag sein. Ich habe meinen Herrn verraten. Es ist sein Recht.“ Ron starrte ihn nur an. Wie konnte Snape so ruhig sein angesichts seines nahenden Todes?</p>
+<p>Eine Weile herrschte Ruhe. Snapes Blick schien abwesend. Fast schien er zu lächeln. „Haben sie denn vor nichts Angst?“ fragte. Snapes Blick wandte sich ihm zu. „Natürlich habe ich das. Er wird mich leiden lassen, so lange es geht. Doch dann- wird es vorbei sein. Und ich bin wieder frei- von ihm.“ Er hatte so lange auf des Messers Schneide gelebt, nie gewusst ob nicht im nächsten Moment, bei seinem nächsten Schritt der Tod auf ihn wartete. Den Zeitpunkt seines Todes nun zu wissen war, so absurd und morbide es klingen mochte, war ihm tatsächlich eine Erleichterung. </p>
+<p>Ron kam näher, dann lehnte er sich rücklings an Snape, der tatsächlich den Arm um ihn legte. Ron fröstelte, obwohl es hier nicht kalt war. Rauhe, langfingrige Hände strichen ihm über Arme, Schulter und Rücken, sacht, angenehm. Die Berührungen taten Ron wohl. Er zitterte stärker, doch Snape hörte nicht auf ihn zu liebkosen. Letztendlich beruhigte sich Ron, er atmete wieder tief durch und liess es einfach geschehen. Er hatte Angst, furchtbare Angst, doch noch- noch war er nicht allein. Noch nicht. Es war absurd. Doch er fühlte sich sicher, hier in Snapes Armen. Jetzt in diesem Moment fühlte es sich an, als seien sie die letzten Mensch auf dieser Welt. Oder in dieser Welt des Chaos.</p>
+<p>Sachte löste sich Ron von Snape und drehte sich zu ihm. Snapes Ausdruck änderte sich nicht, seine bodenlosen schwarzen Augen verrieten kein Gefühl, als Ron ihn intensiv ansah. Dann beugte er sich nach vorne und küsste Snape. Die Welt schien auf dem Kopf zu stehen, doch fühlte es sich einfach richtig an. Er, Ron, küsste Severus Snape. </p>
+<p>Snape versteifte sich- ganz offensichtlich hatte er nicht damit gerechnet. Nun, Ron auch nicht. Er hatte noch nie einen Mann geküsst. Doch die Mädchen hatten immer gesagt, er könnte gut küssen. Snapes Lippen waren warm, Ron leckte, knabberte, und endlich öffnete Snape seinen Mund. Kurz liess er zu, das Ron mit seiner Zunge seinen Mund erkundete, dann übernahm er die Kontrolle. Die sinnliche Begegnung ihrer Zungen liess Rons Herzschlag rasen und sein Körper brannte vor…was? Atemlos lösten sich beide voneinander. Snapes Mundwinkel zuckte, dann meinte er „ich nehme das als Botschaft, das du möchtest, das ich mein Versprechen noch einlöse, bevor ich diese Welt verlasse“ Snape wirkte doch glatt amüsiert! DAS würde Ron nie vergessen. Der Mann hatte Nerven… Snape musterte ihn, auf Antwort wartend. „….ja..“ sagte Ron rauh, als er seine Stimme wiedergefunden hatte. Snape nickte nur.</p>
+<p>Im Nu waren sie beide nackt und Snape drückte Ron sanft rücklings auf das Bett. Die Intensität in seinen schwarzen Augen raubte Ron den Atem- wann hatte er je gedacht, Severus Snape wäre hässlich?? Seine Lippen noch feucht von ihrem Kuss. Und ohne den gewohnten Ausdruck von Verachtung und Verärgerung in Snapes Gesicht strahlte er pure Sinnlichkeit aus. Die rauhen Finger erregten Ron. Zudem Snape genau zu wissen schien, wie er ihn anfassen musste. Ron stöhnte erregt, dabei hatte Snape noch nicht viel getan. Er spreizte die Beine, ihm Raum zu geben, und wunderte sich über seine eigene Begierde. Er wollte.. er wollte ihn. Snapes Stimme war leise und amüsiert. „Nicht so eilig, Ron“ „Fass mich an, bitte, ich…brauche..“ Rons Stimme versagte. Jeder klare Gedanke floh ihn, und auch seine Ängste waren für diesen Moment weit, weit weg. Da waren nur noch Snapes rauhe Hände, die ihn liebkosten. Ron hatte die Augen geschlossen. Sein ganzer Körper brannte längst in Begehren und Lust, als Snapes Finger in ihn eindrangen, ihn vorzubereiten. Es war offensichtlich, das Snape sich Zeit nahm, um ihm nicht zuviele Schmerzen zu bereiten, doch war Ron ungeduldig. Er wollte ihn. Er wollte endlich Snapes Glied in sich und wenn es ihn umbrachte. Er wollte und wollte. Snape lachte leise, als Ron regelrecht bettelte. „Gleich Ron, gleich“ seine Stimme war vor Erregung heiser und fuhr Ron durch Mark und Bein. Es durchzuckte ihn wie ein Stromschlag, als er Snapes heisses Glied auf seiner Haut spürte. Langsam und sehr beherrscht schob sich dieser langsam in ihn und hielt inne. Schmerz durchzuckte Ron, doch er wollte mehr, wollte ihn ganz. Er atmete tief durch, wollte seinen Körper zwingen, das ungewohnte Eindringen zu akzeptieren. „Sieh mich an, Ron“ bat Snape, seine Stimme belegt, sein Atem ging schwer vor unterdrückter Erregung. Ron riss die Augen auf. Es war es wert. Wert die Erregung und Passion in Snapes Augen und Gesicht zu sehen. Die Lust in diesem herben Gesicht. Snape war ein Mann… Irgendetwas gab Raum in Rons Innerem und Snape schob sein Glied weiter in ihn, langsam, bis er sich ganz versenkt hatte. „Oh…“ machte Ron nur tonlos, als er ganz in ihm war. Es war…mehr…als er gedacht hatte. Und es war gut. Es war…unglaublich. Er musste sich erinnern zu atmen. Er blinzelte, keines Worts fähig, Snape anzudeuten er solle sich bewegen. Snape nickte nur. Langsam zog er sich heraus, um wieder in ihn zu stossen, langsam und doch stark, unnachgiebig, bestimmend. Es hatte sich nie so gut angefühlt für Ron, sich hinzugeben. Endlich schrie er auf, erregt und in Triumph, der Schmerz war verdrängt, ersetzt durch köstliche Lust und ein erfüllendes Gefühl des Einsseins. Auf beider Haut stand längst der Schweiss, als sie sich miteinander bewegten. Ron war nur gerade noch fähig, die wilde Lust in Snapes Gesicht zu sehen und die Hingabe als er seine eiserne Kontrolle endlich ganz aufgab und ihn nahm, hart, schnell. Snape schrie auf, kurz und scharf, um sich dann in ihn zu ergiessen unter Zuckungen. Er murmelte einen Namen… Rons Name war es nicht. Einen Moment blieb er liegen, ermattet. Noch schwer atmend löste er sich mit einem Seufzer aus ihm und legte sich neben ihn, auch Ron erlaubend sich lang auszustrecken. Ron schnappte nach Luft und liess die Nachwehen dieser Gefühlsexplosion eine Weile in sich nachwirken. Er konnte sich dunkel erinnern, das man den Orgasmus irgendwo- Frankreich? – als kleinen Tod bezeichnete.  Als die Sensationen in seinem Körper nachliessen, drehte er sich zur Seite um sich an Snape zu schmiegen. Dieser sah auf ihn herab, sein Gesicht war entspannt, gar sinnlich- noch hatte er seine gewohnte Maske von Kälte und Geringschätzung nicht wieder aufgesetzt. Nach kurzem Zögern legte er tatsächlich den Arm um Ron und seufzte. „Ich wünschte ich hätte eine Zigarette…“ Ron sah ihn überrascht an, was Snape kurz auflachen liess. „Ja. Dieses Muggleding. Das wäre genau der Moment dafür.“ Er zuckte die Schultern. Sein Vater hatte geraucht. Als Kind hatte er es gehasst. Später… hatte er sich den Luxus gelegentlich gegönnt. </p>
+<p> </p>
+<p>Eine angenehme Müdigkeit machte sich in Ron breit und die Augenlider wurden ihm schwer. Doch er wollte eigentlich nicht schlafen. Nicht, wenn Snape ihn morgen, nach dieser Nacht alleine liess. Für immer. Kalte Angst stieg in ihm auf. Plötzlich fiel ihm etwas ein. „Vermissen sie ihn? Ich meine… Lucius…sie haben.. haben..  seinen Namen gerufen“. Snape drehte den Kopf, sah plötzlich weg, doch hatte Ron noch einen kurzen Eindruck seines Gesichtsausdrucks und der unnatürlich glänzenden Augen. Als Snape den Kopf wieder zu ihn drehte, war der Moment vorbei. „Er ist tot“ sagte er sehr knapp und ausdruckslos. „Das…das…es tut mir leid“. Rons Worte hörten sich seltsam an aus seinem Mund. Warum sollte ihm Lucius Tod leid tun. Snape zog die Mundwinkel herunter. „Das muss es nicht. Warum sollte er dir mehr sein, als ein Feind? Ich habe ihn geliebt. Doch er war immer Voldemorts Kreatur.“ Snape schnaubte. „Er hat mich geliebt, als niemand anderer dazu bereit war.“ Rons Augenlider wurden schwer. Er hatte noch hunderte von Fragen. Doch… Ihm fielen die Augen zu. Es war ein friedliches Bild. Snape sah auf ihn herab. „Ich hatte nie einen Freund, wie du Harry einer warst… Schlaf Ron. Schlaf…“ murmelte er. Ohne Ron zu wecken zog er die Decke über sie beide. Er fühlte sich klebrig und verschwitzt, doch wollte er den Jungen schlafen lassen. Die Wärme an seiner Seite tat auch ihm wohl und er wollte nicht darauf verzichten. Trotz des befriedigenden Sex floh ihn der Schlaf. </p>
+<p> </p>
+<p>Er betrachtete das junge Gesicht Rons. Er wirkte so unschuldig. Severus konnte sich nicht erinnern wann er seine eigene jugendliche Unschuld verloren hatte. Hatte er sie je besessen? Mühsam versuchte er sich an eine Zeit zu erinnern. Für den Moment sah er das Gesicht seiner Mutter, sie lächelte. Es musste eine Zeit gegeben haben. Trauer erfüllte ihn. Er konnte sich nicht mehr erinnern. Nicht an das Gefühl, nicht an den Zeitpunkt. </p>
+<p>Sein Leben war von Anfang verkorkst, schwierig gewesen. Und er selbst hatte es durch Fehlentscheidungen nur schlimmer gemacht. Er selbst hatte dieses Leben über sich gebracht, niemand anders. Er verdiente ein frühes grausames Ende. Da war kein Leben „danach“ für ihn. Diese Möglichkeit hatte nie für ihn bestanden. Er hatte das schon früh erkannt. Fast war er erleichtert, das es nun so weit war. Keine Zweifel mehr um das Wie, kein Rätseln um den Zeitpunkt. <br/>Er erwachte aus seinen Gedanken. Ron rührte sich im Schlaf. Severus bewegte sich nur wenig, dann endlich gab er dem seltsamen Bedürfnis nach, und er strich federleicht über Rons Haar. Severus staunte über sich selbst. Was zur Hölle…? Er machte sich nichts vor. Es war ihm nicht egal was mit Ron geschah. Nicht mehr. Wann war das passiert? Warum interessierte es ihn plötzlich, was Ron über ihn dachte? <br/>Severus schüttelte unwillig den Kopf. Es passte nicht zu ihm, sentimental zu werden. </p>
+<p> </p>
+<p>Es war sehr früher Morgen, als Ron wach wurde. Severus stand am Becken und wusch sich. Ron drehte sich auf die Seite und sah ihm selbstvergessen zu. Severus Körper war schlank, tatsächlich wirkte er ausgezehrt, sein Rücken war eine Karte unzähliger Narben. Für jemand seiner Statur war er überraschend stark, wie Ron es in seinen Armen hatte spüren können und dürfen. Ron zuckte zusammen als Severus plötzlich sprach- dabei sah er ihn nicht einmal an- „Guten Morgen, Ron“. Sorgfältig trocknete Snape sich ab.  „Morgen“ murmelte Ron peinlich berührt, beim Beobachten ertappt zu werden. </p>
+<p>„Können sie…kannst du es nicht noch einmal versuchen?? Ihn… zu besiegen… du bist der mutigste Mensch, dem ich je begegnet bin, Harry eingeschlossen. Und das- das heisst schon was“. Snape hielt inne, dann drehte er sich zu ihm um. Ein knappes, schiefes Lächeln huschte über sein Gesicht. „Ein Kompliment aus deinem Mund? Doch es tut mir leid, Ron. Voldemort“ – Ron erschauerte- „ist kein Narr. Und ich- ich bin müde. Es ist Zeit für mich. Ich bin bereit meine Vergehen mit meinem Leben zu bezahlen“. Ron liess die Schultern hängen. „Liebst du mich noch einmal?“ Snape zwinkerte. War er überrascht? Dann schüttelte er ablehnend den Kopf. „Sie werden gleich kommen. Das ist ein eher… ungünstiger Moment. Auch wenn“ – er warf Ron einen seltsamen Blick zu – „ich sonst nichts dagegen hätte“. </p>
+<p>Ron stand auf und ging die wenigen Schritte bis zu ihm. Er betrachtete Snape, wie um sich sein Gesicht für immer einzuprägen. Es gab kein nächstes Mal. Im nächsten Moment packte Snape ihn und küsste ihn. Der Kuss war hart und wild und leidenschaftlich, und Ron sog all das auf wie ein Verhungernder. Im gleichen Moment hörten sie die Türschlösser. Snape löste sich von ihm. „Versprich mir etwas. Wenn du hier rauskommst, flieh. Kümmer dich um dich selbst.“ Snape hatte ihn eisenhart an den Schultern gepackt. Ron wand sich in dem harten Griff. Er öffnete den Mund, um.. „Versprich es!“ forderte Snape. Die Tür öffnete sich. „…J..Ja“ antwortete Ron und Snape liess ihn los. In aller Ruhe zog Snape seine Robe über, die Wärter in der Tür ignorierend. „Komm schon Snape. Alle warten nur auf dich“. Mit einem letzten ausdrucklosen Blick über seine Schulter auf Ron, verliess Snape den Raum. Hatte Snape gezwinkert? Ron liess sich auf das Bett fallen, jetzt erst bemerkend das er immer noch nackt war.</p>
+<p> </p>
+<p>„Lasst mich“ Severus wand sich im Griff seiner beiden Wächter. „Ich gehe selbst“ forderte er. Plötzlich war sein Herr, war der Dunkle Lord da, gab den Wächtern einen Wink. „Lasst ihn los. Wo soll er noch hin.“ Voldemorts eisigkalte farblose Augen starrten in Severus schwarze, die von Wut und Stolz glühten. Voldemort nickte ihm zu. „Was geschehen muss, bedaure ich, Severus. Doch du bist mir einfach zu gefährlich, dich in meiner Nähe zu lassen.“ Echte Anerkennung- etwas sehr rares aus seinem Mund- sprach aus seinen Worten. Ein Wink seines Zauberstabs, es gab ein metallisches Klirren, und Severus griff sich an den Hals. Er nahm das geöffnete Halseisen ab und liess es laut scheppernd zu Boden fallen. Er würde nicht als Sklave sterben, wie Vieh in Ketten. Und irgendwie war er froh darum. „Nach dir“ Voldemort winkte ihn voraus, fast wie einen geehrten Gast. Er wies ihm den Weg an den Rand des Raumes. „Stell dich dorthin.“ Severus schluckte und tat wie ihm geheissen, dann drehte er sich herum. In einer geschmeidigen Bewegung zog er seine Robe aus und warf sie beiseite. Unwirsch schüttelte er sich das überlange, schwarze Haar aus dem Gesicht. </p>
+<p>„Severus. Du wirst verstehen, das dich zwei Männer festhalten werden? Du wirst gleich nicht mehr alleine stehen bleiben können“ Severus nickte zustimmend, sein Gesichtsausdruck kühl, auch wenn ihm das Herz raste. Seinem Tod zuraste. „Mein Herr. Eine Bitte“. Warum schmeckte Severus das Wort Mein Herr plötzlich so unerwartet sauer? … Voldemort runzelte die Stirn. „Eine Bitte? Was ist es?“  Voldemort wirkte nicht verärgert. Nur verwundert. </p>
+<p>„Eine Wette. Wenn ich gleich… wenn ich es noch schaffe, diesen Raum zu durchqueren, auf meinen eigenen Füssen. Werdet ihr dann Ron Weasley freigeben?“ Snapes Ausdruck war kühl, arrogant, gelassen, nicht als würde er gleich eines grausamen Todes sterben. Ihm stand diese Bitte nicht zu. Er war ein Verräter. Aber zumindest versuchen konnte er es. Er hatte nichts mehr zu verlieren. Voldemort war für einen Moment wie erstarrt. Dann legte er den Kopf in den Nacken und lachte lauthals. „Severus, Severus… das schaffst nur du, im Angesicht deines Todes noch mit mir zu verhandeln. Na gut. Deine letzten Schritte gegen sein kleines Leben.“ Severus neigte zustimmend den Kopf.</p>
+<p>Zwei Wächter ergriffen ihn an den Armen, ein dritter trat auf ihn zu, ein bösartig scharfes Schlachtermesser in der Hand. Er setzte es mittig im oberen Brustbereich an, dann stach er tiefer. Der Schmerz war intensiv, und Severus Körper wand sich im Bemühen auszuweichen, zu leben. Voldemorts Blick ruhte wie gebannt aus Severus Gesicht, seine nun offensichtliche Qual gierig aufsaugend, auch wenn er nach Angst in Severus Gesicht vergeblich suchte. Trotzdem kalter Schweiss auf seiner Stirn stand und sein Ausdruck den Schmerz widerspiegelte, war da kein Anzeichen von Angst. Die Stille im Raum wurde nur unterbrochen durch Severus rasselnde Atemzüge, unterdrücktes Stöhnen und das Knirschen seiner zusammengebissenen Zähne. Sein Körper war im Schockzustand, als sei er im Unglauben dessen, was geschah. Das Messer schnitt sich mit quälender Langsamkeit nach unten, bis über seinen Schambereich, es schnitt sich durch die Bauchdecke und legte das Leben frei.</p>
+<p>Rot wie guter Wein tropfte Blut auf den Boden, zusammen mit Severus verbleibender Lebenszeit. Es fehlte nicht viel, und er würde zusammenbrechen und schreien bis ihm die Stimme versagte. Als das Messer seinen Dienst getan hatte, fühlte er sein…sein Leben … in seinen Händen, warm und schwer. Sein Blick war längst glasig und verweigerte ihm zum Glück den Blick auf das, was er besser nicht sah. <br/>„Geh“ der Befehl aus Voldemorts Mund erreichte ihn noch. Und er ging schwankend los. Warum war seines Lords Stimme so belegt? Und warum schmeckte er Blut? Sein Blickfeld war gefüllt mit Nebel und nur noch vage erahnte er den Boden, über den er ging. Er schien ein Leben lang zu gehen… er bestand nur noch aus Schmerz und Willen. Schmerz und…. Willen. Schmerz. Er ging bis die Wand ihn aufhielt.<br/>„Er hat es geschafft“ die ungläubige Stimme erreichte ihn nicht mehr, als er zusammenklappte. Nur ein gurgelnder Schrei entrang sich ihm noch.<br/>„Lasst Weasley frei“ murmelte Voldemort und sah ungläubig herab, auf das was von Severus Snape noch übrig war. Snape war tot. Doch besiegt, bezwungen hatte er ihn nie.</p>
+<p> </p>
+<p>Die Wärter standen in der offenen Tür. „Komm, Junge“. Ron stand auf, plötzlich ruhig. Würde er jetzt sterben? Er fühlte nichts mehr, da war nur noch Leere. Die Wärter packten ihn unsanft. Der Saal war leer, Voldemort nicht da. Die Tür am anderen Ende war geöffnet. Unwillkürlich sah sich Ron nach Snape um. Erst als er zu Boden sah, musste er schlucken. Eine breite Spur getrockneten Bluts besudelte den noblen Fliesenboden. Er war so dumm. Was hatte er erwartet. Wunder?? „Du kannst gehen, Junge. Zieh das Gelump da an“- er wies auf Snapes Robe die vergessen auf dem Boden lag. „Geh, bevor wir es uns anders überlegen“ der Mann grinste. „Aber warum?“ Das Grinsen wurde breiter. „Snape hat in den letzten Momenten seines Lebens für deine Freiheit bezahlt. Ein schlechter Tausch, wenn man mich fragt“ er warf Ron einen abfälligen Blick zu „nun sieh zu das du wegkommst“. Mit zittrigen Fingern packte Ron sich Snapes Robe. Dann ging er durch die offene Tür, die man hinter ihm schloss. Tief atmete er die frische Luft ein und sah das erste Mal seit langem wieder den Himmel. </p>
+<p> </p>
+<p>Ron stolperte voran, er fröstelte in Snapes dünner Robe, die nicht für draussen gemacht war. Der Wald war ihm unbekannt. Der Boden war voller Wurzeln. Auf seine Füsse starrend, hielt er plötzlich schlagartig inne. Dort lag ein Körper. Wie angewurzelt blieb er stehen. Und wandte den Blick ab. Der erste Blick hatte ihm schon genug Information verschafft, die Person war tot. Ganz sicher. Eine hagere Gestalt, Narben. Schwarze Haare. Ron riskierte einen Blick und bereute es sogleich. Er drehte sich zur Seite und erbrach sich krampfhaft. Der Anblick war… war…  Er blickte zurück. Am liebsten wäre er zurückgerannt, um… Nein. Er hatte es versprochen. Nein. Sein Magen rebellierte, doch kam nichts mehr. Rons Blick glitt über die Überreste von Severus Snape. Er bemühte sich, nur sein Gesicht zu sehen, den furchtbaren Rest auszublenden. Er beugte sich vor, mit zitternder Hand schob er das wilde Haar beiseite, das das herbe Gesicht bedeckte. Die Augen waren geschlossen, was eine Erleichterung war. Ron stockte der Atem. Snape wirkte… lebendig. Das war unmöglich. Völlig unmöglich. Nicht mit dem… nicht in dem Zustand in dem sich sein Körper befand. Doch sein Lächeln war.. Es wirkte triumphal, mit dem Hauch ätzenden Spott, den nur Snape je so subtil zum Ausdruck gebracht hatte. Und er wirkte- in Frieden. Ron wollte etwas sagen. Etwas tun. „Es… schlaf gut…“ sagte er heiser. Heisse Tränen liefen ihm durchs Gesicht. Er glaubte noch, Snapes Hände zu spüren, diese Hände, so kraftvoll, geschickt und sanft. Diese Leidenschaft und Magie, die dieser Mann immer ausgestrahlt hatte. Noch einmal strich Rons Hand zitternd über Snapes wildes Haar, eine Träne landete in Snapes Gesicht, Ron wischte sie weg. </p>
+<p>Fröstelnd richtete Ron sich auf und zog die dünne Robe um sich. Dabei bemerkte er plötzlich etwas. Etwas langes, unnachgiebiges. War das eben schon da gewesen, als er die Robe angezogen hatte? Hastig griff er danach und zog den Gegenstand heraus. Es war Snapes Zauberstab. Wo zur Hölle kam der her? Hatte Snape ihn die ganze Zeit gehabt? Das war unmöglich. Oder? </p>
+<p>Probeweise schwang Ron ihn. Er war nicht sicher, dass der Zauberstab für ihn funktionieren würde. Nicht Snapes. Doch er produzierte ein paar goldgelbe Funken, und der Stab vibrierte regelrecht einladend. Ermutigt griff Ron sich einen Ast. Mit ein paar klaren Worten verwandelte der sich in eine einfache Decke. Ron nahm die Decke und deckte Snapes Körper damit zu. Plötzlich ging ein Lufthauch durch den Wald, wehte Snape die ewig wilden Haare wieder ins Gesicht. Ron strich sie noch einmal zurück. Wenn er es nicht besser wüsste, müsste man glauben, als ob sich Severus Snapes Lippen fast zu der Andeutung eines Lächelns kräuselten. Doch das konnte nicht sein, oder? Ron zog die Decke über Snapes Gesicht. Dann drehte er sich entschlossen um und ging. Weit weit fort… er hatte es versprochen. Er fühlte sich, als bohrten sich Blicke in seinen Rücken, doch er drehte sich nicht um. Der Zauberstab lag warm und beruhigend in seiner Hand. </p>
+<p> </p>
+<p>Hätte er sich herumgedreht, hätte er Snapes Gesicht gesehen, der Wind hatte die Deckenzipfel beiseite gefegt. Und der Ausdruck auf Snapes Gesicht war ganz sicher ein Lächeln…</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--work endnotes-->
+<div id="work_endnotes" class="end notes module">
+  <h3 class="heading">Notes:</h3>
+  <blockquote class="userstuff"><p>Dont pity the death, Harry. Pity the living, but above all pity those who live without love. (DH)</p></blockquote>
+</div>
+<!--/work endnotes-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="TlTsjtTXUa_LRjYfVrVF9ArOKQcw6HozoK19Y2Vlr_EZovPQ0oYzMkPfPTJ4CJ6hjze7ooHuCBWaZ6Fh_1XgeQ"/>
+          <input value="28149255" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Zixris_Chosm">Zixris_Chosm</a>, <a href="/users/Livia_duh">Livia_duh</a>, <a href="/users/xnxbxlSPN">xnxbxlSPN</a>, <a href="/users/SeraV">SeraV</a>, <a href="/users/Fanyaoi">Fanyaoi</a>, <a href="/users/Ayda_da_okur">Ayda_da_okur</a>, and <a href="/users/Fleur_de_Lis394">Fleur_de_Lis394</a>
+             as well as 
+          9 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_28149255">
+  <form class="new_comment" id="comment_for_28149255" action="/works/28149255/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="Xjh9JqNulfD4lZPw1La5H-pICZW-j52WqwEVowV1Ik8JzmJ4pT_3bXAMmN36C2JKb7GbMA-J77CRy8mhn0Vtxw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_28149255">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_28149255" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_28149255=new LiveValidation('comment_name_for_28149255',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_28149255.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_28149255">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_28149255" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_28149255=new LiveValidation('comment_email_for_28149255',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_28149255.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_28149255" class="landmark">Comment</label>
+        <textarea id="comment_content_for_28149255" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_28149255" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_28149255_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_28149255">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_28149255=new LiveValidation('comment_content_for_28149255',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_28149255.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_28149255.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_28149255" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/28149255/hit_count.json")})</script>
+
+
+  </body>
+</html>

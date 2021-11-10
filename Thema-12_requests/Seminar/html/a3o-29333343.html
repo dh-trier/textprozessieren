@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":85,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Die Crux der Liebe - A-7064 (A7064) - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="Fb0wvWcQzF8XeNRJpHoMQlC9QePJgL8FKCpq6PzC6_Jit0FglAwIQ211hCIReC0vb4RqVlZS4Jh02ktu-NTSjg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="VMeqoKDT2rOezIOCK7b2v30GM-A7QHhep7-tRDqS-Osjzdt9U88er-TB0-metNfSQj8YVaSSJ8P7T4zCPoTBlw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/29333343/chapters/72041616">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/29333343/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/29333343/Die%20Crux%20der%20Liebe.azw3?updated_at=1619860013">AZW3</a></li>
+          <li><a href="/downloads/29333343/Die%20Crux%20der%20Liebe.epub?updated_at=1619860013">EPUB</a></li>
+          <li><a href="/downloads/29333343/Die%20Crux%20der%20Liebe.mobi?updated_at=1619860013">MOBI</a></li>
+          <li><a href="/downloads/29333343/Die%20Crux%20der%20Liebe.pdf?updated_at=1619860013">PDF</a></li>
+          <li><a href="/downloads/29333343/Die%20Crux%20der%20Liebe.html?updated_at=1619860013">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Ginny%20Weasley/works">Ginny Weasley</a></li><li><a class="tag" href="/tags/Tom%20Riddle%20%7C%20Voldemort/works">Tom Riddle | Voldemort</a></li><li><a class="tag" href="/tags/Gilderoy%20Lockhart/works">Gilderoy Lockhart</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2021-02-10</dd><dt class="status">Completed:</dt><dd class="status">2021-05-01</dd><dt class="words">Words:</dt><dd class="words">15192</dd><dt class="chapters">Chapters:</dt><dd class="chapters">10/10</dd><dt class="hits">Hits:</dt><dd class="hits">6</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Die Crux der Liebe
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/A7064/pseuds/A-7064">A-7064 (A7064)</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Liebe ist die Poesie der Dämonen. Ginny Potter trauert um ihren verstorbenen Ehemann. Obwohl Harrys langer Leidensweg ihr viel Kraft gekostet hat, dachte sie, dass sie den Bedürfnissen ihrer Kinder gerecht werden könnte. Als ihr zwölfjähriger Sohn Albus sich in ein Monster zu verwandeln scheint, will sie Beweise für seine Unschuld finden. Nie hätte sie gedacht, dabei auf Tom Riddle zu treffen. - Das Ungeheuer aus einem längst vergangenen Leben.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/72041616">Chapter 1</a>
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <strong>
+    <em>I. </em>
+    <em>TABULA RASA</em>
+  </strong>
+</p><p>
+  <em>
+    <strong>Tagebucheintrag von Albus Severus Potter, Godric's Hollow, den 22.01.2018</strong>
+  </em>
+</p><p>
+  <em>I</em>
+  <em>ch begann also weiterzuforschen.</em>
+</p><p>
+  <em>Stundenlang saß ich vorm Spiegel und wartete darauf, dass es zurückkehrte. Ich musste es einmal mit eigenen Augen gesehen haben, nur dann konnte ich davon ausgehen, es mir nicht eingebildet zu haben. Naiv wie ich war, dachte ich, dass alles seinen gewohnten Gang nehmen würde. Ich glaubte, dass sich alles beispiellos wiederholen würde, nur mit dem Unterschied, dass ich dieses Mal genauer </em>
+  <em>wissen würde</em>
+  <em>, was vor sich ging. Dass ich in der Lage sein würde, es in Worte zu fassen.</em>
+</p><p>
+  <em>Es kam wieder.</em>
+</p><p>
+  <em>Ich spürte, wie eine Hand meinen Hinterkopf berührte und über meine Kopfhaut fuhr. Es kitzelte am Haaransatz und ich freute mich, dass es geklappt hatte. Der Spiegel aber nahm keine Notiz vom Geschehen.</em>
+</p><p>
+  <em>Ich wurde unruhig. Die Sanftheit, die ich von den letzten Malen gewohnt war, wich, bevor ich mich darüber wundern konnte. Ein Finger drückte brachial gegen meinen Kopf.</em>
+</p><p>
+  <em>Der Schädelknochen brach. Ich hörte, wie es knackte.</em>
+</p><p>
+  <em>Etwas Fremdes, Dingliches steckte in meinem Gehirn. Es bohrte sich tiefer hinein, immer tiefer. Es ratschte durch mein weiches Inneres wie ein Messer. Ich schrie, doch dann versagte mein Atem, ich konnte keinen Laut mehr krächzen. Ich krümmte mich am Boden und wünschte nur, ich würde sterben.</em>
+</p><p>
+  <em>Als der Schmerz abgeklungen war, blickte ich wieder auf mein Spiegelbild. Dort, wo ich zuvor den Finger gespürt hatte, klaffte ein Loch. Schwarz, rund und drei Zentimeter breit. Ich nahm die Haare beiseite und tastete es ab. Langsam ließ ich meinen Zeigefinger hineingleiten. </em>
+  <em>W</em>
+  <em>ider meines Erwartens spürte ich nicht, wie die klebrige Masse meines Gehirns meiner Fingerspitze nachgab.</em>
+</p><p>
+  <em>Da war nur ein Loch.</em>
+</p><p>
+  <em>Sonst nichts.</em>
+</p><p>
+  <em>
+    <strong>Erzähl mir also</strong>
+    <strong> nicht, dass hätte alles nur in meinem Kopf stattgefunden.</strong>
+  </em>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/72451176">Chapter 2</a>: DIE CRUX DER HOFFNUNG
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Die Crux der Hoffnung</strong>
+</p><p align="center">Als ich damals zu dir lief<br/>Die Nachricht noch im Ohr<br/>Wünschte ich mir, dass ich schlief<br/>Und im Traume stand vorm Tor</p><p align="center">Doch es war die Wirklichkeit<br/>So sehr ich's mir auch wünschte<br/>Das Hoffen verflog so mit der Zeit<br/>Und überstieg auch meine Künste</p><p align="center">Du hast um's Leben gerungen<br/>Ich habe um deines gebangt<br/>Ist das Herz auch nie verklungen -<br/>Bewusstsein hast du nie erlangt</p><p align="center">Und so saß ich Stund' um Stund'<br/>An deinem stillen Bette<br/>Und flehte mit verkrampftem Mund,<br/>Dass dich ein Wunder rette</p><p align="center">Viel zu schnell und ohne Geleit,<br/>Sagte der Doktor, dein Leben<br/>Sei nur noch ein Spiel auf Zeit<br/>Heilung könne es nicht geben</p><p align="center">Faktisch seist du gar schon tot<br/>Würdest nicht hören, nicht fühlen<br/>Doch deine Wangen glühten rot<br/>Und wollten nicht erkühlen</p><p align="center">Auch wenn dein Sterben besser wär',<br/>So wein' ich doch darum,<br/>Will nicht seh'n dein Bett so leer,<br/>Das bringt mich noch fast um</p><p align="center">Zu Ende war ein grauer Frühling<br/>Und der Sommersonnenschein,<br/>Noch eh' der Herbst richtig verging,<br/>Fing es im Winter an zu schnei'n</p><p align="center">Der Tod, er kam auf leisen Pfoten,<br/>Obwohl es mir war lang bewusst,<br/>Wollt' ich nicht seh'n die dunklen Boten,<br/>Nicht betrauern den Verlust</p><p align="center">Abschied nehm' ich tränenschwer,<br/>Ich werd' dich nicht vergessen,<br/>Vermiss' ich dich doch schon so sehr,<br/>Mein Schmerz ist nicht zu messen</p><p align="center">Ach, das Leben ist nicht fair,<br/>Ich wein' um dich darum,<br/>Wenn ich seh' dein Bett so leer,<br/>Bringt es mich fast um</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/72451248">Chapter 3</a>: BRACHIAL
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Ginny Potter schniefte in ein Taschentuch und wischte sich die Tränen aus dem Gesicht, bevor sie das zerknüllte Tuch in einer Tasche ihres Bademantels verschwinden ließ. Die Füße hatte sie auf den kleinen Wohnzimmerbeitisch abgestellt und sie versank beinahe in der Couch, die ihr nun, wo das Haus fast leer war, zu groß vorkam. Zu groß und zu leer.</p><p>James und Albus waren wieder nach Hogwarts zurückgekehrt. Zwar hatte Ginny noch eine Weile sinniert, ob es wirklich gut war, die beiden schon wenige Wochen nach dem Tod ihres Vaters in den Stress des Alltags zu entlassen. Doch sie hatten es selbst so gewollt und beteuert, dass sie sich melden würden, wenn sie Redebedarf hätten. Grübelnd hatte sie zugestimmt. Auf James Brief hatte sie nicht lange warten müssen. Dieser war gleich nach der ersten Woche bei ihr eingetrudelt. Von Albus hingegen hatte sie rein gar nichts seit drei Wochen gehört. Sie hoffte, dass er wenigstens zu seinem besten Freund, Scorpius Malfoy, einen ausreichend vertraulichen Draht hatte, um mit ihm über seine Gefühle zu sprechen. Dass auch Scorpius' Mutter letztes Jahr verstorben war, ließ sie hoffen, dass ihr Sohn bei ihm in guten Händen war, so makaber es auch klang.</p><p>Schon wieder war ihre Nase verstopft. Sie schnappte nach Luft, während sie den Tagespropheten zuschlug und sich auf die Füße hievte. Lily spielte in ihrem Zimmer und war seit einer Weile außergewöhnlich still. Ginnys Erfahrung riet ihr, nachzusehen, denn ihre Tochter musste wieder etwas Verbotenes tun. Als sie ins Kinderzimmer trat, war sie erstaunt: Lily saß ruhig auf ihrem Schreibtischstuhl und malte. Mit den Linien der Buntwachsmalstifte baute sie Hogwarts auf dem Papier nach.</p><p>Erleichtert atmete Ginny auf. Sie wusste nicht, was es mit ihr gemacht hätte, wenn sie in Harrys Antlitz hätte blicken müssen. Mit ihren neun Jahren war Lily zwar eine ausgezeichnete Künstlerin, wenn es um abstrakte Kunst ging, aber im Moment erinnerte alles an Harry.</p><p>„Das hast du schön gemalt, Spätzchen", sagte sie und Lily nickte. Sie war in ihr Gemaltes vertieft und sah nicht auf. Ginny streichelte ihr sanft den Rücken. „Mama geht jetzt kochen. Du sagst, wenn du etwas brauchst, ja?"</p><p>Lily nickte wieder.</p><p>In der Küche räumte Ginny noch schnell die vom gestrigen Einkauf stehengebliebenen Sachen in die Schränke und beseitigte die Reste des Frühstücks. Als sie begann Kartoffeln zu schälen, hörte sie es.</p><p>Ganz leise, doch sie nahm es wahr. Was war das?</p><p>Da! Da war es schon wieder. Ein Klopfen.</p><p>Ginny legte den Kartoffelschäler aus der Hand. Zuerst hatte sie ihn verzaubert, sodass er von allein schälte. Doch sie hatte feststellen müssen, dass es besser war, ihre Gedanken auf etwas zu lenken. Sonst schweiften sie nur zu ihrer Trauer ab, was momentan verheerend war. Sie lief zum Küchenfenster und schob den Vorhang minimal beiseite.</p><p>Da waren sie! Immer noch! Dabei regnete es. Zudem war sie eine Hexe, sie konnte das Haus verlassen, ohne vor die Tür treten zu müssen. Was erhofften sich all die Reporter von der Belagerung ihres Vorgartens?</p><p>Klar, sie wollten ein Statement. Sie wollten die Trauer und den Schmerz einer Witwe in ihre Kameras pressen. Aber nicht mit ihr. Sie hatte einen Krieg überlebt. Sie hatte ihn gewonnen – diesen Gaffern würde sie schon noch ein Schnippchen schlagen können.</p><p>Da! Schon wieder!</p><p>Ein Pochen, ein wenig lauter als zuvor. Diesmal war Ginny sich sicher, dass es aus dem Wohnzimmer gedrungen war.</p><p>Als sie in den Raum schritt, sah sie die Ursache. Eine Eule hatte sich auf dem Fenstersims eingefunden und pochte mit ihrem Schnabel gegen die Scheibe. Sie lächelte. Was für ein prächtiges Gefieder das Tier hatte! Vorsichtig strich sie ihr über die Federn und befreite ihren Fuß von dem Brief, den sie gebracht hatte.</p><p>Ihr Herz machte einen kleinen Freudensprung, denn dort prangte das Siegel Hogwarts. Ein weiterer Brief von James musste es sein oder der erste von Albus. Doch sie glaubte eher an ihren Ältesten. Albus war schon immer wortkarg gewesen. Daran änderte auch die Trauer nichts. Er machte die Dinge gern mit sich selbst aus. Dies hatte er von Harry. Schon ein Gedanke an ihn reichte und ihr standen die Tränen in den Augen. Sie spürte, wie die erste den Weg über ihre Wange fand.</p><p>Dabei war sein Tod doch absehbar gewesen. Beinahe ein Jahr hatte er im Koma gelegen, bevor er gestorben war und ihre Kinder den Vater und sie den Mann ihrer Träume verloren hatte.</p><p>Sie entfaltete das Papier und stolperte über die förmliche Anrede. Sehr geehrte Mrs. Potter – so würde keines ihrer Kinder sie ansprechen. Es war ein Brief von der Schulleiterin. Enttäuschung machte sich in ihr breit und Sorge. Was war denn jetzt schon wieder?</p><p> </p><p align="center">
+  <em>Sehr geehrte Mrs. Potter,</em>
+</p><p align="center">
+  <em>ich bitte Sie, sich zu einem Elterngespräch am 15.02.2019, Punkt 17 Uhr im Büro der Schulleiterin einzufinden. Das Anzusprechende ist am Besten persönlich zu überbringen.</em>
+</p><p align="center">
+  <em>Mit freundlichen Grüßen</em>
+</p><p align="center">
+  <em>Minerva McGonagall, Schulleiterin</em>
+</p><p> </p><p align="center">oOo</p><p align="center"> </p><p>„Ich danke dir, Ginny, dass du so kurzfristig erschienen bist." McGonagall ließ einen musternden Blick über sie streifen. „Ich weiß, die Situation ist mehr als unpassend und wahrscheinlich weißt du momentan nicht, wo dir der Kopf steht."</p><p>Das war schön gesagt und trotzdem eine maßlose Untertreibung. Unter Blitzlichtgewitter hatte sie Lily zu ihrer Nachbarin gebracht und wie in Trance war sie kurz vor 17 Uhr nach Hogwarts appariert. Sich öffentlichkeitstaugliche Kleidung herauszusuchen, hatte schon alle Kraft aus ihrem Körper gesogen, doch sie konnte nicht im Bademantel erscheinen. Nun hing sie wie ein Schlückchen Elend im Stuhl. Zusammengesackt und die Hände auf den Beinen verschränkt, weil sie keine Energie für eine aufrechte Sitzhaltung hatte.</p><p>„Bitte, Minerva, sei so lieb und überspring all das Geplänkel. Du weißt, wie schlecht ich mich fühle und ich brauche keine Höflichkeitsfloskeln."</p><p>„Sehr wohl, Ginny, sehr wohl." Sie schob die Brille auf ihrer Nase zurecht. „Es wurden schwarz-magische Bücher aus der verbotenen Abteilung in Mr. Albus Potters Sachen gefunden. Ein Mitschüler hat sich an eine Lehrkraft gewandt. Mr. Potter wurde mit einer angemessenen Strafe ausgestattet. Eigentlich wäre es keine Angelegenheit, für die ich sie einbestellt hätte, wäre es das erste Mal, dass er mit schwarzmagischen Büchern gesehen wurde."</p><p>„Wie?"</p><p>„Ihr Sohn hat trotz seines jungen Alters eine ausgesprochen intensive Vorliebe für die schwarze Magie und es bleibt nicht bei reinem Interesse. Er hat bereits schwarz-magische Rituale durchgeführt, zugegebenermaßen kleine, aber die Entwicklung ist zutiefst beunruhigend."</p><p>Ginny fiel in sich zusammen. Ihr Herz raste und gleich, wie viel Luft sie einatmete, der neue Sauerstoff schien nicht in ihren Gehirnzellen anzukommen. „Ich verstehe nicht. Von welcher Art von Ritualen sprechen wir?"</p><p>McGonagall sah sie ohne die kleinste Regung an, doch musterte sie, als würde sie abschätzen, ob Ginny das Kommende aushalten werde. „Ich denke, es ist besser, wenn wir nicht darüber sprechen, bei allem, was in den letzten Wochen passiert ist. Er ist auch noch so jung. Es ist durchaus möglich, dass es nur eine Phase ist und er sich zu einem gesunden Erwachsenen entwickelt."</p><p>Wenn die Worte dazu gedacht waren, sie zu beruhigen, dann verfehlten sie ihr Ziel bei Weitem. Die Alarmglocken in Ginnys Kopf schrillten. „Albus ist nicht gesund? Über was für eine Art von schwarzer Magie reden wir? Sie tun mir keinen Gefallen, wenn sie es für sich behalten. Ich muss doch wissen, was mit meinem Sohn los ist!"</p><p>Die Schulleiterin blickte sie einen Moment starr an und schien wieder abzuwägen. „Also gut, sie haben ja recht. Es handelt sich um Tieropfer, die er erbracht hat. In den letzten Wochen sind mehrere unserer Schuleulen verschwunden. Unter Anbetracht aller Umstände empfehle ich eine Auszeit. Am besten wäre es, wenn Albus für einen Monat nach Hause zu dir kommt. Danach kann er wieder Hogwarts besuchen und seine Strafe absitzen."</p><p>Tieropfer? Ihr Sohn? Albus hatte Tiere immer geliebt! Nie hätte er auch nur einer Fliege etwas zu Leide tun können. Es musste ein Irrtum vorliegen. Vielleicht hatte Albus einen Mitschüler decken wollen und hatte daher die Schuld auf sich genommen. Scorpius Malfoy war sein bester, und soweit sie wusste, auch einziger Freund und dieser Junge hatte es faustdick hinter den Ohren. Es war doch viel naheliegender, dass Scorpius etwas verbrochen hatte und Albus bloß versuchte, seinen Freund zu schützen?</p><p>„Das kann nicht wahr sein, Minerva. Albus würde so etwas nie tun. Was ist mit Scorpius Malfoy? Ich meine, sein Vater hat in seiner Schulzeit ein Verschwindekabinett repariert, um Todesser nach Hogwarts zu lassen. Bekanntlich fällt der Apfel nicht weit vom Stamm..." Sie fühlte sich schlecht, weil sie den Malfoy in die Pfanne hauen musste. Doch wenn keiner das Offensichtliche bemerkt hatte, musste sie mit nacktem Zeigefinger darauf deuten. Es half ja alles nichts.</p><p>McGonagall schüttelte bestimmt den Kopf, was Ginny noch verwirrter zurückließ. „Nein, das ist nicht der Fall. Es war ausgerechnet Mr. Malfoy, der eine Lehrkraft über die Machenschaften von Mr. Potter informiert hat. Aus Sorge, Ginny, bevor du ihm unredliche Motive unterstellst. Er hat seinen Freund in den letzten Wochen nicht wiedererkannt. Der Schmerz über den Verlust seines Vaters muss tief sitzen."</p><p>Ginny schluckte. Das konnte nicht wahr sein. Albus, der schwarz-magische Bücher las und Rituale initiierte? Albus, der Tiere opferte? Nein, irgendjemand wollte die Verantwortung auf ihren Sohn, auf ihr liebes, unschuldiges Kind, schieben. Wenn McGonagall das nicht sehen wollte, dann tat es Ginny leid, aber: Sie würde alles tun, um der alten Hexe zu beweisen, dass sie Unrecht hatte.</p><p>Es klopfte an der Bürotür und bevor McGonagall „Herein" rufen konnte, erschien der junge Hauslehrer von Slytherin auf der Schwelle. Er war bleich im Gesicht, sehr viel blasser als normal. Alle Farbe waren ihm aus dem Gesicht gewichen. Seine Finger trommelten unentwegt gegen seinen Körper. Für keine Sekunde konnte er stillstehen. Sein Mund klappte auf, doch kein Wort schlich sich heraus, obwohl er von McGonagall wie von Ginny erwartungsvoll angeschaut wurde.</p><p>„Was gibt es?", fragte McGonagall kurz angebunden. „Wenn Sie mich schon unterbrechen müssen, dann sprechen Sie wenigstens. Oder ist es etwas Vertrauliches? Soll ich Mrs. Potter für einen kurzen Moment herausschicken?"</p><p>Nun gurgelte er einige Laute heraus und McGonagalls Blick verfinsterte sich. Ginny spürte die Angst, die den jungen Lehrer ergriffen hatte, und ihre Nackenhaare stellte sich auf. Ihr wurde schlecht. Die Übelkeit kroch langsam aus ihrem Magen hervor und die Speiseröhre entlang.</p><p>„Nein, es ist in Ordnung, dass die Mutter da ist." Vehement schüttelte er den Kopf. „Es gab einen Vorfall. Ein Schüler wurde schwer verletzt. Ich habe sogleich das St. Mungos kontaktiert und -"</p><p>Der Hauslehrer ging in die Knie und erbrach sich auf seine Füße. Beim Anblick der bräunlichen Flüssigkeit kam Ginny endgültig die Galle hoch. Sie kauerte sich auf den Stuhl zusammen und vergrub den Kopf in ihren Armen. Hoch konzentriert versuchte sie, sich nicht zu übergeben und alle schrecklichen Gedanken aus ihrem Kopf zu verbannen.</p><p>Albus.</p><p>James.</p><p>Albus?</p><p>Was war passiert?</p><p>Mit einem Schwung ihres Zauberstabs ließ McGonagall die stinkende Brühe verschwinden. „Wer ist daran beteiligt gewesen? Was genau ist passiert? Sprechen Sie mit mir."</p><p>„Potter. Es war Albus Potter", krächzte der Hauslehrer hervor.</p><p>Ihr Sohn? War ihr Junge gesund? Ging es ihm gut? Sie wollte schreien, zu ihm eilen und ihn in ihre Arme pressen, auch wenn er Berührungen in letzter Zeit nicht ertragen konnte.</p><p>„Potter hat mit dem Malfoy-Jungen herumexperimentiert. Mr. Malfoy war nur noch schwerlich wiederzuerkennen, von all den Wunden, mit denen er übersät ist. Und der Geruch... schrecklich... Es roch nach verbranntem Fleisch!" Der Lehrer krümmte sich und würgte ein zweites Mal.</p><p>Ginny linste zwischen ihren Fingern hervor. Ins Herz hatte sich ein stechender Schmerz gefressen. Messerscharf wie ein Skalpell schnitt er es entzwei.</p><p>„Ich habe die Auroren verständigt."</p><p>Ihre Augen brannten. Tränen vernebelten ihre Sicht. Eine Hand hielt sie auf ihr Herz gedrückt, doch es milderte das Stechen kein bisschen. Unter dem unkontrollierten Schluchzen war es für sie schwer, Luft zu holen. „Nein... Das...k-kann... nicht... sein... Sie irren sich!"</p><p>Sie spürte die mitleidigen Blicke auf sich. Dann schlug die Tür ein weiteres Mal auf und machte zwei stämmigen Männern Platz.</p><p>Die Auroren.</p><p>„Es gibt einen Notfall?"</p><p>Ginny schrie. Dann hörte sie, wie ein Stuhl über den Boden kratzte.</p><p>McGonagall hatte sich erhoben und mit Grabesstimme sprach sie zum jungen Lehrer: „Sie bleiben hier und kümmern Sie um Mrs. Potter, während ich die Auroren zum Slytherinkerker begleite."</p><p>Sie merkte, wie jemand vor ihr in die Hocke ging und ihr eine Hand aufs Knie legte. Beruhigende Worte prasselten auf sie ein, doch sie war nicht in der Lage, den Sinn zu erfassen. Nichts ergab einen Sinn.</p><p><em>Wäre Harry doch nur hier!</em> Sie wünschte sich nichts sehnlicher, als endlich aus diesem wahr gewordenen Albtraum erwachen und Harry und Albus an ihrer Seite vorfinden zu können.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/72841269">Chapter 4</a>: IV. DIE LÖCHER
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>Klack. Klack. Klack.</p><p>
+  <em>Klack. Klack. Klack.</em>
+</p><p>Ihre Schritte hallten den sterilen Flur des St. Mungos entlang. Sie hatte sich hier nie wohl gefühlt, obwohl es im vergangenen Jahr ihr zweites Zuhause geworden war. Nein, das stimmte nicht. Zuhause war ein Ort, an den man gern zurückkam. Dies war beim Mungos in zweierlei Hinsicht nie der Fall gewesen: Zum einen war sie nie zurückgekehrt, sondern jeden Tag von Neuem aufgebrochen und zum anderen war sie nicht gern dort gewesen, sondern nur aus Liebe zu Harry.</p><p>Harry, der bleich wie die Krankenzimmerwand im Bett lag und sich nicht regte. Harry, der keine Notiz von ihrem Besuch nahm, doch ruhig und selig atmete. Harry, dessen Körper sie wärmte, wenn sie fröstelte und dessen bloße körperliche Anwesenheit ihr und den Kindern Trost spendete.</p><p>Ihren Vater zu besuchen, auch wenn sie nicht mit ihm kommunizieren konnten, hatte James und Lily immer eine Freude bereitet. Für ihr Alter waren all ihre Kinder sehr verständnisvoll und geradezu altklug – wahrscheinlich kein gutes Zeichen, wenn sie darüber nachdachte. Hatte sie ihren Kindern die Kindheit genommen?</p><p>Nun ja, wenn es so war, dann konnte sie es sowieso nicht ändern.</p><p>Dann war da noch Albus.</p><p>Albus war schon immer anders gewesen. Er hatte sich auf die Besuche gar nicht gefreut, das hatte Ginny ihm an der Nasenspitze ablesen können. Introvertiert, ja, nahezu in sich zurückgezogen hatte sie ihn im St. Mungos erlebt. Seine innerliche Zerrissenheit hatte sie in seinen Augen sehen können, gleich, wohin er geblickt hatte.</p><p>Ginny erinnerte sich, als sei es gestern gewesen, obwohl alles sonst aus dieser Zeit verschwommen war. Stumm und wie eingefroren hatte Albus am Bett seines Vaters gesessen. Einzig seine Lippen hatten sich bewegte, ohne einen Ton von sich zu geben, doch stetig, so als würde er ein Mantra murmeln. Ein kalter Schauer lief über Ginnys Rücken, als sie zurückdachte. Albus' Blick war in die Ferne gerichtet gewesen. Das Funkeln. Der Glanz. Voller Schuldgefühle war er gewesen, während sie und seine Geschwister geheult hatten wie Kettenhunde, hatte er keine einzige Träne vergießen können.</p><p>„Entschuldigung? Wo finde ich das Zimmer von Scorpius Malfoy?", fragte sie die Hexe am Empfang.</p><p>Diese musterte sie mit einem abschätzigen Blick. „Sind sie verwandt?"</p><p>Ginny schüttelte zaghaft den Kopf. Sie kannte die Antwort, die folgte.</p><p>„Dann kann ich Sie nicht zu ihm lassen. Tut mir leid."</p><p>„Ähm... Sein Vater hat gesagt, ich soll ihm was bringen...", log sie. Betreten schaute sie auf ihre Hände. Sie hatte nichts außer die obligatorischen Blumen dabei. Nach diesen würde Malfoy senior wohl nicht gefragt haben.</p><p>„Er wünscht keinen Besuch. Das hat er mir klar und deutlich mitgeteilt. Nun gehen Sie bitte wieder."</p><p>Ginny räusperte sich. Abwechselnd wurde ihr heiß und kalt.</p><p>
+  <em>Sollte sie?</em>
+</p><p align="right">
+  <em>Das war ihre einzige Chance!</em>
+</p><p>
+  <em>Aber es war nicht richtig!</em>
+</p><p align="right">
+  <em>Allerletzte Möglichkeit!</em>
+</p><p>Mit zittrigen Fingern kramte sie aus der Handtasche ihr Portemonnaie hervor und blickte sich kurz um. Gut, es war keiner da.</p><p align="right">
+  <em>Trotzdem war es falsch!</em>
+</p><p>Zögerlich legte sie zehn Galleonen nacheinander auf den Tisch und bemühte sich um ein freundliches Lächeln.</p><p>Die Empfangshexe musterte sie ein zweites Mal, doch nun so, als würde sie sie zum allerersten Mal mit richtigen Augen sehen. „Ich muss doch bitten, Mrs. Potter...", flüsterte sie, doch sie schwang nichts ins Schimpfen um. Verheißungsvoll wartete sie ab.</p><p>Ginny legte weitere zehn Galleonen auf den Tisch. Ein kleines Vermögen, vor allem für sie, die in einem eher ärmlichen Elternhaus aufgewachsen war.</p><p>Die Hexe steckte alle Münzen ein. „Raum A310. Linker Flur, vorletzte Tür. Sie haben fünf Minuten. Werden Sie erwischt, kennen Sie mich nicht", flüsterte sie.</p><p>Sie nickte und beeilte sich, den Anweisungen zu folgen.<em> Nur noch vier Minuten und 55 Sekunden. Nun nur noch vier Minuten und 54 Sekunden. Vier Minuten und 53 Sekunden. 52 Sekunden. 51. 50...</em></p><p> </p><p align="center">oOo</p><p align="center"> </p><p>Malfoy Senior war nicht anwesend. Ginny atmete erleichtert auf. Doch seine Sachen lagen über dem Besucherstuhl. Sie hatte noch weniger Zeit als gedacht.<em> Eile. Eile. Jeden Moment könnte er eintreten.</em></p><p>Schnellen Schrittes ging sie zum Bett. Der Junge, dieser bedauernswerte Junge, Albus' bester – Albus' einziger Freund... <em>Das arme Kind!</em></p><p>Er war zugerichtet... Nicht wiederzuerkennen! War das wirklich Scorpius Malfoy?</p><p>
+  <em>Loch. An Loch. An Loch. An Loch. Loch. Loch. Loch.</em>
+</p><p>Seine schon immer bleiche Haut war schwerlich intakt. Allseits war sie übersäht mit Brandlöchern. Überall. Die Verletzungen zogen sich von seinen Fingerspitzen bis hoch zum Kopf. Übers Gesicht. Über den Hals. Und Ginny war sich sicher: Wenn sie die Bettdecke zurückziehen würde, würde sich die schier endlose Reihe von Löchern weiter Richtung Füße fortsetzen. Auf der ganzen Matratze und auf dem Boden neben dem Bett lagen zerrupfte Bandagen, aufgefächert. Er musste sie sich vom Körper gerissen haben. Nun lagen die Wunden offen und es musste höllisch wehtun. Doch das Kind dämmerte vor sich hin.</p><p><em>Wie Harry!</em> <em>Genauso wie Harry es fast ein Jahr lang getan hatte.</em></p><p>Das Kind atmete flach. Unter den versengten Augenbrauen, hinter den geschlossenen Lidern konnte sie erkennen, wie sich die Augäpfel bewegten. Er schmatzte im Schlaf.</p><p>Wie konnte er am Leben sein? Ginny hasste sich für den Gedanken, doch: Wäre es nicht besser gewesen, wäre er gestorben?</p><p>Dann fiel ihr siedend heiß ein, weshalb sie dort war.</p><p><em>Ihr</em> Sohn sollte dem jungen Malfoy dies angetan haben!</p><p>Das sollte Albus' Werk sein!</p><p>Sie biss sich auf die Lippen. Der Geschmack von Blut füllte ihren Mund. Ihr wurde speiübel und sie musste sich abwenden. Krampfhaft kniff sie die Augen zu und ging in die Knie.</p><p>
+  <em>Durchatmen! Ein! Aus! Nicht weiter drüber nachdenken!</em>
+</p><p>Das konnte nicht sein! Sie mussten sich irren! Albus, <em>ihr</em> Albus, konnte das nicht gewesen sein. Er würde keiner Fliege etwas zu leide tun. Sie musste Beweise finden... Eigentlich war sie hergekommen, um ein Wörtchen mit Malfoy Junior zu wechseln, doch das war unmöglich. Mit einem Mal drangen geflüsterte Worte an ihr Ohr. Sie schreckte hoch und untersuchte verängstigt den Raum.</p><p>Das Kind sprach im Schlaf. Ginny konnte sehen, wie sich seine Lippen bewegten und immer wieder etwas hauchten, doch es war so leise, dass sie sich über ihn beugen musste. Vorsichtig näherte sie sich dem Jungen. Er dämmerte immer noch vor sich hin.</p><p>Da! Schon wieder stieß er dieselben Worte aus. Ginny hielt ihr Ohr über das Gesicht von Scorpius. „<em>Tom... Riddle..</em>."</p><p>Ginny hielt den Atem an. Die Übelkeit wurde übermächtig, sie fürchtete, sich jeden Moment erbrechen zu müssen, wie der junge Hauslehrer von Slytherin es getan hatte. Sie wollte sich abwenden, doch sie schaffte es nicht, ihren Körper zum Bewegen zu zwingen. Er tat, was er wollte und sie musste damit leben. <em>Tom Riddle.</em> Sie erschauerte. Nie hätte sie gedacht, diesen Namen noch einmal hören zu müssen. Seit mehr als zehn Jahren, seit dem Ende der Schlacht hatte man nichts mehr von ihm gehört. Er war weggesperrt worden, kaltgestellt, für den Schutz der restlichen Welt.</p><p>„<em>Tom... Riddle...</em>", flüsterte Scorpius Malfoy wieder. Ginny hätte nicht erwartet, dass ihr noch schlechter werden konnte, doch das war der Fall. Ihr Kopf spann um sich selbst, als sie das dritte Wort erkannte, was Malfoy wie ein Mantra wiederholte. „<em>Tom... Riddle... töten...</em>"</p><p>Was hatte das zu bedeuten? Was hatte Riddle wieder verbrochen?</p><p>„Weasley!"</p><p>Wie aufs Kommando fuhr sie herum. Ein in Zorn entflammter Draco Malfoy stand vor ihr. Er donnerte: „Wie bist <em>du</em> hier reingekommen? <em>Du</em> bist die letzte Person, die ich hier sehen möchte! Nach allem, was <em>dein</em> Sohn gemacht hat!"</p><p>„Ich... i-ich... wollte fragen", stotterte Ginny. Was wollte sie eigentlich fragen? Hatte sie einen Plan gehabt, als sie das Krankenzimmer betreten hatte? Selbst wenn sie sich tatsächlich vorgenommen hatte, mit Malfoy über die Freundschaft ihrer Söhne zu sprechen und herauszufinden, ob nicht vielleicht Scorpius freiwillig an sich herumexperimentiert hatte –dies schien nun weit entfernt. Es war nicht mehr wichtig. Sie musste sofort weg. „Ich gehe! Alles gut, ich gehe schon!" Sie rannte aus dem Raum.</p><p>Malfoy sah ihr verdutzt hinterher. Mit einem solchen Abgang hatte wohl auch er nicht gerechnet.</p><p>Riddle saß in der Gefängnispsychiatrie St. Potter hinter Gitter. Sie würde all ihre Kontakte und ihren guten Ruf ausspielen müssen, um ihm einen Besuch abstatten zu können. Doch dieses lang überfällige Gespräch würde Albus wahrscheinlich entlasten können von dem schrecklichen Verdacht. Und sie würde alles für ihn tun...</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/73654782">Chapter 5</a>: V. DAS SCHAF IM WOLFSPELZ
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Herr."</p><p>Tom Riddle schluckte. Ihm schwante Böses. Wachsam musterte er den Mann, der vor ihm stand. Er trug eine Augenklappe und seine Arme waren bis zur Hand bandagiert. Nur die Finger waren nicht verbunden. Unter seinen Hosenbeinen und der Fußfessel, die ihre Magie unterdrückte, lugte ebenfalls das Grau der Verbände hervor.</p><p>Flink sprang Yaxley auf ihn zu.</p><p>Er behielt Recht.</p><p>Yaxleys devote Begrüßung war nur zum Schein gewesen. Natürlich war sie das. Seit er erfasst hatte, dass Riddle sich nicht wehren konnte, hatte er ihn zur Zielscheibe seines Zorns auserkoren. Auch jetzt funkelte sein verbliebenes Auge vor Verrücktheit.</p><p>Erschrocken wich Riddle einen Schritt zurück, doch es war zu spät.</p><p>Das Messer sauste bereits in seine Richtung. Yaxley brüllte. Riddle quietschte vor Angst und dieser Laut schien den Angreifer noch wütender zu machen. Das Messer, was wirklich stumpf war und nur zum Sonntagsschnitzelschneiden gedacht, versenkte sich in seiner Schulter.</p><p> </p><p align="center">oOo</p><p align="center"> </p><p>Tom Riddle wusste nicht, was seine Mitmenschen alle hatten. An keine seiner angeblichen Schandtaten konnte er sich erinnern, doch die Liste, die sie ihm zu Last gelegt hatten, war lang gewesen. Er hatte sich bemüht, mitzuteilen, dass er keine Ahnung hatte, wovon sie sprachen, doch es war ihnen sichtlich schwergefallen, ihm zu glauben. Dies konnte er ihnen nicht verübeln. Ein Blick auf die Anklageschrift ergab:</p><p>
+  <em>Verbrechen gegen die Menschlichkeit.</em>
+</p><p>
+  <em>Verbrechen gegen den Frieden.</em>
+</p><p>
+  <em>Bildung einer terroristischen Vereinigung.</em>
+</p><p>
+  <em>Verfolgung von Minderheiten</em>
+</p><p>
+  <em>Betrieb eines auf Tötung ausgerichteten Systems</em>
+</p><p>Dass da niemand seinem Wort Glauben schenkte, konnte er verstehen.</p><p>Trotzdem war er sauer.</p><p>Er war aufgewacht und hatte zum ersten Mal seine Umwelt sehen und fühlen können. Verwirrung und Angst hatten seinen Geist dominiert. Kaum war die erste Bestürzung abgeklungen, hatte man ihn gepackt, mit einem Zauber gelähmt und zu schwarzen, fließenden Gestalten gezogen. Gleich, wie sehr er sich schüttelte und wehrte, gegen die Überzahl der Menschen war er nicht angekommen. Dass er überhaupt Zeit gehabt hatte, seine Unschuld zu beteuern, lag an diesen furchteinflößenden Ungeheuern. Sie hatten in dem Augenblick, in dem sich der Hinrichtungszug genähert hatte, Reißaus genommen. Das war der Grund, weshalb er noch lebte.</p><p>Überlebte.</p><p>Leben konnte man sein Dasein nicht nennen.</p><p>Jahrelang hatte er in Isolationshaft gekauert und sich gewünscht, wieder ins Meer der Finsternis hinabsinken zu dürfen. Ab und zu kamen Zauberer vorbei, die mit ihm sprachen und ihm die Welt erklärten, die er niemals erblickt hatte. Dabei studierten sie genau seine Gesichtszüge und kritzelten Notizbücher voll. Als sie bemerkten, dass er sich nicht zur Wehr setzen konnte, begannen sie, ihn aus seiner kleinen Zelle zu zerren. Das hatte ihm beim ersten Mal noch gefallen, doch das, was danach kam, war nicht besser, eher schlimmer gewesen. Analysezauber, Experimente und noch mal Testzauber auf seine Körperfunktionen. Er wollte nur noch sterben. Am schlimmsten waren aber die Tage, an denen man ihn mit den Taten konfrontierte, die er angeblich begangen haben sollte. Längst hatte er aufgegeben, dagegen anzudiskutieren. Wenn sie es so felsenfest behaupteten und so detailliert schilderten – wer war er, dies anzuzweifeln? Es musste stimmen – er war ein Monster gewesen. Seit dieser Erkenntnis hatte er alles anstandslos über sich ergehen lassen.</p><p>Erst vor ein paar Wochen hatte man ihn aufgrund von Kosteneinsparungen oder weil sie nun auch überzeugt waren, dass er höchstens eine Gefahr für sich selbst darstellte, aus der Isolationshaft entlassen.</p><p>Nun musste er mit den Mithäftlingen umgehen lernen. Dies stellte sich gar als das schwierigere Unterfangen heraus. Zu Anfang hatte man ihn gemieden, doch nun, wo auch sie seine Ungefährlichkeit herausgefunden hatte, war sein Leben zu einer Hölle mutiert. Nie hätte er gedacht, dass er sich in seine einsame Zelle zurückwünschte.</p><p>Es war Mittag. Zeit fürs Mittagessen. Sein Magen knurrte schon allein beim Gedanken daran. Die Zellentüren hatten sich für ihn geöffnet und scheinbar allein schritt er die Flure entlang. Viele der Häftlinge waren am Vormittag bei der Gruppentherapie gewesen oder waren einer schlecht bezahlten Arbeit nachgegangen. Tom Riddle selbst hatte nicht das Glück gehabt. Immer noch wurde er von solchen Tätigkeiten ausgeschlossen. Er holte tief Luft, es führte kein Weg dran vorbei. Wenn er heute etwas essen wollte, dann musste er nun die Tür öffnen.</p><p>Als er den Speiseraum betrat, hatte sich bereits eine lange Schlange vor der Essensausgabe gebildet. Ein Wirrwarr aus Stimmen, die eifrig schnatterten und durcheinanderredeten, erfüllte den Raum. Ab und an polterte jemand oder schlug auf den Tisch. Am Ende der Schlange stand Yaxley. Als hätte er seinen Blick im Rücken gespürt, drehte er sich um.</p><p>„Herr", begrüßte er ihm und klang dabei wieder so devot wie das letzte Mal.</p><p>Schnell ließ Riddle seinen Blick zu Yaxleys Hände wandern. Die Verbände waren immer noch dran und Blut hatte sich im dünnen Stoff verkrustet. <em>Sein</em> Blut. In den Fingern hielt er diesmal Plastikbesteck, welches brach, sobald man es ein wenig mit Druck belastete. Trotzdem traute er Yaxley zu, ihn auch mit diesem anzugreifen. Vorsichtshalber wich er zwei Schritte zurück.</p><p>Yaxley verzog seine Lippen zu einem Lächeln, das so spitz war wie Rasierklingen. Das Plastikmesser und die Plastikgabel in der einen Hand klopfte er immer wieder an die andere. Er machte einen Schritt auf Riddle zu und musterte ihn wie ein Raubtier seine Beute.</p><p>Tom Riddle wusste, wenn er sich bewegte, würde Yaxley über ihn herfallen. Er hielt den Atem an, bereit wegzurennen oder ihm ins Gesicht zu schlagen, wenn nötig. Die Plastikgabel an sich war nicht gefährlich, aber wenn sie in sein Auge stach... Gerüchteweise war auch Yaxley so zu seiner Augenklappe gekommen. Es habe drei Wächter gebraucht, um ihn davon abzuhalten, sich auch noch das andere auszustechen.</p><p>Yaxleys Grinsen wurde noch breiter und ging nun von Ohr zu Ohr. Sein Arm bewegte sich.</p><p>Riddle zuckte zusammen.</p><p>Er hielt ihm das Besteck hin.</p><p>Zögerlich ergriff er es.</p><p>Dann drehte dieser sich mit einem zufriedenen Gesichtsausdruck um, ließ sich das Essen auf den Teller schaufeln und zog von dannen.</p><p>Das Essen wurde heute von Rodolphus Lestrange ausgeteilt. Gelangweilt füllte er die Teller, bis sein Blick auf Riddle fiel. Er begann zu grinsen und schüttelte seinen haarlosen Kopf. Prompt gab er den Teller an den Nächsten hinter Riddle in der Schlange weiter.</p><p>„Ich möchte auch was", protestierte er. Schon gestern hatte er nichts gegessen und seitdem war er auch nicht mehr wählerisch.</p><p>Lestrange hob nur die ... Stelle, wo eigentlich die Augenbraue wäre. Sein Gesicht war kahl. Keine Haare, keinen Augenbrauen und keine Wimpern. Alles hatte eine Flamme gefressen. Das vernarbte Gewebe grub sich über seinen Kopf und den Hals langrunter.</p><p>„Wie lange wirst du das noch machen?", seufzte Riddle. Er wusste, dass er Lestrange körperlich unterlegen war. In der Isolationshaft hatten seine Muskeln abgebaut. Er war ein Strich in der Landschaft.</p><p>„Bis du verhungert bist. Dann noch drei Tage und dann höre ich auf."</p><p>„Aber das geht doch nicht!"</p><p>„Du siehst doch gerade, dass es geht."</p><p>Riddle blieb noch eine Weile vor Ort stehen, bis er aufgab und sich einen Platz suchte. Ganz hinten in der rechten Ecke wurde er fündig. Dort waren noch viele Stühle leer. Nur auf einem saß ein mittelalter Mann mit wallenden, blonden Haaren, das ihm über den gesamten Rücken fiel. Er beugte sich dieser über den Tisch, als Riddle sich niederließ und wuschelte ihm durch die schulterlangen, schwarzen Haare.</p><p>Angewidert versuchte Riddle den Patschehänden zu entkommen und stand wieder auf. Es kam kein Laut des Protests von dem Mann. Doch als Riddle durch den Raum blickte, fiel ihm auf, dass dies schon ein guter Platz war. Besser als ein Stuhl in der Nähe von Yaxley oder seinen Freunden. So setzte er sich wieder und wie auf Befehl wurde ihm nochmals durch das Haar gewuschelt.</p><p>„Lass das!"</p><p>„Ich bin Gilderoy Lockhart, berühmter Schriftsteller. Durch viele Länder bin ich bereits gereist und habe einige Abenteuer überstanden, doch so einem Schmuckstück wie dir bin ich selten begegnet." Er zwinkerte ihm überdeutlich zu.</p><p>Riddle konnte sich zwar nicht an viele Konversationen mit seinen Mitmenschen erinnern, trotzdem war er sich sicher, dass dies nicht normal war. Was hatte Gilderoy mit seinem Auge?</p><p>„Sehr erfreut. Mein Name ist Riddle." Er reichte ihm die Hand, die Gilderoy freudig schüttelte. Er schüttelte und schüttelte. Tom Riddle musste Kraft aufwenden, um seine Hand aus dem festen Griff zu ziehen.</p><p>„Sag, kannst du mir was von deinem Essen abgeben?" Wie zur Bekräftigung knurrte sein Magen. „Lestrange bestraft mich. Ich werde hier sonst noch verhungern."</p><p>Gilderoy giggelte und richtete seinen Blick auf die Essensausgabe. Er heftete ihn förmlich an Lestrange. Jede Bewegung, die dieser machte, wurde registriert. Zuerst wartete Tom noch geduldig auf eine Reaktion, doch dann wurde er langsam nervös. War das so eine schwere Entscheidung? „Was ist nun?", hakte er nach.</p><p>„Was?" Gilderoy schreckte aus seinen Gedanken hoch. „Huch, wer bist du?" Aus weit aufgerissenen Augen starrte er ihn an.</p><p>„Riddle..."</p><p>„Ach, Riddle, mein Name ist Gilderoy Lockhart. Ich bin ein berühmter Schriftsteller und habe mehrere Bestseller über meine Abenteuerreisen verfasst. Dabei habe ich sogar den Goldfederpreis gewonnen – doch ich muss schon sagen, ein Schmuckstück wie dir bin ich auf meinen Reisen selten begegnet. Vielleicht sollte ich dich mal mitnehmen."</p><p>War er wirklich so ein <em>Schmuckstück</em>? Er hatte noch nie die Gelegenheit gehabt, sich in einem Spiegel anzusehen? Was hieß das überhaupt? Er beschloss, all dies zur Seite zu schieben.</p><p>„Reisen? Das ist nicht lache!" Ein Mann mit riesigem Schnauzer wandte sich um und grinste süffisant. „Du kommt hier genauso wenig wie jeder andere raus! Das ist eine Gefängnispsychiatrie!"</p><p>„Kannst du mir was zum Essen abgeben?" Riddle versuchte einen bittenden Blick aufzusetzen.</p><p>Den Mann beeindruckte es nur wenig. „Träume weiter! Lockhart muss du auch nichts fragen, der hat einen Sprung in der Schallplatte..." Lachend hielt er sich den Bauch. „Seine Geschichte ist eigentlich ganz witzig. Er ist aus dem Mungos ausgebrochen und hat ein Zeitumkehrerfachgeschäft ausgeraubt. Als er dann seine Beute in der Hand hatte, konnte er sich an nichts mehr erinnern und hat gewartet, bis die Auroren kamen."</p><p>Riddle runzelte die Stirn. „Einen Zeitumkehrer?"</p><p>Der Mann nickte behäbig. „Genau. Niemand weiß genau, was er damit vorhatte. Nicht einmal Lockhart, natürlich. Aber ich vermute, er wollte zurückreisen und sich selbst daran hindern, den schiefgegangenen Obliviate zu sprechen. Deswegen ist er ja hier! Er war mal ein angesehener Mann." Er drehte sich um und ignorierte die Beiden, gleich, was Riddle sagte.</p><p>„Gibst du mir was ab?"</p><p>Diesmal hatte sich Gilderoys Blick an ihn geheftet. Doch er starrte irgendwie durch ihn hindurch. Just in den Moment, in dem er ihn zur Antwort mahnen wollte, kam Leben in sein Gegenüber. „Nö."</p><p>„Wie nö? Ich verhungere sonst! Was habt ihr alle gegen mich?"</p><p>„Wer sind sie? Ich bin Gilderoy Lockhart, doch meine Freunde dürfen mich auch Goldy nennen.-"</p><p>Weiter kam er nicht, da Riddle aufgestanden und den Tisch verlassen hatte. Während er einen Fuß vor den anderen setzte, spürte er die Blicke im Rücken. Egal, wo er hinging, immer waren alle Augen auf ihn gerichtet.</p><p> </p><p>oOo</p><p> </p><p>„Als hättest du es geahnt!", wurde er von einem Wächter begrüßt, der am Ausgang des Speiseraums stand. „Ich wollte dich gerade holen kommen. Es ist wieder Zeit."</p><p>Er wurde von zwei Pranken gepackt und über die Flure geschleift. Zunächst hatten sie ihn im weiß gekachelten Untersuchungszimmer ans Krankenhausbett geschnallt. Schon lange hatte er aufgegeben, sich gegen die Experimente, die bevorstanden, zur Wehr zu setzen, im Gegenzug hatte der Wärter ihm seine Bewegungsfreiheit gelassen. „Ich habe ja immer noch nicht aufgegeben, dass wir irgendwann mal herausfinden, weshalb die Dementoren vor dir geflohen sind, Tom." Er schnürte ihm den Arm ab und begann das Blut abzunehmen.</p><p>Dementoren! Ja, so hießen die schrecklichen Monster, denen er zum Fraß hatte vorgeworfen werden sollen. Er lachte ein bisschen, als er an das Bild der flüchtenden Ungeheuer zurückdachte und an die erschrockenen Gesichter der Menschenmenge um ihnen. Zu diesem Zeitpunkt hatte er sich überhaupt nicht freuen können. Unentwegt hatte er seine Unschuld beteuert, ohne bei einer einzigen Person Gehör zu finden.</p><p>Plötzlich bemerkte er, dass der Wärter zu zittern begann. Die Phiole, die bereits voll mit seinem Blut war, setzte er ab und streckte die Hand aus, um nach einer leeren zu greifen. Das Zittern verstärkte sich.</p><p>„Andrew, alles gut?", fragte Riddle in die ächzende Stille.</p><p>Keine Antwort.</p><p>Auf der Stirn, zwischen den Augen des Mannes, begann die Haut zu rauchen. Erst ein bisschen, doch schon nach wenigen Sekunden stieg eine graue Schwade nach oben. Die riesige Hand klatschte auf die Stelle und Andrews Augen weiteten sich. Ein gellender Schrei kroch aus seiner Kehle. Er schielte und versuchte, das sich einbrennende Loch ins Visier zu nehmen. Ehe Riddle den Mund aufmachen und sich die Lunge aus dem Leib schreien konnte, schwelte es auch am Kinn.</p><p>„Andrew! … Andrew!"</p><p>Andrews Blick wurde starr. Das Zittern klang ab und er stand einen Augenblick still. Die Arme hingen schlaff an seiner Körperseite herab, als hätte jemand die Luft abgelassen.</p><p>„Andrew?"</p><p>Andrews Augen funkelten. Bewusstsein spiegelte sich in ihnen wider. Seine Hand rührte sich und streckte sich nach dem kleinen Tisch aus, auf dem verschiedene Werkzeuge abgelegt waren. Riddle wollte sich freuen, doch in der Bewegung lag etwas Mechanisch, das ihm vor Angst erstarren ließ. Paralysiert musste er zusehen, wie Andrew nach seinem Zauberstab griff und in seine andere Hand ein Beil beschwor. An beiden Händen begann eine kreisrunde Stelle zu schwelen, wie zuvor schon im Gesicht.</p><p>Andrews Unterlippe zitterte protestierend, während er das Beil auf Riddle herabsausen ließ.</p><p>In letzter Sekunde konnte Riddle sich zur Seite werfen und unter dem Schlag abtauchen, doch er fiel auf den Bauch, die Hände nach vorn ausgestreckt.</p><p>Unter seinen Beinen spürte er den Fußboden vibrieren, als zwei Füße neben ihn heranstampfen.</p><p>So schnell er konnte, kroch er vorwärts. Im Nacken zog die flüchtende Luft, durch die das Beil schnitt. Dieses versenkte sich in seinem Fuß. Ein Schrei entwich ihm.</p><p>Dann, als die Angst seine Sinne wieder freigab, merkte er, dass Andrew mit immer heftiger werdenden Rucken an seinem Bein zerrte.</p><p><em>Zack. Zack. Zack</em>.</p><p>Als er einen Blick über seine Schulter warf, erkannte er, dass die Schneide in der Fußfessel, die seine Magie unterdrückte, feststeckte. Wie konnte das sein? Solche dünner Ring aus Metall obsiegte über ein Schlachtermesser?</p><p>
+  <em>Zack. Zack. Zack.</em>
+</p><p><em>Die Fußfessel war aus einem besonderen Metall gemacht.</em> So hatte es Andrew am ersten Tag erklärt, nun verzweifelte er oder das, was noch von ihm übrig war, daran. Mittlerweile rauchte sein Körper an vielen verschiedenen Stellen. Man konnte sein Gesicht vor lauter aufsteigenden Schwaden nicht mehr erkennen.</p><p>
+  <em>Zack. Zack. - „Haaaa!"</em>
+</p><p>Schlagartig hörte das Zerren auf.</p><p>Er hatte es geschafft. Triumphierend hielt der Wärter das Beil hoch über seinen Kopf erhoben, bereit es wieder herabsausen zu lassen.</p><p>Auf seinen Ellenbogen robbte er vorwärts. Er versuchte, auf die Füße zu kommen, ohne zu straucheln oder in zwei geteilt zu werden.</p><p>„Ahhh!-"</p><p>Andrew sackte in sich zusammen wie ein nasser Sack. Das Beil rutschte ihm aus der Hand und schepperte zu Boden.</p><p>Riddle schwankte, doch stand auf den Füßen, den Rücken an die Wand gedrückt. Sein erschrockener Blick war an den Wärter geheftet.</p><p>Der Rauch lichtet sich und gab die Sicht auf ... auf was eigentlich frei?</p><p>Das Wesen vor ihm war nicht wiederzuerkennen. Kein Stück der Haut zeichnete sich ab.</p><p>Stattdessen sah er nur Löcher.<em> Loch. An Loch. An Loch. An Loch. Loch. Loch. Loch.</em></p><p>Der Geruch von verbranntem Fleisch stieg ihm in die Nase und er musste würgen. Er krächzte und ging in die Knie, bevor er sich auf seine Füße übergab.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/74182662">Chapter 6</a>: VI. DAS LOCH
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Graue Gittertüren und massive Steinwände zogen vorbei und sie konnte ihre Absätze über den harten Betonboden klackern hören.</p><p>Klack. Klack. Klack.</p><p><em>Klack.</em> <em>Klack</em>. <em>Klack</em>.</p><p>Ein griesgrämiger Wärter führte Ginny durch die tristen Mauern. Im künstlichen Licht der Laternen wirkte es surreal, als wäre die Zeit stehengeblieben. Ein Labyrinth aus Gitterstäben, Steinen und verendeten Träumen. Der Vorsteher schuldete ihr noch einen Gefallen, für einen beruflichen Dienst, den sie ihm vor noch nicht allzu langer Zeit erwiesen hatte. Ihre Bitte hatte er deswegen mit einem gesunden Maß an Neugier entgegengenommen.</p><p>Riddle befand sich seit einem Vorfall, der nicht so recht erläutert wurde, gleich, wie sehr sie danach fragte, wieder in Isolationshaft. Es hieß bloß, dass er mit einem Wärter aneinandergeraten sei.</p><p>Die letzte Zelle im Gang gehörte ihm.</p><p>Das Klappern der Schlüssel am großen Schlüsselring und das Knacken des Schlosses verriet ihr Kommen.</p><p>Kerzengerade saß er auf seiner Matratze. Es war zwar keine Pritsche, aber auch nicht wirklich ein Bett. Mit den langen und zerzausten Haaren, die ihm in sein Gesicht fielen, sah er menschlich aus. Doch hatte seine Haut einen kränklichen Schein. Er war bleich und die Augen unterlaufen. Tiefe Ringe zeugten von schlimmen Nächten. Das Dunkel seiner Haare, Augen und Augenbrauen stand im Kontrast zu den hellen Tönen seiner Haut. Dieser Umstand ließ ihn noch dürrer und abgekämpfter wirken.</p><p><em>So menschlich</em>... erinnerte er sie <em>fast</em> an Tom.</p><p>Doch dieser hätte nie wie ein Häufchen Elend ausgesehen. Jahre waren vergangen, ehe sie die Scham über ihre kindliche Dummheit hinter sich gelassen hatte.</p><p>Das vor ihr konnte weder Lord Voldemort noch ihr Tom sein.</p><p>Der Wachmann, ein Vertrauter des Direktors, gewährte ihr Eintritt und stellte sich neben die Tür. Langsamen Schrittes ging sie in die Mitte des Raums.</p><p>Riddle hob den Kopf und blickte ihr entgegen. Der Mund öffnete sich und zum Vorschein kamen weiße Zähne. Er sagte etwas, doch Ginny verstand kein einziges Wort. Nicht einmal ein Ton kam bei ihr an. Jedes Mal, wenn die weißen Zahnreihen auseinanderflohen, wuchs ein schwarzer Abgrund, der durch das erneute Zusammenprallen der Lippen versteckt wurde. Sie starrte wie gebannt auf die weiche, rosafarbene Haut. Dann gingen sie wieder auseinander. Ginny stieß einen spitzen Schrei aus, als diesmal keine schwarze Leere sich auftat, sondern ein Schlangenkopf ihr entgegenglitt.</p><p>Grüne Schlitze hatten sie ins Visier genommen. Die Schuppen waren von einer glitschigen Schleimschicht umhüllt. Im flackernden Licht glänzte es unheimlich. Zischend, dass es ihr das Trommelfell zerreißen könnte, öffnete das Tier ihr Maul. Zwei Fangzähne, überdimensional groß, sausten auf sie zu.</p><p>„Mrs. Potter?", fragte der Wärter.</p><p>Sie schüttelte den Kopf. Geschlagen wie ein Hund blickte sie sich in der jämmerlich kleinen Zelle um. Vom Wachmann, über ihre eigenen Füße, zur Matratze und zu Riddle.</p><p>Dieser saß wie eingefroren da und sah sie fragend an. In seinen Augen lag etwas Bittendes, was sie so noch nie dort gesehen hatte.</p><p>„Du hast was gesagt?" In Anbetracht ihrer Vorgeschichte hielt sie es nicht für nötig, ihn zu siezen.</p><p>Einige Sekunden einer peinlich berührten Stimmung verstrichen.</p><p>Sie wollte ihn anherrschen wegen der Zeitverschwendung, die sie offensichtlich beging. Der Schock saß ihr noch tief in den Knochen und machte sie fuchsteufelswild. In dem Moment, in dem sie ansetzte, öffnete auch er seinen Mund und entblößte seine Zähne, die gar nicht so weiß waren oder auch nur annähernd so glänzten, wie sie es gerade noch mitbekommen hatte.</p><p>„Gar nichts." Seine Stimme klang anders. Sie gehörte nicht dem Tom, der sie in die Kammer des Schreckens gelockt hatte, denn er hatte eine äußerst geschmeidige Stimme gehabt. Auch war sie viel tiefer und menschlicher als die Voldemorts. Es war irgendein Ton zwischen den beiden Extremen.</p><p>„Wie?", entfuhr es ihr.</p><p>„Ich habe nichts gesagt", wiederholte Riddle sich. Nicht die leiseste Spur von Gereiztheit oder Ungeduld war zu erkennen. Sie suchte vergeblich. „Sie – oder wenn ich Ihrem Beispiel folgen darf – du bist hierhergekommen, hast mich für einige, beschämte Sekunden angestarrt und angefangen zu schreien. Bis der Wärter dich an der Schulter gepackt hat."</p><p>Sie fuhr herum.</p><p>Dieser hob entschuldigend die Arme.</p><p>„Ich habe das nicht gemerkt. Ich habe eine Schlange gesehen." Ginny wusste, wie bescheuert es klingen musste. „Eine Halluzination."</p><p>Riddles Blick wurde noch weicher. „Warum bist du hier? So gern, wie ich auch glauben würde, dass du mir Gesellschaft leisten möchtest, so aufdringlich ist es, dass du aus einem bestimmten Grund hier bist. Niemand kam mich je um meinetwillen besuchen."</p><p>Ihre Augen verengten sich. „Alle kamen deinetwegen. Wegen deiner Taten."</p><p>Seine Lippen bebten, als würde er sie liebend gern anbrüllen. Als er wieder zu sprechen anfing, war von der Aufgeregtheit in seinem Inneren nichts mehr zu erkennen. „Wenn man sich an keine einzelne erinnern kann, verfehlt jede Strafe ihren Zweck."</p><p>„Strafe?", protestierte Ginny. Sie hatte diese heiß geführte Diskussion um Riddles Amnesie noch detailgetreu im Sinn. „Das ist nicht als Strafe gedacht und auch nicht als Abschreckung."</p><p>„<em>Wie sollen wir sicherstellen, dass er in diesem Zustand für immer verbleibt?"</em></p><p>Harry stand vor ihr.</p><p>Riddles zerzaustes, schwarzes Haar war das von Harry geworden. Die Brille thronte auf seiner Nasenspitze und er trug dieses schiefe, schmallippige Lächeln, das sie an ihm so liebte. Er sah so bedrückt und verwegen zugleich aus.</p><p>Ein Seufzer entkam ihren Lippen.</p><p>So schnell, wie er erschienen war, war er wieder verschwunden.</p><p>Harrys Antlitz war dem Riddles gewichen. Ein ungerechter Tausch.</p><p>Auch wenn es nur eine Halluzination gewesen war, etwas, in dem man für gewöhnlich nicht schwelgen sollte, wünschte sie sich ihn zurück. Ihre Sehnsucht in ihr lehnte sich gegen ihren kalten Verstand auf. Sie musste sich zusammenreißen, um ihre Gefühle nicht an dem Mann vor ihr auszulassen.</p><p>„Es ist eine Maßnahme der Sicherung."</p><p>Riddle wog den Kopf. Er hatte es schon oft genug gehört.</p><p>„Ich bin gekommen und wollte fragen, ob du mit meinem Sohn Albus Kontakt hattest?", fuhr Ginny fort.</p><p>Riddle schüttelte wortkarg den Kopf.</p><p>„Warum will er dich töten?"</p><p>Die Worte klangen ganz und gar falsch. Riddle war der, der töten wollte und der getötet hatte. Ihr Sohn war ganz und gar unschuldig. Diese Verkehrung der Verhältnisse gefiel ihr nicht, auch wenn sie sich bis jetzt nur im Verbalen für Ginny erschöpfte.</p><p>„Er will mich töten?" Riddle war aufgesprungen. Nur der strenge Blick des Wärters ließ ihn in seinem Gang innehalten. „Warum wollen mich bloß alle umbringen?"</p><p>Ginny hob die Augenbrauen. „Dein früheres Selbst wollte alle töten. Du zahlst wohl den Preis dafür. Mich hättest du auch beinahe umgebracht."</p><p>Jegliche Farbe wich aus seinem Gesicht. „Ich wüsste nicht, weshalb." Bevor sie etwas sagen konnte, setzte er, wie gestochen, hintendran: „Erzähle es mir nicht, es wird keinen nachvollziehbaren Grund haben."</p><p>Sie öffnete den Mund und schloss ihn wieder.</p><p>„Es tut mir aufrichtig leid. Ich weiß, Worte ändern nichts, aber trotzdem will ich mich entschuldigen." Riddle streckte seine Hand aus und wollte nach ihrer greifen, doch sie ignorierte sein Bemühen. Sie konnte nicht anders.</p><p>„Durch ein Tagebuch", sprach sie, auch wenn die verzerrte Mimik ihres Gegenübers zeigte, dass dieser es nicht ertrug. Sie spürte auch nicht, wie sie sich die Fingernägel in die Handballen rammte. Auch vom nagenden Kopfschmerz, der sich hinter ihrer Stirn ausbreitete, nahm sie keine Notiz. „Es hat mich willenlos gemacht und das Leben aus mir herausgesaugt. Dabei hatte ich dich als wahren Freund betrachtet. Ich hatte dich <em>geliebt</em>."</p><p>Riddle ließ sich auf die Matratze sinken und versteckte sein Gesicht in den Händen. So kauernd, wie er dasaß, erwartete sie ein Schluchzen, doch Ginny hörte nichts dergleichen. Als er sie wieder anblickte, waren seine Augen schreckgeweitet und rot angelaufen, doch Verständnis spiegelte sich nicht darin. Er war geradezu unfähig, ihre Worte zu erfassen.</p><p>
+  <em>Durch ein Tagebuch. Es hat mich willenlos gemacht und das Leben aus mir herausgesaugt.</em>
+</p><p>
+  <em>Durch ein Tagebuch.</em>
+</p><p>
+  <em>Tom Riddle liebte es, Tagebücher zu schreiben.</em>
+</p><p>War Albus etwas wie einst ihr passiert? Hatte ein schwarz-magisches Objekt von ihm Besitz ergriffen und zwang ihn dazu, diese schrecklichen Dinge zu tun?</p><p>„Danke", flüsterte sie geistesabwesend und Riddle erhob erstaunt den Kopf. „Danke wirklich!" Plötzlich hatte sie eine Hektik ergriffen. „Du hast mir wahrlich geholfen!" Mit diesen Worten war sie aus der Zelle geflohen. Sie musste sofort nach Hogwarts und Albus' Sachen durchsehen. Vielleicht konnte sie dort endlich des Rätsels Lösung finden.</p><p> </p><p align="center">oOo</p><p> </p><p>Gesagt. Getan. Auf schnellstem Wege apparierte Ginny nach Hogwarts. McGonagall begrüßte sie mit skeptischem Blick, führte sie aber, nachdem sie ausführlich darum gebettelt hatte, in Albus' Jungenschlafsaal bei den Slytherins. Der Raum mit vier Betten war eng und klein, die Decke niedrig. Ihr Sohn hatte seine wenigen Besitztümer unter seinem Bett verstaut. Der Holzfußboden knartschte, als sie eine schwer beladene Kiste hervorzog. Hektisch begann sie sich durch das Spielzeug zu wühlen, fand aber kein Buch. Der nächste Kasten beinhaltete Freizeitkleidung und erklärte endlich, warum er in den Ferien immer so zerknittert nach Hause kam. Im dritten hatte er Bücher gestapelt.</p><p>
+  <em>Bingo!</em>
+</p><p>Mit zitternden Händen holte Ginny eins nach den anderen hervor. Märchenbücher, Sachbücher über Katzen und Meerschweinchen, eine schier endlose Kinderbuchreihe, aus der sie ihm früher immer vorgelesen hatte. Dann, zu allerletzt, fand sie, wonach sie suchte. Ein Tagebuch.</p><p>Der Einband war alt und das Leder bereits zerfleddert und abgegriffen. Sie blätterte durch das Papier und fühlte sich schlecht, so dreist in die Privatsphäre ihres Sohnes einzudringen? Was wäre, wenn er auf den Seiten über ein Mädchen geschwärmt hatte oder peinliche Erlebnisse, Träumereien oder Ängste festgehalten hätte? Alles Dinge, die ein Junge seines Alters nicht der Mutter mitteilen wollte. Doch es ging nicht anders. Sie musste es lesen. Viele Seiten hatte er nicht beschriftet, er war kein regelmäßiger Schreiber. Ginny war froh überhaupt auf Buchstaben zu treffen. Sie hätte nicht gewusst, was sie getan hätte, hätte sie ein leeres Tagebuch gefunden.</p><p>Hektisch überflog sie die erste Seite. Typisches Blabla eines zwölfjährigen Jungens.</p><p>Doch da!</p><p>Da war dieser eine Eintrag, der letzte, danach hatte Albus keinen Stift mehr in die Hand genommen.</p><p>
+  <em>Ich begann also weiterzuforschen.</em>
+</p><p><em>Stundenlang saß ich vorm Spiegel und wartete darauf, dass es zurückkehrte. Ich musste es einmal mit eigenen Augen gesehen haben, nur dann konnte ich davon ausgehen, es mir nicht eingebildet zu haben. Naiv wie ich war, dachte ich, dass alles seinen gewohnten Gang nehmen würde. Ich glaubte, dass sich alles beispiellos wiederholen würde, nur mit dem Unterschied, dass ich dieses Mal genauer </em> <em>wissen würde</em> <em>, was vor sich ging. Dass ich in der Lage sein würde, es in Worte zu fassen.</em></p><p>
+  <em>Es kam wieder.</em>
+</p><p>
+  <em>Ich spürte, wie eine Hand meinen Hinterkopf berührte und über meine Kopfhaut fuhr. Es kitzelte am Haaransatz und ich freute mich, dass es geklappt hatte. Der Spiegel aber nahm keine Notiz vom Geschehen.</em>
+</p><p>
+  <em>Ich wurde unruhig. Die Sanftheit, die ich von den letzten Malen gewohnt war, wich, bevor ich mich darüber wundern konnte. Ein Finger drückte brachial gegen meinen Kopf.</em>
+</p><p>
+  <em>Der Schädelknochen brach. Ich hörte, wie es knackte.</em>
+</p><p>
+  <em>Etwas Fremdes, Dingliches steckte in meinem Gehirn. Es bohrte sich tiefer hinein, immer tiefer. Es ratschte durch mein weiches Inneres wie ein Messer. Ich schrie, doch dann versagte mein Atem, ich konnte keinen Laut mehr herauskrächzen. Ich krümmte mich am Boden und wünschte nur, ich würde sterben.</em>
+</p><p>
+  <em>Als der Schmerz abgeklungen war, blickte ich wieder auf mein Spiegelbild. Dort, wo ich zuvor den Finger gespürt hatte, klaffte ein Loch. Schwarz, rund und drei Zentimeter breit. Ich nahm die Haare beiseite und tastete es ab. Langsam ließ ich meinen Zeigefinger hineingleiten und wider mein Erwarten spürte ich nicht, wie die klebrige Masse meines Gehirns meiner Fingerspitze nachgab. Da war nur ein Loch. Sonst nichts.</em>
+</p><p>
+  <em>Sag mir also nicht, das hätte alles in meinem Kopf stattgefunden.</em>
+</p><p>Der Eintrag war auf den 22. Januar 2018 datiert.</p><p>Wenige Tage später hatte sie Harry verloren. In ihrem Haus hatte es einen geheimnisvollen Kampf gegeben. Aus dem mysteriösen Koma war er nie wieder erwacht. Ginny war mit Lily auf dem Spielplatz gewesen. James hatte sich in Hogwarts befunden.</p><p>Nur Albus war im Haus bei seinem Vater gewesen. Mit tränenerstickter Stimme hatte er erzählt, er wäre in seinem Zimmer gewesen und hätte Schreie von unten gehört.</p><p>Die Wahrheit tat sehr viel mehr weh als die Unwissenheit.</p><p>Ginny schluchzte und schluchzte. Durch die viele Tränen konnte sie nicht mehr die geschriebenen Worte erkennen. Ein stechender Schmerz schoss bei jedem Herzschlag durch ihren Körper. Sie konnte nicht mehr.</p><p>Sie konnte nicht mehr und dachte an ihre Kinder. An Lily und James. Und an Albus.</p><p>Plötzlich empfand sie Abscheu und Ekel.</p><p>Ihr Sohn war ein Monster.</p><p>Sie konnte nicht anders. In diesem Moment, in dem sie solch schweren Verdacht gegen ihn hegte, verteufelte sie sich selbst. Wie hatte es soweit kommen können?</p><p align="center">
+  <em>Liebe war die Poesie der Dämonen.</em>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/75645011">Chapter 7</a>: DER WOLF IM SCHAFSPELZ
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Lockhart!", aufgeregt schrie er den Namen des Insassen, doch wie er bereits vermutet hatte, reagierte dieser nicht auf seine Rufe. „Lockhart! Gilderoy!"</p><p>Nun blickte dieser über seine Schulter, direkt ins Gesicht Tom Riddles. Eilig wandte er sich wieder seinem Mittagessen zu und tat so, als wäre nichts geschehen. Riddle ließ sich auf den Platz neben Lockhart fallen. Dass dieser noch frei war, verwunderte ihn nicht. „Wir müssen reden", eröffnete er das Gespräch.</p><p>Lockhart sah ihn an, als würde er ihn zum ersten Mal erblicken. „Worüber?", fragte er mit großen Fragezeichen in den Augen. „Kennen wir uns?"</p><p>„Ja!", schnaufte Riddle entrüstet, obwohl es ihn nicht verärgern sollte. Was hatte er erwartet? „Wir haben vor ein paar Tagen miteinander gesprochen."</p><p>„Wirklich?"</p><p>Er nickte.</p><p>„Komisch. Daran kann ich mich gar nicht erinnern."</p><p>„Woran kannst du dich eigentlich erinnern?"</p><p>„Hm." Lockhart kaute auf seinen Fingernägeln anstatt auf seinen Möhren. „Ich weiß es nicht."</p><p>„Mir geht es genauso wie dir", begann Riddle zu erzählen, doch hielt inne. Er konnte jetzt nicht anfangen, seine Situation auszubreiten. Wie er beim letzten Gespräch festgestellt hatte, wurde Lockharts Gedächtnis regelmäßig zurückgesetzt. Die Mühe des Sprechens musste er sich nicht machen. Es würde zu nichts führen. Besser war es, sich auf kurze, möglichst direkte Fragen zu beschränken. „Wie sieht dein Ausbruchsplan aus?"</p><p>War es wahnsinnig, mit diesem Mann, der selbst von den anderen Insassen als Spinner bezeichnet wurde, etwas zu planen? Auf jeden Fall! Hätte er andere Möglichkeiten? Keine einzige. Jede Chance, auch wenn sie noch so klein war, musste genutzt werden.</p><p>„Ausbruchsplan?", wiederholte Lockhart wie ein Echo die Worte. „Ich habe nichts geplant!"</p><p>„Doch! Ich habe es doch gehört. Du hattest gesagt, du willst mich mitnehmen." Natürlich konnte Lockhart das nur einfach gesagt haben, es war sogar wahrscheinlicher, als dass er sich etwas dabei gedacht haben könnte. Riddle seufzte und schlug die Hände vors Gesicht.</p><p>„Huch? Warum guckst du denn so traurig?", begann Lockharts Schallplatte von vorn. „Kann man dir irgendwie helfen? Ich bin Gilderoy Lockhart, berühmter Schriftsteller und Abenteurer. Ich war auf langen und weiten Reisen, habe unvorstellbaren Monstern getrotzt."</p><p>Riddle ballte seine Hände und wollte auf den Tisch schlagen. Doch in der letzten Sekunde riss er sich zusammen. Noch einmal wollte er es versuchen. Es gab keinen anderen Weg. „Reisen sagst du?"</p><p>Lockhart nickte aufgeregt. „Möchtest du mitkommen?"</p><p>„Ja, gern." Das war die Richtung, in die er wollte. „Doch wie?"</p><p>Sein Gegenüber kratzte sich am Kopf. „Wie wie?"</p><p>„Wie kommen wir hier raus? Wir werden bewacht. Wir können nicht zaubern, durch die Fußfessel."</p><p>Lockhart folgte seinem Fingerzeig. Er stellte einen Fuß auf die Bank, um die Schnalle um seinen Knöcheln, die seine Magie unterdrückte, aus der Nähe zu betrachten. „Das stellt uns tatsächlich vor ein Problem. Ich überlege schon lang, wie ich hier rauskommen kann, auch wenn ich nicht verstehe, wie ich überhaupt hiereingekommen bin."</p><p>„Wir müssen die Fußfesseln loswerden", half Riddle nach. Er stellte seinen Fuß neben den Lockharts und begutachtete sein Exemplar. Sein Puls raste, als er feststellte, dass seines durch den Kampf gegen Andrew in Mitleidenschaft gezogen worden war. Dort, wo das Beil die Fessel getroffen hatte, war ein tiefer Spalt zurückgeblieben. Vielleicht war es ihm möglich, mit einem Messer den letzten Rest Metall zu durchtrennen und so die Schnalle gänzlich von seinem Fuß zu lösen.</p><p>„Du hast einen schönen Fuß. Doch meinen finde ich besser. Ich bin übrigens Gilderoy Lockhart, Schriftsteller und Abenteurer. Du bist?"</p><p>„Riddle."</p><p>„Ah? Haben wir gerade irgendetwas besprochen?" Lockhart kräuselte die Stirn. „Ich kann mich nicht an deine letzten Worte erinnern, doch du wirkst so, als willst du etwas von mir."</p><p>Langsam nickte er. „Wir haben besprochen, dass wir gemeinsam verreisen und daher die Fußfesseln ablegen wollen."</p><p>„Warum können wir nicht mit den Fußfesseln verreisen?"</p><p>„Weil wir sonst nicht aus dem Gebäude rauskommen." Riddle presste seine Lippen aufeinander. „Weißt du was – mache dir keine Gedanken, sorge einfach für Ablenkung."</p><p>„Ablenkung? Wovon?"</p><p>„Von mir natürlich. Du bist doch Schriftsteller, nicht?"</p><p>Eifrig nickte Lockhart. „Ja! Ja! Ich habe gerade ein neues Buch geschrieben, <em>‚Tanz mit der</em> <em>Todesfee'</em>! Ein Meisterwerk, sag ich dir ganz im Vertrauen."</p><p>Riddle machte ein erstauntes Gesicht. „Erzähle das doch nicht nur mir! Das müssen alle erfahren!"</p><p>Lockhart strahlte übers ganze Gesicht. „Du hast ja Recht!" Mit einem Lächeln, das von einem Ohr zum anderen reichte, stieg er auf den Tisch. „Verehrte Bewunderer und Bewundererinnen … –" Er hielt inne, weil er mit seinem umherschweifenden Blick bemerkte, dass in der Halle keine Frauen anwesend waren. Doch der Umstand verwirrte ihn nicht, mit einer tiefen Verbeugung fuhr er fort. „Meine lieben Freunde, ich freue mich von ganzem Herzen, dass Sie alle heute erschienen sind, um mit mir das Erscheinen meines neuen Buches zu feiern. Gern würde ich jeden von Ihnen einzeln begrüßen, doch leider wird es mir bei einer solch enormen Menge an Personen nicht möglich sein."</p><p>„Schnauze, Lockhart!"</p><p>„Fresse halten!"</p><p>Gelächter brauste auf.</p><p>Riddle biss die Zähne aufeinander und dachte nicht daran, Lockhart vor der bevorstehenden Tracht Prügel zu retten. Das Ablenkungsmanöver würde blendend funktionieren. Langsam, betont unverdächtig stand er auf und glitt durch die Tischreihen. Es versetzte ihn in Staunen: Lockhart ließ sich vom entgegenschlagenden Ärger nicht beeindrucken.</p><p>„Mein Buch, <em>‚Tanz mit der Todesfee'</em>, ist ein Werk, welches mir besonders am Herzen liegt. Ich würde sogar so weit gehen und es als mein bestes bezeichnen. Daher bin ich zu Tränen gerührt, dass es mit solch großer Freude angenommen wird -"</p><p>„Jetzt reicht's!"</p><p>Ein großer, stämmiger Mann, der zu Lockharts Füßen saß, schwang sich auf die Beine und fischte ihm vom Tisch wie einen Karpfen aus einem Teich. Lockhart stieß einen spitzen Schrei aus, während einige andere in Jubel verfielen. Wild um sich schlagend verpasste Lockhart seinem Angreifer einen Kinnhaken, der bei seinen zierlichen Armen sicher nicht besonders schmerzhaft gewesen war. Nichtsdestotrotz schoss dem Anderen die Röte ins Gesicht.</p><p>„Schlag ihm eine rein!"</p><p>„Los! Nicht so zimperlich!"</p><p>„Lass mich es machen!"</p><p>Ehe Riddle sich versah, war eine Schlägerei ausgebrochen. Er musste grinsen. Das war genau das, was er hatte erreichen wollen. Leise huschte er weiter und schaffte es, ungesehen von Rodolphus Lestrange in der Küche zu verschwinden. Glücklicherweise war diese verlassen. Die mit dem Kochen beauftragten Insassen schlugen sich mit den anderen.</p><p>Ohne auch nur eine weitere Sekunde verstreichen zu lassen, begann er in den Schubladen nach einem geeigneten Messer zu suchen. Dabei achtete er nur auf die Größe. Je größer, umso besser. Er würde vorsichtig sein müssen, aber er schätzte sich selbst als geschickt ein. Sein verschwörerisches Grinsen sah er in der Spiegelung des Edelstahls, als er endlich ein geeignetes fand. Es war wirklich riesig und glich beinahe einem Beil. Da er damit bis zu diesem Zeitpunkt recht gute Erfahrungen gemacht hatte, begann er mit dem Werkzeug an der Schnalle zu hebeln und irgendwie den Schlitz zu vergrößern.</p><p>Es dauerte leidlich lange, bis sich erste Erfolge einstellte. Von der Essenshalle aus drang wildes Geschrei zu ihm hinüber. Nicht nur die anderen Insassen schrien, drohten oder feuerten einander an. Mittlerweile hatten sich auch die Wachen eingemischt, die versuchten, die streitlustigen Männer zur Ordnung zu rufen. Aus der Schlägerei war ein Gefängnisaufstand mutiert. Hitzig, denn er wusste nicht, wann die Gunst der Stunde noch einmal so selig mit ihm sein würde, schlug Riddle mit dem Beil auf seine Fußfessel ein. Doch gleich, wie sehr er sich anstrengte, er konnte nicht die Kraft Andrews entwickeln. Verärgert schnappte er nach Luft und schreckte in sich zusammen, als die Küchentür zufiel.</p><p>Schritte kamen eilig auf ihn zu. Riddle hob das Messer zum Schlag an. Gleich würde jeder Augenblick zählen. Wenn sein Gegner mit einem Zauberstab bewaffnet wäre, würde der Überraschungsmoment alles sein, was er ihm entgegensetzen konnte.</p><p>„Hallo?"</p><p>Die Anspannung fiel vom Riddle ab, als er Lockharts Stimme erkannte. Hastig begann er wieder, an der Fessel zu hantieren. Nun würde ihm nicht mehr viel Zeit bleiben.</p><p>„Hast du die Freudentänze gesehen?", schwafelte dieser weiter und schritt auf Riddle zu. „Manche haben sogar geschrien vor Freude."</p><p>„Ich bin ganz deiner Meinung."</p><p>„Was machst du dort?"</p><p>Riddle betrachtete das schwere Beil, was in seinen Händen lag. Es musste von außen merkwürdig anzusehen sein, wie es immer wieder auf sein Knöcheln herabsauste. Der Winkel war alles andere als ideal. „Ich will die Fessel lösen. Daher schlage ich immer wieder in diese Kerbe." Er knirschte mit den Zähnen. „Es funktioniert nicht."</p><p>„Lassen Sie mich mal sehen." Lockhart ging in die Knie, schnupperte und strich so andächtig über die Fessel, dass es für Riddle schon unangenehm wurde.</p><p>„Hören Sie auf!"</p><p>Doch Lockhart ging auf seine Forderung nicht ein. Mit einem letzten Blick auf die Kerbe, die er mit Daumen und Zeigefinger vermaß, sagte er keck: „Jetzt bin ich dran. Allein schaffen Sie das nicht." Mit einem Ruck entwendete er das Beil aus Riddles Hand, der es nur lose hielt.</p><p>Was hätte er auch tun sollen?</p><p>
+  <em>Es gab keine andere Möglichkeit.</em>
+</p><p>Einen Irren mit einer Waffe ausstatten?</p><p>
+  <em>Das war ziemlich gefährlich.</em>
+</p><p>Diesem noch sagen, dass er auf seinen Fuß zielen soll?</p><p>
+  <em>Das konnte mächtig ins Auge gehen.</em>
+</p><p>Doch es war der einzige Weg heraus. Er konnte nicht bleiben, nicht bei den Insassen, die ihn sterben sehen wollten. Nicht bei den Wächtern, die versuchten, ihn umzubringen. Irgendetwas oder irgendwer war hinter ihm her. Er musste zu Ginny.</p><p>„In Ordnung", sprach er mit Grabesstimme. „Mache es, aber ziele gut."</p><p>Lockhart nickte. Ohne weitere Warnung schoss das Beil herab und kollidierte mit der Schnalle.</p><p>Riddle schnappte nach Luft und versuchte, sich trotz des brennenden Schmerzes nicht zu bewegen. Er hatte gezielt und getroffen, doch ein blauer Fleck würde trotzdem bleiben. „Verdammt!", entwich es ihm, als er sich wieder die Kerbe ansah. Sie hatte sich kein Stück verändert. „Es war nicht kräftig genug. Du musst es noch einmal versuchen."</p><p>All seine Energie legte Lockhart in den nächsten Schlag und in den übernächsten und den danach. Wieder und wieder erklärte Riddle ihm zwischen den einzelnen Hieben, was er zu tun hatte. Seine Warnungen wurden bissiger, je länger die Prozedur dauerte. Auch sein Gegenüber reagierte zunehmend gereizt.</p><p>„Das letzte Mal!", schnaufte Lockhart. Mit finsterem Blick ließ er das Beil wieder herabfallen. Diesmal jedoch landete es nicht wie die unzähligen Male zuvor auf der Fessel, sondern durchtrennte Fleisch und Knochen.</p><p>Riddle schrie sich die Lunge aus dem Leib. Tränen schossen ihm in die Augen. Sein Körper bebte unkontrolliert. Er wollte Lockhart beschimpfen und verteufeln, doch er brachte keinen zusammenhängenden Satz über die Lippen. Mit schmerzverzerrtem Gesicht betrachtete er den Stumpf, aus dem immer mehr Blut quoll und den abgeschlagenen Fuß mit der Fußfessel um den Knöchel. Die Blutlache um ihn herum wuchs stetig. Er würde sterben, soviel stand für Riddle in diesem Augenblick fest. Während er nur noch den Schmerz wahrnehmen konnte, redete Lockhart auf ihn ein. „Beruhige dich!"</p><p>Die Worte wiederholte er wie ein Besessener. Zwischendurch setzte sich sein Bewusstsein zurück. Immer wieder wurde er erneut in die Katastrophe gestoßen. „Bitte, es ist gleich vorbei!"</p><p>Doch Riddle konnte nicht aufhören.</p><p>Wimmernd und verzweifelt lief Lockhart hin und her. „Es liegt mit auf der Zunge. Der rettende Zauberspruch, um die Blutung zu stoppen."</p><p>Riddle brüllte.</p><p>„Oh mein Gott! Was habe ich bloß getan? Was habe ich gedacht?", kreischte Lockhart. „Ich glaube, ich wollte es abschlagen und dann die Wunde heilen. Doch der Spruch ... Der Spruch! Er fällt mir nicht ein!" Er quiekte und schlug immer wieder die Hände vor dem Kopf. „Mittlerweile bin ich mir nicht mehr mal sicher, ob ich ihn jemals gekannt habe. Ah! Ich hole Hilfe."</p><p>Eilig wollte er verschwinden, doch da schwang die Tür von neuem auf. Entsetzt und verwirrt hielt er inne und starrte Löcher in die Luft.</p><p>Riddle konnte seine Umgebung kaum noch wahrnehmen. Die Schmerzen in seinem Bein wurden stetig größer. Allmählich verschwamm seine Sicht und er merkte, dass er in eine Ohnmacht abdriftete. Die letzten Momente, die er vor Augen bekam, brannten sich überdeutlich in seine Netzhaut ein.</p><p>Ein Engel beugte sich über ihn. Ihr rotes Haar fiel herab und kitzelte seine geschundene Haut.</p><p>Mit ihrem Zauberstab stoppte sie die Blutung und versorgte die Wunde.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/76229468">Chapter 8</a>: WATERLOO
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Unter seinen geschlossenen Lidern zuckten die Augäpfel wild hin und her. Ginny saß mit einer halben Pobacke auf dem Couchtisch, ihrem Gast zugewandt. In ihrem Schoß hatte sie die Hände wie zum Gebet gefaltet. Sie zitterte.</p><p>Der Raum war abgedunkelt, sie hatte alle Vorhänge zugezogen. Es war finster wie in der Nacht. Nur ein kleiner Lichtstrahl fiel hinein und tanzte durch das Zimmer. Der Staub funkelte darin.</p><p>Den Blick starr auf Riddle gerichtet, strich sie ihm über den feinen Nasenrücken. Eine seltsam intime Geste für sie. Früher hatte sie es bei Harry gemacht, wenn sie morgens neben ihm aufgewacht und er noch geschlafen hatte. Es war eine feine Art, jemandem zu wecken, fand sie.</p><p>Er musste doch aufwachen! Wie lange sollte er denn noch vor sich hindämmern? Ginny hoffte, dass seine Verletzungen nicht allzu schwer sein würden. Notdürftig hatte sie ihm wieder den Fuß ans Bein gezaubert. Immerhin war sie mal Quidditchspielerin gewesen und hatte allerlei Verletzungen live und hautnah erlebt. Sie hatte sich viel anlesen können, auch wenn dies nicht mit einer vollwertigen Heilerausbildung zu vergleichen war.</p><p>Sie klammerte sich förmlich an ihm fest. Riddle war ihre <em>einzige</em> Möglichkeit, Albus zu retten. Wenn er sich wieder an alles erinnern könnte, würde er sagen können, welches Wesen von ihrem Sohn Besitz ergriffen hatte und was es von ihm wollte. Riddles Wissen war enorm ... gewesen.</p><p>Damals. In einer anderen Zeit. Scorpius Malfoy hatte immer wieder seinen Namen geflüstert. <em>Tom Riddle... töten.</em> Albus hatte dem Tagebuch seine Besessenheit gebeichtet. Oder das Wesen hatte sich auf den Seiten verewigt. Was auch immer Riddle damit zu tun hatte – er hing mit drin.</p><p>Es war Ginnys Aufgabe, es herauszufinden.</p><p>„Wie geht es dir?", fragte sie, als er die Augen aufschlug.</p><p>„Geht so. Warum hast du mir geholfen?"</p><p>Seine Stimme klang fremd. Nicht nach dem Tom, der sie in die Kammer des Schreckens gelockt hat und schon gar nicht nach Voldemort. Er war … irgendwas dazwischen. „Weil du mir helfen musst, meinen Sohn zu finden. Albus..."</p><p>Sie sahen sich in die Augen.</p><p>Ginny öffnete den Mund und es floss aus ihr heraus. „Wir müssen ihm helfen. Er ist ... er ist nicht er selbst. Irgendein Wesen hat von ihm Besitz ergriffen und zwingt ihn, schreckliche Dinge zu tun. Nun ist er in Askaban ..."</p><p>„Nein ...", flüstere Riddle. „Sie würden doch kein Kind nach Askaban schicken. Mich hätten sie dahingeschickt, weil sie mich schrecklichster Taten bezichtigen."</p><p>Doch es ging nicht. Weil die Dementoren vor Riddle Reißaus nahmen. Ginny wusste es noch. Überall hatte es damals in den Nachrichten gestanden. Sie hielt sich die Hände vors Gesicht und schluchzte enthemmt. „Sie wissen genau, dass Albus besessen ist. Sie denken, er könnte nichts mehr spüren. Sie hofften, mit der Anwesenheit der Dementoren könnten sie seinen Peiniger in Bedrängnis bringen."</p><p>„Was soll ich machen? Was hat das alles mit mir zu tun?"</p><p>„Woran kannst du dich erinnern?", fragte sie hektisch. Ihre Stimme überschlug sich.</p><p>„An nichts."</p><p>Die Worte waren wie ein Schlussstrich. Ginny sackte zusammen.</p><p>Sie wimmerte: „Wenn du es könntest, dann ... könntest du sicher Albus helfen. Außerdem will das Wesen auch dich töten."</p><p>„Dann müssen wir meine Erinnerungen zurückholen."</p><p>Sie erstarrte. „Wirklich? Das willst du tun?"</p><p>Bitterernst nickte er: „Ich warte schon so lang. Es wird Zeit."</p><p>„Vielleicht, wenn du Albus gegenüberstehst … – Wir sollten nach Askaban gehen ..."</p><p>Riddle zögerte. „Ohne zu wissen, was wir uns gegenüberstellen? Zuerst sollte ich wieder im Besitz meiner Erinnerungen sein."</p><p>Beinahe panisch sprang Ginny auf. Mit zittrigen Händen zerrte sie aus ihrer Tasche Albus' Tagebuch. Riddle nahm es entgegen und blätterte es durch. Fahrig verwies sie ihn auf die Stelle. Die <em>eine </em>Stelle.</p><p>„Sage mir also nicht, dass hätte alles in meinem Kopf stattgefunden ...", las er vor. „Erschreckend."</p><p>Neben ihm sitzend, ihre Hände unter ihrem Körper vergrabend, stimmte sie ihm zu. Doch ihr Blick wurde von etwas anderem als seinem entgeisterten Gesichtsausdruck gefangengehalten. Die Buchstaben, geformt aus königsblauer Tinte - sie leuchteten grell. Ein heller Lichtschein strahlte durch die Finsternis und bildete einen alles mitreißenden Strudel. Riddle und sie wurden ins Tagebuch – in Albus' Dokumentation seiner Jugendsünden - hineingesogen.</p><p>Riddle hatte gesagt, er würde Antworten brauchen? Nun bekam er sie.</p><p> </p><p>oOo</p><p> </p><p>Immer und überall hätte Ginny diesen einen, kalten Wintertag wiedererkannt. Sie waren in einer grauen, schemenhaften Abbildung ihres Hauses gelandet. Im trüb aussehenden Wohnzimmer, wo sie bis vor wenigen Sekunden noch auf dem Sofa gesessen hatten. Nur der graue Schleier, der über ihrer Wahrnehmung lag, erinnerte Ginny daran, dass sie nicht im Hier und Jetzt waren, sondern in einer Kopie der Realität. Dieser eine Augenblick, der ihr Leben für immer verändert hatte, würde sich gleich vor ihren Augen abspielen. Ein Teil von ihr wollte die Lider schließen, doch der andere, mächtigere hatte schon so lange darauf gewartet. Sie wollte alles wissen.</p><p>Ihr Herz zersprang, als sie Harry vor sich sah. Harry mit den wilden, schwarzen Haaren, dass auch im Alter nur durch wenige graue Strähnen durchzogen wurde und den grünen Augen. Sein schiefes Lächeln im Gesicht ließ sie aufschluchzen.</p><p>Nicht mehr Riddle, der sowieso völlig fehl am Platz war, und sie saßen auf der Couch, nun waren es Harry und Albus. Ihre beiden Jungs. Harry hatte sich zum Sohn vornübergebeugt und redete leidenschaftlich auf ihn ein. Albus hingegen saß ruhig, beinahe entspannt da und – ...</p><p>Ginny erstarrte. Er hatte das Tagebuch in den Händen. Eine Träne floss über ihre Wange. Sie spürte wie Riddle eine Hand auf ihren Rücken legte.</p><p>„<em>Bist du nicht langsam zu alt, um einen imaginären Freund zu haben?", fragte Harry.</em></p><p>
+  <em>Albus schüttelte den Kopf. „Für Freunde ist man nie zu alt."</em>
+</p><p>„<em>Soll ich mal ein Treffen mit Hugo ausmachen? Und was ist mit Scorpius Malfoy?"</em></p><p>
+  <em>Wieder schüttelte Albus den Kopf.</em>
+</p><p>„<em>Nicht? Denkst du nicht auch, dass es Zeit wird, Matthew gegen einen Freund, den man anfassen kann, auszutauschen?"</em></p><p>
+  <em>Albus verzog das Gesicht zu einer Grimasse. Wut spiegelte sich in den Augen. Ginny wurde angst und bange, doch Harry schien es nicht zu bemerken, geschweige denn zu beunruhigen.</em>
+</p><p>„<em>Ich kann ihn anfassen!", schrie er seinen Vater an und sprang auf seine Beine, „Und sein Name ist Tom!"</em></p><p>
+  <em>Heftig atmend fuhr er sich durch die Haare und zog an ihnen, als würde er sie ausreißen wollen.</em>
+</p><p><em>Harry erstarrte. „Was hast du da? Halt still!"</em> <em>W</em><em>i</em><em>e ferngesteuert legte er seine Hand auf den Kopf des Jungen und schob die Haare beiseite. Unter seinem erschrockenen Blick hielt Albus still. Harry klappte der Mund auf und er stammelte etwas. „Das ... ein Loch! Wo hast du dir wehgetan?"</em></p><p>
+  <em>Albus verengte die Augen und blickte zu seinem Vater auf.</em>
+</p><p>Ginny, verdammt dazu als stummer Beobachter alles mitansehen zu müssen, quiekte. Seine Augen leuchteten wie die eines Raubtieres.</p><p>
+  <em>Er musterte seinen Vater wie ein Stück Fleisch, eine junge, unerfahrene Antilope, die zu weit von der Herde abgekommen war.</em>
+</p><p>„<em><strong>Du</strong></em>!" <em>Mit verzerrter, rauer Stimme, die gar nicht zu Albus passen wollte und die trotzdem aus seiner Kehle kam, sprang der Junge auf und fiel über seinen Vater her. Seine Augen erstrahlte</em><em>n</em><em> rötlich, als er mit einem Hechtsprung Harry an die Kehle sprang und in die weiche Haut seine kleinen Zähne versengte.</em></p><p>Ginny schrie und schlug die Hände vors Gesicht.</p><p>
+  <em>Harry hatte keine Zeit zum Schreien. Er fiel nach hinten, blass und fahl, heftig atmend und drückte eine Hand auf die Wunde am Hals. Blut strömte zwischen seinen Fingern hervor. „Al..." Gurgelnd und ächzend flüsterte Harry immer wieder den Namen seines Sohnes. „Al..."</em>
+</p><p>
+  <em>Als würde ein Geist sich aus Albus lösen, drang eine graue Silhouette aus seinem Körper hervor und Harry entgegen. Er durchstreifte ihn einmal gänzlich, ohne sonderlich auf Widerstand zu treffen, um sich dann in Luft aufzulösen. Albus sackte zusammen, die Augen nicht mehr rot leuchtend und Harrys kämpfende Bewegungen kamen zum Erliegen. Ohnmächtig lagen beide ineinander gekeilt.</em>
+</p><p>Ginny weinte und schrie. Sie wollte zu ihnen eilen und helfen, doch bevor sie einen Schritt machen konnten, wurde sie von der Szenerie weggezogen.</p><p> </p><p>oOo</p><p> </p><p>Riddle neben ihr stand noch eine Weile starr wie eine Skulptur, als sie sich wieder in der Realität zurückfanden.</p><p>„Was war das?" Ginny stellte die Frage in den Raum und sie stand zwischen ihnen wie ein Elefant. Doch er reagierte nicht. Ungeduldig und mit brummenden Kopfschmerzen ließ sie sich aufs Sofa zurückfallen. „Nie hätte ich gedacht ... Das Wesen ist gefährlich."</p><p>Riddle nickte. „Es ist Voldemort."</p><p>Entgeistert blickte sie ihn an. „Harry hat ihn besiegt."</p><p>„Ich bin doch auch noch da."</p><p>Sie klopfte sich auf die Wangen, um aus dem verrückten Traum wieder aufzuwachen, doch es half nichts. „Du glaubst es also?"</p><p>Wieder nickte er. „Du musst endlich die Wahrheit sehen, Ginny! Du kannst es nicht ewig leugnen!"</p><p>„Es muss dir nicht leidtun." Ginny fuhr sich durch ihr Gesicht.</p><p>Ihr Gegenüber wirkte verändert. Zuvor hatte er aufrichtig gewirkt. Sein Blick hatte tröstend und mitfühlend ihren gesucht. Doch nun… Er saß angespannt auf der Couch und seine Augen taxierte ihre unnachgiebig und forschend. Das raubtierhafte Funkeln, das sie erschrocken in Albus' Augen beobachtet, in Harrys letztem wachen Moment auf Erden – Das spiegelte sich jetzt in Riddles wider. Schon wieder. Zaghaft und wohlüberlegt, als müsste sie eine Bombe entschärfen, fragte sie: „An wie viel kannst du dich erinnern?"</p><p>Ihr Herz schlug bis zum Hals.</p><p>„An alles."</p><p>Das war Tom, der sie in die Kammer des Schreckens gelockt hatte. Das war Voldemort.</p><p>„Ich hätte nie gedacht, dass ich dir noch einmal gegenüberstehen würde, Tom. Erinnerst du dich auch an unsere Gespräche, die wir damals geführt haben?"</p><p>Er nickte erhaben. „An jedes einzelne. Wichtiger ist jetzt aber die Zukunft."</p><p>„Wir müssen nach Askaban, um Albus zu befreien!" Ihre Stimme versagte. Sie schluckte die Galle hinunter. „Du weißt, er will dich umbringen. Wie kannst du überhaupt zweimal existieren?"</p><p>„Er will mich umbringen. Diese Genugtuung sollte ich ihm nicht geben. Zudem würde es ihn stärken, wenn er mich aus dem Weg räumen könnte."</p><p>„Wie das?"</p><p>„Wir leben an zwei verschiedenen Stellen, aber sind dieselbe Person, eigentlich."</p><p>„Eine gespaltene Persönlichkeit? Du bist der Gute und er -..." Sie verstummte.</p><p>„Ja, eine gespaltene Existenz, nur sind wir räumlich nicht aneinandergebunden. Aber durch das doppelte Bestehen sind wir beide geschwächt, sozusagen nur hälftig stark."</p><p>„Und durch das Auslöschen der einen, unliebsamen Hälfte könnte Voldemort erstarken?"</p><p>Tom nickte. „Das darf nicht passieren. Ich will erstarken."</p><p>„Was willst du machen, wenn du deine andere Hälfte besiegt hast?"</p><p>„Er benutzt Albus als Wirt. Willst du ihm nicht helfen? Was nützt es deinem armen, unschuldigen Sohn, wenn du solche Fragen stellst?"</p><p>Ginny verstand seine Gedankengänge, aber sie sah auch die Notwendigkeit. Sie konnte nicht auf seine Hilfe verzichten, wenn sie Albus retten wollten. „Bitte! Du bist der Schlüssel zu allem. Allein habe ich keine Chance."</p><p>„Wir werden uns in höchste Gefahr begeben."</p><p>„Für meinen Sohn... Al...", flehte sie, „mache ich alles." Sie betrachtete sein schwarzes, wildes Haar und sah tief in seine grünen Augen. Er zwinkerte heftig. Seine Brust hob und senkte sich schlagartig. Es war ein Hyperventilieren, aber aus Freude. Tiefe, innige Freude über ein Wiedersehen. Sie hatte immer gewusst, dass es eines Tages anstehen würde. Das schiefe Lächeln, das sie immer so an ihm geliebt hatte, umspielte seine Lippen. „Für deinen." Sie beugte sich nach vorn und küsste ihn zärtlich.</p><p>Er riss seinen Kopf weg. Sie stieß einen spitzen Schrei auf, als er sie von sich wegschubste und aufsprang. Mit der Hand fuhr er sich gründlich über die Lippen. Wieder und wieder. Angewidert zischte er sie an: „Ginny! Ich bin es – Tom Riddle! Nicht Harry!"</p><p>Der Traum endete genauso abrupt, wie er gekommen war.</p><p>Erschrocken riss sie die Augen auf. Ein rötlicher Schimmer legte sich auf ihre Wangen. „Es tut mir leid. Was ist in mich gefahren?" Sie sah ihn an und wusste nicht, wie sie ihn für Harry hatte halten können. Seine dunklen Augen starrten kalt zurück. „Warum kann ich meiner Wahrnehmung nicht mehr trauen?"</p><p>„Du bist erschöpft."</p><p>Sie verfielen in ein unangenehmes Schweigen.</p><p>Tom lächelte verwegen. „Dein Unterbewusstsein spielt dir einen makabren Streich."</p><p>„Makaber?"</p><p>„Es wäre schon makaber, wenn ich Potters Platz einnehmen und der Stiefvater seiner Kinder sein würde. Dass du ihn durch mich ersetzen möchtest."</p><p>Ginnys Nackenhaare stellten sich auf. Was hatte sie gerade getan? Sie schmeckte ihn noch auf ihren Lippen. Die Galle stieg in ihr hoch. Er sah es genau.</p><p>Barbarisch erfreut klatschte Tom in die Hände. „Ich helfe dir und deinem Sohn. Ruhe dich für ein oder zwei Stunden aus, sonst bist du zu nichts zu gebrachen. Dann geht es los. Er muss aufgehalten werden."</p><p>Ginny nickte. „Versprich mir, dass du alles tust, um ihn zu retten", forderte sie mit Grabesstimme.</p><p>Er lächelte verwegen. „Du wirst ihn wiedersehen, deinen Albus… – Das verspreche ich dir, so wahr mein Name Tom Riddle ist."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/76623287">Chapter 9</a>: DIE CRUX DER LIEBE
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="justify">Askaban hatte sich vor ihnen wie ein Barbar in der wilden Nordsee erhoben. Es war ein unwirklicher Ort. Wenn man dem Zauberergefängnis, das schrecklichste, das es jemals gegeben hatte, entgegensteuerte, wurde man immer von rauen Winden und tosenden Wellen begrüßt, die einem entgegenschlugen. Ginny wusste nicht, ob der wütende Sturm natürlich oder magisch bedingt war. Sie konnte sich beides gut als Ursache vorstellen. Je näher sie dem rabiaten Blockbau kam, desto höher stieg ihre Endzeitstimmung. Eine völlig normale Reaktion auf diesen Ort.</p><p align="justify">Einerseits war sie froh, dass Tom an ihrer Seite war. Er war ein fähiger Zauberer und würde sie schützen – sofern er es wollte. Auf der anderen Seite allerdings ahnte sie, dass sie mit ihm alles noch unberechenbarer gemacht hatte. Wer konnte schon sagen, ob sie ihm trauen konnte? Sie wusste noch nicht einmal, ob man sich auf <em>sie</em> verlassen konnte. Die Tatsache, dass der gutherzige Riddle zum abgebrühten Tom geworden und sie gleichermaßen auf seinen Vornamen umgestiegen war, sprach Bände. Aber sie war wild entschlossen, Albus aus den Klauen Voldemorts zu befreien und wieder nach Hause zu bringen. Dort, wo er hingehörte.</p><p align="justify">Sie stiefelten in die Anmeldung, einem kleinen Gebäude auf einer Insel vor Askaban. Das Zimmer war vollgestellt mit abgewetzten Möbeln aus den Siebzigern und eine große Fensterwand holte den Blick auf das von Dementoren umschwebte Gefängnis in die Mauern. Ginny erschauderte beim Gedanken, gleich dort hineinspazieren zu müssen.</p><p align="justify">„Wen wollen Sie besuchen, Sir, Madam?“, fragte die Frau hinter dem Tresen.</p><p align="justify">„Albus Potter“, antwortete Ginny mit zittriger Stimme.</p><p align="justify">Sie wunderte sich, dass die Blondine überhaupt den Namen verstanden hatte, aber sie begann, eifrig in einem Buch hin und her zu blättern. Als sie gefunden hatte, was sie suchte, legte sie ihren Finger drauf und sprach: „Das tut mir leid. Für Potter ist eine Besuchssperre eingetragen.“</p><p align="justify">Tom neben ihr stöhnte auf. „Dafür haben wir keine Zeit! <em>Imperio</em>!“</p><p align="justify">Ihr Blick wurde glasig und sie wedelte mit einer Hand den Beiden zu. „Kommen Sie mit! Ich bringe sie hin.“</p><p align="justify">Während Ginny ihr hinterherschritt, sackte ihr Herz in die Kniekehle. Sie hatten gerade mal das Vorzimmer von Askaban betreten und schon hatte Tom einen Unverzeihlichen angewandt. Froh konnte sie sein, wenn er im Laufe des Tages nicht noch die anderen beiden anwandte. Doch all ihre Bedenken schob sie zur Seite. Ginny fragte sich nicht, was passieren würde, nachdem sie Albus gerettet hatten. Hauptsache, sie hatte wieder ihren Jungen bei sich. Für den Rest des Problems, namens Tom, würde sich schon eine Lösung finden lassen, wenn erst einmal Albus in Sicherheit wäre.</p><p align="justify">Sie setzten sich in ein kleines Ruderboot, das sie wie eine Fähre über die stürmische See brachte. Die Wellen waren hoch und Ginny musste sich am Rand festkrallen und ihren Blick ins Innere, auf ihr Schuhwerk, konzentrieren, um nicht seekrank zu werden.</p><p align="justify">„Wehe, du übergibst dich!“, drohte ihr Tom.</p><p align="justify">„Haben wir eigentlich einen Plan?</p><p align="justify">„Das fragst du reichlich spät, nicht?“, höhnte er. Mir finsterem Blick befahl er ihr: „Vertrau mir.“</p><p align="justify">Sie nickte, weil sie keine Kraft für eine Diskussion hatte, die sie eh verlieren würde.</p><p align="justify">Am Fuße Askabans angekommen, hielt er ihr die Hand hin und half ihr auszusteigen wie ein Gentleman. Gemeinsam gingen sie zum Eingangstor. Da sie taumelte und mit jedem Schritt, den sie nach vorn setzte, mehr schwankte, legte er ihr einen Arm um die Schultern. Sacht zog er sie zu sich und da es sich für Ginny einfacher gestaltete, legte auch sie einen Arm um seinen Körper. So ineinandergehakt gingen sie auf zwei Wärter zu, die sie verwundert über das plötzliche Auftauchen ansahen.</p><p align="justify">„Bleiben Sie stehen!“</p><p align="justify">Noch ehe einer der Beiden seinen Zauberstab ziehen konnte, hatte Tom seinen aus dem Ärmel gleiten lassen. „<em>Imperio</em>!“</p><p align="justify">Willenlos wandte sich der eine Wachmann gegen seinen Kollegen und schaltete ihn aus.</p><p align="justify">„Bring uns zur Zelle von Albus Potter!“, befahl Tom. „Ich hätte nie gedacht, dass ich mal einen Albus retten werde.“</p><p align="justify">Von innen war Askaban ein noch düsterer Ort als von außen. Es gab kein natürliches Tageslicht und die Fackeln, die im Abstand von ein paar Metern an den Wänden hingen, erhellten die düsteren Gänge nur spärlich. Der Geruch von Schimmel und allesberührender Feuchtigkeit stieg Ginny in die Nase. Ihr Hals kratzte und sie musste husten. Die dicken Mauern waren hochgezogen und es gab keine Türen zu den Zellen. Nur eine vertikale Reihe andersfarbiger Steine markierte den Beginn einer neuen Zelle. Die Präsenz der Dementoren, die nur von außen um die das Gemäuer streiften, war allgegenwärtig. Das Gefühl von Ohnmacht und Hoffnungslosigkeit nagte an ihr, seit sie den ersten Schritt rein nach Askaban gesetzt hatte. Es gedeihte, während ihre Verzweiflung über Albus‘ Untaten und Harrys Tod den perfekten Nährboden dafür geschaffen hatte. Sie schluckte und versuchte die Gedanken zu vertreiben, doch es gelang ihr nicht.</p><p align="justify">„Du musst einen Patronus heraufbeschwören“, verlangte Tom von ihr. Seine Worte klangen fern, so als stammten sie aus einer anderen Welt. Als wären sie versunken im Sand der Zeit.</p><p align="justify">Sie versuchte, eine frohe Erinnerung aus ihrem Gedächtnis zu kramen. Doch in jeder ihrer Erinnerungen kam Harry oder Albus vor. Selbst an den Geburtstagen seiner Geschwister war Albus doch immer anwesend gewesen und bei James‘ Geburt, das Ereignis, das ihre Gedanken nicht sofort zu ihrem Zweitgeborenen lenkte, hatte sie klar und deutlich auch Harry vor Augen. Ihr Schmerz wuchs ins Unermessliche.</p><p align="justify">„Was machst du denn? Beeile dich!“</p><p align="justify">Dieser Ort sog den letzten Funken Vernunft aus ihr. Was wäre, wenn Albus‘ Untaten und Harrys Tod gar nicht real wären? Vielleicht waren sie Hirngespinste, erschaffen von den Dementoren? Eine Einbildung, die sich in ihrem Kopf eingenistet hatte, während sie die Pforte passiert hatte? Ginny wollte es nur zu gern glauben.</p><p align="justify">„<em>Expecto Patronum!</em>“ Ein silberner Hauch waberte aus ihrer Zauberstabspitze heraus.</p><p align="justify">„Ist das alles?“, zischte Tom. „Strenge dich an!“</p><p align="justify">Sie versuchte es noch einige Male, doch das Ergebnis war nur marginal besser.</p><p align="justify">Der Wärter und Tom hielten inne.</p><p align="justify">„Es ist soweit.“ Tom sah sie ungerührt an. Wie schaffte er es bloß, selbst hier so emotionslos zu sein? Er war eben ein Ungetüm … – ein Monster …</p><p align="justify">Die Mauer zu Albus‘ Zelle teilte sich mit einem immensen Grollen und gab das Innere frei. Dort, in der Mitte, in der Dunkelheit, die nur durch einen Schimmer erhellt wurde, saß ihr Sohn.</p><p align="justify">Albus … – seine Rettung war nah.</p><p align="justify">So wie auch die Gefahr.</p><p align="justify">Doch sie hatte den Besten an ihrer Seite. Wenn irgendjemand die Situation beherrschen konnte – dann war es Tom.</p><p align="justify">Sie blickte zu ihm und sah ihm direkt in die Augen. Er nickte. Sie auch.</p><p align="justify">„Albus!“, rief sie, ließ Tom los und machte einen Schritt in die dunkle Zelle hinein. „Ich bin es, Ginny. Deine Mama.“ Immer näher trugen ihre Beine sie und langsam löste sich die schemenhafte Silhouette ihres Sohnes in ein scharfes Bild auf.</p><p align="justify">Er lag vor ihren Füßen, auf die Seite gedreht, die Beine im Winkel und angezogen. Eine Hand hatte er unter seinem Kopf geschoben und die andere lag von ihm gestreckt so wie eine Stütze. Seine Kleidung und auch seine Haare waren verschmutzt vom Dreck und Staub der Zelle. Schürfwunden fanden sich auf seiner Haut und seine Finger waren abgewetzt und blutig, als hätte er wie wahnsinnig versucht, sich einen Weg durch die Mauern zu kratzen. So geschunden und erschöpft lag er nun regungslos vor ihr und reagierte weder auf ihre Worte, noch auf den Klang ihrer Stimme.</p><p align="justify">So unendlich hatte sie gehofft, dass er seinen Kopf bewegen würde, wenn sie ihn ansprach. Doch nur das gleichmäßige Heben und Senken seines Brustkorbs zeugte davon, dass er noch am Leben war.</p><p align="justify">„Versuch es nochmal, aber fass ihn nicht an“, befahl Tom ihr.</p><p align="justify">„Albus. Ich bin deine Mama, wir werden dich hier ausholen“, erzählte sie ihm. „Ich bring dich nach Hause, Schatz, da kannst du dich in deinem Bett ausruhen. Deine Schwester wartet schon auf dich.“</p><p align="justify">Nichts passierte.</p><p align="justify">„Es ist nicht deine Schuld, Albus. Ich bin nicht sauer auf dich, du hast nichts verkehrt gemacht. Ich will dich nur wieder bei mir haben … – Ich will wieder mit dir Quidditch spielen … – Ich liebe dich … – So sehr!“</p><p align="justify">Aus seiner Kehle kam ein Krächzen. Es klang kaum menschlich, eher wie das einer Maschine. Tränen vernebelte Ginny ihre Sicht. Ihre Augen brannten. „Ich weiß, es muss schrecklich für dich gewesen sein … – Weißt du, ich habe in meinem ersten Schuljahr Ähnliches erlebt … – Auch ich war von einem bösen Geist besessen, der mich hat Dinge tun lassen, die ich nicht wollte.“ Ihre Augen schnellten zum Zelleneingang. Dort stand der böse Geist – ihr böser Geist. Er stand dort mit Körper und Seele. Fleisch und Blut.</p><p align="justify">Was – in Merlins Namen hatte sie nur getan?</p><p align="justify">Als sie zu Tom blickte, geschah es. Mit einem Schwung, so plötzlich wie ein Blitz, setzte sich Albus aufrecht hin.</p><p align="justify">Ihr Kopf fuhr wieder herum.</p><p align="justify">Im Schneidersitz thronte er auf dem Zellenboden. Sein Rücken war durchgestreckt und seine Hände in seinem Schoß gebettet, doch er war nicht die Ruhe selbst – er raste vor Zorn. Er hechelte wie ein Hund und hatte sein Gesicht zu einer Fratze verzogen. Immer wieder biss er sich auf die Lippen und das so kraftvoll, dass sein Blut in Schlieren das Kinn hinunterlief. Seine Augen schimmerten rot und waren überhaupt nicht die von Albus ...</p><p align="justify">Das war nicht ihr Sohn …</p><p align="justify">Ginny wusste es augenblicklich und konnte es trotzdem nicht glauben: Sie kamen zu spät.</p><p align="justify">„Geh da weg!“, warnte Tom sie, doch in ihren Schreien ging seine Warnung unter.</p><p align="justify">„Albus!“ Sie weinte und strich ihm sacht über die Stirn.</p><p align="justify">„Nicht anfassen!“</p><p align="justify">Doch es war zu spät. Albus‘ Hände waren hochgeschossen und krallten sich in ihre Hand. Sie wollte sie zurückziehen, doch er war kräftiger, als sie erwartet hätte. Sie zerrte und ruckelte an seinem Griff, doch sie konnte ihn nicht abschütteln.</p><p align="justify">Gurgelnd sah er sie an und mit einem Ruck hatte er sie zu sich gezogen.</p><p align="justify">Ihr Körper schleifte über den harten Zellenboden. Noch ein Schrei löste sich aus ihrer Kehle. Ehe sie sich versah, lag sie rücklings und Albus kniete über ihr und hatte die kleinen Hände um ihren Hals gelegt.</p><p align="justify">Er drückte zu und sie bekam keine Luft.</p><p align="justify">Sie keuchte und versuchte, ihn von sich wegzuschubsen, doch es war vergebens.</p><p align="justify">Dann, als sie schon dachte, es wäre aus, wurde Albus von ihrem Körper heruntergeschleudert. Krachend landete er gegen die hintere Zellenwand. Sie schnappte nach Luft und richtete sich auf. Ihre Arme waren schwach und nur mit Mühe schaffte sie es, ihren Oberkörper anzuheben.</p><p align="justify">Sie sah, wie Albus windig aufsprang und in Kampfposition gegen Tom ging. Mit Schrecken musste sie feststellen, dass er ihr den Stab geklaut hatte und ihn mordlüstern auf Tom hielt.</p><p align="justify">Tom, nicht mehr so erhaben, sondern eher angespannt wirkend, hatte Harrys Zauberstab in der Hand und hielt diesen ihrem Sohn entgegen. „Ich warne dich: Versuche es erst gar nicht!“, warnte er.</p><p align="justify">„Wie schön, dass du zu mir kommst, anstatt dass ich dich holen muss“, sagte Albus voller Hohn. „Das spart mir den Weg. Du warst schon immer eine besondere Weise von einfältig, nicht wahr, Tom?“</p><p align="justify">Ginny zitterte. Diese Stimme … – Sie gehörte auf keinen Fall zu Albus. Das war nicht ihr Sohn.</p><p align="justify">„Dein Hochmut ist bezeichnend und kommt bekanntlich vor den Fall“, sagte Tom finster und bitterernst.</p><p align="justify">„Daher hast du auch mich erschaffen. Ich bin du, Tom“, sprach Voldemort, „Nur ohne deine Fehler. Doch nun sind der Worte genug gewechselt.“</p><p align="justify">Ein Kampf entbrannte, der Ginny in den Wahnsinn trieb. Zauber flogen hin und her. Schutzschilder wurden heraufbeschworen und verpufften unter dem heftigen Beschuss.</p><p align="justify">Sie bangte um Tom und sie sorgte sich um Albus. Am ganzen Körper zitternd, hatte sie die Hände gegen den Kopf geschlagen.</p><p align="justify">„Albus! Nein!“, brüllte sie. „Albus, du musst dich erinnern! Ich bin deine Mama, ich liebe dich und ich hätte dich nie allein lassen dürfen. Ich weiß nicht, was dein Vater mit dir gemacht hat und was zwischen euch vorgefallen ist, aber ich hoffe, du kannst es mir erzählen. Ich flehe dich an – Albus! Rede mit mir, du bist doch mein Sohn. Ich weiß, dass du genauso um Harry trauerst wie ich.“ Sie schluchzte und rief immer wieder seinen Namen. „Albus! Albus! Hörst du mich? Erinnerst du dich an mich?“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29333343/chapters/76623326">Chapter 10</a>: DIE POESIE DER DÄMONEN
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <em> <b>Erzähl mir nicht, ich wisse nicht, was Wirklichkeit ist. </b> </em>
+</p><p align="center">
+  <em> <b>Sage bloß nicht, dass hätte alles nur in meinem Kopf stattgefunden.</b> </em>
+</p><p align="center"> </p><p align="justify">Ginny saß in einer Zelle. Weißer Boden, weiße Wände. Ein kleines, weißes Fenster, durch das die Sonne hineinschien. Der weiße Schnee hatte begonnen zu tauen. Ein weißer Kittel ging ihr bis zu den Knien. Seit Stunden starrte sie an die Wand, an die Stelle, wo sie ein Bild ihrer Familie angebracht hatte. Von Lily und James, Harry und Albus. Immer wieder streiften ihre Augen über die unwirklich lächelnden Gestalten.</p><p align="right">„<em>Mrs. Potter, ihre Medikamente.“</em></p><p align="justify">Sie nickte und tat, wie ihr geheißen worden war. Mit einem Schluck Wasser spülte sie die Pillen hinunter. „Wann kann ich Albus sehen?“, fragte sie hoffnungsvoll. Bald – ja bald – da würde sie ihn wiedersehen. Sie spürte es in ihren Knochen. Sie fühlte es in all ihren Fasern. Schon bald würden sie wieder vereint sein. Mutter und Sohn, so wie es sich gehörte. Harry würde sich über ihren Anblick freuen.</p><p align="right">„<em>Mrs. Potter, Sie wissen doch, dass das nicht geht.“</em></p><p align="justify">Sie schluckte. Es war noch nicht soweit. Immer noch nicht. Bitterkeit machte sich in ihr breit. Und das Gefühl, betrogen worden zu sein. „Aber er hat es doch versprochen!“, protestierte sie lauthals.</p><p align="right">„<em>Wer hat es versprochen?“</em></p><p align="justify">„Na, Tom war es. Er hat es mir gesagt.“</p><p align="right">„<em>Ich weiß nicht, wer das ist, Mrs. Potter.“</em></p><p align="justify">Tom. Tom Riddle. Er hatte es ihr versprochen. Ihre Stimme versagte.</p><p align="right">„<em>Ist es der Tom, der mit Ihnen in Askaban eingebrochen ist?</em></p><p align="right">
+  <em>Der, der einen Imperiusfluch auf den Wachmann gelegt hat?“</em>
+</p><p align="justify">„Ja! Genau, das ist er! Er hat versprochen, dass ich meinen Sohn wiedersehen werde.“</p><p align="right">„<em>Mrs. Potter… Ginny… Dieser Tom, der Mann, von dem sie sprechen…“</em></p><p align="right">„<em>Es war niemand bei Ihnen…“</em></p><p align="right">„<em>Man hat Sie allein gefunden…“</em></p><p align="right">„<em>Und die Wärter sagen, dass Sie auch allein reingegangen sind.“</em></p><p align="justify">„Nein! Das kann nicht sein! Er hat mich in den Arm genommen und gestützt. Ich kann mir das nicht eingebildet haben! Wir wollten doch gemeinsam Albus retten.“</p><p align="right">„<em>Aber Albus war nie in Askaban!“</em></p><p align="right">„<em>Man würde doch kein Kind nach Askaban schicken...“</em></p><p align="justify">Alles drehte sich um Ginny. Schon seit Langem verstand sie die Welt nicht mehr. Wo waren sie alle hin? Harry? Albus? Tom? Das konnte nicht alles nur in ihrem Kopf passiert sein... Sie hatte sie doch anfassen können.</p><p align="center">„<em>Erzählen Sie mir nicht, ich wisse nicht, was Wirklichkeit ist!“</em></p><p align="center">„<em>Sagen Sie bloß nicht, dass hätte alles nur in meinem Kopf stattgefunden!“</em></p><p align="justify">Als sie Harry das erste Mal gesehen hatte, hatte sie sich unsterblich in ihn verliebt. Doch er hatte sie zurückgewiesen. Noch gut konnte sie sich an den Schmerz in ihrer Kinderseele erinnern. Zum Glück hatte sie Tom gehabt. In der ersten Klasse war er ihr Nabel der Welt gewesen und nie wieder war sie mit jemandem so eins gewesen. In der fünften war sie schließlich mit Harry ausgegangen. Ihre Liebe auf den ersten Blick hatte er endlich erwidert. Ihr Glück war das Maß aller Dinge gewesen. Sie hatten geheiratet und Kinder bekommen. Und bei Merlin – wie sie diese Kinder liebte! Alles würde sie für sie tun. Gar töten oder sterben würde sie.</p><p align="center">
+  <em> <b>Doch die Liebe hatte eine Crux:</b> </em>
+</p><p align="center">
+  <em> <b>Sie war die Poesie der Dämonen.</b> </em>
+</p><p align="center"> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="5OCGfZp9JmnL2zbzenmXXhpgl7RMKi1_dJ24lu42Sf-T6vegaWHidbHWZpjPe7YzJVm8AdP4cuIobZkQ6iBwgw"/>
+          <input value="29333343" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_29333343">
+  <form class="new_comment" id="comment_for_29333343" action="/works/29333343/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="125YLLPp_69KHXAv6pIaZ5EkKosohrNYNMNMQAyxdK-gZCnxQPU7szAQIERfkDsKrh0BPrdU7MVoM23GCKdN0w"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_29333343">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_29333343" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_29333343=new LiveValidation('comment_name_for_29333343',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_29333343.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_29333343">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_29333343" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_29333343=new LiveValidation('comment_email_for_29333343',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_29333343.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_29333343" class="landmark">Comment</label>
+        <textarea id="comment_content_for_29333343" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_29333343" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_29333343_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_29333343">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_29333343=new LiveValidation('comment_content_for_29333343',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_29333343.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_29333343.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_29333343" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/29333343/hit_count.json")})</script>
+
+
+  </body>
+</html>

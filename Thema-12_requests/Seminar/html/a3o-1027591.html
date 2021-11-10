@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":76,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Die Drachentriade - Salemathy - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="zD4EweuMb1uRxYByR3VcXJsP2miKC_V28VjfZJQT4R0j_geDGQcYEZjMuvUWSx33FrQo9nk9iWxNR-UgRuaLDw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="C_hQj0DzcHgcxCoNiBLbR63Jvg2u4k4XJELdX4KkeVjkOFPNsngHMhXNEIrZLJrsIHJMk13UMg2YXecbUFETSg"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;sherlock (tv)&quot; m/m NOT &quot;sherlock holmes/john watson&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=1027591">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/1027591/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/1027591/Die%20Drachentriade.azw3?updated_at=1386810830">AZW3</a></li>
+          <li><a href="/downloads/1027591/Die%20Drachentriade.epub?updated_at=1386810830">EPUB</a></li>
+          <li><a href="/downloads/1027591/Die%20Drachentriade.mobi?updated_at=1386810830">MOBI</a></li>
+          <li><a href="/downloads/1027591/Die%20Drachentriade.pdf?updated_at=1386810830">PDF</a></li>
+          <li><a href="/downloads/1027591/Die%20Drachentriade.html?updated_at=1386810830">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Dravo%20Malfoy*s**q*/works">Dravo Malfoy/?</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Character:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Draco%20Malfoy/works">Draco Malfoy</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Drachen/works">Drachen</a></li><li><a class="tag" href="/tags/Animagus/works">Animagus</a></li><li><a class="tag" href="/tags/Verwandlung/works">Verwandlung</a></li><li><a class="tag" href="/tags/Wunschmagie/works">Wunschmagie</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2013-11-01</dd><dt class="words">Words:</dt><dd class="words">10835</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="comments">Comments:</dt><dd class="comments">2</dd><dt class="kudos">Kudos:</dt><dd class="kudos">5</dd><dt class="hits">Hits:</dt><dd class="hits">295</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Die Drachentriade
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Salemathy/pseuds/Salemathy">Salemathy</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Drachen sind wunderschöne und geheimnisvolle Wesen ... dieser Meinung war er schon immer ... nun kann er am eigenen Leib erfahren, wie es ist einer zu sein ...</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p><br/>
+Stöhnend rieb er sich den Hinterkopf und versuchte in eine aufrechte Position zu kommen. Jeder einzelne Knochen im Körper tat ihm weh und in seinem Kopf schien der reinste Trommelwirbel zu toben.<br/>
+Wie war er nur hierher gekommen?! Was machte er hier, und vor allem, wer war er überhaupt? Angestrengt versuchte er sich an irgendetwas zu erinnern. Da, ganz tief in seinem Inneren, da war etwas. Mühsam trachtete er danach, diesen Gedanken, dieses Gefühl zu erfassen. Immer näher kam es und dann hatte er ein Bild vor Augen. Zwei leuchtend grüne Augen schauten ihn unendlich traurig an. Eine Wehmut erfasste ihn. Wem mochten diese Augen nur gehören?<br/>
+Seufzend erhob er sich nun endgültig und schaute sich suchend um. Diese Fragen brachten ihn nicht weiter, aber hier musste es doch irgendetwas geben, dass ihm weiterhelfen konnte.<br/>
+Bäume, Sträucher, eine Lichtung. Das war alles, was er sah. Enttäuscht wollte er sich schon wieder in das weiche Gras sinken lassen, als er hinter sich ein leises Knacken vernahm. Schnell drehte er sich um, nur um in ein paar große und unendlich gütige Augen zu schauen. Vor lauter Schreck fand er sich im Gras wieder. Ein dumpfes Dröhnen kam daraufhin von seinem Gegenüber. Es dauerte einen Moment bis er verstand, dass der Andere lachte. Eine zarte Röte schlich sich auf seine Wangen. Er räusperte sich und schaute mutiger als er sich fühlte auf das Wesen vor ihm.<br/>
+„Wer bist du? Was bist du? Und wo bin ich hier?“ fragte er zögernd. Eigentlich rechnete er nicht wirklich mit einer Antwort. Umso mehr überraschte es ihn, als das schlangengleiche, geflügelte Wesen anfing mit tief dröhnender Stimme zu sprechen.<br/>
+„Das sind eine Menge Fragen, kleiner Drache. Doch die wichtigste hast du noch gar nicht gestellt. Ich bin Silberflügel, der Älteste der Wasserdrachen und dies ist mein Heim. Doch nun sag, was dich wirklich beschäftigt.“ Silberflügel legte seinen Kopf auf die Vorderkrallen und schaute ihn wissend an.<br/>
+„Weißt du, wer ich bin, und wie ich hierher gekommen bin?“ fragte er und schaute Silberflügel hoffnungsvoll an. „Du hast mich eben kleiner Drache genannt. Ist das mein Name?“<br/>
+„Ich habe dich kleiner Drache genannt, weil du das bist. Tief in dir schlummert eine Drachenseele und wartet darauf befreit zu werden. Mehr weiß ich nicht über dich. Du kamst vor einigen Minuten hier an. Urplötzlich warst du da, von einem Moment auf den anderen.“<br/>
+Traurig schaute er zu Boden. Silberflügel wusste also auch nicht, wer er war. „Was soll ich denn jetzt machen?“ wollte er niedergeschlagen wissen.<br/>
+„Komm mit mir, zur Drachentriade. Zusammen mit Feuerzunge und Sturmwind wird uns eine Lösung einfallen.“ schlug Silberflügel vor und erhob sich.<br/>
+Auch kleiner Drache stand auf und folgte seinem neuen Freund.<br/>
+„Komm, steig auf meinen Rücken. Der Weg ist weit und auf deinen Menschenbeinen wirst du nie ans Ziel kommen.“ forderte Silberflügel und dann erhoben sie sich gemeinsam ins Blau des Himmels. Unter ihnen zogen Seen und Flüsse dahin. Nun erst bemerkte kleiner Drache, dass hier alles voller Leben war. Er sah Hasen und Rehe. Wildkatzen, die ihren Durst an einem kleinen Bach stillten, und sogar einen Adler, der majestätisch an ihnen vorbei flog. Neugierig nahm er alles in sich auf, und vergaß für einen Moment seine Sorgen. Wie lange sie so dahin flogen, wusste kleiner Drache nicht. Irgendwann übermannte ihn die Müdigkeit und er schlief sicher beschützt auf Silberflügels Rücken ein.<br/><br/>
+***<br/><br/>
+Kleiner Drache fühlte sich absolut wohl. Genüsslich kuschelte er sich tiefer in die Kissen und genoss dieses Gefühl. So dämmerte er noch eine ganze Zeit vor sich hin, bis ein leises Kichern ihn aus diesem Zustand riss.<br/>
+Murrend öffnete er ein Auge und versuchte sich erst einmal zu orientieren.<br/>
+Da erklang erneut das Kichern und eine Kleine-Mädchen-Stimme rief: „Nun wach schon auf, du Schlafmütze.“<br/>
+Gähnend setzte er sich auf und sah sich nach der Sprecherin um.<br/>
+„Na endlich.“ Das Mädchen saß frech am Fußende seines Bettes und spielte mit ihren langen geflochtenen Zöpfen. Dabei lächelte es ihn lieblich an. „Nun steh schon auf! Großvater wartet auf dich.“ trieb sie ihn an und zog seine Decke weg. Danach sprang sie vom Bett und wuselte durch den Raum.<br/>
+Einen Augenblick später stand sie schon wieder lachend vor ihm.<br/>
+„Hier hast du ein paar saubere Sachen, die kannst du anziehen. Da hinten ist das Bad.“<br/>
+Damit schob sie ihn durch den Raum in ein angrenzendes Zimmer.<br/>
+„Mein Name ist übrigens Salina.“ rief sie noch, dann war die Tür zu.<br/>
+Kopfschüttelnd machte kleiner Drache sich daran, sich wieder herzurichten.<br/>
+Nun hatte er auch die Gelegenheit sich selbst im Spiegel zu betrachten.<br/>
+Was er sah, gefiel ihm, auch wenn er das dumpfe Gefühl hatte, dass eine Kleinigkeit an diesem Bild falsch war. Ihm schaute ein etwa zehnjähriger, blonder Junge entgegen. Seine Augen waren von einer silbergrauen Farbe, die Nase schmal und gerade. Die Lippen vollendeten feingeschwungen das Bild. Alles in allem war er ein hübscher Junge, wie er zufrieden feststellte.<br/>
+Lächelnd trat er wieder aus dem Bad und schaute sich nach seiner kleinen Gastgeberin um.<br/>
+Diese saß auf einem Stuhl am Schreibtisch und baumelte ungeduldig mit den Beinen.<br/>
+„Da bist du ja endlich. Ich dachte schon du willst ewig da drin bleiben.“ teilte sie ihm vorwurfsvoll mit. <br/>
+Schwungvoll sprang sie auf die Beine und zog kleiner Drache mit sich aus dem Raum.<br/>
+Zusammen liefen sie durch mehrere Flure und über Treppen, bis sie vor einem Salon zum Stehen kamen.<br/>
+Schnell klopfte Salina an und öffnete dann die Tür, noch bevor ein „Herein“ erklingen konnte.<br/>
+„Hier ist er, Großvater.“ rief sie fröhlich einem weißhaarigen älteren Herrn zu und schob kleiner Drache ins Zimmer.<br/>
+„Guten Morgen, kleiner Drache. Hast du gut geschlafen?“<br/>
+Schüchtern nickte er und grüßte ebenfalls. „Darf ich jetzt mit ihm spielen, Großvater?“ fragte Salina und war schon wieder halb dabei kleiner Drache aus dem Raum zu zerren.<br/>
+„Moment, Salina. Was habe ich gestern gesagt?“ fragte der alte Herr leicht vorwurfsvoll.<br/>
+„Aber er sit doch jetzt wach, und du hast doch gesagt, dann darf ich mit ihm spielen!“ heilt Salina dagegen.<br/>
+„Salina, hast du ihn geweckt?“<br/>
+„...“<br/>
+„Salina?!“<br/>
+„Er hat sich bewegt...“ schmollte Salina und ließ sich in einen der Sessel sinken. Sprachlos verfolgte kleiner Drache dieses Schauspiel.<br/>
+Seufzend wandte sich Salinas Großvater an ihn. „Tut mir leid, kleiner Drache. Salina kann manchmal ganz schön stürmisch sein. Wir bekommen hier nicht allzu oft Besuch, musst du wissen. Aber nun setz dich doch.“ <br/>
+„Das macht doch nichts. Ich bin Salina nicht böse, im Gegenteil. Es ist schön, so freudig begrüßt zu werden.“<br/>
+Kleiner Drache nahm ebenfalls in einem der Sessel Platz, während Salina kurz mit dem Schmollen aufhörte, um ein „Siehste...“ hören zu lassen.<br/>
+„Hast du Hunger?“ fragte Salinas Großvater fürsorglich und reichte kleiner Drache einen Teller mit Sandwiches.<br/>
+„Vielen Dank.“ sagte er und griff zu. Dann fiel sein Blick zum ersten Mal in die gütigen Augen in dem alten Gesicht, und er stockte. „Silberflügel.“ hauchte er. Der alte Mund verzog sich zu einem Lächeln und Silberflügel nickte.<br/>
+„Hat Salina es dir nicht gesagt?“ fragte der Drache und stellte das Tablett wieder zur Seite auf den kleinen Tisch.<br/>
+Kauend schüttelte kleiner Drache den Kopf. „Nein, sie hat nur gesagt, dass ihr Großvater auf mich wartet.“<br/>
+„Das ist mal wieder typisch Salina. Wenn sie mal wieder etwas für sich behalten soll, dann weiß es binnen Sekunden die halbe Welt, aber etwas Wichtiges kann sie nicht mitteilen.“ milde lächelnd ließ Silberflügel seinen Blick über seine Enkelin schweifen.<br/>
+„Nun denn, ich bin Silberflügel, wie du festgestellt hast. Dennoch möchte ich dich um eines bitten. Wenn ich in meiner menschlichen Gestalt weile, dann rufe mich nicht bei diesem Namen. Nicht jeder, der unter diesem Dach lebt, kennt mein Geheimnis.“<br/>
+„Wie soll ich Euch dann nennen?“<br/>
+„Mein zweiter Name lautet Salemeth. Rufe mich bei diesem.“<br/>
+„Wie Ihr wünscht. Gestattet ihr mir einige Fragen?“ fragte kleiner Drache vorsichtig.<br/>
+„Aber sicher. Was möchtest du wissen?“ Gütig schaute Salemeth ihn an, dabei nippte er immer wieder an seiner Teetasse.<br/>
+„Nun, zuerst einmal möchte ich erfahren, wo ich hier eigentlich bin.“<br/>
+„Das ist nicht so einfach zu erklären, kleiner Drache. Wir befinden uns so gesehen noch immer an der Stelle, wo wir uns kennen gelernt haben. Jene Lichtung befindet sich parallel zu diesem Haus. Wenn du aber wissen willst, wo wir auf der Landkarte sind, dann lass dir gesagt sein, das Edingborough lediglich 10 km Luftlinie von hier entfernt ist.“<br/>
+Kleiner Drache nickte. Von dieser Stadt hatte er bereits gehört.<br/>
+„Sie Haben gesagt, dass wir zur Triade wollen. Ist das hier?“<br/>
+„Ja, meine Freunde werden bald eintreffen, dann können wir beratschlagen.“<br/>
+„Gut, dann habe ich vorerst nur noch eine Frage. Warum helfen Sie mir?“<br/>
+Wieder lachte Salemeth leise auf. „Du bist ein misstrauischer, junger Mann. Ich helfe dir, weil es in meiner Natur liegt. Dein Wesen ist dem meinem verwandt. Daher ist es eine Selbstverständlichkeit.“ Kleiner Drache fühlte, wie er rot wurde. nun war ihm sein Misstrauen peinlich. „Ich danke Ihnen.“ murmelte er kleinlaut und senkte den Blick. Die nächste halbe Stunde verbrachten Salemeth und kleiner Drache in vergnüglichem Gespräch. Auch Salina gab ihr Schweigen auf und beteiligte sich daran.<br/>
+Dann endlich öffnete sich die Salontür erneut und zwei Männer traten herein. Sie waren erheblich jünger als Salemeth und doch strahlte aus ihren Augen dieselbe Güte und Ruhe. „Stephanos, Raphasos, wie schön euch zu sehen. kommt herein und setzt euch.“ Salemeth winkte ihnen zu und wies dann auf die noch freie Couch.<br/>
+Stephanos, hochaufgeschossen mit feuerrotem Haar und stahlblauen Augen, trat auf die kleine Gruppe zu und gab jedem die Hand, bevor er Platz nahm.<br/>
+Raphasos hingegen hielt sich im Hintergrund. Mit seiner zierlichen, braunhaarigen Gestalt fiel es ihm nicht schwer, die Aufmerksamkeit von sich abzulenken. Seine dunklen Augen nahmen jedoch jede Kleinigkeit in sich auf.<br/>
+„Kleiner Drache, darf ich dir Stephanos Feuerzunge und Raphasos Sturmwind vorstellen? Mit ihnen ist die Drachentriade komplett.“<br/>
+Kleiner Drache musterte die Neuankömmlinge neugierig. Er wusste nicht, was er von ihnen halten sollte. Dennoch flößten sie ihm die gleiche Sicherheit ein, wie Salemeth.<br/>
+„Warum hast du uns gerufen, Salemeth? Hat es etwas mit diesem jungen Mann zu tun?“ fragte Stephanos und ließ seinen Blick über kleiner Drache schweifen.<br/>
+Der alte Drache nickte und berichtete über sein Zusammentreffen mit kleiner Drache.<br/>
+Nun erhob Raphasos das erste Mal seine Stimme. „Sieh mich an, kleiner Drache.“ bat er, während er sich vor seinem Sessel auf die Knie sinken ließ. Sanft nahm er seine Hände und schloss die Augen. Ein fahles Licht breitete sich über ihre verbundenen Hände aus. Kleiner Drache spürte, wie ihn ein innerer Frieden befiel. Er ließ sich in dieses Gefühl fallen und schloss ebenfalls langsam die Augen. Einige Minuten saßen sie so reglos verharrend, dann erklang erneut Raphasos sanfte Stimme.<br/>
+„Ich kann seine Drachenseele spüren. Sie ist sehr mächtig und im Gegensatz zu ihrem menschlichen Ich erinnert sie sich an die Vergangenheit.“ Raphasos öffnete seine Augen und fixierte die stahlgrauen seines Gegenübers.<br/>
+„Kleiner Drache, dir wurde ein großes Geschenk gemacht. Damit du zu dir selbst finden kannst, wurdest du in diese Form transferiert. Deine Vergangenheit wurde ausgelöscht. Erst wenn du im Gleichklang mit deiner Drachenseele bist, ehrt deine Erinnerung zurück. Bis dahin wird sich jeder Fortschritt deinerseits in deinem Äußeren widerspiegeln. mit jeder Erkenntnis wirst du wieder ein wenig älter werden, bis dein wahres Alter erreicht ist.“ Verwirrt schaute kleiner Drache auf Raphasos. Seine Hände zitterten leicht. „Wer hat das getan?“ fragte er leise. Raphasos strich ihm sanft eine Strähne des blonden Haares aus dem Gesicht, ehe er antwortete.<br/>
+„Das weiß ich nicht. Aber eines kannst du dir sicher sein. Wer immer das auch war, er muss dich unendlich lieben.“<br/>
+Ein sanftes Lächeln schlich sich um kleiner Draches Mund und brachte sein gesamtes Gesicht zum Strahlen.<br/>
+„Ich erinnere mich an grüne Augen, ob das seine sind?“ sprach er mehr zu sich selbst.<br/>
+Salemeth nickte leicht. „Das wäre durchaus möglich.“<br/><br/>
+***</p><p><br/>
+Am nächsten Morgen begann der Ernst für Kleiner Drache. Nachdem er sich ais dem Bett gequält und ein satiigendes Frühstück zu sich genommen hatte, wartete auch schon Salemeth auf ihn. <br/>
+"Bist du bereit für deine erste Unterrichtsstunde?"<br/>
+Sofort stand Kleiner Drache vor ihm und nickte eifrig. Er freute sich regelrecht darauf.<br/>
+"Na dann komm." lachte Salemeth und führte ihn in die Bibliothek. In einer der Leseecken nahmen sie Platz. Auf dem Tisch stand eine kleine Phiole mit silbernem Inhalt.<br/><br/>
+"Bevor wir mit der ersten Lektion anfangen können, müssen wir dein Magielevel bestimmen, damit du nicht später in Gefahr gerätst. Der Zauber, der auf dir liegt hat zwar deinen Körper verjüngt, aber nicht dein Magielevelö. Es entspricht noch immer deinem wahren Alter." erklärte Salemeth geduldig und reichte Kleiner Drache die Phiole. "Trink das bitte, damit ich anhand deiner Aura dein Level bestimmen kann."<br/><br/>
+Kleiner Drache nickte, entkorkte das Fläschchen und trank den süßlichen Inhalt. Beinahe augenblicklich machte er einem Glühwürmchen Konkurrenz. Er leuchtete von Kopf bis Fuß in grünlich-schwarz mit silbernen Schlieren. Salemeth nichte anerkennend und lächelte leicht.<br/><br/>
+"Du besitzt ein hohes Magielevel. Dennoch denke ich, dass du nicht älter als zwanzig Jahre alt sein wirst. Die silbernen Streifen zeigen, dass du das Mannesalter erst vor kurzem erreicht hast."<br/><br/>
+Kleiner Drache lächelte erleichtert, während das Leuchten wieder verblasste. Immerhin war er kein alter Mann.<br/>
+"Und noch etwas hat uns deine Aura verraten." sagte Salemeth geheimnisvoll und ließ ein Buch zu ihnen schweben. Seitenblätternd legte es sich auf den Tisch. "Was siehst du da?"<br/><br/>
+Neugierig beugte sich Kleiner Drache vor. "Auren."<br/>
+"Erinnere dich an deine. Findest du eine ähnliche?"<br/><br/>
+Kleiner Drache blätterte vorsichtig in dem Buch, bis er endlich fündig wurde. "Hier ist eine!" teilte er aufgeregt mit. Salemeth riskierte ebenfalls einen Blick und nickte zustimmend. "Lies, was darunter geschrieben steht." <br/>
+Kleiner Drache zog das Buch endgültig zu sich heran und begann vorzulesen:" eine grün.schwarze Aura ist das Zeichen eines Zwielichtdrachen. Diese kleine Drachenart macht sich die Schatten zu nutze und gebietet über die Dämmerung." Neugierig schaute Kleiner Drache auf. "Ich bin ein Zwielichtdrache ..." hauchte er. "Wie sehen die denn aus?" Ein weiteres Buch schwebte auf ihn zu und öffnete sich.</p><p> </p><p>                                                                                            <img src="http://www.tattooberater.de/tattoos/thumbs/71_big.jpg" alt="" width="127" height="159" align="middle"/></p><p>Das Bild eines kleinen schwarz-grauen Drachen prangte ihm entgegen. Das Wesen besaß einen zierlichen Leib und schlanke Pranken mit spitzen Klauen. Und obwohl keinerlei Flügel zu sehen waren, schwebte der Drache einige Meter über der Erde. Ehrfürchtig strich Kleiner Drache über die Zeichnung. "Wunderschön." murmelte er und entlockte so ein gütiges Lächeln von Salemeth.<br/>
+"Werde ich auch so aussehen?"<br/>
+"So in etwa, ja. Aber bis du dich das erste Mal verwandelst, musst du noch eine Menge lernen."</p><p>ooOOoo</p><p>Zu sagen, dass die Unterrichtsstunden einfach seien, wäre eine Untertreibung. Dennoch kam nie auch nur ein Wort der Klage über Kleiner Draches Lippen. Er hatte ein Ziel vor Augen, auf das er fleißig hinarbeitete. Und dann, drei Wochen nach der ersten Stunde brach er mitten im Kampftraining mit Raphasos zusammen. Sofort trug der Drache ihn hinein und rief Salemeth und Stephanos zu Hilfe. Die nächsten Stunden lag Kleiner Drache im Bett und rührte sich nicht. Nur ab und an verließ ein leises Murmeln seine Lippen. Salemeth hielt an seinem Bett Wache und kühlte seine Stirn mit einem nassen Lappen.</p><p>Als er endlich wieder zu sich kam, war die Nacht bereits herein gebrochen. Mühsam rappelte er sich auf und hielt sich stöhnend den Kopf. Er fühlte sich, als ob eine Elefantenherde über ihn hinweggetrampelt sei. Sofort hielt Salemeth ihm einen leichten Schmerztrank hin, der ohne Widerspruch in Kleiner Draches Magen verschwand.<br/>
+"Geht es wieder?" fragte Salemeth mitfühlend. Vorsichtig nickte Kleiner Drache und versuchte das Geschehen zu verarbeiten. In seinem Kopf summte und brummte es. Unmengen an Bildern, Lauten und Gerüchen schossen hindurch. Stöhnend begann Kleiner Drache von dem zu berichten, was er gerade erlebte.</p><p>"Da sind Bilder ... in meinem Kopf ... so viele Bilder ... und Stimmen ... Was hat das zu bedeuten?"<br/>
+Beruhigend legte ihm Salemeth eine Hand auf die Schulter. "Das sind deine Erinnerungen, mein Junge. Dein innerer Drache hat dir Zugang zu ihnen gewährt. Schließe deine Augen und konzentriere dich auf sie, dann wirst du schon sehen."</p><p>Kleiner Drache gehorchte. Ganz fest schloß er seine Augen und konzentrierte sich, bis er nur noch seine Erinnerungen wahrnahm. Langsam formten sie sich zu einer Geschichte. Er sah sich selbst als kleinen Jungen von vielleicht drei Jahren auf den Knien einer wunderschönen Frau, seiner Mutter. Sie strich ihm sanft durch die Haare und summte ein Kinderlied.<br/>
+Dann, er war wohl sechs oder sieben, stand er vor einem hochaufgeschossenen blonden Mann, seinem Vater. Dieser sprach von Dingen, die den Jungen verwirrten. Dinge wie Malfoyehre und Reinheit des Blutes. Und so zog ein Bild nach dem anderen an ihm vorbei, wurde ein Teil von ihm und füllte die Lehre in seinem Inneren. Als letztes schließlich sah er wieder jene tiefgrünen Augen. Diesmal jedoch schauten sie ihn neugierig an. Er war wieder ein wenig älter und stand in einem Laden, neben ihm ein gleichaltriger Junge mit verschlissenen und viel zu großen Klamotten und den zerzaustesten schwarzen Haaren, die man sich nur vorstellen konnte. Damit endete die Flut von Bildern und Kleiner Drache öffnete lächelnd die Augen. </p><p>"Ich habe ihn gesehen, den Jungen mit den grünen Augen." strahlend schaute er Salemeth an.<br/>
+"Das ist schön. Magst du mir von ihm erzählen?" Eifrig nickte Kleiner Drache. "Mein Name ist Draco Malfoy. Draco, wie der Drache." leise lachte er, und dann erzählte er alles, woran er sich erinnern konnte.</p><p>ooOOoo</p><p>Erneut gingen die Wochen ins Land. Draco lernte nun nur noch eifriger, und mit jeder Lektion, die er meisterte, kehrte ein weiteres Stück Vergangenheit zu ihm zurück. Mittlerweile erinnerte er sich an sechszehn Lebensjahre, dennoch hatte sich sein Körper kein Stück verändert. Es war ein irritierendes Gefühl als sechszehnjähriger im Körper eines Kindes zu stecken. Dennoch gab er nicht auf, in der Hoffnung, dass der Körper dem Geist folgen würde.</p><p>Abend für Abend saß er auf den Turmzinnen von Salemeth Heim und schaute auf die Welt. Er genoss die Ruhe und den Frieden und dachte über sein bisheriges Leben nach. Nun, ausgestattet mit den Lehren und dem Wissen der Drachen, sah er Vieles aus einem anderen Blickwinkel und es gab nicht Weniges, das er bereute. Er hatte gelernt das Leben zu achten und mit jeder Faser seines Seins zu spüren. Nicht selten, wenn er so dasaß, kam Salina zu ihm, setzte sich neben ihn und leistete ihm stumm Gesellschaft. In der Zeit, die er nun hier war, war sie zu einer echten Freundin geworden. Das Drachenmädchen schaffte es mit ihrer herzerfrischenden Art die trüben Gedanken aus seinem Kopf zu verbannen. Salemeth Unterricht besuchten sie gemeinsam, nun da sein Wissen an das seiner kleinen Freundin heran reichte. Früher wäre es ihm peinlich gewesen, dass ein achtjähriges Mädchen mehr wusste, als er, aber irgendwie war es ihm jetzt gleichgültig. Salinas Streiche und kleine Frechheiten brachten ihn immer wieder zum Lachen. Was machte es da schon, wenn er ab und an blaue Haare oder grüne Haut hatte, die Hauptsache war doch, dass er sich endlich wohl fühlte und akzeptiert, so wie er war. Draco war stolz darauf, was er hier in den wenigen Monaten erreicht hatte.</p><p>Auch an diesem Abend saß er wieder mit Salina da und schaute auf das weite Land, als ihm plötzlich schwarz vor Augen wurde. Einzig Salinas schnelle Reaktion bewahrte ihn vor dem Sturz in den sicheren Tod.  Und während das Drachenmädchen ihn von den Zinnen wegzog, verwandelte sich sein Körper. Er wurde kleiner, seine Arme und Beine wurden zu klauen-besetzten Tatzen. Sein Leib streckte sich und nah, eine tiefschwarze Färbung an. Behutsam nahm Salina den welpengroßen Drachen auf den Arm und trug ihn zu Salemeth. </p><p>Nur langsam kam Draco wieder zu sich. Dann schlug er geschockt die Aug auf und jaulte verzweifelt. ~Was habe ich dir nur angetan, Harry?!~</p><p><br/>
+Beruhigend strich Salina über Dracos Kopf. Besorgt schaute sie dabei ihren Großvater an. "Lass uns bitte einen Moment allein." bat Salemeth und nickte Salina aufmunternd zu. Nur zögernd ließ sie die Beiden zurück und schloss die Tür.<br/><br/>
+"Draco, kannst du mich verstehen?"fragte Salemeth sanft den wimmernden Drachenwelpen.  Noch immer schniefend nickte Draco und richtete das erste Mal seinen Blick auf seinen Mentor. "Du hast dich gerade das erste Mal in deine Drachenform verwandelt, Kleiner. Das bedeutet, du bist mit deiner Drachenseele verschmolzen."<br/><br/>
+~Ich weiß, ich kann es spüren, aber ich habe das nicht verdient, nicht nachdem, was ich getan habe.~<br/><br/>
+"Beruhige dich. Sag mir, was geschehen ist. Warum glaubst du es nicht verdient zu haben?" redete Salemeth sanft auf ihn ein. Er konnte die seelische Qual, die Draco erlitt beinahe körperlich spüren.<br/><br/>
+Draco atmete tief durch und versuchte sich noch mehr zusammen zu rollen, dann begann er zu berichten: ~ Ich habe euch doch von Harry erzählt, dem Jungen mit den tiefgrünen Augen. ... Ich habe ihm sooo weh getan, dabei wollte ich das doch gar nicht ... ~<br/><br/>
+Vor Dracos innerem Auge entstand erneut die Szene, die ihn so quälte. Er sah sich und Harry vor den Toren von Hogwarts stehen. Der Junge mit den grünen Augen sah schüchtern zu ihm auf. Seit einigen Wochen waren sie einander näher gekommen. Der Hass war allmählich aus ihren Herzen gewichen und hatte Freundschaft Platz gemacht. Nun standen sie hier unter dem klaren Nachthimmel, während drinnen der Abschlussball sich seinem Ende neigte. Beide hatten sie schon einiges getrunken. Daher war es nicht verwunderlich, dass eine süße Röte sich ihrer Wangen bemächtigt hatte.<br/><br/>
+Harry schluckte nervös und näherte sich langsam Draco, der verzaubert in die tiefgrünen Augen schaute. Dann stellte Harry sich auf seine Zehenspitzen und legte seine Lippen sanft auf Dracos. Ein Zittern lief durch seinen Körper, als er begann sanft mit Dracos Mund zu schmusen.<br/><br/>
+Draco stand wie verzaubert da und konnte kaum glauben, was gerade passierte. Harrys Lippen fühlten sich so gut an und die Zärtlichkeit raubte ihm schier den Atem. Ohne sein Zutun öffnete sich sein Mund und nahm an dem zarten Kuss teil. Jedoch nur für einen Moment, dann zuckte Draco zurück, löste sich von Harry und keuchte ihm mit glänzenden Augen entgegen.<br/><br/>
+Unzählige Gefühle stürmten auf ihn ein, während Harry seine Augen aufschlug und ihn sanft anlächelte. Draco konnte damit nicht umgehen und fühlte sich verloren. Automatisch verschloss sich sein Gesicht, die Augen wurden eiskalt.<br/><br/>
+"Was sollte das Potter?!" herrschte Draco Harry an, obwohl alles in ihm schrie es nicht zu tun.<br/><br/>
+Geschockt starrte Harry in Dracos Gesicht. "Aber ... aber , ich ... ich dachte ... " stotterte er fassungslos.<br/><br/>
+"Was dachtest du? Das ich was von dir will? Träum weiter! Ich würde nie etwas mit einem minderwertigen Gryffindor anfangen!" Dracos Stimme war schnarrend und stahlhart. Ein Blick in Harrys Augen ließ ihn genau erkennen, dass gerade dessen Herz zerbrochen war. Leblos und glanzlos wirkten die Seelenspiegel, gerade begannen die ersten Tränen zu fließen. Es zerriss Draco schier das Herz, dennoch wusste er sich nicht anders zu helfen. Er hielt seine Maskerade mühsam aufrecht.<br/><br/>
+"Es tut mir leid, wenn ich dich belästigt haben sollte. Ich hoffe du findest eines Tages die Liebe." Unter Tränen nahm Harry von ihm Abschied. Dann geschah es. Aus Harrys Fingerspitzen löste sich ein strahlendes Licht und hüllte Draco ein. Dann war er verschwunden.<br/><br/>
+Dracos Herz schmerzte bei dieser Erinnerung und noch immer liefen die Tränen aus seinen Drachenaugen. ~Es ist alles meine Schuld, dabei liebe ich ihn doch.~ wimmerte er leise.</p><p><br/>
+Nach dieem Geständnis rollte Draco sich noch mehr in sich zusammen, gab sich seinem Schmerz hin. Egal was Salemeth versuchte, er drang nicht zu seinem Schützling durch. Niedergeschlagen gab er auf, legte sanft eine Decke über den zitternden Drachenkörper. Es dauerte über eine Stunde, bis Draco schließlich erschöpft einschlief, doch selbst im Schlaf liefen die Tränen weiter.<br/><br/>
+Erst jetzt traute Salemeth sich ihn für einen Moment allein zu lassen, um Stephanos und Raphasos zu benachrichtigen. Er brauchte dringend den Rat seiner Freunde, um Draco helfen zu können. Eine gefühlte Ewigkeit verging, bis die Beiden erschienen, und doch sah man ihnen an, dass sie sich regelrecht abgehetzt hatten. <br/>
+Stephanos Haare standen kreuz und quer vom Kopf ab und Raphasos hatte vor lauter Hektik seine Jacke falsch geknöpft.<br/><br/>
+"Wie geht es ihm?" besorgt ließ sich Raphasos neben dem Häufchen Elend nieder. Vorsichtig zog er die Decke weg, legte seine Hände sacht auf den bebenden Drachenkörper. Die Augen geschlossen, streckte er seine Sinne nach der leidenen Drachenseele aus. Das Gesicht des Drachenlords spiegelte die Trauer wieder, die er durch die verbindung empfing. Eine einsame Träne rann sein Gesicht hinab. Dann erhob er sich wieder, deckte Draco zu und führte seine Freunde in den Nebenraum. Die Tür lehnte er nur leicht an, bevor er sich seufzend in einem der Sessel niederließ. Auch Stephanos und Salemeth namhmen in der gemütlichen Leseecke platz, sahen Raphasos ungeduldig an. <br/><br/>
+Der seufzte tief. "Seine Seele leidet, und wenn wir nichts unternehmen, dann wird er daran zerbrechen."<br/><br/>
+"Was schlägst Du vor?"<br/><br/>
+"Hier können wir ihm nicht helfen. Er weigert sich seine menschliche Form anzunehmen. Nur seine Drachenseele ist noch aktiv, der Rest hat sich in sein Innerstes zurückgezogen. Ich kann nicht wirklich zu ihm durchdringen." Geschlagen sah er seine Freunde an. " Es gibt keine andere Möglichkeit, wir müssen ihn nach Hogwarts bringen. Nur da kann er mit Hilfe einer vertrauten Person zu sich zurück finden."<br/><br/>
+Stephanos und Salemeth sahen den Ernst in Raphasos Augen. Traurig stimmten sie dem Vorschlag zu, in der Hoffnung ihren kleinen Drachen wiederzubekommen.<br/><br/><br/>
+oooOOooo<br/><br/><br/>
+Am nächsten Tag stand die Drachentriade vor den Toren von Hogwarts. Salemeth trug den traurigen Drachenkörper wie ein Baby schützend im Arm.<br/>
+Schnurstrax machten sie sich auf den Weg zu Albus Dumbledore. Mit Hilfe ihrer Drachenmagie standen sie sehr schnell vor dem überraschten Direktor.<br/><br/>
+"Was kann ich für Sie tun?" wandte er sich seinen Gästen zu und bot ihnen einen Platz an. Nachdem die Drachenlords sich gesetzt hatten, begann Salemeth mit seiner erklärung. Er berichtete Albus alles, was sie von Draco erfahren hatten. Sorgenvoll schaute der Schulleiter auf seinen ehemaligen Studenten. "Wie kann ich helfen?"<br/><br/>
+"Gibt es hier jemanden, dem Draco bedingungslos vertraut?"<br/><br/>
+"Mmh ... sein ehemaliger Hauslehrer, Severus Snape ... oder Harry Potter?"<br/><br/>
+"Er ist noch hier?" elektrisiert schauten die drei ihn an.<br/><br/>
+Albus nickte. "Er arbeitet als Lehrerassistent bei Professor Lupin."<br/><br/>
+"Dann würde ich darum bitten, dass er sich um Kleiner Drache kümmert. Vielleicht gelingt es ihm, die Apathie zu durchdringen. Er darf nur nicht wissen, wen er vor sich hat. Seine Unvoreingenommenheit ist entscheidend." drängte Raphasos, nun wieder Hoffnung fassend.<br/><br/>
+"Ich werde ihn rufen, dann können Sie ihn selbst fragen." Albus wandte sich seinem Kamin zu, ließ ein loderndes Feuer erscheinen. Mit Hilfe von Flohpulver rief er Professor Lupin. "Entschuldigen Sie die Störung, Remus, aber könnten Sie Harry für eine Weile entbehren?"<br/><br/>
+"Kein Problem, die Stunde ist sowieso gleich zu Ende. Ich schicke ihn zu Ihnen." lächelte der Werwolf, bevor sich sein Kopf wieder zurück zog.<br/>
+Einige Minuten später betrat ein ernster junger Mann das Büro. Melancholische grüne Augen musterten die Besuher, blieben an dem zarten Drachenkörper hängen. Dann wandte er sich an den Schulleiter. "Sie wollten mich sprechen, Albus?"<br/><br/>
+"Ja, mein Junge. Die Herren hier haben eine Bitte an Dich."<br/><br/>
+Der alte Drache erhob sich. "Wenn ich mich vorstellen dürfte, mein Name ist Salemeth und dies sind meine Freunde Raphasos und Stephanos." <br/><br/>
+Harry nickte ihnen zu. "Angenehm, ich bin Harry Potter. Wie kann ich Ihnen behilflich sein?"<br/><br/>
+Salemeth war sehr angetan von dem höflichen jungen Mann, nur die Traurigkeit in den grünen Augen bedrückte ihn. und er hatte das untrügliche Gefühl den Grund dafür genau zu kennen. Er warf einen kurzen Blick zu seinen Freunden. Auch sie schienen denselben Gedanken zu verfolgen. "Sie haben sicherlich unseren Problemfall bereits bemerkt. Das ist Kleiner Drache. Vor lauter Trauer hat er sich in sein Innerstes zurückgezogen. Wir können nicht zu ihm durchdringen. Daher sind wir hier. Nur ein einfühlsamer Zauberer kann ihm vielleicht noch helfen. Würden Sie sich vielleicht um unseren Schützling kümmern?" <br/><br/>
+Einen Moment lang musterte Harry den kleinen Drachen. Dann streckte er seine Hände aus. "Darf ich?" Sanft nahm er Salemeth Draco ab. Automatisch schmiegte sich der Drachenkörper an die Wärmequelle. Ein Lächeln legte sich auf Harrys Gesicht, erhellte die traurigen Augen. Vorsichtig streichelte er das kleine Köpfchen, dann sah er wieder auf. Erneut legte sich der dunkle Schimmer über eine Seelenspiegel. Beinahe automatisch streichelte seine Hand weiter, den Babydrachen fest an sich gedrückt. "Ich würde es gerne versuchen." sagte er leise.<br/><br/>
+Erleichtert atmeten die Drachenlords auf. "Danke." Salemeth war sichtlich beruhigt. Die Anspannung verließ seinen Körper. "Das bedeutet uns sehr viel. Passen Sie gut auf Kleiner Drache auf."</p><p><br/>
+Nun hatte Harry einen kleinen, wenn auch teilnahmslosen Begleiter. Liebevoll nahm er ihn mit in seine Räumlichkeiten. "Schau mal, mein Schöner, dass ist für die nächste Zeit dein Heim. Ich hoffe es gefällt dir." Liebevoll streichelte Harry über den kleinen Drachenkopf, wiegte Kleiner Drache hin und her. Jedoch kam von diesem noch immer nicht die geringste Reaktion. Doch so leicht ließ Harry sich nicht entmutigen. Sanft legte er Kleiner Drache auf dem Sofa ab. "Ich muss dich kurz allein lassen, damit ich dein Reich herrichten kan, aber keine Sorge, ich bin gleich wieder bei dir." <br/><br/>
+Als er sich jedoch abwenden wollte, griff Kleiner Draches Pfote nach seinem Umhang, krallte sich darin fest. "Nanu, du willst wohl nicht allein sein?" Lächelnd nahm Harry ihn wieder auf den Arm. "Na, dann komm mit, ich werde das auch so hinbekommen." Gemeinsam verließen sie das gemütliche Wohnzimmer, um in Harrys Schlafraum zu gehen, das von einem großen ebenholzfarbenen Bett dominiert wurde. Das Schlafgemach strahlte Behaglichkeit aus. Ein kleiner Kamin in der Ecke steuerte erheblich zum Wohlfühlfaktor bei. Nun schwang Harry seinen Zauberstab, und neben seinem Bett erschien ein kleineres Dublikat. "Was sagst du? Darin wirst bestimmt gut schlafen können." <br/><br/>
+Da nun das Wichtigste geregelt war, konnte Harry den restlichen Tag mit seinem neuen Mitbewohner genießen. Es machte ihm sichtlich Spaß ihn durch Hogwarts zu führen, ihm sein neues Zuhause zu zeigen. Langsam konnte er auch die ersten Reaktionen bei seinem kleinen Schützling bemerken. So kam es vor, dass dieser das eine oder andere Mal seine Augen öffnete, sich vorsichtig umsehend. Dennoch ließ der krampfhafte Griff in Harrys Robe nicht ein Mal locker. Der kleine Drachenkörper strahlte eine beinahe panische angst aus, allein gelassen zu werden. Immer wieder redete Harry beruhigend auf ihn ein.<br/><br/>
+Schließlich war die Zeit für das Abendbrot heran. Harry stellte fest, dass schon seit langer Zeit kein Nachmittag mehr so schnell vergangen war, genauer gesagt seit einem bestimmten Moment. Einen Augenblick lang spiegelte sich tiefe Trauer in seinem Antlitz wieder, bevor er sie erneut in seinem Innersten verschloss. Er spührte, dass dieses kleine Wesen, dass so dringend seine Hilfe brauchte, auch ihm gut tat. Liebevoll strich er über den kleinen Körper in seinen Armen. Ein Lächeln schlich sich auf sein Gesicht, als sich dieser vertrauensvoll in die Liebkosung schmiegte.<br/><br/>
+Den gesamten Weg zur großen Halle, spielte dieses sanfte lächeln um seinen Mund. So mansch einer der Schüler freute sich über diesen Anblick, war es doch schon lange her, dass man ihn fröhlich gesehen hatte. Als Harry schließlich in die große Halle trat, beobachteten die Schüler und Lehrer neugierig seinen Schützling. Harry spürte, wie der kleine Körper bei dieser Aufmerksamkeit zu zittern begann. Scheinbar hatte sein Kleiner Angst vor all diesen vielen Zauberern und Hexen. Mit einem kurzen Blick verständigte Harry sich mit Albus, und verließ dann die Halle wieder. Dobby würde ihm sicherlich eine kleine Mahlzeit in seine Räumlichkeiten bringen. Beruhigend redete er auf dem gesamten Weg auf Kleiner Drache ein, was jedoch nur langsam Wirkung zeigte. Dennoch war der Kleine wieder ein wenig ruhiger, als sie sich schließ auf dem Sofa nieder ließen. Wie bereits erwartet, stand ein Teller mit einigen Broten auf dem Tisch, bereit vernascht zu werden. Still dankte Harry seinem Hauselfenfreund und machte sich ans Werk.<br/><br/>
+Von Salemeth wusste er, dass Kleiner Drache das gleiche essen konnte, wie er selbst. So zerteilte er eines der Brote in kleine Häppchen und begann den Drachen auf seinem Schoß zu füttern. Freudig nahm Harry war, dass Kleiner Drache dies ohne Widerspruch geschehen ließ. Innerlich hatte er schon befürchtet, dass dieser vielleicht nichts essen wollte. Es zeigte sich jedoch, dass wohl noch ein wenig Lebenswille in dem Kleinen steckte. Und Harry nahm sich vor,alles zu tun, damit dieser funken auflodern würde.<br/><br/>
+Nach dem Essen begab er sich mit einem Buch und seinem kleinen Begleiter ins Schlafzimmer, machte es sich auf dem Bett gemütlich und begann mit leiser Stimme vorzulesen.  Von der leisen, sanften Stimme getragen schlief Kleiner Drache schließlich ein, das erste Mal seit seiner Wandlung fiel er in einen ruhigen und erholsamen Schlaf.Harry brachte es nicht über sich, den entspannten Körper umzubetten. So zauberte er sich selbst schnell seinen Pyjama an, und kuschelte sich mit Kleiner Drache unter die Decke. Kurze Zeit später war auch er in Morpheus Armen versunken.</p><p><br/>
+Am nächsten morgen wachte Harry ausgeruht wie schon lange nicht mehr auf, spürte den warmen Körper an seiner Seite. Ein Lächeln legte sich auf sein Gesicht. Sanft zog er den kleinen Drachenkörper näher zu sich heran. Verbarg seinen Kopf an dem weichen Rücken, seufzte zufrieden. <br/><br/>
+Noch eine ganze Weile lang, döste er vor sich hin, bis langsam Leben in den kleinen Körper kam. Lächelnd sah Harry zu, wie sein neuer Freund erwachte. Schmatzend drehte der Drache sich auf den Rücken, öffnete seine silbernen Augen. Wach nahm er seine Umwelt wahr.<br/><br/>
+Freude durchströmte Harrys Herz. „Hey, geht’s dir wieder gut?“ Er konnte es kaum glauben, sollte es ihm gelungen sein so schnell zum Ziel zu kommen?<br/><br/>
+Einen Moment lang musterte Kleiner Drache ihn, dann schüttelte er traurig den Kopf. Eine sanfte Stimme schlich sich in Harrys Innerstes. „Ich bin Kleiner Drache, die Drachenseele. Mein zweites ich will leider immer noch nicht an die Oberfläche kommen, aber ER hat mir die Kontrolle überlassen.“<br/><br/>
+„Schade, ich hatte schon gedacht, ich könnte euch richtig kennen lernen.“, wisperte Harry. <br/><br/>
+„Es tut mir Leid, aber das wird wohl noch dauern. So lange wie ER sich weigert, darf ich dir nichts über IHN erzählen.“ Geknickt schaute der Drache ihn an.<br/><br/>
+„Was kann ich tun, um euch zu helfen?“<br/><br/>
+„ER braucht Nähe, lass IHN wissen, dass ER nicht allein ist, dann wird alles wieder gut, da bin ich sicher.“<br/><br/>
+„Das werde ich gerne tun.“, versprach Harry. <br/><br/>
+Dankbar nickte Kleiner Drache. „Es tut mir Leid, aber ich muss mich wieder zurück ziehen. Es kostet zu viel Kraft, so mit dir zu reden. Sollte jedoch etwas sein, so kannst du mich jederzeit rufen. ... Kümmere dich gut um uns, ich bitte dich.“ Nach diesen Worten verschwand der Glanz aus den silbrigen Augen, stumpf und leer blickten sie nun wieder in die Welt.<br/><br/>
+Es tat Harry im Herzen weh, den Kleinen erneut so zu sehen, fest nahm er sich vor, alles in seiner Macht stehende zu tun, um zu helfen. Seufzend löste er sich von dem Kleinen, und stand auf. Schnell ging er ins Badezimmer, machte sich frisch. <br/><br/>
+Nachdem er sich angezogen hatte, ging er wieder auf das Bett zu. Kleiner Drache lag in der gleichen Position wie zuvor, als ob er sich nicht einen Millimeter bewegt hatte. Nur ein leichtes Zittern zeigte, dass er wach war. Erschüttert schaute Harry ihn an, hob ihn auf seine Arme, streichelte sanft über seinen Rücken. Nur langsam nahm das Zittern wieder ab, schmiegte sich der Drachenkörper wieder entspannt an ihn. „Du magst es wohl wirklich nicht, allein zu sein ...“, wisperte Harry ihm sanft entgegen.<br/><br/>
+Seufzend nahm er an seinem kleinen Schreibtisch platz, kraulte dabei ununterbrochen die Ohren des Kleinen. Da er sich sicher wahr, dass ein Frühstück in der großen Halle die Situation nur verschlimmern würde, rief er kurzerhand Dobby herbei. Der aufgedrehte Hauself war überglücklich ihm das Essen servieren zu dürfen. So verbrachte Harry einen geruhsamen Vormittag mit seinem neuen kleinen Freund.<br/><br/>
+Am Nachmittag kam Albus die Beiden besuchen. Der neugierige Direktor wollte sicher gehen, dass es seinen beiden Schützlingen gut erging. Die Geschichte von Draco rührte sein Herz, nur zu gerne wollte er ihnen helfen. „Nun, Harry, wie geht es voran?“ Albus kristallklare Augen musterten wohlwollend das friedliche Bild des schlafenden Drachen in Harrys Armen.<br/><br/>
+Angesprochener seufzte tief. „Er hat Angst, wenn ich ihn mal nicht festhalte, dann beginnt er zu Zittern. Aber heute morgen hat die Drachenseele in ihm mit mir gesprochen. Sie hat gesagt, dass ich mich gut um ihn kümmern soll, für ihn da sein soll. Allerdings durfte sie mir nichts über den Schmerz in seinem Herzen berichten.“ Wehmütig strich er über Kleiner Draches Schuppen.<br/><br/>
+„Das ist verständlich. Nur wenn die Beiden Seelen im Einklang sind, darf die Drachenseele Näheres verraten. Du wirst dich also noch ein wenig gedulden müssen. Wenn ich dir einen Rat geben darf ...“ Albus wartete auf das bestätigende Nicken von Harry, ehe er fortfuhr. „Am Besten erzählst du ihm ein wenig aus deinem Leben. Wenn du willst, dass er sich dir anvertraut, dann musst du zuerst Etwas von dir preisgeben. Nur so kann er Vertrauen zu dir fassen.“<br/><br/>
+Nachdenklich musterte Harry Kleiner Drache. Sollte er wirklich einem so kleinen Wesen aus seinem schweren Leben berichten? Es gab so viele schreckliche Dinge in seiner Vergangenheit, aber wenn Kleiner Drache durch ein ähnlich trauriges Ereignis in diesen Zustand geraten war, dann konnte ihm vielleicht genau das helfen. Zögernd nickte Harry. „Ich werde es versuchen.“<br/><br/>
+„Fein ...“, freute Albus sich. „Solange du dich noch derart intensiv um ihn kümmern musst, bist du selbstverständlich von deiner Arbeit befreit. Lass dich ruhig durch nichts von dieser Aufgabe ablenken. Ich habe volles Verständnis dafür.“ Kurz strich er über Kleiner Draches Kopf und dann über Harrys Haare, bevor er sich wieder zurück zog.<br/><br/>
+Erst am Abend, als Harry wieder mit Kleiner Drache im Bett lag und kuschelte, fand er den nötigen Mut, seine Lebensgeschichte zu erzählen. Er hatte beschlossen gleich alles zu berichten, wenn er schon einmal damit begann. So dauerte es bis tief in die Nacht, ehe er wieder schwieg. Die ganze Zeit über hatte er Kleiner Drache nicht einmal losgelassen, beruhigend strich er über die glatten Schuppen. <br/><br/>
+In dieser Nacht dauerte es lange, bis Harry einschlief, und dann begleitete ihn die Vergangenheit bis in seine Träume. So bekam er nicht mit, wie sich die silbernen Augen langsam klärten. Ein einzelner Gedanke schwirrte durch den Drachenkopf. ~Harry ...~</p><p><br/><br/>
+Am nächsten morgen wachte Harry nicht sehr ausgeruht auf. Im Gegenteil, er fühlte sich wie erschlagen. Die ganze Nacht hatte ihn seine Vergangenheit verfolgt, von einem Albtraum war er in den nächsten gekommen.<br/><br/>
+Müde drehte er sich zu dem kleinen Drachenkörper, schaute in die silbrigen Augen. „Guten Morgen“, nuschelte er verschlafen, gähnte herzhaft.<br/><br/>
+„Guten Morgen“, antwortete ihm die sanfte Gedankenstimme des Kleinen.<br/><br/>
+„Bist du es wieder, Kleiner Drache, oder ...“<br/><br/>
+„Ja, ich bin es. ER will noch immer nicht heraus, aber ich muss dir danken. Was du uns erzählt hast, hat uns sehr geholfen, hat IHM geholfen. Du hast es zwar nicht gemerkt, weil du geschlafen hast, aber für einen Moment war ER wieder da. Das war ein wunderbares Gefühl. Einen Augenblick lang war ich wieder vollständig. Seitdem hat ER sich wieder zurück gezogen, allerdings nicht mehr so tief wie zuvor. Nun kann ich ein wenig länger bei dir bleiben, wenn du das willst ...“ <br/><br/>
+Bei den letzten Worten war sein Schützling ein wenig rot um die Nase geworden. ‚Wie süß ...‘, dachte Harry, dann nickte er. „Ich würde mich sehr darüber freuen. Dann kann ich mich ein wenig mit dir unterhalten.“<br/><br/>
+Freudig klopfte der Drachenschwanz auf das Laken. Der Kleine konnte seine Gedanken und Gefühle einfach nicht verbergen, sein Körper verriet ihn. „Das ist schön, dann bin ich nicht mehr so allein.“<br/><br/>
+„Wollen wir frühstücken?“ Behende warf Harry die Decke zurück, sprang aus dem Bett. Fröhlich schaute er auf Kleiner Drache hinab.<br/><br/>
+„Au ja, ich habe großen Hunger!“, stimmte Kleiner Drache augenblicklich zu, machte es nach und landete ein wenig ungeschickt auf dem Boden. So ganz hatte er seine Gliedmaßen noch nicht unter Kontrolle.<br/><br/>
+Harry schmunzelte, beugte sich zu ihm hinab. „Soll ich dich vielleicht lieber tragen?“<br/><br/>
+Überrascht schaute Kleiner Drache in die funkelnden grünen Augen. Er hatte nicht damit gerechnet noch immer diesen Luxus genießen zu dürfen. Freudig nickte er. „Wenn es dir nicht allzu viel ausmacht? Alleine diesen Körper zu steuern fällt mir noch ein wenig schwer. SEINE Hilfe fehlt mir.“<br/><br/>
+„Kein Problem, das mache ich doch gerne“, winkte Harry ab, verschwand kurz im Bad um sich herzurichten. In frischen Sachen hob er Kleiner Drache auf seinen Arm. „Wollen wir wieder hier essen, oder möchtest du in die Halle?“<br/><br/>
+Überlegend schaute Kleiner Drache aus dem Fenster, dann fasste er eine Entscheidung. „Ich würde lieber hier essen, aber vielleicht können wir danach ein wenig nach draußen gehen? Ich vermisse die frische Luft.“<br/><br/>
+Zustimmend nickte Harry. „Was immer du möchtest.“ Im Nu hatte er nach Dobby gerufen, der ihnen ein schmackhaftes Frühstück servierte. Kleiner Drache schlang seine Portion regelrecht hinunter. So wie es aussah wollte der Kleine schnellstmöglich hinaus. Sobald sein Schützling fertig war, erhob Harry sich. Er warf sich noch seinen Umhang über, und ging dann mit seiner wertvollen Last durch die Gänge. Da der Unterricht bereits begonnen hatte, kamen sie unbehelligt zum Eingangsportal. <br/>
+Harry stieß die schwere Tür auf. Die Sonne schien ihm ins Gesicht, als sie hinaus traten. Neugierig streckte Kleiner Drache den Kopf aus dem schützenden Umhang, der sie einhüllte. Befreit sog er die frische Luft in seine Lungen, genoss es in vollen Zügen.<br/><br/>
+Vergnügt schlenderten sie über das Gelände. Der Herbst hatte die Welt noch immer fest im Griff, obwohl es bereits Mitte November war. Der verbotene Wald leuchtete in den schönsten Farben, die Blätter bewegten sich im leichten Wind. Gemächlich schlenderten sie am Waldrand entlang, lauschtenden Geräuschen die aus seinem Innerern kamen. Lächelnd berichtete Harry von den Unterrichtsstunden mit Hagrid, die er in den Schatten der Bäume erlebt hatte, entlockte Kleiner Drache leises Gelächter.<br/><br/>
+Dann richtete er seine Schritte zum schwarzen See. Am Ufer entlang spazierend, erzählte er Kleiner Drache mit geheimnisvoller Stimme von seiner Aufgabe beim Trimagischen Tunier. Mit großen Augen verschlang Kleiner Drache die Worte, sog sie in sich auf. Sicher, er kannte all dies schon aus den Gedanken Dracos, aber es aus Harrys Mund zu hören war viel spannender.<br/><br/>
+Erst das Magenknurren seines Schützlings beendete Harrys Wortschwall. Ein Blick auf seine Uhr zeigte ihm, dass es bereits Mittag war. Lächelnd schaute er in die silbrigen Seelenspiegel Kleiner Draches. „Was hälst du davon, wenn wir zurück gehen, und etwas essen?“<br/><br/>
+Freudig nickte Kleiner Drache. „Au ja, ich habe großen Hunger! Vielleicht sollten wir in der Halle essen, das ist nicht so weit, wie dein Zimmer.“ Der Hunger sorgte dafür, dass Kleiner Drache seine Angst vor den vielen Menschen verlor. Er wollte jetzt nur noch so schnell wie möglich was in seinen Bauch bekommen, alles andere war ihm egal.</p><p><br/>
+Schnell waren die Beiden in der Halle angekommen. Und obwohl es Kleiner Draches eigene Idee war, so schrumpfte er doch merklich in Harrys Armen zusammen. Ein sanftes Lächeln umspielte Harrys Mund. <br/><br/>
+"Wir können auch gerne wieder in meine Wohnung gehen, wenn du Angst hast."<br/><br/>
+"Angst? Träum weiter. Wir gehen jetzt da rein." <br/><br/>
+Das leichte Stocken von Harry bei diesen Worten fiel Kleiner Drache nicht auf, ebenso wenig, wie der prüfende Blick. <br/>
+"Nun gut, aber wenn es dir zu viel wird, dann sag mir Bescheid, ja?"<br/><br/>
+Kleiner Drache nickte und holte noch einmal tief Luft, ehe Harry die großen Flügel der Tür öffnete. Sofort drang lautes Gelächter und Geschnatter auf die Beiden ein. Die Schüler unterhielten sich angeregt, achteten gar nicht auf die Neuankömmlinge.<br/><br/>
+Aufmerksam achtete Harry auf seinen Schützling, der neugierig durch die Halle schaute. <br/>
+"Wow, das ist aber voll. Ich hätte nicht gedacht, dass das so viele sind," murmelte Kleiner Drache leise.<br/><br/>
+Harry lächelte. "Das ist ja auch eine große Schule. Wollen wir uns dann setzen?"<br/><br/>
+Eifrig nickte Kleiner Drache. "Wo ist dein Platz?"<br/><br/>
+Harry deutete zum Lehrertisch, wo neben Minerva ein freier Platz prangte. "Ich sitze eigentlich immer da, aber wenn du lieber wo anders sitzen möchtest, dann ist das sicher auch möglich."<br/><br/>
+Noch einmal ließ Kleiner Drache seinen Blick umher schweifen, dann schaute er zögernd zu Harry auf. "Wäre es möglich, dass wir uns dort in die Ecke setzten?" Dabei wies er auf den langen Slytherinhaustisch, der direkt vor der Wand stand.<br/><br/>
+Harrys Augenbraue wanderte nach oben, prüfend musterte er den Kleinen Drachen, der unter dem intensiven Blick rötlich anlief. Schließlich nickte Harry, ging mit ihm auf die lange Tafel zu, ehe er sich bei den Erstklässlern der Schlangen niederließ, den Kleinen auf seinem Schoß platzierte. Lächelnd schaute er den überraschten Schülern entgegen. "Ich hoffe es stört euch nicht, wenn wir euch ein wenig Gesellschaft leisten. Mein Kleiner wollte unbedingt bei euch sitzen."<br/><br/>
+Neugierig musterten die Jüngsten der Schlangen den kleinen Drachen. Ein Mädchen wagte es sogar zaghaft seine Hand auszustrecken und die silbernen Schuppen zu berühren. Sie kicherte, als der zarte Leib begann zu zittern. <br/><br/>
+"Das kitzelt,"lachte Kleiner Drache.<br/><br/>
+„Er kann ja sprechen!“, die Überraschung der Kinder war nicht zu überhören.<br/><br/>
+„Klar kann ich das, bin ja nicht dumm!“ Kleiner Drache musterte empört das Mädchen vor sich. „Du sprichst doch auch!“<br/><br/>
+„Entschuldige ... ich wollte dich nicht beleidigen,“ mit großen Augen schaute die Kleine auf den Drachen. „Ich bin Rose Ravenwood, und wie heißt du?“<br/><br/>
+„Dra ... ähm, ich werde Kleiner Drache genannt.“<br/><br/>
+Erneut musterte Harry seinen kleinen Schützling. Langsam keimte ein Verdacht in ihm auf, was wäre wenn wenn Er ..., aber nein, das konnte nicht sein! Aber zur Sicherheit würde er ihn noch besser im Auge behalten. Ein Rütteln an seinem Arm riss ihn wieder aus seinen Gedanken. Sanft sah er in die silbrigen Augen hinunter.<br/><br/>
+„Können wir jetzt essen? Ich habe einen Riesenhunger,“ wimmerte Kleiner Drache gespielt mitleidig.<br/><br/>
+Lachend zog Harry einen Teller zu sich heran und belegte ihn mit einer Auswahl von den leckersten Köstlichkeiten, ehe er ihn vor Kleiner Draches Nase schob. „Lass es dir schmecken, Kleiner.“<br/>
+Dann bediente er sich selbst und auch die Erstklässler wandten sich wieder ihrem Mahl zu, auch wenn sie mit einem Auge noch immer an dem Drachen klebten.<br/><br/>
+Und kaum dass Kleiner Drache und Harry den letzten Bissen herunter geschluckt hatten, drangen auch schon die nächsten Fragen auf sie ein.<br/><br/>
+„Was bist du denn für ein Drache? So einen wie dich habe ich in noch keinem Buch gesehen,“ neugierig rutschte Rose wieder ein Stückchen näher.<br/><br/>
+„Ich bin ein Zwielichtdrache, das ist etwas ganz Besonderes! Und über mich wirst du in keinem Buch etwas finden. Wir zeigen uns normaler Weisen nicht in der Zaubererwelt,“ mit stolz geschwellter Brust sah Kleiner Drache auf die wissbegierige Slytherin.<br/><br/>
+„Und warum bist du dann hier in Hogwarts?“ Der Junge neben Rose neigte sich zu ihm hinüber. Seinem Aussehen nach, musste er ihr Bruder sein. Beide hatte sie die gleichen tiefblauen Augen und nachtschwarzen Haare.<br/><br/>
+„Ich bin nur wegen Harry hier.“ Ein leichter Rotschimmer umspielte Kleiner Draches Nase bei diesen Worten. Schüchtern schaute er zu seinem Beschützer auf. „Ich bin ein wenig krank, und daher hat mich mein Mentor zu ihm gebracht, damit ich wieder gesund werde.“<br/><br/>
+„Was hast du denn?“<br/>
+„Tut es weh?“<br/>
+„Ist es sehr schlimm?“<br/>
+„Können wir dir helfen?“<br/>
+„Wer ist dein Mentor?“<br/>
+„Ist er auch ein Drache wie du?“<br/><br/>
+Gleichzeitig prasselten die Fragen auf ihn ein. Ein fröhliches Lächeln legte sich auf Kleiner Draches Gesicht. Es freute ihn, so viel Aufmerksamkeit zu erregen, so umsorgt zu werden. „Leider darf ich euch dazu nichts sagen, das sind Geheimnisse, die nicht nur mich betreffen. Seid mir bitte nicht böse, ja?“<br/><br/>
+Eifrig nickten die Kinder, denn wer konnte diesem kleinen Wesen mit den riesigen silbernen Augen schön böse sein.<br/><br/>
+„Hoffentlich wirst du bald wieder gesund.“ Rose Bruder schaute zuversichtlich auf den Drachen.<br/><br/>
+Der nickte zustimmend. „Es geht mir schon viel besser, Harry ist sehr lieb zu mir. ... Sag mal, wie heißt du eigentlich?“<br/><br/>
+„Ich bin Cloude, Cloude Ravenwood, Rose älterer Bruder.“<br/>
+„Aber nur um fünf Minuten!“<br/>
+„Na und, ich bin trotzdem älter!“<br/><br/>
+Trotzig schauten sich die beiden fest in die Augen. Kleiner Drache musste bei diesem Anblick kichern. Das brach den Bann. Rose und Cloude sahen wieder zu ihm. „Können wir heute nicht zusammen spielen? Das wäre toll!“<br/><br/>
+Bittend trafen alle Blicke auf Harry, selbst Kleiner Drache schloß sich an. Harry lachte leise. „Nun gut, wenn ihr eure Hausaufgaben gemacht habt, dann kommt zum See. Wir werden dort auf euch warten.“<br/><br/>
+„O.K., bis nachher!“ Mit strahlenden Gesichtern liefen die Kinder aus dem Saal, um so schnell wie möglich ihre Aufgaben zu erledigen, damit noch viel Zeit zum Spielen übrig blieb. Harry erhob sich gemächlicher. Gemeinsam mit Kleiner Drache verließ er die große Halle, um noch einmal kurz in seine Räumlichkeiten zu gehen, ehe sie sich erneut den Kindern stellen mussten.</p><p><br/>
+Bereits kurze Zeit später waren Harry und Kleiner Drache zum See aufgebrochen, da der Kleine in der Wohnung keine Ruhe fand. Und während Harry es sich mit einer Decke unter den Bäumen gemütlich machte, tapste Kleiner Drache fröhlich durch das flache Wasser am Ufer. Es war das erste Mal, dass der Drache sich von sich aus ein paar Meter von Harrys schützenden Armen entfernte. Harry genoss den Augenblick der Ruhe und hing seinen Gedanken nach. Jeden Moment mit dem Kleinen ließ er Revue passieren, denn der Mittag hatte einen Verdacht in ihm geweckt, der sich einfach nicht verdrängen ließ. Was wäre, wenn Draco Malfoy unter dieser Drachenhaut steckte. So unwahrscheinlich das auch war, das Verhalten am Slytherintisch erinnerte ihn einfach zu sehr an seinen ehemaligen Rivalen und Freund.<br/><br/>
+Und schließlich hatte nicht einmal Albus heraus gefunden, wohin dieser vor knapp einem Jahr verschwand. Und nun, konnte es wirklich sein, dass er wieder da war? Konnte es sein, dass er endlich seine Liebe wiedersehen sollte? <br/><br/>
+Harry grübelte angestrengt. Wie konnte er nur die Wahrheit herausfinden? Was war nun zu tun? <br/><br/>
+Und dann kam ihm die rettende Idee. Am Abend würde er dem Drachen auch noch den Rest seines Lebens erzählen, wie er Draco kennen gelernt hatte, ihre Feindschaft, Freundschaft und schließlich, wie er sich in ihn verliebt hatte. Und sollte wirklich Draco hinter der Fassade stecken, dann würde er es schon entdecken.<br/><br/>
+Ein lautes Kinderlachen holte ihn aus seinen Gedanken. Als er aufsah, entdeckte er Rose und Cloude, die fröhlich auf Kleiner Drache zustürmten. Auch sein schuppenbewehrter Freund hatte die Kinder entdeckt und tapste ihnen aufgeregt entgegen. Und dann tobten die drei gemeinsam am Ufer entlang, stolperten teilweise über die eigenen Beine und purzelten durch die Gegend. Harry grinste in sich hinein. Er konnte sich nicht erinnern, wann er das letzte Mal solch einen Spaß gehabt hatte. Die drei zu beobachten war aber auch zu komisch. Gerade versuchte Cloude Kleiner Drache auf den Arm zu nehmen, so wie er es zuvor bei Harry gesehen hatte. Leider scheiterte das jedoch an der Tatsache, dass er bei weitem nicht die nötige Kraft besaß, und so war die ganze Aktion mehr ein Schieben als alles andere. Rose hielt sich lachend den Bauch. <br/><br/>
+„Ich ... habe dir doch ... gesagt, das ... schaffst du nicht“, japste sie kichernd. Und anscheinend hatte auch kleiner Drache genug von den ungelenken Versuchen. Mit einem schnellen Dreh seines schmalen Körpers brachte er sich aus der Gefahrenzone. Noch im Schwung des Hebeversuches, landete Cloude mit seiner Nase im Sand. Einen Moment blieb er scheinbar regungslos liegen, ehe er sich mit einem Kriegsschrei auf die Beiden frechen Lacher stürzte und begann sie abwechselnd durchzukitzeln.<br/><br/>
+Harry beobachtete das Treiben noch eine Weile, ehe er mit seinem Augenwinkel eine leichte Bewegung ausmachte. Alarmiert wandte er sich um, nur um augenblicklich zu Grinsen anzufangen. Hinter ihm hatte sich der gesamte erste Jahrgang von Hogwarts versammelt und schaute neidvoll auf die drei tobenden. <br/><br/>
+„Na, wollt ihr au mitspielen?“ fragte Harry mit einem sanften Lächeln. Unisono nickten die Kinder mit einem hoffnungsvollem Leuchten in den Augen.<br/><br/>
+„Hey ihr Drei, wie wäre es mit ein wenig Gesellschaft?“ fing Harry die Aufmerksamkeit der Spielenden ein und zeigte grinsend hinter sich. Freudig nickten sie und winkten die anderen zu sich. Damit war das Chaos perfekt. In einem einzigen großen Tumult neckten und hetzten die fünfundzwanzig Kinder sich gegenseitig durch die Gegend.<br/><br/>
+Die nächsten zwei Stunden genoss Harry das fröhliche Treiben. Dann rief er Dobby zu sich. Mit einem Ploppen tauchte der Hauself neben ihm auf, schaute staunend auf die spielende Meute.<br/><br/>
+„Dobby“, fing Harry seine Aufmerksamkeit ein, „kannst du für uns ein paar Decken besorgen und ein paar Sachen fürs Abendessen? Ich denke wir bleiben heute einfach hier draußen. Die Kinder werden sich freuen.“<br/><br/>
+„Gerne, Harry Potter, Sir. Ich sage auch gleich Professor Dumbledore Bescheid.“ Bot sich Dobby an.<br/><br/>
+„Ich danke dir, mein Lieber“, lächelte Harry ihm zu, ehe der Hauself wieder verschwand.<br/><br/>
+Nur kurze Zeit später tauchten neben ihm mehrere Decken, sowie Teller und Gläser auf. Mit einer Bewegung seines Zauberstabes verteilte er die Decken auf dem Boden, so dass ein riesiges Quadrat entstand. Dann legte er einen leichten Wärmezauber darauf, ehe er auch noch die Gedecken in einem Kreis verteilte. Er musste auch nicht lange warten, da tauchten die ersten Getränke auf.<br/><br/>
+„Essenszeit!“ rief er die Kinder zu sich, die staunend Platz nahmen. Sie hatten nicht erwartet, hier draußen speisen zu dürfen. Dementsprechend groß war die allgemeine Begeisterung, vor allem da nach wenigen Momenten ein riesiges Buffet in der Mitte auftauchte, wo die Kinder nach Herzenslust zu griffen.<br/><br/>
+Kleiner Drache hatte es sich wieder mal auf Harrys Schoss gemütlich gemacht, und ließ sich nun von diesem füttern. Ihn hatte das Spielen, so viel Spaß es auch gemacht hatte, doch sehr geschafft. Nun war er dementsprechend müde. Und während Harry lächelnd das Zusammensein aller vier Häuser beobachtete, freute sich kleiner Drache schon darauf mit ihm allein den Abend verbringen zu können. Und Draco in seinem Inneren fieberte dem ebenfalls entgegen, wie er genau spüren konnte.</p><p><br/>
+Nach diesem mehr als schönen und lustigen Tage, lagen Harry und Kleiner Drache am Abend entspannt in ihrem Bett. Der Kleine strahlte Harry regelrecht an. „Danke schön, das war toll,“ freute er sich.<br/><br/>
+„Gern geschehen,“ lächelte Harry zurück, dann wurde er wieder ernst. „Möchtest du heute auch noch das letzte bisschen meiner Geschichte hören?“<br/><br/>
+Nachdenklich schaute Kleiner Drache ihn an. Er hatte so eine Ahnung, welche Geschichte nun kommen würde. Dann nickte er entschlossen, es war Zeit. Draco musste endlich die ganzen Geschehnisse aus Harrys Sicht erfahren.<br/><br/>
+Harry richtete seinen Blick aus dem Fenster, sammelte sich einen Moment, ehe er begann zu berichten.<br/><br/>
+„Weißt du, ich habe dir bereits mein ganzes Leben geschildert, doch eines habe ich ausgelassen. Ich habe dir noch nicht von dem wichtigsten Menschen in meinem Leben erzählt. … Kurz nachdem Hagrid mir gesagt hat, dass ich ein Zauberer bin, hat er mich  in die Winkelgasse mitgenommen, damit ich meine Schulsachen kaufen konnte, und da bin ich ihm begegnet. Er stand auf einem Podest bei Mme Malkins, und probierte gerade ein Schuluniform an. Er sah so süß aus, mit seinen nach hinten gekämmten blonden Haaren und dem stolzen Blick. Ich glaube, schon damals, in diesem Moment habe ich erkannt, dass er wichtig für mich ist. Die Tage bis zum Schulbeginn träumte ich beinahe jede Nacht von ihm, konnte es gar nicht erwarten ihn wieder zu sehen. Und dann war es so weit, im Hogwartsexpress trafen wir wieder auf einander. Mittlerweile hatte ich bereits mit Ron Freundschaft geschlossen, meinem ersten Freund überhaupt, wie du weißt, und freute mich darauf die Beiden mit einander bekannt zu machen. Doch meine Hoffnung wurde enttäuscht. Er war so kalt, beleidigte Ron und schien nichts mehr mit dem Jungen aus dem Geschäft gemein zu haben. Aus meiner Enttäuschung heraus, schlug ich seine Hand aus, und so schafften wir den Grundstein zu einer siebenjährigen Feindschaft. Unzählige Male haben wir uns gegenseitig verflucht, beleidigt und verhauen. Es war schier ein Wunder, dass wir unsere Schulzeit überlebten. In unserem letzten Jahr jedoch, änderte sich das Blatt. Der Kampf gegen Voldemort war wichtiger geworden, als unsere kleinlichen Streitereien, und so schafften wir es nach dem Sturz des bösartigsten Zauberers den Hass abzubauen. Eine Freundschaft entwickelte sich, eine Freundschaft, die ich bereits seit Jahren ersehnte. Es kostete mich viele Mühen und eine Menge schlafloser Nächte mir das einzugestehen, aber danach war ich in der Lage ihm anders entgegen zu treten. Mit einem Male machten die Streitereien Spaß, ich konnte mir nichts schöneres mehr vorstellen, freute mich ihn zu sehen. Nach einer Party schließlich trafen wir am See auf einander. Ich wartete schon auf seine obligatorische Eröffnung, überlegte mir, was ich erwidern könnte, doch er blieb still. Dann streckte er mir seine Hand entgegen, und diesmal gab es kein Zweifel, kein Zögern, ich ergriff sie mit Freude. Die darauf folgenden Wochen waren die Schönsten in meinem Leben. Wir lachten gemeinsam, verbrachten viele Stunden auf dem Astronomieturm und redeten. Natürlich blieben die alten Neckereien nicht aus, zu sehr war es uns ins Blut über gegangen, doch nie mehr waren sie verletzend oder beleidigend.<br/><br/>
+Und ein weiteres Mal änderten sich meine Gefühle für ihn. Ich begann in seinen wunderschönen Augen zu versinken, wann immer er mich ansah, sehnte mich nach seiner Gegenwart, wenn wir nicht beisammen waren. Diesmal gestand ich mir meine Gefühle schnell ein, ich wusste einfach, dass ich mich verliebt hatte, dass ich ihn liebte.<br/><br/>
+Erneut brachte eine Feier die Wende. Während unseres Abschlussballs, bat ich ihn nach draußen. Wir hatten schon ein wenig getrunken, und so fand ich den Mut, ihm meine Gefühle zu offenbaren. Die wenigen Sekunden, die ich seine Lippen berühren durfte, waren unglaublich, ich wähnte mich im Himmel, aber ich fiel in die Hölle, als er mir klar machte, dass ich seiner nicht würdig bin. Ich wünschte ihm noch alles Glück und dass er seine Liebe finden möge, ehe ich mich abwenden wollte. Doch dann machte sich meine Magie selbstständig. Blitze fuhren aus meinen Fingern, hüllten ihn ein, dann war er verschwunden.<br/><br/>
+Ich war schier verzweifelt, ich dachte, ich hätte ihm etwas angetan. In meiner Not lief ich zu Dumbledore, berichtete ihm alles. Er war es, der mich wieder beruhigte, der mir erklärte, dass es ihm gut ging.<br/><br/>
+Aus Instinkt hatte ich meinen Wunsch war werden lassen, hatte ihn an einen Ort transferiert, an dem er seinen Weg finden würde. Seit diesem Moment vor fast einem Jahr habe ich ihn nicht mehr wieder gesehen, noch etwas von ihm gehört. <br/><br/>
+Mit jedem Tag, der vergeht, wird meine Sehnsucht nach ihm größer, quält mich meine Liebe, die wohl nie vergehen wird, und nur das Wissen um sein Glück macht es mir ein wenig leichter ...“ <br/><br/>
+Erschöpft ließ sich Harry gegen das Kissen sinken. Stumme Tränen liefen sein Gesicht hinab. Schweigend wartete er auf eine Reaktion von kleiner Drache.<br/><br/>
+Der Kleine hatte stumm der Erzählung gefolgt, und Draco war bis dicht an die Oberfläche gekommen, um auch kein Wort zu verpassen. Als er das Leid Harrys sah, liefen heiße Tränen aus seinen Augen. Mit dem letzten Wort aus Harrys Mund begann die Verwandlung. Endlich war es so weit, Draco war bereit sich seinen Gefühlen, seinen Taten zu stellen. Mit seiner Drachenhälfte im Einklang, kehrte er zu seinem alten Selbst zurück …</p><p><br/>
+Draco konnte während seiner Verwandlung beobachten, wie die Augen von Harry immer größer wurden. Und dann, nur einen Augenblick später war es soweit. Zum ersten Mal seit Monaten fand er sich dem Menschen gegenüber, der der wichtigste in seinem Leben war. Er konnte sich dem eindringlichen Blick nicht mehr stellen. Beschämt senkte er seinen Blick. Dennoch konnte er es nicht mehr vermeiden, dass ihm ein heiseres „Harry“ entfleuchte.<br/><br/>
+Wie ein verurteilter Schwerverbrecher wartete er regungslos auf Harrys Urteil. Nun, nachdem er erneut vernommen hatte, wie sehr er Harrys mit seinem Verhalten verletzt hatte, wo er wusste welches Leid er verursacht hatte, rechnete er mit dem Schlimmsten. Er konnte sich nicht vorstellen, dass Harry ihm verzeihen würde. <br/><br/>
+Um so mehr überraschte ihn die sanfte Berührung an seinem Arm. Vor Schreck zuckte er regelrecht zusammen, dann starrte er auf die schmale Hand, die sich auf die seine legte, ihn zart festhielt. Nur zaghaft wagte er es seinen Kopf ein kleines Stück zu heben, durch seinen blonden Pony auf Harrys Gesicht zu linsen. Was er dort sah, verschlug ihm den Atem. Stumme Tränen liefen über Harrys Wangen, tropften auf die seidene Bettwäsche, wo sie unbeachtet versickerten. Dennoch erleuchtete ein beinahe überirdisches Strahlen das Gesicht des Gryffindors, und ehe Draco es sich versah, fühlte er sich in eine feste Umarmung gezogen. <br/><br/>
+Während er tief den Geruch Harrys in sich aufnahm, hörte er diesen seinen Namen in einem immer wiederkehrenden leisen Mantra vor sich hin murmeln. Und dann brachen auch bei ihm die Dämme, eine Träne nach der anderen lief aus seinen Augenwinkeln und verirrte sich in Harrys pechschwarzem Haar. Nun fand Draco auch seine Stimme wieder. Unter Schluchzen wisperte er eine Entschuldigung nach der anderen in Harrys Ohr, bis sie sich nach endlosen Minuten langsam beruhigten.<br/><br/>
+Die Tränen versiegten. Draco fühlte Frieden in sich aufsteigen. Die Geborgenheit dieser Umarmung ließ ihn all das Sagen, was er zuvor nicht konnte. Er berichtete wie er sich gefühlt hatte, bei ihrem ersten Kuss, der Freude die ihn durchströmte. Aber auch von seinen Ängsten, die ihn so sehr im Griff gehabt hatten, dass er sich abwandte, abwandte von dem Menschen, den er am meisten in der Welt brauchte, der zu seinem Lebensinhalt wurde. Und dann erzählte er von seinem Aufwachen. Erinnerungslos, in fremder Umgebung, wie Silberflügel ihn fand, von seiner Ausbildung, der schrittweisen Wiederkehr seiner Erinnerung. Und auch von seinem Schock, als ihm schließlich bewusst wurde, was er getan hatte. Ein Schock, der ihn dazu zwang, sich in sein Innerstes zurück zu ziehen, damit er nicht an den Selbstvorwürfen und Selbstzweifeln zerbrach. Die Nase noch immer in Harrys Haaren vergraben, schüttelte Draco seinen Kopf. Dann fuhr er mit seinem Bericht fort. <br/><br/>
+Er erzählte von den wenigen lichten Momenten in den letzten Tagen, wenn er seiner Stimme gelauscht hatte, wie sie ihm half zu sich zurück zu finden, das Geschehen zu verarbeiten. Und schließlich von dem Gefühl, das ihn in der letzten halben Stunde erfasst hatte. <br/><br/>
+„Während du geredet hast, war es, als ob mich deine Magie, deine Gefühle umschließen und halten würden. Ich spürte deine Gefühle, Freude und Schmerz tief in mir. Und dann … dann war da eine Wärme, wie ich sie nie zuvor erlebt habe. Sie zwang mich regelrecht wieder hervor zu kommen, hüllte mich ein. Ich konnte ihr nicht widerstehen. Ich ergab mich der Verlockung. Verstehst du, was ich damit sagen will? Ich bin deinetwegen zurück gekommen.  … Harry, ich liebe dich. Bitte verzeih mir.“<br/><br/>
+Nun wagte Draco es, sich ein wenig von Harry zu lösen, ihm tief in die Augen zu schauen, ehe er sanft seine Lippe auf den verlockenden roten Mund sinken ließ.</p><p><br/>
+In dieser Nacht schliefen die Beiden so gut wie lange nicht mehr. Dicht aneinander gedrängt, in der Wärme des anderen badend und eine sanfte Welle von Geborgenheit spürend, wachten sie schließlich am folgenden Morgen wieder auf. Mit einem überdimensionalen Grinsen im Gesicht drängte Draco seine Nase in Harrys Haare, sog tief den ureigendsten Geruch seines Freundes in sich auf, bedeckte seinen Nacken mit sanften Küssen. Lächelnd drehte sich Harry in der sanften Umarmung. „Guten Morgen“, murmelte er noch halb schlafend, während die Küsse nun über sein Gesicht wanderten. „Dir auch einen guten Morgen mein Schatz“, erwiderte Draco gegen seine sanfte Haut und ließ seine Lippen weiter über den begehrten Körper wandern, um jede erreichbare Stelle zu liebkosen.<br/><br/>
+oooOOooo<br/><br/>
+Zwei Stunden später fanden sie sich in Dumbledores Büro ein. Dort erwartete sie der Direktor mit einer heißen Tasse Tee und einigen belegten Broten, wohl wissend, dass sie das Frühstück ausgelassen hatten. Mit seinem wissenden Blick schien er sie bis auf den Grund ihrer Seelen zu durchschauen. Draco lief ein Schauer über den Rücken. Bereits als Schüler hatte er diesem Blick kaum Stand halten können, sich unter ihm gewunden. Doch jetzt, mit dem Wissen wie sehr er Harry verletzt hatte, wie sehr dieser gelitten hatte, schien es ihm um so schlimmer. Selbst das Wissen, dass sein Liebster ihm seine Fehler verziehen hatte, half da nicht viel. Den Blick auf den Boden gerichtet, saß er wie festgeklebt auf seinem Stuhl. Dann fühlte er Harrys Hand auf seinem Bein, den sanften Druck voll Mitgefühl. <br/><br/>
+Sofort wurde ihm leichter ums Herz und er wagte es endlich aufzuschauen. Harrys Hand fest in die seine nehmend, sich regelrecht daran fest klammernd, stellte er sich dem Blick seines ehemaligen Lehrers, und traf überrascht auf ein warmes, einfühlsames Lächeln.  <br/><br/>
+„Es ist schön, Sie wieder unter uns begrüßen zu dürfen. Mr. Malfoy“, die heitere sanfte Stimme Dumbledores schwebte leise durch den Raum.  „Und es freut mich zu sehen, dass Sie es geschafft haben, aus ihrem Tief heraus zu kommen.“<br/><br/>
+„Sie wussten es?“ Draco konnte seine Überraschung kaum zurück halten.<br/><br/>
+Dumbledore nickte.  „Ja, Silberflügel war so freundlich mich einzuweihen. Damit ich ihn auf dem Laufenden halten kann, und einschreiten, sollte nicht der gewünschte Erfolg eintreten, was ich jedoch nie bezweifelt habe. Ich war mit sicher, dass Harry den rechten Weg finden würde, um Sie aus Ihrer Agonie zu befreien, umso mehr uns bewusst war, dass er der Grund für ihr Leiden  und Selbstbestrafung war.  Wie man sieht haben wir recht behalten. Daher darf ich euch nun mitteilen, dass du Draco noch einmal zu den Drachen zurück kehren sollst, denn nun steht deiner Aufnahme in ihren Kreis nichts mehr im Wege.“ Mit einem Lächeln wandte er sich Harry zu. „Du bist natürlich auch eingeladen. Nutzt die Zeit eurer Reise, und denkt über eure Pläne für die Zukunft nach.“ Damit entließ er sie aus seinem Büro, seiner Obhut, in dem Bewusstsein, dass ihrem Glück nun nichts mehr im Wege stand, sie einer freundlichen Zukunft entgegen blickten, was immer sie für die Beiden auch bereit halten möge, sie würden es gemeinsam schaffen.<br/><br/>
+-Ende-</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="I88xMm8KsndVr9shCcf8m_boD9NILvz43U0DbHditivMDzJwnYHFPVym4aZY-b0we1P9TbsYgOJhUjkopZfcOQ"/>
+          <input value="1027591" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=1027591">Comments (2)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/AnnaMarieLuise">AnnaMarieLuise</a> and <a href="/users/ShellyConnors">ShellyConnors</a>
+             as well as 
+          3 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_1027591">
+  <form class="new_comment" id="comment_for_1027591" action="/works/1027591/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="cOGWBjNhrgIT1cH04G5ywT9XjT9yBq_Ut-3mvaUvzUifIZVEwerZSBrc-3OxUDNqsux_oYEw084L8tz5d9qnWg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_1027591">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_1027591" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_1027591=new LiveValidation('comment_name_for_1027591',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_1027591.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_1027591">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_1027591" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_1027591=new LiveValidation('comment_email_for_1027591',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_1027591.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_1027591" class="landmark">Comment</label>
+        <textarea id="comment_content_for_1027591" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_1027591" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_1027591_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_1027591">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_1027591=new LiveValidation('comment_content_for_1027591',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_1027591.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_1027591.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_1027591" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/1027591/hit_count.json")})</script>
+
+
+  </body>
+</html>

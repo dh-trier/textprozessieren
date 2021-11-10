@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":68,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Der böse Wolf - Thylis - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="4KQymI6rceU-ZnwAgHUpNdfKHeSCw_rxNyYSqyGS7-W0f8-g3GKeuamGDP5FmIYVeCLYBcdeayumyv4oqG14Qg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="kUl4PZydH7PYb8pjbPLr-FO3zU1BAJYlI0IvQ7AtlwTFkoUFzlTw70-Pup2pH0TY_F8IrASdB_-yrsPAOdIAow"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;sherlock (tv)&quot; m/m NOT &quot;sherlock holmes/john watson&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/29693913/chapters/79214296">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/29693913/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/29693913/Der%20bose%20Wolf.azw3?updated_at=1623852899">AZW3</a></li>
+          <li><a href="/downloads/29693913/Der%20bose%20Wolf.epub?updated_at=1623852899">EPUB</a></li>
+          <li><a href="/downloads/29693913/Der%20bose%20Wolf.mobi?updated_at=1623852899">MOBI</a></li>
+          <li><a href="/downloads/29693913/Der%20bose%20Wolf.pdf?updated_at=1623852899">PDF</a></li>
+          <li><a href="/downloads/29693913/Der%20bose%20Wolf.html?updated_at=1623852899">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Explicit/works">Explicit</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Graphic%20Depictions%20Of%20Violence/works">Graphic Depictions Of Violence</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Categories:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li><li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Fenrir%20Greyback/works">Fenrir Greyback</a></li><li><a class="tag" href="/tags/Alecto%20Carrow/works">Alecto Carrow</a></li><li><a class="tag" href="/tags/Bellatrix%20Black%20Lestrange/works">Bellatrix Black Lestrange</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Thriller/works">Thriller</a></li><li><a class="tag" href="/tags/Male-Female%20Friendship/works">Male-Female Friendship</a></li><li><a class="tag" href="/tags/Horror/works">Horror</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2021-06-16</dd><dt class="status">Completed:</dt><dd class="status">2021-06-16</dd><dt class="words">Words:</dt><dd class="words">11779</dd><dt class="chapters">Chapters:</dt><dd class="chapters">4/4</dd><dt class="hits">Hits:</dt><dd class="hits">12</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Der böse Wolf
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Thylis/pseuds/Thylis">Thylis</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Jede Geschichte braucht einen Bösewicht. Einen Schurken, dessen Schlechtheit über jeden Zweifel erhaben ist. Manchmal kann ein Perspektivwechsel diese Eindimensionalität zerstreuen. Manchmal.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29693913/chapters/79214296">Chapter 1</a>: Allianzen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p>
+<p>
+  <strong>
+    <u>Allianzen</u>
+  </strong>
+</p>
+
+<p></p><div>
+  <p></p>
+  <div class="ff-formattedtext">
+    <p></p>
+    <div class="user-formatted grid-100">
+      <p></p>
+      <div class="user-formatted-inner contrast-normal"><p><br/><span></span><br/><span></span><br/><span></span></p>
+<p></p><div class="user_right" align="right"><p>9. Mai 1980</p></div><br/><span></span><br/><span></span><br/><span></span>Kleine Geschenke erhalten die Freundschaft. Zumindest besagte das ein altes Sprichwort.<br/><span></span>Stalk hatte ihm etwas mitgebracht. Ein wimmerndes Bündel, gehüllt in einen rostroten Umhang. Das Geschenk schien jedoch erschöpft zu sein. Fenrir wusste dies zu ändern. Spätestens, wenn er seine Zähne in ihr Fleisch grub, wurden sie alle wieder munter.<br/><span></span>Er gestattete sich ein kurzes Grinsen. Der Tag war noch jung und Fenrir ging gedanklich die heutige Tagesordnung durch.<br/><span></span>Sie saßen auf den Treppen der National Galerie und einer seiner Jungs verschlang einen Burger. Ketchup und Senf tropfte auf den hellen Stein. Nuschelnd gab er seine Meinung darüber Kund. Es schmeckte ihm. Was für eine bahnbrechende Überraschung. Die Verwandlung hatte Bode einiges an Hirnzellen gekostet. Sonst druckste er nur herum und trug auch an diesem Abend wieder eine Sonnenbrille wie ein dummer Muggel.<br/><span></span><br/><span></span>Drei Stadtpolizisten beobachteten ihr Treiben schon seit ihrer Ankunft auf dem Trafalgar Square. Sie würden nicht mehr lange durch den Nebel ihrer Langweile waten. Schon allein, damit ihnen davon nicht schwummrig wurde, würde Fenrir sich was einfallen lassen. Aber was?<br/><span></span>Vor geraumer Zeit war ihm zu Ohren gekommen, dass die Galerie neben ihren unbezahlbaren Gemälden auch Artefakte ihr Eigen nannte. Sicherlich nur wertloses Zeug und irgendwelcher Ramsch, denn sonst hätte sich die halbe Reinblüterschaft schon darüber hergemacht. Dennoch: Es versprach einen amüsanten Auftakt, Kurzweil, ein paar mehr Galleonen in den Taschen und ein aufsehenerregendes Sperenzchen. Der Tagesprophet hätte anstatt dieser sinnlosen Geplänkel über die abtrünnigen reinblütigen Heiler im St. Mungos endlich wieder eine Schlagzeile für die nächste Morgenausgabe.<br/><span></span>»N’du? Boss?«<br/><span></span>Stalk meldete sich zu Wort und vertagte damit Fenrirs innere Planung auf einen späteren Zeitpunkt.<br/><span></span>Geräuschvoll zog der Junge die Nase hoch.<br/><span></span>Fenrir stemmte sich hoch und baute sich grollend vor dem Rangniederen auf. Soweit kam es noch, dass diese Welpen ungefragt ihr Wort an ihn richteten.<br/><span></span>»Was?«, knurrte Fenrir und taxierte sein Gegenüber.<br/><span></span>Ein gerötetes Augenpaar lugte hinter der Sonnenbrille hervor und Bode warf seinen Fraß zur Seite. Einzelne Pommes kullerten die Treppen hinab und er wischte sich die Finger an seiner Jeans sauber. Beide Welpen nahmen augenblicklich Haltung an. Es hätte nur noch gefehlt, dass sie ihre Hacken zusammenschlugen.<br/><span></span>»N‘du Boss … ka-ka-kein Grund für Ärger«, stotterte Stalk und warf Fenrir das Bündel Mensch vor die Füße. »Hab sie dahinten aufgegriffen.« Wie zum Beweis deutete der Welpe hinüber zum Denkmal auf der Mitte des Platzes und schnaubte. »Hat‘ uns beobachtet, dass Miststück. Hmhm.«<br/><span></span>Mit einem hässlichen Grinsen tropfte Fenrirs Blick hinab. Das Bündel war gerade dabei sich zwischen den vielen Stoffalten vor seinen Füßen zurecht zu finden. Die in den Nacken geschlagene Kapuze gab einen roten Haarschopf der Abendluft preis. Jammernd rieb sie sich den Nacken, ehe sie aufsah.<br/><span></span>Mit geweitetem Blick starrte Fenrir zurück. Die Erinnerung an den Fluch dieser Prewetts fuhr ihm wieder durch die Schulter und verursachte eine Art Phantomschmerz. Durchtrennte Venen, Arterien, Sehnen und Muskelfasern. Maden die sich an seinem Fleisch gütlich getan hatten. Dieser Todesser mit der Hakennase hatte ganze Arbeit beim Zusammenflicken geleistet.<br/><span></span><br/><span></span>»So behandelt man keine Reinblüterin«, sagte die Kleine widerborstig und rieb sich das Knie. Sie klang nicht wirklich überzeugt. Die Welpen witterten ihre Unsicherheit. Reinblüterin stand nicht oft auf ihrem Speiseplan.<br/><span></span>Ein geiferndes Grinsen zeichnete sich auf Bodes unrasierten Wangen ab, während Stalk seinen eigenen Ohren nicht zu trauen schien.<br/><span></span>»Wen haben wir denn da? Hat die kleine Todesserin sich schon wieder verlaufen? Haben die Tauben deine Brotkrumen gefressen, Rotkäppchen?«<br/><span></span>Was Besseres war ihm auf die Schnelle nicht eingefallen. Der Verlobten vom Galleonen scheißenden Rosier durften seine Welpen kein Haar krümmen. Aber Schwäche zeigen kam nicht in Frage. Die Reinblüter kommandierten und übergingen sie schon oft genug. Da musste ihr Rudelführer nicht noch vor ihren Kindern katzbuckeln.<br/><span></span><br/><span></span>»Die hat aber ganz nackische Arme, Boss«, warf Stalk ein, packte die Kleine am Kragen und riss sie hoch. Er pflückte ihren Umhang bei Seite. Sie trug ein schwarzes Kleid mit durchsichtiger Spitze an den Armen darunter. Da war kein Dunkles Mal. Diese verdammte Assel hatte recht.<br/><span></span>Die Kleine war starr vor Angst. Dieser Geruch lockte nicht nur Fenrir. Bode kam mit weiten Schritten näher. Hob witternd die Nase und grinste noch breiter.<br/><span></span>Jetzt hieß es einen kühlen Kopf zu bewahren.<br/><span></span>»Kennst du eine andere, außer unsere Herrin Black, die sowas hat, du minderbemitteltes Ungeziefer?«<br/><span></span>Unisono schüttelten die Welpen ihre Köpfe.<br/><span></span>»Trotzdem stopfen die Kerle ihre Schwänze gelegentlich in etwas anderes als ihre Hauselfen. Soweit klar?«<br/><span></span>Ein glucksendes Kichern der Beiden verriet Fenrir, dass er sie überzeugt hatte. Stalk schob das Mädchen von sich weg. Rückte hastig ihren Umhang zurecht und schenkte ihr ein entschuldigendes Lächeln.<br/><span></span>»Das Püppchen hier ist von ihrem Ehemann geschickt worden. Ist sich wohl zu Schade hier selbst aufzukreuzen.«<br/><span></span>Das klang einleuchtend. Selbst für Fenrir, der eigentlich nur eine Ausrede gesucht hatte.<br/><span></span>Alecto stand zwischen den drei Werwölfen mit ruinierter Frisur und verschmierten Make-Up. Sie hatte sich den Verlauf dieses Abends sicherlich auch anders vorgestellt.<br/><span></span>Vermutlich hoffte Rosier darauf, dass Fenrir einen besonders waghalsigen Auftrag annahm, wenn sein kleines Vögelchen die Nachricht zwitscherte. Schließlich hatte die Kleine ihm im Ministerium den Arsch gerettet. So zumindest besagte es die Gerüchteküche zwischen den Kameraden. Fenrir wusste es besser.<br/><span></span>»Kümmert euch um die drei Spanner dahinten, mit ihren Knüppeln. Gönnt euch den Spaß. Und wir zwei. « Nun wandte sich Fenrir direkt an Alecto und murmelte: »Haben zu Reden. Dort drüben.«<br/><span></span><br/><span></span>Alecto zog ihren Kopf tief zwischen die Schultern, als sie unter den Blicken der anderen Werwölfe weghuschte. Jede Wette, dass ihr die Nackenhaare vor Angst zu Berge standen.<br/><span></span>Bode stierte ihr begierig nach. Fenrir hatte ihn als Kind infiziert. Vermutlich war es das erste Mal, dass er eine echte Reinblüterin aus ihren Reihen –ausgenommen Bellatrix - zu Gesicht bekam. Dazu war er erst kürzlich volljährig geworden. Diese jungen Werwölfe hatten alle nur das eine im Kopf.<br/><span></span>Stalk schien weitaus mehr Interesse daran zu haben die Stadtpolizei aufzumischen. Brüllend wüste Gesten an sie richtend, zog er ihre Aufmerksamkeit auf sich.<br/><span></span>Soweit, so gut.<br/><span></span>Fenrir hastete über die Stufen zu Alecto hinauf, packte sie am Kragen und zerrte sie die letzten Schritte hinter sich her.<br/><span></span>Verborgen hinter den Säulen am Eingang zur Galerie löste er seine Pranke von ihrem Nacken und schubste sie.<br/><span></span>»Zu viel von deinem Hexenkraut genascht, hm?«<br/><span></span>Die schaurige Intonation seiner Stimme wollte ihm heute besonders gut von den Lippen gehen.<br/><span></span>Wenige Schritte trennten sie. Ein unüberwindbares Hindernis. Alecto stand da, wie an dem Rand eines Tümpels.<br/><span></span>»Hier ohne deinen Ehemann aufzukreuzen«, half Fenrir ihr auf die Sprünge und hob prüfend eine Braue. »Das war ziemlich blauäugig von Rosier.«<br/><span></span>»Ähm«, machte Alecto unschlüssig und kratzte sich am Hals.<br/><span></span>»Ähm, was?«<br/><span></span>»Ähm, siehst du irgendwo einen Verlobungsring an meiner Hand, du Trottel?«<br/><span></span>Volltreffer.<br/><span></span>Fenrir verdrehte die Augen. Bei den jungen Dingern hatte er stets den Geschmack von Blut auf der Zunge. Die Erinnerung an warmes buttriges Fleisch zwischen seinen Zähnen. Sein Geist war in diesen Momenten nicht geschärft genug um auf so Kinkerlitzchen wie Ringe oder Dunkle Male zu achten.<br/><span></span>»Wer schickt dich dann?«<br/><span></span>»Niemand«, erwiderte Alecto lässig. Sie wirbelte herum und beugte sich über die Absperrung wie über eine Reling. Mit großen Augen beobachtete sie seine Welpen dabei, wie diese die Stadtpolizei vermöbelten. »Die zwei erinnern mich an meinen Bruder und seinen besten Freund.«<br/><span></span>Er schätzte es gar nicht, von Reinblütern zum Narren gehalten zu werden. Und ganz besonders nicht von so einer Rotzgöre.<br/><span></span>Aus den tiefen seiner Brust knurrend stürmte Fenrir auf sie zu.<br/><span></span>Nur drei polternde Schritte und ein eiserner Griff.  Mehr brauchte es nicht.<br/><span></span>In höchsten Tönen kreischend hing Alecto mit dem halben Oberkörper über das Geländer hinweg. Die Augen vor Angst weit aufgerissen.<br/><span></span>Ihr junger Körper ächzte, als Fenrir sie herumschleuderte und gegen die nächste Säule presste. Drohend senkte er seinen Schädel und entblößte sein Gebiss. Für diese Frechheit würde er ihr die kümmerlichen Brüste amputieren und die weißen Knochen ihres Brustkastens freilegen.<br/><span></span>Mit seiner Hand umklammerte er ihren Hals und hob die Hexe auf die Zehenspitzen. Seine Finger schlossen sich um ihre Luftröhre. Sie trat und kratze ihn, fuhr mit ihren Nägeln über die Haut seines Unterarmes und japste.<br/><span></span>Als Fenrir sich an ihrem Kleid zu schaffen machte, ächzte Alecto: » Mein Bruder ist Rosiers rechte Hand. Amycus Carrow. « Ihr Gesicht wurde immer röter. »Ich bin zwar nicht Evans Verlobte aber seine geweihte Seherin.«<br/><span></span>»Seherin … ? Was für ein Schwachsinn. Fleh lieber, Kleines. Das erhöht deine Chance hier in einem Stück heraus zu kommen, anstatt mir diesen lauwarmen Scheiss aufzutischen.«<br/><span></span>»Aber es stimmt.«<br/><span></span>Sie blieb dabei. Wie eine Marionette an Fäden hing sie in seinem Griff. Das Scharlachrot in ihrem Gesicht biss sich hervorragend mit ihrem Haar.<br/><span></span>»Wenn ich jungfräulich und unversehrt zu Rosier zurückkehre, wird er nicht sehr zornig werden«, hauchte sie mit zittriger Stimme und fand irgendwo her noch den Mumm ein zweideutiges Lächeln aus sich heraus zu schütteln.<br/><span></span>Jungfräulich? Für was für einen kranken Bastard hielten die Todesser ihn mittlerweile? Wobei … ‚Kinderschänder und Kannibale‘ klang gar nicht so schlecht. Besser als ‚lausiger Werwolf‘.<br/><span></span>Wie ein nasser Sack ging sie zu Boden, als Fenrir seinen Griff lockerte. Jammernd umfasste Alecto ihren Hals. Spuckte und hustete.<br/><span></span>»Aber ich will mehr sein als das. Du hast mehr in mir gesehen. Im Ministerium. Du hast mich Tyr genannt«, röchelte sie, als sie wieder zu einem Quäntchen Sauerstoff gekommen war. Für einen Moment schlossen sich ihre Augen und Alecto stieß einen langen Seufzer aus.<br/><span></span>Mit vor der Brust verschränkten Armen lehnte sich Fenrir an die Säule und starrte angewidert hinab. Er konnte sich denken was jetzt folgte. Irgendeine rührselige Geschichte darüber, wie sehr sich der kleine Vogel in seinem Käfig langweilte.<br/><span></span>»Ja, ich musste es zuerst nachlesen, aber Tyr ist ein Gott. Des Kampfes, des Sieges und der Rechtsordnung. Vermutlich warst du ziemlich wirr durch die Dämpfe, doch wie sagt man so schön: Betrunkene und Kinder sagen immer die Wahrheit, hm?«, sagte sie beinah entschuldigend und rappelte sich auf.<br/><span></span>Dicke rote Striemen zeichneten sich auf ihrem Hals ab. Hoffentlich stimmte die ganze Story einfach nicht, denn sonst würde Fenrir wieder nur Ärger mit diesen feinen Pinkeln bekommen.<br/><span></span>»Ich will für den Dunklen Lord kämpfen. Genau wie du. Du darfst unsere Robe tragen. Hilf mir dabei mich würdig zu erweisen und du wirst es nicht bereuen.«<br/><span></span>Ganz schon mutig von der Kleinen sich einem Werwolf zu stellen dessen Reputation hinlänglich bekannt war. Trotzdem hielt sie ihm die Hand entgegen. Bot sie <span class="user_italic">ihm</span> gerade den Frieden an?<br/><span></span>Seufzend kratzte Fenrir sich an der Nase. Was er nicht brauchen konnte war jemand der unnütz an seinem Rockzipfel baumelte.<br/><span></span>»Und ich wollte mich bedanken. Für die Sache im Ministerium. Diese Mistkerle hätten dich beinah umgebracht. Mein Bruder hat es ihnen heimgezahlt. Hat einen dieser Ratten einfach umgelegt.«<br/><span></span>»Dolohov wird für den Mord an den Prewetts gesucht.«<br/><span></span>»Mein Zwillingsbruder wird mit seinen dreizehn Jahren sicher nicht vom Ministerium ausspioniert. Den Bürokraten passt es doch wunderbar in dem Kram, einen der großartigsten Todesser per Steckbrief zu denunzieren.«<br/><span></span>Auch wieder wahr. Bestechende Logik hatte die Kleine, dass musste man ihr lassen.<br/><span></span>Ihre Hand schwebte weiterhin ausgestreckt vor ihm.<br/><span></span>»Du wirst es nicht bereuen, Fenrir.«<br/><span></span>Er wusste nicht was genau es war. Vielleicht ihr Augenaufschlag? Oder die rosigen Wangen in denen er nur zu gerne seine Zähne vergraben würde? Irgendeine Dummheit brachte ihn dazu auf ihr Angebot einzugehen.<br/><span></span>Es gab schlimmeres als eine reinblütige Hexe, die einem etwas schuldig war. Sein direkter Draht zu denen da oben. Bellatrix ließ ihn schließlich seit geraumer Zeit am ausgestreckten Arm verhungern. Also warum sein Gold nur auf ein Pferd setzen.<br/><span></span>»Wenn du mir zur Last fällst, fress ich dich.«<br/><span></span>»Du bist witzig. Ein böser Wolf wie aus dem Muggelkinderbuch«, kicherte sie und erwiderte seinen festen Händedruck. Oder sie versuchte es zumindest. Er war sich ziemlich sicher, dass er ihr die Fingerknöchel zerquetschte, trotzdem lächelte sie.<br/><span></span>»N’du? Boss? Uns ist langweilig. Die Polizisten liegen ausgenockt auf’m Boden. Wie du befohlen hast, Boss.«<br/><span></span>Bode und Stalk beäugten sie beide kritisch.<br/><span></span>»Wollt ihr ein Lob dafür, oder was? Macht, dass ihr das Museums-Tor aufbekommt. Ihr seht doch, dass ich uns gerade Arbeit verschaffe!«, wies Fenrir seine Anhänger zurecht und deutete in die entsprechende Richtung. Beide hetzten los, die Pupillen so geweitet, dass ihre Iriden kaum noch zu sehen waren. Wie zwei verschissene Amphetamin-Junkies.<br/><span></span><br/><span></span>Es hatte was von einer schlecht verlaufenden Verabredung. Fenrir hielt Alectos Hand weiterhin umklammert, während sie fahrig mit ihrer anderen ihr Kleid richtete. Ihr Kragen war gerissen.<br/><span></span>»Darf ich?«, fragte sie charmant und versuchte ihm die Hand zu entziehen. Die Kleine meinte das wirklich ernst.<br/><span></span>»Zieh dich wieder vernünftig an, sonst drehen die zwei Schwachmaten dahinten noch durch. Und dann mach die Türe auf, bevor sie ihre Schädel daran blutig schlagen.«<br/><span></span>»Reparo«, summte Alecto und schwang ihren Zauberstab. Ein hübsches Stück. Wie eine verdammte Königin stolzierte sie an Fenrir vorbei. Nur die deutlich sichtbaren Würgemale an ihrem Hals straften ihre Hochnäsigkeit Lügen.<br/><span></span>»Heute noch. Meine Fingernägel wachsen volle zwei Fuß, während ihr zu blöd seid, die Tür da aufzukriegen.«<br/><span></span>»Alohomora.«<br/><span></span>Geschäftig huschten die Werwölfe um Alecto herum und sie marschierte einfach durch sie hindurch. Ganz instinktiv wies sie die zwei in ihre Schranken.<br/><span></span>Wie nützlich, jemanden bei sich zu haben, der auch zaubern konnte. Stalk war nichts weiter als ein Squib gewesen, bevor Fenrir ihn aus diesem bemitleidenswerten Dasein erlöst hatte. Bode hatte im Laufe seines bisherigen Lebens gerade mal gelernt, wie man einen Zauberstab richtigherum hielt.<br/><span></span>Gemeinsam schwärmten sie aus. Alectos lächerliche Absätze hallten mit einem „Klick-Klack“ von den hohen Wänden wider. Einige gebellte Anweisungen später nahm sein Rudel die Örtlichkeit auseinander.  <br/><span></span>Fenrir kam zu dem Entschluss, dass er schon wesentlich schlechtere Entscheidungen getroffen hatte, als Alectos gespiene Flammen die Gemälde verputzten und Stalk ehrfürchtig zurückließ.<br/><span></span>Bode nutze jede Unachtsamkeit ihrerseits, um an Alecto zu schnuppern. Armer Bastard.<br/><span></span>»Du riechst gut«, grunzte er nach einer Weile. Seine spitz zu gefeilten Zähne zu einem dümmlichen Grinsen entblößt.<br/><span></span>»Oh … Vielen Dank. Man bekommt sicher nicht jeden Tag ein Kompliment von einem so stattlichen Werwolf.«<br/><span></span>Die Kleine war einfach unbezahlbar. Und amüsant.<br/><span></span>Um die unangenehme Stille zwischen Bode und ihr zu übertönen plapperte Alecto weiter: »Ich habe erst kürzlich einen anderen Werwolf kennen lernen dürfen. Der war auch echt höflich. So wie du. Nur war er geblendet. Gefangen von den Rattenfängern der Opposition. Sicher nichts weiter als ihr Schoßhündchen. Nicht so stolz und frei wie ihr.«<br/><span></span>Mit dieser Flut an Informationen konnten seine Werwölfe eh nichts anfangen. Stalk schlug seine Pfoten in die Leinwand eines Rembrandts und Bode bohrte sich geistesabwesend in der Nase.  <br/><span></span>Fenrir jedoch wurde hellhörig.<br/><span></span>»Hieß er zufällig Lupin?«<br/><span></span>»Ich hab nur einen Namen gehört: Peter. Aber der eine, der auch dabei war, sah unserem damaligen Slytherin-Sucher verdammt ähnlich. Ich vermute, dass es sich bei dem Schönling um den Blutsverräter Sirius Black handelt.«<br/><span></span>»Das hilft mir nicht weiter, Kleines. Wie sah der Werwolf aus?«<br/><span></span>»Er war ungefähr so groß.« Alecto hielt inne, um auf Bode zu deuten. Der Welpe war etwas über sechs Inch hoch. »Hatte grünen Augen und hellbraunes Haar. Aber schon mit grauen Strähnen, dabei war er kaum älter als Zwanzig. War übertrieben höflich und hatte eine heisere Stimme.«<br/><span></span><br/><span></span>Das war er! Ganz sicher! Auch eines seiner Kinder, doch weigerte sich Lupin beharrlich sein Leben als Zauberer abzulegen und endlich der Werwolf zu werden, zu dem Fenrir ihn gemacht hatte. Sogar seine Werwölfin Nastia war mit ihrer Kontaktaufnahme gescheitert. Dabei lockte ihr sanftes Lächeln nahezu jeden Werwolf in Fenrirs Klauen.<br/><span></span>»Mit dem hab ich noch eine Rechnung offen.«<br/><span></span>»Ich auch. Der hat mir nämlich meinen Zauberstab weggenommen.«<br/><span></span>»Du hast dich von diesem Würstchen entwaffnen lassen?«<br/><span></span>»Na du willst dich doch sicher auch nicht zum Butterbier trinken mit ihm treffen, oder?«, erwiderte Alecto trotzig und spuckte wieder Flammen auf die kostbaren Bilder an den Wänden.<br/><span></span><br/><span></span>Einen schwelenden Brand und zwei umgelegte Museumswächter später hatte Fenrir Gewissheit: Keine Artefakte weit und breit. Aber die Information, dass Lupin sich bei der Opposition herum trieb war ohnehin viel wertvoller für ihn.</div>
+    </div>
+  </div>
+</div><div class="clearfloat">
+  <p> </p>
+</div><div>
+  <p></p>
+  <div class="ff-separator">
+    <p> </p>
+  </div>
+</div><div>
+  <p> </p>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29693913/chapters/79214371">Chapter 2</a>: Auf Augenhöhe
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>
+  <u> <strong> <span class="user_underlined"> <span class="user_bold">Auf Augenhöhe</span> </span> </strong> </u>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</p><p> </p><p></p><div class="user_right" align="right">
+  <p>14. Mai 1980</p>
+</div><p><br/><br/><br/>Fenrir spähte die Straße hinab. Im Fenster zu ihrer Rechten zappte der Fernseher unaufhörlich und warf sein flackerndes Licht durch die Vergitterung. Ein steter Wechsel von Grün zu Gelb verlieh der Londoner Innenstadt-Tristesse etwas Abwechselung.<br/>Gedanken und schmerzhaft pochende Herzschläge brodelten in ihm. Beide tobten unvermindert in seinem Kopf und Körper. Aber er hörte ihnen nicht mehr zu. Sie waren verblasst wie vergilbte Fotografien, abgewetzt im Laufe der Zeit. Fenrir vernahm den Appell nach Selbsterhaltung kaum noch.<br/>Immer wenn sie rief, kam er herbei. Ganz gleich was er eigentlich geplant hatte.<br/>Sie zu finden war schwer. Doch Fenrir hatte dafür allmählich einen Spürsinn entwickelt. Beispielsweise waren die Straßen menschenleer, dort wo sie ihr Unwesen trieb. Die Schreie verjagten irgendwann auch die Schaulustigsten. Angst möglicherweise als nächster dran zu sein überwog die Neugierde bei weitem.<br/>Anstatt darüber zu sinnieren, was ihn wohl gleich erwarten möge, entschied Fenrir sich, ihrem Pfad zu folgen. Donnernde Schritte zweier Stiefelpaare echoten hinter ihm.<br/>Stalk presste sich die Hände auf die Ohren. Das tat er jedes Mal, wenn Bellatrix ihren Spaß hatte.<br/>Gemeinsam bogen sie in die nächste Gasse ein. Ein warmer Schimmer roten Lichtes hatte sie schon aus der Ferne begrüßt.<br/>Beide Lestranges hatten einen Gast, den sie fürstlich umsorgten.<br/>Die Adern in den Augen dieses Unglücksraben waren geplatzt. Rote Augäpfel mit braunen Iriden starrten flehend in den Himmel, während Bellatrix herumwirbelte, um ihrem Ehemann einen heißblütigen Kuss auf die Lippen zu pressen. Ihr Bein schnellte hinauf und wickelte sich um Lestranges Oberschenkel. Entblößte dabei die milchweiße und makellose Haut, die von einem nachtschwarzen Seidenpantoffel gekrönt wurde.<br/>Lestranges Hüfte ruckte vor und presste sich gierig gegen ihre.<br/>Grinsend kratzte sich Fenrir im Nacken. Geduldig diesen wilden Austausch an Speichel abwartend – Bellatrix verabscheute es, wenn man sie bei jedweden Tätigkeiten unterbrach – verschränkte Fenrir die Hände hinter dem Rücken. Als Lestrange lüstern seine Hände in Bellatrix Haar vergrub, beschloss Fenrir seinen Blick auf das Opfer am Boden zu heften. Irgendjemand musste hier ja schließlich den Anstand wahren.<br/>Bode und Stalk teilten seine Ansichten nicht. Der eine schob seine Sonnenbrille die Nasenwurzel hinab, um das Schauspiel besser betrachten zu können, während der andere Mühe hatte leise durch die Nase zu atmen.<br/>»Reinblüterinnen scheinen es echt ganz schön nötig zu haben, mhmh«, brummte Stalk und Bode grunzte zustimmend: »Ganz gleich was die für’n Kraut gesoffen oder geraucht hat, das will ich auch. Für mich und die kleine Hexe.«<br/>Dann geschah zweierlei:<br/>Fenrir verpasste zuerst Bode, dann Stalk je einen Schlag in den Nacken. Die Welpen mussten dringend lernen ihr Schundloch zu halten. Glücklicherweise kam Bellatrix ihm dabei zur Hilfe.<br/>Beschwingt glucksend schob sie Lestrange bei Seite und deutete mit ihrem krummen Zauberstab auf Bode.<br/>Ein freudiges Glänzen in ihren Augen war die einzige Vorwarnung. Jaulend ging der Welpe zu Boden. Krümmte sich. Das rote Licht hüllte ihn ein. Wie ein Käfig um Brust und Glieder.<br/>»Crucio«, zischelte Bellatrix mit sadistischer Befriedigung und verstärkte die Pein, indem sie die Spitze ihres Zauberstabes weiter auf Bode hinab senkte und langsam drehte, wie man einen Korkenzieher in eine köstliche Flasche Roten dreht. Unverhohlene Erregung trat in ihre Augen.<br/>In seiner vermeintlichen Agonie schrie der Welpe sich die Seele aus dem Leib.<br/>Anstatt seinem Freund zu Hilfe zu eilen, versiegelte Stalk sein Gehör erneut mit seinen Händen. Er mochte dieses Gebrüll wohl wirklich nicht. Es sah aus als klammerte sich Stalk an seine Schmusedecke.<br/>Fenrir wartete geduldig, bis Bellatrix befriedigt von ihrem neuen Ziel abließ. Lächelnd warf sie sich einen Schwung ihres Haares über die Schulter.<br/>»Schön, dass du es einrichten konntest so schnell zu erscheinen«, sagte sie zu Fenrir und ihre Stimme triefte vor Hohn, »Zunächst: Dieser Widerling da lässt die Finger von Unseresgleichen.«<br/>Die Spitze ihres Pantoffels tippte exemplarisch gegen Bodes Schulter.<br/>Jetzt wo sie drei der sechs Anwesenden still geprügelt hatte, wirkte sie wieder ausgeglichen und zufrieden. Wobei still nicht ganz zutreffend war. Gedämpftes Schluchzen kam von Bode, der sich mühsam aufrappelte und der Typ am Boden in der Gasse schnaufte gurgelnd nach jedem Atemzug.<br/>Fenrir nickte. Bellatrix war eh alles gleich was er sagte. Sie war ein Freund der Taten. Wie er selbst.<br/>»Für deinen Aufwand«, meinte Lestrange und machte einige Schritte auf Fenrir zu, um ihn ein paar Münzen in die Hand zu drücken. Das musste ein Scherz sein. Die konnte er sich gleich in den Arsch schieben. »Beseitige die Sauerei, die meine Frau angerichtet hat. Sei ein kleiner braver Hauself.«<br/>Die Münzen verschwanden in den Taschen von Fenrirs Robe.<br/>»Sauerei?«<br/>»Na diese Made da«, antwortete Bellatrix in einer kindlich schrillen Tonlage und deutete auf den am Boden liegenden Kerl.<br/>Fenrir lächelte, als sein Blick abermals auf ihn fiel.<br/>»Ist das irgendwer besonderes?«<br/>»Hach… wen kümmert das schon? Sei ein Schatz, Greyback, und mach dich nützlich.«<br/>Wieder warf sie ihm einer dieser Blicke zu.<br/>Am Anfang hatte er noch Hoffnungen gehabt, dass irgendwann mal was zwischen ihnen laufen könnte, wenn er ihr nur treu und ergeben genug war. Dann hatte Fenrir verstanden, dass Bellatrix kein Interesse an ihren Bediensteten hegte. Sie bevorzugte Anführer.<br/>Also war Fenrir zu einem geworden.<br/><br/>Mit durchgestreckten Rücken ging er an den Reinblütern vorbei und ging neben dem Kerl am Boden in die Hocke. Der war eh bloß noch eine Kartoffel. Vermutlich kullerte nicht mal mehr ein einzelner Knut durch seine Birne.<br/>Also tat Fenrir das, was getan werden musste. Seine Art von Gnade.<br/>Mit seinem spitzgefeilten Fingern fuhr er in einem langgestreckten Bogen seinen Hals entlang, von Ohr zu Ohr. Das gurgelnde Schnaufen des Kerles wandelte sich. Qualvoll nach Luft japsend krallte er sich an Fenrirs Arme. Der Werwolf grinste mitleidig. Die Augen des Fremden wurden starr. Die Pupillen weiteten sich, als eine neue Welle von qualvollen Schmerzen über sein Nervensystem hereinbrach.<br/>Bald schon schwamm der Kopf in einem Meer aus Blut. Der Kerl sagte nichts mehr doch strampelte er noch unter ihm. Versuchte zu entkommen. Ein hirnrissiges Unterfangen. In seinem Zustand kam er nicht mehr weit. Dann ruderten die Arme nur noch phlegmatisch, ehe sie erschlafften.<br/>Das Blut tropfte und spritze durch die Gegend, als Fenrir seine Hände zu Fäusten ballte und auf das Gesicht dieses Unglücksraben einprügelte. Dann rasten seine gestreckten Klauen wie ein Messer auf den Brustkorb zu. Immer und immer wieder stach er zu. Vergrub seine Nägel in dem Fleisch. Zerriss Kleidung und Leib zur Unkenntlichkeit. Es würde die magische Strafverfolgung einiges an Mühe kosten diesen Kerl zu identifizieren. Sein Kopf – oder das was von ihm übrig war – wabbelte locker am Hals, der so zerhackt war, dass die Wirbel aus der Haut stachen.<br/><br/>Lestrange hatte die Weitsicht besessen sich an den Ausgang der Gasse zu stellen und Wache zu halten. Bellatrix hatte sich während dieses blutigen Spektakels zu Fenrir gesellt und ihn freudig kichernd angefeuert.<br/>Das war etwas, das ihn und seine Herrin verband. Ihm machte es nichts aus, die Drecksarbeit zu übernehmen und Bellatrix genoss es ihn dabei zu beobachten.<br/>Sie tätschelte ihm die Wange, ehe sie mit ihrem Ehemann verschwand.<br/>Ein Grinsen schlich sich auf Fenrirs blutverschmiertes Gesicht. Er sah seine Welpen an und grinste noch breiter. Kurz überlegte er sich von Bode oder Stalk abklatschen zu lassen, ließ es dann aber doch bleiben.<br/>Die hatten das ganze Schauspiel beobachtet, ohne ein Wort zu sagen.<br/>Fenrir stemmte sich auf, wischte sich die Hände an Stalks Robe sauber.<br/>»Eh‘ Boss? Haben wir‘n nu Feierabend? Ich hab‘ Hunger.«<br/>»Soll ich den Typen etwa allein klein schneiden?«<br/>»Den erkennt eh keiner mehr Boss. Ich schwöre, das ist nur noch einen Klumpen Blut und Knochen.«<br/>»Darum geht’s nicht. Hört mir mal zu ihr zwei.«<br/>Fast schon väterlich winkte Fenrir seine Welpen herbei und legte jeweils einen seiner vor Blut triefenden Arme um ihre Schultern.<br/>»Es geht darum auf den ersten Blick möglichst viel Grauen zu verbreiten. Versteht ihr? Außerdem wollt ihr die Herrin doch stolz machen, oder?«<br/>Beide nickten unisono. Bode wurde wieder ein bisschen bleicher. Von irgendwoher zückte er eine seiner schlecht gebauten Tüten, zündetet sie mit einem Sturmfeuerzeug an. Rauchend und brummend machte er sich an die Arbeit. Stalk ging ihm zur Hand so gut er konnte und zog gelegentlich an dem Joint.<br/>Bei diesem Gemisch von Körpersäften und dem süßlichen Kraut, bekam auch Fenrir allmählich Hunger. Als sähe er einen Film und nicht die sadistische Verstümmlung eines Mannes. Der vermutlich vor wenigen Stunden Nudeln mit Käse gegessen hatte. Zumindest ließ sein Mageninhalt dies vermuten.<br/><br/>Nachdem der Typ nichts weiter als eine rote Pfütze mit Klumpen war, kramte Fenrir die Galleonen von Lestrange aus seinen Taschen hervor und warf sie den Welpen vor die Füße.<br/>»Der Abend geht auf mich. Zieht euch vorher um, damit die magische Strafverfolgung nicht auf dumme Ideen kommt.«<br/>»Naha, vielleicht dürfen wir uns bald gar nich‘ mehr von unserem Wohnort entfernen, mhmh. Nur noch rauchen, saufen und ‘n paar Nachbarn zerfleischen. Klingt doch ganz gut.«<br/>Beipflichtend nickte Bode Stalk über die Sonnenbrille hinweg zu.<br/>»Macht was ihr wollt. Aber morgen Abend seid ihr wie besprochen am Piccadilly Cirius. Wir haben ein Date.«<br/>Während Stalk die Münzen vom Boden klaubte, wechselten Bode und Fenrir einen kurzen Blick. Nicht auf Augenhöhe, nein. Eher eine Art stilles Verständnis darüber, wie es war sich jemanden zu unterwerfen, der nichts anderes im Kopf hatte als einen wie ein Spielzeug zu benutzen und dann weg zu werfen.<br/>Vielleicht malte auch Bode sich irgendwelche Chancen aus? Alecto gab sich zumindest noch die Blöße ihn mit ihrer Version zuckersüßer Höflichkeit zu behandeln. Dieses Stadium hatten Fenrir und Bellatrix gleich übersprungen. Beim ersten Cruciatus hatte sie ihren Standpunkt unmissverständlich gemacht.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29693913/chapters/79214413">Chapter 3</a>: Hab keine Angst
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p><p>
+  <u>
+    <strong>
+      <span class="user_underlined">
+        <span class="user_bold">Hab keine Angst</span>
+      </span>
+    </strong>
+  </u>
+  <br/>
+  <br/>
+  <span></span>
+  <br/>
+  <span></span>
+</p><p></p><div class="user_right" align="right">
+  <p>22. Mai 1980</p>
+</div><p><br/><span></span><br/><span></span>Fenrir war zufrieden mit seinem Leben.<br/><span></span>Der Dunkle Lord unterstützte ihn. Half ihm bei seiner Suche nach Zerstreuung und begrüßte seine Grausamkeit. Er konnte definitiv nicht klagen.<br/><span></span>Als Anführer eines größer werdenden Rudels hatte er einiges an Verantwortung. Die Rangfolge musste verteidigt werden. Die Neuen lechzten nur so vor Machtgeilheit. Sie mussten in die Schranken gewiesen werden. Dazu kamen die Aufträge. Langweile gehörte der Vergangenheit an.<br/><span></span>Die Ablehnung der anderen Todesser während eben dieser Aufträge machte ihm gelegentlich doch noch zu schaffen. Bei ihren Massakern schickten sie ihn in die vordersten Reihen, überließen ihm die Drecksarbeit – nicht, dass er sich beklagen wollte – und warfen ihn danach wie ein unlieb gewordenes Paar Stiefel weg. Es war entwürdigend, doch er kannte es nicht anders.<br/><span></span>Bis …  <br/><span></span>er sie kennen gelernt hatte. Sie sah zu ihm auf. Nicht nur der physischen Natur wegen.  <br/><span></span>Ein kleines Mädchen mit lädiertem Gesicht und nervösen Augen. Jetzt schlich sie vor ihm durch den schmuddeligen Flur.  <br/><span></span>Fenrir kannte diesen Blick nur zu gut.<br/><span></span>In der Regel rannten seine Opfer vor ihm davon. Wie sollten sie auch nicht? Wenn sie ihren Kopf wendeten und voller Verzweiflung zurück starrten, merkten, dass sie einfach nicht schnell genug waren, dann potenzierte sich genau dieser Ausdruck.<br/><span></span>Nur galt die Verzweiflung bei ihr nicht ihm.<br/><span></span>Was ihn jedes Mal wunderte. Doch es war so.<br/><span></span>Sie hatte Angst. Vor den Muggeln, die sie gemeinsam jagten. Vor den Blutsverrätern, die sich ihnen todessüchtig in den Weg stellten. Aber nicht vor ihm.<br/><span></span><br/><span></span>Sie hatte sich nicht gut im Griff. Die Spitze ihres Zauberstabs warf einen zittrigen Lichtkegel auf den Boden. Die Wände waren rissig, der Putz blätterte ab. Es erinnerte Fenrir an seine eigene Unterkunft.<br/><span></span>Alles hier war mit Staub und Spinnenweben bedeckt. Lag im Halbdunkeln.<br/><span></span>Zu allem Überfluss begann Alecto jetzt auch noch zu plappern.<br/><span></span>»Ich hatte heute Muggelkunde. Dieser Stotterer Quirrell versteht es echt dieses widerwärtige Zeug noch öder zu präsentieren als es sowieso schon ist«, sagte sie und schenkte ihm ein scheues Lächeln.  <br/><span></span>Fenrirs Hand kroch in die Höhe, noch bevor er sich bewusst entschlossen hatte sie zu heben. Tätschelte ihr die Schulter.<br/><span></span>»Nutz die Chance, um deinen Feind kennen zu lernen, Kleines. Nur was du kennst, kannst du auch erfolgreich jagen.«<br/><span></span>Ihre Schulter ruckte schmerzhaft zusammen. Die Bluse warf eine Falte über ihrem Rücken. Ihr Körper war ein sinnliches Büffet. Jede einzelne Regung eine unerträgliche Versuchung.<br/><span></span>Doch er hatte sich im Griff.<br/><span></span>Ließ das Monster in sich wüten. Hörte zu, aber unternahm nichts.<br/><span></span>So kurz vor dem Vollmond roch und schmeckte er noch intensiver. Sie stank verdorben. Durch den Nebel des schweren Parfüms – war das Patschuli und Zitrone? – konnte er den Schweiß auf ihrer Haut riechen, den Geruch des Mannes von letzter Nacht zwischen ihren Schenkeln und die scharf kupferartige Note von Menstruationsblut. Ein Emblem ihrer kürzlich erwachten Weiblichkeit. Ein Jammer, dass sie es zu vertuschen suchte.<br/><span></span>Schon vom bloßen Anblick ihrer kindlichen Haut wurde ihm schwindelig. Sie war außerdem etwas pummelig. Das mochte er. Als würde man Obst und Fleisch und Blut zu einem Cocktail zusammenrühren.<br/><span></span>Fenrir war so gierig, es zu kosten, dass sein Magen sich verkrampfte. So durstig nach dem Geschmack des Blutes, dass seine Kehle ausdörrte. Sein Speichel war dick und klebrig. Lautstark schluckte er.<br/><span></span>»Ich hab auch noch Tee dabei. In einer Kanne«, wie zum Beweis hob sie ihre Umhängetasche und wackelte mit dem Schulterriemen, »Ist schwarzer Tee. Magst du so was? Der macht wach. Damit ich nicht einschlafe und dir gut helfen kann.«<br/><span></span>Sie klang stolz und überaus motiviert.<br/><span></span>»Dann muss ich nachher nur pissen. Wie von deinem Gewürzmet beim letzten Mal.«  <br/><span></span>»Aber ich habe dir den Rücken auch da freigehalten, hab ich.«<br/><span></span>Die Fäuste in die Hüften gestemmt starrte sie zu ihm hinauf. Irgendwo knallte eine Türe.<br/><span></span>Die Kleine zuckte nicht mal zusammen. Denn sie fühlte sich durch seine bloße Präsenz sicher. Niemand konnte ihr etwas anhaben. Bestimmt redete sie sich so etwas in der Art ein. Träge hob sie ihren Zauberstabarm und vertrieb Schatten, die zuvor nicht dagewesen waren.<br/><span></span>Ihre Naivität machte sie noch verlockender. Unter welchem Stein war sie aufgewachsen? Wie konnte ihr entgehen, dass nicht von ihrer Umwelt die größte Gefahr ausging, sondern von ihrem Begleiter selbst?<br/><span></span>Murrend fuhr Fenrir sich mit der Pranke durch das Gesicht.<br/><span></span>»Nächstes Mal klau was Stärkeres, wenn wir was Schönes unternehmen.«<br/><span></span>»Ich glaube wir haben eine unterschiedliche Vorstellung von etwas Schönem. Ein Stück Kuchen und ein Kakao in Hogsmeade ist was Schönes. Die würden Augen machen, wenn wir da zusammen auftauchen würden.«<br/><span></span>Sie kicherte auf und knuffte ihn gegen den Arm. Der wankte nur träge.<br/><span></span>Wieder rief Fenrir sich mahnend in Erinnerung, dass er das Tier in sich unter Kontrolle hatte. Es zurück pfeifen konnte, wenn er musste.<br/><span></span>Ihre prallen Wangen machten es ihm nicht leichter. Am liebsten hätte er seine Zähne in dem blanken Fleisch vergraben. Hier und jetzt! Sie hatten sogar einen entzückenden Rotstich zwischen all den Sommersprossen. Wie ein reifer Apfel.<br/><span></span>»Ja … die würden Augen machen«, antwortete Fenrir zähneknirschend. Mit seiner Pranke schob er sie weiter den Gang hinab. »Ich bin kein Kniesel. Leuchte gefälligst. Sonst seh ich nichts. «<br/><span></span>Es war nicht viel nötig. Ein blitzschneller Griff seiner Kiefer nach ihrer Kehle und es wäre aus. Keine Gelegenheit für sie, um Gnade zu winseln. Bei ihr würde ihn das tatsächlich stören: Das übliche Gewimmer nach Mommy und Daddy.<br/><span></span>»Was machen wir denn überhaupt in diesem Drecksloch? Du hast was von einer Überraschung versprochen!« Ihre Schuhe klackerten auf den Fliesen des stillgelegten U-Bahn-Bahnhofes.<br/><span></span>Gelegentlich kam hier jemand vorbei, um die verstorbenen Junkies wegzuräumen, die an ihrer Kotze erstickt oder sich mit einer Überdosis das Herz oder Hirn gesprengt hatten.<br/><span></span><br/><span></span>Hier würde Fenrir ihr zeigen, dass man vor Muggeln keine Angst zu haben brauchte. Dass sie nichts weiter waren als Nutzvieh. Wenn man das Pack nicht entsprechend lenkte, vernichtete es sich selbst. Nicht mal für ein Dasein als Werwolf geeignet. In der Regel starben sie durch die Infektion.<br/><span></span>Fenrir schwieg beharrlich. Sie wollte reden. Sollte sie. Was hatte das mit ihm zu tun?<br/><span></span>Eine leere Bierflasche aus dem Weg kickend, die klirrend an der nächsten Wand zersprang, tippte sie sich mit dem Finger gegen die Unterlippe. »Warst du eigentlich in Hogwarts? Also als Schüler.«<br/><span></span>»Ja, war ich«, antwortete Fenrir schmunzelnd. Er wusste, worauf sie hinaus wollte. Mal sehen, wie geschickt sie sich dabei anstellte.<br/><span></span>»Was für UTZs hast du?«<br/><span></span>»Keinen.«<br/><span></span>»Und ZAGs?«<br/><span></span>»Keinen einzigen.«<br/><span></span>»Dann kannst du aber nicht in Hogwarts gewesen sein«, motzte sie und drehte sich auf ihren Absätzen zu ihm herum. Mit dem Zauberstab blendeten sie ihn. Den Arm schützend vor die Augen gelegt knurrte Fenrir.<br/><span></span>»Pass doch auf.«<br/><span></span>»Entschuldige, Fenrir.«<br/><span></span>Dafür, dass sie noch ein Welpe war, hatte sie es ganz gut drauf, die Kerle mit ihrer Stimme bezirzen zu wollen. Und der Schmollmund war auch nicht schlecht.<br/><span></span>Er winkte ab.<br/><span></span>»Ich bin raus geflogen, als ich ein Werwolf wurde. Anfang der vierten Klasse. Pech gehabt, Fenrir. Kein Orden des Merlins für dich.«<br/><span></span>»Wie gemein.« Tröstend strich sie ihm über den Arm.<br/><span></span>Bei ihrem Anblick und erst recht der Berührung ihrer zarten Finger flutete erneut Speichel in seine Mundhöhle. Der Trieb loderte wie ein Hochofen, brannte tief in seinem Inneren, wild und drängend.<br/><span></span>Fenrir atmete schwer aus und spürte, wie sich sein Körper entspannte, als ihre Hand sich endlich zurückzog.<br/><span></span>Das Monster bestimmte nicht. Er befahl und es folgte.<br/><span></span>Das Grün-Blau ihrer Augen erinnerten Fenrir an irgendwas Giftiges. Eine brodelnde Substanz, gefangen in einem Kranz aus dichten, geschwärzten Wimpern anstatt sicher bewahrt in gusseisernen Kesseln.<br/><span></span>»Gemein ist, dass du nicht auf mich gehört hast. Was seh ich da an deinen Füßen?«<br/><span></span>Alecto zog ihren Kopf ein und mimte ein schlechtes Gewissen. Exemplarisch hob sie ihren linken Fuß.<br/><span></span>»Aber die sind hübsch.«<br/><span></span>»Das weiß ich. Wir hatten die Diskussion schon. Aber dieses Mal trag ich dich nicht.«  <br/><span></span>Gelegentlich musste Fenrir ein Machtwort bei der Kleinen sprechen. Sonst würde sie ihm sehr bald auf der Nase herumtanzen. Außerdem brachte es ihn auf andere Gedanken. Wusch die Vorstellung fort, wie wohl ihre zarten Knospen schmeckten oder ob er das Mal des Dunklen Lords erst zu Beginn fressen oder es sich bis zum krönenden Abschluss aufbewahren sollte.<br/><span></span>»Nächstes Mal denk ich dran «, kicherte sie und hüpfte zum Gegenbeweis beschwingt voran. Wie eine kleine Stepptänzerin in einem echt herunter gekommen Lokal. Viel zu virtuos für diesen Schuppen, doch zu namenlos für lukrativere Aufträge.<br/><span></span>Er sah ihr nach, ohne zu blinzeln, dann verzogen sich seine Mundwinkel zu einem breiten Grinsen.<br/><span></span>Sie gingen noch eine Weile. Mehr oder weniger wortkarg. Er mehr. Alecto plapperte in ihrer Nervosität drauf los und offenbarte ihm, was sie zurzeit brennend beschäftigte.<br/><span></span>Fenrir gab sich alle Mühe, nicht an das köstliche Fleisch ihrer üppigen Hüften zu denken, das da neben ihm umher stolzierte, während Alecto ihm erklärte, warum sie Kräuterkunde, Wahrsagen und Zaubertränke allen anderen Schulfächern vorzog. Fenrir konnte ihre Meinung diesbezüglich nicht teilen, doch behielt er sie für sich, um ihr nicht noch unnötig Gesprächsstoff zu geben.<br/><span></span>Dann nahm sie ihm das Versprechen ab, dass Fenrir von der nächsten Sache keiner anderen Seele – nicht mal einem Geist! – jemals erzählen dufte.<br/><span></span>Nicht, dass er den Eindruck gehabt hätte, dass er hierbei wirklich eine Wahl zu haben. Fenrir nickte steif.<br/><span></span>Sie schenkte ihm ein anzügliches Grinsen. Die Kleine musste wahnsinnig sein. So nah am Abgrund tanzte sie mit ihren hochhackigen Stiefeln daran herum.<br/><span></span>Fenrirs Mund verzog sich zu einer harten Linie. Sie senkte den Blick, doch amüsierte sie sich prächtig. Der Schelm zog ihre Nase kraus.<br/><span></span>Mit hochrotem Kopf offenbarte sie ihm, dass sie einen Freund hatte. Aleisters Averys Sohn, wenn Fenrir es richtig verstanden hatte.  <br/><span></span>Warum erzählte sie ihm davon? Natürlich würde er es für sich behalten. Schließlich war er vertrauenswürdig - bis ihm jemand etwas dafür bot, es nicht mehr zu sein.<br/><span></span><br/><span></span>Alecto nuschelte hastig vor sich hin und ihre zarten Ohrmuscheln glühten Dunkelrot. Sollte das Tier in ihm doch toben. Fenrir behielt die Kontrolle, auch wenn der Geruch ihrer Haut, nachdem sich das Parfüm mit jeder Minute mehr und mehr verflüchtigt hatte, ihn schier in den Wahnsinn trieb.<br/><span></span>Schwankend tauchte er an ihr vorbei in den nächsten Durchgang, das Ziel ihrer Reise direkt vor Augen.<br/><span></span>Mit wenigen Schritten würden sie die Bahnhofsmission erreicht haben.<br/><span></span>Alecto schloss zu ihm auf.<br/><span></span>Kurz bevor sie konkreter werden konnte, was ihre Freizeitaktivitäten betraf, packte Fenrir sie an der Schulter und schnarrte: »Ruhe jetzt. Wir sind da.«<br/><span></span>»Bahnhofsmission«, las Alecto und ihre Augen flogen wieder und wieder über das vollgeschmierte Schild.<br/><span></span>»Der Teil wurde vor Jahren still gelegt. Hat sich nicht mehr gelohnt für die Muggel. Jetzt dient er Ungeziefer aller Art als Unterschlupf.«<br/><span></span>Fenrir wanderte auf und ab, gestikulierte ausladend, als er Alecto alles weitere erklärte. Ihre Augen begannen zu leuchten. Sein Plan ging auf – sie war begeistert – und Fenrir konnte kaum noch an sich halten.<br/><span></span>»Und wie immer - «<br/><span></span>» … komm mir nicht in die Quere. Ich will dich nicht verletzen«, beendete das Mädchen den Satz auswendig mit albern verstellten tiefen Stimme und nickte.  <br/><span></span>Der Hass und die Verachtung auf die Individuen, auf die sie gleich trafen, half ihm kurzfristig über den Hunger hinweg. Mit seiner Pranke deutete er auf die Sicherheitstüre der Bahnhofsmission und sagte: »Und jetzt öffne die verdammte Tür. Mach dich nützlich.«<br/><span></span>Sie kam seinem Befehl nach. Er liebte es dem kleinen Reinblut tatsächlich Befehle erteilen zu können und nur wenig später leuchtete das Vorhängeschloss auf. Quietschend schwang die Tür zurück und Alecto schnellte zurück an Fenrirs Seite.<br/><span></span>Ihre Gesichtsfarbe wurde käsig. Fast fahl.<br/><span></span>Ihre Wangen mit tiefen Grübchen – wenn sie lachte – hatten nur noch etwas Kontrast durch die vielen Sommersprossen in ihrem Gesicht. Auf ihrer geschwungenen Unterlippe kaute sie herum, die großen scheuen Augen auf den dunklen Schlund vor ihnen gerichtet. Immer so melancholisch, die Kleine. Mutmachend klopfte Fenrir ihr auf den Rücken und ging voran.<br/><span></span>Aus der Finsternis schälte sich eine Gruppe von Menschen. Vielleicht sechs. Es konnten auch acht sein. Liegend oder gekrümmt in den Ecken.<br/><span></span>Der Gestank von Ammoniak brannte in den Augen. Auch Gall- und Magensäfte kitzelten Fenrirs Nase.<br/><span></span>Ein paar Köpfe hoben sich träge. Gebrumme und Gemurmel erklang.<br/><span></span>»Eh … Verpisst euch. Wir waren zuerst hier. Außer, ihr habt was dabei«, sagte einer unsauber und schob sich mit dem Rücken an der Wand hoch, um die Neuankömmlinge zu begutachten.<br/><span></span>Alecto war angewidert. Mit spitzen Fingern hielt sie sich die Nase zu. Die Lippen geteilt, um überhaupt noch Luft zu bekommen. Wie zwei zarte Leckerbissen.<br/><span></span>Kurz hinter der Türzarge ging Fenrir vor Alecto in die Hocke und legte beide Hände auf ihren Schultern ab.<br/><span></span>»So. Du wartest hier.«<br/><span></span>»Wieso?«, fragte Alecto und Fenrir hätte am liebsten aufgelacht. Sie stank nach Furcht.<br/><span></span>»Also… ich geh da jetzt rein. Und alle die verschwinden wollen, legst du um.«<br/><span></span>»Umlegen … ?« Sie knetete an ihrem Zauberstab herum.<br/><span></span>»Genau. Hab keine Angst. Wir haben doch geübt. Du kennst den Zauber. Du packst das.«<br/><span></span>Bestärkend kniff er sie mit Daumen und Zeigefinger in die Wange. Den Spaß gönnte er sich dann doch.<br/><span></span>Erst als Alecto entschlossen den Zauberstab hob und mit ihren Lippen stumm die zwei Worte mehrfach hintereinander formte, donnerte Fenrir in die Bahnhofsmission.<br/><span></span>Die Menschen waren in einem erbärmlichen Zustand. Bei einem steckte sogar noch die Nadel im Arm. Die Adern hatte er sich mit einem Gürtel abgebunden. Das Blut, das dahinter ungeduldig pulsierte, roch fade.<br/><span></span>Der erste Typ schaffte es sich aufzurappeln. War eingeschüchtert.<br/><span></span>»Wir haben selbst nichts mehr. Hier gibt’s nichts zu finden.«<br/><span></span>Auf Diskussionen ließ er sich nie ein. Dies schuf nur noch um so mehr ein Klima der Angst.<br/><span></span>Auf einer Pritsche, in ein halbes Dutzend Decken gewickelt, fand er dann was er suchte.<br/><span></span>Ein junges Mädchen. Vielleicht fünfzehn oder sechszehn Jahre. Nur ihre Nase und ihr verwaschenes, rotgefärbtes Haar lugte neben ein paar Ohren aus dem Kokon.<br/><span></span><br/><span></span>Ohne Umschweife packte er ihren Hals, voller Vorfreude auf der Kommende.<br/><span></span>Vermutlich war das Gör von zu Hause weggelaufen. Vor Jahren. Sie war in einem sehr schlechten Zustand. So wie sie von ihm gegen die Wand gedrückt röchelte, konnte er die vielen Einstichwunden an ihren Armen nicht übersehen. Die Ekzeme in ihrem Gesicht. Graue Augen starrten ihm panisch entgegen, während sie verzweifelt auf seine Pranke einhämmerte. Den zahnlosen Mund weit aufgerissen, entkam ihrer zugedrückten Kehle kein Laut.<br/><span></span>Sein Blutdurst brach aus dem Kerker hervor, in dem Fenrir ihn den ganzen Abend so mühsam gebunden hatte. Die heißen Tränen des Mädchens waren Öl im Fauchen seines Feuers, das zum Sturm wurde. Geifer und Speichel spuckend drang er mit aufgerissenem Maul und spitzgefeilten Reißzähnen gegen sie. Den erlösenden ersten Biss versagte er sich mit aller Selbstbeherrschung, die er noch aufzubringen im Stande war.<br/><span></span>Er warf einen Blick zurück über seine Schulter.<br/><span></span>»Viel Spaß, Kleine«, knurrte er Alecto noch zu, bevor er sich wieder seiner Beute zuwandte.<br/><span></span>Mit der freien Pranke befreite er ihren Oberkörper von der lästigen Kleidung. Da schrie Alecto zum ersten Mal » Avada Kedavra«. Das grüne Licht blieb aus. Vor rasender Wut brüllend ließ er sich noch ein letztes Mal ablenken und sah zum Eingang.<br/><span></span>Einer der Junkies rannte direkt auf die kleine Reinblüterin zu.<br/><span></span>Nur äußerst ungern würde er die Faust um den Hals seiner Beute nochmal lösen und von ihr ablassen. Doch soweit kam es nicht.<br/><span></span>Alecto schrie den Zauber erneut.<br/><span></span>Die Stirn gefruchtet, das Gesicht voller Abscheu. Ein neongrünes Licht riss den Junkie von den Beinen und ließ ihn reglos zurück. Am Boden.<br/><span></span>Als Alecto freudig aufquietschte, wusste er, dass sie allein klar kam.<br/><span></span><br/><span></span>Grinsend drehte Fenrir sich wieder dem vor Angst entstelltem Gesicht vor ihm zu.<br/><span></span>Endlich vergrub er seine Zähne in ihr. Er riss einen großen Fleischbrocken aus ihrer Brust und verschlang ihn. Blut schoss warm und süß über seine Zunge und ihren Leib. Das Mädchen versuchte nicht mehr zu schreien. Er arbeitete sich jetzt rasend vor Gier in sie hinein, bis er ihre Rippen aufbrach wie eine fette Auster und die darunter liegenden Organe erreichte. Erst dann sah er ihr wieder in die Augen.<br/><span></span>Das ungläubige Entsetzen würde ihr als Maske erhalten bleiben, bis die Ratten es fraßen. Die Lider flackerten nur noch schwach.<br/><span></span>Wenn er nicht wieder hinsah, würde er sich weiter Alectos Körper an ihrer Stelle vorstellen können.<br/><span></span>Wie er einen großen Bissen aus ihrer Kehle nahm, die Luftröhre zerfetzte und den noch warmen Lebenssaft auf seinen Lippen schmeckte. Fenrir begann gurgelnd zu lachen, saugte an dem butterzarten Fleisch.<br/><span></span>Alecto würde sicher nicht so erbärmlich sterben. Und besser schmecken als diese Junkie-Schlampe.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/29693913/chapters/79214479">Chapter 4</a>: Dein Freund und Helfer
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p> </p>
+<p>
+  <u>
+    <strong>
+      <span class="user_underlined">
+        <span class="user_bold">Dein Freund und Helfer</span>
+      </span>
+    </strong>
+  </u>
+  <br/>
+  <br/>
+  <span></span>
+  <br/>
+  <span></span>
+</p>
+
+<p></p><div class="user_right" align="right">
+  <p>12. Juni 1980</p>
+</div><p><br/><br/><span></span>»Entschuldige dich gefälligst bei mir!«<br/><span></span>»Nein.«<br/><span></span>»Ich bestehe darauf.«<br/><span></span>»Nein.«<br/><span></span>»Aber du wolltest mich fressen!«<br/><span></span>»Ich habe dir gesagt: Komm mir nicht in die Quere.«<br/><span></span>»Aber du wollest mich wirklich fressen. Ich glaub das nicht.«<br/><span></span>»Ja? Und?«<br/><span></span>»Ich dachte wir verstehen uns.« Alecto grapschte nach seiner Pranke. Fenrir rollte überdeutlich mit den Augen. Die Kleine hatte echt nicht mehr alle Tassen beisammen. Fahrig schüttelte er ihre Hand weg.<br/><span></span>»Ich habe dann keine Kontrolle. Stell dich nicht so an. Wenn ein Sprengzauber dich versehentlich erwischt, bist du dem doch auch nicht bös‘, oder?«<br/><span></span>Die Lippen wie einen Schnabel gespitzt starrte Alecto nachdenklich drein. Ihr Blick glitt hinüber zum Schaufenster von Dystyl Phaelanges. Nach einer Weile sagte sie: »Das stimmt nicht. Ich war mir sicher, dass du mich erkennst. Da war irgendwas in deinen Augen.«<br/><span></span>»Ein Werwolf steht vor dir, will dich zerfleischen und du deutest in aller Ruhe seinen Blick?« Das konnte unmöglich ihr Ernst sein.<br/><span></span>»Na, vorher hättest du meinen Bruder gefressen. Und der ist echt zäh. Deswegen hatte ich einen Moment.«<br/><span></span>Lächelnd betrachtete sie einen ausgehöhlten Schädel in der Auslage. Ein Windlicht.<br/><span></span>»Da bildest du dir was ein.«<br/><span></span>»Nein. Ich bin mir sicher.«<br/><span></span>»Das ist lächerlich. Meine Jungs drücken sich wer-weiß-was in die Venen, damit sie auch abseits vom Vollmond einen vergleichbaren Trip erleben. Erfolglos. So einen Kontrollverlust gepaart mit Macht und Hunger erleben sie nur währenddessen. Die Sinne sind zum Zerreißen geschärft. Du hörst das Blut in den Adern der Menschen pulsieren. Es gibt dann nur noch einen Gedanken: Fressen. Und zwar alles. Und jeden.«<br/><span></span>»Wieso nimmst du dich bei der Aufzählung heraus?«<br/><span></span>»Was? Mach ich doch gar nicht!«<br/><span></span>»Doch! Du redest die ganze Zeit von „denen“. Und nicht von dir.«<br/><span></span>Wie die widerspenstige Göre, die Alecto nun einmal war, schrie sie mittlerweile durch die halbe Nokturngasse. Machte eine Szene. Im Versuch sie zu beruhigen, tätschelte er ihre Schulter.<br/><span></span>»Du hörst Gespenster. Komm. Ich kauf dir die Lampe, die du die ganze Zeit anstarrst und dann geht es für dich zurück nach Hogwarts.«<br/><span></span>»Die ist wirklich hübsch, oder? Bestimmt der Schädel eines Blutsverräters.«<br/><span></span>Sie lachte fies. Freute sich wie ein kleiner Kobold über einen Sack voller Galleonen.<br/><span></span>»Bestimmt. Warte hier.«<br/><span></span>Eine Glocke über der Türe kündigte Fenrirs Erscheinen im Lokal an. In den Auslagen dominierte eine Farbe: Weiß. Blankpolierte Knochen so weit das Auge reichte. In allen erdenklichen Formen.<br/><span></span>Madam Parkinson - die leicht exzentrische Besitzerin des Ladens - wog auch ohne Kleider ungefähr zwei Tonnen. In Kürze würde sie Mutter werden. Oft hatte sich Fenrir gefragt, wer diesen Berg wohl freiwillig bestieg.<br/><span></span>»Die Lampe im Schaufenster.«<br/><span></span>»Ich wusste gar nicht, dass Sie eine Tochter haben. Ein niedliches Kind.«<br/><span></span>Madam Parkinson wälzte sich hinter der Theke hervor hinüber zu den Auslagen. Sein Blick glitt hinüber zu Alecto vor dem Schaufenster. Sie fischte sich einen ihrer Ohrringe aus ihrer Mähne und streckte ihm dann – wohl, weil sie sich ertappt fühlte – die Zunge raus.<br/><span></span>»Kommt nach der Mutter, hm?«<br/><span></span>»Wie kommst du denn darauf?«, erwiderte Fenrir und schluckte den restlichen Sarkasmus runter.<br/><span></span>»Macht dann dreizehn Sickel.«<br/><span></span>»Das ist Wucher.«<br/><span></span>»Die Zeiten sind für jeden von uns hart, Greyback.«<br/><span></span>»Zehn Sickel. Keinen Knut mehr.«<br/><span></span>»Zwölf. Sonst zahl ich drauf.«<br/><span></span>»Elf. Und erzähl keinen Schwachsinn. Wenn es zur Zeit irgendwas gibt, dann sind das Leichen und Knochen.«<br/><span></span>»Gut Elf. Aber nur, weil dein Töchterchen dich so anstrahlt.«<br/><span></span><br/><span></span>Mit dem Windlicht in den Händen war das Thema von zuvor glücklicherweise vom Tisch. Insgesamt machte Alecto einen zufriedenen Eindruck.<br/><span></span>»Willst du <span class="user_italic">es</span> eigentlich mal sehen?«<br/><span></span>»Nein.«<br/><span></span>»Tut wirklich weh. Ich habe danach geheult wie ein… na ja, wie ein Mädchen halt. Brennt auch jetzt noch. Echt übel. «<br/><span></span>»Damit käm‘ ich klar.«<br/><span></span>»Deine Zeit kommt schon noch.«<br/><span></span>»Ich wär‘ mir da nicht so sicher. Und jetzt rauf mit dir. Endstation.«<br/><span></span>Mit einem Kopfnicken deutete Fenrir die Treppen zur Winkelgasse hinauf. Oben war sicher einiges mehr los. Die Trümmer des Aufstandes gehörten der Vergangenheit an. Es ging auf die Sommersonnenwende zu. Ein Grund mehr die Lokalitäten mit kitschigen gelben Blümchen und Lampenschirmchen zu schmücken.<br/><span></span>»Kann ich nicht einfach von hier unten apparieren?«<br/><span></span>»Das Apparieren ist nur für Notfälle. Denk an deine Spur. Sei eine brave Schülerin, geh in den Tropfenden Kessel und floh von dort aus nach Hogwarts. Beweg dich.«<br/><span></span>Sie hatte ihm aufgelauert. Dabei gab sie sich mal mehr, mal weniger Mühe. Wie die Unschuld selbst hatte sie dagestanden und die Acrumantulas im Schaufenster gegenüber von Borgin und Burks begafft. Mit einem Spitzhut, Kniestrümpfen und in einer sommerlichen Robe. Als hätte sie kein Wässerchen trüben können. Sie hatte vom Zufall gesprochen. Schicksalspfade, die sich kreuzten und fest ineinander verwoben waren. Fenrir glaubte nicht daran. Gerade war er im Begriff gewesen sich ein paar Heiltränke für den morgigen Auftrag zu besorgen. Die Preise in den Apotheken grenzten mittlerweile an Halsabschneiderei. Aber was hatte er für Alternativen? In die Winkelgasse hinauf konnte er nicht und Brauen hatte noch nie zu seinen Talenten gehört. Dafür war er einfach zu ungeduldig. Und wenn er Alecto darum bat, würde sie am darauffolgenden Abend nur mitkommen wollen.<br/><span></span>»Na gut.« Mit hängenden Schultern stapfte sie wehmütig die Treppen hinauf. »Aber wir sehen uns, ja? Und danke.«<br/><span></span>»Wir sehen uns«, bejahte Fenrir mürrisch und verschränkte die Arme vor der Brust. Die Kleine klang schon wie seine Mutter. Widerlich.<br/><span></span>Oben angekommen winkte sie zum Abschied und verschwand aus seinem Blickfeld.<br/><span></span>Noch bevor er auch nur einen Schritt gemacht hatte, hörte er das freudige Gezeter eines Ordnungshüters. Faselte was von Ministerium und Ausgangsbeschränkungen. Sie war ihnen direkt in die Arme gerannt. Fantastisch.<br/><span></span>»Was haben wir denn da? Eine Schulschwänzerin. Du hast ganz schön Ärger an der Backe, Miss.«<br/><span></span>»Au! Nicht da anfassen! Sie tun mir weh!« Alecto‘s Stimme war schrill.<br/><span></span>Falsche Antwort, dachte Fenrir und nahm das erste Dutzend Stufen. Drückte sich gegen die Wand des Aufgangs und spitze die Ohren.<br/><span></span>»Stell dich nicht so an!«<br/><span></span>Eine andere Stimme. Zwei Brigadisten. Er durfte nicht einschreiten, denn sonst würde das Chaos losbrechen. Wenn Fenrir Greyback sich außerhalb der Nokturngasse zeigte, patrouillierte in den nächsten Tagen die dreifache Menge dieser Hansel.<br/><span></span>»Du kommst jetzt schön mit uns. Mal sehen was deine Eltern dazu sagen, dass du Mitten in der Woche in dieser finsteren Gegend herumstromerst.«<br/><span></span>»Meine Mam ist schwer krank«, sprudelte Alecto los, »Ich machs auch nie wieder. Versprochen. Aber ich will meine Mam damit nicht behelligen. Das regt sie nur unnötig auf. War mit meinem Tad da unten. Der ist auch noch da. Wir haben Kräuter verkauft. Dianthuskraut. Wir bekommen bessere Preise von dem lieben Herren in der Apotheke, wenn ich dabei bin. Tad weiß das. Deswegen hat er mich aus der Schule geholt. Mam ahnt nichts davon. Ich schwör's, bei Orion. Bitte. Lassen Sie mich los.«<br/><span></span>»Dann gehen wir jetzt mal schön deinen Vater suchen.«<br/><span></span>»Bist du dir sicher, Ed? Du willst in diese Kloake einen Fuß setzen?«<br/><span></span>»Komm schon. Die Kleine hier lügt doch wie gedruckt.«<br/><span></span>Alectos mühsam hervorgepresste Tränen halfen ihr diesmal nicht aus der Patsche. Fenrir legte seinen Hinterkopf gegen die geklinkerte Wand. Schloss die Augen und nahm ein paar tiefe Atemzüge. Wegen Schulschwänzerei würde sie wohl kaum nach Askaban kommen. Er hingegen schon, wenn er am helllichten Tage einen Schritt da rauf machten würde.<br/><span></span>»Heul nicht. Sag uns einfach die Wahrheit. Und hör auf an meinem Arm herumzuzerren.«<br/><span></span>»Schon irgendwie auffällig, hm? Vielleicht hat sie Hehlerware dabei.«<br/><span></span>Ein Handgemenge brach aus. Alecto fluchte und spuckte. Dann folgte ein hoher Schrei, als hätte man sie mitten auf der Straße zur Gänze entblößt.<br/><span></span>Zwei Heiltränke. Mehr hatte Fenrir nicht gewollt. Er seufzte. Ihm blieb doch keine andere Wahl, also machte er sich daran die letzten Stufen zur Winkelgasse zu erklimmen.<br/><span></span>»Verdammt! Du bist eine von denen?«<br/><span></span>»Williamson! Beweg deinen Arsch hier her. Hier ist ne Kleine, die ne Zelle in Askaban beziehen möchte.«<br/><span></span>Beide Ordnungshüter lachten. Das würde ihnen gleich vergehen. Die Klauen gespreizt und die Zähne gefletscht, nahm Fenrir die letzte Stufe und sah sich mit zwei Brigadisten und Alectos entblößtem Unterarm konfrontiert. Ein tiefes Knurren sorgte für den Funken. Es eskalierte augenblicklich.<br/><span></span>Der eine Brigadist rannte direkt los, war auf und davon. Der andere hielt Alecto immer noch am Arm fest. Stammelte was von »D-D-Das ist F-Fenrir Greyback« und machte Anstalten dem Ersten hinterher zu rennen. Nichts da! In solchen Momenten verfluchte Fenrir seine Hände. Ein Satz nach vorne war mit vier Läufen wesentlich einfacher zu bewerkstelligen. Seine Klauen fanden den Hals des Brigadisten. Mit aller Kraft packte er zu. Aus der Ferne betrachtet hätte es wie eine innige Umarmung zweier Liebenden wirken können.<br/><span></span>Bewegung kam in das sorglose Volk der Winkelgasse. Einige schrien seinen Namen. Andere brüllten wahllos drauf los und flohen. Ein paar wenige zückten ihre Zauberstäbe. Traumtänzer.<br/><span></span>Mit einem Ruck in Richtung Schulterblatt riss Fenrir dem Brigadisten fast den Schädel von den Schultern. Es war zu einer Alltäglichkeit geworden. Wie Zähne putzen. Seine Pranken wechselten die Position. Das ganze Spiel nochmal in die andere Richtung. Es knackte vernehmlich. Ein herrlicher Laut. Dann endlich, hatte der Kerl es hinter sich. Wie ein Stück Fleisch ging er zu Boden. Die Augen weit aufgerissen und das Gesicht ungläubig verzerrt.<br/><span></span>»Hast du deine Maske dabei?«, spie Fenrir über seine Schulter Alecto zu. Sie stand da wie festgehext. Starrte auf den Toten als würde er ihr irgendwas bedeuten. Mit zittrigen Fingern fischte sie gehorsam ihre Totenmaske hervor und pappte sie sich ins Gesicht.<br/><span></span>»Und jetzt lauf. Runter.«<br/><span></span>»A-A-Aber wa-was ist mit dir?«<br/><span></span>»Du sollst laufen, habe ich gesagt!«<br/><span></span>Der Befehl war mehr ein lautes Donnern und Knurren. Doch er verfehlte seine Wirkung nicht. Schüttelte den Schock aus ihren Gliedern. Hastig sprang Alecto die Treppen hinab. Keine Sekunde zu früh. Ein Schockzauber grub sich nur knapp neben ihr in die Fassade von Weaslethorpe's Pergamentladen. Gestein zerbrach. Feine Splitter stoben in alle Himmelsrichtungen. Fenrir wirbelte herum und starrte in das Gesicht eines Aurors. Ein alter Bekannter. Das rote Cape trug er immer noch.<br/><span></span>»Das war ein Fehler«, sagte Williamson und schickte schon den zweiten Fluch.<br/><span></span>Fenrir konnte sich schon gar nicht mehr daran erinnern, wann dieses Katz-und-Maus-Spiel zwischen ihnen begonnen hatte. Mit Pauken und Trompeten wollte der Auror, ganz der Held der er meinte zu sein, den bösen Werwolf nach Askaban verfrachten. Fenrir ersehnte den Moment, an dem Williamsons blutige Überreste seinen illusorischen Zielen ein jähes Ende setzen würden.<br/><span></span>Der Fluch traf seinen Schädel und hinter seiner Netzhaut explodierte ein schillernder Farbbeutel. Die Sicht war ihm genommen. Der Aufprall folgte. Setzte noch einen obendrauf. Knapp unterhalb seiner Schläfe knallte Fenrir gegen die Wand. Durch dieses letzte unmissverständliche Signal endlich losgelassen spülte rauschendes Adrenalin den Schmerz zurück, wo er bleiben konnte, bis Fenrir Zeit haben würde, sich damit zu befassen.<br/><span></span><br/><span></span>»Eins muss ich dir lassen«, sagte Williamson und warf spielerisch seinen Zauberstab in die Höhe. »Du hast echt Mumm aus deinem Rattenloch hier hochzukriechen.«<br/><span></span>Lachend hustete Fenrir Speichel und machte, dass er fort kam. Die Stufen flogen unter seinen Stiefelsohlen dahin. Mit jedem Schritt nahm er gleich zwei von ihnen. Der Auror war ihm sicher auf den Fersen. Auch wenn Fenrir seine Schritte nicht hörte.<br/><span></span>Anstatt kopflos drauf loszurennen, presste Fenrir sich, unten angekommen an die Wand hinter der nächsten Biegung. Hielt den Atmen an. Zählte. Bei neun angekommen, hastete der Auror an ihm vorbei. Fenrir stieß sich fauchend von der Wand ab und grub ihm die Faust in den Rücken. Der heraufbeschworene Schutzschild half rein gar nichts. Wie von einer Abrissbirne erfasst, stolperte der Auror nach vorn. Statt seinen Rumpf vor der Kollision mit dem Boden zu schützen, klammerte Williamson sich an seinen Zauberstab. Der Ertrinkende und sein Senkblei. Jedes Mal das Gleiche.<br/><span></span>Durch seinen blutverschmierten Filter machte Fenrir den Stab aus. Seine Welt wurde von einem Gedanken dominiert: Er musste diesen Mistkerl entwaffnen. Das war seine einzige Chance.<br/><span></span>Williamson kämpfte sich auf die Seite. Hechelte als läge er in den Presswehen. Fenrir bekam seine rechte Hand nicht zu packen. Dafür aber seine Linke. Musste sich dafür zu ihm hinab beugen. Verdrehte ihm die Finger so, dass der Auror sich verrenken musste, damit sie nicht brachen. Den Gefallen tat er ihm nicht. Hielt ihm stattdessen den Zauberstab vor die Nase. Gut, sollte er seinen Lohn erhalten. Wenig dramatisch, aber unüberhörbar knackend brach das Gelenk. Der Jämmerling heulte auf. Fenrirs nächster Griff ging in Richtung Haarschopf. Am liebsten hätte er ihn gepackt und seinen Kopf immer wieder aufs Kopfsteinpflaster geschlagen, bis seine weißen Zähne in einer Blut- und Knochensuppe auf den Steinen schwammen und man die Hirnmasse durch das Loch in seiner Stirn sehen konnte.<br/><span></span>Doch dazu kam es nicht. Der Cruciatus kam unerwartet. Holte Fenrir von den Beinen. Hart kam er auf seinen Knie auf und nun war er es, der aus Leibeskräften brüllte. Der Schmerz in Form eines blinden Flecks, etwa an der Kante seines Sichtfeldes, breitetet sich immer weiter aus. Weit über die Ränder.<br/><span></span>»Was wolltest du in der Winkelgasse? Ein paar Kinder zu Waisen machen? Eltern ihre Bälger unter der Nase wegfressen?«<br/><span></span>Der Auror war von Sinnen. Schrie seinen eigenen Schmerz und den Hass ungebremst heraus. Fenrir war außer Stande, seine Gedanken auszuformulieren. Gerne hätte er dem Auror geantwortet, dass er bei beiden Szenarien einen Steifen bekam. Stattdessen krümmte er sich. Trotz der Schnappatmung vernebelte Sauerstoffarmut ihm das Hirn. Sabbernd und kaum fähig den Schmerz weiter zu ertragen, biss er sich auf die Zunge. Schmeckte Kupfer und Eisen. Zwei Heiltränke würden ihm den Kopf kosten. Lachhaft. Auch, wenn er gerade einen von ihnen echt gut gebrauchen könnte.<br/><span></span>Williamson senkte den Zauberstab. Grinste mit säuerlicher Miene: »Ich werde die Dementoren nicht übergehen. Du wirst deinen Kuss bekommen. Und ich werde in der ersten Reihe stehen, applaudieren und lachen.« Er zog die Nase hoch und spuckte. Ein helles Licht sprudelte aus der Spitze seines Zauberstabes hervor. Formte ein Tier aus Licht. Fenrir blinzelte dagegen an. Der Schemen eines Fuchses tänzelte zu Williamsons Füßen. Das musste ein Scherz sein, oder? Eigentlich war es recht schmeichelhaft, dass der Auror die Dementoren direkt zu ihm rief. Offensichtlich lag Williamson viel an ihm. Doch stattdessen begann der Auror auf den Fuchs einzureden: »Ich hab ihn-«<br/><span></span>Weiter kam der Schnösel nicht.<br/><span></span>Niemand, aber auch wirklich niemand rechnete damit, dass Fenrir selbst einen Zauberstab bei sich trug. Natürlich waren seine Fäuste effekthaschend und seine Zähne legendär. Seine Flüche hingegen waren schlampig ausgeführt. Trotzdem fegte der Schockzauber den Auror um. Anstatt sich dagegen zu verteidigen explodierte ein von dem Auror beschworenes rotes Licht vor ihrer beider Augen. Orientierungslosigkeit. Ein Wummern und Dröhnen in Fenrirs Ohren besorgte den zusätzlichen Wohlfühlfaktor. Der Zauber hatte nicht den Zweck ihn zu verletzen. Er war einzig und allein dafür da, um für Verstärkung zu sorgen.<br/><span></span>Zischelnd schwirrten die Funken über ihnen am Himmel.<br/><span></span>Flucht war der erste Gedanke. Der zweite war ein heißes Brennen, dass von seinem Nacken hinauf gegen seinen Scheitel schwappte. Vorher musste er die Kleine finden.<br/><span></span>Es kostete ihn einiges an Überwindung. Seine Stiefelspitze schwebte quasi schon über dieser Ministeriumschabe. Sicher würde er irgendwann wieder eine Gelegenheit bekommen. Also sah Fenrir davon ab, ließ den Auror hinter sich und rannte.<br/><span></span><br/><span></span>Der Schornsteinfeger-Elf, der Sternenprophet und auch Cobbs und Webbs hatten ihre Fensterläden zu gezogen. Fenrirs Auseinandersetzung war also nicht unbemerkt geblieben. Spätestens, wenn eine Horde Auroren die Nokturngasse flutete und jeden Stein umdrehte, würde Fenrir den Zorn der anderen Ladenbesitzer auf sich ziehen. Doch wie man Probleme mit Gold aus der Welt schaffte, hatte er von den Lestrange Brüdern gelernt. Er vertagte dieses Problem auf einen späteren Zeitpunkt.<br/><span></span><br/><span></span>Das Seitenstechen setzte in Höhe von Borgin und Burks ein. Trotzdem weiter. Mühsam widerstand er dem Drang nach ihr zu rufen. Tastete die Hauseingänge und Ecken hastig mit dem Blick nach ihrer Silhouette ab. Zweifel schwelten in seiner Brust. Was, wenn sie disappariert war? Was, wenn er einen Fehler beging, weil er nicht nur seine Haut rettete? Und was, wenn dies alles nur ein abgekartetes Spielchen war und die Kleine ihn wegen des horrenden Kopfgeldes an das Ministerium verraten hatte?<br/><span></span>Um ein Haar wäre Fenrir in den Straßenaufsteller des Barbieres hineingerannt, als er plötzlich seinen Namen hörte. Der Ruf war nicht besonders laut gewesen. Doch er kannte die Stimme. Trotz Stimmverzerrung. Es war die Gleiche, die auch im Ministerium immer wieder seinen Namen gerufen hatte, obwohl die Prewetts ihn zu Hackfleisch verarbeitet hatten.<br/><span></span>Sie versteckte sich im Hauseingang von Dystyl Phaelanges. Von Madam Parkinson fehlte jede Spur. Sie wäre wohl kaum zu übersehen gewesen.<br/><span></span>»Du elendes Arschloch!«, warf Alecto ihm als Begrüßungsfloskel entgegen und schluckte einen Kloß hinab, der unmöglich durch ihre Speiseröhre passte. »Tu mir das nie wieder an! Ich dachte … ich dachte ich seh dich nie wieder.«<br/><span></span>Keine Zeit für weitere Rührseligkeiten. Er packte sie am Arm und schleifte sie hinter sich her. Kurz befürchtete er, dass er ihr dabei die Schulter ausgekugelt hatte. Als das „Klick-Klack“ ihrer Schritte ohne jammernde Beigeräusche hinter ihm erklang, verflüchtigte sich die Sorge wieder.<br/><span></span>»Wir müssen dich zu einem Heiler bringen!«<br/><span></span>»Später.«<br/><span></span>»Aber du blutest echt heftig aus deinem Auge und deinem Mund.«<br/><span></span>Ihre Fürsorge in allen Ehren, doch ihre Naivität trieb ihn zur Weißglut. Auf ihren Stöckelschuhen war sie ohnehin viel zu langsam. Der Schockzauber wirkte sicher nicht mehr. Ergo war der Auror ihnen auf der Fährte und wenn Alecto weiter so trödelte, würden er und seine Entourage ihnen beiden den Garaus machen. Kurzerhand wandte Fenrir sich herum, murrte eine fahrige Entschuldigung hervor, packte sie an der Hüfte und schmiss sie sich über seine Schulter.<br/><span></span>»Sag mal, spinnst du jetzt völlig?«<br/><span></span>Sie empörte sich richtiggehend. Strampelte und kämpfte dagegen an. Hatte sogar den Nerv ihn in den Arm zu beißen. »Lass mich sofort runter!«<br/><span></span>»Noch ein Wort und du wirst dir wünschen, dass der Auror dich in die Finger bekommt.« Seine Zunge lahmte. Das Gesagte klang mehr wie ein blutiges Nuscheln. Anstatt weiter auf den Saiten seines Nervenkostüms Harfe zu spielen, schwieg Alecto sich aus. Klammerte sich an ihn, so gut es ihre Situation eben zuließ.<br/><span></span>Sie steuerten die nächste verwinkelte Seitenstraße an. Seine Schritte hallten viel zu laut von den Wänden der menschenleeren Gassen wider. Alle hatten sie sich verkrochen. Von wegen Sympathisanten und stolze Todesser. Niemand riskierte hier Kopf und Kragen, um die Auroren aus der Gasse heraus zu jagen. Am Ende des Tages blieb er für diese Widerlinge, was er war: Ein Grobian, ein Helfershelfer. Nützlich, aber entbehrlich, wenn es erst um die eigene Haut ging.<br/><span></span>Schleunigst musste er einen geschützten Ort zum Disapparieren finden. Besser noch einen, wo die Kleine das Apparieren übernehmen konnte. In seinem Zustand würde er sich nur zersplintern. Und die Kleine gleich mit ihm.<br/><span></span><br/><span></span>Der Widerhall anderer, hastiger Schritte gesellte sich zu seinen. Erst ein Stiefelpaar. Dann ein zweites. Noch klangen sie fern. Doch näherten sie sich ihnen rasend.<br/><span></span>Fenrir widerstand dem Sirenengesang der offenen Konfrontation. Besann sich. Sein Ziel war es, hier rauszukommen. Er presste sich in den nächstbesten Hauseingang. Pflückte Alecto von der Schulter und lehnte sich der Länge nach an das braune Pressholz. Zwischen Türrahmen und Vorsprung verschmolzen sie mit den Schatten.<br/><span></span>Wie durch rotstichiges Milchglas starrte Fenrir auf das Plakat an der gegenüberliegenden Hausfassade. Hauselfen aus zweiter Hand für wenige Galleonen versprach der Verfasser dessen jedem Interessierten. Spürte dabei jeden Atemzug von Alecto stoßweise und warm an den Härchen auf seinem Handrücken. Ihre Mitte umschlungen hatte er sie an sich gepresst und ihr mit der Pranke den Mund verschlossen. Sie krallte sich an ihm, als würde ihr Leben davon abhängen. Strenggenommen tat es das auch<br/><span></span>Die nächsten Augenblicke zogen sich ins Unendliche. Ein Lichtkegel pendelte umher. Dann waren es zwei. Die ausgewaschenen Ränder des Plakates warfen lange Schatten an der Wand. Das Knacken der Steinchen zwischen Sohlen und Kopfsteinpflaster wurde lauter.<br/><span></span>Gemeinsam hielten sie den Atem an. Ihr Herz hämmerte gegen den Brustkorb und Fenrir fühlte jeden ihrer Schläge. Doch mahnte er sich zur Ruhe. Keine Bauchatmung. Nur leise, flache Atemzüge.<br/><span></span>Wieder zuckten die Lichtkegel. Genau in ihre Richtung. Jede seiner Muskelfasern war gespannt. Zäh verlangsamten sich die Schritte der Auroren. Das nächste Geräusch kam einer Erlösung gleich. Unweit von ihnen schlug irgendein Idiot Fensterläden zu.<br/><span></span>»Dort entlang.« Williamsons Stimme verfing sich in den Gauben der umstehenden Gebäude. Deutete mit dem Zauberstab den Weg voraus. Der übriggebliebene Lichtkegel wurde aus der Gasse gerissen.<br/><span></span>Alecto atmete auf. Der Sog zupfte deutlich an Fenrirs Haut und brachte seine Handfläche näher an ihre Lippen heran.<br/><span></span>Dann, als die Schritte sich in den Wirrungen der Nokturngasse verloren hatten, erlöste Fenrir sie, indem er Alecto wieder auf dem Boden absetzte. Nur um sicher zu gehen, legte er einen Finger an die Lippen. Eine stumme Mahnung und sie verstand, denn ein Kopfrücken - irgendwas zwischen Nicken und Kopfschütteln - folgte. Hastig neigte sie sich hinab, um aus ihren Schuhen zu schlüpfen. Diese blieben im Hauseingang zurück, während sie die Nokturngasse in entgegengesetzter Richtung zu den Auroren zurück liefen.<br/><span></span><br/><span></span>Weitere Ordnungshüter würden kommen. Es war nur eine Frage der Zeit.<br/><span></span>Die Stille war erdrückend. Genauso gut hätte es Mitten in der Nacht sein können. Jegliches Leben schien aus der Nokturngasse gewichen. Als würde ein Dementor über allen schweben und sich an ihnen gütlich tun. Nur die Kälte fehlte. Die Eiskristalle. Wassertröpfchen, die an Staubpartikeln festfroren und von Unheil kündeten.<br/><span></span>Murrend fuhr Fenrir sich mit der Pranke durch das Gesicht. Starrte auf seine blutverschmierte Hand und schüttelte den Kopf. Er musste bei der Sache bleiben. Bei den Schlägen, die er drüber bekommen hatte, war es ganz natürlich, dass sein Hirn Aussetzer hatte. Aber an Dementoren zu denken, würde ihnen jetzt nicht weiterhelfen.<br/><span></span>Einen Unterschlupf! Den brauchten sie!<br/><span></span>»Kannst du noch?«<br/><span></span>Ihre Stimme zerriss die angespannte Ruhe. Dabei hatte sie bloß geflüstert. Zornig starrte Fenrir sie in Grund und Boden. Alectos Kopf sank zwischen ihre Schultern. Wann hatte sie ihren hübschen kleinen Spitzhut verloren? Egal. Ein Unterschlupf. Wer kam ihm da in den Sinn? Der Wirt vom Wyvern würde sie sofort vor die Türe setzen. Borgin würde mit dem Auror den besten Deal aushandeln und sie dann ausliefern. Der Barbier! Er war die Lösung. Dieser Mistkerl war ihm noch was schuldig. Beim Kartenspiel im White Wyvern hatte Fenrir ihn bis aufs letzte Hemd ausgenommen, doch großherzig wie er nun einmal war, hatte er den Großteil der Spielschulden noch nicht eingetrieben.<br/><span></span>Sollten die Auroren doch weiter durch die Gassen toben. Fenrir tastete nach Alectos Hand und schlüpfte mit ihr durch den nächsten Durchgang.<br/><span></span><br/><span></span>Die Freude über den nur knapp gewonnenen Wettlauf wich der Angst. Ein Stimmengewirr nur ein paar Häuserreihen entfernt, kündete von weiterer Verstärkung. Der Türknauf wollte sich nicht drehen, ganz gleich wie sehr Fenrir daran zerrte. Mausgraue Lamellen hinter der Eingangstür versperrten den Blick ins Ladeninnere. Alecto fischte Fenrirs Zauberstab aus seiner Robentasche und tat das, worauf er in seiner Eile einfach nicht gekommen war.<br/><span></span>»Alohomora.«<br/><span></span>Das Schloss klackte. Ruckelte ein letztes Mal. Die Türe öffnete sich, schob die Lamellen fort. Stück für Stück gab sie die Sicht auf den großen Spiegel an der Rückseite des Ladens frei. Fenrir unterdrückte seine Fluchtreflexe, schlich in das Innere und schob die Türe zurück. Das erneute Klicken war nicht zu vermeiden. Ihnen bleib nicht viel Zeit.<br/><span></span>Die schwelende Dunkelheit um sie herum wurde vertrieben.<br/><span></span>»Was suchst du denn hier?«<br/><span></span>Fenrir schnellte so hastig herum, dass die meisten Menschen instinktiv einen Schritt vor ihm zurückgewichen wären. Der Barbier hingegen starrte ihn bloß entgeistert an. Blinzelte nicht mal.<br/><span></span>»Raus mit der Sprache! Was willst du? Ich habe selbst genug auf dem Kerbholz. Auroren kann ich ungefähr so gut gebrauchen wie Nagelpilz.«<br/><span></span>»Schnauze, Potrick.«<br/><span></span>Der Trottel war sein kleinstes Problem. Zunächst gab es eine andere Angelegenheit zu klären.<br/><span></span>»Bist du okay, Kleine?«, flüsterte Fenrir. Die Arme zu beiden Seiten ausgestreckt ging er vor Alecto in die Hocke. Versuchte sich an ein Lächeln und sie tapste ihm prompt entgegen. Auf seiner Höhe angekommen packte er zu. Riss ihren Kopf in den Nacken und presste ihr die Hand auf den Mund. Erstickte so den nächsten Schrei. Und die darauffolgenden.<br/><span></span>»Was ist das hier für ein Spiel, Mädchen? Du rennst rein zufällig einer Horde verdammter Brigadisten mit Aurorenverstärkung in die Arme und lässt dich enttarnen?«<br/><span></span>Bemüht gleichgültig legte er den Absatz seines Stiefels auf ihren Fuß und drückte zu. Nur der Stoff des rot geringelten Strumpfs stand noch dazwischen. Das kindliche Gesicht wurde von Pein verzerrt. Sie schrie. Doch nichts als ein gedämpftes Kreischen drang durch seine Pranke an die Umwelt.<br/><span></span>»Wie viele Galleonen haben sie dir geboten? Hm?«<br/><span></span>Ihre blaugrünen Augen schwammen in dicken Tränen. Er presste den Absatz noch heftiger hinab.<br/><span></span>»Du willst behaupten, dass das alles nur ein verdammter Zufall war? Du lauerst mir auf und keine Stunde später kleben mir zwei Auroren am Arsch? Was geben diese Mistkerle dir? Spucks schon aus.«<br/><span></span>Fenrir wunderte sich, dass er überhaupt die Kraft hatte, mit ruhiger Stimme zu sprechen. Denn wenn er Recht behielte, würde nur eine Person den Barbier wieder verlassen.<br/><span></span>Seine Hand glitt von ihrem Mund, die andere hielt weiterhin eisern ihren Haarschopf gepackt.<br/><span></span>Alecto versagte die Stimme. Brachte nichts weiter als ein unzusammenhängendes Gestammel heraus. Es war nicht einmal in Englisch. Dann wischte sie sich die Tränen aus den Augen und sagte: »Sie haben mir gar nichts geboten, weil ich lieber sterben würde, als mit diesen Ministeriumsratten zu kooperieren.«<br/><span></span>»Was wollten sie von dir?«<br/><span></span>»Mich nach Askaban bringen.«<br/><span></span>Auf Augenhöhe starrten sie einander an. Alecto biss sich auf ihre Unterlippe als Katalysator für den Schmerz, den Fenrir ihrem Fuß zufügte.<br/><span></span>»Letzte Chance.«<br/><span></span>Er lockerte den Griff in ihrem Haar und legte seine freie Hand auf ihre Wange. Sie erwiderte die Geste, indem sie ihr Kinn gegen seinen Handballen presste. Kurz schlossen sich ihre Augen. Sie schmiegte sich fester an ihn, dann teilte sie ihre Lippen, die über den Schneidezähnen etwas gesprungen waren.<br/><span></span>»Nimm deinen Fuß von mir runter. Du tust mir scheiße weh.«<br/><span></span>»Wenn du das Mäuschen umlegst, mach‘s draußen. Ich will hier keinen Ärger«, schaltete sich der Barbier dazwischen. Fenrirs Antwort war ein ungehaltenes Knurren. Zwar erlöste er Alecto von seinem Absatz, doch packte er sie erneut am Haarschopf und schleifte sie hinter sich her in Richtung des Barbiers.<br/><span></span>Hinter den Stühlen und über den Emaillebecken lag eine Auswahl feinster Rasiermesser neben den sonstigen Auslagen. Fenrir packte sich das erste, dass er in die Finger bekam. Klappte es auf und präsentierte es seiner Umwelt. Führte es hinab an Alectos Kehle und grinste: »Ich will die Wahrheit hören.«<br/><span></span>»Ich würde dich niemals verraten.«<br/><span></span>Ihre Stimme war klar. Ohne Umschweife hatte sie den Satz ausgesprochen. Fenrir hatte genug. Dann sei es eben so.<br/><span></span>Er hob die Klinge in die Höhe und schnitt nah seiner Hand in Alectos geballten Haarschopf. Strähne um Strähne segelte ihr karamellfarbenes Haar hinab auf den Boden.<br/><span></span>Sie traute ihren Augen nicht.<br/><span></span>»Was machst du?«, schluchzte sie hervor und wagte es doch nicht sich von der Stelle zu rühren.<br/><span></span>»Hast du irgendwas da, womit du ihr die Haarfarbe verändern kannst?«<br/><span></span>Der Barbier nickte. Er war etwas blass um die Nase geworden.<br/><span></span>»G-G-Gleich dahinten.«<br/><span></span>»Warum stehst du dann noch da herum?«<br/><span></span>Strähne um Strähne mehrte sich am Boden. Das Rasiermesser war scharf. Bald blieb von Alectos langer Mähne nur noch ein zerrupfter Bob zurück.<br/><span></span>»Apparier zurück zur Schule. Leg dich in den Krankenflügel und behaupte irgendwas. Frauenprobleme. Da fragt keiner genauer. Finde jemanden der bezeugen kann, dass du den ganzen Tag dort warst und flehe deine dämlichen Schicksalspfade an, dass sie dir nicht auf die Schliche kommen.«<br/><span></span>Erst als der letzte Batzen Haare zu Boden ging und sich sein Griff löste, nickte Alecto. Wehmütig starrte sie hinab zu ihren Füßen, die von kleinen und großen rost-roten Haarbüscheln gerahmt wurden.<br/><span></span>»Was ist mit dem zweiten Brigadisten? Er wird mich trotzdem erkennen.«<br/><span></span>Sein Kopf brauchte Platz, um diese Erkenntnis zu verarbeiten. Schweiß perlte an seiner Stirn.<br/><span></span>»Du machst mich fertig, Kleine.«<br/><span></span>Den hatte er schon wieder gänzlich verdrängt. Williamson hatte ihr Gesicht nicht gesehen. Nur ihre rote Mähne. Der Brigadist schon.<br/><span></span>»Das kann nich‘ dein verschissener Ernst sein.«<br/><span></span>Der Barbier kam zurück. Hielt eine Auswahl an Tinkturen in bauchigen Phiolen vor sich.<br/><span></span>»Ich kann anbieten: Blond, Braun, Schwarz, ein kräftiges Kirschrot-«<br/><span></span>Als wollten die Flaschen seinen Gedanken Beifall spenden, klapperten sie, als Fenrir die Nächstbeste ergriff, entkorkte und Alecto den Inhalt über den Kopf kippte.<br/><span></span>Schwarz.<br/><span></span>Mit ihren Handrücken rieb sie sich die Augen frei, ließ die Prozedur aber stur über sich ergehen. Der Barbier hatte den Ernst seiner Lage wohl endlich begriffen. Hastig wedelte sein Zauberstab um Alectos Kopf herum und versuchte das Beste aus dem Schlamassel, dass Fenrir angerichtet hatte, herauszuholen.<br/><span></span>»Ich kann mich verstecken. Zu Hause. Sie werden mich nicht finden, bis genug Gras über die Sache gewachsen ist. Du kannst mitkommen… aber nur, wenn du mir versprichst, nicht nochmal so ein Arsch zu sein.«<br/><span></span>Das war ihr wohldurchdachter Plan. Fenrirs Vorstellung wich weit davon ab.<br/><span></span>»Ich gehe in dieses Drecksloch von Ministerium und leg den Kerl um.«<br/><span></span>»Das ist vollkommen hirnrissig.«<br/><span></span>»Verstecken ist besser, ja? Jeden Tag bitten und bibbern, dass niemand den Stein umdreht, unter dem du dich verkrochen hast?«<br/><span></span>Statt einem süßen Rotschopf mit schelmisch funkelnden Augen starrte ihm ein ernstes Mädchen entgegen. Mit Bedacht kramte sie in den Taschen ihrer Robe.<br/><span></span>»Finde ihn. Er wird dir helfen.«<br/><span></span>Mit diesen Worten reichte sie ein Bild an ihn weiter. Zur Fenrirs Überraschung war es nicht magisch. Das unbewegte Porträt eines Liebespaars.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="r_f9QIH_bCC_kxVi8xYXiXHafGx-Hf5HO9G2MpEyESL7LAB40zaDfChzZZw2-7ip3jK5jTuAb52qPVqxGM2GhQ"/>
+          <input value="29693913" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_29693913">
+  <form class="new_comment" id="comment_for_29693913" action="/works/29693913/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="aQC78eezTdDlQ4UQrIak-IS5moOeF2gBXZdWxJlCXTU920bJtXqijHKj9e5pawvYK1FfYtuK-dvMe7pHEL3Kkg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_29693913">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_29693913" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_29693913=new LiveValidation('comment_name_for_29693913',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_29693913.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_29693913">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_29693913" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_29693913=new LiveValidation('comment_email_for_29693913',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_29693913.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_29693913" class="landmark">Comment</label>
+        <textarea id="comment_content_for_29693913" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_29693913" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_29693913_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_29693913">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_29693913=new LiveValidation('comment_content_for_29693913',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_29693913.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_29693913.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_29693913" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/29693913/hit_count.json")})</script>
+
+
+  </body>
+</html>

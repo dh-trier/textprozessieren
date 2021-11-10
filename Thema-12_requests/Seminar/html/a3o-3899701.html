@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":85,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Das Baby mit den grünen Augen - SiamKitty - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="2ptFXNmZyz4Vi2HwUChuhjgD8S_4yx-1CiyuSQhHcjNl7snzbjJzu7qVXxTXTrf5XVZGH2fX8XS4rGzMbhbTxA"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="mqC6CcX_iZrqXFYj_0zXiV63Lotv7PbkfbaPod0Mm8cl1TamclQxH0VCaMd4Kg72O-KZu_DwGCXPNk0ku106MA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: austen words:10000-50000 sort:title</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/3899701/chapters/8724031">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+    <li class="style">
+        <a href="/works/3899701?style=disable&amp;view_full_work=true">Hide Creator&#39;s Style</a>
+    </li>
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/3899701/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/3899701/Das%20Baby%20mit%20den%20grunen.azw3?updated_at=1431087104">AZW3</a></li>
+          <li><a href="/downloads/3899701/Das%20Baby%20mit%20den%20grunen.epub?updated_at=1431087104">EPUB</a></li>
+          <li><a href="/downloads/3899701/Das%20Baby%20mit%20den%20grunen.mobi?updated_at=1431087104">MOBI</a></li>
+          <li><a href="/downloads/3899701/Das%20Baby%20mit%20den%20grunen.pdf?updated_at=1431087104">PDF</a></li>
+          <li><a href="/downloads/3899701/Das%20Baby%20mit%20den%20grunen.html?updated_at=1431087104">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Other/works">Other</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter*s*Severus%20Snape/works">Harry Potter/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Sirius%20Black/works">Sirius Black</a></li><li><a class="tag" href="/tags/Sirius%20Black&#39;s%20Motorbike/works">Sirius Black&#39;s Motorbike</a></li><li><a class="tag" href="/tags/Rubeus%20Hagrid/works">Rubeus Hagrid</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Madam%20Rosmerta/works">Madam Rosmerta</a></li><li><a class="tag" href="/tags/Remus%20Lupin/works">Remus Lupin</a></li><li><a class="tag" href="/tags/Vernon%20Dursley/works">Vernon Dursley</a></li><li><a class="tag" href="/tags/Petunia%20Evans%20Dursley/works">Petunia Evans Dursley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Canonical%20Character%20Death/works">Canonical Character Death</a></li><li><a class="tag" href="/tags/Drama/works">Drama</a></li><li><a class="tag" href="/tags/Family%20Drama/works">Family Drama</a></li><li><a class="tag" href="/tags/Sad/works">Sad</a></li><li><a class="tag" href="/tags/Baby%20Harry/works">Baby Harry</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2015-05-08</dd><dt class="status">Completed:</dt><dd class="status">2015-05-08</dd><dt class="words">Words:</dt><dd class="words">13036</dd><dt class="chapters">Chapters:</dt><dd class="chapters">3/3</dd><dt class="kudos">Kudos:</dt><dd class="kudos">33</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/3899701/bookmarks">1</a></dd><dt class="hits">Hits:</dt><dd class="hits">1046</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+    <style type="text/css">#workskin .indent{padding:0 5em 0 5em}#workskin .book{margin:0 auto;text-indent:3em}#workskin .dropcap{font-family:Georgia,serif;font-size:3em}#workskin .flashback{font-style:italic}#workskin .caps{font-variant:small-caps}#workskin .spoiler{background:#333;color:#333}#workskin .border{border:1px solid}#workskin .font-serif{font-family:Cambria,Constantia,Palatino,Georgia,serif}#workskin .font-sansserif{font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif}#workskin .font-monospace{font-family:consolas,courier,monospace}#workskin .font-big{font-size:120%}#workskin .font-small{font-size:80%}#workskin .align-right{text-align:right}#workskin .align-center{text-align:center}#workskin .align-justify{text-align:justify}#workskin hr.third{width:33%;margin:auto}#workskin hr.full{width:auto;margin:auto}#workskin .font-red{color:red}#workskin .font-orange{color:#ffa500}#workskin .font-yellow{color:#ff0}#workskin .font-green{color:green}#workskin .font-blue{color:#00f}#workskin .font-purple{color:purple}#workskin .font-white{color:#fff}#workskin .font-black{color:#000}#workskin .font-pink{color:#ffc0cb}#workskin .font-teal{color:#008282}#workskin .font-redbrown{color:#a15000}#workskin .font-cherryred{color:#e00707}#workskin .font-brickred{color:#a10000}#workskin .font-dimorange{color:#f2a400}#workskin .font-murkyyellow{color:#a1a100}#workskin .font-jade{color:#4ac925}#workskin .font-dimgreen{color:#008141}#workskin .font-leafgreen{color:#1f9400}#workskin .font-darkolive{color:#416600}#workskin .font-dimblue{color:#005682}#workskin .font-midblue{color:#0715cd}#workskin .font-mediumskyblue{color:#00d5f2}#workskin .font-darknavy{color:#000056}#workskin .font-lightpurple{color:#f141ef}#workskin .font-midviolet{color:#b536da}#workskin .font-verydarkpurple{color:#2b0057}#workskin .font-darkplum{color:#6a006a}#workskin .font-darkmaroon{color:#77003c}#workskin .font-reallydarkgray{color:#626262}</style>  
+
+  <!-- end cache for work skin -->
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Das Baby mit den grünen Augen
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/SiamKitty/pseuds/SiamKitty">SiamKitty</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>In der Halloweennacht 1981 begibt sich Severus Snape zum Haus der Potters. Was er dort vorfindet, lässt seine schlimmste Befürchtung wahr werden. Doch der kleine Sohn seiner großen Liebe ist noch am Leben und blickt ihm verzweifelt und mit so vertrauten Augen entgegen. <br/>[Three-Shot, mit einem 21-jährigen Severus und einem 1-jährigen Harry als Hauptcharaktere]</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Moin!</p><p>Diesen kleinen Dreiteiler hier hatte ich mal ganz spontan verfasst gehabt und möchte ihn natürlich nicht vorenthalten. </p><p>Als Beta eingesprungen bei dieser FF war mein lieber Freund "MyrddinEmrys".</p><p>Disc.: Alle Figuren und Orte aus dem Harry Potter-Universum gehören selbstverständlich Joanne K. Rowling. Ich leihe sie mir nur aus und gebe sie anschließend unbeschadet zurück. Natürlich verdiene ich hiermit auch kein Geld.</p><p>So, genug Blabla. Viel Vergnügen und liebe Grüße!<br/>Eure SiamKitty</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/3899701/chapters/8724031">Chapter 1</a>: 1. Teil
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Mit einem nie dagewesenen Gefühl stand Severus Snape vor dem Haus in Godrics Hollow. Er ahnte, dass sich seine schlimmste Befürchtung bewahrheiten würde, sobald er durch die Tür des Gebäudes trat. Obwohl sich alles in ihm sträubte sich auch nur einen Millimeter fortzubewegen, musste er Gewissheit haben.</p><p>Seine zittrige rechte Hand griff in die Seitentasche seines Umhangs und umfasste den Zauberstab, welchen Severus seit nun zehn Jahren ständig bei sich trug.<br/>Durch eine fließende Bewegung mit dem Stab vor seinem Gesicht, verschwand die silberne, sehr bedrohlich wirkende Maske. Seine linke Hand schob die schwarze Kapuze des Umhangs zurück und legte seine schulterlangen, strähnigen und pechschwarzen Haare frei.<br/>Severus wollte nicht in seiner Todesserkluft den wohl bis dato schwersten Gang seines Lebens antreten. Es erschien ihm in dieser Situation nicht richtig.</p><p>Als er vor circa zehn Minuten im Haus der Lestranges war, sozusagen dem Hauptquartier der Todesser und dieser fiese, rattengesichtige Speichellecker Peter Pettigrew ihm voller Stolz berichtet hatte, dass er dem Dunklen Lord den Aufenthaltsort der Potters gesteckt hatte, wusste Severus tief in seinem Inneren das es bereits zu spät war. Nun stand er hier vor diesem Haus, welches Pettigrew auch ihm gegenüber als Zuhause von Lily und ihrer Familie deklariert hatte.</p><p>Ein paar Straßen weiter schlug die Uhr am Kirchturm Mitternacht. Das kurze Läuten der Glocken durchbrach die abstrakte Stille, welche in dieser Halloweennacht über dem kleinen Dorf lag. Der Ort schien wie ausgestorben. Nicht einmal ein Windhauch war zu spüren. Es war beinahe gespenstisch und dieses dunkle Gefühl, das Severus beschlich seit er hierher appariert war, verstärkte sich nur noch mehr.</p><p>Das hölzerne Gartentor vor ihm brauchte er gar nicht erst auf machen, denn es stand bereits sperrangelweit offen. Noch einmal tief durchatmend setzte er langsam einen Fuß vor den anderen und betrat den kleinen, charmant-chaotischen Vorgarten, in dem Gräser, kleine Büsche und Wildpflanzen fröhlich nebeneinander her wucherten. Direkt neben den Brombeerbusch stand ein Bänkchen, von der aus man im Sommer sicherlich das schöne Wetter genießen konnte.<br/>Die Haustür war nur angelehnt, so dass es sich Severus sparen konnte sie mit einem Alohomora zu öffnen. Vom Inneren des Hauses drang kein Laut nach draußen.</p><p>Die Deckenlampe in dem quadratisch geschnittenen Flur pendelte leicht vor und zurück und tauchte den Raum in ein ebenso unheimlich schwenkendes Licht. Direkt am Ende der Diele, auf der Treppe die in das obere Stockwerk führte, lag der tote Körper von James Potter.<br/>Es sah beinah so aus, als ob ihn jemand geschubst und er dann einfach auf dem Treppenabsatz liegen geblieben wäre. Seine Arme und Beine waren weder verdreht, noch trat Blut aus irgendeiner Verletzung aus. Lediglich seine weit aufgerissenen Augen zeugten von dem Grauen, welches sich hier abgespielt haben musste. Severus erkannte eine Leiche die durch den Avada Kedavra getötet wurde, wenn er eine sah.<br/>Es tat ihm zwar leid, dass Potter auf diese Art und Weise und in einem so jungen Alter sterben musste, empfand aber keinen großen Verlust aufgrund seines Ablebens. Severus setzte sich einen Augenblick neben James' Kopf auf die drittunterste Treppenstufe und schloss mit einer Hand die leblos drein starrenden Augen seines toten Widersachers. Mehr konnte er eh nicht mehr für ihn tun.</p><p>Aus der oberen Etage drang ein Laut an Severus' Ohr und das so plötzlich, dass er erschrocken hochfuhr und in die Richtung des Geräusches blickte. Es war das leise Wimmern eines Kindes, welches die geisterhafte Stille durchbrach. Severus konnte es nicht glauben. Sollte das Kind der beiden tatsächlich noch am Leben sein? Und vielleicht lebte Lily auch noch, war nur schwer verletzt und brauchte Hilfe? Mit lautlosen Schritten schlich Severus die Treppen hoch und folgte den klagenden Lauten bis vor die zweite Tür auf der rechten Seite des Ganges.</p><p>An dem hellen Holz war mit bunten Buchstaben das Wort Harry angebracht. Unter dem Namen hing eine kleine Löwenfigur, welche mit seiner niedlichen Aufmachung den folgenden Raum eindeutig als Kinderzimmer auswies.<br/>Mit zitternder Hand griff Severus nach der Klinke und schob die ebenfalls nur angelehnte Tür auf.</p><p>Das Bild, welches sich ihm daraufhin bot, ließ ihn noch im Türrahmen die Fassung verlieren. Lily lag seitlich mit dem Rücken zu ihm und bewegte sich nicht. Hinter ihr stand das Gitterbettchen in dem ihr Kind saß und bitterlich weinte. Der Junge versuchte mit seinem viel zu kurzen Ärmchen durch die Stäbe nach seiner Mutter zu greifen, schaffte es jedoch nicht. Mit einem mehr geweinten als gesagtem Wort, das verdächtig nach "Mama" klang, gab der Kleine schließlich auf und ließ sich gegen die Seitenwand seines Bettchens sacken.</p><p>Severus schleppte sich inzwischen durch den Raum. Er konnte kaum noch etwas erkennen, da seine Sicht durch die vielen Tränen ganz verschwommen war. Vor Lily angekommen sackte er zu Boden und streckte eine Hand nach ihr aus. Zaghaft berührte er ihre Wange, welche sich ganz kalt anfühlte. Auch ein Atmen oder irgendein anderes Lebenszeichen waren nicht zu vernehmen und Severus musste erkennen, dass seine beste Freundin und große Liebe tot war.<br/>Sanft drehte er sie auf den Rücken und brach letztendlich über ihr zusammen. Hemmungslos weinte und schrie er seine Trauer heraus, wollte es einfach nicht wahrhaben, dass sie tatsächlich nicht mehr lebte. Immer wieder wiederholte er zwischen seinen endlos vielen Schluchzern die Worte: "Es tut mir so leid."</p><p>Dieses Schicksal hatte seine wundervolle Freundin nun wahrlich nicht verdient. Ganz vorsichtig zog Severus sie in seine Arme und hob sie hoch, trug sie anschließend herüber zu der kleinen Couch um sie behutsam darauf abzulegen. Denn sie sollte nicht wie eine weggeworfene Puppe auf dem kühlen Boden liegen bleiben, seine warmherzige und tapfere Lily. Liebevoll strich ihr Severus die Haare aus dem Gesicht und faltete ihre Hände auf ihrem Bauch. Jetzt sah sie ein wenig so aus, als würde sie nur schlafen. Doch Severus wusste, dass Lily nie wieder aufwachen würde. Immer wieder wischte er sich die Tränen weg, da sie unaufhörlich flossen. Eine Weile stand er völlig starr vor seiner nun aufgebarten Freundin und betrachtete sie stumm. Er musste an all die schönen Erlebnisse mit ihr denken, die wie im Zeitraffer vor seinem inneren Auge in so vielen Bildern vorbeizogen.</p><p>Ein leises Wimmern und die Worte "Mama, Mama!" holten ihn aus seiner Trance. Als er sich umdrehte sah er den Jungen wie er sich in seinem Gitterbett aufgerichtet hatte und nun verzweifelt zu seiner Mutter wollte. Severus blieb fast das Herz stehen, denn das Kind schaute ihn mit flehenden, großen, grünen Augen an. Es waren Lilys Augen. Bedacht ging er auf ihn zu und bemerkte erst jetzt die blitzförmige Narbe auf der Stirn des Kindes. Nachdenklich tippte er dieses eigenartige Wundmal an, woraufhin der Kleine sich nun ebenfalls ungeschickt an die Stirn fasste. Diese Narbe hat eine zu eigenartige Form, als wenn sie nur eine gewöhnliche Schramme sein könnte, dachte sich Severus.<br/>In seinem Kopf ratterte es. Unweigerlich musste er an die Prophezeiung denken und an die Aussagen, die er mitbekommen und überliefert hatte. Wenn diese Narbe das ist, was Severus dachte, dann würde das bedeuten, dass die Prophezeiung tatsächlich eingetreten war.</p><p>Er bemerkte, wie sich das Kind in seinen Umhang vergriff. Als er zu ihm runter schaute, blickten ihm wieder diese vertrauten, grünen Augen entgegen. Langsam nahm Severus den Jungen auf dem Arm und wischte ihm sachte die Tränen aus dem Gesicht.<br/>"Mama.", schluchzte der Kleine erneut auf.<br/>"Nein Harry, deine Mama wird nicht wiederkommen.", erwiderte Severus gepresst und zog den Jungen in eine Umarmung.<br/>Weinend ging er mit ihm herüber zu Lily und setzte das Kind vor dem Sofa ab. Harry griff nach seiner Mutter, wollte offensichtlich von ihr in den Arm genommen werden, doch Lily rührte sich nicht. Verstört blickte Harry nun wieder zu Severus. Anscheinend begriff das Kind nicht, was mit seiner Mutter los war. Severus setzte sich auf den Boden und zog den Jungen wieder an sich, strich ihm durch die wirren, schwarzen Haare und flüsterte immer wieder "Es tut mir leid, Kleiner."<br/>Eine ganze Weile saßen sie so vor Lilys totem Körper.</p><p>"Schniefelus!", donnerte es auf einmal durch den Raum.<br/>Erschrocken blickten Severus und Harry zur Tür. Niemand anderes als Sirius Black stand im Türrahmen und richtete seinen Zauberstab auf die beiden.<br/>Mit der linken Hand machte er eine winkende Handbewegung und sagte energisch: "Los Schniefelus, gib mir den Jungen! Sofort!"<br/>Harry registrierte die angespannte Stimmung genau und fing wieder an laut zu weinen.<br/>Langsam und bedacht stand Severus mit dem Kind auf dem Arm auf und übergab ihn ohne zu Zögern vorsichtig an den augenscheinlich ebenfalls sehr aufgebrachten Sirius.</p><p>Dieser drückte Harry an sich und wippte ihn sachte in seinem Arm. Das Kind legte vertrauensvoll den Kopf auf Sirius' Schulter ab und schlang die kleinen Ärmchen so gut es ging um ihn.<br/>"Sshhh, ist ja gut mein Großer.", säuselte Sirius dem immer noch weinenden Jungen zu, woraufhin sich dieser jedoch schnell beruhigte.<br/>In der rechten Hand hielt er den Zauberstab und hatte ihn nach wie vor drohend auf Severus gerichtet. Nachdem Harry einigermaßen entspannt zu sein schien, wandte Sirius seine ganze Aufmerksam wieder dem aufgelösten Todesser zu. Dessen Verfassung irritierte ihn zwar, jedoch war er viel zu sehr von dem Szenario geschockt, welches er vorgefunden hatte. Seine besten Freunde Lily und James waren tot und sein Patensohn völlig verstört.</p><p>"Nenn mir einen guten Grund, warum ich dich nicht sofort umlegen sollte.", knurrte Sirius und sah sein Gegenüber mit wütend blitzenden Augen an.<br/>Severus wusste das mit ihm in diesem Moment nicht zu spaßen war, konnte aber nur hilflos mit den Schultern zucken.<br/>"Was bei Merlin …", Sirius traten Tränen in die Augen, "… machst du eigentlich hier?! Warst du das etwa?" Er schaute verzweifelt auf den immer noch stummen Severus, blickte auch hinter ihm auf die liebevoll aufgebarte Leiche von Lily auf der Couch. Für einen Moment verspürte er einen kleinen Anflug von Rührung.<br/>"Was, nein … ich …", begann Severus zu stottern. Er atmete tief ein und aus, auch um sich wieder zu fassen und normal sprechen zu können. "Ich wollte nie, dass sie stirbt. Das hier…", er machte mit der Hand eine ausladende Bewegung, "… ist das Werk des Dunklen Lords."</p><p>"Ach ja! Wenn du das nicht wolltest, wieso hast du denn nicht versucht deinen Meister aufzuhalten? Bist du wirklich so verdorben und niederträchtig, Schniefelus?!", blaffte Sirius ihn an.<br/>"Ich wollte es verhindern!", schrie Severus ihm entgegen. "Bei Merlin, denkst du wirklich ich würde das hier gewollt haben?! Ich war sogar bei Dumbledore und hab ihn um Hilfe gebeten. Doch wie du siehst, konnte auch der mächtige und große Dumbledore es nicht verhindern!"<br/>Sirius ließ den Zauberstab sinken, steckte ihn zurück in seine Umhangtasche und schaute einige Minuten auf den nun wieder in Tränen aufgelösten Severus. "Wo ist Voldemort jetzt?", fragte Sirius schließlich ruhig.<br/>"Woher soll ich das denn wissen, Black! Weg! Tot!", erwiderte er. "Als ich hier ankam fand ich das Baby mit dieser komischen Narbe auf der Stirn vor. Er hat als einziger überlebt."</p><p>Sirius nahm Harry nun ein Stück von sich weg und betrachtete argwöhnisch die Blitznarbe, welche noch wund und gerötet war. "Das ist eine Fluchnarbe.", flüsterte er nachdenklich. "Irgendetwas muss schief gegangen sein, dass er ihn nicht töten konnte, so wie James und Lily."  <br/>Das Kind wurde wieder quengelig, so dass er ihn erneut fest in die Arme schloss und sanft hin und her wiegte.</p><p>"Wer hat deinem Meister den Aufenthaltsort der Potters verraten? Du konntest es ja nicht gewesen sein. Durch den Fidelius wusste ja lange Zeit noch nicht einmal ich wo dieses Haus zu finden war.", fragte  Sirius. Tief in seinem Inneren kannte er die Antwort, hoffte aber dass er sich irrte.<br/>"Es war Peter Pettigrew. Er war wohl Geheimniswahrer und hat dem Dunklen Lord die Information zukommen lassen. Tja, niemand wusste davon, dass sich Pettigrew den Todessern angeschlossen hatte. So konnte er sich gleich beliebt machen beim Lord. Er war es auch, der mir ganz schadenfroh erzählt hat, dass er ihm den Standort des Hauses genannt hat und hatte keine Skrupel es auch mir zu verraten."<br/>"Wurmschwanz, du miese Ratte!", brummte Sirius bedrohlich. Sein ganzer Körper begann zu beben und zu zittern. Seine Augen nahmen einen dermaßen rasenden Ausdruck an, dass sie ihn fast wahnsinnig aussehen ließen.<br/>Severus wich aufgrund dieses Anblicks zurück. Sieben lange Jahre war er mit Sirius Black zur Schule gegangen. Doch noch nie hatte er ihn so gesehen. "Black! Black, komm zu dir, verdammt! Wir müssen sie hier wegschaffen! Pettigrew wird es noch anderen Todessern erzählen und wenn der Dunkle Lord nicht zurückkehrt, dann werden sie herkommen und dann das hier vorfinden.", sprach er verzweifelt und deutete auf Lilys Körper.</p><p>Sirius schüttelte heftig seinen Kopf und drückte anschließend das unruhig gewordene Kind in seinen Armen fest an sich. "Du hast recht. Sie werden herkommen. Wir müssen Harry in Sicherheit bringen und dieser miese, kleine …", er hielt plötzlich inne und schaute Severus mit einem undurchsichtigen Gesichtsausdruck an. "Ich sag dir was wir tun werden. Du wirst Harry in Sicherheit bringen."<br/>Severus riss erschrocken die Augen auf. "Was, wie ... ich?", stammelte er als Reaktion auf die Ansage.<br/>"Ja du, Schniefelus! Lily lag dir doch am Herzen, oder nicht?! Dann bist du es ihr schuldig, ihren über alles geliebten Sohn zu beschützen.", sagte Sirius weiter.<br/>"Was ... ja, aber ... was ist mit dir?" Severus war immer noch nicht in der Lage einen vernünftigen Satz zu sprechen.<br/>"Du bringst Harry zu Dumbledore nach Hogwarts. Ich komme nach, sobald ich mich um die Ratte gekümmert habe.", schloss Sirius finster.<br/>Ergeben ließ Severus die Schultern hängen, sah sich noch einmal zu Lily um und erwiderte schlussendlich: "In Ordnung. Ich mache es."<br/>"Gut. Und das wir uns richtig verstehen: wenn ich nachgekommen bin und Harry ist nur ein Haar gekrümmt worden, dann mach ich dich kalt, Schniefelus! Ich werde dir so schrecklich weh tun, dass du mich auf deinen knochigen Knien um Gnade anwinseln wirst. Voldemort wäre dann ein Scheiß gegen mich. Haben wir uns verstanden?!", machte Sirius eindeutig seinen Standpunkt klar.<br/>Severus hatte sich inzwischen wieder zu ihm umgedreht und bestätigte genervt: "Ist ja gut Black, spiel dich hier nicht so auf. Ich pass schon auf den Jungen auf!"<br/>Mit einem Nicken von Sirius war die Unterhaltung dann beendet.</p><p>Sirius durchquerte das Zimmer und legte Harry in seinem Gitterbett ab. Hastig wickelte er das Kind in seine weiche, scharlachrote Decke ein. James hatte sie ausgesucht, das wusste Sirius noch. Er entdeckte im Bettchen ebenfalls einen kleinen Teddybären, den Remus den beiden zur Geburt geschenkt hatte. Er wusste, dass sein Patensohn ohne diesen nicht einschlafen konnte. Das Plüschtier drückte er Severus in die Hand, der die ganze Zeit nur auf Lily gestarrt hatte und sich nun erschrocken abwandte. Den kleinen Teddy drehte er achtsam in den Händen und betrachtete ihn gedankenverloren von allen Seiten.<br/>Sirius nahm den nun warm eingepackten Harry hoch. Der Junge rieb sich ungeschickt die Augen und gähnte einmal herzhaft. Sein Patenonkel musste über den Anblick schief lächeln. "Na Großer, bist du müde? Gleich kannst du ein bisschen schlafen.", flüsterte er dem Baby zu und drehte sich auf dem Absatz um.</p><p>"Los Schniefelus, komm jetzt!", grummelte er dem ganz verloren wirkenden Severus zu und verließ auch schon prompt das Zimmer.<br/>Severus schreckte auf, drehte sich noch einmal zu Lily um und verabschiedete sich innerlich, ehe er Sirius hinaus folgte.<br/>Harry hingegen schien die Anspannung zu spüren und wurde wieder nervöser. Bevor er ganz anfing zu weinen versuchte Sirius ihn auf dem Weg nach draußen mit Worten "Sshhh, es wird alles wieder gut, Großer." zu beruhigen. Severus trottete mit dem Teddybären in der Hand hinter ihnen her. Den Kopf hielt er dabei traurig gesenkt.<br/>Auf der Treppe achteten sie jedoch beide darauf, den toten James nicht aus Versehen zu streifen.</p><p>Als sie aus der Haustür traten, wehte ihn die kalte Luft entgegen. Sirius begab sich schnell mit dem nun doch schluchzenden Baby zu seinem Motorrad, welches er direkt vor dem Gartentor auf der Straße geparkt hatte. Severus fragte sich, wie er die Ankunft mit diesem Vehikel überhören konnte.<br/>Das Kind nun wieder mit einem Arm haltend, griff Sirius in die Tasche nach seinem Zauberstab und beschwor in seinem Beiwagen ein Kissen herauf, das die ganze Bodenfläche bedeckte. Vorsichtig legte er seinen Patensohn darauf nieder und sprach über den gesamten Beiwagen einen Wärmzauber. Sanft strich er dem quengelnden Kind über die Wange und raunte ihm liebe voll zu: "Schlaf ein bisschen, Harry. Sshhht, hab keine Angst. Ich bin bald wieder bei dir."<br/>Mit einem Wink seiner Hand verlangte er das Kuscheltier von Severus, was dieser ihm auch schnell gab.<br/>"Hier siehst du, dein Teddy ist auch da.", sagte Sirius und legte den Plüschbären mit in den Beiwagen, was Harry augenblicklich milder stimmte. Er hörte auf zu weinen und sah nun seinen Patenonkel mit müden Augen an. Sirius beugte lächelnd sich zu ihm runter, hauchte ihm einen Kuss auf die Schläfe und wuschelte zum Abschied noch einmal durch die schwarzen, eh schon strubbeligen Haare.<br/>"Bis bald, Großer!"</p><p>Als er wieder stand, guckte er ernst in das Gesicht von Severus, welcher bis jetzt still daneben gestanden und das Ganze beobachtet hatte.<br/>"Nimm mein Motorrad und flieg damit nach Hogwarts. So kannst du den Apparierschutz umgehen. Außerdem ist es für so ein kleines Kind eh nicht gut zu apparieren. Sie können davon einen Schock bekommen.", erklärte er monoton. Mit ein paar Schritten stellte er sich nun direkt vor Severus blickte ihm entschlossen entgegen. "Ich komme nach, sobald ich diese eine Angelegenheit erledigt habe. Mir ist immer noch nicht ganz wohl dabei, gerade dir mein Patenkind anzuvertrauen, aber im Moment habe ich leider keine andere Wahl. Doch wenn dem Jungen irgendetwas passieren sollte ..."<br/>"... ich weiß, Black. Keine Sorge, er ist bei mir in sicheren Händen.", unterbrach Severus seinen Redeschwall. Bitter lachte er auf. "Ich passe auf Lilys Sohn auf, das bin ich ihr schuldig.", sagte Severus. In seiner Stimme schwang unendliche Traurigkeit mit.</p><p>Die beiden nickten sich noch einmal bedeutungsvoll zu. Etwas ungelenk bestieg Severus das Motorrad und guckte nach unten in den Beiwagen. Dort lag jetzt ganz friedlich der fast schon eingeschlafene Harry. Mit der linken Hand griff er zur Decke und wickelte sie etwas enger um das Baby. Normalerweise hatte Severus für so kleine Kinder nichts übrig. Aber dieses hier, war jedoch etwas ganz besonderes.<br/>Konzentriert widmete er sich dem Vehikel. Zu seinem Leidwesen musste er sich eingestehen, dass er noch nie Motorrad gefahren, geschweige denn geflogen war.<br/>Sirius bemerkte seine Unsicherheit und erklärte salopp: "Mit dem rechten Pedal regulierst du die Höhe, mit dem Linken gibst du Stoff. Die Bremse ist oben am Lenker. Ein Druck auf den grünen Knopf und schon startest du es. Lass lieber die Finger von den anderen Knöpfen und Hebeln. Schaffst du das, Schniefelus?"<br/>"Ich bin ja nicht bescheuert!", giftete Severus zurück und betätigte den Startknopf.</p><p>Tatsächlich hatte er das fliegende Motorrad schnell im Griff. Sirius blickte ihnen noch so lange sorgenvoll nach, bis von ihnen nichts mehr zu sehen oder zu hören war.<br/>Severus drehte sich, als er genug Höhe hatte, ebenfalls nochmal um. Die Lichter des kleinen Örtchens verblassten in der Dunkelheit der Nacht. Und obwohl der fliegende Untersatz einen Heidenlärm veranstaltete, stellte er erleichtert fest, dass Harry bereits eingeschlafen war, kurz nachdem sie Godrics Hollow hinter sich gelassen hatten.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/3899701/chapters/8724037">Chapter 2</a>: 2. Teil
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Sicher und ruhig flog Severus mit dem schlafenden Baby im Beiwagen über Großbritannien hinweg. Er musste vom Süden Englands bis in den Norden, in die schottischen Highlands navigieren. Schon früh hatte er in den Besenflugstunden in der Schule gelernt, worauf es dabei ankam: sich an die Himmelsrichtungen halten, nachts die Konstellation der Gestirne und tagsüber den Sonnenstand beachten und zur Not etwas tiefer fliegen um markante Bauten und Orte, wie zum Beispiel Stonehenge oder die alte Burgruine in Harlech, als Orientierungspunkt nutzen. Falls alle Stricke reißen sollten, kannte Severus eh einen zuverlässigen Navigationszauber, für den Fall, dass er sich tatsächlich mal verfliegen sollte.<br/>Zielsicher lenkte er das Motorrad gen Norden und war in seinen eigenen Gedanken versunken. Das wirklich anstrengende an der Fliegerei war eh darauf zu achten, dass man nicht mit Vögeln oder den Flugmaschinen der Muggel kollidierte.</p><p>So saß er auf dem zugegeben doch recht bequemen Sitz des fliegenden Vehikels, den Gegenwind im Gesicht spürend und das stetige Knattern des verzauberten Motors hörend und musste an die Begebenheiten der letzten Stunden denken. Der Moment, in dem er das Kinderzimmer im Haus der Potters betrat, war und wird wohl immer sein, der schlimmste Augenblick in seinem Leben. Dieses Bild von seiner toten Lily auf dem Fußboden hatte sich tief in sein Innerstes eingebrannt. Bei der Erinnerung daran schossen ihm erneut die Tränen in die Augen, welche er aber eilig mit dem Ärmel wegwischte.<br/>Was allerdings das Schlimmste war: Es war seine Schuld! Hätte er den Inhalt der Prophezeiung nicht an den Dunklen Lord weitergegeben, wäre dieser nicht auf Lily aufmerksam geworden. Warum musste sie dieses Kind auch am letzten Tag im Juli zur Welt bringen, so wie es in der Prophezeiung beschrieben war? Wäre dieser Bengel nur einen Tag später geboren worden, wäre Lily jetzt noch am Leben und der Dunkle Lord hätte versucht irgendein anderes Balg umzubringen. Gerade als sich Wut zu seiner Verzweiflung und Trauer mischte, schaute er hinunter in den Beiwagen auf das friedlich schlafende Kind. Wie es so ruhig dalag, eingekuschelt in eine warme Decke und leise im Schlaf ab und an vor sich herbrabbelte. Severus musste zugeben, dass der Anblick niedlich war. Er konnte dieses unschuldige Baby einfach nicht für das ganze Desaster verantwortlich machen.</p><p>Etwa nach der Hälfte der Strecke, kurz hinter Leeds, wurde Harry jedoch munter. Als das Kind seine Augen aufriss, sah es nichts weiter als den endlos dunklen, blauschwarzen Himmel über sich. Er fing an zu weinen, versuchte sich aus der Decke zu befreien und aufzusetzen. Severus, der inzwischen längst bemerkt hatte, dass sein kleiner Passagier wieder wach war, flog augenblicklich langsamer und versuchte mit einer Hand den Jungen zum Liegenbleiben zu bewegen. Diese Hand, die ihn sanft in der liegenden Position hielt, verunsicherte Harry aber nur noch mehr. Laut jammernd versuchte er sich ihr entgegen zu drücken, was aber nicht von Erfolgt gekrönt war.<br/>Nun war Severus in der Bredouille, denn er konnte sich nicht gleichzeitig auf das Fliegen des Motorrades konzentrieren und darauf, dass Harry nicht auch noch aus dem Beiwagen fiel.<br/>"Hör auf zu zappeln, sonst bind' ich dich fest!", zischte er dem Kind ungeduldig zu.<br/>Jetzt schrie der Junge richtig laut los und guckte Severus mit flehenden Augen an.<br/>"Ach, verdammt!", schimpfte dieser zu sich selbst und ging in den Sinkflug.<br/>Zum Glück befanden sie sich gerade über recht unbewohntem Gebiet, so dass er problemlos landen konnte. Nach ein paar Minuten kam er auf einem kleinen Sandweg neben einem abgeernteten Feld zum Stehen. Die Muggel in dem kleinen Dörfchen am Ende des Feldweges schienen das eigenartige Flugobjekt nicht bemerkt zu haben.</p><p>Severus stellte den Motor aus, stieg ab und beugte sich direkt über den Beiwagen, in dem ein noch immer herzzerreißend weinender Harry lag. Er betrachtete sich den Jungen genau. Hatte er Schmerzen wegen der Fluchnarbe oder, Merlin bewahre, die Windeln voll? Aber all das schien nach eingehender Prüfung nicht der Fall zu sein. Harry wurde immer hysterischer und Severus war so langsam mit seinem Latein am Ende. Vielleicht hatte er Hunger, dachte sich Severus. Er griff in seine Umhangtasche und holte das Fläschchen mit Kürbissaft heraus, welches er gestern Abend angebrochen hatte und seitdem mit sich rumschleppte. Doch auch von dem süßen Saft wollte das Kind nichts abhaben. So gut es ging schob Harry die ihm dargebotene Flasche von sich weg und weinte stattdessen nur noch lauter.</p><p>"Was hast du denn, Kleiner? Hör auf zu weinen! Was ist denn los mit dir?!", jammerte Severus verzweifelt, denn er wusste nicht, was er noch tun könnte. Er stand ganz allein, mitten in der Nacht, irgendwo in der Pampa und musste sich mit einem schreienden Baby auseinandersetzen. Er hatte keine Ahnung wie er den aufgelösten Jungen beruhigen konnte. Hilflos stand Severus vor dem Kind, was nach wie vor völlig außer sich war und flehend mit seinen grünen, verheulten Augen zu ihm hoch blickte.<br/>"Lily hilf mir! Was soll ich tun?", flüsterte er zu sich selbst. Die Antwort gab ihm Harry selbst. Ungelenk rappelte sich das einjährige Kind auf und streckte die Arme nach Severus aus.<br/>Dieser blinzelte ein paar Male, bevor er verstand was zu tun war. Vorsichtig und mit der wärmenden Decke nahm er Harry auf den Arm, welcher sich sofort an ihn kuschelte und die kleinen Händchen in die schwarze Zaubererrobe vergriff.<br/>Sachte wiegte Severus ihn hin und her, worauf sich der Kleine langsam wieder beruhigte.<br/>Sogar dem sonst so verbitterten Zauberer ging in diesem Moment das Herz auf. Anscheinend brauchte der Junge, der gerade vor ein paar Stunden seine Eltern verloren hatte, nur ein wenig Nähe.<br/>"Schon gut, ich bin ja bei dir, Kleiner. Ich pass schon auf, dass dir nichts passiert.", raunte Severus dem zwar noch etwas schluchzenden, aber nun wieder deutlich entspanntem Harry zu und drückte ihn fest an sich.</p><p>Severus begann leise zu summen und musste mit einem Schmunzeln daran denken, was wohl seine Todesserkollegen davon halten würden, sollten sie ihn jetzt so sehen. Allen voran Lucius. Der hatte ja auch einen Sohn in Harrys Alter, aber mit dem hatte sich Severus nie so richtig beschäftigt. So ging es ihm auch mit anderen Kindern der Todesser, denn eigentlich mochte er Kinder auch nicht besonders. Andererseits meinte Lucius mal zu ihm, dass er nicht weiter dem Schlammblut nachtrauern und sich stattdessen eine bessere Frau suchen sollte, mit der er dann eine Familie gründen solle, da er ja doch zur Hälfte aus einer altehrwürdigen und reinblütigen Familie stamme. Jedoch konnte sich Severus nie jemand anderes als Lily neben sich vorstellen. Aber diese hat denjenigen zum Mann gewählt, der ihm in der Schulzeit ständig das Leben schwer gemacht hatte. Severus dachte auch an die Begebenheit, nach der ihm Lily endgültig die Freundschaft gekündigt hatte. Er sollte darüber wütend sein, empfand aber stattdessen nur unendliche Traurigkeit und Enttäuschung. Er wusste, dass er Lily immer noch von Herzen liebte.<br/>Und nun war er hier, lehnte gegen das Motorrad von diesem Taugenichts Black und hielt ihr Kind in den Armen.</p><p>Zu Severus' Erleichterung war Harry wieder eingeschlafen. Offensichtlich hatte das Summen seiner tiefen Stimme eine ziemlich beruhigende Wirkung auf das Baby gehabt. Äußerst behutsam, auch um den Jungen nicht wieder zu wecken, legte er ihn zurück in den mit einem Wärmzauber versehenen Beiwagen. Nachdem er das Kind wieder in die rote Decke eingekuschelt hatte, welche in der dominierenden Farbe des Hauses Gryffindor war, wie er jetzt erst mit einem Augenrollen feststellte, schaute Severus noch eine Weile auf ihn hinab. Obwohl Harry äußerlich eher nach seinem Vater kam, hatte er zweifelsohne die Augen seiner Mutter. Severus hoffte inständig, dass der kleine Junge später auch charakterlich nach seiner Mutter schlagen würde. Ihm kam der tröstende Gedanke, dass Lily mit ihrem Sohn einen Teil von sich in dieser Welt zurückgelassen hatte.</p><p>Mit einem tiefen Seufzer bestieg Severus wieder das Motorrad und setzte seinen Weg nach Hogwarts fort. Zum Glück verlief der restliche Flug ohne weitere Zwischenfälle. Harry schlief die ganze Zeit über friedlich im Beiwagen, so dass sie schließlich am frühen Morgen ihr Ziel erreichten.<br/>Severus hielt es für das Klügste Blacks Motorrad beim Wildhüter zu parken und den restlichen Weg ins Schloss mit dem Kind auf dem Arm zu Fuß zurück zu legen. Schließlich war es die Halloween-Nacht, was bedeutete, dass die Schule nicht leer stand. Er wusste, dass er sich mit Harry bedeckt halten und sich unbemerkt von den anderen Schülern und Lehrern zu Dumbledore begeben musste.<br/>Also landete Severus das Vehikel neben der kleinen Hütte, in dem der Halbriese Hagrid hauste.<br/>Kaum hatte er den verzauberten Motor abgestellt, kam auch schon ein unheimlich großer, grauer Jagdhund aus dem Haus gestürmt, baute sich vor Severus auf und knurrte und bellte was das Zeug hielt. Hinter dem Hund folgte Hogwarts Wildhüter in alter, abgewetzter Kleidung und mit gezückter Armbrust.</p><p>"Was soll'n der Lärm! Wer is da?", brummte Hagrid ungehalten.<br/>Severus wusste, dass er jetzt schnell reagieren musste. Der Halbriese war bei Voldemorts Anhängern nicht gerade für sein geduldiges Wesen bekannt. Schnell zückte er seinen Zauberstab und sprach einen Lumos, welcher sein Gesicht beleuchtete.<br/>Hagrid riss seine dunklen Augen weit auf, als er erkannte wer da vor ihm stand. "Ah! Du bist doch Severus Snape, einer der Schergen von `Du-weißt-schon-wem´! Was, bei Merlins Bart, tust'n du hier, hä?! Sag schon!", grollte er hitzig.<br/>Severus wiederum hob als Antwort beschwichtigend die Hand und meinte nur: "Warten Sie!" Ganz langsam beugte er sich hinunter zum Beiwagen und holte einen inzwischen zwar aufgewachten, aber dennoch vollkommen stillen Harry heraus.<br/>"Was soll'n das jetzt, Snape, und wer is dieses Kind?" fragte der Wildhüter ungehalten, die Armbrust noch immer im Anschlag.<br/>"Der Dunkle Lord hat heute Nacht die Potters getötet. Das hier ist ihr Sohn. Ich will ihn zu Dumbledore bringen.", antwortete Severus gefasst. Er wusste, dass er im Augenblick Ruhe bewahren musste.<br/>"Was? Lily und James sind tot? Aber ... das kann doch nich sein?", murmelte Hagrid. Man sah ihm den Schock über diese traurige Nachricht an.</p><p>Sein Hund knurrte den fremden Zauberer mit dem Baby im Arm immer noch an. "Schon gut, Tessy. Bist'n braves Mädchen. Geh zurück ins Haus.", sprach er zu seiner Wachhündin, die dem Befehl artig Folge leistete. Hagrid ließ seine Armbrust sinken und trat langsam an Severus heran.<br/>Vorsichtig strich er mit seiner übergroßen Hand die Decke ein Stück weg, so dass er mit der Beleuchtung durch Severus' Zauberstab den Kleinen ansehen konnte.<br/>Harry blinzelte nur ein paar Mal mit den Augen und versuchte sich ungeschickt die kleinen Händchen vors Gesicht zu halten, da ihn das Licht des Lumos-Zaubers offenbar blendete.<br/>"Och, is der niedlich und er hat Lilys Augen! Sie sich das einer an!", kommentierte der Halbriese herzlich. Mit einem ernsten Blick wandte er sich anschließend wieder an Severus. "Ich weiß zwar nicht was genau los war und auch nicht warum Sie den kleinen Fratz bei sich haben, aber ich bringe Sie jetzt zu Professor Dumbledore. Is besser, er wird wissen was zu tun ist.", sagte Hagrid gefasst.<br/>"In Ordnung. Danke.", erwiderte Severus eintönig. Innerlich war er dennoch sehr erleichtert. Es hätte auch anders kommen können. Wenn er sich so diese Waffe in den Händen des Wildhüters besah, dann war er heilfroh, dass dieser so besonnen auf seine Ankunft reagiert hatte.</p><p>Während Hagrid kurz in seiner Hütte verschwand, um sich seinen Lieblingsfellmantel überzuwerfen und eine Laterne zu holen, steckte Severus seinen durch den Nox nun wieder erloschenen Zauberstab in die Tasche und griff geistesgegenwärtig in den Beiwagen, um sich Harrys Teddybär zu schnappen. Diesen steckte er zu seinem Stab in die Umhangtasche.<br/>"Bleib hier Tess und pass schön auf, ja!", sprach Hagrid freundlich zu seiner Hündin, ehe er aus der Tür trat und diese mit einem Rumms ins Schloss fallen ließ.<br/>"Na dann, Snape. Los geht's", wandte er sich an Severus und beide machten sich auf den Weg hoch zum Schloss.</p><p>Severus hielt Harry fest in seinen Armen und versuchte ihn so gut es ging, auch mit Zuhilfenahme der Decke, vor dem frischen Herbstwind zu schützen. Hier oben in Schottland war es sowieso immer kälter als im Rest des Landes. Vertrauensvoll lehnte sich der Junge gegen seinen Träger. Während des gesamten Weges sprachen Hagrid und Severus kein Wort miteinander.</p><p>Im Schloss angekommen, führte der Wildhüter sie zum Eingang der Privatgemächer des Direktors. Zum Glück war um diese Uhrzeit, es war kurz vor fünf Uhr morgens, noch niemand im Schloss unterwegs. Einzig und allein die Blicke der Portraits folgten ihnen auf Schritt und Tritt.<br/>Vor einem unscheinbaren Wandteppich im 3. Stock blieb der Halbriese stehen und klopfte exakt drei Mal dagegen, doch nichts tat sich.<br/>"Falls du den Professor suchst, Hagrid, der befindet sich in seinem Büro und hat eine wichtige, geheime Unterredung mit den ehemaligen Schulleitern.", sagte ein alter Mann mit leicht spöttischen Unterton und einer auffälligen großen Feder am Spitzhut vom Gemälde gegenüber des Wandteppichs.<br/>"Oh, danke Wendel!", erwiderte Hagrid und ging den Gang weiter hinunter zur nächsten Treppe.<br/>Der Zauberer im Bildnis musterte den ganz in Schwarz gekleideten Zauberer mit dem Baby auf dem Arm eindringlich. Während Severus dem Portrait nur höflich zunickte, beschaute Harry es sich neugierig mit großen Augen und zeigte auffällig mit dem Finger darauf.<br/>"Da!", sagte der kleine Junge plötzlich.<br/>"Ja, das ist Wendel Lancaster. Er war zu Lebzeiten ein großer Heiler und Tränkemeister.", flüsterte Severus dem Kind zu, während er Hagrid folgte. Er wusste nicht, warum er dem Einjährigen auf seine Neugier eine Antwort gab. Der Kleine dürfte eh kein Wort verstanden haben von dem was er gesagt hatte, geschweige denn sich später daran erinnern. Trotzdem war Severus in diesem Moment einfach danach. Jetzt sah Harry freudig zu ihm hoch, die grünen Augen strahlten ihn regelrecht an. Er konnte nicht anders als zurückzulächeln und den kleinen Jungen wieder fest an sich zu drücken.</p><p>An den Wasserspeiern vor Dumbledores Büroeingang angekommen raunte Hagrid ihnen das Passwort "Mäusespeck" zu, was einen ungläubigen Gesichtsausdruck seitens Severus zur Folge hatte. Ein dämlicheres Passwort hätte sich der Schulleiter auch nicht aussuchen können, dachte er sich im Stillen, während sie die Stufen der Wendeltreppe bis hoch vor die Bürotür trugen.<br/>Diese öffnete sich wie von selbst und in dem großen, runden Raum stand Albus Dumbledore vor dem großen Schreibtisch und guckte seinen Besuchern neugierig entgegen. Ein kurzer, etwas irritierter Blick seinerseits wanderte zu dem kleinen Bündel in Severus' Armen.<br/>Die ehemaligen Schulleiter in den Gemälden taten allessamt so, als würden sie schlafen. Jeder im Zimmer wusste aber, dass dem nicht so war. Es war eine schrullige Angewohnheit der Portraits, da sich in diesem vollgehangenen Büro niemand bei seinem Gespräch mit dem amtierenden Direktor belauscht fühlen sollte.</p><p>Harry sah sich indes neugierig im Raum um. Die unzähligen, allein vor sich her arbeitenden Apparaturen und magischen Gegenstände beanspruchten sein ganzes Interesse. Normalerweise wäre das für die erwachsenen Zauberer im Zimmer ein Grund gewesen, dem Kind volle Aufmerksamkeit zukommen zu lassen. Unter den gegebenen Umständen schenkte jedoch keiner von ihnen Harry besondere Beachtung.<br/>"Was ist geschehen?", fragte Dumbledore ruhig. Er ahnte schon was jetzt kommen würde.<br/>"Oh Professor, es is so schrecklich!", begann Hagrid laut zu klagen. "Snape hier stand vorhin ganz plötzlich mit dem kleinen Fratz vor meiner Tür und behauptete, dass James und Lily tot seien!"</p><p>Dumbledore ging langsam zu Severus und betrachtete sich einen Moment den Jungen in seinen Armen. Dann schaute er hoch in das angespannte Gesicht des Todessers. Severus blinzelte nicht einmal, sondern nickte nur langsam. Man sah ihm deutlich an, wie sehr er in diesem Augenblick um Fassung rang.<br/>"Ich fürchte, mein lieber Hagrid, dass das, was Mr Snape da berichtet hat, der Wahrheit entspricht.", sagte Dumbledore mit großer Traurigkeit in der Stimme.<br/>Jetzt fing der Halbriese an zu schniefen und weinte in der nächsten Sekunde auch schon in sein altes, gepunktetes Taschentuch, welches er immer in der linken Hosentasche bei sich trug.<br/>Der Schulleiter ging herüber zu seinem Wildhüter und klopfte ihm aufmunternd auf die Schulter.<br/>"Hagrid, ich habe eine große Bitte an dich.", sprach er weiter. "Würdest du zu Kingsley gehen und gemeinsam mit ihm und seinen Auroren James und Lily Potter bergen? Wir sollten sie in den nächsten Tagen mit Würde und Ehrfurcht bestatten."<br/>"Ja, natürlich Professor Dumbledore. Wird sofort erledigt, Sir.", erwiderte Hagrid und schnaubte noch einmal laut in sein Taschentuch, bevor er sich auf den Weg machte.</p><p>Kaum hatte der Halbriese das Büro verlassen brach es auch schon aus Severus heraus. "Sie haben mir geschworen sie zu beschützen! Und jetzt?! Haben Sie überhaupt irgendetwas getan um sie vor dem Tod zu bewahren? Ich war da! Es war schrecklich! Sie lag wie eine weggeworfene Puppe auf dem Fußboden!" Erneut rannten die Tränen über sein Gesicht. Mit jedem Wort wurde er immer lauter.<br/>"Severus, bitte, Sie müssen sich beruhigen.", sagte Dumbledore und gebrauchte in diesem Moment ganz bewusst den Vornamen seines ehemaligen Schülers.<br/>"Nein, ich werde mich nicht beruhigen! Wo waren Sie als der Dunkle Lord sie umgebracht hat?! Wo?!"<br/>"Severus, ich verstehe dass Sie aufgewühlt sind...", versuchte der Direktor es erneut.<br/>"Einen Scheiß wissen Sie!", fuhr Severus dazwischen. "Und sagen Sie nicht, dass Sie verstehen können wie ich mich fühle! Das können Sie nicht! Sie sind nur ein dummer, alter Mann!", schrie er ungezügelt in den Raum hinein.</p><p>Harry war von diesem Gefühlsausbruch so erschrocken, dass auch er anfing lauthals zu kreischen und zu weinen.<br/>Severus sackte mit ihm zu Boden, hielt ihn fest in einer Umarmung und streichelte ihm mit einer Hand über den Kopf. "Sshhh, tut mir leid, Kleiner. Ich wollte nicht so laut werden. Sshhh.", sprach er nun wieder sanft auf das aufgebrachte Kind ein.<br/>Als sie sich beide wieder einigermaßen gefasst hatten, stand Severus mit Harry auf und setzte sich auf einen Stuhl in die Ecke.<br/>Er kniff mit Daumen und Zeigefinger in seinen Nasenrücken, konnte die Tränen, die immer weiter seine Wangen runter liefen, nicht stoppen. Er war völlig fertig. Im Moment war ihm irgendwie alles zu viel.</p><p>Albus Dumbledore hatte interessiert die Szenerie beobachtet. Ganz besonders die Fürsorge, welche Severus offenbar für das Kind empfand, freute ihn insgeheim. Darauf konnte er nämlich aufbauen.<br/>Langsam trat er an die beiden heran und streckte seine Hand nach dem Kind aus. Er legte sie auf den Kopf des Jungen, strich leicht mit dem Daumen über die Blitznarbe auf Harrys Stirn und bekam einen undurchsichtigen und seltsamen Ausdruck im Gesicht.<br/>Der Junge drehte sich daraufhin demonstrativ von der Hand weg und legte seinen Kopf auf Severus Schulter ab. Dieser hielt ihn weiterhin fest und strich ihm nun sanft über den Rücken.</p><p>"Es ist noch nicht vorbei, Severus.", sagte Dumbledore auf einmal, woraufhin dieser ihn ungläubig ansah.<br/>"Wie? Natürlich ist es vorbei. Die Potters sind tot und der Dunkle Lord verschwunden.", erwiderte Severus mit einem bitteren Unterton. Dieser Sieg hatte für seinen Geschmack einen viel zu hohen Preis.<br/>"Aber er wird nicht für immer verschwunden bleiben, davon bin ich überzeugt.", redete Dumbledore weiter. "Er wird wiederkehren und dann ist der Junge in größter Gefahr, Severus! Heute Nacht ist die Prophezeiung, welche Sie belauscht hatten, in Erfüllung gegangen. Voldemort hat Harry mit dieser Narbe gekennzeichnet, als der Todesfluch auf ihn selbst zurückprallte. Es ist jedoch ausgeschlossen, dass er tot ist. Er wird sich erholen und zurückkommen. Ab diesem Augenblick wird er es auf Harry Potter abgesehen haben. Wir wissen nicht wann das sein wird. Vielleicht wird es in Harrys Schulzeit passieren oder schon vorher. Ich brauche Sie unbedingt hier in Hogwarts, um den Jungen zu schützen.", schloss er seine Erklärung ab.</p><p>Severus raste der Schädel. Doch auch er wusste, dass der Dunkle Lord niemals locker lassen würde. Warum dieser allerdings nicht tot sein konnte, entzog sich seiner Kenntnis. Er wusste in dem Moment, dass Dumbledore offenbar Einsichten hatte, die er ihm nicht preisgab. Etwas anderes, was der alte Schulleiter aber gesagt hatte, war im Moment jedoch viel interessanter.<br/>"Sie wollen mich hier in Hogwarts haben?", fragte Severus verwirrt. "Sie wissen schon, dass Todesser wie ich höchstwahrscheinlich für den Rest des Lebens nach Askaban wandern werden."<br/>"Das lassen Sie mal meine Sorge sein. Wenn ich Sie vor einer Verurteilung bewahren kann, werden Sie also Lehrer an dieser Schule?", fragte Dumbledore und hoffte das sein Gegenüber auf die Abmachung eingehen würde.</p><p>Doch Severus lachte nur auf. "Ich, ein Lehrer?! Ich soll also die Seiten wechseln und diesen Bengel hier beschützen, nur um einer Haft in Askaban zu entgehen?!", meinte er höhnisch.<br/>Doch der Schulleiter ließ sich von der bissigen Art Severus Snapes nicht beirren. "Sie haben Ihrem Meister doch innerlich schon abgeschworen, als er es auf Lily und ihre Familie abgesehen hatte. Kamen Sie nicht zu mir und flehten mich an Ihnen zu helfen? Erinnern Sie sich nicht mehr was Sie versprochen haben mir dafür zu geben?", fragte Dumbledore eindringlich. Wenn es nicht anders ging, dann musste es eben so sein.<br/>"Alles.", antwortete Severus schlicht. Es war kaum mehr als ein Flüstern. Abwesend begann er Harry in seinen Armen hin und her zu wiegen, da dieser wieder angefangen hatte zu quengeln.<br/>"Wenn Sie Lily geliebt und damit meine ich wirklich geliebt haben, dann lösen Sie ihr Versprechen auch ein. Helfen Sie dabei ihren Sohn zu beschützen. Sehen Sie ihn an, er hat ihre Augen.", versuchte Dumbledore es weiter.<br/>"Ich weiß.", sagte Severus schlicht und starrte mit nun wieder tränennassen Augen stur geradeaus.</p><p>Nach einer Weile, in der Severus offenbar nachgedacht hatte, sagte er schließlich: "Ich mache es, unter einer Bedingung."<br/>"Und die wäre?", stellte Dumbledore die Gegenfrage. Er wusste, dass er ihn schon im Boot hatte, da würde er ihm höchstwahrscheinlich seine Bitte nicht abschlagen.<br/>"Niemand wird je von meinen Gefühlen für Lily erfahren. Das ist wichtig für mich! Besonders der Junge hier darf das niemals wissen.", erwiderte Severus energisch.<br/>Der alte Direktor war über dieses Ansinnen zwar etwas verwundert und auch enttäuscht, willigte jedoch ein. "In Ordnung, Severus. Von mir wird nie jemand das Beste an Ihnen zu hören bekommen." Er gebrauchte ganz gewollt diese Wortwahl, in der Hoffnung, dass es sich Severus eventuell doch noch einmal anders überlegte.</p><p>Dieser nickte aber nur ergeben und versuchte weiterhin das zappelnde und schluchzende Kind in seinem Schoß zu beruhigen.<br/>"Ich würde Ihnen das Fach Zaubertränke anvertrauen wollen.", sagte Dumbledore und ging hinüber zu seinem Schreibtisch, der vollgepackt war mit allerlei Pergamenten, Büchern, einem silbrig-glänzenden, undefinierbarem Gerät das eifrig arbeitete und tickte, sowie einer Schale mit Zitronenbonbons. Seit kurzem war Albus Dumbledore dieser Muggelsüßigkeit regelrecht verfallen.<br/>Er fing an einen Brief aufzusetzen.<br/>"Ich würde Verteidigung gegen die dunklen Künste vorziehen.", sprach Severus ungerührt.<br/>Dumbledore schaute ihn mit einem Blick, den Severus nicht deuten konnte, über seine Halbmond-förmigen Brillengläser an. "Bedaure, aber dieses Fach kann ich ihnen nicht geben. Horace wollte schon seit längerer Zeit in den Ruhestand gehen. Jetzt wird er die Gelegenheit dazu erhalten. Sie werden seine Stelle als Zaubertränke-Professor und Hauslehrer von Slytherin übernehmen.", erwiderte Dumbledore und schrieb seelenruhig seinen Brief weiter.</p><p>Severus schnaufte abfällig und grummelte anschließend jedoch: "Na wenn's sein muss."<br/>Da Harry in seinen Armen immer noch sehr unruhig war, zog Severus seinen Teddybären aus der Tasche und gab sie dem Einjährigen. Der ergriff sein Plüschtier und drückte es nah an sich ran. Als er sich das Ohr des Teddys in den Mund steckte und daran nuckelte, wirkte er endlich wieder entspannter und Severus ließ ihn locker auf dem Schoß sitzen.</p><p>Der Schulleiter hatte inzwischen seinen Brief beendet, faltete das Pergament anschließend zweimal und ging damit zum Fenster. Er rief eine Eule zu sich, gab ihr das Papier in den Schnabel und sagte ihr leise den Empfänger, den Severus allerdings nicht verstand.<br/>Als sich Dumbledore wieder zu ihm umdrehte, fragte er freundlich: "Haben Sie einen Ort, wo Sie mit dem Jungen hinkönnen? Ich würde seinen Paten Sirius Black zu Ihnen schicken, sobald ich mit ihm gesprochen und die traurige Nachricht…"<br/>An dieser Stelle unterbrach ihn Severus schnell. "Nicht nötig. Ich bin mit Blacks Motorrad hier. Er fand mich im Haus der Potters und gab mir das Kind mit. Er meinte, er würde nachkommen und den Jungen holen, sobald er die Sache mit Pettigrew erledigt hätte."<br/>"Pettigrew? Sie meinen Peter Pettigrew?" Auf einmal verstand Dumbledore, was vorgefallen war.<br/>"Ja, Pettigrew war der Geheimniswahrer. Was aber niemand wusste ist, dass er sich dem Dunklen Lord angeschlossen und ihm den Standort des Hauses der Potters gesteckt hatte. Ich nehme an Black will deswegen einen Hippogreif mit ihm rupfen.", erläuterte Severus.<br/>"Ich hoffe, dass der Gute sich im Griff haben wird.", raunte Dumbledore nachdenklich.<br/>"Das wird er schon. Er hat doch Sehnsucht nach seinem Patenkind. Das wird ihn schon davon abhalten etwas zu tun, weswegen er einwandern könnte. So dumm wäre noch nicht mal Black.", kam es von Severus. Er hoffte inständig, dass er damit Recht behalten würde.</p><p>Der Direktor nickte einmal nachdenklich, bevor er sich wieder seinem Gegenüber zuwandte. "Haben sie nun einen Platz, wo sie mit dem Kind unterkommen können?"<br/>Severus schüttelte nur den Kopf und schaute mit einem deprimierten Gesicht in die grünen Augen von Harry, welche ihm vertrauensvoll entgegen blickten.<br/>"Das habe ich mir schon gedacht.", gestand Dumbledore. "Ich war so frei Madam Rosmerta eine Nachricht zu schicken, dass sie bitte ein Zimmer für sie beide herrichten soll. Wir sollten auch sofort aufbrechen. Es ist noch sehr früh am Morgen und die Chance ist groß, dass uns niemand dabei sieht wie wir runter ins Dorf schleichen. Ich würde allein schon wegen Harry keine zu große Aufmerksamkeit haben wollen."<br/>Überrascht schaute Severus ihn an. Da war der alte Kauz anscheinend mal wieder einen Schritt voraus. Er hatte eigentlich gedacht, dass er hier im Büro auf Black warten würde. Denn so lange kann dieser Tölpel ja nicht mehr auf sich warten lassen. Aber die Aussicht auf eine heiße Dusche oder ein Bett waren zu verführerisch. So willigte er schließlich ein und gemeinsam machten sie sich auf den Weg nach Hogsmeade in die Drei Besen.<br/>Was Severus nicht bemerkte war, dass Dumbledore während der gesamten Strecke zur Sicherheit einen Tarnzauber über sie gelegt hatte.</p><p>In der urigen Kneipe mit der dazugehörigen Zimmervermietung angekommen, wurden sie sogleich von der Inhaberin Madam Rosmerta, einer auffällig hübschen und vollbusigen Hexe, in das entsprechende Zimmer gebracht. Auf ihre Nachfragen hin vertröstete der Schulleiter sie jedoch damit, ihr später alles zu erklären.<br/>Mit der Abmachung Sirius gleich zu ihnen zu schicken, wenn er in Hogwarts eintraf, ließen Dumbledore und die gute Seele der Drei Besen ihn und Harry allein. Madam Rosmerta war außerdem so nett, eine Flasche warme Milch für Harry und eine Kleinigkeit zu Essen und zu Trinken für Severus im Zimmer bereitzustellen. Außerdem hatte sie eines der Betten im Raum in ein Kinderbettchen verwandelt, in welches Severus den Jungen auch sogleich ablegte. Seine Arme waren bereits lahm geworden, da er das Kind seit ein paar Stunden getragen hatte.</p><p>Nach einer ausgiebigen, heißen Dusche fühlte Severus sich um einiges besser und beschloss sich nun über die Sandwiches herzumachen, welche ihn von einem kleinen Beistelltisch aus regelrecht anlachten. Seit seiner letzten Mahlzeit waren nun schon circa 12 Stunden vergangen und bei seinem Hunger schmeckte selbst dieses einfache Schinkensandwich wie ein Gourmetessen.<br/>Harry hatte sich in der Zwischenzeit in dem Bettchen aufgerichtet und schaute ihm mit einem sehnsüchtigen Blick beim Essen zu. Als Severus dem Kind doch keine Beachtung schenkte, fing der Kleine lauthals an zu kreischen.<br/>"Na, bist wohl futterneidisch, Kleiner.", sagte Severus ohne zu überlegen. Schnell kam ihn beim Anblick der flehenden, grünen Kinderaugen jedoch der Gedanke, dass er gar nicht wusste wann das Baby zuletzt gefüttert wurde. Er selbst kannte aus seiner Kindheit, die wirklich alles andere als schön gewesen war, wie es ist wenn man hungrig und durstig ist.<br/>Also legte er das belegte Brot zurück auf den Teller und nahm Harry aus dem Bettchen heraus. Er setzte sich mit ihm in den Sessel neben dem Beistelltisch, auf dem das Essen und Trinken bereit stand und gab dem Jungen die Flasche. Das Kind trank so gierig die Milch, dass es wohl wirklich einige Stunden her sein musste, wann er zuletzt etwas bekommen hatte.<br/>Nachdem Harry die Flasche vollständig geleert hatte, hielt Severus ihn mit einem Arm über die Schulter und wartete auf das Bäuerchen. Es war selbst einem wie ihm bekannt, der Kinder nicht besonders mochte, dass Babies so etwas nach dem Essen tun.<br/>Nebenbei aß er mit der anderen Hand gemütlich seine Sandwiches auf.</p><p>Anschließend beschlich Severus eine unglaublich große Müdigkeit. Die Nacht steckte ihn in den Knochen und am liebsten wäre hier und jetzt im Sessel eingeschlafen. Doch das ging wegen dem Kind auf seinem Arm nicht. Langsam stand er auf und gerade als er Harry in dem Gitterbettchen ablegen wollte, krallte dieser sich laut weinend an ihm fest.<br/>Severus atmete tief durch. Trotz der Rührung über das Verhalten des Jungen hätte er nie gedacht, dass es so anstrengend war ein Baby zu hüten. Harry strampelte und weinte bitterlich und Severus konnte nichts anderes tun als nachgeben, wollte er endlich wenigstens ein bisschen Schlaf bekommen.<br/>"Na gut, Kleiner. Hast gewonnen.", sagte er ergeben und drückte den Jungen wieder an sich. Mit einem herzhaften Gähnen trottete er rüber zum Bett, legte das Baby darauf ab und drapierte die vorhandenen Kissen so um Harry herum, dass er nicht so einfach von der Matratze rollen konnte.</p><p>Mit einem Accio rief er den Plüschteddy aus dem Kinderbettchen zu sich und drückte ihn dem noch viel zu munteren Kind in die kleinen Händchen. Völlig erschöpft ließ er sich neben Harry auf die bunt gemusterte Tagesdecke fallen, machte sich gar nicht erst die Mühe Schuhe und Umhang auszuziehen. Er legte sich auf die Seite, mit dem Gesicht zu dem Jungen und sah ihn eine Weile einfach nur an. Der Kleine machte keine Anstalten auch schlafen zu wollen. Severus dachte sich, dass wahrscheinlich sein Tagesrhythmus, sofern Kinder in dem Alter schon so etwas haben, eh total durcheinander war.<br/>Sachte strich er Harry über die Schläfe, in der Hoffnung ihn dadurch doch noch etwas müde zu machen. Stattdessen war er es selbst, der nach ein paar Minuten in einen tiefen Schlaf fiel.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/3899701/chapters/8724043">Chapter 3</a>: 3. Teil
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Urplötzlich schreckte Severus auf. Er wusste nicht, was ihn genau geweckt hatte. Verschlafen blinzelte er ein paar Mal und schaute neben sich. Harry saß auf dem Bett und zeigte Richtung Tür. Als der Kleine laut "Da! Moony!" rief und die Arme nach oben ausstreckte, wunderte sich Severus im ersten Moment über dieses Verhalten. Als zwei Hände nach dem Jungen griffen und eine Stimme sagte: "Na du kleiner Krümel! Freust du dich mich zu sehen?", schreckte er hoch und setzte sich blitzschnell auf.</p><p>Vor dem Bett und nun Harry im Arm haltend stand Remus Lupin in einem schäbig aussehenden, mit Flicken besetzten Umhang und musterte Severus belustigt.<br/>"Hab dich gar nicht reinkommen hören.", nuschelte er und fühlte sich noch unglaublich matt.<br/>"Du hast ja auch tief und fest geschlafen.", stellte Remus fest.<br/>"Wie lange eigentlich?", fragte Severus hinterher.<br/>"Keine Ahnung, aber es ist Viertel nach Neun. Werd erst einmal richtig wach.", meinte Remus und zog Harry fürsorglich in eine Umarmung.</p><p>Während Severus sich streckte, gähnte und die Augen rieb um wieder einigermaßen munter zu werden, murrte er innerlich darüber, dass er nur circa eine Stunde geschlafen hatte. Er fragte sich was Lupin hier wollte. Eigentlich hatte er seinen Kumpel Black erwartet. Wo der steckte wusste nur der Fuchs oder Dumbledore, dachte sich Severus.</p><p>Remus redete indes liebevoll mit dem Kleinen und setzte sich mit ihm, nachdem er dem Baby durch einen Zauber eine neue Windel verpasst hatte, in den großen, gemütlichen Sessel.<br/>"Na Harry, hast du Hunger? Guck mal, hier ist noch eine Banane für dich.", redete er mit dem fröhlich wirkenden Jungen. Magisch schälte er das Obst und schnitt es in kleine Stücke zurecht. Er fing an den Kleinen mit den mundgerechten Bananenstückchen zu füttern und anscheinend mochte Harry Banane sehr gerne.<br/>"Ich hatte ihn doch vor einer Stunde die Flasche gegeben.", sagte Severus verwundert.<br/>"Ja, aber das reicht nicht. Er wird bald wieder Hunger haben und wo ich schon mal hier bin...", meinte Remus dazu freundlich. Ihm machte es sichtlich Spaß Zeit mit Harry zu verbringen.</p><p>Das brachte Severus aber dazu zu fragen: "Was machst du eigentlich hier, Lupin? Ich dachte, dass Black den Jungen holen wollte."<br/>"Das wird er nicht.", antwortete Remus und wurde augenblicklich sehr, sehr ernst.<br/>Severus bekam von diesem Gesichtsausdruck, gepaart mit einem eigenartigen Unterton eine Gänsehaut. Er ahnte Schlimmes. "Hättest du denn bitte die Güte mir zu erzählen, warum er hier nicht auftauchen wird?", sagte er mit einem genervt sarkastischen Tonfall.<br/>Remus atmete tief durch bevor er gestand: "Sirius ist verhaftet worden."<br/>So etwas in der Art hatte Severus bereits vermutet. "Aha, verhaftet und weiter?", fragte er. Eigentlich hasste Severus es den Leuten jede Information aus der Nase ziehen zu müssen.<br/>Jetzt wurde Remus' Gesicht jedoch richtig verschlossen. "Er wurde wegen des Mordes an Peter Pettigrew und zwölf weiteren Muggeln verhaftet.", sagte er leise.<br/>"Bitte was?!", erwiderte Severus voller Unglaube. Er dachte, dass er sich eben hoffentlich verhört hatte.<br/>"Du hast mich schon verstanden.", fügte Remus bitter mit an. "Ich kann es selbst nicht glauben. Innerhalb einer Nacht ist alles komplett aus den Fugen geraten. Einer meiner Freunde ist ein mieser Verräter und wurde ermordet, der Zweite wurde ebenfalls umgebracht mit seiner wunderbaren Frau und der Dritte ist wahrscheinlich ein Mörder. Glaub mir, wenn das der Preis ist für das Verschwinden von `Du-weißt-schon-wem´, dann ist es ein zu hoher. Findest du nicht?"<br/>Er setzte Harry auf den Boden, da dieser offenbar nicht weiter Essen wollte und auf seinem Schoß nur noch gezappelt hatte. Er schaute dem Jungen nach, wie er energiegeladen durchs Zimmer krabbelte und musste lächeln.<br/>"Wenigstens ist Harry noch da und du bist zur Vernunft gekommen und hast ihn beschützt. Danke dafür, Severus!"<br/>"Keine Ursache.", flüsterte dieser geknickt. Er musste im Moment wieder an Lily denken und konnte gerade so verhindern, dass ihm schon wieder die Tränen kamen. Stattdessen senkte er den Kopf und beobachtete ebenfalls Harry dabei, wie er neugierig den Raum erkundete.</p><p>"Was passiert jetzt mit dem Kleinen?", fragte Severus vorsichtig. Er hoffte nicht, dass Lilys Sohn jetzt irgendwohin zu Fremden oder, Merlin bewahre, in ein Waisenhaus kommen würde. "Nimmst du ihn bei dir auf?"<br/>Remus schüttelte den Kopf. "Nein, das geht nicht. Schon vergessen? Ich bin ein Werwolf. Niemand würde mir allein ein Kind anvertrauen. Schon gar nicht den Jungen, wegen dem `Du-weißt-schon-wer´ verschwunden ist."<br/>Severus stieß einen tiefen Seufzer aus. Diese dämlichen Werwolf-Gesetze vom Zaubereiministerium hatte er tatsächlich für einen Augenblick außer Acht gelassen. Er führte es auf seine Müdigkeit zurück. Die Ereignisse forderten langsam ihren Tribut.<br/>Unauffällig musterte Severus den in dem Sessel sitzenden Remus. Obwohl dieser im selben Alter war wie er selbst, sah Remus um einige Jahre älter aus. Lycanthropie machte allem Anschein nach nicht gerade jünger. Außerdem sah der junge Werwolf ebenfalls echt fertig aus. Und war vor ein paar Nächten nicht gerade Vollmond?<br/>Unweigerlich kam Severus die Begebenheit in den Sinn, bei der er fast tödliche Bekanntschaft mit Remus' pelzigem Ich gemacht hatte. Hätte Potter ihn damals nicht gerettet, wäre er durch Blacks Verschulden tatsächlich von dem Werwolf zerfleischt worden. Eine Sache, die er Sirius Black niemals verziehen hatte. Dieser war schon damals skrupellos gewesen und daher traute Severus ihm durchaus zu Pettigrew umgebracht zu haben. Die zwölf Muggel waren dabei wohl nicht mehr als Kollateralschaden gewesen.</p><p>"Dumbledore erzählte vorhin irgendetwas von Verwandten.", griff Remus ihr ursprüngliches Thema wieder auf. "Aber ich kann mir nicht vorstellen wer das sein soll. Die Familie von James lebt nicht mehr und Lilys Eltern sind schon zu alt für diese Aufgabe. Ich weiß, dass sie noch eine Schwester hat, aber mit der hatte sie schon seit ein paar Jahren keinen Kontakt mehr."<br/>"Zu Recht.", murmelte Severus so leise, dass Remus es nicht verstand und als allgemeines Gegrummel abtat.</p><p>Inzwischen war Harry zu Severus gekrabbelt und zog sich an seiner schwarzen Robe in eine stehende Position. Unbekümmert sah er den erwachsenen Zauberer an und streckte eine Hand nach ihm aus.<br/>"Nicht mehr lange und er kann laufen.", kommentierte Remus die Szene.<br/>Daraufhin hob Severus nur eine Augenbraue und schmunzelte leicht. Es war schon erstaunlich, dass er hier mit Remus Lupin in einem Raum sitzen und sich so normal unterhalten konnte. Früher wäre dieser Umstand undenkbar gewesen.<br/>Er hob den nun quengelnden Harry auf seinen Schoß, sah ihn direkt an und fragte ihn im gelassenen Ton: "Na Kleiner, was möchtest du denn?"<br/>"Deddy!", antwortete der Junge prompt und wedelte aufgeregt mit den Ärmchen.<br/>Severus erschrak furchtbar und riss weit die Augen auf. Hatte der Kleine eben das zu ihm gesagt, was er glaubte verstanden zu haben?<br/>"Deddy, Deddy!", wiederholte Harry jetzt lauter.<br/>Der immer noch starr dreinblickende Severus bekam kein Wort heraus. Er öffnete zwar kurz den Mund, schloss ihn aber in der nächsten Sekunde wieder.<br/>Seine Reaktion amüsierte Remus allerdings sehr. "Ganz ruhig, Severus. Er will nur seinen Teddybären haben.", versicherte er dem sprachlosen Severus.<br/>Dieser schaute erstaunt zu ihm und dann wieder zu dem Kind. Und tatsächlich hatte der Kleine seine grünen Augen auf den Plüschbären fixiert, welcher schräg hinter Severus auf dem Bett lag.<br/>Er gab dem Jungen seinen Teddy, was dieser mit einem fröhlichen Kinderlachen quittierte. Harry kuschelte sein Plüschtier an sich und brabbelte ihm unverständliche Babylaute zu.<br/>"Tja, nicht mehr lange und er wird auch richtig sprechen.", sagte Severus und schaute nun wieder zu einem gerührten Remus.</p><p>Dieser schlug im Sessel die Beine übereinander und sprach vorsichtig: "Severus, darf ich dir eine Frage stellen?"<br/>"Hhmmm, okay." Gab dieser als Antwort während er das Kind auf seinem Schoß behielt.<br/>"Könntest du dir nicht vorstellen Harry aufzuziehen?", kam es von Remus bittend.<br/>"Was, ich?", erwiderte Severus überrumpelt. "Aber … ich … nein, das geht doch nicht.", stammelte er weiter.<br/>"Wieso eigentlich nicht? Du hattest ihn doch seit letzter Nacht bei dir und er ist wohl auf und scheint dich schon ins Herz geschlossen zu haben. Außerdem müsste er so auch nicht zu fremden Leuten. Könntest du dir das nicht … überlegen?", versuchte es Remus weiterhin.<br/>"Ausgerechnet ich soll James Potters Sohn aufziehen. Das wäre wirklich verrückt!", gab Severus zurück und lachte zynisch auf.<br/>"Harry kann rein gar nichts für das, was Sirius und James mit dir all die Jahre gemacht haben und du musst zugeben, dass du ebenfalls kein Unschuldslamm warst.", meinte Remus zu ihm. "Sie ihn dir an. Er ist auch Lilys Sohn. Denk wenigstens darüber nach, für sie. In Ordnung?"<br/>"Ja, ja, ist ja schon gut! Trotzdem denke ich nicht, dass es eine so gute Idee wäre. Ich hab es nicht so mit Kindern.", sagte Severus, denn er zweifelte ganz stark an seinen Qualitäten als Ersatzvater. Außerdem soll er bald als Lehrer in Hogwarts unterrichten. Das alleine reichte ihm schon. Er brauchte da nicht noch Kind zu Hause, welches ihn eigentlich rund um die Uhr brauchte und forderte.</p><p>Wenn er allerdings Harry so ansah, der ihn mit den Augen seiner Mutter so vertrauensvoll anblickte, dann tat ihm seine Entscheidung, den Jungen nicht zu sich zu nehmen, fast leid.<br/>"Dumbledore wollte sowieso gleich noch mal hierher kommen um dich zu sprechen. Ich glaube du sollst Harry zu den ominösen Verwandten fliegen. Aber vielleicht … musst du das ja gar nicht, wenn du es dir doch noch überlegst.", sagte Remus und stand aus dem Sessel auf. "Ich muss jetzt los und mich um die Beerdigung von James und Lily kümmern. Ich kann es immer noch nicht fassen, dass sie nicht mehr da sind."<br/>Bei diesen Worten erfüllte wieder eine schwere Traurigkeit den Raum.<br/>Remus ging zu ihnen hinüber und herzte Harry noch einmal zum Abschied. "Bis bald, Krümel. Ich komm dich in deinem neuen Zuhause bald besuchen, versprochen.", raunte er dem Kind liebevoll zu und gab ihm noch einen Kuss auf den Haarschopf.<br/>"Bis dann.", verabschiedete er sich auch von Severus und verließ das Zimmer.</p><p>Er dachte noch eine Weile über Remus' Vorschlag nach. Könnte er wirklich ein Kind aufziehen? Wäre er als Todesser, der sich mit Dumbledores Hilfe aus der Affäre gezogen hatte, gesellschaftlich nicht genauso gebrandmarkt wie der Werwolf? Außerdem stellte er sich die Frage, ob Lily es überhaupt gewollt hätte, wenn er ihren Sohn großziehen würde. Severus fragte sich, zu welchen Verwandten Dumbledore den Kleinen schicken wollte. Er hoffte inständig, dass es nicht Lilys Muggelschwester sein würde.<br/>Harry beschäftigte sich auf seinem Schoß immer noch intensiv mit seinem Stoffbären und ahnte nichts von den wichtigen Entscheidungen, die in den nächsten Stunden über ihn gefällt werden müssen.</p><p>Wie aufs Stichwort betrat Dumbledore das kleine Zimmer. Mit einem sehr ernsten Gesicht schloss er die Tür und begab sich zu dem Sessel, in dem vor einigen Minuten noch Remus gesessen hatte.<br/>Instinktiv drückte Severus Harry ein Stück an sich und begann schließlich zu sprechen, bevor der Schulleiter auch nur ein Wort sagen konnte.<br/>"Lupin war eben hier und hat mich über die neuesten Entwicklungen informiert. Sie wollen den Kleinen also zu Verwandten geben? Wen haben Sie da konkret im Sinn?"<br/>Dumbledore schlug die Beine übereinander und überlegte kurz, bis er seine Worte gewählt hatte und antwortete mit stoischer Ruhe auf die Frage: "Es ist Petunia Dursley. Sie kennen sie womöglich noch unter ihrem Mädchennamen Evans. Sie ist Lilys ältere Schwester."</p><p>Severus lachte bitter auf, fuhr sich mit einer Hand übers Gesicht und schaute dann den Direktor mit einem skeptischen Ausdruck an. "Ich hoffe doch, dass Sie scherzen. Sie wollen den Jungen allen Ernstes dieser Frau anvertrauen?!"<br/>"Sie ist seine Tante und wird sich sicherlich gut um ihn kümmern. Ich konnte in Erfahrung bringen, dass sie ebenfalls einen Sohn in Harrys Alter hat. Er wird also zusammen mit seinem Cousin aufwachsen können. Angesichts der momentanen Lage ist das die beste und sicherste Lösung.", erwiderte Dumbledore gefasst.<br/>Severus höhnte weiter: "Sie haben keine Ahnung was das für eine Frau ist! Früher war sie neidisch gewesen, hat Lily und alle magischen Menschen als Freaks beschimpft und wollte nichts mit ihnen zu tun haben. Und ausgerechnet ihren Neffen, der zweifelsohne ein Zauberer sein wird, wollen sie ihr anvertrauen?! Petunia wird ihn nicht aufnehmen, das kann ich Ihnen versprechen."<br/>"Das lassen Sie mal meine Sorge sein. Sie muss Harry in ihr Haus aufnehmen, das ist sehr wichtig. Es gibt unter den gegebenen Umständen keine bessere Möglichkeit."</p><p>Mit traurigem Blick schaute Severus den kleinen Jungen in seinen Armen an, der ihn mit seinen grünen Augen zuversichtlich anzulächeln schien. Nein, er wollte nicht zulassen, dass Lilys Sohn bei dieser Frau aufwachsen musste.<br/>"Was ist mit mir?", fragte er schließlich.<br/>Dumbledore zog überrascht eine Augenbraue hoch und musterte den ehemaligen Anhänger Voldemorts ausgiebig.<br/>"Ich kann ihn nehmen.", sagte Severus schließlich weiter. "Wir könnten ihn als mein Kind ausgeben, so würde keiner Verdacht schöpfen. Ich beziehe mit ihm eine Wohnung in Hogwarts, wo er ebenfalls sicher sein würde."<br/>"Severus.", begann Dumbledore. Doch Angesprochener hörte ihm nicht zu.<br/>"Lieber würde ich mich um ihn kümmern, als wenn er zu dieser schrecklichen Muggelfrau geht. Er würde unter Seinesgleichen aufwachsen und ich erzähle und zeige ihm alles was er wissen muss."<br/>"Severus, hören Sie auf. So einfach ist das nicht, wie Sie sich das denken.", versuchte der Schulleiter es erneut.<br/>"Und warum nicht?", murrte ihn Severus entgegen.</p><p>Dumbledore atmete tief durch. Offenbar war er auf so eine Diskussion nicht vorbereitet gewesen.<br/>"Als Lily sich vor ihr Kind gestellt hatte um ihn vor Voldemort zu schützen, hat sie einen Zauber auf Harry gelegt. Es handelt sich um sehr alte, mächtige Magie, welche nur eine liebende Mutter imstande ist anzuwenden. Ich habe diesen Zauber bereits registrieren können, als sie mit dem Jungen in meinem Büro waren. Wie dem auch sei, solange Harry im Haus eines Blutsverwandten leben würde, würde ihm kein Schaden zugefügt werden können. Natürlich ist es in Hogwarts ebenfalls sehr sicher für ihn. Aber nur, wenn er bei Lilys Schwester ein neues Zuhause finden würde, wäre er komplett geschützt.<br/>Ein weiteres Problem ist, dass die Presse und damit die gesamte magische Gesellschaft bald herausfinden wird, was in der letzten Nacht geschehen ist. Sie werden den Jungen als Bezwinger von Voldemort ansehen und jeder wird bald seinen Namen kennen. Ich kann mir vorstellen was so ein Status und so viel Aufmerksamkeit mit dem Charakter eines Menschen machen und ich denke Sie auch, Severus. Wenn er fernab in der Muggelwelt aufwachsen wird, bekäme er von all dem nichts mit und wäre ein ganz normaler Junge. Eigenschaften wie Arroganz und Überheblichkeit würde Harry gar nicht erst erlangen.<br/>Außerdem müssen Sie bedenken, dass sie weiterhin als Todesser gelten werden. Auch wenn ich eine Verurteilung und einen Aufenthalt für Sie in Askaban werde abwenden können, ihr Ruf wird eine lange Zeit nicht der Beste sein. Das Ministerium würde ihnen unter diesen Umständen den Jungen nicht anvertrauen.<br/>Es tut mir leid Severus, wenn Sie für Harry schon eine gewisse Fürsorge empfinden. Aber wie Sie es auch drehen und wenden, Sie werden sich eingestehen müssen, dass ich Recht habe. Es ist das Beste, wenn er zu seiner Tante nach Surrey geht."</p><p>Severus schüttelte energisch den Kopf. Natürlich konnte er die Argumente des Direktors logisch nachvollziehen, es fühlte sich aber trotzdem nicht richtig an. Es bliebe ja dabei, dass der alte Zauberer Lilys Sohn einer völlig Fremden anvertrauen wollte. Unter diesen Umständen war Severus mit dem Plan nicht einverstanden. Es behagte ihm gar nicht, dass er sich angesichts der momentanen Situation, auch was seine Person anging, fügen musste.<br/>"Ich habe trotzdem kein gutes Gefühl bei der Sache.", sagte er noch hinterher.</p><p>Dumbledore stand auf und guckte ihn mit einem undurchdringlichen Blick an. "Ich war so frei und habe das Motorrad hierher bringen und hinter dem Gebäude parken lassen. Bringen Sie Harry bitte heute Abend um 20:00 Uhr nach Little Whinging in den Ligusterweg Nr. 4. Dort werden Minerva und ich auf Sie beide warten."<br/>"Was, heute Abend schon?", erwiderte Severus erstaunt.<br/>"Die Sache duldet keinen Aufschub. Bis heute Abend.", legte Dumbledore nach und verließ ohne ein weiteres Wort den Raum.</p><p>Zurück blieben ein leer dreinblickender Severus mit einem energiegeladenen Kind im Arm. Er setzte das Kind ab, woraufhin dieser sich wieder auf Erkundungstour durch das Zimmer begab. Severus blieb mit seinen Gedanken alleine. Er dachte an Lily und wie sie ihre eifersüchtige und garstige Schwester immer in Schutz genommen hatte. Er glaubte nicht daran, dass Petunia sich wirklich verändert hatte und nun zu einer liebevollen und fürsorglichen Frau gereift war. Tief in seinem Inneren hatte Severus ein  sehr ungutes Gefühl bei der Sache, welches ihn nicht losließ.</p><p>Er war so in Gedanken versunken, dass er gar nicht mitbekommen hatte, wie Harry zum Kamin gekrabbelt war und nun die kleinen Hände in die kalte Asche tauchte. Erst als er sich die Finger in den Mund gesteckt und aufgrund des ekligen Geschmacks anfing zu weinen, schreckte Severus auf und lief eilig zu dem Kind. Er hätte sich verfluchen können. Da passte er mal ein paar Minuten nicht auf und schon machte dieser Bengel nur Unsinn. Mit einem Zauber entfernte er die Asche von Harrys Händen und dankte Merlin, dass der Kamin nicht an gewesen war. Gerade als er mit dem Jungen schimpfen wollte, einfach auch um sich ein bisschen Luft zu machen, schaute er in die flehenden, grünen Augen und alle Wut war verflogen. Stattdessen nahm er das Kind auf den Arm, wiegte es sanft hin und her und versuchte es wieder zu beruhigen.<br/>"Ist ja gut, Kleiner. Ich hab nicht aufgepasst. Es ist ja nichts passiert.", sprach er leise auf das weinende Kind ein.</p><p>Dieses Mal hatte sich Harry jedoch wieder schnell gefasst. Severus setzte sich mit ihm in den Sessel und erzählte ihm einfach leise von seiner Mutter. Die Tatsache das Lily tot war, bettete sich mit einer Schwere und Traurigkeit in ihm ein, dass er nicht wusste ob er darüber jemals hinwegkommen würde. Harry lauschte aufmerksam seinen Erzählungen und kuschelte sich wieder vertrauensvoll in seine Robe. Das seine Stimme wohl eine beruhigende Wirkung auf das Kind hatte, konnte Severus ja bereits letzte Nacht auf den Flug hierher feststellen.<br/>Gegen 12:00 Uhr mittags klopfte es zaghaft an der Tür und Madam Rosmerta steckte nach einem gepressten "Ja." von Severus den Kopf hindurch.<br/>"Ich bringe Ihnen und dem kleinen Wurm etwas zu Essen. Es ist Mittagszeit.", sagte sie freundlich.<br/>"Dankeschön.", kam es nur von Severus.<br/>Die Wirtin betrat mit zwei vor sich her schwebenden Tellern den Raum und setzte sie auf dem Beistelltisch neben dem Sessel ab. "Das ist meine berühmte Kürbissuppe. Ich mache sie immer aus denen die Hagrid mir vorbeibringt. Die wird ihnen beiden gut tun, versprochen.", erklärte sie mit einem herzlichen Lächeln.<br/>"Danke, das ist sehr freundlich von Ihnen.", erwiderte er jetzt doch etwas ausführlicher. Eigentlich hatte ihn das Erzählen über Lily unglaublich schwermütig gemacht und obwohl Madam Rosmerta sicherlich eine angenehme Gesellschaft darstellte, hatte er momentan keine große Lust sich mit ihr zu unterhalten.<br/>"Och, das arme kleine Würmchen.", begann sie jedoch. "Dumbledore hat erzählt, dass er seine Eltern verloren hat. Das ist so schrecklich!"<br/>"Ich bringe ihn heute Nachmittag hier weg, zu Verwandten. Da wird er es sicher gut haben.", sagte Severus um das Gespräch zu beenden. Obwohl er natürlich nicht glaubte was er da sprach.<br/>"Ganz bestimmt!", erwiderte Rosmerta wieder positiver. Lassen Sie die leeren Teller nachher einfach stehen, ich räume sie schon wieder weg.<br/>Nach einem Nicken durch Severus verließ sie den Raum auch schon wieder.</p><p>"Na Kleiner, hast du denn schon wieder Hunger?", wandte er sich nun Harry zu, der sich brav von ihm füttern ließ. Das, was von der Suppe daneben und auf seine Kleidung ging, war mit einem schnellen Schwenk durch den Zauberstab wieder beseitigt. Anschließend setzte er Harry in das Kinderbettchen und verwandelte eines der Kissen in einen Spielzeugdrachen, welcher zwar nicht fliegen oder Feuer speien konnte, dafür aber Arme, Beine und Flügel bewegte. Der Junge war sofort absolut fasziniert von diesem und so konnte Severus in Ruhe auch seinen Teller Suppe genießen.<br/>Madam Rosmerta hatte recht gehabt, die Kürbissuppe schmeckte köstlich und tat ihm wirklich gut. Jetzt mit etwas Warmen im Bauch kroch die Müdigkeit zurück in Severus. Er beschloss noch etwas zu schlafen, bevor er sich ab heute Nachmittag wieder auf das fliegende Motorrad schwang. Es war ein langer Weg bis nach Surrey und für diese Strecke musste er einigermaßen wach und aufmerksam sein.<br/>Nach einem prüfenden Blick in das Gitterbettchen und nachdem er den Teddybären noch mit hineingelegt hatte, stellte er fest, dass Harry noch genug beschäftigt war. Erschöpft schleppte er sich hinüber zum Bett, zog seine Schuhe aus und legte sich, nachdem er einen Alarmzauber gesprochen hatte, auf die Decke und schlief augenblicklich ein.</p><p>Ein lautes Weinen machte ihn nach ein paar Stunden wieder wach. Nachdem er seine Glieder gestreckt und zufrieden festgestellt hatte, dass er fast ganze drei Stunden geschlafen hatte, rappelte er sich auf, zog die Schuhe wieder an und ging hinüber zum Kinderbettchen.<br/>Dort  drin lag Harry, der vor lauter Weinen inzwischen schon ganz rot im Gesicht war. Severus' Nase verriet ihm auch gleich, warum das Baby so außer sich war. Mit dem praktischen Zauber den auch Remus benutzt hatte und den er sich gleich gemerkt hatte, verpasste er dem Kleinen eine frische Windel.<br/>"Na, so ist es besser, was Kleiner?", sagte er zu Harry hinab und rieb sich die Augen. Anschließend ging er ins angrenzende Badezimmer, um sich selbst etwas frisch zu machen. Es war auch bald Zeit aufzubrechen, wie er mit einem Seufzen feststellte. Allerdings bereitete es ihm immer noch Magenschmerzen den Kleinen heute ausgerechnet bei Petunia abzuliefern.</p><p>Harry stand jetzt in dem Kinderbett und streckte seine kurzen Ärmchen nach ihm aus. Mit einem ergebenen, leichten Grinsen nahm er den Jungen auch wieder auf den Arm, worauf dieser seinen Kopf auf seiner Schulter ablegte.<br/>"Wirst du langsam wieder müde?", raunte er ihm zu und strich ihm sanft über Kopf und Rücken. Als Severus sich mit ihm zu dem Tischchen umdrehte, registrierte er, dass die Suppenteller durch ein Fläschchen warme Milch, eine Kanne Tee und ein Käsesandwich ersetzt wurden. Zwar war Severus kein großer Käse-Fan, war aber trotzdem dankbar für den kleinen Snack vor der Abreise. Madam Rosmerta muss die Sachen ausgetauscht haben als er geschlafen hatte. Er beschloss, sich irgendwann mal für ihre unaufdringliche Gastlichkeit zu bedanken.</p><p>Da Harry momentan keine Milch trinken wollte, steckte er die Flasche in seinen Umhang. Wer weiß, ob das Kind nicht auf dem Weg auf die Idee kam plötzlich Hunger zu haben. Ohne Eile aß er das Sandwich auf und trank den Tee. Wehmütig bemerkte er, dass es nun wirklich an der Zeit war sich auf den Weg zu machen. Die Grafschaft Surrey lag südwestlich von London. Den Ort Little Whinging und die Straße Ligusterweg Nr.4 würde er dann mit dem Navigationszauber aufspüren.<br/>Vor seinem Aufbruch verwandelte er den Spielzeugdrachen wieder in ein Kissen zurück, denn nicht dass Madam Rosmerta ihm dieses noch in Rechnung stellte, steckte den Teddybären jedoch in die Umhangtasche und wickelte Harry wieder in seine flauschige, rote Decke ein.</p><p>Unten im Schankraum angekommen, kam ihm die Wirtin schon entgegen und geleitete sie zur Hintertür, hinter der das fliegende Motorrad auch schon bereit stand.<br/>Severus legte das Kind und den Plüschbären in den mit dem Wärmzauber versehenen Beiwagen und verabschiedete sich mit einem Dankeschön bei Madam Rosmerta.</p><p>Harry schlief die ganze Zeit nicht ein und fing an, als sie über Hamilton flogen, zu kreischen und zu weinen. Sicher landete Severus das Vehikel an dem nahegelegenen See Strathclyde Loch, nahm das Kind hoch und gab ihm die Flasche, dessen Inhalt glücklicherweise noch warm war. Über dem Fläschchen selbst musste ein Wärmzauber liegen, so dass der Kleine nun gierig die Milch trinken konnte. In diesem Moment war Severus über sich selbst sehr erstaunt. So langsam konnte er das mit der Babypflege richtig gut, fand er und das Geschrei machte ihn auch nicht mehr so hilflos wie in der letzten Nacht. Der Gedanke, Lilys Kind in ein paar Stunden abgeben zu müssen, lag ihm schwer auf dem Herzen. Am liebsten wäre er augenblicklich zurück nach Hogwarts geflogen. Aber das ging leider nicht, denn das Ministerium und Dumbledore würden ihn damit sicherlich nicht durchkommen lassen.</p><p>Nachdem er Harry noch ein paar Minuten in seinen Armen gewiegt und wieder irgendeine undefinierbare Melodie gesummt hatte, legte er ihn zurück in den Beiwagen und setzte den Flug Richtung Süden fort.<br/>Kurz vor Carlisle war der Junge auch eingeschlafen, so dass Severus den ganzen Weg bis nach Little Whinging ohne Unterbrechung fliegen konnte.</p><p>Der Navigationszauber führte ihn bis vor das Haus der Dursleys im Ligusterweg 4, wo Minerva McGonagall, die strenge Verwandlungslehrerin die Severus noch aus seiner Schulzeit kannte und Albus Dumbledore bereits wie angesagt auf ihn warteten.<br/>"Guten Abend, Severus.", sprach sie ihn sogleich an, nachdem er den Motor ausgestellt hatte. Es war offensichtlich, dass sie ihm nicht ganz über den Weg traute.<br/>"Guten Abend, Professor.", gab Severus jedoch ungerührt zurück. Er würde sich von einer alten, misstrauischen Hexe nicht einschüchtern lassen. Dafür hatte er in seinem jungen Leben schon zu viel erlebt und gesehen.<br/>Vorsichtig hob er den schlafenden Harry aus dem Beiwagen und übergab ihn an Dumbledore, der sich noch leise nach dem Flug erkundigte und ihn darüber informierte, dass er sich Morgen früh für eine Befragung in der Aurorenzentrale einfinden solle. Severus nickte nur und legte die Decke enger um den Jungen. Auch Minerva riskierte nun einen Blick und fragte erschrocken nach der merkwürdigen Narbe auf seiner Stirn. Der Schulleiter versicherte ihr, dass er alles später in Ruhe mit ihr bereden würde.</p><p>Durch den Accio rief Severus den Teddy und das große Kissen aus dem Beiwagen zu sich und platzierte beides vor der Eingangstür des Hauses. Wenn die Nummer nicht an der Wand neben dieser angebracht wäre, hätte Severus auch jedes andere Haus in der Straße anfliegen können. Sie sahen alle nahezu identisch aus und er verstand in diesem Moment den Baustil und das Bedürfnis nach Konformität der Muggel in dieser Ortschaft überhaupt nicht.<br/>Mit  missmutigem Gesichtsausdruck und einer ausladenden Handbewegung machte er Dumbledore verständlich, dass er das Kind auf dem Kissen ablegen sollte. Er hatte dem Schulleiter extra das Kind in die Hand gedrückt. Denn alles in ihm weigerte sich strikt ihn hier zurückzulassen.</p><p>Er ging zurück zum Motorrad, wo auch schon McGonagall stand und die Männer bei ihrem Tun beobachtet hatte.<br/>"Ich fühl mich nicht wohl dabei ihn einfach hier zu lassen.", gestand Severus ihr flüsternd.<br/>Überrascht blickte die ältere Hexe zu ihm auf und sprach leise zurück: "Mir geht es ebenso. Ich habe die Familie den Tag über beobachtet. Es sind Muggel der schlimmsten Sorte. Aber Albus wird schon wissen was er tut."<br/>Seine Gesichtszüge verhärteten sich bei dieser Antwort.</p><p>Dumbledore hatte in der Zwischenzeit Harry auf dem Kissen abgelegt und einen Brief aus der Tasche seines Umhangs gezogen, welchen er gut sichtbar auf dem Kind postierte. Anschließend gesellte er sich zu den beiden anderen.<br/>"Ich möchte sehen wie sie ihn aufnehmen. Repello Muggeltum!", sprach Severus den Tarnzauber über sie und betätigte mit einem weiteren Schwenk seines Stabes die Klingel.</p><p>Durch das Geräusch der sich kurz darauf öffnenden Haustür wurde Harry wach und begann ungnädig zu quengeln. Heraus trat eine dünne, pferdegesichtige Frau mit einem unglaublich langen Hals und schaute schockiert auf das Bündel auf dem Boden. Mit zittriger Hand nahm sie den Brief und überflog diesen hastig. Während des Lesens wurden ihre Augen immer größer. Sie presste ihre Hand auf die Lippen um einen Aufschrei zu unterdrücken.<br/>"Petunia? Petunia! Wer ist da an der Tür?", hörte man eine männliche Stimme von drinnen rufen.<br/>Petunia selbst war jedoch nicht in der Lage auch nur ein Wort herauszubringen, so dass man bald darauf ein Trampeln hörte und ein unheimlich dicker, schnaufender Mann neben sie trat.<br/>"Was ist hier los? Oh mein Gott! Was soll das denn?!", schimpfte er und zeigte auf das nun weinende Baby vor seiner Haustür.<br/>"Dddas ... das ist ... Harry. Lilys Kind.", stotterte Petunia schließlich leise.<br/>"Kannst du mir mal sagen was der Bengel deiner verrückten Schwester vor meinem Haus zu suchen hat?!", blaffte der dicke Mann nun aufgebracht.<br/>"Shht, Vernon-Schatz, nicht hier!", sagte sie. Offensichtlich hatte sie sich nach dem ersten großen Schreck wieder gefangen.<br/>Eilig drückte sie ihrem Mann den Brief in die Hand und hob den Jungen vom Boden auf. Argwöhnisch blickte sie sich noch einmal um.<br/>"Sei still!", zischte sie dem immer lauter weinenden Harry zu, bevor sie mit ihm und Vernon im Haus verschwand.</p><p>Severus hatte genug gesehen. Als er einen Schritt vorwärts tat, um ins Haus zu gehen und Lilys Sohn sofort wieder mitzunehmen, wurde er jedoch von Dumbledore am Arm gepackt und zurückgehalten.<br/>"Nein Severus, nicht. Es ist wirklich das Beste für ihn. Glauben Sie mir bitte.", sagte der Schulleiter eindringlich.<br/>Abrupt drehte Severus sich um und sah ihn mit wütend blitzenden Augen an. McGonagall schüttelte nur den Kopf und machte ihm mit einem bittenden Gesichtsausdruck klar, dass er sich beruhigen sollte.<br/>Severus' Blick richtete sich noch einmal auf den Eingang des Hauses und mit einer großen Traurigkeit registrierte er den Teddybären, welcher noch immer auf dem Boden neben der Tür lag. Mit einem Aufrufezauber nahm er diesen wieder an sich und wandte sich erneut erzürnt an Dumbledore. Drohend hob er den Zeigefinger und sprach folgende Worte zwar leise, aber so eindringlich aus, dass es Minerva McGonagall eine Gänsehaut über den Rücken jagte.<br/>"Ich werde nach ihm sehen und sollte ich feststellen, dass sie ihn nicht gut behandeln oder auf irgendeine Art und Weise vernachlässigen, dann werde ich ihn ohne Zögern von da wegholen. Blutzauber hin oder her! Auch die Aufregung um meine Person wird sich legen. Seien Sie versichert, dass ich ihn dann nicht einfach in seinem Elend verrotten lassen werde."</p><p>Ohne eine Reaktion seitens Dumbledore abzuwarten, rauschte Severus an ihm vorbei, setzte sich aufs Motorrad und flog, ohne sich noch einmal umzusehen, davon.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="emR91EoNNgLVkrmKXD-I2HqEjTy9VUThBNcPWCIi3SDFEfF7_aaOh3qMh27bWVGnH9E6DCJJqiC2V83dRHN81w"/>
+          <input value="3899701" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          <a href="/users/Akade">Akade</a>, <a href="/users/Ichigo03">Ichigo03</a>, <a href="/users/Maxyxpumpkinpie">Maxyxpumpkinpie</a>, <a href="/users/Sheetara">Sheetara</a>, <a href="/users/CupcakeWarrior1824">CupcakeWarrior1824</a>, <a href="/users/Julchen4512">Julchen4512</a>, and <a href="/users/Verbaltonic">Verbaltonic</a>
+             as well as 
+          26 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_3899701">
+  <form class="new_comment" id="comment_for_3899701" action="/works/3899701/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="RI3w0lEf5IWmnyaw6cCtKYziCMUjdzJhk9dSoPEyNfH7-Hx95rRcAAmBGFRupnRW6be_9bxr3KAhV5All2OUBg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_3899701">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_3899701" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_3899701=new LiveValidation('comment_name_for_3899701',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_3899701.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_3899701">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_3899701" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_3899701=new LiveValidation('comment_email_for_3899701',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_3899701.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_3899701" class="landmark">Comment</label>
+        <textarea id="comment_content_for_3899701" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_3899701" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_3899701_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_3899701">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_3899701=new LiveValidation('comment_content_for_3899701',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_3899701.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_3899701.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_3899701" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/3899701/hit_count.json")})</script>
+
+
+  </body>
+</html>

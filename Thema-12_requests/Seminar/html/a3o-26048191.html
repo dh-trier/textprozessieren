@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":106,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        The Prince's Tale - SeKaYa - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/A.01-core.css+02-elements.css+03-region-header.css+04-region-dashboard.css+05-region-main.css+06-region-footer.css+07-interactions.css+08-actions.css+09-roles-states.css+10-types-groups.css+11-group-listbox.css+12-group-meta.css+13-group-blurb.css+14-group-preface.css+15-group-comments.css+16-zone-system.css+17-zone-home.css+18-zone-searchbrowse.css+19-zone-tags.css+20-zone-translation.css+21-userstuff.css+22-system-messages.css,Mcc.git1lGlAgy.css.pagespeed.cf.MUYvNWCXR3.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/site/2.0/A.26-media-narrow.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/site/2.0/A.27-media-aural.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/site/2.0/A.28-media-print.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/29-role-ie8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/30-role-ie5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/31-role-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/site/2.0/32-role-ie7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="KI7yOVdVugjjVtRuNj3HXSn32jEOdZSyhpzT91ZlD15F-zHXU-DA-u5didbzG8jAtHRmSTCq-bmp4GuWU4fK0Q"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="wt493HvftTK4bO_GyXK-13fMQkOV4GcgFY3PcASMSvyvq_4yf2rPwLVnsn4MVLFK6k_-O6s_Cis68XcRAW6Pcw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: lex m/m (mature OR explicit)</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/26048191/chapters/63346690">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/26048191/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/26048191/The%20Princes%20Tale.azw3?updated_at=1598117691">AZW3</a></li>
+          <li><a href="/downloads/26048191/The%20Princes%20Tale.epub?updated_at=1598117691">EPUB</a></li>
+          <li><a href="/downloads/26048191/The%20Princes%20Tale.mobi?updated_at=1598117691">MOBI</a></li>
+          <li><a href="/downloads/26048191/The%20Princes%20Tale.pdf?updated_at=1598117691">PDF</a></li>
+          <li><a href="/downloads/26048191/The%20Princes%20Tale.html?updated_at=1598117691">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works">Creator Chose Not To Use Archive Warnings</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Lily%20Evans%20Potter/works">Lily Evans Potter</a></li><li><a class="tag" href="/tags/Marauders%20(Harry%20Potter)/works">Marauders (Harry Potter)</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Present%20Tense/works">Present Tense</a></li><li><a class="tag" href="/tags/Marauders%20Era%20(Harry%20Potter)/works">Marauders Era (Harry Potter)</a></li><li><a class="tag" href="/tags/The%20Golden%20Trio%20Era%20(Harry%20Potter)/works">The Golden Trio Era (Harry Potter)</a></li><li><a class="tag" href="/tags/Snippets%20throughout%20the%20Years/works">Snippets throughout the Years</a></li><li><a class="tag" href="/tags/Timeline%20story/works">Timeline story</a></li><li><a class="tag" href="/tags/possible%20canon%20divergence/works">possible canon divergence</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><span class="position">Part 1 of the <a href="/series/1890892">A Prince's Tale</a> series</span><span class="divider"> </span><a class="next" href="/works/8538232">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2020-08-22</dd><dt class="status">Completed:</dt><dd class="status">2020-08-22</dd><dt class="words">Words:</dt><dd class="words">16787</dd><dt class="chapters">Chapters:</dt><dd class="chapters">5/5</dd><dt class="kudos">Kudos:</dt><dd class="kudos">1</dd><dt class="hits">Hits:</dt><dd class="hits">28</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      The Prince's Tale
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/SeKaYa/pseuds/SeKaYa">SeKaYa</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Das Leben des Severus Snape, in einzelne Szenen gefasst. Von seinem sechsten Lebensjahr durch seine Schulzeit hindurch bis zum Leben in der "Welt da draußen" – und auch ein wenig darüber hinaus.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Eine meiner ersten längeren Geschichten und demnach durchaus etwas älter ... an und für sich eine Grundlage für "meinen" Severus Snape, aber einige Dinge haben sich im Laufe der Zeit doch sehr geändert.</p><p>(ursprüngliche Anmerkungen:)<br/>Nach Deathly Hallows eindeutig AU. Bis HBP dürfte es jedoch noch weitestgehend Canon sein – zumindest hoffe ich das.<br/>Diese Story entstand mehr oder weniger beim Schreiben eines RPG-Charakter-Steckbriefes und ist daher ein wenig auf den Charakter abgestimmt, den Snape dort hat. Es ist mehr ein Versuch, den Charakter noch ein wenig genauer zu definieren. Des Weiteren war es ein kleines Experiment meinerseits, alles im Präsens zu schreiben – oder es zumindest zu versuchen. Es kann jedoch sein, dass ich teilweise in die Vergangenheitsform abgerutscht bin. Die Story ist nicht betagelesen.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/26048191/chapters/63346690">Chapter 1</a>: Prolog eines Magiers ('66-'70)
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es ist 1966, und Severus fühlt sich zum ersten Mal wirklich allein, obwohl er von anderen Menschen umgeben ist.</p><p> </p><p>Er weiß nicht, was er getan hat, aber er weiß, dass die anderen Kinder ihn nicht mögen. Sie rufen ihn Spottnamen, sagen <em>Freak</em> zu ihm und sprechen niemals seinen Vornamen aus. Sie sagen nur <em>der da</em> oder sagen <em>Snape</em>. Severus fühlt sich zum ersten Mal richtig verletzt deswegen, denn er kennt diese Kinder nicht und sie kennen ihn nicht, doch sie rufen ihn immer mit Spottnamen.</p><p> </p><p>"Hey, Freak!", ruft ein Junge aus der Klasse über ihm, doch Severus reagiert nicht.</p><p> </p><p>Er sitzt allein auf dem wackeligen Klettergerüst, das auf dem Schulhof steht. Es sieht gefährlich aus, doch Severus kümmert das nicht. Es kümmert auch niemand sonst, wenn er dort oben sitzt, und er hat dort seine Ruhe. Die Lehrer haben inzwischen aufgegeben, ihn dort hinunterholen zu wollen. Er will nicht dort hinunter.</p><p> </p><p>"Freak, Freak!"</p><p> </p><p>Andere Kinder haben sich zu dem Jungen dazugesellt und schreien nun zu ihm hinauf. Severus' schwarze Augen glitzern mit Tränen, doch er wischt sie vehement weg. Er darf nicht weinen. Jungs weinen nicht. Sie würden ihn nur noch mehr auslachen.</p><p> </p><p>Er sieht hinüber zu dem Aufsichtslehrer, doch dieser beachtet das Schauspiel nicht. Keinen Lehrer scheint es wirklich zu kümmern, was mit Severus ist. Sie verhindern nur, dass er auf dem Schulhof zusammengeschlagen wird, wenn er von dem Gerüst herunterkommt.</p><p> </p><p>
+  <em>"Dort oben sitzt die Fledermaus</em>
+</p><p>
+  <em>Der Freak aus dem Snape-Haus</em>
+</p><p>
+  <em>Heult herum, flennt und weint</em>
+</p><p>
+  <em>Ein Freak ist er, wem tut er Leid?"</em>
+</p><p> </p><p>Severus kann die Tränen kaum zurückhalten, als er den Singsang der Kinder hört. Es ist nicht das erste Mal, dass sie dieses Spottlied auf ihn singen. Es ist auch nicht das erste Mal, dass er deswegen weint. Er weiß nicht, warum sie ihn Freak nennen, warum diese seltsamen Dinge um ihn herum passieren, aber er will, dass sie ihn endlich in Ruhe lassen.</p><p> </p><p>"Was ist denn, Snapey?", höhnt ein Junge aus dem letzten Schuljahr. "Sag bloß, du heulst wieder! Ruf doch deine Mami!"</p><p> </p><p>Severus weiß nicht, wie er es gemacht hat. Aber er weiß, <em>dass</em> er es gemacht hat. Er wollte, dass es passierte, und es ist passiert.</p><p> </p><p>Mit einem ausdruckslosen Blick sieht er auf den Jungen hinunter, der nun selbst weinend am Boden liegt, sich schmerzverzerrt das linke Bein haltend.</p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1967, und Severus ist Zeuge eines heftigen Streits.</p><p> </p><p>"Du verfluchte Hexe! Man sollte dich auf dem Scheiterhaufen verbrennen, so wie man es früher mit deinesgleichen getan hat!"</p><p> </p><p>Tobias Snape ist außer sich vor Wut, beschimpft Severus' Mutter und brüllt Verwünschungen. Severus sitzt still in der Ecke des Wohnzimmers und beobachtet den Streit seiner Eltern. Er weiß, dass er schuld an dem Streit ist. Es ist immer Severus' Schuld. Er ist ein Freak. Die anderen Kinder haben Recht, wenn sie ihn so nennen. Sein Vater tut es auch.</p><p> </p><p>"Tobias, bitte ...", versucht es Eileen vorsichtig.</p><p> </p><p>"Halt den Mund!", schreit Severus' Vater zornig. "Du und dieses abnormale Pack! Der kleine Bastard, den du deinen Sohn schimpfst, ist genauso ein abnormaler Freak wie du!"</p><p> </p><p>"Er ist genauso dein Sohn!"</p><p> </p><p>Severus kneift die Augen zusammen und hält sich die Ohren zu. Er will es nicht mehr hören, das Geschrei seiner Eltern. Sie streiten immerzu und er kann nichts tun. Er fühlt sich so hilflos und schwach. Warum hasst sein Vater ihn so? Warum behandelt er seine Mutter so schlecht? Und warum bezeichnet er sie als <em>abnormales Pack</em>?</p><p> </p><p>Es sind immer die gleichen Fragen, doch Severus findet keine Antwort. Seine Mutter schweigt immer, wenn er sie fragt, und sein Vater wird wütend, wenn er nur eine Andeutung macht. Severus gibt es nur ungern zu, doch er hat Angst vor seinem Vater.</p><p> </p><p>Stumme Tränen laufen sein Gesicht hinab, als er mitbekommt, wie sein Vater seine Mutter wütend ins Gesicht schlägt.</p><p> </p><p>
+  <em>Warum wehrt sie sich denn nicht?</em>
+</p><p> </p><hr/><p align="center"><br/> </p><p>Es ist 1968, und Severus verbringt die Nacht wieder einmal draußen. Seine Eltern haben sich wieder gestritten und er ist aus dem Fenster seines Zimmers geklettert. Er hat darin bereits Übung und auch die Höhe macht ihm nichts mehr aus. Zum Glück ist unter seinem Fenster ein kleiner Schuppen, in dem sein Vater das alte Gerümpel lagert.</p><p> </p><p>Seine Eltern kümmern sich selten darum, was er tut, wenn sie streiten. Wenn er nicht im Zimmer ist, dann ist das meistens auch besser so. Severus fühlt sich schlecht, weil er seine Mutter allein gelassen hat, aber sie hat ihm gesagt, dass er gehen soll.</p><p> </p><p>"Schon wieder allein draußen, Junge?", fragt ein älterer Mann mit einem dunklen, struppigen Bart. "Du bist doch das Balg der Snapes, oder?"</p><p> </p><p>Severus mag es nicht als Balg bezeichnet zu werden, doch er nickt leicht. Er kennt den Mann vom Sehen her, aber er hat noch nie mit ihm gesprochen und er weiß auch nicht, was er von ihm halten soll. Normalerweise würde er nicht mit Fremden reden, aber er ist ja selbst nicht normal. Er kommt schon klar, er ist bisher immer klargekommen.</p><p> </p><p>"Komm rüber zu mir, du musst ja frieren in den Klamotten", sagt der Mann und deutet auf ein Haus in der Nähe.</p><p> </p><p>Severus zögert. Es gefällt ihm nicht, mit einem so fremden Mann zu sprechen. Und nun auch noch mitgehen? Er erinnert sich nun an die Geschichten, die die anderen Kinder erzählen. Er hält sich dann immer versteckt, da sie immer, wenn er in die Nähe kommt, aufhören zu reden und ihn stattdessen ärgern.</p><p> </p><p>Er sieht den Mann mit einem unsicheren Blick an. Sie nennen ihn den Mörder mit der Schaufel und Severus weiß nicht, was er davon halten soll. Er kennt diesen Mann nicht, doch die Gerüchte und Geschichten sind schauderhaft. Severus will am liebsten wegrennen, aber er weiß nicht, wohin. Zurück nach Hause kann er nicht.</p><p> </p><p>"Was ist, Junge?", fragt der Mann besorgt und macht einen Schritt auf Severus zu.</p><p> </p><p>Er weicht verängstigt zurück. "Wer sind Sie?"</p><p> </p><p>Er versucht Zeit zu gewinnen, um sich eine Möglichkeit zur Flucht zu überlegen. Vielleicht sollte er sich am Fluss verstecken, dort kann er sich in einem Rohr verstecken, wenn er muss. Er hat sich schon vor seinem Vater dort versteckt und wurde nicht gefunden. Ob der Mann ihn da auch nicht findet? Er kann es nur hoffen, doch wie soll er dorthin kommen, ohne dass man ihm folgt?</p><p> </p><p>"Mh-hm", macht der Mann nachdenklich. "Sie nennen mich meistens nur Schaufel-Barney. Du kannst aber einfach nur Barney sagen, wenn du magst."</p><p> </p><p>"Barney, Sir", wiederholt Severus langsam, einen leichten Schritt zurückmachend.</p><p> </p><p>"Nein, nein", sagt Barney, "lass das 'Sir' weg. Sag ruhig 'du' zu mir."</p><p> </p><p>Severus nickt leicht. "Ähm, okay ... Barney, Sir ... äh ... ich meine, du ..."</p><p> </p><p>Er stottert und das ist meist ein mehr als deutliches Zeichen dafür, dass er verunsichert und ängstlich ist. Barney scheint das zu bemerken, denn er lächelt ihn auf eine seltsame Art und Weise an. Severus spürt seinen Herzschlag, kann ihn fast schon hören und ist sich sicher, dass auch Schaufelmörder-Barney das kann.</p><p> </p><p>"Und wie heißt du, Junge?", will er wissen und kommt ein wenig näher auf ihn zu.</p><p> </p><p>Severus schluckt schwer, weicht weiter zurück und fühlt plötzlich eine Hauswand in seinem Rücken. Er kann nicht weiter zurück. Und er weiß, dass er wahrscheinlich nicht schnell genug ist, um wegzurennen, auch wenn er eigentlich recht gut in Sport ist. Hier ist das aber etwas anderes.</p><p> </p><p>"Nun?"</p><p> </p><p>Er beginnt zu zittern, als der Mann näher kommt.</p><p> </p><p>"S-Severus, Mr. Barney, Sir", stottert Severus, schon wieder vergessend, dass Barney ihm gesagt hat, dass er ihn duzen soll.</p><p> </p><p>"Ich sagte doch, lass das 'Sir' weg", wiederholt Barney, als er fast direkt vor Severus steht.</p><p> </p><p>Severus' Körper bebt und er hat das Gefühl, dass man in seinem schmächtigen Körper alle Knochen klappern hören kann. Er schließt die Augen, Todesangst lähmt seinen Körper. Auf einmal fühlt er etwas Schweres auf seinen Schultern liegen und die Kälte weicht ein wenig. Ist das sterben? Er hat es sich vollkommen anders vorgestellt.</p><p> </p><p>"Komm, Junge, du holst dir noch den Tod", brummt Barney, während er Severus an der Schulter packt und in Richtung seines Hauses dirigiert.</p><p> </p><p>Severus starrt ihn mit großen Augen an und registriert erst jetzt, dass Barney ihm seinen Mantel umgelegt hat. Schaufel-Barney scheint seinen Blick zu bemerken, denn er sieht Severus mit einem Lächeln im Gesicht an.</p><p> </p><p>"Hey, keine Angst, Severus!", sagt er, als er erkennt, was mit ihm los ist. "Die erzählen alle möglichen Geschichten über mich – dabei schaufle ich im Winter nur die Wege frei und fege im Sommer die Fußwege ..."</p><p> </p><p>"Dann ... stimmt das alles gar nicht?", fragt Severus ein wenig überrascht.</p><p> </p><p>"Nein. Alles Vorurteile", bestätigt Barney.</p><p> </p><p>Severus lächelt. Er hat das Gefühl, einen Freund gefunden zu haben. </p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1969, und es ist der Tag der Zeugnisvergabe.</p><p> </p><p>Severus sitzt im Klassenraum in der letzten Reihe, still auf seinen Tisch starrend. Er weiß, dass er gute Noten hat, aber er hofft, dass sie für seinen Vater gut genug sind. Er will seinen Vater nicht noch mehr verärgern. Severus braucht die guten Noten aber nicht nur dafür. <em>Ich werde nicht wie mein Vater</em>.</p><p> </p><p>"Severus, komm nach vorne", sagt die Lehrerin.</p><p> </p><p>Severus ist der letzte in der Klasse, der sein Zeugnis bekommt. Und nun liegen alle Augen auf ihm, als er langsam nach vorne geht. Er hört das Getuschel neben sich, als er an den anderen Bänken vorbeikommt. Kein nettes Wort dringt an sein Ohr. Streber. Freak. Er hört schon kaum noch richtig hin. Inzwischen kennt er es auswendig.</p><p> </p><p>"Hier", sagt die Lehrerin nur, als er vorne steht, und drückt ihm sein Zeugnis in die Hand.</p><p> </p><p>Kein Wort. Kein Lob. Nichts. Severus wirft nicht einmal einen Blick auf das Blatt in seiner Hand, sondern geht still zurück zu seinem Platz. Es ist wie jedes Jahr.</p><p> </p><p>Erst als er wieder sitzt, sieht er sich sein Zeugnis an. Nichts, was er nicht erwartet hat. Er fühlt sich nicht beschwingt. Er fühlt sich nicht euphorisch. Es ist das beste Zeugnis in der Klasse, doch Severus ist nicht nach feiern zumute. Er hat niemanden zum Feiern.</p><p> </p><p>Er hat keine Freunde.</p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1970, und Severus' Hand zittert, während er nervös und angestrengt konzentriert auf seine Lippe beißt. Sein Großvater steht direkt hinter ihm und sieht ihm über die Schulter. Er macht Severus nervös, dieser Mann mit seinen stechenden, strengen Augen, denen kein Fehler zu entgehen scheint.</p><p> </p><p>"Großvater, ich –"</p><p> </p><p>"<em>Was</em> hatte ich dir gesagt?", unterbricht Daray ihn, noch bevor Severus überhaupt eine Chance hat, seinen Satz zu beenden. "Sag es richtig!"</p><p> </p><p>Severus versucht sich zu konzentrieren, auf seinen Zauberstab, seine zitternde Hand, den Spruch und die richtigen Worte, um seinem Großvater klar zu machen, dass er diesen Zauber nicht versteht. Er kann keinen Zauber ausführen, den er nicht versteht, noch dazu, wenn er einen fremden Zauberstab hat. Doch seinen eigenen bekommt er erst später, wenn er elf ist.</p><p> </p><p>"Sir, ich verstehe den Zauber nicht", versucht Severus es schließlich, doch sein Großvater ist nicht zufrieden.</p><p> </p><p>"Du verstehst es nicht?!", faucht er zornig. "Aber was erwartet man auch von einem wertlosen <em>Muggel</em> wie dir!"</p><p> </p><p>Es schmerzt Severus, dass sein Großvater ihn Muggel nennt, mehr noch, als wenn sein Vater ihn Freak genannt hat. Die einen verachten ihn dafür, dass er Magie in sich trägt, und die anderen verachten ihn, weil sein Vater ein Muggel ist. Severus kommt sich zerrissen vor. Er gehört nicht hierher, aber auch nicht in die Welt seines Vaters. Er fühlt sich, als würde er zwischen den Stühlen sitzen. Nur seine Mutter hat ihm bei so was geholfen, aber hier darf sie ihm nicht helfen.</p><p> </p><p>"Versuch es noch einmal!", knurrt sein Großvater hinter ihm. "Und glaub ja nicht, dass deine Inkompetenz keine Konsequenzen haben wird!"</p><p> </p><p>Severus zuckt ein wenig zusammen. Er kennt die Konsequenzen für Versagen. Und es hilft ihm nicht, dass er bevor er hier herkam keine Ahnung von Magie hatte. Es hilft ihm nicht, dass er erst zehn Jahre alt ist. Er ist ein Halbblut, eine Schande für die Familie und das Kind eines dreckigen Muggels. Er muss froh sein, dass er in diesem Haus geduldet wird und dass sein Großvater sich die Mühe macht, ihm Unterricht zu geben.</p><p> </p><p>"Ja, Sir", sagt Severus nur und konzentriert sich wieder auf den Zauber, den er ausführen soll.</p><p> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/26048191/chapters/63346807">Chapter 2</a>: Leben und Leidern ('71-'81)
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es ist 1971, und der Sprechende Hut ruft laut "SLYTHERIN!", und Severus weiß, dass er in Schwierigkeiten ist, denn die beiden Jungen aus dem Zug haben am Gryffindortisch Platz genommen. Ihm ist nicht sonderlich wohl zumute, als er auf den Slytherintisch zusteuert. Er zieht ein wenig an seiner Krawatte als er sich neben einen blonden Jungen setzt. Ihm ist nicht wohl dabei, hier zu sitzen.</p><p> </p><p>"Snape, huh?", meint ein älterer Schüler zu seiner linken. "Waren deine Eltern auch in Hogwarts?"</p><p> </p><p>Severus schluckt ein wenig. Er weiß, dass sein Vater ein Muggel ist. Sein Großvater hat ihm das oft genug vorgehalten. Aber er hat ihm auch gesagt, dass er niemals ein Wort über Tobias Snape verlieren soll. Ein Halbblut ist fast noch schlimmer als ein Schlammblut, das hatte sein Großvater gesagt. Severus glaubt ihm das.</p><p> </p><p>"Slytherin", haucht er kaum hörbar, auch wenn es nur die halbe Wahrheit ist.</p><p> </p><p>Der Junge scheint zufrieden, wenngleich er immer noch ein wenig skeptisch ob Severus' Nachnamen ist. Aber Severus ist auf Fragen vorbereitet, sein Großvater hat ihm das oft genug eingebläut. Es gibt einen Zauberer namens Snape, reinblütig, lebt im Ausland. Er war nicht sehr bekannt, doch bekannt genug, um ihn als Vorwand zu benutzen, aber zu unwichtig, um genauere Nachforschungen anzustellen.</p><p> </p><p>"Nun, da du ein Slytherin bist, scheinst du ja in Ordnung zu sein", grinst der Blonde und Severus findet ihn ein wenig unsympathisch. "Ich bin Evan Rosier."</p><p> </p><p>"Severus Snape", erwidert Severus nur, nicht besonders stolz auf seinen Namen.</p><p> </p><p>Er erinnert sich zu gut daran, dass man ihn in der Grundschule wegen seines Vornamen verspottet hatte, denn wer nannte ein Kind schon <em>Severus</em>? Aber scheinbar waren merkwürdige Namen hier normal, dachte Severus beruhigt, als er an die anderen Schüler dachte. Remus und Sirius waren sicher auch keine alltäglichen Namen. Nur ob er froh darüber sein sollte, wusste er wirklich nicht.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1972, und Severus kocht vor Wut. Sein Haar tropft mit einer schleimigen Flüssigkeit seinen Umhang voll und um ihn herum stehen lachende Schüler. Es ist nichts Neues für ihn, ausgelacht zu werden, doch es verletzt ihn, dass es auch seine eigenen Hauskameraden sind.</p><p> </p><p>"Was ist hier los?", fragt die Stimme von Professor McGonagall und die Schüler deuten nur grinsend auf Severus.</p><p> </p><p>Ihm ist ein wenig nach heulen zumute, doch er hat sich geschworen, nicht zu weinen. Er will nicht weinen, nicht hier vor allen anderen. Er weiß, dass er es durchstehen kann. Und er weiß auch, dass er seine Rache bekommen wird. Er bekommt sie immer. Es ist ihm egal, ob er deswegen Strafarbeiten bekommt oder Punktabzug. Er fürchtet nur ein wenig den Ärger mit seinen Mitschülern, aber auch das ist nichts Neues mehr für ihn.</p><p> </p><p>Ihm ist nach schreien zumute, doch er darf nicht die Fassung verlieren. Er ist wütend, sehr wütend. Wütend auf die Gryffindors, weil sie ihn immer wieder ärgern und ihm gemeine Streiche spielen. Wütend auf sich selbst, weil er es nicht schafft, sich genug zu wehren. Und wütend auf die anderen, weil sie es nicht verhindern, sondern ihn nur auslachen. Noch wütender jedoch ist er auf die Lehrerin vor sich, weil sie nie etwas unternimmt.</p><p> </p><p>"Wer war das?", will Professor McGonagall von ihm wissen, doch Severus sagt nur finster "Sie glauben mir doch sowieso nicht", und dann geht er in den Gemeinschaftsraum um sich den Schleim aus den Haaren zu waschen.</p><p> </p><p>Es ist immer die gleiche Prozedur. Die Gryffindors spielen ihm einen Streich, er wird ausgelacht, die Lehrer glauben ihm nicht. Er hat es aufgegeben, sie zu melden. Die Lehrer meinen nur, dass er sich das nicht so zu Herzen nehmen sollte. Dumme Jungenstreiche. Doch diese Streiche treffen immer nur Severus und Severus weiß, dass es etwas Persönliches zwischen ihm und Potter und Black ist. Zwischen ihnen herrscht ein Krieg, den er nicht gewinnen kann.</p><p> </p><p>Zwei Wochen später fragt man ihn "Warum haben Sie das getan?" und Severus einzige Antwort ist ein gehässiges "Weil sie es verdient haben!", und er schaut selbstgefällig auf die beiden Gryffindors, denen die verräterischen Tentakeln aus den Ohren und der Nase wuchern.</p><p>  </p><hr/><p> </p><p>Es ist 1973, und Severus brütet über seiner Fächerliste. Sein Großvater sitzt ihm gegenüber und mustert ihn scharf und seine Mutter sieht ihm über die Schulter. Seine Großmutter sitzt vor dem Kamin und nimmt keine Notiz von ihm. Severus weiß nicht, ob er froh darüber sein soll.</p><p> </p><p>"Nimm Arithmantik", schlägt seine Mutter ihm vor, wirft jedoch einen fragenden Blick in Richtung ihres Vaters.</p><p> </p><p>Severus hasst es, dass seine Schullaufbahn von seinem Großvater bestimmt werden soll. Er ist sich eigentlich sicher, welche Fächer er nehmen will. Alte Runen. Vielleicht auch Wahrsagen. Er findet, dass es interessant klingt. Aber sein Großvater wird damit wohl nicht einverstanden sein.</p><p> </p><p>"Wozu brauche ich Arithmantik?", will er wissen, sieht aber nicht von dem Pergament auf. "Ich kann Mathe."</p><p> </p><p>"Mathematik!", speit sein Großvater aus. "Muggelkram! Unsinn!"</p><p> </p><p>Severus sieht ihn ärgerlich an. "Nur weil die Muggel es lernen, ist es kein Unsinn", sagt er. "Mathematik ist sehr nützlich. Mit Geometrie kann man die Welt erklären –"</p><p> </p><p>"Nur die <em>Muggel</em>welt", sagt sein Großvater abwertend. "Von Magie haben sie keine Ahnung. Du nimmst Arithmantik! Damit du endlich einmal etwas Vernünftiges lernst."</p><p> </p><p>Severus knirscht mit den Zähnen. Er weiß, dass es nichts bringt, weiter darüber zu diskutieren. Sein Großvater wird Ungehorsam nicht dulden und Severus will nicht wirklich erneut den Cruciatus zu spüren bekommen. Der Vorfall vor drei Tagen hat ihm gereicht. Manchmal wünscht er sich, das Ministerium findet endlich heraus, dass Daray Prince ihn mit den Unverzeihlichen traktiert. Aber dann denkt er wieder daran, dass das nur mehr Aufmerksamkeit als nötig auf seine Familie und ihn selbst lenkt. Außerdem ist er es selbst schuld.</p><p> </p><p>"Also Arithmantik", meint er simpel und kreuzt das Fach an. "Was noch?"</p><p> </p><p>Er weiß, dass er selbst da nicht mitzubestimmen hat. Sein Großvater will schließlich nicht, dass er irgendetwas nimmt, was seine Muggelherkunft unter Beweis stellt. Nicht, dass Severus nur einen zweiten Gedanken an Muggelkunde verloren hätte. Er weiß genug über Muggel.</p><p> </p><p>"Pflege Magischer Geschöpfe", beschließt sein Großvater. "Das gehört zur Allgemeinbildung eines Reinbluts. Du musst die verschiedenen Kreaturen erkennen können."</p><p> </p><p>"Ja, Sir", sagte Severus nur und macht ein weiteres Kreuz. Er starrt auf den Zettel. "Darf ich Alte Runen nehmen?"</p><p> </p><p>Kurz herrscht Schweigen. Schließlich schüttelt sein Großvater den Kopf. Ein wenig Allgemeinbildung kann nicht schaden, aber dieses Fach ist ihm nicht wichtig genug. Severus seufzt niedergeschlagen. Es ist das einzige Fach, das er wirklich will.</p><p> </p><p>"Lass den Jungen, Daray", meldet sich da seine Großmutter. "Alte Runen sind nicht zu unterschätzen. Ich muss das wissen."</p><p> </p><p>Severus sieht hoffnungsvoll auf. Sein Großvater nickt. Mit einem Leuchten in den Augen macht er ein weiteres Kreuz auf das Blatt. Dann steht er auf, um seine Wahl per Eule der Schule mitzuteilen.</p><p> </p><p>Niemand bemerkt das vierte Kreuz, das hinter Wahrsagen steht.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1974, und die Sonne scheint auf Severus' Gesicht. Er liegt zusammen mit Lily Evans, einer Gryffindor, am Ufer des Sees und genießt das schöne Wetter. Einige Büsche schützen sie vor den neugierigen Blicken der anderen. Und noch wichtiger, vor den Blicken der Rumtreiber.</p><p> </p><p>Lily räkelt sich ein wenig im Gras und sieht Severus an. "Hast du schon eine Ahnung, was du nach der Schule machen willst?"</p><p> </p><p>Severus starrt nachdenklich in den Himmel, die Stirn leicht gekräuselt. Er hat sich schon viele Gedanken darüber gemacht, aber er weiß nicht, ob sein Großvater das zulassen wird.</p><p> </p><p>"Nicht so direkt ...", weicht er schließlich aus. "Was ist mit dir?"</p><p> </p><p>Lily verschränkt die Arme hinter ihrem Kopf und lächelt breit. "Ich möchte Medihexe werden. Heilerin im St. Mungo." Sie schaut ebenfalls in den Himmel. "Warum kommst du nicht auch?"</p><p> </p><p>Er setzt sich auf und schaut raus auf den See. Heiler. Eigentlich klingt das nicht wirklich schlecht, findet er. Nur er macht sich Sorgen, ob sein Großvater das gut finden wird. Immerhin ist Lily eine Muggelgeborene – Severus sollte wirklich nicht mit ihr sprechen – und er muss die Fassade eines Reinbluts aufrechterhalten.</p><p> </p><p>"Ich weiß nicht", sagt er und zupft abwesend ein paar Grashalme aus. "Würde zwar interessant sein, aber irgendwie ... ich würde wohl als erstes studieren. Zaubertränke. Oder ich gehe ins Ministerium. Die haben da auch ein paar interessante Stellen."</p><p> </p><p>Severus meint etwas ganz Bestimmtes, wenn er an eine Stelle im Ministerium denkt. Aber kann er Lily wirklich erzählen, dass es einen gewissen Reiz für ihn hätte, ein Auror zu werden? Es ist nicht die Tatsache, dass er wirklich helfen will. Oder dass er kämpfen will. Es ist die Möglichkeit des Wissens, die ihn daran reizt. Das Training. Er kann es dann Potter und Black zeigen.</p><p> </p><p>"Das Ministerium?", fragt Lily überrascht. "Aber was willst du da?"</p><p> </p><p>Severus schweigt und betrachtet die Grashalme auf seinem Umhang. Lily ist zwar eine recht gute Freundin, aber sie versteht ihn nicht wirklich. Sie sitzen im Unterricht häufiger zusammen und Lily ist gut in Zaubertränke. Sie reden oft über Zaubertränke. Oder Hausaufgaben. Aber niemals wirklich darüber, was sie fühlen und denken.</p><p> </p><p>Lily setzt sich auf und stößt Severus lachend den Ellenbogen in die Rippen. "Sag bloß, du willst in die Abteilung für experimentelle Zauber?" Severus runzelt ein wenig die Stirn und sieht sie an. "Okay, dann vielleicht ... die Mysterienabteilung? Stimmt doch, oder? Ich könnte mir wirklich vorstellen, dass das interessant da ist ... <em>mysteriööös</em>!"</p><p> </p><p>Er nickt nur. Irgendwie hat er das Gefühl, dass Lily kindisch ist. Er weiß nicht, woher der Gedanke kommt, aber er ist da.</p><p> </p><p>"Ich glaube, ich studiere lieber", meint er schließlich nur.</p><p> </p><p>Lily blinzelt ihn ein wenig verwirrt an.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1975, und Severus sitzt einem Auroren gegenüber. Das ist keine angenehme Erfahrung für ihn, denn er möchte überall sein, nur um diesen wachsamen Augen zu entgehen. Er weiß nicht, was er hier soll, denn seine Mutter hätte auch alleine herkommen können. Er sieht keinen Grund für seine Anwesenheit.</p><p> </p><p>"Gehst noch zur Schule, he?"</p><p> </p><p>Severus beschließt, den Auroren so gut es geht zu ignorieren. Er will nicht mit ihm reden. Er will nach Hause, zu seinen Büchern. Es kümmert ihn nicht, dass sein Vater scheinbar vermisst wird. Vielleicht sogar tot ist. Er ist ein Muggel. Wahrscheinlich liegt er nur irgendwo besoffen in der Gosse. Severus kann sich das durchaus vorstellen. Sein Vater war nicht besonders verantwortungsbewusst. Er hat ihn seit fünf Jahren nicht mehr gesehen.</p><p> </p><p>"In welchem Schuljahr bist du?", will der Auror wissen, scheinbar bemüht, ein Gespräch zu beginnen. "Fünftes, nicht wahr?"</p><p> </p><p>"Lassen Sie mich in Ruhe", meint Severus mit einem finsteren Blick. Er denkt an seine Mutter, die momentan wohl ebenfalls von einem Auroren gelöchert wird. Aber sie wollte ja nicht anders.</p><p> </p><p>"Slytherin, eh?" Der Auror lehnt sich ein wenig in seinem Stuhl zurück.</p><p> </p><p>Severus sieht ein wenig überrascht auf. Es gefällt ihm nicht, dass der Auror diese Dinge über ihn weiß. Ganz und gar nicht. Er hasst es, wenn man Informationen über ihn hat, die er nicht selbst weitergegeben hat. Aber woher weiß der Auror das?</p><p> </p><p>"Wer sind Sie?"</p><p> </p><p>Der Auror grinst ihn ein wenig unverschämt an, auch wenn es mehr einer Grimasse gleicht. Severus weiß nicht, ob er lachen oder weinen soll, denn das Gesicht ist zerfurcht und voller Narben. Es sieht ein wenig beängstigend aus, wenn er ehrlich mit sich selbst ist. Doch er will nicht, dass der Auror ihn einschüchtert.</p><p> </p><p>"Du bist einer der ersten, die mich das gefragt haben", meint der Auror schließlich. "Ich bin Alastor Moody."</p><p> </p><p>Nun versteht Severus.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1976, und Severus starrt aus dem Fenster. Er sitzt im Büro des Schulleiters, zusammen mit Potter und Black, und er kann sich tausend Orte denken, an denen er nun lieber wäre. Er wäre überall lieber, außer in der Heulenden Hütte.</p><p> </p><p>"Mr. Snape", sagt Professor Dumbledore, "ich muss Ihnen eindringlich klarmachen, dass Sie über die Ereignisse der heutigen Nacht absolutes Stillschweigen bewahren müssen."</p><p> </p><p>Severus schweigt und starrt weiter aus dem Fenster und starrt den Vollmond an. Das, was Dumbledore so schön als <em>Ereignisse der heutigen Nacht</em> bezeichnet, ist für ihn ein grausiger Albtraum. Nicht nur, dass er einem ausgewachsenen Werwolf gegenübergestanden hat, nein, man hat versucht, ihn zu <em>ermorden</em>. Severus ist sich dessen sicher. Und es ärgert ihn, dass Dumbledore offenbar weder Black noch Potter zur Rechenschaft ziehen will. Von dem Werwolf Lupin ganz zu schweigen. Wie kann man ein solches <em>Ding</em> nur in die Schule lassen?</p><p> </p><p>"Mr. Snape!", sagt Dumbledore scharf.</p><p> </p><p>Severus schnaubt leise, sieht den Schulleiter jedoch nicht an. Er denkt nicht einmal daran. Er ist hier das Opfer – warum behandelt man ihn dann so, als wäre er der Täter? Er hat nichts getan, was die Bande um Potter und Black nicht schon tausendmal getan hat. Und nun wollen die beiden ihn umbringen. Potter hat kalte Füße bekommen und ihn <em>gerettet</em>. Dumbledore erwartet hoffentlich nicht, dass er ihm deswegen dankt. Severus würde Potter wahrscheinlich nur mit der Faust danken.</p><p> </p><p>"Hören Sie, das ist wichtig!"</p><p> </p><p>"Genau, Schniefelus", meint Black grimmig. "Hier geht es um Remus! Also –"</p><p> </p><p>"HALT DIE KLAPPE!", schreit Severus und funkelt Black wütend an. "Du bist doch erst Schuld an allem!"</p><p> </p><p>Er hält den Zauberstab unter seinem Umhang fest, bereit, ihn jederzeit zu verwenden. Black springt zornig auf und Potter muss ihn zurückhalten, damit er sich nicht auf Severus stürzt. Severus kocht innerlich. Dumbledore versucht, Black und ihn zu beruhigen, doch Severus will sich nicht beruhigen. Er will Rache. Er will Vergeltung.</p><p> </p><p>"Mr. Snape ... Severus", versucht es der Schulleiter.</p><p> </p><p>"<em>Wagen Sie es nicht!</em>", zischt Severus giftig. "Wagen Sie es nicht, meinen Vornamen zu benutzen!" Er wirft den Anwesenden einen mehr als finsteren Blick zu. "Ich werde nichts sagen", sagt er schließlich mit unterdrückter Wut. "Aber keiner von euch sollte glauben, dass ich es <em>vergessen</em> werde! Irgendwann wird es euch das Genick brechen, euch scheinheiligen Nobelgryffindors!"</p><p> </p><p>Dann rauscht er ohne ein weiteres Wort aus dem Büro. Er weiß, dass er den Schulleiter beleidigt hat. Er weiß, dass das ein Nachspiel geben wird. Doch es kümmert ihn nicht. Die Wut ist zu groß, das Verlangen nach Rache zu verzehrend. Er wird seine Rache bekommen.</p><p> </p><p>Das ist ein Versprechen.</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1977, und es herrscht Krieg.</p><p> </p><p>Severus sitzt mit seinem Freund in einer Eisdiele in der Winkelgasse. Sie machen sich keine Sorgen um den Krieg. Vor allem Severus ist ganz ruhig. Er weiß, dass ihm eigentlich nichts passieren kann. Er ist nicht reinblütig, aber er steht auf der richtigen Seite. Das reicht.</p><p> </p><p>"Hey, Sev, schau mal", meint sein Freund leise, als sich ein Mann und eine Frau an den Nebentisch setzen.</p><p> </p><p>Er sieht nicht auf, doch sein Blick huscht von seinem Eisbecher zu ihren neuen Sitznachbarn. Kurz scheinen sich die Blicke zu treffen, als die Frau ihn misstrauisch mustert und schließlich den Rest des Cafés in Augenschein nimmt. Severus weiß, wer sie ist. Er kennt sie. Er kennt sie beide. Jeder kennt sie.</p><p> </p><p>"Was ist los? Du siehst aus, als hättest du ein Gespenst gesehen", will Jonathan wissen. "Kennst du sie?"</p><p> </p><p>"Ja", sagt Severus nur eintönig. "Das ist Alastor Moody... und <em>Dorcas Meadowes</em>."</p><p> </p><p>Jonathan blinzelt ihn ein wenig verwirrt an. Dann dreht er ein wenig den Kopf um Dorcas Meadowes anzusehen. Severus braucht sie nicht mehr anzustarren. Er hat sie gleich erkannt, er kennt ihr Bild – es ist häufig im Tagespropheten zu sehen, auch wenn sie meist der Kamera ausweicht. Severus versteht sie sehr gut, er würde auch nicht wollen, dass sein Gesicht so bekannt würde. Vor allem nicht, wenn der Feind sie so einfach erkennen kann. Das war nur eine weitere Gefahr.</p><p> </p><p>Jonathan ist noch immer verwirrt. "Sag mal, bist du dir da sicher?", wispert er ihm zu. "DAS ist Dorcas Meadowes?"</p><p> </p><p>"Ich dachte, du kennst sie", meint Severus dunkel. "Sie ist deine Cousine, oder etwa nicht?"</p><p> </p><p>Sein Freund zuckt nur die Schultern. "Alle Reinblutfamilien sind untereinander verwandt." Mehr gibt es dazu nicht zu sagen. Severus fragt sich, wie das ist, wenn man irgendwann seiner eigenen Familie im Kampf gegenübersteht. Aber er macht sich wenig Sorgen, dass er in diese Situation kommen wird. Er hat niemanden in der Zaubererwelt außer seiner Mutter und seinen Großeltern.</p><p> </p><p>"Vergiss es einfach." Severus wendet sich wieder seinem Eis zu.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1978, und um Severus herum tobt der Kampf. Flüche fliegen an seinem Kopf vorbei, Staub wirbelt durch die Luft und erschwert das Sehen. Er hört Schreie, gebrüllte Flüche und das Krachen der Steine, wenn ein Fluch dagegen rast. Er hört Kameraden und Feinde gleichermaßen leiden. Doch es berührt ihn nicht.</p><p> </p><p>Er duckt sich geschmeidig unter einem Schockzauber weg und schleudert noch in derselben Bewegung seinerseits einen <em>Stupor</em> in die Richtung seines Gegners. Er hält sich nicht damit auf, sich um die anderen Todesser zu kümmern. Seine Anweisungen waren mehr als klar: Handelt am Maximum eurer Fähigkeiten – ihr seid Profis! Wenn ihr keine Gefangenen machen könnt, müsst ihr töten. Er hat nicht sofort die Erlaubnis zum Töten gegeben, es ist ihm zuwider, einfach jemanden mit dem Todesfluch zu begrüßen. Oder noch unsauberen Todesarten.</p><p> </p><p>Er hält nichts von sinnlosem Töten und Morden. Wenn er kann, hält er sich von derlei Dingen fern. Der Dunkle Lord scheint das soweit zu akzeptieren. Vielleicht ist es, weil Severus erst achtzehn ist. Vielleicht ist es, weil er <em>nützlich</em> ist. Severus glaubt mehr an letzteres.</p><p> </p><p>"Jackson!", brüllt eine bekannte Stimme und Severus gestattet sich für den Bruchteil einer Sekunde Unaufmerksamkeit, um den Besitzer der Stimme auszumachen.</p><p> </p><p>Dorcas Meadowes schert sich nicht darum, ob der Gegner mit Todesflüchen um sich wirft oder nur Schockzauber benutzt. Sie <em>ist</em> der Todesfluch. Severus weiß, dass sie sich an die Regeln hält und zuerst versuchen wird, ihn und die anderen gefangen zu nehmen. Aber wenn das nicht klappt, dann wird es schmutzig.</p><p> </p><p>"Lewis!", knurrt die Aurorin, die Namen allein schon als Befehl bellend.</p><p> </p><p>Ihre Blicke treffen sich, Severus hebt leicht den Zauberstab. Er macht keine Anstalten, anzugreifen, er <em>kann</em> es nicht. Sie ist Jonathans Cousine, er will kein Familienmitglied seines Freundes angreifen. Außerdem mag er ein wenig Meadowes' Kampfgeist. Wenn er im Kampf sterben sollte, dann will er es von ihrer Hand tun. Einfach, weil er weiß, dass er dann gegen die Beste verliert.</p><p> </p><p>"Frank!", ruft Meadowes, als sie scheinbar erkannte, dass das <em>seine</em> Truppe ist. "Ich hab ihn!"</p><p> </p><p>Severus findet es amüsant, was Dorcas Meadowes unter <em>haben</em> versteht, doch er schweigt. Er ist besorgt, dass sie seine Stimme erkennen könnte. Sie ist einmal bei Jonathan vorbeigekommen, als Severus gerade zu Besuch war. Sie wird ihn ganz sicher erkennen, wenn er einen Ton von sich gibt. <em>Wie gut, dass ich nonverbal zaubern kann</em>.</p><p> </p><p>Severus ist ein guter Duellant, aber Dorcas Meadowes ist nicht gut. Sie ist <em>besser</em>. Sie muss besser sein, das weiß Severus, doch er findet es schwer, ihren Flüchen standzuhalten. Er will sie nicht mehr als nötig verletzen und er scheut sich, zu versuchen sie zu fassen. Er weiß, was dann passiert, sollte er es schaffen.</p><p> </p><p>Er weicht aus und schickt ihr Lähm- und Schockzauber entgegen, vorgebend, sie gefangen nehmen zu wollen, beschwört Schilde herauf. Meadowes tut dasselbe und Severus hat den Gedanken an einen tödlichen Tanz.</p><p> </p><p>Schließlich schafft er es, Meadowes' Verteidigung mit einem hinterhältigen irischen Runenzauber zu durchbrechen. Es ist einer der gemeinsten Schockflüche, die Severus kennt. Meadowes wird wohl für ein einige Tage nicht wirklich einsatzfähig sein, auch wenn sie es wohl ignorieren wird. Er nutzt diese Zeit, in der er sich frei bewegen kann, hebt den Zauberstab und macht das Signal zum Rückzug.</p><p> </p><p>Severus weiß, dass er die Konsequenzen seines Handelns zu spüren bekommen wird. Er hatte die Chance, Dorcas Meadowes gefangen zu nehmen, zu töten, doch er hat es nicht getan. Er wird auch alles andere bei diesem Einsatz zu verantworten haben, denn es war sein Team.</p><p> </p><p>Zumindest kann er von sich behaupten, Meadowes für mindestens zwei Tage ans Bett gekettet zu haben, obwohl er gerade erst mit der Schule fertig ist.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1979, und es ist bitterkalt draußen. Severus beobachtet die Schneeflocken, die am Fenster vorbeitreiben, während er die heiße Tasse vor sich umfasst. Er friert erbärmlich, doch es ist nicht nur das Wetter und er weiß, dass auch der dampfende Tee vor ihm diese Kälte nicht vertreiben kann. Die Kälte ist in seinem Inneren, seiner Seele.</p><p> </p><p>"Du frierst", stellt Dorcas sachlich fest.</p><p> </p><p>Severus sieht sie schweigend an. Sie hat denselben Vornamen wie die Aurorin, doch ihr Charakter ist gänzlich anders. Er weiß das, und doch findet er sich immer wieder Vergleiche ziehend. Doch diese Dorcas ist nur eine gute Freundin, eine Freundin und Kollegin.</p><p> </p><p>"Du solltest deinen Tee trinken, bevor er kalt wird", sagt Jonathan mit einem Lächeln. "Das wird dich ein wenig wärmen."</p><p> </p><p>Er seufzt nur. Seine Freunde wissen, wo er sich reingeritten hat. Sie wissen es, aber sie sagen dazu nichts. Sie lassen Severus immer seine Ruhe, denn sie kennen ihn. Er ist ihnen dankbar dafür. Er mag es nicht, wenn man ihn zum Sprechen zwingen will, vor allem, wenn es solche heiklen Themen sind. Er weiß auch nicht, ob er mit ihnen darüber reden will. Er will ihnen nicht das Weihnachtsfest verderben.</p><p> </p><p>"Du kannst mit uns über alles reden, Severus", sagt Dorcas. "Ob es nun Gefachsimpel ist oder wir Kummerkasten spielen sollen. Wir sind deine Freunde."</p><p> </p><p>"Ich weiß", erwidert Severus leise. "Ich weiß... danke."</p><p> </p><p>Jonathan grinst sein jugendliches Grinsen und Severus kommt sich mit einem Mal so alt vor. Er weiß, dass er eigentlich der Jüngste von ihnen ist, doch er hat das Gefühl, als würde er eher auf die Hundert zusteuern und nicht auf die Zwanzig. Dieser Krieg lässt ihn schneller altern. Aber er ist sowieso nie wirklich Kind gewesen.</p><p> </p><p>"<em>Muffliato</em>", murmelt Severus leise, den Zauberstab unter dem Tisch haltend.</p><p> </p><p>Jonathan und Dorcas sehen sich kurz an. Sie ahnen wohl bereits das nun folgende Gesprächsthema. Severus achtet ganz besonders darauf, dass nichts über diese Gespräche nach außen gelangt und seine Freunde wissen um die Gefahr dieser Diskussionen.</p><p> </p><p>Severus seufzt erneut und nimmt einen tiefen Schluck Tee, um wenigstens physisch wieder ein wenig aufzutauen.</p><p> </p><p>"Ich nehme an, ihr wisst bereits, worum es geht", sagt er simpel, wartet kurz das Nicken seiner Freunde ab und fährt fort, "Ich ... hab mir ein paar Gedanken darüber gemacht. Ihr wisst schon, der Dunkle Lord, Todesser und so ... dieses Zeug halt ... so von wegen richtig und falsch und ... na ja ..."</p><p> </p><p>Er kommt sich plötzlich wieder wie zehn vor, so nervös ist er. Es ist ein wenig wie an dem Tag, an dem er zum ersten Mal seinen Großvater getroffen hat. Er hat versucht, die richtigen Worte zu finden, hat gezögert und gestottert. Sein Großvater war alles andere als begeistert davon gewesen und hat immer wieder betont, was für eine Schande Severus doch sei.</p><p> </p><p>Er atmet einmal tief durch. "Ich muss da raus."</p><p> </p><p>Jonathan und Dorcas schweigen beide. Severus bedauert einen Moment, dass Lionel nicht hier ist; er hätte diese Stille sicherlich mit irgendeiner dummen Bemerkung gebrochen, so wie immer. Sie verbringen eine ganze Weile im Schweigen.</p><p> </p><p>Severus starrt wieder abwesend aus dem Fenster, tief in Gedanken versunken. Seine Gedanken passen überhaupt nicht zu der leuchtenden Dekoration am Haus gegenüber, denn sie sind rabenschwarz. Sie handeln von seiner Zukunft, der Zukunft seiner Freunde und der Zukunft seiner Feinde. Er hat eine Prophezeiung gehört und das macht ihm nun Sorgen. Er hätte sie nicht an den Dunklen Lord weitergeben dürfen, das weiß er jetzt. Doch es ist zu spät.</p><p> </p><p>"Dann solltest du zu Dumbledore gehen", schlägt Jonathan nach einiger Zeit vor. "Er wird dir zuhören."</p><p> </p><p>"Und dir sicherlich eine Chance einräumen", pflichtet Dorcas bei.</p><p> </p><p>Severus lässt sich mit einer Antwort Zeit. Er starrt weiter aus dem Fenster, sein Tee wird kalt. Schließlich sieht er seinen Freunden fest in die Augen.</p><p> </p><p>"Ich werde es versuchen."</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1980, und Severus weiß nicht so recht, was er tun soll.</p><p> </p><p>Er sitzt auf der falschen Seite des Schreibtisches, auf der Seite, auf der er eigentlich niemals sitzen wollte. Und er sitzt dem Mann gegenüber, von dem er gedacht hatte, ihn höchstens noch in einem Kampf wiederzutreffen. Das Schicksal geht seltsame Wege.</p><p> </p><p>Severus fragt sich kurz, warum er das überhaupt tut, während er abwesend die Feder in den Händen des Aurors betrachtet. <em>Ich sollte nicht hier sein</em>. Er weiß, dass der Mann vor ihm eine Gefahr darstellt, doch jetzt ist er nicht zum Kämpfen hier. Severus wäre das eindeutig lieber. Er will nicht hier sein, nicht mit diesem Mann und nicht in der Aurorenzentrale. Es kommt ihm ein wenig vor wie das berühmte Kaninchen vor der Schlange. Nur dass er diesmal das Kaninchen ist.</p><p> </p><p>"Name?", brummt der Auror, dieses Mal scheinbar nicht so gesprächig wie das letzte Mal. Severus kann es ihm nicht verübeln.</p><p> </p><p>"Jonathan Alan Helios Meadowes", antwortet er kurz angebunden, Moodys Blick ausweichend. "Jahrgang '58, ledig. Wohnhaft Winkelgasse 72 in London."</p><p> </p><p>Er kommt sich ausgesprochen idiotisch vor. Nicht zuletzt, weil Jonathan nicht einmal mit ihm verwandt ist. Eigentlich müsste Aurorin <em>Meadowes</em> hier sitzen. Aber Severus beklagt sich nicht. Er weiß, was passiert ist. Aber das macht es auch nicht besser.</p><p> </p><p>"Wann wurde er zum letzten Mal gesehen?", will Moody wissen, nachdem er einen kurzen, fast schon überraschten Blick ob des Namens auf Severus geworfen hat.</p><p> </p><p>Severus zögert kurz. "Ich habe ihn am Samstagmorgen noch gesehen."</p><p> </p><p>Er erinnert sich daran, was passiert ist. Er war den Samstag noch bei ihm, hatte mit ihm geredet. Sie hatten sich zum Frühstück getroffen, wie sie es früher öfter getan hatten. Severus erinnerte sich gerne daran zurück, weil es damals noch einfach gewesen war. Zumindest wollte er das glauben. Jonathan hatte ihm davon erzählt, dass er eine neue Freundin hätte. Eine Muggelgeborene, oder war sie doch ein Muggel? Severus erinnerte sich nicht. Aber scheinbar lief da schon länger etwas. Er selbst hatte damit kein Problem gehabt, doch scheinbar hatten die falschen Leute davon erfahren.<br/> </p><p>Severus hatte Jonathan nur warnen können, dass er aufpassen sollte. Es hatte nichts genützt. Vielleicht war es schon die einfache Tatsache, dass er mit Dorcas Meadowes verwandt war. Severus weiß es nicht und die Hintergründe interessieren ihn auch nicht.</p><p> </p><p>"Lebende Verwandte?", reißt Moody ihn aus seinen Gedanken.</p><p> </p><p>Severus hebt leicht den Kopf, den Blick von der Feder abwendend, und sieht Moody ins Gesicht. Seine Augen sind ausdruckslos, wie so oft in letzter Zeit.</p><p> </p><p>"Dorcas Meadowes, Cousine. Ihren vollen Namen weiß ich nicht."</p><p> </p><p>Moody sieht ihn nur an. "Andere Verwandte?"</p><p> </p><p>Severus erwidert nichts. Er starrt hinunter auf seine Hände. Sie zittern. Er ärgert sich und versucht, es unter Kontrolle zu bringen. Er weiß, wer Jonathan verschleppt hat. Er weiß, dass es keine Hoffnung darauf gibt, ihn wiederzusehen. Und er weiß, dass er zu jenen gehört, die Jonathan auf dem Gewissen haben. Wenn er auch nicht direkt etwas dazu beigetragen hat, er hat auch nichts dagegen unternommen.</p><p> </p><p>"Keine anderen Verwandten", antwortet er tonlos, blicklos auf seine Hände starrend.</p><p> </p><p>Er weiß, was Moody ihm nun sagen wird. Jonathan wurde entführt, gefoltert, vermutlich getötet. Vielleicht taucht seine Leiche wieder auf. Wenig Hoffnung. Severus weiß es besser. Es gibt keine Hoffnung. Es gibt keine Leiche.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1981, und Severus steht vor den Scherben einer Heldin, die er jedoch nicht vergessen wird. Er war dabei, als sie gestorben ist, und er bewundert sie für ihren Mut. Er glaubt nicht, dass irgendwer im Angesicht des Todes so viel Mut aufbringen kann. Die anderen Todesser sind froh, dass sie tot ist. Severus ist es nicht.</p><p> </p><p>Er starrt auf den Eingang zur Familiengruft der Meadowes'. Jonathan würde hier auch liegen, vermutet er, wenn es denn eine Leiche gäbe. Aber da ist nichts und nun liegt Dorcas Meadowes hier, die letzte dieser Reinblutfamilie.</p><p> </p><p>Severus macht sich nichts aus reinem Blut, aber er macht sich etwas aus Dorcas. Er weiß nicht, wann genau er aufgehört hat, von ihr als Meadowes zu denken, doch er findet diesen Wandel gut. Sie verdient seinen Respekt, auch wenn er bezweifelt, dass sie es mögen würde, dass er sie Dorcas nennt. Aber er tut das nur in Gedanken. Mit anderen spricht er nicht über sie.</p><p> </p><p>'<em>Dorcas Elladora Meadowes</em>' steht auf der Grabtafel, '<em>geboren 1949 – gestorben 1981</em>'.</p><p> </p><p>Severus findet es ironisch, dass ihr Name so gar nicht zu ihrer Art passen will, doch es gibt viele Menschen, deren Namen nicht zu ihnen zu passen scheinen. Er fragt sich innerlich, was passiert wäre, wenn er sich nicht dem Dunklen Lord angeschlossen hätte. Auch wenn er nun als Spion agierte, er war noch immer ein Todesser, das konnte er nicht verleugnen. Etwas wie Ex-Todesser gab es nicht. Nicht für ihn und für Dorcas Meadowes sicher genauso wenig. Er wusste, dass sie Dumbledore gewarnt hatte, als er sich dazu entschlossen hatte, Severus eine zweite Chance zu geben.</p><p> </p><p>"Der verdammte Kerl stinkt von oben bis unten nach den Dunklen Künsten!", hatte sie geknurrt, Severus war dabei gewesen. "Der rennt doch bei der ersten Gelegenheit zu seinem Meister und verrät alles!"</p><p> </p><p>Severus mag lächeln ob dieses Ausbruchs, denn es war das, was er in dem Augenblick auch gedacht hat. Er ist nicht sonderlich stolz darauf, ein Todesser zu sein, doch er wird niemals leugnen, dass die Dunklen Künste eine dunkle Faszination auf ihn ausüben. Die Gerüchte aus seiner Schulzeit sind nicht ganz so abwegig, wie manche meinen.</p><p> </p><p>Dumbledore hatte darauf bestanden, Severus die Chance zu geben, seinen Fehler wieder gutzumachen, wenn das denn überhaupt möglich war, und die Auroren hatten zugestimmt, sich darum zu kümmern, dass Severus nicht zur Anklage kam. Vorerst, wie Dorcas und Moody betont hatten, nachdem sie Severus allein angetroffen hatten. Er hatte nichts darauf erwidert, still genickt. Er weiß, dass ihm der Prozess gemacht wird, wenn die Auroren diesen Krieg gewinnen. Aber es kümmert ihn schon lange nicht mehr, ob man ihn nach Askaban schickt.</p><p> </p><p>Er wirft einen letzten Blick auf die ewige Ruhestätte von Dorcas Meadowes, eine eigentlich rastlose Person, immer auf der Jagd nach Schwarzmagiern, dann wendet er sich ab.</p><p> </p><p>Er kommt nie mehr zurück.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/26048191/chapters/63346879">Chapter 3</a>: Den Krieg vergessen ('82-'90)
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es ist 1982, und Severus steht gedankenverloren auf dem Astronomieturm. Sein schwarzer Umhang ist mit Schnee bedeckt und es ist kalt hier oben. Aber hier hat er Ruhe zum Nachdenken.</p><p> </p><p>Es ist noch nicht lange her, die Geschehnisse von Halloween '81 sind noch immer in aller Munde. Severus ist davon genervt, aber er weiß auch nicht genau, was er von alldem halten soll. Alle haben gefeiert, dass Harry Potter den Angriff des Dunklen Lords überlebt hat. Er nicht. Er hat nicht gefeiert und er wird auch nicht feiern. Da ist nichts, was er feiern will.</p><p> </p><p>Der Krieg ist vorbei. Er hat eine Anhörung hinter sich. Er ist freigesprochen, weil Dumbledore für ihn gebürgt hat. Severus ist nicht besonders stolz darauf, auch wenn er nichts dagegen hat, <em>nicht</em> in Askaban zu sitzen.</p><p> </p><p>Er hat einen Job, den er nicht wirklich leiden kann. Lehrer. Er wollte nie Lehrer werden. Er wollte Meister der Zaubertränke werden – ist er auch – und vielleicht auch die Ausbildung zum Auroren machen. Aber er ist ein Todesser. Ein Grund mehr, warum er nicht in einem Klassenraum stehen will. Er kennt noch ein paar der Gesichter aus seiner eigenen Schulzeit. Mehr fürchtet er jedoch etwas anderes: Die Kinder derer zu sehen, die er als Todesser auf dem Gewissen hat.</p><p> </p><p>"Severus?", sagt eine Stimme hinter ihm.</p><p> </p><p>Severus dreht sich langsam um und sieht den Schulleiter von Hogwarts schweigend an. Es ist nicht das erste Mal, dass Dumbledore ihn hier oben findet. Es wird auch nicht das letzte Mal sein. Dieser Ort hat etwas, was Severus hilft, seine Gedanken zu ordnen.</p><p> </p><p>"Es ist ziemlich kalt hier draußen", bemerkt Dumbledore und tritt neben ihn.</p><p> </p><p>"Nicht kälter als meine Seele", meint Severus kaum hörbar und geht hinein.</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1983, und Severus kommt sich ziemlich fehl am Platz vor. Er sitzt zwischen Leuten, die alle älter sind als er selbst. Viele von ihnen kennt er noch aus seiner Schulzeit. Er kommt sich wirklich fehl am Platz vor.</p><p> </p><p>"Kommen wir zu Punkt eins der Tagesordnung", beginnt Dumbledore mit der Konferenz.</p><p> </p><p>Severus passt nicht wirklich auf, einfach, weil er nicht viel zu sagen hat. Und meistens hört sowieso keiner auf ihn. Er ist gerade einmal dreiundzwanzig, gerade erst erwachsen, wenn man das Alter von den meisten Magiern betrachtet. Außerdem will er nicht unbedingt mit seinen alten Lehrern diskutieren. Er fühlt sich immer noch ein wenig wie ein Schüler.</p><p> </p><p>"Die neuen Vertrauensschüler müssen bestimmt werden", erklärt Dumbledore. "Irgendwelche besonderen Vorschläge?"</p><p> </p><p>"Nein", gibt Severus leise von sich.</p><p> </p><p>Die anderen Hauslehrer sehen ihn ein wenig erstaunt an, wenden sich dann jedoch der Diskussion zu, welche Schüler Vertrauensschüler werden sollten. Severus hält sich wie die Jahre zuvor daraus, denn er kennt die Schüler einfach nicht genug, um etwas dazu sagen zu können. Er fragt sich immer noch, warum er den Posten als Hauslehrer von Slytherin bekommen hat. Vielleicht ist er der einzige Slytherin unter den Lehrern? Er beschließt, später einmal Dumbledore zu fragen. Aber wahrscheinlich bekommt er nur eine kryptische Antwort.</p><p> </p><p>"Severus, haben Sie etwas dagegen einzuwenden?", will Professor McGonagall wissen.</p><p> </p><p>Er schweigt, was die anderen als Zustimmung auffassen. Es ist wie jedes Jahr. Und wie jedes Jahr hat er nicht das Gefühl Lehrer zu sein. Nein, wenn er mit den anderen Lehrern im Lehrerzimmer sitzt, auf eine Lehrerkonferenz geht oder auch so einfach mit ihnen spricht, dann ist er ein Schüler.</p><p> </p><p>Aber vielleicht kann er dieses Gefühl irgendwann abschütteln. Dann erst kann er wirklich von sich selbst als Lehrer denken.</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1984, und es ist eine regnerische Vollmondnacht. Severus kann aus verschiedenen Gründen nicht schlafen und steht an einem Fenster im fünften Stock. Es ist nicht die erste schlaflose Nacht in dieser Woche und es wird auch nicht die letzte sein.</p><p> </p><p>Einer der Gründe für seine Schlaflosigkeit ist der Vollmond. Auch wenn Severus den Schock und die Angst überwunden hat, die ihn in der Zeit nach Blacks Mordversuch an der Heulenden Hütte verfolgt haben, kann er immer noch nicht ganz ruhig werden, wenn Vollmond ist. Inzwischen ist es jedoch besser. Er fürchtet nicht mehr hinter jeder Ecke des Kerkers einen ausgewachsenen Werwolf. Die Tatsache, dass er sich inzwischen auch besser verteidigen kann, hilft ihm auch.</p><p> </p><p>Der Hauptgrund, warum er hier steht, ist, dass er noch im Krieg ist. Wenn er schläft, schläft er mit offenen Augen, den Zauberstab in der Hand. Wenn er wach ist, wandert er ruhelos durch das Schloss, immer wieder auf eventuelle Eindringlinge lauschend. Er erwartet fast jeden Augenblick einen Angriff aus dem Hinterhalt. Vielleicht Todesser, vielleicht Auroren. An manchen Tagen sind es beide. Die einen wollen ihn nur festnehmen, die andere ihn umbringen. Inzwischen macht das keinen großen Unterschied mehr, er behandelt alle gleich.</p><p> </p><p>Peeves meidet ihn – Severus hat ihm einmal einen ziemlich üblen Fluch auf den Hals gehetzt, als er sich von hinten angeschlichen hat. Peeves konnte danach eine Woche lang keinen Ton mehr hervorbringen und hatte Probleme mit seiner Unsichtbarkeit. Der Poltergeist sucht sich nun lieber andere Opfer in diesen Nächten.</p><p> </p><p>Severus ist froh, dass ihm bisher noch kein Schüler über den Weg gelaufen ist. Möglicherweise würde es ernsthafte Verletzungen geben. Nein, es wird <em>ganz sicher</em> ernsthafte Verletzungen geben. Wenn die anderen Lehrer davon erfahren, muss er wahrscheinlich Hogwarts verlassen. Zu gefährlich. Er gefährdet die Sicherheit der Schüler. Er ist eine Gefahr für die anderen und für sich selbst, zumindest nachts, wenn er im Krieg ist und er auf Angreifer wartet.</p><p> </p><p>"Professor Snape?"</p><p> </p><p>Severus wirbelt herum, den Zauberstab erhoben und einen Fluch auf den Lippen. Der erste, der ihm eingefallen ist. <em>Sectumsempra</em>. Nun, genützt hätte es nichts, wie er feststellt.</p><p> </p><p>"Sir Nicholas", stellt er fest und zwingt sich selbst zur Ruhe. "Sie hätten mich nicht ... <em>erschrecken</em> dürfen."</p><p> </p><p>Er mag den Hausgeist von Gryffindor nicht besonders. Immer dieses ständige Lamentieren über sein fast-kopfloses Dasein. Und er ist ein Gryffindor, wenn auch ein Toter. Severus versucht jedes Mal, dem Geist klarzumachen, dass er mehr lächerlich als fürchterlich ist, aber dieses Mal hat er ihn wirklich kalt erwischt.</p><p> </p><p>"Entschuldigen Sie, dass hatte ich nicht vor", sagt der Geist höflich.</p><p> </p><p>Severus sagt dazu nichts. Ist es nicht die Aufgabe von Geistern, Sterbliche zu erschrecken? Nun, er steht dem Gryffindorgeist gegenüber. Er sollte nicht zuviel erwarten.</p><p> </p><p>"Tatsächlich", sagt Severus nur. "Und was wollen Sie nun?"</p><p> </p><p>"Sie wandern in letzter Zeit oft nachts durch die Gänge", erklärt Nicholas. "Ich wollte nur wissen, ob alles in Ordnung ist."</p><p> </p><p>Severus' Blick verfinstert sich. "Wenn ich Hilfe brauche, oder einen Seelenklempner, dann werde ich mich schon melden, <em>Sir</em> Nicholas. Ich würde Ihnen <em>raten</em>, sich aus meinen Angelegenheiten herauszuhalten. <em>Guten Abend</em>."</p><p> </p><p>Mit diesen Worten dreht er sich auf dem Absatz um und rauscht den Gang mit wehenden Roben entlang. Er braucht keine Hilfe. Nicht von einem Geist. Nicht von einem Gryffindor. Diese Nacht ist Krieg und er kann niemandem trauen. Nicht einmal sich selbst.</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1985, und Severus steht in einer Leichenhalle. Neben ihm steht ein Auror, der scheinbar keine Ahnung davon hat, wie man sich fühlt, wenn man zu einer Leichenidentifizierung gerufen wird. Severus findet, dass das keine Erfahrung ist, die er machen will.</p><p> </p><p>"Sie müssen nicht so ein Gesicht machen", meint der Auror gutgelaunt. "Ist hier schon still genug. Sagen Sie doch mal was!"</p><p> </p><p>Severus überlegt, ob er vielleicht eine kleine Ausnahme machen kann. Ein kurzes <em>Avada Kedavra</em> und es wäre ruhig. Still. Totenstill. Wie bei einer Beerdigung. In einer solchen Umgebung darf man einfach keine gute Laune haben. Severus wird der Auror mit jeder Sekunde unsympathischer. Nicht, dass er Auroren überhaupt sympathisch finden würde.</p><p> </p><p>"Wie war noch Ihr Name? Ich hab den irgendwie wieder vergessen", sagt der Auror mit einem Lächeln, während er an den Bahren entlanggeht. "Er liegt irgendwo dahinten", fügt er an.</p><p> </p><p>Ein Schnauben kommt von Severus, als er an dem Auroren vorbeigeht. Seine Lehrerroben, die er für diese Begegnung nicht ausgezogen hat, wirbeln hinter ihm durch die Luft. Er sieht imposant aus, das weiß er.</p><p> </p><p>Nach außen hin ist da nichts weiter als diese kalte Fassade, die er jedem zeigt. Doch innerlich ist er nervös, ein wenig besorgt, vielleicht. Er ahnt, wen er identifizieren soll. Es ist nicht so, als wisse er nicht, dass er tot ist. Aber sein Herz möchte noch immer daran glauben, dass er lebt. Diese Begegnung wird es endgültig machen.</p><p> </p><p>"Hey, Mister, Sie müssen mich hier nicht einfach so stehen lassen", beschwert sich der Auror, als er zu Severus hinüberkommt. "Hier, das ist er. Erkennen Sie ihn?"</p><p> </p><p>Der Auror schlägt das Tuch zurück, unter welchem etwas zum Vorschein kommt, dass nicht mehr als ein Skelett zu sein scheint. Severus fragt sich eine Sekunde lang, wie er die Person identifizieren soll. Es gibt nichts mehr zu erkennen. Da ist dunkler Stoff, vermutlich von einer Robe. Aber viel mehr ist da auch nicht.</p><p> </p><p>"Und?", will der Auror wissen.</p><p> </p><p>Severus wirft ihm nur einen finsteren Blick zu und sieht dann wieder auf die Leiche. Kaum zu erkennen, befindet er. Aber er weiß, dass er es ist. Die Kette um seinen Hals ist Beweis genug. Er kennt sie. Es ist etwas, wie ein Medallion und eine Uhr in einem. Es war ein Geschenk an ihn, nach dem Ende ihrer Ausbildung. Severus hat ebenfalls eine solche Uhr. In seiner ist ein Bild von Dorcas, Jonathan und Lionel. Er weiß, dass, wenn er Jonathans öffnen würde, er darin ein Bild von Dorcas, Lionel und sich selbst finden würde. Jünger, lachend. Wie aus einem anderen Leben.</p><p> </p><p>"Ja", meint er schließlich und wendet sich ab. "Das ist Jonathan Meadowes."</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1986, und es ist eine halbe Dekade seit dem offiziellen Kriegsende vergangen. Für Severus ist er noch nicht wirklich vorbei.</p><p> </p><p>Die Albträume werden langsam weniger, doch sie verschwinden nicht. Manchmal wünscht Severus sich, dass sie aufhören. Doch dann denkt er zurück und er findet, dass sie bleiben sollen. Sie erinnern ihn an das, was passiert ist, und an das, was er getan hat.</p><p> </p><p>Seine Albträume sind nicht nur Träume, sie sind auch Erinnerungen. Erinnerungen, die er nicht vergessen will, und Erinnerungen, die er nicht vergessen darf. Sie sind ein Teil seiner Selbst. Und wenn er schon nicht in Askaban sitzt und sich mit ihnen auseinander setzen muss, dann wird er das wenigstens auf diese Art tun. Den Krieg kann man nicht so leicht vergessen. Der Kampf tobt noch immer in ihm.</p><p> </p><p>Es ist wieder Nacht und Severus schleicht durch die dunklen Gänge des Schlosses. Den anderen Lehrern sagt er immer, dass er aufpasst, dass keine Schüler nach der Sperrstunde herumstreunen. In Wirklichkeit kann er nicht schlafen.</p><p> </p><p>"Schon wieder zu so später Stunde unterwegs?"</p><p> </p><p>Severus dreht sich um und sieht sich dem Blutigen Baron gegenüber. Das ist das erste Mal, dass der Hausgeist von Slytherin ihn anspricht. Zum ersten Mal in der gesamten Zeit, die er nun schon in Hogwarts verbracht hat, zuerst als Schüler des Hauses Slytherin und nun als Hauslehrer. Es ist irgendwie ein wenig verwirrend. Er hat ihn vorher nie sprechen hören.</p><p> </p><p>"Scheinbar", meint er nur schlicht, den Geist immer noch anstarrend.</p><p> </p><p>Der Blutige Baron lächelt. Es ist nicht wirklich warm und Severus denkt einen Moment, sein Inneres würde erfrieren. Aber er weiß, dass da schon zu viel Kälte in ihm ist. Viel mehr kann da nicht mehr erfrieren.</p><p> </p><p>"Albträume?", will der Baron wissen, und er hat einen fast schon wissenden Ausdruck im Gesicht.</p><p> </p><p>"Warum sollte ich ausgerechnet mit Ihnen darüber reden?"</p><p> </p><p>"Jeder hat seine Geheimnisse", sagt der Baron nur. "Ich denke nur, dass Sie am ehesten mit einem anderen Slytherin darüber sprechen würden. Jemandem, der Sie versteht."</p><p> </p><p>Severus schweigt. Es stimmt, er würde am ehesten mit jemandem darüber reden, der ihn auch verstehen kann. Einem Slytherin, wenn es geht. Natürlich kann er immer zu Dumbledore gehen, aber er ist zu sehr Gryffindor, als dass er die Problematik von Severus' Gedanken und Gefühlen versteht. Der Blutige Baron hat recht.</p><p> </p><p>"Gibt es einen besonderen Grund, warum Sie mich ausgerechnet jetzt ansprechen? Sie reden nicht besonders viel", sagt Severus, um das Thema zu wechseln.</p><p> </p><p>"Ich bin ein Slytherin. Ich habe Sie beobachtet." Der Geist schweigt für einen Moment. "Wenn Sie jemals darüber reden wollen. Ich kann schweigen."</p><p> </p><p>"Das weiß ich", erwidert Severus nur und zeigt ein schmales Lächeln.</p><p> </p><p>Vielleicht wird er mit dem Blutigen Baron darüber reden. Vielleicht auch nicht. Jeder hat seine Geheimnisse. Severus weiß das, genauso wie der Blutige Baron das weiß. Wenn er reden will, weiß er nun, mit wem er das tun kann.</p><p> </p><p>"Gute Nacht, Baron", sagt Severus, als der Hausgeist von Slytherin davon schwebt.</p><p> </p><p>"Gute Nacht, Professor", sagt der Baron, und Severus beschließt, dass er mit ihm sprechen wird, wenn er das nächste Mal mit dem Zauberstab in der Hand und einem Fluch auf den Lippen aufwacht. Vielleicht kann er dann den Krieg vergessen.</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1987, und Gryffindor ist um einen Rotschopf reicher. Percival Weasley, <em>Percy</em>. Natürlich ein Gryffindor. Wie seine Brüder. Wie seine Eltern. Scheinbar ist die Haarfarbe nicht nur ein Weasleyindikator.</p><p> </p><p>Nun sind es schon drei. William, Charles und Percival – oder besser Bill, Charlie und Percy. So werden sie genannt, nicht mit ihren vollständigen Namen. Nun, Severus kann das egal sein, denn für ihn sind sie nur Mr. Weasley, Mr. Weasley und Mr. Weasley. Manchmal auch einfach nur Weasley. Wenn er sich darum kümmern würde, wie seine Schüler mit Vornamen heißen, müsste er wohl den ganzen Tag Spitznamen hinterher jagen.</p><p> </p><p>Severus betrachtet nachdenklich die drei Rotschöpfe am Gryffindortisch. Er versucht sich daran zu erinnern, wie viele Weasleys es da gibt. Wenn er sich nicht irrt, dann ist es eine recht große Familie. Er weiß nicht, wie viele es genau sind, und er will auch nicht Dumbledore fragen, aber dazu ist es nicht wichtig genug.</p><p> </p><p>Familie. Der Name Weasley ist inzwischen fast ein Synonym dafür. Zumindest für ihn. Wenn er jemals eine Familie haben wollte, dann wollte er den Namen <em>Weasley</em>. Auch wenn die Familie arm ist. Reichtum ist nicht alles, dass weiß er nur zu genau, denn er hat zehn Jahre in ärmlichen Verhältnissen gelebt. Er hat auch lang genug in einer reichen Familie gelebt. Er kann sich inzwischen wohl auch selbst als <em>reich</em> betiteln, aber es kümmert ihn nicht.</p><p> </p><p>Er gibt nicht viel auf Reichtum, schon gar nicht, wenn er nichts dafür getan hat. Auch wenn er seine magische Verwandtschaft dafür, dass sie magisch ist, recht gut leiden kann. Sie haben ihn zwar nicht sonderlich gut behandelt, vor allem sein Großvater nicht, aber er empfindet keinen wirklichen Groll. Immerhin hat er dadurch viel gelernt. Außerdem heißt es, dass man über Tote nur Gutes sagen soll. Und in diesem Fall hält er sich daran.</p><p> </p><p>"Severus, eine Galleone für Ihre Gedanken", sagt Dumbledore amüsiert.</p><p> </p><p>Severus sieht ihn einen Augenblick lang irritiert an. Dann hebt er eine Augenbraue. "Eine Galleone? Sind Sie sicher, dass Sie soviel darin investieren wollen? Aber gut, geben Sie mir eine Galleone und ich sagen Ihnen, woran ich denke."</p><p> </p><p>Er weiß, dass man normalerweise nicht auf dieses Angebot eingeht, aber er tut es trotzdem. Er will wissen, ob Dumbledore wirklich dazu bereit ist, eine Galleone zu zahlen, denn er weiß, dass seine Gedanken nichts Neues für den alten Magier enthalten werden. Vier Namen, vier Daten, mehr wird es nicht sein. Nun liegt es an Dumbledore.</p><p> </p><p>"Wollen Sie einem alten Mann wirklich das Geld aus der Tasche ziehen?", gluckst er. "Nun, schön. Hier, ich habe gerade keine Galleone zur Hand, aber ich kann Ihnen einen Schuldschein schreiben."</p><p> </p><p>Severus findet die Situation absurd, geradezu bizarr. Da sitzen sie beim Festessen in der Großen Halle, und Dumbledore schreibt ihm einen Schuldschein. Über <em>eine Galleone</em>. Severus mustert den Zettel einen Moment lang, dann steckt er ihn ein und sieht Dumbledore kurz schweigend an. Fairer Handel. Das hat er bei seiner Ausbildung gelernt. Eine Galleone für seine Gedanken. Fairer Handel. Gleichwertiges für gleichwertiges eintauschen.</p><p> </p><p>"Schön", meint er schließlich. "Um es ein wenig zu verkürzen: Tobias Snape – <em>1975</em>, Daray Prince – <em>1978</em>, Keriann Prince – <em>1979</em>, Eileen Snape – <em>1981</em>. Das Ende der Princes und damit das sichere Aussterben eines weiteren Reinblutnamens."</p><p> </p><p>Damit wendet er sich von Dumbledore ab und lässt seinen Blick wieder zu den drei Weasleys am Gryffindortisch schweifen. Der Krieg hat viele Familien ausgelöscht. Aber nicht alle. Nein, ganz sicher nicht alle.</p><p> </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1988, und Severus sitzt in einer Eisdiele in der Winkelgasse. Es ist dieselbe Eisdiele, in der er vor einer Dekade mit Jonathan gesessen hat. Es ist viel Zeit vergangen, doch manche Dinge ändern sich einfach nicht.</p><p> </p><p>"Es ist wirklich lange her, seit wir uns das letzte Mal gesehen haben", sagt Dorcas abwesend und rührt in ihrem Kaffee umher.</p><p> </p><p>Severus schweigt und auch Lionel schweigt. Einer fehlt und es ist nicht, weil er einfach keine Zeit hat. Jonathan ist tot. Er wird nie mehr kommen. Severus starrt auf seine Tasse und greift abwesend nach der Kette um seinen Hals.</p><p> </p><p>"Du trägst sie immer noch?", fragt Lionel leise.</p><p> </p><p>Severus nickt nur. "Ich habe ihm versprochen, sie nie abzunehmen. Er hat seine auch nicht abgenommen ..."</p><p> </p><p>Seine Stimme verliert sich und sie schweigen wieder. Selbst Lionel findet nichts, um die Stimmung aufzuheitern. Früher konnte er das immer, aber inzwischen ist ihm das Lachen vergangen. Severus fragt sich, ob sie jemals wieder so unbeschwert sein können, wie sie es damals waren. Er erinnert sich noch genau an die Zeit seiner Ausbildung, die Zeit mit Jonathan.</p><p> </p><p>"Wisst ihr noch, wie Ptolemäus ihn erwischt hat, wie er in einem Kessel eine Gemüsesuppe angerührt hat?", fragt Lionel schließlich mit einem schmalen Lächeln.</p><p> </p><p>"Jaah", sagt Dorcas. "Er war so wütend auf Jonathan ..."</p><p> </p><p>"Und Jonathan hat nur gemeint, dass zwischen Zaubertränken und Gemüsesuppe nur ein Unterschied entscheidend wäre: der Geschmack", stimmt Severus schließlich zu.</p><p> </p><p>Seine Stimme klingt wehmütig, doch Lionel hat ein wenig Recht: Statt darüber zu trauern, was sie nicht mit Jonathan teilen können, sollten sie besser daran denken, was sie geteilt haben. Die Zeit in der Lehre war sehr schön und auch wenn Jonathans Tod alle Erinnerungen überschattet: Sie leben und können sich erinnern. Das wird Jonathan in ihren Herzen lebendig halten.</p><p> </p><p>Er lächelt, traurig, aber es ist ein Lächeln. Es ist ein Anfang.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1989, und ein Kessel explodiert. Nichts, womit Severus nicht gerechnet hat, denn es sind Erstklässler. Und es sind Slytherins und Gryffindors. Eine hochexplosive Mischung, die seiner Meinung nach eigentlich verboten gehört.</p><p> </p><p>Was ihn jedoch an der Sache stört, ist, dass eigentlich kein Trank explodieren dürfte, denn er hat erst vor einer Minute alle Kessel kontrolliert. Nichts von dem, was die Schüler da zusammengemischt haben, ist explosiv. Bleibt nur noch die pure Absicht, die dahintersteckt.</p><p> </p><p>Der Trank hat keinen Schaden verursacht und der Schüler, dem der Kessel gehört, ist nur leicht angeschwärzt, wegen der Explosion. Nichts ernstes, nichts, worum Severus sich kümmert. Sorgen macht er sich sowieso nur selten. Er betrachtet die Reste des Kessels und das, was von dem Trank übrig ist. Da ist auch etwas, was definitiv <em>nicht</em> in einen Zaubertrank gehört.</p><p> </p><p>"Feuerwerkskörper?", will Severus gefährlich leise von der Klasse wissen und sieht sich jeden einzelnen seiner Schüler genau an. "Nun gut ... zwanzig Punkte Abzug für Gryffindor."</p><p> </p><p>Er weiß, dass es ein Gryffindor war. Der Kessel gehört einem Slytherin – außerdem würden die Schüler seines Hauses ganz sicher nicht ausgerechnet in seinem Unterricht solchen Unsinn anstellen. Die Gryffindors sehen diese Logik nicht, wagen es aber bei seinem Blick nicht wirklich, etwas dazu zu sagen. Es sind schließlich nur Erstklässler.</p><p> </p><p>"Wer war das?", fragt Severus, während er zu seinem Pult zurückkehrt. "Wenn der- oder diejenige sich nicht meldet, gibt es Strafarbeiten für jeden – natürlich nur Gryffindors – und noch einmal zwanzig Punkte Abzug." Kurze Zeit herrscht einfach nur Schweigen. "Für jeden."</p><p> </p><p>Er weiß, dass diese Drohung Wirkung zeigen wird. Die Erstklässler würden niemals solch einen Punktverlust riskieren, schon gar nicht in einer der ersten Stunden, die sie haben. Außerdem wird man sie gewarnt haben, denkt Severus sich, denn eigentlich wissen alle Schüler, dass er keine Störungen duldet und dementsprechend handelt.</p><p> </p><p>"Keiner hat den Mut, offen zuzugeben, dass er der Schuldige ist?", sagt Severus. "Was ist nur aus dem <em>stolzen</em> Haus Gryffindor geworden ..."</p><p> </p><p>"Wir waren es, Sir", melden sich zwei Stimmen synchron.</p><p> </p><p>Severus sieht die beiden Jungen an. Schweigt. Sie gleichen sich wie einem Ei dem anderen, und selbst Severus hat Probleme, die beiden auseinander zu halten. Er ruft sich kurz ihre Namen in Erinnerung, Fred und George Weasley, Gryffindors wie alle Weasleys und ebenso mit feuerrotem Haar ausgestattet. Es ist nicht genau zu sagen, ob sie es von ihrer Mutter oder ihrem Vater haben.</p><p> </p><p>Ein wenig hat Severus das Gefühl, ihm stehen Geister gegenüber. Geister der Vergangenheit. Ob die Namen daherrühren? Severus weiß, dass die Mutter der beiden mit Mädchennamen Prewett hieß und er kannte auch die Prewett-Zwillinge, Gideon und Fabian. Die Verbindung scheint unübersehbar, wenn man sie einmal gefunden hat. Ob die beiden wissen, dass sie den Prewetts ähneln? Ihre Mutter weiß es sicher, immerhin waren es ihre Brüder.</p><p> </p><p>"Strafarbeit, alle beide", sagt Severus mit einem angedeuteten Lächeln. "Und jeweils fünf Punkte Abzug. Ich seh die Herren Weasley heute Abend in meinem Büro."</p><p> </p><p>Damit beendet er die Stunde.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>Es ist 1990, und Severus sitzt zusammen mit Dorcas in einem Muggelcafé nahe der Winkelgasse. Er bevorzugt zuweilen eine unmagische Atmosphäre, vor allem, wenn er schlechte Laune hat. Daran ist der neue Minister schuld.</p><p> </p><p>"Die Inkompetenz in Menschengestalt", schnaubt er. "Ich frage mich immer noch, wie er es geschafft hat."</p><p> </p><p>Sein Blick ist dabei auf die Zeitung geheftet, die auf dem Tisch liegt. Eigentlich ist es verboten, den Tagespropheten so offen liegen zu lassen, denn es ist eine magische Zeitung und sie sitzen in einem Muggelcafé, aber Severus und Dorcas kümmert das nicht. Die Muggel trauen sich nicht wirklich zu ihnen beiden hinüber. Vor allem Severus scheint eine finstere Aura zu verstrahlen.</p><p> </p><p>"Severus, vielleicht solltest du deine dunkle Aura ein wenig weniger offensichtlich zeigen", grinst Dorcas. "Heb dir das für den Herren Minister auf."</p><p> </p><p>Er schnaubt erneut. "Ich war nie besonders begeistert von der Bagnold. Ich hatte nichts gegen Neuwahlen. Aber warum müssen wir mit so einer Pfeife gestraft werden?"</p><p> </p><p>Severus hat das Bedürfnis, sich die Haare aus Verzweiflung zu raufen, doch er unterdrückt es. Für gewöhnlich macht er nichts, was auf irgendeine Weise Aufmerksamkeit auf sich zieht oder peinlich erscheint. Dorcas lächelt leicht, da sie weiß, wie er sich fühlt. Ihr geht es genauso. Severus weiß es, weil er sie kennt. Deshalb weiß er, was sie weiß, und er weiß auch, was sie denkt.</p><p> </p><p>"Hättest dich ja selbst zur Wahl stellen können", meint sie. "Außerdem, Fudge ist besser als jemand wie Crouch."</p><p> </p><p>Severus seufzt leicht. "Alles ist besser als Crouch, huh ...?"</p><p> </p><p>Dorcas zuckt die Schultern. Severus starrt nachdenklich wieder auf das Bild eines lächelnden Ministers, Cornelius Oswald Fudge. Natürlich ist es besser, einen Fudge als Minister zu haben, wenn die Alternative Bartemius Crouch senior ist.</p><p> </p><p>"Solange es keine Krise gibt, kann ich mit ihm leben, schätze ich", beschließt Severus schließlich. "Aber bei den ersten Problemen, bei der kleinsten Katastrophe – schließen wir eine Wette auf sein Versagen ab?"</p><p> </p><p>"Das macht keinen Spaß, wenn beide auf dasselbe wetten ..."</p><p> </p><p>"Das stimmt natürlich", stimmt Severus zu. "Wäre zwar eine todsichere Wette, aber da kann man nichts machen."</p><p> </p><p>Fudge war ein Versager – das war so sicher wie eins plus eins zwei war.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/26048191/chapters/63346972">Chapter 4</a>: Ein neuer Kampf ('91-'97)
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/26048191/chapters/63346972#chapter_4_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es ist 1991, und Severus steht eine schwere Prüfung bevor. Es ist der erste September und dieses Jahr kommt Harry Potter nach Hogwarts, der Sohn seines Erzfeindes. Severus weiß nicht, wie er ihm gegenübertreten soll.</p><p> </p><p>Er hasst Harry Potter dafür, dass er Harry Potter, der Sohn von James Potter, ist. Das allein ist schon Grund genug. Er ist berühmt dafür, dass er lebt. Und er erinnert Severus an schlechte Zeiten. Auch wenn es Harry Potter war, der den Dunklen Lord vertrieben hat, Severus kann ihn nicht feiern wie alle anderen. Vor allem nicht, wenn man ihm diese Berühmtheit vor die Nase setzt.</p><p> </p><p>"Severus, Sie machen ein Gesicht zum Davonlaufen", teilt ihm Professor McGonagall mit.</p><p> </p><p>Severus wirft ihr einen finsteren Blick zu und sie wendet sich schließlich ab. Er starrt wieder auf die große Tür, die in die Halle führt. Es kann nicht mehr allzu lange dauern, bis die Erstklässler ankommen. Und damit die Probleme. Severus weiß, dass es Probleme gibt. Es ist nicht nur Harry Potter. Da ist weitaus mehr, dieses Jahr.</p><p> </p><p>Da ist der Stein der Weisen. Severus weiß nicht, was Dumbledore geritten hat, den Stein in einer Schule zu verstecken. Aber wahrscheinlich ist es, weil Hogwarts eines der sichersten Gebäude ist. Vielleicht auch das sicherste, das weiß er nicht genau. Aber in Gringotts ist man auch eingebrochen, warum sollte man nicht auch in dieses Schloss einbrechen können?</p><p> </p><p>Und dann ist da noch Draco Malfoy. Lucius Malfoys Sohn. Und auch, wenn Severus mit ihm befreundet ist, ist da die Gewissheit, dass das Ärger bedeutet. Was ihn wieder zurück zu Potter bringt: Harry Potter wird nicht nur seine Erinnerungen an den Krieg durch seine bloße Anwesenheit auffrischen, er wird auch massiv die Ruhe, die er die Jahre zuvor genossen hat, stören. Zumindest, wenn er nur entfernt so ist wie sein Vater – und daran zweifelt er nicht.</p><p> </p><p>"Ich gehe dann mal", sagt Professor McGonagall und verlässt die Halle, die sich bereits mit Schülern füllt.</p><p> </p><p>Severus beneidet sie nicht um diese Aufgabe. Die Erstklässler einführen ist wirklich nicht seine Vorstellung von einem Traumberuf. Nun, <em>sein</em> Traumberuf wird momentan von einem stotternden Individuum mit einem absolut abartigen Turban besetzt. Severus sieht ein wenig zur Seite und mustert Quirrell aus den Augenwinkeln. <em>Dumbledore scheint ein Faible für schräge Gestalten entwickelt zu haben</em>.</p><p> </p><p>Die Tore der Halle öffnen sich. Und da kommen sie, in einer langen Schlange hinter Professor McGonagall herlaufend und sich staunend umsehend. Severus' Blick richtet sich fast augenblicklich auf den Jungen mit dem schwarzen Wischmopp auf den Kopf. Er kennt diese Frisur. Und daran erkennt er den Jungen, noch bevor er die legendäre Narbe zu Gesicht bekommt. <em>Harry Potter</em>.</p><p> </p><p>Als er nach vorne gerufen wird, hat Severus nur noch einen Gedanken. <em>Nicht Slytherin! Bloß nicht Slytherin!</em></p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1992, und Severus steht kurz davor, eine Straftat zu begehen. Nicht irgendeine Straftat, sondern das grausamste Verbrechen, dass es gibt: Mord. Vor Gericht würde er jedoch auf Notwehr plädieren – und vielleicht sogar damit durchkommen.</p><p> </p><p>Grund für Severus' gegenwärtige Mordgedanken ist der neue Lehrer für Verteidigung gegen die Dunklen Künste. Das allein ist eigentlich schon Grund genug für Severus, ihn <em>nicht</em> zu mögen. Aber der neue Lehrer gehört sowieso zu jenen Personen, die man einfach nicht mögen <em>kann</em>. Seine gesamte Art macht es einem unmöglich, auch nur ein wenig Sympathie für ihn zu empfinden. Nur leider merkt er es auch nicht, wenn man ihm Abneigung entgegenbringt, wie Severus bitter festgestellt hat. Der Neue interpretiert seine abweisende Art als Schüchternheit.</p><p> </p><p>"Habe ich Ihnen eigentlich schon von meiner Begegnung mit diesem Vampir in Neapel erzählt?", fragt Gilderoy Lockhart mit einem breiten Zahnpastalächeln.</p><p> </p><p>Severus fragt sich, ob Lockhart den Vampir angegrinst hat, damit er sich in Staub auflöst. Er überlegt auch, ob es unhöflich wäre, wenn er eine Sonnenbrille heraufbeschwört, um seine Augen vor Schäden zu bewahren. Wahrscheinlich würde Lockhart nicht einmal merken, egozentrisch, wie er ist. Severus fragt sich auch, ob man von dem Lächeln Strahlungsschäden bekommt. Er fühlt sich schon irgendwie unwohl.</p><p> </p><p>"Haben Sie", sagt er schließlich, da Lockhart scheinbar <em>wirklich</em> auf eine Antwort wartet. "Bereits vier Mal ...", fügt Severus leise an, doch Lockhart scheint das nicht zu hören.</p><p> </p><p>Was Severus dabei wirklich erstaunt, ist die Tatsache, dass bei jedem weiteren Mal, wie Lockhart die Geschichte erzählt, ein paar Opfer mehr hinzukommen, die Situation auswegsloser wird und der Vampir plötzlich eine ganze Schar Untoter ist. Zumindest nach dem, was Severus mitbekommen hat, denn er schenkt den Geschichten, die Lockhart ihm erzählt, nur wenig Beachtung.</p><p> </p><p>"Ah, aber habe ich Ihnen auch von der Todesfee in Singapur erzählt?", lächelt Lockhart breit.</p><p> </p><p>"Auch das haben Sie", sagt Severus leicht genervt. "Und auch von dem Werwolf, den Riesen, den Kobolden und den Drachen haben Sie erzählt."</p><p> </p><p>Er sagt das, damit Lockhart nichts sagt. Nur es nützt wohl alles nichts. Lockhart ist nicht zu stoppen. Nicht mit normalen Mitteln.</p><p> </p><p>"Dann erzähle ich Ihnen von den Meermenschen, die ich im Mittelmeerraum angetroffen habe", erklärt Lockart fröhlich. "Wirklich eine faszinierende Geschichte, müssen Sie wissen."</p><p> </p><p>"Ach, wirklich?", meint Severus tonlos.</p><p> </p><p>Er weiß, was Lockhart unter faszinierend versteht. Viel über ihn selbst, viele Gefahren, die er meistert, und möglichst viele Opfer, die er verhindert. Severus fragt sich, was Lockhart wohl sagen würde, wenn er ihm eröffnen würde, dass er einem Todesser gegenübersitzt.</p><p> </p><p>
+  <em>Vermutlich würde er gar nichts sagen und gleich schreiend davonrennen.</em>
+</p><p> </p><p>"... und dann hat mich der Anführer des Clans ..."</p><p> </p><p>Ob Dumbledore es ihm sehr übel nehmen wird, wenn er einen Unverzeihlichen bei Lockhart benutzt? Es wären nur zwei Worte, ein grüner Lichtblitz und die Welt wäre um einen Dummkopf ärmer. Das würde nur zur Hebung des geistigen Niveaus beitragen. Das Ministerium wird ihn sicherlich laufen lassen, wenn er Lockhart wirklich umbringt. Es wäre Notwehr.</p><p> </p><p>"... hat mir seine Tochter zur Frau versprochen ..."</p><p> </p><p>Severus seufzt resigniert auf, auch wenn es nur innerlich ist. "Kein Mord in meiner Schule", würde Dumbledore sagen. Wenigstens muss Severus nur dieses eine Jahr ausstehen. Danach würde Lockhart wie alle anderen vor ihm bestimmt auch gehen. Wenn nicht, wird er ein wenig nachhelfen. Vielleicht würde er sich auch mit einem Gryffindor zusammentun, wenn es sein muss. Hauptsache, er wird diesen Lockhart los.</p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1993, und Severus läuft im Schulleiterbüro auf und ab wie ein eingesperrtes Tier. Er ist ungeduldig und Dumbledores Ruhe setzt dem Ganzen noch die Krone auf. Severus hasst das Warten: Er soll auf etwas warten, worauf er verzichten kann.</p><p> </p><p>"Severus, wollen Sie sich wirklich nicht setzen?", fragt Dumbledore zum bestimmt zehnten Mal.</p><p> </p><p>Das ist einer der einzigen Sätze, die Severus in den letzten zwei Stunden gehört hat. Das, und die Frage nach Zitronenbonbons. Er weiß wirklich nicht, was an Süßigkeiten so toll sein soll. Er findet sie widerlich. Und Dumbledore scheint sie als Aufforderung zum Mord zu benutzen. Severus ist wirklich mehr als nur gereizt und Dumbledores Fragen tragen nicht wirklich zu seiner Geduld bei.</p><p> </p><p>"Nein, Schulleiter", antwortet er finster. "Ich habe Ihnen bereits gesagt, dass ich nicht sitzen möchte. Brauchen Sie das schriftlich?"</p><p> </p><p>Er stoppt seine Schritte und fixiert die Tür. Er hat etwas gehört und für gewöhnlich bildet er sich so etwas nicht ein. Seine Sinne sind gut trainiert, er weiß, dass jemand die Treppe hochkommt.</p><p> </p><p>"Ist er das?", will er von Dumbledore wissen, ohne sich umzudrehen.</p><p> </p><p>"Ich weiß es nicht. Warten wir doch einfach ab, oder was meinen Sie, Severus?"</p><p> </p><p>Severus wirft einen flüchtigen Blick über seine Schulter, nur um sich angewidert wegzudrehen. Er erträgt ja schon die ewige Fragerei, aber er muss sich nicht mit ansehen, wie Dumbledore sich genüsslich Bonbons in den Mund schiebt und ihn fröhlich anzwinkert. Manchmal hat Severus wirklich das dringende Bedürfnis, ihn umzubringen. Vor allem in solchen Augenblicken.</p><p> </p><p>Bevor er etwas auf die Worte erwidern kann, klopft es an der Tür, und Dumbledore ruft ein freundliches "Herein!" in diese Richtung.</p><p> </p><p>Für Severus klingt es ein wenig wie Genuschel, aber wenn man gerade Bonbons isst, ist das wohl nicht so verwunderlich. Er beschließt, Dumbledores Sucht nach Süßem zu ignorieren – er glaubt inzwischen sowieso, dass der Schulleiter das mit Absicht macht, um ihn zu ärgern, und starrt auf die Tür, die sich öffnet und einen schäbig aussehenden Mann preisgibt.</p><p> </p><p>"Lupin", meint Severus leicht aggressiv. "Haben Sie auch endlich den Weg hergefunden?"</p><p> </p><p>Remus Lupin, in zerschlissenem Umhang und schäbiger Kleidung, macht ein zerknirschtes Gesicht. Severus mustert ihn abschätzig. Er weiß, dass Lupin Probleme hat, einen Job zu finden. Niemand stellt gerne einen Werwolf ein. Und es ärgert ihn, dass Dumbledore Lupin offensichtlich eine Stelle – <em>seine</em> Stelle – geben will. Ist der Werwolf etwa vertrauenswürdiger als er?</p><p> </p><p>"Remus, mein Junge!", begrüßt Dumbledore den Werwolf überschwänglich und kommt mit weit ausgebreiteten Armen auf ihn zu. "Wie war die Reise?"</p><p> </p><p>Severus wird von diesem Getue schlecht und er muss sich dazu zwingen, nicht die Augen zu verdrehen. Es ist nicht so, dass er den Werwolf nicht leiden kann. Er <em>hasst</em> ihn. Umso mehr ärgert es ihn, dass Dumbledore ihn dazu gezwungen hat, zu versprechen, dass er den Wolfsbann für Lupin braut. Severus spielt schon seit längerem mit dem Gedanken, den Trank mit Gift zu versetzen. Arbeitsunfall würde er sagen.</p><p> </p><p>"Professor Dumbledore", nickt Lupin. "Sever–"</p><p> </p><p>"Ich kann mich nicht daran erinnern, Ihnen meinen Vornamen angeboten zu haben", zischt Severus, dem es deutlich gegen den Strich geht, dass jeder meint, ihn mit dem Vornamen ansprechen zu dürfen.</p><p> </p><p>Mehr ärgert es ihn jedoch, dass es ausgerechnet Lupin ist. Denkt der Werwolf etwa, er hat vergessen, was die Rumtreiber ihm in ihrer Schulzeit angetan haben? Er vergisst nicht so einfach. Selbst wenn es bald zwanzig Jahre her ist – er wird das, was sie alle als geschmacklosen Streich bezeichnet haben, nicht vergessen. Es war ein Mordversuch, auch wenn Dumbledore etwas anderes sagt. Auch wenn Lupin behauptet, nichts damit zu tun gehabt zu haben. Severus glaubt ihm nicht und er wird ihm nicht glauben. Und irgendwann wird er seine Rache haben.</p><p> </p><p>"Ich gehe", teilt Severus Dumbledore mit. "Sie können ihm alles Notwendige mitteilen, dazu brachen Sie mich bestimmt nicht. Immerhin ist dies ja scheinbar eine, ah, Reunion der Gryffindors, nicht wahr?"</p><p> </p><p>Ohne Dumbledores Antwort abzuwarten rauscht er zur Tür. Er versäumt es jedoch nicht, noch ein paar Worte an Lupin zu richten, die er ihm im Vorbeigehen ins Ohr zischt.</p><p> </p><p>"An deiner Stelle würde ich auf meinen Rücken aufpassen, Werwolf!"</p><p> </p><p>Dann schließt sich die Tür hinter ihm.</p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1994, und Severus hat eine Begegnung der dritten Art. Nein, keine Außerirdischen, das wäre dem wohl vorzuziehen gewesen. Begegnungen der ersten Art sind gute Begegnungen. Begegnungen der zweiten Art sind nervige Begegnungen. Und Begegnungen der dritten Art sollte man aus dem Gedächtnis streichen, wenn das möglich ist.</p><p> </p><p>"Vorstellungen sind wohl überflüssig", meint Severus' Gegenüber knurrig.</p><p> </p><p>"Definitiv", stimmt Severus ruhig zu. "Sie sind, ah, <em>berühmt</em>."</p><p> </p><p>Er fragt sich ein wenig, was aus dem Mann geworden ist, den er einst zu seinen größten Feinden im Kampf zählte. Sein Name stand ganz oben auf der Liste, direkt bei Dorcas Meadowes. Und nun saß ein Abklatsch des einstigen Aurors vor ihm. Vielleicht ist <em>Alastor</em> Moody im ersten Krieg gestorben. Nun gibt es nur noch <em>Mad-Eye</em> Moody.</p><p> </p><p>"Immer wieder erstaunlich, euch Todesser außerhalb von Askaban zu sehen." Moodys Gesicht verzerrt sich zu etwas, was man bestenfalls eine Grimasse nennen kann. Es soll ein Grinsen darstellen. "Gut für dich, dass Dumbledore dich da rausgehauen hat, was?"</p><p> </p><p>Ja, Moody ist berühmt. Aber inzwischen nicht mehr dafür, dass er ein erfolgreicher Auror ist. Er ist berühmt dafür, verrückt zu sein. Paranoid bis zur Schmerzgrenze. Nicht, dass Severus Paranoia als etwas Schlechtes ansieht – damals im Krieg war es notwendig – aber Moody ist zu einer Witzfigur verkommen. Es würde ihn nicht wundern, wenn Eltern ihren Kindern mit ihm drohen, wenn sie nicht artig sind. 'Seid lieb oder Mad-Eye Moody kommt' – etwas in der Art.</p><p> </p><p>"Sie haben sich ziemlich verändert", stellt Severus fest, ohne auf Moodys Worte einzugehen.</p><p> </p><p>"Du dich nicht, Todesser", knurrt Moody. "Du siehst immer noch aus wie von den Dunklen Künsten ausgespuckt!"</p><p> </p><p>Severus hebt eine Augenbraue. Er weiß wirklich nicht, was aus dem Alastor Moody geworden ist, den er respektiert hat. Der Moody, den er gekannt hat, weiß es besser, als ihn mit so etwas beleidigen zu wollen. Es schmerzt ihn nicht mehr, schon lange nicht. Weiß Moody das nicht?</p><p> </p><p>"Wenn Sie meinen ...", sagt Severus nur und geht.</p><p> </p><p>Er will keine Sekunde länger in der Gegenwart dieses Abklatsches verbringen. Der Held ist tot.</p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1995, und Severus lehnt erschöpft an einem Baum. Er ist gerade erst vom Dunklen Lord zurück und es war weiß Gott kein angenehmes Treffen. Vor allem für ihn nicht.</p><p> </p><p>Er weiß, dass er froh sein muss, dass er nicht tot ist. Als er den Versammlungsraum betreten hat, tat er das in der Annahme, ihn mit den Füßen voran auf einer Bahre zu verlassen. Wenn überhaupt etwas von ihm übrig geblieben wäre. Verrat wurde sehr hart bestraft und er war als Verräter gekommen. Zwei Stunden zu spät, zwei Stunden, die ihn als Verräter abstempelten.</p><p> </p><p>Severus wendet den Kopf und sieht zum Schloss hoch. Es klingt für ihn selbst fast schon surreal, was sich hier abgespielt hat. Vor einigen Stunden hat sich niemand darüber Gedanken gemacht, dass der Dunkle Lord zurückkehren würde. Abgesehen von Bartemius Crouch junior, denn er hat hier in Hogwarts die Fäden gezogen. Severus wusste auch, dass da etwas im Busch war, denn sein Mal verriet es ihm. Aber vielleicht war es auch das, was er scherzhaft <em>Auroreninstinkt</em> nennt.</p><p> </p><p>Dieser Instinkt hat ihn jedoch nicht davor bewahrt, auf den falschen Moody hereinzufallen. Er wusste zwar, dass etwas mit Moody nicht stimmte, aber für ihn war es die Veränderung, die das Ende des ersten Krieges mit sich gebracht hat.</p><p> </p><p>"Severus?"</p><p> </p><p>Severus zuckt nicht zusammen. Er hat die Schritte gehört, das Astknacken.</p><p> </p><p>"Direktor", meint er nur und starrt weiter zum Schloss hoch.</p><p> </p><p>Dumbledore tritt neben ihn. Severus weiß, dass der alte Magier auf ihn gewartet hat. Er weiß, dass er Sorge in den kristallblauen Augen sehen wird, wenn er sich umdreht. Doch er tut es nicht. Er muss das nicht sehen. Er <em>will</em> das nicht sehen. Er weiß, worauf er sich eingelassen hat.</p><p> </p><p>"Wie ist es gelaufen?", fragt Dumbledore.</p><p> </p><p>"Den Umständen entsprechend." Severus überlegt kurz und entschließt sich für die Wahrheit. "Er war nicht sonderlich begeistert. Man könnte es auch als fuchsteufelswild bezeichnen."</p><p> </p><p>Er dreht den Kopf zu Dumbledore, zumindest soweit, dass er ihn aus den Augenwinkeln ansehen kann. Irrt er sich oder ist Dumbledore blasser geworden? Nun, es ist nicht so, als habe er selbst eine gesunde Farbe. Er vermutet, dass er aussieht wie der Tod höchstpersönlich, will es aber nicht wirklich nachprüfen.</p><p> </p><p>"Der Cruciatus?", will Dumbledore leise wissen.</p><p> </p><p>"Fünf Mal, in diversen Abständen. Zwischen einer Frage und der nächsten. Die Länge variierte, kam auf meine Antwort an", sagt Severus fast schon schulterzuckend.</p><p> </p><p>Er redet nicht gerne über solche Dinge. Dumbledore versteht sie einfach nicht. Für Severus ist der Cruciatus nichts Neues. Es ist nicht so, dass es ihn nicht kümmert, aber er beklagt sich nicht. Es nützt nichts. Außerdem ist es harmlos im Vergleich zu anderen Dingen. Und der Dunkle Lord achtet für gewöhnlich darauf, seine Anhänger nicht bis zum Wahnsinn zu foltern. Severus sieht es als Strafe an. Der Dunkle Lord war sehr wütend, aber Severus ist ungewöhnlich optimistisch, dass er sich nun beruhigt hat.</p><p> </p><p>"Severus, ich ...", beginnt Dumbledore, doch Severus unterbricht ihn unwirsch.</p><p> </p><p>"Ich weiß, worauf ich mich eingelassen habe. Ich weiß, was mich erwartet, sollte der Dunkle Lord an meiner Loyalität zweifeln. Ich weiß es."</p><p> </p><p>Er wendet sich gänzlich ab und macht sich auf den Weg zum Schloss. Dumbledore bleibt zurück, doch Severus ist sich sicher, dass er seine letzten Worte dennoch hört.</p><p> </p><p>"Der Krieg ist zurück."</p><p>  </p><hr/><p align="center"><br/> </p><p>Es ist 1996, und ein Treffen des Ordens des Phönix ist einberufen. Severus sitzt teilnahmslos am Tisch in der Küche des Hauptquartiers. Grimmauldplatz Nummer 12, Sirius Blacks Elternhaus, Sirius Blacks <em>Gefängnis</em>.</p><p> </p><p>Zumindest war es das bis vor einigen Stunden.</p><p> </p><p>Das Ministerium gibt offen zu, dass der Dunkle Lord zurück ist. Severus weiß es bereits seit mehr als einem Jahr. Es wurde der Kriegszustand ausgerufen. Severus kämpft schon seit Monaten in einem Krieg. Ein Krieg, der im Geheimen stattfand. Doch nun werden die Karten offen gelegt.</p><p> </p><p>"Wir müssen über einen neuen Treffpunkt beratschlagen", verkündet Dumbledore. "Wir wissen nicht genau, wie sich die Verschiebung im Besitz des Hauses auf den Fidelius-Zauber auswirkt."</p><p> </p><p>"Keine Trauerfeier?", lässt Severus sich vernehmen, noch bevor jemand anderes ein Wort von sich gibt. "Keine Totenandacht für Sirius Black?"</p><p> </p><p>Er weiß, dass er gefühllos ist, aber das weiß er schon lange und die anderen wissen das auch. Sie wissen, dass sein Kommentar Salz in der Wunde ist, die Sirius Blacks Tod verursacht hat, aber Severus hat keine Wunde. Ihm macht das Salz nichts aus. Er trauert nicht um Sirius Black. Er hat ihn gewarnt, hat ihm gesagt, er soll hier bleiben. Black wollte nicht hören, Black musste fühlen. Nun ist Black tot. Geschieht ihm recht, wenn er unbedingt den Helden spielen muss.</p><p> </p><p>"Severus!", mahnt Dumbledore scharf.</p><p> </p><p>Severus ignoriert die Mahnung, schweigt jedoch wieder und blickt teilnahmslos auf das alte Holz des Tisches. Er zeigt es nicht, er trauert nicht. Aber es ist auch ihm nicht vollkommen egal, wenn jemand stirbt. Selbst wenn es Sirius Black ist, selbst wenn er ihn nicht leiden kann. Selbst wenn er eigentlich froh ist, ihn los zu sein. Selbst wenn er Bellatrix seinen Dank aussprechen würde. Es ist ihm nicht vollkommen gleichgültig.</p><p> </p><p>Es ist ein wenig, weil Black im selben Jahrgang war. Es ist, weil Black eine Hölle namens Askaban hinter sich hat, obwohl er unschuldig ist, und Severus diese Jahre in Freiheit verbrachte. Es ist, weil das Leben unfair ist. Es ist, weil er einen Feind verloren hat, den er ein Leben lang kannte.</p><p> </p><p>Das Treffen schreitet voran. Severus bekommt finstere Blicke zugeworfen, wird aber größtenteils ignoriert. Er sagt während des Treffens kein Wort mehr. Seine Gedanken sind in der Vergangenheit, im ersten Krieg. Sie verweilen in einer Zeit, wo alles noch irgendwie in Ordnung war, wenn auch auf eine skurrile Weise. Wo Leute wie Sirius Black noch gelebt und gekämpft haben. Wo Leute wie Dorcas Meadowes noch nicht vergessen wurden. Wo Leute wie Alastor Moody nicht zu einer paranoiden Witzfigur verkommen waren.</p><p> </p><p>Severus vermisst diese Zeit, auch wenn es Krieg war. Es war wenigstens <em>sein</em> Krieg, in dem er gekämpft und gelitten, in dem er Freunde und Familie verloren hat – er konnte damals noch lachen und trauern, ohne sich falsch vorzukommen.</p><p> </p><hr/><p align="center"><br/> </p><p>Es ist 1997, und Nacht liegt über Hogwarts. Severus hat gesehen, wie Dumbledore ins Dorf gegangen ist und sein Instinkt sagt ihm, dass heute Nacht die Nacht ist. Die Nacht, auf die er seit fast einem Jahr wartet und die er zugleich fürchtet.</p><p> </p><p>Der Mord an Albus Dumbledore steht bevor.</p><p> </p><p>Er weiß es einfach. Auch wenn Draco sich weigert, ihm genaueres mitzuteilen, er weiß, dass es heute ist. Ob Dumbledore eine Ahnung davon hat? Severus bezweifelt es. Dumbledore mag zwar ein großer Geist sein, aber er hat nicht die Intuition, die Severus besitzt. Er weiß, dass er seiner Intuition in den meisten Fällen trauen kann, doch er verlässt sich nicht darauf. Er ignoriert sie aber auch nicht. Heute Nacht passiert etwas.</p><p> </p><p>Severus kann nicht von sich behaupten, erfreut zu sein. Aber er kann auch nicht sagen, dass er wirklich abgeneigt ist. Er kann eine ganze Reihe an Gründen nennen, warum er Dumbledore umbringen will. In der Vergangenheit hat er sich einen solchen Moment oft genug herbeigewünscht. Vielleicht ist er grausam, vielleicht gefühlskalt. Vielleicht beides. Aber seine Furcht gilt nicht dem Akt des Mordens an sich. Es ist die Frage nach dem Danach, die ihn beunruhigt. Der Plan ist im Grunde einfach, aber er ist ihm einfach zu unsicher.</p><p> </p><p>Wird es Zeugen geben?</p><p> </p><p>Diese Frage ist wichtig. Gibt es keine Zeugen, kann er weiter in Hogwarts bleiben. Er kann sich eine Geschichte ausdenken, warum er den Mord nicht verhindert hat. Er macht sich keine Sorgen um eine Befragung mit Veritaserum – er beherrscht Okklumentik, er ist immun dagegen. Es ist die Frage nach anderen Personen, die ihn beschäftigt. Menschen sind immer ein unsicherer Faktor in diesen Dingen.</p><p> </p><p>Zum Beispiel war es nicht geplant, dass Hermine Granger und Luna Lovegood vor seinem Büro kampieren.</p><p> </p><p>Severus vermutet, dass das auf Potters Mist gewachsen ist, aber er unternimmt nichts dagegen. Er hat Wichtigeres zu tun, als sich um zwei Schülerinnen zu kümmern, die nachts das Bett meiden. Er muss Vorbereitungen treffen. Schutzmaßnahmen für seine Besitztümer, wenn er Hogwarts verlassen muss. Vielleicht ist es besser, wenn er die wichtigsten Dinge einfach mitnimmt? Das ist sicher die beste Lösung. Vor allem, wenn er an ein paar Raritäten unter seinen Büchern denkt – ein paar davon sind illegal, und er weiß, was es für Schwierigkeiten geben würde, wenn er irgendwie wieder an sie herankommen will.</p><p> </p><p>Seine fast abgeschlossenen Vorbereitungen werden durch einen unerwarteten Besucher gestört. Der quirlige Lehrer für Zauberkunst stürmt scheinbar aufgelöst in sein Büro. Das ist nicht unbedingt die Person, die er erwartet hat, aber scheinbar ist es soweit.</p><p> </p><p>"Severus! Schnell! Wir brauchen Ihre Hilfe! Todesser ...!"</p><p> </p><p>Ein kurzes, fast schon wehmütiges Lächeln huscht über seine Züge, als er Flitwicks aufgeregte Stimme vernimmt.</p><p> </p><p>Das Schauspiel beginnt – jetzt.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_4_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Das ist das "offizielle" Ende der Geschichte - es folgen nur noch einige "Missing Scenes", die übrig geblieben sind.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/26048191/chapters/63347038">Chapter 5</a>: Das war nicht alles (Missing Scenes)
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Ab hier sind die Szenen nicht mehr chronologisch geordnet. Sie sind nach der Reihenfolge des Schreibens aufgelistet. Daher sollte sich niemand wundern, wenn plötzlich eine Szene aus dem Jahr 1995 vor einer aus dem Jahr 1981 steht.<br/>Ansonsten sind das erst einmal die Szenen, die noch auf meinem PC vor sich hinvegetierten, die aber irgendwo trotz allem zur Geschichte gehören.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>(Vor der original 1978-Szene)</em>
+</p><p> </p><p>Es ist 1978 und Severus sieht sich einem Toten gegenüber. Das Problem ist nur, dass dieser Tote ihn geradezu anstarrt. Und dass er sich bewegt.</p><p> </p><p>"<em>Das</em>", sagt der Todesser neben ihm mit einem finsteren Unterton, "ist ein Inferius."</p><p> </p><p>Severus ist hin- und hergerissen zwischen Ekel und Faszination. Ja, er findet es wirklich abartig, einen toten Körper vor sich zu haben. Ein toter Körper, der sich bewegt. Eine wandelnde Leiche. Aber es fasziniert ihn ein wenig, sich dem gegenüberzusehen, was Muggel wohl als Zombie bezeichnen würden. Abgesehen davon, dass Muggelzombies meist schleimig und halb verfault sind.</p><p> </p><p>"Und ... wozu sind Inferi gut ...?", fragt Severus, sich nicht sicher, ob er das eigentlich wissen will.</p><p> </p><p>Der Todesser gluckst ein wenig. "Wozu wohl? Um Angst zu verbreiten ... Schrecken ... Chaos ... ein paar Leute anzunagen ..."</p><p> </p><p>Severus starrt den Todesser entgeistert an. "Leute <em>anzunagen</em>?!"</p><p> </p><p>"Erschreckt?"</p><p> </p><p>"Das ist nicht ganz das richtige Wort", meint Severus ausweichend. "Eher... <em>überrascht</em>."</p><p> </p><p>Sein Blick haftet wieder an der Leiche. Die Augen sind blicklos, aber das macht es nicht wirklich besser für Severus. Er will wirklich nicht daran denken, dass er irgendwann genauso enden könnte. Damit er auch im Tod noch einen Nutzen für den Dunklen Lord hat. Es ist erschreckend, dass diese Menschen selbst im Tod keine Ruhe haben und weiter in diesem Krieg kämpfen müssen. Wenigstens merken sie nichts mehr davon. Oder?</p><p> </p><p>"Aber die sind doch richtig tot, oder? Ich meine, tot, auch wenn die sich noch bewegen und so..." Severus schluckt leicht. Er fürchtet die Antwort.</p><p> </p><p>"Kleiner Moralapostel, oder was?", schnaubt der Todesser. "Natürlich sind die tot." Er stößt mit dem Stiefel gegen die Leiche. "So tot, wie ein Inferius nur sein kann. Eben ein toter Körper. Mehr nicht. Rennt zwar durch die Gegend, aber auch nur dann, wenn man ihn lässt. Stupide, tote Körper."</p><p> </p><p>Severus versucht, sich seine Erleichterung nicht anmerken zu lassen. Inferi sind ihm wirklich nicht ganz geheuer, schon gar nicht, wenn sie solche stupiden, toten Körper sind. Auch wenn die Inferi auf ihrer Seite sind, wer weiß, ob die sich nicht gegen ihre Herren wenden können.</p><p> </p><p>Innerlich geht er bereits alle Möglichkeiten durch, wie er einen Inferi-Angriff abwehren kann.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>
+  <em>(Nach der original 1995-Szene)</em>
+</p><p> </p><p>Es ist 1995 und Severus lässt eine Befragung durch die neue Großinquisitorin von Hogwarts über sich ergehen.</p><p> </p><p>Die Worte und Fragen erreichen ihn kaum. Sie perlen an ihm ab wie Wasser an einer Glasscheibe. Severus sitzt nur da, starrt abwesend auf die Wand hinter dem Schreibtisch von Dolores Umbridge und nickt hier und da leicht. Ab und zu gibt er auch einen unbestimmten Laut von sich, der alles sein könnte, von Zustimmung über Ablehnung bis hin zu einem "Leck mich", wenn man ganz grob sein will. Severus fragt sich, wie lange das noch so gehen soll.</p><p> </p><p>Severus blinzelt leicht. Ihm ist schon ein wenig schummerig wegen der Katzen, die aufgemalt auf Zierteller an der Wand hängen. Sie maunzen und wandern umher. Es kostet ihn ein wenig Anstrengung, sich wieder ein wenig auf Umbridge zu konzentrieren.</p><p> </p><p>"... meint der Minister, dass ..."</p><p> </p><p>Nichts Wichtiges. Severus seufzt unhörbar und schaltet wieder auf Durchzug. Wenn Fudge irgendetwas sagt, dann kann dabei nichts Sinnvolles rauskommen, das weiß er. Und egal, was Umbridge ihm nun vorbetet, es ist nichts, was ihn wirklich schocken könnte.</p><p> </p><p>"Haben Sie das verstanden?", will Umbridge am Ende ihres Monologes wissen.</p><p> </p><p>Severus kann sich glücklich schätzen, dass er im Groben weiß, worum es eigentlich geht. Umbridge hat ihn herbestellt, um ihm Instruktionen zu geben und ihm die neuen Regeln zu erklären. Zumindest in der Theorie. Und sie hat es sich zur Aufgabe gemacht, ihm auf den Zahn zu fühlen. Severus zweifelt, dass letzteres von Erfolg gekrönt ist.</p><p> </p><p>"Natürlich", meint er herablassend. "Und wenn Sie mich nun entschuldigen würden...? Ich habe noch eine Aufgabe neben dem Herumsitzen, wissen Sie."</p><p> </p><p>Bevor irgendeine Erwiderung von Umbridge kommt, hat Severus den Raum schon verlassen. Er hasst Zeitverschwendung. Und er hasst Dolores Jane Umbridge.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>
+  <em>(Nach der original 1994-Szene)</em>
+</p><p> </p><p>Es ist 1994 und Severus trifft zum ersten Mal auf einen Verräter, der den ersten Krieg überlebt hat. Er kann nicht von sich behaupten, begeistert über diese Begegnung zu sein, denn er steht einem Feigling gegenüber, und er selbst hasst Feiglinge.</p><p> </p><p>Natürlich, sie haben Gemeinsamkeiten. Sie sind Verräter. Sie sind Todesser. Sie sind nicht wirklich vertrauenswürdig. Aber der große Unterschied ist die Art ihres Verrates. Severus kann von sich behaupten, dass er es ohne Zwang getan hat. Es war seine freie Entscheidung und er folgt ihr noch immer. Auch wenn es gewisse ausschlaggebende Dinge gab: Es war seine Wahl, so zu leben.</p><p> </p><p>Igor Karkaroff ist ein Feigling.</p><p> </p><p>Er wurde von Auroren gefasst – auch das ist eine Gemeinsamkeit, wenn man so will, doch Severus hat Askaban nie von innen gesehen. Karkaroff wurde in die Hände der Auroren gegeben. Vielleicht sollte man ihm das ein wenig zu Gute halten, denn Askaban verändert die Menschen. Dennoch ist Severus angewidert. Karkaroff ist ein Verräter, der seine Kameraden verriet, um sich selbst zu retten. Das haben viele getan und Severus würde das vielleicht auch tun. Es gibt nur wenige, denen er wirklich loyal ist.</p><p> </p><p>Severus ist wirklich nicht begeistert. Schon gar nicht, weil Karkaroff sich selbst bei ihm eingeladen hat. Glück für ihn, dass Severus ein recht höflicher Mensch ist. Zumindest meistens.</p><p> </p><p>"Karkaroff", begrüßt er seinen ungebetenen Gast kurz angebunden. "Wie ... <em>schön</em> dich zu sehen."</p><p> </p><p>Nur kurz taucht der Gedanke in seinem Kopf auf, ihm die Tür direkt vor der Nase zuzuschlagen. Dann ist dieser Augenblick jedoch vorbei und Severus lässt Karkaroff in sein Wohnzimmer. Sein ungemütliches, mit Bücherregalen vollgestelltes Wohnzimmer. Severus gibt nichts auf Gemütlichkeit, und die Chancen stehen für gewöhnlich recht gut, dass sein Besuch, wenn er denn mal welchen hat, sich recht schnell wieder verabschiedet.</p><p> </p><p>"Snape." Karkaroff nickt ihm nur kurz zu und sieht sich neugierig um.</p><p> </p><p>Severus sitzt finster vor dem Kamin und fixiert Karkaroff mit einem eisigen Blick. Seine gesamte Haltung zeigt nur zu deutlich, dass er auf diesen Besuch verzichten kann.</p><p> </p><p>"Immer noch sauer ...?", will Karkaroff mit dem Rücken zu Severus wissen, während er ein Bücherregal inspiziert. "Es ist schon mehr als zehn Jahre her, Snape."</p><p> </p><p>"Du solltest wissen, dass manche Dinge nicht verjähren, Karkaroff", gibt Severus kühl zur Antwort. "Und wenn du doch weißt, dass ich ein nachtragender Mensch bin – und du dir bewusst bist, dass ich ein klein wenig verärgert bin – dann solltest du mir nicht den Rücken zuwenden. Du weißt schließlich nicht, ob nicht zufällig ein Messer seinen Weg dort hinfindet."</p><p> </p><p>Karkaroff wirbelt herum und starrt Severus mit leicht geweiteten Augen an. "Du drohst mir?"</p><p> </p><p>"Nenn es eine Feststellung der Tatsachen." Severus lehnt sich ein wenig zurück. "Aber natürlich, du kannst es auch eine Drohung nennen, wen es dir besser gefällt. Kommt auf dasselbe hinaus, nicht wahr?"</p><p> </p><p>Sein Gegenüber schweigt. Severus hat nichts anderes erwartet.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>
+  <em>(Vor der original 1997-Szene)</em>
+</p><p> </p><p>Es ist 1997 und Severus ist wirklich genervt. Er kann es prinzipiell nicht leiden, wenn er zum Schulleiter gerufen wird. Das hat etwas an sich, was ihn sich wieder wie einen Schüler fühlen lässt. Es ist diese Gefühl, etwas angestellt zu haben, aber nicht zu wissen, was.</p><p> </p><p>Noch mehr hasst er es jedoch, wenn sich herausstellt, dass es nur um einen Kaffeeklatsch geht.</p><p> </p><p>Vielleicht wird es dieses Mal anders, denn Severus hat nicht vor, sich an irgendeinem Gespräch sinnvoll zu beteiligen. Vielleicht liegt es auch einfach daran, dass er <em>The Raven</em> gelesen hat. Er fühlt sich momentan ein wenig in der Rolle des Raben, und er fühlt sich eigentlich recht wohl dabei.</p><p> </p><p>"Severus, möchten Sie denn wirklich kein Zitronenbonbon?"</p><p> </p><p>Severus verdreht innerlich die Augen ob dieser Frage. Zitronenbonbons sind ihm ein Gräuel. Nach mehr als zehn Jahren geht Severus eigentlich davon aus, dass Dumbledore das verstanden hat. Aber irren ist menschlich und vergessen dumbledore'sch. Zumindest manchmal. Wie oft wollte er diese Frage noch stellen? Und wie oft wollte er noch eine Ablehnung kassieren?</p><p> </p><p>"Nimmermehr."</p><p> </p><p>Dumbledore blinzelt ein klein wenig. "Nimmermehr? Nun, gut ..."</p><p> </p><p>Er stellt die Schale mit den Zitronenbonbons wieder auf seinen Schreibtisch. Dann legt er die Hände nachdenklich aneinander und mustert Severus. Severus starrt ausdruckslos zurück. Ihm ist wirklich nicht nach reden. Er will zurück in seine Räume, sein Labor. Ein paar Tränke brauen. Madam Pomfrey hat ihm eine Liste gegeben, die er noch abarbeiten muss, selbst wenn er sich die Arbeit ein wenig mit Slughorn teilt. Er ist immer noch Meister der Zaubertränke und in seinem Arbeitsvertrag steht, dass er für die Versorgung der Krankenstation zuständig ist.</p><p> </p><p>"Sie wissen, dass der Zeitpunkt näher rückt, nicht wahr?", beginnt Dumbledore ein Thema, dass Severus mehr als nur verabscheut. "Ihnen ist auch klar, worum ich Sie bitten muss. Was ich verlangen muss."</p><p> </p><p>"Nimmermehr", sagt Severus nur, ganz nach dem Vorbild Edgar Allan Poes.</p><p> </p><p>"Wir hatten das doch schon diskutiert, Severus!" Dumbledores Stimme ist vorwurfsvoll. "Es gibt keine andere Möglichkeit, es bleibt nachher an Ihnen hängen. <em>Sie müssen es tun</em>."</p><p> </p><p>Severus verzieht keine Miene. "Nimmermehr."</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>
+  <em>(Nach der original 1991-Szene)</em>
+</p><p> </p><p>Es ist 1991 und Severus hält eine Zaubertränkestunde mit den Erstklässlern aus Slytherin und Gryffindor. Das bedeutet, dass er in dieser Stunde nicht nur Klein-Malfoy und Sankt Potter vor sich sitzen hat, sondern auch Chaosmagnet-Longbottom, Signalrot-Weasley und Schlaukopf-Granger.</p><p> </p><p>Der Grund, warum Weasley auch in dieser Liste erwähnt wird, ist der, dass Severus einfach seine Haarfarbe nicht ausstehen kann – sie ist zu knallig im Vergleich zu der eher düsteren Umgebung. Abgesehen davon ist Weasley ein Gryffindor und gehört zu Potters Schergen. Malfoy wird deshalb erwähnt, weil er Potters Erzfeind ist und Erzfeinde machen immer Ärger.</p><p> </p><p>"Das Rezept steht an der Tafel", bemerkt Severus, nachdem einige Zeit lang kollektives Schweigen geherrscht hat. "Sie <em>könnten</em> damit anfangen."</p><p> </p><p>Es klingt wie ein Vorschlag, ist aber alles andere als das. Es ist ein Befehl, eine Warnung und eine versteckte Drohung. Inzwischen wissen das aber auch die Erstklässler und sie machen sich eilig an die Arbeit. Severus ist zufrieden: Seine Schüler lernen diese Dinge schnell. Was vom Zaubertränkebrauen nicht gesagt werden kann.</p><p> </p><p>Die Stunde über achtet Severus besonders darauf, was Longbottom tut. Nicht, dass er die anderen Schüler aus den Augen lassen würde oder ihnen zutrauen würde, etwas richtig zu machen, aber er befürchtet, Longbottom könnte sie alle vergiften, in die Luft jagen oder andere, grauenvolle Dinge, die er sich nicht einmal ausmalen möchte. Ein geschmolzener Kessel ist da die geringste Sorge, auch wenn das auch nicht zu Severus' Wunschszenarien gehört.</p><p> </p><p>Wenn man vom Teufel spricht ...</p><p> </p><p>"Longbottom!", zischt Severus finster. "Zwanzig Punkte Abzug für Gryffindor – wegen Ihrer totalen Unfähigkeit mit einem Kessel umzugehen!"</p><p> </p><p>Mit einem Schlenker seines Zauberstabes lässt er das geschmolzene Etwas, was vor ein paar Sekunden noch ein intakter Kessel samt Inhalt war, verschwinden. Natürlich ist es unzulässig wegen Unfähigkeit Punkte abzuziehen – aber Longbottom ist momentan damit beschäftigt, zu beben und zu zittern. Und die Tränen zurückzuhalten. Severus hofft, dass der Junge wenigstens damit Erfolg hat, denn er <em>hasst</em> weinende Kinder.</p><p>  </p><hr/><p> </p><p>
+  <em>(Vor der original 1996-Szene)</em>
+</p><p> </p><p>Es ist 1996 und Severus hat die wundervolle Aufgabe, Sonderstunden zu geben. Nicht nur, dass er das Potterbalg in seinen regulären Zaubertrankstunden ertragen muss, nein, Dumbledore hat die Stunden um Okklumentikunterricht erhöht. Damit Potter sich vor mentalen Angriffen des Dunklen Lords schützen kann.</p><p> </p><p>Der Erfolg ist eher zweifelhaft.</p><p> </p><p>Severus schätzt Potters Chancen auf einen Wert unter eins zu einer Trilliarde. Vielleicht sollte er jedoch noch ein paar Nullen dranhängen: Er kennt Potter. Es kann nichts werden. Nicht, wenn der Goldgryffindor schon mit solch einer Miene in seinen Unterricht kommt. In Zaubertränke ist die Leistung auch mehr als mangelhaft, und das, obwohl Potter doch wissen müsste, dass man Zaubertränke für die Aurorenausbildung braucht – Severus hat keinen Zweifel, dass das Potters Berufswunsch ist. Vermutlich hofft Potter jedoch auf eine Sonderbehandlung, wie gehabt.</p><p> </p><p>Wenn Potter jemals Auror werden würde, dann wäre das Ende nahe.</p><p> </p><p>Allein der Gedanke, dass jemand mit dem Verhalten von Potter einmal den Schutz der Zauberergemeinschaft garantieren sollte, verursachte ihm Kopfschmerzen. Severus wusste, dass dieser Krieg ein verlorener war, denn die Auroren waren auf Frieden eingerichtet. Es gab keine Meadowes' und keine Moodys mehr, die auf dem Schlachtfeld der Auroren standen – es gab nur noch Leute wie Dawlish und Tonks. Severus hatte Dawlish getroffen und beschlossen, ihn aus reinem Mitleid nicht auszulachen. Tonks war sowieso hoffnungslos.</p><p> </p><p>Potter ebenso.</p><p> </p><p>"Ich hoffe, Sie haben dieses eine Mal geübt, Potter", sagt Severus und fixiert den Sohn seines Erzfeindes, der trotzig zurücksah. Hoffnungslos. "Legilimens!"</p><p> </p><p>Und wiedereinmal ziehen Erinnerungen an seinem geistigen Auge vorbei. Potter. Immer wieder Potter. Potter, wie er auf einen Baum gejagt wird. Potter, wie er von einem wirklich ungesund dicken Kind verprügelt wird. Potter, wie er in einem Schrank eingesperrt wird, dass sein Zimmer sein soll. Potter und immer wieder Potter.</p><p> </p><p>Severus will das nicht sehen. Es erinnert ihn stellenweise zu sehr an sich selbst. Aber er unterbricht den Zauber nicht sofort und als er es tut, ist sein Blick mörderisch. Potter blickt wütend zurück.</p><p> </p><p>"Konzentration!", bellt Severus. "Legilimens!"</p><p> </p><p>Und es beginnt wieder von vorne.</p><p>  </p><hr/><p align="center">
+  <br/>
+  <br/>
+</p><p>
+  <em>(Nach der original 1980-Szene)</em>
+</p><p> </p><p>Es ist 1980 und Severus betrachtet wehmütig die bunten Blätter, die der Wind am Fenster vorbeitreibt. Neben ihm stehen seine beiden Freunde, Lionel und Dorcas, seine Kollegen. Sie alle tragen festliche Roben, schlicht, aber elegant.</p><p> </p><p>Es ist eine Feier, doch keine Feierlaune will aufkommen. Severus fühlt sich innerlich tot, vor allem in diesem Augenblick. Jemand fehlt.</p><p> </p><p>Severus wünscht sich, es wäre bereits vorbei. Er hat lange auf diesen Augenblick hingearbeitet, aber nun ist es vollkommen unwichtig geworden. Wen kümmert es, ob er nun seinen Titel hat oder nicht? Der einzige, mit dem er sich darüber gefreut hätte, ist vermutlich tot. Dieses ganze Theater macht er nur noch aus dem Grund mit, weil er nicht weiß, was er sonst tun soll.</p><p> </p><p>"... ernenne ich hiermit Mr. Severus Snape zum Meister der Zaubertränke!"</p><p> </p><p>Applaus ertönt. Severus hat das Gefühl, sich selbst zu sehen, wie er nach vorne geht, wie in einem Traum. Er nimmt kaum wahr, wie ihm sein alter Lehrmeister das traditionelle Symbol seines Standes als neu ernannter Meister überreicht. Auch die Urkunde nimmt er entgegen, ohne es wirklich zu bemerken. Alles erscheint ihm wie eine ferne Wirklichkeit, eine falsche Wirklichkeit, denn jemand fehlt. Und er fehlt jetzt, hier, an seiner Seite.</p><p> </p><p>Als Severus in das Gesicht von Hermes Trismegistos sieht, erkennt er in den Augen seines Lehrmeisters dieselben Gefühle, die auch in ihm toben – oder eben nicht. <em>Er fehlt</em>. Severus weiß, dass Trismegistos sich freut, dass er die Prüfung bestanden hat, aber diese Freude ist hintergründig in Anbetracht des Verlustes.</p><p> </p><p>Wen kümmert ein Titel, wenn er einen Freund verloren hat?</p><p> </p><p>Wut überkommt Severus, als er zurück zu Lionel und Dorcas geht. Das Publikum klatscht und scheint froh. Und genau diese Fröhlichkeit ist es, die ihn wütend macht. Er erträgt es nicht, dass sie sich freuen, während er trauert, sie trauern. Jemand fehlt, aber sie bemerken es nicht. Niemand bemerkt es, außer ihnen vier – sie sind die einzigen.</p><p> </p><p>"Lass uns gehen", sagt Dorcas leise, mit demselben Schmerz in den Augen.</p><p> </p><p>Severus nickt nur. Er weiß, wohin ihr Weg führen wird. Sie werden die Zeremonie verlassen und dorthin gehen, wo sie immer hingehen, wenn sie an ihren verlorenen Freund denken. Es ist immer derselbe Ort, immer dasselbe Café. Sie haben viele gemeinsame Stunden dort verbracht, gelacht, gescherzt und auch ernsthaft diskutiert. Sie sitzen immer an demselben Tisch. Severus weiß, dass Florean diesen Tisch freihält – er hat es ihm erzählt, auch Florean vermisst ihn. Er versteht den Schmerz, den sie spüren, und er tut, was er kann. Auch Florean war sein Freund.</p><p> </p><p>Und so findet sich Severus, wie so oft in letzter Zeit, an demselben Tisch in Floreans Eiscafé, mit Dorcas und Lionel, und er denkt, wie so oft, an seinen besten Freund, Jonathan Meadowes, den er auf dem Gewissen hat.</p><p>  </p><p> </p><p align="center">
+  <strong>~ E N D E ~</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><span class="position">Part 1 of the <a href="/series/1890892">A Prince's Tale</a> series</span><span class="divider"> </span><a class="next" href="/works/8538232">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="Uli7TtYW3j51ITzGTvgAwqxZsc3Ic5VCqM6pYh_bpwU_LXig0qOkzHgqYX6L3g9fMdoNtfas-EmHshEDGjliig"/>
+          <input value="26048191" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <div id="kudos">
+      <p class="kudos">
+          1 guest
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_26048191">
+  <form class="new_comment" id="comment_for_26048191" action="/works/26048191/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="zE0XlaVTFefTdvmZeeMSlAuG7zwTO2EaIHCNvpTRIjOhONR7oeZvFd59pCG8xR0JlgVTRC3kDBEPDDXfkTPnvA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_26048191">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_26048191" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_26048191=new LiveValidation('comment_name_for_26048191',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_26048191.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_26048191">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_26048191" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_26048191=new LiveValidation('comment_email_for_26048191',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_26048191.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_26048191" class="landmark">Comment</label>
+        <textarea id="comment_content_for_26048191" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_26048191" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_26048191_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_26048191">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_26048191=new LiveValidation('comment_content_for_26048191',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_26048191.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_26048191.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_26048191" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.305.1">otwarchive v0.9.305.1</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.WtSGMYPRr2.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/26048191/hit_count.json")})</script>
+
+
+  </body>
+</html>
