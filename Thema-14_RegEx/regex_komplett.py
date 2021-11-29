@@ -57,13 +57,13 @@ r = re.findall(".ython", data)
 
 # Kurz noch zu finditer und search
 
-#result = re.search("Python", data)
-#print(result)
-#print(result.span(), result.start(), result.end(), result.group())
+result = re.search("Python", data)
+print(result)
+print(result.span(), result.start(), result.end(), result.group())
 
-#r = re.finditer("Python", data)  
-#for item in r:
-#    print(item.span(), item.start(), item.end(), item.group())
+r = re.finditer("Python", data)  
+for item in r:
+    print(item.span(), item.start(), item.end(), item.group())
 
 
 # Flags
@@ -143,8 +143,8 @@ r = re.findall(r"\\n", data) # Findet das Richtige, etwas einfacher.
 
 
 r = re.findall(r"\d+-\d+", data) # Folge von Zahlen, Bindestrich, Folge von Zahlen; verschiedene Treffer
-#r = re.findall(r"\d+", data) # Alle Zahlen, aber nicht solche die durch andere Zeichen unterbrochen werden
-#r = re.findall(r"\w+", data) # Alle zusammenhängenden Folgen von Wort-Zeichen (im Text!)
+r = re.findall(r"\d+", data) # Alle Zahlen, aber nicht solche die durch andere Zeichen unterbrochen werden
+r = re.findall(r"\w+", data) # Alle zusammenhängenden Folgen von Wort-Zeichen (im Text!)
 
 
 
@@ -184,12 +184,12 @@ r = re.sub("z:language", "z:SPRACHE", data)
 r = re.findall(r"\d+-\d+", data) # Zu viele Treffer
 r = re.findall(r"<bib:pages>.*?</bib:pages>", data) # Besser mit Kontext
 r = re.findall(r"<bib:pages>(.*?)</bib:pages>", data) # Jetzt noch Fokus auf Gruppen
-#r = re.findall(r"<bib:pages>(\d+).*?(\d+)</bib:pages>", data) # Jetzt noch präzisere Struktur
+r = re.findall(r"<bib:pages>(\d+).*?(\d+)</bib:pages>", data) # Jetzt noch präzisere Struktur
 
 # Wir können gefundene Gruppen wieder einsetzen, egal welche Werte enthalten sind.
 # Gruppen werden mit "\n" wieder aufgerufen. 
 
-#r = re.sub(r"<bib:pages>(\d+)-(\d+)</bib:pages>", r"<bib:pages>\1–\2</bib:pages>", data)   # Mit Kontext wird es präziser.
+r = re.sub(r"<bib:pages>(\d+)-(\d+)</bib:pages>", r"<bib:pages>\1–\2</bib:pages>", data)   # Mit Kontext wird es präziser.
 
 
 # =========== Ausgabe ====
@@ -198,9 +198,9 @@ print(len(r), "Ergebnisse:", r)
 
 
 
-#text = "Das hier ist mein Text, [p.123] der hier nach dem Seitenumbruch weitergeht."
+text = "Das hier ist mein Text, [p.123] der hier nach dem Seitenumbruch weitergeht."
 
-#text = re.sub(r"\[.*?(\d+)\]", "</pb n=\"\\1\">", text)
-#print(text)
+text = re.sub(r"\[.*?(\d+)\]", "</pb n=\"\\1\">", text)
+print(text)
 
 
