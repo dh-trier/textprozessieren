@@ -33,20 +33,21 @@ with open("programmieren.rdf", "r", encoding="utf8") as infile:
     data = infile.read() # Als String
     #print(type(data)) # Sollte "str" sein
     #print(data)
-
+    
+"""
 
 
 # ==== Mehrere Funktionen von re, mit denen man suchen kann ====
 
-"""
-"re.match": nur von Anfang des Strings an
-"re.search": Erster Treffer im gesamten String als "match object". 
-"re.findall": Alle nicht-überlappenden Treffer im gesamten String als Liste von strings.
-"re.finditer": Wie re.findall, aber gibt einen Iterator von "match objects" zurück.
 
-Wir fokussieren hier der Einfachheit halber auf "re.findall"; die match objects sind aber auch praktisch.
-Erst einmal ein paar Beispiele zum Einstieg. 
-"""
+# "re.match": nur von Anfang des Strings an
+# "re.search": Erster Treffer im gesamten String als "match object". 
+# "re.findall": Alle nicht-überlappenden Treffer im gesamten String als Liste von strings.
+# "re.finditer": Wie re.findall, aber gibt einen Iterator von "match objects" zurück.
+
+# Wir fokussieren hier der Einfachheit halber auf "re.findall"; die match objects sind aber auch praktisch.
+# Erst einmal ein paar Beispiele zum Einstieg. 
+
 
 # Einfach Suche nach String
 r = re.findall("Python", data)
@@ -68,16 +69,15 @@ for item in r:
 
 # Flags
 
-"""
-Flags sind wie ein zusätzlicher Parameter für die Suche.
-Man hängt sie mit der Syntax re.FLAG an die Suche an
-Drei nützliche Flags
 
-re.IGNORECASE (I)
-re.DOTALL (S)
-re.MULTILINE (M)  Normalerweise wird immer nur innerhalb einer Zeile geprüft; so auch über Zeilen hinweg. 
+# Flags sind wie ein zusätzlicher Parameter für die Suche.
+# Man hängt sie mit der Syntax re.FLAG an die Suche an
+# Drei nützliche Flags
 
-"""
+# re.IGNORECASE (I)
+# re.DOTALL (S)
+# re.MULTILINE (M)  Normalerweise wird immer nur innerhalb einer Zeile geprüft; so auch über Zeilen hinweg. 
+
 
 r = re.findall("python", data, re.IGNORECASE)
 r = re.findall("python", data, re.I) # Auch kurz
@@ -86,14 +86,13 @@ r = re.findall("python", data.lower()) # Auch kurz
 
 # ==== Quantifier =====
 
-"""
-* = beliebige Anzahl (auch 0x)
-+ = beliebige Anzahl, mindestens aber 1x
-? = optional, 0x oder 1x
-*? = beliebige Anzahl, aber "non-greedy" # Kontextabhängige Bedeutung von "?"!!
-{n} = exakte Anzahl
-{n,m} = Range, von n bis m x
-"""
+
+# * = beliebige Anzahl (auch 0x)
+# + = beliebige Anzahl, mindestens aber 1x
+# ? = optional, 0x oder 1x
+# *? = beliebige Anzahl, aber "non-greedy" # Kontextabhängige Bedeutung von "?"!!
+# {n} = exakte Anzahl
+# {n,m} = Range, von n bis m x
 
 r = re.findall("comp.* ", data.lower()) # Siehe das Leerzeichen am Ende! (Problem? Interpunktion)
 r = re.findall("comput.+ ", data.lower())
@@ -112,29 +111,29 @@ r = re.findall("comp.{5}", data.lower()) # Non-greedy bedeutet, dass das kürzes
 
 # ======== Zeichen-Klassen =====
 
-"""
-Es gibt vordefinierte Zeichen-Klassen
-Man kann aber auch leicht selbst Zeichen-Klassen definieren
 
-Vordefinierte Zeichen-Klassen
+# Es gibt vordefinierte Zeichen-Klassen
+# Man kann aber auch leicht selbst Zeichen-Klassen definieren
 
-\d = Zahlen (digits)
-\w = Wort-zeichen  (words)
-\D = Nicht-Zahlen
-\W = Nicht-Wort-Zeichen (einschließlich Interpunktion und Whitespaces)
-\s = Whitespace
-\S = Alles außer Whitespace
+# Vordefinierte Zeichen-Klassen
 
-Eigene Zeichen-Klassen: innerhalb von [] alle Mitglieder der Klasse auflisten: 
-[äüö] (entspricht den Umlauten im Deutschen)
-[a-zA-Z] entspricht dem lateinischen Alphabet in Kleinbuchstaben
-Besonders mächtig in Kombination mit den Quantifiern.
+# \d = Zahlen (digits)
+# \w = Wort-zeichen  (words)
+# \D = Nicht-Zahlen
+# \W = Nicht-Wort-Zeichen (einschließlich Interpunktion und Whitespaces)
+# \s = Whitespace
+# \S = Alles außer Whitespace
 
-Wenn man einen "\" matchen möchte, muss man ihn escapen.
-Oder besser: die "raw string notation" zu verwenden: mit >> r" <<.
-Dadurch werden die "\" zwar von re, aber nicht von Python, als special characters interpretiert. 
+# Eigene Zeichen-Klassen: innerhalb von [] alle Mitglieder der Klasse auflisten: 
+# [äüö] (entspricht den Umlauten im Deutschen)
+# [a-zA-Z] entspricht dem lateinischen Alphabet in Kleinbuchstaben
+# Besonders mächtig in Kombination mit den Quantifiern.
 
-"""
+# Wenn man einen "\" matchen möchte, muss man ihn escapen.
+# Oder besser: die "raw string notation" zu verwenden: mit >> r" <<.
+# Dadurch werden die "\" zwar von re, aber nicht von Python, als special characters interpretiert. 
+
+
 # Wir suchen den String \n, der an einer Stelle als Text in der Datei ist. Rest von Markup o.ä.
 r = re.findall("\n", data) # Findet alle Newlines!
 r = re.findall("\\n", data) # Findet alle Newlines!
@@ -151,11 +150,11 @@ r = re.findall(r"\w+", data) # Alle zusammenhängenden Folgen von Wort-Zeichen (
 
 # ==== Gruppen von Zeichen =====
 
-"""
-Gruppen von Zeichen werden in Klammern gesetzt;
-Die Inhalte der Gruppe sind die Treffer
-Der Rest des Musters bietet den Kontext an.
-"""
+
+# Gruppen von Zeichen werden in Klammern gesetzt;
+# Die Inhalte der Gruppe sind die Treffer
+# Der Rest des Musters bietet den Kontext an.
+
 
 # Wir suchen die Sprachbezeichnungen 
 r = re.findall("en|ger", data)   # Alternative Strings; es fehlt "en-US"; zu viele andere Strings.
@@ -170,37 +169,81 @@ r = re.findall("<dc:date>.*?(\d{4}).*?</dc:date>", data) # Mit Groups können wi
 # ==== Suchen und Ersetzen =====
 
 """
-Hierfür kommt re.sub zum Einsatz. 
-"""
 
-r = re.sub("Python", "##JAVA##", data) # Funktioniert einwandfrei;
-r = re.sub("z:language", "z:SPRACHE", data)
+# Hierfür kommt re.sub zum Einsatz. 
+
+#r = re.sub("Python", "##JAVA##", data) # Funktioniert einwandfrei;
+#r = re.sub("z:language", "z:SPRACHE", data)
 
 
 # Problem: Suchen/Ersetzen mit flexiblen Mustern. Das löst man mit Gruppen.
 
 # Wir suchen Seitenzahlen und möchten das Trennzeichen korrigieren
 
-r = re.findall(r"\d+-\d+", data) # Zu viele Treffer
-r = re.findall(r"<bib:pages>.*?</bib:pages>", data) # Besser mit Kontext
-r = re.findall(r"<bib:pages>(.*?)</bib:pages>", data) # Jetzt noch Fokus auf Gruppen
-r = re.findall(r"<bib:pages>(\d+).*?(\d+)</bib:pages>", data) # Jetzt noch präzisere Struktur
+#r = re.findall(r"\d+-\d+", data) # Zu viele Treffer
+#r = re.findall(r"<bib:pages>.*?</bib:pages>", data) # Besser mit Kontext
+#r = re.findall(r"<bib:pages>(.*?)</bib:pages>", data) # Jetzt noch Fokus auf Gruppen
+#r = re.findall(r"<bib:pages>(\d+).*?(\d+)</bib:pages>", data) # Jetzt noch präzisere Struktur
 
 # Wir können gefundene Gruppen wieder einsetzen, egal welche Werte enthalten sind.
 # Gruppen werden mit "\n" wieder aufgerufen. 
 
-r = re.sub(r"<bib:pages>(\d+)-(\d+)</bib:pages>", r"<bib:pages>\1–\2</bib:pages>", data)   # Mit Kontext wird es präziser.
+#r = re.sub(r"<bib:pages>(\d+)-(\d+)</bib:pages>", r"<bib:pages>\1–\2</bib:pages>", data)   # Mit Kontext wird es präziser.
 
 
 # =========== Ausgabe ====
 
-print(len(r), "Ergebnisse:", r)
+#print(len(r), "Ergebnisse:", r)
 
 
+# ============ Bonus-Beispiel
 
-text = "Das hier ist mein Text, [p.123] der hier nach dem Seitenumbruch weitergeht."
+#text = "Das hier ist mein Text, [p.123] der hier nach dem Seitenumbruch weitergeht."
 
-text = re.sub(r"\[.*?(\d+)\]", "</pb n=\"\\1\">", text)
-print(text)
+#text = re.sub(", ", ",\n", text)
+
+#text = re.sub("\[.*?(\d+)\]", "</pb n=\"\\1\">", text)
+#text = re.sub(r"\[.*?(\d+)\]", "</pb n=\"\\1\">", text)
+# print(text)
+
+
+# ===== 
+# Der Zweck von "r" ("raw string")
+
+# Python kennt "\" als das "Escape"-Zeichen,
+# um eine literale Interpretation eines Spezialzeichens auszulösen,
+# oder um eine spezielle Interpretation eines normalen Zeichens auszulösen.
+# Spezialzeichen sind: \ und "; normale Zeichen mit Spezialbedeutung: n
+
+# Beispiel literale Interpretation: Wenn man eine URL als String angibt und darin ein Anführungszeichen einfügen möchte
+#url = "https://www.search.com/q=\"holiday\""
+#print(url)
+
+# Hier wird dann mit dem \" nicht der String url beendet.
+# Umgekehrtes Beispiel spezielle Interpretation:
+# Man möchte in einem String einen Zeilenumbruch notieren
+#string = "Ach wie schön\nist Panama."
+#print(string)
+
+# Das gleiche Prinzip gibt es im Modul re
+# Spezialzeichen: " \ () [] {}
+# Als Spezialzeichen aktivierbare normale Zeichen: w, W, d, D
+# Normales Zeichen als Spezialzeichen aktivieren:
+#r = re.findall("\d", "Es war 1mal 'ne Mickymaus")
+#print(r)
+
+# Aber: Wie dann Spezialzeichen wörtlich einfügen oder suchen?
+# Jetzt doppeln sich quasi Python und re
+# Das lässt sich mit "r" (raw string notation) etwas reduzieren
+
+# Beispiel \
+#r = re.findall("\", "Der Pfad lautet C:\home") # Syntax-Fehler
+#r = re.findall("\\", "Der Pfad lautet C:\home") # Regex-Fehler
+#r = re.findall("\\\", "Der Pfad lautet C:\home") # Syntax-Fehler
+#r = re.findall("\\\\", "Der Pfad lautet C:\home") # Korrekt: "\" wird gefunden (aber als "\\"!)
+r = re.findall(r"\\", r"Der Pfad lautet C:\home") # Korrekt: "\" wird gefunden (aber als "\\"!)
+
+print(r)
+print(r[0])
 
 

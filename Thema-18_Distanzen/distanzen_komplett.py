@@ -14,7 +14,7 @@ Es gibt immer wieder Situationen, in denen die Ähnlichkeit von Zeichenketten re
 """
 
 # Levensthein-Distanz
-# Die Anzahl der Edit Operationen (delete, insert, modify) die notwendig sind,
+# Die minimale Anzahl der Edit Operationen (delete, insert, modify) die notwendig sind,
 # um einen String in einen anderen String zu überführen.
 # Operiert auf Strings, die auch unterschiedlich lang sein können. 
 # https://en.wikipedia.org/wiki/Levenshtein_distance
@@ -29,6 +29,27 @@ Es gibt immer wieder Situationen, in denen die Ähnlichkeit von Zeichenketten re
 # https://docs.scipy.org/doc/scipy/reference/spatial.distance.html
 # Achtung: hier wird noch durch n =len(str) geteilt, so dass es um einen Anteil geht (!= Wikipedia)
 
+# Beispiele
+# 
+# Team
+# Turm
+# 0110 => ld = 2
+# 0110 => hd = 2
+#
+# Tee#
+# Team
+# 0011 => ld = hd = 2
+#
+# Team#
+# Traum
+# 01011 => hd = 3
+#
+# Tea m
+# Traum
+# 0m0i0 => ld = 2
+#
+#
+
 
 
 def retrieve_ld(str1, str2):
@@ -36,6 +57,9 @@ def retrieve_ld(str1, str2):
     ldl = lvn.distance(str1, str2)
     return ldl
 
+def calculate_ld(str1, str2):
+    # Siehe: https://johnlekberg.com/blog/2020-10-25-seq-align.html
+    return "not implemented"
 
 
 def retrieve_hd(item1, item2): 
@@ -58,6 +82,7 @@ def calculate_hd(list1, list2):
     Output: int or float
     """
     hd = 0
+    #print(list1, list2)
     for i in range(0, len(list1)):
         if list1[i] != list2[i]:
             hd +=1
@@ -87,7 +112,7 @@ def turn_into_list(str1, str2):
     Input: 2 x str
     Output: 2 x list
     """
-    list1 = [i for i in str1]
+    list1 = [i for i in str1] # list comprehension!
     list2 = [k for k in str2]
     return list1, list2
 
@@ -106,30 +131,35 @@ def main(str1, str2):
     # Levensthein Distance
     ldl = retrieve_ld(str1, str2)
     ldc = calculate_ld(str1, str2)
-    print("levenshtein ld: " + str(ldl))
 
     # Hamming Distance
     str1, str2 = match_lengths(str1, str2)
     list1, list2 = turn_into_list(str1, str2)
     hds = retrieve_hd(list1, list2)
     hdc = calculate_hd(list1, list2)
+    
     # Display results
+    print("levenshtein ld: " + str(ldl))
+    print("calculated ld: " + str(ldc))
     print("\nscipy hd: " + str(hds))
     print("calculated hd: " + str(hdc))
+
+    # Display conclusion
     if float(hds) == float(hdc):
-        print("Alles ok, die Ergebnisse sehen gut aus.")
+        print("\nDie Ergebnisse für hd sehen gut aus.")
     else:
-        print("Achtung, mit der Berechnung stimmt etwas nicht.")
+        print("\nAchtung, mit der Berechnung stimmt etwas nicht.")
   
 
 if __name__ == "__main__":
-    main("lawn", "flaw")
+    main("team", "traum")
 
 
 # Tests
 # - Julia|Jolie => ld 2, hd 2
 # - Julie|Jody => ld 4, hd 4
-# - flaw|lawn => ld 2, hd 4 (wegen der Veschiebung!)
+# - Team|Traum => ld 2, hd 3 (wegen der Verschiebung)
+# - flaw|lawn => ld 2, hd 4 (wegen der Verschiebung)
 
 
 
