@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":191,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Wolfstar year to year - MinnieFinn - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="dif5FV4aMreq0mBtBdtvmiIDSVjjtU195rJJZrdq1M8z7Ko_m6fowOcfPDoJfJZ39Kn8L2ZrNdhEhmp8FgVFTw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="AlptKCumCXPus9OhqNGIN1nepPtGGyR8VW35o5yQGNdHkT4C7hvTBKN-j_akdnHaj3QRjMPFXNn3Wdq5Pf-JVw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: katekyou &quot;alternate universe&quot; sort:&gt;words</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/9367178/chapters/21205358">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=9367178">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/9367178/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/9367178/Wolfstar%20year%20to%20year.azw3?updated_at=1638375813">AZW3</a></li>
+          <li><a href="/downloads/9367178/Wolfstar%20year%20to%20year.epub?updated_at=1638375813">EPUB</a></li>
+          <li><a href="/downloads/9367178/Wolfstar%20year%20to%20year.mobi?updated_at=1638375813">MOBI</a></li>
+          <li><a href="/downloads/9367178/Wolfstar%20year%20to%20year.pdf?updated_at=1638375813">PDF</a></li>
+          <li><a href="/downloads/9367178/Wolfstar%20year%20to%20year.html?updated_at=1638375813">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Not%20Rated/works">Not Rated</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Categories:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li><li><a class="tag" href="/tags/M*s*M/works">M/M</a></li><li><a class="tag" href="/tags/Multi/works">Multi</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Sirius%20Black*s*Remus%20Lupin/works">Sirius Black/Remus Lupin</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Remus%20Lupin/works">Remus Lupin</a></li><li><a class="tag" href="/tags/Sirius%20Black/works">Sirius Black</a></li><li><a class="tag" href="/tags/Peter%20Pettigrew/works">Peter Pettigrew</a></li><li><a class="tag" href="/tags/James%20Potter/works">James Potter</a></li><li><a class="tag" href="/tags/Poppy%20Pomfrey/works">Poppy Pomfrey</a></li><li><a class="tag" href="/tags/Minerva%20McGonagall/works">Minerva McGonagall</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Marlene%20McKinnon/works">Marlene McKinnon</a></li><li><a class="tag" href="/tags/Original%20Female%20Character(s)/works">Original Female Character(s)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hogwarts/works">Hogwarts</a></li><li><a class="tag" href="/tags/Marauders&#39;%20Era/works">Marauders&#39; Era</a></li><li><a class="tag" href="/tags/POV%20Sirius%20Black/works">POV Sirius Black</a></li><li><a class="tag" href="/tags/POV%20Remus%20Lupin/works">POV Remus Lupin</a></li><li><a class="tag" href="/tags/Hurt*s*Comfort/works">Hurt/Comfort</a></li><li><a class="tag" href="/tags/Friends%20to%20Lovers/works">Friends to Lovers</a></li><li><a class="tag" href="/tags/Best%20Friends/works">Best Friends</a></li><li><a class="tag" href="/tags/wolfstar/works">wolfstar</a></li><li><a class="tag" href="/tags/POV%20Multiple/works">POV Multiple</a></li><li><a class="tag" href="/tags/Animagus/works">Animagus</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2017-01-17</dd><dt class="status">Completed:</dt><dd class="status">2017-01-17</dd><dt class="words">Words:</dt><dd class="words">12192</dd><dt class="chapters">Chapters:</dt><dd class="chapters">15/15</dd><dt class="comments">Comments:</dt><dd class="comments">7</dd><dt class="kudos">Kudos:</dt><dd class="kudos">42</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/9367178/bookmarks">3</a></dd><dt class="hits">Hits:</dt><dd class="hits">2904</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Wolfstar year to year
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/MinnieFinn/pseuds/MinnieFinn">MinnieFinn</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Its the story of Remus Lupin , the boy who is cute as fuck and Sirius Black, hot as hell and about their time at Hogwarts.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>I'm sorry, this fic is in german, but I'll try to translate it to english soon. It's my first work I'll show the world, so please be kind.<br/>Oh and yea,...Harry Potter isn't my stuff, so thanks to JKR for EVERYTHING! &lt;3</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21205358">Chapter 1</a>: Der erste Tag - Sirius Black
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u>
+    <em>SIRIUS BLACK</em>
+  </u>
+</p>
+<p> </p>
+<p>Erstes Schuljahr 1. September 1971</p>
+<p> </p>
+<p>Sirius warf sich auf das große Bett von James, auf dem mittlerweile einige Klamotten lagen und sah sich langsam um. Der Raum war rund gebaut und es standen vier große Himmelbetten an den Wänden. Dazwischen waren Regale und kleine Tische, an denen sie wohl ihre Schulaufgaben erledigen konnten. In der Mitte des Raums stand ein kleines Kohlebecken von dem eine angenehme Wärme ausging. Der ganze Gryffindorturm war in rot-goldenen Farben gehalten und es gefiel ihm wirklich gut. Es war warm und einladend und er fühlte sich zum ersten Mal irgendwo wirklich wohl.</p>
+<p>In seinem Raum würden drei weitere Jungen schlafen und sie stellten sich gerade vor und er sagte, die Beine ausstreckend, als wäre er schon immer hier gewesen, &gt;&gt; Sirius Black. &lt;&lt;</p>
+<p>Der pummelige Junge namens Peter sah ihn entsetzt an, &gt;&gt; Black, wie die Familie BlackBlack? &lt;&lt;</p>
+<p><em>Ja, Black wie die berühmte böse Zaubererfamilie, </em>dachte er beschämt. Er war nicht wie seine Familie, er war anders. Er war einfach Sirius Orion ‑ leider ‑ Black und er erwiderte mit einem sarkastischen Grinsen auf den Lippen, &gt;&gt; Black, wie BlackBlack. &lt;&lt;</p>
+<p>Und dann nahm er den Jungen am Fenster wahr. Er hatte zwei Bücher im Arm und auf dem schmalen Gesicht tummelten sich so viele Sommersprossen wie Sterne am Himmel. Die honigfarbenden Locken fielen ihm in die großen, runde Augen, unter denen tiefe dunkle Ringe lagen. Und obwohl er erschöpft und kränklich aussah, funkelten seine Augen und sie erinnerten Sirius an die Bernsteinkette seiner Cousine Andromeda. <em>Schön.</em></p>
+<p>&gt;&gt; Ich bin Remus. &lt;&lt;, flüsterte er und eines der Bücher rutschte ihm beinah aus den Armen, &gt;&gt; Lupin. &lt;&lt;</p>
+<p><em>Remus Lupin, komischer Name, </em>dachte Sirius und beobachtete den Jungen, wie er seinen alten, verfranzten Koffer auspackte. Jede Bewegung war wie geplant. Ruhig, ohne Hast, als hätte er Angst. <em>Angst vor was?</em></p>
+<p>Er hatte die Ärmel hochgekrempelt und an seinen Armen konnte Sirius einige Narben sehen. Hell, silberne bereits verheilte. Rosa, bläuliche, frische. <em>Was wohl mit ihm passiert war?</em></p>
+<p>&gt;&gt; Wollen wir was spielen? So zum kennen lernen? &lt;&lt;, fragte James und grinste breit in die Runde. Sirius hatte den jungen Potter bereits im Zug kennen gelernt und ihn wirklich cool gefunden. Er hatte denselben Humor und ähnliche Ansichten. Sie hatten die selben Sachen gegessen und über dieselben Sachen gelacht. Als der sprechende Hut auf Sirius Kopf laut und deutlich „GRYFFINDOR“ gebrüllt hatte, hatte James beide Daumen in die Luft gestreckt und ihn breit angelacht und Sirius hatte sich mit eine entzückten Grinsen an den applaudierenden Tisch gesetzt. Das würde seinen Eltern sicher gar nicht gefallen.</p>
+<p>&gt;&gt; Klar, lass uns was spielen. Snap explodieren? &lt;&lt;, sagte Sirius und setzte sich wieder auf.</p>
+<p>&gt;&gt; Was ist das genau für ein Spiel? &lt;&lt;, fragte Lupin und blickte nervös in die Runde.</p>
+<p>&gt;&gt; Du kennst Snap Explodieren nicht? &lt;&lt;</p>
+<p>Der Junge schüttelte den Kopf und kam langsam, bedächtigen Schritten, näher und setzte sich zu den anderen dazu. Sirius konnte jetzt auch einige kleine Narben auf seinem Gesicht und am Hals sehen und der Umhang, den er an hatte, war mindestens zwanzig Jahre alt und total abgetragen.</p>
+<p>Er tat ihm leid.</p>
+<p>&gt;&gt; Mein Gott, du kennst das nicht? Was hast du denn all die Jahre mit deinen Freunden gespielt? &lt;&lt;, stieß James verwundert aus und schüttelte ungläubig den Kopf. Remus biss sich nervös auf die Lippe, &gt;&gt; Schach. &lt;&lt;</p>
+<p>Sirius konnte an dem kurz zuckenden Mundwinkel erkennen, dass der Junge log. Sein kleiner Bruder Regulus sah auch immer so aus.</p>
+<p>
+  <em>Ob er keine Freunde hatte?</em>
+</p>
+<p>Sirius jedenfalls hatte keine gehabt, aber dafür seinen Bruder und seine Cousinen zum Spielen. Nicht, dass er sie gemocht hatte. Nein, ganz im Gegenteil.</p>
+<p>&gt;&gt; Komm. &lt;&lt;, sagte er also, klopfte neben sich, &gt;&gt; Wir spielen die erste Runde zusammen und ich erklär's dir, ja? &lt;&lt;</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21205799">Chapter 2</a>: Nein, ich weine nicht - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u> <em>REMUS LUPIN</em> </u>
+</p><p> </p><p>Erstes Schuljahr 8. September 1971</p><p> </p><p>Es war bereits dunkel und abgesehen vom kontinuierlichem schnarchen Peters, leise im Schlafsaal der neuen Gryffindorjungen. Der Mond stand zwar noch voll am Himmel, aber er nahm bereits wieder ab. Vollmond war diesmal am 5. des Monats gewesen, an einem Sonntag.</p><p>Remus Lupin lag vollkommen regungslos in seinem Bett. Müde und ausgelaugt.</p><p>Er war bereits 8 Tage in Hogwarts und obwohl er zwei Nächte nicht im Schlafsaal verbracht hatte, hatte sich schon nach wenigen Tagen an die Anwesenheit der anderen Jungen gewöhnt. An das dumpfe Schnarchen von Peter Pettigrew, einen kleinen, kräftig gebauten Jungen mit starken Südenglischen Akzent. An das tiefe Einatmen von James Potter, einem schlacksigen Jungen mit strubbeligen schwarzen Haaren und auch an den Jungen mit den stahlgrauen Augen und dem schwarzen Lockenkopf. Sirius Orion Black, auch an ihn und sein leises Atmen hatte Remus sich gewöhnt. Es war auch nicht schwer gewesen, sich an die anderen Jungen zu gewöhnen. Sie hatten ihn direkt a ersten Abend</p><p>Remus hatte seine Vorhänge zugezogen, sodass er in seinem großen, weichen Bett wie in einer kleinen, gemütlichen Höhle eingeschlossen lag. Aber es war ein gutes eingeschlossen. Er kuschelte sich tiefer in das Kissen und zog die Decke bis zu den kleinen</p><p>Ohren hoch, als er es hörte.</p><p>Erst war er sich nicht sicher, ob er sich vielleicht getäuscht hatte, doch da. Da hörte er das Geräusch wieder. Als er seine Ohren spitze, konnte er ein leises Schluchzen hören. Eine Nase wurde geräuschvoll hochgezogen und ersticktes Weinen. Das Kissen oder eine Decke schien es dämpfen zu sollen.</p><p>Als nach einiger Zeit das schluchzen nicht aufhörte, stand Remus leise auf. Barfuß folgte er dem Geräusch und blieb vor Sirius Bett stehen, dessen Vorhänge zugezogen waren. <em>Das ist das erste Mal, dass er sie zu hat</em>, fiel es Remus auf.</p><p>&gt;&gt; Sirius? &lt;&lt;, seine leise Stimme klang in der Nacht höher als sonst.</p><p>&gt;&gt; Geh weg! &lt;, antwortete der andere Junge mit erstickter Stimme und räusperte sich. Doch einmal aufgestanden und aus dem Bett, ließ sich Remus nicht mehr abbringen. Vorsichtig schob er den Vorhang zur Seite, kletterte hinein und zog diesen wieder hinter sich zu. Es war sehr warm in dem Himmelbett, da sich die Körperwärme des anderen Jungen gestaut hatte.</p><p>&gt;&gt; Was willst du Lupin? &lt;&lt;</p><p>Es war so dunkel, dass Remus sein Gesicht nicht sehen konnte, doch er spürte an seinen Knien Sirius kalte Füße. Ohne groß zu überlegen, krabbelte er zu ihm ans Kopfende, trat ihm aus versehen in eine Rippe und entschuldigte sich hektisch.</p><p>&gt;&gt; Warum weinst du? &lt;&lt;</p><p>&gt;&gt; Ich weine nicht! &lt;&lt; antworte Sirius mit brüchiger Stimme und Remus könnte spüren, dass er sich komplett aufsetzte und versuchte die Tränen zu unterdrücken, was ihm jedoch nicht gelang. Er machte ein Geräusch wie ein verwundetes Tier und Remus fühlte die Tränen, als er plötzlich dessen Kopf an seine Schulter spürte.</p><p>Als sie eine Weile so neben einander saßen, den Rücken an das Kopfteil gelehnt, versiegten Sirius Tränen und er erzählte ihm im Flüsterton von dem Heuler, denn er von seinen Eltern erhalten hatte. Die Black's waren eine alte, reinblütige Zaubererfamilie, seit Jahrzehnten  besuchten seine Vorfahren Hogwarts. Und er war der erste, der nach Gryffindor, statt nach Slytherin gekommen war. Ein Schande, ein Desaster, er solle sich auf eine Trachtprügel gefasst machen. Er hätte die Familie entehrt, der unerwünschte Sohn. Er erzählte auch von den Schlägen, die er schon früher bekommen hatte, weil er nicht so war, wie seine Familie ihn wollte. Nicht so radikal, nicht so streng. Mit der flachen Hand, mit dem Gehstock seines Großvaters, mit dem Gürtel.</p><p>&gt;&gt; Ich hab Angst. &lt;&lt; gestand Sirius leise.</p><p>Remus, der sich mittlerweile unter die Decke gekuschelt hatte, nahm den Jungen in den Arm, streichelte beruhigend dessen Schulter und murmelte auf ihn ein.</p><p>&gt;&gt; Du brauchst keine Angst haben. Hier bist du sicher. Hier können sie dir nichts tun. Hier nicht. &lt;&lt;</p><p>Und obwohl beide Jungen wussten, dass das Schuljahr zu Ende gehen würde und Sirius dorthin zurück gehen musste, fühlte sich der schwarzhaarige Junge sicher. Nach längerer Zeit schliefen sie ein, Stirn an Stirn, Hand in Hand.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21205955">Chapter 3</a>: Was stimmt mit Remus nicht? - Sirius Black
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <u>SIRIUS BLACK</u>
+  </em>
+</p>
+<p> </p>
+<p>Zweites Schuljahr 22. September 1972</p>
+<p> </p>
+<p>&gt;&gt; Ich weiß, was ihr sagen wollt, aber glaubt mir. Irgendwas stimmt mit Remus nicht. &lt;&lt;, sagte Sirius ernst und strich sich eine Locke hinter das Ohr.</p>
+<p>Peter stöhnte auf, &gt;&gt; Fängst du schon wieder damit an? Seine Mum ist einfach krank und deswegen muss er nach Hause. Und jetzt lass uns diesen blöden Aufsatz für Zaubertränke fertig schreiben, bevor Slughorn morgen Krötenpickels aus uns macht. &lt;&lt;</p>
+<p>Sirius beugte sich wieder über sein Pergament, obwohl er schon längst fertig war. <em>Warum glaubten sie ihm nicht?</em></p>
+<p>&gt;&gt; Vielleicht hat Sirius recht. &lt;&lt;, flüsterte James und Sirius zog arrogant eine Augenbraue hoch, &gt;&gt; Ich meine, ist es nicht seltsam, dass er jeden Monat nach Hause muss? &lt;&lt;</p>
+<p>Peter zuckte mit den Schultern, &gt;&gt; Scheint wohl ernst zu sein, vielleicht stirbt Mrs. Lupin ja? &lt;&lt;</p>
+<p>Sirius stöhnte und lehnte sich in dem Sessel zurück, &gt;&gt; Doch nicht einmal im Monat, du Dumpfbacke! Außerdem, habt ihr ihn danach mal genauer angeguckt? &lt;&lt;</p>
+<p>Peter schob jetzt ebenfalls seine Schularbeit zur Seite, &gt;&gt; Naja, er ist immer sehr müde und manchmal hat er Verletzungen. Aber bevor wir spekulieren könnten wir ihn doch auch einfach fragen. &lt;&lt;</p>
+<p>Als Remus Lupin die Treppe zum Gemeinschaftsraum runter kam, verstummten die anderen.</p>
+<p>&gt;&gt; Wir sehen uns, Leute. &lt;&lt;, winkte er erschöpft und ging mit hängenden Schultern zum Portaitloch.</p>
+<p>Sirius und James warfen sich einen Blick zu und beide grinsten breit, &gt; Denkst du, was ich denke? &lt;&lt;</p>
+<p>Der andere nickte und stand auf, &gt;&gt; Ich hol nur kurz den Umhang! &lt;&lt;</p>
+<p>&gt;&gt; Was? &lt;&lt;, Peter sah nun vollkommen verloren aus.</p>
+<p>&gt;&gt; Na was wohl Pete? Wir fragen nicht, wir folgen ihm! &lt;&lt;</p>
+<p>Als sie einige Zeit später, zu dritt unter den Tarnumhang von Mr. Potter gequetscht, einem kleinen Remus Lupin und ein einer besorgten Madam Pomfrey zur peitschenden Weide folgten, wurde Sirius unsicher.</p>
+<p><em>Hätten sie ihn nicht einfach Fragen sollen? </em>Remus war schließlich ihr Freund, vielleicht würde er ihnen die Wahrheit sagen.</p>
+<p>Madam Pomfrey schwenkte kurz den Zauberstab und die Weide hielt still.</p>
+<p>&gt;&gt; Ab hier kann ich alleine gehen. Ich sollte mich vielleicht beeilen. Es ist nicht mehr viel Zeit bis es losgeht. &lt;&lt;, sagte Remus und Sirius konnte im hellen Mondschein das entsetzten in seinem Gesicht sehen. Sie nickte kurz, legte eine Hand auf seinen Kopf, &gt;&gt; Mein tapferer kleiner Junge. &lt;&lt; und drehte sich um.</p>
+<p>Schnell folgten die drei Remus durch das große Erdloch einen Gang entlang. Die Weide über ihnen hatte schon wieder zu peitschen angefangen. Remus lief schnell, als würde ihm etwas folgen. Sirius unterdrückte ein kleines Lachen, in der Tat folgte ihm etwas und bevor sie ihn erreichen konnten, ging er durch eine Tür die dann hinter ihm zuschnappte. James griff nach der Klinke, doch sie bewegte sich nicht. Sirius zog den Tarnumhang von sich runter und legte ein Ohr an die Tür, &gt;&gt; Remus? Alles in Ordnung bei dir da drin? &lt;&lt;</p>
+<p>Und nur kurz darauf hörten sie ein lautes Wimmern, gefolgt von einem langanhaltenden, markerschütternden Schrei, dass sich in ein tiefes Grollen verwandelte.</p>
+<p>&gt;&gt; Was meinst du ist da los? &lt;&lt;, flüsterte James ängstlich. Sirius gefror das Blut in den Adern. Seine Vermutung bestätigte sich, als er das Jaulen hörte und ein energisches Kratzen an der Tür.</p>
+<p>&gt;&gt; Es ist Vollmond. &lt;&lt;, flüsterte Sirius entsetzt, &gt;&gt; Remus ist ein Werwolf. &lt;&lt;</p>
+<p>Ein lautes bestialisches Heulen ertönte hinter der Tür und die Jungen sahen sich erschrocken an. Sie hörten wie Remus ‑ oder das was er in diesem Moment war ‑ an der Tür kratzte, sich dagegen warf, jaulte, heulte, wimmerte. Er konnte sie riechen und wahrscheinlich auch hören.</p>
+<p>Als die Sonne aufging, hörten sie Remus wieder jaulen und plötzlich wurde der tierische Laut so unglaublich menschlich. Er weinte.</p>
+<p>&gt;&gt; Sirius? James? &lt;&lt;, hörten sie seine zittrige Stimme, &gt;&gt; Pete? Seid ihr immer noch da? &lt;&lt;</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21206099">Chapter 4</a>: Sie wissen es - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em> <u>REMUS LUPIN</u> </em>
+</p><p> </p><p>Zweites Schuljahr 23. September 1972</p><p> </p><p>Remus rannte die Treppen zum Jungenschlafsaal hinauf, knallte laut die Tür hinter sich zu, warf sich auf sein Bett, das er seit über einem Jahr bewohnte und zog die Vorhänge hinter sich zu.</p><p><em>Nein</em>, er wollte nicht mit ihnen reden. Sie wussten es. James, Peter und Sirius wussten es! Es. Dass er ein Werwolf war, ein Monster, eine Bestie. Er konnte nicht mehr ihr Freund sein, sie würden ihn hassen. Sie würden ihn ächten. Sie würden es weiter erzählen. Ein heiser, schmerzvoller Laut drang aus seiner Kehle. Er war so müde und erschöpft. Vollmond war erst wenige Stunden her und er konnte sich kaum auf den Beinen halten. Eine neue Wunde an seiner Taille blutete und sein ganzer Körper schmerzte.</p><p>Er hörte Schritte und leise Stimmen auf der anderen Seite des Vorhangs und brüllte immer wieder, &gt;&gt; Verschwindet! Ich bin ein Monster. Verschwindet! &lt;&lt;</p><p>Und sie verschwanden.</p><p>Remus wusste nicht wie und warum, aber er war eingeschlafen und mittlerweile war es mitten in der Nacht. Er konnte durch einen kleinen Spalt durch die Vorhänge den Mond hoch und hellerleuchtet am Himmel sehen. Wie sehr hasste er den Mond. Er hasste ihn so sehr. Machte er ihn doch zu etwas, was er nicht sein wollte. Zu einem Monster, das Morden und Wüten wollte. Nach Blut lechzte und schreckliches Geschehen lassen konnte.</p><p>Da hörte er leise Tapser. Barfuß lief jemand über den Steinboden und bevor Remus ihn fortschicken konnte, kletterte Sirius zu ihm ins Bett. Er wusste, dass es Sirius war. Keiner der anderen Jungen war jemals zu vor in sein Bett gekommen, doch Sirius kam oft. Wenn er schlecht träumte, wenn er wieder einen Brief von zuhause erhalten hatte, wenn er sich sorgen um seinen kleinen Bruder machte oder wenn er einfach nur nicht schlafen konnte. Ohne ein Wort zu sagen, kroch der andere Junge unter die warme Decke und streckte seine kalten Füße gegen Remus Waden.</p><p>&gt;&gt; Geh weg, Sirius! &lt;&lt;, protestierte Remus mit kraftloser Stimme. Er wollte sich weg drehen und zum anderen Ende des Bettes kriechen. Weit weg von einem besten Freund. Er wollte allein sein <em>Ich will nicht mehr allein sein!</em> Und Tränen schossen ihm in die bernstein Augen.</p><p>Doch Sirius packte ihn am Arm und zog ihn in eine Umarmung. Leise weinte er in den Schlafanzug seines Freundes, während dieser ihm nur den Rücken streichelte und murmelte,</p><p>&gt;&gt; Ist uns egal. Du bist unser Freund. Du bist cool. Du bist kein Monster. Du bist KEIN Monster, Remus! Ist mir egal. Total egal, Remus. Ist mir so was von egal. Wir sind Freunde. Ist mir scheiß egal. Fuck scheiß egal! &lt;&lt;</p><p>Als die letzte Träne endlich versiegt war, wischte Sirius ihm das Gesicht trocken.</p><p>&gt;&gt; Weißt du Rem'? Du bist so cool. &lt;&lt;</p><p>Remus boxte ihm leicht in die Seite, &gt;&gt; Hör auf! Du hast keine Ahnung, Sirius. Ich könnte euch umbringen, ich könnte euch zu so was machen. Das ist nicht cool, ich bin nicht cool! &lt;&lt;</p><p>Doch er schwarzhaarige lachte nur, &gt;&gt; Doch, doch wirklich. Mit deinen Büchern und deinen Pullis und deinem kleinen flauschigen Problem. &lt;&lt;</p><p>Sie lachten beide. Sirius wie ein bellender Hund und Remus erstickt, nasal da seine Nase vor lauter Weinen verstopft war.</p><p>&gt;&gt; Guck mal, ich hab dir deine Lieblingsschokolade mitgebracht. &lt;&lt;, Sirius öffnete die Schokolade und hielt Remus ein Stück vor die Nase. Dieser steckte sich das Stück in den Mund und lutschte genüsslich dran und sie mussten beide wieder leise Lachen.</p><p>Als sie wieder ernst waren, legte Sirius seinen Arm fest um ihn und flüsterte, &gt;&gt; Wir sind die Marauders. Wir sind deine Freunde und es ist uns so was von scheiß fuck kack egal, dass du ein Werwolf bist. Du bist nämlich einer von uns. &lt;&lt;</p><p>So schliefen sie ein, die Arme umeinander gelegt, Stirn an Stirn, leises murmelnd, &gt;&gt; Du bist unser Freund und kein Monster. Du bist wertvoll. Du bist cool, du bist....du bist. &lt;&lt;</p><p>Und Remus fühlte sich wertvoll und cool und als Freund und nicht mehr so unsäglich einsam.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21206237">Chapter 5</a>: Weihnachten - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u>
+    <em>REMUS LUPIN</em>
+  </u>
+</p><p> </p><p>Drittes Schuljahr 24. Dezember 1973</p><p> </p><p>Remus lag, umgeben von einigen Büchern, warm eingepackt auf seinem Bett und las. Es war der Abend vor Weihnachten und es war mittlerweile eiskalt im Schlafsaal geworden, sodass er mit dem Gesicht zum Kohlebecken in der Mitte lag und die Füße in dicke, selbstgestrickte Wollsocken von Mrs. Potter eingepackt hatte.</p><p>Plötzlich warf sich etwas mit voller Wucht auf ihn und Remus war umgeben von schwarzen Locken, die ihm die Sicht versperrten.</p><p>&gt;&gt; Was soll das, Sirius? &lt;&lt;, fauchte er, da das Buch an dem er gelesen hatte nun eine eingerissene Seite hatte. Sirius, der sich von ihm runter rollte und neben ihn auf den Rücken legte, grinste ihn unverschämt an, &gt;&gt; In wenigen Stunden ist Weihnachten und du liest einfach nur an deinem Buch, statt mit mir zu spielen! &lt;&lt;</p><p>Remus stieß ihm sein Ellenbogen in die Seite, &gt;&gt; Man kann auch was sagen. Guck doch, jetzt hast du mein Buch kaputt gemacht, Idiot! &lt;&lt;</p><p>Er stand auf und sammelte die Bücher ein, die nach Sirius Angriff auf dem Boden um sein Bett verteilt worden war. Sirius drehte sich schnell um, stütze sein Kinn auf seinen Arm und sagte, &gt;&gt; Mir ist aber so langweilig Moony! &lt;&lt;</p><p>Sie waren alleine. James und Peter besuchten ihre Familien über Weihnachten und es stimmte. Remus hatte seit Beginn der Ferien mehr Zeit mit seinen Büchern verbracht, statt mit seinem besten Freund. Er sah Sirius an und die grauen Augen erwiderten den Blick. Störrisch, liebevoll und Remus musste lächeln.</p><p>&gt;&gt; Sorry. Ok was sollen wir machen? &lt;&lt;, sagte er also und grinste den Jungen auf seinem Bett breit an. Urplötzlich sprang Sirius auf, jubelte kurz und holte unter seinem Bett zwei Butterbier und eingepackte Geschenke hervor.</p><p>Remus machte große Augen, &gt;&gt; Wo hast du die denn her? &lt;&lt;, doch Sirius lachte nur sein bellendes Lachen und drückte ihm eine der Falschen in die Hand.</p><p>&gt;&gt; Wir spielen. Ich stell eine Frage über mich, wenn du sie falsch beantwortest musst du trinken, wenn nicht darfst du eines der Geschenke öffnen, ok? &lt;&lt;</p><p>Remus nickte nur, holte seine Geschenke hervor und setzte sich im Schneidersitz auf sein Bett.</p><p>&gt;&gt; Also &lt;&lt;, sagte Sirius und nahm einfach einen Schluck aus der Flasche, &gt;&gt; Wie viel Cousins hab ich? &lt;&lt;</p><p>Remus stöhnte auf, &gt;&gt; Das ist mies Sirius. Deine Familie ist riesig. &lt;&lt;</p><p>Er zuckte mit den Achseln, &gt;&gt; Trink. &lt;&lt; und er trank.</p><p>&gt;&gt; Was ist mein Lieblingsbuch? &lt;&lt;</p><p>Sirius streckte seine Hand in die Höhe, &gt;&gt; Zu einfach, Moony, wirklich zu einfach. <em>Hobbit</em> von diesem Muggelautor. &lt;&lt;</p><p>Remus stöhnte auf und händigte ihm eines der Geschenke aus, dass seine Eltern für Sirius mitgeschickt hatten und Sirius riss es ohne zu zögern auf. Eine Kassette von der Muggeband Pink Floyd „Dark side of the Moon“</p><p>&gt;&gt; Fuck man, Moony, das ist ja mega cool! &lt;&lt; rief er aus und drückte den kleineren fest an sich und anstatt weiter zu spielen, legte er die Kassette in den verzauberte Rekorder ein und ließ sie abspielen. Er gab Remus ein kleines Geschenk und zwinkerte, &gt;&gt; Ist nichts besonderes, aber vielleicht gefällt's dir. &lt;&lt;</p><p>Und es gefiel Remus Lupin so sehr, dass er seinen besten Freund fast umwarf, als er seine Arme um ihn legte. Von seinem Lieblingsautor Tolkin war es eine gebundene Ausgabe von <em>Der Herr der Ringe</em>.</p><p>&gt;&gt; Gefällt's dir? &lt;&lt;</p><p>Remus nickte sprachlos</p><p>Und Sirius packte das Geschenk der Madauers, seiner Freunde, aus. Eine schwarze Lederjacke. Er zog sie sofort an, das Gesicht abgewandt. Damit man die Träne nicht sehen konnte.</p><p>Und sie lagen, Schulter an Schulter bis tief in die Nacht nebeneinander, tranken Butterbier und lauschten den „Super-mega-punkigen“ Liedern (wie Sirius meinte) von Pink Floyd.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207287">Chapter 6</a>: Sam Gamdschie.... - Sirius Black
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u>
+    <em>SIRIUS BLACK</em>
+  </u>
+</p>
+<p> </p>
+<p>Drittes Schuljahr Schuljahr 9. Januar 1974</p>
+<p> </p>
+<p>Sirius saß auf dem kleinen, unbequemen Hocker, neben dem Bett im Krankenflügel. In seiner Hand hielt er <em>Den Herr der Ringe</em> und zwei Tafeln Schokolade. Er blickte auf den schlafenden Jungen runter. Remus hatte sich in den letzten zwei Jahren etwas verändert. Er war größer geworden, das Gesicht markanter und die Haare lockiger. Er hatte auch als erstes von ihnen Probleme mit der Stimme bekommen und auch als erstes Haare unter den Armen. Liegt wohl an der Lycanthropie. Doch jetzt sah er so klein und zerbrechlich aus. Sein erschöpftes Gesicht bleich wie das Kissen darunter, unter den Augen, wie immer direkt nach dem Vollmond, dunkel-violette Augenringe. Es war nicht fair, dass er damit kämpfen musste, dachte Sirius als Remus langsam die Augen öffnete.</p>
+<p>&gt;&gt; Was machst du denn schon hier? &lt;&lt; fragte er mit verschlafener Stimme, die sofort brach.</p>
+<p>Sirius winkte mit der Schokolade, &gt;&gt; Konnte nicht schlafen und weil ich weiß, dass du immer so früh wach wirst, dacht ich, ich komm direkt vorbei. &lt;&lt;</p>
+<p>Remus richtete sich zittrig auf und biss sofort von der Schokolade ab, &gt;&gt; HMM, du bist mein Held. &lt;&lt;</p>
+<p>Sirius lachte und lehnte sich auf das Bett, &gt;&gt; Immer wieder gerne, Moony. &lt;&lt;</p>
+<p>Plötzlich zuckte Remus zusammen und er sah ihn mit ernsten Augen an, &gt;&gt; Warst du heute Nacht wieder da? &lt;&lt;</p>
+<p>Sirius kratzte sich nervös am Nacken. An manchen Vollmondnächten folgte er Remus in den Gang und wartete auf der anderen Seite der Tür, bis die Sonne aufging und Remus sich zurück verwandelte.</p>
+<p>&gt;&gt; Bist du bescheuert, Sirius? &lt;&lt;, fauchte der Junge jetzt, &gt;&gt; Was wenn mal was schief geht? Ich will nicht, dass dir was passiert. &lt;&lt;</p>
+<p>&gt;&gt; Ich weiß, ich weiß. Aber- &lt;&lt;, wiegelte Sirius ab und setzte sich nun auf die Bettkante, &gt;&gt; Aber du bist immer ruhig, wenn jemand da ist. Und du hast weniger Verletzungen. Ich weiß  auch nicht, aber ich kann dich da doch nicht alleine lassen. &lt;&lt;</p>
+<p>Er sah Remus eindringlich an, doch dieser schüttelte wütend den Kopf, &gt;&gt; Du musst mir versprechen, nie wieder mit zu kommen. Bitte ich könnte mir nicht verzeihen, wenn dir oder den anderen je etwas passiert. &lt;&lt;</p>
+<p>&gt;&gt; Moony. &lt;&lt;, seufzte Sirius leise auf, &gt;&gt; Ich kann das nicht versprechen, aber wir haben eine Idee. &lt;&lt;</p>
+<p>Remus runzelte die Stirn und sah seinen Freund skeptisch an.</p>
+<p>Und da erzählte Sirius von dem Plan, dass sie ein Animagus werden wollten. Seit Wochen waren die drei anderen Jungen in der Bibliothek gewesen und hatten recherchiert.</p>
+<p>&gt;&gt; Als Tier kannst du uns nichts tun und du wärst nicht mehr alleine. Wir könnten dir helfen. &lt;&lt;, sagte Sirius leise und kletterte jetzt komplett neben Remus, sodass ihre Schultern sich berührten.</p>
+<p>&gt;&gt; Außerdem wäre es verdammt cool. &lt;&lt;, lachte er, &gt;&gt; Stell dir mal vor, was wir alles machen könnten?! &lt;&lt;</p>
+<p>Und obwohl er Remus nicht vollends überzeugen konnte, stimmte dieser irgendwann zu.</p>
+<p>&gt;&gt; Snap Explodieren? &lt;&lt;, fragte Sirius ihn, doch Remus schüttelte den Kopf.</p>
+<p>&gt;&gt; Gib mir doch das Buch. Bin fast fertig. &lt;&lt;</p>
+<p>Doch seine Hände zitterten so stark, dass Remus nicht in Ruhe lesen konnte und enttäuscht den Mund verzog.</p>
+<p>Sirius, der seinen besten Freund niemals so sehen konnte, nahm ihm seufzend das Buch ab und begann vorzulesen.</p>
+<p>&gt;&gt; <em>Und so geschah es. Sam Gamdschie heiratete Rosie Hüttinger im Frühjahr 1420... </em>&lt;&lt;</p>
+<p>Remus Kopf rutschte auf seine Schulter und Sirius konnte den warmen Atem in seiner Halsbeuge spüren und die Schokolade riechen. Er legte das Buch zur Seite, kuschelte sich enger an Remus kalten Körper und zog die Decke über sie beide.</p>
+<p>Als er beinah eingeschlafen war, hörte er ein leise gemurmeltes, &gt;&gt; Danke, Sirius. &lt;&lt;</p>
+<p>Er lächelte und schlief, die Nase in den weichen Locken vergraben, ein.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207335">Chapter 7</a>: Kuss in der Nacht - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>First kiss and light talking about smut ;)</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u>
+    <em>REMUS LUPIN</em>
+  </u>
+</p>
+<p> </p>
+<p>Viertes Schuljahr 13. November 1974</p>
+<p> </p>
+<p>Es war schon spät in der Nacht, als die Tür zum Schlafsaal geöffnet wurde und Sirius leise hinein schlüpfte. Seine Haare ein wildes Durcheinander, unter der Lederjacke die nackte Brust sichtbar und sein Gang etwas unkoordiniert. So leise es ihm möglich war zog er sich um, doch anstatt in sein Bett zu steigen, kam der 15-jährige zu Remus.</p>
+<p>&gt;&gt; Ey, Moony, bist du noch was? &lt;&lt;, flüsterte er und Remus konnte den scharfen Geruch von Feuerwhiskey wahrnehmen und etwas anderes. Ein leichtes, süßes Parfüm. Anstatt jedoch auf eine Antwort zu warten, stieg Sirius in das Bett seines Freundes und stieß ihn in die Seite, &gt;&gt; Moons, wach auf, man. &lt;&lt;</p>
+<p>Remus drehte sich zu Sirius um, &gt;&gt; Was willst du, Sirius? Es ist mitten in der Nacht, man. &lt;&lt;</p>
+<p>Sirius drückte ihm etwas zu Seite und legte sich neben ihn, &gt;&gt; Man, Moons. Ich hab‘s getan. &lt;&lt;</p>
+<p>Seine Stimme rauchig, dunkel, aufgeregt.</p>
+<p>&gt;&gt; Was getan? &lt;&lt;, fragte Remus mit zitternder Stimme obwohl er genau wusste, was sein bester Freund ihm sagen würde. Sirius drehte sich auf die Seite, stütze den Kopf auf seine Hand und sagte leise, &gt;&gt; Ich hatte Sex. &lt;&lt;</p>
+<p>&gt;&gt; Super, Sirius und jetzt lass mich schlafen. &lt;&lt;, murmelte Remus und schloss seine Augen. Er versuchte flach zu atmen, da der Geruch von Parfüm, Zigaretten und Alkohol ihm ein mulmiges Gefühl in der Magengegend bescherte. Doch Sirius wäre nicht Sirius, wenn er sich mit dieser kleinen Anteilnahme zufrieden geben würde. Er zog die Vorhänge zu, was Remus leichte Panik überkommen lies. <em>Verdammt, den Gestank bekomm ich hier sicher für mehrere Tage nicht mehr raus</em>.</p>
+<p>Er stöhnte auf und setzte sich in eine senkrechte Position, &gt;&gt; Ok, Sirius, wer war‘s? &lt;&lt;</p>
+<p>Eigentlich wollte er es nicht hören und er fühlte wie sich sein Magen schmerzhaft zusammen zog. Eifersucht.</p>
+<p>Sirius Stimme überschlug sich jetzt fast, &gt;&gt; Die kleine Blonde, aus Hufflepuff. Helena McGregory, weißt du? Die mit der Jeansjacke. Verdammt, Moony dass war echt...krass. &lt;&lt;</p>
+<p>&gt;&gt; Super. Sirius und jetzt? Seid ihr jetzt ein Paar? &lt;&lt;</p>
+<p>&gt;&gt; Merlin bewahre. &lt;&lt;, lachte der andere auf und streckte die langen Beine über Remus' aus.</p>
+<p>Und so saßen sie da und Sirius erzählte. Von dem Feuerwhiskey, von der Musik, von Helena McGregory mit ihren lavendel farbenen Augen, ihren breiten Lippen und was sie mit denen gemacht hatte. Von ihren kleinen Händen und dabei lacht er leise, rau, aufgeregt.</p>
+<p>Und Remus lacht mit, ebenfalls aufgeregt und erregt, bei der bildlichen Vorstellung seiner Beschreibung.</p>
+<p>&gt;&gt; Und du, Moony? Was ist mit dir? &lt;&lt;, fragt Sirius plötzlich und legt eine Hand um die Schulter seines Freundes. Remus lachte sein leises, geheimnisvolles Lachen und rückte von ihm ab.</p>
+<p>&gt;&gt; Was soll mit mir sein? &lt;&lt;</p>
+<p>Sirius grinste ihn breit an, &gt;&gt; Hattest du schon? &lt;&lt;</p>
+<p>Der kleinere schüttelte immer noch lachend den Kopf, &gt;&gt; Ich hab noch nicht mal geknutscht! &lt;&lt;</p>
+<p>&gt;&gt; Ernsthaft? &lt;&lt;</p>
+<p>&gt;&gt; Ernsthaft! &lt;&lt;</p>
+<p>Bevor Remus noch irgendetwas sagen konnte, setzte sich Sirius direkt vor ihn und zog ihn auf die Knie. Alkohol, Dunkelheit und eine weiche Federmatratze brachten ihn zum Schwanken, doch er schaffte es das Gleichgewicht zu halten.</p>
+<p>&gt;&gt; Willst du es ausprobieren? &lt;&lt;, Sirius Stimme brüchig und Remus merkte, dass er zitterte. Er war nun seinem Gesicht zu nah. Remus konnte seinen Atem auf seinen Wangen spüren.</p>
+<p>&gt;&gt; Sirius, sei nicht bescheuert. Du bist total betrun... &lt;&lt;</p>
+<p>Zu mehr kam er nicht. Sirius legte eine Hand in seinen Nacken und zog ihn an sich. Lippen an Lippen und ihm wurde schwarz vor Augen. Dann bröckelte seine Welt und blieb für einige Zeit unter rot, golden, silbern sprühenden Funken stehen. Er konnte kaum mehr atmen, Sirius Zunge fuhr leicht über seine Unterlippe. Scharf zog er die Luft ein und öffnete zögernd die Lippen. Die Hände in Sirius Haaren vergraben, erwiderte er den Kuss. Hungrig, fordernd, heißer Atem in seinem Mund und Sirius rutschte näher an ihn. Kniete zwischen seinen Beinen, eine Hand in Remus Nacken um ihn fester an sich zu ziehen und die andere in den Honig-Locken. Als Remus einziehen im Unterleib spürte und wusste, dass dieser Kuss mit seinem besten Freund etwas in ihm auslöste was niemals geschehen sollte, wimmerte er leise auf. Und Sirius lies atemlos von ihm ab.</p>
+<p>Als die Welt sich plötzlich weiter drehte, öffnete Remus die Augen und sein bester Freund grinste ihn breit an, &gt;&gt; So, jetzt hast du das auch hinter dich gebracht, Moony. &lt;&lt;</p>
+<p>Er ließ sich rückwärts fallen, Remus legte sich ebenfalls hin.</p>
+<p>Bein an Schulter und Schulter an Bein schlief Sirius ein, während der andere Junge noch lange wach lag und die weichen Lippen auf seinen, die Hand in seinem Nacken und das Feuerwerk im Bauch spürte.</p>
+<p>
+  <em>Verdammt!</em>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207374">Chapter 8</a>: Aber er ist mein bester Freund - Sirius Black
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u> <em>SIRIUS BLACK</em> </u>
+</p><p> </p><p>Viertes Schuljahr 16. Dezember 1974</p><p> </p><p>Egal was er tat, Sirius konnte sich auf nichts konzentrieren.</p><p>Er wollte Zucker in seinen Kaffee machen und schaufelte Eierschalen hinein.</p><p>Er wollte den Tisch in Verwandlung in ein Schwein verwandeln und färbte stattdessen Marlene McKinniens Haare purpurrot.</p><p>Er fiel beim Training vom Besen. Er hatte seine Tasche nach Wahrsagen vergessen und musste den ganzen Weg wieder hoch hetzten.</p><p>Es ging einfach alles schief und das nur, weil er sich nicht konzentrieren konnte. Die anderen hatten gescherzt, dass es wohl an dem Fick mit Helena McGregory lag, dass seine Gedanken umherschwirrten. Dass er die ganze Zeit an das erste Mal Sex denken musste.</p><p>Doch Sirius wusste es besser. Der Sex war.... nett gewesen. Sie hatten zusammen gelacht, dann sich geküsst und dann auf einem Sofa war er in sie eingedrungen. Es war gut gewesen, er hatte sich nicht blamiert, es war nichts Peinliches dabei passiert und sie hatte gesagt, dass es ihr gefallen hatte. Nein, das Problem war, dass dabei in seinem Inneren gar nichts passiert war, rein gar nichts.</p><p>Nicht so wie bei dem Kuss mit Remus.</p><p>Als der verschlafene Junge sein kleines, geheimnisvolles Lachen von sich gegeben hatte und gestanden hatte, er hätte noch nie jemanden geküsst, war in Sirius Kopf ein Schalter umgeklappt und ohne groß nachzudenken hatte er seine Lippen auf Remus' gelegt. Das Feuerwerk in Sirius Inneren, das Prickeln auf seiner Haut und das Ziehen in seinem Unterleib, hatten ihn sprachlos, atemlos gemacht. Danach hatte er sich Rückwerts fallen lassen, seinen Arm auf seinem Mund, damit Remus den erregten Seufzer nicht hören konnte.</p><p>Erst hatte Sirius gedacht, es hätte an den Hormonen gelegen. Dass er generell schon wieder Lust auf Sex gehabt hatte, dass ihm das Zusammensein mit Helena nur für den Moment gereicht hat und ihm Lust auf mehr gemacht hatte.</p><p>Doch als er sich in den Tagen darauf ertappte, wie er Remus beobachtete, seine weichen Hände, die Beuge an seinem Hals, den Blick gebannt auf den weichen Lippen, wusste er, dass es nicht alles gewesen sein konnte. Und als der erste Traum gekommen war, sein Körper an Remus', leises Seufzen, Remus Geruch und Sirius stöhnend und so erregt wie nie zu vor aufgewacht war, war er wütend geworden. So hatte er sich befriedigt. Wut und Schmerzenstränen in den Augen, die Gedanken die ganze Zeit bei Remus Augen und seinem Mund.</p><p><em>Was passiert mit mir?</em> ,wollte er brüllen. <em>Er ist mein bester Freund!</em></p><p>Er fühlte sich furchtbar. Er war nicht so ein Kerl, der gerne mit anderen Kerlen....</p><p>&gt;&gt; He, Sirius, schon wieder in Gedanken zwischen zwei weichen Beinen? &lt;&lt;, hörte er eine Stimme.</p><p>&gt;&gt; Klappe, James! &lt;&lt;, fauchte er und das Brennen auf seinen Wangen wurde noch schlimmer. Er stand auf und ging ohne ein weiteres Wort in den Schlafsaal und legte sich in sein Bett. Er antwortete auch nicht, als die anderen später rein kamen und eine gute Nacht wünschten. Er warf sich in seinem Bett umher, schlaflos, aus Angst wieder von ihm zu träumen.</p><p>Da hörte Sirius, wie Remus auf stand und zu ihm kam. <em>Verpiss dich!</em>, wollte er zischen, doch er brachte es nicht über die Lippen und als Remus neben ihm lag, ohne Fragen zu stellen, entspannte er sich langsam.</p><p>Sirius konnte die Wärme des anderen wahrnehmen und allein das reichte aus, seinen Körper in Wallung zu bringen. Aus Angst, Remus könnte spüren, dass er erregt war, versuchte er Abstand zu wahren.</p><p>&gt;&gt; Mir ist kalt. &lt;&lt;, sagte Remus leise und wieder ohne groß nachzudenken, zog Sirius seinen besten Freund ganz fest an sich. So blieb er still liegen, bis Remus gleichmäßig atmete. Ohne es zu wollen, begannen Sirius Finger über den Nacken, den Rücken, die Arme zu streicheln und seine Lippen hauchzart wie der Flügelschlaf eines Schmetterlings über die Stirn, die Wange zu streifen. Er wagte es nicht, ihn richtig zu küssen. Er schloss die Augen und atmete tief ein. Schokolade, Moschus, Wald, wild. Wie sehr liebte er diesen Geruch. Wie sehr er <em>liebte</em> ihn.</p><p>Er war verloren und Sirius wusste es, als er eng an Remus gekuschelt einschlief.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207446">Chapter 9</a>: Mssrs. Moony, Wormtail, Padfoot and Prongs - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <u>REMUS LUPIN</u>
+  </em>
+</p>
+<p> </p>
+<p>Fünftes Schuljahr 19. September 1975</p>
+<p> </p>
+<p>Sirius riss die Tür auf, gefolgt von James und Peter, &gt;&gt; Es ist so weit! Remus, wir haben es geschafft! &lt;&lt;</p>
+<p>Remus saß auf seinem Bett, ein dicken Wälzer auf den Beinen und blickte langsam auf, &gt;&gt; Was geschafft? &lt;&lt;</p>
+<p>&gt;&gt; Was wohl, Moony? &lt;&lt;, lachte James und hüpfte aufgeregt vor ihm rum, während Peter die Tür hinter ihnen fest verschloss, &gt;&gt; Wenn du willst, fangen wir an, ja? &lt;&lt;</p>
+<p>Sirius stimmte laut lachend mit ein und klärte den vollkommen verwirrt drein schauenden Remus auf, &gt;&gt; Wir sind fertig mit der Verwandlung zu Animagi. Wir haben es geschafft. Pete und James haben sich schon verwandelt. Willst du es sehen? &lt;&lt;</p>
+<p>Remus warf sein Buch achtlos zur Seite, was die anderen drei Jungen nochmals zum Lachen brachte, &gt;&gt; LOS! &lt;&lt;</p>
+<p>Und Peter stellte sich in die Mitte des Raums, murmelte leise und verschwand.</p>
+<p>&gt;&gt; Wo ist er? &lt;&lt;, rief Remus aufgeregt und Sirius bückte sich um eine kleine, hellblonde Ratte auf die Hand zu nehmen. Der Rattenschwanz schlängelte sich um sein Handgelenk und die Piepste laut auf. Nachdem er die Ratte wieder auf das Bett gesetzt hatte, verwandelte Peter sich zurück und saß breitbeinig vor ihnen.</p>
+<p>&gt;&gt; WAHNSINN! &lt;&lt;, rief Remus, &gt;&gt; Verdammter Wahnsinn! &lt;&lt;</p>
+<p>&gt;&gt; Jetzt ich! &lt;&lt;, James trat nach vorn, wiederholte den Zauberspruch mit zittriger Stimme und ehe sie sich versahen, stand ein Hirsch in ihrem Schlafsaal. Remus trat mit leuchtenden Augen auf ihn zu und streckte die Hand aus, &gt;&gt; Bei Merlin, James. Wusste gar nicht, dass du so schön sein kannst! &lt;&lt;</p>
+<p>Ein plötzlicher Stich in Sirius Magengegend und er versuchte unsicher zu lachen, während er ebenfalls James langen Hals tätschelte. Sein Freund schüttelte sich und verwandelte sich zurück.</p>
+<p>&gt;&gt; Leute, nächstes Mal nicht tatschen, ja? &lt;&lt;, seine Stimme klang ernst, doch die funkelten Augen und das breite Grinsen auf seinem Gesicht, straften seinen Worte lügen.</p>
+<p>&gt;&gt; Und du Sirius? Was ist deine Animagiform? &lt;&lt;, fragte Remus.</p>
+<p>Sirius zuckte mit den Schultern, &gt;&gt; Keine Ahnung, Moony. Hab‘s noch nicht ausprobiert. &lt;&lt;</p>
+<p>&gt;&gt; Er wollte es mit dir zusammen machen. &lt;&lt;, lachte Peter, der noch immer auf dem Bett saß und eine Schachtel Berty Botts Bohnen in der Hand hielt.</p>
+<p>&gt;&gt; Wirklich? &lt;&lt;, flüsterte Remus und augenblicklich wurde Sirius Gesicht heiß. Er nickte und stellte sich jetzt an James' Stelle.</p>
+<p>&gt;&gt; Fangen wir an. &lt;&lt;</p>
+<p>Sirius war nervös. Er wusste, dass die Verwandlung wehtun würde und er wusste noch immer nicht, welches seine Tiergestalt sein würde. Genau wie bei einem Patronus konnte der Zauberer seine Animagiform nicht beeinflussen. <em>Was wenn ich ein Ferkel bin?</em></p>
+<p>Remus lächelte ihn mit seinem wunderbaren Lächeln an und Sirius holte tief Luft.</p>
+<p>Der Schmerz war unbeschreiblich. Seine Haut platze auf, seine Knochen brachen, er wollte schreien aber es kam kein Ton aus ihm raus. Er wusste, dass es gleich vorbei sein würde und wenn Remus, dass jeden Monat über sich ergehen lassen konnte, dann war das nichts.</p>
+<p>Als er die Augen wieder öffnete, sah er nur die Beine der anderen. Er holte tief Luft. Alle Gerüche waren so viel intensiver. <em>Oh bei Merlin, Moony riecht so gut.</em></p>
+<p>Er versuchte an sich hinab zu blicken, doch das einzige was er sehen konnte, war jede Menge schwarzer Haare.</p>
+<p>Remus war vor ihm in die Knie gegangen und grinste ihn breit an, &gt;&gt; Sirius, du bist ein Hund! &lt;&lt;</p>
+<p>Sirius wollte antworten, doch aus seiner Kehle kam nur ein raues Bellen und als Remus ihn hinter den Ohren kraulte, spürte er das seine Rute zu wackeln begann. Er hörte James und Peter lachen und sprang auf Remus Bett. Die weiche Nase in den Decken und dem Kissen vergraben, atmete er tief ein. Remus setzte sich neben ihn, &gt;&gt; Willst du dich nicht wieder zurück verwandeln? &lt;&lt;</p>
+<p>Sirius brummte und legte seinen Kopf auf Remus Knie und schlug mit der Pfote gegen ihn. Remus nahm sie in die Hand, schüttelte sie leicht &gt;&gt; Na, Padfoot, bleibst du jetzt so? &lt;&lt;</p>
+<p>Und so kamen sie an ihre Namen.</p>
+<p>Peter wurde zu Wormtail, da der lange Rattenschwanz wie ein Regenwurm aussah.</p>
+<p>James wurde Prongs, der die Krone als Hirsch mit Begeisterung trag.</p>
+<p>Und Sirius wurde Padfoot.</p>
+<p> </p>
+<p>Als Sirius die Augen öffnete, war es dunkel im Schlafsaal und er konnte die ruhigen Atemzüge der anderen hören. Sie waren alle schon eingeschlafen, bis auf Remus, der neben ihm lag und seine langen Finger durch sein Fell gleiten ließ</p>
+<p>&gt;&gt; Du bist so weich. &lt;&lt;, flüsterte er und lächelte ihn an. Sofort schlug die Rute in einem unruhigen Takt auf die Bettdecke und Sirius verfluchte es. <em>Verdammt, der scheiß Schwanz verrät mich nur.</em></p>
+<p>Doch Remus lachte nur, ganz leise und traurig.</p>
+<p>&gt;&gt; Danke. &lt;&lt;, seine Stimme zitterte und Sirius konnte in den großen Augen die Tränen sehen, &gt;&gt; Danke, dass ihr das für mich gemacht habt. &lt;&lt;</p>
+<p>Sirius kroch näher an ihn ran, stupste mit der feuchten Nase an Remus Wange und leckte drüber.</p>
+<p>&gt;&gt; Du kannst dir nicht vorstellen, wie glücklich ich bin, dich zu haben. &lt;&lt;, sagte Remus leise, als er ihn noch näher an sich zog und die Augen schloss.</p>
+<p>Remus Herzschlag in den Ohren schlief Sirius an.</p>
+<p>Oder Padfoot?</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207479">Chapter 10</a>: Ein fataler Fehler - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Language</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <u>REMUS LUPIN</u>
+  </em>
+</p><p> </p><p>Ende Fünftes Schuljahr 13. Juni 1976</p><p> </p><p>Es war Mitte Juni und in wenigen Tagen würden die Sommerferien beginnen. Es war brühend heiß im Schlafsaal und Remus saß am offenen Fenster und blickte über die Landschaft. Sein Gesicht voller neuer Kratzer und unter seinen Nägeln Blut. Es war ebenso gerade Vollmond gewesen und eine furchtbare Übelkeit überkam ihn. Es war so stickig, dass er kaum Atmen konnte und die lauwarme Briese verschaffte keine Besserung. Er hatte es fast getan. Es war beinah passiert. Und seine Welt stand still.</p><p>&gt;&gt; Moony? &lt;&lt;, Sirius Stimme war leise und zitterte. Es war ansonsten vollkommen ruhig im Schlafsaal der Gryffindor. Remus war bis eben allein gewesen. Er reagierte nicht.</p><p>&gt;&gt; Remus, bitte, ich... &lt;&lt;, so hatte er ihn noch nie gehört. Schüchtern, zerbrochen, bettelnd. Langsam drehte sich Remus um. Ihm tat alles weh. Jede Bewegung schmerzte, jeder Gedanke brannte in seinem Herzen, &gt;&gt; Verschwinde, Black! &lt;&lt;</p><p>Sirius stand mit hängenden Schultern in einiger Entfernung vor ihm und sein bleiches Gesicht hatte jeden Funken Schalk verloren. Remus konnte seine Angst riechen und es stieß ihn ab. Moony in ihm wollte zu Padfoot und ihm zeigen, dass alles in Ordnung war. Das sie noch immer ein Rudel waren, doch Remus, der nun wieder die Oberhand über seinen Körper hatte, wollte nicht.</p><p>&gt;&gt; Moony, ich...&lt;&lt;, doch Remus schnitt ihm die Worte ab, &gt;&gt; Nenn mich NIE wieder so. &lt;&lt;</p><p>Sirius Hände schwebten Hilflos in der Luft, er zitterte, &gt;&gt; Bitte, Remus, du musst mir glauben, es tut mir leid. Es tut mir wirklich leid. &lt;&lt;</p><p>Er wollte einen Schritt auf den jungen Werwolf zu machen, doch ein tiefes, bestialisches Grollen hielt ihn ab. Seine Hände fuhren durch sein bleiches Gesicht, &gt;&gt; Es tut mir so leid, ich hab nicht nachgedacht. &lt;&lt;</p><p>&gt;&gt; Wie immer, Sirius. Du hast nicht nachgedacht. &lt;&lt;, jetzt sprang Remus auf und ging eine Schritt auf seinen einstigen Freund zu, &gt;&gt; Du hast nur an dich gedacht. Kannst du dir vorstellen was passieren hätte können? &lt;&lt;</p><p>Remus Hände zitterten vor Wut, seine Stimme war ein tiefes Knurren, die Zähne fest zusammen gebissen, die Augen zu gefährlichen Schlitzen verengt.</p><p>&gt;&gt; SNAPE HÄTTE STERBEN KÖNNEN! &lt;&lt;, brüllte er Sirius an, &gt;&gt; VERDAMMT. ICH HÄTTE IHN UMBRINGEN KÖNNEN! &lt;&lt;</p><p>Sirius hatte Snape zu ihm geführt. Hatte ihm gesagt, wie er durch die peitschende Weide kommen konnte und Remus hatte ihn nach seiner Verwandlung fast ermordet. Sirius hatte ihn verraten. Er hatte ihre Freundschaft verraten.</p><p>&gt;&gt; DU DENKST NIE AN WEN ANDERES ALS AN DICH, ODER SIRIUS? &lt;&lt;, Remus machte eine Schritt auf ihn zu, &gt;&gt; Verdammt, dass bin ICH. Ich bin das Ding, dass an Vollmond in diesem Körper steckt, wenn dieses Ding jemanden Umbringt, dann hab ICH das getan. Verstehst es das denn nicht? Du hättest mich zu einem Mörder machen können. Oder Snape zu einem Werwolf. &lt;&lt;</p><p>&gt;&gt; Remus, bitte, bitte, es tut mir so leid. &lt;&lt;, schluchzend machte Sirius einen großen Schritt auf ihn zu und wollte ihn an der Schulter packen, doch Remus riss sich los. Stattdessen schlug er mit der Faust seinem Freund ins Gesicht, der mit einem lauten Poltern auf den Boden fiel. Sofort floss Blut aus Sirius Nase und verteilte sich auf seinem Hemd und Remus sprang auf ihn, schlug blind vor Hass, vor Wut vor Trauer auf ihn ein.</p><p>&gt;&gt; SCHEIßE, SIRIUS. ICH HAB DIR VERTRAUT. &lt;&lt; schrie er, während er immer wieder zu schlug. Sirius wehrte sich nicht, &gt;&gt; ICH DACHTE DU BIST MEIN FREUND. &lt;&lt;</p><p>&gt;&gt; Bitte, Remus. Ich bin dein Freund. Ich bin dein Freund. &lt;&lt;, Sirius sah die Tränen und die blutigen Kratzer von der letzten Verwandlung in Remus Gesicht und wollte sie wegwischen doch Remus schlug seine Hand grollend weg.</p><p>Die Tür zum Schlafsaal wurde aufgerissen und James kam mit Peter rein gestürmt. James packte Remus an den Schultern und zog ihn von dem schwarzhaarigen runter. Er legte die Arme um seine bebende Brust, sprach beruhigend in sein Ohr. Remus sonst so sanfte Augen sprühten vor Hass und eine unsagbare Kälte lag im Raum.</p><p>Sirius saß auf dem Boden. Den Kopf zwischen die Knie gesteckt und wiederholte nur immer und immer wieder, &gt;&gt; Oh Gott, es tut mir so leid, es tut mir leid, es tut mir leid, Remus. Es tut mir so leid. Scheiße, verdammt. Scheiße. Scheiße! &lt;&lt;</p><p>Er hatte ihn verloren, dass wusste der junge Black. Er hatte alles verloren und ein heiseres Schluchzen drang aus seiner Kehle, &gt;&gt; Scheiße, verdammt! &lt;&lt;</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-11">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207521">Chapter 11</a>: "Du bist mein bester Freund" - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u>
+    <em>REMUS LUPIN</em>
+  </u>
+</p>
+<p> </p>
+<p>Sechstes Schuljahr 16. Oktober 1976 </p>
+<p>
+  <em>&gt;&gt; Vielleicht solltest du ihm langsam vergeben. &lt;&lt;, sagte James und legte einen Arm um Remus, doch dieser schüttelte den Kopf. Er sah zu Sirius rüber, der teilnahmslos, mit dunklen Augenringen und bleichem, kantigen Gesicht, an der Wand lehnte. Seine Augen geschlossen. &gt;&gt; Es tut ihm wirklich leid. Er hat sich seit dem verändert, Moony. &lt;&lt;</em>
+</p>
+<p>Remus setzte sich langsam in seinem Bett auf. Es war kühler geworden und die Luft roch bereits nach Schnee. Er mochte diese Jahreszeit. Ihm war nie wirklich kalt, aufgrund des Werwolfblutes in ihm. Und die Wintermonate kühlten ihn, sein Temperament und sein stets in Wallung ratendes Blut ab.</p>
+<p>Er sah sich im Schlafsaal um. Peter schnarchte laut vor sich hin. Über die Jahre hinweg, war er lauter geworden. James hatte die Vorhänge zu seinem Bett geschlossen und wahrscheinlich einen <em>Stillezauber</em> darüber gelegt, damit er in Ruhe seinen „Gedanken“ an Lily nachhängen konnte.</p>
+<p>Sirius lag zusammengerollt in seinem Bett. Die Vorhänge wie immer nur teils geschlossen, sein Gesicht dem Fenster und somit auch Remus zugewandt.</p>
+<p>
+  <em>&gt;&gt;Scheiße, man. Scheiße, verdammt. Es tut mir so leid. &lt;&lt;, Sirius saß auf dem Boden, sein Gesicht bleich und Blut und Tränen überströmt. Remus wollte weiter auf ihn einschlagen. Er hatte ihm vertraut...</em>
+</p>
+<p>Die Erinnerung an den Abend nach dem Vorfall überkam ihn und sein Herz zog sich heftig zusammen. Es war noch immer seltsam ihn wieder zu sehen, wieder in seiner Nähe zu sein. Sirius wirkte seit dem immer gestresst, unsicher.</p>
+<p>
+  <em>Der erste Tag nach den Sommerferien zurück im Schlafsaal und Sirius vor sich, war wie ein Schlag in die Magengegend gewesen. Der andere Junge hatte ihn nur angeguckt, die Lippen leicht geöffnet, als würde er etwas sagen wollen, doch er hatte keinen Ton raus gebracht. Remus hatte sich also von ihm abgewandt, seine Bücher aufgestellt und den Vorhang hinter sich zu gezogen.Unfähig etwas zu sagen oder klar zu denken, geschweige denn tief durch zu Atmen.Und Sirius hatte noch lange da gestanden, schweigend und händeringend.</em>
+</p>
+<p>Sirius Gesicht zuckte, er stöhnte leise auf. Ein Bein schlug zur Seite aus.</p>
+<p>Remus hatte in den letzten Wochen immer wieder seinen einstigen Freund Nachts beobachtet. Er wurde beinah jede Nacht von Albträumen heimgesucht. Manchmal wachte er flach atmend auf, die Augen voller Angst durch den Raum wandernd. Manchmal jedoch wachte er nicht auf und wurde irgendwann einfach ruhiger, doch entspannt war er nie. Auch jetzt sah Sirius Gesicht nicht vollkommen entspannt aus. Die Augenbrauen leicht zusammen gezogen, die Lippen fest auf einander gepresst. Seine Hand, die über die Bettkante hing, zuckte unruhig und Remus konnte ihn leise murmeln hören, &gt;&gt; Nein. Bitte. Es tut mir leid. &lt;&lt;</p>
+<p>Remus stand leise auf und ging auf den, sich mittlerweile umher werfenden, Jungen zu. Vorsichtig setzte er sich auf die Bettkante und überlegte, ob er Sirius nicht einfach weiterhin den Albträumen aussetzten sollte.</p>
+<p>&gt;&gt; Moony, bitte. Nicht. &lt;&lt;, stöhnte Sirius leise auf und strampelte die Decke komplett von sich. Obwohl Remus wusste, dass er immer halb nackt schlief, war der Anblick der nackten Brust auf der Angstschweiß stand, ein Schock. Er überlegte kurz, was er tun sollte. Wie er ihn wecken sollte und entschied sich für den alten, bekannten Weg.</p>
+<p>Remus kletterte in das Bett, zog den Vorhang fast komplett zu und legte eine Hand auf Sirius' Wange und die andere auf dessen Brust, &gt;&gt; Wach auf, Padfoot. &lt;&lt;</p>
+<p>Erschrocken riss er die Augen auf und wich zurück. Ein kläglicher Laut drang aus seinem Hals, das Herz unter Remus Hand raste wie verrückt.</p>
+<p>&gt;&gt; Du träumst schlecht. &lt;&lt;</p>
+<p>&gt;&gt; Ja, danke. &lt;&lt;, keuchte er und wischte sich den Schweiß von der Stirn. Langsam versuchte er sich aufzurichten und Remus ließ wieder von ihm ab. Es entstand eine unangenehm lange Stille, bis Sirius' Atem sich beruhigt hatte und er leise flüsterte, &gt;&gt; Verdammt, es tut mir so leid, ich wollte das alles nicht. Du bist ein bester Freund und ich hab‘s voll verkackt. Bitte hass' mich nicht, Remus. &lt;&lt;</p>
+<p>Seine Stimme wurde hektischer und er überschlug sich fast.</p>
+<p>Remus zog den Vorhang etwas zur Seite, damit etwas mehr Licht zu ihnen durchschien.</p>
+<p>&gt;&gt; Ich hasse dich nicht. &lt;&lt;</p>
+<p> </p>
+<p>Lange, leise im Flüsterton unterhielten sie sich. Sprachen von ihrem Sommer. Davon, wie schmerzvoll und einsam Remus in den zwei Vollmondnächten gewesen war. Aber auch, dass er ein Muggelmädchen aus dem nahe gelegenen Dorf kennen gelernt hatte, mit der er ein paar Mal tanzen gewesen war. Sirius erzählte, wie er von Zuhause endgültig fort gerannt war. Zu James und dessen Eltern, die ihn wie einen verlorenen Sohn willkommen geheißen hatten. Dort hatte er endlich so etwas wie ein Familienleben miterleben dürfte. Und das obwohl er das Gefühl hatte, nach allem was passiert war, dass er es nicht verdient hatte.</p>
+<p>Als ihn die Müdigkeit überkam, wollte Remus wieder aufstehen und zu seinem Bett gehen, doch eine Hand schloss sich um seine und seine Welt bröckelte ein zweites Mal.</p>
+<p>&gt;&gt; Bitte. &lt;&lt; Sirius räusperte sich, &gt;&gt; Bitte bleib bei mir, wie in alten Zeiten. &lt;&lt;</p>
+<p>Zögernd, zitternd, nun selber mit rasendem Herzen, drehte Remus sich wieder um und fragte sich, ob er es wagen sollte. Einen kurzen Moment hatte er sich so gefühlt als wäre nie etwas geschehen.</p>
+<p>&gt;&gt; Moons? Es tut mir so leid. &lt;&lt; flüsterte Sirius, seine Stimme brach.</p>
+<p>&gt;&gt; Ich weiß, Pads. &lt;&lt;</p>
+<p>Er schlang die Arme fest um den Körper des jungen Werwolfs, drückte sein Gesicht an seine Brust und die Schultern zuckten verdächtig.</p>
+<p>Remus strich sanft durch die dichten Locken und atmete tief ein. Sirius roch nach Schweiß, Schlaf,</p>
+<p>Aftershave und Lederjacke. Er roch wie immer und doch hatte sich alles verändert.</p>
+<p>Er spürte seine Beine, Sirius Atem an seinen Hals, seine Finger an seinem Rücken und eine wohlige Gänsehaut breitete sich auf Remus ganzen Körper aus.</p>
+<p>&gt;&gt; Du hast mir gefehlt Padfoot. &lt;&lt;, flüsterte er so leise, dass es beinah nicht zu hören war.</p>
+<p>Doch der Animagi hatte ihn deutlich gehört und sein Kopf zuckte hoch.</p>
+<p>&gt;&gt; Du mir auch. &lt;&lt;</p>
+<p>Ganz langsam, ganz vorsichtig, legte er seine warme Hand an Remus' Wange und seine Lippen auf die des anderen.</p>
+<p>Und Remus armes Herz explodierte abermals in tausend Stücke. Er konnte nicht atmen, sich nicht bewegen. Sein ganzer Körper begann zu zittern. Die Hitze die von Sirius' Körper ausging, die ganz sanft sich bewegenden Lippen auf seinen. Die nackte Brust an seiner, ein heftig pochende Herz. Er wusste nicht ob es sein war oder das des anderen.</p>
+<p>Der Kuss wurde fester, fordernder, beinah aggressiv. Die Hände in Sirius Lockenschopf. Ihm wurde heiß und kalt und seine Beine begannen zu zittern. Er öffnete leicht die Lippen, als Sirius' Zunge darüber fuhr und stöhnte leise auf. Dieser zog ihn fester an sich, eine Hand nun im Nacken, die andere auf seiner Brust. Sirius drängte seinen Körper an ihn und Remus spürte, dass Sirius erregt war, die brodelnde Hitze die von ihm ausging und das er ihn wollte. Seine schönen Hände wanderten unter das Shirt und legten sich auf Remus blanke Haut, die zu brennen schien.</p>
+<p>Remus versteifte sich unter dieser Berührung. <em>Verdammt. Verdammt, was tut er da? Aber war es nicht das was er gewollt hatte? All die Jahre seit dem Kuss und auch schon davor?</em></p>
+<p>&gt;&gt; Stopp. &lt;&lt;, stöhnte Remus plötzlich auf und versuchte Abstand zu gewinnen, um einen klaren Kopf zu bekommen, &gt;&gt; Lass das. Sirius Stopp. &lt;&lt;</p>
+<p>Sofort ließ er von ihm ab, &gt;&gt; Oh Gott, es tut mir leid. Ich wollte nicht. Es tut mir leid. &lt;&lt;</p>
+<p>Sirius setzte sich schnell auf, rückte ans andere Ende seines Bettes und atmete schwer. Versuchte seinen Atem unter Kontrolle zu bringen. Sirius silber-graue Augen sahen ihn erschrocken an, die Haare standen in allen Richtungen vom Kopf ab, die Wangen leicht gerötet und die Lippen vom Kuss angeschwollen.</p>
+<p>Remus musste unwillkürlich lächeln. Er war so schön. <em>Was wollte er? Was sollte er nur tun?</em></p>
+<p>Und Remus entschied sich nichts zu tun. Er lehnte sich zurück, in das noch durch Schweiß angefeuchtete Kissen, schloss die Augen und sagte, &gt;&gt; Du bist mein bester Freund Padfoot. &lt;&lt;</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-12">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207584">Chapter 12</a>: Vollmond - Sirius Black
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>WARNING<br/>mentioning of suicide thoughts</p>
+          </blockquote>
+        </div>
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <u>
+    <em>SIRIUS BLACK</em>
+  </u>
+</p><p> </p><p>Sechstes Schuljahr 4. April 1977</p><p> </p><p>Als die Tür hinter ihnen zu viel, lächelte Remus gequält. In dieser Nacht war Vollmond und sein ganzer Körper zitterte jetzt schon vor Schmerzen.</p><p>Sirius war das erste Mal seit dem Vorfall mit Snape allein mit Remus in einer Vollmondnacht und er war nervös. James und Peter hatten wegen einem blöden Streich sich Nachsitzen eingehandelt.</p><p>&gt;&gt; Wie geht’s dir Moony? &lt;&lt;, fragte Sirius leise, obwohl es die bescheuerteste Frage war, die er stellen konnte. So bescheuert, dass Remus kurz lachte, dann aber laut auf zischte.</p><p>&gt;&gt; Es tut weh, wie immer. &lt;&lt;</p><p>Das Gesicht bleich und schmerzverzerrt. Es riss Sirius immer wieder das Herz raus ihn so leiden zu sehen und nichts dagegen tun zu können. Ganz langsam zog Remus sein Hemd aus und als er die Hose nicht auf bekam, knurrte er wütend. Während des Vollmondes war er immer gereizt, aggressiv.</p><p>&gt;&gt; Warte, ich helfe dir. &lt;&lt;, Sirius ging auf ihn zu und öffnete ohne weiteren Kommentar seine Hose. Seine Finger berührten kurz die glatte Haut an Remus Bauch und ein Schauder ging durch Sirius Körper. Er legte die Arme um seinen Freund, fühlte sein Herz gegen die eigene Brust schlagen und Remus unregelmäßigen Atem in seinem Nacken. Dieser erwiderte die Umarmung, flüsterte jedoch leise, &gt;&gt; Du solltest dich verwandeln. Es geht gleich los. &lt;&lt;</p><p>Und er hatte Recht.</p><p>Der Mond schien nun hell in die Hütte und sein ganzer Körper begann sich zu schütteln. Sirius ließ ihn los und verwandelte sich in Padfoot.</p><p>Keinen Augenblick zu spät, denn schon ging Remus in die Knie, die Hose hatte er schnell ausgezogen und ein leises Wimmern drang aus seiner Kehle. Seine Hände umschlangen seine Schultern, er wiegte sich vor und zurück, als sein Körper begann sich zu deformieren. Das laute geheule nach der Verwandlung war ohrenbetäubend, doch Sirius liebte es.</p><p>Er liebte Remus, er liebte Moony, er liebte den Geruch, das Jaulen, das er versuchte ihn zu dominieren, dass rennen, die gegenseitige Fellpflege.</p><p>Es hatte seinen Grund, warum er ein Hund war. Hunde waren die besten Freunde. Hunde waren dem Wolf am nächsten verwandt. Er gehörte zu ihm, er war sein Rudel.</p><p> </p><p>Eng aneinander gekuschelt lagen sie an einander, als der Mond unterging und Remus Körper wieder zu zittern begann. Die Rückverwandlung ging immer schneller, aber ebenso schmerzvoll, vonstatten, wie die erste Verwandlung.</p><p>Sirius blieb oft bis Remus wieder ein Mensch war. Wenn er schutzlos und nackt auf dem kalten Boden der Hütte lag. Er verwandelte sich immer sofort zurück und half seinem Freund auf.</p><p>So auch an diesem Tag. Sobald Remus in menschlicher Gestalt auf dem Boden lag, verwandelte sich Sirius zurück und griff nach der Decke. Er stütze den jüngeren, brachte ihn zu dem ordentlichen, sauberen Bett und legte die Decke auf seine Schultern. Dann holte Sirius seine Klamotten und half Remus langsam in die Hose, in das Hemd. Mit zärtlichen Fingern knöpfte er das Hemd zu, so vorsichtig wie es ihm möglich war. Remus Haut war danach immer sehr empfindlich und ihm tat alles weh.</p><p>Dann setzte er sich neben ihn und wartete.</p><p>Remus Schultern zuckten und sein ganzer Körper wurde von heftigen Schluchzern durchgeschüttelt.</p><p>&gt;&gt; Moony? &lt;&lt;</p><p>&gt;&gt; Warum kann das nicht aufhören? Warum kann dieses scheiß Leben nicht endlich aufhören? Ich bin es so leid. Ich kann nicht mehr, Sirius. Ich kann das nicht mehr. Ich will nicht mehr leben. &lt;&lt;</p><p>Seine Worte trafen Sirius wie ein Schlag. Ihm wurde schlecht und er konnte kaum mehr atmen. Er versuchte nach Luft zu schnappen, doch es war als hätten sich kräftige Finger um seinen Hals gelegt die zu drückten.</p><p>&gt;&gt; Ich will nicht mehr leben! &lt;&lt;</p><p>&gt;&gt; HALT DEN MUND! &lt;&lt;, brüllte Sirius und stand auf, &gt;&gt; REMUS JOHN LUPIN!  WEHE! Wehe du sagst so etwas nochmal. &lt;&lt;</p><p>Remus hob den Kopf und sah ihn mit seinen braunen Augen erschrocken an. Er sah so zerbrechlich aus. So verwundet.</p><p>Sirius kniete sich vor ihn auf den Boden, &gt;&gt; Bitte, Remus, sag so etwas nie wieder. &lt;&lt;</p><p>Er wusste, dass Remus so etwas öfter dachte. Wenn er auf seinem Bett saß und aus dem Fenster blickte oder im Gemeinschaftsraum. Er konnte es in seinem Blick lesen, in den Augen sehen. Einmal auf dem Astronomieturm wäre er beinah den Schritt gegangen, wenn nicht James ihn an der Schulter zurück gehalten hätte.</p><p>Sirius wusste, dass Remus über Selbstmord nachdachte, aber er hoffte, dass er es niemals tun würde. Eine unbeschreibliche Angst überkam ihn und er fühlte sich betäubt.</p><p>&gt;&gt; Bitte, tu das niemals. &lt;&lt;, er griff nach dem schmalen Gesicht und nahm es zwischen seine Hände, &gt;&gt; Bitte, tu mir das nicht an. &lt;&lt;</p><p>
+  <em>Es würde mich umbringen!</em>
+</p><p>&gt;&gt; Sirius, es gibt keine Zukunft für mich. &lt;&lt;, flüsterte Remus und seine Augen waren leer, &gt;&gt; Ich werde niemals etwas in meinem Leben machen können. Keine anständige Arbeit, keine Familie. Was soll ich hier? &lt;&lt;</p><p>Und Sirius wusste, dass er damit Recht hatte, doch er sagte, &gt;&gt; Du hast mich und ich werde dich niemals verlassen, hörst du mich? &lt;&lt;</p><p>Seine Augen weiteten sich, der Mund geöffnet und Sirius wollte ihn so sehr küssen, doch es gehörte nicht hier her. Also sagte er nur, &gt;&gt; Ich verlass dich niemals und du bleibst bei mir. &lt;&lt;</p><p>&gt;&gt; Versprichst du es mir? &lt;&lt;, Remus Stimme zitterte und Sirius nickte.</p><p>&gt;&gt; Natürlich verspreche ich dir das. Du und ich, Versprochen. &lt;&lt;</p><p>Sirius nahm ihn in den Arm, drückte ihn fest an sich, atmete tief ein und flüsterte, &gt;&gt; Du bist wertvoll, Remus, wann lernst du es endlich? Du bist alles erdenklicher Wert und du hast ALLES Glück dieser Welt verdient, verdammte scheiße. Moony, bitte, bitte tu so was niemals. Ich bleibe immer bei dir. Versprochen, aber tu dir nichts an. &lt;&lt;</p><p><em> Ich will niemals ohne dich leben, </em>dachte Sirius und sein Herz wurde schwer, <em>Ich liebe, liebe liebe liebe dich.</em></p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-13">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207629">Chapter 13</a>: Sweet dreams - Sirius Black
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>light smut *_*</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <u>SIRIUS BLACK</u>
+  </em>
+</p><p> </p><p>Siebtes Schuljahr 28. Dezember 1977</p><p> </p><p>Der Gemeinschaftsraum der Gryffindor war wie leergefegt, abgesehen von einer kleinen Gruppe des Abschussjahrgangs. Es waren die Madaurers, Lily und deren Freundinnen, die sich am Feuer versammelt hatten und seit einiger Zeit „<em>Pflicht oder Wahrheit</em>“ spielten. Dazu gab es Alkohol und andere Leckereien aus der Küche.</p><p>Da dieses Jahr an Weihnachten Vollmond war, waren Sirius und die anderen in Hogwarts geblieben und hatten Remus über die schwere Nacht hinweg geholfen. Es war eine der schlimmsten Verwandlungen, die sie je bei ihm erlebt hatten. Es lag wohl daran, dass er in dieser Nacht noch mehr an seinem menschlichen Dasein gehangen hatte, als sonst.</p><p>Er saß neben Sirius, einen großen, weichen Pulli an und in den Händen eine heiße Schokolade mit Amaretto. Seine Nase und seine Wangen waren aufgrund des Alkohols etwas roter geworden und die Augen funkelten spöttisch.</p><p>Sirius konnte seinen Blick nicht von ihm abwenden.</p><p>&gt;&gt; Alles klar, Lily? &lt;&lt;, sagte James, der schon ordentlich was getrunken hatte und grinste die Schulsprecherin anzüglich an, &gt;&gt; Pflicht oder Wahrheit? &lt;&lt;</p><p>Sie grinste zurück, &gt;&gt; Wahrheit. &lt;&lt;</p><p>&gt;&gt; Willst du morgen mit mir ausgehen? &lt;&lt;</p><p>Sie nahm ein tiefen Schluck von ihrem Butterbier und grinste dann, &gt;&gt; Ja. &lt;&lt;</p><p>James Gesichtszüge entglitten und ein etwas dümmliches Lächeln breitete sich darauf aus. Lily wandte sich dann Remus zu, &gt;&gt; Pflicht oder Wahrheit, Baby? &lt;&lt;</p><p>Er lachte laut auf, &gt;&gt; Pflicht, Liebes. &lt;&lt;</p><p>&gt;&gt; Küss den Menschen im Raum, der dir am meisten etwas bedeutet. &lt;&lt;</p><p>Sein Gesicht wurde noch roter und er schien eine Weile zu überlegen. Als Remus sich zu ihm umdrehte, blieb Sirius' Herz stehen. Seine Hände wurden schweißnass und er schnappte leise nach Luft.</p><p>Sanft legte Remus seine Lippen auf seine, die Augen weit geöffnet und was Sirius darin sehen konnte, ließ einen angenehmen Schauer über seinen Rücken rieseln. Er konnte die Schokolade und den Alkohol riechen und natürlich auch Remus. Sein ganzer Körper schrie nach ihm und sofort spürte er in seiner Lendengegend sich etwas regen.</p><p>Lächelnd ließ Remus von ihm ab und fragte, &gt;&gt; Marlene? &lt;&lt;</p><p>Doch Sirius hörte nicht mehr zu. Remus hatte ihn vor allen anderen geküsst. Er bedeutete ihm am meisten etwas. In seinen Ohren rauschte das Blut und...</p><p>&gt;&gt; Hey, Sirius, alles ok? &lt;&lt;</p><p>&gt;&gt; Hä? &lt;&lt;</p><p>&gt;&gt; Hast du nicht zugehört, du bist dran. &lt;&lt;</p><p>&gt;&gt; Oh, Sorry. &lt;&lt;, er stand auf, &gt;&gt; Ich passe. Bin total fertig, geh mal ins Bett. Bis Morgen. &lt;&lt;</p><p>Ohne auf eine Antwort zu warten, war er aufgestanden und die Treppe zu seinem Schlafsaal hinauf gestiegen. Er holte tief Luft und versuchte sich zu beruhigen.</p><p><em>Verdammt. Komm wieder runter, Padfoot, </em>versuchte er sich zu besänftigen, als die Tür hinter ihm aufging, &gt;&gt; Pads, alles in Ordnung? &lt;&lt;</p><p>Remus Stimme lallte etwas und er hielt sich an der Wand fest. Sirius drehte sich wieder zu seinem Bett um, zog sich Shirt und Hose aus und wollte nur noch unter die Decke krabbeln.</p><p>&gt;&gt; Ja. &lt;&lt;, Sirius musste sich räuspern, &gt;&gt; Ja klar. Alles gut. Bin nur müde. &lt;&lt;</p><p>Da spürte er die weiche Hand auf seinem Rücken und eine Sengende Hitze trieb durch seinen Körper.</p><p>&gt;&gt; Wirklich alles in Ordnung? &lt;&lt;, Remus raue Stimme in seinem Nacken und der heiße Atem auf der nackten Haut und ihm war nicht mehr zu helfen. Sirius wollte ihn so sehr.</p><p>&gt;&gt; Bitte Moony, ich muss nur in mein Bett. &lt;&lt;, presste er aus den zusammen gekniffenen Lippen hervor und brachte alle erdenkliche Willenskraft auf, sich zu lösen und in sein Bett zu legen.</p><p>&gt;&gt; In Ordnung. &lt;&lt; sagte Remus, drehte sich um und ging wieder zur Tür. Er löschte das Licht und Sirius wartete auf das bekannte Quietschen der Tür, doch es kam nicht. Stattdessen hörte er Kleider rascheln und leise, nackte Füße auf den Boden.</p><p>&gt;&gt; Rutsch rüber, Pads. &lt;&lt;</p><p>
+  <em>Oh Gott, es wird mich umbringen.</em>
+</p><p>Doch Sirius rutschte rüber und machte ihm im Bett Platz. Remus zog den Vorhang komplett hinter sich zu und schlüpfte unter die Decke.</p><p>&gt;&gt; Was ist los, Sirius? &lt;&lt;</p><p>Er konnte Remus blanke Haut an seinem Arm und am Bein spüren und er hielt die Luft an. Langsam zählte er von 10 Rückwärts und bei 0 sagte er mit erstickter Stimme, &gt;&gt; Ich....kann.....nicht. &lt;&lt;</p><p>Und Remus rückte näher, seine Hand auf Sirius Brust. Sirius wusste, wenn er noch ein kleines Stück näher kommen würde, würde er sein erigierten Penis am Bein spüren und versuchte etwas von ihm weg zu rücken.</p><p>Er spürte Remus warmen Atem auf seinem Gesicht, &gt;&gt; Pads? &lt;&lt;</p><p>&gt;&gt; Ja? &lt;&lt;</p><p>&gt;&gt; Was passiert mit uns? &lt;&lt;</p><p>Er klang erschrocken, verängstigt, verunsichert und Sirius ging es im Inneren nicht viel besser weshalb er ehrlich, &gt;&gt; Ich weiß es nicht. &lt;&lt; antwortete.</p><p>Remus warme Hand legte sich auf seine Wange, er strich ihm das Haar aus dem Gesicht und obwohl es stockdunkel war, konnte Sirius den Ausdruck auf Remus' Gesicht erkennen, beziehungsweise erahnen. Er strich ihm über die Stirn, die Schläfe, über die Wange hinab, in den Nacken und dort verweilte seine zitternde Hand.</p><p>&gt;&gt; Willst du mich küssen, Sirius? &lt;&lt;</p><p>Er schnappte nach Luft, &gt;&gt; Ja. &lt;&lt;</p><p>&gt;&gt; Dann mach es bitte, bevor ich es mir anders überlege. Nur heute Nacht, ja? &lt;&lt;, Remus Stimme war ganz rau, ganz anders, als er sie kannte. Voller Lust.</p><p>Sirius lehnte sich an ihn, die Lippen auf seinen, die Zunge in seinem Mund, die Hände auf dem Körper des anderen. Als Remus mit seinem Mund weiter nach unten wanderte, stöhnte Sirius laut auf und als seine weichen Lippen seinen Penis umfassten....</p><p>...wachte Sirius schwer atmend auf.</p><p>
+  <em>Gott verdammter Mist!</em>
+</p><p>Es war nur ein Traum gewesen.</p><p>Er hörte aus dem Gemeinschaftsraum leises lachen und wusste, dass die anderen wahrscheinlich noch weiter feierten. Er drehte sich um, drückte seinen Körper an einen anderen und stieß einen leisen Schrei aus.</p><p>&gt;&gt; Alles ok, Pads? &lt;&lt; fragte die verschlafene Stimme von Remus, der ‑ zwar völlig angezogen ‑ neben ihm lag.</p><p>Sirius rückte schnell wieder von ihm ab, damit Remus nicht seinen steifen Penis an sich spürte, &gt;&gt; Heiliger ich hab mich halb zu Tode erschreckt. &lt;&lt;</p><p>&gt;&gt; Sorry, Pads. Ich konnte nicht schlafen, weil es so kalt war und dann dachte ich, tut mir Leid, soll ich wieder gehen? &lt;&lt;, Remus klang entschuldigend.</p><p>&gt;&gt; Quatsch, Moons. Hab mich nur erschreckt. &lt;&lt;</p><p>&gt;&gt; Ok. Hattest du grade einen Albtraum? &lt;&lt;, flüsterte Remus und rückte mit dem Rücken direkt an seinen Körper.</p><p>&gt;&gt; Eh – nein. Nein, kein Albtraum. &lt;&lt;</p><p>Sirius war sich sicher, dass er ihn jetzt genau spüren konnte, doch Remus rückte nicht wieder ab. Stattdessen murmelte er leise etwas und kuschelte sich noch enger an ihn. Sirius zog scharf die Luft ein und versuchte sich wieder zu beruhigen.</p><p>Es war zum verrückt werden und er brauchte eine halbe Ewigkeit, bis er ein einen leichten Schlaf überging.</p><p>Er war sich nicht sicher, ob die Hand, die sich plötzlich um seinen harten Penis schloss und ihn in den siebten Himmel beförderte, nur wieder ein Traum war oder Remus, der leise in sein Ohr flüsterte. Es war Sirius auch egal. Diesmal würde er nicht aufwachen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-14">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207659">Chapter 14</a>: Ein Leben wie auf Glatteis - Remus Lupin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>SMUT, but not really...I dont know. =D</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <u>REMUS LUPIN</u>
+  </em>
+</p><p> </p><p>Siebtes Schuljahr 21. Mai 1978</p><p> </p><p>Im Gemeinschaftsraum der Gryffindor war es laut und heiß.</p><p>Die Abschlussparty des siebten Jahrgangs und der Sieg des letzten Quidditchmatch - was gleichzeitig bedeutete, dass sie dieses Jahr den Pokal erhalten würden ‑ heizte die Stimmung extrem an und laute Musik dröhnte durch den Turm.</p><p>Remus sah sich mit gemischten Gefühlen um.</p><p>Da stand Sirius, ein randvolles Glas Feuerwhiskey in der Hand und grölte zu David Bowies Liedern mit.</p><p>Peter saß mit einem Mädchen aus dem fünften Jahrgang am Feuer und unterhielt sich angeregt über irgendetwas.</p><p>Und James, der Held des Spiels, hatte seine Arme fest um eine rothaarige gelegt. Ein kleines Lächeln auf seinen Lippen, als Lily ihm etwas ins Ohr flüsterte.</p><p>Doch Remus sah seine Freunde, seine Gefährten der letzten Jahre, nicht nur, wie sie jetzt aussahen. Er sah ihre kindlichen Gesichter, als sie sich im Schlafsaal vor beinah 7 Jahren vorgestellt hatten.</p><p>
+  <em>&gt;&gt; Peter Pe-Pe-Pettigrew. &lt;&lt;, stotterte der kleine, stämmige Junge mit den mausebraunen Haaren und winkte allen zittrig zu.</em>
+</p><p>
+  <em>Der große, schlanke Junge mit der Brille, leerte gerade seine Tasche auf dem Himmelbett aus, &gt;&gt; Ich bin James Potter. Meine Eltern waren auch schon in Gryffindor. Also total cool hier zu sein. &lt;&lt;</em>
+</p><p>
+  <em>&gt;&gt; Sirius Black. &lt;&lt;, der andere Junge mit den schwarzen Locken, der aristokratischen Nase und den eisgrauen Augen, ließ sich neben Potter auf das Bett fallen, streifte die Schuhe ab.</em>
+</p><p>
+  <em>&gt;&gt; Black, wie die Familie BlackBlack? &lt;&lt;, brach Peter raus und sah ihn bewundernd an. Sirius grinste nur breit, &gt;&gt; Black, wie BlackBlack. &lt;&lt;</em>
+</p><p>
+  <em>Und dann sahen alle drei Jungen zu ihm. Zwei Bücher im Arm, nuschelte er leise, &gt;&gt; Ich bin...- &lt;&lt;</em>
+</p><p>&gt;&gt; Remus? &lt;&lt;, eine ihm durchaus bekannte Stimme an seinem Ohr und als Remus sich umdrehte, blickte er in die glasigen Augen seines besten Freundes.</p><p>&gt;&gt; Ja, Sirius? &lt;&lt;, fragte er, während der andere ihm einen Arm um die Schulter legte.</p><p>&gt;&gt; Du siehst so nostalgisch aus. Erinnerung an den ersten Tag? &lt;&lt;</p><p>
+  <em>Warum wusste dieser Kerl eigentlich immer, wie es ihm ging? Das war dermaßen gruselig.</em>
+</p><p>Remus nickte und lehnte sich an ihn, &gt;&gt; Ich werde das wirklich vermissen. &lt;&lt;</p><p>&gt;&gt; Komm Moony, lass uns von hier verschwinden. Es ist viel zu heiß und laut hier. &lt;&lt;, flüsterte der ältere und zog ihn die Treppen zum Schlafsaal hoch, in dem die laute Musik noch immer wahr zu nehmen war.</p><p>Sie setzten sich an das offene Fenster auf Remus Bett. Rücken an Rücken und Sirius legte seinen Kopf in den Nacken, sodass seine gelockten Haare Remus am Hals kitzelten.</p><p>&gt;&gt; Die letzten sieben Jahre sind schrecklich schnell rum gegangen. Verrückt oder? &lt;&lt;</p><p>Der Werwolf nickte abermals, einen Klos im Hals.</p><p>Sehr lange sprachen sie nicht. Genossen nur die frische Luft und die Nähe des anderen.</p><p>&gt;&gt; Moons? &lt;&lt;</p><p>&gt;&gt; Hmmm? &lt;&lt;</p><p>Sirius kletterte um ihn und setzte sich zwischen Remus langen Beine, die er von sich gestreckt hatte  und der Blick wurde unheimlich ernst, &gt;&gt; Da draußen herrscht tatsächlich Krieg und – und wer weiß schon was in fünf Jahren ist. &lt;&lt;</p><p>Er rieb sich nervös den Nacken, zupfte an seinem Shirt und stammelte, &gt;&gt; Was ich sagen will, ist, dass wir nicht wissen können was die Zukunft bringt und ich möchte, verdammt sei Merlin, nicht bereuen müssen, etwas nicht gewagt zu haben. &lt;&lt;</p><p>&gt;&gt; Padfoot, was soll das werden? &lt;&lt;</p><p>Sturm grau traf Bernstein braun, eine warme Hand auf Remus Wange, die sich plötzlich heiß anfühlte.</p><p>&gt;&gt; Ich möchte nur heute Nacht einmal nicht dein bester Freund sein, Remus. Ich möchte wissen, wie es ist und morgen ist alles wie immer. Nur einmal in meinem Leben bitte?! &lt;&lt;, er biss sich leicht in die Unterlippe. Unsicher, aber den Mut eines wahren Gryffindors in sich, lehnte er sich vor und legte seine Lippen auf Remus'.</p><p>Erst ganz langsam und vorsichtig bewegte Sirius seinen Mund, aber als er seine Hand auf Sirius Brust legte, wurde der Kuss wagemutiger, intensiver.</p><p>Sirius griff nach seinem Nacken, die langen Finger vergruben sich in den Honighaaren und zog Remus näher an sich. Als er mit der Zunge über die weichen Lippen strich, seufzte Remus leise auf und erwiderte endlich den Kuss.</p><p> </p><p>Remus brannte. Seine Lippen, seine Zunge, jedes bisschen Zoll Haut, die Sirius berührte und sein Herz schlug schneller denn je. Noch nie hatte er sich so lebendig gefühlt, noch nie so sicher und geborgen.</p><p>Unter seinen Fingern konnte er auch Sirius' Herz spüren, wie es raste und eine verrückte Sinfonie spielte.</p><p>Remus Hände wanderten weiter hinab, unter das Shirt und seine Finger liebkosten die weiche, heiße Haut. Leise stöhnte Sirius in den Kuss und Remus Welt bröckelte ein drittes und letztes Mal.</p><p>Sirius ließ kurz von ihm ab und zog sich das Shirt über den Kopf. Die Muskeln auf der Brust und am Bauch spielten unter der Haut und als Remus nochmals, diesmal deutlich unsicherer, mit den Fingerspitzen darüber fuhr, breitete sich eine Gänsehaut darauf aus.</p><p>Die grauen Augen blickten liebevoll auf ihn hinab, doch in seinen Augen lag noch etwas anderes. <em>Er will mich, Gott, verdammt, er will mich. </em>Remus unterdrückte ein erregtes Stöhnen und ließ stattdessen seinen Blick über Sirius Körper streifen, während seine Hände dem Blick auf der Erkundungstour folgten. Fragend zupfte Sirius an Remus Pulli, &gt;&gt; Ich verließe die Tür richtig und du ziehst das da aus. &lt;&lt; und nach einem kurzen Augenblick nickte Remus.</p><p>Ganz langsam, während Sirius mit seinem Zauberstab die Tür richtig schloss und einen Stille Zauber über den Raum legte, zog er erst den Pullover, dann das Unterhemd aus. Die kühle Nachtluft strich über seine nackte Brust und er versuchte seine Narben zu verdecken.</p><p>&gt;&gt; Lass das, Remus. Ich kenne deinen Körper. &lt;&lt;, Sirius raue Stimme an seine Ohr und die weichen Lippen liebkosten ihn. Es stimmte, er kannte ihn. Jeden Monat nach Vollmond blieb er länger, bis Remus wieder ein Mensch war. Nackt, schutzlos, verwundet. Sirius kannte ihn und wollte ihn trotzdem und es machte ihm Mut.</p><p>Zögernd ließ er die Arme sinken. Sirius stand nun vor ihm, sein Blick wanderte über seinen Körper, &gt;&gt; Verdammt, du bist so schön, weißt du das eigentlich? &lt;&lt;</p><p>Remus spürte das Blut in die Wangen schießen und beschämt blickte er zu Boden. Sofort legten sich Sirius Arme wieder um ihn und nun den nackten Körper an sich zu spüren, ließ sein Herz stottern. Sirius' Lippen wanderten über seinen Mund, seine Wangen, seine Hals. Er küsste jede kleine Narbe, strich mit dem Daumen darüber und murmelte immer wieder, &gt;&gt; Du bist so schön. &lt;&lt;</p><p>Als er an Remus Hüfte ankam, stöhnte dieser laut auf. Die Hände in Sirius Locken vergraben, folgte er jeder Bewegung und seine Beine zitterten so sehr, dass er kaum noch stehen konnte.</p><p>&gt;&gt; Willst du- &lt;&lt;, räusperte Sirius sich kniend vor ihm, &gt;&gt; Willst du das wirklich? &lt;&lt;</p><p>Ob Remus wollte oder nicht spielte mittlerweile keine Rolle mehr. Sein Körper wollte. Tief im inneren seines Bauchs braute sich ein Sturm zusammen und alles zog sich zusammen.</p><p>&gt;&gt; Ja. &lt;&lt;, hauchte er, seine Stimme dunkler als je zuvor.</p><p>Sirius stand auf, sein Mund wieder auf Remus, schob er ihn zum Bett und kniete sich zwischen seine Beine. Ganz langsam strich er vom Hals abwehrts zum Hosenbund und verweilte dort, schwer Atmend. Als Remus sich ihm entgegen drängte, lachte er leise auf und öffnete erst seine, dann Remus Hose.</p><p>Der darauffolgende Kuss, die Hände an dem Körper des jeweils anderen, war nicht mehr sanft, nicht mehr sinnlich. Dieser war hungrig, aggressiv, auffordernd und als Sirius Hand seinen Penis umfasste, fluchte Remus laut und tat es ihm gleich.</p><p>&gt;&gt; Oh mein...FUCK &lt;&lt;</p><p>Seine bereits gebröckelte Welt explodierte in tausend Einzelteile und hinter seinen flackernden Augenlidern wurde es schwarz.</p><p> </p><p>Remus lag auf der Brust, als Sirius Finger zärtlich seinen Nacken entlangwanderten. Beide noch nackt und nach Atem ringend, die Herzen am rasen.</p><p>&gt;&gt; Ich wollte das schon damals machen, als ich dir deinen ersten Kuss geklaut hab. &lt;&lt;, flüsterte er ganz leise und der warme Atem ließ Remus erschaudern.</p><p>Dieser drehte sich wieder zu ihm, küsste Sirius Brust. Er schmeckte Salz auf den Lippen.</p><p>&gt;&gt; Ich weiß. Ich auch. &lt;&lt;</p><p>&gt;&gt; Nach Weihnachten, hab ich das nur geträumt? &lt;&lt;</p><p>Remus lachte kurz auf und er sah beschämt auf einen Punkt hinter ihm, &gt;&gt; Nein, hast du nicht. Es tat mir so leid, dass ich neben dir lag und du nichts an deiner <em>Situation</em> ändern konntest. Tut mir leid, dass ich dich nicht richtig geweckt hab. &lt;&lt;</p><p>&gt;&gt; Verrückter! &lt;&lt;, murmelte Sirius mit einem glücklichen Grinsen auf dem Gesicht.</p><p>Nackte Haut an nackter Haut, Hand in Hand, Lippen an Lippen schliefen sie ein.</p><p>Und am nächsten Morgen war, wie Sirius es versprochen hatte, beinah alles wie zuvor. Abgesehen von den heimlichen Blicken, den kurzen, sanften Berührungen der Hände, wenn sie nebeneinander gingen oder Sirius anzüglichen Gesten, die Remus Haut brennen und seinen Kopf fliegen lies.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-15">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/9367178/chapters/21207713">Chapter 15</a>: Das Ende
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/9367178/chapters/21207713#chapter_15_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Als sie nebeneinander ein letztes Mal aus dem Hogwartsexpress stiegen, streiften Remus Finger Sirius' und leise flüsterte er ihm zu, &gt;&gt; Ich bin froh, dass wir es gewagt haben und bin der Meinung wir sollten das heute Abend wiederholen. Vielleicht mit etwas mehr "Mundeinsatz". &lt;&lt; und lachte, als Sirius Wangen sich rot färbten.</p>
+<p> </p>
+<p>Als er wenige Wochen später sich ein magisches Mondtattoo direkt unter seine Brust, wo das Herz lag, stechen ließ, dachte er lächelnd an Remus. Der Mond veränderte sich zusammen mit dem Echten. Er würde nie wieder einen Vollmond verpassen.</p>
+<p> </p>
+<p>Als er und Remus endlich eine richtige Nacht miteinander verbracht hatten, veränderte sich sein ganzes Leben. Er war noch nie so glücklich gewesen, wie in der Zeit danach und er würde es auch nie wieder sein. Sie zogen danach zusammen in die kleine Wohnung und Sirius konnte ihn jeden Tag im Arm halten. Das erste Mal fühlte Sirius, wie es war, eine eigene Familie zu haben. Nicht so, wie bei den Potters, die ihn zwar wie einen Sohn liebten, denn das hier war etwas anderes. Das hier war nur für ihn.</p>
+<p> </p>
+<p>Als der Krieg zum Höhepunkt kam und man sich nicht mehr sicher sein konnte, ob einem Werwolf zu trauen war, lag Sirius mit dem Kopf auf seinen Beinen und lächelte verschwörerisch. Trotz der Angst und dem Misstrauen hielt er zu ihm und hielt seine Hand. Liebkoste sie sanft mit seinem Mund und stöhnte Nacht für Nacht seinen Namen.</p>
+<p> </p>
+<p>Als Remus immer wieder wegen irgendwelchen Aufträgen des Ordens verschwinden musste und Informationen nach draußen gelangen, zweifelte er nicht eine Sekunde. &gt;&gt; Er ist es nicht. Glaub mir einfach. &lt;&lt;, sagte er zu James, der ihn traurig anblickte.</p>
+<p> </p>
+<p>Als Sirius die ersten Todesser tötete, lag er lange neben Remus der seinen Rücken küsste und beruhigend auf ihn einsprach. <em>Mord. Verdammt, Mord.</em> Aber es war Krieg und im Krieg musste man manchmal morden.</p>
+<p> </p>
+<p>Als James sich mit Lily und ihrem Sohn Harry verstecken mussten und Sirius seine besten Freund überredete, Peter und nicht sich oder gar Remus zum Geheimniswahrer zu machen, war er ebenso selbstsüchtig, wie besorgt. Sollte Remus der Verwahrer werden, dann würde Voldemort ihn versuchen zu ermorden.</p>
+<p>James war selber noch ein halbes Kind, gerade 20 Jahre alt und schon Vater und Ehemann.</p>
+<p>Doch Sirius war vor lauter Liebe und angst selbstsüchtig geworden.</p>
+<p> </p>
+<p>Als sie tot waren und er lebte und Peter, ihr Freund, sie verraten hatte, sprach er leise zu sich selbst, <em> "I solmnly swear iIm up to no good."</em> Denn er wusste, dass er seinen einstigen Freund ermorden würde. Er konnte nicht weinen, nicht schreien. Er hatte kein anderen Gedanken als Rache im Kopf, er hatte wie immer nicht nachgedacht.</p>
+<p> </p>
+<p>Als Remus erfuhr, dass seine besten, EINZIGEN, Freunde tot und Sirius in Azkaban und Harry bei seiner Tante war, brach er zusammen. Wimmernd, heulend, schreiend, brüllend wie ein verwundetes Tier verfluchte er ihn. Verfluchte die Hände, die Lippen, den Körper, den er noch immer auf seinem spürte und die sanfte Stimme, die er noch immer hören konnte. Und verfluchte sich, weil er es nicht glauben konnte, dass Sirius sie alle verraten hatte und Remus verfluchte sich, da er sich dennoch nach Sirius sehnte.</p>
+<p> </p>
+<p> </p>
+<p>Als Sirius zwölf Jahre in Azkaban verbrachte, dachte er nur an ihn. An Remus, an seine Stimme, seinen Geruch, seine Haut, sein Lachen, seine Hände und immer wieder blickte er auf das Tattoo und litt in jeder Vollmondnacht Höllenqualen.</p>
+<p> </p>
+<p>Als er „<em>Sirius Black</em>“ auf der Karte der Rumtreiber sah, wusste er nicht ob sein Herz vor Sehnsucht oder Hass zerspringen wollte.</p>
+<p>Als er „<em>Peter Pettigrew“</em> las, den Namen seines toten Freundes, rauschte sein Kopf, Galle stieg empor und er zweifelte das erste Mal seit Jahren laut fluchend.</p>
+<p> </p>
+<p> </p>
+<p>Als er Remus, wie in alten Zeiten, in der Hütte, in den Armen hielt, wollte er endlich brechen. Endlich nicht mehr stark sein und alles was er fühlte, raus lassen. Oh, er hatte sich so verändert. Doch die Augen, diese Augen, dachte Sirius und fühlte sich noch einmal wie der elfjährige Junge, der die Augen mit der Bernsteinkette seiner Cousine verglichen hatte.</p>
+<p> </p>
+<p>Als er seinen Freund, nach so langer Zeit, in den Arm nahm und den unverkennbaren Geruch einatmete traten Tränen in dessen Augen.</p>
+<p>&gt;&gt; Du bist alt geworden. &lt;&lt;, hatte Remus gesagt und ihn angeblickt. Die Schönheit und Jugend war schon lange verschwunden und nichts, außer die Augen und das bellende Lachen, wiesen darauf, dass er es tatsächlich war.</p>
+<p> </p>
+<p>Als er ihn sterben sah, durch die Nebelwand fallend und dahinter verschwindend, mit einem letzten Lächeln auf den breiten Lippen, starb auch Moony. Der Junge, der er einst gewesen war. Denn nun gab es niemanden mehr, der sich an ihn erinnern würde.</p>
+<p> </p>
+<p> </p>
+<p>Als Sirius Remus in der letzten Schlacht sterben sah, empfing er ihn mit offenen Armen. Wieder jung und schön und stark, mit einem lauten, warmen Lachen und einen langen sehnsüchtigen Kuss, &gt;&gt; Mein Moony, wo warst du nur so lange? &lt;&lt;</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_15_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>the end.</p>
+<p>I really hope you enjoyed it. It's definitley not my best piece, but the first I shared, so I'm quite nervous. </p>
+<p>Please tell me any mistakes and you know: Be happy.<br/>what ever, peace, Elias is out =D</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="jTGtvaxFZowHbITJ9zoqe2keILNX1mh4CpAQvoaHTvfI-v6Xafi8-0qh2J77ndOWv7SVxNIIEN2opDOkJ-jfdw"/>
+          <input value="9367178" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=9367178">Comments (7)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/Jenna_Saraby">Jenna_Saraby</a>, <a href="/users/Laura228">Laura228</a>, <a href="/users/mynameismc">mynameismc</a>, <a href="/users/Bsmith">Bsmith</a>, <a href="/users/crycrycrytillyouknowwhy">crycrycrytillyouknowwhy</a>, <a href="/users/neglected_pluto">neglected_pluto</a>, <a href="/users/superego">superego</a>, <a href="/users/Meliitdf">Meliitdf</a>, <a href="/users/schwimmnudel">schwimmnudel</a>, <a href="/users/Mako_chan">Mako_chan</a>, and <a href="/users/Ravenqueer_me">Ravenqueer_me</a>
+             as well as 
+          31 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_9367178">
+  <form class="new_comment" id="comment_for_9367178" action="/works/9367178/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="SyKK1KiQBykYkrdkU1S4sQ1fmhR8iaBKjz3hw0Ltl5oO6dn-bS3dXlVf6zNf80Fc2_UvY_lX2O8tCcLZ44IGGg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_9367178">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_9367178" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_9367178=new LiveValidation('comment_name_for_9367178',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_9367178.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_9367178">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_9367178" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_9367178=new LiveValidation('comment_email_for_9367178',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_9367178.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_9367178" class="landmark">Comment</label>
+        <textarea id="comment_content_for_9367178" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_9367178" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_9367178_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_9367178">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_9367178=new LiveValidation('comment_content_for_9367178',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_9367178.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_9367178.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_9367178" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/9367178/hit_count.json")})</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":136,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Einhundert Mal Minerva - Ysilme - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="JG7fFxsWD3PIj51UrLkJqZbuT5FF4GTIW_KffSzzMZ-_cC4TNN-oiXue9JX9PYh22RloIyBBUjz5iOfoBki-rg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="xL_yRUoMV-zxpZqlpKOtwWpYpWTx0LjrqtykBo6ikCNfoQNBZcXwFkK082T1JyweJa-C1pRxjh8IptyTpBkfEg"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;sherlock (tv)&quot; m/m NOT &quot;sherlock holmes/john watson&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/183049/chapters/269210">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/183049/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/183049/Einhundert%20Mal%20Minerva.azw3?updated_at=1391776571">AZW3</a></li>
+          <li><a href="/downloads/183049/Einhundert%20Mal%20Minerva.epub?updated_at=1391776571">EPUB</a></li>
+          <li><a href="/downloads/183049/Einhundert%20Mal%20Minerva.mobi?updated_at=1391776571">MOBI</a></li>
+          <li><a href="/downloads/183049/Einhundert%20Mal%20Minerva.pdf?updated_at=1391776571">PDF</a></li>
+          <li><a href="/downloads/183049/Einhundert%20Mal%20Minerva.html?updated_at=1391776571">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Categories:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li><li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Minerva%20McGonagall*s*Severus%20Snape/works">Minerva McGonagall/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Minerva%20McGonagall/works">Minerva McGonagall</a></li><li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/others%20-%20Character/works">others - Character</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/100%20Drabbles/works">100 Drabbles</a></li><li><a class="tag" href="/tags/100%20Drabble%20Challenge/works">100 Drabble Challenge</a></li><li><a class="tag" href="/tags/Sprache:%20Deutsch/works">Sprache: Deutsch</a></li><li><a class="tag" href="/tags/Drabbles/works">Drabbles</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2011-04-13</dd><dt class="status">Completed:</dt><dd class="status">2012-04-18</dd><dt class="words">Words:</dt><dd class="words">11095</dd><dt class="chapters">Chapters:</dt><dd class="chapters">10/10</dd><dt class="kudos">Kudos:</dt><dd class="kudos">8</dd><dt class="hits">Hits:</dt><dd class="hits">403</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Einhundert Mal Minerva
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Ysilme/pseuds/Ysilme">Ysilme</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Einhundert Drabbles rund um Minerva McGonagall, die ihr gesamtes Leben umspannen - als Kind, Frau, Schülerin, Lehrerin, Geliebte, Mensch und Animagus, manchmal auch mit Severus Snape.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+    <ul class="associations">
+
+        <li>
+          Translation into English available: 
+            <a href="/works/386551">Minerva and the 100 prompts</a> by <a rel="author" href="/users/Ysilme/pseuds/Ysilme">Ysilme</a>
+        </li>
+
+
+    </ul>
+
+    <blockquote class="userstuff">
+      <p>Diese 100-Drabble-Challenge wurde für das deutschsprachige <a href="http://www.alraune.winterwitch.de/forum/viewforum.php?f=45">Alraune-Forum</a> und nach der dort verfügbaren Alraune-Tabelle geschrieben. Ich bedanke mich bei allen Lesern und weiteren Challenge-Teilnehmern im Forum, die mich durch ihr Feedback unterstützt haben.</p><hr/>
+    </blockquote>
+
+    <p class="jump">(See the end of the work for <a href="#work_endnotes">more notes</a>.)</p>
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/269210">Chapter 1</a>: Drabbles 1-10
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <center>
+<p><b>Einhundet Mal Minerva</b><br/>von Alcina vom Steinsberg</p>
+<p>~ ~ ~</p>
+</center><p>
+  <i>Stichwort 49: Katze</i>
+</p>
+<p>
+  <b>1. Gefühl</b>
+</p><br/><p>En Gefühl wie - ja, wie denn?<br/>
+Sie kann es nicht beschreiben. Schön ist es. Anders als alles, das sie kennt.</p>
+<p>Einzigartig. Wunderbar. Atemberaubend.<br/>
+Großes wird klein, Glattes wird weich, Steifes wird geschmeidig.<br/>
+Gewandte Gliedmaßen strecken und dehnen sich nach der Anstrengung.</p>
+<p>Sie schnuppert. Seltsam, wie das riecht. Wie – nein, sie kennt es nicht. Fremd.<br/>
+Sie blinzelt. Wie anders alles auf einmal aussieht. Die Welt hat ein neues Gewand.<br/>
+Sie lauscht. Neue Geräusche, ungewohnt. Interessant, wie das klingt.<br/>
+Sie steht auf. Gähnt. Räkelt sich. Hebt den Kopf. Ein Luftzug streicht vorbei.</p>
+<p>Doch, das gefällt ihr.<br/>
+Sie lächelt.</p>
+<p>Hinreissend, so ein Katzenkörper.</p><hr/><p>
+  <i>Stichwort 11: Kartoffel</i>
+</p>
+<p>
+  <b>2. Hunger</b>
+</p>
+<p>Minerva schnüffelte. Das roch aber lecker! Ihr Magen knurrte vernehmlich, viel zu lange hatte sie ihn ignoriert. Erneut konzentrierte sie sich auf ihre Korrekturen, ein wenig mußte sie noch durchhalten. Ihr selbstauferlegtes Pensum wurde strikt eingehalten.</p>
+<p>Wieder zog ein Schwaden herrlichen Duftes an ihr vorbei. Minerva schnüffelte erneut, seufzte und gab auf.</p>
+<p>Am Herd stand ihr Liebster und rührte eifrig im Kessel. Das roch eindeutig nach ihrem Leibgericht, Kartoffelsuppe. Sie trat hinter ihn und legte die Arme um seine Mitte.<br/>
+„Bald fertig“, lächelte er und schmiegte sich an sie.<br/>
+„Ich weiß doch, daß du bei dem Gericht nie abwarten kannst!“</p><hr/><p>
+  <i>Stichwort 25: Ingwer</i>
+</p>
+<p>
+  <b>3. Gesundheit!</b>
+</p>
+<p>„Hatschi!“<br/>
+Ein lautes Niesen erschütterte die Luft, gefolgt von einem trompetenartigen Schneuzen.</p>
+<p>Minerva musterte den Berg gebrauchter Taschentücher und die feuerrote Nase. Armer Kerl, schon die dritte Erkältung diesen Winter!</p>
+<p>Sie brachte ihm eine Tasse und schenkte ihm aus ihrer Thermosflasche ein. Mißtrauisch schnupperte er an dem hellen Gebräu.</p>
+<p>„Mein Spezialrezept“, lächelte sie. „Ein daumenlanges Stück von der Wurzel, in Scheiben geschnitten, zehn Minuten gekocht und dann mit Honig gesüßt. Versuch es, es wirkt wahre Wunder!“</p>
+<p>Severus stöhnte.</p>
+<p>„Oh nein, Minerva, bitte nicht – geh weg mit Deinem Ingwerwasser! Und wenn es noch so gut hilft – ich kann Ingwer nicht leiden.“</p><hr/><p>
+  <i>Stichwort 99: Lernen</i>
+</p>
+<p>
+  <b>4. Müde</b>
+</p>
+<p>Dumbledore schielte vorsichtig durch die Wimpern. Sie saß reglos, starrte auf die Hände, müde, erschöpft.</p>
+<p>Er wußte, daß sie sich von ihm beobachtet fühlte, daher gab er meistens vor, zu schlafen. Sie mußte erst lernen, sich davon nicht stören zu lassen, wollte keinen Rat von ihm, keine Hilfe.<br/>
+Auch ihm war das so gegangen – wie lange war das nur her!</p>
+<p>Manchmal bereute er, ihr diese Verantwortung zugemutet zu haben. Sie trug schwer daran, trug schwer an ihrer Position. Doch sie erfüllte sie mit aller Kraft und all ihrem Können, und sie machte es gut. Besser als er selbst, fand er.</p><hr/><p>
+  <i>Stichwort 89: Trauer</i>
+</p>
+<p>
+  <b>5. Trauer</b>
+</p>
+<p>Sie steht am Grab. In der Hand eine Rose, weiß, wie er sie liebte. Sie beißt sich auf die Lippen, unwillkürlich krampft sie die Hand um die Blume, zerdrückt sie. Was tut es. Was hat diese für ein Recht auf Leben, wenn jenes Leben vorbei ist? Kalt, erloschen, unwiederruflich.<br/>
+Ihr Herz scheint aus Glas, das beim geringsten Hauch zerspringen mag, ihre Seele wie Eis. Wie soll sie nun weiterleben, nun, da ihr das Liebste genommen ist?</p>
+<p>Eiskalte Hände zerpflücken, Blatt für Blatt. Sie fallen hinaub auf all die anderen, alte und neue, trockene und frische, ein jedes Zeichen ihres Schmerzes.</p><hr/><p>
+  <i>Stichwort 16: Pferd</i>
+</p>
+<p>
+  <b>6. Niemals!</b>
+</p>
+<p>„Niemals! Nichts, aber schon dreimal nichts bringt mich auf den Rücken dieses Monsters!“</p>
+<p>Minerva mußte grinsen angesichts Severus' vehementer Ablehnung seines Reittieres.</p>
+<p>„Traust du dich nicht?“ spöttelte sie.</p>
+<p>„Natürlich traue ich mich, aber das ist unter meine Würde“, verteidigte er sich wütend, „apparieren wäre die intelligente Lösung.“</p>
+<p>„Keineswegs. Wir befinden uns unter Muggeln, und du wolltest schließlich auf diesen Berg.“</p>
+<p>„Ich will nicht, ich muß – nur hier wächst die Bergminze, die ich brauche. Was kann ich dafür, daß die Muggel ausgerechnet hier einen Naturschutzpark eröffnen!“</p>
+<p>Minerva lachte nur und band die Pferde wieder an.</p>
+<p>„Also gut, dann laufen wir eben.“</p><hr/><p>
+  <i>Stichwort 30: Pfefferminze</i>
+</p>
+<p>
+  <b>7. Zweisamkeit</b>
+</p>
+<p>Langsam schlenderte Minerva hinter Severus her. Sie genoß den Tag bei schönem Wetter und in Severus' Gesellschaft, der nun wieder fröhlicher dreinsah. Daß er manchmal aber auch so starrsinnig sein konnte!</p>
+<p>„Hier, Minerva, schau! Das ist die walisische Bergminze.“</p>
+<p>Gehorsam ging sie neben ihm in die Hocke und ließ sich eine weitere Pflanze erklären. Sie interessierte sich nicht sonderlich für Botanik, doch sie hörte ihm gerne zu, wenn er von den Besonderheiten einer Pflanze erzählte und auf ihre magische Wirkung hinwies. Es war so schön, einen selbstvergessenen und entspannten Severus zu erleben, so ganz anders, als er sich sonst gab.</p><hr/><p>
+  <i>Stichwort 48: Blumenkranz</i>
+</p>
+<p>
+  <b>8. Sommer</b>
+</p>
+<p>Severus hockte versunken vor einem unscheinbaren Gewächs. Feingliedrige, sensible Finger befühlten Blättchen und Stengel, er weilte in einer anderen Welt, die nur ihm gehörte.</p>
+<p>Ein amüsiertes Lächeln umspielte Minervas Mund. Ihre Finger, nicht weniger geschickt, pflückten Margeriten und Glockenblumen, Mädesüß und Storchenschnabel und was sonst gerade blühte. Geübt flocht sie einen Kranz, duftend und leuchtend vor Farbenpracht, ein Abbild des Sommers.</p>
+<p>Leise, unbemerkt, trat sie hinter ihn, und sanfte Hände drückten den Kranz auf sein Haupt.</p>
+<p>Severus fuhr erschrocken auf, einen ärgerlichen Ausruf auf den Lippen, doch beim Anblick ihres verschmitzten Grinsens schmolz sein Ärger wie Butter in der Sonne.</p><hr/><p>
+  <i>Stichwort 76: Liebe </i>
+</p>
+<p>
+  <b>9. Erfüllung</b>
+</p>
+<p>Skeptisch befühlten seine Finger, was sie ihm da aufgesetzt hatte, und sein Unmut verwandelte sich in überraschte Freude. So etwas hatte er noch nie bekommen, so unschuldig und schön. Ein Lächeln erhellte sein Gesicht.</p>
+<p>Ein heißes, unglaublich starkes Gefühl durchströmte Minerva, vertraut und doch aufregend neu. Ein Gefühl von Zärtlichkeit und Geborgenheit, ein unstillbarer Drang, diesem unmöglichen Mann nahe zu sein, so nahe, daß sie mit ihm verschmelzen konnte, mit ihm eins zu werden mit Haut und Haar, mit Leib und Seele...</p>
+<p>„Severus“, flüsterte sie heiser, die Kehle eng vor Leidenschaft und Sehnsucht, und streckte die Hände nach ihm aus.</p><hr/><p>
+  <i>Stichwort 03: Wiese </i>
+</p>
+<p>
+  <b>10. Freiheit</b>
+</p>
+<p>Die Sonne stieg immer höher und wärmte zwei Gestalten, die es sich auf der kühlen Bergwiese bequem gemacht hatten. Vergessen waren die Kräuter, die Wurzeln, die man sammeln wollte, vergessen der Grund des Hierseins. Nur das Jetzt zählte, eine kostbare Blase inmitten der Zeit, vertan mit herrlichem Unsinn, albernen Wortgefechten, liebevollen Kabbeleien und zärtlich gehauchten Küssen. Dann wurde es still.</p>
+<p>Minerva stütze sich auf den Ellbogen und betrachtete lächeld die schlafende Gestalt des Gefährten. Noch nie hatte sie ihn so entspannt erlebt, so in sich ruhend. Noch nie hatte sie sich selbst so jung gefühlt, so lebendig und so frei.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/270367">Chapter 2</a>: Drabbles 11-20
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><b>11. Ein neuer Freund</b></p><p>Aufgeregt trat sie von einem Fuß auf den anderen. Wie hatte sie diesen Tag herbeigesehnt! Unsicher beobachete sie den kleinen Mann, der eine Schachtel nach der anderen aus den Fächern nahm, betrachtete und wieder zurücklegte. Dann kam er zu ihr.</p><p>„Bitteschön, versuchen Sie diesen!“</p><p>Ehrfürchtig griff sie nach dem schlanken Holz und umschloß es mit den Fingern. Hitze durchströmte sie und ein Pulsieren wie von einer großen Welle, und ihr war, als flöge sie ein wenig durch die Luft. Das Holz in ihrer Hand schien mit ihrer Haut zu verschmelzen.</p><p>Mr. Ollivander nickte. „Kirschbaum mit einem Kern aus Katzenschnurrhaar. Perfekt.“</p><p><i>Stichwort 92 - Zauberstab - diesmal absichtlich erst am Ende genannt ;o) </i></p><hr/><p><b>12. Schade</b></p><br/><p>Erschrocken machte sie halt und starrte auf das riesige Vieh vor ihr. Scheinbar vertraut, und doch so fremd - sie brauchte einen Moment um zu begreifen, daß eine andere Perspektive Vertrautes ungewohnt und neu wirken ließ.</p><p>Aufgeregt zitternde Schnurrhaare erkundeten das Wesen. Als Mensch hatte sie sich immer davor gegraut, doch ihr felides Selbst fand es mehr als nur spannend. So viele Beine... ob es wohl schmeckte?</p><p>Sie spürte, wie der Jagdtrieb alles andere überlagerte. Sie hob die Pfote, um die Beute zu erlegen, doch sie schlug ins Leere.</p><p>Enttäuscht sah sie der Spinne nach, die eilig das Weite suchte. Schade.</p><p><i>Stichwort 50: Spinne</i><br/></p><hr/><p><i>Stichwort 12. Gewand</i></p><p><b>13. Ungewohnt</b></p><p>Minerva stand vor dem Spiegel und betrachtete sich kritisch. Die neue Robe sah traumahft aus, aber war das nicht zu modern für sie? Und nicht vielleicht auch zu jugendlich? Eine prüfende Hand strich über die changierende, dunkelgrüne Seide, auf der ihre Finger dunkle Spuren hinterließen. Sie wollte schön sein für ihn, auch wenn er sich nichts draus machte. Doch um keinen Preis der Welt war sie bereit, sich in irgendeiner Form lächerlich zu machen.</p><p>Praktisch war es ja schon, und Muggelfrauen trugen so etwas ständig, auch in ihrem Alter.<br/>Entschlossen hob sie den Kopf. Es war perfekt. Weshalb noch zögern?</p><hr/><p><i>Stichwort 68: Haar</i></p><p><b>14. Veränderung</b></p><br/>Tibby, die Hauselfe, trat zurück und betrachtete zufrieden die aufgesteckte Haarpracht. „Schön, Miss Minnie!“<p>Minerva nickte lächelnd. Ja, sie war schön. Lange schon ignorierte sie Falten, graue Haare und schlaff werdende Haut. Sie war keine zwanzig mehr, auch keine fünfzig. Doch klare Augen, frischer Teint, glänzendes Haar sprachen für sich, die Würde ihrer Jahre stand ihr gut. Und heute würde sie das zeigen.</p><p>Samtschwarz bestrumpfte Füße schlüpften in hochhackige Pumps. Ungewohnt, der Robenschnitt, der nicht nur ihre Figur perfekt zur Geltung brachte, sondern auch ein langgehütetes Geheimnis lüftete: auch Hexen hatten Beine.</p><p>Die magische Welt war reif für den Minirock.</p><p>~ ~ ~</p><p><b>A/N:</b> Tibby, ein OC von mir, ist eine vor vielen Jahren freigelassene, persönliche Hauselfe Minervas, die sie in den Geschichten in meinem Kopf seit ihrer Kindheit begleitet. Über sie geschrieben habe ich bisher noch nicht, aber sie wird sicher immer wieder einmal auftauchen.</p><hr/><p><i>Stichwort 81: Phönix</i></p><p><b>15. Happy Birthday!</b></p><p>Lächelnd packte Minerva ihre Geschenke aus, so reich war sie noch nie bedacht worden. Fünfzig wurde man nicht alle Tage.</p><p>Ein Päckchen mit rotviolettem Papier erregte ihre Aufmerksamkeit, das mußte von Albus sein. Gerührt las sie die beiliegenden Wünsche, bevor sie den Muggelklebstreifen löste.</p><p><i>Ach, Albus,</i> dachte sie gerührt.</p><p>Leicht strichen ihre Finger über die geschwungene, prächtige Feder in leuchtenden Rot- und Goldtönen, perfekt für eine Gryffindor und gleichzeitig die schönste Feder, die sie je gesehen hatte. Eine Schreibfeder von Fawkes! Und ein Fäßchen smaragdgrüner Tinte dazu, ihre Lieblingsfarbe.</p><p><i>Das ist wohl das schönste Geschenk, das ich je bekommen habe.</i></p><hr/><p><i>Stichwort 53: Feuer</i></p><p><b>16. Gedanken</b></p><p>Nachdenklich starrte sie ins Feuer.</p><p>So lange schon tauschten sie verstohlene Blicke.<br/>So lange schon beobachtete sie ihn heimlich und wußte sich von ihm beobachtet.</p><p>Ob er verstand, was sie bewegte? Spürte, was sie fühlte? Ob er etwa – auch so empfand?</p><p>Nein, wies sie sich zurecht, das war wohl kaum möglich. Das bildete sie sich ein.<br/>Sie war soviel älter, war so verschieden, und früher noch dazu seine Lehrerin gewesen.<br/>Und die alte Hausrivalität...</p><p>Undenkbar, daß er mehr für sie empfinden könnte als Kollegialität, oder höchstens Freundschaft.</p><p>Minerva trank aus und erhob sich. Ein warmes Lächeln fing ihren Blick auf.</p><hr/><p><i>Stichwort 02: Zinne</i></p><p><b>17. Erneuerung</b></p><p>Knarzend öffnete sich die schwere Tür. Eine schlanke Gestalt trat an die Zinnen des Turms.</p><p>Klare, kühle Luft umfing sie, während ihr Blick übers Land glitt. Noch waren die Bäume kahl und Schnee lag in den Senken. Doch sie hatte die Schneeglöckchen schon gesehen und die Weidenkätzchen am Seeufer, und die Vögel sangen ihre Freude in den Tag. Endlich war es Frühling.</p><p>Wie jedes Jahr an diesem Tag, dem ersten, an dem die Sonnenstrahlen wärmten, verabschiedete sie sich vom Winter. Zeit für den neuen Kreislauf von Leben und Wachstum, von Geburt und Neuanfang. Wie passend, daß gerade heute Karfreitag war.</p><hr/><p><i>Stichwort 18: Große Halle</i></p><p><b>18. Frohe Ostern!</b></p><p>Die große Halle war festlich geschmückt. Filius strahlte, stolz über sein Dekorationswerk, wie immer ein meisterhafter Beweis seines Könnens.</p><p>Minerva mußte zugeben, daß er sich selbst übertroffen hatte. Der Boden war einer Wiese gewichen, überall sprossen Narzissen und Hyaztinthen, und ver nicht aufpaßte trat auf die in kleinen Nestchen liegenden Eier und Süßigkeiten, die überall für die Kinder bereitlagen. Aus Tischen und Bänken waren zu Baumstämmen geworden, alles glich einem Picknick im Freien.</p><p><i>Aber bei aller Liebe,</i> dachte sie mit mißmutigem Blick auf ihren Vorgesetzten, <i>da mache ich nicht mit. Und wenn dreimal Ostern ist – ICH komme nicht im Hasenkostüm.</i></p><hr/><p><i>Stichwort 64: herb</i></p><p><b>19. Frühstück</b></p><p>Minerva ließ ihre Augen erfreut über den reichgedeckten Tisch gleiten. Den ganzen Sommer über hatte es nur ein einfaches Frühstück gegeben, doch nun, am ersten Schultag, wurde wieder die gewohnte Fülle aufgetischst, die Hauselfen hatten sich selbst übertroffen. Porridge, Eier mit Speck, Würstchen, Bohnen und Tomaten, Pfannkuchen und Waffeln, Räucherfisch und kalter Braten, es gab alles, was das Herz begehrte.<br/>Sie schenkte sich eine dampfende Tasse Tee ein und griff zu. Wie reich der Tisch auch gedeckt und wie üppig das Angebot auch sein mochte – für sie gab es nichts Schöneres als Toast mit dem herben, fruchtigen Aroma der Orangenmarmelade.</p><hr/><p><i>Stichwort 78: Kind</i></p><p><b>20. Die Fremde</b></p><p>Minnie schaute erstaunt auf, als die Mutter sie rief. Neben ihr stand ein seltsames Wesen: nicht viel größer als sie selbst, aber – ein Kind war das doch nicht?</p><p>Es sah eigentlich aus wie sie, doch der Kopf war viel zu groß, die Augen und Ohren riesig und eine Glatze hatte es auch. Und so komische Haut...</p><p>„Das ist Tibby“, stellte die Mutter vor, „eine Hauselfe. Sie wird auf dich aufpassen und sich um dich kümmern.“</p><p>Minnie nickte stumm und kam zögernd näher, eingeschüchtert von der Fremden.</p><p>Ein fröhliches Zwinkern nahm ihr die Angst, und lächelnd streckte sie die Hand aus.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/271023">Chapter 3</a>: Drabbles 21-30
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><i>Stichwort 95: verkehrte Welt</i></p><p><b>21. Rollentausch</b></p><p>„Nun mußt du dich hinsetzen, Tibby, jetzt bin ich dran!“</p><p>Verlegen zupfte die Elfe an ihrem Geschirrtuch.<br/>„Das geht nicht, Miss Minnie, Sie können mich doch nicht bedienen!“</p><p>Minerva stampfte mit dem Fuß.<br/>„Und warum nicht? Ich will auch mal Elfe sein und dich bedienen. Das macht doch Spaß!“</p><p>Schließlich gab Tibby nach, sie kannte den Dickkopf ihres Schützlings. Wenn nur niemand etwas merkte!</p><p>Minerva war ganz bei der Sache, verteilte Serviertten, schenkte aus dem Puppengeschirr ein und reichte Tibby ein Stück Kuchen.</p><p>So sehr Tibby den Zorn der Herrin fürchtete – die Zuneigung der kleinen Miss wärmte ihr das Herz.</p><hr/><p><i>Stichwort 61: Konflikt</i></p><p><b>22. Nicht richtig</b></p><p>„Morgen fahre ich nach Hogwarts“, erklärte Minerva. „Schade, daß du hierblieben mußt.“<br/>Die Elfe lächelte. „Miss Minnie wird mich nicht vermissen. In der Schule gibt es genug Elfen zur Bedienung.“<br/>Minerva schüttelte den Kopf. „Du weißt genau, daß ich das nicht meine! Du bist meine Freundin, Tibby, und wirst mir fehlen. Ich brauche keine Bedienung.“</p><p>Tibby nickte nur und packte weiter.<br/>„Hauselfen sind nur zum Dienen da“, erklärte sie geduldig.<br/>Minerva schüttelte den Kopf. „Das ist einfach nicht richtig! Du kannst denken, du kannst fühlen, du bist doch nicht weniger wert als ich!“</p><p>Tibby nickte nur und schloß den Koffer.</p><hr/><p><i>Stichwort 73: Schnee</i></p><p><b>23. Auf eigenen Füßen</b></p><p>Dicke Flocken fielen unaufhaltsam vom Himmel, und bald war alles unter einer weichen, weißen Decke begraben.</p><p>Zwei dick vermummte Gestalten kamen aus dem Haus gerannt, jagten einander laut lachend nach und versuchten sich gegenseitig mit Schnee einzureiben.</p><p>Schließlich blieb die eine erschöpft im Schnee liegen.<br/>„Ich kann nicht mehr, Miss Minnie! Hab Erbarmen mit einer armen alten Hauselfe!“<br/>Minerva ließ sich lachend neben sie fallen und rieb sich die Brille sauber.</p><p>Wie herrlich, endlich ein eigenes Zuhause zu haben. Hier konnte ihr niemand vorschreiben, wie sie sich einer Elfe gegenüber zu verhalten hatte, oder sich wundern, warum diese Kleidung trug.</p><hr/><p><i>Stichwort 37: schlafen</i></p><p><b>24. Abend</b></p><p>Severus trat erschöpft in sein Quartier. Wie er diese Todesserversammlungen haßte! Auch wenn es meistens nur langweilige, gesellschaftliche Zusammenkünfte waren – sich dauernd verstellen zu müssen und vorzugeben, jemand ganz anderer zu sein, zehrte jedes Mal mehr an seinen Nerven.</p><p>Er verstaute die silberne Maske in der Todesserrobe, hängte diese ganz hinten in den Schrank und schaute sich suchend nach seiner Hausrobe um. Diese lag auf seinem Lieblingssessel, und darauf, eng zusammengerollt, schlief eine Tigerkatze.<br/>Ein warmes Lächeln breitete sich auf seinen müden Zügen aus.</p><p>Wie wohl tat es doch, daß jemand auf ihn wartete. Jemand, dem er wirklich wichtig war.</p><hr/><p><i>Stichwort 05: Rüstung</i></p><p><b>25. Das erste Mal</b></p><p>Mit einem lauten Scheppern ging die Rüstung zu Boden.</p><p>Minerva, erschrocken über den Krach, sah sich verlegen um und brachte dann mit einem Schlenker ihres Stabes alles wieder in Ordnung. Wenn nur niemand etwas gehört hatte!</p><p>Zu spät. Professor Flitwick kam um die Ecke.</p><p>„Alles in Ordnung, Miss McGonagall?“</p><p>Sie nickte eifrig. „Alles bestens, Professor Flitwick!“</p><p>„Haben Sie den Krach nicht gehört?“</p><p>„Krach? Nein, da war nichts.“ Minerva schickte eine stumme Entschuldigung gen Himmel für die Lüge.</p><p>„Na dann, weiterhin viel Erfolg bei Ihren Runden! Der erste Abend ist besonders aufregend.“</p><p>Stimmt, dachte sie, aber DAMIT habe ich nicht gerechnet.</p><hr/><p><i>Stichwort 17: Duell</i></p><p><b>26. Lehrreich</b></p><p>„Protego!“</p><p>Minerva duckte sich und schleuderte einen gelben Blitz zurück.</p><p>„Rictusempra!“</p><p>Damit hatte ihr Gegner nicht gerechnet und krümmte sich einen Moment lang, bevor er den Kitzelfluch kontern und mit einen Furunkulus beantworten konnte, den sie gerade noch abzuwehren vermochte.</p><p>Ein paar Flüche später wurde ihr schließlich ein flinker Beinklammerfluch zum Verhängnis, und sie ging wie ein Brett zu Boden.</p><p>Ihr Gegner kam keuchend auf sie zu, löste den Fluch und streckte die Hand aus.</p><p>„Ausgezeichnet, Miss McGonagall, schon viel besser! Ich mache noch eine Duellantin aus Ihnen, Sie werden sehen!“</p><p>Lächelnd half Flitwick seiner jungen Kollegin auf die Füße.</p><hr/><p><i>Stichwort 36: färben</i></p><p><b>27. Teestunde</b></p><p>„Sag mal, Minerva, wie schaffst du es eigentlich, noch immer so schwarze Haare zu haben? Färbst du die etwa?“</p><p>Minerva, die gerade Tee nachgeschenkt hatte, hob eine Augenbraue und reichte Pomona den Teller mit den Scones.</p><p>„Färben? Mein Haar? Du lieber Himmel, nein!“</p><p>Madam Sprout bestrich ihr Scone mit Clotted Cream und wiegte dabei wehmütig den Kopf.</p><p>„Hast du ein Glück! Ich habe längst vor den grauen Haaren kapituliert.“</p><p>Minerva betrachtete die angegraute, wuschelige Frisur der fast gleichalten Kollegin nachdenklich.</p><p>„Ja, das habe ich wohl. Erdbeermarmelade?“</p><p>Wie gut, daß ihr Geheimnis bei Severus gut aufgehoben war.</p>~ ~ ~<p><b>A/N:</b> Wie auch bei Professor Flitwick zuvor nehme ich mir beim Alter von Professor Sprout die literarische Freiheit, es einfach meinen Bedürftnissen anzupassen ;o).</p><hr/><p> </p><p><i>Stichwort 04: Schlüsselblume</i></p><p><b>28. Das Geheimnis</b></p><p>Minerva trat ein, einen Strauß Schlüsselblumen in der Hand.</p><p>„Severus?“</p><p>Der Angesprochene war in die delikate Arbeit vertieft, winzige Pflanzenstiele in genau gleiche Stücke zu schneiden, und sah nicht auf.</p><p>„Ich brauche neuen Haarwuchstrank.“</p><p>Severus runzelte die Stirn. „Schon wieder?“</p><p>Als sie über ihren ersten grauen Haaren fast in Tränen ausgebrochen war – absolut untypisch für eine so wenig eitle Frau wie sie – war es Severus' Idee gewesen, die grauen Haare auszuzupfen und mit einem Haarwuchstrank nachwachsen zu lassen. Bisher hatte das bestens funktioniert.</p><p>Minerva nickte kläglich. „Ja, es werden immer mehr.“</p><p>Nun sah Severus auf und musterte ihr lackschwarzes Haar.</p><hr/><p><i>Stichwort 32: brauen</i></p><p><b>Nr. 29 Beobachten</b></p><p>Severus nahm ihr die Blumen ab und kaute konzentriert auf seiner Lippe, während er sie zum Trocknen vorbereitete. Pulverisierte Primula Veris war ein wichtiger Bestandteil eines Kopfschmerztrankes, den Madam Pomfrey in unglaublichen Mengen verbrauchte.</p><p>Minerva bemühte sich, ihn nicht beim Nachdenken zu stören, und setzte sich auf den üblichen Stuhl, von dem aus sie ihm schon oft beim Tränkebrauen zugesehen hatte.<br/>Sie liebte es, seinen schlanken, kräftigen Fingern bei ihrem Tun zuzuschauen, zu beobachten, wie er Wurzeln würfelte, Rhizome rieb oder Käferaugen viertelte. Ihn zu beobachten, wie er mit fast schon tänzerischer Anmut einen Trank braute, hatte etwas ungemein Entspannendes.</p>~~~<p><b>A/N:</b> Primula Veris = Echte Schlüsselblume, deren Blüten in der Volksmedizin auch gegen Kopfschmerzen eingesetzt werden.</p><hr/><p><i>Stichwort 97: Pechnase</i></p><p><b>30. Inspiration</b></p><p>Minerva sah lächelnd den Schülern hinterher, die sich auf den Weg nach Hogsmeade machten. Der Eifer, mit dem die Drittkläßler den Verheißungen von Honeyduke's und Zonko's zustrebten, hatte etwas Rührendes.</p><p>Für sie war ein Besuch im Dorf längst reine Pflicht geworden, langweilige Stunden bei dünnem Tee bei Madame Puddifoot, die sie lieber mit einem strammen Spaziergang um den See verbracht hätte. So wie heute, da der Kelch der Schüleraufsicht an ihr vorübergegangen war.</p><p>Zufrieden verwandelte sie Schuhe und Robe in Wanderkleidung und ging los. Als ihr Blick dabei auf die Pechnasen des Portals fiel, kam ihr eine Idee.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632274">Chapter 4</a>: Drabbles 31-40
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>Stichwort 75: Dämmerung</em>
+</p>
+<p><br/><strong>Nr. 31 – Lösung</strong><br/><br/> Es dämmerte schon, als sie zurückkehrte. Nachdem sie sich davon  überzeugt hatte, daß alle Schüler wieder wohlbehalten eingetroffen  waren, zog sie sich in ihr Quartier zurück. Die Wanderung hatte ihr Zeit  zum Nachdenken über ihre Idee gegeben, nun wollte sie sie ausprobieren.  <br/><br/> Eine halbe Stunde später musterte sie zufrieden ihr Spiegelbild. Wer  hätte gedacht, daß die Lösung für ihr Problem so einfach war. Daß sie  nicht schon früher drauf gekommen war, die grauen Haare einfach zu  verwandeln! Gesünder als der ständige Haarwuchstrank war es allemal. Sie  mußte die Verwandlung zwar regelmäßig wiederholen, aber die kostete nur  wenig arkane Energie. Perfekt. <br/><br/></p>
+<hr/><p>
+  <em><br/> Stichwort 26. Hexenmeister</em>
+</p>
+<p><br/><strong>Nr. 32 – Gefunden</strong><br/><br/> „Sieben senkrecht mit A – Alraune!“<br/> Zufrieden trug Minerva das gesuchte Wort ein. <br/><br/> Ein trister Sonntagnachmittag wie dieser ließ sich   immer noch am  besten gemütlich am Feuer mit Tee, Ingwergebäck und dem  Samstagskreuzworträtsel verbringen. <br/> Aber was kam dann nur in waagrecht, zwölf Buchstbaben, mit einem X hier und dem N dort? <br/><br/> Nachdenklich klopfte sie mit dem Stift an die Zähne, doch weder fiel ihr  etwas ein, noch wußte die um Rat gefragte Pomona eine Antwort. <br/><br/> Ein kalter Luftzug ließ sie aufsehen. Ihr Lächeln, daß den  schwarzgekleideten Kollegen willkommen hieß, fiel wärmer aus als sonst,  denn nun hatte sie die Lösung: <br/> „Hexenmeister!“<br/><br/></p>
+<hr/><p>
+  <br/><em>Stichwort 28: Schlange</em>
+</p>
+<p><strong><br/> Nr.  33 - Begegnung</strong><br/><br/> Die Schlange hob zischend ihren Kopf. Minerva machte einen Satz zur  Seite und schrie erschrocken auf, bevor die Vernunft Oberhand gewann und  sie das Tier mit einem raschen Immobilus lähmte.<br/><br/> Wo mochte die Schlange nur herkommen? Klein und leuchend grün erinnerte  sie sie verdächtig an das Haustier eines Schulkameraden, das längst  nicht mehr klein war und die magische Welt bedrohte, wie der  Schulkamerad auch. <br/><br/> Ein Erstklässler machte atemlos vor ihr Halt, das Gesicht blutrot unter  dem langen, weizenblonden Schopf. Sie hob rügend die Augenbrauen.<br/><br/> „Passen Sie gefälligst besser auf Ihr Haustier auf, Mr. Malfoy. Beim nächsten Mal gibt es Punkteabzug!“<br/><br/></p>
+<hr/><p>
+  <em><br/> Stichwort 94 - Werwolf</em>
+</p>
+<p><br/><strong>Nr.  34 – Der neue Schüler </strong><br/><br/> Nervös betrat Minerva den Raum. <br/><br/> Welche Schnapsidee, einen Werwolf als Schüler aufzunehmen, und nun war der Gryffindor ihre Verantwortung! <br/><br/> Doch der tapsige, fröhlich bellende Wolfswelpe, der ihr entgegensprang,  brachte sie zum Lachen. Daß ein Werwolf so niedlich sein konnte!  Nun  ja, das war allerdings auch nur ein Werwölfchen, dachte sie grinsend und  wurde zur Katze. <br/><br/> Nachdem der Canide gelernt hatte, sie zu respektieren, tollten die  beiden durch den Raum und spielten Fangen und Verstecken, bis das  Wolfskind schließlich müde wurde und vor dem Feuer einschlief. <br/><br/> Der Mond schien hell auf das schlafende Wolfsjunge, dem die Katze hingebungsvoll das Fell putzte. <br/><br/></p>
+<hr/><p>
+  <br/><em>Stichwort 33: Erker </em>
+</p>
+<p><strong><br/> Nr.  35 - Halloween</strong><br/><br/> Minerva kniete im Erkerfenster und schaute den Kindern nach, die als  Gespenst, Hexe und Monster verkleidet durch die Straßen zogen und an  Haustüren klingelten.<br/><br/> „Mami, warum darf ich nicht mitgehen?“, fragte sie traurig. <br/><br/> Madam McGonagall nahm ihre Tochter in den Arm. <br/><br/> „Schau, Minnie, du weißt doch, daß du deine Magie noch nicht  kontrollieren kannst. Die Leute hier sind alles Muggel. Letztes Jahr  hast du dem alten Mr. Scrooge eine Blumenkohlnase wachsen lassen, weil  er keine Süßigkeiten gab." <br/><br/> „Aber die Muggel wollen an Halloween doch erschreckt werden!“ protestierte Minerva.<br/><br/> „Das stimmt. Aber eben nur ein bißchen, Minnie, nicht mit echter Magie!“ <br/><br/></p>
+<hr/><p>
+  <em><br/> Stichwort 56 - Macht</em>
+</p>
+<p><strong><br/> Nr. 36 - Erkenntnis</strong><br/><br/> Minerva saß wie erstarrt vor dem wütenden, tobenden Severus.<br/> So hatte sie ihn noch nie erlebt, so komplett hatte er sich noch nie  vergessen. Er war vollkommen außer sich. Und das nur, weil sie ihn  provoziert hatte und ihm so nahe getreten war wie niemals zuvor. <br/> Sie spürte die Macht, die sie über ihn hatte. Eine unglaubliche Macht,  geboren aus Liebe und Zuneigung, weil er sich nur ihr so sehr öffnete,  daß man ihm dermaßen wehtun und ihn so provozieren konnte. <br/> Minerva schluckte. Was für ein furchtbares Instrument hatte sie da in der Hand! Wie leicht konnte das mißbraucht werden!<br/><br/></p>
+<hr/><p>
+  <br/><em>Stichwort 88: Quelle</em>
+</p>
+<p><strong><br/> Nr. 37 - Sommerabend</strong><br/><br/> Mit einem leisen Rascheln trat eine Gestalt durch die Büsche. Am Rand  der kleinen Quelle stand eine verwitterte Holzbank, auf der sie sich  niederließ und wohlig seufzte. <br/><br/> Süß dufteten die Heckenrosen, herb der Holunder. Wie sie die lauen  Frühsommerabende liebte, wenn sich langsam die Dämmerung senkte und die  Vögel ihr Abendkonzert sangen. Hier fand sie Ruhe nach einem arbeitsamen  Tag und konnte ungestört nachdenken. <br/><br/> Lange saß sie so, bis ihre Geduld belohnt wurde. <br/> Eine Fee kam hervor und tanzte auf einem schwimmenden Blatt, eine  Weitere flatterte in den Rosenbusch und scheuchte dort einen Jobberknoll  auf. <br/><br/><em>Ich liebe die magische Welt. </em><br/><br/><strong>A/N:</strong> Dieses Drabble gehört chronologisch eigentlich vor Nummer 25,  "Rüstung". Die Idee dazu hatte ich allerdings erst dank Angies  Bemerkung, und das Bunny hat eine Weile zum Wachsen gebraucht.<br/><br/></p>
+<hr/><p>
+  <em><br/> Stichwort 35: stolpern</em>
+</p>
+<p><br/><strong>Nr. 38: Fehleinschätzung</strong><br/><br/> Das erste Mal als frischgebackene Lehrerin unterwegs zum abendlichen  Patrouillengang. Minerva war ein wenig aufgeregt, gleichzeitig machte es  Spaß. Hogwarts hatte eine besondere Atmosphäre, wenn die Schüler im  Gemeinschaftsraum verschwunden waren, es schien nun selbst lebendig zu  werden. Nur das Genörgel der Portraits über das Licht ihrers Stabes  störte. Wie das wohl die Kollegen machten?<br/><br/> Nun, ein Versuch konnte nicht schaden, als Katze störte sie das doch  auch nicht. Vorsichtig ging sie im Dunkeln weiter, mit zunehmender  Gewöhnung immer selbstbewußter. Das klappte doch prima! <br/> Zufrieden bog sie um die Ecke, stolperte über eine Schwelle und fiel gegen etwas Metallisches. Verdammt!<br/><br/></p>
+<hr/><p>
+  <br/><em>Stichwort 7: Burggraben </em>
+</p>
+<p><strong>Nr. 39: Mißerfolg</strong><br/><br/> Leise schlich sie durchs hohe Gras, ihr Ziel im Blick: eine Amsel, die vorwitzig vor ihr herhüpfte und ihr Morgenlied sang. <br/> Sie bewegte sich in Zeitlupe, kein Laut war dabei zu hören, nicht einmal  das Rascheln eines Grashalms oder eines Blatts im Geäst. Kein  Kunststück für eine Katze, für die angestrebte Beute jedoch fatal. <br/> Wieder ein Hüpfer der Amsel, ein weiterer Schritt für sie. Gleich war es soweit...<br/> Ihre Schwanzspitze zuckte, ihr Körper spannte sich an, das Gewicht verlagerte sich auf die Hinterbeine. Sie sprang.<br/><br/> Die Amsel erhob sich in die Lüfte, und ein getigertes Fellknäuel kullerte den Burggraben hinunter. <br/><br/></p>
+<hr/><p>
+  <br/><em>Stichwort 42: Froschlaich</em>
+</p>
+<p><strong><br/> Nr. 40:  Der Schüler </strong><br/><br/> Peinlich berührt sah sie sich um und schüttelte den Kopf. Das war ihr  noch nie passiert! Sie putzte sich verlegen. Wenigstens war sie trocken  geblieben. <br/><br/> Unten im Graben entdeckte sie einen Schüler, der im stehenden Wasser nach Froschlaich fischte. Ob er sie gesehen hatte? <br/> Wie auf ein Stichwort schaute er auf und in ihre Richtung. Ein Lächeln  überzog sein Gesicht, er legte seinen Kescher beiseite und stieg aus dem  Wasser. <br/> Guter Impervius, dachte sie, die Füßte sind trocken. Und das bei einem Erstklässler!<br/><br/> Der Junge ging in die Hocke und streckte ihr die Hand entgegen. <br/> „Na, darf ich dich streicheln?“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632300">Chapter 5</a>: Drabbles 41-50
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>Stichwort 52: Bettler</em><br/><br/><strong>Nr. 41: Katze</strong><br/><br/> Minerva schnupperte ergeben an seinen Fingern und rieb, ganz die Katze, bettelnd ihren Kopf an seiner Hand. <br/><em><br/> Ich muß mitspielen. Nicht auszudenken, was er sonst davon halten mag,  wenn seine Verwandlungslehrerin den Burgraben hinunterkullert...</em><br/><br/> Der Junge streichelte behutsam ihr glänzendes, gepflegtes Fell und  kraulte sie dann gekonnt hinter dem Ohr, genau an der Stelle, an der es  sie als Katze immer am meisten juckte. <br/><br/><em>Genau da... Wenigstens kann ich das ungeniert genießen. Sonst traut sich ja immer niemand, Tabby Minerva zu streicheln. </em><br/><br/> Sie merkte nicht, daß die animalischen Instinkte in ihrem Geist überhand nahmen und sie laut zu schnurren anfing. <br/><br/><strong>A/N:</strong> „Tabby“ ist die englische Bezeichnung für die typische Tigerkatze  und wird häufig als Ruf- oder Kosenamen für eine Katze verwendet.<br/><br/></p><hr/><p><em><br/> Stichwort 6: Verlies</em><br/><br/><strong>Nr. 42: Überraschung</strong><br/><br/> Hingerissen auf den Rücken gerollt, streckte die Tigerkatze dem Jungen  den hellen Bauch entgegen und genoß sein Streicheln aus vollen Zügen.  Dieser hatte längst die zweite Hand mit dazugenommen und genoß  es, dem  hübschen Tier Freude zu bereiten.</p><p><br/> „Schade, daß es in unserem Verlies keine Katzen gibt“, murmelte er  leise. Im Schloß war jedoch nur die zerzauste Mrs. Norris unterwegs.  Trotzdem kam ihm die Katze bekannt vor...<br/><br/> Erschrocken zog er die Hände zurück, als er begriff, wen er vor sich hatte.<br/> „Professor McGonagall!“<br/><br/> Minerva kam schlagartig zu sich. Er hatte sie erkannt! Eilig verwandelte sie sich zurück. <br/><br/> „Hallo, Mr. Snape.“<br/><br/></p><hr/><p><em><br/> Stichwort 39: Vergangenheit</em><br/><br/><strong>Nr 43: Erinnerung</strong><br/><br/> Spät am Weihnachtsabend saßen Minerva und Severus bei einem Glas Feuerwhisky zusammen und ließen den Tag ausklingen. <br/><br/> „Weißt du noch?“<br/> „Was?“ Minerva sah auf.<br/> „Damals, als du als Katze in den Burggraben gekugelt bist und ich dich das erste Mal als Mensch wahrgenommen habe.“<br/><br/> Minerva hob die Augenbrauen. „Wie meinst du das, als Mensch?“<br/><br/> Severus grinste. „Nun ja, vorher warst du nur eine Lehrerin für mich.  Aber dich als Katze zu erleben, die sich hingebungsvoll streicheln ließ,  das war furchtbar nett. Da habe ich begriffen, daß Lehrer auch Menschen  sind.“<br/><br/> Minerva nickte lächelnd. „Stimmt.“ <br/> So hatte eine wunderbare Freundschaft begonnen.<br/><br/></p><hr/><p><br/><em>Stichwort 45: Winter</em><br/><strong><br/> Nr 44: Winter </strong><br/><br/> Zwei Gestalten waren schon früh unterwegs, eine dick vermummte große und  eine sehr kleine. Wie auch das Glas Feuerwhisky nach der schrillbunten  Schulweihnachtsfeier im Kollegenkreis war die Schneewanderung am Morgen  danach längst Tradition für die beiden geworden, wie auch die gemeinsam  verbrachte Weihnachtsnacht. Und wie so oft begleitete Minerva ihren  Liebsten als Katze. <br/><br/> Als der Schnee zu tief für den Katzenkörper wurde, maunzte sie. Severus blieb lachend stehen und nahm sie hoch. <br/> „Ich habe doch gesagt, du sollst einen Mantel anziehen, bevor du in die Katze gehst“, zog er sie auf. <br/> Sie kuschelte sich unter seinem Mantel in seine Arme. <br/><br/><strong>A/N:</strong> Die Formulierung „in die Katze gehen“ stammt von Slytherene, bei der Sirius Black „in den Hund“ geht.<br/><br/></p><hr/><p><em><br/> Stichwort 21: Mistel </em><br/><strong><br/> Nr 45:  Strafe</strong><br/><br/> Immer noch mit der verwandelten Animaga auf dem Arm betrat Severus eine halbe Stunde später die große Halle. <br/> „Faulpelzchen, du könntest dich langsam wieder auf eigene Füße begeben“,  teilte er der schnurrenden Katze mit und hatte gleich darauf eine  ausgewachsene Hexe in den Armen.<br/><br/> Minerva lachte. „Danke, du darfst mich gerne wieder absetzen! Es sei denn...“<br/> „Es sei denn was?“<br/> Sie schaute nach oben. Severus folgte ihrem Blick und verstand. Nun ja,  wer an Weihnachten genau unter einem Mistelzweig stehenblieb, war selbst  schuld. Diese „Strafe“ nahm er jedoch gerne auf sich und senkte den  Kopf zu einem innigen, leidenschaftlichen Kuß. <br/><br/></p><hr/><p><br/><em>Stichwort 22: Stechpalme</em><br/><br/><strong>46. Verpflichtung </strong><br/><br/> Minerva starrte nachdenklich auf den Stechpalmenzweig vor ihr in der Vase. <br/><br/> Es war Zeit für die alljährlichen Weihnachtsbriefe an jene Cousinen,  Onkel und Tanten, mit denen sie nur sehr lockeren Kontakt pflegte, doch  sie wußte nicht, was sie schreiben sollte. Von Voldemort konnte sie  nicht gut erzählen, und von Severus wollte sie nicht. <br/><br/> Sie hatte früher oft die Augen verdreht über einen Brief, der nur von  alltäglichen Banalitäten und dem Wetter erzählte, doch schon lange griff  sie selbst zu solchen Themen. Es war einfacher,  von Schülerstreichen  und Peeves' Untaten zu erzählen – auch wenn man sich so eigentlich immer  fremder wurde. <br/><br/></p><hr/><p><br/><em>Stichwort 9: giftig</em><br/><br/><strong>Nr 47: Konkurrenz</strong><br/><br/> Ein struppiger Katzenkörper bog flink um die Ecke und blieb wie  angewurzelt stehen, entsetzt den Feind anstarrend, dem sie sich  unvermutet gegenübersah. <br/><br/> Schnurrhaare zitterten, Nackenfell sträubte sich, der Schwanz wurde dick  wie eine Flaschenbürste. Ein dumpfes Knurren drang aus der Kehle und  steigerte sich rasch zu einem giftigen Kreischen, das in Wellen an- und  wieder abschwoll. <br/><br/> Ihr getigertes Gegenüber sprang erschrocken zurück und verwandelte sich in einen Menschen. <br/> „Sch, ist ja gut“, beschwichtigte eine Frauenstimme das wütende  Katzentier, das vor Angst bebte, aber keinen Schritt zurückwich.  Entnervt stemmte Professor McGonagall die Hände in die Hüften. <br/><br/> „Argus! Wo stecken Sie? ARGUS!“<br/><br/></p><hr/><p><br/><em>Stichwort 47: Drache</em><br/><br/><strong>Nr 48: Konkurrenz II</strong><br/><br/> Der Hausmeister kam keuchend um die Ecke getrabt und nahm sein immer noch spotzendes Katzentier schützend auf den Arm. <br/> Mit gesenktem Kopf murmelte er eine Entschuldigung, aber man sah ihm  deutlich an, daß er lieber etwas ganz anderes gesagt hatte. <br/><br/> Minerva musterte ihn streng. „Es tut mir wirklich leid, Mr. Filch. Ich  habe ja vollstes Verständnis für Ihren kleinen Drachen da, aber das geht  in einer Schule einfach nicht. Viele Kinder haben Katzen als Haustiere.  Wenn Ihre Katze mit Artgenossen nicht auskommt, kann sie nicht  bleiben.“<br/> „Mrs. Norris.“<br/> „Wie bitte?“<br/> „Sie heißt Mrs. Norris“, murmelte Filch undeutlich, „nach meiner Mum.“<br/><br/></p><hr/><p><br/><em>Stichwort 77: Hass</em><br/><br/><strong>Nr 49:  Haß</strong><br/><br/> „Oh.“ Minerva betrachtete den Mann aufmerksam. Was für eine Geschichte mochte sich hinter dieser Information verbergen?<br/><br/> Sie hatte es von Anfang an für keine gute Idee gehalten, diesen Mann als  Pedell einzustellen. Doch der Posten war schwer genug zu besetzen mit  seinem geringen Gehalt und einem Status, der kaum besser war als der  eines Hauselfen. Von Filchs  Amtsvorgängern hatte keiner nennenswerte  magische Kräfte besessen, doch Filch war der erste Squib auf dieser  Stelle. Wie sollte der sich gegen hormongesteuerte Jugendliche  durchsetzen, die ihre magischen Fähigkeiten erst zu kontrollieren  lernten?<br/><br/> Doch das eigentliche Probem war der Haß Filchs auf alles Magische. <br/><br/></p><hr/><p><em><br/> Stichwort 13: Pranger</em><br/><strong><br/> Nr. 50:  Frustration</strong><br/><br/> Der Knall, mit dem Minerva Dumbledores Tür hinter sich zuwarf, hallte durch die Gänge. <br/><br/> Wie so oft hatte Dumbledore für ihre Beschwerde kein Verständnis. Er habe seine Gründe. <br/> Gründe! Pah! Das lief doch immer so! Immer hatte er einen Plan für irgendwas. Wütend stapfte sie davon. <br/>  <br/> Fehlte noch, daß man sie an den Pranger stellte, weil sie mit dem  vermaledeiten Katzenvieh  des Hausmeisters aneinandergeraten war! Das  war ein TIER, dem konnte man nicht mit vernünftigen Argumenten kommen!  Und nun hatte der Schulleiter ihr die unerfreuliche Aufgabe aufs Auge  gedrückt, die widerspenstige Katze zur Raison zu bringen, damit sie sich  benahm.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632310">Chapter 6</a>: Drabbles 51-60
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>Stichwort 54: Eifersucht</em><br/><br/><strong>Nr. 51:  Lösung gesucht</strong><br/><br/> Minerva nippte nachdenklich an ihrem Tee. Vor ihr lag ein Stapel  Korrekturen, doch das Problem, das ihr der Schulleiter zur Lösung  überlassen hatte, lenkte sie ab. <br/><br/> Alle ihre Einwände, daß Mr. Filch sich für den Posten des Hausmeisters  nicht eignete, hatte Dumbledore rundheraus ignoriert, wie auch ihre  Vorschläge, ihn anderweitig einzusetzen. Nicht genug, daß die Schüler  ständig beaufsichtigt werden mußten – nun mußte auch noch ein magisch  unfähiger Angestellter vor deren Einfallsreichtum beschützt werden!  Jeder Versuch, mit ihm wegen seiner Katze zu reden, waren bisher  erfolglos verlaufen. Und diese hielt hartnäckig an ihrer Eifersucht auf  alles, was ebenfalls Fell hatte, fest. <br/><br/></p><hr/><p><em>Stichwort 58: riechen</em><br/><br/><strong>Nr. 52:  So einfach!</strong><br/><br/> Vorsichtig schlich sie näher. Es roch gut, aber sie durfte doch nicht...  es war verboten! Aber trotzdem... eine zuckende Nase schnupperte  gierig, ein weiterer Schritt brachte sie näher zu der duftenden  Köstlichkeit. Gehorsam und Begierde stritten in ihrer Brust, aber nicht  sehr lange.</p><p><br/> Zufrieden betrachtete Minerva später Mrs. Norris, die sich gesättigt putzte.</p><p>Filch sah es nicht ein, seine Katze zu füttern, damit diese Mäuse fing.  Was für ein Unfug! Der Jagdinstinkt einer Katze hatte doch nichts mit  einem gefüllten Bauch zu tun! Aber wer hätte gedacht, daß ein großes  Stück vom besten Hauselfenbraten die Hausmeisterkatze so friedlich  stimmen würde. <br/><br/><br/><strong>A/N:</strong> Für die Beobachtung, daß hungrige Katzen äußerst schlechtgelaunt  sein können, bedanke ich mich bei Alva, Smilla, Skrållan und Pelle!  *lol*<br/><br/></p><hr/><p><br/><em>Stichwort 20: Paradies (freie Auswahl)</em><br/><br/><strong>Nr. 53: Paradies</strong><br/><br/> Verstohlen schaute Minerva sich um, bevor sie den kleinen Laden betrat. Sie wollte auf keinen Fall gesehen werden. <br/><br/> Ah, das war das Paradies! Mit glänzenden Augen betrachtete sie  wohlgefüllten Regale. Es hatte sich gelohnt, hier in den Vorort zu  apparieren, auch wenn es dazu Muggelkleidung brauchte. Solche  Herrlichkeiten gab es nicht einmal in der Winkelgasse. <br/>  <br/> Sie nahm einen Korb und begann ihn zu füllen. Dies hier war besonders  gut, das dort auch, und jenes roch äußerst verführerisch... sie mußte  aufpassen, nicht über die ersehnten Schätze herzufallen. <br/><br/> Eine bekannte Stimme ließ sie erstarren. <br/><br/> „Minerva? Bist du das?“<br/><br/> War man ihr gefolgt? <br/><br/></p><hr/><p><em>Stichwort: 83 Geheimnis</em><br/><br/><strong>Nr. 54: Fehler</strong><br/><br/> Nervös lächelte sie den Fragesteller an und versuchte, ihren Korb hinter  ihrem Rücken zu verbergen. Vor den Mitgliedern des Phönixordens war man  doch nirgendwo sicher! <br/><br/> „Kingsley. Was führt dich hierher?“<br/><br/> Er zuckte die Achseln. „Nur ein paar Vorräte, für einen Freund. Und selbst?“<br/><br/> Neugierig versuche er, in ihren Korb zu sehen. Minerva wurde rot.<br/><br/> „Ach, nichts weiter. Eine Überraschung. Wie hast du mich so schnell erkannt?“, versuchte sie abzulenken.<br/><br/> Kingsley lachte dröhnend. „Minerva, du hättest dir nicht gerade einen  schwarzen Vorort aussuchen sollen, wenn dein Ausflug ein Geheimnis  bleiben soll! Hier fällst du auf wie ein Muggel im tropfenden Kessel!“<br/><br/></p><hr/><p><em>Stichwort 85: Dummheit</em><br/><br/><strong>Nr. 55: Peinlich</strong><br/><br/> Minerva wurde noch röter. Was für eine Dummheit! Mit ihrer Erfahrung  einen so peinlichen Fehler zu begehen... Im Gedanken an das Objekt ihrer  Begierde hatte sie offenbar ihren Verstand zuhause gelassen. <br/><br/> Kingsley, der ihr Mienenspiel aufmerksam betrachtete, hob besänftigend die Hand. <br/> „Ein <em>Obliviate </em>ist nicht nötig, Minerva, dein Geheimnis ist bei mir  sicher. Aber dafür mußt du mir auch verraten, was du hier einkaufst.“<br/><br/> Sie nickte mit zusammengebissenen Zähnen, hob ihm ihren Korb unter die  Nase und stakste dann mit mühsam zusammengekratzter Würde zur Kasse,  begleitet von seinem schallenden Gelächter. <br/><br/> Das nächste Mal nahm sie besser Vielsafttrank, um Katzenminzespielzeug einzukaufen!<br/><br/> (<strong>A/N:</strong> Kingsley hat übrigens Hundefutter für Sirius Black eingekauft. )<br/><br/></p><hr/><p>
+  <em>Stichwort 8: Heckenrose</em>
+</p><p><strong>Nr. 56: Einfallsreichtum</strong><br/><br/> Gelangweilt lauschte Minerva dem Sermon von Madam Rosehip. Kräuterkunde  war sterbenslangweilig, viel lieber hätte sie jetzt Quidditch trainiert!  Auch noch so ein ödes Thema – Rosengewächse. Puh. Die brauchte man doch  nur für Heiltränke, wen interessierte das schon!<br/><br/> „... nur mit Schutzzauber, die Kerne verursachen starken Juckreiz...“ <br/><br/> Wie war das? Starker Juckreiz? <br/><br/> Sie fing einen verschmitzten Blick von Molyneux Prewett auf – oder war  es Perceval? Die beiden glichen einander wie ein Ei dem anderen. Das  breite Grinsen, das die rothaarigen Zwillinge einander zuwarfen, war  vielversprechend. Wenn es eine unterhaltsame Verwendung für eine Pflanze  gab, dann blieb sie diesen Tunichguten bestimmt nicht verborgen. <br/><br/><strong>A/N:</strong>  Molyneux und Perceval Prewett sind frei erfunden; wobei einer von  ihnen gut der Vater von Fabian, Gideon und Molly gewesen sein könnte.  Und die berüchtigte Tante Muriel war vielleicht ihre Schwester. Wir  wissen wenig über Mollys Familie, aber Gred und Forge sind bestimmt  nicht die ersten in der Familie mit dieser speziellen Begabung! ;o) <br/><br/></p><hr/><p><em>Stichwort 91: Mitternacht</em><br/><br/><strong>Nr. 57: Faszination</strong><br/><br/> Mitternacht. <br/><br/> Minerva machte sich auf ihre übliche Kontrollrunde, die letzte vor dem Schlafengehen.<br/><br/> Erwartungsvoll bog sie um die Ecke. <br/><br/> Im Mondschein kam eine dunkle Gestalt auf sie zu - eiligen Schrittes, hoch aufgerichtet, die Robe bauschte sich im Luftzug. <br/><br/> Er machte seine Runde stets zur gleichen Zeit wie sie. War es Zufall, daß sie sich dabei so oft begegneten? <br/> Ein feines Lächeln zog sich über ihr Gesicht. <br/><br/> Er gab sich so abweisend und finster. Leicht vornübergebeugt, starre  Gesichtszüge, finster zusammengezogene Augenbrauen. Stets schwarz  gekleidet, dazu das schwarze Haar und die dunklen Augen im blassen  Gesicht...<br/><br/> Wußte er, wie anziehend er wirkte? <br/><br/></p><hr/><p><em>Stichwort 15: Turnier</em><br/><strong><br/> Nr. 58 Ungewöhnlich</strong><br/><br/> Gebannt starrte Minerva nach unten. Jetzt, gleich, noch einen Moment...  da kam ein Klatscher angeflogen, Harry wich aus und hatte den Schnatz  erneut verfehlt. Minerva fluchte innerlich. Das war wohl das längste  Quidditchturnier, das sie erlebt hatte, seit sie denken konnte.. schon  zum fünften Mal war Harry kurz davor gewesen, den Schnatz zu erwischen,  nur um von einem üblen Klatscher abgedrängt zu werden. Was war mit den  Treibern los? Mißmutig warf sie den Weasley-Brüdern einen Blick zu.  Dabei fiel ihr Blick auf Severus, der sie unverschämt angrinste. <br/> Sie hätte ihn verdächtigt, wenn sie gegen Slytherin spielten, aber gegen Hufflepuff... <br/><br/></p><hr/><p><br/><em>Stichwort 55. Rache</em><br/><br/><strong>Nr. 59 Wetteinsatz</strong><br/><br/> Später, beim Umtrunk im Lehrerzimmer, stand Severus plötzlich mit einem Butterbier vor ihr und grinste amüsiert. <br/><br/> „Prost, meine Liebe! Diese Wette ging eindeutig an mich.“<br/> Minerva nahm einen tiefen Zug. <br/><br/> „In der Tat. Du kommst wohl, um deinen Gewinn einzutreiben?“<br/> Er nickte und grinste anzüglich. <br/><br/> Wir hätten beim üblichen Geldeinsatz bleiben sollen, dachte Minerva. Diesmal war der Wetteinsatz mehr... körperlicher Art. <br/><br/>  „Genau. Wollen wir?“<br/> „Was, jetzt gleich?“ <br/><br/> Solche Eile sah ihm gar nicht ähnlich. Es sei denn... er war doch nicht so unschuldig am seltsamen Verhalten des Klatschers! <br/><br/> „Na warte! Meine Rache wird fürchterlich sein!“<br/><br/> Severus grinste nur. „Einverstanden. Also?“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632315">Chapter 7</a>: Drabbles 61-70
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>Stichwort 44: König </em><br/><br/><strong>Nr. 60 Gelegenheit </strong><br/><br/> Minerva blickte lächelnd auf ihr Gegenüber. Außerhalb der Ferien waren  Momente privater Zweisamkeit selten und kostbar. Es fiel ihr schwer,  dafür die Rolle der Lehrerin und Hausvorsteherin abzulegen, geschweige  denn Zeit dafür zu finden. Umso gelegener kam Severus' Einfall, genau  darum zu wetten: der Verlierer mußte für so einen Moment der Zeit und  Ungestörtheit sorgen. <br/> Nun, das war einfach gewesen; der Sieg des Hauscups für Hufflepuff  rechtfertigte ein königliches Buffet, durch das sich nun fast die  gesamte Schule futterte. <br/> Dafür verzieh sie ihm sogar, daß er es war, der den Klatscher manipuliert hatte. Allerdings nicht ohne Strafe. <br/> Sie grinste diabolisch. <br/><br/></p><hr/><p><em>Stichwort 66: Rauch</em><br/><strong><br/> Nr. 61 Genuß</strong><br/><br/> Entspannt saß Severus vor dem Kaminfeuer, in Minervas tartangemusterten  Morgenmantel gehüllt und ein Glas Laphroaig in der Hand. Bedauerlich,  daß er Minerva nicht öfter auf diese Weise provozieren konnte, denn ihre  Rache war in der Tat... formidabel gewesen. <br/><br/> Mit einem warmen Lächeln nippte er er an der dunkelgoldenen Flüssigkeit.  Rauchig, teerig, salzig, mit deutlichem Aroma von Tang - Minvera hatte  einen ausgezeichneten Geschmack, nicht nur beim Whisky.<br/> Und dieses Lebenswasser schmeckte genauso, wie er sie gerade erlebt  hatte: Wild, ungezügelt,  leidenschaftlich. Zu schade, daß auch privat  die gestrenge Lehrerin meistens die Oberhand behielt. <br/><em>Ich kann schließlich nicht immer einen Klatscher manipulieren.</em><br/><br/></p><hr/><p><em><br/> Stichwort 23: Einhorn</em><br/><br/><strong>Nr. 62 Auftrag</strong><br/><br/> Minerva zögerte. <br/><br/> Sie sei die Einzige für diese Aufgabe in Hogwarts. Es sei vollkommen harmlos. <br/><br/> Das glaubte sie weniger, immerhin hatte es schon Tote gegeben, wenn auch selten. Aber daß es außer ihr niemanden gab...<br/><br/> Hagrid, der junge Wildhüter, tätschelte ihr beruhigend die Hand. <br/> „Keine Angst, Miss, die tun' nix. Ich kenn mich aus.“<br/><br/> Mit einem Nicken folgte sie ihm in den verbotenen Wald. <br/><br/> Sie fanden sie auf einer Lichtung. Hagrid schob sie vor. <br/><br/> „Ruhig bleiben, und freundlich bitten. Hat bei mir früher immer geklappt.“<br/><br/> „Früher?“ <br/><br/> Minerva begriff, nickte, nahm ihren Mut zusammen und bat die Einhörner um etwas Haar. <br/><br/></p><hr/><p><br/><em>Stichwort 40: Anmut – freie Auswahl</em><br/><br/><strong>Nr. 63 Erlebnis</strong><br/><br/> Beschwingt ging Minerva hinter Hagrid her, das kostbare Geschenk der  Einhörner sorgsam in ein Tuch eingeschlagen und in der Tasche verstaut.  Was für ein Erlebnis, diesen anmutigen, scheuen Tieren so nah gewesen zu  sein! Die Stute, die das Haar gab, hatte ihr sogar gestattet, sie zu  streicheln. <br/><br/> Vergessen waren Verlegenheit und Empörung, als der Schulleiter ihr  erkärte, was man von der einzigen volljährigen Schülerin Hogwarts  erwartete, die die nötige Qualifikation aufwies. <br/><br/> Sie schnaubte. Qualifikation! Sie hoffte inständig, daß keiner ihrer  Schulkameraden je davon erfuhr. Es war nicht gerade schmeichelhaft, die  einzige im sechsten Schuljahr zu sein, die noch Jungfrau war. <br/><br/><strong>A/N:</strong> mir ist beim vorherigen Drabble der Lapsus passiert, Fanon-Wissen  mit einzubauen: nämlich daß nur jungfräuliche Bittsteller eine Chance  haben, von einem Einhorn etwas zu bekommen. Peinlich, wenn man sich die  Pointe so verhunzt *lach*. Mit Hagrid bin ich hier sehr frei umgegangen:  erstens habe ich keine Ahnung, ob meine implizierte Behauptung von  Drabble 62 zutreffen könnte, und zweitens ist die Wahrscheinlichkeit,  daß er schon zu Minervas Schulzeiten Wildhüter war, auch nicht besonders  groß. <br/><br/></p><hr/><p><br/><em>Stichwort 82: Fels</em><br/><br/><strong>Nr. 64 Zufriedenheit</strong><br/><br/> Nachdem das Einhornhaar abgeliefert war und Minerva eine erfreuliche  Punktemenge für Gryffindor erhalten hatte, saß sie nun bei Hagrid und  trank Tee. Die wie kleine Felsen geformten Kuchen lehnte sie höflich ab –  was so schwarz aussah, konnte nicht genießbar sein. <br/> Hagrid erzählte stolz von der Einhornherde, der größten in Europa und  von seinen anderen Schützlingen. Minerva hörte ihm zu und genoß diesen  friedlichen Augenblick im hektischen Schulalltag.<br/> Es freute sie, daß Rubeus offenbar glücklich war. Als sie damals von  seinem Schulausschluß erfahren hatte, war ihr das als eine furchtbare  Strafe erschienen, wohl die schlimmste, die sie selbst hätte treffen  können. <br/><br/></p><hr/><p><br/><em>Stichwort 14: Barde</em><br/><br/><strong>Nr.  65 Blasphemie</strong><br/><br/> Man sah ihr die schlechte Lauen schon von weitem an. <br/> Poppy musterte die Freundin und schenkte ihr Tee ein, den Minerva sofort hinunterstürzte. <br/><br/> Zwei Tassen später schien sie ansprechbar zu sein, und Poppy erkundigte sich mitfühlend nach ihrem Ärger.  <br/> Minerva schnaufte nur und griff zu den Scones. Erst als sie eines davon verschlungen hatte, antwortete sie.  <br/><br/> „Dieser blonde - Barde! Säuselt Unsinn, daß einem die Haare zu Berge stehen.“<br/>  „Lockhart?“<br/> „Genau! Erklärt der mir doch glatt, meine Animagustransformation sei verkehrt, er kenne eine viel bessere Methode!“<br/><br/> Poppy verkniff sich ein Grinsen. Minerva ertrug viel, aber gewiß keine Kritik an ihrer Verwandlungskunst. <br/><br/></p><hr/><p><em><br/> Stichwort 31: Kröte</em><br/><br/><strong>Nr.  66 Rechtfertigung</strong><br/><br/> Minerva blickte streng auf den Schüler vor sich. <br/><br/> Eingeschüchtert stand Neville vor seiner Hauslehrerin und starrte auf seine Fußspitzen. Wie sollte er ihr das nur erklären? <br/><br/> „Es ist nicht so wie es aussieht, Professor.“<br/><br/> „Das will ich doch hoffen! Denn es sieht wahrlich sehr merkwürdig aus,  wenn sich ein Erstklässler im Pyjama im Schlafzimmer seiner Hauslehrerin  herumtreibt!“<br/><br/> Neville wurde noch blasser. „Es war nur wegen Trevor, Professor. Er ist ausgerissen.“<br/><br/> „Wer ist bitte Trevor?“ Ihr war kein Schüler diesen Namens bekannt.<br/><br/> „Meine Kröte.“<br/><br/> Minerva seufzte und rieb sich müde die Schläfen. <br/><br/> „Oh, Mr. Longbottom, Sie und Ihre dreimal verflixte Kröte!“<br/><br/></p><hr/><p><em><br/> Stichwort 27: Besen</em><br/><br/><strong>Nr. 67 Wie in alten Zeiten</strong><br/><br/> Der erste sonnige Herbsttag zeigte den Schülern ein ungewohntes Bild.  Eine hochgewachsene Gestalt marschierte in Richtung Quidditchfeld,  gekleidet in altmodische Knickerbocker aus Tweed, Wollpullover und eine  karierte Mütze mit Ohrenklappen. Dort angekommen, schwang sie sich auf  einen Rennbesen und war gleich darauf mit überraschender Geschwindigkeit  davongeflogen.<br/><br/> Madam Hooch, die das Ganze vom Lehrerzimmer aus beobachtete, fielen fast  die Augen aus dem Kopf. Sie hatte zwar gewußt, daß McGonagall in ihrer  Jugend ein Quidditchstar gewesen war, sie aber noch nie fliegen sehen,  geschweige denn etwas anderes tragen als Roben. Und nun hatte sie einen  Blitzstart erlebt, den sie nur bewundern konnte.  <br/><br/></p><hr/><p><br/><em>Stichwort 70: Wald</em><br/><br/><strong>Nr. 68 Freude </strong><br/><br/> Minerva jauchzte laut vor Freude – hier über dem Verbotenen Wald konnte  sie sowieso keiner hören. Wie lange war sie nicht mehr auf einem Besen  gesessen! Sie konnte es noch immer so gut wie eh und je, auch wenn sie  sich die gewagten Manöver besser aufhob, bis sie sich wieder  warmgeflogen hatte. <br/><br/> Manche Dinge verlernt man eben nie. <br/><br/> Mit leichtem Grinsen dachte sie an die erstaunten Blicke der beiden  Schüler, die sie in ihrer Aufmachung gesehen und den Mund nicht mehr  zubekommen hatten. Sicher, die Sachen waren altmodisch, aber in den  Dreißigern trug man nun mal Tweed und Wolle zum Quidditchtraining.<br/><br/></p><hr/><p><br/><em>Stichwort 19: Safran </em><br/><br/><strong>Nr. 69. Tradition</strong><br/><br/> „Aber – was mach sie da? Und wo fliegt sie hin?“<br/> Madam Hooch starrte der fliegenden Gestalt nach, die in der Ferne immer kleiner wurde. <br/><br/> „Zitronenbonbon?“ <br/> Dumbledore hielt ihr eine Tüte hin, nahm selbst eines und erklärte dann: <br/> „Minerva trainiert für ein Freundschaftsspiel der Altherrenmannschaften.  Das findet alle zehn Jahre statt, in drei Wochen ist es wieder soweit.“<br/><br/> „Ach so. Aber warum, bei Merlin, trägt sie dazu safrangelbe Tweedhosen?“<br/> Die gestrenge Verwandlungslehrerin trug zwar häufig seltsame Kleidung,  selbst für eine Hexe, aber diese Hosen übertrafen alles, fand Hooch.  <br/><br/> Dumbledore lachte. „Das sind die Mannschaftsfarben der Glasgow Grinders. Minerva war dort Sucherin.“<br/><br/></p><hr/><p><em><br/> Stichwort 43: Codex</em><br/><br/><strong>Nr. 70 Wissen</strong><br/><br/> Ehrfürchtig betrachtete Minerva den Folianten vor sich. Wie wunderbar  war es doch, sich in dieser stillen Welt des Wissens in die Gedanken und  Überlegungen großer Geister vertiefen und alles über ihr Studienthema  lernen zu können!  <br/><br/> Der Codex vor ihr stellte das wohl älteste und berühmteste Werk in  diesem Fach dar. <em>De res metamorphosi</em>,  „Von der Verwandlung“, stammte  aus der Feder Merlins persönlich. Welche Ehre, das Original berühren zu  dürfen! Feindetaillierte Zeichnungen und Ornamente schmückten die mit  Leder bezogenen Holztafeln, die die kostbaren Pergamentseiten  umschlossen. Lächelnd entdeckte sie in der rechten unteren Ecke des  Einbands eine Gestalt, halb Mensch, halb Katze.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632321">Chapter 8</a>: Drabbles 71-80
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>Stichwort 51: Portal</em><br/><br/><strong>Nr.  71 Erwartungsvoll</strong><br/><br/> Die letzten Strahlen der Abendsonne vergoldeten den Weg vor ihr.  Minerva, müde von der langen Zugfahrt, doch gleichzeitig beschwingt vor  Freude, schritt zügig aus. Sie hatte sich sorgfältig und mit der ihr  eigenen Gewissenhaftigkeit auf dieses Ziel vorbereitet. <br/><br/> Noch die breite Freitreppe hinauf, und dann war sie da. Stolz stand  Minerva McGonagall vor dem großen Portal und ließ ihren Blick über die  alten, ehrwürdigen Mauern gleiten, die hohen Fenster und die mächtigen  Türme. <br/><br/> Wie schön war es doch, wieder herkommen zu dürfen. Denn dies war der  große Tag, von dem sie so lange geträumt hatte: Sie war Lehrerin in  Hogwarts. <br/><br/></p><hr/><p><em><br/> Stichwort 86: Faulheit</em><br/><br/><strong>Nr. 72 Trotz</strong><br/><br/> „Ich will aber nicht! Das soll Tibby machen!“</p><p>Minnie stampfte zornig mit dem Fuß auf und wollte verschwinden, doch  ihre Mutter erwischte sie am Ärmel und  hielt sie unbarmherzig fest.</p><p>„Momentchen, Miss McGonagall. So geht das nicht. Du weißt ganz genau, daß du dein Zimmer selbst aufräumen mußt.“</p><p>Minnie zog einen Flunsch.</p><p>„Aber Tibby ist eine Hauselfe! Dazu ist sie doch da!“, gab sie zurück. <br/><br/> Madam McGonagall hob die Augenbrauen.</p><p>„Tibby ist dein Kindermädchen, Minerva, und manchmal räumt sie auch auf.  Es ist aber nicht ihre Aufgabe, hinter dir herzuräumen, wenn du aus  lauter Faulheit alles stehen und liegen läßt.“<br/><br/></p><hr/><p><em>Stichwort 38: sammeln</em><br/><br/><strong>Nr. 73. Morgenfrisch</strong><br/><br/> „Komm mit“, lockte sie und lächelte verschmitzt, „ich möchte dir etwas zeigen.“</p><p><br/> Er brummte nur. Am Sonntagmorgen wollte er in Ruhe seine Zeitung lesen,  Tee trinken und sonst gar nichts.  Erst recht nicht sich irgendwas  anschauen müssen. Um das heftig zerwühlte Bett konnte es sich nicht  handeln, das hatten sie gerade erst verlassen. <br/> Sie ließ jedoch nicht locker, und schließlich folgte er ihr mit sinkender Laune. Spazierengehen am Sonntagmorgen. Pah!</p><p><br/> Minerva ging lächelnd voran. Am Waldrand machte sie halt und ging in die Hocke.</p><p><br/> „Schau, Severus! Ist es nicht wunderschön, wie sich all die Wassertropfen auf den Blättern gesammelt haben?“<br/><br/><strong>A/N: </strong>Zu diesem Drabble hat mich artis.magicas wunderbares <a href="http://artismagica.deviantart.com/art/Klee-139790023">Herbstfoto</a> inspiriert. <br/><br/></p><hr/><p><br/><em>Stichwort 72: Regen</em><br/><br/><strong>Nr.74. Vertraut</strong><br/><br/> Langsam wurde Severus munterer. <br/><br/> Diesen Zustand durch frische Luft zu erreichen war nicht das Mittel  seiner Wahl, doch in Minervas Gesellschaft ließ es sich ertragen. Und  sogar viel mehr als das... sogar den Regen, der nun wieder einsetzte,   ertrug er geduldig. Sie war so begeistert von ihrem Fund, so erpicht  darauf, diese Freude mit ihm zu teilen... <br/><br/> Er spürte das inzwischen vertraute Gefühl in sich aufsteigen. Das Gefühl  von Zärtlichkeit angesichts der Freude der geliebten Frau, einer  Freude, die, wie er gut wußte, vor allem daraus entstand, daß er diesen  Moment mit ihr teilte. <br/><br/> Plötzlich war ihm nicht mehr kalt. <br/><br/></p><hr/><p><br/><em>Stichwort 34: verhexen</em><br/><br/><strong>Nr. 75. Verhext</strong><br/><br/> Severus schluckte. Das hätte er wahrlich nicht erwartet. Hier stand er,  früh am Morgen, mitten im Wald und im langsam immer dichter werdenden  Regen. Wärme, nein, Hitze durchströmte ihn und das Gefühl, es nicht mehr  auszuhalten ohne ihre Nähe. Das Bedürfnis, ihr so nah zu sein wie es  nur ging, wurde fast übermächtig. Diese Frau hatte ihn wahrlich verhext!<br/><br/> „Minerva.“ Seine Stimme war heiser.</p><p>„Ja?“</p><p>„Laß uns zurückgehen.“<br/><br/> Sie wollte schon spötteln, ob er aus Zucker sei und vor so einem bißchen Regen kapituliere, doch dann bemerkte sie seinen Blick.<br/><br/> Wortlos stand sie auf, nahm seine Hand und folgte ihm. <br/><br/></p><hr/><p><br/><em>Stichwort 57: schmecken</em><br/><br/><strong>Nr. 76. Vergleich</strong><br/><br/> „Kartoffeln“, murmelte Severus und vergrub sein Gesicht an ihrer Halsbeuge.</p><p>Minerva wollte fragen, was er damit meinte, doch dann war ihr Ohr an der  Reihe, und kurz darauf hatte sie alles andere vergessen. <br/><br/> „Was hast du da vorhin eigentlich gemeint?“, wollte Minerva später schläfrig wissen.</p><p>„Der Geschmack deiner Haut“, erklärte er und zog sie an sich. „Du schmeckst so gut. Wie frischgekochte Pellkartoffeln.“</p><p> </p><p>„Wie bitte?“ Minerva setzte sich entrüstet auf und zog die Decke an  sich.</p><p>„Von allen Komplimenten, die man mir jemals gemacht hat...“</p><p> </p><p>Severus lächelte und verschloß ihre Lippen mit dem Finger. </p><p>„Für mich gibt es nichts Besseres.“<br/><br/></p><hr/><p><br/><em>Stichwort 71: Knochen</em><br/><br/><strong>Nr. 77: Inhaltsstoffe</strong><br/><br/> „Mäuseknochen?“ Minerva starrte mit leichtem Abscheu auf den Trank, den ihr der Tränkemeister entgegenhielt.</p><p>Severus nickte. „Jawohl, Mäuseknochen. Ich kann nichts dafür, daß dieser  Trank nur durch die Zugabe von selbigen seine Wirkung erhält. Es sollte  dich dabei nicht überraschen daß spezielle Animagus-Tränke tierische  Bestandteile benötigen. Und erzähle mir nicht, daß du noch nie eine Maus  gefre- äh, verspeist hättest.“</p><p>Minerva nickte abwesend. Natürlich hatte sie in ihrer Tiergestalt Mäuse  gefangen und manchmal auch gefressen. Mäuse und andere kleine Tiere. <br/> Deswegen fand sie Mäuseknochen in ihrem Heiltrank aber keineswegs  appetitlicher, im Gegenteil. Immerhin wußte sie genau, wie das  schmeckte...<br/><br/></p><hr/><p><br/><em>Stichwort 24: Tee</em><br/><br/><strong>Nr. 78: Vorahnung</strong><br/><br/> „Was ist?“ Die Tür öffnete sich knarzend und gab den Blick auf einen äußerst derangierten Tränkemeister frei. <br/><br/> Minerva, neben der ein vollbeladenes Tablett schwebte, zog amüsiert eine  Augenbraue hoch. Was hatte der Mann nur letzte Nacht angestellt? Er sah  aus wie der lebende Tod. <br/><br/> „Ich hatte so eine Ahnung, daß dir eine Tasse Tee guttun würde“, erklärte sie und trat ein. <br/><br/> Severus schnaubte nur, ließ sich jedoch in einen Sessel fallen und  nippte dankbar an dem aromatischen Gebräu, das Minerva ihm lächelnd  reichte. <br/> Eine anständige Tasse Tee war in der Tat jetzt genau das Richtige. Minerva konnte offenbar Gedanken lesen. <br/><em><br/></em></p><hr/><p><em><br/> Stichwort 60 (freie Auswahl): Geburtstag</em><br/><br/><strong>Nr. 79: Happy Birthday!</strong><br/><br/> „Und was ist damit?“<br/> Unter Severus' immer noch kritischem Blick schwebten Toast, Marmelade,  Saft und zwei zugedeckte, verführerisch duftende Teller auf den Tisch.  <br/><br/> „Das, lieber Severus, ist ein Frühstück. Genauer gesagt, ein komplettes  englisches Frühstück. Genau das Richtige für deinen Zustand.“<br/> Severus schnaubte erneut. „Was weißt du von meinem Zustand?“<br/><br/> „Du meinst, abgesehen von deinem blühenden Aussehen?“ Minerva grinste.<br/> „Es ist kein Geheimnis, daß du deinen Geburtstag am Vorabend in  Feuerwhisky ertränkst. Ich dachte mir, daß dein Fünfzigster Anlaß zu  besonderen – äh – Exzessen sein könnte. Und da ich heute noch etwas  anderes mit dir vorhabe...“<br/> Sie küßte ihn. <br/><br/> „Happy Birthday!“<br/><br/><strong>A/N:</strong> Ein klein bißchen zu spät bin ich ja dran mit einem  Geburstagsdrabble. Trotzdem: herzlichen Glückwunsch zum 50., Professor  Snape! <br/><br/></p><hr/><p><br/><em>Stichwort  67: Kessel</em><br/><br/><strong>Nr. 80:  Freizeitgestaltung</strong><br/><br/> Später saß Minerva mit dem Tagespropheten bei einer Tasse Tee und  beobachtete Severus, der konzentriert in seinen Kessel starrte. <br/> Es mochte überraschen, Severus an seinem Geburtstag, der noch dazu ein  Ferientag war, bei der Arbeit zu sehen – wer ihn kannte wußte, daß das  Tränkebrauen für ihn mehr Entspannung und Freude war als Pflicht,  zumindest wenn er experimentieren und ausprobieren konnte. <br/> Eigentlich hatte sie mit ihm heute ihm einen schönen Tag fernab der  Schule verbringen wollen. Doch wenn er es vorzog, im Labor zu stehen...   sie waren zusammen, das war die Hauptsache. Was schenkte sie ihm auch  dieses äußerst seltene Zaubertrankbrevier!</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632381">Chapter 9</a>: Drabbles 81-90
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>Stichwort 41: Schierling </em><br/><br/><strong>Nr.  81:  Abscheu</strong><br/><br/> Voller Hass starrte Minerva auf ihr Gegenüber. <br/><br/> Selten hatte sie so starke Gefühle verspürt und auch gezeigt, doch ihr  Gegenüber weckte alles Negative, dessen sie fähig war. Umso mehr, als  sie eine gewisse Anziehungskraft nicht abstreiten konnte. <br/><br/> Anfangs war geschmeichelt vom Interesse des Mitschülers an ihr; er, der  die Begabten und Klugen um sich scharte und sie seine besondere  Wertschätzung spüren ließ. Anfangs beflügelten sie die neuen Ideen und  Gedanken. Sie war jung und wollte die Welt verändern. <br/><br/> Doch bald hatte sie verstanden, worum es wirklich ging. <br/><br/> „Niemals, Tom, niemals werde ich deinem Vorschlag nachgeben! Eher nehme ich den Schierlingsbecher.“<br/><br/><strong>A/N:</strong> Eine Verbindung egal welcher Art zwischen diesen beiden Charakteren  mag erst einmal sehr fremd und vielleicht undenkbar scheinen, da wir  beide Charaktere relativ spät in ihrem Leben kennengelernt haben. Doch  McGonagall und Riddle sind sich im Alter ziemlich nah, weshalb es  plausibel scheint, daß sie sich bereits aus der Schulzeit beide  intelligente und begabte Magier sind, müssen sie auch auf irgendeine  Weise interagiert haben, zumal jemand wie Minerva mit Sicherheit ein  Gewinn für Riddles Kreis gewesen wäre, weshalb ich es für wahrscheinlich  halte, daß er versucht hat sie für sich einzunehmen. <br/><br/></p><hr/><p><br/><em>Stichwort 69: Teufel</em><br/><br/><strong>Nr. 82: Flucht</strong><br/><br/> Minerva eilte mit hastigen Schritten durch die Gänge, den hochroten Kopf  gesenkt. Sie schämte sich zutiefst dafür, daß sie jetzt erst begriffen  hatte, was Riddle wirklich von ihr wollte und sie die ganze Zeit blind  gewesen war für seine wahren Absichten. Wie hatte ihr das nur passieren  können?<br/><br/> Sie bog um die Ecke und hätte fast Professor Dumbledore umgerannt. Ausgerechnet ihn, dem so schnell nichts entging! <br/><br/> Er betrachtete sie besorgt. „Ist alles in Ordnung, Miss McGonagall? Sie sehen ja aus als wäre der Teufel hinter Ihnen her.“<br/><br/> Sie holte Luft und versuchte ihr klopfendes Herz zu beruhigen. „So ungefähr, Professor.“<br/><br/></p><hr/><p><br/><em>Stichwort 46: Sturm</em><br/><strong><br/> Nr. 83: Ratlos</strong><br/><br/> Sturm zog auf. Minerva starrte blicklos aus dem Fenster, blind für den tiefdunklen Himmel und die jagenden Wolkengebilde. <br/><br/> Was sollte sie nur tun? Sie wußte sich keinen Rat. Es war kein  Verbrechen, sich mit einflußreichen Freunden zu umgeben und große Reden  von einer besseren, magischen Welt zu schwingen. Damit war er wahrlich  nicht der Einzige. Nur  ihr Gefühl gab ihr Gewißheit, daß Riddle nichts  Gutes im Schilde führte. Sie fürchtete sich nicht davor, selbst der  Teilnahme an zweifelhaften Versammlungen beschuldigt zu werden. Doch sie  fürchtete ihre Machtlosigkeit, die Unmöglichkeit etwas zu unternehmen;  fürchtete, was aus dieser Keimzelle zu werden vermochte.  <br/><br/></p><hr/><p><em><br/> Stichwort 29: Petersilie</em><br/><br/><strong>Nr. 84: Ratsuche </strong><br/><br/> Geistesabwesend griff Minerva nach einem der angebotenen Bonbons. Es  schmeckte seltsam, doch sie war zu abgelenkt, um darauf zu achten. Ihre  Augen verfolgten den Lehrer, der gedankenversunken auf- und abging. <br/><br/> Sie hatte lange für den Entschluß gebraucht, sich an einen Lehrer zu  wenden und noch länger, dafür Dumbledore zu wählen. Nun wartete sie auf  sein Urteil. Doch was er auch sagen mochte, sie war froh, die Last nicht  mehr alleine zu tragen. <br/><br/> Langsam wich ihre Anspannung. Der Bonbongeschmack verstärkte sich. Minerva verzog das Gesicht. Wonach schmeckte das nur?<br/><br/> „Petersilie, Miss McGonagall. Sehr gesund, habe ich mir sagen lassen. Noch eins?“<br/><br/></p><hr/><p><br/><em>Stichwort  84: Weisheit</em><br/><br/><strong>Nr. 85. Mut</strong><br/><br/> Professor Dumbledore nickte Minerva zu, als er am Lehrertisch platznahm.  Dankbar und erleichtert lächelte sie zurück und lud sich dann mit neuem  Appetit ihren Teller voll. Wie gut, daß sie sich ein Herz gefaßt hatte  und zu Dumbledore gegangen war!<br/><br/> Ihre Sorge, in etwas Furchtbares verstrickt zu werden, war  beschwichtigt, wie auch das nagende Gefühl, als Gryffindor versagt zu  haben, weil sie Hilfe gesucht hatte. Sie lächelte beim Gedanken an die  Worte des Lehrers: <br/><br/> „Manchmal ist es weise, hinter einen Stärkeren zu treten, Miss  McGonagall, auch wenn es nach Feigheit aussehen mag. Sie müssen nur  Ihrem Gewissen antworten, niemandem sonst.“<br/><br/></p><hr/><p><br/><em>Stichwort 10: Heilkräuter</em><br/><br/><strong>Nr. 86. Schlaflos</strong><br/><br/> Es war schon spät, doch Minerva konnte nicht schlafen. Wie so viele  Nächte zuvor schlüpfte sie in ihre Fellgestalt und verließ ihr  Appartement, um der sorgenvollen Ruhelosigkeit mit Bewegung zu begegnen.  Ein weiterer Kontrollgang konnte zudem nicht schaden, nicht, solange  diese furchtbare Bestie ihr Unwesen in der Schule trieb. <br/><br/> Auch in dieser Nacht fand sie sich schließlich im Gewächshaus 4 wieder,  das vor allem magische Heilkräuter beherbergte. Hierher kam sie selten  als Animaga; zu groß war die Versuchung, sich von den Mäusen hier  verführen zu lassen. Es ging nicht an, dem Jagdinstinkt ihrer  Animagusgestalt nachzugeben – nicht als stellvertretende Schulleiterin. <br/><br/></p><hr/><p><br/><em>Stichwort 1: Alraune</em><br/><strong><br/> Nr. 87. Sorgen</strong><br/><br/> Leichtfüßig sprang sie auf den Pflanztisch und schnupperte. Ihre  Schnurrhaare erkundeten forschend den Zustand von Erde und Pflanzen. Als  Mensch war sie hoffnungslos mit allem, was Blätter hatte, doch als  Katze konnte sie riechen und spüren, wie etwas wuchs und gedieh. <br/><br/> Zufrieden wechselte sie die Gestalt, doch damit kam auch die Unruhe  zurück. Auch wenn sie nun mit eigenen Augen gesehen und mit ihren  anderen Sinnen gespürt hatte, daß sich die Pflanzen gut entwickelten –  die Sorge um ihre Schüler wurde dadurch nicht geringer. Wer hätte jemals  gedacht, daß Pomonas Alraunen jemals wirklich gebraucht würden, um eine  Versteinerung rückgängig zu machen!<br/><br/></p><hr/><p><em><br/> Stichwort 98: beliebiges Fest - Taufe</em><br/><br/><strong>Nr. 88. Wehmut</strong><br/><br/> Minerva schnupperte andächtig am Kopf des kleinen Wesens, das man ihr  anvertraut hatte und das nun friedlich in ihren Armen schlief. Der  Geruch war einzigartig, warm, weich und süß, ein bißchen nach Milch –  typisch Baby eben. Das Gefühl, diesen winzigen Menschen zu halten und  ihm Geborgenheit zu geben, weckte ungeahnte Gefühle in ihr. <br/><br/> Eigene Kinder hatten in ihrem Leben nie eine Rolle gespielt; der Beruf  als Lehrerin war immer ihre Berufung gewesen, hatte sie mehr als erfüllt  und befriedigt. Doch heute, da sie das neugeborene Kind ihrer Nichte im  Arm hielt, konnte sie nicht umhin eine gewisse Wehmut zu empfinden. <br/><br/></p><hr/><p><br/><em>Stichwort 59: kosten, versuchen</em><br/><br/><strong>Nr. 89. Verführung </strong><br/><br/> Es war spät, als eine spärlich bekleidete Gestalt sich dem Sofa näherte und die Schlafende lächelnd betrachtete.<br/><br/> „Minerva?“<br/> „Hmm?“ Sie öffnete ein Auge.<br/> „Wach auf. Ich habe etwas für dich. Etwas ganz besonderes.“<br/><br/> Sie brummte nur unbestimmt und schloß das Auge wieder. Sanft streichelte er ihre Wange. <br/> „Nun komm schon, du wirst es nicht bereuen. Ich habe es extra für dich vorbereitet.“<br/><br/> Erneut öffnete sie ein Auge und ließ ihren Blick über seinen nackten Oberkörper gleiten. Er lächelte und hielt es ihr entgegen. <br/><br/> „Hier. Koste mal.“<br/><br/> Minerva rümpfte die Nase. . <br/> „Das ist mir zu glitschig. Warte bis es trocken ist.“<br/><br/></p><hr/><p><br/><em>Stichwort 90: Gewürze</em><br/><br/><strong>Nr. 90: Leckerbissen</strong><br/><br/> „Na gut.“<br/><br/> Severus ließ sich neben ihr aufs Sofa fallen und stellte den  mitgebrachten Teller ab, während Minerva sich aufsetzte und die Augen  rieb.<br/><br/> „Du warst wieder die ganze Zeit in der Küche“, meinte sie vorwurfsvoll. <br/> „Ich wollte etwas ausprobieren“, entschuldigte er sich und deutete auf den Teller. <br/> „Willst du nicht versuchen?“<br/><br/> Sie bejahte und fiel mit unerwarteter Energie über ihn her, um genüßlich seine Brust abzulecken.  <br/> „Ist das köstlich“, stöhnte sie mit schokoladeverschmierten Lippen. „Was ist das?“<br/><br/> „Kardamomschokolade. Auf dem Teller ist noch mehr.“<br/><br/> „Brauch ich nicht. Nicht, wenn du dich dabei komplett bekleckerst“, meinte Minerva und machte weiter.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/183049/chapters/632387">Chapter 10</a>: Drabbles 91-100
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>Stichwort 74: Eis</em><br/><br/><strong>Nr. 91 Kompromiß</strong><br/><br/> Die drahtige Frau mit dem Kurzhaarschnitt stöhnte: „Nicht noch eine Kirche, Minnie, ich kann keine Baudenkmäler mehr sehen!“<br/><br/> Minerva lächelte aufmunternd. Es war nicht einfach, ihrer beider  Interessen unter einen Hut zu bringen, erst recht nicht in einem Land  wie Italien, dessen herrliche Architektur genauso lockte wie die  traumhafte Natur und wunderschöne Badestrände. Doch nun war es Zeit für  einen Ausgleich für Willa, die sich bisher klaglos in jedes Gebäude  hatte mitschleppen lassen, das laut Reiseführer auch nur halbwegs von  Interesse war. <br/><br/> „Nur diese noch. Danach lade ich dich zum besten Eis Italiens ein und wir gehen an den Strand.“<br/><br/><strong>A/N:</strong> Willa, bzw. Wilhelmina Grubbly-Plank, ist canonmäßig ja ein recht  unbeschriebenes Blatt. Seit sich einige meiner FF-Freundinnen ihrer  angenommen haben, taucht sie auch bei mir verstärkt im Umfeld Minervas  als gute alte Freundin auf. <br/><br/></p><hr/><p><br/><em>Stichwort 96: Tinte</em><br/><br/><strong>Nr. 92 Urlaubsgrüße I</strong><br/><br/> „Hast du Tinte bei dir?“<br/><br/> Minerva, die ihr Eis genoß und die Gedanken wandern ließ, sah auf.<br/> „Tinte? Hier?“ Überrascht starrte sie ihr Gegenüber an.<br/><br/> Willa nickte und wedelte mit einem kleinen, bunten Stück Pappe.<br/> „Ja. Hagrid paßt doch auf meine Menagerie auf, er freut sich bestimmt über so eine Muggelpostkarte. Eine Feder habe ich.“<br/><br/> Minerva mußte lachen beim Anblick der Taubenfeder, die die Freundin  erwartungsvoll vorzeigte, und zückte einen länglichen, dünnen  Gegenstand.</p><p>„Meine Liebe, dein Improvisationstalent in allen Ehren, aber selbst du  wirst mit einer Taubenfeder kaum einen leserlichen Brief schreiben  können. Warum nimmst du nicht lieber einen Kugelschreiber?“ <br/><br/></p><hr/><p>
+  <br/>
+  <em>Stichwort 93: Eule</em>
+  <br/>
+  <br/>
+  <strong>Nr. 93 Urlaubsgrüße II</strong>
+</p><p>Severus betrachtete das grellbunte Muggelfoto, das ihm eine Eule überreicht hatte. Was war das nur für ein Brief? Eine dumpfe Erinnerung an seine Kindheit stieg in ihm auf. Auf der Rückseite entdeckte er Minervas Handschrift.<br/><br/><em>Lieber Severus,<br/><br/> Willa schreibt dauernd Muggelpostkarten, das mußte ich auch ausprobieren. </em> <em><br/> Es ist herrlich hier – fantastische Küche, traumhaftes Wetter und  Architektur, wohin das Auge fällt. Willa schleppt mich zwar ständig  durch irgendwelche bemerkenswerten Pflanzenansammlungen, aber dafür darf  ich jede Kirche besichtigen, die ich möchte. Nur du fehlst mir, ich  freue mich auf zuhause!<br/><br/> Minerva</em> <br/><br/> Severus lächelte. Auch er konnte es kaum erwarten, bis sie zurückkam.<br/><br/></p><hr/><p><em><br/> Stichwort 80: Briefmarke (freie Auswahl)</em><br/><strong><br/> Nr. 94 Wieder Zuhause</strong><br/><br/> Severus stand, ganz untypisch, vor dem Portal der Schule und betrachtete  die herannahende, hochgewachsene Gestalt. Pünktlich wie immer. <br/><br/> „Severus!“ <br/><br/> „Minerva. Du siehst erholt aus.“ Er versuchte vergeblich, sich seine  Wiedersehensfreude nicht anmerken zu lassen, und schließlich gab er auf  und schloß sie fest in die Arme. <br/><br/> Minerva strahlte. Sie hatte ihn ebenfalls sehr vermißt, doch wenn ihre  Abwesenheit ihn zu öffentlichen Gefühlsäußerungen brachte, sollte sie  das vielleicht wiederholen. <br/><br/> „Ich hoffe, Dir war nicht langweilig ohne mich“, scherzte sie.</p><p>„Nein, nicht sehr. Dank Deiner Postkarten habe ich ein neues Hobby“, erwiderte er mit einem Zwinkern.</p><p>„Darf ich Dir meine Briefmarkensammlung zeigen?“ <br/><br/></p><hr/><p><br/><em>Stichwort 63: süß</em><br/><strong><br/> Nr. 95: Süße Früchte</strong><br/><br/> „Mh, viel zu sauer, da muß mehr Zucker dran.“ <br/><br/> Minerva runzelte die Stirn und blickte Severus strafend an. <br/> „Du bist aber auch ein Süßschnabel. Marmelade kann gar nicht süß genug sein für Dich, oder?“<br/><br/> Severus grinste verwegen und schnappte sich eine Handvoll der Kirschen, die noch aufs Einkochen warteten.<br/><br/> „Ich verstehe nicht, warum Du Dich damit abgibst,“ meinte er mit vollem  Mund, „Tibby kocht schließlich für ihr Leben gern und kann es außerdem  viel besser.“<br/><br/> „Marmeladekochen macht Spaß“, gab Minerva zurück, „und Tibby hat Urlaub. Sie ist Verwandte besuchen gefahren.“<br/><br/> „Auch gut“, sagte Severus nahm sich noch einen Handvoll Kirschen. <br/><br/></p><hr/><p><em><br/> Stichwort 62: sauer</em><br/><br/><strong>Nr. 96: Belohnung</strong><br/><br/> Minerva sank zerzaust und erhitzt in einem Sessel. Sie hatte ganz  vergessen, wie anstrengend das Verarbeiten von etlichen Kilo Obst war.  Sie hätte sich wirklich helfen lassen sollen. <br/><br/> Severus saß am Schreibtisch, korrigierte Aufsätze und würdigte sie  keines Blickes. War er sauer,  weil sie ihn aus der Küche geschickt  hatte? Kindskopf. <br/> Minerva beschloß, sich mit einem heißen Bad für die Arbeit zu belohnen. <br/><br/> Im Badezimmer fand sie ein dampfende, aromatisch duftende Wanne vor,  Kerzen, Champagner und einen Teller Kirschen. Sie lachte. Dafür also  hatte er all die Kirschen gemopst! Gerührt ließ sie sich ins Wasser  sinken. <br/><br/> Die Tür ging auf. <br/><br/></p><hr/><p><em><br/> Stichwort 65: bitter</em><br/><strong>Nr. 97 Nacht</strong><br/><br/> Draußen war es dunkel und still. Minerva machte es sich vor dem Kamin  bequem und nippte an ihrem bitteren, heißen Getränk. Kaffee half ihr  zwar nicht gerade beim Schlafen, doch das wollte sie auch gar nicht.  Morgen hatte sie Geburtstag, und wie immer zog sie in der Nacht davor  Bilanz und dachte über das vergangene Lebensjahr nach. <br/> Es war ein schweres Jahr gewesen, vielleicht das schwerste überhaupt.  Sicher, Voldemort war besiegt, der Krieg gewonnen. Doch zu welchem  Preis! So viele Verluste, so viel Zerstörung. Und sie als Schulleiterin  mußte der Fels in der Brandung sein, ob sie wollte oder nicht. <br/><br/></p><hr/><p><br/><em>Stichwort 100: (freie Auswahl) Vater</em><br/><strong>Nr. 98 Ratschlag</strong><br/><br/> Mit kalten Fingern klopfte Minerva an die Tür der Bibliothek und trat ein.<br/> Ihr Vater begrüßte sie mit seinem strengen Lächeln. Überrascht nahm sie ein Glas Wein entgegen – das erste ihres Lebens.</p><p>„Morgen also fährst Du nach Hogwarts“, sagte er, „morgen beginnt Dein Leben als Hexe.“</p><p>Sein Lächeln vertiefte sich. „Ich bin sehr stolz auf Dich und weiß, Du  wirst Dich bewähren. Doch einen Rat möchte ich Dir mitgeben: Was Du auch  tust, folge immer Deinem Herzen. Tu nichts, worauf Du nicht stolz sein  kannst, und nichts, dessen Du Dich schämen müßtest.“</p><p>Minerva nickte. „Ja, Vater. Das will ich tun.“<br/><br/></p><hr/><p><em><br/> Stichwort 79: Rabe</em><br/><strong>Nr. 99 Abschied</strong><br/><br/> Wie Rabenschwingen so schwarz sei ihr Haar, hatte er immer gesagt. Sie  lächelte wehmütig und zählte die Bürstenstriche. Dreiundfünfzig,  vierundfünfzig – einhundert Mal jeden Abend, ihr privates Ritual von  klein auf. Sie hatte Raben immer gemocht und war stolz über den  Vergleich. So wie es ihr auch immer wie eine besondere Auszeichnung  vorgekommen war, wenn er ihr über das Haar gestrichen hatte. <br/><br/> Doch das konnte sie nicht erwähnen in ihrer Grabrede, das war zu privat.  Was sollte sie jedoch sagen? Sie, die Molyneux Gordon McGonagall  vielleicht am wenigsten gekannt hatte? Seit Tagen schon grübelte sie  über den Abschiedsworten an ihren Vater. <br/><br/></p><hr/><p><br/><em>Stichwort 87: Tod</em><br/><strong><br/> Nr. 100 Frage </strong><br/><br/> „Wirst du um mich weinen?“</p><p>„Wie bitte?“ Minerva, die ihre Finger durch Severus' Haar gleiten ließ, fuhr hoch.</p><p>„Wie kommst du denn darauf?“</p><p>Severus setzte sich auf. „Was ist an meiner Frage so schwer zu verstehen?“ Seine Augenbrauen zogen sich finster zusammen.</p><p>Minerva setzte sich ebenfalls auf und zog die Decke um sich. Ein so  plötzlicher Stimmungswechsel zu einem bitterernsten Thema war ihr nichts  Neues, wie auch die Tatsache daß Severus davon überzeugt war, Voldemort  nicht zu überleben.</p><p>„Natürlich werde ich um dich weinen. Aber ich hoffe sehr, daß ich es nicht muß. Versprich mir, daß Du auf Dich aufpaßt.“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--work endnotes-->
+<div id="work_endnotes" class="end notes module">
+  <h3 class="heading">Notes:</h3>
+  <blockquote class="userstuff"><p>Veröffentlicht Februar 2009 bis November 2010</p><p><b>Disclaimer:</b> Das Hogwarts-Universum und seine Figuren sind Eigentum von J.K. Rowling. Ich leihe sie mir nur ein bißchen aus und verspreche, sie unbeschadet zurückzugeben. Die verrückten Einfälle dagegen sind von mir. Tibby ist meine eigene Schöpfung.</p></blockquote>
+</div>
+<!--/work endnotes-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="hvsLFSQwF95JcrG1-H7eCxFfUa8vWq_QnxI9Zj9vgHAd5foRC_mwJPpj2HSp-l_UXqh2HUr7mSQ9aEXzFdQPQQ"/>
+          <input value="183049" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          8 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_183049">
+  <form class="new_comment" id="comment_for_183049" action="/works/183049/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="duF9YVLG8btxGv3dfYaRInVByIIXhGdWTQeFRbaRCyHt_4xlfQ9WQcILlBwsAhD9OrbvMHIlUaLvff3QnCqEEA"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_183049">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_183049" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_183049=new LiveValidation('comment_name_for_183049',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_183049.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_183049">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_183049" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_183049=new LiveValidation('comment_email_for_183049',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_183049.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_183049" class="landmark">Comment</label>
+        <textarea id="comment_content_for_183049" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_183049" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_183049_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_183049">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_183049=new LiveValidation('comment_content_for_183049',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_183049.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_183049.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_183049" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/183049/hit_count.json")})</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":118,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Verdacht! - rebelyell - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="gaXOURC7d0COO9dP18JR-ioyZ_vyD0bU8eGbQPOjbNp7KfxMwAnsj42zQLBQrw8naLN8TDPjVJ51QFz-xwb31w"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="DsPt4uBDp6wet2ZdC2IY5zzcg9e5zvvBpjaZiS-ZWgr0T9__MPE8Yx0_8aKMD0Y6fl2YYHgi6Ysil143GzzBBw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: austen words:10000-50000 sort:title</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/33957355/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/33957355/Verdacht.azw3?updated_at=1639135324">AZW3</a></li>
+          <li><a href="/downloads/33957355/Verdacht.epub?updated_at=1639135324">EPUB</a></li>
+          <li><a href="/downloads/33957355/Verdacht.mobi?updated_at=1639135324">MOBI</a></li>
+          <li><a href="/downloads/33957355/Verdacht.pdf?updated_at=1639135324">PDF</a></li>
+          <li><a href="/downloads/33957355/Verdacht.html?updated_at=1639135324">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Remus%20Lupin*s*Severus%20Snape/works">Remus Lupin/Severus Snape</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Remus%20Lupin/works">Remus Lupin</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Established%20Relationship/works">Established Relationship</a></li><li><a class="tag" href="/tags/Misunderstandings/works">Misunderstandings</a></li><li><a class="tag" href="/tags/Eavesdropping/works">Eavesdropping</a></li><li><a class="tag" href="/tags/Marauder&#39;s%20Map%20(Harry%20Potter)/works">Marauder&#39;s Map (Harry Potter)</a></li><li><a class="tag" href="/tags/Invisibility%20Cloak%20(Harry%20Potter)/works">Invisibility Cloak (Harry Potter)</a></li><li><a class="tag" href="/tags/Harry%20misuses%20his%20cloak%20and%20gets%20too%20much%20information%20for%20his%20small%20teenager%20brain/works">Harry misuses his cloak and gets too much information for his small teenager brain</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/31605836">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 2 of the <a href="/series/2652802">Snupin Works</a> series</span><span class="divider"> </span><a class="next" href="/works/33556813">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2021-09-18</dd><dt class="words">Words:</dt><dd class="words">16481</dd><dt class="chapters">Chapters:</dt><dd class="chapters">1/1</dd><dt class="kudos">Kudos:</dt><dd class="kudos">13</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/33957355/bookmarks">2</a></dd><dt class="hits">Hits:</dt><dd class="hits">175</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Verdacht!
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/rebelyell/pseuds/rebelyell">rebelyell</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Harry wird Zeuge eines Streits zwischen den Professoren Lupin und Snape und ahnt, dass Snape seinem Lieblingslehrer etwas antun möchte. Kann Hermione ihn vom Gegenteil überzeugen? Die Karte des Rumtreibers zeigt Snape in Lupins Räumen auf! Er wird ihn doch nicht etwa umbringen wollen, um seine Stelle zu übernehmen?! [Snape/Lupin] kein TW.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+
+    <p class="jump">(See the end of the work for <a href="#work_endnotes">notes</a>.)</p>
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+        <h3 class="landmark heading" id="work">Work Text:</h3>
+          <div class="userstuff"><p align="center"> </p><p> </p><p align="justify">
+  <span>Es war ein regnerischer Tag. </span>
+</p><p align="justify">
+  <span>Deswegen quoll der Gemeinschaftsraum über und die Schüler saßen bereits auf dem Boden, weil kein Stuhl und kein Sessel mehr frei war. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das zweite Trimester neigte sich dem Ende zu. Überall traf man jetzt auf Schüler, die ihre Nasen tief in die Bücher oder ihre Notizen gesteckt hatten.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry kam spät vom Nachsitzen zurück. </span>
+</p><p align="justify">
+  <span>Er hasste es. </span>
+</p><p align="justify">
+  <span>Das war mal wieder eine ungerechte Behandlung, und Harry wurde das Gefühl nicht los, dass es Professor Snape eine sadistische Befriedigung verschaffte, wenn er Harry zum Nachsitzen verdonnern konnte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er musste wieder eine ganze Stunde nur Kessel schrubben. Kessel! Die Professor Snape mit einem simplen Reinigungszauber hätte säubern können!</span>
+</p><p align="justify">
+  <span>Stattdessen ließ er die Kessel immer für diejenigen am Ende des Tages übrig, die er zum Nachsitzen eingetragen hatte. </span>
+</p><p align="justify">
+  <span>Meistens war es Harry, und meistens waren die Kessel besonders verschleimt oder verkrustet oder stanken bestialisch, weil der Trank nicht richtig gebraut wurde. </span>
+</p><p align="justify">
+  <span>Nicht einmal Neville wurde so oft Nachsitzen aufgebrummt wie Harry.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione machte sich schon lustig darüber, dass sie sich wohl erst für die Zeit nach dem Nachsitzen verabreden sollten, da Harry nach eigentlich jeder Zaubertränkestunde zum Nachsitzen beordert wurde. </span>
+</p><p align="justify">
+  <span>Harry verstand die Welt einfach nicht mehr. </span>
+</p><p align="justify">
+  <span>Er musste nur einmal etwas sagen, um den unendlichen Zorn von Professor Snape auf sich zu ziehen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Du könntest dich zur Abwechslung auch mal mit einem Handzeichen melden, anstatt direkt in die Klasse hineinzuquatschen«, belehrte Hermione ihn dann, wenn er sich mal wieder über die ungerechte Behandlung beschwerte. »Oder du könntest auch aufhören mit deinem Sitznachbarn zu quatschen während Professor Snape versucht, der Klasse etwas zu erklären. Nur weil du es nicht verstehst, heißt das nicht, dass andere im Unterricht nichts lernen wollen.« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er konnte nicht verstehen, warum Hermione sich auf die Seite von Snape schlagen konnte!</span>
+</p><p align="justify">
+  <span>Immerhin war das Wetter mies!</span>
+</p><p align="justify">
+  <span>Somit mussten die anderen ihre Zeit genau so drinnen verbringen wie er selbst.</span>
+</p><p align="justify">
+  <span>Als er nun Gemeinschaftsraum betrat, wollte er glatt wieder rückwärts rausmarschieren. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Hey, Potter! Mal wieder ein Rendezvous mit der Fledermaus gehabt?« rief David Nolton von einem sehr bequemen Sessel am Kamin zu ihm hinüber.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Haha! Sehr witzig!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die anderen kicherten, weil sie alle wussten, dass es wahr war.</span>
+</p><p align="justify">
+  <span>Ron und Hermione hatten ihm einen Platz bei den Sitzkissen freigehalten. Er wusste allerdings nicht, ob ihm nach herumsitzen war. Bis zur Sperrstunde war noch genug Zeit. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione hatte ihre Nase in ein Buch gesteckt.</span>
+</p><p align="justify">
+  <span>Ron wirkte neben ihr recht verloren. Er war ohnehin damit beschäftigt, Seamus Finnigan mit einer Zwille und Bertie Botts Bohnen zu beschießen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Nein, darauf hatte er gerade so gar keine Lust.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Irgendjemand rief ihm noch einen abfälligen Kommentar hinterher als er ohne Zwischenstopp zum Schlafsaal ging, wo er sich die Rumtreiberkarte schnappte und seinen Umhang. </span>
+</p><p align="justify">
+  <span>In der Küche würde er bestimmt noch ein paar Fleischstückchen finden, mit denen er Hedwig glücklich machen konnte. Den Umhang brauchte er eigentlich gar nicht, aber er wollte dieses Mal vorbereitet sein und nicht nach der Sperrstunde erwischt werden. </span>
+</p><p align="justify">
+  <span>Vor allem nicht von Snape!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Also versteckte er sich schon im Schlafsaal unter dem Umhang und schlängelte sich so durch die Massen im Gemeinschaftsraum. </span>
+</p><p align="justify">
+  <span>Es bemerkte auch keiner, wenn eine Tür in einem Schloss voller Zauberer und Geister auf unerklärliche Weise geöffnet und wieder geschlossen wurde. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Nicht jeder kannte den Weg zur Küche. </span>
+</p><p align="justify">
+  <span>Dazu hatte kaum jemand einen Grund. </span>
+</p><p align="justify">
+  <span>In der Großen Halle wurden sie schließlich regelmäßig und im Überfluss versorgt. Niemand musste also wissen, wo sich die Küche befand. </span>
+</p><p align="justify">
+  <span>Im Gegensatz zu Harry, obwohl die Entdeckung der Küche eher ein Zufall für ihn war. Er hätte auch einen der Hufflepuffs fragen können, aber das hätte nur weitere Fragen aufgeworfen, die er nicht beantworten wollte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>In der Küche begegnete ihm gähnende Lehre. Obwohl nach jedem Essen eine riesige Menge an Resten und dreckigem Geschirr entstand, mussten die Elfen wirklich fix sein, wenn sie jetzt schon mit allem fertig waren. Im Kamin glimmte eine niedrige Flamme, gierig über das letzte Holzscheit leckend. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Vorratskammer war nie abgeschlossen, auch etwas, das er per Zufall herausgefunden hatte. Entweder vertrauten die Elfen darauf, dass die Küche nie aufgesucht werden würde, oder sie wollten denjenigen, die später noch etwas essen wollten, keine Schwierigkeiten verursachen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er nahm sich also ein paar Speckstreifen. </span>
+</p><p align="justify">
+  <span>Die Eulen wurden während des Schuljahres immer von den Elfen bzw. von Hagrid versorgt. Manchmal hatten auch die Schüler die Aufgabe, sich um die Eulen zu kümmern. Deswegen würde Hedwig nicht verhungern, wenn er einmal keine Zeit für sie hatte. </span>
+</p><p align="justify">
+  <span>Der Speck war lediglich ein Bestechungsmittel.</span>
+</p><p align="justify">
+  <span>Im Grunde genommen wollte Harry sich einfach nur zurückziehen, und mit niemandem sprechen.</span>
+</p><p align="justify">
+  <span>Er besuchte Hedwig viel zu selten in der Eulerei. Sie war eine schlaue Eule. So stellte er es sich jedenfalls immer vor. Wenn er sich mehr mit ihr beschäftigen würde, hätte er vielleicht auch eine viel bessere Verbindung zu ihr.</span>
+</p><p align="justify">
+  <span>Egal!</span>
+</p><p align="justify">
+  <span>Er stellte sich einfach vor, dass sie sich darüber freute, wenn er nach ihr in der Eulerei sah.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Auf halbem Wege die Treppe hinauf verfluchte er sich für sein Vorhaben.</span>
+</p><p align="justify">
+  <span>Warum musste die Küche auch in den unteren Stockwerken sein und die Eulerei im obersten Geschoss eines Turmes!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Oben angekommen war er so außer Atem, dass er sich an der Wand neben dem Eingang abstützen musste. Die Prüfungen standen an und da hatte er nicht so viel Zeit zum trainieren, wie er es gerne hätte. </span>
+</p><p align="justify">
+  <span>Kein Wunder, dass er so gereizt war in letzter Zeit, dass er es selbst wagte, Snape Widerworte zu geben! Er hatte keine Zeit mehr fürs Quidditch Training und fühlte sich sehr aus dem Gleichgewicht gebracht. </span>
+</p><p align="justify">
+  <span>Und dann waren da noch die fast täglichen Schikanen durch diesen schleimigen Blödmann Snape!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>In der Eulerei zischte der Wind durch die kleinen Öffnungen, durch die die Eulen nach draußen geschickt werden konnten oder durch die sie in die Eulerei zurückkehrten, wenn sie die Post zugestellt hatten. </span>
+</p><p align="justify">
+  <span>Hier oben war es immer windig und kalt - egal, zu welcher Jahres- und Tageszeit. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Eingang war am untersten Ende. </span>
+</p><p align="justify">
+  <span>Die Eulerei selbst war mehrstöckig. An den Wänden schlängelten sich die Wendeltreppen hinauf zu den Galerien. Jeder Vogel hatte seine eigene Sitzstange und seinen eigenen Wassertrog. Am Boden der Eulerei war ein Brunnen, der stetig plätscherte. </span>
+</p><p align="justify">
+  <span>Das Becken war sehr flach, so dass sich die Vögel leicht darin baden konnten.</span>
+</p><p align="justify">
+  <span>Heute Abend war es viel zu kalt dafür und die Vögel bevorzugten es, auf ihrer Sitzstange zu dösen bis zur nächsten Fütterung oder bis sie ihre Arbeit verrichten mussten.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hedwigs Sitzstange war ziemlich weit unten. Darüber war er sehr froh. Noch mehr Treppenstufen würde er heute nicht mehr hinauf schaffen!</span>
+</p><p align="justify">
+  <span>Die Schneeeule schlug verschlafen die großen gelben Augen auf und huuhuute leise als sie Harry erblickte. </span>
+</p><p align="justify">
+  <span>»Na? Hast du mich vermisst?« Natürlich sprach der Vogel nicht mit ihm. Doch manchmal hatte er das Gefühl, dass seine Eule ihn verstand. Irgend einen Vorteil musste es doch haben, ein magisches Tier zu sein. </span>
+</p><p align="justify">
+  <span>Er gab ihr ein Stück vom Speck zu fressen und streichelte über ihr schneeweißes Gefieder. </span>
+</p><p align="justify">
+  <span>»Huuhuuu«, gab der Vogel eifrig von sich und verschlang den Speck mit einem Haps. </span>
+</p><p align="justify">
+  <span>»Wenn die Prüfungen vorbei sind, werde ich mit dir einen ganz langen Spaziergang machen«, versprach er der Eule. »Na ja... ich werde spazieren... du wirst eher fliegen!« </span>
+</p><p align="justify">
+  <span>Er versuchte über sich selbst zu lachen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Plötzlich hörte er Geräusche, die von keinem Vogel stammen konnten. </span>
+</p><p align="justify">
+  <span>Zwei Personen unterhielten sich in der Stube, die sich in der Eulerei befand. </span>
+</p><p align="justify">
+  <span>Die Stube wurde von denen genutzt, die sich gerade um die Tiere kümmerten. Harry hatte bisher nie aufgepasst, wie der Schichtplan vergeben wurde, ob man sich dafür melden konnte, ob es freiwillige Arbeit war, oder ob man dafür Punkte gutgeschrieben bekam für die Endnote. </span>
+</p><p align="justify">
+  <span>Wenn er ehrlich zu sich war, waren ihm magische Wesen sehr suspekt und er würde es sich nicht zutrauen, sich um welche zu kümmern. Er schaffte es ja gerade mal, sich um sich selbst zu kümmern, wie sollte er dann die Verantwortung für andere Lebewesen übernehmen? Gar nicht auszudenken, wie viele Tiere dann verhungern würden, weil Harry es nicht auf die Reihe bekommen würde, sie zu füttern oder sich um die kranken Tiere zu kümmern!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Stube war mehr ein Verschlag. </span>
+</p><p align="justify">
+  <span>Sie wirkte als hätte jemand einfach drei Holzwände an der Steinwand hochgezogen und dann ein paar Dachschindeln drüber gezimmert. Sie hatte einen Türrahmen ohne Tür und ein Fenster ohne Glas. Darin waren nicht nur Utensilien für die Tierpflege untergebracht. Dort waren auch ein Stuhl und ein Tisch, direkt unter dem Fenster, und ein Sammelsurium von unterschiedlichen Schreibfedern und Tintenfässern, die sich im Laufe der Jahre wohl angesammelt hatten. Sie waren von denjenigen vergessen worden, die einen eiligen Brief aufsetzen mussten. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Au</span>
+  <span>ch</span>
+  <span> Harry hatte hier schon einmal einen Brief aufgesetzt. </span>
+</p><p align="justify">
+  <span>Da war es allerdings taghell und Hedwig war übel gelaunt gewesen, weil sie es vorzog auf ihrer Stange zu sitzen und den Tag zu verschlafen. Ein Hufflepuff Schüler aus der 7. Jahrgangsstufe hatte ihm dann erklärt, dass Eulen - egal, ob magisch oder nicht - es bevorzugten, in der Dämmerung ihre Arbeit zu verrichten. Es gab einige Ausnahmen, die auch tagsüber sogar in der Sommerhitze Briefe zu ihren Bestimmungsorten brachten, aber die gehörten schon zu einer besonderen Eulenart. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>In der Stube wurde auch das Futter zerkleinert - meistens waren es Mäuse oder Ratten, die die Hauselfen in den Vorratskammern von Hogwarts gefangen hatten. </span>
+</p><p align="justify">
+  <span>Kranke Tiere wurden darin auch versorgt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Es wunderte Harry nicht mehr, dass die Stube von außen schäbig und klein aussah, innen aber viel mehr Platz und vor allem auch mehrere Räume bereit hielt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Aus eben dieser Stube drangen nun Stimmen heraus, die in einem Streitgespräch verwickelt waren. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Jetzt war Harry wirklich froh, dass er seinen Tarnumhang mitgenommen hatte! Er legte den Speck auf den Sims neben Hedwigs Sitzstange. Hedwig hatte seine Anwesenheit längst wieder vergessen und begnügte sich nun genüsslich mit den Leckerbissen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry warf den Umhang über sich und schlich zum Fenster hinüber, um nachzusehen, wer sich mit wem stritt und warum! Für sein und Alter und wider besseren Wissens war er viel zu neugierig und konnte es einfach nicht lassen, seine Nase in seinen eigenen Angelegenheiten zu lassen! Dafür war diese Welt einfach zu spannend und zu herausfordernd!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich habe dir schon hundertmal gesagt, dass du gefälligst pünktlich zu sein hast!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Stimme erkannte Harry überall! Es war diese seidige Stimme, die mit jedem Kommentar schärfer schneiden konnte als ein frisch gewetztes Messer, die Stimme, die ihn in seinen Albträumen verfolgte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry drängte sich gegen die Wand der Hütte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich weiß, ich weiß, Severus! Und es tut mir leid!« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das war Professor Lupins Stimme! </span>
+</p><p align="justify">
+  <span>Was hatten er in der Eulerei zu dieser Zeit noch zu tun?</span>
+</p><p align="justify">
+  <span>Und vor allen Dingen: Was hatte Snape mit Professor Lupin hier allein in der Eulerei vor? Die beiden konnten sich doch nicht ausstehen! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Es war allgemein bekannt, dass Snape auf Professor Lupins Stelle scharf war! Was würde Snape alles tun, um an diesen Job zu kommen? Er hatte Professor Lupin doch bestimmt hier herauf gelockt, damit er ihn allein und ohne Zeugen bedrängen konnte! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nein, Remus! Ich bin deine Ausreden leid! Ist das hier nur ein Spiel für dich?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nein, natürlich nicht!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ach, wirklich? Denn mir scheint, dass du das alles auf die leichte Schulter nimmst!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Severus, lass mich das bitte erklären!« flehte Professor Lupin Snape an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Vorsichtig spähte Harry über den Fenstersims in die Stube hinein. Snape stand drohend über einen am Tisch sitzenden Professor Lupin gebeugt. Der Tisch stand direkt direkt beim Fenster und deshalb hatte Harry die beste Sicht auf beide Professoren.</span>
+</p><p align="justify">
+  <span>»Remus! Ich hab es satt! Du wirst schon sehen, was du davon hast! Mir egal, ob du mit deinem Leben spielst oder mit dem anderer!« Snape hielt ein Tablett mit einem Metallbecher darauf, aus dem leicht bläulicher Qualm aufstieg. Er stellte das Tablett für sein wütendes Getue viel zu behutsam auf dem Tisch ab.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Den Ring«, sagte Snape zusammenhanglos.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was?« kam es flüsternd über Professor Lupins Lippen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Bei Merlins Bart! Bist du neuerdings zu deiner Senilität auch noch schwerhörig geworden, Lupin? Deinen Ring! Gib ihn mir!« forderte Snape harsch und griff nach Professor Lupins Arm, um ihn an sich heranzuziehen und mit seinen Blicken zu malträtieren.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Aber...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Heute noch, wenn's recht ist!« Snape ließ ihn los und hielt ihm seine Hand auffordernd hin.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Professor Lupin wirkte auf einmal so traurig als hätte man ihn soeben ins Gesicht geschlagen und dabei ausgelacht. </span>
+</p><p align="justify">
+  <span>Wieso war Snape nur so gemein zu ihm! </span>
+</p><p align="justify">
+  <span>Er war der beliebteste Lehrer... Oh, deswegen war er so unausstehlich zu ihm! Es war doch klar, dass Snape der Neid quer übers Gesicht geschrieben stand! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Professor Lupin griff nach dem Ringfinger an seiner linken Hand, zog einen schlichten Ring ab und legte ihn in Severus' ausgestreckte Hand. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Ring verschwand in Snapes Manteltasche. </span>
+</p><p align="justify">
+  <span>Mit einem scharfen Absatz machte er kehrt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry beeilte sich, in eine Ecke zu schleichen und möglichst nicht im Weg zu stehen. Er war zwar unter dem Umhang unsichtbar, dennoch war er physisch immer noch da. Wenn Snape ihn ertasten oder umrennen würde, dann wäre Harry in Teufels Küche!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape stand schon in der Tür, die zur Treppe nach draußen führte, als Professor Lupin ihm hinterher rief: »Severus, warte!« </span>
+</p><p align="justify">
+  <span>Unerwarteterweise blieb Snape tatsächlich stehen und blickte über seine Schulter zurück auf den geschlagenen Lehrer. </span>
+</p><p align="justify">
+  <span>»Bitte, verzeih mir...« kam es nur leise über seine Lippen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape ignorierte ihn kaltherzig und stakste mit energischen Schritten weg.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Als er schließlich verschwunden war, schlich Harry sich wieder zum Fenster hin, wohl darauf bedacht keine lauten Schritte zu machen. Er hatte immer das bedauerliche und zweifelhafte Glück, erwischt zu werden, wenn er bewusst etwas Unerlaubtes tat. Er war wohl nie wirklich auf leisen Sohlen unterwegs, und die Lehrer schienen allesamt ein Gespür zu haben für verdächtige Geräusche. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Professor Lupin saß immer noch an dem Tisch. Vor ihm stand das Tablett mit dem qualmenden Becher. Sein Blick war darauf fixiert - so intensiv als könne der Becher durch sein bloßes Starren verschwinden. Er vergrub sein betrübt wirkendes Gesicht in seinen Händen und stützte sich dabei müde auf dem Tisch ab. Er wirkte so gebrochen und verletzt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry wollte den Umhang ablegen und Professor Lupin zur Seite stehen! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>So bekümmert und verloren hatte er den Professor noch nie gesehen und es erschütterte ihn, einen Lehrer so sehen zu müssen. Mit Sicherheit würde Professor Lupin sich nie so gehen lassen, wenn er wüsste, dass ein Schüler anwesend war.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Auf einmal fühlte Harry sich sehr beschämt und schuldig, weil er jemanden beobachtete, der sich - allein wähnend - seinen Gefühlen hingab. Die Szene war keinem fremden Beobachter gegönnt. Aber er konnte den Blick auch nicht einfach abwenden. </span>
+</p><p align="justify">
+  <span>Professor Lupin holte einmal tief Luft, und blickte wieder auf den Becher. Seine Mine verzog sich zu einer Grimasse als er den Inhalt des Bechers hinunterschluckte. </span>
+</p><p align="justify">
+  <span>Alles schrie in Harry "Nein! Das ist vergiftet!", aber sein Mund blieb verschlossen und so blieb er unentdeckt bis der Professor den Becher und das Tablett verschwinden ließ und die Eulerei schließlich verließ. Professor Lupin war bereits auf der Außentreppe vom Turm als er einen Zauber zurückschickte, der das Feuer der Lampen in der Stube löschte. </span>
+</p><p align="justify"> </p><p align="center">
+  <b>***</b>
+</p><p> </p><p align="justify">
+  <span>»Welcher Boggart ist dir denn über die Leber gelaufen?« fragte Ron als Harry sich schwerfällig neben ihm auf das Sofa fallen ließ. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Gemeinschaftsraum hatte sich mittlerweile größtenteils geleert. Auch der Geräuschpegel war zu einem angenehmeren Volumen gesunken. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich weiß es nicht, ehrlich gesagt...« Harry starrte ins Leere hinein. »Ich glaube, Snape hat etwas Schlimmes vor.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Ron schnippte sich eine Bertie Botts Bohne in den Mund.</span>
+</p><p align="justify">
+  <span>»Wie kommstn drauf?!« fragte Ron schmatzend. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich hab gesehen, wie er sich mit Professor Lupin gestritten hat. Der hat definitiv etwas vor. Professor Lupin war am Ende ziemlich fertig mit den Nerven. Ich dachte schon er würde anfangen zu weinen...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Und?« fragte Ron ziemlich desinteressiert.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was, und?« warf Harry verwirrt zurück.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Na, hat er geheult oder nicht?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Darum geht es doch gar nicht! Snape hat sich mit ihm gestritten und ihm wieder diesen Trank hingestellt. Der vergiftet ihn doch langsam genug, dass es kein anderer mitbekommt!« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione kam zurück in den Raum, anscheinend auf der Suche nach etwas, und erspähte die Jungs in der Ecke.</span>
+</p><p align="justify">
+  <span>»Habt ihr mein Notizbuch gesehen? Ich bin mir sicher, dass ich es hier irgendwo liegen gelassen habe...« fragte sie leicht panisch und scheuchte die Jungs vom Sofa weg, um unter den Kissen nachzusehen. </span>
+</p><p align="justify">
+  <span>Da war es aber auch nicht.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ron?« fragte sie als dieser nicht reagierte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was ist?« gab dieser genervt zurück.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Hast du es gesehen?« fragte sie ungeduldig.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was? Nein... was...« Ein Kissen mitten in sein Gesicht brachte ihn zum Schweigen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Welches meinst du?« fragte er. Bei Hermiones Lerneifer war das eine berechtigte Frage.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das Schwarze mit den roten Stickern drauf, das mir Professor Lupin geschenkt hat!« antwortete sie und durchsuchte den Haufen Bücher und Zeitschriften auf dem Kaffeetisch vor dem Sofa.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Tut mir leid, das habe ich nicht gesehen«, antwortete er immer noch tief in Gedanken versunken.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ach, verdammt!« schnaufte sie und ließ sich zwischen den Jungs auf das Sofa fallen. Sie ging gedanklich noch einmal alle Orte durch, an denen sie es benutzt hatte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Vielleicht hast es unter deinem Bett versteckt, weil du lauter kleine Liebesgedichte an Lupin verfasst hast«, scherzte Ron und handelte sich gleich mehrere Schläge mit dem nächsten Kissen ein.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, was ist mit dem?« fragte sie ihn und bemerkte, dass selbst Harry sich merkwürdig verhielt.</span>
+</p><p align="justify">
+  <span>Dieser blieb ihr eine Antwort schuldig und sie erkannte, was er in den Händen hielt: Die Karte, die ihm verriet, wer sich gerade wo in Hogwarts aufhielt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Willst du schon wieder irgendwen ausspionieren?« kommentierte sie. »Das Ding bringt nichts Gutes und du solltest es nicht ständig benutzen. Was würdest du davon halten, wenn dir jederzeit jemand auflauern könnte, weil er genau weiß, wo du bist! Würde dir das gefallen?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich habe vorhin gesehen, wie Snape sich mit Professor Lupin gestritten hat. Er hat ihn ziemlich fertig gemacht!« brach es aus ihm heraus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Na, und? Auch wenn du es kaum glauben magst, Harry, aber das tun Leute manchmal«, winkte sie gleich ab und verdrehte die Augen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nein! Du verstehst das nicht! Professor Lupin sah aus als würde er weinen. Da ist irgend etwas im Busch!« erklärte er ihr sehr davon überzeugt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, du siehst Zusammenhänge, wo gar keine sind!« versuchte sie ihm begreiflich zu machen. Doch so wie sie ihn einschätzte, redete sie gegen eine Wand.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Aber schau doch mal!« Er zeigte auf eine Stelle der Karte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione winkte ab. »Harry, ich will mit deinen paranoiden Vorurteilen nichts zu tun haben.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Schau doch nur einmal!« Er hielt ihr die Karte vors Gesicht. »Er ist in Professor Lupins Räumen!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione verdrehte die Augen. »Dann ist er eben zu ihm gegangen, um die Diskussion, die du als Streit einstufst, fortzuführen. Das machen Menschen nun mal!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Dazu müsste Professor Lupin aber auch in seinen Räumen sein!« Harry verlor langsam die Geduld. Warum verstand sie auch nicht, dass es eine ernste Situation war??</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was meinst du?« fragte Hermione immer noch wenig überzeugt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Er ist in Professor Lupins privaten Räumen... ALLEIN!« Er zeigte mit dem Finger auf den Namen 'Severus Snape', wie er langsam Kreise zog in den besagten Räumen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Die Karte muss sich irren...« sagte sie und nahm die Karte in ihre eigenen Hände, um einen besseren Blick darauf zu haben. »Bist du sicher, dass das Professor Lupins Quartiere sind?« fragte sie und zog die Augenbrauen konzentriert zusammen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich war da schon einmal... naja, ich habe zumindest davor gestanden als er abends zu seinen Räumen gegangen ist und wir uns auf dem Weg dahin unterhalten haben. Das sind Professor Lupins Räume, Hermione! Und Snape lauert ihm da auf!« sagte er mit einer äußersten Dringlichkeit in seiner Stimme.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Dann drückte sie ihm die Karte auf die Brust. »Und wenn schon! Harry, das ist nicht deine Angelegenheit! Du willst dich doch nur profilieren, weil Professor Lupin dein Lieblingslehrer ist.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was hat das denn damit zu tun?« fragte Harry empört.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Du kannst dich nicht immer in die Angelegenheiten anderer einmischen, nur weil dein Retter-in-glänzender-Rüstung-Syndrom aufblinkt!« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das war ein Dämpfer!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry konnte nicht glauben, dass Hermione es nicht verstehen wollte.</span>
+</p><p align="justify">
+  <span>Energisch faltete er die Karte zusammen und stand auf. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Schön! Dann glaub mir eben nicht!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, wenn du jetzt losgehst und Snape auflauerst, handelst du dir nur wieder Ärger ein! Und dann bist du es wieder, der sich darüber beschwert, wie unfair er doch behandelt wird, obwohl du immer nur Unsinn machst und anderen nachstellst! Gib es endlich auf, Harry!« Sie stand auf. »Ich suche weiter nach meinem Notizbuch. Und, Harry, wenn ich hören sollte, dass du da hingegangen bist, nur um wieder nach Ärger zu suchen, sag ich's Professor McGonagall! Mal schauen, wie begeistert sie davon sein wird, dass du Lehrern hinterher spionierst!« </span>
+</p><p align="justify">
+  <span>Mit diesen Worten verließ sie den Gemeinschaftsraum ohne sich noch einmal umzudrehen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Ron und Harry starrten ihr hinterher.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wie willst du in sein Quartier kommen?« fragte Ron schließlich und starrte immer noch auf die Tür, aus der Hermione eben noch gegangen war.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was?« fragte Harry irritiert.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Na, du wirst doch da hingehen wollen! Aber wie willst du hineinkommen?« fragte Ron.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich weiß es noch nicht. Aber ich werde mir etwas ausdenken«, versicherte Harry ihm.</span>
+</p><p align="justify"> </p><p align="center">
+  <b>***</b>
+</p><p> </p><p align="justify">
+  <span>Er lag schon eine ganze Weile wach in seinem Bett. </span>
+</p><p align="justify">
+  <span>Die anderen schliefen tief und fest. Ron schnarchte laut im Bett neben ihm. Und auch wenn Harry die Vorhänge zu seinem Bett zugezogen hatte, wusste er, dass Ron unmöglich verrenkt quer in seinem Bett liegen würde.</span>
+</p><p align="justify">
+  <span>Er schob den Vorhang ein kleines Stück beiseite und versuchte, in der Dunkelheit die Uhrzeit auf seinem Wecker abzulesen. </span>
+</p><p align="justify">
+  <span>5:28 Uhr konnte er gerade eben so mit zusammengekniffenen Augen entziffern.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Verdammt!« nuschelte er und warf sich das Kissen auf sein Gesicht. Die Karte knisterte unter seinem Ohr. Er hatte sie vor dem Schlafen gehen unter sein Kopfkissen gelegt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er zog den Vorhang wieder zu und setzte sich auf. </span>
+</p><p align="justify">
+  <span>»Lumos!« Die Spitze seines Zauberstabs beleuchtete die Karte und er suchte nach der Stelle, an der sich Remus Lupins Räume befanden. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Seine Augen weiteten sich!</span>
+</p><p align="justify">
+  <span>Was er da zu sehen bekam, konnte einfach nicht wahr sein!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Severus Snape war immer noch in Professor Lupins Räumen! Und direkt neben ihm flackerte Lupins Name unstetig auf wie bei einer statischen Störung eines Fernseherbildes. </span>
+</p><p align="justify">
+  <span>Das durfte nicht sein!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er hatte ihn tatsächlich umgebracht! Warum wohl sollte Lupins Name auf der Karte sonst flackern? Er musste in den letzten Atemzügen liegen, und Snape sah ihm beim Sterben zu!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry griff nach draußen. Seine Kleidung lag auf dem Stuhl direkt neben dem Bett. Er griff blind danach und belegte sein Innere seines Bettes bis zu den Vorhängen mit einem Ruhezauber, damit die anderen nicht hörten, dass er sich gerade anzog und dabei wild fluchte aus Angst, seinen Lieblingslehrer betrauern zu müssen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er knüpfte sich das Hemd halbherzig und versetzt zu, ließ es über der Hose hängen, schnappte sich seine Schuhe, die vor dem Bett standen und den Tarnumhang, der in einer Schachtel unter seinem Bett verstaut war. </span>
+</p><p align="justify">
+  <span>Und dann schlich er sich aus dem Schlafsaal, ging die Treppe hinunter und musste durch den Gemeinschaftsraum, um hinauszugehen. </span>
+</p><p align="justify">
+  <span>Er hatte sich den Umhang noch nicht umgelegt. </span>
+</p><p align="justify">
+  <span>Warum auch? </span>
+</p><p align="justify">
+  <span>Wer sollte ihn um 5:30 Uhr schon erwischen können?</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry?«</span>
+</p><p align="justify">
+  <span>Erschrocken blieb er stehen. Die Hand bereits auf das Holz der Tür gelegt. </span>
+</p><p align="justify">
+  <span>Warum überraschte es ihn eigentlich noch, dass Hermione so ein Frühaufsteher sein musste!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Ein leises 'Verdammt!' stolperte über seine Lippen.</span>
+</p><p align="justify">
+  <span>Erwischt und geschlagen drehte er sich zu ihr um. Sie saß beim Feuer und hatte ihr schwarzes Notizbuch vor sich liegen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Du hast es gefunden!« bemerkte er.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Lenk nicht ab! Wie siehst du überhaupt aus?« Sie deutete auf sein hektisch zugeknüpftes Hemd und seine fehlende Krawatte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry starrte an sich herunter und zuckte mit den Schultern. </span>
+</p><p align="justify">
+  <span>Sie bemerkte den Tarnumhang unter seinem Arm. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Du willst doch nicht etwa Professor Snape auflauern?!« Ihre Augen weiteten sich ungläubig.</span>
+</p><p align="justify">
+  <span>Da löste sich seine Starre und er schnellte auf sie zu bevor sie sich erheben und anfangen konnte zu zetern.</span>
+</p><p align="justify">
+  <span>Er entfaltete vor ihr die Karte und deutete auf die beiden Namen. Professor Lupins Name flackerte immer noch.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sieh dir das an und sag mir, dass er ihn nicht gerade umgebracht hat!« forderte er sie auf und war sehr von seiner Annahme überzeugt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermiones Augen weiteten sich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Verstehst du es jetzt?« fragte Harry. »Das ist kein normaler Streit in der Eulerei gewesen! Snape vergiftet Professor Lupin langsam mit diesen komischen Tränken, die er ihm immer zu schlucken gibt!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, war heute Vollmond?« fragte sie mit einem Grad von Angst in ihrer Stimme, die Harry nicht so recht zu interpretieren wusste.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Keine Ahnung... Der Mond schien vorhin noch, aber ich hab keine Ahnung, ob Vollmond oder nicht... Was spielt das für eine Rolle?« fragte er ahnungslos.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Unwichtig...!« tat sie seine Frage ab und er konnte an ihrem Gesichtsausdruck erkennen, dass sie sich beherrschen musste, um nicht mit den Augen zu rollen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Manchmal verstand er dieses Mädchen überhaupt nicht! </span>
+</p><p align="justify">
+  <span>»Wir müssen etwas unternehmen, Mione!« sprach er sehr von seiner Sache überzeugt, sprang auf und ging energischen Schrittes zur Tür.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Und was willst du machen? Wie willst du da reinkommen? Du kennst das Passwort nicht und Professor Lupin hat seine Räume bestimmt mit mehreren Schutzzaubern belegt!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»So schwer belegt kann seine Tür gar nicht sein, wenn Snape hineingelangen konnte!« entgegnete er ihr selten dämlich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry!« Sie schnellte hoch und rannte an ihm vorbei, um sich zwischen ihm und die Tür zu stellen. »Wir wissen nicht, ob Professor Snape dort eingebrochen ist! Und auch wenn! Er ist ein Meister in vielen Fächern, du willst dich doch wohl nicht auf die gleiche Stufe wie er stellen?! Du kommst doch noch nicht mal in Zaubertränke mit dem Stoff hinterher!« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich werd schon einen Weg finden!« verteidigte er sich und wollte sie beiseite schieben.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry! Du brauchst einen Plan! Wenn man dich vor der Tür eines Lehrerquartiers findet am frühen Morgen, wird man dir nicht nur Fragen stellen wollen, es würde auch Professor Lupin in einem schlechten Licht dastehen lassen!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Warum?« fragte Harry - tatsächlich sehr ahnungslos. »Und hör auf, die Augen zu verdrehen! Ich weiß, dass ich nicht die hellste Leuchte bin!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, wenn du so früh am Morgen vor den privaten Räumen eines Lehrers stehst, werden die andern glauben, dass du da die Nacht verbracht hast!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Schließlich fiel der Groschen: »Was? Üääh! Wie kannst du nur so was sagen!« Harry verzerrte angewidert das Gesicht.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das ist nicht das, was ich denke, aber genau so wird es aussehen! Und dann wäre Professor Lupin in großen Schwierigkeiten! Du willst doch nicht, dass er seinen Job verliert, weil du vor seiner Wohnung herumgelungert bist und keine Erklärung parat hast, was du da gemacht hast!?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry hielt inne. »Du meinst für den Fall, dass er noch lebt!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione schluckte. »Ich fürchte, es wird ganz anders ausfallen als du dir gerade denkst.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was meinst du damit?« fragte er ungeduldig.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das tut nichts zur Sache... Vielleicht liege ich auch einfach falsch«, hoffte sie. »Also... was ist dein Plan?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry stockte. »Ich... also... ich...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Lass mich raten: Du hast keinen Plan, richtig?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry nickte geschlagen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wenn man dich einmal aus den Augen lässt, rennst du gleich in dein nächstes Verderben!« Sie ging zurück zum Sofa und hob ihre Robe auf. »Ich komme mit! Du verlierst sonst noch deinen Arm oder sonst was...« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er grinste selten dämlich. War er doch erleichtert, dass er Professor Snape nicht alleine zur Rede stellen musste! »Wie sieht dein Plan aus?« fragte er, schon ein wenig ängstlich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wir brauchen unsere Besen!« verkündete sie sehr von sich überzeugt.</span>
+</p><p align="justify"> </p><p align="center">
+  <b>***</b>
+</p><p> </p><p align="justify">
+  <span>Es fing gerade wieder an zu nieseln als sie die Stelle erreicht hatten, an denen sie die Räume von Remus Lupin vermuteten. </span>
+</p><p align="justify">
+  <span>Laut Karte war das die richtige Stelle, aber das Stockwerk stimmte nicht. </span>
+</p><p align="justify">
+  <span>Zuerst hatten sie ihre Nasen an einer sehr verschmierten Fensterfront plattgedrückt und in einen unbenutzten Raum gestarrt, der scheinbar schon eine ganze Weile nicht mehr bewohnt worden war. Die Möbel darin waren mit Laken verhangen und an die Seite gestellt. Überall standen Kisten herum, große und kleine, die wohl auch nicht zueinander gehörten. Das konnten jedenfalls nicht Professor Lupins Zimmer sein.</span>
+</p><p align="justify">
+  <span>Ein Stockwerk weiter oben sah schon eher danach aus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Und jetzt?« fragte Harry. Seine Brille beschlug und der Nieselregen sammelte sich zu einem dünnen Tröpfchenfilm auf den Gläsern, weil er vergessen hatte, einen Schirmzauber über sich zu legen, der ihn vor dem lästigen Nass trocken gehalten hätte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Lass mich nur machen! Halt du dich einfach bereit! Wenn ich es dir sage, fliegst du durch das Glas!« forderte Hermione sehr zielsicher.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Okay...« antwortete er wenig überzeugt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione flüsterte einen Zauberspruch, den er nicht erkannte. Aber das Plätschern des Regens war mittlerweile so laut, dass er ihre leisen kaum ausmachen konnte. </span>
+</p><p align="justify">
+  <span>Das Fenster veränderte sich. Die feste Form waberte auf einmal wie dickflüssiger Sirup, der trotz allem nicht aus dem Fensterrahmen herausquoll oder von der Mauer hinunter tropfte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Flieg hindurch, aber langsam! Und sei LEISE!« gab sie Bescheid.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er gab sich wirklich alle Mühe!</span>
+</p><p align="justify">
+  <span>Als sein Besen das geleeartige Fenster durchbrach, hatte er das Gefühl als würde er von einer dickflüssigen Seifenblase umhüllt werden. </span>
+</p><p align="justify">
+  <span>Mit einem zähen PLOPP! entließ ihn das zähflüssige Fenster wieder aus seinem glibberigen Griff, und er purzelte mit seinem Besen durch die Luft. </span>
+</p><p align="justify">
+  <span>Erschrocken stöhnte er auf, während er sich an seinen Besen festklammerte, um nicht herunterzufallen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>LEISE! Hatte Hermione ihm eingetrichtert! Er wollte doch nicht, dass Snape ihn erwischte! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das zweite Plopp Geräusch sagte ihm, dass Hermione es ebenfalls hinein geschafft hatte. </span>
+</p><p align="justify">
+  <span>Sie blieben eine Weile nebeneinander in der Luft und horchten in die Stille hinein. </span>
+</p><p align="justify">
+  <span>Hermione signalisierte ihm, langsam zu landen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das war eine recht einfache Aufgabe. </span>
+</p><p align="justify">
+  <span>Das Zimmer war sehr geräumig und nur spärlich möbliert. An den Wänden gedrängt standen ein Bücherregal neben dem anderen. </span>
+</p><p align="justify">
+  <span>Es gab einen Kamin, in dem ein grünes Feuer flammte, davor zwei Sessel mit hoher Rückenlehne. Ein Schemel aus viel zu hellem Holz stand neben einem der Sessel und passte farblich so rein gar nicht zu den anderen Möbeln, die aus rotbraunem Holz gefertigt waren und teilweise sehr alt und abgewetzt wirkten. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>In der Mitte des Raumes standen sich zwei große Sofas gegenüber. Dazwischen stand ein niedriger Tisch aus Eichenholz, dessen Ecken abgestoßen wirkten. Ja, beinahe schon wie abgekaut! </span>
+</p><p align="justify">
+  <span>Darauf standen mehrere leere Phiolen und Becher. Außerdem lagen da noch ein paar Bücher und Zeitschriften. Die Ausgabe vom Daily Prophet mit Sirius Blacks Fahndungsfoto lag ganz oben drauf. Daneben stand ein Aschenbecher, was Harry doch sehr stutzig machte. </span>
+</p><p align="justify">
+  <span>Er hatte Professor Lupin noch nie rauchen gesehen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Auf dem Sofa lagen merkwürdigerweise bunte Spielzeuge verteilt... Ein Ball, einige sehr abgenutzte Kuscheltiere, dessen ursprüngliche Farbe man nur noch erahnen konnte, und ein buntes kurzes Seil mit dicken Knoten an beiden Enden. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hatte Professor Lupin eventuell ein Kind, von dem er nichts erzählt hatte?</span>
+</p><p align="justify">
+  <span>Er konnte sich schlecht vorstellen, dass er die Spielzeuge für die Erstklässler parat hielt, wenn sie ihn für Vertrauensstunden aufsuchten. </span>
+</p><p align="justify">
+  <span>Bot Professor Lupin solche Stunden überhaupt an? In seinem Privatquartier?!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Auf dem Tisch lag noch ein offenes Notizbuch, das Hermione plötzlich sehr interessierte. Sie drängte Harry quasi auf die andere Seite des Tisches, damit sie es nicht zu sich herumdrehen musste, um die Notizen zu lesen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Zahlen... Noch mehr Zahlen...« kommentierte Harry tonlos. »Das sieht unwichtig aus.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das ist eine Art Journal... Siehst du... das sind Tage und Daten dazu...« erklärte Hermione und deutete mit dem Finger auf die einzelnen Zahlen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das bringt uns auch nicht weiter«, bemängelte Harry desinteressiert.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Raum wirkte recht normal.</span>
+</p><p align="justify">
+  <span>Keine Spuren eines Kampfes, oder Anzeichen von Gewalt. </span>
+</p><p align="justify">
+  <span>Nirgendwo war Blut zu sehen und alle Gegenstände schienen genau da zu stehen, wo sie hingehörten.</span>
+</p><p align="justify">
+  <span>Nichts war umgeworfen und der Boden war frei von herumliegenden Gegenständen. </span>
+</p><p align="justify">
+  <span>In Harrys Schlafsaal musste man echt aufpassen, um nicht über die Hose oder die getragenen Socken von irgendeinem anderen Schüler zu stolpern! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Mit Ausnahme des kleinen Tisches zwischen den zwei Sofagarnituren gab es keinen Hinweis auf Unordnung.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Da lag ein Teppich in der einzigen Ecke, in der keine Regale und keine weiteren Möbelstücke standen. Der Teppich wirkte etwas zerrupft und er lag auch nicht ordentlich auf dem Boden, sondern schlug Falten und sah aus wie hingeschleppt und fallen gelassen. </span>
+</p><p align="justify">
+  <span>Aber das war auch schon alles.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Raum wurde großzügig von dem breiten und hohen Fenster beleuchtet, durch das sie eingedrungen waren. Das Fenster reichte bis zur Decke, fing aber nicht gleich wie jedes andere Fenster auf Hüfthöhe an. </span>
+</p><p align="justify">
+  <span>Nein, das Fenstersims war auf einer Höhe von zirka zwei Metern angesetzt, so hoch, dass darunter locker mehrere Bücherregale Platz fanden.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Außer dass der Raum ziemlich ordentlich doch recht leer wirkte, konnte man hier nicht davon ausgehen, dass Snape Professor Lupin hier umgebracht hatte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Verwundert schaute Harry auf der Karte nach. </span>
+</p><p align="justify">
+  <span>Sie waren im richtigen Raum. </span>
+</p><p align="justify">
+  <span>Das war Professor Lupins Zimmer - allerdings nur das Wohnzimmer oder etwas ähnliches. Die beiden Namen befanden sich allerdings in dem Raum daneben und Professor Lupins Name flackerte immer noch statisch wie bei einer Bildstörung.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione landete neben ihm und lehnte ihren Besen gegen eins der Regale.</span>
+</p><p align="justify">
+  <span>»Und was jetzt?« fragte sie und Harry dachte, er hörte etwas wie Angst in ihrer Stimme vibrieren. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie sind beide nebenan«, flüsterte Harry und deutete auf die angelehnte Tür.</span>
+</p><p align="justify">
+  <span>Hermiones Augen weiteten sich.</span>
+</p><p align="justify">
+  <span>»Was ist los? Kriegst du kalte Füße?« fragte er beinahe belustigt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Für ihn stand es fest: </span>
+</p><p align="justify">
+  <span>Er würde Professor Lupin retten und Severus Snape überführen! Am Ende des Tages würde man ihn als Held feiern!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, ich glaube, ich muss dir etwas über Professor Lupin erzählen...« fing sie an, doch sie kam nicht weit.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er starrte nur auf seine Karte, lehnte seinen Besen neben ihren und schlich sich zur Tür hinüber.</span>
+</p><p align="justify"> </p><p align="justify"> </p><p align="justify">
+  <span>»Harry!« versuchte sie so laut und so empört wie möglich zu flüstern, und schlich ihm hinterher. »Erinnerst du dich an die Stunde, in der Professor Snape Professor Lupin vertreten hat wegen irgendwelcher 'Unpässlichkeiten'?« </span>
+</p><p align="justify">
+  <span>»Hier! Komm mit drunter!« ignorierte er sie erneut und warf den Tarnumhang um sie beide herum.</span>
+</p><p align="justify">
+  <span>Sich mit einer anderen Person unter einem Kleidungsstück zu bewegen erwies sich nicht nur als schwierig, sondern auch als hochgradig albern und lächerlich. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Au! Harry, das war mein Fuß!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Tschuldigung!« Er rempelte gegen ihre Schulter als sie stehen blieb und er beinahe in sie hinein lief. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wir sollten besser kleine Schritte machen, damit wir uns nicht gegenseitig auf die Füße treten«, schlug sie vor. Dann fiel ihr aber wieder ein, was sie ursprünglich sagen wollte: »Harry, erinnerst du dich an die Stunde, die Professor Snape als Vertretungslehrer gegeben hat?« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was ist damit?« fragte er genervt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Sie standen bereits vor der Tür. </span>
+</p><p align="justify">
+  <span>Es trat kein Licht durch den offenen Spalt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Anstatt sich an den Lehrplan zu halten, hat er mit uns das Thema Werwölfe durchgenommen«, erklärte Hermione.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich weiß! Und er hat uns einen fürchterlich langen Aufsatz aufgegeben, obwohl er wusste, dass am nächsten Tag mein Quidditch Training war! Worauf willst du hinaus? Snape hat sich nicht an die Vorgaben gehalten, na und? Das ist doch nichts neues!« gab Harry ahnungslos zurück.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das war nach dem ersten Vollmond in diesem Trimester, Harry. Und Professor Lupin fehlt immer in den Stunden nach Vollmond. Jeden Monat! Ich hab bei den Hufflepuffs und Ravenclaws nachgehakt. Er fehlt immer einen Tag nach Vollmond!« flüsterte sie eindringlich. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry griff bereits nach der Türklinke. Geistesgegenwärtig griff Hermione nach seinem Ärmel und hielt ihn auf.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Na, und? Dann ist er halt öfter krank. Willst du ihm unterstellen, dass er eins von diesen Monstern ist?« fragte er verärgert. »Das ist doch lächerlich! Professor Lupin könnte niemals so ein Monster sein!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, hast du überhaupt in den Stunden aufgepasst? Werwölfe können ganz normale Menschen sein wie du und ich! Sie werden nur bei Vollmond zu Werwölfen und haben keine Macht darüber, sich dagegen zu wehren. Es könnte also jeder von uns ein Werwolf sein. Du kannst nicht vom Äußeren darauf schließen, was eine Person wirklich ist!« versuchte sie ihn zu überzeugen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Du glaubst doch nicht etwa, dass Professor Lupin uns das verheimlichen würde!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sag mal, passt du im Unterricht eigentlich generell mal zu? Oder ist Quidditch alles, woran du denken kannst?« fragte sie ihn und ihr Griff verstärkte sich an seinem Ärmel.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Mione, es ist unmöglich, dass Professor Lupin eine dunkle Kreatur ist!« flüsterte er empört.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Dieses Mal verdrehte sie die Augen so sehr, dass ihre Pupillen kurzzeitig nicht mehr zu sehen waren. »Harry, was ich dir damit sagen will ist, dass vielleicht nicht Professor Lupin derjenige hier ist, der in Gefahr ist, sondern Professor Snape! Auch wenn es dir nicht gefallen wird... Denk doch mal drüber nach!« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das ist doch Unsinn, Hermione!« flüsterte er und riss sich von ihr los. </span>
+</p><p align="justify">
+  <span>Langsam schob er die Tür auf, denn der Spalt war zu schmal, um sich hindurchzuschlängeln.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Pass auf, Harry«, flüsterte sie, obwohl ihr nichts anderes übrig blieb, als ihm zu folgen, wenn sie unsichtbar bleiben wollte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Raum war dunkel. </span>
+</p><p align="justify">
+  <span>Das wenige Licht brach durch einen Spalt durch die Vorhänge hindurch, die nicht ganz zugezogen waren, und natürlich durch die spärlich geöffnete Tür.</span>
+</p><p align="justify">
+  <span>Der Lichtkegel, der vom Fenster her rührte, gab den Blick frei auf ein großes Doppelbett und ein Bein, das vom Bett herunter baumelte. </span>
+</p><p align="justify">
+  <span>Harrys Blick wanderte vom Bein hinauf zu der Person, an der das Bein dranhing. Die Decke ging nur bis zur Hüfte und entblößte eine bleiche Männerbrust. Darüber drapiert lagen zwei lange, behaarte Beine, die in riesigen Tatzen mit langen Krallen endeten. Auf dem Brustkorb lag, seelenruhig schlummernd, der riesige Kopf eines Hundes. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Anstatt zurückzugehen und schleunigst den Raum zu verlassen, ging Harry näher heran, um einen besseren Blick zu bekommen. Er spürte Hermiones spindeldürre Finger, die sich in seinen Oberarm hinein krallten.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, wir sollten nicht hier sein!« flüsterte sie ihm eindringlich zu.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Ohren des Hundes bewegten sich und er schnaufte, doch die Augen blieben geschlossen. Der Körper darunter war mager und blass. Unter den schwarzen, langen Strähnen lugte die so markante Hakennase hervor. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape rührte sich nicht. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Seit wann hat Snape einen Hund?« wunderte Harry sich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, das ist kein Hund! Atmet Professor Snape noch?« fragte Hermione verängstigt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry starrte intensiv auf den riesigen Hund und konnte den Blick einfach nicht abwenden. »Ich weiß es nicht.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die spitzen Ohren bewegten sich wieder, dieses Mal wachsamer. Sie drehten sich zur Seite und nach hinten wie ein Ortungsgerät, das den Ort bestimmen sollte, von wo die Geräusche herkamen. Die Nase kräuselte sich und schließlich bewegte sich auch der Kopf. Er schüttelte sich kurz und schnaufte, änderte dann seine Position und schlief weiter.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, wir sollten von hier verschwinden. Das ist kein Hund!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»So ein Unsinn! Das ist doch ein normaler Hund, schau ihn dir doch an. Der sieht aus wie ein Husky. Wo ist nur die Leiche von Professor Lupin? Vielleicht hat er ihn eingesperrt... Siehst du hier eine Kiste oder so was?« Harry schob Hermione um das Bett herum, und starrte vom Fußende her auf die andere Seite. </span>
+</p><p align="justify">
+  <span>Doch da war nichts. </span>
+</p><p align="justify">
+  <span>An der Wand gegenüber vom Fenster stand ein Schrank an dessen halb geöffnete Tür eine Robe hing. In der Dunkelheit konnte er nicht ausmachen, ob sie schwarz oder braun war. </span>
+</p><p align="justify">
+  <span>Als Harry wieder zur Seite zwischen Fenster und Bett zurückging und Hermione hinter sich herzog, stolperte er über ein Paar Schuhe und konnte gerade eben noch von Hermione aufgefangen werden.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ahh!« rief er überrascht aus. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das war knapp!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sei leise und lass uns gehen, Harry«, flehte sie ihn beinahe an. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape bewegte seine Hand! </span>
+</p><p align="justify">
+  <span>Beide erstarrten unter dem Tarnumhang und wagten nicht einmal zu schlucken. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Doch Snape suchte nur nach dem Hund, kraulte ihn hinter den Ohren und murmelte: »Mach nicht so einen Lärm, Remus, und schlaf weiter!«</span>
+</p><p align="justify">
+  <span>Er schien sich bewegen zu wollen. Da aber der Hund aber halb auf seinem Brustkorb lag, kam er nicht weit mit seinem Versuch und blieb schließlich auf dem Rücken liegen und drehte nur den Kopf zur Seite des Fensters.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Lass uns gehen«, flehte sie ihn erneut an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Der nennt seinen Hund nach Professor Lupin! Wie geschmacklos!« Harry rümpfte die Nase.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Er nennt seinen Hund nicht nach ihm, das IST Professor Lupin. Glaub es mir doch endlich, Harry!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Hermione, du liest zu viele Horrorgeschichten!« schimpfte Harry, obwohl er wusste, dass Hermione gar keine Belletristik las. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Ein Knurren unterbrach ihre Zankerei und beide Köpfe schnellten erschrocken in die Richtung des Bettes. </span>
+</p><p align="justify">
+  <span>Der Hund starrte mit gelb leuchtenden Augen zur Tür hinüber. Er reckte seine Schnauze hoch und schnüffelte nach etwas, das er zwar nicht sehen, aber sehr wohl riechen konnte!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, lass uns gehen!« flehte sie ein letztes Mal und dieses Mal teilte er ihre Meinung.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Sie waren schon bei der Tür als der Hund sich knurrend vom Bett erhob und sehr zielgerichtet auf sie zukam. </span>
+</p><p align="justify">
+  <span>Harry zog die Tür hinter ihnen zu - gerade noch im letzten Moment. Der Hund knallte mit einem lauten Aufprall gegen die Tür und kratzte energisch am Holz.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry riss den Umhang von ihnen herunter und klemmte sich das Stoffbündel unter den Arm. Hermione stand schon bei den zwei Besen und hielt ihm seinen entgegen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das Kratzen hörte sich metallisch. </span>
+</p><p align="justify">
+  <span>Waren Hunde so schlau, um eine Tür zu öffnen?</span>
+</p><p align="justify">
+  <span>Sie wollten es nicht herausfinden!</span>
+</p><p align="justify">
+  <span>Harry klemmte sich den Besen zwischen die Beine. »Welchen Spruch hast du verwendet?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione war abgelenkt. </span>
+</p><p align="justify">
+  <span>Sie hing mit ihrer Robe an einem der Tische fest, die bei den Regalen standen und auf dem eine Menge Kleinkram stand. </span>
+</p><p align="justify">
+  <span>Sie zerrte blindlings und panisch an ihrer Robe, und riss damit die die kleinen Gegenstände mit einem Ruck herunter. Befreien konnte sie sich damit nicht. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Es schepperte laut.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Erschrocken ließ sie ihren Besen fallen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Schlafzimmertür öffnete sich mit einem Knarzen. Krallen sprinteten über den Steinboden. </span>
+</p><p align="justify">
+  <span>Hermione befreite sich aus ihrer Robe und sprang hinter Harry auf den Besen. Es blieb keine Zeit mehr, um ihren eigenen Besen aufzuheben. Da war der Werwolf schon bei ihr und schnappte nach ihrem Bein. Seine Zähne bekamen aber nur ihre Schuhsohle zu fassen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Höher, Harry! Höher!« rief sie panisch und trat nach der riesigen Schnauze, um sich aus den scharfen Zähnen befreien zu können. Harry flog augenblicklich höher.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Werwolf ließ sich nicht abwimmeln. Es reizte eher seinen Jagdinstinkt.</span>
+</p><p align="justify">
+  <span>Das Tier setzte zum Sprung an und verfehlte nur knapp die Borsten des Besens. </span>
+</p><p align="justify">
+  <span>Er jaulte und knurrte laut. </span>
+</p><p align="justify">
+  <span>Seine langen Krallen schabten tänzelnd über den Boden.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry hatte Schwierigkeiten, den Besen zu lenken. Er war noch nie mit einer weiteren Person auf einem Besen geflogen.</span>
+</p><p align="justify">
+  <span>»Flieg zum Fenster und bleib da stehen!« befahl sie ihm und hielt ihren Zauberstab bereit. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich versuche es ja!« schimpfte er über seine Schulter. Der Besen schlingerte durch die Luft. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Werwolf unter ihnen fixierte die beiden und leckte sich über die Lefzen. </span>
+</p><p align="justify">
+  <span>Er sah in ihnen wohl sein Frühstück! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Na, warum tust du es dann nicht? Du bist doch hier der Quidditch Spieler! Du solltest wissen, wie man mit einem Besen fliegt!« zeterte Hermione und schaute dabei ängstlich hinunter.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry flog gegen ein Regal. </span>
+</p><p align="justify">
+  <span>Vor Schreck ließ Hermione ihren Zauberstab fallen.</span>
+</p><p align="justify">
+  <span>»Verdammt! Harry, pass doch auf, wo du hinfliegst!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Warum hast du denn nicht deinen eigenen Besen genommen?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Dazu blieb keine Zeit mehr! Harry! Oder willst du etwa, dass ich zu einem Werwolf mutiere, nur weil das Biest da unten mich beißen will?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er steuerte den Besen zum Fenster hinauf.</span>
+</p><p align="justify">
+  <span>»Sag mir den Spruch!« forderte er sie auf. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»MURI PRAESIDIO!!!« raunte eine tiefe Stimme hinter ihnen. Von der Decke her kam ein blauer Schleier heruntergerieselt, der sich über die Wände und das Fenster legte.</span>
+</p><p align="justify"> </p><p align="center">
+  <b>***</b>
+</p><p> </p><p align="justify">
+  <span>»Was war das?« fragte Harry und wollte auf keinen Fall zurückblicken.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das war ein Schutzzauber, hier kommen wir nicht mehr raus!« jammerte Hermione über seine Schulter und krallte sich mit aller Kraft an ihm fest.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie kommen entweder freiwillig herunter oder ich bringe Sie dazu, herunterzukommen. Was also wählen Sie, Mr. Potter?« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry drehte den Besen um. </span>
+</p><p align="justify">
+  <span>Dort stand er - der Zaubertränkemeister, der nie ein gutes Wort auf ihn kommen ließ. Sein Zauberstab war auf die beiden Schüler gerichtet. </span>
+</p><p align="justify">
+  <span>Er hatte sich ein weißes Hemd übergeworfen und keine Zeit gefunden, es zuzuknöpfen, ehe er zur Verteidigung aus dem Schlafzimmer heraus gerannt kam. Das Hemd hing locker über seine schwarze Pyjamahose und entblößte einen dezenten Blick auf seine behaarte Brust.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry warf Snape einen hasserfüllten Blick zu und ignorierte Snapes Aufforderung galant.</span>
+</p><p align="justify">
+  <span>»Sie haben Professor Lupin umgebracht!« rief er ihm unter bebenden Atem entgegen. Seine Wut kochte über und er handelte alles andere als rational.</span>
+</p><p align="justify">
+  <span>Er zückte seinen Zauberstab so schnell er nur konnte und wähnte sich im Vorteil als er seinem verhassten Lehrer unter Tränen ein »Expelliarmus!« entgegen schmetterte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Zauber wurde gekonnt abgeblockt. </span>
+</p><p align="justify">
+  <span>Einen erfahrenen Zauberduellisten anzugreifen und auf einen Sieg zu hoffen, das konnte auch nur Drittklässler Harry Potter einfallen! </span>
+</p><p align="justify">
+  <span>Wenigstens hatte er es versucht!</span>
+</p><p align="justify">
+  <span>Das war er Professor Lupin schuldig! </span>
+</p><p align="justify">
+  <span>Er musste doch etwas gegen dieses Monster unternehmen, das seinen Lieblingslehrer ermordet hatte!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie erzählen mir jetzt sofort, was Sie mit Professor Lupin gemacht haben... Sir!« Er spie das 'Sir' angewidert und überdrüssig aus. Sollte es dieser Mörder noch einmal wagen, ihn wegen fehlenden Respekts zu rügen! Dieses Ungeheuer wusste doch gar nicht, was Respekt wirklich bedeutete! </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Gedanken wühlten ihn auf. </span>
+</p><p align="justify">
+  <span>Es erschreckte ihn gleichermaßen, wie es ihn befriedigte, so einen Hass auf eine Person zu spüren. Seine Finger umklammerten zitternd den Zauberstab.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape zeigte sich jedoch wenig beeindruckt. </span>
+</p><p align="justify">
+  <span>»Oder was?«, warf der Zaubertränkemeister ihm mit hochgezogener Augenbraue ruhig entgegen. »Wollen Sie mich verzaubern mit diesem... rosa Feenstab?« Snape zog einen Mundwinkel zu einem zynischen Grinsen hoch.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry verstand nicht... </span>
+</p><p align="justify">
+  <span>Irritiert schaute er auf seinen Zauberstab und erblickte auf einmal einen rosa Plastikstab mit einem glitzernden Stern an der Spitze! Pinke und silberfarbene Puschelfedern umgaben den Stern wie ein Kranz. Von der Spitze hing buntes Lametta herab.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Erschrocken ließ Harry den Stab fallen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich weiß zwar nicht, wovon Sie da reden, Mr. Potter, aber wenn Sie nicht augenblicklich landen, hole ich sie aus der Luft und das wird deutlich schmerzhafter für Sie sein sein als nur ein angekratztes Ehrgefühl!« drohte Snape ihm und sog Harrys rosa Feenglitzerstab magisch in seine Hand. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Noch mit Harrys Stab in der einen Hand, knöpfte Snape sein Hemd sehr sporadisch zu. Um genau zu sein knöpfte er nur vier davon zu. Immerhin war seine Blöße damit gewahrt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das Biest hatte Hermiones Robe und Zauberstab aufgesammelt und Severus als Pfand gebracht. </span>
+</p><p align="justify">
+  <span>»Danke, Remus«, sprach er leise. </span>
+</p><p align="justify">
+  <span>Die Kreatur hatte nicht ganz den Körperbau eines Hundes. Die Beine waren länger und muskulöser, und auch wenn er auf allen vieren lief, reichte sein Kopf Professor Snape bis zur Brust. </span>
+</p><p align="justify">
+  <span>So riesig war diese Kreatur.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, du solltest auf ihn hören«, riet Hermione ihm.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ja, Mr. Potter, Sie sollten dem Rat von Ms. Granger folgen. Noch haben Sie eine Wahl«, sagte Snape gelassen. »Und von nun an liegt es an Ihnen, wie hoch Ihre Strafe ausfällt, obwohl ich mir von Ihnen, Ms. Granger mehr Verstand erhofft hatte.« Sie beobachteten, wie Snape langsamen Schrittes zu den Regalen unter dem Fenster ging und Hermiones Besen an sich nahm. </span>
+</p><p align="justify">
+  <span>Seine Schritte hallten gefährlich durch den verschlossenen Raum. Die Borsten ihres Besens schleiften hinter ihm über den Boden.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape setzte sich auf das Sofa, von dem aus er den besten Blick auf das Fenster und die beiden Eindringlinge hatte. Hermiones Besen lehnte an der Armstütze der Couch. Ihren Umhang hatte Snape über die Rückenlehne gelegt und ihr Zauberstab war zusammen mit Harrys Feenglitzerstab an Snapes Handgelenk verschwunden als hätte er ihn sich angeheftet und unsichtbar gemacht!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry landete nur sehr widerwillig.</span>
+</p><p align="justify">
+  <span>Hermione stellte sich unschlüssig neben ihn. Sie blickte bei weitem nicht so hasserfüllt oder angriffsbereit drein, eher ehrfürchtig.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Setzen Sie sich«, forderte Snape die zwei Schüler auf. </span>
+</p><p align="justify">
+  <span>Der Werwolf nahm sich indes eines der Spielzeuge von der Couch und beschäftigte sich damit vor dem Kamin liegend. Er biss in den Ball hinein, knurrte und winselte, ließ den Ball fallen, rannte ihm hinterher, kläffte ihn an, biss wieder hinein und kaute darauf herum.</span>
+</p><p align="justify">
+  <span>Wie ein normaler Hund... ein sehr großer Hund.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione setzte sich auf die Couch gegenüber vom Professor, das Biest niemals aus den Augen lassend. Harry jedoch blieb dahinter stehen und blitzte Snape mit Blicken an. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was haben Sie mit Professor Lupin gemacht?« zischte er zwischen zusammengebissenen Zähnen hervor.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape ignorierte ihn. </span>
+</p><p align="justify">
+  <span>Stattdessen ließ er mit seinem Zauberstab die leeren Phiolen vom Tisch verschwinden und zauberte sich eine rechteckige Packung herbei, die sich als eine Schachtel mit Zigaretten entpuppte. Er zog einen der Glimmst</span>
+  <span>ä</span>
+  <span>ngel heraus, kniff ihn sich zwischen seine Lippen und zündete ihn mit einem Fingerschnipp an. </span>
+</p><p align="justify">
+  <span>Blauer Dunst entwich seinem Mund während er sprach:</span>
+</p><p align="justify">
+  <span>»Wie auch immer Sie auf die Idee kommen konnten, dass ich ihrem geliebten Verteidigungslehrer irgend etwas angetan habe, kann ich Sie versichern, dass Sie auf dem Holzweg sind - wie so oft auch, Mr. Potter.« Die Zigarette leuchtete auf und Snape blies den Rauch durch seine Nase aus. Er sah Harry immer noch nicht direkt an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich habe Sie in der Eulerei gesehen!« zischte Harry ihn an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Jetzt hatte er Snapes Aufmerksamkeit.</span>
+</p><p align="justify">
+  <span>»Tatsächlich?« fragte er gefährlich ruhig. »Und was wollen Sie da gesehen haben?« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie haben sich gestritten! Sie sind auf Professor Lupins Stelle aus, das weiß doch jeder hier auf Hogwarts! Sie brauchen sich nicht zu verstellen! Der Streit war der Beweis! Und das hier sind Professor Lupins Räume! Was machen Sie hier? Und wo ist Professor Lupin? Wo haben Sie ihn versteckt?« Harrys Stimme überschlug sich vor Wut.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape schnaufte ein lautloses Lachen und schüttelte den Kopf.</span>
+</p><p align="justify">
+  <span>»Ich bin weder auf Lupins Stelle aus, noch habe ich irgend etwas mit ihm gemacht. Außerdem habe ich ihn nicht versteckt, er liegt doch direkt vor Ihnen und spielt mit seinem Ball.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das war zu viel für Harry.</span>
+</p><p align="justify">
+  <span>Er setzte sich neben Hermione und ließ den Werwolf nicht aus den Augen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wenn ich Ihnen eine Frage stellen dürfte, Sir?« meldete sich endlich Hermione zu Wort.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Fragen Sie«, forderte Snape sie auf.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie brauen ihm jeden Monat Wolfsbanntrank, habe ich recht?« fragte Hermione.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das ist richtig, Ms. Granger«, antwortete er ihr schlicht.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wie sicher ist das? Ich habe gelesen, dass der Trank einer der kompliziertesten Tränke in der ganzen Zaubererwelt ist. Ich habe aber nirgends etwas lesen können über die Auswirkungen.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape zeigte sich überrascht. </span>
+</p><p align="justify">
+  <span>»Der Trank bewirkt, dass er seinen Verstand beibehalten kann und nicht zu einem aggressiven Biest wird, das nach Menschenfleisch giert.« Snape beobachtete, wie Hermiones Blick auf den spielenden Werwolf fixiert war. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Warum hat er uns dann angegriffen?« fragte sie mit gekräuselten Augenbrauen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Glauben Sie mir, wenn er es ernst gemeint hätte, dann wären sie jetzt entweder Werwolffutter oder Sie wären selbst mutiert, Ms. Granger. Nur weil er etwas knurrt und nach Ihnen greift, heißt das nicht, dass er vor hat, Sie zu zerfleischen«, erklärte er in seinem typisch stoischen Ton. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Aber er hat nach mir geschnappt...« fing sie an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape warf mit einem der Kuscheltiere nach ihr. Reflexartig fing sie es mit beiden Händen aus der Luft. </span>
+</p><p align="justify">
+  <span>»Wieso haben Sie das Spielzeug nicht mit Ihrem Mund gefangen, Ms. Granger?« fragte er immer noch im sachlichen Ton und zog an seiner Zigarette. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wieso sollte ich das Spielzeug mit meinem Mund fangen? Ich habe Hände!« erwiderte sie verwirrt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Genau aus dem gleichen Grund, wie Remus in dieser Form nicht mit seinen Pfoten greifen kann.« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Da bemerkte sie, dass der Werwolf sie mit seinem Blick fixierte, und sie rutschte unruhig auf der Couch herum. Sie quetschte das Kuscheltier zu einem bunten Klumpen zusammen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape lachte leise und beobachtete das Zusammenspiel eine Weile.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was macht er?« fragte sie unsicher.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nun, Ms. Granger. Sie haben sein Lieblingsspielzeug in der Hand. Entweder Sie behalten es und er wird Sie nicht aus den Augen lassen, oder...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Oder was?« Ihre Stimme kletterte eine halbe Oktave höher und sie gab sich alle Mühe, ihre Angst nicht zu offensichtlich zu zeigen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Haben Sie jemals einen Hund besessen, Ms. Granger?« fragte er beiläufig. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nein... unsere Nachbarn hatten einen Hund. Ich durfte keinen haben. Meine Eltern haben es mir verboten«, antwortete sie mit zitternder Stimme.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Werwolf winselte und grummelte gespannt.</span>
+</p><p align="justify">
+  <span>»Was für ein Jammer«, entgegnete Snape zynisch </span>
+</p><p align="justify">
+  <span>Der Werwolf hüpfte mit den Vorderpfoten nach vorn und kläffte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was wird das?« fragte Harry und rückte näher an Hermione und weg von dem Tier.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was wird er tun, wenn ich das Spielzeug behalte, Professor Snape?« wiederholte Hermione ihre Frage. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nun...« begann er und drückte den Zigarettenstummel im Aschenbecher aus. »Entweder Sie werfen das Spielzeug und er holt es Ihnen wieder, oder Sie werden in zirka 1 Minute seine sabbernde Schnauze bettelnd auf Ihren Knien liegen haben... bis sie es werfen.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Oh!« rief sie aus. </span>
+</p><p align="justify">
+  <span>Es war so offensichtlich und traute sich trotzdem nicht.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nur zu, sonst haben Sie ihn gleich wirklich an den Fersen hängen. Er kann sehr aufdringlich sein, wenn er spielen will«, kommentierte Snape als der Werwolf wieder nach vorne sprang und kläglich jammerte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Also gut...« Sie nahm das Spielzeug und der Werwolf sprang sofort auf und tänzelte. Sie warf das Spielzeug in seine Richtung, wohl aber nicht weit genug. Der Werwolf schnappte es aus der Luft und schüttelte es knurrend und jauchzend, ließ es zwischen seine Pfoten fallen, knurrte es an und schnappte es sich erneut, um es wieder herumzuschütteln.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Kurz darauf kam er auf Hermione zu und legte das Spielzeug vorsichtig neben ihr auf das Sofakissen. </span>
+</p><p align="justify">
+  <span>Er winselte jämmerlich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Seine Schnauze war so lang wie ihr Oberschenkel! Die Ohren so groß wie ihre Handfläche.</span>
+</p><p align="justify">
+  <span>Die Augen hatten einen gelben Schimmer, dass sie glaubte, sie würden leuchten. </span>
+</p><p align="justify">
+  <span>Jetzt, wo er so erwartungsvoll und mit gesenktem Kopf vor ihr saß, und sich kleiner machte, als würde er verstehen, dass sie Angst vor ihm hatte. So sah er nicht viel anders aus als ein gewöhnlicher Hund... ein sehr verspielter Hund, der zu groß geraten war.</span>
+</p><p align="justify">
+  <span>»Darf ich... darf ich ihn anfassen?« fragte sie unsicher und schaute Professor Snape an. Der Werwolf legte seinen Kopf auffordernd auf ihre Knie und schaute aus unglaublich großen Augen zu ihr hinauf. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Remus!« schnappte Snape und der Werwolf zuckte zusammen und schaute zu ihm hinüber. »Benimm dich!« </span>
+</p><p align="justify">
+  <span>Winselnd und mit der Rute wedelnd ging er auf Snape zu. Mit angelegten Ohren legte er seinen Kopf in Snapes Schoß, der ihm sofort das Ohr kraulte. </span>
+</p><p align="justify">
+  <span>»Sie müssen beachten, dass es sich - genau wie beim Animagus - um eine Person handelt. Würden Sie Professor Lupin denn genau so anfassen wollen? Ihm durch die Haare streicheln wollen? Oder über das Gesicht?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Natürlich nicht!« rief sie entsetzt aus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das Tier winselte und schaute aus großen Augen zu ihm auf. Bei Snape wusste er, dass er sich nicht zurückhalten musste. Er musste sich nicht klein machen oder rücksichtsvoll reagieren. Deswegen wedelte er heftig mit seiner Rute und hielt sich nur deswegen zurück, weil Snape ihm ein Handzeichen gab. </span>
+</p><p align="justify">
+  <span>Erwartungsvoll setzte er sich auf sein Hinterteil.</span>
+</p><p align="justify">
+  <span>»Ball?« Das Tier kläffte zustimmend. »Oder Puppe?« </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Eine Qual der Wahl!</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das Biest sprang auf Hermione zu, die verschreckt quiekte. Aber er schnappte nicht nach ihr, sondern griff sich das Kuscheltier und ließ es vor Snapes Füßen fallen. </span>
+</p><p align="justify">
+  <span>Mit hochgezogener Braue und einem schiefen Lächeln nahm er das Plüschtier an sich und machte ein paar Anstalten, das Spielzeug zu werfen. Der Wolf zuckte jedes Mal zusammen und kläffte, blieb aber wieder stehen. So ging es ein paar Mal hin und her, bis Snape das Plüschtier tatsächlich warf in die andere Richtung und der Wolf dem Objekt hinterher sprang ohne Rücksicht auf Verluste. </span>
+</p><p align="justify">
+  <span>Aus der Ecke hinter Snape hörte man die Krallen über den Boden schaben und ein lautes Jaulen und Knurren zeugte davon, dass er die plüschige Beute erlegt hatte. </span>
+</p><p align="justify">
+  <span>»Für Sie mag er nur wie ein großer, fluffiger Hund mit großen Augen aussehen...« sprach Snape schließlich. Der Wolf sprang mit dem Plüschtier im Maul auf das Sofa und ließ das Spielzeug in Snapes Schoß fallen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Doch das Spiel war vorbei. </span>
+</p><p align="justify">
+  <span>Snape klopfte auf die Sitzfläche vom Sofa, was zuerst mit einem enttäuschten Jaulen quittiert wurde. Aber es änderte Snapes Meinung nicht. Der Wolf gab schließlich nach und ließ sich auf das Polster nieder. Snape sprach weiter: »Aber unter dem Wolfsbanntrank wirkt er nicht nur ruhiger, er kann sich auch an alles erinnern. Also wenn Sie nicht vorhaben, Professor Lupin auf irgendeine Weise becircen zu wollen, was in Ihrem Alter ohnehin illegal und mit weitreichenden Konsequenzen für ihn verbunden wäre, würde ich Ihnen empfehlen, dass Sie weder einen Werwolf, noch einen Animagus jemals streicheln.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Werwolf drehte sich winselnd auf den Rücken und streckte ihm seinen Bauch entgegen. Snape verdrehte nur die Augen und griff zuerst nach der Zigarettenschachtel, um sich die zweite Zigarette anzuzünden. Jammernd und winselnd reckte das Tier den Kopf weiter in Snapes Schoß. Erst als Snape ihm den Bauch kraulte, gab er zufrieden Ruhe.</span>
+</p><p align="justify">
+  <span>Der Werwolf war so unglaublich groß. Er füllte den Rest der Couch aus wie ein etwas zu dünn geratener Bär.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Warum berühren Sie ihn dann, so wie es sich nicht gehören würde unter Erwachsenen?« fragte Harry, der auch endlich aus seiner Starre aufgewacht war.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wenn Sie es unbedingt wissen müssen: Aus dem selben Grund, aus dem Professor Lupin und ich uns ein Bett teilen, Mr. Potter.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry hustete als hätte er sich grade an seinem eigenen Speichel verschluckt.</span>
+</p><p align="justify">
+  <span>Hermione kicherte wissend.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Da wir ja nun Professor Lupins und meine Situation ausgiebig genug besprochen haben, werde ich Ihnen einige Fragen stellen, und ich gebe Ihnen nur zwei Möglichkeiten zu antworten: Entweder Sie antworten hier und jetzt auf der Stelle, und ich ermesse selbst, welche Bestrafung für Sie angemessen ist - denn glauben Sie nicht, dass Sie aus dieser Situation ungestraft davonkommen werden - oder Sie verantworten sich vor Schulleiter Dumbledore und gefährden somit Ihren Abschluss an dieser Schule und werden eventuell einen Rausschmiss in Kauf nehmen müssen.« Er steckte sich den Glimmst</span>
+  <span>ä</span>
+  <span>ngel zwischen die Lippen und ließ die Spitze aufflammen. Unter zusammengezogenen Augenbrauen bedachte er die beiden Schüler mit einem strengen Blick. »Ich hoffe, Sie sind sich beide darüber im Klaren, wie respektlos Ihr Vorgehen war und wie rücksichtslos und unvorsichtig und, wenn ich ehrlich bin, fehlen mir die Worte über die unaussprechliche Dummheit Ihrer Aktion!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sir, wir sind uns darüber im Klaren«, gab Hermione ohne Umschweife zu.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das kann nicht dein Ernst sein, Mione!« wandte Harry ein. »Er präsentiert uns hier einen... Hund... einen großen Hund! Und du kuschst vor ihm??«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry...!« versuchte sie ihn zum Schweigen zu bringen... vergebens.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nein, das kannst du nicht ernst meinen, Mione!« zischte Harry. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Schluss jetzt!« donnerte Snape, ohne wirklich die Stimme zu erheben. »Ms Granger, ich nehme an, dass sie Mr. Potters Ansichten nicht teilen?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione nickte eifrig.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Gehe ich recht von der Annahme aus, dass Mr. Potter sich als derjenige profilieren wollte, der den bösen, verhassten Zaubertränkelehrer enttarnt oder bei einer böswilligen Tat erwischt, ohne sich einen Plan zurecht zu legen, und er es als Drittklässler mit einem Magier aufnehmen wollte, der ein Meister sowohl in Verteidigung als auch in der Duellführung ist, und hat eben dieser gedacht, er würde als Held dafür gefeiert werden?« sprach er weiter und sah sie eindringlich an. »Ist es so, Ms. Granger?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Sie hielt seinem Blick nicht stand. </span>
+</p><p align="justify">
+  <span>»Es ist so...« gab sie zu und ignorierte ein empörtes 'Mione!'.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Und warum haben Sie Ihre Schulkarriere in Gefahr gebracht, obwohl sie wussten, was in diesen Räumen auf ihn lauern würde?« fragte Snape mit Bedacht.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry starrte Hermione ungläubig an.</span>
+</p><p align="justify">
+  <span>»Ich wusste über Professor Lupins Kondition Bescheid...« Sie stockte unsicher.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Weiter?« forderte er sie auf.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich war mir zuerst nicht sicher, aber Ihre Vertretungsstunde hatte mich neugierig gemacht. Der Unterrichtsstoff verlief nicht nach Plan, und ich wollte wissen, warum! Erst hielt ich es für einen Zufall oder als Vorsorge, dass wir um die gefährlichsten dunklen Kreaturen Bescheid wissen sollten. Sie hatten einen Trank erwähnt, der angeblich helfen sollte, aber nicht weiter ausgeführt. Und als ich darüber nachlas, ergab alles einen Sinn. Harry erwähnte einen Trank, den Sie Professor Lupin immer zu einer bestimmten Zeit im Monat vorsetzten. Er hatte sich darüber sehr aufgeregt, doch Professor Lupin hatte ihm versichert, dass der Trank dafür sorgte 'dass er bei Sinnen bliebe' und es war immer vor Vollmond und Professor Lupin fehlte immer den Tag nach Vollmond. Ich musste also nur 1 und 1 zusammenzählen.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Gratulation! Immerhin hört mir ein Schüler im Unterricht zu!« kommentierte Snape ihre Erklärung.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich wusste also, dass er ein Werwolf war und habe eher damit gerechnet, dass Ihnen etwas passiert sei - im Gegensatz zu Harrys Spekulation«, schloss Hermione ihre Erklärung ab. Sie hatte einen schnippischen Kommentar von ihm erwartet, der sie auf irgendeine Weise herabsetzen sollte - sei es wegen ihrer Bestrebung nach Wissen oder wegen ihrer Fähigkeit, Beweise in die richtige Relation zueinander zu bringen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Aber es kam nichts.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Warum hast du nichts gesagt?« stieß Harry entsetzt aus. </span>
+</p><p align="justify">
+  <span>Hermione zuckte mit den Schultern. »Es ist nicht mein Geheimnis und auch nicht meine Angelegenheit, darüber zu reden. Wenn du nicht richtig kombinieren kannst, dann ist das deine Sache, Harry!« erwiderte sie.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Damit haben Sie sich gerade eben noch gerettet, Ms. Granger, was Sie aber nicht vor der Strafarbeit bewahren wird.« Snape bedachte Harry mit einem strengen Blick. »Nun zu Ihnen, Mr. Potter.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich... wollte...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Unterbrechen Sie mich nicht, Potter!« raunte Snape ihn an. »Mit Ihnen habe ich eine ganz andere Angelegenheit zu erörtern: Wie konnten Sie Professor Lupin und mich überhaupt in der Eulerei beobachtet haben? Die Eulerei war menschenleer neben Remus und mir. Also erklären Sie mir doch bitte, wie Sie unser Gespräch bespitzelt haben möchten, wenn doch niemand anderes anwesend war?« Es war eine Bitte, und doch war es eine scharf ausgesprochene Aufforderung. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nun... ich...« stotterte Harry.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich warte, Mr. Potter!« drängte Snape ihn.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich habe meine Methoden, die Sie nichts angehen!« brach es aus Harry heraus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape fuhr sich mit der freien Hand über das müde Gesicht und drückte seine Zigarette im Aschenbecher aus. »Also gut. Damit hat sich Ihre persönliche Strafarbeit um zwei Wochen verlängert.« </span>
+</p><p align="justify">
+  <span>Das Tier neben ihm winselte, weil Snape aufgehört hatte, ihm den Bauch zu kraulen. </span>
+</p><p align="justify">
+  <span>»Sie glauben mir also nicht, wenn ich Ihnen sage, dass Professor Lupin ein Werwolf ist. Warum nicht? Zerstört es Ihr Bild eines perfekten Vorbildes, zu dem Sie aufgesehen haben? Vertrauen Sie mir, wenn ich Ihnen sage, dass jeder seine Geheimnisse hat, selbst Sie. Sonst würden Sie nicht vor mir verbergen wollen, wie es Ihnen gelungen war, sich unsichtbar zu machen«, bemerkte er spitzfindig und an Harrys überraschter Reaktion konnte er feststellen, dass er mit seiner Vermutung richtig lag. </span>
+</p><p align="justify">
+  <span>Er schwang seinen Zauberstab. </span>
+</p><p align="justify">
+  <span>Ein glitzernder Regen ließ eine kleine Uhr auf dem Tisch erscheinen. Er starrte einen Augenblick darauf und warf dann einen Blick auf das offen liegende Notizbuch, das die beiden Schüler sich vorher schon einmal angesehen hatten und keinen Sinn in den vielen Zahlen erkennen konnten. </span>
+</p><p align="justify">
+  <span>»Sie haben noch vierzehn Minuten, Potter. Der Mond geht um 7:53 Uhr unter«, erklärte er sachlich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ha! Sie wollen mich doch auf den Arm nehmen! Der Mond scheint doch nur nachts!« lachte Harry sehr von sich überzeugt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er konnte nicht ausmachen, wer zuerst von ihm enttäuscht die Augen verdrehte. Selbst Hermione konnte sich ein Lachen nicht verkneifen. »Harry, der Mond kann auch tagsüber scheinen! Das ist alles eine Frage des Winkels!« belehrte sie ihn. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Da wir ja nun mehrere Ihrer Defizite aufgedeckt haben, sollte ich Ihnen wohl nicht nur simple Strafarbeit aufgeben wie Kessel putzen oder Hausmeister Filch bei der Arbeit zu helfen... Ich glaube, Ihnen wird es wohl sehr zu gute kommen, wenn Sie mir wöchentlich einen zusätzlichen Aufsatz anfertigen - zu bestimmten Themen. Natürlich nur, damit Sie Ihre Defizite aufarbeiten können, versteht sich«, bemerkte Snape recht spitzfindig. </span>
+</p><p align="justify">
+  <span>Mit einem wortlosen Wink erschien ein Buch auf dem Tisch zusammen mit einer Schreibfeder und einem Tintenfässchen. </span>
+</p><p align="justify">
+  <span>Das Buch war unter seinen Schülern wohl bekannt. </span>
+</p><p align="justify">
+  <span>Darin notierte er Punkteabzüge, Strafarbeiten, Hausaufgaben, Noten, Zwischenkommentare für schlechtes Betragen - einfach alles. </span>
+</p><p align="justify">
+  <span>Während er mit harschen Handbewegungen Bemerkungen zu Harrys Fehltritten notierte, schürzte dieser nur unsicher die Lippen und bedachte den viel zu groß geratenen Wolf mit einem eindringlichen Blick. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wenn Sie in Ihren Astronomie Stunden aufgepasst hätten, wüssten Sie, dass eine Mondphase nicht vom Tag-Nachtrhythmus abhängig ist. Der Mond kann auf- oder untergehen, während die Sonne bereits oder noch scheint. Zugegeben passiert das viel häufiger bei zunehmender oder abnehmender Phase, seltener bei Vollmond«, erklärte Snape mit seiner ruhigen, doch sehr harschen Lehrerstimme. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Haben Sie alle Zeiten aufgeschrieben? Für alle Mondphasen? Auch wenn es kein Vollmond ist?« fragte Hermione wissbegierig. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich lasse mir die Zeiten von Professor Sinistra geben, wenn das Mondjahr endet. Ihre Berechnungen haben sich bisher als sehr präzise herausgestellt«, erklärte er, obwohl sie aus seiner Stimme heraushören konnte, dass er die Informationen nicht gerne preis gab. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Macht das einen Unterschied beim Wolfsbanntrank? Oder nutzen Sie die Zeiten nur, um zu bestimmen, wann es für sie gefährlich werden könnte?« Hermione lagen noch viel mehr Fragen auf der Zunge, doch auf Handbewegung seinerseits ließ sie innehalten. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ms. Granger, ich bin nicht gewillt, Ihnen eine Privatstunde zu erteilen!« Damit hatte er ihrer Wissbegierde den Wind aus den Segeln genommen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Wolf drehte sich herum und jaulte lange und laut. </span>
+</p><p align="justify">
+  <span>Die Kinder schraken zurück. </span>
+</p><p align="justify">
+  <span>Das Tier knurrte und seine Glieder zuckten. Im Gegensatz zu den Kindern saß Snape seelenruhig neben dem Wolf und schaute nur auf seine Uhr. </span>
+</p><p align="justify">
+  <span>»Ein bisschen früh...« sprach er mehr zu sich selbst. »Geh ins Schlafzimmer, Remus. Das müssen die Kinder nicht unbedingt sehen«, wies er den Wolf an, der aufs Wort vom Sofa sprang und in das angrenzende Zimmer trottete.</span>
+</p><p align="justify">
+  <span>Blindlings schwang Snape seinen Zauberstab und sprach ein 'Quietamarea' aus. »Die Schreie können sehr verstörend wirken, wenn man es nicht schon einmal erlebt hat«, erklärte er schlicht und in seiner Fakten-in-Stein-gemeißelt Stimme.</span>
+</p><p align="justify">
+  <span>»Sie bleiben also bei Ihrer Annahme, dass ich Professor Lupin umgebracht oder sonst etwas angetan habe, Mr. Potter?« fragte er beiläufig und nahm sich wieder sein Buch zur Hand, um sich Notizen für seine Strafen zu machen. »Letzte Chance!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich vertraue Ihnen nicht!« spie Harry aus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape hob eine Augenbraue und murmelte dann ein »Also nicht...« vor sich hin, während seine Schreibfeder über das Papier kratzte. </span>
+</p><p align="justify">
+  <span>Er zauberte ein Glas mit einer leicht braunen Flüssigkeit auf den Tisch. Daneben erschien eine Phiole, die er entkorkte und einige Tropfen davon in das Glas hineingab. </span>
+</p><p align="justify">
+  <span>»Zieh dir was an, wenn du fertig bist. Du willst die Kinder schließlich nicht noch mehr verschrecken als du es ohnehin schon getan hast«, rief er in Richtung Schlafzimmer.</span>
+</p><p align="justify">
+  <span>Snape schaute auf seine Uhr und schwang erneut seinen Zauberstab in Richtung des Schlafzimmers, woraufhin ein leichtes Ächzen und Stöhnen zu hören war. Er hatte den Ruhezauber vom Raum entfernt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Kurz darauf stand Remus Lupin in der Tür. </span>
+</p><p align="justify">
+  <span>Er wirkte sehr angeschlagen. Sein Gesicht war gräulich und verschwitzt. Zerzauste Strähnen standen zu allen Seiten ab. Er atmete unter Anstrengung. </span>
+</p><p align="justify">
+  <span>Sein weiter Pyjama und der Morgenmantel verbargen sein Zittern nur bedingt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Professor Lupin!« rief Harry überrascht aus und handelte sich damit einen Seitenhieb von Hermione ein. Ihr Blick bedeutete ihm, zu schweigen, doch er hörte nicht auf sie. »Warum haben Sie nichts gesagt?« fragte er und selbst Hermione war über die Einfalt dieser Frage verwundert.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus schwieg. </span>
+</p><p align="justify">
+  <span>Er hing am Türrahmen als würde er jeden Augenblick zusammenbrechen.</span>
+</p><p align="justify">
+  <span>Auf einen Wink mit dem Zauberstab zauberte Snape Lupins Gehstock in dessen Hände.</span>
+</p><p align="justify">
+  <span>»Danke«, hauchte dieser erleichtert. Er atmetet einmal tief durch und machte sich dann langsam zum Sofa auf. </span>
+</p><p align="justify">
+  <span>Snape rückte einen Platz weiter. </span>
+</p><p align="justify">
+  <span>Remus' Gelenke knackten als er sich langsam auf das Polster sinken ließ.</span>
+</p><p align="justify">
+  <span>»Mit Minze und Honig, wie du es magst«, erklärte Snape schlicht. Das Glas mit dem Zaubertrank stellte er vor Remus auf den Tisch. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er griff sich selbst in den Nacken und holte etwas hervor. </span>
+</p><p align="justify">
+  <span>Es war eine Kette, an der zwei Ringe hingen. Mit geübtem Griff nahm er einen Ring herunter und überreichte ihn Remus. </span>
+</p><p align="justify">
+  <span>Wortlos nahm Remus ihn entgegen und steckte ihn sich an seinen linken Ringfinger. Zitternd klemmte er sich das Glas zwischen beide Hände. Er nippte wie ein Schlafwandler daran, dessen Bewegung automatisiert und einstudiert war.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Trink es bitte aus. Du weißt, dass es dir danach besser gehen wird!« murrte Snape als Remus einen zweiten, langsamen Schluck nahm. </span>
+</p><p align="justify">
+  <span>Ohne zu zögern trank Remus das Glas aus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nun, Mr. Potter, ich hoffe, dass Sie sich darüber im Klaren sind, dass Ihr geliebter Professor Lupin nur deswegen noch wach ist, weil Sie hier eingebrochen sind!« redete Snape ihm ins Gewissen und hätte garantiert noch viel mehr gesagt, wenn Remus nicht seine Hand ergriffen hätte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Es tut mir leid«, sagte Remus leise. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ist schon gut«, erwiderte Snape beinahe sorgenvoll. »Das nächste Mal sei einfach nur pünktlich.« Er drückte Remus' Hand wie eine Gutmachung. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich gebe mir Mühe, das weißt du«, entgegnete Remus ihm.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die beiden Schüler wurden das Gefühl nicht los, einem sehr intimen Gespräch beizuwohnen, und fühlten sich unangenehm berührt und fehlt am Platz.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape bedachte Remus immer noch mit einem sanften Blick während er das Wort an Hermione richtete: »Ms. Granger, würden Sie bitte das Gedächtnis von Mr. Potter auffrischen und ihm erläutern, warum Professor Lupin nicht mit seinem Privatleben logieren geht?« Er richtete den Blick auf Harry, ohne den Kopf zu bewegen, und seine Augenbraue schellte skeptisch hoch. »Ich fürchte, dass Sie gar nicht den Aufsatz selbst verfasst haben, den ich Ihnen allen aufgegeben hatte nach meiner Vertretungsstunde!«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione holte Luft und suchte nach den richtigen Worten. </span>
+</p><p align="justify">
+  <span>Da fiel Remus ihr ins noch nicht erhobene Wort: »Lass gut sein, Severus. Ich danke dir, Hermione, dass du mein Geheimnis für dich behalten hast. Ich habe mir gleich gedacht, dass du die Hinweise richtig deuten würdest. Ich war froh, dass Severus mit euch das Thema durchgenommen hat. Meine Nerven gehen manchmal mit mir durch, wenn ich höre, wie andere schlecht über Werwölfe sprechen... auch wenn es nur dummes Geschwätz ist...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus holte einmal tief Luft und fuhr sich mit einer Hand über das viel zu kränkliche Gesicht.</span>
+</p><p align="justify">
+  <span>»Severus...« Sein Blick war in die Ferne gerichtet.</span>
+</p><p align="justify">
+  <span>Der etwas derangierte Tränkemeister brummelte nur als Reaktion.</span>
+</p><p align="justify">
+  <span>»Warum kann Errol nicht durchs Fenster fliegen?« fragte der Werwolf und deutete auf die Eule, die ein großes Paket auf die Fensterbank gelegt hatte und sich ausgiebig das Gefieder putzte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich habe den Raum eventuell hermetisch abgeriegelt«, sagte Severus beiläufig und schwang seinen Zauberstab, um den Schutzzauber vom Raum zu entfernen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das Fenster öffnete sich von selbst und die zerzauste Eule flog hinein, um das Paket mit einem Krachen auf den Tisch fallen zu lassen. Snape konnte das Glas noch rechtzeitig in Sicherheit bringen, bevor das Paket den halben Tisch besetzte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Eule war ein sehr zerrupfter Bartkauz. </span>
+</p><p align="justify">
+  <span>Normalerweise war diese Gattung behäbig, robust und sehr strapazierfähig.</span>
+</p><p align="justify">
+  <span>Errol war jedoch nichts davon. Er war nur groß und wirkte mehr wie ein Huhn in der Mauser, auch wenn es in seinem Fall mehr einer Dauermauser glich. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ist das nicht...« fing Harry an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Die Eule der Weasleys«, beendete Remus seinen Satz, während er den Umschlag an sich nahm, die zwischen dem Paketband und dem Packpapier klemmte. »Privat öffnen«, las er laut vor.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die zwei Schüler sahen sich gegenseitig schweigend an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Severus bedachte ihn mit einem schiefen, skeptischen Blick, während Errol an seinen Fingern nippte. »Ich habe mir Molly nicht als den Typ Person vorgestellt, der anderen Leuten Erwachsenenspielzeug schenkt...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus verpasste ihm empört einen Hieb mit dem Ellenbogen. »Schließe nicht von dir auf andere, Severus!« schimpfte er, obwohl er sich alles andere als verärgert anhörte. »Soll ich's öffnen?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Severus beäugte das Paket misstrauisch. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was soll schon schlimmes drin sein?« gab er zurück und zuckte mit den Schultern.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus öffnete den Umschlag und zog eine Karte heraus, die darauf aus seinen Händen flog und auf dem Paket wieder Platz nahm. Über der Karte erschien ein Hologramm von einer überschwänglich fröhlichen Molly und einem etwas gezwungenen wirkenden Arthur. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Dann plärrte das Trugbild drauf los: »Alles Gute zum Hochzeitstag! Wir hoffen, dass ihr zwei einen wu...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape schlug mit seiner Hand auf die Karte. Das Bild löste sich auf.</span>
+</p><p align="justify">
+  <span>»Bei Merlins Bart!« fluchte er.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus kicherte unverhohlen. »Deswegen stand da also, dass wir es privat öffnen sollen.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Severus kümmerte sich indes, um das zerzauste Tier. </span>
+</p><p align="justify">
+  <span>Er zauberte ein rohes Stück Fleisch herbei und eine Dose mit einem rot glitzernden Pulver.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Du solltest ihm auch ein ein wenig Chrysanthemennektar geben«, schlug Remus vor. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das habe ich das letzte Mal gemacht. Er scheint es nicht zu vertragen«, informierte Severus ihn beiläufig, als wären sie beide allein. </span>
+</p><p align="justify">
+  <span>Er streute eine Prise von dem Pulver über das Fleisch und rieb es in die Fasern hinein. Errol schlang das Stück gierig hinunter, bewegte seinen Kopf noch ein paar Mal nickend, um die Nahrung in seinen Muskelmagen zu befördern und schmiegte sich anschließend auffordernd in Severus Hand hinein. Hin und wieder war ein leises Hu! zu hören, während der Vogel sich ausgiebig hinter den Ohren kraulen ließ. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Hast du grünes Holunderextrakt? Er scheint etwas sehr unter der Mauser zu leiden« beobachtete Remus und deutete auf die halb fertigen Federn, die überall aus dem Vogel herausstachen und noch von dem schützenden Keratinkokon umhüllt waren. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Gegen das Alter gibt es kein Mittel, Remus... Der Vogel ist schon älter als jede andere Eule in ganz Britannien und mit dem Alter wird die Mauser langsamer.« Severus kraulte das Tier, das sich immer aufdringlicher in seine Hand schmiegte, dass der Vogel schon fast darin lag.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie sind verheiratet!« unterbrach Harry das harmonische Miteinander zwischen den beiden Professoren.</span>
+</p><p align="justify">
+  <span>Hermione stieß einen genervten Seufzer aus. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Bravo, Mr. Potter! Sie haben eins und eins kombiniert! Gratuliere!« sagte Snape mit seiner vor Hohn triefenden Stimme, die so anders klang als gerade eben noch, während er den Bartkauz liebevoll versorgte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Aber... Sie sind doch...« stotterte Harry und brachte den Satz doch nicht zu Ende.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was?« fragte Snape gefährlich zischend.</span>
+</p><p align="justify">
+  <span>Remus hielt ihn am Arm fest und beide wechselten ungesagte Argumente während sie sich ansahen. Geschlagen verdrehte Severus die Augen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, wir sind zwei Menschen, die sich lieben. Und das ist alles, was du dazu wissen musst«, antwortete Professor Lupin in einer gezwungenen Ruhe, die er sich wohl im Laufe seines Lebens angelegt haben musste, wenn herauskam, dass er mit einem Mann verheiratet war. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was Harry damit sagen will ist, dass es ungewohnt ist für zwei Männer, verheiratet zu sein. Stimmt doch, oder Harry?« Hermione ergriff seine Hand und flüsterte ihm ein 'Bleib am besten still!' zu. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Während Severus Errol auf eine Sitzstange am Ende des Raumes brachte, stellte Remus das Paket auf den Boden und warf einen Blick in das Notizbuch mit den Bemerkungen über die Strafen der Schüler.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Kein Punkteabzug?« fragte er verwundert.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Wenn ich Punkte abziehe, werden Fragen aufkommen, warum ich das schon vor dem Unterricht getan habe«, erklärte Severus schlicht. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus studierte die Notizen eingehender.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Bist du damit einverstanden?« fragte Severus ihn schließlich.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Im Großen und Ganzen, ja«, antwortete Remus.</span>
+</p><p align="justify">
+  <span>Die Schüler auf der gegenüberliegenden Couch rutschten unsicher auf den Polstern umher.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nun gut«, begann Remus. »Ihr beide bekommt für das Einbrechen in unsere Räume, mit dem Wissen, dass hier ein Werwolf auf euch lauern könnte, einen Monat Strafarbeit. Hermione, du wirst jeden Tag eine Stunde bei Professor Snape antreten. Die Uhrzeit hängt von deinem Stundenplan ab. Harry, du wirst jeden Tag bei mir eine Stunde deine Strafe absitzen. Die Strafarbeit beginnt ab morgen. Da nun bald die Ferien anfangen, wird die Strafarbeit in der Zwischenzeit ausgesetzt und nachgeholt, wenn das nächste Trimester wieder anfängt. Außerdem wirst du, Harry, während der Strafarbeitszeit einen Aufsatz pro Woche bei Professor Snape abliefern. Das Thema wird dir vorgegeben. Irgendwelche Einwände?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die beiden Schüler schwiegen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Dann wäre das ja geklärt«, bestimmte Remus.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Eins ist allerdings noch unklar«, meldete Severus sich zu Wort. »Sie haben noch nicht erzählt, woher Sie wussten, dass ich mich in diesen Räumen aufhalten würde, Mr. Potter.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich... also...«, stotterte Harry beinahe trotzig und lieferte Snape genau den Fetzen Information, an dem er sich festbeißen konnte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie sind doch so überrascht, dass Professor Lupin und ich verheiratet sind, demnach dürfte ich keinen Grund haben, hier zu sein.« Snapes Augen verengten sich. Er war auf der richtigen Spur, das wusste er. »Also woher wussten Sie, dass ich ausgerechnet heute Nacht hier in diesen Räumen sein würde?« Er sah den trotzig dreinblickenden Jungen eindringlich an.</span>
+</p><p align="justify">
+  <span>»Keine Antwort? Das habe ich mir fast gedacht... Sie erhöhen Ihre Strafarbeit nur weiter je länger Sie Ihre Antwort hinauszögern«, meinte Snape mit einem enttäuschten Blick.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Woher wollen Sie wissen, dass ich auf die Idee gekommen bin?« versuchte der Junge sich zu rechtfertigen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Weil Sie ein außerordentliches Gespür dafür haben, sich und Ihre Mitschüler in Schwierigkeiten zu bringen. Remus, setz zwei Wochen zu Mr. Potters Strafe hinzu.« Snapes Zunge schnitt durch jede Silbe wie ein Messer. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das ist nicht fair!« protestierte Harry.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus, der den Jungen schweigend eingehend beobachtet hatte, meldete sich schließlich zu Wort: »Ich glaube, ich kenne den Grund, warum Harry wusste, dass du hier bist. Harry, du hast nicht zufällig die Karte des Rumtreibers?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Bei dem letzten Wort zuckte Snape leicht zusammen und bedachte seinen Partner mit einem fragenden Blick. Doch Remus wollte nicht unterbrochen werden. So hielt er seinen Partner am Arm fest. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Der Junge starrte ihn mit großen Augen an. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Die hochwohlgeborenen Herren Moony, Wurmschwanz, Tatze und Krone präsentieren stolz die Karte des Rumtreibers«, rezitierte Remus und sah seinen Verdacht im Gesicht des Schülers bestätigt. »Harry, gib mir die Karte.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Harry griff in die Innenseite seiner Jacke und überreichte Remus die Karte, wenn auch sehr widerwillig. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus legte die Karte ausgebreitet vor sich auf den Tisch und griff an sein Handgelenk. Von dort zog er seinen Zauberstab herbei als hätte er sich dort die ganze Zeit befunden. </span>
+</p><p align="justify">
+  <span>»Ich schwöre feierlich, ich bin ein Tunichtgut«, sagte er auf während er mit seinem Zauberstab darauf zeigte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Braune Tinte blümte auf dem blanken Papier auf und breitete sich, durch die Papierfasern saugend, zu einem kompletten Bild aus. Der Titel war umgeben von einem monochromen Landschaftsaquarell von Hogwarts. Die Mauern ferchten die Schrift trapezartig ein. Drumherum rangten Namen und Wörter, um die Türme herum schlängelnd und durch die Eingänge führend. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Das Papier war alt und abgegriffen. </span>
+</p><p align="justify">
+  <span>Die Faltkanten ließen die Tinte verschwinden, auch wenn sie sich gerade eben neu über das Papier ausgebreitet hatte. Der Zauber bewirkte nur die optische Täuschung der Verhüllung. </span>
+</p><p align="justify">
+  <span>Andächtig entfaltete Remus die Karte. Der Anflug eines Entzückens erhellte sein Gesicht. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Dass sie so lange noch funktioniert..« hauchte er beinahe andächtig. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Remus?« fragte Snape, und Remus musste ihm für seine Geduld schon einen gewissen Tribut zollen. </span>
+</p><p align="justify">
+  <span>Sonst hatte er sich nicht sonderlich unter Kontrolle nach einer fast schlaflosen Nacht und ungebetenen Gästen früh am Morgen. Severus war kein Morgenmensch. Obwohl, wenn Remus es so betrachtete, war er überhaupt kein Mensch, der zu irgendeiner Zeit nach dem Aufstehen gute Laune zu haben schien. </span>
+</p><p align="justify">
+  <span>Remus beschloss, ihn aus dem Dunkeln zu holen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»James, Sirius und Peter fanden relativ früh heraus, was mit mir war. Die monatlichen Aufenthalte auf der Krankenstation, meine Kraft, die Augenfarbe, und manchmal sehr peinliches Wolfsverhalten, das in den unangebrachtesten Situation aus mir herausbrach. Es gab Anzeichen, die sie zuerst falsch interpretierten, Nachforschungen anstellten hinter meinem Rücken und mich dann zur Rede stellten. Ich war völlig panisch als sie mich in die Ecke getrieben hatten, um die Wahrheit aus mir herauszupressen...«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Remus, vielleicht solltest du das nicht unbedingt vor den Kindern erzählen«, hielt Severus ihn auf.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus starrte mit einem etwas verklärten Blick auf die Karte.</span>
+</p><p align="justify">
+  <span>»Du hast recht... 'tschuldigung«, murmelte Remus. »Wir haben damals die Karte erstellt, damit die andern wussten, wo ich war während der Vollmondnächte. Sie haben auf mich aufgepasst.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Severus bedachte dies mit einem sehr skeptischen Blick. </span>
+</p><p align="justify">
+  <span>»Ich weiß, dass ihr euch spinnefeind wart, aber sie haben versucht, mir zu helfen«, verteidigte Remus seine Jugendfreunde, hielt dann jedoch inne. »Die Karte war zu Anfang ganz nützlich, bis James und Sirius entschieden, sie auch für andere Dinge zu verwenden.« Die letzten Worte klangen sehr wehmütig. Die Enttäuschung musste ihn so hart getroffen haben, dass sie auch nach über zwanzig Jahren nicht nachgelassen hatte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Er faltete sie zusammen und sprach: »Missetat begangen.« </span>
+</p><p align="justify">
+  <span>Die Tinte verschwand. Der Schleier des Unsichtbaren legte sich über das Papier. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Harry, ich werde diese Karte beschlagnahmen. Sie hat nichts in den Händen eines 13jährigen zu suchen. Du hast es heute leider bestätigt, dass du mit dem Wissen der Karte nichts Gutes bewerkstelligst. Ihr hättet euch beide in Lebensgefahr bringen können, ist euch das klar!?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die beiden Schüler schauten betroffen zu Boden. </span>
+</p><p align="justify">
+  <span>Harry schürzte rebellisch die Lippen. Die Karte würde er so schnell nicht wieder zu Gesicht bekommen und er war offensichtlich nicht begeistert darüber. Hatte er sich die Geheimgänge gemerkt? </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Auf dem niedrigen Kaffeetisch erschienen plötzlich Papierbögen. Snape griff nach seiner Schreibfeder und kratzte damit über das Papier. Er fertigte zwei Bögen an. </span>
+</p><p align="justify">
+  <span>»Welchen Unterricht hätten Sie jetzt?« fragte er sichtlich genervt. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Arithmantik bei Professor Vektor«, beeilte Hermione sich zu erklären, bevor aus Harry noch irgendein schlimmes Wort herausplatzte, das er hinterher bitter bereuen würde. Der Junge sah aus, als würde er innerlich kochen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Snape sah zu ihnen hinüber. </span>
+</p><p align="justify">
+  <span>Die Augenbraue skeptisch hochgezogen wie er es oft tat. Er unterschrieb beide Blätter kommentarlos. </span>
+</p><p align="justify">
+  <span>Die Blätter flogen beiden in den Schoß. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Es war eine Beglaubigung!</span>
+</p><p align="justify">
+  <span>Professor Snape hatte ihnen bestätigt, dass sie beide ihm bei einem wichtigen Experiment geholfen hatten, zu dessen erfolgreichen Abschluss er unbedingt zwei Assistenten benötigte, da die aufgebrachte Zeit sonst vergeudet gewesen wäre. Weiter stand darin, dass er es zutiefst bedauere, die beiden Schüler so lange beansprucht zu haben, dass sie die erste halbe Stunde ihres Tagesplanes verpasst hatten.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Professor Snape war bereit, für beide zu lügen! Hermione zeigte sich beeindruckt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Verstehen Sie mich nicht falsch, Mr. Potter und Ms. Granger. Wir könnten Sie auch einfach gehen lassen ohne einen Attest, der Ihnen eine Verspätung einräumt«, begann Snape und stützte sich mit seinen Ellenbogen auf den Knien ab. »Doch dann würden Sie erklären müssen, warum Sie sich verspätet haben, und bevor Sie sich in irgend welchen Lügengeschichten verstricken, ist es einfacher, die anderen glauben zu lassen, dass Sie offiziell etwas zu tun hatten. Sollte Professor Vektor dazu Fragen haben, können Sie sie gerne zu mir schicken.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Heißt das - wir können gehen?« fragte Hermione als traue sie ihren Ohren nicht. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nicht ganz«, erklärte Professor Snape. »Sie müssen hier und jetzt einen Eid ablegen, der es Ihnen nicht erlauben wird, über das Gesehene vor anderen zu sprechen. Es darf weder publik werden, dass Professor Lupin ein Werwolf ist, noch dass wir verheiratet sind.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Verzeihen Sie, aber warum darf niemand erfahren, dass Sie beide verheiratet sind?« So zeigte Harry, dass er doch zumindest zu einer höflichen Konversation noch fähig war.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Weil es niemanden etwas angeht, Mr. Potter!« raunte Snape ihn an.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Findest du das nicht ein wenig harsch?« wandte Remus ein. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Beide tauschten stumme Blicke miteinander aus, bis Remus das Wort an die beiden Schüler richtete: »Kann ich mich auf eure Verschwiegenheit verlassen? Ich muss euch nicht erklären, welche Konsequenzen für alle hätte, wenn herauskäme, dass ein Werwolf auf Hogwarts unterrichtet.« Remus versuchte zu lächeln. Seine angespannten Lippen glichen einer steinernen Fassade, dessen Risse sich bis ins Innerste hineinzogen.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Aber Sie können doch nichts dafür, dass Sie das sind!« protestierte Harry heftig. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Remus schüttelte resignierend den Kopf. »Da bist du aber nur einer von sehr wenigen, der diese Meinung vertritt, Harry. Wenn herauskommt, dass ich ein Werwolf bin, wird es nicht nur meinen Ruf zerstören, sondern auch den von Schulleiter Dumbledore und von dieser Schule. Also... Kann ich mich auf euer Stillschweigen verlassen?«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Das können Sie, Sir!« bestätigten die Schüler.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Und Sie können das auch, Professor Snape«, setzte Hermione noch hinzu, wohl wissentlich, dass der Professor nicht davon überzeugt war. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sie sollten jetzt gehen«, forderte Professor Snape sie auf. »Die Beglaubigung ist nur für dreißig Minuten angesetzt und nicht für den ganzen Tag. Milly!« rief er in die Leere hinein und neben dem Professor erschien - PLOPP! - eine kleine Hauselfe, die mit eifrigem Händeringen und einem freudigen Lächeln auf den Lippen sich vor den Zauberern verneigte.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Was kann ich für Sie tun, Master Snape?« fragte Milly ehrfürchtig.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Stell den zwei Schülern bitte ein kleines Frühstück in einer Box zusammen, Milly. Sie haben das Frühstück leider verpasst.«</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die Hauselfe war binnen weniger Sekunden wieder da mit zwei kleinen Paketen, eingeschlagen in braunem Packpapier. Sie stellte die Päckchen auf dem Tisch ab. »Hashbrowns, Würstchen und ein paar Gurkensandwiches. Haben Sie noch einen Wunsch, Master Snape?« fragte die Elfe pflichtbewusst.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ja, bring uns gegen 13 Uhr das Übliche, bitte« fügte Snape hinzu.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Sehr wohl!« So schnell sie erschienen war, so schnell löste sie sich auch schon wieder in Luft auf. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Die beiden Schüler nahmen dankend die Verzehrpäckchen entgegen und folgten Professor Snape zur Tür. An dem Garderobenständer neben der Tür hing auf einmal Hermiones Robe und die beiden Zauberstäbe lugten aus der Robentasche hervor. Zu Harrys Erleichterung sah sein Zauberstab wieder normal aus. Ihre beiden Besen lehnten an der Wand.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Noch bevor Snape den Schutzzauber von den Wänden nahm und somit die Tür entriegelte, schob Hermione sich in sein Sichtfeld, dass er irritiert inne hielt, die Hand auf dem Türknauf.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Herzlichen Glückwunsch!« Sie strahlte ungewöhnlich über das ganze Gesicht und Snape wusste nicht so recht, ob er angewidert reagieren oder sich darüber hinwegsetzen sollte. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Danke«, brachte er dann doch über die Lippen. Ein ungewöhnliches Wort aus seinem Mund, das Schüler nicht oft, oder besser gesagt: nie von ihm zu hören bekamen. </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>Hermione schob Harry durch die geöffneten Tür, welche der Professor ihnen offen hielt. Sie wollte ihr Glück nicht zu sehr für einen Tag strapazieren.</span>
+</p><p align="justify"> </p><p align="center">
+  <b>***</b>
+</p><p> </p><p align="justify">
+  <span>Sie sprachen erst miteinander als die Tür mehrere Ecken hinter ihnen lag.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Ich hab's dir ja gesagt!« grinste Hermione triumphierend.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Nichts hast du gesagt!« protestierte Harry genervt.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Oh, doch! Gib's endlich zu! Du hattest Unrecht und jetzt kannst du es nicht einsehen, dass du falsch gehandelt hast! Ich habe dich gewarnt! Und was hat es dir gebracht? Du hast deine Karte verloren! Und uns beiden Nachsitzen eingebracht!« schimpfte Hermione und war noch nicht fertig mit ihm: »Nicht zu fassen, dass du Professor Snape des Mordes beschuldigt hast, wo du überhaupt keine Beweise hattest! Nur deine dumme Karte, von der wir nicht einmal wussten, ob sie genau das wiedergibt, was sie verspricht. Und was kam heraus? Die Karte wurde von Jugendlichen hergestellt, die nicht älter als wir waren!« Hermione seufzte lang und dramatisch.</span>
+</p><p align="justify"> </p><p align="justify">
+  <span>»Mione... Die sind </span>
+  <em>
+    <b>verheiratet</b>
+  </em>
+  <span>
+    <span>!« flüsterte Harry angewidert und blieb stehen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ist es die Tatsache, dass sie zwei Männer sind, oder dass es Professor Snape ist, mit dem Professor Lupin zusammen ist?« fragte sie und stemmte die Hände in die Hüften.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Als er ihr nicht antwortete und mehr einem Fisch glich, der an Land nach Luft schnappte, sagte sie: »Dann sei mal froh, dass es dich nichts angeht. Ich an seiner Stelle hätte dir mehr Strafarbeit aufgehalst. Tu dir selbst einen Gefallen und lass dir nichts anmerken, wenn du nachher zu Professor Lupin gehen musst für deine Strafarbeit.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Sie gingen ein Stück weiter. Der Unterricht hatte bereits begonnen, deswegen waren die Korridore leergefegt. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Weiß du Harry, du kannst froh sein, dass du bei Professor Lupin antreten musst. Du glaubst doch nicht etwa, dass Professor Snape das zufällig angeordnet hat oder?« erinnerte Hermione ihn.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Was soll das </span>
+  </span>
+  <span>
+    <span>jetzt wieder </span>
+  </span>
+  <span>
+    <span>bedeuten?« fragte er, mehr als würde er den Grund nicht wahr haben wollen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich habe da meine Theorie. Aber das wirst du ja bestimmt auch irgend wann erkennen...« Und als wäre sie der Unterhaltung überdrüssig, ging sie einfach etwas schneller. Entweder Harry schloss zu ihr auf oder er würde später ankommen, es konnte ihr nicht gleichgültiger sein.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Harry kratzte sich verlegen am Hinterkopf, rief ihr dann aber ein »Warte doch!« hinterher und rannte ihr nach.</span>
+  </span>
+</p><p align="justify"> </p><p align="center">
+  <span>
+    <b>***</b>
+  </span>
+</p><p> </p><p align="justify">
+  <span>
+    <span>»Das war wirklich sehr umsichtig von dir«, sagte Remus, der auf der Couch sitzen geblieben war. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Er blickte nur über seine Schulter hinweg und murmelte einen neuen Schutzzauber, der sich surrend über Tür und Fenster legte. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>»Deine Fähigkeiten, den Raum zu sichern, haben stark nachgelassen«, kommentierte er schließlich über seine Schulter hinweg.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich hatte nur das Fenster nicht mit eingeschlossen. Die Posteulen sollen doch schließlich noch unbeschadet hier landen können«, verteidigte Remus sich halbherzig, denn sein Interesse war längst dem Paket gewidmet, das Molly und Arthur ihnen geschickt hatten. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Nun, rein geflogen ist dann ja doch etwas, aber es waren keine Eulen.« Severus hielt sich dieses Mal nicht mit seiner Unzufriedenheit zurück. »Wir sollten uns besser drauf einspielen, dass es Eindringlinge geben kann, egal aus welcher Richtung. Selbst Drittklässler haben es geschafft, unbemerkt einzudringen.« </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Remus machte sich indes über die Verpackung des Pakets her. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Remus, hörst du mir überhaupt zu?«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Severus, du weißt genau, dass ich nach der Verwandlung nicht aufnahmefähig bin«, jammerte Remus in einem sehr kläglichen Ton und hielt inne als ihm eine weiße Papiertüte ins Gesichtsfeld gehalten wurde.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Hungrig?« fragte Severus mit einem schelmischen Grinsen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Was ist das?« fragte Remus und wollte nach der Papiertüte greifen, doch Severus zog die Tüte wieder weg.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Nicht so schnell!« ermahnte er seinen Mann.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Rieche ich rohes Fleisch?« fragte Remus. Seine Pupillen wurden riesig als sein Körper auf den Geruch reagierte. Er konnte sich so kurz nach Vollmond gar nicht dagegen wehren. Der Geruch schoss ihm scharf in die Nase und seine Instinkte waren drauf und dran, ihn zu überwältigen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Severus wusste längst über die Wirkung des Geruchs Bescheid. Sanft drückte er seinen Mann wieder in das Sofapolster zurück. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>»Ich weiß, dass wir uns nichts gegenseitig schenken wollten... Es ist auch keine runde Zahl, die man besonders feiern sollte oder sonst etwas. Aber ich wollte dir eine kleine Freude machen.« </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Severus setzte sich wieder neben ihn auf die Couch. Auf dem Tisch erschien ein Schneidebrett, ein Messer und Streuer für Pfeffer und Salz. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>»Du sagst mir immer, wie sehr es dich nach rohem Fleisch zehrt. Dass du dich aber immer zusammennehmen willst oder musst aufgrund falscher sozialer Normen, an die du dich zu halten müssen glaubst. Wenn es nach mir ginge, wäre es mir egal, wenn es denn sicher ist, dass dein Magen rohes Fleisch auch verdauen kann, und dich nicht krank macht. Dein innerer Wolf wird dich bestimmt vom Gegenteil überzeugen wollen, aber auch wenn dein Körper mehr aushält als der eines normalen Menschen, und du unempfindlicher bist gegen viele Gifte, bin ich mir nicht sicher, ob es deinem Magen gut tun würde.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Warum werde ich das Gefühl nicht los, dass ich einen Vortrag über mich ergehen lassen muss?« fragte Remus müde.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»So ungeduldig?« fragte Severus grinsend.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Das einzige, was mich davon abhält, dir das Ding da aus der Hand zu reißen, ist der, dass du mein Mann bist... und du mich aus einem unerfindlichen Grund unbedingt foltern willst.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Disziplin ist alles«, gab Severus zurück.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Sag das mal meinem inneren Wolf, wenn er keinen Wolfsbanntrank genommen hat... dann wirst du deine Meinung ganz schnell ändern«, entgegnete Remus schnippisch. Er hasste es, wenn er müde und gereizt war. Dann sagte er für gewöhnlich Dinge, die er sofort wieder bereute, und er wollte sich nicht mit seinem Mann streiten. Nicht an ihren Hochzeitstag.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Nur Geduld!« forderte Severus und riss die Tüte auf, um den Inhalt auf dem Tisch auszubreiten. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>In der Tüte waren mehrere kleine Brote? Sie sahen nicht ganz aus wie Brote... vermutlich war das auch der falsche Begriff. Zusätzlich waren da noch ein kleines verführerisch riechendes Päckchen und mehrere kleine Plastikdosen. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>»Ich war gestern in Deutschland«, fing Severus an und gab damit nur mehr Nährboden für Fragen, als dass er eine Erklärung lieferte für sein mysteriöses Verhalten. »Ich weiß ja, dass du es roh magst, aber alles, was das menschliche Gebiss zerteilen kann, muss vorbereitet sein. Erinnerst du dich an das Hackfleisch, das du roh probiert hast?«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Remus verzog angewidert das Gesicht. »Bitte erwähne dieses abartige Gepansche nicht noch einmal! Ich krieg sonst ein pelziges Gefühl auf der Zunge... und schlechte Laune!«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Severus schnitt eins der kleinen Brote in zwei Hälften. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>»Die Deutschen essen etwas, das nicht jedermanns Geschmack trifft. Ich bin darauf gestoßen als ich letztes Jahr auf dem Kolloquium des Magicis Potio war. Da gab es diesen riesigen rohen Fleischberg, garniert mit Zwiebeln, den sich die Deutschen aufs Brötchen geschmiert und gegessen haben.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Und du hast denen nicht auf den Tisch gereiert?« fragte Remus bewundernd.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich konnte mich gerade noch zurückhalten«, erinnerte Severus sich. »Aber ich wollte wissen, was das ist, und so hat mir der Dekan der deutschen Abteilung für Zaubertränke erzählt, was es damit auf sich hat.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Severus entfaltete das verführerisch riechende Päckchen. Darin lag eine formlose, rosa Masse, die im entferntesten Ähnlichkeit mit Hackfleisch hatte.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Was ist das?« fragte Remus mit glänzenden Augen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Die Deutschen nennen es Mett. Es ist ist feiner zerkleinert als normales Hackfleisch, roh und vorgewürzt.« Er bestrich eine Hälfte des - wie hatte er es genannt? Brötchen? »Aber der Aspekt, der mir am wichtigsten erscheint als dein Mann: Es ist vorbehaltlos genießbar, wenn es frisch ist.«</span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Severus überreichte Remus die wohlriechende belegte Scheibe, und setzte hinzu: »Es wird normalerweise mit Zwiebeln gegessen und nach Belieben gewürzt. Aber lass dir eins gesagt sein: Wenn du Zwiebeln drauf machst, kannst du gleich auf dem Sofa schlafen.« </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Bevor Remus genüsslich in das dargebotene Brötchen reinbeissen konnte, schob Severus seine Hand unter Remus' Kinn und zog ihn in seine Richtung. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Er küsste ihn, langsam und genüsslich. Die Art Kuss, die Paare untereinander austauschten, die ihren Partner nicht mehr umwerben mussten, dessen Beziehung gefestigt war und schon einige Hürden gemeinsam bestanden hatte. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Alles Gute zum Hochzeitstag«, wünschte Severus ihm. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Wenn ich es nicht schon wäre, würde ich mich jetzt in diesem Moment in dich verlieben, Severus Snape!« grinste Remus und fühlte sich benebelt und glücklich zugleich. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Das will ich aber doch meinen!« lachte Severus. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Remus genoss die Zeit, in der sie allein waren. Das waren die Momente, in denen Severus sich traute, seine Schutzmauern fallen zu lassen. Er wusste, dass sein Mann keine leichte Aufgabe vor sich hatte, und auch wenn er auf Hogwarts nur mit Schülern zu tun hatte, so war er doch unter ständiger Beobachtung durch deren Eltern. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Sollte auch nur ein Wort nach draußen gelangen über seine Verbindung mit einem Werwolf, würde das die Todesser sicher brennend interessieren. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Müde schob er den Gedanken wieder beiseite. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Er wollte keine Minute an diese schreckliche Verbindung verschwenden, nicht an diesem Tag. Es genügte bereits, dass ihr Leben von beiden Seiten bestimmt wurde, und sie auf jeden ihrer Schritte Acht geben mussten, dass ihr Tun und Lassen nicht von den falschen Leuten falsch interpretiert werden konnte.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Warum hast du eigentlich Harry mir zugeteilt? Man könnte fast meinen, dass du es liebst, ihn mit dreckigen Kesseln zu foltern«, wollte Remus wissen und biss schließlich ins Brötchen hinein. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Weil es vergeudete Zeit wäre. Wenn er bei dir ist, kann er wenigstens etwas lernen. Wie der Einbruch eben gezeigt hat, muss der Junge mehr Disziplin lernen und die kann er sich nun einmal nicht bei mir aneignen, wenn sich sein ganzer Körper dagegen sträubt, mir auch nur einen Bruchteil einer Sekunde zuzuhören«, erklärte Severus. »Der Junge braucht ständige Bestätigung und Lob zum lernen. Du weißt genau, dass ich ihm das nicht bieten kann. Bei dir gibt er sich wenigstens Mühe.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Und was werden deine Reinblüterfamilien dazu sagen, wenn herauskommt, dass du einer Muggelgeborenen besondere Aufmerksamkeit schenkst? Würde das keine Fragen aufwerfen?« erwiderte Remus mit vollem Mund und war mit seinem Mettbrötchen und seinen Geschmacksknospen auf Wolke 7 angekommen. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich werde sicherstellen, dass sie die Strafarbeit nicht genießen, aber trotzdem etwas lernen wird«, gab Severus mit einem fast zu selbstgefälligen Lächeln zu. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Severus, du bist ein Sadist!« beschuldigte Remus ihn empört.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Selbst jemand wie ich braucht hin und wieder ein wenig Amüsement.« Severus zog beide Augenbrauen hoch und warf seinem Mann einen schamlos gespielt unschuldigen Blick zu.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Nur gut, dass du sexy bist, denn deinen Unschuldsblick kauf selbst ich dir nicht ab«, lachte Remus und erhob sich umständlich vom Sofa. Er ließ die Gehhilfe weg und humpelte steif zu seinem Schreibtisch in der hinteren Ecke. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Es ist doch immer wieder erstaunlich, wie wir beide uns gegenseitig Grenzen zu setzen versuchen, und diese nicht einhalten«, begann Remus, während er aus der obersten Schublade ein Päckchen hervor holte. »Wir wollten uns nichts schenken... Nun hast du mir etwas geschenkt... Und ich habe hier auch etwas für dich.«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Er kam zum Sofa zurück und überreichte das Päckchen seinem Mann. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Severus sah ihn fragend an. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Remus wusste, dass es seinem Mann schwer fiel, Geschenke anzunehmen, oder sich gar dankbar dafür zu zeigen. Deswegen feierte Severus auch seinen Geburtstag nicht, weil er die Schenkerei als lästig und verschwenderisch empfand. In den meisten Fällen gab der Schenkende sich keine Mühe, etwas Passendes zu finden und verschenkte anschließend nur nutzlosen Plunder, und der Beschenkte musste dann aufgrund der gesellschaftlichen Erwartungen vorgeben, sich über dieses sinnlose Geschenk zu freuen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Nein, Severus war wirklich kein Mensch, der sich gern beschenken ließ. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Trotzdem konnte Remus sich nicht die Gelegenheit entgehen lassen, seinem Mann eine Freude zu bereiten. Schon allein aus dem Grund, weil er keine gedankenlose Geschenke aussuchte. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Das Paket war noch mit der Adresse versehen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Es kam gestern Abend per Eulenpost. Ich wollte nicht, dass es direkt vor deinen Augen geliefert wird. Deswegen habe ich angewiesen, dass es in der Eulerei landen soll«, erklärte Remus und ließ sich wieder auf dem Sofa sinken, um sich eine zweite Brötchenhälfte mit dem köstlichen rohen Fleisch zu beschmieren.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Deswegen warst du nicht pünktlich im Labor, um deinen Trank abzuholen!« erkannte Severus.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich habe in der Eulerei gewartet. Die Eule hatte sich leider verspätet. Nun schau mich nicht so an! Ich weiß, dass es wichtig war und du hast mich ja auch rechtzeitig gefunden... also mach schon auf! Ich will wissen, ob es dir gefällt«, forderte Remus ihn auf.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Wenn andere Leute Geschenke bekamen, rissen sie die Verpackung normalerweise auf.</span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Nicht so Severus.</span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>Mit dem Daumennagel strich er unter der Papierkante entlang, um das Klebeband zu lösen. Wenn Severus etwas auspackte, konnte man das Papier noch einmal wiederverwenden. Auch wenn es nur normales Packpapier war.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Er starrte eine Weile auf das Buch, das darin eingeschlagen war. </span>
+  </span>
+</p><p align="justify">
+  <span>
+    <span>»Giftige Kräuter, Beeren und Pflanzen und ihre Verwendung in der magischen Medizin«, las er den Titel vor.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Du hast darüber gesprochen...«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich dachte, du hättest mir nicht zugehört!« rief er überrascht aus.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Was soll ich dazu sagen? Überraschung?« Hatte Remus ihm gerade zugezwinkert?! »Gefällt es dir?«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Natürlich gefällt es mir!« sagte Severus und hatte seine Nase schon im Inhaltsverzeichnis vergraben. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Du weißt, dass es selten ist?« fragte Severus ohne aufzusehen.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Du erwähntest etwas in der Art«, entgegnete Remus mit vollem Mund.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Dann weißt du auch, dass es unheimlich teuer ist...«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ach, deswegen bin ich so viel Geld losgeworden! Ich hab mich schon gewundert, wo das ganze Geld hingegangen ist!« antwortete Remus belustigt und wusste schon, wo die Diskussion hinführen würde.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Dann wirst du auch wissen, was ich von der Anschaffung halte?«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ja«, fing Remus an, biss ein Stück vom Mettbrötchen ab und fügte hinzu: »Und es ist mir egal. Du wolltest das Buch haben, ich habe es dir gekauft. Wir können nicht all unser Erspartes mit in den Tod nehmen. Also warum sollte ich es nicht für denjenigen ausgeben, den ich am meisten liebe auf dieser Erde?« Remus wusste, dass er ihn damit Schachmatt gesetzt hatte. »Sag einfach Danke, du sturer Bock!« forderte er ihn auf und gab ihm einen Kuss auf die Wange.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Danke, du sturer Bock!« Severus grinste.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Remus verdrehte die Augen. »Ok, das geht wohl auf meine Kappe...«, kommentierte er lediglich.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Schmeckt das Zeug eigentlich?« fragte Severus.</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Es ist wunderbar! Wie eine samtene Wolke aus Fleisch! Aber wir sollten wieder zurück ins Bett gehen. Mir wird kalt und wenn ich nicht bald ein Kissen unter meinem Kopf haben werde, knall ich mit dem Kopf auf den Tisch«, bemerkte Remus und stand auf. »Muss das Mettzeug gekühlt werden?«</span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>»Ich kümmer mich schon drum. Geh du zurück ins Bett«, bot Severus an. </span>
+  </span>
+</p><p align="justify"> </p><p align="justify">
+  <span>
+    <span>Wenig später lagen sie sich in den Armen und verschliefen ihren siebten Hochzeitstag fast gänzlich.</span>
+  </span>
+</p></div>
+        <!-- end cache -->
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--work endnotes-->
+<div id="work_endnotes" class="end notes module">
+  <h3 class="heading">Notes:</h3>
+  <blockquote class="userstuff"><p>AN:<br/>Ich habe oft gelesen, dass Werwölfe einen unnatürlichen Appetit auf rohes Fleisch haben. Der Verzehr von rohem Fleisch ist nicht für jedermanns Magen. Für meinen schonmal gar nicht - Moi ist seit über 20 Jahren Vegetarier :D<br/>Die Briten haben das Minced Meat. Das ist aber eher grobes Hackfleisch und wird in der Regel nicht roh verzehrt.<br/>In welchen Speisen gibt es sonst noch rohes Fleisch?<br/>Als Deutscher fällt einem natürlich sofort der olle METTIGEL ein :D (Und ich hatte relativ wenig Lust, das Thema zu recherchieren... also blieb's beim Mett.... hab ich nie gern gegessen.... nicht einmal als ich noch Fleisch gegessen habe.)</p><p>Die Story sollte eigentlich "nur was KURZES" werden... vor allem etwas FLUFFIGES (wie man sieht: ich kann kein Fluff)... Bevor es in die dunkelsten Tiefen von "Unter Wölfen" weitergehen sollte...<br/>Hätte ja nicht ahnen können, dass das wieder so ein 16k Klopper wird....</p><p>Vielleicht hätte ich noch zu Anfang erwähnen sollen, dass Harry P. hier nicht ganz so gut wegkommt... *tiiihiii*</p></blockquote>
+</div>
+<!--/work endnotes-->
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/31605836">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 2 of the <a href="/series/2652802">Snupin Works</a> series</span><span class="divider"> </span><a class="next" href="/works/33556813">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="gHfEVoXKWTF4dQGgI7AT4yrglBZ7m_FLDVfVE-PUxiB6-_ZLVXjC_nv9ll-k3U0-aGGPobp34wGJ9hKt13FdLQ"/>
+          <input value="33957355" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/Dschinn">Dschinn</a>, <a href="/users/Sempiterno">Sempiterno</a>, <a href="/users/ProxyxHoodie">ProxyxHoodie</a>, <a href="/users/Hiya3">Hiya3</a>, <a href="/users/AnnaOnTheMoon">AnnaOnTheMoon</a>, <a href="/users/onefour_one">onefour_one</a>, <a href="/users/Cchaarrlliiee">Cchaarrlliiee</a>, and <a href="/users/Trickster32">Trickster32</a>
+             as well as 
+          5 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_33957355">
+  <form class="new_comment" id="comment_for_33957355" action="/works/33957355/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="UxVO-r_O3_qb7zi3ebOl04UpHKNQqB3vXY2uwEl2mEqpmXznb3xENZhnr0j-3vsOx6gHFJFED6XZLGl-fdMDRw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_33957355">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_33957355" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_33957355=new LiveValidation('comment_name_for_33957355',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_33957355.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_33957355">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_33957355" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_33957355=new LiveValidation('comment_email_for_33957355',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_33957355.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_33957355" class="landmark">Comment</label>
+        <textarea id="comment_content_for_33957355" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_33957355" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_33957355_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_33957355">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_33957355=new LiveValidation('comment_content_for_33957355',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_33957355.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_33957355.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_33957355" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/33957355/hit_count.json")})</script>
+
+
+  </body>
+</html>

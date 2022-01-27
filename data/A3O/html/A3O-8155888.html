@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":195,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Weihnachtliche Momentaufnahmen - ChrissiTine - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="RVzkMBZFY4U-wJ5hZAUmUOxq0IbOiNKBPAaFN8NDA83Jom3H56K_cx40-yTxqOVNB4-UoVV74Dm1cjVQt1L3rA"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="2EgWK3LyBSM1Aod5a3p1mMYra9Nc60feKmLm_0-2lr5Utp_cgxXZ1RX24jz-17aFLc4v9McYdWajFlaYO6di3w"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: katekyou &quot;alternate universe&quot; sort:&gt;words</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/8155888/chapters/18690751">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/8155888/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/8155888/Weihnachtliche.azw3?updated_at=1480068681">AZW3</a></li>
+          <li><a href="/downloads/8155888/Weihnachtliche.epub?updated_at=1480068681">EPUB</a></li>
+          <li><a href="/downloads/8155888/Weihnachtliche.mobi?updated_at=1480068681">MOBI</a></li>
+          <li><a href="/downloads/8155888/Weihnachtliche.pdf?updated_at=1480068681">PDF</a></li>
+          <li><a href="/downloads/8155888/Weihnachtliche.html?updated_at=1480068681">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Arthur%20Weasley*s*Molly%20Weasley/works">Arthur Weasley/Molly Weasley</a></li><li><a class="tag" href="/tags/Lucius%20Malfoy*s*Narcissa%20Black%20Malfoy/works">Lucius Malfoy/Narcissa Black Malfoy</a></li><li><a class="tag" href="/tags/James%20Potter*s*Lily%20Evans%20Potter/works">James Potter/Lily Evans Potter</a></li><li><a class="tag" href="/tags/Remus%20Lupin*s*Nymphadora%20Tonks/works">Remus Lupin/Nymphadora Tonks</a></li><li><a class="tag" href="/tags/Fleur%20Delacour*s*Bill%20Weasley/works">Fleur Delacour/Bill Weasley</a></li><li><a class="tag" href="/tags/Audrey%20Weasley*s*Percy%20Weasley/works">Audrey Weasley/Percy Weasley</a></li><li><a class="tag" href="/tags/Angelina%20Johnson*s*George%20Weasley/works">Angelina Johnson/George Weasley</a></li><li><a class="tag" href="/tags/Hermione%20Granger*s*Ron%20Weasley/works">Hermione Granger/Ron Weasley</a></li><li><a class="tag" href="/tags/Harry%20Potter*s*Ginny%20Weasley/works">Harry Potter/Ginny Weasley</a></li><li><a class="tag" href="/tags/Astoria%20Greengrass*s*Draco%20Malfoy/works">Astoria Greengrass/Draco Malfoy</a></li><li><a class="tag" href="/tags/Teddy%20Lupin*s*Victoire%20Weasley/works">Teddy Lupin/Victoire Weasley</a></li><li><a class="tag" href="/tags/Scorpius%20Malfoy*s*Rose%20Weasley/works">Scorpius Malfoy/Rose Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Fred%20Weasley/works">Fred Weasley</a></li><li><a class="tag" href="/tags/Dominique%20Weasley/works">Dominique Weasley</a></li><li><a class="tag" href="/tags/Louis%20Weasley/works">Louis Weasley</a></li><li><a class="tag" href="/tags/Molly%20Weasley%20II/works">Molly Weasley II</a></li><li><a class="tag" href="/tags/Lucy%20Weasley/works">Lucy Weasley</a></li><li><a class="tag" href="/tags/Fred%20Weasley%20II/works">Fred Weasley II</a></li><li><a class="tag" href="/tags/Roxanne%20Weasley/works">Roxanne Weasley</a></li><li><a class="tag" href="/tags/Hugo%20Weasley/works">Hugo Weasley</a></li><li><a class="tag" href="/tags/James%20Sirius%20Potter/works">James Sirius Potter</a></li><li><a class="tag" href="/tags/Albus%20Severus%20Potter/works">Albus Severus Potter</a></li><li><a class="tag" href="/tags/Lily%20Luna%20Potter/works">Lily Luna Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Adventskalender/works">Adventskalender</a></li><li><a class="tag" href="/tags/Christmas/works">Christmas</a></li><li><a class="tag" href="/tags/one%20shots/works">one shots</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/8142490">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 4 of the <a href="/series/555904">10 kleine Dinge - Universum</a> series</span><span class="divider"> </span><a class="next" href="/works/8641453">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-09-28</dd><dt class="status">Completed:</dt><dd class="status">2016-09-28</dd><dt class="words">Words:</dt><dd class="words">18538</dd><dt class="chapters">Chapters:</dt><dd class="chapters">24/24</dd><dt class="kudos">Kudos:</dt><dd class="kudos">7</dd><dt class="hits">Hits:</dt><dd class="hits">270</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Weihnachtliche Momentaufnahmen
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/ChrissiTine/pseuds/ChrissiTine">ChrissiTine</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Adventskalender-FF ... Kleine weihnachtliche Momente der Paare der Familien Weasley und Malfoy, manchmal traurig, manchmal schön.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Ich schreibe jedes Jahr einen Adventskalender, jeden Tag ein Kapitel vom ersten bis zum 24. Dezember. In diesem Adventskalender von 2010 gibt es einen kurzen Einblick in einen weihnachtlichen Moment der Paare der Harry Potter Welt.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690751">Chapter 1</a>: Molly und Arthur
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>1981</strong>
+  </em>
+</p><p>Traurig betrachtete Molly Weasley den mickrigen Weihnachtsbaum, der nur mit ein paar schiefen Sternen geschmückt war. Ihre Jungs hatten sie aus alten Tagespropheten ausgeschnitten, die Molly bunt gefärbt hatte. Sie hatten richtigen Schmuck gehabt, aber Fred und George hatten ihn bei einem ihrer verbotenen Streifzüge auf dem Dachboden kaputt gemacht und versucht, den Schaden zu verstecken. Als Molly das Problem entdeckt hatte, war es schon zu spät gewesen, neuen Schmuck zu kaufen.</p><p>Sie hatte das ganze Geld, das sie für Weihnachten mühsam zusammengespart hatten, bereits für Weihnachtsgeschenke ausgegeben. Es war dieses Jahr weniger als in den letzten Jahren, aber Bill würde im nächsten September nach Hogwarts kommen und sie würden die gesamte Schulausrüstung für ihn neu kaufen müssen. Danach konnten die Sachen an die anderen Kinder weitergegeben werden, aber dieses erste Mal würden sie alles kaufen müssen. Zwar nur Second Hand, aber auch das war eigentlich schon mehr, als sie sich leisten konnten.</p><p>Molly schluckte, als sie zu ihrem ältesten Sohn schaute, der den anderen Kindern dabei half, die Sterne auszuschneiden. Charlie war die Arbeit bereits zu blöd geworden und er hatte seine Schere ungeduldig hingeschmissen. Percy arbeitete am gewissenhaftesten von allen und schnitt die Sterne mit einer Präzision aus, zu der selbst Molly nicht im Stande gewesen wäre. Fred und George machten sich einen Spaß daraus, den Sternen so verrückte Formen wie nur möglich zu geben und Ron saß in seinem Hochstuhl, kaute auf einem Keks herum und betrachtete mit großen Augen seine Brüder. Molly war froh, dass Bill darauf achtete, dass er an keine Schere herankam. Sie wollte sich gar nicht ausmalen, wie es sein würde, wenn Bill erst in Hogwarts sein würde. Er würde ihnen allen schrecklich fehlen.</p><p>Es war das letzte Weihnachten, an dem sie alle zusammen wären. Bills letztes, bevor er in die weite Welt gehen würde. Und Ginnys erstes. Sie war natürlich noch zu klein, um zu begreifen, was vor sich ging, aber es war trotzdem etwas besonderes. Das erste Mal war immer etwas besonderes. Deshalb hatte Molly sich auch die Zeit genommen, einen weihnachtlichen Pullover für ihre vier Monate alte Tochter zu stricken. So wie sie für alle ihre Söhne einen Pullover gestrickt hatte.</p><p>Molly strickte jedes Jahr Pullover für ihre Kinder. Das machte sie, seit Bill auf der Welt war. Es war ein einfaches Geschenk. Wolle war nicht teuer. Die Besitzerin des Ladens, in dem sie die Wolle immer kaufte, hatte ein Herz für ihre Familie. Je mehr Wolle Molly kaufte, desto billiger wurde sie. Außerdem konnte sie ihre Stricknadeln verhexen, damit die die meiste Arbeit für sie erledigten. Nur die komplizierten Muster fertigte Molly selbst an. So hatte sie genügend Zeit für all die anderen Dinge, die unbedingt erledigt werden mussten. Es war auch ein praktisches Geschenk, denn sie konnte dafür sorgen, dass ihre Kinder etwas warmes zum Anziehen hatten. Und vor allem war es ein Geschenk, das von Herzen kam.</p><p>Molly liebte ihre Kinder über alles und wünschte sich, in der Lage zu sein, ihnen alles schenken zu können, was sie wollten. Leider konnte sie ihnen nichts aufwendiges kaufen, so wie sie es manchmal gerne getan hätte. Dafür schenkte sie ihnen Liebe, Wärme und Geborgenheit. Und das waren doch die größten Geschenke, die es geben konnte. Wie viele Kinder mussten ohne diese Dinge auskommen.</p><p>Tränen standen in ihren Augen, als sie an die vielen Waisenkinder dachte, die nicht einmal einen Pullover bekommen würden. Die niemanden hatten, der sie liebte und für sie da war. Ihre Kinder waren glücklich und zufrieden, selbst wenn nicht der neueste Rennbesen unter dem Weihnachtsbaum für sie bereitliegen würde.</p><p>Die Tür ging auf und Arthur kam herein. Schneeflocken hatten seinen zerschlissenen Umhang durchnässt. Molly atmete auf. Sie war jedes Mal erleichtert, wenn er wohlbehalten nach Hause kam. Sie hatte sich noch nicht daran gewöhnt, dass er, dessen Name nicht genannt werden darf, nicht mehr da war. Es würde das erste Weihnachten sein, das sie in Frieden feiern würden.</p><p>Arthur drückte jedem seiner Söhne einen Kuss auf den Kopf, bevor er zu ihr kam, einen Arm um ihre nicht mehr vorhandene Taille schlang und auch sie küsste. Dann beugte er sich zu Ginny, die Molly im Arm hielt, und küsste sie sanft auf die Stirn.</p><p>"Frohe Weihnachten", wünschte er ihr lächelnd.</p><p>Molly nickte. Sie waren alle zusammen. Sie waren gesund. Sie liebten sich. Sie konnten in Frieden leben. Es waren frohe Weihnachten.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690782">Chapter 2</a>: Lucius und Narcissa
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>1990</strong>
+  </em>
+</p>
+<p>"Nun, Draco?", fragte Lucius mit hochgezogenen Augenbrauen.</p>
+<p>Draco betrachtete den neuen Nimbus 2000, den er gerade von dem edlen Geschenkpapier der Herstellerfirma befreit hatte. Er glänzte im Licht des Kronleuchters und der Kerzen, die auf dem drei Meter hohen Weihnachtsbaum befestigt waren. Er war genauso, wie Draco erwartet hatte. Er hatte keine Zweifel daran gehabt, diesen Besen zu bekommen. Er war neu auf den Markt gekommen und sein Vater würde sich schon allein deswegen nicht mehr mit ihren alten Besen abgeben. Er wollte nur das Beste vom Besten.</p>
+<p>Außerdem war er der Meinung gewesen, dass Dracos Flugkünste verbessert werden sollten, damit er in Hogwarts im nächsten Schuljahr der Familie keine Schande machen würde. Er hatte es zwar nicht angedeutet, aber Draco war dennoch klar, dass es Lucius' Wunsch war, dass er so schnell wie möglich ins Quidditchteam aufgenommen werden sollte. Es war unwichtig, dass es seit einem Jahrhundert keinem Schüler mehr gelungen war, im ersten Schuljahr in die Mannschaft zu kommen, noch nicht einmal Lucius selbst, wie Draco sich gerne in Erinnerung rief. Es würde zeigen, dass ihre Familie nicht <em>gewöhnlich</em> war.</p>
+<p>Das war das wichtigste: Nichts, aber auch gar nichts, sollte an der Familie Malfoy gewöhnlich sein. Weder das Geschirr, von dem sie aßen, noch die Bettwäsche, in der sie schliefen. Und schon gar nicht Weihnachten.</p>
+<p>Aus diesem Grund hatten sie den größten Baum der ganzen Gegend, der imposant im Foyer aufgestellt war und bis in den ersten Stock hinauf ragte. Er war geschmückt mit echtem Gold. Die restliche Dekoration war geschmackvoll, elegant und selbstverständlich teuer. Malfoys gaben sich nie dem zweitbesten zufrieden.</p>
+<p>"Er ist perfekt, Vater", gab Draco genau die Antwort, die von ihm erwartet worden war. Er hätte den Besen gerne ausprobiert, aber ihm war klar, dass jetzt nicht der richtige Zeitpunkt dafür war. Wenn er ihn wirklich genießen wollte, ohne die wachsamen Augen seines Vaters, der jede seiner Bewegungen kritisierte, dann würde er warten müssen, bis seine Eltern nicht da waren. Seine Mutter war sowieso der Ansicht, dass Fliegen für ihn viel zu gefährlich war. Doch sein Vater war anderer Meinung und nur das zählte.</p>
+<p>Lucius schaute ihn weiterhin auffordernd an.</p>
+<p>"Vielen Dank", fügte er hinzu.</p>
+<p>Seine Mutter kam aus der Küche. Sie hielt eine Teetasse in der Hand. "Dieser unfähige Hauself hat Unmengen von Zucker in den Tee gekippt. Ich musste ihn selbst neu machen.", erklärte sie missbilligend. Sie setzte sich auf das Ledersofa und strich ihr grünes Seidenkleid glatt. Lucius und Narcissa wären nie auf die Idee gekommen, die Geschenke in ihren Schlafanzügen auszupacken, so wie es eigentlich üblich gewesen wäre. Sie bestanden auf eine angemessene, feierliche Kleidung.</p>
+<p>Sie musterte ihren Sohn, der auf dem anderen Sofa saß und den teuersten und neuesten Rennbesen der Welt in der Hand hielt. "Gefällt er dir?", fragte sie lächelnd.</p>
+<p>Draco erwiderte ihr Lächeln und nickte. "Ja, sehr. Vielen Dank, Mutter." Er stand auf und küsste sie auf die Wange. "Ich verstaue ihn besser im Besenschrank.", fügte er hinzu und hielt den Besen hoch.</p>
+<p>Lucius nickte zustimmend. "Vergiss nicht, die Tür abzuschließen. Ich will nicht, dass dieser Hauself dort herumschnüffelt.", rief er seinem Sohn streng zu.</p>
+<p>Draco verdrehte die Augen. Als ob er das schon jemals vergessen hätte!</p>
+<p>"Das Geschenk hat seine Wirkung nicht verfehlt", stellte Lucius zufrieden fest und lehnte sich nach hinten. Er hob die Hand und strich Narcissa ihre blonden Haare aus dem Gesicht. Seine Finger verweilten auf ihrem Ohrläppchen. "Gefallen sie dir?"</p>
+<p>Narcissa nickte. "Die Ohrringe sind wunderschön." Lucius hatte ihr zu Weihnachten Diamantohrstecker geschenkt. Sie waren sündhaft teuer gewesen und das sah man ihnen an. "Danke."</p>
+<p>Lucius nickte. "Für euch nur das Beste." Etwas anderes kam bei der Familie Malfoy nicht infrage.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690848">Chapter 3</a>: James und Lily
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>1980</strong>
+  </em>
+</p>
+<p>"Schau mal, Harry, ist der nicht toll?", fragte James begeistert seinen fünf Monate alten Sohn und hielt ihm einen kleinen Schnatz unter die Nase, der wie wild flatterte und versuchte, sich aus James' Hand zu befreien.</p>
+<p>Lily musterte den Schnatz kopfschüttelnd. "Also wirklich, James, wo hast du den denn her? Hat Sirius ihn für Harry geklaut?" Sie würde es dem besten Freund ihres Mannes durchaus zutrauen, das für sein Patenkind zu tun. James wäre dazu auch imstande gewesen, wenn sie sich nicht hätten verstecken müssen. Die beiden würden nie erwachsen werden.</p>
+<p>James schüttelte den Kopf. "Wo denkst du denn hin, mein Schatz? Mit dem hab ich damals nach den ZAG-Prüfungen gespielt. Du weißt schon, als du mir gesagt hättest, dass du lieber mit dem Kraken schlafen würdest als mit mir." Er schaute sie grinsend an.</p>
+<p>Lily verdrehte die Augen. "So habe ich das nie gesagt, James. Ich hab nur gesagt, dass ich lieber mit dem Kraken ausgehen würde als mit dir. Von Sex war nie die Rede." Sie kniete sich auf den Boden neben James und kitzelte Harry, der auf einer Spieldecke lag, unter dem Kinn. Seine Aufmerksamkeit galt allerdings ganz dem Schnatz, den sein Vater noch in der Hand hielt. Seine Mutter ignorierte er völlig.</p>
+<p>"Er wird einmal ein großartiger Sucher werden", sagte James verträumt. "In Hogwarts wird er die anderen Mannschaften vernichten. Und dann wird er die englische Quidditchliga revolutionieren. Ich sehe es schon genau vor mir."</p>
+<p>Lily küsste James lachend auf die Wange und schnappte ihm den Schnatz weg.</p>
+<p>"Hey!", rief James überrascht, weil Lily es geschafft hatte, ihm den geflügelten Ball wegnzunehmen. "Gib den sofort wieder her! Das war mein Weihnachtsgeschenk für Harry!"</p>
+<p>Lily spang flink auf und floh vor ihrem Mann. Sie rannte lachend durch das Wohnzimmer und hätte beinahe den kleinen Weihnachtsbaum umgeworfen, der auf der Kommode stand. James hatte sie rasch eingeholt. Er schlang die Arme um sie. Allerdings hatte er so einen Schwung, dass sie beide auf dem Sofa landeten. Lily streckte ihren Arm so weit wie möglich von James weg, aber er war fast zwei Köpfe größer als sie und hatte dementsprechend auch längere Arme. Als er ihre Hand fast erreicht hatte, öffnete Lily sie schnell und ließ den Schnatz frei.</p>
+<p>James schaute dem Schnatz hinterher, der wie ein aufgescheuchtes Huhn durch das ganze Wohnzimmer flatterte. "Vielen Dank auch", murmelte er grimmig. "Und wie soll ich den jetzt wieder einfangen?"</p>
+<p>Lily lachte. Sie streckte sich und küsste ihn zärtlich auf die Lippen. "Schon mal was von einem Aufrufezauber gehört, du Genie?"</p>
+<p>James schaute sie einen Moment sprachlos an und lachte dann lauthals los. Er beugte sich zu ihr hinunter und küsste sie stürmisch. "Darauf wäre ich wirklich nicht gekommen", gab er zu und drückte sich enger an sie. Ihre Hände fuhren durch seine Haare und verstrubbelten sie noch mehr.</p>
+<p>Ein lautstarker Schrei brachte sie dazu, auseinander zu fahren. James sprang auf und zog seinen Zauberstab, der hinten in seiner Jeans steckte. Alarmiert sah er sich um. Während James noch nach der Ursache für das Geräusch suchte, hatte Lily es schon längst gefunden.</p>
+<p>Der Schnatz flog um Harrys Kopf herum und dem schien das gar nicht zu gefallen. Er versuchte den Ball mit seinen kleinen Händchen zu verscheuchen, aber diesen Schnatz schien das nur umso mehr anzustacheln.</p>
+<p>Mit großen Schritten durchquerte Lily das Wohnzimmer. Sie ließ sich neben Harry auf die Knie sinken, schnappte sich den goldenen Ball und ließ ihn in der Hosentasche verschwinden. Dann hob sie ihren Sohn hoch und bedeckte sein Gesicht mit Küssen. Harry hörte auf zu weinen und lächelte seine Mutter zahnlos an.</p>
+<p>Lily schluckte. Sie hätte nie gedacht, dass sie für irgendeinen Menschen so viel Liebe empfinden konnte wie für ihren Sohn. Er war das perfekteste Wesen, das sie kannte und sie würde alles für ihn tun. Absolut alles, damit er sicher und glücklich und zufrieden war.</p>
+<p>"Ich glaube, das mit dem Quidditch war nichts, James", sagte sie grinsend zu ihrem Mann.</p>
+<p>James seufzte theatralisch und ließ sich dann neben den beiden im Schneidersitz nieder. Er legte die Arme um sie und zog sie an sich. Harry grabschte nach seiner Brille. "Dann überlege ich mir was anderes für ihn. Vielleicht kann er ja Zaubereiminister werden. Solange er berühmt wird."</p>
+<p>Lily verdrehte die Augen. "Er muss doch nicht berühmt werden, James", sagte sie entschlossen. Sie strich ihm die schwarzen Haare aus der Stirn und drückte ihm einen Kuss darauf. "Solange er glücklich ist."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690857">Chapter 4</a>: Remus und Tonks
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    
+<p></p><div class="xcontrast">
+  <p></p>
+  <div>
+    <p></p>
+    <div>
+      <p>
+        <em>
+          <strong>1997</strong>
+        </em>
+      </p>
+      <p>"Dora? Ist alles in Ordnung?" Remus musterte seine Frau besorgt. Tonks saß im Wohnzimmer im Haus ihrer Mutter auf dem Sofa. Sie hatte ihre geschwollenen Füße hochgelegt und eine Decke über ihren großen Bauch gebreitet. Sie umklammerte eine Tasse mit heißer Schokolade und starrte aus dem Fenster hinaus in die Dunkelheit.</p>
+      <p>"Meinst du, es geht ihm gut?", fragte sie ihn leise. In diesem Moment wirkte sie auf ihn mehr wie ein verängstigtes kleines Kind und nicht wie die toughe Aurorin, die sie immer sein wollte.</p>
+      <p>Remus seufzte und ließ sich am Fußende des Sofas nieder. Er hob ihre Füße an und legte sie in seinen Schoß. Er begann damit, sie zu massieren. "Dein Dad ist schlau. Er kommt zurecht."</p>
+      <p>Tonks schluckte. Tränen standen in ihren Augen, aber sie weigerte sich, ihnen freien Lauf zu lassen. Sie würde bald eine Mutter sein. Sie musste stark sein. Sie legte eine Hand auf ihren Bauch. Sie spürte, wie das Baby strampelte. "Ich wünschte nur, er wäre hier. Ich hab noch nie ohne ihn Weihnachten gefeiert."</p>
+      <p>Remus lächelte sie aufmunternd an, obwohl er sich längst nicht so hoffnungsvoll fühlte, wie er seine Frau glauben lassen wollte. Nach dem ersten Krieg hatte er niemanden mehr gehabt. <em>Niemanden</em>. Er hoffte, dass es dieses Mal anders sein würde. Mit aller Kraft. Aber die Realität war fast immer eine andere. Träume wurden nie wahr. Zumindest nicht so, wie man sich das wünschte.</p>
+      <p>"Nächstes Jahr, wenn das Baby da ist, dann werden wir alle zusammen feiern. Eine große Familie. Ohne Krieg.", sagte er überzeugend. Wenn er die Augen schloss, sah er es genau vor sich. Und wenn er nur dieses eine Mal Glück hatte, dann würde es wirklich so sein.</p>
+      <p>Tonks brachte ein kleines Lächeln zustande. "Das wäre schön.", sagte sie und wischte sich verstohlen ein paar Tränen aus dem Augenwinkel. Sie schaute auf ihren Ehering. Er hatte Remus' Mutter gehört. Sie hatten schon in aller Stille heimlich heiraten müssen. Kaum jemand war da gewesen, um ihr Glück mit ihnen zu teilen. Sie mussten ihre Liebe verstecken. Sie durften sich nicht über ihre Schwangerschaft freuen. Remus hatte sie sogar aus Angst verlassen. Nichts war so, wie sie es sich vorgestellt hatte. Und jetzt war noch nicht mal ihr Vater da. Sie hatte keine Ahnung, wie es ihm ging und ob er noch lebte.</p>
+      <p>Sie hatte gedacht, dass das letzte Weihnachten beschissen gewesen wäre. Remus hatte sie ignoriert und ihr Herz war so gebrochen gewesen wie noch nie zuvor. Sie hatte gedacht, dass es nicht schlimmer hätte sein können. Jetzt war sie mit ihrer großen Liebe verheiratet und bekam von ihm ein Baby. Eigentlich hätte sie Luftsprünge machen sollen. Stattdessen kam ihr alles noch schrecklicher vor. Sie fühlte sich machtlos und das war ein Gefühl, das kein Auror ertragen konnte.</p>
+      <p>"Was macht ihr denn für betrübte Gesichter?", fragte ihre Mutter fröhlich. Sie trug einen kleinen verstaubten Plastikweihnachtsbaum unter dem Arm, den Tonks vor Jahren einmal auf dem Dachboden gesehen hatte. Es war der erste Weihnachtsbaum gewesen, den ihre Eltern gehabt hatten. Nach ihrer Hochzeit hatten sie so wenig Geld gehabt, dass sie sich keinen echten hatten leisten können - von Schmuck ganz zu schweigen. Deshalb hatten sie die Plastiktanne mit dem Lametta und der blinkenden Lichterkette gekauft und ihn in den ersten Jahren ihrer Ehe aufgestellt.</p>
+      <p>"Es ist Weihnachten! Freut euch doch!", fuhr sie gut gelaunt fort und platzierte den Baum neben dem Kamin. "Schau mal, was ich auf dem Dachboden gefunden hab, Dora. Ich dachte mir, da es nicht sicher ist, nach draußen zu gehen und einen zu holen, ist dieser hier sehr gut." Sie schwang ihren Zauberstab und die Lichter begannen zu leuchten.</p>
+      <p>Dora seufzte. Früher hatte sie Weihnachten geliebt. Aber jetzt war ihr so wenig nach feiern zumute wie noch nie in ihrem Leben. Und sie kannte ihre Mutter gut genug, um zu wissen, dass es ihr genauso ging. Sie setzte nur ein fröhliches Gesicht auf, weil sie nicht wollte, dass die schlechte Stimmung sie erschlug.</p>
+      <p>Andromeda rückte den Baum solange zurecht, bis sie mit ihm zufrieden war. Dann schaute sie zu ihrer Tochter und ihrem Schwiegersohn. "Jetzt kommt schon. Ich versuche wirklich, mich zu bemühen. Aber allein krieg ich das nicht hin."</p>
+      <p>Dora schluckte. "Mum, ich glaube nicht, dass jetzt der richtige Augenblick -", begann sie vorsichtig.</p>
+      <p>"Ach, Papperlapapp!", widersprach Andromeda energisch. "Jetzt ist genau der richtige Augenblick. Es ist Weihnachten. Wir sollten dankbar sein für alles, was wir haben. Dass wir am Leben sind. Dass ihr dabei seid, neues Leben in die Welt zu setzen. Dein Vater will bestimmt nicht, dass wir Trübsal blasen, Dora. Wenn er jetzt hier wäre, dann würde er sagen: Jetzt erst Recht!" Sie schaute die beiden auffordernd an.</p>
+      <p>Dora gab sich schließlich geschlagen. Vielleicht klappte es ja und sie würde etwas aufgeheitert werden. Wenn sie Glück hatte, würde im Fernsehen Drei Haselnüsse für Aschenbrödel laufen. Bei dem Film kam sie immer in Weihnachtsstimmung.</p>
+      <p>Als ihre Mutter lautstark und schief ein Weihnachtslied anstimmte, klammerte sie sich ganz fest an die Hoffnung, die Remus ihr gegeben hatte. Nächstes Jahr. Nächstes Jahr würden sie alle zusammen Weihnachten feiern.</p>
+    </div>
+  </div>
+</div><div class="maxwidth">
+  <p> </p>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690868">Chapter 5</a>: Bill und Fleur
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2007</strong>
+  </em>
+</p>
+<p>"So, jetzt stellt euch schön in eine Rei'e. Vor euren Vater. Dominique, würdest du bitte läscheln? Das soll eine fröhliche Karte werden." Fleur schaute ihre sechsjährige Tochter auffordernd an. Als Antwort verzog Dominique ihr Gesicht zu einer Grimasse. "Dominique!" Fleur stemmte die Hände in ihre Hüften. "Würdest du bitte tun, was isch dir gesagt 'abe!" Dominique verschränkte stur die Arme vor der Brust.</p>
+<p>Hilflos schaute Fleur zu ihrem Mann, der genauso viel Begeisterung an den Tag legte wie seine jüngste Tochter. Er versuchte, ein Gähnen zu unterdrücken, in der Hoffnung, dass seine Frau es nicht sehen würde, aber dafür kannte sie ihn viel zu gut. Sie verdrehte die Augen und schaute auf ihre beiden anderen Kinder. Victoire schaute fröhlich drein, aber sie stürzte sich auch auf jede Kamera, die sie sah. Louis war zwar auch nicht sonderlich begeistert, aber er wollte ihr eine Freude machen und hatte ein höfliches Lächeln aufgesetzt.</p>
+<p>Fleur seufzte. "Je mehr ihr eusch weigert, desto länger wird es dauern", drohte sie. Auf Bill schien dieses Argument zu wirken, aber Dominique schien heute besonders stur sein zu wollen.</p>
+<p>"Mum, warum müssen wir so einen Mist machen! Niemand, den ich kenne, macht so ein beschissenes Foto für seine Weihnachtskarten.", beschwerte sie sich.</p>
+<p>Fleur atmete scharf ein. Dominiques Augen wurden groß und sie schlug eine Hand vor den Mund. "Dominique Nadine Weasley, was 'ast du gerade gesagt?" Sie trat einen Schritt auf sie zu und funkelte sie wütend an.</p>
+<p>"Nichts", murmelte sie kleinlaut und schaute hilfesuchend zu ihrem Vater.</p>
+<p>Bill hatte das ganze vergnügt beobachtet. Er hasste diese blöden formellen Fotos, auf die seine Frau zu Weihnachten immer bestand, aber es war die Mühe nicht wert, sie ihr auszureden, deshalb ließ er sie immer über sich ergehen. Er konnte Dominique nicht böse sein, nur weil sie genauso wenig dafür übrig hatte wie er. Aber dass sie schon mit sechs Jahren so fluchen konnte ... Er unterdrückte seinen Stolz und versuchte, sich auf die Seite seiner Frau zu stellen.</p>
+<p>"Das sollte man wirklich nicht sagen, Nicki", tadelte er sie sanft. Mehr war nicht drin. Vor allem, weil er das Wort selbst viel zu häufig gebrauchte.</p>
+<p>Dominique öffnete den Mund, um zu protestieren, aber nach einem Blick von ihrer Mutter schloss sie ihn doch lieber wieder.</p>
+<p>"Können wir nicht einfach dieses blöde Foto machen?", mischte sie Louis jetzt ein. "Ich wollte noch zu Brian zum Spielen gehen." Brian war der Nachbarsjunge. Louis war häufig bei ihm zum Spielen, um den vielen Frauen im Haus zu entkommen, wie er seinem Vater einmal gebeichtet hatte. Bill hatte dafür vollstes Verständnis.</p>
+<p>Fleur nickte und fing an, an der Kamera herumzufummeln, die sie auf ein Stativ gestellt hatte. Trotzdem warf sie Dominique wütende Blicke zu. "Darüber spreschen wir nosch, junge Dame!", drohte sie. Bill bekam Mitleid mit seiner Tochter. Aber sie hatte sich die Suppe selbst eingebrockt. Vor ihrer Mutter durfte man nicht fluchen, das wussten sie alle.</p>
+<p>"Und jetzt läschelt gefälligst, damit isch endlisch dieses Foto schießen kann." Sie schaute sie der Reihe nach streng an. Folgsam setzten sie alle ein Lächeln auf. Fleur drückte auf einen Knopf und eilte dann zu ihrem Mann, der hinter ihren drei Kindern stand und einen Arm um sie legte. Trotz ihrer Wut lächelte sie strahlend in die Kamera.</p>
+<p>Louis verließ sofort seinen Platz, nachdem das Foto geschossen worden war. Er zog sich den feinen Pullover über den Kopf, den er hasste, weil er so kratzig war, und den er nur angezogen hatte, weil seine Mutter ihn dazu gezwungen hatte. Er lief den Flur entlang. "Ich komm um fünf wieder!", rief er ihnen noch zu, bevor er sich seine Jacke nahm und die Haustür hinter sich zuknallen ließ.</p>
+<p>Dominique zerrte die Schleife aus ihren Haaren und rannte so schnell wie möglich die Treppe hoch, um ihrer Mutter zu entkommen.</p>
+<p>Nur Victoire blieb im Wohnzimmer und half ihrer Mutter dabei, die Kamera zu verstauen. "Darf ich dir dabei zusehen, wie du die Fotos entwickelst?", fragte sie interessiert und schaute ihre Mutter hoffnungsvoll an.</p>
+<p>Fleur lächelte glücklich und nickte. "Natürlich, mein Schatz. Du kannst die Kamera wieder zurück in die Dunkelkammer stellen. Ich komme gleisch nach." Victoire nahm die Tasche vorsichtig in die Hand und verließ damit das Wohnzimmer, um sie in den Keller zu bringen.</p>
+<p>Bill ließ sich mit einem Seufzer auf das Sofa fallen. Er legte einen Arm um Fleur und küsste sie auf die Wange. "Du weißt, dass wir alle diese Fotos hassen. Außer Victoire.", erinnerte er sie.</p>
+<p>Fleur nickte. "Isch weiß. Aber wir 'aben so wenige Fotos, auf denen wir alle susammen drauf sind. Und die Kinder wachsen so schnell. Meine Mutter sagt immer, dass sie sie über'aupt nischt wieder erkennt, wenn sie sie im Sommer sieht. Isch möschte, dass meine Eltern sehen, wie glücklisch wir sind. Isch möschte, dass sie auch daran teil'aben können. Wenn wir Weihnaschten schon nischt susammen feiern."</p>
+<p>Sie hatte Tränen in den Augen. Bill schluckte und umarmte sie. Fleur hatte für ihn viel aufgegeben. Er wusste, dass sie gerne in England lebte, aber er wusste auch, dass sie ihre Familie vermisste. Besonders während der Feiertage. Sie hatten den Kindern letztes Jahr vorgeschlagen, Weihnachten doch einmal bei ihren anderen Großeltern in Frankreich zu feiern, waren aber auf heftige Proteste gestoßen. Die Kinder wollten auf keinen Fall auf das bunte Treiben im Fuchsbau verzichten. Und hatte Fleur ihren Wunsch aufgegeben und mit seiner Familie gefeiert, anstatt mit ihrer.</p>
+<p>Bill strich ihr zärtlich über die Wange und lächelte sie liebevoll an. Sie war eine fantastische Frau. Er hätte sich keine bessere wünschen können. Und sie war eine fantastische Mutter. Sie konnten sich wirklich glücklich schätzen, die Kinder und er.</p>
+<p>Und das Mindeste, was sie für Fleur tun konnten, war dieses beschissene Foto.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690898">Chapter 6</a>: Charlie und Mara
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Gut zu wissen:</p>
+<p>Charlie setzte sich neben ihn und fing an, Fred davon zu erzählen, dass er vor ungefähr dreißig Jahren verlobt gewesen war, mit einer Rumänin. Sie hatten sich bei der Arbeit kennen gelernt und schnell ineinander verliebt. Als sie merkte, dass sie schwanger war, hatte Charlie ihr spontan einen Heiratsantrag gemacht, den sie freudestrahlend angenommen hatte. Kurz vor ihrer Abreise nach England einen Monat später, wo Charlie sie seiner Familie vorstellen wollte, war sie unabsichtlich in ein Zauberduell in einer Bar geraten und von einem Spruch getötet worden.</p>
+<p>Charlie hatte diesen Verlust nie überwunden und es auch nicht fertig gebracht, seiner Familie zu erzählen, dass er einmal verlobt gewesen und beinahe Vater geworden war.</p>
+<p> </p>
+<p>aus 10 kleine Dinge über Fred Weasley</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    
+<p></p><div>
+  <p>
+    <br/>
+    <em>
+      <strong>1999</strong>
+    </em>
+  </p>
+  <p>"Und du bist sicher, dass deine Familie mich mögen wird?", fragte Mara Charlie zum zehnten Mal unsicher.</p>
+  <p>Charlie lächelte. Er saß auf ihrem Bett und sie stand vor dem Kleiderschrank. Sie überlegte schon die ganze Woche, was sie alles mitnehmen sollte, wenn sie mit Charlie in den Fuchsbau kommen würde. Sie wollte einen guten Eindruck machen. Sie drehte sich zu ihm um und legte die Arme um seine Schultern. Charlie schlang seine um ihre Taille und küsste ihren flachen Bauch, der von einem dicken Pullover bedeckt wurde.</p>
+  <p>"Ich hab dir schon hundert Mal gesagt, dass meine Familie dich lieben wird. Meine Mum wird begeistert davon sein, dass wir heiraten werden.", sagte er überzeugt.</p>
+  <p>Sie runzelte die Stirn und strich sich ein paar braune Haare aus den Augen. "Obwohl es so kurzfristig ist? Sie kennen mich doch gar nicht." Ihr gefiel diese Heimlichtuerei überhaupt nicht, auf die Charlie bestand. Aber ihm war es lieber so. Es würde eine fantastische Überraschung werden.</p>
+  <p>Nach Freds Tod war er so schnell wie möglich wieder zurück nach Rumänien gegangen. Er hatte seine Arbeit gebraucht, um sich abzulenken. Er gab es nicht gerne zu, aber durch seine Zeit in Rumänien hatte er sich von seiner Familie entfremdet. Der Rest der Weasleys brauchte einander, um mit diesem Verlust fertig zu werden, aber er hatte das Gefühl gehabt, von ihrer Trauer erdrückt zu werden. Er fühlte sich am besten, wenn er mit den Drachen allein sein konnte. Sie waren sein Heilmittel.</p>
+  <p>Und dann war Mara in sein Leben getreten und hatte ihm einen neuen Sinn gegeben. Sie war fantastisch. Sie war lustig, naturverbunden, hatte ein gutes Herz und liebte Drachen so sehr wie er. Sie verstand ihn wie kein zweiter. Er hatte sich anfangs zurückgehalten, weil sie sechs Jahre jünger war als er (und mit fünfundzwanzig erschien das noch wie eine ganze Menge), aber letztendlich war das Verlangen nach ihr zu stark gewesen. Und diese sechs Jahre machten wirklich nichts aus. Sie liebten sich und das war das wichtigste.</p>
+  <p>Er war versucht gewesen, Bill von seiner Beziehung zu erzählen, seinem großen Bruder, seinem besten Freund, aber er hatte es nicht geschafft, in einem Brief wirklich zu beschreiben, wie viel Mara ihm bedeutete. Er wollte es Bill persönlich erzählen. Und dem Rest seiner Familie auch.</p>
+  <p>Aber dann hatte Mara vor ein paar Wochen festgestellt, dass sie schwanger war und das änderte alles. Charlie hatte ihr ohne zu zögern einen Heiratsantrag gemacht. Es ging zwar alles sehr schnell, aber er wusste, dass sie die Richtige war und vielleicht war das Baby ja sein Zeichen dafür gewesen, dass er seinen ganzen Mut zusammen nehmen und den Schritt wagen sollte. Doch das konnte er seiner Familie unmöglich alles in einem Brief mitteilen. Also hatten sie beschlossen, zu Weihnachten zusammen in den Fuchsbau zu kommen und es ihnen persönlich mitzuteilen. Und wie Charlie seine Mutter kannte, würde sie wollen, dass sie in England heirateten, wo die ganze Familie dabei sein konnte. Natürlich noch bevor das Baby auf die Welt kam. Also war er auf die Idee gekommen, seiner Familie vorzuschlagen, dass sie gleich nach Weihnachten dort heiraten sollten. Dann wären alle zusammen und könnten ihr Glück mit ihnen teilen. Außerdem würde es ihnen dabei helfen, nicht ganz so viel an Freds Tod denken zu müssen. Feiertage ohne ihn waren besonders schlimm.</p>
+  <p>"Meine Familie wird dich genauso sehr lieben wie ich.", versicherte Charlie ihr überzeugt. "Sie werden gar nicht anders können. Du wirst sehen." Mara schaute ihn unsicher an.</p>
+  <p>Charlie seufzte. Er lehnte sich nach hinten und zog seine Verlobte mit sich, bis sie nebeneinander auf dem Bett lagen. Mit einer Hand strich er über ihre Haare, seine andere lag auf ihrem Bauch. "Mach dir keine Sorgen."</p>
+  <p>Mara biss sich auf die Lippe. "Ich weiß nicht. Was ist, wenn sie denken, dass ich absichtlich schwanger geworden bin, weil ich wollte, dass du mich heiratest?"</p>
+  <p>Charlie zuckte mit den Schultern. "Na und? Dann lass sie das denken. Wir beide wissen, doch, dass es nicht so war." Außerdem würde seine Familie das nie tun. Sie würden sich freuen, dass er endlich die Frau gefunden hatte, mit der er sein Leben teilen wollte.</p>
+  <p>"Und wenn sie das Baby ablehnen?"</p>
+  <p>Charlie schüttelte entschieden den Kopf. "Das werden sie nicht. Meine Mum liebt Babys. Sie wird sich freuen. Außerdem wird das ihr erstes Enkelkind sein. Außer Bill und Fleur kommen uns zuvor." Vor ein paar Wochen hatte er einen Brief von Bill bekommen, in dem er ihm begeistert berichtet hatte, dass er Vater werden würde. Er hatte allerdings nicht geschrieben, wie weit Fleur schon war, also wäre es durchaus möglich, dass Charlies Baby früher kommen würde. Somit wäre es möglich, dass Charlie zum ersten Mal in seinem Leben seinem großen Bruder zuvor kommen würde. Es war ein besseres Gefühl, als Charlie gedacht hatte und wenn er nicht so glücklich gewesen wäre, dann hätte er sich deshalb vielleicht sogar geschämt. So war es nur ein netter Nebeneffekt.</p>
+  <p>"So oder so werden sie sich freuen. Vertrau mir. Es wird alles gut gehen.", sagte er zuversichtlich und küsste sie. "Wenn das neue Jahrtausend anbricht, sind wir bereits verheiratet." Er küsste sie erneut, bevor er nach untern rutschte, ihren Pullover hochschob und ihren Bauch küsste. "Und das nächste Weihnachtsfest feiern wir dann zu dritt."</p>
+  <p>Mara begann zu strahlen. Sein Herz schmolz dahin. "Das klingt fantastisch."</p>
+  <p>"Nicht wahr?" Er konnte es kaum noch erwarten. Das würde das beste Weihnachten werden, das er je erlebt hatte.</p>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690938">Chapter 7</a>: Percy und Audrey
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2001</strong>
+  </em>
+</p>
+<p>"Gefällt es dir?", fragte Audrey unsicher. Nervös schaute sie ihren Mann an, der seinen Blick durch das weihnachtlich dekorierte Wohnzimmer schweifen ließ. Sie war tagelang durch die Stadt gegangen und hatte nach dem richtigen Schmuck gesucht. Dann hatte sie Stunden gebraucht, um die Sachen so im Wohnzimmer und auf dem Baum aufzuhängen, dass sie zufrieden damit war. Und jetzt wartete sie mit einem mulmigen Gefühl auf das Urteil ihres Mannes.</p>
+<p>Sie hatten am ersten Dezember geheiratet und das würde ihr erstes Weihnachten als Ehepaar sein. Es würde überhaupt ihr erstes gemeinsames Weihnachten sein. Es war ein neues Kapitel in ihrem Leben, deshalb hatte sie auch alles neu gekauft. Es war alles Muggelschmuck, alles Dinge, die sie kannte und die ihr gefielen. Sie hatte keine Ahnung, ob Percy etwas völlig anderes gewohnt war. Sie wusste nicht, wie Zauberer diese Feiertage feierten. Sie wusste nicht, ob sie völlig anderen Schmuck benutzten. Percy hatte ihr freie Hand gelassen und sie hatte sich begeistert an die Arbeit gemacht. Aber in den letzten Stunden war sie immer unsicherer geworden. Was, wenn es ihm nicht gefiel?</p>
+<p>Sie wusste noch so wenig von ihm. Sie hatten sich erst vor ein paar Monaten kennen gelernt. Ihrer Familie kam die Heirat überstürzt vor, aber sie wusste, dass Percy der Richtige für sie war und sie sah nicht ein, warum sie noch warten sollte, wenn sie es wusste. Darauf hatte sie schließlich ihr ganzes Leben gewartet. Was aber nicht bedeutete, dass es einfach war. Percy war ein Zauberer und sie war eine Muggel. Obwohl Percy und sie im gleichen Land geboren waren und die gleiche Sprache gelernt hatten, hätte sie genauso gut einen Chinesen oder Indianer oder Eskimo heiraten können. Percy war in einer Kultur aufgewachsen, die ihr völlig fremd war. Und weil sie nicht zaubern konnte, würde sie nie wirklich ein Teil davon sein, egal, wie sehr sich Percy und seine Familie darum bemühte, dass es anders war.</p>
+<p>Im Grunde war es ihr und Percy zwar völlig egal, aber in Momenten wie diesen wurde ihr der Unterschied zwischen ihnen wieder mehr als nur bewusst.</p>
+<p>Percy nickte anerkennend und schlang die Arme um seine frisch angetraute Ehefrau. "Es ist wunderschön, Audrey", sagte er ehrlich. "Ich hätte es längst nicht so gut hingekriegt wie du." Erleichtert atmete sie durch.</p>
+<p>"Und es macht dir auch wirklich nichts aus, wenn wir hier alleine feiern und nicht mit deiner Familie zusammen?", versicherte sie sich erneut. Sie wusste, wie viel ihm seine Familie bedeutete und dass er seit dem Tod seines Bruders jeden Feiertag mit ihnen zusammen gewesen war. Er hatte ihren Halt gebraucht, wollte aber auch mit seinen Schuldgefühlen fertig werden, weil er in den Jahren davor nicht mit ihnen gefeiert hatte. Sie wollte nicht, dass er ihretwegen auf seine Familie verzichtete. Ihre Familie nahm es mit dem Fest sowieso nicht sehr genau. Ihre Eltern waren beide Ärzte und arbeiteten immer über die Feiertage. Weihnachten hatte in ihrer Familie nie die Bedeutung gehabt, die sie sich gewünscht hatte. Deshalb freute Audrey sich sehr, dass es jetzt anders werden würde.</p>
+<p>"Audrey, ich hab dir doch gesagt, dass es nichts gibt, was ich lieber täte. Es ist unser erstes Weihnachtsfest. Und das möchte ich mit meiner Frau zusammen in Ruhe genießen. Ich verspreche dir, dass es noch viele Feste gibt, die wir mit meiner und mit deiner Familie feiern können. Aber dieses Weihnachten ..."</p>
+<p>" ... gehört nur uns.", vervollständigte sie lächelnd den Satz..</p>
+<p>"Genau", bestätigte Percy lächelnd und küsste sie auf die Nasenspitze. "Also spar dir bitte deine Schuldgefühle. Ich bin genau da, wo ich sein möchte."</p>
+<p>Glücklich schloss sie die Augen und lehnte ihren Kopf an seine Brust. Sein Herz schlug angenehm schnell. Sie lächelte. Sie war der Grund dafür. "Ich auch.", flüsterte sie.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690950">Chapter 8</a>: George und Angelina
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2019</strong>
+  </em>
+</p>
+<p>"George Weasley, ich glaube, du hast den Verstand verloren!" Angelina Weasley betrachtete den völlig überladenen Weihnachtsbaum, die übergroßen Weihnachtsstrümpfe, die am Kamin hingen, die singenden Girlanden, die um die Lampen gewickelt waren und die Mistelzweige, die den kompletten Türrahmen überdeckten und Angelina lautstark aufforderten, ihren wahnsinnig gutaussehenden, überaus charmanten und besten Ehemann der Welt zu küssen.</p>
+<p>George schaute sich zufrieden in dem knallbunten vollgestopften Wohnzimmer um. Er fand es absolut perfekt. "Das merkst du erst jetzt?", neckte er seine Frau grinsend.</p>
+<p>Angelina schüttelte den Kopf. "Du musst deinen gesamten Laden leergeräumt haben." Sie nahm den Weihnachtsbaumschmuck genauer in Augenschein. Ein kleines Engelchen reckte ihr den Stinkefinger entgegen. Der Weihnachtsmann war in Badehose und mit Schwimmflügeln vorhanden und prostete ihr mit einem, wie sie vermutete, verführerischen Augenzwinkern mit einem Cocktail zu. Die Sterne funkelten so stark, dass Angelina das Gefühl hatte, blind zu werden. "Außerdem hast du mir nie gesagt, dass du Farbenblind bist."</p>
+<p>Georges Grinsen war nicht von seinem Gesicht zu kriegen. Er ging zu Angelina und zog sie in seine Arme. "Ach komm schon. Du musst zugeben, dass es hier fantastisch aussieht. So wäre selbst Snape in Weihnachtsstimmung gekommen."</p>
+<p>Angelina lachte. "Irgendwie bezweifle ich das." Sie drückte ihrem Mann einen Kuss auf die Lippen, in der Hoffnung, dass diese nervigen Mistelzweige dann damit aufhören würden, mit schrecklich piepsiger Stimme einen Kuss zu fordern. Sobald ihre Lippen sich trafen, brachen alle Engel, die am Weihnachsbaum hingen, in Jubelrufe aus. Sogar einige Fanfarenklänge waren zu hören. Aber danach herrschte wenigstens Ruhe. Wie sie George kannte, würde die aber nicht lange dauern. Er würde sie bestimmt so verhext haben, dass sie bald wieder von vorne anfingen.</p>
+<p>"Morgen werde ich von dem Wohnzimmer Fotos machen und sie im Laden aushängen. So eine dämliche alte Schachtel hatte heute die Nerven zu behaupten, dass unsere Werbung nicht stimmt.", erklärte George und weigerte sich, Angelina loszulassen, als sie sich aus seiner Umarmung befreien wollte. "Sie hat gemeint, dass man unmöglich alles von dem Angebot im Wohnzimmer aufhängen kann."</p>
+<p>"Ach so, jetzt verstehe ich", sagte Angelina beruhigt. George hatte dieses Jahr ein Supersonderangebot für Weihnachten: Man konnte bei ihm das gesamte Weihnachtssortiment kaufen und bekam es fünfzig Galleonen billiger, als wenn man alles einzeln kaufen würde. "Dann machst du morgen die Fotos und schmeißt dann die Hälfte von dem Zeug raus." Angelina war erleichtert. Sie würde die Feiertage doch nicht in einem Zimmer verbringen müssen, in dem es aussah, als hätte eine Spielzeugmaschine Durchfall bekommen.</p>
+<p>"Bist du wahnsinnig?", rief George empört. "Das bleibt natürlich bis zum ersten Januar so."</p>
+<p>Angelina schluckte. Wenn sie ihn nicht dazu bringen konnte, einen Teil davon zu entfernen, dann müsste sie wohl ihre alte Sonnenbrille herauskramen, wenn sie ihre Sehkraft behalten wollte. "George, bitte, sei doch vernünftig ...", fing sie an. Georges Gesichtsausdruck verhärtete sich sofort und er ließ die Arme sinken. Angelina seufzte. Sie hätte sich denken können, dass sie mit Vernunft nicht weit bei ihm kommen würde. Lange genug verheiratet waren sie schließlich schon.</p>
+<p>"Mum, Dad, wir sind zu Hause!", hörten sie kurz darauf die Stimmen ihrer Kinder Fred und Roxanne durch das Haus schallen, die aus der Muggelgrundschule im Ort zurückgekommen waren. Ihr Herz schlug schneller. Vielleicht würden die beiden ihren Vater dazu bringen können, auf etwas von dem Zeug zu verzichten. Bei Roxanne wurde George sofort schwach.</p>
+<p>Aber so schnell, wie die Hoffnung in ihr aufgekeimt war, so schnell verging sie auch wieder.</p>
+<p>"Wow, dass sieht ja absolut super aus!", rief Roxanne begeistert, sobald sie einen Fuß in das Zimmer gesetzt hatte. Mit leuchtenden Augen sah sie sich um und umarmte ihren Vater glücklich.</p>
+<p>Angelina schaute zu ihrem Erstgeborenen. Er war nicht so begeistert wie seine Schwester, aber es war nicht zu übersehen, dass ihm diese Dekoration auch sehr gut gefiel und er bestimmt nicht auf die Idee kommen würde, dass es zuviel war.</p>
+<p>"Wirklich cool, Dad", sagte er anerkennend und inspizierte dann ausgiebig den Enkel mit dem Stinkefinger.</p>
+<p>Angelina verdrehte die Augen. Sie hatte wirklich keine Chance gegen die drei. Aber das Leuchten in ihren Augen entschädigte sie mehr als genug. Sie ging zu George und küsste ihn. "Du hast Recht", lenkte sie lächelnd ein. "Es ist perfekt."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18690986">Chapter 9</a>: Fred
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>1997</strong>
+  </em>
+</p>
+<p>"Dieses Weihnachten ist ja die reinste Beerdigung", murmelte Fred missmutig und ließ sich neben George auf das Sofa im Fuchsbau fallen. Er schaute den Baum an, den Ginny, George und er vor ein paar Stunden mit wenig Begeisterung geschmückt hatten.</p>
+<p>George zuckte mit den Schultern. "Was erwartest du? Ron, Harry und Hermine sind irgendwo da draußen und riskieren ihre Ärsche. Ohne sie haben wir noch nie gefeiert. Ist doch klar, dass Mum da nicht gerade Freudentänze aufführt."</p>
+<p>"Wenigstens wird Percy dieses Jahr sein hässliches Gesicht hier nicht zeigen.", versuchte Fred das Positive daran zu sehen, das so wenig Familienmitglieder zum Fest kommen würden.</p>
+<p>"Und Bill will auch nicht hier auftauchen", fügte George hinzu. Obwohl der sich ruhig hatte sehen lassen können.</p>
+<p>Fred grinste. "Wenn ich mit einer Veela verheiratet wäre, dann würde ich das Bett auch nie verlassen."</p>
+<p>George lachte. "Stimmt."</p>
+<p>"Trotzdem. Nicht mal Lupin oder Tonks werden auftauchen. Das wird das beschissenste Weihnachten aller Zeiten werden." Fred schwang seinen Zauberstab und brachte so die Weihnachtskugeln dazu, in unterschiedlichen Farben zu leuchten. Aber nicht mal das heiterte den düsteren Raum auf.</p>
+<p>Weihnachten war immer sein Lieblingsfest gewesen. Fast die ganze Familie kam bei diesem Anlass zusammen und es ging immer laut und lustig zu. Es war immer ein Familienmitglied zu finden, über das man sich lustig machen konnte. Früher war es häufig Percy gewesen, aber letztes Jahr hatte Ron sich auch sehr gut geeignet mit seiner Beziehung zu Lavender Brown. Fred würde es zwar nie zugeben, aber Ron fehlte ihm sehr diese Weihnachten. Es waren zwar nie alle Familienmitglieder zu Weihnachten da gewesen, da immer mindestens ein Weasley abwesend gewesen war, doch ohne Ron hatte Fred noch nie gefeiert. Er hätte nie gedacht, dass er seinen kleinen Bruder so vermissen würde. Aber wenigstens war Ginny noch da. Wenn sie auch nicht hier gewesen wäre, dann wäre ihre Mutter wahrscheinlich völlig durchgedreht. Und Weihnachten wäre völlig ins Wasser gefallen.</p>
+<p>"Hey Gin!", rief George, als Ginny ins Zimmer kam. "Willst du 'ne Runde Zauberschnippschnapp spielen?"</p>
+<p>Ginny zuckte mit den Schultern und quetschte sich zwischen ihnen auf das Sofa. Sie machte kein fröhlicheres Gesicht als ihre Mutter.</p>
+<p>George machte sich daran, die Karten zu mischen und zu verteilen. Fred musterte seine kleine Schwester besorgt. Es war erschreckend, wie erwachsen sie geworden war. Nachdem sie in ihrem ersten Schuljahr von Tom Riddle besessen gewesen war, hatte sie ihre kindliche Unschuld verloren. Trotzdem hatte sie eine Fröhlichkeit ausgestrahlt, die einfach ansteckend gewesen war. Aber jetzt ... die Todesser in Hogwarts hatten ihr auch das genommen. Fred hätte diesen Umstand gerne Harry zugeschrieben, der einfach nicht wusste, was er an Ginny hatte und sich von ihr getrennt hatte, aber er wusste, dass dem nicht so war. Spätestens bei Bills Hochzeit hatte er gesehen, wie sehnsüchtig Harry Ginny angestarrt hatte. Er hatte nur getan, was er für vernünftig gehalten hatte und Fred konnte ihm deshalb keinen Vorwurf machen. Wahrscheinlich hätte er das gleiche getan, wenn er an Harrys Stelle gewesen wäre. Trotzdem wäre es schön, seine kleine Schwester wenigstens zu Weihnachten einmal richtig lachen zu sehen.</p>
+<p>George schob Fred ein paar Karten zu, die sofort explodierten, kaum das er sie in die Hand genommen hatte. Überrascht sprang er auf das Sofa, verlor das Gleichgewicht und fiel hinten über. Fluchend rappelte er sich hinter dem Sofa wieder auf.</p>
+<p>"Du Arschloch!", sagte er zu George, der sich ein Grinsen nicht verkneifen konnte. "Du hast mir die superexplodierenden Karten gegeben!"</p>
+<p>George schaute ihn unschuldig an. "Ich wollte nur sehen, ob der Zauber noch funktioniert."</p>
+<p>Fred funkelte ihn an. "Du hast genau gewusst, dass der verdammte Zauber noch funktioniert!" Vorsichtig tastete er seine versengten Augenbrauen ab. "Und jetzt bin ich völlig entstellt! Wie soll ich denn da noch das Muggelmädchen im Dorf beeindrucken können, hmm?"</p>
+<p>George zuckte lachend mit den Schultern. "Du weißt doch ganz genau, dass du bei der scharfen Braut keine Chance gehabt hättest. Ich hab die schmachtenden Blicke gesehen, die sie mir zugeworfen hat."</p>
+<p>Fred schüttelte entschieden den Kopf. "Das war nur, weil sie dich für mich gehalten hat, du Idiot."</p>
+<p>Ginny schlug sich die Hand vor den Mund und fing an zu kichern. Fred und George schauten ihre kleine Schwester erstaunt an. Keiner von ihnen hätte erwartet, dieses Jahr so etwas von ihr zu hören.</p>
+<p>"Was ist denn daran lustig?", fragte Fred verständnislos, wenn auch unendlich froh darüber, dass Ginny doch noch lachen konnte.</p>
+<p>"Dieses Mädchen muss absolut dämlich sein, wenn sie euch zwei verwechseln kann.", sagte sie lachend. "Selbst Mundungus hat völlig besoffen noch erkannt, dass George ein Ohr fehlt."</p>
+<p>Fred und George schauten sich an. Fred vergaß immer wieder, dass seinem Bruder jetzt ein Ohr fehlte. Man sah es ihm zwar deutlich an und George machte auch häufig Witze darüber, aber mittlerweile nahm Fred das große Loch an seinem Kopf gar nicht mehr wahr. Es war so, als würde es gar nicht da sein. Und George schien es im Grunde genauso zu gehen.</p>
+<p>George runzelte die Stirn. "Ich glaube, Ginny hat Recht. Das Mädchen ist wirklich dämlich. Gestern hat sie mir gesagt, dass ihr meine Augen gut gefallen, weil das Blau so Grün ist."</p>
+<p>Die drei Geschwister wechselten einen Blick und brachen dann in schallendes Gelächter aus. Vielleicht war Weihnachten doch noch nicht ganz verloren.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691001">Chapter 10</a>: Ron und Hermine
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2015</strong>
+  </em>
+</p>
+<p>"Ach du meine Güte!" Hermine betrachtete entsetzt den riesengroßen Weihnachtsbaum, den Ron und Hugo gerade mit vereinten Kräften ins Wohnzimmer zu zerren versuchten. "Was habt ihr denn für ein Ungetüm gekauft!"</p>
+<p>Sie schaute zu Rose, die hilflos mit den Schultern zuckte. Hermine hatte ihre Tochter mit ihrem Vater und ihrem Bruder in der Hoffnung zum Weihnachtsbaumkaufen geschickt, dass sie die beiden bremsen würde.</p>
+<p>Hermine wäre selbst gerne mitgekommen, aber sie hatte dringend noch an einem Fall arbeiten müssen und es deshalb nicht geschafft. Als sie jetzt allerdings beobachtete, wie Ron und Hugo sich damit abmühten, den viel zu großen Baum in ihrem bescheiden hohen Wohnzimmer aufzustellen, wünschte sie sich von ganzem Herzen, dass sie doch mitgekommen wäre.</p>
+<p>"Ich hab euch doch gesagt, dass der zu groß ist", sagte Rose kopfschüttelnd und verschränkte die Arme vor der Brust, um auch ja nicht zum Mithelfen aufgefordert zu werden. Sie hatte lange versucht, auf ihren Vater und Hugo einzureden, aber die beiden waren in der Sekunde, in der sie den Baum erblickt hatten, von ihm begeistert gewesen. Alle von Roses Argumenten waren an ihnen abgeprallt.</p>
+<p>"Es tut mir Leid, Mum", sagte Rose und stellte sich neben Hermine. "Ich hab es wirklich versucht. Aber du kennst die zwei ja."</p>
+<p>Hermine legte lachend einen Arm um ihre Tochter und nickte. "Stimmt." Sie zog ihren Zauberstab. "Ron, das hat doch keinen Sinn", rief sie ihrem Mann zu. "Lass mich den Baum einen halben Meter kleiner zaubern."</p>
+<p>Ron schüttelte entschieden den Kopf. "Ich hab ihn genau ausgemessen. Der muss hier reinpassen!", widersprach er entschlossen. "Hugo, zieh ihn mal ein bisschen nach rechts."</p>
+<p>Hugo legte sich mächtig ins Zeug und wäre fast auf dem Teppich ausgerutscht. Aber dadurch, dass er den Teppich unabsichtlich zur Seite geschoben hatte, passte der Baum jetzt tatsächlich in das Zimmer. Die Spitze war allerdings nur drei Millimeter von der Decke entfernt.</p>
+<p>"Na also!", sagte Ron triumphierend und betrachtete zufrieden die stattliche Tanne. "Ich hab doch gewusst, dass das passt."</p>
+<p>Hermine schüttelte ungläubig den Kopf und gab ihrem Mann einen Kuss. "Du hast Recht. Er passt wirklich. Aber nur ganz knapp."</p>
+<p>Ron winkte ab. "Ich hab doch gesagt, dass ich das ausgemessen habe. Aber mein Fräulein Tochter hat mir natürlich nicht geglaubt." Vorwurfsvoll schaute er Rose an.</p>
+<p>"Entschuldige, Daddy", erwiderte sie zerknirscht. Sie stellte sich auf die Zehenspitzen und gab ihm einen Kuss auf die Wange. Ron lächelte sie versöhnlich an. Er konnte ihr einfach nicht böse sein. Rose hatte ihn seit dem Tag ihrer Geburt um den kleinen Finger gewickelt.</p>
+<p>Hugo schüttelte sich die Tannennadeln aus den Haaren und schaute den Baum bewundernd an. "Er ist toll, oder?"</p>
+<p>Hermine nickte. Toll war er wirklich. Wunderschön gewachsen. Ein herrliches Grün. Stabile Zweige, die auch die schwereren Kugeln halten würden. Ihre Männer hatten gut gewählt. Obwohl es ein kleinerer Baum auch getan hätte.</p>
+<p>Sie deutete auf die Kisten mit dem Schmuck, die sie vom Dachboden geholt hatte, nachdem sie ihre Akten durchgearbeitet hatte. "Ihr könnt schon mal anfangen, ihn zu schmücken."</p>
+<p>Begeistert stürzten sich die beiden Kinder auf die Schachteln und förderten den Schmuck zutage, den sie vor ein paar Jahren im Kindergarten selbst gebastelt hatten. Die Sterne und Weihnachtsmänner und Engel waren zwar alle nicht perfekt, aber die beiden hatten sich wirklich Mühe gegeben und hängten sie jedes Jahr wieder stolz an den Baum. Und Ron vergaß nie, jeden Besucher, den sie zu der Zeit hatten, ausführlich darauf hinzuweisen.</p>
+<p>"Du hast uns heute gefehlt", flüsterte Ron ihr zu.</p>
+<p>Hermine schaute ihn gerührt an. "Wirklich?"</p>
+<p>"Ja", erwiderte Ron grinsend. "Ohne dein Gemecker war es nicht das selbe. Obwohl Rosie sich sehr bemüht hat, dich zu vertreten."</p>
+<p>Hermine boxte ihn spielerisch in den Arm. "Idiot." Sie lehnte ihren Kopf an seine Schulter und schaute lächelnd ihren beiden Kindern dabei zu, wie sie den Baum schmückten. Sie liebte ihr Leben.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-11">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691039">Chapter 11</a>: Harry und Ginny
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2012</strong>
+  </em>
+</p>
+<p>"JAMES SIRIUS POTTER!" Ginny hatte die Hände in die Hüften gestemmt und schaute entsetzt auf die Sauerei im Wohnzimmer. Der große Weihnachtsbaum war umgekippt und der ganze Schmuck lag zerbrochen auf dem Boden.</p>
+<p>James steckte vorsichtig den Kopf zur Wohnzimmertür herein. "Was hast du gemacht!", rief Ginny außer sich und deutete fuchtelnd auf die Sauerei.</p>
+<p>"Wieso soll ich Schuld sein?", erwiderte James patzig. "Warum nicht Al oder Lily?"</p>
+<p>Ginny atmete tief durch. Sie war froh, dass ihr Zauberstab nicht in Reichweite war, denn in diesem Moment hätte sie für nichts garantieren können. "Waren sie es denn?", fragte sie mit mühsam beherrschter Stimme.</p>
+<p>James schluckte und schüttelte den Kopf. Ängstlich zog er den Kopf ein. "Aber du kannst das doch alles wieder reparieren, oder?", fragte er zögerlich. "Ein Spruch und alles ist wieder heil."</p>
+<p>"RAUF!", schrie Ginny jetzt völlig außer sich. "Auf dein Zimmer! SOFORT!" James schien zu erkennen, dass mit seiner Mutter im Moment nicht zu spaßen war. Er drehte sich um und sprintete die Treppen rauf.</p>
+<p>Schwer atmend schaute Ginny ihm hinterher. Sie versuchte ihre Wut wieder unter Kontrolle zu bringen. Sie probierte es mit den Atemübungen, die sie im Geburtsvorbereitungskurs gelernt hatte und nach ein paar Minuten war ihr Zorn abgeflaut. Sie schaute auf den Baum und spürte, wie ihr Tränen in die Augen stiegen. Sie sank auf die Knie und nahm ein zerbrochenes Engelchen in die Hand. Es hätte eigentlich eine Trompete in seinen Händchen halten sollen, aber die Arme waren abgebrochen. Ginny ließ ihren Blick suchend über den Boden schweifen, aber sie konnte das Instrument nicht entdecken. Traurig blinzelte sie die Tränen weg.</p>
+<p>"Gin?" Harry betrat das Wohnzimmer auf der Suche nach ihr. Er war gerade aus dem Ministerium gekommen. "Was ist denn hier passiert?" Er überblickte das Chaos in drei Sekunden und brauchte nur zwei weitere, um sich neben ihr hinzuknien. Er schlang die Arme um sie und strich ihr beruhigend über den Rücken, während sie in sein Hemd schluchzte.</p>
+<p>"James hat den Baum umgeworfen", erklärte sie ihm schließlich mit zitternder Stimme.</p>
+<p>Harry hatte sich schon gedacht, dass sein Ältester für diesen Saustall verantwortlich war. "Er hat es bestimmt nicht mit Absicht gemacht." Solche Scherze machte er nicht. Er hatte in seinem Übermut wahrscheinlich nur vergessen, dass der Baum da stand und ihn nicht mehr halten können.</p>
+<p>"Ich weiß", erwiderte Ginny leise. Sie löste sich wieder von ihm und wischte sich die Tränen aus dem Gesicht. "Aber kaputt sind die Sachen trotzdem. Schau mal." Sie hielt das Engelchen ohne Trompete hoch, das sie so sehr liebte.</p>
+<p>"Man kann das alles wieder reparieren", versuchte er sie zu trösten. Sanft strich er ihre roten Haare aus dem Gesicht.</p>
+<p>Ginny schniefte. "Ich weiß, dass man das kann", sagte sie. Neue Tränen flossen ihr über die Wangen. "Aber das ist dann nicht mehr das selbe." Vorsichtig fuhr sie über die abgebrochenen Stellen der Figur.</p>
+<p>Harry wünschte sich, dass er irgendetwas tun könnte, um sie zu trösten. Er wusste, wie sehr sie an dem Schmuck hing. Sie hatte ihn gekauft, als sie beide ihr erstes Weihnachten in ihrer ersten gemeinsamen Wohnung gefeiert hatten. Sie hatte ihn selbst bezahlt von ihrem Gehalt, das sie als Ersatzjägerin bei den Holyhead Harpies verdient hatte. Es war etwas ganz besonderes für sie gewesen. Ein neuer Abschnitt in ihrem Leben. Immer, wenn sie die Figuren zu Weihnachten an den Baum hängte, dann erinnerte sie sich daran, wie es war, endlich erwachsen zu sein und die Dinge zu tun, die ihre Mutter früher getan hatte.</p>
+<p>"Vielleicht sollten wir einfach neuen Schmuck kaufen", schlug er schließlich vor. "Zusammen mit den Kindern."</p>
+<p>Ginny betrachtete den Engel nachdenklich. Sie nickte. "Vielleicht wäre das wirklich das Beste." Eine neue Tradition für einen neuen Abschnitt. "Aber James kommt nicht mit." Strafe musste sein. Außerdem hatte er bestimmt nicht viel für den kitschigen Schmuck übrig, der Ginny und Lily gefallen würde.</p>
+<p>"Wir können ihn zu Mrs Figg bringen", schlug Harry grinsend vor. Nach dem Krieg hatte er den Kontakt mit ihr wieder aufgenommen. Sie hatten sich überraschend gut verstanden und Harry hatte sie öfter zu Familienfeiern im Fuchsbau eingeladen. Als sie ein paar Mal keinen anderen Babysitter hatten finden können, hatten sie die Kinder kurzentschlossen zu Mrs Figg gebracht. Sie hatte sich sehr darüber gefreut. Sie hätte früher gerne selbst einmal Kinder gehabt, aber leider hatte es nie geklappt und sah Harrys Kinder mittlerweile als ihre Enkelkinder an.</p>
+<p>Harry wusste, dass es den Kindern mehr Spaß bei ihr machte als ihm früher, aber an den Fuchsbau kam es natürlich überhaupt nicht heran.</p>
+<p>"Und Nachtisch wird er die ganze Woche auch nicht kriegen.", fügte Ginny entschlossen hinzu. Harry verzog das Gesicht. Das würde seinen Sohn schwer treffen. Besonders zu Weihnachten. Von diesem Entschluss würde seine Frau sich allerdings nicht abbringen lassen.</p>
+<p>"Mummy?" Die vierjährige Lily schaute vorsichtig ins Wohnzimmer. Sie umklammerte ein großes Blatt Papier. "Bist du traurig?", fragte sie besorgt und eilte zu ihrer Mutter. Sie schlang die Arme um Ginny und gab ihr einen Kuss auf die Wange.</p>
+<p>Ginny lächelte ihre Tochter schief an. "Es geht schon wieder, mein Liebling."</p>
+<p>"James hat gesagt, dass du unglücklich bist", erzählte Lily und hielt das Blatt hoch, das sie in der Hand hielt. "Deshalb hab ich dir das gemalt."</p>
+<p>Ginny nahm das Bild in die Hand und ein richtiges Lächeln breitete sich auf ihrem Gesicht aus. Lily hatte einen Weihnachtsbaum gemalt. Unter ihm saßen Harry, James, Albus, Lily und Ginny mit einem großen Grinsen im Gesicht.</p>
+<p>"Es ist wunderschön", sagte Ginny mit zitternder Stimme. Schon wieder standen Tränen in ihren Augen, aber diesmal aus einem anderen Grund.</p>
+<p>Harry strich seiner Tochter dankbar über den Kopf. Lily konnte sie alle aufheitern, egal, wie unglücklich sie waren. Es war ziemlich clever von James gewesen, seine kleine Schwester vorzuschicken, um die Wogen mit seiner Mutter wieder zu glätten. Nachtisch würde er diese Woche allerdings trotzdem nicht bekommen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-12">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691049">Chapter 12</a>: Draco und Astoria
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2014</strong>
+  </em>
+</p>
+<p>"Warum muss ausgerechnet dieser Idiot zu uns kommen?", beschwerte Scorpius sich lautstark bei seiner Mutter. Er zerrte einen großen Karton hinter sich her, um die Modelleisenbahn darin zu verstauen, die er zu Weihnachten bekommen hatte. Er hatte Stunden damit verbracht, sie ihm Wohnzimmer aufzubauen und sich ein kompliziertes Schienennetz auszudenken, das unter den Kaffeetisch führte, um die Couch und sogar unter den Weihnachtsbaum. Draco und Astoria hatten sich in den letzten drei Tagen bemüht, weder auf die Schienen noch auf die Züge zu treten, die Scorpius fast nonstop durch das Wohnzimmer fahren ließ.</p>
+<p>"Du weißt doch schon seit Wochen, dass wir die Zabinis zum Essen eingeladen haben", erwiderte Astoria und beobachtete erstaunt, wie ihr Sohn sich daran machte, die Schienen auseinander zu nehmen. "Was machst du denn da?"</p>
+<p>"Du glaubst doch nicht im Ernst, dass ich Mortimer damit spielen lasse, oder?", fragte Scorpius sie entsetzt. Er hasste Mortimer Zabini. Der Junge war ein Jahr jünger als er und ein totaler Idiot. Immer, wenn er mit ihm spielen musste, dann machte er irgendwas von Scorpius' Sachen kaputt. Aber er entschuldigte sich nie dafür. Und Scorpius saß am Ende mit kaputtem Spielzeug da, das ihm seine Eltern nicht reparieren würden, weil sie der Ansicht waren, dass er selbst darauf aufpassen musste. Scorpius würde den Teufel tun und Mortimer an die Eisenbahn lassen, die er sich schon seit Jahren gewünscht hatte.</p>
+<p>"Scorpius, das ist aber nicht nett", tadelte Astoria ihren Sohn. Allerdings unternahm sie nichts, um ihn daran zu hindern, sein Spielzeug einzupacken. Sie war selbst nicht sehr begeistert von Mortimer, aber sie war mit seiner Mutter Pansy gut befreundet. In Hogwarts hatte Astoria sie verabscheut, aber nachdem ihre Eltern beide im finalen Kampf umgekommen waren, war Pansy erwachsener geworden. Sie hatte aufgehört, so gehässig zu sein und mittlerweile hatte Astoria sie sehr gerne. Aber ihr Sohn war dumm wie Brot und sie konnte Scorpius voll und ganz verstehen.</p>
+<p>"Das ist mir egal", widersprach Scorpius stur. Er kroch unter den Baum, um die Schienen von dort zu holen.</p>
+<p>Astoria zuckte mit den Schultern. Sie machte sich daran, den großen Esstisch für die Gäste zu decken. Draco war es ein Rätsel, warum sie darauf bestand, es mit der Hand zu tun und nicht mit dem Zauberstab. Aber ihr war es so einfach lieber. Mit einem Zauber wurde es doch nicht so, wie sie es sich vorgestellt hatte.</p>
+<p>"Warum lädst du dann nicht einfach noch einen anderen Freund ein?", schlug sie ihrem Sohn schließlich vor. "Ihr könnt doch auch zu dritt spielen."</p>
+<p>Scorpius schüttelte den Kopf. "Das sind alles Muggel. Die kann ich doch nicht hierher einladen." Astoria sah sich um. Ihr Haus war wirklich viel zu magisch.</p>
+<p>Traurig schaute sie auf ihren Sohn. Sie hatte darauf bestanden, Scorpius in eine Muggelgrundschule zu schicken, anstatt einen Hauslehrer zu engagieren, weil sie wollte, dass er mit anderen Kindern in seinem Alter zusammen war. Außerdem fand sie dieses ganze Reinblütergefasel abscheulich und wollte alles dafür tun, dass Scorpius erkannte, dass Muggel genauso normale Menschen waren wie er selbst. Mit dieser Einstellung war sie in der Gunst ihrer Schwiegereltern zwar sehr gefallen, aber das war ihr egal. Und Draco hatte sich glücklicherweise auf ihre Seite gestellt. Draco stellte sich immer auf ihre Seite.</p>
+<p>"Außerdem sind die Jungs alle Idioten", fügte Scorpius hinzu. Sie konnten zwar gut miteinenader Fußball spielen, aber sie hatten keine Ahnung davon, wie es war, Lucius Malfoy als Großvater haben zu müssen und sich ständig dieses dämliche Geschwätz über Reinblüter anhören zu müssen. Vielleicht wäre es anders, wenn er sie zu sich einladen könnte, aber das war ja leider nicht möglich. Und mittlerweile vermuteten sie, dass er sich entweder zu fein dazu war, sie zu sich einzuladen oder aber dass er irgendetwas zu verbergen hatte. Nur einmal wünschte sich Scorpius einen Freund, der ihn verstand und mit dem er über diese Sachen auch reden konnte. Mortimer Zabini war das auf keinen Fall. Und andere Zauberer in seinem Alter kannte er nicht. Wütend trat Scorpius gegen die Wand. Er hasste es, ein Malfoy zu sein. Er liebte seine Eltern und seine Großmutter, aber er hasste es, ein Malfoy zu sein.</p>
+<p>"Hey, was ist denn hier los?" Draco bemerkte überrascht, wie Scorpius sein Spielzeug einpackte. Er hätte gedacht, dass er die nächsten zwei Monate über die Schienen steigen müsste.</p>
+<p>"Scorpius will nicht, dass Mortimer mit dem Zug spielt", informierte Astoria ihn, während sie sich streckte, um die Kerzenständer in die Mitte des riesigen Esstisches zu stellen.</p>
+<p>"Ach so." Diese Probleme überließ er lieber Astoria. Davon verstand sie mehr.</p>
+<p>Draco ließ seinen Blick über den schlanken Körper seiner Frau schweifen und lächelte zufrieden. Er trat von hinten an sie heran und schlang die Arme um sie. "Soll ich dir beim Tischdecken helfen?", flüsterte er ihr ins Ohr und küsste ihren Hals.</p>
+<p>Astoria erschauderte, schüttelte aber den Kopf. "Du weißt so gut wie ich, dass du mir keine Hilfe bist."</p>
+<p>"Na und?" Draco ließ sich nicht beirren und nahm ihr den anderen Kerzenständer aus der Hand. Achtlos stellte er ihn auf den Tisch.</p>
+<p>Astoria drehte sich in seinen Armen um und küsste ihn auf den Mund. "Ich mach dir einen Vorschlag", flüsterte sie und warf einen schnellen Blick zu ihrem Sohn, der gerade dabei war, die Schienen unter dem Sofatisch hervorzuzerren. "Ich decke den Tisch alleine zu Ende und du hilfst mir heute Abend, wenn Scorpius schläft."</p>
+<p>Draco grinste. "In Ordnung." Damit konnte er leben.</p>
+<p>Sie deutete mit dem Kopf auf Scorpius. "Vielleicht könntest du ihm ja dabei helfen, das Zeug einzupacken.", schlug sie vor.</p>
+<p>Draco nickte. Er küsste sie noch einmal, bevor er ihr einen kleinen Klaps auf den Po gab und sich seinem Sohn zuwandte. Er kniete sich neben ihm und begann, einige Schienen voneinander zu lösen. "Du weißt doch, dass es im dritten Stock eine große Abstellkammer gibt", fing er an. Scorpius schaute ihn misstrauisch an und nickte. "Ich hab da in den letzten Tagen etwas Ordnung gemacht. Wenn du willst, kannst du deine Eisenbahn dorthin bringen." Scorpis' Augen begannen zu leuchten. "Du kannst auch den Schlüssel haben", fügte er hinzu. Er wusste, dass Scorpius dieses Spielzeug ungern mit jemandem teilen würde und so konnte er seine Ruhe haben und sie mussten nicht jedes Mal aufpassen, auf den Boden zu treten, wenn sie in sein Zimmer kamen.</p>
+<p>Begeistert sprang Scorpius auf. "Wirklich?", fragte er aufgeregt. Draco nickte. "Danke, Dad!" Scorpius umarmte ihn stürmisch und rannte dann die Treppen hoch, um sich das Zimmer anzusehen.</p>
+<p>Kopfschüttelnd schaute Draco seinem Sohn hinterher. "Ich hätte ihm das erst sagen sollen, wenn wir alles verpackt haben, oder?", fragte er dann seine Frau seufzend, die ihn lachend beobachtete.</p>
+<p>Sie nickte. "Allerdings."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-13">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691057">Chapter 13</a>: Teddy und Victoire
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2018</strong>
+  </em>
+</p>
+<p>"Erschieß mich", murmelte Ted erschöpft. Er ließ sich neben Victoire auf das Bett fallen und schloss die Augen.</p>
+<p>Victoire rieb sich die Augen. Sie war vor fünf Minuten aufgewacht. Und Ted war vor fünf Minuten aus dem Krankenhaus nach Hause gekommen. "So schlimm?", fragte sie mitfühlend. Sie fuhr ihm zärtlich durch die Haare und beobachtete lächelnd, wie seine dunkelbraunen Haare wieder blau wurden.</p>
+<p>"Ich weiß nicht, wie die Leute das anstellen", murmelte Ted. "Irgendwelche fallen vom Dach, andere verbrennen sich beim Kochen und irgendwer hat es geschafft, ein halbes Hühnchen zu verschlucken." Victoire unterdrückte ein Lachen. Seine Geschichten waren doch immer die besten. "Ständig sind irgendwelche Tränke ausgegangen. Wir konnten gar nicht schnell genug brauen."</p>
+<p>Victoire schaute ihn mitleidig an. Ted sah nach seinen Nachtdiensten immer schrecklich müde aus, aber so erschöpft wie heute hatte sie ihn noch nie gesehen. Er hatte dunkle Ringe unter den Augen und es nicht mal mehr geschafft, sich auszuziehen.</p>
+<p>"Mein armer Liebling", sagte sie zärtlich und fuhr über seine Wange. Sie konnte seine Bartstoppeln spüren.</p>
+<p>"'Tschuldige", nuschelte er schon im Halbschlaf. "Wir wollten die Geschenke noch auspacken."</p>
+<p>Sie schüttelte den Kopf, obwohl er es nicht sehen konnte. "Wir packen sie später aus." Es war der fünfundzwanzigste Dezember und eigentlich war es Tradition, die Geschenke gleich in der Früh auszupacken. Sie hatte diese Tradition sehr gerne und sich schon darauf gefreut, sie zum ersten Mal alleine mit ihrem Freund zu begehen, mit dem sie endlich zusammenwohnte, aber so, wie Ted im Moment aussah, wäre er wahrscheinlich schlafend in den Weihnachtsbaum gefallen. Sie küsste ihn auf die Wange. "Ich wecke dich in ein paar Stunden."</p>
+<p>Ted war bereits eingeschlafen. Victoire angelte sich ihren Zauberstab vom Nachttisch und sorgte mit einem Schnippen dafür, dass Ted seine Klamotten ausgezogen wurden und ordentlich zusammengefaltet auf einem Stuhl landeten. Dann zerrte sie die Decke unter seinem Körper hervor und deckte ihn damit zu. Sie schüttelte den Kopf. Sie war immer wieder erstaunt darüber, wie fest er schlafen konnte. Sie küsste Ted noch einmal auf die Wange und stand anschließend auf. Sie zog sich an und ging in die Küche ihrer kleinen Wohnung, um mit dem Weihnachtsessen anzufangen. Sie hatte ein paar Rezepte von ihrer Mutter bekommen, die sie jetzt ausprobieren wollte. Ihre Eltern hatten ihr und Ted vorgeschlagen, dass sie zusammen in ihrem Elternhaus feiern konnten, aber Victoire hatte abgelehnt. Es war das erste Weihnachten von ihr und Ted, seit sie mit Hogwarts fertig war und mit ihm zusammen wohnte. Sie wollte es nur mit Ted verbringen.</p>
+<p>Und jetzt schlief ihr Freund wie ein Stein, weil er kurzfristig noch eine Nachtschicht aufs Auge gedrückt bekommen hatte. So hatte sie sich das eigentlich nicht vorgestellt.</p>
+<p>Seufzend drehte sie das Radio auf, weil sie hoffte, dadurch in Weihnachtsstimmung zu kommen. Es funktionierte tatsächlich. Nach einer Weile summte sie sogar mit, während sie fröhlich die Kartoffeln schälte.</p>
+<p>Erschrocken schrie sie auf, als sie spürte, wie jemand die Arme um sie legte.</p>
+<p>"Entschuldige", flüsterte Ted. "Ich wollte dich nicht erschrecken." Er nahm das Messer und die Kartoffel in die Hand, die Victoire vor Schreck hatte fallen lassen. Er begann sie zu schälen, obwohl er sie kaum sehen konnte. Aber er hatte schon so viele Zutaten für Zaubertränke geschält, dass er es mittlerweile sogar im Schlaf hinkriegen würde.</p>
+<p>"Hast du ausgeschlafen?", wollte sie wissen und lehnte sich an ihn. Kopfschüttelnd schaute sie dabei zu, wie er die Kartoffel perfekt abschälte. Sie warf einen Blick auf die Kartoffeln, die sie geschält hatte. Ihr war das nicht halb so gut gelungen. Sie war einfach keine gute Köchin.</p>
+<p>"So ungefähr", erwiderte Ted. "Ich will mein erstes Weihnachten mit dir hier nicht verschlafen. Morgen ist auch noch ein Tag für sowas."</p>
+<p>Victoire seufzte. Eigentlich sollte sie darauf bestehen, dass er sich wieder hinlegte und richtig ausschlief. Aber sie war selbstsüchtig und wollte die Zeit mit ihm verbringen. "Vielleicht solltest du kochen", sagte sie dann mit Blick auf die Kartoffeln.</p>
+<p>"Und vielleicht", Ted legte das Messer hin und drehte sie zu sich herum, "sollten wir das Kochen einfach sein lassen." Er küsste sie leidenschaftlich. Victoire klammerte sich an ihm fest. Sie fühlte sich plötzlich ganz wackelig auf den Beinen.</p>
+<p>"Aber", protestierte sie schwer atmend, als Ted sich ein paar Minuten später zufrieden grinsend von ihr gelöst hatte. "Das Essen muss doch fertig sein. Heute ist Weihnachten und da haben wir Zuhause immer -"</p>
+<p>Ted schüttelte den Kopf und legte seinen Finger auf ihre Lippen. "Wir sind nicht mehr bei dir Zuhause. Wir können unsere eigenen Traditionen haben. Und wenn wir sagen, scheiß auf das Essen, lass uns eine Tiefkühlpizza auftauen und den Tag im Bett verbringen, dann ist das völlig in Ordnung."</p>
+<p>Victoires Augen fingen zu leuchten an. "Das ist eine fantastische Idee." Sie versanken in einem weiteren Kuss. "Aber davor packen wir noch die Geschenke aus, einverstanden?", fügte sie begeistert hinzu.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-14">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691069">Chapter 14</a>: Dominique und Steven
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2034</strong>
+  </em>
+</p>
+<p>"Das ist gemein!", rief Dominique gegen den Wind ihrem Mann Steven zu. "Du schummelst!"</p>
+<p>"Du kennst mich doch!", erwiderte Steven laut und schwang seinen Zauberstab, um dafür zu sorgen, dass ihr noch mehr Schnee ins Gesicht wirbelte. Diesmal rechnete sie allerdings mit einer Attacke und flog einen Looping, um dem Schnee zu entkommen. Sie hatte ihren Zauberstab jetzt ebenfalls gezogen und sorgte dafür, dass der Wind, der ihm entgegenwehte, um einige Grade kälter wurde.</p>
+<p>"Hey!", rief Steven überrascht und ließ vor Schreck seinen Zauberstab sinken. Der Schnee hörte damit auf, Dominique zu verfolgen und fiel ihm auf den Kopf. "Was soll das denn?"</p>
+<p>"Du schummelst, ich schummele", erwiderte Dominique zufrieden und legte noch einen Zahn zu. "Du musst schon früher aufstehen, wenn du mich kriegen willst!", rief sie ihm über ihre Schulter zu und brauste davon.</p>
+<p>Steven beschleunigte fluchend seinen Besen. Der eiskalte Wind peitschte ihm ins Gesicht. Als sie die Regeln für ihr kleines Wettfliegen festgelegt hatten, hatten sie ausgemacht, dass sie ihre Zauberstäbe nicht mitnehmen, sondern zu Hause lassen würden. Natürlich hatte er nicht vorgehabt, sich daran zu halten, denn er spielte nie fair. Aber Dominique kannte ihn viel zu gut und hatte wahrscheinlich geahnt, dass er mit ein paar Tricks versuchen würde, das Rennen für sich zu entscheiden. Seiner Ansicht nach war die magische Hilfe allerdings sehr fair. Er war schließlich nicht der Quidditchprofi von ihnen beiden.</p>
+<p>Er stieg etwas höher, um dem Wind zu entkommen und versuchte nun, den Besen seiner Frau mit einem Zauber zu bremsen. Allerdings misstraute sie ihm noch immer, denn mittlerweile flog sie so schnell im Zickzack, dass er sie unmöglich erwischen konnte. Ihm wurde sogar etwas schwindelig, je länger er ihr dabei zuschaute.</p>
+<p>Als er sie laut schreien hörte und sah, wie sie einen dreifachen Looping flog, wusste er, dass er verloren hatte.</p>
+<p>"Gib's zu, Davies, du bist ein Versager!", rief sie ihm triumphierend zu. "Ich bin einfach viel besser als du. Mit faulen Tricks und ohne auch." Sie streckte ihm die Zunge raus und flog noch einen Looping. Dann steuerte sie auf ihren verschneiten Garten zu.</p>
+<p>Nach ihrer Hochzeit hatten sie sich ein kleines Häuschen mitten in der Pampa gekauft. Die nächsten Nachbarn waren über einen Kilometer entfernt und auch Wanderer oder Spaziergänger verirrten sich nur äußerst selten in diese Gegend. Aus diesem Grund war es perfekt für sie, denn sie konnten mit ihren Besen ohne Rücksicht auf nichtsahnende Muggel durch die Luft sausen. Genau wie heute Abend.</p>
+<p>Sie landete sanft auf der Erde und brachte ihren Besen mit einem Schwenk ihres Zauberstabs dazu, im Besenschuppen zu verschwinden. Steven landete kurz nach ihr und tat das gleiche mit seinem Besen. Dann zog er sie mit einem Ruck an sich. Weil sie nicht damit gerechnet hatte, geriet sie ins Stolpern. Er nutzte das aus und schubste sie in den Schnee. Dann warf er sich auf sie und begann damit, sie mit Schnee zu überhäufen. Sie wehrte sich mit Händen und Füßen und brachte ihn schließlich dazu, wieder aufzuhören, indem sie ihren Ellbogen in seine Magengrube rammte. Er stöhnte auf und ließ sich neben sie in den Schnee fallen.</p>
+<p>Zufrieden richtete Dominique sich auf und wollte nun ihrerseits damit beginnen, Schnee über ihn zu schaufeln, als sie sein schmerzverzerrtes Gesicht sah. Besorgt beugte sie sich über ihn. "Hab ich dir irgendwie weh getan?", fragte sie hektisch und berührte vorsichtig die Stelle, an der ihn ihr Ellbogen getroffen hatte.</p>
+<p>Sein Stöhnen würde leiser und er schüttelte den Kopf. "Nicht wirklich. Den größten Schaden hat mein Ego abgekriegt.", gab er zu und nahm ihre Hand in seine.</p>
+<p>"Dann ist ja gut", erwiderte Dominique erleichtert. Sie hatte ihm nicht ernsthaft wehtun wollen. Das war eigentlich nur ein harmloses Spiel zwischen ihnen. Sie hätte Weihnachten ungern im Mungos verbringen wollen, wo sie irgendeinem Idioten hätte erzählen müssen, warum sie ihrem Mann wehgetan hatte. Darauf konnte sie wirklich verzichten.</p>
+<p>Sie legte sich neben ihn auf den Boden und ließ ihren Kopf auf seine Schulter sinken. "Wirst du mich eigentlich irgendwann mal gewinnen lassen?", fragte er schließlich nach ein paar Minuten Stille, in denen sie zugesehen hatten, wie die Schneeflocken langsam auf sie herabfielen.</p>
+<p>Dominique schüttelte den Kopf. "Der Sinn ist doch nicht, dass ich dich gewinnen <em>lasse</em>.", widersprach sie. "Entweder du schaffst es alleine oder nicht. Alles andere wäre wirklich unfair. Außerdem glaube ich, dass Ravenclaw mit dir oft genug gegen Gryffindor gewonnen hat.", fügte sie hinzu. Diese Tatsache war der Grund für ihre Feindschaft gewesen. Dass sich darauf irgendwann einmal sowas entwickeln würde, damit hatte keiner von ihnen gerechnet. "Aber wenn du mehrere Stunden am Tag trainierst, dann wirst du es vielleicht irgendwann mal hinkriegen."</p>
+<p>Steven schüttelte lachend den Kopf. "Ich glaube, so ist es auch ganz schön." Er zog sie näher zu sich und küsste sie.</p>
+<p>"Da hast du ausnahmsweise einmal Recht", erwiderte sie zufrieden lächelnd. "Das ist es."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-15">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691081">Chapter 15</a>: Louis und Annie
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2026</strong>
+  </em>
+</p>
+<p>"Also ich weiß nicht." Annie legte den Kopf schief und biss sich auf die Unterlippe. "Ich hab ihn größer in Erinnerung."</p>
+<p>Louis schüttelte lachend den Kopf. "Ich kann mir nicht vorstellen, dass er geschrumpft ist."</p>
+<p>Annie trat ihrem Mann auf den Fuß und schaute ihn böse an. "Mach dich nicht lustig über mich, Louis Weasley!" Sie verschränkte die Arme vor der Brust.</p>
+<p>"Du glaubst doch nicht im Ernst, dass der Eifelturm seit deinem letzten Besuch geschrumpft ist, oder?", fragte Louis jetzt ernsthaft.</p>
+<p>Annie schüttelte den Kopf. "Nein, eigentlich nicht. Aber er sieht trotzdem irgendwie kleiner aus, meinst du nicht?"</p>
+<p>Louis legte einen Arm um ihre Schultern. "Vielleicht liegt das daran, dass du diesmal weiter weg stehst?", schlug er vor.</p>
+<p>Annie nickte lachend. "Ja, daran könnte es wirklich liegen. Das hab ich gar nicht bedacht."</p>
+<p>"Na siehst du", erwiderte Louis zufrieden. "Willst du nach oben?", fragte er dann und deutete auf den Turm.</p>
+<p>"Nein. Beim letzten Mal haben wir uns die Beine in den Bauch gestanden. Und oben hat es schrecklich gezogen. Von hier unter gefällt er mir besser." Sie vergrub die Hände in ihren Manteltaschen und schaute sich um. "Aber wir könnten vielleicht in eins von den kleinen Cafés gehen. Ich hab langsam das Gefühl, dass meine Finger erfrieren."</p>
+<p>"Das wollen wir natürlich nicht", erwiderte Louis sofort. Er nahm eine von Annies Händen in seine und zog sie mit sich zu einem Café in einer Seitenstraße. Als er noch in Paris gewohnt hatte, hatte er eine Weile dort gearbeitet. Es war kein typisches Café für Touristen und das liebte er. Außerdem hatten sie zu Weihnachten immer einen kleinen Baum aufgestellt.</p>
+<p>Annie folgte ihm bereitwillig. Ihr gefiel das Café auf Anhieb. Es herrschte feierliche Stimmung und es wirkte unheimlich gemütlich. Sie ließ sich auf eine gepolsterte Bank sinken und wollte nach der Karte greifen, aber Louis hielt sie auf.</p>
+<p>Einen Moment später trat eine blonde Kellnerin an ihren Tisch und hätte beinahe ihren Schreibblock fallen gelassen, als sie Louis erblickte. "Das glaube ich ja nicht!", rief sie auf Französisch. "Was machst du denn hier, Louis?"</p>
+<p>Louis stand auf und umarmte die blonde Kellnerin überschwänglich. "Ich hab gehofft, dass du heute arbeitest", gestand er und musterte sie prüfend. "Du siehst gut aus."</p>
+<p>Die Kellnerin wurde rot und schlug Louis auf den Arm. "Du alter Charmeur, du", sagte sie geschmeichelt. "Und du siehst fantastisch aus. England scheint dir gut bekommen zu sein."</p>
+<p>Louis schüttelte den Kopf. "Nicht England." Er deutete auf Annie, die die beiden misstrauisch beobachtet hatte. Sie hatte nicht gewusst, dass Louis hier jemanden kannte. Und obwohl sie eigentlich nicht eifersüchtig war und ihrem Mann vertraute, war es doch kein angenehmes Gefühl, dabei zuzusehen, wie sehr er sich freute, eine sehr hübsche junge Frau zu sehen. Besonders, wenn sie kein Wort von dem verstand, was er sagte. "Darf ich vorstellen, das ist meine Frau Annie.", sagte Louis stolz.</p>
+<p>"Und Annie, das ist Lucille", sagte er dann auf Englisch zu Annie. "Ich hab vor ein paar Jahren hier gearbeitet und Lucille hat sich als fantastische Stadtführerin entpuppt."</p>
+<p>"Freut mich, Sie kennen zu lernen", sagte Annie und bemühte sich, ihre negativen Gefühle aus ihrer Stimme herauszuhalten. Leider gelang es ihr nicht ganz.</p>
+<p>"Misch ausch", erwiderte Lucille auf Englisch mit sehr starkem Akzent. Sie lächelte Annie fröhlich an. Dann schaute sie Louis tadelnd an. "Du hast mir gar nicht gesagt, wie hübsch deine Annie ist.", sagte sie vorwurfsvoll.</p>
+<p>Louis lachte. Als er damals gedacht hatte, dass er Annie an einen fremden Mann verloren hatte, hatte er viel Zeit hier verbracht und Lucille deprimiert sein Leid geklagt. Sie hatte sich nach Kräften bemüht, ihn aufzuheitern, war aber kläglich gescheitert. "Ich dachte, das versteht sich von selbst.", erwiderte er schulterzuckend und setzte sich wieder hin. "Kannst du uns zweimal die Spezialmischung bringen?"</p>
+<p>Lucille nickte. Zärtlich nahm sie seine Hand und drückte sie. "Ich freu mich, dass du so glücklich bist, Louis.", sagte sie ehrlich.</p>
+<p>Louis strich mit dem Daumen über ihren Handrücken. "Ich mich auch", gab er zu und ließ ihre Hand wieder los. Lucille entfernte sich rasch vom Tisch, um noch eine andere Bestellung aufzunehmen. Louis wandte sich wieder seiner Frau zu, die ihn jetzt wirklich wütend anschaute. "Was?", fragte er verwirrt.</p>
+<p>"So hab ich mir Weihnachten mit Mann vorgestellt", sagte sie bissig. "Dass ich dabei zusehen darf, wie er mit einer scharfen Frau flirtet. Wirklich super. Ich danke dir sehr dafür, dass du mir diese Reise geschenkt hast."</p>
+<p>Louis hob abwehrend die Hände. "Moment mal!", rief er. "Du denkst, dass wir ..." Er brach in lautes Lachen aus. Annie schaute ihn verwirrt an. Sie konnte sich beim besten Willen nicht vorstellen, was daran komisch sein sollte. "Lucille war meine beste Freundin hier. Wir haben zusammen angefangen, in diesem Café zu arbeiten und den Schuppen zu dem gemacht, was er heute ist. Sie hat mir Paris gezeigt und mich ihren Freunden vorgestellt. Sie hat dafür gesorgt, dass ich mich hier so wohl gefühlt habe. Aber wir hatten wirklich nie was am Laufen. Seit ich sie kenne ist sie mit einem wahnsinnig großen, einschüchternden, sehr netten Franzosen zusammen. Sie haben sich schon im Sandkasten kennen gelernt. Ich war sogar auf ihrer Hochzeit."</p>
+<p>Annie atmete erleichtert aus. "Ihr habt also wirklich nie ...?"</p>
+<p>Louis schüttelte entschieden den Kopf. Lucille war so etwas wie eine Schwester für ihn gewesen. An ihr hatte er nie romantisches Interesse gehabt. An vielen anderen Frauen in Paris schon, aber nicht an ihr. Bei den meisten war er sowieso so betrunken gewesen, dass er sich nicht mal mehr an sie erinnern würde, wenn er vor ihnen stehen würde. Letzten Endes war Annie die einzige Frau in seinem Leben, die wirklich gezählt hatte. Und die es immer tun würde.</p>
+<p>"Absolut nicht", sagte er entschieden. Er nahm ihre Hand und küsste sie. "Du bist so süß, wenn du eifersüchtig bist.", fügte er grinsend hinzu.</p>
+<p>Annie verdrehte lachend die Augen. "Ach, halt die Klappe, Louis."</p>
+<p>Er beugte sich vor und küsste sie zärtlich. "Nein, wirklich. Es gibt keinen anderen Menschen, mit dem ich jetzt lieber hier wäre. Ich liebe dich."</p>
+<p>Annie seufzte glücklich. Sanft fuhr sie mit ihrer Hand über seine Wange. "Ich liebe dich auch."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-16">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691094">Chapter 16</a>: Molly und Justin
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2021</strong>
+  </em>
+</p>
+<p>"Wow, der Baum sieht ja noch mickriger aus, als ich gedacht habe." Molly musterte den kargen Baum, den sie in die einzige freie Ecke ihres kleinen Wohn/Schlafzimmers gequetscht hatten. Molly hatte ihn in Ermangelung von irgendwelchem Schmuck mit bunter Wolle behängt.</p>
+<p>"Aber wir haben einen. Und das ist das wichtigste, Mrs Cooper.", erwiderte Justin aufmunternd.</p>
+<p>Molly warf einen Blick auf ihren schlichten Ehering und lächelte. Sie waren jetzt seit vier Tagen verheiratet und es kam ihr immer noch wie ein Traum vor. Aus diesem Grund war der Baum auch so mickrig ausgefallen. Sie hatten ihr ganzes Geld für die Hochzeit zusammengekratzt und deshalb nichts mehr für Weihnachten übrig. Aber schlimm war das nicht. Sie war viel lieber seine Frau. Weihnachten war da mehr als unwichtig.</p>
+<p>"Mrs Cooper ist das wichtigste", widersprach sie lächelnd und ließ sich neben ihm auf das ausziehbare Sofa fallen. Molly hatte es von Harry und Ginny bekommen, bei denen es nur auf dem Dachboden herumgestanden hatte. Auf dem Sofatisch waren noch ihre Bücher ausgebreitet. Sie machte eine Ausbildung in der Abteilung zur Magischen Strafverfolgung und bemühte sich gerade, so viele Paragraphen wie möglich auswendig zu lernen, bevor sie mit Justin nach den Feiertagen in ihre Flitterwochen fahren würde. Die Flitterwochen hatten sie glücklicherweise von Bill und Fleur geschenkt bekommen, sonst hätten sie nirgendwohin fahren können. So würden sie eine Woche in Paris verbringen.</p>
+<p>"Es stört dich nicht, dass wir so klein feiern werden?", fragte Justin besorgt.</p>
+<p>Molly schüttelte den Kopf. "Nein, tut es nicht. Ich wusste, dass wir wenig Geld haben werden, als ich mit dir zusammen gezogen bin. Aber das ist mir egal. Wir sind zusammen und nur das zählt." Sie kuschelte sich an ihn und schaute auf den armseligen Baum. Mit einem Schwenk ihres Zauberstabs brachte sie die Wolle zum leuchten. "Siehst du? Schon besser." Sie lächelte ihn an und küsste ihn.</p>
+<p>"Auch wenn ich dir nichts schenken kann?", fragte Justin immer noch unsicher.</p>
+<p>Molly hob ihre Hand hoch und wackelte mit dem Ringfinger. "Du hast mir doch schon was geschenkt." Sie strich über seinen Arm. "Wir werden noch sehr viele Weihnachten miteinander feiern. Wir haben noch genug Zeit, einen größeren Baum zu finden und viele Geschenke zu kaufen. Dieses Weihnachten reicht das doch völlig. Oder fehlt dir etwas?" Jetzt schaute sie ihn besorgt an.</p>
+<p>Justin schüttelte den Kopf. "Ich habe dich. Das reicht völlig." Er lächelte sie liebevoll an. "Es ist sogar mehr als genug."</p>
+<p>"Na siehst du", erwiderte Molly zufrieden. "Sieh doch, wie schön die Wolle leuchtet. Was kann man denn noch wollen zu Weihnachten?"</p>
+<p>Justin lachte laut los. "Du bist wirklich toll, Molly", murmelte er und strich mit seinem Daumen über ihre Wange.</p>
+<p>Molly wurde rot. "Ich weiß", sagte sie trotzdem. Sie fing an, "Jingle Bells" zu summen. Völlig falsch, denn sie war absolut unmusikalisch, aber das war ihr egal. Und ihm auch. Er stimmte in ihr Gesumme ein. Genauso falsch.</p>
+<p>Molly schüttelte lachend den Kopf. "Wir sind schon ein tolles Paar. Stell dir mal vor, wie das wird, wenn wir erst Kinder haben und alle zusammen Weihnachtslieder singen werden. Die Nachbarn werden die Flucht ergreifen."</p>
+<p>Justin schaute sie mit leuchtenden Augen an. "Ich kann's kaum erwarten."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-17">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691138">Chapter 17</a>: Lucy
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2030</strong>
+  </em>
+</p>
+<p>"Wow, das ist ein Wetter da draußen", sagte Lucy zitternd zu dem süßen Bartender. Sie schüttelte sich die Schneeflocken aus den Haaren und legte ihren Mantel ab, unter dem sie ein dünnes, violettes und vor allem sündhaft teures Cocktailkleid trug.</p>
+<p>"Schneesturm?", fragte der Bartender interessiert, während er einen Cocktailshaker durch die Luft wirbelte.</p>
+<p>"Blizzard", erwiderte Lucy grinsend und ließ sich elegant auf dem Barhocker nieder. Sie schlug ihre langen Beine übereinander. "Martini", sagte sie auf den fragenden Blick des Mannes. "Geschüttelt, nicht gerührt", fügte sie grinsend hinzu.</p>
+<p>Der Mann schüttelte lachend den Kopf. "Sehr James-Bond-mäßig", sagte er anerkennend. "Ihr Engländer enttäuscht wirklich nicht."</p>
+<p>"Irgendwie muss ich ja eure Vorurteile bestätigen", erwiderte Lucy zwinkernd. Sie beugte sich vor und versuchte, sein Namensschild zu lesen, aber vergeblich. Deshalb setzte sie ihr strahlendstes Lächeln auf. "Ich bin Lucy", sagte sie. "Ich hab das Gefühl, dass wir noch einige Zeit miteinander verbringen werden, deshalb sollten wir wohl per du sein."</p>
+<p>Der Mann musterte sie lächelnd, während er eine Flüssigkeit in ein hohes Glas schüttete. "Ich hab absolut nichts dagegen, Lucy. Ich bin Pierre."</p>
+<p>"Freut mich." Lucy lehnte sich nach hinten und begutachtete den gutaussehenden Schweizer anerkennend.</p>
+<p>Pierre schob das Glas einer Kellnerin zu und lehnte sich dann zu Lucy. "Also, Lucy, bist du alleine hier?" Sie nickte. "Und was macht so eine gutaussehende Frau wie du alleine in den Schweizer Alpen?"</p>
+<p>"Meine Großeltern haben mir die Reise geschenkt, nachdem ich erwähnt habe, dass ich gerne mal wieder richtig Skifahren würde." Sie hatte das nur beiläufig bei einem Familienessen erwähnt. Sie wäre nie auf die Idee gekommen, dass die Eltern ihrer Mutter ihr tatsächlich so etwas teures schenken würden. Aber die beiden hatten ihr gesagt, dass sie so wenig Ahnung von ihrem Leben hatten, dass sie sich freuten, ihr einmal etwas schenken zu können, von dem sie wussten, dass es ihr gefallen würde. Lucy hatte ein schlechtes Gewissen bekommen, weil sie die beiden so selten besuchte und so wenig an ihrem Leben teilhaben ließ. Aber sie war nun mal in erster Linie eine Hexe und ihre Großeltern waren Muggel. Sie fühlte sich in der Zaubererwelt einfach wohler, obwohl Abstecher in die Muggelwelt nicht verkehrt waren. So wie jetzt.</p>
+<p>"Du kannst Skifahren?", fragte Pierre interessiert und legte den Kopf schief. Er machte sich daran, ihren Martini zu mixen und schob ihn ihr einen Moment später zu.</p>
+<p>Lucy nickte. "Was, traust du mir das etwa nicht zu?" Sie strich sich ihre kurzen dunklen Haare hinters Ohr und schaute ihn entrüstet an. "Ich bin eine exzellente Skifahrerin. Wenn du mir nicht glaubst, dann kannst du gerne morgen mitkommen."</p>
+<p>Sie schaute ihn herausfordernd an. Zu ihrer Überraschung nickte er. "Sehr gerne. Ich bin schon lange nicht mehr mit einer exzellenten Skifahrerin unterwegs gewesen." Lucy lachte. Glücklicherweise hatte sie nicht übertrieben. Sie <em>war</em> so gut.</p>
+<p>"Arbeitest du das ganze Jahr hier?", fragte sie interessiert. Sie konnte sich nicht vorstellen, dass sowas das ganze Jahr über Spaß machte, aber sie ließ sich gerne vom Gegenteil überzeugen.</p>
+<p>Pierre schüttelte den Kopf. "Nein, nur über Weihnachten. Wenn hier die ganzen steinreichen Gäste sind. Da kann man fantastische Trinkgelder abstauben.", vertraute er ihr an und griff nach zwei neuen Flaschen, deren Flüssigkeiten er gleichzeitig in den Cocktailshaker kippte.</p>
+<p>"Und was machst du sonst?"</p>
+<p>"Ich studiere in Genf Medizin."</p>
+<p>"Wirklich?" Lucy schaute ihn erstaunt an. Damit hatte sie nicht gerechnet. Sie versuchte, ihn sich in einem dieser weißen Kittel vorzustellen, die die ganzen Fernsehärzte immer trugen. Es funktionierte nicht ganz. Stattdessen kam ihr das Bild vor Augen, wie er wohl ohne diesen Kittel aussehen würde.</p>
+<p>"Was, traust du mir das etwa nicht zu?", wiederholte er mit hochgezogenen Augenbrauen ihre Worte. "Wenn du mir nicht glaubst, kannst du dich gerne mal von mir untersuchen lassen."</p>
+<p>Lucy schaute ihn lachend an. "Ich werde es mir überlegen. Wer weiß, vielleicht breche ich mir morgen beim Skifahren etwas."</p>
+<p>Er schaute sie überrascht an. "Wie, eine so exzellente Skifahrerin wie du?"</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-18">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691153">Chapter 18</a>: Fred und Ellen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2033</strong>
+  </em>
+</p>
+<p>"Es ist wunderschön hier", flüsterte Ellen ehrfurchtsvoll und ließ ihren Blick über die unberührte Landschaft schweifen. In der letzten Nacht hatte es geschneit und Wald und Wiese waren von einer weißen Schicht überdeckt. Es sah aus wie im Märchen. Einfach zauberhaft.</p>
+<p>Fred trat von hinten an sie heran und schlang die Arme um ihre Taille. Ellen lehnte sich an ihn und legte ihre Hände auf seine. "Es war doch eine gute Idee, hierher zu kommen, oder?", versicherte er sich noch einmal.</p>
+<p>Seine Eltern hatten von Bekannten ein Wochenende auf einer abgelegenen Hütte in den Bergen geschenkt bekommen, von der aus man wunderbar zu ein paar fantastischen Skipisten gelangen konnte. Leider veranstalteten die Falmouth Falcons, das Quidditchteam, für das Freds Mutter das Marketing übernommen hatte, gerade an diesem Wochenende eine Spendengala, bei der seine Mutter unmöglich fehlen konnte. Und ohne seine Mutter wollte sein Vater nicht fahren, also hatten sie das Wochenende kurzfristig Fred und Ellen als verfrühtes Weihnachtsgeschenk gegeben.</p>
+<p>"Eine fantastische Idee", erwiderte Ellen und atmete genießerisch die gute Bergluft ein. "Es ist herrlich hier. Am liebsten würde ich gar nicht mehr weg."</p>
+<p>"Mhm ..." Fred begann damit, ihren Hals zu küssen. "Du hast Recht." Er schob seine Hände unter Ellens übergroßes T-Shirt, in dem sie gerne schlief. Sie erschauderte und Fred spürte, wie sie eine Gänsehaut bekam. Zufrieden zog er sie mit sich zum Bett. Sie waren schon seit mehr als sechs Jahren zusammen und es fühlte sich trotzdem immer noch alles fantastisch und neu und aufregend an.</p>
+<p>"Wir wollen doch heute Skifahren", murmelte Ellen und folgte ihm bereitwillig zum Bett. Sie ließ es zu, dass er ihr das T-Shirt über den Kopf zog und machte sich dann flink daran, ihn von seinem zu befreien.</p>
+<p>"Wir können auch später noch Skifahren", erwiderte Fred.</p>
+<p>"Oder gar nicht", fügte Ellen lachend hinzu.</p>
+<p>"Deine Art zu denken gefällt mir", lachte er, bevor er ihren Mund mit seinen Lippen verschloss.</p>
+<p>Etwas später lagen sie aneinandergekuschelt in dem großen Himmelbett. Fred hatte die Augen geschlossen und spielte mit Ellens dunklen Haaren. "Willst du wirklich Skifahren gehen?", fragte er schläfrig .</p>
+<p>Ellen zuckte mit den Schultern. "Eigentlich schon. Als Kind bin ich immer gerne Skifahren gegangen. Aber dann müssten wir ja aufstehen ..." Und dazu fühlte sie sich im Moment überhaupt nicht in der Lage. Dieses Bett war einfach zu bequem.</p>
+<p>Fred schüttelte mit dem Kopf. "Keine gute Idee."</p>
+<p>Ellen richtete sich schließlich seufzend auf. "Wir sind eigentlich ziemlich dämlich. Wir wohnen zusammen. Wir können Sex haben, wann wir wollen. Aber zum Skifahren kommen wir so selten ..." Es war eine wunderschöne Landschaft. Und vor allem wegen der waren sie hierher gekommen. Nicht wegen dem fantastischen Himmelbett, das in der hübschen Hütte stand. Sie hatten sich die Mühe gemacht, sich von diversen Freunden eine Skiausrüstung auszuleihen. Jetzt sollten sie sie auch benutzen, wenn sie sie schon mitgeschleppt hatten.</p>
+<p>"Du hast Recht." Fred setzte sich auf und schwang die Beine über den Bettrand. Er griff nach seiner Boxershorts und zog sie an. Er sah sich gerade nach seinem Unterhemd um, als sein Blick aus dem Fenster fiel. Es fielen so große Schneeflocken, dass er den Wald schon gar nicht mehr sehen konnte. Er drehte sich zu seiner Freundin um, die ebenfalls aus dem Fenster starrte. Ein verschmitztes Grinsen breitete sich auf seinem Gesicht aus. "Sieht wohl so aus, als würden wir jetzt doch nicht zum Skifahren kommen."</p>
+<p>Ellen lachte und schlang die Arme um seinen Hals. "Da kann man dann wohl nichts machen." Sie würden auch ein anderes Mal Skifahren können.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-19">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691172">Chapter 19</a>: Roxanne und Oliver
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2047</strong>
+  </em>
+</p>
+<p>"Schau mal, Maggie", sagte Roxanne schwärmerisch zu ihrer kleinen Tochter. "Das ist ein Kreisel. Den hab ich selbst erfunden. Von alleine wird der nie aufhören, sich zu drehen. Und wenn man auf den Knopf da drückt, dann beginnt ein kleines Feuerwerk." Roxanne beugte sich vor und drückte auf den roten Knopf auf dem Kreisel. Sie schaute in Maggies Gesicht, das begeistert aufleuchtete, als sie das bunte Minifeuerwerk vor ihr explodierte.</p>
+<p>"Hat das deine Mummy nicht fantastisch gemacht?", fragte Oliver, Roxannes Mann, grinsend. Er ließ sich neben seiner Frau und Tochter unter dem Weihnachtsbaum im Schneidersitz nieder. "Er ist wirklich toll, Roxy."</p>
+<p>"Danke", erwiderte Roxanne zufrieden. Das Feuerwerk in dem Kreisel unterzubringen war eine kleine Herausforderung gewesen, aber zusammen mit Hugo und Lucy hatte sie es schließlich geschafft. Und die Kundschaft war begeistert. Um genau zu sein war der Kreisel der größte Renner unter ihren neuen Angeboten. Hugo, Lucy und sie würden es zwar nie zugeben, aber es gab jedes Weihnachten einen kleinen Wettstreit zwischen ihnen. Jeder wollte, dass seine Erfindungen die beliebtesten waren. In den letzten Jahren hatte Hugo immer die besten Ideen gehabt, was, wie Roxanne vermutete, an seiner Vaterschaft lag. Seine Kinder hatten Hugo beflügelt und die Ideen waren nur so aus ihm herausgesprudelt. Aber dieses Jahr hatte sie die Nase vorn und das war nur Maggies Verdienst.</p>
+<p>Als sie vor zwei Jahren erfahren hatte, dass sie unfruchtbar war, war sie in ein tiefes Loch gefallen. Ihre Kreativität war wie weggeblasen gewesen und sie hatte nichts zustande gebracht. Ihr war hundeelend zumute gewesen. Aber seit sie sich für eine Adoption entschieden hatten und Roxanne Maggie kennen gelernt hatte, war es schlagartig wieder aufwärts gegangen. Sie fühlte sich so glücklich wie nie zuvor und plötzlich war sie diejenige mit den vielen Ideen gewesen.</p>
+<p>Und jetzt saß sie zusammen mit ihrem Mann und ihrer Tochter unter dem Weihnachtsbaum. Sie hätte nicht gedacht, dass dieser Traum noch wahr werden würde. Sie hatte sich schon damit abgefunden, irgendwann völlig alleine unter dem Baum sitzen zu müssen, weil Oliver sich jemanden gesucht hatte, der ihm die Kinder schenken konnte, die er haben wollte. Aber er hatte ihr klar gemacht, dass er sie nicht verlassen würde und dass sie alles zusammen schaffen konnten und er hatte Recht behalten. Dieses wunderbare Wesen in ihrem Schoß war der Beweis dafür.</p>
+<p>"Du hast den Baum sehr hübsch geschmückt", sagte Roxanne schließlich zu ihrem Mann, nachdem das Feuerwerk des Kreisels erloschen war. "Er sieht wunderschön aus." Sie hatte zwar einen guten Geschmack und auch einen Blick für Farben, aber beim Weihnachtsbaum war sie bisher immer gescheitert. Vielleicht lag das auch daran, dass sie als Kind immer mit ihrem Vater zusammen den Baum geschmückt hatte, und da hatten sie immer alles auf den Baum geschmissen, was sie hatten finden können. Oliver hatte sich als Naturtalent im Weihnachtsbaumschmücken erwiesen und übernahm diese Aufgabe mit Freuden schon seit Jahren.</p>
+<p>"Er ist aber längst nicht so schön wir ihr zwei", erwiderte Oliver großspurig.</p>
+<p>Roxanne lachte. "Das versteht sich ja wohl von selbst, mein Schatz." Sie lehnte sich zu ihm und küsste ihn.</p>
+<p>"Bist du glücklich?", fragte er dann ernsthaft. Die letzten Weihnachtsfeste hatte todunglücklich verbracht. Sie hatte sich geweigert, an den großen Familienfeierlichkeiten teilzunehmen und Oliver war es kaum gelungen, einmal ein ehrliches Lächeln auf ihr Gesicht zu zaubern. Seit Maggie bei ihnen lebte, war sie zwar viel erschöpfter und müder als früher, aber ihr Lächeln war etwas, das er jeden Tag auf ihrem Gesicht sah. Das war das allerschönste Geschenk für ihn dieses Weihnachten. Mit Ausnahme von Maggie natürlich. Maggie war unbezahlbar.</p>
+<p>Sie lehnte ihren Kopf an seine Schulter und drückte Maggie an sich, die immer noch verzückt auf den Kreisel schaute. "Um ehrlich zu sein, bin ich noch nie so glücklich gewesen."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-20">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691189">Chapter 20</a>: Rose und Scorpius
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    
+<p></p><div class="xcontrast">
+  <p></p>
+  <div>
+    <p></p>
+    <div>
+      <p>
+        <em>
+          <strong>2036</strong>
+        </em>
+      </p>
+      <p>"Aiden, lass die Kugeln in Ruhe, bevor du noch eine kaputt machst!", ermahnte Rose ihren sechsjährigen Sohn, während sie selbst versuchte, die Lichterkette zu entwirren.</p>
+      <p>Aiden zog es allerdings vor, nicht auf seine Mutter zu hören. Er warf weiterhin die rote und die blaue Christbaumkugel in die Luft, um sie wieder aufzufangen. Bei seinem fünften Versuch hatte er allerdings kein Glück mehr. Die Kugel verfehlte seine Hand und schlug auf dem Boden auf. Sofort zersprang sie in ihre Einzelteile. "Ups.", murmelte er.</p>
+      <p>Rose schaute von ihrer Lichterkette auf und verzog das Gesicht. "Was hab ich dir gesagt, Aiden!" Sie schaute ihren Sohn strafend an.</p>
+      <p>"Tut mir Leid, Mum", murmelte Aiden zerknirscht.</p>
+      <p>Rose seufzte. "Räum die Scherben weg. Und dann hol deine Schwester. Sag ihr, dass wir jetzt den Baum schmücken können."</p>
+      <p>Aiden nickte und rannte erleichtert in die Besenkammer, um etwas zu holen, mit dem er die Scherben aufräumen konnte. Er war froh, dass seine Mutter ihn nicht bestraft hatte. Aber wahrscheinlich war es besser, wenn er den Rest des Tages brav blieb, damit sie sich nicht doch noch etwas einfallen ließ.</p>
+      <p>Rose ahnte, was in seinem Kopf vorging, weshalb sie ihn auch nicht bestraft hatte. Manchmal war die Angst vor der Strafe mehr Strafe, als die Strafe selbst. Außerdem hatte sie schon mit sowas gerechnet. Aiden wurde immer besonders unruhig, wenn Weihnachten vor der Tür stand, weil er sich so auf die Familienfeiern und die Geschenke freute.</p>
+      <p>Er machte sich daran, die Scherben aufzufegen und in den Müll zu schmeißen. Dann rannte er die Treppe hoch, um seine Schwester zu holen, die in ihrem Zimmer war und bestimmt irgendein Buch las. Diana tat das für ihr Leben gern. Deshalb war es auch nicht weiter verwunderlich, dass auf ihrem Wunschzettel kaum etwas anderes als Bücher standen.</p>
+      <p>Rose stand mit der Lichterkette in der Hand auf und hängte sie vorsichtig auf den Baum. Sie achtete sorgfältig darauf, dass die Lichter gleichmäßig verteilt waren.</p>
+      <p>"Urgh!" Stöhnend kam Scorpius die Treppe herunter. Er trug eine große Kiste, die er mit einem lauten Seufzer auf das Sofa fallen ließ. "Ich hab diesen blöden Stern endlich gefunden.", erklärte er ihr. "Er war in der hintersten Ecke hinter der scheußlichen Stehlampe, die uns mein Großvater zur Hochzeit geschenkt hat. Keine Ahnung, wie er dahin gekommen ist." Kopfschüttelnd schaute er zu seiner Frau, die gerade ihren Zauberstab gezogen hatte, um die Lichterkette zum Leuchten zu bringen.</p>
+      <p>"Ich kann mir schon denken, wie er dahin gekommen ist", sagte sie und begutachtete prüfend ihr Werk.</p>
+      <p>"Ach ja?", erwiderte Scorpius überrascht. Einen Moment später kam Aiden die Treppe wieder heruntergepoltert. Diana hatte er im Schlepptau. Rose deutete mit ihrem Kopf auf Aiden. "Ach so", murmelte Scorpius nickend. "Ja, dann ist alles klar."</p>
+      <p>Diana schaute sich den Baum mit schief gelegtem Kopf an und ging dann zu ihrer Mutter, um ihr dabei zu helfen, den richtigen Schmuck aus der Kiste zu holen. Scorpius schaute seinen beiden Frauen lächelnd dabei zu. Er fand es faszinierend, mit wie viel Ernsthaftigkeit die beiden an diese Aufgabe herangingen. Sie beratschlagten immer ausführlich, welcher Schmuck wohin kommen sollte, ob er da auch richtig hing und gut zur Geltung kam. Wenn die beiden das Aiden und ihm überlassen hätten, dann hätten sie sich längst nicht so eine Mühe gemacht. Sie hätten einfach irgendwas an den Baum gehängt und sich dann darüber gefreut, wie schnell sie fertig geworden waren.</p>
+      <p>Er zog den Stern aus der Kiste, wegen dem er den halben Dachboden auf den Kopf gestellt hatte. Er war für die Baumspitze gedacht. Er tippte ihn mit seinem Zauberstab an, um ihn zu putzen. Einen Moment später sah er so gut wie neu aus.</p>
+      <p>Scorpius schaute zu seiner Frau und seiner Tochter, die gerade darüber diskutierten, ob der kleine Quidditchspieler wirklich richtig hing. Aus den Augenwinkeln konnte er sehen, wie Aiden die Augen verdrehte und sich gelangweilt ein Quidditchmagazin geschnappt hatte, in dem er jetzt blätterte.</p>
+      <p>"Rose?" Er hielt den frisch geputzten Stern hoch und deutete auf den Baum. "Soll ich den Stern an die Spitze stecken?"</p>
+      <p>Rose und Diana legten den Kopf schief und ließen ihren Blick von dem Baum zu dem Stern schweifen.</p>
+      <p>Rose schaute ihn entschuldigend an. "Ich glaube, dieses Jahr passt er nicht dazu. Vielleicht solltest du ihn wieder zurück auf den Dachboden bringen."</p>
+      <p>Scorpius schaute seine Frau fassungslos an. Wütend, weil er gerade eine Stunde umsonst auf diesem schrecklichen Dachboden herumgekrochen war, warf er den Stern zurück in die Kiste. "Ihr verarscht mich doch!"</p>
+      <p>Aidens Augen leuchteten auf. "Mum!", schrie er so laut, als ob er nur von tauben Menschen umgeben wäre. Anklagend zeigte er auf seinen Vater. "Dad hat ein böses Wort gesagt!"</p>
+      <p>Scorpius schluckte. Er schaute zu Rose, die die Arme verschränkt hatte und ihn mit hochgezogenen Augenbrauen vorwurfsvoll anschaute.</p>
+      <p>Scorpius stöhnte auf. Das waren wirklich beschissene Weihnachten.</p>
+    </div>
+  </div>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-21">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691195">Chapter 21</a>: Hugo und Clara
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2045</strong>
+  </em>
+</p>
+<p>"Simon, komm zu Daddy!", rief Hugo lockend und breitete seine Arme aus. Er beobachtete seinen einjährigen Sohn aufmerksam, der langsam auf ihn zuschwankte. An seinem Geburtstag hatte er angefangen zu laufen, auch wenn er schon nach drei Schritten wieder auf seinen Hintern gefallen war. Hugo war trotzdem über die Maßen stolz auf sein Kind und ermunterte es seitdem andauernd, wieder zu laufen.</p>
+<p>"Hugo, jetzt lass ihn doch mal für eine Weile in Ruhe spielen!", tadelte seine Frau Clara ihn kopfschüttelnd. Sie trug eine Schachtel mit Girlanden, die sie vom Dachboden geholt hatte.</p>
+<p>"Ach komm schon, ihm macht das Spaß", widersprach Hugo überzeugt und fing Simon auf, bevor der erneut auf den Boden fallen konnte. Er spürte, wie sein Sohn sich in dem Pullover festkrallte, den seine Großmutter ihm geschenkt hatte. "Und Übung macht den Meister", fügte er hinzu.</p>
+<p>Clara schüttelte den Kopf. "Du willst doch nur, dass er endlich auf dem Spielzeugbesen reiten kann, den du Angela damals gekauft hast. Nur weil sie sich geweigert hat."</p>
+<p>"Also entschuldige mal!", entrüstete Hugo sich und ließ sich mit Simon an ihrem großen Esstisch nieder, wo Clara jetzt die Girlanden aus dem Karton zog und nach Farben sortierte. Natürlich hatte sie Recht. Er hatte seiner Tochter zu ihrem zweiten Geburtstag einen Spielzeugbesen gekauft. Er hatte als Kind selber einen gehabt und konnte sich noch daran erinnern, wie gerne er darauf geflogen war. Aber zu seiner Enttäuschung war Angela in Tränen ausgebrochen und hatte sich geweigert, den Besen überhaupt auszuprobieren. Seine einzige Hoffnung war jetzt Simon. Aber Clara weigerte sich, ihren Sohn durch die Luft fliegen zu lassen, wenn er noch nicht einmal fest auf dem Boden stehen konnte. Also bemühte Hugo sich, es ihm so schnell wie möglich beizubringen.</p>
+<p>"Hugo, wenn sie mein miserables Quidditchtalent geerbt haben, dann wirst du dich wohl damit abfinden müssen", rieb Clara auch noch Salz in die Wunde. "Dein Vater hat das doch auch bei Rose geschafft." Aber auch nur, weil er selbst sich als recht passabler Quidditchspieler erwiesen hatte, obwohl er längst nicht so gut war wie sein bester Freund Tommy, der jetzt für die portugiesische Nationalmannschaft flog.</p>
+<p>"Ich weiß", gab er seufzend zu und nahm Simon eine Girlande aus der Hand, die der sich gerade geangelt hatte und in den Mund stecken wollte. Simon gab einen Protestschrei von sich, aber Hugo schob das Zeug erbarmungslos aus seiner Reichweite. Schließlich begnügte sein Sohn sich mit seinem eigenen Daumen. "Wo hast du Angela gelassen?"</p>
+<p>Ihre vierjährige Tochter war mit Clara auf dem Dachboden verschwunden, um die Girlanden zu suchen, aber sie war mit ihrer Mutter nicht wieder heruntergekommen.</p>
+<p>"Sie hat oben eine Spinne entdeckt und wollte sie noch eine Weile beobachten", erklärte Clara leichthin und blies den Staub von der Dekoration. Das war allerdings so viel, dass sie davon anfangen musste zu husten.</p>
+<p>Hugo schüttelte den Kopf. Er hasste Spinnen. Seinem Dad ging es nicht anders. Er hätte nie gedacht, dass seine Tochter sie einmal so für sie begeistern würde. Sie konnte stundenlang Hagrids Geschichten über Aragog zuhören. Er hatte als Kind immer Albträume davon bekommen.</p>
+<p>"Daddy?" Hugo schaute zur Wohnzimmertür. Angela, von Kopf bis Fuß mit Staub bedeckt, hatte das Lächeln aufgesetzt, mit dem sie von Hugo bisher immer bekommen hatte, was sie wollte. "Daddy, kann ich eine Tarantel zu Weihnachten bekommen?", fragte sie flehentlich. Sie schaute ihn mit großen, bittenden Augen an.</p>
+<p>Hugo schluckte. Schon allein bei dem Gedanken an so ein Vieh bekam er eine Gänsehaut. Entschieden schüttelte er den Kopf. Nie im Leben würde er sich mehr in diesem Haus wohlfühlen, wenn er wusste, dass so ein Tier im Zimmer seiner Tochter war. Außerdem würde er eine Todesangst um sie haben.</p>
+<p>"Nein, Angela. Absolut nicht. Du bekommst keine Tarantel.", sagte er entschlossen. "Und auch keine andere Spinne oder irgendein Insekt mit mehr als zwei Beinen.", fügte er hinzu, damit er sich ganz deutlich ausgedrückt hatte und sie nicht noch auf andere Ideen kam.</p>
+<p>Angela schaute ihn enttäuscht an. "Aber Daddy, alle meine Freundinnen haben -", fing sie an, doch Hugo unterbrach sie.</p>
+<p>"Das kannst du mir nicht erzählen, Liebling. Ich weigere mich zu glauben, dass auch nur eine deiner Freundinnen so ein Tier hat." Es war doch nicht normal für kleine Mädchen, sich so etwas zu wünschen. Wo waren denn die ganzen verdammten Puppen geblieben? Er schaute zu Clara, die zustimmend nickte und einen genauso abweisenden Gesichtsausdruck aufgesetzt hatte wie er.</p>
+<p>"Und wenn ich ganz lieb bitte?" Angelas Augen wurden noch größer und ihre Stimme noch flehentlicher. Hugo schluckte. Er hasste es, ihr etwas abzuschlagen, aber das kam bei aller Liebe nicht in Frage.</p>
+<p>"Pass auf, Schatz", schlug Clara vor und zog Angela auf ihren Schoß. Hugo atmete tief ein. Wenn Clara so anfing, dann war sie auf einen Kompromiss aus. Ihm fiel allerdings kein Kompromiss bezüglich einer Tarantel an, mit dem er leben konnte. "Wenn du einmal groß bist und alleine wohnst, dann darfst du so viele Taranteln haben, wie du willst." Angela seufzte. Sie hätte jetzt gerne eine gehabt! "Aber wenn du unbedingt Spinnen sehen willst, dann gehen wir nach Weihnachten in den Zoo und schauen sie uns alle zusammen an. Was hälst du davon?"</p>
+<p>Hugo hielt herzlich wenig davon, aber seiner Tochter schien der Vorschlag zu gefallen. Zumindest war ihr klar, dass sie kein besseres Angebot bekommen würde. "Also gut", lenkte sie ein. "Aber wenn Simon sich eine Tarantel wünscht, dann darf er auch keine bekommen!", fügte sie hinzu und verschränkte die Arme vor der Brust.</p>
+<p>Hugo nickte. "Das kann ich dir ganz fest versprechen, mein Schatz. So lange ich lebe, wird in dieses Haus keine Tarantel kommen."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-22">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691217">Chapter 22</a>: James und Julia
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2039</strong>
+  </em>
+</p>
+<p>"Ich fass es nicht, dass du mich dazu überredet hast", sagte James missmutig und klammerte sich am Arm seiner Frau Julia fest. "Ich hab mir bestimmt alle Knochen gebrochen."</p>
+<p>Julia lachte und versetzte ihrem Mann einen Schubs. "Jetzt hab dich doch nicht so, du Weichei!", rief sie. "Du hast dir beim Quidditch schon weitaus schlimmere Verletzungen zugezogen." Sie musterte ihn von Kopf bis Fuß. "Ich wette, dir tut nicht mal irgendwas weh."</p>
+<p>James schaute sie entsetzt an. "Ich kenne dich überhaupt nicht. Da fliege ich vor deinen Augen auf die Nase, schreie wie am Spieß, bringe sogar diesen kleinen Jungen da drüben zum Weinen und du bezweifelst meine Aufrichtigkeit?" Er wollte sich auf dem Absatz umdrehen, verlor aber das Gleichgewicht und ruderte wild mit den Armen, um einen erneuten Fall zu verhindern.</p>
+<p>Julia eilte sofort zu ihm und ergriff seinen Arm, aber anstatt ihm zu helfen, zog er sie unabsichtlich mit sich auf die Eisfläche.</p>
+<p>"Aua!", rief Julia mit schmerzverzogenem Gesicht und rieb sich ihren Bauch. James' Ellbogen hatte sie dort gerammt.</p>
+<p>Er kniete sich sofort hin und musterte seine Frau besorgt. Glücklicherweise konnte er nirgendwo Blut sehen. "Ist alles in Ordnung mit dir? Es tut mir Leid, ich wollte dir nicht wehtun."</p>
+<p>Julia lächelte ihn beruhigend an. Sie hob ihre Hand, die in einem roten Handschuh steckte, und strich ihm über die Wange. "Mir geht's gut, keine Sorge." Er schaute sie so erleichtert an, dass sie nicht anders konnte, als ihn zu sich herunter zu ziehen und stürmisch zu küssen. Merlin, wie sie diesen Mann liebte!</p>
+<p>James löste sich schließlich schwer atmend von ihr. "Sollten wir das Schlittschuhlaufen nicht einfach vergessen und ins Hotel zurückgehen?", schlug er vor.</p>
+<p>Sie biss sich auf die Lippen und legte den Kopf schief. "Ich weiß nicht. Du wolltest doch unbedingt vor dem Rockefeller Center Schlittschuhlaufen. Außerdem hast du vor zwei Minuten noch behauptet, dass du dir alle Knochen im Leib gebrochen hast." Sie schaute ihn mit hochgezogenen Augenbrauen an. Ihr machte Schlittschuhlaufen großen Spaß, nur James konnte so überhaupt keinen Gefallen daran finden, was besonders daran lag, dass er absolut unfähig war.</p>
+<p>"Ich glaube, ich hab mich lange genug gequält. Und was meine Verletzungen angeht: Dem Körperteil, auf das es ankommt, geht es absolut fantastisch. Du kannst das im Hotel gerne überprüfen." Er zwinkerte ihr zu und versuchte mehrfach, wieder aufzustehen. Allerdings klappte das nicht so, wie er wollte, denn er rutschte dauernd aus und landete auf seinem Hintern. Schließlich gab er es auf und kroch auf den Knien zum Ausgang. Stöhnend zog er sich an der Bande hoch und atmete erleichtert aus, als er mit wackeligen Beinen wieder auf festem Boden stand. Er hätte nie gedacht, dass Schlittschuhlaufen so eine Quälerei war.</p>
+<p>Er drehte sich um, um zu sehen, ob Julia ihm auf den Fersen war, aber sie stand noch Mitten auf der Eisfläche. Sie wischte sich den Schnee von ihrer roten Mütze, strich sich ihre blonden Haare aus dem Gesicht und fing dann an, elegant über das Eis zu laufen. James beobachtete sie fasziniert. Vorhin hatte er sich so darauf konzentriert, nicht hinzufallen, dass er überhaupt nicht auf sie geachtet hatte. Aber jetzt ... sie war fantastisch. Sie war die Beste auf der ganzen Eisfläche. Ihre Bewegungen waren anmutig und sie schaffte sogar eine kleine Pirouette. Und sie hatte behauptet, dass sie nur ein paar Mal als kleines Mädchen Eislaufen war! Das war die Untertreibung des Jahrhunderts gewesen!</p>
+<p>Zehn Minuten später bremste sie vor James ab und schaute ihn glücklich an. Ihre Wangen waren rot und ihre Augen leuchteten. "Entschuldige, dass du so lange warten musstest. Ich wollte nur eine kleine Runde drehen und dann ..." Sie schaute ihn kleinlaut an.</p>
+<p>James schüttelte den Kopf. Er beugte sich über die Bande und küsste sie. "Du bist wunderschön", flüsterte er ihr zu. "Ich könnte dir stundenlang dabei zusehen. Wenn du noch weiterlaufen willst ..."</p>
+<p>Sie unterbrach ihn mit einem Kuss. Dann verließ sie die Eisfläche und warf sich in seine Arme. "Ich will jetzt nur noch dich", widersprach sie.</p>
+<p>James grinste. Er würde bestimmt nicht widersprechen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-23">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691229">Chapter 23</a>: Albus und Tia
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2039</strong>
+  </em>
+</p>
+<p>"Amanda, nein, spuck das sofort wieder aus!", rief Tia entsetzt, als sie entdeckte, dass ihre Tochter auf einem der Weihnachtssterne herumkaute, die sie eigentlich an den Baum hatte hängen wollen. Umständlich beugte sie sich herunter, um ihr den Stern wegzunehmen.</p>
+<p>"Tia, was machst du denn da!" Al schaute seine Frau strafend an. "Du sollst dich doch nicht bücken!"</p>
+<p>Tia verdrehte die Augen. Sie nahm den Stern unter heftigen Protesten von Amanda an sich und legte ihn auf den Fernseher. Da kam die anderthalbjährige Amanda nicht heran. Dann schaute sie zu ihrem Mann, der sie vorwurfsvoll anblickte. Sie zuckte mit den Schultern. "Was? Der Weihnachtsbaum schmückt sich nicht von alleine. Und ohne Bücken funktioniert das nicht."</p>
+<p>Es war bereits ihre dritte Schwangerschaft und Al führte sich immer noch so auf, als wäre sie aus Porzellan. Nur weil die Heiler ihr geraten hatten, es etwas ruhiger angehen zu lassen, da ihr Blutdruck zu hoch war, hätte Al sie am liebsten im Schlafzimmer weggesperrt, damit sie auch ja nichts machte. Leider hatten ihm ihre beiden kleinen Töchter, Haley und Amanda, einen Strich durch die Rechnung gemacht. Sie hatten unbedingt mit Tia zusammen den Baum schmücken wollen. Okay, Haley hatte ihn mit ihr schmücken wollen. Amanda gab sich damit zufrieden, auf dem Boden zu sitzen und ihnen dabei zuzuschauen.</p>
+<p>"Wie wäre es mit Zauberei?", schlug Al ihr vor.</p>
+<p>"Nein, Daddy!", widersprach Haley ihrem Vater energisch. "Das ist doch nicht das gleiche! Den Weihnachtsbaum schmückt man mit der Hand."</p>
+<p>Al schüttelte lachend den Kopf und zog etwas Lametta aus den Haaren seiner vierjährigen Tochter. "Du hast dich wohl lieber selbst geschmückt." Haley zuckte mit den Schultern, nahm ihm das Lametta aus der Hand und warf es auf den Baum.</p>
+<p>Al gab sich geschlagen. Gegen diese geballte Frauenpower kam er nicht an. Er war nur froh, dass Tia und er im Februar einen Jungen bekommen würden. Er brauchte dringend etwas männliche Unterstützung. Er setzte sich auf den Boden neben Amanda und zog die Kiste mit dem Schmuck zu sich. "Wie wäre es, wenn ich dir dann einfach den Schmuck gebe?", schlug er schließlich einen Kompromiss vor. "Dann musst du dich wenigstens nicht bücken."</p>
+<p>Tia lächelte ihn liebevoll an und erklärte sich damit einverstanden. Obwohl er ihr mit seiner Führsorglichkeit schrecklich auf die Nerven ging, fand sie es trotzdem süß von ihm, dass er sich solche Sorgen um sie machte. Wenn sie nicht seine ständigen Einmischungen hören würde, dann würde ihr in der Schwangerschaft etwas fehlen.</p>
+<p>Sie nahm die Christbaumkugel entgegen, die Al vor Amanda gerade noch hatte retten können, und hängte sie auf einen der Tannenzweige. Sie warf einen Blick auf die Seite ihrer Tochter, die anscheinend nur an Lametta Gefallen gefunden hatte. Vor lauter bunten Farben konnte man das Grün des Baumes schon fast gar nicht mehr sehen.</p>
+<p>"Wunderschön", lobte sie Haley, als die sie fragend anschaute.</p>
+<p>Ein zufriedenes Lächeln breitete sich auf ihrem Gesicht aus. "Siehst du, Daddy", sagte sie triumphierend zu ihrem Vater und deutete auf den Baum. "Mit einem Zauber hätte Mummy das nie so schön hingekriegt."</p>
+<p>Al nickte ehrfurchtsvoll und streckte seine Arme aus. Haley setzte sich auf seinen Schoß und lehnte ihren Kopf an seine Brust. Dann schaute sie den Teil des Baumes an, den ihre Mutter gerade schmückte. "Da fehlt noch Lametta, Mummy", sagte sie ernsthaft.</p>
+<p>Tia trat ein paar Schritte zurück und musterte den Baum kritisch. Sie nickte. "Ich glaube, du hast Recht, mein Schatz. Aber ich fürchte, du hast das ganze Lametta schon verbraucht."</p>
+<p>"Oh." Haley schaute sich im Wohnzimmer um, und tatsächlich, nirgendwo konnte sie noch Lametta finden. Nicht mal in ihren Haaren. "Naja, vielleicht kannst du ja etwas von meiner Seite nehmen", schlug sie schließlich großzügig vor.</p>
+<p>"Das ist wirklich lieb von dir", sagte Tia lächelnd. "Aber vielleicht können wir das auch einfach so lassen. Dann fehlt auf deiner Seite nichts."</p>
+<p>Haley schaute den Baum lange kritisch an. Schließlich nickte sie. "Okay." Sie drehte sich Al um und sah ihn streng an. "Solange du nichts daran veränderst, Daddy. Du hast nämlich echt keinen Geschmack."</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-24">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8155888/chapters/18691262">Chapter 24</a>: Lily und Henry
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>
+    <strong>2036</strong>
+  </em>
+</p>
+<p>"Stille Nacht, heilige Nacht ..." Fröhlich trällernd kam Henry ins Schlafzimmer.</p>
+<p>"Nimm's mir nicht übel, Schatz", sagte Lily, ohne von ihrem Pergament aufzublicken, "aber du kannst überhaupt nicht singen." Sie saß im Schneidersitz auf ihrem Bett und schrieb in rasendem Tempo ein Pergament voll.</p>
+<p>"Na und?", erwiderte Henry, zog sich den Pullover über den Kopf und warf ihn über einen Stuhl. "Es kommt doch nicht auf das Können an. Es kommt darauf an, dass es mir Spaß macht." Als nächstes warf er seine Jeans über den Stuhl und sich neben seine Frau auf das große Bett. Lily, die ihren Mann kannte, hatte wohlweißlich das Tintenfass hochgehoben, damit es nicht umkippte und die weiße Bettwäsche einfärbte.</p>
+<p>"Sag das mal deiner Tochter", murmelte Lily. Sie stellte das Tintenfass wieder hin und rieb sich ihren großen Bauch.</p>
+<p>Henry streckte den Arm aus und legte seine Hand auf den Bauch seiner Frau. Mit leuchtenden Augen ließ er sie liegen. Er war jedes Mal aufs Neue von den Bewegungen fasziniert, die er im Bauch seiner Frau spürte. Es war kaum zu glauben, dass dort wirklich ihr gemeinsames Kind drin war.</p>
+<p>"Und dabei dachte ich, dass Babys Musik mögen."</p>
+<p>Lily verdrehte die Augen. "Musik. Nicht Katzengejaule.", widersprach sie und tauchte ihre Feder wieder ins Tintenfass.</p>
+<p>"Du verletzt mich tief", verkündete Henry dramatisch. "Erst beleidigst du meine Gesangskünste und dann ist dir so ein dämliches Pergament wichtiger als ich."</p>
+<p>"Noch fünf Minuten", erwiderte Lily, ohne die Feder abzusetzen. "Der Artikel muss fertig werden. Ich hab ihn Anthony versprochen. Danach bin ich im Mutterschutz. Dann werde ich keine Feder mehr anrühren."</p>
+<p>Henry betrachtete seine Frau zweifelnd. Er konnte sich an keinen Tag in ihrer Ehe erinnern, an dem sie keine Feder in der Hand gehalten hatte. Selbst als sie neununddreißig Grad Fieber gehabt hatte, hatte sie nicht aufgehört zu schreiben.</p>
+<p>"Das glaube ich erst, wenn ich es sehe", murmelte er und legte sein Ohr an ihren Bauch. Lily ließ sich davon nicht stören, sie schrieb seelenruhig weiter. Allerdings spürte sie beruhigt, wie ihre Tochter damit aufhörte, sie so kräftig zu treten. Henrys Stimme hatte immer eine sehr beruhigende Wirkung auf sie. Zumindest dann, wenn er nicht sang.</p>
+<p>Sie tunkte ihre Feder noch einmal in die Tinte, um den letzten Satz zu schreiben, dann verschloss sie das Fass sorgfältig. Sie las ihren Artikel noch einmal durch, besserte mit ihrem Zauberstab ein paar Fehler aus und stand dann schwerfällig vom Bett auf. Sie öffnete das Fenster und warf dann einen Blick auf ihre Armbanduhr. Sie hatte Anthony heute morgen geschrieben, wann sie ungefähr mit ihrem Artikel fertig sein würde und ihr Chefredakteur hatte ihr versprochen, eine Expresseule zu schicken.</p>
+<p>Eine halbe Minute später flatterte ein flinker Steinkauz ins Zimmer, landete auf Lilys Schminktisch und streckte erwartungsvoll sein Beinchen aus. Lily band das zusammengerollte Pergament vorsichtig daran fest und scheuchte ihn dann schnell wieder in die verschneite kalte Nacht hinaus.</p>
+<p>Henry hatte dem Ganzen kopfschüttelnd zugeschaut. Sein Blick fiel auf die drei Goldenen Federn im Regal, die Lily als beste Reporterin verliehen bekommen hatte. Stolz schaute er seine ehrgeizige Frau an, die es sich trotz ihrer Schwangerschaft im achten Monat und Weihnachten nicht nehmen ließ, einen Artikel fertig zu schreiben. "Du bist unglaublich", flüsterte er.</p>
+<p>Lily schaute ihn lächelnd an und legte sich dann neben ihn auf das Bett. Mit einem glücklichen Seufzer streckte sie sich aus und schloss die Augen.</p>
+<p>"Ist alles okay?", erkundigte sich Henry dann besorgt. Jetzt, wo sie mit ihrem Artikel fertig war, war sie wieder zu einem vernünftigen Gespräch fähig. "Tut dein Rücken noch so weh?"</p>
+<p>Lily nahm seine Hand, legte sie auf ihren Bauch und verschränkte ihre Finger mit seinen. "Nein. Der Trank von Ted scheint wirklich zu wirken.", erwiderte sie und schlug die Augen wieder auf. Sie lächelte ihn an. "Mach dir keine Sorgen. Uns geht es gut." Mit ihrer freien Hand fuhr sie durch seine Haare.</p>
+<p>"Ich kann dir gar nicht sagen, wie erleichtert ich sein werde, wenn das Baby endlich da ist.", murmelte Henry. Er hatte sich ein Buch über Schwangerschaft und Geburt durchgelesen und nach den ganzen Horrorszenarien, die darin beschrieben worden waren, panische Angst bekommen, dass irgendetwas schief laufen könnte. Da war ihm auch herzlich egal, dass Lily ihm versichert hatte, dass es in ihrer Familie noch nie Probleme gegeben hatte und alle Beteiligten alle Geburten immer gut überstanden hatten. Sie selbst hatte wenig Angst vor der Geburt, sie konnte es nur nicht mehr erwarten, endlich ihre kleine Tochter im Arm halten zu können. Seit sie erfahren hatte, dass sie schwanger war, sehnte sie sich nach diesem Moment.</p>
+<p>"Ich weiß", erwiderte sie. Er lehnte sich zu ihr und küsste sie.</p>
+<p>"Und nächstes Jahr sind wir dann zu dritt." Seine Augen leuchteten auf. "Hey, vielleicht können wir, wenn die Kleine älter ist, Weihnachtslieder im Kanon singen."</p>
+<p>Lily richtete sich auf und starrte ihn entsetzt an. "Nur über meine Leiche!"</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/8142490">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 4 of the <a href="/series/555904">10 kleine Dinge - Universum</a> series</span><span class="divider"> </span><a class="next" href="/works/8641453">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="V1wo7i2aeMWCvEqdLIiNHeG0yi14nfQbR7nyNQwYHezboqEZ3H2kM6JIL9i5JU4AClGOCuNuxqPOzUJSeAnpjQ"/>
+          <input value="8155888" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/Lalelilolu">Lalelilolu</a>
+             as well as 
+          6 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_8155888">
+  <form class="new_comment" id="comment_for_8155888" action="/works/8155888/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="TWydFZBCK3nMMBoONv7wsAZWIyf9NaAf0_nKYSVxWg_BkhTiYaX3j-zEf0ujUzOt7bNnAGbGkqdajXoGUWCubg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_8155888">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_8155888" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_8155888=new LiveValidation('comment_name_for_8155888',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_8155888.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_8155888">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_8155888" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_8155888=new LiveValidation('comment_email_for_8155888',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_8155888.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_8155888" class="landmark">Comment</label>
+        <textarea id="comment_content_for_8155888" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_8155888" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_8155888_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_8155888">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_8155888=new LiveValidation('comment_content_for_8155888',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_8155888.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_8155888.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_8155888" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/8155888/hit_count.json")})</script>
+
+
+  </body>
+</html>

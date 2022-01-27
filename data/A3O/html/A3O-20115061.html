@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":104,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Der Zeltausflug - Ginada - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="s5O9KmxrtqPDszaJ5ZSmyRzdqw45E2dxtj7BVg9-a5-dN463-_nyx5dF7GNz8K9-U8pZ3aehZjtGLS5eMRUeYw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="Zn3qBce4ZCHejcxHj4zYsSAMo0jRtDxFBd8Sjo3A-rxI2dmYUCogRYp7Fq0Z6NEGbxtRm08GPQ_1zP2Gs6uPQA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: words:100</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/20115061/chapters/47651773">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/20115061/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/20115061/Der%20Zeltausflug.azw3?updated_at=1617964751">AZW3</a></li>
+          <li><a href="/downloads/20115061/Der%20Zeltausflug.epub?updated_at=1617964751">EPUB</a></li>
+          <li><a href="/downloads/20115061/Der%20Zeltausflug.mobi?updated_at=1617964751">MOBI</a></li>
+          <li><a href="/downloads/20115061/Der%20Zeltausflug.pdf?updated_at=1617964751">PDF</a></li>
+          <li><a href="/downloads/20115061/Der%20Zeltausflug.html?updated_at=1617964751">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandoms:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li><li><a class="tag" href="/tags/Harry%20Potter%20and%20the%20Cursed%20Child%20-%20Thorne%20*a*%20Rowling/works">Harry Potter and the Cursed Child - Thorne &amp; Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Fred%20Weasley%20II%20*a*%20Lucy%20Weasley/works">Fred Weasley II &amp; Lucy Weasley</a></li><li><a class="tag" href="/tags/Albus%20Severus%20Potter%20*a*%20Rose%20Weasley/works">Albus Severus Potter &amp; Rose Weasley</a></li><li><a class="tag" href="/tags/Lucy%20Weasley%20*a*%20Molly%20Weasley%20II/works">Lucy Weasley &amp; Molly Weasley II</a></li><li><a class="tag" href="/tags/Louis%20Weasley%20*a*%20Molly%20Weasley%20II/works">Louis Weasley &amp; Molly Weasley II</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Molly%20Weasley%20II/works">Molly Weasley II</a></li><li><a class="tag" href="/tags/Louis%20Weasley/works">Louis Weasley</a></li><li><a class="tag" href="/tags/Lucy%20Weasley/works">Lucy Weasley</a></li><li><a class="tag" href="/tags/Fred%20Weasley%20II/works">Fred Weasley II</a></li><li><a class="tag" href="/tags/Rose%20Granger-Weasley/works">Rose Granger-Weasley</a></li><li><a class="tag" href="/tags/Albus%20Severus%20Potter/works">Albus Severus Potter</a></li><li><a class="tag" href="/tags/James%20Sirius%20Potter/works">James Sirius Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Camping/works">Camping</a></li><li><a class="tag" href="/tags/Puberty/works">Puberty</a></li><li><a class="tag" href="/tags/Cousins/works">Cousins</a></li><li><a class="tag" href="/tags/Sommerferien/works">Sommerferien</a></li><li><a class="tag" href="/tags/Firewhiskey%20(Harry%20Potter)/works">Firewhiskey (Harry Potter)</a></li><li><a class="tag" href="/tags/Campfires/works">Campfires</a></li><li><a class="tag" href="/tags/Thunderstorms/works">Thunderstorms</a></li><li><a class="tag" href="/tags/Pre-Harry%20Potter%20and%20the%20Cursed%20Child/works">Pre-Harry Potter and the Cursed Child</a></li><li><a class="tag" href="/tags/Nachtwanderung/works">Nachtwanderung</a></li><li><a class="tag" href="/tags/2017/works">2017</a></li><li><a class="tag" href="/tags/Exmoor-Nationalpark/works">Exmoor-Nationalpark</a></li><li><a class="tag" href="/tags/Harry%20Potter%20Next%20Generation/works">Harry Potter Next Generation</a></li><li><a class="tag" href="/tags/Next%20Generation/works">Next Generation</a></li><li><a class="tag" href="/tags/Next-Gen/works">Next-Gen</a></li><li><a class="tag" href="/tags/Harry%20Potter%20Epilogue%20Compliant/works">Harry Potter Epilogue Compliant</a></li><li><a class="tag" href="/tags/Canon%20Compliant/works">Canon Compliant</a></li><li><a class="tag" href="/tags/Harry%20Potter%20and%20the%20Cursed%20Child%20Compliant/works">Harry Potter and the Cursed Child Compliant</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-08-05</dd><dt class="status">Completed:</dt><dd class="status">2019-08-11</dd><dt class="words">Words:</dt><dd class="words">10868</dd><dt class="chapters">Chapters:</dt><dd class="chapters">7/7</dd><dt class="hits">Hits:</dt><dd class="hits">69</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Der Zeltausflug
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Ginada/pseuds/Ginada">Ginada</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Es sind Sommerferien, und was können ein paar Schüler da machen, außer ihren Eltern zu Hause auf die Nerven zu gehen? Richtig, einen Zeltausflug. Genau das machen sieben Enkel von Arthur und Molly Weasley im Sommer 2017. Zum ersten Mal sind sie ohne Erwachsene zusammen weg, wie werden sie klarkommen?</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Geschrieben für das Projekt <a href="https://forum.fanfiktion.de/t/27136/1" rel="nofollow">Zeltausflug</a> auf Fanfiktion.de.<br/>Beta: <a href="https://www.fanfiktion.de/u/streunerseelen" rel="nofollow">streunerseelen</a></p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47651773">Chapter 1</a>: Es geht los
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Samstag, 5. August 2017</strong>
+</p><p align="left">
+  <em> <strong>Molly</strong> </em>
+</p><p align="justify">„Wann kommen sie denn endlich?“ quengelte meine kleine Schwester. Ungeduldig tigerte sie vor dem Kamin auf und ab und rannte beim kleinsten Geräusch hin, ob nicht endlich jemand mit dem Flohnetzwerk ankäme.</p><p align="justify">„Liebling, selbst wenn sie ganz pünktlich sind, dauert es noch fünf Minuten, und du kennst doch deine Verwandten, meistens sind sie sowieso ein bisschen zu spät“, sagte Mum, die im großen Sessel saß und strickte. „Aber ich will endlich los“, maulte Lucy, manchmal war sie wirklich noch wie ein kleines Kind. Erstklässler halt, auch wenn sie natürlich fast schon in der Zweiten war.</p><p align="justify">„Wenn sie kommen, gibt es sowieso erstmal Mittagessen. Geh mal zu Gran in die Küche und frag, ob sie Hilfe braucht, und dann könnt ihr schon mal den Tisch decken. Habt ihr alles gepackt, Molly?“ fragte sie mich. Für die wichtigen Sachen war immer ich zuständig, ich war schließlich die Ältere. Mit vierzehn ist man kein Kind mehr und muss verantwortlich sein, nach den Sommerferien würde ich in die vierte Klasse kommen und schon anfangen, für die UTZ-Prüfungen zu lernen.</p><p align="justify">Der Kamin rauschte und mein Cousin Louis trat heraus, doch fast pünktlich. Wie immer war ich ein bisschen neidisch auf die Eleganz, mit der er das konnte, ich schaffte es irgendwie immer, mich irgendwo mit Ruß zu beschmieren. Er drückte mich Lucy und mich und sagte „Hallo, Tante Audrey“, zu Mum. Ich freute mich, ihn zu sehen. Er war definitiv mein Lieblingscousin, was zwar wahrscheinlich nur daran lag, dass wir fast gleich alt waren, aber egal. In Hogwarts waren wir Klassenkameraden und sahen uns deshalb die ganze Zeit. Wenn wir uns jetzt in den Sommerferien mal eine Woche nicht sahen, vermisste ich ihn.</p><p align="justify">Wir waren gerade dabei, den Tisch zu decken, als es wieder im Kamin rauschte und mein Cousin Fred ankam – ja, ich habe ziemlich viele Cousins und Cousinen, Dad hat fünf Geschwister.</p><p align="justify">„Huhu!“ rief er laut und ließ seine Tasche auf den Boden plumpsen.</p><p align="justify">Er entwand sich Grans Umarmung und tuschelte Lucy etwas ins Ohr. Was Louis für mich war, war Fred für Lucy, die beiden waren quasi unzertrennlich und gingen in die gleiche Klasse.</p><p align="justify">„Mum und Dad können nicht kommen“, verkündete er. „Irgend so ein Kind ist im Laden auf ein Regal geklettert, das ist umgekippt und auf die neue Lieferung Explodierender Kessel gefallen, es ist ein furchtbares Durcheinander.“</p><p align="justify">„Ach je, und sie haben doch sowieso schon so viel Arbeit“, sagte Gran und ich wusste, dass sie enttäuscht war, dass nicht alle kamen. Freds Eltern, mein Onkel George und seine Frau Angelina hatten zusammen mit meinem Onkel Ron einen Scherzartikelladen. Das war in der Schule oft ziemlich cool, weil alle von uns etwas über die neuesten Produkte wissen wollten, obwohl ich Scherzartikel eigentlich ziemlich unnötig fand.</p><p align="justify">„Lucy, Schatz, holst du deinen Vater? Das Essen ist gleich fertig. Und Freddy, schaust du mal nach Opa? Ich glaube, er ist im Schuppen“, sagte Gran. Samstags war Opa meistens im Schuppen und bastelte an irgendwelchen komischen Muggelgeräten herum. Das konnte zwar niemand von uns so recht nachvollziehen, aber er liebte es nun mal, das mussten wir wohl akzeptieren.</p><p align="justify">Endlich ging der Kamin wieder, es war inzwischen eine halbe Stunde nach der verabredeten Zeit, und meine Tante Ginny kam an. Sie sah ziemlich gestresst aus und hinter ihr kamen nicht nur ihre drei Kinder James, Albus und Lily, sondern auch Rose und Hugo, die auch Cousins von uns waren, aber eigentlich die Kinder von Onkel Ron – dem mit dem Laden – und Tante Hermine waren. Sie waren Nachbarn, wahrscheinlich kamen sie deshalb zusammen.</p><p align="justify">„Sorry Mum“, sagte sie und umarmte Gran. „Harry und Hermine haben jetzt doch irgendwelche Sitzungen, und im Laden ist irgendwas passiert“,</p><p align="justify">„Ja, hat Freddy schon erzählt.“</p><p align="justify">„Jedenfalls komme nur ich, auch wenn das heißt, dass ich meinen Artikel irgendwann heute Nacht fertig schreiben muss.“</p><p align="justify">„Jetzt bist du ja erstmal da. Setzt euch, das Essen ist schon fertig und steht auf dem Tisch.“</p><p align="justify">Gran dachte vermutlich, wir würden in der kommenden Woche auf dem Zeltausflug verhungern, wenn wir uns selbst versorgen mussten, jedenfalls hatte sie selbst für ihre Verhältnisse enorm viel Essen aufgetischt. Es gab Rinderbraten, Yorkshire Pudding, Kartoffeln, Bohnen, Blumenkohl, Auberginen, Salat, und als wir wirklich schon zum Platzen voll waren, auch noch Kirschkuchen mit flüssiger Sahne. Trotzdem ein paar Cousins und Cousinen fehlten und nur Tante Ginny da war, war es wirklich schön, so viele Leute am Tisch zu haben, dachte ich, auch wenn ich mir dabei ein bisschen wie Gran vorkam. Wie sie hätte ich manchmal am liebsten gehabt, dass wir alle bei ihr und Opa wohnen würden, nicht nur meine Eltern, Lucy und ich. Aber natürlich wäre das Haus viel zu klein dafür und wahrscheinlich würden wir uns auch schnell auf die Nerven gehen.</p><p align="justify">Lily jammerte die ganze Zeit, dass sie auch mit Zelten gehen wollte, und natürlich wollte Hugo dann auch.</p><p align="justify">„Keine Diskussion mehr jetzt“, sagte Tante Ginny, „Ihr seid noch zu klein, nur Schulkinder kommen mit.“ Ich war ganz froh, dass sie da konsequent blieb. Lily und Hugo waren erst neun und zehn und kamen noch lange nicht zur Schule, auf die musste man noch richtig aufpassen, und Louis und ich waren als die Ältesten auf dem Ausflug schließlich verantwortlich, das hatte Mum oft genug gesagt. Am Ende wollte womöglich Roxanne auch noch mitkommen, und die war erst sechs. Lucy und ich hatten ziemlich betteln müssen, um überhaupt mit zu dürfen, besonders Mum war immer furchtbar ängstlich. Opa sagte immer, das liege daran, dass sie einen Krieg erlebt hatte, als sie jung war, wenn ich mich beschwerte, und er hatte sie schließlich überzeugt, uns mitgehen zu lassen. Wir waren schließlich älter als Albus und Rose, die überhaupt erst im September in die Schule kommen würden, und die durften auch mit.</p><p align="justify"> </p><p align="justify">Der ganze Ausflug war Tante Hermines Idee gewesen, sie hatte so etwas als Kind immer mit ihren Eltern gemacht und sie hatte die anderen überzeugt, obwohl Onkel Ron und Onkel Harry erstmal nicht so begeistert gewesen waren. Ehrlich gesagt waren die Eltern der anderen glaube ich ganz froh, ihre Kinder für eine Woche der Ferien loszuwerden, Tante Hermine, Tante Ginny und Tante Angelina hatten schließlich Berufe und nicht wie Mum den ganzen Tag Zeit für Haushalt und Kinder. Aber wir waren auch froh, die Erwachsenen mal für eine Woche loszuwerden und es war natürlich ziemlich aufregend, ohne Eltern zu verreisen, so etwas machten wir zum ersten Mal.</p><p align="justify">Endlich hatten wir aufgegessen und waren zum Aufbruch bereit, das heißt, wir waren das, die Erwachsen meinten, wir bräuchten noch jede Menge Ratschläge und Ermahnungen. Mum strich mir die Haare glatt und ich schüttelte sie ab, als ob ich nicht mittlerweile selbst einen ordentlichen Zopf hinbekommen würde, ich wusste, dass keine Haare hervorschauten.</p><p align="justify">„Rose, bist du ganz sicher, dass du weißt, wie man das Handfeloton benutzt?“ fragte Gran.</p><p align="justify">„Handtelefon!“ verbesserte Opa.</p><p align="justify">Rose war sich ganz sicher, sie war sich meistens ganz sicher, was ganz schön nervig sein konnte, sie war schließlich gerade erst elf geworden. „Wenn etwas ist, ruft sofort Hermine an!“ ermahnte Mum zum hundertsten Mal. Dieses Handtelefon war ein Muggelgerät, das etwa wie ein tragbarer Kamin für die Stimme funktionierte, und Rose war die einzige von uns, die damit umgehen konnte. Ihre anderen Großeltern waren Muggel, deshalb wusste sie so etwas. James, Albus und Lily hatten zwar auch Muggelverwandte, aber die sahen sie nur ganz selten und sie hatten nicht viel mehr Ahnung von so etwas als Lucy und ich.</p><p align="justify">Natürlich konnte niemand von uns apparieren, und so sollten wir per Portschlüssel reisen. Mum, Dad, Gran und Opa gaben uns letzte Küsse und Umarmungen, der Portschlüssel glühte blau auf, wir packten ihn, die Welt begann sich immer schneller zu drehen, und schon stolperten wir über eine Wiese im Exmoor-Nationalpark. Tante Hermine war früher mit ihren Eltern im Forest of Dean gewesen, aber als sie vorgeschlagen, wir könnten dort Zelten, waren Onkel Harry und Onkel Ron strikt dagegen gewesen, und die Erwachsenen hatten sich auf Exmoor geeinigt, weil das nicht allzu weit vom Fuchsbau entfernt war.</p><p align="justify">„Na dann“, sagte Tante Ginny und sah sich um. Sie war mitgekommen, damit sie ungefähr wusste, wo wir waren, und notfalls herapparieren konnte. „Denkt dran, dass euer Rückportschlüssel am Freitag genau um zwölf Uhr geht. Louis, du hast den, ja?“ Als hätten nicht alle anderen Erwachsen das ungefähr schon dreihundert Mal gesagt. Sie gab James und Albus noch einen Kuss, drehte sich auf der Stelle, und wir waren endlich allein, allein und frei.</p><p align="justify"> </p><p align="justify">Es war herrlich. Louis und ich entschieden, dass wir erst noch ein bisschen gehen wollten, und nicht direkt hier die Zelte aufbauen. Die Landschaft war wunderschön, weil die Heide gerade blühte, und ich wusste, das Louis ewig hätte wandern können, aber ich wusste auch, das Albus wandern hasste, und bestimmt bald schlechte Laune kriegen würde. James rupfte Heidekrautbüschel aus dem Boden und steckte sie Albus hinten in den Kragen seines Umhangs, woraufhin Albus mit Rose‘ Unterstützung versuchte, sich zu rächen, aber James war zu schnell für die beiden. Fred und Lucy gingen ein Stück hinter uns anderen, die Köpfe zusammengesteckt und leise aufeinander einredend. Das taten die beiden eigentlich immer, wenn sie zusammen waren, sie versanken völlig in ihrer eigenen Welt.</p><p align="justify">„Hier bleiben wir“, sagte ich, als wir an eine Stelle kamen, wo die Ginsterbüsche eine dichte Wand bildeten, ich hoffte, sie würden uns Windschutz geben. Louis sah mich etwas überrascht an, aber er nickte, und wir begannen die Zelte aufzubauen. Wir hatten drei Zelte und wollten uns nach Alter aufteilen. Louis und ich zusammen, Lucy und Fred und James bei den beiden Kleinen in einem Zelt, auch wenn James ein bisschen murrte, weil er natürlich nicht zu den Kleinen wollte. Aber wir fanden, die Brüder sollten zusammenbleiben.</p><p align="justify">„Oh verfluchter Doxydreck“, hörte ich ihn plötzlich draußen rufen, während ich im Zelt unsere Vorräte ordentlich in den Schrank räumte. „Ich hab meinen Schlafsack vergessen!“</p><p align="justify">„Och James“, stöhnte ich und Albus meinte „Aber Mum hat doch ungefähr zwanzig Mal gefragt, ob wir die eingepackt haben.“</p><p align="justify">„Ich hab ihn auch eingepackt. Ich weiß genau wo er liegt, auf dem Sofa beim Kamin, griffbereit, damit ich ihn nicht vergesse.“</p><p align="justify">„Das hat ja super funktioniert“, bemerkte Rose spitz und James warf ärgerlich ein Büschel Gras nach ihr.</p><p align="justify">„Glaub ja nicht, dass du zu mir ins Bett darfst“, sagte Albus missvergnügt. „Ich hab den Schlafsack zum Geburtstag erst bekommen, der ist ganz neu.“</p><p align="justify">„Du kannst zu mir kommen“, bot Fred an. Das war typisch für ihn, er ist wahrscheinlich der netteste Mensch der Welt, und er kann Streitereien nicht ausstehen.</p><p align="justify">James’ Gesicht hellte sich auf. „Wirklich?“</p><p align="justify">Fred zuckte die Achseln. „Ja klar. Es ist warm genug, dass wir den Schlafsack einfach über uns breiten können, und wahrscheinlich ist irgendwo in dem Zelt sogar noch eine Decke oder so was.“</p><p align="justify">James strahlte, er hatte ja sowieso lieber zu Lucy und Fred ins Zelt gewollt.</p><p align="justify">Der Nachmittag verging wie im Fluge. Wir hatten nur ein bisschen die Gegend erkundet, schon hatten wir solchen Hunger, das wir anfangen mussten zu kochen. Es dauerte ein bisschen, bis wir den Gaskocher anbekamen, den Rose‘ andere Großeltern uns ausgeliehen hatten, zaubern durften wir ja dummerweise in den Ferien nicht, aber dann konnten wir endlich die Reste, die Gran uns eingepackt hatte, warmmachen. Wir spielten Kartenspiele, bis es zu dunkel war, um die Karten zu erkennen und krochen dann in die Schlafsäcke. Aber ich glaube wir waren alle noch lange wach. Louis und ich quatschten bestimmt noch eine halbe Stunde, und nachdem wir still geworden waren, konnte ich nicht schlafen, weil ich von lauter fremden Geräuschen umgeben war, deren Ursache ich nicht kannte.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47698174">Chapter 2</a>: Der See
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong> Sonntag, 6. August 2017 </strong>
+</p><p align="justify">Zelten war herrlich, fand Lucy. Sie lag zufrieden im hohen Gras und ließ sich von der warmen Sommersonne bescheinen. Die Augen hatte sie geschlossen, und vor ihren Lidern tanzten Kreise in mehr warmen Orangetönen, als sie mit offenen Augen je hätte sehen können. Es war wunderbar, einfach dazuliegen und nichts zu tun, angenehm satt von den Sandwiches, die sie zum Mittagessen gemacht hatten. Sie hätte ewig so liegen können, ihren besten Freund und Lieblingscousin Fred auf der einen, ihre Schwester Molly auf der anderen Seite neben sich im Gras. Die Stimmen von James und Albus, die irgendwas spielten, wehten ab und zu ihr herüber, mit ihnen die angenehme Gewissheit, dass sie dort irgendwo waren, aber nicht die Verpflichtung, irgendwas zu machen. Es war wie im Paradies, fand Lucy, allerdings – das wäre im Paradies wahrscheinlich nicht passiert: „Es ist soooo langweilig!“ quengelte Rose. „Können wir nicht irgendwas machen?“</p><p align="justify">„Geh mit James und Albus spielen“, murmelte Molly schläfrig.</p><p align="justify">„Neee, das ist auch langweilig. Ich will was Neues“, deklamierte Rose. „Jetzt sind wir schon mal hier und machen die gleichen langweiligen Sachen wie zu Hause.“</p><p align="justify">Molly ächzte genervt und drehte sich auf den Bauch, damit die Sonne auf ihren Rücken scheinen konnte.</p><p align="justify">„Louis, bringst du mir Duellieren bei?“ fragte Rose und piekte ihn in die Seite.</p><p align="justify">„Selbst wenn ich fände, dass du alt genug wärst, wie soll das denn gehen, ohne zu zaubern? Das ist doch sinnlos.“</p><p align="justify">„Überhaupt nicht“, fand Rose. „Du kannst mir die Haltungen beibringen und wir können die Zauberstabbewegungen mit Stöcken üben, und die Aussprache der Sprüche, ich weiß nicht, warum sie in den Büchern nicht endlich anfangen, die auch in Lautschrift anzugeben. Und es ist doch zu bescheuert, dass Mum und Dad es mir nicht beibringen wollen…“</p><p align="justify">„Rose! Ich bringe dir nicht bei, wie man sich duelliert, bevor du überhaupt deine Mitschüler getroffen hast“, machte Louis ihrem Redeschwall ein Ende. „Albus wird mein Mitschüler, und den habe ich schon getroffen, schon vor elf Jahren“, konnte es Rose natürlich nicht lassen zu sagen, sie musste immer das letzte Wort haben, was Lucy manchmal ganz schön nervte.</p><p align="justify">„Es ist langweilig“, beschwerte sich Rose wieder. „Können wir nicht mal schauen, was dahinten hinter dem Hügel ist?“</p><p align="justify">„Hmmm“, murmelte Molly, und Lucy hörte, dass sie fast schlief. „Lucy, könnt ihr nicht was mit ihr machen?“</p><p align="justify">Lucy hatte überhaupt keine Lust, aufzustehen und den wunderbaren sonnigen Platz zu verlassen, aber Fred sagte: „Ok, dann lass uns gehen.“ Er stand auf und streckte Lucy eine Hand hin, um sie hochzuziehen. „Kommst du, Lucy?“ Also musste sie wohl oder übel mitkommen, sie konnte den armen Fred ja schlecht allein mit Rose lassen. Louis schloss sich dann auch noch an, er war doch eigentlich eine ziemlich unternehmungslustige Natur, auch wenn Molly ihn öfters bremste.</p><p align="justify">Sie gingen zu dem Hügel, und oben war tatsächlich die Aussicht ganz schön, so dass Lucy es schon fast gar nicht mehr bereute, mitgekommen zu sein, obwohl es inzwischen ziemlich heiß war und Rose in einem Fort über die Pflanzen und Insekten referierte, die sie sahen.</p><p align="justify">„Ich glaube, dahinten ist ein See“, sagte Fred und zeigte auf die andere Seite des Hügels.</p><p align="justify">„Tatsache. Lasst uns hin, vielleicht gibt es interessante Lurche oder Fische“, meinte Rose begeistert und lief auch schon los. Lucy und Fred trotteten einträchtig hinter Louis her, es war zu heiß, um viel zu reden und Rose redete sowieso für drei.</p><p align="justify">Der See war wunderschön. Er lag ganz still, umgeben von hohen Büschen, so dass sie ihn bestimmt nicht entdeckt hätten, wenn sie nicht auf den Hügel gestiegen wären. Das Wasser war schwarz, weil der Grund des Sees moorig war, aber es war klar und glitzerte im Sonnenlicht.</p><p align="justify">„Lasst uns baden!“ rief Fred begeistert.</p><p align="justify">„Oh ja, das ist wirklich perfekt, ich bin schon am Schmelzen“, stimmte Louis zu und schlug sich die letzten Meter durch den Ginster, um das Ufer zu erkunden. „Bleibt lieber da, wir sollten in die andere Richtung schauen, hier sind so komische Algen“, meinte er. Sie suchten das Ufer nach einer geeigneten Einstiegsstelle ab. Der Seeboden sah ein bisschen eklig aus, sie wollten ihn lieber nicht betreten, deshalb waren sie froh, als sie einen umgekippten Baumstamm fanden, der ins Wasser ragte und von dem sie losschwimmen konnten.</p><p align="justify">„Da, hier könnt ihr ins Wasser gehen, ohne auf was Glibschiges zu treten“, sagte Lucy, die den Baum zuerst entdeckte. Rose hatte schon angefangen, auf den Stamm zu klettern und sah Lucy jetzt an, als sei ihr ein zweiter Kopf gewachsen. „Was heißt hier ihr? Willst du nicht ins Wasser?“</p><p align="justify">Lucy zuckte die Schultern. „Ich hab keine Badesachen dabei“, sagte sie.</p><p align="justify">„Wir doch auch nicht, aber hier sieht uns doch niemand“, sagte Louis. Er hatte schon ohne weitere Hemmungen seine Robe über einen Ast des Stammes gehängt und sich aus den übrigen Sachen geschält. Es platschte laut und spritzte die anderen ein bisschen nass, als er mit einem unsauberen Kopfsprung ins Wasser hechtete. Auch Fred und Rose hatten ohne zu warten angefangen, sich auszuziehen, aber Lucy zögerte.</p><p align="justify">„Komm schon Lucy, es ist bestimmt toll. Und wir haben dich schon hunderte Male nackt gesehen, falls du denkst, wir kucken dir was weg“, sagte Rose und hüpfte hinter Louis ins Wasser, der schon mit langen Schwimmzügen auf dem Weg zur Mitte des Sees war.</p><p align="justify">Unsicher biss Lucy sich auf die Unterlippe. Rose hatte den Nagel auf den Kopf getroffen mit ihrer Vermutung, warum sie nicht ins Wasser wollte. Natürlich hatte sie auch Recht, dass die anderen sie schon unzählige Male nackt gesehen hatten, sie waren schließlich quasi zusammen aufgewachsen. Aber da war sie eben noch ein Kind gewesen, und jetzt war sie sich nicht mehr so sicher. Ohne dass sie es selbst so richtig gemerkt hatte, hatte ihr Körper sich in letzter Zeit verändert, und genauso fühlte es sich an: Ihr Körper hatte sich verändert, nicht sie, und es passte nicht mehr richtig zusammen. Niemand sollte das sehen, niemand sollte sehen, dass ihre Brüste nicht mehr richtig flach waren, aber auch keine richtigen Brüste, niemand sollte sehen, dass die Haare im Schambereich fester und dunkler wurden. Sie wollte es ja nicht mal selbst sehen und darüber nachdenken, geschweige denn es anderer Leute Blicke aussetzen, auch wenn sie die Leute noch so sehr mochte, denn absolut nichts war privater. Das Problem war nicht, dass ihre Mutter stirnrunzelnd sagen würde, sie sei langsam zu alt, um mit den Jungs nackt zu baden, ohne genauer zu erklären, weshalb. Das Problem war – ja was eigentlich? Sie konnte es nicht wirklich erfühlen, weshalb sie nicht mehr nackt sein wollte, wollte auch nicht zu tief in sich gehen, aus Angst, dort vielleicht auch Veränderungen zu finden. Aber sie wollte definitiv auf keinen Fall nackt in diesen See schwimmen, auch wenn er noch so einladend glitzerte.</p><p align="justify">Fred stand vor ihr auf dem Baum, er hatte sich inzwischen auch ausgezogen und wartete auf sie. Sein Körper, mit der Haut in der Farbe von schwarzem Tee mit Milch, Schultern und Gesicht mit großen Sommersprossen übersprenkelt, war der eines Kindes, und er stand völlig sicher in sich vor ihr und sah sie an.</p><p align="justify">„Lass doch einfach dein Hemd an, bei der Hitze trocknet das doch schnell wieder“, sagte er zu ihr, und sie hatte das Gefühl, ihren besten Freund noch nie so geliebt zu haben wie in diesem Augenblick. Ohne dass sie etwas gesagt hätte, hatte er gewusst, was ihr Problem war, und eine einfache, naheliegende Lösung gewusst. Warum war sie nur nicht darauf gekommen? Sie hatte es nicht anders machen wollen, als die anderen, dabei war das eine einfache Lösung, und sie konnte ins Wasser. Lucy nickte, überströmend vor Dankbarkeit, und schlüpfte aus ihrer Robe. Das Hemd, was sie darunter trug, war leuchtend gelb und ihre Unterhose weiß – helle Farben, die durscheinend werden würden, wie sie kurz besorgt dachte. Aber dann entschied sie, dass der Stoff fest genug sei, und sprang hinter Fred ins kühle Wasser.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47732359">Chapter 3</a>: Gewitterregengespräche
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Montag, 7. August 2017</strong>
+</p><p align="left">
+  <em> <strong>Molly</strong> </em>
+</p><p align="justify">Wir hatten uns entschieden, dass der Gaskocher zwar einigermaßen gut kochte, aber doch nicht besonders atmosphärisch war, zum Zelten gehörte ein ordentliches Lagerfeuer. Sagte zumindest Rose, und sie war die Campingexpertin, oder ihre Großeltern zumindest, weshalb sie sich so aufspielte. Aber natürlich hatte sie Recht, ein richtiges Lagerfeuer war viel schöner, da waren wir uns alle einig. Dummerweise gab es im Exmoor-Nationalpark nicht gerade Feuerholz im Überfluss, oder zumindest dort, wo wir zelteten, keine Ahnung, ob das überall so ist – Rose wüsste das wahrscheinlich. Also war das Holzsammeln eine ziemlich mühselige Angelegenheit und Louis und ich entschieden, dass wir uns besser aufteilen sollten, damit wir ein größeres Gebiet abdecken konnten. Er ging mit Rose und ich mit Albus, weil wir nicht wollten, dass die Kleinen allein loszogen.</p><p align="justify">Albus und ich zogen also Richtung Osten los. Erstmal fanden wir nicht besonders viel, nur ein paar einzelne Äste, aber irgendwann sahen wir in der Ferne ein Wäldchen und beschlossen, dorthin zu gehen, da musste es ja Holz geben. Ich überlegte die ganze Zeit, wie wir das Holz am besten Tragen konnten, es war wirklich zu hinderlich, dass wir nicht zaubern durften. Das Verbot ist natürlich total sinnvoll und es ist sehr wichtig, dass das Ministerium das durchsetzt, aber es ist vor allem nötig, weil es so schrecklich viele völlig verantwortungslose Menschen gibt, wenn alle so vernünftig wären wie wir, bräuchte man das nicht.</p><p align="justify">Albus war viel ruhiger als sein älterer Bruder, das fiel mir wieder so richtig auf, als wir zusammen über die Heide stapften. Er ging manchmal ein bisschen unter hinter James, dabei mochte ich ihn eigentlich glaube ich lieber, ich war ja auch nicht so extrovertiert. War es eigentlich ok, seine Cousins nicht alle gleich gern zu haben? Wahrscheinlich eigentlich nicht, ich sollte James und Albus gleich gern haben. Aber Louis mochte ich auf jeden Fall am liebsten, das musste ok sein, denn das würde so bleiben.</p><p align="justify">Kurz bevor wir das Wäldchen erreichten, hörten wir den ersten Donner. Oh nein, wir hatten überhaupt nicht auf das Wetter geachtet. Es war zwar schwül gewesen heute Morgen nach dem heißen Tag gestern, aber ich hatte mir nichts dabei gedacht. Jetzt sahen wir, dass der ganze westliche Himmel, wo unsere Zelte aufgeschlagen waren, von tiefdunklen Wolken überzogen war. Es blitzte und donnerte ein paar Sekunden später wieder. Albus sah ziemlich beunruhigt aus und ich ärgerte mich, ich war verantwortlich für ihn und hätte mehr auf das Wetter achten müssen. Jetzt standen wir hier mitten in der Heide und die ersten schweren Tropfen fielen auf uns. Albus zog an meiner Robe und strebte in Richtung des Wäldchens.</p><p align="justify">„Komm schon Molly, wir müssen uns unterstellen“, drängte er.</p><p align="justify">Ich überlegte fieberhaft, irgendwas war da, mit Gewittern und Bäumen, man sollte sie meiden, oder? „Wir können nicht in den Wald, da werden wir wahrscheinlich vom Blitz getroffen“, sagte ich und Albus blieb erschrocken stehen.</p><p align="justify">„Was?“</p><p align="justify">„Wir dürfen nicht der höchste Punkt in der Landschaft sein oder in der Nähe des höchsten Punkts“, erklärte ich.</p><p align="justify">„Aber Molly, wir sind der höchste Punkt!“ sagte Albus leicht panisch und er hatte blöderweise mehr oder weniger Recht. In der Heide gab es nur ein paar Büsche, die vielleicht höher waren als wir, vielleicht auch nicht. Die Landschaft insgesamt war gar nicht so flach, eher hügelig, aber ich hatte keine Ahnung, ob Blitze sich für Hügel interessierten oder nicht. Aber ich musste ruhig bleiben und überlegen, das konnte man schließlich nicht von Albus verlangen, der noch nicht mal zur Schule ging.</p><p align="justify">„Wir müssen uns eine Senke suchen und da reinlegen“, entschied ich und zuckte zusammen, als es wieder donnerte, diesmal wirklich laut, ein richtiger Knall, gefühlt schon direkt über uns. „Schnell!“</p><p align="justify">Wir liefen also ein paar Meter durch den inzwischen heftigen Regen und kauerten uns dann in die nächstbeste Senke. Nass waren wir eh schon und jetzt wurden wir auch noch dreckig, aber wenigstens war das Heidekraut weich, wenn auch kratzig. Ich spürte Albus neben mir Zittern und legte den Arm um ihn, und ja, vielleicht fühlte auch ich mich so auch besser. Es blitzte heftig und gleich darauf knallte über uns der Donner, so heftig, dass wir den Boden buchstäblich beben spürten. Hoffentlich hielten die Zelte das aus. Albus zuckte bei dem Knall zusammen. „Hast du Angst vor Gewitter?“ fragte ich ihn.</p><p align="justify">Er schüttelte den Kopf. „Nur k-k-k-kalt“, sagte er, und tatsächlich klapperten ihm die Zähne und es war auch wirklich kalt, so im Regen auf der Erde zu liegen, aber ich glaube Angst hatte er auch. Ich zog meinen Arm fester um ihn und drückte ihn an mich.</p><p align="justify">„Wie lange müssen wir liegen bleiben?“ fragte er. „Ich will zurück.“</p><p align="justify">„Mindestens bis zwischen Blitz und Donner neuen Sekunden sind“, sagte ich. Ich hatte keine Ahnung, ob das stimmte, aber ich dachte, es würde ihn beruhigen, wenn ich so klang, als wüsste ich Bescheid. „Freust du dich auf Hogwarts?“ fragte ich, um ihn abzulenken. Irgendwie, in meinem Kopf habe ich tausend interessante Themen, aber letztendlich spreche ich immer nur über die Schule und das Wetter, wenn ich was raussuchen soll.</p><p align="justify">„Ich weiß nicht so genau“, sagte er. „Schon, aber ich bin auch gern zu Tante Audrey gegangen.“ Mum hatte nicht nur Lucy und mich unterrichtet, sondern auch James, Fred und Albus, und jetzt immer noch Lily, Hugo und Roxanne, weil deren Mütter keine Zeit hatten, das selber zu machen.</p><p align="justify">„Du wirst sehen, Hogwarts ist super“, ermutigte ich ihn.</p><p align="justify">Er murmelte etwas. „Hm?“ fragte ich.</p><p align="justify">„James meint, ich komme bestimmt nach Slytherin“, widerholte er, und ich konnte sehen, dass ihn das beschäftigte.</p><p align="justify">„Wieso solltest du? Deine Eltern waren beide in Gryffindor, und Weasleys sind immer in Gryffindor. Sogar Lucy und ich sind hingekommen, obwohl Mum in Slytherin war.“ Alle meine Weasleycousins und –Cousinen waren bisher nach Gryffindor gekommen, wobei James natürlich technisch gesehen kein Weasley, sondern ein Potter war, aber egal, er gehörte trotzdem zur Weasley-Seite der Familie.</p><p align="justify">„Hast du dir Sorgen gemacht, als du nach Hogwarts kamst, dass du vielleicht nach Slytherin kommst?“ fragte Albus.</p><p align="justify">„Nee, nicht besonders. Dann wäre ich halt nach Slytherin gekommen. Oder Ravenclaw, was auch immer. Ist doch egal.“</p><p align="justify">„Meinst du nicht, sie wären enttäuscht gewesen? Unsere Familie, meine ich?“</p><p align="justify">„Höchstens Onkel Ron und Onkel George. Aber die meinen das auch eher als Scherz, nicht so ernst wie sie immer tun.“</p><p align="justify">„Meinst du?“ Er klang skeptisch.</p><p align="justify">„Mum war in Slytherin uns sie wohnt mit fünf Gryffindors unter einem Dach und niemanden stört es“, erklärte ich. Ich wusste zwar, dass Mum und Gran ab und zu Streit hatten, aber ich glaubte nicht, dass es gut sei, das jetzt zu erwähnen, und es hatte ja auch wirklich höchstwahrscheinlich nichts mit der Hauszugehörigkeit zu tun. „Familie ist Familie, das ist viel wichtiger als irgendwelche Hogwartshäuser“, erklärte ich so entschieden wie möglich. „Mir wäre es auf jeden Fall egal, wenn du nach Slytherin kommst, und den anderen bestimmt auch. James sagt das doch sowieso nur, weil er merkt, dass dich das ärgert, und außerdem kommst du eh nach Gryffindor.“</p><p align="justify">„Aber ich seh dich nie mit deinen Slytherincousinen, du machst fast nie was mit denen. Was, wenn ich dahin komme, und ihr macht dann nichts mehr mit mir?“</p><p align="justify">„Das liegt nur daran, dass sie in Schottland wohnen und ich sie einfach nicht so gut kenne. Wir wohnen nun mal bei Dads Eltern und sehen Mums Eltern und Geschwister nur ein paar Mal im Jahr, euch sehen wir ja ständig. Wirklich, Albus, das hat überhaupt nichts mit Slytherin und Gryffindor zu tun.“</p><p align="justify">Diese ganze Hausrivalität war wirklich albern. Ein bisschen schön und gut, wenn man sich um Punkte für die beste Hausaufgabe stritt, aber das wurde viel zu weit geführt, manchmal duellierten sich sogar Schüler deswegen. Das ganze kam vom Quidditsch, vermutete ich, die Spiele verstärkten die Rivalität ins Unermessliche und James, der ein guter Flieger war, ließ sich natürlich anstecken. Ich konnte mit Quidditsch überhaupt nichts anfangen, es war doch einfach primitiv, so viele Emotionen in ein Spiel und eine Mannschaft zu stecken. Es ärgerte mich, wenn die Leute über Slytherin herzogen, weil Mum dort gewesen ist und ich sie liebe, und manchmal, wenn James mich oder Lucy damit aufzog, musste ich mir auf die Zunge beißen, nicht zu sagen, dass ich wenigstens keine Muggelfamilie hatte. Das würde ziemlich Ärger geben, aber war es wirklich so viel anders, stolz auf sein Haus zu sein, als stolz auf sein Blut? Was nicht heißen soll, dass ich keine stolze Gryffindor war, ich trug schon mein Bestes bei, dass wir möglichst weit vorn im Hauspokal landeten.</p><p align="justify">Das Gewitter war weitergezogen, die Donner klangen jetzt deutlich ferner, aber es schüttete noch wie aus Kübeln. Ich stieß Albus an. „Komm, wir gehen zurück.“</p><p align="justify">Er nickte und wir rappelten uns auf. Völlig durchnässt wie wir waren klebten kleine Stöckchen, Sand und Heidekrautblüten an uns, aber es war aussichtslos, sich jetzt darum zu kümmern, und wir verfielen in einen Laufschritt Richtung Zeltplatz, um nicht ganz so sehr zu frieren.</p><p align="justify">Die Zelte standen zum Glück alle noch, hier war nur ein kurzer Schauer gewesen, aber die anderen hatten das Gewitter gehört und sich schon Sorgen gemacht. Ich war wirklich froh, dass Onkel Harry und Tante Ginny ein Zelt mit warmer Dusche hatten, so dass Albus und ich uns richtig waschen und aufwärmen konnten. Mit Tante Hermines Campingdusche, die zwar vielleicht sehr authentisch Muggel, aber nicht sehr praktisch war, wäre das nicht so gegangen. Ich war wirklich froh, kein Muggel zu sein.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47765698">Chapter 4</a>: Rhamnus frangula
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Dienstag, 8. August 2017</strong>
+</p>
+<p align="justify">Leise vor sich hin summend schlenderte Lucy durch die blühende Heide. Sie war so zum Platzen glücklich, dass sie immer wieder ein wenig hüpfte. Es war noch ganz früh am Morgen, aber sie war schon wach gewesen, und weil Fred und James noch tief und fest schliefen, war sie schon ohne sie aufgestanden. Die Luft war ganz frisch und klar, das Gewitter gestern hatte alle Schwüle herausgewaschen. Aber die Sonne schien schon kräftig, wärmte sie angenehm in der Morgenkühle und ließ den Honigduft der Heide in die frische Luft steigen. Der Tag versprach wieder warm zu werden. Lucys Füße und der Saum ihrer Robe waren nass vom Tau, aber es störte sie überhaupt nicht, weil der Tau nämlich auch ganz wunderbar in der Morgensonne glitzerte. Die Vögel sangen ihre Melodien und es war so wunderschön, dass Lucy das Gefühl hatte, in ihrem Herzen wäre gar nicht genug Platz, für so viel Schönheit. Kurz bedauerte sie, dass außer ihr niemand wach war, um den Morgen zu bewundern, aber dann entschied sie, dass es gerade deshalb so schön sei, weil es so überbordend viel Schönheit ganz für sie und die Vögel war.<br/> Sie fing an, ein Kinderlied zu pfeifen, das ihre Mutter immer gesungen hatte und brach nach ein paar Takten abrupt ab, als sie in der Ferne eine Herde Rotwild sah. Sie blieb stehen und beobachtete atemlos die schönen großen Tiere, bis sie irgendwas erschreckte und sie aus ihrem Blickfeld stoben. Lucy nahm ihr Lied wieder auf und hüpfte weiter durch die Heide. Gedankenverloren begann sie, ihre Zöpfe, sowieso ganz verstrubbelt von der Nacht, zu lösen. Sie drehte sich um sich selbst und freute sich an den Locken, die ihre eigentlich glatten Haare durch die Zöpfe bekommen hatten, daran, wie die Sonne ihr rotblondes Haar leuchten ließ, und an der Art, wie sich ihre weiße Robe um sie bauschte, wenn sie sich schnell genug drehte. Lucy hörte auf, sich zu drehen, als ihr schwindlig wurde, und beschloss, in einem weiten Bogen zurück zum Zeltplatz zu gehen, um zu schauen, ob die anderen schon wach waren.<br/> Aber schon nach ein paar Minuten wurde sie aufgehalten, denn – oh das war ja noch besser als Hirsche! Dort graste eine Herde kleiner falbfarbener Ponys. Lucy duckte sich hinter einen Busch und beobachtete die Tiere mit angehaltenem Atem, auf keinen Fall wollte sie sie verjagen. Sie hatte gewusst, dass es hier wilde Ponys gab, und gehofft, welche zu sehen, aber bis jetzt waren ihnen noch keine begegnet. Oh wie würden die anderen neidisch sein, wenn sie es ihnen erzählte! Sie konnte sich nicht sattsehen, aber irgendwann liefen sie natürlich doch weg, vielleicht hatte der Wind ihren Geruch herüber getragen.<br/> Lucy streckte sich, als sie aus ihrer unbequemen Haltung aufstand. Dabei sah sie, dass der Busch, hinter dem sie sich versteckt hatte, voller Beeren hing, die sehr lecker im Morgenlicht glänzten. Sie waren paarweise angeordnet; einige waren grün, die waren vermutlich noch unreif, aber viele waren appetitlich rot oder schwarz. Lucy probierte zunächst eine rote Beere, sie schmeckte ein bisschen säuerlich und hauptsächlich nach nichts. In der Mitte waren drei Kerne, an denen sie ein bisschen herumlutschte und die sie dann ausspuckte. Sie probierte als nächstes eine schwarze Beere, die musste ja reifer sein. Tatsächlich schmeckte die intensiver, zwar lange nicht so gut wie die Heidelbeeren, die Molly und Louis gestern gefunden hatten, aber durchaus nicht schlecht. Lucy entschied, dass die Kerne klein genug zum Mitessen waren und pflückte noch eine Schwarze. Bestimmt würden die Beeren gut mit dem Haferschleim schmecken, den sie sich morgens immer zum Frühstück anrührten. Die anderen würden sich bestimmt freuen, wenn sie aufwachten, und es gab Frühstück mit frischen Beeren, dachte Lucy. Aber wie sollte sie die Beeren zu den Zelten schaffen? In jede ihrer Hände passten höchstens genug für eine Person, und sie waren zu siebt! Sie überlegte hin und her, aber es gab nur eine Lösung, die ihr einfiel, und die gefiel ihr nicht besonders. Sie konnte ihre Robe schürzen und darin die Beeren tragen, aber auch wenn sie noch so vorsichtig wäre, würde es Flecken geben. Warum musste sie auch ausgerechnet heute eine weiße Robe anhaben? Na gut, das war ihre Lieblingsfarbe, sie hatte oft weiße Roben an, aber trotzdem… Und warum mussten die Beeren ausgerechnet schwarz sein?<br/> Lucy dachte daran, wie sehr sich die anderen über eine Abwechslung freuen würden und entschied, dass es den Ärger mit ihrer Mutter und Großmutter wert sei, die würden die Robe schon wieder hinkriegen. Sie fing wieder an, das Lied zu summen, während sie die Beeren in ihre geschürzte Robe pflückte und sich immer wieder den Saft von den Fingern leckte. Beschwingt lief sie zu den Zelten zurück und sang vor sich hin, während sie das Frühstück vorbereitete. Sie setzte Wasser auf den Gaskocher und goss es über die Haferflocken, als es kochte, rührte und deckte sie den Topf mit dem Haferschleim ab, damit er warm blieb. Dann goss sie Milch in den Topf und stellte ihn zurück auf die Flamme. Mit einem halben Auge bei der Milch verteilte sie Schälchen und Löffel auf der Picknickdecke, die ihr „Esstisch“ war, stellte die Zuckerdose und die Gläser mit Erdbeer- und Kirschmarmelade in die Mitte und die Beeren, die sie in einen Topf gefüllt hatte. Dabei sang sie immer lauter, schließlich sollten die anderen langsam mal aufwachen, damit sie rechtzeitig zum fertigen Frühstück aus den Zelten kamen. Albus und Louis waren schon aus den Zelten gekommen und sahen ihr verschlafen zu, während sie die letzten Handgriffe erledigte. Als die Milch kochte, rührte sie sieben Löffel Trinkschokoladenpulver hinein und sang aus vollem Hals.<br/> „Frühstück ist fertig!“ rief sie, und tatsächlich waren alle da, bevor sie ungeduldig werden konnte.<br/> „Oh wow Lucy, du hast ja schon alles gemacht“, sagte James mit schlafrauer Stimme und rieb sich die Augen. „Wo hast du denn die Beeren her? Die sehen ja toll aus!“<br/> „Ich war schon spazieren“, verkündete Lucy. „Ich habe Ponys gesehen! Und Hirsche! Und ganz viele Vögel.“<br/> „Was sind das denn für Beeren, Lucy?“ fragte Molly.<br/> „Keine Ahnung, aber sie schmecken ganz ok.“<br/> „Aber Lucy, du kannst doch nicht einfach irgendwelche Beeren essen, die du gar nicht kennst! Was, wenn die giftig sind?“<br/> „Ich hab schon welche gegessen, und mir geht es gut“, sagte Lucy, aber sie fühlte sich ein bisschen unbehaglich. Wieso hatte sie daran nicht gedacht? Alles war so wunderperfekt gewesen, dass sie sich nicht hatte vorstellen können, dass irgendetwas in dieser Landschaft schädlich war.<br/> Rose hatte eine der kleinen Beeren zwischen Daumen und Zeigefinger genommen und betrachtete sie aufmerksam. „Wie sah der Baum aus, Lucy?“ fragte sie.<br/> „Es war eher ein Busch. Und er sah halt aus, wie ein Busch. Zweige und Blätter und so.“<br/> „Die Beeren einzeln können alles Mögliche sein, wenn du den Busch nicht genauer beschreiben kannst, können wir nicht wissen, was das für Beeren sind. Du willst uns doch wohl nicht alle vergiften.“<br/> „Natürlich nicht“, sagte Lucy ärgerlich.<br/> „Dann überleg halt. Wie sahen die Blätter aus? Wie waren die Beeren angeordnet? Hatte er Dornen?“<br/> Lucy dachte nach, aber der Busch hatte nun mal einfach wie ein Busch ausgesehen, nur die Beeren waren ihr aufgefallen. „Die Blätter waren halt so blattförmig. Keine Dornen, glaube ich, ich hab mich jedenfalls nicht gestochen.“<br/> „So kann ich nicht sagen, was das ist, du musst dich genauer erinnern!“<br/> „Rose“, versuchte Fred zu beschwichtigen. „Vielleicht sollten wir die Beeren sicherheitshalber einfach nicht essen, egal was es ist, weil wir es einfach nicht genau wissen, ob sie giftig sind oder nicht.“<br/> Lucy nickte ein bisschen traurig. „Sie sahen nur so schön aus, so schwarz und rot und grün zusammen zwischen den Blättern“, murmelte sie.<br/> „Verschiedene Reifestadien gleichzeitig? Ha, das muss ein Faulbaum sein!“ rief Rose, begeistert, weil sie das Rätsel gelöst hatte. „Das hätte was gegeben, wenn wir das gegessen hätten, die Beeren können blutigen Durchfall verursachen.“<br/> „Rose hat Recht, die enthalten Blausäureglycosid, wir hatten die letztes Jahr in Kräuterkunde“, bestätigte Louis.<br/> „Das wusste ich nicht“, sagte Lucy erschrocken.<br/> Molly sah sie besorgt an. „Geht es dir gut? Wie viele hast du gegessen?“<br/> „Vielleicht so zehn Stück, ich wollte sie ja mitnehmen.“<br/> „Das sollte noch gehen“, meinte Rose mit fachmännischem Gesichtsausdruck.<br/> „Es tut mir so leid“, flüsterte Lucy. „Ich wollte euch doch nicht vergiften.“ Tränen traten in ihre Augen und ihre Unterlippe zitterte verdächtig.<br/> „Das wissen wir doch, du hast es nur gut gemeint“, sagte Louis beruhigend. „Und das Frühstück hast du trotzdem toll vorbereitet.“<br/> Aber nichts war gut. Sie hatte sich so gefreut, den anderen eine Freude zu machen, und jetzt hätte sie sie beinahe vergiftet. Wie konnte so etwas an einem so strahlenden Morgen geschehen? Die Tränen liefen über ihre Wange und Molly zog sie in eine Umarmung. Lucy presste ihr Gesicht in die weiche Schulter ihrer Schwester und wollte die Welt vergessen. Wieso musste immer alles blöd werden, wenn es gerade mal schön war?</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47800816">Chapter 5</a>: Die Nachtwanderung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Mittwoch, 9. August 2017</strong>
+</p>
+<p align="left">
+  <em>
+    <strong>Molly</strong>
+  </em>
+</p>
+<p align="justify">Ich hatte ja von Anfang an gewusst, dass das eine bescheuerte Idee war, eine Nachtwanderung zu machen. Wer kam überhaupt auf so etwas? Nachts sollte man im Bett liegen und schlafen, nicht irgendwo herumwandern. Oder wenigstens im Bett liegen und lesen. Aber James hatte sich in den Kopf gesetzt, eine zu machen, und Albus mit der Idee auch noch angesteckt. Und ich konnte die die beiden ja schlecht allein im Dunkeln allein durch die Nacht stapfen lassen. Sie waren erst elf und zwölf! Wobei James zugegebenermaßen bald dreizehn wurde.</p>
+<p align="justify">Also hatte ich mitgemusst, bei dieser dummen Aktion. Louis wollte nicht, er hatte im Laufe des Tages angefangen, sich mit Lucy und Fred eine Geschichte auszudenken, die sie immer weiter spannen und jetzt unbedingt aufschreiben wollten. Sie hatten also gar keine Zeit, meinte zumindest Louis, und dass ich die beiden einfach allein gehen lassen sollte. Aber das konnte ich einfach nicht verantworten, auch nicht mit diesem tragbaren Lumos von Rose‘ Großeltern. Also war ich mitgekommen, als ich gemerkt hatte, dass sie im Zweifel eher ohne mich losziehen, als einfach im Zelt bleiben würden, die beiden konnten wirklich stur sein.</p>
+<p align="justify">Es war stockdunkel, weil es sich wieder zugezogen hatte, kein Sternenlicht, kein Mondschein, oder was man sich sonst so vorstellt, was vielleicht schön sein könnte auf einer Nachtwanderung. Nein, es war einfach dunkel und ätzend und wir stolperten Ewigkeiten durch die Dunkelheit, ohne etwas anderes zu sehen als den Lichtkreis von dem tragbaren Lumos, den James viel zu hektisch hin und her schwenkte, so dass er kaum was brachte. Und dann war das blöde Ding natürlich kaputt gegangen. Erst war das Licht nur schwächer geworden, und dann war es ganz plötzlich ausgegangen, und egal wie viel James es schüttelte, es wollte nicht mehr angehen.</p>
+<p align="justify">Jetzt standen wir also hier, im Stockfinstern, irgendwo im Exmoor-Nationalpark, und hatten kein Licht.</p>
+<p align="justify">„Habt ihr jetzt endlich genug von der Nachtwanderung?“ fragte ich. „Können wir zurückgehen?“</p>
+<p align="justify">„Ok, Molly“, sagte Albus, ein bisschen zu schnell. James sagte gar nichts, ich konnte mir gut vorstellen, wie er das Gesicht verzog, sehen konnte ich ihn im Dunkeln kaum, aber er protestierte auch nicht und wir kehrten um. Ich hatte zwar das Gefühl gehabt, dass das Licht überhaupt nichts gebracht hatte, aber es war jetzt doch noch schwieriger. Sowohl ich als auch Albus schlugen einmal der Länge nach hin, als wir in ein Loch traten. Zum Glück taten wir beide uns nichts, die Heide polsterte den Fall, aber was, wenn jemand von uns sich den Knöchel vertrat? Dann wären wir schön aufgeschmissen.</p>
+<p align="justify">Wir stolperten eine ganze Weile durch die Nacht und ich wurde mir immer unsicherer, ob wir noch auf dem richtigen Weg waren. Waren wir auf dem Hinweg wirklich an diesem krummen Baum vorbeigekommen? Ich war mir einfach nicht mehr sicher. James und Albus schien es ähnlich zu gehen, denn James fragte, mit jamesuntypisch dünner Stimme: „Äh Molly, bist du sicher, dass wir noch richtig sind?“</p>
+<p align="justify">„Ziemlich“, antwortete ich so überzeugt wir möglich, es würde niemanden nützen, wenn ich jetzt in Panik verfiel, und wir stolperten eine Weile weiter. Wieso musste auch dieses blöde Ding kaputt gehen, war ja klar, dass auf Muggeltechnik keinen Verlass war. Und warum mussten die beiden unbedingt eine Nachtwanderung machen wollen und warum war Louis nicht mitgekommen. Wenn Louis dabei wäre, wäre es halb so schlimm. Was, wenn wir in die völlig falsche Richtung gingen, und uns immer weiter von den Zelten entfernten? Bei Merlins Bart, das wäre schlecht.</p>
+<p align="justify">Ich blieb stehen und Albus lief gegen mich, weil er nicht damit gerechnet hatte.</p>
+<p align="justify">„Was ist los?“ fragte er.</p>
+<p align="justify">„So ganz sicher bin ich mir doch nicht“, gab ich zu. Ich redete schnell weiter, bevor Panik aufkommen konnte. Es war wichtig, immer einen Plan zu haben, oder zumindest so zu wirken. Und ich hatte ja wirklich einen. „Wir bleiben jetzt hier, bis es heller wird und wir was erkennen, nicht dass wir immer weiter weg laufen“, sagte ich so entschieden und sicher, wie ich konnte, auch wenn ich mir ziemliche Sorgen machte. Wie lange waren wir schon gelaufen? Irgendwie verlor man das Zeitgefühl, so im Dunkeln im Freien. Was, wenn wir schon gleich am Anfang falsch gegangen waren? Wir konnten sonst wo sein.</p>
+<p align="justify">„Bis es heller wird?“ kiekste Albus.</p>
+<p align="justify">„Vielleicht kommt ja der Mond bald raus“, versuchte ich ihn zu beruhigen. „Dann müssen wir nicht bis zum Morgen warten.“</p>
+<p align="justify">„Aber was, wenn wir immer noch nicht erkennen, wo wir sind, auch wenn es hell wird?“ fragte Albus.</p>
+<p align="justify">„Wir sind hier so viel rumgelaufen, wir erkennen das bestimmt“, sagte ich, hoffentlich überzeugend. Ganz sicher war ich mir eigentlich nicht. „Jetzt machen wir es uns jedenfalls erstmal hier gemütlich.“</p>
+<p align="justify">Wir setzten uns also auf den großen Stein, vor dem wir gerade standen. Ich hatte das Gefühl, dass er mir bekannt vorkam, aber hier waren so viele Steine… Und jedenfalls hatte ich keine Ahnung, in welcher Richtung die Zelte lagen. Der Stein war zwar nicht so feucht vom Tau, aber dafür war es ziemlich kalt, darauf zu sitzen, obwohl die Luft sonst zum Glück ziemlich lau war. Trotzdem spürte ich, wie Albus leicht zitterte.</p>
+<p align="justify">„Bhavani darf nicht zu meinem Geburtstag kommen“, sagte James mit ziemlich mauliger Stimme, aber ich wusste trotzdem, dass er davon anfing, um seinen Bruder abzulenken.</p>
+<p align="justify">„Du siehst sie doch bald wieder in Hogwarts, du wirst schon noch ein paar Tage ohne sie auskommen“, sprang Albus dann auch darauf an.</p>
+<p align="justify">„Aber sie darf nie zu meinem Geburtstag kommen, und es nervt“, beschwerte sich James.</p>
+<p align="justify">„Es ist nun mal ziemlich weit von Indien zu uns“, sagte Albus.</p>
+<p align="justify">„Aber nach Hogwarts kommt sie ja auch. Sie müsste nur eine Woche früher kommen, dann könnte sie bei meinem Geburtstag sein. Sie könnte ja danach bei uns bleiben, wir haben genug Platz und Dad ist mit ihrer Mum befreundet.“</p>
+<p align="justify">„Stell dir mal vor, du würdest in den Ferien eine Woche früher wegfahren, und dann auch noch so weit weg, das fände unsere Familie bestimmt auch nicht gut“, sagte ich. „Wenn Bhavanis Familie in Indien wohnt, sieht sie die ja bestimmt nur selten.“</p>
+<p align="justify">„Das stimmt“, meinte Albus. „Dad wäre nicht begeistert, selbst zum Zelten mussten wir ihn überreden. Und Nan auch nicht.“</p>
+<p align="justify">„Trotzdem“, murmelte James. „Das ist doch albern, so rumzuglucken. Dann sollen sie halt alle wieder nach England ziehen.“</p>
+<p align="justify">„Weißt du, was Mum letztes Jahr gesagt hat, als sie weg waren? Also ihre Mum und ihr Dad waren mit ihrem Bruder ja noch bei uns zum Tee trinken, nachdem wir euch zum Bahnhof gebracht hatten. Und als sie gegangen waren, meinte Mum zu Dad, dass ihre Mum eine von denen sei, die es in Großbritannien nicht mehr ausgehalten haben nach dem Krieg. Dass sie deswegen immer nur ganz kurz kommt, und gleich wieder abreist und auch nicht will, dass ihre Kinder länger als nötig da sind.“ Albus klang ziemlich altklug, als er das erzählte, aber ich fand, dass es eine ziemlich kluge Beobachtung war. Wir waren es alle irgendwie gewohnt, dass unsere Eltern manchmal komische Sachen machten, und wenn wir nachfragten, hieß es, das liege am Krieg. Irgendwann entwickelte man ein Gefühl dafür, und musste nicht mehr nachfragen.</p>
+<p align="justify">Plötzlich sah ich in der Ferne ein Licht aufblitzen und meinte auch, etwas zu hören.</p>
+<p align="justify">„Psst. Seid mal still!“</p>
+<p align="justify">Ja, ganz deutlich da rief jemand. Das mussten die anderen sein, die uns suchten.</p>
+<p align="justify">„Ist das Louis?“ flüsterte James.</p>
+<p align="justify">„Ich glaub schon. LOUIS!“ brüllte ich so laut ich konnte, und die anderen stimmten mit ein. Wir lauschten, und tatsächlich wehte etwas herüber, das wie unsere Namen klang. Wir schrien wieder, und das Licht kam langsam näher, bis endlich tatsächlich Louis und Rose vor uns standen. Ich war noch nie so froh, sie zu sehen.</p>
+<p align="justify">„Wo bleibt ihr denn, wir haben uns Sorgen gemacht!“ sagte er.</p>
+<p align="justify">„Unser Licht ist kaputtgegangen“, erklärte ich und Albus sagte „Wir haben uns verlaufen.“ Hm.</p>
+<p align="justify">„Wir sind keinen Kilometer von den Zelten entfernt, ihr hättet einfach nur weitergehen müssen“, erklärte Louis. „Fred und Lucy sind bei den Zelten geblieben, falls ihr zurückkommt. Und Rose und ich sind euch suchen gegangen, Rose ist nämlich eingefallen, dass ihr Handsprechdingens auch so ein tragbares Lumos hat.“</p>
+<p align="justify">Wir waren tatsächlich keine viertel Stunde später bei den Zelten und ich fiel todmüde in meinen Schlafsack. Das war mehr als genug Aufregung für zwei Zeltausflüge gewesen, auch wenn ich mir schon denken konnte, dass James und Albus das ganze morgen ziemlich cool finden würden.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47832784">Chapter 6</a>: Letzter Abend
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Donnerstag, 10. August 2017</strong>
+</p><p>Rose wischte sich die staubigen Hände an ihrer knallroten Robe ab. Es hinterließ weiß-graue Staubspuren, aber das kümmerte sie im Augenblick nicht, sie war viel zu beschäftig. Den ganzen Zeltausflug über hatte sie schon Ordnung in der Truhe schaffen wollen, und war dann immer abgelenkt worden, und jetzt war schon der letzte Tag, es wurde also höchste Zeit.</p><p>Das Zelt, das sie sich mit Albus teilte, war eigentlich ein klassisches Muggel-Dreimannzelt, das einmal ihren Großeltern Granger gehört hatte, die es dann an ihre Mutter vererbt hatten. Deshalb verfügte es nicht über den bei Zaubererzelten eingebauten Komfort mit durch Ausdehnungszauber mögliche normalen Schlafzimmer und dergleichen Schnickschnack, aber irgendwann hatte ihre Mutter genervt zumindest der Truhe, die in der Mitte des Zeltes ihren Platz hatte, einen Ausdehnungszauber verpasst, um dem Chaos an herumliegenden Klamotten, Geschirr, Besteck, Lebensmitteln und Büchern, das unweigerlich entstand, wenn sie mit ihrem Mann und Kindern zeltete, Herr zu werden. Aber die Familienzeltausflüge waren seltener geworden, je höher ihre Mutter in der Hierarchie des Zaubereiministeriums aufgestiegen war, war das doch unvermeidlich mit mehr Arbeit und weniger Zeit verbunden gewesen. Rose‘ Vater war noch einmal allein mit ihr und Hugo zelten gewesen, und vielleicht lag es daran, dass es in den ausgedehnten Tiefen der Truhe so unordentlich war, jedenfalls war das schon drei Jahre her und es war nicht nur alles durcheinander, sondern auch völlig verstaubt.</p><p>Rose entschied, dass sie erstmal etwas gegen den Staub unternehmen musste und holte einen ihrer Waschlappen, den sie mit Wasser aus einer Flasche befeuchtete. Es wäre sehr viel praktischer, das zu Hause zu machen, wo das Wasser aus dem Wasserhahn kam, oder einer ihrer Eltern einfach einen Reinigungszauber anwenden konnte, aber sie wollte das nun mal jetzt machen. Draußen hörte sie Fred und Lucy mal wieder über irgendetwas kichern, und James schimpfen, weil Albus ihn im Zauberschnippschnapp besiegt hatte. Sie beugte sich in die Truhe und versuchte, möglichst viel Staub mit dem feuchten Waschlappen zu erreichen. Ächzend stellte Rose fest, dass sie wohl oder übel ganz in die Truhe klettern musste, wenn sie gründlich sein wollte, sie war innen sicher fast zwei Meter breit und tief.</p><p>Nachdem sie in die Truhe geklettert war und ein bisschen herumgewischt hatte, sah sie ein, dass das so nichts brachte. Sie musste erst die Flächen freischaffen, damit sie Platz zum Wischen hatte. Seufzend ließ Rose den Lappen fallen und begann, die Sachen aus der Truhe zu schaffen. Was nicht zerbrechlich wirkte, warf sie einfach nach oben durch die Öffnung. Eine alte Decke, die aussah, als ob ihre Großmutter die selbst gestrickt hatte, einen Schal, eine hellblaue Robe, die Hugo geliebt hatte und die sie alle ewig gesucht hatten, als sie weg war, eine hölzerne Grillzange, ein Kissen, bei dem die Füllung aus verschiedenen Löchern rieselte, Campingbesteck… Die zerbrechlichen Sachen musste sie nach und nach hochbringen und dabei immer wieder durch den Truhendeckel klettern. Fünf Porzellanteller und vier Tassen, die alle nicht zusammen passten, verschiedene Flaschen, die so verstaubt waren, dass sie die Etiketten nicht erkennen konnte, ein leerer Salzstreuer, eine Taschenbuchausgabe von Fünf Freunde im Zeltlager – die war vielleicht nicht unbedingt zerbrechlich, aber Rose war es gewohnt, Bücher respektvoll zu behandeln.</p><p>Als sie endlich Platz hatte, wischte sie alles gründlich ab und sah sich zufrieden um. Jetzt musste sie nur noch die Sachen wieder einsortieren, der Teil, der am meisten Spaß machte. Als sie dann aber im Zelt vor den übereinander geworfenen Sachen kniete, wusste Rose, dass sie sie erst reinigen musste, sonst wäre das Ganze am Ende nicht befriedigend, sie konnte doch nicht die dreckigen Sachen in die saubere Truhe räumen.</p><p>Also schüttelte sie die Decke und das Kissen vor dem Zelt aus, gegen die Löcher konnte sie jetzt leider nichts machen, aber sie legte die Decke ordentlich zusammen und das Kissen darauf. Die Robe war Hugo natürlich viel zu klein inzwischen, aber sie legte sie zur Seite, vielleicht würde Tante Angelina die für Roxanne wollen. Das Buch legte sie neben ihren Schlafsack, ihr Vater hatte es ihr zwar schon mal vorgelesen, aber sie wollte es noch mal selbst lesen. Die Grillzange und das Geschirr musste sie abspülen, entschied sie, und nachdem sie sauber waren, wischte sie mit dem Spüllappen die verstaubten Flaschen ab. Jetzt konnte sie die verstaubten Etiketten lesen: Es waren eine unangebrochene Flasche Öl, eine fast leere Flasche Essig, und eine halbvolle Flasche Ogdens Old Feuerwhisky. Rose wollte die Flaschen gerade neben den jetzt sauberen Tellern in die Truhe stellen, als Louis den Kopf in das Zelt steckte.</p><p>„Rose, alles klar bei dir? Man hört gar nichts von dir.“</p><p>„Ich hab aufgeräumt“, verkündete Rose, ein bisschen stolz.</p><p>Louis‘ Blick fiel auf die Flaschen, ein Funkeln trat in seine Augen und er kroch ganz in das Zelt. „Was hast du denn da gefunden?“ fragte er und griff nach der nun glänzenden braunen Whiskyflasche.</p><p>„Hey, das gehört Dad, ich räum die jetzt wieder auf!“ protestierte Rose.</p><p>„Sei nicht so. Maman und Dad erlauben mir immer nur Wein, das ist perfekt für unseren letzten Abend.“</p><p>„Deine Eltern erlauben dir Wein?“ fragte Rose ungläubig. „Du bist vierzehn! Weißt du, wie schädlich Alkohol für die Gehirnentwicklung ist?“</p><p>„Sie erlauben mir ja nicht, mich zu besaufen. Nur ab und zu ein halbes Glas. Ich glaube, es liegt an Maman, irgendwie sind Franzosen da entspannter, hab ich das Gefühl. Aber Feuerwhisky erlaubt sie auch nicht.“</p><p>„Also gut“, sagte Rose gleichmütig und gab ihm die Flasche. „Ist ja dein Gehirn. Aber glaub bloß nicht, dass ich auch was trinke!“</p><p>Louis sah sie entsetzt an. „Rose! Du bist elf! Das würde ich nie erlauben!“ Er kroch zurück aus dem Zelt und rief laut „Molly! Sieh mal, was ich gefunden habe!“</p><p>Kopfschüttelnd lief Rose hinter ihrem Cousin her, Mollys Reaktion wollte sie sich nicht entgehen lassen. Tatsächlich beäugte ihre Cousine die braune Flasche eher misstrauisch als begeistert.</p><p>„Was sollen wir damit?“ frage Molly skeptisch.</p><p>„Uns einreiben, das lässt Sommersprossen golden glitzern“, sagte Louis ironisch. „Na trinken natürlich, du Dussel. Nur wir natürlich, nicht die Kleinen“, fügte er hinzu, als Molly immer noch skeptisch schaute. „Das ist perfekt für unseren letzten Abend, und wir müssen es hier machen, unsere Eltern erlauben uns das sonst nie.“</p><p>Molly zog den Korken von der Flasche, schnupperte am Inhalt und zog die Nase kraus. „Aber wir müssen es mit irgendwas mischen, das riecht wie Putzmittel.“</p><p>Rose war wenig erstaunt, dass Molly so schnell einlenkte, sie war lange nicht so brav, wie sie immer aussah. Sie pochte immer auf die Regeln und ging damit Rose und den anderen oft auf die Nerven, aber eigentlich war sie doch immer schnell bereit, doch von ihnen abzuweichen, besonders wenn Louis es vorschlug, dem sie nichts abschlagen konnte. Rose hatte ihre Tante Angelina mal zu ihrer Mutter sagen hören, es sei ihr schleierhaft, wie zwei rothaarige Mädchen nur immer so brav wie Molly und Lucy aussehen konnten. Rose dachte, dass das weniger mit der Haarfarbe und mehr mit den immer ordentlich gebügelten Blusenkragen unter ihren Roben und zu tun hatte, und außerdem wussten weder Angelina noch Hermine, dass es zwar Freds Idee gewesen war, die Stinkbomben in Percys Büro zu deponieren, aber Molly die Ausführung übernommen hatte.</p><p> </p><p>Am Abend machten sie ein richtig schönes Feuer, wie sie es schon die ganze Zeit vorgehabt hatten und was beim letzten Versuch vom Regen vereitelt worden war, und brieten Stockbrot, Würstchen und Mäusespeck an langen Stöcken über der Glut. Rose saß eingezwängt zwischen Albus und Fred auf einem Baumstamm. Der Stamm war hart und unter der bröseligen Rinde krochen Kellerasseln herum, das Feuer vor ihr war etwas zu heiß an ihrer Vorderseite und die Nachtluft hinter ihr etwas zu kühl an ihrer Rückseite, aber Rose war glücklich, es war absolut perfekt, hier mit ihrer Familie zu sitzen.</p><p>Über das Feuer hinweg beobachtete sie, wie Louis einen Schluck aus der Feuerwhiskyflasche nahm. Er verzog verzweifelt das Gesicht zu einer Grimasse, bemüht, den viel zu kühnen Schluck herunterzuschlucken, und Rose unterdrückte ein Kichern.</p><p>„Ich habe doch gesagt, wir müssen das mischen“, sagte Molly ziemlich zufrieden, weil sie Recht hatte. „Zu schade, dass der Kürbissaft schon alle ist. Meinst du Zitronen- oder Kirschlimo passt besser?“</p><p>Louis zuckte keuchend die Achseln, er erholte sich immer noch von dem ersten Schluck.</p><p>„Nehmt Zitrone, davon haben wir mehr, ihr müsst nicht unsere schöne Kirschlimo verderben“, empfahl Rose über das Feuer und Molly nahm tatsächlich eine angefangene Zitronenlimonadenflasche und goss vorsichtig etwas von dem Whisky dazu. „Ich denke, das reicht erstmal, oder?“</p><p>Louis nickte und nahm einen Schluck. „Viiiel besser“, befand er und gab Molly die Flasche. Sie verzog ziemlich das Gesicht, nahm aber gleich noch einen Schluck.</p><p>„Lasst mich auch mal!“ forderte James, aber Molly zog ihm die Flasche weg und gab sie Louis zurück, der gleich noch einen Schluck nahm. „Du bist noch zu klein!“</p><p>James verzog schmollend das Gesicht, stimmte aber gleich darauf enthusiastisch in das Lagerfeuerlied ein, das Lucy anstimmte. Sie sangen eine Weile, und am Anfang klang es wunderschön, aber mit der Zeit sangen Louis und Molly immer lauter und schiefer und fingen ständig an zu kichern und sie gaben es wieder auf. James griff wieder nach der Flasche, und diesmal achtete Molly nicht auf ihn. Rose sah, wie er hastig einen großen Schluck trank und eine angewiderte Grimasse zog. Still gab er Molly die Flasche zurück, die gar nichts mitbekommen hatte, weil sie inzwischen ziemlich betrunken war.</p><p>„Ihr nervt!“ befand Rose und warf ein Stück Mäusespeck, dass ihr zu sehr verbrannt war ins Feuer. „Könnt ihr nicht woanders rumkichern?“</p><p>Louis prustete los, als habe sie den Witz der Woche gemacht. „Ok, lass uns spazieren gehen, ja Molly? Is‘ eh langweilig hier.“ Er stand auf und trat dabei beinahe ins Feuer, was einen Lachanfall bei Molly auslöste. Sie rappelte sich ebenfalls auf, stolperte aber gleich rückwärts über den Baumstamm, auf dem sie gesessen hatte. Kichernd zog Louis sie wieder hoch und die beiden torkelten davon „Die Schderne sind ja sooooooo schön“, hörte Rose Molly sagen, während sie den beiden kopfschüttelnd hinterher sah. Lucy stimmte das letzte Lied wieder an, und Rose fiel genau wie Fred, Albus und James in die vertraute Melodie ein. Bestimmt würde sie sich nie so idiotisch verhalten wie Molly und Louis, man konnte doch sicher auch normal erwachsen werden.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/20115061/chapters/47868886">Chapter 7</a>: Zurück zum Fuchsbau
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>Freitag, 11. August 2017</strong>
+</p>
+<p>Am nächsten Morgen mussten sie packen, es ließ sich wirklich nicht länger hinauszögern, da um zwölf ihr Portschlüssel zurück zum Fuchsbau gehen sollte. Rose lief schon einige Zeit geschäftig hin und her, ihr Rucksack war längst gepackt, Schlafsack und Isomatte waren eingerollt und gerade war sie dabei, mit Albus ihr Zelt abzubauen.</p>
+<p>„Meinst du, wir sollen sie wecken?“ fragte Albus und nickte mit dem Kinn in Richtung des Zeltes von Louis und Molly, während er eine Zeltstange aus dem Zelt zerrte.</p>
+<p>Rose zuckte die Achseln. „Bestimmt stehen sie bald auf.“ Sie fing an, die Stange zusammenzufalten. „Ich freu mich schon so auf Hogwarts“, sagte sie zu Albus.</p>
+<p>„Ich weiß.“ Er seufzte etwas und machte sich an die nächste Stange.</p>
+<p>Rose stockte und sah ihn an. „Du etwa nicht?“</p>
+<p>Albus zuckte die Schultern. „Doch schon. Aber es ist auch alles … neu. Und alle werden wegen meinem Nachnamen ausflippen“ Er sagte neu, als sei es ein Synonym für etwas Schlimmes.</p>
+<p>„Das meiste hat James bestimmt schon abbekommen. Es wird bestimmt super. Endlich zaubern, stell dir das doch mal vor!“ sagte Rose und stupste ihn die die Seite.</p>
+<p>Albus lächelte etwas „Na gut, das stimmt natürlich.“</p>
+<p>Rose nickte zufrieden. „Ich bin jedenfalls froh, nicht mehr auf die Muggelschule gehen zu müssen. Schon, weil man nicht mehr aufpassen muss, sich aus Versehen zu verplappern.“</p>
+<p>„Bist du nicht gern hingegangen?“ fragte Albus überrascht.</p>
+<p>„Doch schon.“ Rose liebte es zu lernen. Albus sah sie fragend an und sie zuckte die Achseln. „Manche Muggel haben komische Vorstellungen von Rothaarigen, sie finden das ziemlich uncool und anscheinend hässlich“, sagte sie und strich sich verlegen eine ihrer leuchtend roten Strähnen aus dem Gesicht. Sie hatte keinem ihrer Cousins und Cousinen gesagt, dass sie in der Schule wegen ihrer Haarfarbe gehänselt wurde, nur ihre Eltern wussten davon.</p>
+<p>„Rote Haare sind doch nicht hässlich oder uncool!“, sagte Albus ehrlich empört. „Ich wollte immer auch welche haben wie ihr alle.“</p>
+<p>„Victoire und Hugo haben auch keine roten Haare, und Roxanne auch nicht“, sagte Rose und schenkte ihm ein schiefes Lächeln. „Man will immer das, was man nicht hat, was?“</p>
+<p> </p>
+<p>James, Lucy und Fred bereiteten das Frühstück vor, ihr Zauberzelt ließ sich mit einem Griff zusammenpacken und erforderte kein Auseinanderbauen von irgendwelchen Zeltstangen oder mühseliges Zusammenlegen von Zeltplanen.</p>
+<p>„Kommt ihr frühstücken?“ rief James und Albus und Rose stellten das gepackte Zelt zu dem anderen Gepäck und ließen sich zu den drei an die Tischpicknickdecke plumpsen.</p>
+<p> „Wir sollten sie wecken“, befand Fred. „Sie wollen ja bestimmt noch was essen, und wir müssen alles abspülen und einpacken.“</p>
+<p>„Stimmt, guter Punkt“, sagte Rose und brüllte so laut sie konnte „Oi! Louis! Molly! Aufstehen!“</p>
+<p>Lucy, die gerade heiße Schokolade ausschenkte, sah sie kopfschüttelnd an und stand auf, um sie richtig zu wecken. „Sie kommen, sagen sie“, meinte sie, als sie nach ein paar Minuten wieder aus dem Zelt zu ihnen zurückkam.</p>
+<p>Es dauerte dann aber noch fast eine viertel Stunde, bis Louis und Molly endlich wirklich aus dem Zelt gekrochen kamen. Sie sahen völlig verschlafen und zerdrückt aus und Rose amüsierte sich über Mollys völlig verwuschelte, leuchtend rote Haare. Sie hatte sie kaum jemals mit offenen Haaren gesehen, geschweige denn mit so einem Chaos auf dem Kopf.</p>
+<p>„Wieso ist der kalt?“ beschwerte Molly sich missgelaunt über den Haferschleim.</p>
+<p>„Nicht unsere Schuld, dass ihr so lange pennen müsst“, fand James spitz.</p>
+<p>„Pfff, so spät kann es ja wohl noch nicht sein“, sagte Molly und stocherte lustlos in ihrer Schale herum.</p>
+<p>„Es ist fast halb elf, ihr Schlafmützen!“</p>
+<p>„Uff. Und wir müssen noch packen.“ Molly nippte an ihrem Kakao. „Ich glaub ich will lieber Wasser“, murmelte sie ergeben.</p>
+<p>„Ich freu mich jedenfalls, wenn es morgen früh wieder Speck und Eier zum Frühstück gibt. Und auf Grans Mittagessen“, sagte Louis, der auch nicht gerade überschwänglich an seinem Brei aß.</p>
+<p>Etwas grummelnd machte Rose sich an den Abwasch, als endlich auch Molly und Louis fertig gegessen hatten. Eigentlich wären die beiden dran gewesen, aber sie sah ein, dass es wichtiger war, dass sie ihre Sachen zusammenpackten, und Albus und Lucy halfen ihr beim Abtrocknen. James und Fred verstauten den spärlichen Rest ihrer Vorräte, den sie nicht vertilgt hatten, in der Reisetasche, und dann auch nach und nach das Geschirr und Besteck, das fertig abgewaschen war.</p>
+<p>Rose kippte gerade das Spülwasser weg, als Louis und Molly zurückkamen und sich ins Gras fallen ließen.</p>
+<p>„Fertig, alles gepackt“, sagte Louis zufrieden. „Hättet ihr nicht gedacht, dass wir so schnell alles schaffen, was? Jetzt haben wir sogar noch eine halbe Stunde Zeit.“</p>
+<p>„Aber nur, weil wir für euch den Abwasch gemacht haben“, meinte Rose und gab den Spüleimer James, der ihn als letztes in der Reisetasche verschwinden ließ, auf der natürlich ein Ausdehnungszauber lag.</p>
+<p>„Dann können wir ja noch ein bisschen entspannen, bevor der Portschlüssel geht“, sagte Lucy. Sie ließ sich auf den Rücken ins Gras fallen und blinzelte in die Sonne.</p>
+<p>„Apropos Portschlüssel, wo ist der eigentlich?“ fragte Rose, die gern den Überblick hatte.</p>
+<p>Alle sahen Louis erwartungsvoll an, der aber die Augen geschlossen hatte und nichts davon merkte.</p>
+<p>„Louis!“ James stieß ihn in die Seite.</p>
+<p>„Hm?“</p>
+<p>„Der Portschlüssel!“</p>
+<p>„Was ist damit?“</p>
+<p>„Wo ist er?“</p>
+<p>„Keine Ahnung, woher soll ich das wissen. Lasst mich noch ein bisschen schlafen.“</p>
+<p>„Was soll das heißen, keine Ahnung? Du solltest darauf aufpassen!“ fragte Rose anklagend.</p>
+<p>„Hm?“ machte Louis und setzte sich dann langsam auf. „Oh verdammt. Der Portschlüssel. Ich hab keine Ahnung, wo der ist!“</p>
+<p>„Dann haben wir genau zweiundzwanzig Minuten, ihn zu finden“, verkündete Lucy nach einem Blick auf die Uhr ganz ruhig.</p>
+<p>„Was war noch mal der Portschlüssel?“ fragte Molly, schon etwas wacher. Die Situation weckte ihr Verantwortungsbewusstsein, wenn sie nicht mit dem Portschlüssel kamen, würden ihre Eltern sich sorgen machen, und Rose wusste, dass Molly das um jeden Preis vermeiden wollte. Sie wollte alle sicher zurückbringen und natürlich auf gar keinen Fall, dass ihre Eltern von der Feuerwhiskysache etwas erfuhren.</p>
+<p>„Ein Stück Seife“, sagte Louis und Rose dachte, dass das ein bescheuerter Gegenstand für einen Portschlüssel war. Was, wenn die Seife ins Wasser fiel und sich auflöste? Was passierte dann mit dem Portschlüssel? Eigentlich eine interessante Frage, sie hoffte, die Antwort darauf bald in Hogwarts zu finden.</p>
+<p>„Du hast ihn bestimmt mit deinen anderen Sachen eingepackt“, sagte Albus und sah Louis auffordernd an.</p>
+<p>Louis stöhnte, aber ihm blieb natürlich nichts anderes übrig, als seine Sachen wieder auszupacken. Nur – das Stück Seife, von dem sie einigermaßen sicher waren, dass es einfach ein eckiges Stück Kernseife war und nicht die rosafarbene französische Seifenkugel, die Louis in seinem Waschbeutel hatte, blieb verschwunden. Langsam wurde die Zeit wirklich knapp, und sie begannen nun  alle, in Louis‘ Sachen zu wühlen.</p>
+<p>„Es hat keinen Zweck“, sagte Albus irgendwann niedergeschlagen und warf ein Paar Socken zurück Richtung Louis‘ Rucksack.</p>
+<p>„Ich fürchte, Albus hat Recht“, sagte James und setzte sich neben seinen Bruder. „Wenn wir nicht kommen, appariert Mum irgendwann her und sie macht uns einen neuen Portschlüssel oder nimmt uns per Seit-an-Seit-Apparieren mit.“ Er klang ein bisschen aufgeregt, diese Reisemethode verwendeten seine Eltern nur sehr selten, war aber hier wahrscheinlicher, als ein illegal erzeugter neuer Portschlüssel</p>
+<p>„Dann lass uns zumindest an die Stelle zurückgehen, wo wir uns getrennt haben“, befand Molly und fing an, Louis zu helfen, seine Sachen wieder einzupacken.</p>
+<p>„Molly, was hast du da eigentlich in der Kapuze?“ fragte Lucy und holte etwas aus der Robenkapuze ihrer Schwester. Es war ein Stück Kernseife – der Portschlüssel.</p>
+<p>„Natürlich, da habe ich ihn gestern noch hingetan, damit wir ihn heute gleich finden!“ sagte Molly aufgeregt. „Schnell!“ rief sie hektisch, denn der Portschlüssel denn es konnten nur noch wenige Augenblicke bis zwölf Uhr sein.</p>
+<p>Louis stopfte die letzte Robe in seinen Rucksack, alle griffen sich hektisch irgendwelche Gepäckstücke und versuchten, einen Finger an den Portschlüssel zu bekommen. Wenige Sekunden, nachdem sie sie mit dem Finger die Seife berührte, als sie gerade tief durchatmen wollte, begann sich die Welt auch schon immer schneller um Rose zu drehen, bis sie sich auflöste und mit einem Plumps im Garten des Fuchsbaus landete. Sofort wurde sie von ihrer Großmutter in eine Umarmung gezogen.</p>
+<p>„Da seid ihr ja wieder. Hattet ihr Spaß? Hat alles geklappt? Hattet ihr genug zu essen dabei?“ Sie drückte als nächstes Albus an sich, ohne auf Rose‘ Antworten zu warten. Neben ihr hielt ihre Tante Audrey ihre Tochter vor sich und betrachtete sie kritisch. „Du siehst müde aus, Molly. Habt ihr nicht geschlafen?“ Sie strich ihr eine Strähne hinters Ohr, die sich aus dem sonst immer ordentlichen Zopf gelöst hatte und seufzte, sagte aber nichts.</p>
+<p>„Lasst euer Gepäck einfach hier, es ist ja gutes Wetter. Ihr könnt den Tisch schon mal decken, es gibt Backfisch und Pommes. Opa und Percy kommen bestimmt bald aus dem Büro“, sagte Rose‘ Großmutter.</p>
+<p>Rose lächelte, alles war wie immer hier, der Fuchsbau war ihr zweites zu Hause. Nachher würde ihr Vater kommen und sie zurück nach London in ihr erstes zu Hause mitnehmen, sie würde ihre Mutter und ihren Bruder wieder sehen und noch ein bisschen die Ferien genießen, und in drei Wochen würde sie endlich, <em>endlich</em>, nach Hogwarts gehen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="VGciPaKpJMu_HCsdwK2WX_EpQkfoToptsgkoMgOTWNB6wxGgNTtgr-vq8fdWyZ_ovj6wlHb8iydCGsc6PfgtLA"/>
+          <input value="20115061" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_20115061">
+  <form class="new_comment" id="comment_for_20115061" action="/works/20115061/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="PWXdgHrpQCVBmGhbMIAXXdY6vZd-6bQpMQYqdxBgBLkTwe4d7XsEQRVusrGm5B7qmS1PROBbtWPBFcV_LgtxRQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_20115061">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_20115061" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_20115061=new LiveValidation('comment_name_for_20115061',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_20115061.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_20115061">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_20115061" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_20115061=new LiveValidation('comment_email_for_20115061',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_20115061.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_20115061" class="landmark">Comment</label>
+        <textarea id="comment_content_for_20115061" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_20115061" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_20115061_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_20115061">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_20115061=new LiveValidation('comment_content_for_20115061',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_20115061.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_20115061.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_20115061" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/20115061/hit_count.json")})</script>
+
+
+  </body>
+</html>

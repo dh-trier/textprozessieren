@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":122,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Auf Bewährung - SeKaYa - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="vNp4B_K-6eKXLohaI0-8qqnKYzyDoCi8YvTYfVDnY1NXYNBgqfjfdtZL2vXYvSn7YPwkThhTI9Z83fzkVqCChw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="wVFjF-Pyn9wvZPDXUqLiJzNxl31Wq6SEXxV31I0lQ-Aq68twuLSpSG4BonipUHd2-kfQD81Yr-5BPFNNi2KiNA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/8679988/chapters/19898530">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8679988">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/8679988/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/8679988/Auf%20Bewahrung.azw3?updated_at=1598894633">AZW3</a></li>
+          <li><a href="/downloads/8679988/Auf%20Bewahrung.epub?updated_at=1598894633">EPUB</a></li>
+          <li><a href="/downloads/8679988/Auf%20Bewahrung.mobi?updated_at=1598894633">MOBI</a></li>
+          <li><a href="/downloads/8679988/Auf%20Bewahrung.pdf?updated_at=1598894633">PDF</a></li>
+          <li><a href="/downloads/8679988/Auf%20Bewahrung.html?updated_at=1598894633">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Gen/works">Gen</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Severus%20Snape/works">Severus Snape</a></li><li><a class="tag" href="/tags/Alastor%20%E2%80%9CMad-Eye%E2%80%9D%20Moody/works">Alastor “Mad-Eye” Moody</a></li><li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Bartemius%20Crouch%20Sr*d*/works">Bartemius Crouch Sr.</a></li><li><a class="tag" href="/tags/Mr%20Slant/works">Mr Slant</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Discworld%20References/works">Discworld References</a></li><li><a class="tag" href="/tags/Discworld%20Lawyers/works">Discworld Lawyers</a></li><li><a class="tag" href="/tags/Footnotes/works">Footnotes</a></li><li><a class="tag" href="/tags/a%20lot%20of%20Latin%20words/works">a lot of Latin words</a></li><li><a class="tag" href="/tags/Humor/works">Humor</a></li><li><a class="tag" href="/tags/Crack%20Treated%20Seriously/works">Crack Treated Seriously</a></li><li><a class="tag" href="/tags/There%20is%20no%20justice/works">There is no justice</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/8538232">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 3 of the <a href="/series/1890892">A Prince's Tale</a> series</span><span class="divider"> </span><a class="next" href="/works/26143606">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-11-28</dd><dt class="status">Completed:</dt><dd class="status">2016-12-17</dd><dt class="words">Words:</dt><dd class="words">15025</dd><dt class="chapters">Chapters:</dt><dd class="chapters">8/8</dd><dt class="comments">Comments:</dt><dd class="comments">21</dd><dt class="kudos">Kudos:</dt><dd class="kudos">9</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/8679988/bookmarks">1</a></dd><dt class="hits">Hits:</dt><dd class="hits">291</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Auf Bewährung
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/SeKaYa/pseuds/SeKaYa">SeKaYa</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Es ist Ende 1981 und Severus Snape sitzt auf der Anklagebank, während andere über sein Schicksal entscheiden. Ihm zur Seite steht ein verstaubter Anwalt mit einer seltsamen Ansicht über Gerechtigkeit.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Da ich keine Ahnung habe, wie es in England und insbesondere in der Zaubererwelt mit dem Ablauf einer Verhandlung aussieht, habe ich die Informationen genommen, die ich über deutsche Verhandlungsabläufe gefunden habe ... Viele der Rechtsbegriffe sind übrigens frei erfunden oder gehen auf Terry Pratchetts Scheibenwelt zurück. Die sind mit einem (TP) gekennzeichnet. Die, die ich erfunden habe, sind mit einem (sky) gekennzeichnet.</p><p>Die ganze Geschichte ist gespickt mit Anspielungen ;-)</p>
+    </blockquote>
+
+    <p class="jump">(See the end of the work for <a href="#work_endnotes">more notes</a> and <a href="#children">other works inspired by this one</a>.)</p>
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/19898530">Chapter 1</a>: Prozessbeginn
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p align="center">
+  <strong>
+    <em>~ Vor Gericht und auf hoher See ist man in Gottes Hand ~</em>
+  </strong>
+</p>
+<hr/>
+<p align="center"> </p>
+<p align="center">
+  <em>»Auf Erden herrscht die Liebe,</em>
+</p>
+<p align="center">
+  <em>im Himmel die Gnade,</em>
+</p>
+<p align="center">
+  <em>nur in der Hölle gibt es Gerechtigkeit.«</em>
+</p>
+<p align="center">
+  <em> </em>
+</p>
+<p align="center">(Anaklet II.)</p>
+<p align="center"> </p>
+<hr/>
+<p> </p>
+<p align="center">
+  <strong>1981</strong>
+</p>
+<p> </p>
+<p>"... und am besten sagen Sie nur das Nötigste und auch nur, wenn Sie gefragt werden."<br/>  </p>
+<p>Severus beschloss, dass es das Beste war, wenn er sich vollkommen von dem Geschehen zurückzog. Es mochte zwar eine Gerichtsverhandlung sein, bei der er der Angeklagte war – und wenigstens bekam er eine Verhandlung, das war bereits ein großes Plus – aber er gab zu, dass ihm die ganze Juristerei zuwider war. Man bezahlte Leute dafür, damit sie die Gegenpartei der Lüge bezichtigten, ohne freilich zu sagen, dass es Lügner waren, und irgendwie schaukelte es sich soweit hoch, dass der Richter beschloss, ein Machtwort zu sprechen, was im Endeffekt das Urteil war. Zumindest war das der Eindruck, den er von den ganzen Erklärungen bekommen hatte. Nach Recht und Gerechtigkeit brauchte man hier gar nicht erst zu fragen. Da war man mit einem Wörterbuch vermutlich besser bedient.<br/>  </p>
+<p>Dennoch, er fragte sich, wie ausgerechnet er an diesen Anwalt geraten war. Bei Merlin, er war kein schlechter Anwalt, nur ein schlechter Mensch. Letzteres mochte auch daran liegen, dass er einer der wenigen gesellschaftlich etablierten Zombies war, die die Zauberer kannten, aber das war auch nicht das Problem. Severus hatte da wenig Vorurteile - er hatte schließlich eine Wohnung in einem Mietshaus, dass mitunter von Banshees, Vampiren und Igors bewohnt war. Nur um ein paar seiner Nachbarn zu nennen. Nein, er fragte sich vielmehr, wie er dazu kam, sich die Dienste dieses Anwalts leisten zu können. Er hatte ihn nicht gefragt. Es bestand die geringe Möglichkeit, dass Slant, sein Verteidiger, der Anwalt der Familie Prince war und er als letzter Nachkomme der Princes eine Art Privileg besaß, aber in Anbetracht der Mentalität seines Großvaters wagte er es zu bezweifeln.<br/>  </p>
+<p>"Sagen Sie, Mr. Slant", sagte Severus leise, "Sie wissen, dass ich mir nicht einmal eine Minute Ihres üblichen Honorars leisten kann?"<br/>  </p>
+<p>Slant war einer der ältesten Anwälte mit seinen dreihundertfünfzig Jahren und er ließ sich diese Berufserfahrung teuer bezahlen. Er galt als der beste Anwalt, den man für Geld kaufen konnte, was dazu führte, dass man durchaus der Meinung sein konnte, dass die Reichen im Recht waren, egal, was passierte. Severus gehörte definitiv nicht zu den Reichen, selbst mit dem Erbe der Princes - was er nun wirklich nicht haben wollte, er war eine eigenständige Person. Slant fixierte ihn mit einem Blick. Severus kroch ein Schauer über den Rücken.<br/>  </p>
+<p>"Machen Sie sich keine Sorgen. Eine ... einflussreiche Persönlichkeit machte mich eindrucksvoll darauf aufmerksam, dass Ihr Fall ein großartiges Beispiel des <em>pro bono publico</em>(1) ist." Slants Stimme war finster, obwohl er einen neutralen Ton beibehielt. "Wie man so schön sagt, ein <em>quia ego sic dico</em>(2), gegen das Einspruch wirkungslos ist."<br/>  </p>
+<p>Severus blinzelte. Er war gut genug in Latein, um die Phrasen übersetzen zu können, aber der Sinn dahinter blieb ihm verborgen. Wo war seine Verteidigung zum Wohle der Allgemeinheit? Und wer war diese einflussreiche Persönlichkeit, die mit einem simplen 'weil ich es so sage' Slants Widerspruch wegwischen konnte? Severus' Gedanken wurden unterbrochen, als das Gericht den Saal betrat. Alle Anwesenden, die zu Severus' Freude sehr wenige waren, erhoben sich, um dem Gericht Respekt zu zollen. Sie warteten alle, bis der Richter sich gesetzt hatte und auch alle anderen aufforderte, Platz zu nehmen. Danach folgte die Vorstellung der Beteiligten und die Belehrung der Zeugen - und Severus musste zu seiner Schande gestehen, dass er kaum etwas davon mitbekam. Seine Gedanken kreisten.<br/>  </p>
+<p>Er saß auf der Anklagebank, was an sich nicht sonderlich verwunderlich war. Aber neben ihm saß der beste Anwalt, den man für Geld kriegen konnte, und er besaß kein Geld. Vielleicht hätte ihn die Tatsache, dass Slant offenbar keine Geldforderungen an ihn stellen wollte, beruhigen sollen, aber im Endeffekt verstärkte es seine Unruhe nur noch. Und er hatte nicht einmal die Möglichkeit, genauer nachzufragen, wer diese einflussreiche Persönlichkeit war, von der Slant gesprochen hatte, denn die Verhandlung war eröffnet und damit kein Ort für Privatgespräche.<br/>  </p>
+<p>"Mr. Snape, beantworten Sie uns einige Fragen zu Ihrer Person."<br/>  </p>
+<p>Es war wirklich ein Glück, dass das hier ein kleines Gericht war. Und dass man ihn als ungefährlich eingestuft hatte - er wusste nicht, wie er sich gefühlt hätte, wenn die Ketten am Stuhl sich um seine Armgelenke geschlungen hätten. So war er zwar mit den Beinen an den Stuhl gekettet, hatte aber noch die Möglichkeit, zumindest so zu tun, als könnte er aufstehen. Es war bereits so schlimm genug, und hätte man ihn nicht angesprochen und ihn unwillkürlich dazu gebracht, aufzumerken, dann hätte er es verdrängen können. Er atmete ein Mal tief durch und sah zum Richter. Er kannte ihn, selbst wenn er bei der Vorstellung nicht zugehört hatte: Bartemius Crouch, der Ältere.<br/>  </p>
+<p>"Mr. Snape, nennen Sie uns Ihren vollständigen Namen."<br/>  </p>
+<p>Severus unterdrückte einen Stoßseufzer. "Severus Alexander Snape."<br/>  </p>
+<p>Er sah kurz zum Protokollanten, bevor er wieder zu Crouch sah. Er war froh, dass er genau wusste, was er an Personalien herausgeben musste - es erleichterte diese ganze Fragerei. Und nach seinen Personalien hatte er keinerlei Verpflichtung mehr, irgendetwas zu sagen. Er war nicht dazu verpflichtet, sich aktiv am Verfahren zu beteiligen, und egal, ob er etwas sagte oder nicht, aus seinem Schweigen durften ihm eigentlich keine Nachteile erwachsen.<br/>  </p>
+<p>"Geboren am 9. Januar 1960 in Halifax, ledig. Momentaner Hauptwohnsitz ist London, Nockturngasse 27a", fuhr Severus mit seinen Personalien fort. "Ich arbeite als Braumeister in einer Apotheke in der Nockturngasse Ecke Winkelgasse, bin aber eigentlich Meister der Zaubertränke. Mir wurde deswegen eine Stelle im Lehrkörper der Hogwarts-Schule für Hexerei und Zauberei in Aussicht gestellt ..."<br/>  </p>
+<p>"Wie sieht es mit Ihrem Werdegang und Ihren persönlichen Verhältnissen aus, Mr. Snape?"<br/>  </p>
+<p>Er biss die Zähne zusammen. Er hatte wirklich keine Lust, sein gesamtes Leben hier aufzurollen. Aber was für eine Wahl hatte er? Er war verpflichtet, diese Angaben zu machen.<br/>  </p>
+<p>"Ich wurde in eine relativ gesehen arme Familie geboren. Mein Vater, ein Muggel, verlor seinen Job in der Fabrik und wurde zum Alkoholiker. Er neigte zu häuslicher Gewalt, woraufhin ich, nach dem Ende meiner Zeit an der Muggelschule mit meiner Mutter zu meinen Großeltern zog. Mit elf Jahren besuchte ich wie die meisten Zauberer Hogwars, wo ich sieben Jahre später abging. In meinem siebten Schuljahr begann ich bereits meine Lehre zum Meister der Zaubertränke, welche ich vor etwa einem Jahr beendet habe. Seit dem lebe ich in einer kleineren Mietswohnung, da ich ein persönliches Interesse daran habe, nicht in das Haus meiner Eltern zurückzukehren, dass ich nach dem Verschwinden meines Vaters vor sechs Jahren und dem Tod meiner Mutter diesen Sommer geerbt habe."<br/>  </p>
+<p>Crouch nickte. "Das genügt dann. Mr. Salic, verlesen Sie die Anklage."<br/>  </p>
+<p>Severus sah ein wenig auf. Er sah zum Staatsanwalt, Atton Salic, hinüber. Slant grummelte neben ihm und Severus meinte, etwas wie 'Sippschaft von unmöglichen Rechtsverdrehern' zu hören, aber er konnte sich auch irren. Immerhin, Slant wäre nicht so nachlässig eine Beleidigung auszusprechen, oder? Andererseits, es handelte sich um <em>Slant</em>. Slant kannte scheinbar jeden Präzedenzfall und war in gewisser Weise selbst ein Präzedenzfall. Er konnte sich aus jeder Affäre ohne Probleme herausziehen, wenn das, was Severus gehört hatte, stimmte.<br/>  </p>
+<p>Salic erhob sich und räusperte sich. "Im Strafverfahren gegen Severus Alexander Snape, geboren am neunten Januar 1960, wohnhaft in der Nockturngasse 27a, ledig. Die Staatsanwaltschaft legt dem Angeklagten aufgrund der bisherigen Ermittlungen folgende Sachverhalte zur Last: Er hat im bewussten und gewollten Zusammenwirken mit anderen Individuen in kriegstreiberischer Intention den allgemeinen Frieden und die Sicherheit der Zivilbevölkerung maßgeblich gefährdet, indem er ..."<br/>  </p>
+<p>Severus blendete die stetig wachsende Liste von Straftaten aus. Er wusste auch so, was er getan hatte - oder wobei er geholfen hatte - und es deprimierte ihn nur, das in einer langen Auflistung vorgesetzt zu bekommen. Wenigstens war diese ganze Angelegenheit unter Ausschluss der Öffentlichkeit. Er wollte wirklich nicht wissen, was er sonst im Tagespropheten über sich lesen durfte.<br/>  </p>
+<p>Er warf Slant einen kurzen Blick zu. Der Zombie starrte Salic mit einem finsteren Blick an, schien aber nicht weiter besorgt zu sein. Er war sich offenbar sehr sicher, den Prozess zu gewinnen. Und da sagte man, dass Arroganz und Überheblichkeit typisch menschlich waren ...<br/>  </p>
+<p>"... deshalb wird der Angeklagte beschuldigt, im sowohl selbst als auch im <em>animus socii</em>(3) eine große Tendenz zum <em>animus belligerendi</em>(4) gezeigt zu haben. Hinzu kommen ..."<br/>  </p>
+<p>Er unterdrückte das Verlangen, den Kopf auf den Tisch zu legen und Salic vollkommen zu ignorieren. Es würde kein gutes Licht auf ihn werfen, wenn er sich hier vollkommen desinteressiert zeigte. Stattdessen hörte er mit halbem Ohr zu, damit er im Groben wusste, weshalb genau er hier vor Gericht stand. Sein Glück als Angeklagter war definitiv, dass er praktisch nichts sagen musste.<br/>  </p>
+<p>"... und einem anderen zum Mord Hilfe geleistet zu haben. Des Weiteren wird ihm vorgeworfen, andere Personen mittels des Cruciatus-Fluchs misshandelt und gefoltert zu haben ..."<br/>  </p>
+<p>Aus den Augenwinkeln bemerkte er, wie Slant ein unheimliches, staubiges Lächeln zur Schau trug. Es erinnerte ihn an ein Krokodil. Entweder saß Severus nun in der Tinte, oder aber Slant wusste bereits, wie er zum Gegenschlag ansetzen würde. Blieb nur die Frage, ob so ein Gegenschlag gut oder schlecht für ihn war. Severus traute seinem Verteidiger nicht wirklich. Vielleicht war er ihm auch einfach generell zu suspekt. Wäre er in einer Position, in der er sich beschweren könnte, er würde es vermutlich tun. So jedoch ...<br/>  </p>
+<p>"Möchte der Angeklagte etwas zu den Vorwürfen gegen seine Personen sagen?", fragte Richter Crouch.<br/>  </p>
+<p>Severus warf einen fast fragenden Blick zu Slant. Der Zombie schien nachzudenken, bevor er kaum merklich nickte und ihm ein Zeichen gab. Severus seufzte innerlich.<br/>  </p>
+<p>"Ja, Euer Ehren", sagte er ruhig. "Bezüglich des Besitzes und der Verwendung von unter normalen Umständen vom Zaubereiministerium als illegal eingestuften Tränkezutaten, möchte ich darauf verweisen, dass mir meine Position als Meister der Zaubertränke beides von Gesetzes wegen für jegliche Forschungszwecke erlaubt. Ansonsten habe ich nichts weiter dazu zu sagen."<br/>  </p>
+<p>Crouch nahm mit finsterer Miene zur Kenntnis, während Slant ihm sacht zunickte. Severus erwiderte es nicht. Es war eine der wenigen Gesetzeslücken, wenn man es denn so nennen wollte, die er kannte. Und auch wenn er sich aus einem der Anklagepunkte damit herausreden konnte, so blieben noch genug andere, um ihn zehnmal nach Askaban zu schicken. Was wollte Slant dagegen tun?<br/>  </p>
+<p>Einiges, wie ihm schien. Severus wusste nicht, wie Slant es machte, oder ob seine Argumente überhaupt einen <em>Sinn</em> ergaben, aber irgendwie schaffte der Zombie es, Staatsanwalt Salic nach Strich und Faden in den Boden zu rammen. Dabei warf er mit seltsamen Ausdrücken und Präzedenzfällen nur so um sich. Das Interessante daran war, dass die Übersetzung der Worte offenbar nichts damit zu tun hatte, was sie im Endeffekt bedeuteten. Ein Blick in die Runde zeigte Severus, dass es nicht nur ihm so ging - auch Crouch schien verwirrt. Von Salic ganz zu schweigen.<br/>  </p>
+<p>"Das ist doch lächerlich!", unterbrach Salic irgendwann Slants Ausführungen. Severus wusste, dass es ein Fehler war - Salic ging hier nicht gegen irgendwen zu Felde, sondern gegen <em>Slant</em>. "Haben Sie <em>irgendeinen</em> Beweis für Ihre Behauptungen, dass Severus Snape unschuldig ist?"<br/>  </p>
+<p>"Natürlich", sagte Slant mit einem Blick, der deutlich sagte, dass er die Gesetze besser kannte als alle anderen Anwesenden. Das war auch ohne weiteres möglich, denn immerhin hatte er viele der Gesetzbücher, die von den vielen Anwälten der Zaubererwelt verwendet wurden, selbst geschrieben - und er kannte den Rest auch. Er war eine wandelnde Bibliothek, was Gesetze betraf. Wenn es eine Gesetzeslücke gab, dann war Slant derjenige, der sie garantiert aufspürte. "Unter anderen Umständen würde ich vermutlich auf den Fall des <em>lucre sermat</em>(5) verweisen, aber im Fall von Mr. Snape werde ich wohl <em>expressis verbis</em>(6) darauf hinweisen, dass <em>de facto</em>(7) kein Tatbestand existiert, wie ich durch eine Zeugenaussage beweisen werde."<br/>  </p>
+<p>Severus musste zugeben, dass Slant wusste, wie man seine Worte eindrucksvoll zur Geltung brachte. Er wirkte, allein durch das Nutzen lateinischer Formulierungen, kompetenter und gebildeter als Salic, was ihm eine besondere Glaubwürdigkeit verlieh. Außerdem, und das dürfte auch Salic aufgefallen sein, handelte es sich eben um <em>Slant</em> - Slant, dem Albtraum eines jeden Anwalts, Slant, der Personifzierung eines Präzedenzfalls. Gegen einen solchen Anwalt zu bestehen war unmöglich, insbesondere, wenn man versuchen musste, Slants verkorkste Argumente zu entkräften.<br/>  </p>
+<p>Crouch zögerte einen Augenblick, Slants Forderung, einen Zeugen aufzurufen, zu entsprechen. Aber es war eine Forderung, kein Antrag oder Bitte - er hatte keine Wahl.<br/>  </p>
+<p>"Also gut", gab Crouch sich knirschend geschlagen, "rufen Sie den Zeugen ... Kenneth McCormac auf."<br/> </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20035630">Chapter 2</a>: Kenneth McCormac
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_2_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus drehte leicht den Kopf, als einer der Gerichtsdiener den Saal verließ, offenbar um diesen Kenneth McCormac herzuholen. Er hatte keine Ahnung, wer dieser McCormac sein sollte, aber vermutlich eines seiner vermeintlichen Opfer, wenn Slant seine Unschuld beweisen wollte. McCormacs Eintreffen zeigte Severus, dass es nicht ganz so vermeintlich wie tatsächlich war, und das war ... beunruhigend. Insbesondere die Tatsache, dass er diesem Kenneth McCormac ja offensichtlich etwas angetan hatte - und jetzt sollte er für Severus aussagen? Das war doch absurd!<br/>  </p><p>"Ich hoffe, Sie haben einen Plan", bemerkte Severus leise. "Mir jedenfalls entzieht er sich."<br/>  </p><p>Slant ignorierte ihn, aber er hatte auch nichts anderes erwartet. Natürlich hatte Slant einen Plan - er konnte es sich, schon allein wegen seinem Ego, nicht leisten, zu verlieren. Sie erwarteten schweigend die Ankunft von Kenneth McCormac. Als Severus das Gesicht des Mannes sah, regte sich etwas in seiner Erinnerung - er <em>hatte</em> ihn tatsächlich gesehen. Und ihm einen Fluch auf den Hals gehetzt, der ihn im Normalfall unter die Erde befördern würde, es aber in diesem Fall offenbar nicht getan hatte. Der Mann war auch nicht, wie er zuerst vermutet hatte, ein Zombie - denn ein Zombie war trotz allem nach den Gesetzen des Ministeriums als <em>'zumindest zeitweise tot'</em> einzustufen, und das bedeutete, er hätte ihn ermordet und alles, was danach kam, war unwichtig. Severus sah fast fragend zu Slant, aber Slants Aufmerksamkeit galt seinem Zeugen und Salics miesepetrigem Gesichtsausdruck.<br/>  </p><p>McCormac nahm den ihm zugewiesenen Platz ein und sah ein wenig nervös zu Crouch. Crouchs Miene konnte einem aber auch Angst einjagen. Es schien dem Mann so gar nicht recht zu sein, womöglich einen Zeugen dafür zu haben, dass Severus unschuldig, oder wenn auch nicht unschuldig, nicht in dem Maße kriminell war, wie er es gerne hätte. Das verriet auch Crouchs Tonlage bei der Befragung McCormacs. Severus hatte noch nie gehört, wie jemand mit noch mehr Groll nach seinen Personalien gefragt wurde - natürlich, <em>nachdem</em> er über seine Rechte und Pflichten belehrt worden war.<br/>  </p><p>"Sie sind Eingreifzauberer, ist das korrekt, Mr. McCormac?", fragte Crouch, während er in einigen Unterlagen blätterte. "Seit dem 29.5.1979 im Ministerium tätig?"<br/>  </p><p>"Ja." McCormac nickte.<br/>  </p><p>"Und Sie wurden nach Mr. Snapes ... Mord<em>versuch</em> ... für unbestimmte Zeit krank geschrieben, stimmt das so?"<br/>  </p><p>"So könnte man es ausdrücken", gab McCormac zu. "Danach habe ich mich versetzen lassen, in den Zaubergamot-Verwaltungsdienst, weil mir die Arbeit in der Magischen Polizeibrigade nach dem Vorfall ein wenig zu ... brisant war."<br/>  </p><p>"Nun gut." Crouch sah zu Slant. "Mr. Slant, es ist Ihr Zeuge."<br/>  </p><p>Severus gab zu, dass es den Klang eines Todesurteils hatte, und McCormac zuckte auch fast zusammen, als er Slant einen unsicheren Blick zuwarf. Slant, obwohl alt und staubig, machte den Eindruck eines Raubtiers, und das sogar noch mehr als seine blutsaugenden Kollegen aus der Kanzlei. Severus bemitleidete McCormac - nicht nur, dass er hier für jemanden aussagen sollte, der ihn mit Magie aufgeschlitzt hatte, nein, er musste auch noch Slants Befragungen standhalten.<br/>  </p><p>"Sie sind also Eingreifzauberer. Verzeihung, Ex-Eingreifzauberer", begann Slant und fixierte McCormac. "Das bedeutet, als Sie diesen Beruf ergriffen haben, waren Sie sich der Implikationen bewusst?"<br/>  </p><p>"Ähm, ja, doch."<br/>  </p><p>"Sie <em>wussten</em> also, dass Sie im Zuge Ihrer Tätigkeit im Magischen Strafverfolgungskommando bei gesellschaftlichen Unruhen, gewalttätigen Konflikten und zur allgemeinen Wahrung des Friedens herangezogen werden würden? Stimmt das, Mr. McCormac?"<br/>  </p><p>McCormac nickte und Severus könnte schwören, dass er hypnotisiert wirkte.<br/>  </p><p>"Ist es dann nicht <em>sui generis</em>(1) ein kalkulierbares Berufsrisiko, das zu den Verletzungen durch meinen Mandanten führte?"<br/>  </p><p>"Sie meinen <em>tödliche</em> Verletzungen", unterbrach Salic Slant in einem eindeutigen Selbstmordversuch. "Das medizinische Gutachten -"<br/>  </p><p>"- ist überholt." Slant starrte seinen Gegner nieder. "Eine <em>tödliche</em> Verletzung zieht, wie der Name bereits sagt, den Tod mit sich. Das ist in diesem Fall aber offensichtlich nicht gegeben, da das Opfer noch lebt." Er wandte sich wieder McCormac zu. "Beantworten Sie meine Frage."<br/>  </p><p>"Ja, also, irgendwie schon, nur nicht so ganz ...", stammelte der Mann. "Verletzungen sind tatsächlich ein Berufsrisiko, ja, aber es waren doch etwas mehr als nur einfache Verletzungen, mit denen man so rechnet –"<br/>  </p><p>"Gut, die <em>schwereren</em> Verletzungen, die mein Mandant Ihnen zugefügt hat." Slant winkte fast ab. "Aber Sie geben also zu, dass Sie mit Verletzungen zu rechnen hatten. Hinzu kommt, dass die vermeintlich <em>tödlichen</em> Verletzungen höchstens einige Tage im Krankenhaus mit sich zogen, korrekt?"<br/>  </p><p>Er wartete McCormacs Nicken kaum ab und wandte sich an Crouch. "Damit wäre bewiesen, dass die Anschuldigung, mein Mandant hätte einen <em>Mord</em> begangen, haltlos ist. Selbst ein Mordversuch ist auszuschließen, da mein Mandant <em>a priori</em>(2) fähig genug ist, es nicht bei einem Versuch zu belassen." Severus zog ein wenig die Brauen zusammen, aber Slant fuhr fort, als wäre nichts gewesen. "Auch weise ich die Anschuldigung, er habe Beihilfe zum Mord geleistet, zurück, da sonst jeder Apotheker und Tränkebrauer dessen bezichtigt werden müsse. <em>Dosis sola facit venenum</em>(3), und eine andere Beihilfe als durch Tränke können Sie ihm nicht nachweisen, aufgrund des Präzedenzfalls des <em>tertium non datur</em>(4)."<br/>  </p><p>Severus musste an sich halten, um nicht den Kopf gegen irgendetwas in nächster Umgebung zu schlagen. Auch das Haare raufen oder das Gesicht in den Händen verbergen hatte eine große Anziehungskraft, der er nur mit Mühe widerstand. Es war einfach nicht normal, dass jemand mit solchen Argumenten durchkam, oder? Sofern man das <em>Argumente</em> nennen konnte. Selbst wenn man das tat, so waren es keine <em>intelligenten</em> Argumente. Es war eher die Argumentation, wie sie von einem Vierjährigen stammen könnte. Aber das war ja nicht einmal das Problem - das Problem war, dass Slant damit <em>durchkam</em>. Es kam ihm zwar irgendwie zu Gute, doch das hieß nicht, dass Severus es gut finden musste. Eher im Gegenteil. Es ließ ihn ganz erheblich an der Institution des Gerichts - und der Gerechtigkeit - zweifeln.<br/>  </p><p>"Um meine Ausführungen zu untermauern", sagte Slant, "möchte ich noch einen Zeugen aufrufen - den … Arzt … der sich um Mr. McCormacs Verletzungen gekümmert hat."<br/>  </p><p>Crouch schien nicht fähig, Widerstand zu leisten. "Stattgegeben", meinte er, und er klang sehr lustlos. Offenbar war ihm klar geworden, dass Slant alle Register zog, nur um seine Gegner fertig zu machen.<br/>  </p><p>Erneut verließ ein Gerichtsdiener den Saal. Severus fragte sich, was das für ein Arzt war. Und warum überhaupt Arzt? Sollte es nicht ein Heiler sein? Die Antwort kam in Form einer Ansammlung von stückhafter Menschlichkeit. Severus unterdrückte ein Seufzen. Natürlich. Was hatte er erwartet?<br/>  </p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_2_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "von seiner eigenen Art"<br/>(2) "von vorneherein"<br/>(3) "allein die Menge macht das Gift" - egal, was man macht, viele Leute sind zu blöd, um die Mittel anzuwenden, ohne sich in Lebensgefahr zu bringen (sky)<br/>(4) "ein Drittes gibt es nicht" - kein Kompromiss; es gibt nur zwei Möglichkeiten, nämlich die falsche und meine (sky)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20035735">Chapter 3</a>: Igor
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_3_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Im Gegensatz zu ihm war der Rest der Anwesenden - mit Ausnahme von Slant, selbstverständlich - überrascht. Severus sah, wie sie starrten, und es war der erste Fehler. Der zweite war, dass ihnen die Kinnlade herunterzufallen drohte. Der dritte war, dass sie sich nicht fassten. Slants zweiter Zeuge <em>war</em> ein Anblick, den man nicht so leicht vergaß. Der Gerichtsdiener war vollkommen aus dem Häuschen - Severus konnte sich vorstellen, dass es an der speziellen Art des Zeugen lag, immer hinter demjenigen aufzutauchen, der nach ihm rief. Aber auch sonst war es ein seltsamer Zeitgenosse. Und das lag nicht nur daran, dass er Narben hatte, viele Narben. Eine verlief einmal rund um seinen Hals, eine andere verschwand an der Schläfe unter den Haaren, die durchaus jemand anderem gehören konnten. Es war auch die Tatsache, dass er zwei Daumen an einer Hand hatte.<br/>  </p><p>Crouch verzog leicht das Gesicht. Man musste ihm jedoch zu Gute halten, dass er seine Gefühlslage nicht ganz so deutlich wie die anderen zeigte.<br/>  </p><p>"Sie sind … Igor?" Crouch runzelte leicht die Stirn.<br/>  </p><p>"Nein", sagte der Zeuge, "ich bin Igor."<br/>  </p><p>Crouch starrte ungläubig. "Sagte ich das nicht?"<br/>  </p><p>Igor verneinte. "Fie fagten Igor, aber daf ift mein Vetter."<br/>  </p><p>"Das ist doch -", begann Crouch, unterbrach sich aber und schüttelte den Kopf. "Na schön, Igor, kommen wir zu Ihren Personalien. Sie sind … Arzt?"<br/>  </p><p>"Unter anderem", sagte Igor. "Ich arbeite alf Chirurg und Handlanger."<br/>  </p><p>Severus unterdrückte ein Schnauben. Handlanger. Hand<em>reicher</em> traf es eher - und Igors hatten für gewöhnlich mehr als eine Hand in Reserve. Natürlich waren Igors nützlich, und er hatte auch nichts gegen sie, aber irgendwie fand er die Beschreibung von Igors Tätigkeit untertrieben. Crouch schien Zweifel anderer Art zu hegen, aber er behielt sie, zum Glück, für sich.<br/>  </p><p>"Also, Mr. Slant, Ihr Zeuge - Ihre Fragen."<br/>  </p><p>Slant nickte würdevoll und wandte sich Igor zu. "Sie haben Mr. McCormac hier behandelt, nicht wahr?"<br/>  </p><p>Igor sah kurz zu McCormac hinüber, dann zurück zu Slant und nickte. "In der Tat, daf habe ich."<br/>  </p><p>"Wie schwer waren die Verletzungen?"<br/>  </p><p>"Ach, nicht befonderf fwer", meinte Igor. "Er hatte noch alle Arme und Beine und der Kopf war auch noch da."<br/>  </p><p>Severus widerstand dem Drang, etwas dazu zu sagen. Crouch starrte und Salic öffnete den Mund, um zu protestieren, aber er wurde mit einem Blick von Slant zum Schweigen gebracht, noch bevor er es gebrochen hatte. Slant fixierte Salic einen Moment lang, dann sah er wieder zu Igor.<br/>  </p><p>"Worin genau bestanden die Verletzungen, mit denen Mr. McCormac zu Ihnen gebracht wurde?"<br/>  </p><p>"Oh", begann Igor, "er hatte einige Quetfungen, Abfürfungen und Prellungen - nichtf, waf nicht jeder andere Arft hätte richten können."<br/>  </p><p>"Das war <em>alles</em>?", fragte Salic dazwischen. "Im medizinischen Gutachten stand -"<br/>  </p><p>"Nein, daf war nicht allef", meinte Igor. "Er hatte auch einen gebrochenen Arm - muf gefallen fein, fah nicht nach einem Fluch auf - und, natürlich, er war ein wenig aufgeflitft ..."<br/>  </p><p>Es dauerte einen Augenblick, bis Igors Worte übersetzt waren. Severus befand, dass Igor zu Untertreibungen neigte. <em>Ein wenig aufgeschlizt</em>. Das war auch mal eine Umschreibung für den Sectumsempra. McCormac schien ebenfalls zu denken, dass es untertrieben war, aber immerhin, es handelte sich um einen Igor. Igors sahen vermutlich jeden zweiten Tag schlimmere Verletzungen. Was war schon ein wenig aufgeschlitzt dagegen, irgendwelche Kopflosen wieder zusammenzuflicken? Severus schnaubte kaum hörbar, während Igor mit seiner Auflistung fortfuhr.<br/>  </p><p>"… allef nichtf, waf ich nicht richten könnte. Ich fage immer, gebt mir etwaf, wo ich drin rumkramen kann, dann kriege ich daf wieder hin." Igor nickte. "Ich habe, neben der offenfichtlichen Behandlung, noch ein paar Extraf gemacht. Er hatte eine angegriffene Leber, und da ich noch eine in Referve hatte, habe ich fie aufgetauft. Unfer Motto ift flieflich: <em>Immer eine helfende Hand</em>."<br/>  </p><p>"Das war genau der Zustand, in dem der Patient - Mr. McCormac hier - zu Ihnen gebracht wurde, korrekt?"<br/>  </p><p>"Alfo, ja, er war eben ein wenig mitgenommen, daf ftimmt fon."<br/>  </p><p>Slant lächelte. Vielleicht schnitt er auch eine Grimasse, Severus war sich da nicht so sicher. Jedenfalls war es beunruhigend. "Noch einmal fürs Protokoll. Er war also ansonsten in Ordnung, das heißt, in bester Gesundheit, also, nicht tot?"<br/>  </p><p>"Nein, daf wäre mir aufgefallen."<br/>  </p><p>"Was hätten Sie getan, wenn er tot gewesen wäre?"<br/>  </p><p>Das Gericht war verwirrt ob dieser Frage. Salic sprach das, was sie wohl alle dachten laut aus. "Na, was wohl! Die Todesursache festgestellt!"<br/>  </p><p>Igor sah ihn erstaunt an. "Aber nein. Ich hätte ihm eine kleine Runderneuerung gegeben und ihn dann wieder auf feinen Weg gefickt. Wäre ja nichtf ernftef gewefen."<br/>  </p><p>Salic schien etwas darauf erwidern zu wollen, aber Slant hatte sich bereits triumphierend umgedreht. "Da haben Sie es", sagte er an Crouch gewandt mit einer Genugtuung, die man ihm rein aus Prinzip gerne aus dem Gesicht wischen würde, "die Bestätigung vom Fachmann selbst. Selbst eine Koryphäe auf dem Gebiet der Chirurgie und Humanmedizin - und noch so einigem anderen - wie Igor sagt, dass dem vermeintlichen Mordopfer kein permanentes, ja, nicht einmal ein ernstes Leid geschehen ist. Im Falle meines Mandanten ist damit eine Morduntersuchung hinfällig, da kein Mord stattgefunden hat, und ich bereits erläutert habe, warum ein <em>Mordversuch</em> von Seiten meines Mandanten vollkommen bar jeder Wirklichkeit ist." Slant machte eine Pause. Ein lebendiger Anwalt hätte die Pause vermutlich dazu genutzt, um Luft zu holen, aber Slant stand über solchen nichtigen Dingen. "Ich verweise darauf, dass dies ein klassischer Fall von <em>nihil est actum</em>(1) ist. Die Verletzungen, die Mr. McCormac erlitten hat, können ohne Weiteres als Berufsunfall und/oder Folgen einer kleinen Meinungsverschiedenheit <em>ad acta</em>(2) gelegt werden."<br/>  </p><p>Crouch massierte sich die Schläfen. "Das ändert aber nichts an der Tatsache, dass es dennoch eine Straftat wäre. Nämlich schwere Körperverletzung mit Todesfolge … oder zumindest <em>beinahe</em> Todesfolge."<br/>  </p><p>Der Zombie sah ihn an, als würde er mit einem Kleinkind reden. "Schwerere Körperverletzung", korrigierte er, "wenn ich bitten darf, die zum Tod hätte führen <em>können</em>, es aber nicht hat. Ich räume ohne Weiteres ein, dass mein Mandant dazu in der Lage gewesen wäre, den Konflikt auf eine Weise zu beenden, die sehr endgültig, sprich, einen Toten beinhaltet. Fakt ist jedoch, dass er es nicht getan hat. Dem entsprechend ist es kein Mord und auch kein Mordversuch." Slants Gesichtsausdruck verfinsterte sich. "Muss ich Sie, Mr. Crouch, darüber in Kenntnis setzen, dass der Anklage keine Punkte hinzugefügt werden dürfen? Ihre Vorbereitung auf den Vorsitz dieses Gerichts hätte eine <em>bona occasio libros legis diligenter legendi</em>(3) beinhaltet, die Sie offensichtlich versäumt haben. Die Anklagepunkte dieser Verhandlung wurden bereits genannt, und es ist in höchstem Maße unzulässig, diese im Nachhinein noch zu verändern, zu erweitern oder zu korrigieren. Falls Sie meinen Mandanten aufgrund schwererer Körperverletzung strafrechtlich belangen wollen, müssen Sie ein weiteres Verfahren anstreben."<br/>  </p><p>Slant sagte es zwar nicht, aber jeder im Saal hörte praktisch das angefügte <em>'wovon ich jedoch dringendst abrate'</em>. Crouch war sprachlos. Es war undenkbar, dass ein Richter so vorgeführt wurde, aber, wie Severus für sich dachte, es handelte sich immerhin nicht um irgendwen - es war <em>Slant</em>. Slant, der Albtraum jedes Juristen. Slant, die Personifizierung von Juristerei. Wenn es irgendwo eine anthromorphe Personifizierung vom Dasein als Rechtsanwalt gab, so sah sie bestimmt so aus wie Slant. Tatsächlich zeigte sich mit jeder weiteren Minute, in der Slant seine Verteidigung weiter ausbaute - und das, obwohl die Beweispflicht beim Kläger lag! - dass Slant vermutlich sogar dazu in der Lage war, Bellatrix Lestrange zu einem Unschuldslamm zu machen. Merlin, wenn Severus' Vermutungen zutrafen, dann könnte er auch einen Freispruch für den Dunklen Lord höchstselbst erzwingen. Bisher wies alles darauf hin - und offenbar war es auch Crouch klar geworden, nur dass ihm die Hände gebunden waren.<br/>  </p><p>Crouch gab sich widerwillig geschlagen. Gegen Slants Logik kam er einfach nicht an. Severus beobachtete, wie Kenneth McCormac und Igor aus dem Saal geführt wurden. Vermutlich würden sie in der Nähe bleiben müssen, damit sie, im Falle weiterer, im späteren Verlauf auftauchender Fragen noch zur Verfügung standen. Severus war sich nicht sicher, aber gut, er hatte auch keine Ahnung davon, was für Zeugen Slant noch aus dem Ärmel schütteln wollte. Sie mochten zwar Anwalt und Mandant sein, aber das hieß nicht, dass sie irgendetwas besprochen hatten. Eher das Gegenteil - jeder hatte stur sein eigenes Ding gemacht. In Severus' Fall war es nichts gewesen. Was Slant gemacht hatte, wusste er nicht. Vermutlich ein paar Verschwörungen.<br/>  </p><p>"Das Wort hat dann die Anklage", bemerkte Crouch fast ein wenig spitz. Offenbar war es ihm so gar nicht recht, dass Slant das geregelte Protokoll außer Kraft gesetzt hatte, und war bestrebt, es wieder zurückzuholen. "Mr. Salic?"<br/>  </p><p>Salic erhob sich und räusperte sich leicht. "Die ... Beweisführung von Mr. Slant ist sehr eindrucksvoll, und sofern man diesen Zeugen Glauben schenken kann, entlastet sie den Angeklagten, zumindest im Punkt des Mordes. Jedoch ist Mr. Snape nicht nur des - scheinbar nicht stattgefundenen - Mordes an Kenneth McCormac beschuldigt, sondern auch anderer Vergehen. Darunter unter anderem Folter, Misshandlung und leichte bis schwere Körperverletzung." Er wandte sich an Crouch. "Ich möchte, um diesen Punkt der Anklage genauer darzustellen, einen Zeugen aufrufen, Mr. Keven Kernel."</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_3_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "Nichts ist passiert" - es liegt überhaupt nichts vor, also warum verschwendet ihr meine Zeit? Seid euch sicher, dass ich dafür eine Extrazulage verlange! (sky)<br/>(2) "zu den Akten"<br/>(3) "eine gute Gelegenheit, Bücher des Gesetzes gründlich zu lesen" - du hast meine Bücher nicht gelesen, obwohl du wusstest, dass ich dir begegnen werde, und nun musst du die Konsequenzen tragen, denn ich kenne sie alle auswendig (sky)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20102344">Chapter 4</a>: Keven Kernel
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_4_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus hob eine Augenbraue. Er wusste nicht, wer dieser Kernel war, aber der Name kam ihm seltsam bekannt vor. Slants Miene zeigte, dass er den Namen zumindest kannte – oder wusste, mit was er zu rechnen hatte. Wäre er jemand anderes gewesen, hätte er vielleicht seine Finger aneinandergelegt und "Ausgezeichnet!" gesagt. Das schmale Lächeln war jedoch bereits Beweis genug für Severus, dass er sich da keine Gedanken machen musste. Musste er sowieso nicht, aber Slant wusste offensichtlich – mal wieder – mehr als er. Und wenn er ehrlich war, dann war es ihm eigentlich ein wenig egal, ob Slant ihn nun wirklich raus haute oder nicht. Immerhin <em>war</em> er schuldig, er wusste es, Slant wusste es und auch Crouch wusste es. Aber da die Verhandlung nun stattfand - vermutlich sehr zum Missfallen von Crouch, der ihn mit Sicherheit am liebsten sofort nach Askaban gekarrt hätte – waren nur die Sachen wichtig, die hier vorgetragen wurden. Und sofern Severus nicht aufstand und ein Geständnis ablegte, welches Slant mit Sicherheit trotz allem entkräften würde, standen die Chancen gut, dass er frei gesprochen wurde.<br/>  </p><p>Der Gerichtsdiener kam mit Keven Kernel zurück. Keven Kernel sah aus wie die Personifizierung eines getretenen Hündchens, dass noch mit Wasser überschüttet worden war. Severus fragte sich, warum er sich nicht an so eine Elendserscheinung erinnerte, aber vielleicht war das ein klarer Fall von simpler Verdrängung. Es war nicht besonders schwer, sich das Szenario vorzustellen. Jemand, der so aussah, wurde bestimmt leicht vergessen – sonst würde man auf ewig vor Mitleid zerfließen. Andererseits ... Severus zog die Brauen zusammen. Er hatte derlei Gestalten schon mal gesehen, und es war auch in freier Wildbahn gewesen. Und er meinte <em>nicht</em> Peter Pettigrew, so sehr der auch in diese Kategorie passen mochte.<br/>  </p><p>"Mr. Kernel", begann Crouch nach der Aufnahme der Personalien und musterte den neuen Zeugen, "Sie wurden über Ihre Rechte und Pflichten und die Konsequenzen, die aus einer Falschaussage resultieren, belehrt?"<br/>  </p><p>Kernel nickte. "Ja, das wurde ich."<br/>  </p><p>Auch seine Stimme hatte einen erbärmlichen, mitleidserregenden Klang. Dennoch war Severus aus irgendeinem bisher undefinierbaren Grund nicht dazu gewillt, Kernel dieses Mitleid entgegenzubringen. Etwas stimmte da nicht. Er sah zu Salic. Hatte der Kerl vielleicht den Zeugen für sich vereinnahmt? Oder ihn erfunden?<br/>  </p><p>"Nun gut. Mr. Salic, Sie dürfen Ihre Fragen stellen."<br/>  </p><p>Crouch lehnte sich ein wenig zurück, während Salic mit gewichtigter Miene vortrat. Offenbar hatte er vor, diesen Kernel in die Mangel zu nehmen, damit dieser Severus alles anlastete, was Salic so einfiel.<br/>  </p><p>"Mr. Kernel", begann Salic auch schon, "Sie sind mit dem Angeklagten, Mr. Severus Snape, bekannt. Ist das korrekt?"<br/>  </p><p>Kernel warf einen unsicheren Blick in Richtung Anklagebank und nickte zögerlich.<br/>  </p><p>"Sie wurden mehrfach Opfer von Folterflüchen, ausgeführt unter anderem vom Angeklagten, in deren Folge Sie das St. Mungo's Hospital für Magische Krankheiten und Gebrechen frequentieren mussten", fuhr Salic fort. "Stimmt das?"<br/>  </p><p>"Ja." Kernel nickte, dieses Mal ein wenig enthusiastischer.<br/>  </p><p>Slant schnaubte, als Salic ein fast triumphierendes Lächeln zeigte. "Können Sie dem hohen Gericht mitteilen, worin genau die Folter und Misshandlung, die Sie durch den Angeklagten erlitten haben, bestand?"<br/>  </p><p>Kernel dachte nach, und er ließ sich dabei viel Zeit. Severus hatte kein gutes Gefühl dabei. Er wusste, was er getan hatte - insbesondere dann, wenn andere Todesser danebenstanden und ihn beobachteten - und es war sicherlich nicht gerade die <em>feine englische Art</em>. Eher das Gegenteil. Was würde Kernel alles aufzählen?<br/>  </p><p>"Erstaunlich, dass er die ach so häufigen Begegnungen dann überlebt hat", spottete Slant kaum hörbar. "Nur ein Idiot würde nicht merken, dass da etwas nicht ganz stimmen kann."<br/>  </p><p>"Eben", war alles, was Severus dazu zu sagen hatte.<br/>  </p><p>Er hörte sich schweigend an, was Kernel zu sagen hatte. Es war viel, was erstaunlich war angesichts der Tatsache, dass er zuvor nur mit recht knappen Antworten gearbeitet hatte. Ja, da war wirklich etwas im Busch. Nur war die Frage ob es ein Mantikor oder ein Kaninchen war.<br/>  </p><p>"... Cruciatus, aber da bin ich mir nicht mehr ganz sicher, wer das war, Sie können sich sicher vorstellen warum ..."<br/>  </p><p>Severus hob milde eine Augenbraue. Wenn er es nicht besser wüsste, dann könnte man meinen, dass Kernel <em>glücklich</em> darüber war, malträtiert worden zu sein. Er sah zu Slant, während Kernel weiter fröhlich irgendwelche Flüche aufzählte, Körperverletzungen benannte und andere Grausamkeiten, die ihm von der Todesserheit allgemein und mitunter von Severus persönlich zugefügt worden zu sein schienen. So, wie er klang, musste das alles für einen Sprung im Kessel gesorgt haben, denn es war definitiv nicht normal, dass sich jemand so <em>fröhlich</em> gab. Slant indes sah eine Liste durch - ein seltenes Ereignis - und begann zu lächeln - ein Wunder.<br/>  </p><p>Kernel beendete seine sehr ausführliche Aufzählung und Salic sah fast erwartungsvoll zu Crouch, der um einige Nuancen blasser geworden zu sein schien. "Wie Sie sehen, Herr Richter, wurde Mr. Kernel permanent Opfer von Gewalt seitens des Angeklagten -"<br/>  </p><p>"Warum auch nicht?", fuhr Slant dazwischen.<br/>  </p><p>Crouch sah ihn finster an. "Warten Sie, bis Sie dran sind, Mr. Slant." Er wandte sich wieder an Salic, "Haben Sie noch weitere Fragen an den Zeugen, Mr. Salic?"<br/>  </p><p>"Nein." Salic wirkte für Severus' Geschmack entschieden zu selbstzufrieden, aber Slant würde ihn wieder zurechtstutzen. "Keine weiteren Fragen."<br/>  </p><p>"Gut. Das Wort hat die Verteidigung", sagte Crouch seufzend.<br/>  </p><p>Slant stand auf und trat nach vorne neben Kernel. "Mr. Kernel, wäre es korrekt, wenn ich Sie als <em>Opfer</em> bezeichnen würde?"<br/>  </p><p>"Ja, natürlich", erwiderte Kernel.<br/>  </p><p>Der Zombie nickte sich selbst einmal zu. "Ist es auch korrekt, dass Sie, bevor Sie durch meinen Mandanten zu einem Opfer gemacht wurden, nur ein <em>Gearschter</em> waren?"<br/>  </p><p>"Einspruch!" Salic sprang auf. "Das ist eine Beleidigung und -"<br/>  </p><p>"Nein, nein, er hat Recht", unterbrach Kernel ihn mit einem Lächeln. "Ich war tatsächlich ein Gearschter. Meinen Status als Opfer - und das auch noch der obersten Stufe! - habe ich nur Mr. Snape zu verdanken."<br/>  </p><p>Severus blinzelte ein paar Mal. Dann machte es <em>klick</em>. Er musste sich dazu zwingen, ein Lachen zu unterdrücken - ausgerechnet einer von <em>denen</em>! - aber dennoch konnte er nicht verhindern, dass ein schmales Grinsen auf seinem Gesicht erschien. Slant wirkte ebenfalls sehr zufrieden, aber warum auch nicht? Der Zeuge der Anklage hatte sich soeben als eine Art Helfershelfer der Verteidigung erwiesen, nur, dass scheinbar niemand außer der Verteidigung das wusste. Die Blicke, die Crouch und Salic austauschten, sprachen Bände.<br/>  </p><p>"Wenn das nicht zur Verhandlung gehört, dann -", begann Crouch, aber Slant würgte ihn ab: "Aber es ist ein <em>essentieller</em> Teil der Verhandlung. Denn der Zeuge hat deutlich gemacht, dass er durch die ... Aufmerksamkeit meines Mandanten einen Vorteil erhalten hat. Damit wird sein Fall der eines <em>sini pleni piscis</em>(1). Die scheinbar böse Absicht hinter den Taten meines Mandanten verliert jegliche Bedeutung angesichts der Tatsache, dass Mr. Kernel so offensichtliche Vorteile erlangt hat.</p><p>Abgesehen davon müssen wir davon ausgehen, dass Mr. Kernel kein unschuldiges Opfer, das heißt, ein Opfer ohne jegliche Schuld daran, in eine Straftat verwickelt worden zu sein, ist. Mr. Kernel ist per Definition eine Person, die <em>prädestiniert</em> dazu ist, ein Opfer zu werden, und dementsprechend müsste man ihm eine Mitschuld an der Straftat anlasten.</p><p>Tatsächlich könnte man, wenn man es darauf anlegt, Mr. Snape zum Opfer in diesem Fall erklären, aufgrund des althergebrachten <em>cui prodest scelus, is fecit</em>(2). Aber es liegt nicht im Interesse meines Mandanten, diesbezüglich ein Verfahren anzustreben."<br/>  </p><p>Salic schnaubte. "Das ist das wohl <em>lächerlichste</em>, was ich je gehört habe." Er wandte sich an Crouch. "Euer Ehren, Sie können doch nicht <em>wirklich</em> glauben, dass der Zeuge sich hat freiwillig foltern lassen, das ist doch vollkommen absurd."<br/>  </p><p>"Das Gericht teilt diese Ansicht", verkündete Crouch. "Mr. Slant, entweder Sie begründen Ihre ... Anschuldigungen und Behauptungen, oder Sie schweigen."<br/>  </p><p>Slant wirkte unbeeindruckt. "Es ist ganz einfach. Das Opfersein ist ein Teil von Mr. Kernels Beruf. Demnach haben sich seine Berufschancen durch die Taten meines Mandanten nur verbessert - was Mr. Kernel bereits dargelegt hat. Er ist von einem einfachen <em>Gearschten</em> aufgestiegen zu einem <em>Opfer der obersten Stufe</em>."<br/>  </p><p>"Mr. Slant ...", sagte Crouch mahnend.<br/>  </p><p>"Er ist Mitglied der, nun, Gilde der Opfer und Gearschten", sagte Slant fast süffisant. "Stellgetretenes Oberhaupt, möchte ich hinzufügen. Ein Meister im Opfersein."<br/>  </p><p>Kernel schrumpfte in sich zusammen, aber die roten Ohren waren nicht zu übersehen. Offenbar war es ihm peinlich, so hoch gelobt zu werden. Dennoch, es war wahr. Severus hatte selten jemanden gesehen, der so sehr Opfer war wie Kernel. Kernel war <em>gut</em>. Daran gab es keinen Zweifel, und nur ein Narr hätte etwas anderes behauptet. Kernel war dazu geboren, ein Opfer zu sein, und dementsprechend war offensichtlich auch seine Berufswahl ausgefallen.<br/>  </p><p>Crouch starrte. "Die Gilde der ...?"<br/>  </p><p>"Opfer und Gearschten", beendete Slant für ihn. "Ihre Gildenstatuten besagen bereits, dass ein Mitglied der Gilde per Definition ein Opfer ist, und als solche sind sie mitunter bestrebt, in der Opferhierarchie weiter aufzusteigen. Demnach muss damit gerechnet werden, dass Gildenmitglieder dazu neigen, eine Straftat zu provozieren, solange sie in einem gewissen Rahmen bleibt, eben dem, dass der verursachte Schaden soweit reparabel, oder in diesem Falle, heilbar ist." Slant reichte Crouch eine dicke Pergamentrolle. "Die genauen Statuen mögen Sie dieser Rolle entnehmen, und <em>in dubio</em>(3) sollte auch Mr. Kernel als stellgetretenes Oberhaupt der Gilde dazu in der Lage sein, Ihnen diese noch einmal zu nennen."<br/>  </p><p>Crouch zögerte. Er sah zwischen Slant und Kernel hin und her, als erwarte er, in einem ihrer Gesichter einen Hinweis darauf zu finden, dass er hereingelegt wurde. Aber Severus wusste bereits, dass es ein unmögliches Unterfangen war: Es <em>gab</em> keine Hinweise. Crouch <em>konnte</em> nichts finden. Gleichzeitig war es ihm nicht zu verdenken, dass er so dachte. Severus wusste, dass die ganzen Gilden oftmals zu Verwirrungen führten - insbesondere, da sie Außenstehenden eher unbekannt waren. Er musste da nur an die ständigen Missverständnisse bezüglich der Näherinnengilde denken. Crouch schien zu dem Schluss zu kommen, dass man ihm die Wahrheit gesagt hatte, und nichts als die Wahrheit, und ihm auch nichts verschwiegen hatte. Er rieb sich die Schläfen, als hätte er Kopfschmerzen, was bei Slants Worten auch nicht weiter verwunderlich war. Wie bestrafte man jemanden, der ja so offensichtlich keine Straftaten begangen zu haben schien? Es war zum Mäuse melken! Jeder Ansatz, um Severus in den Knast zu schicken, wurde systematisch auseinander genommen und ins Gegenteil verkehrt. Severus konnte sich Crouchs Frust nur zu gut vorstellen – auch wenn er nicht genug Mitleid besaß, um es ihm nachzufühlen.<br/>  </p><p>"Wir stellen also fest, dass gegen Mr. Snape im Fall von Mr. Kernel keine Straftat besteht", sagte Crouch. "Und damit ist der einzige Fall von bewiesener Folter hinfällig geworden."<br/>  </p><p>Sein Tonfall zeigte, wie begeistert er davon war, aber er war in keiner Position, seinem Unmut Luft zu machen. Er musste immerhin vorgeben, unparteilich zu sein. Severus fragte sich, wie lange diese Verhandlung noch dauern sollte. Er war zwar an sich durchaus fähig, lange zu warten, doch es schien zweifelhaft, dass Crouch so lange durchhielt. Ganz zu schweigen von seinen Beinen – sie waren eingeschlafen, da er sie in seiner Position nicht bewegen konnte.<br/>  </p><p>"Sind noch Fragen an den Zeugen Keven Kernel? Nein?" Crouch seufzte. "Mr. Kernel, bitte halten Sie sich für etwaige Nachfragen weiterhin bereit, wir werden Sie zur Urteilsverkündung wieder in den Saal rufen."<br/>  </p><p>Kernel nickte und wurde hinausgeführt. Crouch seufzte verhalten. "Mr. Salic, möchten Sie weitere Zeugen vernehmen?"<br/>  </p><p>"Nein, keine weiteren Zeugen." Salic klang resigniert, aber er hatte sich erstaunlich lange gehalten. "Die restlichen Beweise liegen dem Gericht bereits vor."<br/>  </p><p>"Mr. Slant?"<br/>  </p><p>"Ich hätte noch zwei Zeugen", bemerkte der Zombie. "Zunächst würde ich gerne Ex-Auror Alastor Moody in den Zeugenstand rufen."</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_4_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "die Taschen voller Fische" - die böse Absicht zählt nicht mehr, wenn sie dem Betroffenen einen Vorteil erbringt (TP)<br/>(2) "Wem das Verbrechen nützt, hat es begangen" - eine verschärfte Form des sini pleni piscis, da das scheinbare Opfer den alleinigen Nutzen aus der Straftat zieht und demnach als einziger ein Motiv hat (sky)<br/>(3) "im Zweifel(sfalle)" - falls jemand, der allein auf Grund der Tatsache, dass er es tut, verrückt sein muss, zweifelt (sky)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20152456">Chapter 5</a>: Alastor Moody
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_5_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Severus' Kopf schoss nach oben. Moody? Slant hatte, von allen Auroren dieser Welt, Moody als Zeugen? Das konnte nicht sein ernst sein! Moody <em>hasste</em> ihn. Die alleinige Tatsache, dass er ein Todesser war und vermutlich auch noch <em>davonkam</em>, war Grund genug dafür, dass Moody versuchte, ihn auf Nimmerwiedersehen nach Askaban zu schicken. Er wusste nicht, ob Moody, um dieses Ziel zu erreichen, nicht sogar einen Meineid leisten würde, aber er wusste eins: Moody war ein Slytherin. Als solcher würde er alles tun, um sein Ziel zu erreichen.<br/>  </p><p>Crouch schien ebenfalls verwirrt zu sein. "Moody?", hakte er nach. Slant nickte, und Crouch schien die Schultern zu zucken und schickte einen Gerichtsdiener los. "Holen Sie Alastor Moody herein."<br/>  </p><p>Severus beobachtete das mit gemischten Gefühlen. Er war sich sicher, dass Slant einen Plan hatte. Er wusste zwar nicht, in welchem Haus Slant gewesen war, aber er war <em>Anwalt</em>, das war praktisch eine Erklärung für sich. Slant wusste, was er tat. Er hatte garantiert einen Plan. Aber es änderte nichts an den Tatsachen, dass Moody eher ein Zeuge der Anklage war, nicht einer der Verteidigung. Die einzigen Momente, an die er sich erinnern konnte, in denen sie sich nicht an die Gurgel gesprungen - oder kurz davor gewesen - waren, war eine Begegnung in seinem fünften Schuljahr und ein Verhör, dass aufgrund der Tatsache, dass Severus Dumbledores Spion war, abgebrochen worden war. Moody war bestimmt nicht gut auf ihn zu sprechen. Sie waren nie auf einen grünen Zweig gekommen, und auch wenn die Farbe von Slytherin grün war, so war es zweifelhaft, dass sich das nun änderte.<br/>  </p><p>Moody kam herein, seine Miene steinern. Er schien nicht besonders glücklich zu sein, dass er als Zeuge aussagen sollte, insbesondere, da er ja als Zeuge für Severus seinen Auftritt machte. Es sprach zwar nichts dagegen, dass er auch gegen ihn aussagte, aber Severus vermutete, dass Slant wusste, dass Moody es nicht tun würde. Vielleicht hatte da auch noch ein gewisser Schulleiter eine Hand im Spiel.<br/>  </p><p>Crouch und Moody starrten sich an, und die Belehrung des Zeugen war bereits eine erstaunlich spannungsgeladene Angelegenheit. Zwischen Zeuge und Richter gab es keine Liebe, und Severus wusste, dass, nachdem Crouch mit seinen sehr dubiosen Schnellverfahren angefangen hatte - oder die, die zwar offiziell Schnellverfahren hießen, in Wahrheit jedoch <em>absente reo</em>(1), und dabei auch <em>absente curiae</em>(2), stattfanden - Moody ihm gesagt hatte, dass er sich die Regelung sonst wo hinschieben konnte. Er hatte zwar gesagt, wenn Severus die Gerüchte richtig verstand, dass Crouch sie sich dorthin, wo die Sonne nie schien, schieben sollte, aber aus gewissen Gründen, bezweifelte er, dass es die wirkliche Aussage traf. Severus beobachtete mit mildem Interesse die beiden Kontrahenten: Sie starrten sich an wie zwei Katzen, und vermutlich würde das dafür sorgen, dass sie noch ein wenig länger hier sitzen würden.<br/>  </p><p>"Scheint auf ein klassisches <em>a verba ad verbis</em>(3) hinauszulaufen", bemerkte Slant mit der morbiden Kuriosität, die Severus eigentlich nur von Igors im Angesicht eines neuen Organismus kannte. "Mr. Moody muss wirklich ein <em>amicus curiae</em>(4) sein."<br/>  </p><p>"Möglich." Severus seufzte. "Ich hoffe nur, sie verbringen nicht die ganze Zeit damit, sich stumm anzugiften - oder überhaupt, sich anzugiften - denn ich habe nicht vor, hier wegen denen Wurzeln zu schlagen."<br/>  </p><p>Slant neigte leicht den Kopf und wandte sich dann an Crouch. "Mit Verlaub, aber Sie sollten sich doch daran erinnern, dass wir hier vor Gericht sind. Ihre Streitigkeiten - insbesondere Ihre, Herr Richter, da Sie hier schließlich als neutrale Instanz sind - sollten Sie doch außerhalb austragen, oder zumindest außerhalb <em>dieser</em> Verhandlung. Was das betrifft, schmerzt es mich fast, Ihnen zu sagen, dass Sie sich wie Kleinkinder verhalten."<br/>  </p><p>"Beleidigen Sie das hohe Gericht?", grollte Crouch, froh, einen Grund gefunden zu haben, wegen dem er jemanden anschnauzen konnte.<br/>  </p><p>"Aber nein, <em>absit invidia</em>(5)", sagte Slant unbekümmert. "Können wir dann jetzt zum Prozess zurückkehren?"<br/>  </p><p>Crouch grummelte. "Gut, dann befragen Sie den Zeugen."<br/>  </p><p>Moody war erstaunlich unbekümmert ob der Beleidigung, aber jetzt, wo er befragt werden sollte, verfinsterte sich seine Miene zunehmend. Er starrte Slant mit einem bösen Blick an - Severus konnte praktisch hören, wie Moody dachte: <em>advocatus diaboli</em>(6). Er schien es als einen persönlichen Affront zu sehen, dass Severus ein Verfahren bekam, andere, weniger eindeutig Schuldige, jedoch nicht. Vielleicht war er aber auch nur grantig, weil Lucius Malfoy sich aus der Affäre gezogen hatte. Severus würde es wohl nie wissen.<br/>  </p><p>"Mr. Moody", begann Slant, "Sie sind ... <em>waren</em> bis vor kurzem als Auror im Ministerium tätig, korrekt?"<br/>  </p><p>"Ja", brummte Moody.<br/>  </p><p>"Während Ihrer Tätigkeit als Auror sind Sie meinem Mandanten mehrfach begegnet. Wann haben Sie ihn das erste Mal getroffen, und was war Ihr Eindruck von ihm?"<br/>  </p><p>Schweigen senkte sich über den Saal. Moody starrte den Zombie schweigend an, ungläubig. Severus könnte praktisch das Zirpen der Grillen hören, das zu solchen Gelegenheiten <em>immer</em> zu hören war. Das war wie das Donnergrollen, wenn ein Igor von <em>dem Schloss</em> sprach. Man hätte vermutlich eine Stecknadel fallen hören können.<br/>  </p><p>"Mr. Moody?", fragte Slant nach.<br/>  </p><p>"Ich denke nach!", grollte Moody. "Das ist nicht so einfach, wie es klingt!" Er schwieg einen Augenblick. "Also, ich glaube, das erste Mal, als ich ihn getroffen habe, das war 1975. Doch, doch, genau, das war ganz <em>genau</em> 1975. Ich weiß das Datum nicht mehr - August oder später, bestimmt. Ich weiß das, weil D... also, es war jedenfalls 1975."<br/>  </p><p>Severus zog ein wenig die Brauen zusammen. Er erinnerte sich an die Begegnung, aber er fragte sich, was Moody beinahe gesagt hätte. Allein die Tatsache, <em>dass</em> er mehr gesagt hätte, als gefordert, zeigte, dass Moody nicht so desinteressiert an allem war, wie es schien. Und seine böse Miene war scheinbar auch nur ein Abwehrmechanismus. Moody grummelte vor sich hin, offenbar seinen beinahe Ausrutscher verfluchend.<br/>  </p><p>"Und Ihr Eindruck?", hakte Slant nach. "Was war der Grund für das Treffen?"<br/>  </p><p>"Ach, das ..." Moody schüttelte den Kopf. "Er war mit seiner Mutter in die Zentrale gekommen, wegen einer Vermisstenmeldung. Während seine Mutter die Meldung weitergab, blieb er draußen - oder drinnen, je nachdem - wo ich ihn getroffen habe. Wir hatten eine <em>kurze</em> Unterhaltung. Er wirkte nicht besonders interessiert am Vermissten, ja, nicht einmal minimal besorgt. Ansonsten war er ziemlich einsilbig, misstrauisch und einfach ein seltsames Balg."<br/>  </p><p>"War zu dem Zeitpunkt bereits klar, was aus ihm werden würde?"<br/>  </p><p>"Nein." Moody schnaubte. "Wenn dem so gewesen wäre, hätte ich ihn doch sofort eingebuchtet."<br/>  </p><p>"Er war zu dem Zeitpunkt fünfzehn", bemerkte Slant.<br/>  </p><p>Moody zuckte die Schultern. "Alt genug, um in Sicherheitsverwahrung zu kommen, finde ich."<br/>  </p><p>Severus unterdrückte ein Schnauben ob der Worte. Natürlich, das war typisch Moody. Jeder, der einen Zauberstab halten konnte, war zu Verbrechen fähig, und das war die Voraussetzung dafür, auch straffähig zu sein. Moody war auch so jemand, der nach dem Prinzip handelte, dass ein Verdächtiger vermutlich schuldig war, und wenn es ein Slytherin - zumindest in neunundneunzig Prozent der Fälle - war, dann war er verdächtig hoch zwei. Dann gab es natürlich noch die Schuldigen, das waren Slytherins und obendrein auch noch Reinblüter. Reinblüter waren das Letzte: Wenn sie reinblütig waren, dann hatten sie Geld und wenn sie Geld hatten, dann taten sie den ganzen Tag lang nichts. Das machte sie verdächtig, und wer verdächtig war, war natürlich auch schuldig. Eine fehlerfreie Logik. Vor allem, da die Auroren sowieso der Ansicht waren, dass jeder irgendwie schuldig war ...<br/>  </p><p>Slant räusperte sich. "Sie haben also zu dem Zeitpunkt keine Anzeichen für später erfolgte Straftaten feststellen können. Was war danach? Sie sind ihm noch einmal begegnet?"<br/>  </p><p>"Einmal?" Moody schnaufte. "Schön wär's!" Er verschränkte die Arme. "Ich hab ihn ein paar Mal flüchtig gesehen, in der Winkelgasse und auch an zwielichtigeren Orten, zum Beispiel der Nockturngasse ... und dann natürlich noch einmal in der Zentrale, als er seinen Freund vermisst gemeldet hat."<br/>  </p><p>"Sein Freund?" Crouch hob die Augenbraue. "Wer ...?"<br/>  </p><p>"Jonathan Meadowes", fuhr Severus dazwischen. "Falls Sie auch nur halb so bürokratisch sind, wie Sie immer tun - was im Übrigen so oder so schon <em>zu</em> bürokratisch ist - sollten Sie eine Akte haben. Und einen <em>Verweis</em> in meiner Akte, dass ich ihn als vermisst gemeldet habe."<br/>  </p><p>Moody knurrte. "Ich hasse es zwar, ihm in irgendeiner Weise beizupflichten, aber er hat Recht, Barty. Das muss ein echter Saftladen geworden sein, seit ich hier weg bin, denn zu <em>meiner</em> Zeit handelte man nach dem Grundsatz <em>abundans cautela non nocet</em>(7), und das ist keineswegs ein Kompliment. Es hat uns ständig aufgehalten, aber retrospektiv gesehen ist es besser, als alle ach so sorgfältig ausgefüllten Formulare, Akten und andere Dokumente einfach zu verschlampen. Also echt mal, Barty, was ist das für ein Saftladen?"<br/>  </p><p>"Moody!", warnte Crouch. "Vergiss nicht wo du bist, sonst muss ich dich verwarnen!"<br/>  </p><p>"Verdammt noch mal, Barty, du weißt genauso gut wie ich, dass es die Wahrheit ist!"<br/>  </p><p>"Außerdem", mischte Slant sich ein, "<em>volenti non fit iniuria</em>(8)."<br/>  </p><p>Crouch verzog das Gesicht, als hätte er auf eine saure Zitrone gebissen, sagte jedoch nichts weiter dazu. Severus meinte, ihn mit den Zähnen knirschen zu hören. Crouch räusperte sich ein wenig.<br/>  </p><p>"Was ist nun mit ... mit Jonathan Meadowes?"<br/>  </p><p>Severus schürzte die Lippen, unwillig, dazu noch etwas zu sagen. Er hatte sowieso schon mehr gesagt, als er musste. Als er sollte. Und erst recht wollte. <em>Das</em> konnte Moody beantworten, immerhin hatte der die Meldung entgegen genommen.<br/>  </p><p>"Nun, ich würde annehmen, da er mit einem verkorksten Todesser befreundet war, dass er jetzt, um den medizinischen Fachterminus zu verwenden, <em>mortis portalis tacculatum</em>(9) ist. Und natürlich verschollen, obendrein, einfach, weil ich es wüsste, wenn wir ihn gefunden hätten. Haben nicht mal die Hälfte der Opfer gefunden, warum also den."<br/>  </p><p>"Tatsächlich." Crouch seufzte. "Also ist dieser Meadowes vollkommen irrelevant für diese Verhandlung."<br/>  </p><p>"Ein eindeutiges Indiz für <em>imperitia</em>(10)", murmelte Slant so leise, dass nur Severus es hören konnte.<br/>  </p><p>Severus wandte den Kopf und sah ihn nachdenklich an. "Finden Sie?", fragte er. "Ich bin eigentlich ... froh, dass Jonathan nicht für die Verhandlung wichtig ist. Es ist <em>sehr</em> persönlich, und ich habe wirklich kein Interesse daran, das vor Crouch auszubreiten."<br/>  </p><p>"Ist dem so?" Slant musterte ihn. "Was ist mit Moody?"<br/>  </p><p>"Er weiß es bereits. Wir hatten später noch eine ... Unterhaltung ... in der Jonathan erwähnt wurde. Ich bezweifle aber, dass er zu so niederen Mitteln greifen wird, um mir eins auszuwischen. Wie sagt man so schön? <em>Cornix cornici oculos non effodiet</em>(11)."<br/>  </p><p>Slant nahm das hin und wandte seine Aufmerksamkeit wieder Crouch und Moody zu, die sich darüber stritten, ob Crouch das Recht hatte, Jonathan Meadowes nur <em>Meadowes</em> zu nennen. Moody war eindeutig dagegen, aus Gründen der Verwechslungsgefahr, wie er behauptete, aber Crouch war uneinsichtig. Severus sah aus den Augenwinkeln zu Slant, der zwar keine wirkliche Miene verzog, aber eine Aura verströmte, als würde er es liebend gerne tun. Dass er es nicht tat, konnte verschiedene Gründe haben - es schickte sich nicht oder aber er machte sich Sorgen, dass ihm die Ohren abfielen. Trotzdem war es für alle Anwesenden - Crouch und Moody ausgenommen - mehr als deutlich, dass er sich ärgerte. Vielleicht war Moody als Zeuge doch keine so gute Idee.<br/>  </p><p>"Wie auch immer Mr. Jonathan Meadowes von Ihnen jetzt im Einzelnen zu bezeichnen ist, es ist doch wohl eindeutig, dass es ein <em>falsa demonstratio non nocet</em>(12) ist. Wenn Sie nun also so freundlich wären, sich wieder dem Thema zuzuwenden? <em>In medias res</em>(13), wenn ich bitten darf, sonst verlange ich aufgrund der Unfähigkeit des Richters, sich an seine Pflicht zu erinnern, dass mein Mandant mit einem <em>exeo carco cum nihil pretii</em>(14) freigelassen wird."<br/>  </p><p>Crouch presste die Lippen zusammen. "Schön, dann stellen Sie Ihre Fragen, damit wir fertig werden!"<br/>  </p><p>"<em>Festina lente</em>(15)", meinte Slant nur, wandte sich nun aber wieder Moody zu. "Haben Sie meinen Mandanten sonst noch gesehen? Außer in den bereits genannten Fällen?"<br/>  </p><p>"Nun, ich <em>glaube</em>, dass ich ihn ab und an im einen oder anderen Scharmützel gesehen habe, aber beschwören möcht ich's nicht ... wirklich gegenübergestanden haben wir uns wohl erst diesen August wieder."<br/>  </p><p>"Gegenübergesessen. Oder besser, ich habe gesessen und er ist auf und ab gewandert", murmelte Severus.<br/>  </p><p>"Diesen August." Crouch zog ein wenig die Brauen zusammen und zog einige Dokumente hervor. "Er wurde verhört, weil er auf dringenden Tatverdacht festgenommen wurde, aber er wurde freigelassen."<br/>  </p><p>"Aus Mangel an Beweisen", knirschte Moody. "Stand alles im Bericht, Barty. Du brauchst es mir nicht noch einmal vorzubeten, und schon gar nicht mit so einer vorwurfsvollen Stimme. Du kennst mich gut genug, um zu wissen, dass ich niemanden laufen lassen würde, wenn ich nicht müsste."<br/>  </p><p>Crouch brummte nur. Severus wusste, dass Moody indirekt gelogen hatte - es hatte genug Beweise gegeben. Bevor Moody, oder wer auch immer vom Orden sie zuerst in die Finger gekriegt hatte, sie vernichtet hatte, wohlgemerkt. Es war erstaunlich, wie schnell aus einer Fülle an Beweisen ein Mangel entstehen konnte. Erschreckend, wirklich. Gleichzeitig warf es die Frage auf, ob Moody es im Zweifelsfall zugeben würde. Es war die Frage danach, ob Moody bereit war, einen Meineid zu leisten oder nicht, insbesondere, wenn er die Wahl hatte zwischen Crouch und Severus. Severus war sich nicht sicher, worauf er hoffte, aber es versprach, spannend zu werden.<br/>  </p><p>Slant lächelte sein unangenehmes Lächeln. "Aber bis auf diesen einen Zwischenfall, bei dem er freigelassen wurde, sind keinerlei Interaktionen mit den Auroren zu verzeichnen?"<br/>  </p><p>"Nein", sagte Moody knapp.<br/>  </p><p>"Aber ist Mr. Snape wirklich nie strafrechtlich aufgefallen? In seiner Akte sind einige ... Zusammenstöße mit der Wache verzeichnet!" Salic schien außer sich.<br/>  </p><p>Moody runzelte die Stirn. "Was die Wache für einen Murks macht, was kümmert mich das? Die sind von den Auroren nicht abhängig, und was ihr unter <em>Zusammenstöße</em> versteht, weiß ich nicht, aber bei der Wache bedeutet das, dass er wegen auffälligem und allgemeinem Herumlungern ins Wachhaus auf eine Tasse Tee eingeladen wurde." Er schnaubte. "Also wirklich, Auroren sind eine Spezialeinheit zum Fangen von Schwarzmagiern und dergleichen Gesocks - die Wache hat nicht umsonst das wundervolle Motto <em>Fabricati Diem, Punk!</em>(16), wisst ihr? Deren Aufgabe ist es, den Frieden zu wahren - wie auch immer man das so macht."<br/>  </p><p>Severus unterdrückte ein Lächeln und auch einen gleichzeitigen Stoßseufzer. Die Wache. Ein Kapitel für sich. Sie war vom Zuständigkeitsbereich vermutlich gleichgestellt mit der magischen Polizeibrigade, aber gleichzeitig von Grund auf verschieden. Mochte auch daran liegen, dass die Leitung Samuel Vimes unterlag und der ignorierte den Zaubereiminister, wo er nur konnte. Vermutlich würde Vimes den Minister verhaften, wenn er die Gelegenheit dazu bekam. Ihm fiel immer etwas ein, das war auch der Grund, warum Severus mehrere Zusammenstöße mit der Wache gehabt hatte.<br/>  </p><p>"Mr. Snape", begann Crouch, "möchten Sie zu den genannten Vorfällen Stellung nehmen?"<br/>  </p><p>Severus sah kurz zu Slant, der die slant'sche Variante eines Schulterzuckens machte. Offenbar war der Zombie davon überzeugt, dass Vimes nur überreagiert hatte und es im Endeffekt nicht mehr war als das simple Benutzen der öffentlichen Verkehrswege, sprich, er war über die Straße gegangen.<br/>  </p><p>"Wenn Sie unbedingt wollen, dann kann ich Sie erleuchten", meinte Severus ruhig. "Da wäre Verhaftungsgrund a - auffälliges Herumlungern. Verhaftungsgrund b - allgemeines Herumlungern. Dann c, die allgemeine Anstiftung, sehr beliebt, wirklich, und dazu kommt dann noch d, gewohnheitsmäßige und <em>vorsätzliche</em> Anstiftung. Und natürlich e, Beihilfe. Wie kann ich nur die Beihilfe vergessen?" Er schüttelte gespielt den Kopf über sich selbst.<br/>  </p><p>"Anstiftung und Beihilfe <em>wozu</em>?", fragte Salic.<br/>  </p><p>Severus zuckte die Schultern. "Das hat Vimes nicht gesagt. Vermutlich zum Herumlungern. Ich bin ein notorischer Herumlungerer, wissen Sie." Er legte leicht den Kopf schief. "An schlechten Tagen ende ich aufgrund vom Blockieren der öffentlichen Verkehrswege auch öfters bei der Wache. Die sehen das nicht so gerne."<br/>  </p><p>"Und <em>warum</em> lungern Sie herum und blockieren die Straßen?", wollte Salic wissen, offenbar bestrebt, einen Grund zu finden, um Severus doch noch zu einem wahrhaftigen Kriminellen zu machen.<br/>  </p><p>Slant schien nun den Punkt zu sehen, an dem er sich wieder einmischen musste. "Ich glaube, Sie verstehen die Sprache der Wache nicht - mein Mandant wurde festgenommen, weil er dem Kommandanten der Wache oder einem beliebigen anderen Mitglied eben dieser im Weg gestanden hat, eben <em>Blockieren der öffentlichen Verkehrswege</em>. Außerdem, weil er - und vermutlich einige Bekannte oder Freunde - sich auf der Straße getroffen und zu einem Gespräch stehen geblieben sind. Das ist <em>auffälliges</em> und <em>allgemeines Herumlungern</em>."<br/>  </p><p>Salic starrte. Crouch starrte. Moody verkniff sich ein Grinsen, und Severus bemühte sich, nicht noch weitere Gründe für Verhaftungen anzuführen, einfach, um zu sehen, wie Salic und Crouch vollkommen entgeistert dreinblickten.<br/>  </p><p>"Sie müssen verstehen", erklärte Slant schließlich, weil er es einfach zu genießen schien, dem ganzen noch die Krone aufzusetzen, "dass es eine allgemein anerkannte Verfahrensweise in der Wache ist. Ich habe von einem Fall gehört, in dem Mitglieder der Wache einen Toten - einen <em>wirklich</em> Toten - verhaftet hätten. Aufgrund der Tatsache, dass er auf <em>ungebührliche Art und Weise tot</em> war. Die Tatbestände beliefen sich auf 'Leblosigkeit' und 'ungebührliches Verhalten in der Öffentlichkeit', denn immerhin wurde die Leiche des Mannes auf einer öffentlichen Straße aufgefunden ..."<br/>  </p><p>"Das reicht", unterbrach Crouch. "Ich denke, wir haben genug über die ... die Verfahrensweise der Wache erfahren. Wenn keine ... schwerwiegenden Vergehen vorliegen, die mit den von Ministerium bestimmten Straftaten und Delikten konform sind, wird die Interaktion mit der Wache in diesem Verfahren außen vor gelassen." Er schüttelte den Kopf. "Wenn Sie keine weiteren Fragen an den Zeugen haben ..."<br/>  </p><p>"Keine weiteren Fragen." Slant lächelte dämonisch. "Wenn Sie nichts dagegen haben, würde ich jedoch gerne einen weiteren Zeugen aufrufen."<br/>  </p><p>Crouch verzog das Gesicht. "<em>Noch einen</em>? Ähm ..." Er räusperte sich. "Ich meinte, ein weiterer Zeuge also." Er blätterte ein wenig in seinen Unterlagen. "Albus Dumbledore, nicht wahr?"<br/>  </p><p>Er klang resigniert, was aber auch nicht weiter verwunderlich war. Es hatte ein wenig den Anschein, als ob Slant die gesamte Verhandlung <em>ad absurdum</em>(17) führen wollte, und das Schlimmste daran war, dass es ihm auch noch zu gelingen schien. Problem: Slant war eine Koryphäe auf dem Gebiet der Rechtsverdrehung, eine Virtuose, was das Biegen von Gesetzen betraf, und alles, was man als Laie - oder Crouch - da noch tun konnte, war sich seinem Schicksal zu ergeben. Widerstrebend, vielleicht, aber nichtsdestotrotz ergeben. Und Crouch war nicht der Typ, der gerne aufgab oder sich ergab. Wäre er jemand anderes gewesen, man hätte vielleicht Mitleid mit ihm gehabt, wo man ihn doch so effektiv daran hinderte, den <em>bösen Todesser</em> zu verurteilen.<br/>  </p><p>Aber die Welt war nicht fair, und Slant wusste es zu seinem Vorteil zu nutzen. Vermutlich hätte selbst Salazar Slytherin von ihm noch einiges über List und Tücke lernen können, von der Verbindung derselben ganz zu schweigen.<br/>  </p><p>"Na schön." Crouch hatte offenbar festgestellt, dass er die Einberufung des Zeugen Albus Dumbledore nicht verhindern konnte. "Na <em>schön</em>. Holen Sie den Zeugen Albus Dumbledore. Und geleiten Sie Moody raus", wandte er sich an den Gerichtsdiener, der auch schon loseilte.<br/>  </p><p>Moody warf Slant einen finsteren Blick zu und Severus einen mörderischen - bei Slant wäre er verschwendet gewesen, war der Mann ja bereits <em>un</em>tot. Dann ging er hinaus, nur um kurze Zeit später von Albus Dumbledore abgelöst zu werden.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_5_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "in Abwesenheit des Angeklagten"<br/>(2) "in Abwesenheit des Gerichts"<br/>(3) "von Worten zu Schlägen" (in diesem Fall würde die Stufe der Worte übersprungen werden und direkt von der Stille zur Gewalt gegriffen)<br/>(4) "Freund des Gerichts" - eine nettere Umschreibung für jemanden, der sich so oft mit dem Gesetz anlegt, dass er dem Gericht bereits bestens bekannt ist (sky)<br/>(5) "ohne eine Beleidigung (zu wollen)" - ich weiß, dass ich dich beleidige, und ich meine es so, aber durch diesen netten Spruch wird jede böse Absicht hinfällig (sky)<br/>(6) "Anwalt des Teufels" (wörtlich zu verstehen)<br/>(7) "überflüssige Vorsicht schadet nicht" - alles doppelt und dreifach machen, verschwendet Zeit, ist aber ein Fest für jeden gestandenen Bürokraten (sky)<br/>(8) "dem Einwilligen geschieht kein Unrecht" - die Wahrheit ist keine Beleidigung (TP)<br/>(9) "tot wie ein Türnagel" (TP)<br/>(10) "Unerfahrenheit" - mangelnde Fachkenntnis; eine nettere Umschreibung dafür, dass man den anderen für einen Idioten hält (sky)<br/>(11) "Eine Krähe pickt der anderen nicht die Augen aus"<br/>(12) "die falsche Bezeichnung schadet nicht" - es ist egal, wie es genannt wird, solange alle wissen, um wen oder was es sich handelt, solange ich dagegen angehen kann, wenn es mir nicht passt (sky)<br/>(13) "in die Mitte der Dinge" - zur Sache kommen, nicht um den heißen Brei herumreden, solange es keine slant'sche Taktik ist (sky)<br/>(14) "raus aus dem Kerker ohne Geld" - du bist frei und musst nicht einmal dafür bezahlen (TP)<br/>(15) "Eile mit Weile" - geht oft mit "in medias res" einher (sky)<br/>(16) "Zu schützen und zu dienen" (angeblich, eigentlich: "Versüß mir den Tag, Punk!") (TP)<br/>(17) "zum Absurden, ins Unmögliche"</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20248696">Chapter 6</a>: Albus Dumbledore
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_6_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Dumbledore wirkte fehl am Platz. Es gab viele Gründe dafür, und Severus verbrachte die Zeit, die für Dumbledores Personalien draufging, damit, sie mehr oder weniger alle aufzuzählen. Da war das Zwinkern in den Augen, das bereits zeigte, dass er sich keine Sorgen machte oder die Sache nicht ernst nahm. Selbst <em>Moody</em> hatte sich Mühe gegeben, nicht vollkommen sorglos zu erscheinen, und das, <em>obwohl</em> es ihm sogar gegen den Strich ging, für Severus auszusagen. Und dann war da natürlich auch noch die Robe. Die Robe war das Schlimmste - sie war <em>unangemessen</em>. Sie war <em>bunt</em>. Nicht farbenfroh, und auch nicht grell oder kitschig, sondern einfach nur <em>bunt</em>. Severus schauderte. Wie konnte man vor Gericht erscheinen und so etwas tragen? Das war das non plus ultra(1) des schlechten Stils.<br/>  </p><p>"Ihr Zeuge, Ihre Fragen, Mr. Slant. Und machen Sie's kurz", sagte Crouch lustlos.<br/>  </p><p>Jeder im Saal konnte den Zusatz <em>'und schmerzlos'</em> hören, aber niemand sagte etwas. Der Grund blieb jedem selbst überlassen, aber es gab bestimmt den einen oder anderen, der fürchtete, von Slant wegen <em>Verfahrensstörung</em> vor den Kader gezerrt zu werden, sollte er es wagen, ein Wort zu sagen. Man sollte zudem meinen, dass die meisten Leute hier besseres zu tun hatten, als sich einen - für die Anklage - bereits verlorenen Prozess anzutun, selbst wenn sie Teil der Verhandlung waren. Es war doch bereits in dem Moment entschieden, in dem Slant der Verteidiger wurde.<br/>  </p><p>"Nun, Mr. Dumbledore -"<br/>  </p><p>"Tatsächlich wäre es <em>Professor</em> Dumbledore", unterbrach Dumbledore Slant - Sakrileg! - mit einem Augenzwinkern.<br/>  </p><p>Slant wirkte nicht amüsiert. "Dann eben <em>Professor</em> Dumbledore. Für die Verhandlung ist es irrelevant, aber wenn Sie darauf bestehen ..." Er schnaufte. "Wie auch immer - Sie kennen meinen Mandanten?"<br/>  </p><p>"Oh, ja, natürlich." Dumbledore musterte Severus über den Rand seiner Brille hinweg. "Seit er das erste Mal die Schwelle von Hogwarts überschritten hat."<br/>  </p><p>"Nur fürs Protokoll - wann genau war das?"<br/>  </p><p>"Nun, am Abend des ersten September 1971." Dumbledore lächelte. "Kurz bevor er vom Sprechenden Hut nach Slytherin gesteckt wurde -"<br/>  </p><p>"Ja", unterbrach Slant, "das wissen wir. Er war Schüler des Hauses Slytherin von 1971 bis 1978, korrekt? Irgendwelche besonderen Vorkommnisse während dieser Zeit?"<br/>  </p><p>Severus zog die Brauen zusammen. Er fragte sich, was Dumbledore nun sagen würde. Er erwartete nicht viel. Nicht wirklich. Wenn, dann würde alles, was Dumbledore zu <em>besonderen Vorkommnissen</em> sagen könnte, zu Ungunsten von Severus sein - es gab nichts, was nicht zu Gunsten der Gryffindors ausgelegt worden war. Severus wollte sagen, dass er Dumbledore noch immer dafür hasste, dass er trotz allem die Gryffindors immer bevorzugt hatte, aber er räumte Dumbledore diese Position nicht ein. Es war schon genug, die Rumtreiber zu hassen - und selbst da nur Black und Potter, und einer war tot und der andere in Askaban.<br/>  </p><p>"Nun ..." Dumbledore dachte nach. "Es sind keine <em>besonderen</em> Vorkommnisse, nein."<br/>  </p><p>Severus unterdrückte ein Schnauben. Slant sah ihn von der Seite an.<br/>  </p><p>"Gibt es etwas, das ich wissen sollte?", fragte er leise.<br/>  </p><p>"Ich weiß nicht." Severus sah ihn lange an. "Andererseits, Dumbledore würde es vermutlich - wie heißt der Fachterminus? <em>Ad calendas Graecas</em>(2)? - zugeben, weshalb ich es Ihnen wohl oder übel sagen müsste. Vielleicht <em>hilft</em> es ja." Er sah Dumbledore finster an, aber Dumbledore studierte Crouchs Gesichtsausdruck. Vermutlich, um herauszufinden, was im bisherigen Verfahren passiert war, da die Zeugen ja nicht darüber informiert wurden. "Man hat versucht, mich umzubringen."<br/>  </p><p>Slant wirkte überrascht. "Wirklich?"<br/>  </p><p>"Ja." Severus bohrte ein weiteres Loch in Dumbledores Hinterkopf - wenn auch nur mental. "In meinem sechsten Schuljahr hat Sirius Black mich durch einen Trick dazu gebracht, an einem Vollmond die Heulende Hütte zu betreten - wo ich mich einem ausgewachsenen Werwolf gegenüber sah. James Potter hat den Helden markiert und mich <em>gerettet</em>, aber nun, das halte ich für zweifelhaft. Wie dem auch sei: Dumbledore hat den Vorfall vertuscht, da sonst der Werwolf enttarnt und von der Schule geschmissen worden wäre."<br/>  </p><p>Slant dachte darüber nach. "Ich könnte darauf Bezug nehmen ..."<br/>  </p><p>"Lassen Sie's, wenn es nicht zwingend nötig ist", meinte Severus. "Dumbledore ist ... parteiisch, was das betrifft, und im Endeffekt hat er die Möglichkeit, seine Rolle als Zeuge für mich ins Gegenteil zu verqueren."<br/>  </p><p>Severus war sich nicht sicher, ob Dumbledore wirklich zu solchen Mitteln greifen würde, aber er traute es ihm durchaus zu, egal, was alle darüber sagten, wie <em>nobel</em> Dumbledore war. Dumbledore hatte genug auf dem Kerbholz, und er war genau der Typ, der die einen Dinge verschwieg und die anderen ausplauderte. Severus traute ihm nicht weiter, als er ihn werfen konnte. Natürlich, offener Verrat war nicht Dumbledores Stil, aber auf die kleinen Dinge kam es an. Und die kleinen Dinge verlangten, dass er auf Dumbledores guter Seite blieb. Vorerst.<br/>  </p><p>"Was wären diese weniger besonderen Vorkommnisse?", fragte Slant schließlich.<br/>  </p><p>"Oh, nichts Wichtiges", meinte Dumbledore mit einem Zwinkern in den Augen, aber Severus' Miene verfinsterte sich noch mehr. "Kleine Reibereien zwischen den Schülern. Die üblichen Streitigkeiten, kleine Rivalitäten ..."<br/>  </p><p>"Mit wem genau?", fragte Slant.<br/>  </p><p>"Einer Gruppe von Gryffindors", sagte Dumbledore. Severus glaubte fast, einen mahnenden Ton zu hören. "Tut das etwas zur Sache?"<br/>  </p><p>"Ja", behauptete Slant sofort. "Können Sie uns die Namen dieser Gryffindors nennen? Vielleicht ist das wichtig." Er lächelte. "Ansonsten ist mein Mandant sicher bereit -"<br/>  </p><p>Dumbledore sah zu Severus. Severus konnte geradezu sehen, wie es in seinem Kopf arbeitete, denn er konnte ja nicht wissen, was Severus genau ausplaudern würde. Insbesondere deshalb nicht, weil Severus verdammt gut in Okklumentik war. Keine Chance, da etwas zu erfahren. Severus unterdrückte ein gehässiges Grinsen.<br/>  </p><p>"Die betreffenden Gryffindors waren Remus Lupin, James Potter, Peter Pettigrew und Sirius Black. Aber -"<br/>  </p><p>"Danke", unterbrach Slant geschickt. Vermutlich ahnte er, was Dumbledore hinzufügen wollte. "Soweit ich das sehe, ist von den genannten Personen nur noch Remus Lupin fähig, als Zeuge einberufen zu werden. Eine Schande."<br/>  </p><p>"Eben, ist das nicht verdächtig?", fragte Salic, der offenbar neuen Mut geschöpft hatte. "Ich meine, der Angeklagte <em>streitet</em> sich mit diesen Personen, und bis auf Remus Lupin sind sie alle, wie soll ich sagen, aus dem Verkehr gezogen." Er hob die Hand, um daran abzuzählen. "Zunächst ist da James Potter, der von dem, dessen Name nicht genannt werden darf, an Halloween dieses Jahres ermordet wurde, gemeinsam mit seiner Frau Lily Potter. Dann Peter Pettigrew - von Sirius Black ermordet, nachdem er ihn am ersten November dieses Jahres gestellt hatte wegen dem Verrat an den Potters. Und dann ist da natürlich noch Sirius Black selbst, der nach dem Mord an Peter Pettigrew und zwölf Muggeln lebenslänglich nach Askaban verbracht wurde. Ist das nicht irgendwie verdächtig?"<br/>  </p><p>"Ein chinesisches Sprichwort sagt, dass man, wenn man nur lange genug an einem Fluss sitzt, seine Feinde tot vorbei treiben sieht", bemerkte Slant spitz. "Das bedeutet übersetzt, Mr. Salic, dass zu dem, der warten kann, alles kommt mit der Zeit. Oder ganz platt ausgedrückt: Mein Mandant <em>musste</em> gar nichts tun, damit diese Leute in ihr Verderben rennen." Dumbledore sah Severus an und Severus wusste, dass er an die Prophezeiung dachte, die alles erst ins Rollen gebracht hatte. Slant schien den Blickwechseln nicht zu bemerken, denn er fuhr ungerührt fort: "Was Sie hier versuchen, ist ein <em>invenit patella operculum</em>(3) zu kreieren, aber das ist juristisch nicht haltbar. <em>C'est pire qu'un crime, c'est une faute</em>(4)!"<br/>  </p><p>Salic schürzte die Lippen, schwieg aber. Slants Blick schien ihn, einmal mehr, unangespitzt in den Boden gerammt zu haben, und jetzt musste er sich mühsam wieder ausbuddeln. Nun, seine bisherigen Beiträge waren auch nicht besonders intelligent gewesen, deshalb war es wohl kein großer Verlust. Slant wandte sich wieder Dumbledore zu. Wäre er jemand anderes gewesen, er hätte sich vermutlich geräuspert, aber so atmete er nur ein wenig Staub aus.<br/>  </p><p>"Was können Sie uns bezüglich der ... Gefolgschaftstreue meines Mandanten sagen?", fragte Slant.<br/>  </p><p>Jetzt kam die Stunde der Entscheidung. Dumbledore hatte die Wahl: <em>Attica fides</em>(5) oder <em>Punica fides</em>(6). Was er jetzt sagte, könnte entscheidend für den Ausgang der Verhandlung sein. Severus konnte nicht mit Bestimmtheit sagen, was Dumbledore tun würde. Vielleicht war er zu sehr Slytherin, um nicht daran zu denken, dass Dumbledore eine vollkommen eigene Agenda verfolgte, vielleicht hatte er aber auch nur zu viel Zeit in der Nockturngasse verbracht und wurde langsam zu so einem zynischen Bastard wie Vimes, selbst wenn er dann vermutlich noch einen weiten Weg vor sich hatte. Aber er traute Dumbledore nicht. Für ihn arbeiten? Kein Problem. Spionieren? Keine Frage. Aber ihm <em>vertrauen</em>? Das dann doch lieber nicht.<br/>  </p><p>Dumbledore sah Severus lange an, und Severus versuchte, sich seine Gedanken nicht anmerken zu lassen. Seine mentalen Schilde waren da, wie eh und je, aber er wusste nicht, ob seine Mimik ihn nicht vielleicht doch verriet.<br/>  </p><p>"Severus Snape", sagte Dumbledore schließlich an Crouch gewandt mit todernster Stimme, "hat sich von Voldemort abgewandt und ist zum Licht zurückgekehrt, nachdem er erkannt hat, was für einen schrecklichen Fehler er begangen hat. Von da an hat er treu zu uns gehalten und gegen Voldemort agiert, um seine Schuld abzutragen, indem er wichtige Informationen an uns weitergegeben hat."<br/>  </p><p>Severus vermied es, irgendjemanden anzusehen. Seine Ohren klingelten beinahe. So, wie Dumbledore das Ganze darstellte, bekam er die Rolle des reuigen Sünders, der um Vergebung bettelnd angekrochen kam und um Abbitte bat. Schade nur, dass es nicht den Tatsachen entsprach. Tatsächlich hatte Severus den reuigen Sünder markiert, aber mehr aus dem einfachen Grund, dass seine <em>wirklichen</em> Überlegungen nicht besonders überzeugend wirkten. Außerdem, der Zweck heiligte die Mittel. Aber natürlich musste Dumbledore ihm daraus jetzt einen Strick drehen. Ob er wusste, dass Severus' Auftreten nur eine Show gewesen war? Es war ein Fakt, dass Severus die Seiten gewechselt hatte, aber der <em>Grund</em> war ein anderer. Zumindest, wenn man sich Dumbledores und Severus' Versionen anhörte und sie verglich.<br/>  </p><p>"Tatsächlich?", fragte Crouch, die Brauen zusammenziehend. Er schien sich an Mathematik auf Grundschulniveau zu probieren - er versuchte, eins und eins zusammenzuzählen und, hoffentlich, zwei herauszubekommen. "Wusste von diesem Seitenwechsel noch jemand?"<br/>  </p><p>Dumbledore schien nachzudenken, bevor er den Kopf schüttelte. "Nein, aus Sicherheitsgründen hat niemand davon erfahren."<br/>  </p><p>"Das stimmt nicht ganz", fuhr Severus dazwischen. "<em>Mir</em> wurde zu verstehen gegeben, dass einige Auroren davon wussten."<br/>  </p><p>Crouch sah zwischen Severus und Dumbledore hin und her. "Stimmt das, Mis... <em>Professor</em> Dumbledore?"<br/>  </p><p>"Nun, ich hatte sie darüber informiert, dass wir einen Spion in den Reihen der Todesser haben", erklärte er, "aber ich habe Mr. Snapes Namen in diesem Zusammenhang nie erwähnt."<br/>  </p><p>"Nie?" Severus starrte. "Und was ist mit der Sache im August? Ich meine -" Er unterbrach sich, nicht ganz sicher, ob er sich dadurch nicht in noch mehr Schwierigkeiten brachte. Wenn es stimmte, dass Dumbledore wirklich <em>niemandem</em> davon erzählt hatte, dann war seine Erklärung dubios, und Severus' einzige Chance in dieser Sache wäre, seine Freunde mit hineinzuziehen, was er vermeiden wollte.<br/>  </p><p>Crouch starrte ihn an. "Sache im August?" Er wandte sich Dumbledore zu. "Können Sie uns mitteilen, was er damit meint?"<br/>  </p><p>Dumbledore schwieg. Severus seufzte unhörbar. Natürlich. Wenn Dumbledore dazu etwas sagen würde, dann würde er verraten, wer in besonderem Kontakt zu ihm stand - und da es sich um Auroren handelte, wäre es möglicherweise ein Grund dafür, sie rauszuschmeißen oder sonst etwas. Und natürlich konnte er nicht die Aktivposten bei den Auroren riskieren, nur um einen Spion zu entlasten, über dessen Nutzen man streiten konnte. Immerhin war der Dunkle Lord verschwunden, wie es schien, und es war zweifelhaft, dass er in nächster Zeit aus der Versenkung zurückkehrte.<br/>  </p><p>"Professor Dumbledore?", hakte Crouch nach.<br/>  </p><p>"Ich kann mir nicht sicher sein", sagte Dumbledore simpel. "Ich glaube, er meint seinen Zusammenstoß mit den Auroren. Vielleicht nahm er an, dass ich die Auroren über seine Rolle informiert habe, was ich jedoch nicht getan habe."<br/>  </p><p>Severus verengte seine Augen zu Schlitzen und presste die Lippen zusammen. Er wusste, dass Dumbledore log, und es ging ihm gegen den Strich. Natürlich, es war eine Sache, zuzugeben, dass einige Auroren - namentlich die, die mit Severus' Festnahme zu tun gehabt hatten - eingeweiht gewesen waren, die andere jedoch es so rigoros abzustreiten, obwohl es nicht den Tatsachen entsprach. Severus <em>wusste</em>, dass er nicht wegen 'Mangel an Beweisen' freigelassen worden war. Nein, er war freigelassen worden, weil Moody gesagt bekommen hatte, dass sie ihn nicht festhalten <em>sollten</em>. Natürlich hatte Moody das nicht vor Gericht erwähnt, denn darauf könnte man ihm einen Strick drehen, aber dass jetzt auch Dumbledore damit anfing ...<br/>  </p><p>"Also gibt es keine weiteren Zeugen, die bestätigen könnten, dass Mr. Snape als Spion für unsere Seite gearbeitet hat", stellte Crouch fest.<br/>  </p><p>Severus biss sich auf die Lippen. Das wäre der Augenblick, an dem er zugeben müsste, dass seine Freunde es wussten. Vermutlich würde Crouch das jedoch nicht zulassen, immerhin waren es <em>Freunde</em>, und es bestand die Möglichkeit, dass sie dazu bereit wären, einen Meineid zu leisten. Schließlich war er ein Slytherin, und Slytherins waren prädestiniert dafür, Lügner zu sein. Auch wollte er sie nicht mit hineinziehen. Es war die eine Sache, ihn zu unterstützen - eine Sache, wegen der man sie belangen könnte: Sie hatten einen Verbrecher gedeckt - eine andere, sie offiziell in einem Prozess dazu aussagen zu lassen.<br/>  </p><p>Severus' Entscheidung wurde ihm abgenommen. Dumbledore hatte sich erhoben und einen ernsten Blick aufgesetzt - einen Blick, der verhieß, dass die Zeit des Spaßens vorbei war. Er machte Ernst und er nahm die Sache nun auch ernst. Severus sah ihn verwundert, ja, überrascht an.<br/>  </p><p>"Ich <em>verbürge</em> mich für Severus Snape", sagte Dumbledore scharf. "Ich habe niemanden in die Sache eingeweiht, um ihn zu schützen. Je weniger davon wussten, desto weniger hätten es verraten können, sei es absichtlich oder unabsichtlich. Diese Vorsicht scheint mir in Anbetracht der jüngeren Ereignisse durchaus für angebracht, denn immerhin haben wir - haben die Potters - Sirius Black vertraut, und dennoch hat er sie verraten. Dass ihm nun, weil ich es um seiner Sicherheit Willen verschwiegen habe, ein Strick daraus gedreht wird, lasse ich nicht zu. Ich verbürge mich dafür, dass Severus Snape <em>lange</em> vor dem Fall Lord Voldemorts auf unsere Seite zurückgekehrt ist und uns seitdem tatkräftig unterstützt und unter Risiko seines eigenen Lebens mit Informationen versorgt hat. Wenn Ihnen mein Wort nicht reicht, Mr. Crouch, vielleicht sollte ich dann einen Zaubererschwur ablegen ...?"<br/>  </p><p>Es gab keine andere Möglichkeit, es zu beschreiben: Severus starrte. Es war ein offenes, überraschtes Starren, vielleicht konnte man es auch dümmlich nennen. Er hatte mit vielem gerechnet - damit jedoch nicht. Und er war nicht allein mit seiner Reaktion: Crouch war der Mund aufgeklappt, Salic schienen die Augen aus dem Kopf zu fallen und bei Slant war es sogar wirklich passiert. Dumbledore hatte das ultimative Ass aus dem Ärmel gezogen, und es war zum Erstaunen aller nicht nur ein einfaches Ass, sondern Vierlinge.<br/>  </p><p>"Ich ...", begann Crouch, brach jedoch ab und räusperte sich, um sich wieder zu fassen. Slant steckte seine Augen mit einem ploppenden Geräusch zurück in ihre Höhlen und alle Anwesenden drehten sich angeekelt weg. Crouch atmete tief durch. "Ich denke, das wird nicht nötig sein, Professor."<br/>  </p><p>Severus wusste nicht, was er davon halten sollte. War es ein <em>Bluff</em> gewesen? Dumbledore hätte, sollte er wirklich einen Zaubererschwur darauf leisten, die gesamte Wahrheit sagen müssen, und das hatte er zuvor vermieden. Aber hatte er sich wirklich sicher sein können, dass Crouch dieses Angebot ablehnte? Severus hatte davon gehört, dass es durchaus häufiger vorkam, dass vor Gericht Zaubererschwüre geleistet wurden. Es passte jedoch nicht zu Dumbledore, so, wie Severus ihn kannte oder dachte zu kennen - ein Schwur war wie eine unsichtbare Fessel, und er würde sich doch nicht in Ketten schlagen lassen, oder? Es war jedoch, egal ob Bluff oder nicht, eine Tatsache, dass Dumbledore sich vor Gericht und Zeugen dazu bereit erklärt hatte.<br/>  </p><p>"Muss ein klassischer Fall von <em>fronti nulla fides</em>(7) sein", bemerkte Slant mit etwas wie widerwilliger Bewunderung. "Ich habe selten eine so perfekt ausgeführte Version des <em>iurare in verba magistri</em>(8) gesehen. Eine Kombination des scheinbaren <em>integer vitae scelerisque purus</em>(9) und des schlichen, aber sehr effektiven <em>ipsi dixit</em>(10)."<br/>  </p><p>Severus zog die Brauen zusammen, im Geiste Slants Worte übersetzend. Es war manchmal nicht so einfach, dem Zombie in all seinen Worten zu folgen, selbst dann, wenn man sich mit Latein auskannte. "Wenn Sie meinen, dass Dumbledore ein ziemlicher Manipulator ist, dann gebe ich Ihnen Recht", sagte er schließlich.<br/>  </p><p>"<em>Da mihi factum, dabo tibi ius</em>(11)?" Slant lächelte staubig. "Aber tatsächlich, in den Worten eines Laien würde es wohl auf diese ... Umschreibung zurückführen. Ein Manipulator, in der Tat. Nicht der beste, das nicht, aber sicherlich mit wenigen Rivalen gesegnet, die es mit ihm aufnehmen können."<br/>  </p><p>"Ich vermute, derjenige, der Ihnen das <em>quia ego sic dico</em> aufgehalst hat, gehört in die Kategorie der möglichen Rivalen?"<br/>  </p><p>"Ein interessanter Gedanke", meinte Slant nur. "Es wäre sicherlich ... bereichernd, davon auszugehen ..."<br/>  </p><p>Severus fragte sich, was genau Slant damit meinte, zog es jedoch vor, nicht danach zu fragen. Es gab nicht allzu viele Leute, die man mit Dumbledores manipulatorischen Fähigkeiten auf eine Stufe stellen konnte, und später würde er noch genug Zeit dazu haben, über diesen Hinweis herauszufinden, wer nun sein ominöser Helfer war. Nun, sofern es wirkliche <em>Hilfe</em> war. In diesen Zeiten konnte man nicht davon ausgehen, dass es einen wohltätigen Zweck hatte.<br/>  </p><p>Salic räusperte sich ein wenig nervös. "Nun, wie dem auch sei ... selbst wenn, wie Sie sagen, er sich vom Dunklen Lord abgewandt hat, so befreit es ihn trotz allem nicht von dem Anklagepunkt der Mitgliedschaft bei den Todessern. Selbst wenn man es gegeneinander aufwiegen würde, so bleibt der Tatbestand an sich noch bestehen. Oder wollen Sie behaupten, dass er vollkommen unschuldig ist? Auch wenn festgestellt wurde, dass Mr. Kenneth McCormac kein Mordopfer per se ist, so haben wir dennoch Berichte, dass er bei anderen Morden mitgewirkt hat."<br/>  </p><p>Slant begann, in seinen Dokumenten zu wühlen, was Severus seltsam vorkam. Normalerweise hielt Slant sich nicht damit auf, <em>Fakten</em> zu prüfen. Er schien mehr davon auszugehen, dass seine Sicht der Dinge die einzig wahre war und alles andere Unsinn, der von Idioten verzapft wurde. Slant schien jedoch bereits fündig geworden zu sein.<br/>  </p><p>"Wenn Sie von Morden sprechen", sagte er zuckersüß - oder es wäre zuckersüß, wenn er zu so einer Tonlage im Stande gewesen wäre, "meinen Sie dann unter Umständen <em>Inhumierungen</em>?"</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_6_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "bis hierher und nicht weiter"<br/>(2) "an den griechischen Kalenden" - zu einem späteren Zeitpunkt, der ihm besser passt (ergo: nie) (sky)<br/>(3) "die Schale fand einen Deckel" - die Tat (er)fand einen Täter (sky)<br/>(4) "Das ist mehr als ein Verbrechen, das ist ein Fehler"<br/>(5) "attische Treue" (die Athener errichteten einen Tempel für den Gott der Treue)<br/>(6) "punische Treue" - vorgetäuschte Treue<br/>(7) "der Erscheinung kann kein Vertrauen geschenkt werden" - bewerte nicht nach dem Äußeren/der Schein kann trügen<br/>(8) "auf die Worte des Meisters schwören" - aufgrund seines Einflusses leere Versprechungen machen, die für voll genommen werden (sky)<br/>(9) "wer unbescholten lebt und frei von Schuld" - jemand, der ein absoluter Gutmensch zu sein scheint (sky)<br/>(10) "er selbst hat es gesagt" - weil er es gesagt hat, hat es ein besonderes Gewicht (sky)<br/>(11) "Gib mir die Fakten, ich werde dir das Recht geben"</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20293363">Chapter 7</a>: Plädoyer
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_7_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>"Bitte was?" Salic zog die Brauen zusammen. "Wenn ich von Mord spreche, meine ich Mord. Was sonst? Sie wissen, was Mord ist, ja?"<br/>  </p><p>"Natürlich." Slant sah seinen Gegner finster an. "Ich glaube nur, dass Sie nicht wissen, was eine Inhumierung ist." Er wandte sich an Crouch. "Laut Paragraph 13 des Artikels 715, Abschnitt b des Gesetzes zur Integrierung der Gilden in die magische Gemeinschaft und Verwaltung, revidierte Fassung von 1889, steht ausdrücklich geschrieben, dass ein Mitglied der <em>Conlegium Sicariorum</em>(1) dazu befugt ist, wenn ein Auftrag an die Gilde vorliegt, die in diesem Auftrag genannte Person zu inhumieren."<br/>  </p><p>"Nun, <em>ist</em> Mr. Snape Mitglied der Conlegium Sicariorum?", fragte Crouch mit einem beinahe spöttischen Unterton und sah Severus an.<br/>  </p><p>"Jein", antwortete Severus. "Ich bin kein vollwertiges Mitglied, da man nur in einer Gilde richtiges Mitglied sein kann. Diese Mitgliedschaft besteht bereits mit der Alchemistengilde. Gleichzeitig bin ich jedoch ein so genanntes Ehrenmitglied der Gilde -"<br/>  </p><p>"- was Sie problemlos in den Aufzeichnungen der Gilde einsehen können", unterbrach Slant. "Des Weiteren können Sie dort auch erfahren, was genau der Unterschied zwischen einem vollwertigen Mitglied und einem Ehrenmitglied ist. Fakt ist jedoch, dass Aufträge, die bei der Gilde abgegeben werden, und die von ihrem Schwierigkeitsgrad her nicht für die höher stehenden Mitglieder bestimmt sind oder explizit von einem bestimmten Sicarianer übernommen werden müssen, auch von den Ehrenmitgliedern erledigt werden können." Slant fixierte Crouch mit einem durchdringenden Blick. "Wenn eine Inhumierung stattfindet - entsprechend dem jeweiligen Auftrag - so verfasst der Sicarianer oder eben der Sicarianer ehrenhalber eine Quittung in dreifacher Ausführung. Eine wird am Ort der Inhumierung hinterlassen, eine geht an die Gilde zwecks Buchführung und eine geht an das Ministerium."<br/>  </p><p>Severus fragte sich, ob Crouch überhaupt von der Existenz der Assassinengilde wusste. Es war zweifelhaft, aber Slant <em>hatte</em> Recht - es gab Quittungen. Manchmal sogar mehr als nur drei. Je nach Inhumierung variierten die Richtlinien, aber es war eine Tatsache, dass es Aufzeichnungen gab. Die Frage war nur, ob Slant Recht hatte, wenn er behauptete, dass Severus im Auftrag der Gilde gehandelt hatte. Er hatte zwar die Ehrenmitgliedschaft, aber der Grund war ein gänzlich anderer. Außerdem hatte er nie eine Quittung ausgestellt - es war möglich, dass die Gilde die entsprechenden Aufzeichnungen nachträglich hinzugefügt hatte, sofern ein Auftrag bestand, aber irgendwie schien es Severus darauf hinauszulaufen, dass sein ominöser Helfer, der ihm Slant geschickt hatte, auch die Assassinengilde irgendwie in der Hand hatte, damit diese Quittungen ausstellte für Dinge, die nie Sache der Gilde gewesen waren.<br/>  </p><p>Crouch zögerte. Offenbar schien auch er nicht ganz überzeugt zu sein. "Das Gericht wird das prüfen. Inzwischen wird die Verhandlung fortgesetzt", beschloss er schließlich. Der Gerichtsdiener eilte indessen hinaus, um Informationen darüber einzuholen. "Bestehen noch Fragen an den Zeugen Albus Dumbledore?"<br/>  </p><p>Severus sah sich um. Er konnte sich nicht wirklich vorstellen, dass irgendwer noch eine Frage hatte. Dumbledore hatte sehr eindrucksvoll seine Stellung ausgenutzt, um ihnen allen klar zu machen, dass er eine Reihe von Assen im Ärmel hatte - selbst wenn die Hälfte nur aus Bluffs bestand - und Slant erstickte sowieso jeden Widerstand im Keim. Die Gerichtsverhandlung war zu einer reinen Farce mutiert, denn jegliche Anklagepunkte wurden an der Wurzel gepackt, verdreht und ausgehebelt. Es war eine verlorene Schlacht, die Salic schlug, und er schlug um sich, nicht tapfer, aber wild. Leider gingen alle Schläge ins Leere.<br/>  </p><p>Crouch zog die Konsequenzen. "Professor, Sie sind entlassen. Halten Sie sich jedoch bereit, falls noch weitere Fragen bestehen sollten." Er nickte Dumbledore zu, als dieser den Saal verließ. Dann sah er in die Runde. "Sind noch weitere Zeugen anzuhören?"<br/>  </p><p>"Nein", sagte Slant, "von unserer Seite nicht."<br/>  </p><p>Salic schüttelte ebenfalls den Kopf, resignierend. Crouch nickte. "Dann bitte ich Sie um Ihre Plädoyers. Mr. Salic, Sie haben das Wort."<br/>  </p><p>Salic räusperte sich und erhob sich. "In Anbetracht der vorliegenden Zeugenaussagen und den Beweisen, die vorgebracht wurden, ist die Anklage noch immer der Ansicht, dass der hier anwesende Severus Snape schuldig ist. Aufgrund dessen veranschlagt die Anklage eine Haftstrafe nicht unter ..." Er räusperte sich. "Nicht unter zehn Jahren, ohne Bewährung. Die Anklage ist der Auffassung, dass trotz der Zeugenaussagen die Tatbestände des <em>animus belligerendi</em> und des <em>animus socii</em> weiterhin bestehen, beides in besonders schweren Fällen. Zudem, wenngleich der Angeklagte scheinbar Reue gezeigt hat, so hat er doch zuvor im Einvernehmen mit ihm, dessen Name nicht genannt werden darf, gehandelt, und ist demnach der Mitgliedschaft im Kreis der Todesser schuldig. Des Weiteren ..."<br/>  </p><p>Severus seufzte. Salic wiederholte die Anklagepunkte, minus die offiziell ausgeräumten, und es war Wunschdenken, dass er damit durchkam. Crouch hatte zwar das Recht, Slants Vorschläge zu ignorieren und Salics Forderung zu entsprechen, aber es war zweifelhaft, dass er das tun würde. Slant würde ihm die Hölle heiß machen, sollte er das tatsächlich tun, und es war garantiert legal. Was auch immer Crouch entschied - sollte er Slant <em>nicht</em> entsprechen, würde Slant nicht nur in Revision gehen, was Severus' eigenes Verfahren betraf, sondern er würde wohl auch noch ein Verfahren gegen Crouch selbst anstreben. Im Endeffekt lief es darauf hinaus, dass Crouch zu Slants Forderungen <em>ja</em> und <em>Amen</em> sagen würde und die Gerechtigkeit irgendwo auf der Strecke blieb.<br/>  </p><p>Severus sah zur Seite. Salic hatte sein Plädoyer beendet und nun war Slant an der Reihe. Slant sah für einen Moment aus wie das nicht ganz blühende Leben, aber das war an sich bereits eine Leistung: Er schien lebendig. Offenbar war es genau das, was Slant sich unter einem guten Zeitvertreib vorstellte, den Gegner mit abstrusen Argumenten in den Boden rammen und das gesamte Rechtssystem auf den Kopf stellen, wenn es ihm gerade passte.<br/>  </p><p>"Hohes Gericht", begann Slant und Severus hatte das Gefühl, dass Slant zum finalen Schlag ausholte, "die Verteidigung ist, in Anbetracht aller Beweise, Indizien und Aussagen, der Ansicht, dass der Angeklagte, Severus Snape, in allen Punkten der Anklage unschuldig ist."<br/>  </p><p>Slant machte eine Kunstpause, in der alle ihn anstarrten. Teilweise ungläubig, teilweise fürchtend. Es war, alles in allem, eine ziemlich gewagte Deklaration, beschloss Severus. Insbesondere, nachdem Salic so detailliert dargestellt hatte, warum Severus nicht <em>vollkommen</em> unschuldig war. Crouch machte eine Miene, als würde er die kommenden Worte nicht hören wollen.<br/>  </p><p>"Zunächst einmal muss bedacht werden, dass hier, wie überall, der Grundsatz <em>errare humanum est</em>(2) wirkungsvoll ist. Das bedeutet, dass wir davon ausgehen müssen, dass der Angeklagte einen Fehler begangen hat - einen Fehler, den er bereut und gesühnt hat, indem er sein Leben riskiert hat, um für die Gegenseite Informationen im Sinne von <em>arcana imperii</em>(3) einzuholen."<br/>  </p><p>Severus fiel auf, dass Slant darauf achtete, sich auf keine Seite zu stellen. Nun, vermutlich hätte nicht einmal der Dunkle Lord es gewagt, Slant bei einer etwaigen Machtübernahme anzugreifen - Slant war ein störrischer Bastard, und das war allgemein bekannt: Er war ein Zombie geworden, als er irgendeiner Ungereimtheit bei dem Prozess, der zu seiner Hinrichtung geführt hatte, auf die Spur kommen wollte. Gegen so jemanden kam nicht einmal der Dunkle Lord an: Es bestand die Möglichkeit, dass Slant ihn nach Strich und Faden verklagte, weil er ihn ermordet hatte.<br/>  </p><p>"Deshalb möchte ich das Gericht in meiner Rolle des Verteidigers noch einmal schärfstens an den alten Grundsatz erinnern, der da lautet <em>accipere quam facere praestat iniuriam</em>(4). Ich hoffe, Sie werden ihn beachten, sonst muss ich mich auf den Präzedenzfall von 1879 berufen und das Urteil im Sinne des <em>aut viam inveniam aut faciam</em>(5), aus dem hervorging, dass der Richter sich des <em>cacoethes carpendi</em>(6) schuldig gemacht hatte." Slant lächelte finster. "Zudem, wir haben vor diesem Gericht festgestellt, dass der Angeklagte aufgrund seines Berufsstands leichten Zugang zu gefährlichen Substanzen hatte und obendrein auch noch die Befähigung - und die eingeschränkte Erlaubnis - zu, wie Sie es so krude ausdrücken, Mord. Es ist mehr als eindeutig, dass bei meinem Mandanten der Präzedenzfall des <em>cui peccare licet, peccat minus</em>(7) zutrifft. Was Sie hier versuchen, ist meinen Mandanten aufgrund eines <em>cum catapultae proscriptae erunt tum soli proscibti catapultas habeunt</em>(8) festzusetzen, was aber nicht erlaubt ist, wie Sie sehr wohl wissen sollten. Das wäre Rechtsbeugung in Form von <em>cum finis est licitus, etiam medi sunt licit</em>(9)!"<br/>  </p><p>Crouch verzog das Gesicht - ihm schien der Kopf regelrecht zu rauchen wegen der ganzen scheinbaren Grundsätze und Präzedenzfälle, die Slant nun vorbrachte. Severus konnte es ihm nicht verübeln. Der Mann war einfach unglaublich. Man musste sich nur einmal anhören, <em>was</em> er eigentlich sagte. Er hatte gerade behauptet, dass der Zweck die Mittel nicht heiligte, und dabei war es genau das, was er die ganze Zeit über tat. Auch seine anderen Argumente waren, bei genauer Betrachtung, bestenfalls dubios, aber man kam einfach nicht dagegen an, weil er sie so rüberbrachte, als wären es Gesetze, die in Stein gemeißelt waren.<br/>  </p><p>Slant räusperte sich und wechselte in seinen monotonen, drögen Vortragsmodus - die Geheimwaffe des Anwalts. "Wir sehen daran, dass mein Mandant wohl <em>de iure</em>(10) nicht zu belangen ist. Das Strafmaß, das die Anklage erhebt, ist überzogen, und die Beweise sprechen nicht gegen meinen Mandanten. Ich möchte auf den Fall des <em>exercitatio artem parat</em>(11) verweisen - wir können daran sehr anschaulich erkennen, dass Mr. Salics Anschuldigungen und Begründungen hinfällig werden. Es wäre nicht mehr als eine Farce, wenn das Gericht dem zustimmen würde." Severus fragte sich, was die Farce war - die Farce oder die Farce der Farce? Bei Slant wusste man nie. "Des Weiteren, <em>ex mea sententia</em>(12), kann ich zu den Taten meines Mandanten nur sagen, dass <em>eum recte fecisse puto</em>(13) der Fall ist. Ich sehe keinen Grund, in allen vorgetragenen Beweisen, der mich davon überzeugt, dass mein Mandant straffällig geworden sein soll. Mr. Salic - und damit die Anklage - ist ganz offensichtlich mit diesem Satz zu beschreiben: <em>Falsus in uno, falsus in omnibus</em>(14). Deshalb, zum Schluss, möchte ich das Hohe Gericht an den Grundsatz erinnern, der da lautet <em>fiat iustitia et pereat mundus</em>(15). Ich verlange als Anwalt der Verteidigung einen vollkommenen Freispruch auf Grundlage des <em>nolens volens</em>(16). <em>Hoc volo, sic iubeo</em>(17). Ich danke Ihnen."<br/>  </p><p>Slant nahm Platz und Severus fragte sich, was er da gerade gehört hatte. Das war mehr als nur ein simples <em>quia ego sic dico</em> - das war ein deutliches <em>sit pro ratione voluntas</em>(18). Das hatte nichts mehr mit Berechnung zu tun, das war ein simpler Fall von Siegerwillens. Slant konnte nicht verlieren, auch wenn der Fall bereits verloren war, und dementsprechend musste er sich wohl mit einigen <em>ad hoc</em>(19)-Gesetzen retten. Severus bezweifelte, so verdreht die Rechtsprechung auch sein mochte, dass alle von Slant genannten Gesetze wirklich existierten. Er wusste aber auch genug, um sich dessen nicht sicher zu sein - vermutlich würde man tatsächlich Gesetzbücher darüber finden, und eine Bananenschale in der Nähe, aber das hieß nicht, dass Severus das akzeptieren musste. Ob Crouch sich die Mühe machte, all das nachzuschlagen? Es war eher zweifelhaft.<br/>  </p><p>Crouch seufzte. "Nun, das Gericht wird sich zur Beratung zurückziehen. Die Verhandlung wird bis dahin unterbrochen."<br/>  </p><p>Severus fragte sich, ob Crouch lange für die Beratung brauchen würde. Der Mann sah fix und fertig aus, als er sich aus dem Raum stahl. Anders konnte man es kaum nennen. Slant hatte ihn vorgeführt, ohne dass man ihn dafür in irgendeiner Weise belangen konnte. Alle im Saal wussten das. Selbst Salic, der trotz allem den Mut gehabt hatte, trotz Slant auf dem Schuldspruch zu bestehen, ließ resigniert den Kopf hängen. Slant hingegen sah mehr als zufrieden mit sich selbst aus.<br/>  </p><p>Der Gerechtigkeit würde heute nicht genüge getan.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_7_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "Vereinigung der Meuchelmörder" - Eigenbezeichnung der Assassinengilde (TP)<br/>(2) "irren ist menschlich" - jeder Mensch irrt sich irgendwo und irgendwann, aber da Slant als Zombie kein Mensch ist, ist er davon ausgeschlossen und (juristisch) unfehlbar (sky)<br/>(3) "Geheimnisse des Imperiums"<br/>(4) "Es ist besser, eine Ungerechtigkeit zu erleiden, denn eine zu begehen"<br/>(5) "Ich werde entweder einen Weg finden oder einen machen" - so oder so komme ich zu meinem Ziel (sky)<br/>(6) "Die Sucht zu sammeln/markieren (Fehler finden)"<br/>(7) "Wer zu sündigen erlaubt ist, sündigt weniger" - da die Erlaubnis besteht, ist es keine Sünde (sky)<br/>(8) "Wenn Katapulte verboten sind, haben nur noch Verbrecher Katapulte"<br/>(9) "Wenn der Zweck erlaubt ist, sind auch die Mittel erlaubt" - normalerweise Slants Vorgehensweise (sky)<br/>(10) "dem Gesetz nach"<br/>(11) "Übung macht die Kunst" - 'Übung macht den Meister', und da ich mehr Übung als Anwalt habe als du, bin ich der Meister und habe demzufolge natürlich auch Recht (sky)<br/>(12) "meiner Meinung nach"<br/>(13) "Ich meine, dass er richtig gehandelt hat" - und damit ist er über jeden Verdacht erhaben (sky)<br/>(14) "Falsch in einem, falsch in allem"<br/>(15) "Es geschehe Recht und gehe die Welt darüber zu Grunde"<br/>(16) "nicht wollend wollend" - ob du willst oder nicht (sky)<br/>(17) "Dies will ich, so ist's Befehl"<br/>(18) "statt vernünftiger Grund mein Wille"<br/>(19) "zu diesem" - für einen bestimmten Zweck, Improvisation; ein aus dem Stehgreif erfundenes Gesetz, das mit Sicherheit irgendwo im B-Raum zu finden ist, aber sicherlich nicht gefunden wird, weil der Bibliothekar es verhindern wird (sky)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8679988/chapters/20350453">Chapter 8</a>: Urteilsverkündung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8679988#chapter_8_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Der Saal versank in Schweigen, während sie warteten. Es dauerte nicht besonders lange - vermutlich war es nur die absolut notwendige Pflichtzeit, die ein Richter darauf verwenden musste, das Urteil auszuarbeiten - da kam Crouch zurück. Seine Miene war noch immer die eines besiegten Mannes, aber trotzdem spiegelte sich eine gewisse Entschlossenheit in seinen Augen wieder. Offenbar hatte er Slants Forderungen nicht vollkommen befolgt. Severus unterdrückte ein Grinsen. Es versprach, interessant zu werden!<br/>  </p><p>Crouch räusperte sich gewichtig. "Bitte erheben Sie sich für die Verkündung des Urteils."<br/>  </p><p>Severus sah an sich herunter. Er bezweifelte, dass er mit seinen an den Stuhl geketteten Füßen stehen konnte. Und er fühlte sich nicht besonders in der Stimmung, um es auszuprobieren - es wäre ihm viel zu peinlich, sollte er es versuchen und scheitern, sprich, auf die Schnauze fallen.<br/>  </p><p>"Gilt das für alle?", fragte er Slant leise.<br/>  </p><p>Slant sah ihn einen Moment lang an. Dann schüttelte er kaum merklich den Kopf. "Es wäre rein <em>pro forma</em>(1), und <em>in dubio</em> werde ich Sie gegen jegliche Anschuldigungen verteidigen - und natürlich gewinnen."<br/>  </p><p>Es war besser, nichts darauf zu erwidern. Crouch sah ihn missbilligend an, aber Slants Anwesenheit - und die Tatsache, dass er, wenn er jetzt einen Aufstand machte, <em>noch</em> mehr Zeit in dessen Anwesenheit würde verbringen müssen - ließ ihn Stillschweigen über den Bruch des Protokolls bewahren.<br/>  </p><p>"Severus Alexander Snape", begann Crouch, "das hohe Gericht befindet Sie für ... schuldig." Severus warf einen kurzen Blick zu Slant, der die Augen verengt hatte und Crouch mit einer Bosheit anstarrte, die ihresgleichen suchte. Crouch hüstelte. "... schuldig des Totschlags im minderschweren Fall beziehungsweise der schwereren Körperverletzung wie unter anderem im Falle von Mr. Kenneth McCormac. Das Gericht legt dazu eine Strafe von achtzehn Monaten Haft in Askaban fest - die jedoch zu drei Jahren Bewährung ausgesetzt sind. Sollten Sie sich innerhalb dieser drei Jahre etwas zuschulden kommen lassen, wird die Bewährung aufgehoben und Sie müssen die Freiheitsstrafe in Askaban verbüßen. Während Ihrer Bewährungszeit werden Ihnen von diesem Gericht gewisse Auflagen auferlegt. Sollten Sie gegen eine davon verstoßen, wird Ihre Bewährung ebenfalls aufgehoben. Die Auflagen sind wie folgt: Sie werden angewiesen, sich in den ersten drei Monaten persönlich jeden Tag bei Ihrem Bewährungshelfer zu melden. Des Weiteren verpflichten Sie sich, das Land nicht zu verlassen, sich unter die Aufsicht allein zu diesem Zweck berufener Aufseher zu stellen - im Einzelnen sind das Ihr Arbeitgeber, Albus Percival Wulfric Brian Dumbledore, und Ihr künftiger Vermieter, Alastor Nathaniel Moody - und sich in der Zeit, in der Sie sich nicht im Zuge Ihrer Tätigkeit als Lehrer in Hogwarts befinden, allgemein gesprochen den Ferien, bei letztgenanntem einzufinden. Alle weiteren Details werden Ihnen schriftlich zugesandt." Crouch fixierte Severus mit einem finsteren Blick. "Damit ist das Urteil rechtsgültig. Revision können Sie innerhalb eines Monats ab Verkündung des Urteilsspruchs einreichen. Ich erkläre die Sitzung hiermit für beendet."<br/>  </p><p>Severus gab ungern zu, wie glücklich er war, dass die Fesseln von ihm abfielen und <em>keine</em> Dementoren auf ihn warteten. Und, was noch viel wichtiger war - er war frei! Mit einigen Einschränkungen, aber das war nebensächlich. Slant wirkte weniger glücklich.<br/>  </p><p>"Wir gehen in Revision und dann -"<br/>  </p><p>"Nein", unterbrach Severus ihn, denn er hatte sowieso schon das Gefühl, dass er irgendwie zu glimpflich davongekommen war, "wir werden <em>nicht</em> in Revision gehen. Ich werde meine Bewährungsstrafe antreten und Sie tun ... was auch immer Sie so tun. Einen Komplott schmieden oder ein neues Gesetzbuch schreiben, was weiß ich."<br/>  </p><p>"Ein Gesetzbuch?" Slant schnaubte. "Etwa über den <em>Casus Severi</em>(2)?"<br/>  </p><p>Severus zuckte desinteressiert die Schultern. "Ob es nun ein <em>Casus Severi</em> ist oder ein <em>casus severus</em>(3) - mir soll's egal sein. Hauptsache, Sie veröffentlichen es nicht zu meinen Lebzeiten. Es könnte sich ... <em>ungünstig</em> ... auf meine Lebensspanne auswirken, wenn Sie verstehen, was ich meine."<br/>  </p><p>"Oh, durchaus." Slant schlurfte an ihm vorbei. "Machen Sie sich keine Sorgen. Es gibt Personen, die man besser nicht ... <em>enttäuscht</em>. Wenn Sie mich entschuldigen, ich muss ein paar andere Prozesse gewinnen."<br/>  </p><p>Severus sah ihm nach und fragte sich einmal mehr, wer diese ominöse Person war, die Slant dieses <em>quia ego sic dico</em> aufgebürdet hatte. Andererseits - er hatte jetzt erst einmal andere Probleme, mit denen er sich befassen musste. Zum Beispiel herausfinden, wie man Moody überlebte.<br/>  </p><p> </p><p align="center">
+  <strong>~ E N D E ~</strong>
+</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_8_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>(1) "der Form halber" - es ist Tradition, und auch wenn man sich für gewöhnlich daran halten sollte, ist es doch im Grunde alles Unsinn (sky)<br/>(2) "Fall des Severus" - ein wirklich ernst zu nehmender, strafrechtlicher Fall (vgl. casus severus), der die Brillianz von Mr. Slants Verteidigung in allen Einzelheiten beleuchtet (sky)<br/>(3) "ein ernster Fall" - ein scheinbar unmöglich zu gewinnender Gerichtsprozess (sky)</p><p>-------<br/>... und es ist kein permanentes Ende, denn jetzt folgt, wie bereits angedeutet, die Erforschung der Frage "Wie überlebe ich Moody?" ;-)</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--work endnotes-->
+<div id="work_endnotes" class="end notes module">
+  <h3 class="heading">Notes:</h3>
+  <blockquote class="userstuff"><p>(1) "zum Wohle des Volkes" - ein unentgeltlicher Dienst, der Horror aller Anwälte (TP)<br/>(2) "weil ich es so sage" - die uneingeschränkte Befehlsgewalt des Patriziers (TP)<br/>(3) "Geist des Kameraden" - der Beteiligungswille an einer Straftat<br/>(4) "Geist zum Führen eines Krieges" - Kriegsführungswille, Wille dazu, einen Krieg zu führen/zu starten<br/>(5) "Geld spricht (für sich)" - je reicher jemand ist, desto unschuldiger ist er (TP)<br/>(6) "mit ausdrücklichen Worten"<br/>(7) "von den Tatsachen her"</p></blockquote>
+</div>
+<!--/work endnotes-->
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/8538232">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 3 of the <a href="/series/1890892">A Prince's Tale</a> series</span><span class="divider"> </span><a class="next" href="/works/26143606">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+        <!--approved children-->
+
+<div id="children" class="children module">
+  <h3 class="heading">Works inspired by this one:</h3>
+  <ul>
+    <li>
+        <a href="/works/8876581">Wie überlebe ich Moody?</a> by <a rel="author" href="/users/SeKaYa/pseuds/SeKaYa">SeKaYa</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="kny-WwJH6HihY3kQbOS1TnhYKzgtK1EPJgrOV1FSxk95xhY8WQHe7OAGK7-XFiAfsW5sSrbYWmU4I-rOVxUnmw"/>
+          <input value="8679988" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8679988">Comments (21)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/coolio_beans">coolio_beans</a>, <a href="/users/Annapods">Annapods</a>, <a href="/users/Gokro">Gokro</a>, <a href="/users/JakeDot">JakeDot</a>, and <a href="/users/teryarel">teryarel</a>
+             as well as 
+          4 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_8679988">
+  <form class="new_comment" id="comment_for_8679988" action="/works/8679988/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="260af6_bQRvXeHVsi3M4Eb8iaFnp78ijvVDc3Jmcaw4wF7IY9J13j5YdJ8Nwga1AdhQvK3Icw8mjefhFn9uK2g"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_8679988">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_8679988" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_8679988=new LiveValidation('comment_name_for_8679988',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_8679988.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_8679988">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_8679988" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_8679988=new LiveValidation('comment_email_for_8679988',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_8679988.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_8679988" class="landmark">Comment</label>
+        <textarea id="comment_content_for_8679988" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_8679988" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_8679988_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_8679988">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_8679988=new LiveValidation('comment_content_for_8679988',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_8679988.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_8679988.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_8679988" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/8679988/hit_count.json")})</script>
+
+
+  </body>
+</html>

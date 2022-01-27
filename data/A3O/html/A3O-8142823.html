@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":163,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        All I Need - ChrissiTine - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="RW1ryO1d6bQx-Miv6Va0Vsy0N1wWvg4FfZBH2nfXk6aWO67qOGw0SfMLJoGJ5AIjpt1jnDZKg7iopZ0n2l5Ukg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="P1y22NwKC8NfHx-Uaftxmf0TCI8J0JMWY7AornlcBsLsCnP6CTvWPp3s8boJScfsl3pcTykkHqu2hfJT1NXB9g"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: buffy gen teen AND &quot;no archive warnings apply&quot;</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/8142823/chapters/18663547">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/8142823/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/8142823/All%20I%20Need.azw3?updated_at=1480068681">AZW3</a></li>
+          <li><a href="/downloads/8142823/All%20I%20Need.epub?updated_at=1480068681">EPUB</a></li>
+          <li><a href="/downloads/8142823/All%20I%20Need.mobi?updated_at=1480068681">MOBI</a></li>
+          <li><a href="/downloads/8142823/All%20I%20Need.pdf?updated_at=1480068681">PDF</a></li>
+          <li><a href="/downloads/8142823/All%20I%20Need.html?updated_at=1480068681">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Scorpius%20Malfoy*s*Rose%20Weasley/works">Scorpius Malfoy/Rose Weasley</a></li><li><a class="tag" href="/tags/Teddy%20Lupin*s*Victoire%20Weasley/works">Teddy Lupin/Victoire Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Rose%20Weasley/works">Rose Weasley</a></li><li><a class="tag" href="/tags/Scorpius%20Malfoy/works">Scorpius Malfoy</a></li><li><a class="tag" href="/tags/Teddy%20Lupin/works">Teddy Lupin</a></li><li><a class="tag" href="/tags/Victoire%20Weasley/works">Victoire Weasley</a></li><li><a class="tag" href="/tags/Albus%20Severus%20Potter/works">Albus Severus Potter</a></li><li><a class="tag" href="/tags/Molly%20Weasley%20II/works">Molly Weasley II</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Unplanned%20Pregnancy/works">Unplanned Pregnancy</a></li><li><a class="tag" href="/tags/Married%20Couple/works">Married Couple</a></li><li><a class="tag" href="/tags/Children/works">Children</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/21628885">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 9 of the <a href="/series/555904">10 kleine Dinge - Universum</a> series</span><span class="divider"> </span><a class="next" href="/works/35443366">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-09-26</dd><dt class="status">Completed:</dt><dd class="status">2016-09-26</dd><dt class="words">Words:</dt><dd class="words">18326</dd><dt class="chapters">Chapters:</dt><dd class="chapters">7/7</dd><dt class="kudos">Kudos:</dt><dd class="kudos">5</dd><dt class="hits">Hits:</dt><dd class="hits">273</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      All I Need
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/ChrissiTine/pseuds/ChrissiTine">ChrissiTine</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Rose und Scorpius werden völlig unerwartet und viel zu früh vor die größte Herausforderung ihres Lebens gestellt. Wie werden sie sich entscheiden? Werden sie sich ihr stellen? Oder sind sie noch zu jung dafür?</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Diese FF gehört eigentlich in die One-Shot-Reihe Momentaufnahmen. Aber als ich angefangen habe, an diesem One-Shot zu arbeiten, wurde er immer größer und größer, genau wie Love finds you, die Geschichte von James und Julia. Deshalb habe ich mich dazu entschieden, ihn in mehrere Teile zu zerteilen und nach und nach als eigenständige FF zu posten. Sie ist die Vorgeschichte zu der Momentaufnahme "Der größte Schock seines Lebens". Sie gehört also in das "10 kleine Dinge"-Universum, kann aber natürlich auch gelesen werden, ohne dass man die anderen FFs gelesen hat.</p>
+<p>Titel und Song Text von Within Temptation.</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663547">Chapter 1</a>: Nein!
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>I'm dying to catch my breath</em>
+  <br/>
+  <em>Oh why don't I ever learn?</em>
+</p>
+<p>
+  <strong>
+    <em>
+      <strong>September 2027</strong>
+    </em>
+  </strong>
+</p>
+<p>"Rose?" Ted Lupin sah von seinen Krankenblättern auf und entdeckte die Cousine seiner Frau. Sie saß auf einem der Besucherstühle, hatte ihren limonengrünen Umhang an und hielt ihren Kopf in den Händen. Außerdem war sie weiß wie ein Laken. Sie sah auf, als sie seine Stimme hörte und Ted war erschrocken darüber, wie müde und erschöpft sie aussah. Er wusste, wie viel Kraft und Energie eine Ausbildung zur Heilerin kostete, aber Rose war immer beeindruckend souverän mit Prüfungsstress und Lerndruck umgegangen. Er hatte sich immer gewünscht, so ruhig sein zu können wie sie.</p>
+<p>"Hey, Ted", murmelte sie.</p>
+<p>"Was ist los?", fragte er ohne Umschweife und setzte sich neben sie. So wie sie aussah, sollte sie Zuhause im Bett liegen. Es wunderte ihn sehr, dass Scorpius sie in diesem Zustand hatte gehen lassen.</p>
+<p>"Es ist alles in Ordnung", murmelte Rose schwach und alles andere as überzeugend. Ted zog ungläubig die Augenbrauen hoch und Rose brachte ein schwaches Lächeln zu Stande. "Wirklich, Ted. Mir war nur etwas übel."</p>
+<p>"Übel? Dir?" Ted lachte. "Du hast doch einen Pferdemagen. Wann war dir zum letzten Mal schlecht, Rose? Das muss doch schon Jahre her sein."</p>
+<p>Sie schüttelte den Kopf. "Vorgestern. Vorgestern war mir zum letzten Mal schlecht. Aber das war wegen der angebrannten Milch und die hab ich noch nie gerne gerochen."</p>
+<p>"Und weshalb war dir jetzt schlecht? Wieder angebrannte Milch?" In diesem Krankenhaus wurde man mit den kuriosesten Sachen konfrontiert.</p>
+<p>"Nein. Ich glaube es war das Blut. Ich hab vorhin einen Patienten behandelt, der betrunken in ein Zauberduell gestolpert und von ungefähr zehn verschiedenen Sprüchen getroffen worden ist. Du willst gar nicht wissen, was für Körperteile von ihm angeschwollen und an andere Stellen gewandert sind. Und Plötzlich hat der Typ angefangen, mindestens einen Liter Blut zu spucken und ich hab mich wirklich sehr bemühen müssen, den Patienten nicht vollzukotzen." Sie schloss die Augen und lehnte sich erschöpft zurück. "Vielleicht hab ich eine Magen-Darm-Grippe. Als ich sieben war, hatte ich sowas mal, da hab ich auch ein paar Tage lang gekotzt." Sie schlug die Augen wieder auf. "Hast du nicht vielleicht einen Trank für mich? Ihr habt doch bestimmt irgendwas.", sagte sie hoffnungsvoll.</p>
+<p>Ted zuckte mit den Schultern. "Du weißt, dass ich dir solche Tränke nicht einfach so geben darf. Jemand muss dich untersucht haben oder du musst in die Apotheke."</p>
+<p>"Aber die haben nur schwaches Zeug in der Apotheke und ich <em>bin </em>eine Heilerin, Ted, mich muss niemand untersuchen.", widersprach Rose und Ted bemerkte erleichtert, dass wieder etwas Farbe in ihr Gesicht zurückkehrte. Überzeugt war er trotzdem nicht.</p>
+<p>"Rose, du hast dich nicht untersucht. Du hast nicht mal wirklich eine Vermutung, was mit dir nicht stimmen könnte. Ich kann dir nicht einfach irgendeinen Trank geben in der Hoffnung, dass es der Richtige ist. Ich dachte, das ist das erste, was sie euch in der Ausbildung beibringen."</p>
+<p>"Nein, das erste, was sie uns beibringen ist, nicht auszuflippen, wenn man keine Ahnung hat, was mit dem Patienten nicht stimmt."</p>
+<p>Ted verdrehte die Augen. "Rose"</p>
+<p>Sie seufzte. "Ist ja schon gut, du hast Recht. Ich hatte nur gehofft, dass du irgendwas hast. Wir haben in zwei Wochen einen großen Test und ich kann es mir jetzt absolut nicht leisten, krank zu sein und irgendwas zu verpassen. Ich hab nur noch anderthalb Jahre, bis ich mit meiner Ausbildung fertig bin." Rose seufzte erneut und rieb sich mit ihrer Hand ihre Stirn. "Hast du wenigstens etwas gegen Kopfschmerzen? Ich hab schon alles ausprobiert, aber es hat nichts geholfen."</p>
+<p>"Du hast Kopfschmerzen und dir wird von Gerüchen übel?", fragte Ted. Ihm wurde langsam klar, was mit Rose nicht stimmte und er musste nicht einmal ein Heiler sein, um diese Diagnose zu stellen.</p>
+<p>Rose schüttelte hastig den Kopf. "Ich weiß, was du jetzt denkst, aber das ist absolut unmöglich."</p>
+<p>"Vic hatte genau die gleichen Symptome, als sie mit Dora schwanger war", wandte Ted ein. "Die Erklärung ist die plausibelste, besonders, weil dir sonst nie schlecht wird, wenn du Blut siehst oder riechst. Bei einer Magen-Darm-Grippe würdest du außerdem sehr viel häufiger erbrechen als nur jeden zweiten Tag. Dir wäre ein paar Tage ständig übel. Nicht so wie jetzt."</p>
+<p>"Ted, das klingt vielleicht logisch, aber es stimmt trotzdem nicht. Ich bin nicht schwanger. Ich kann gar nicht schwanger sein.", protestierte Rose heftig.</p>
+<p>Ted legte den Kopf schief. Es war nicht typisch für Rose, sich so aufzuregen. Aber schon allein die Möglichkeit, schwanger zu sein, schien sie zu Tode zu ängstigen. Und Ted konnte es ihr nicht verübeln. Als Victoire ihm freudestrahlend verkündet hatte, dass sie schwanger war, hatte er sich zwar gefreut, aber er hatte auch eine Heidenangst gehabt. Und er war schon eine Weile mit seiner Ausbildung fertig gewesen. Rose steckte noch mittendrin.</p>
+<p>"Und wieso ist es nicht möglich, Rose? Hast du schon so lange keinen Sex gehabt?", wollte er mit süffisantem Grinsen wissen.</p>
+<p>Rose verdrehte die Augen. "Hast du meinen Mann gesehen, Ted? Er ist heiß."</p>
+<p>Ted tat so, als würde er erschaudern. "Ich weiß nicht, Rosie. Mein Typ ist er nicht unbedingt. Ich steh nicht so auf muskulöse Blonde."</p>
+<p>"Nein, du stehst mehr auf zierliche Blondinen, ich weiß", konterte sie lächelnd.</p>
+<p>Ted zuckte lachend mit den Schultern. "Du hast mich erwischt."</p>
+<p>"Aber ernsthaft, Ted. Ich kann nicht schwanger sein. Ich hab meinen Verhütungstrank jede Woche geschluckt, immer zur gleichen Zeit, und der hat mich noch nie im Stich gelassen."</p>
+<p>Er runzelte die Stirn. "Aber du musst den Trank täglich schlucken. Das steht doch explizit auf der Packung. Und die Verkäuferin ist verpflichtet, dich darauf hinzuweisen. Das müsstest du doch wissen, Rose." Es kam ihm zwar unwirklich vor, dass sie wirklich so einen gravierenden Fehler machen könnte, aber das schien die einzige Erklärung zu sein, die in seinen Augen möglich war. Es wunderte ihn nur, dass Rose nicht schon sehr viel früher schwanger geworden war, wenn sie diesen Fehler schon jahrelang beging.</p>
+<p>Sie schüttelte den Kopf. "Ich bin allergisch gegen den Kartoffelbauchpilz. Deshalb kann ich den normalen Verhütungstrank nicht schlucken. Ich nehme den Trank von Arsenius Bunsen. Und den muss man nur einmal die Woche schlucken."</p>
+<p>Ted nickte verwirrt. "Ich weiß, Rose. Ich braue diesen Trank für die ungefähr zweihundert Frauen in England, die allergisch gegen irgendeine Zutat aus dem anderen Trank sind. Aber wenn du auf der Liste wärst, dann wäre mir das sicher aufgefallen."</p>
+<p>Rose verdrehte die Augen. "Glaubst du wirklich, dass ich für diesen Trank jeden Monat dreißig Galleonen hinlegen würde? Seit ich mit Hogwarts fertig bin, braue ich den Trank selbst. Es ist sehr viel billiger, einfach die Zutaten zu kaufen."</p>
+<p>"Und es besteht nicht die Gefahr, dass du den Trank irgendwann mal falsch gebraut hast?", fragte Ted zweifelnd. Der Trank von Arsenius Bunsen war der zuverlässigste Trank, den es auf diesem Gebiet gab. Er war allerdings wahnsinnig kompliziert und brauchte einige teure Zutaten, weshalb er von den Apotheken nicht verlangt wurde. Der normale Trank war wesentlich billiger und wesentlich einfacher herzustellen, auch wenn es trotzdem zu ein paar ungewollten Schwangerschaften gekommen war, weil einige Frauen häufiger vergaßen, ihn täglich zu nehmen. Außerdem war kaum jemand allergisch gegen die verwendeten Zutaten. Für die Frauen, die es doch waren, braute Ted jeden Monat Arsenius Bunsens Trank. Er war natürlich um einiges teurer, aber das war es den Frauen wert, die sich nicht auf den Verhütungsspruch verlassen wollten, den man vor jedem Mal Sex aussprechen musste, was auf Dauer ziemlich lästig wurde (Ted sprach da aus Erfahrung).</p>
+<p>"Ted, seit ich elf bin, hab ich keinen Trank falsch gebraut. Ich habe nicht umsonst ein Ohnegleichen in meinem UTZ.", versicherte Rose ihm nicht ohne Stolz. "Ich hab ihn nicht falsch gebraut und ich hab auch nicht vergessen, ihn zu nehmen. Es muss eine andere Erklärung für meine Probleme geben, denn ich bin nicht schwanger."</p>
+<p>"Dann liefere mir eine, denn das ist die einzige Erklärung, die ich für dich habe, Rose. Du bist schwanger.", widersprach Ted entschlossen.</p>
+<p>"Mir wird schon eine einfallen, keine Sorge." Ihre Farbe war jetzt wieder vollständig zurückgekehrt und sie wirkte wieder wie die Rose, die er kannte und liebte. Sie strich sich einige Haarsträhnen aus dem Gesicht und stand auf. Allerdings musste sie sich stützend an der Wand festhalten, weil sie anfing zu schwanken. Ted streckte die Hand aus, um sie zu stützen, aber sie warf ihm nur einen bösen Blick zu. "Ich bin nicht schwanger, Ted!"</p>
+<p>Er zuckte mit den Schultern. "Ich brau dir einen Test zusammen, Rose", sagte er und ignorierte ihre letzte Aussage. "Dann kannst du mir heute Abend immer noch sagen, dass du Recht hattest, wenn der Test negativ war."</p>
+<p>Sie schaute ihn immer noch böse an, aber Ted wusste, dass er gewonnen hatte. Und als er ihr dabei zusah, wie sie mit unsicheren Schritten zu ihrer Station zurückging, da hätte er den Lieblingsstoffniffler seiner zweijährigen Tochter Nymphadora darauf verwettet, dass Rose schwanger war.</p>
+<p>/-/</p>
+<p>Wütend griff sich Rose das Krankenblatt einer neu hereingekommen Patientin und überflog es. Sie hatte sich den Fuß verknackst und versucht, ihn mit einem Spruch zu heilen. Sie hatte dabei völlig versagt und jetzt hatte ihr linker Fuß acht Zehen.</p>
+<p>"Das ist doch hoffentlich nichts allzu schlimmes, oder?", wollte die Frau von Rose wissen, als diese ihren Fuß untersuchte. "Meine Tochter kommt heute Abend mit ihrem neuen Freund zu Besuch und da muss ich unbedingt Zuhause sein. Es ist schon so lange her, dass sie sich wirklich in jemanden verliebt hat und vielleicht ist das endlich der Richtige. Sie ist schon fünfunddreißig, müssen Sie wissen und langsam mache ich mir wirklich Sorgen, dass sie alleine bleibt. Meine andere Tochter hat schon drei Kinder, aber ihr Mann war leider nicht der Richtige und hat sie einfach sitzen lassen. Aber Lizzie hat schon wieder einen neuen Mann gefunden und der ist wirklich ein Glücksgriff. Ach, wenn Mary doch auch nur so viel Glück haben könnte! Sie sucht schon so lange."</p>
+<p>Rose murmelte etwas unverständliches. Die Verletzung war glücklicherweise nicht kompliziert und sie hatte während ihrer Ausbildung schon fünf Mal so einen Fall geheilt. Dabei musste sie nicht mal mehr ihren Ausbilder um Rat fragen, obwohl sie das sowieso kaum noch machen musste, da sie immer selbstständiger arbeiten durfte. Sie freute sich schon darauf, wenn sie endlich fertig war mit ihrer Ausbildung und gravierendere Fälle mit mehr Verantwortung behandeln durfte.</p>
+<p>"Sie scheinen Ihren Traumprinzen ja schon gefunden zu haben, Kindchen, wenn ich den tollen Ring an Ihrer Hand richtig interpretiere.", sprach die Frau weiter und warf einen beeindruckenden Blick auf den Diamanten in ihrem Ehering. Scorpius hatte drei Monate darauf gespart, obwohl Rose ihm versichert hatte, dass sie auch mit einem schlichteren Ring zufrieden sein würde. Aber er hatte sich nicht umstimmen lassen.</p>
+<p>Rose nickte lächelnd. "Ja, den hab ich." Scorpius war wirklich der beste Mann, den sie sich hätte wünschen können.</p>
+<p>"So ganz glücklich sehen Sie aber nicht aus, meine Liebe."</p>
+<p>Rose zuckte mit den Schultern. Sie hatte sich bemüht, so präsentabel auszusehen wie möglich, aber wahrscheinlich konnte sie nicht gut aussehen, wenn sie sich nicht gut fühlte. "Mir ging's in den letzten Tagen nicht so gut, aber das wird wieder."</p>
+<p>Die Frau nickte. "Ich kann sie voll und ganz verstehen. Als ich im zweiten Monat schwanger war, war mir andauernd schlecht. Der Begriff Morgenübelkeit ist meiner Meinung nach eine riesengroße Untertreibung."</p>
+<p>Rose erstarrte. Wieso war das schon die zweite Person heute, die davon überzeugt zu sein schien, dass sie schwanger war? Sie hatte diesen Trank nie fehlerhaft gebraut und immer rechtzeitig eingenommen und es war absolut unmöglich, dass sie ein Baby bekam. Die Symptome deuteten vielleicht darauf hin, aber es war trotzdem unmöglich. Es gab sicher irgendeine andere Erklärung dafür. Es musste eine andere Erklärung dafür geben. Es musste einfach.</p>
+<p>"Sie täuschen sich, Ma'am. Ich bin nicht schwanger.", versicherte Rose ihr.</p>
+<p>"Wirklich nicht?", fragte die Frau überrascht. "Ich hätte schwören können, dass Sie es sind. Ich hab mich bisher noch nie getäuscht." Sie zuckte mit den Schultern. "Aber vielleicht haben Sie ja Recht. Ich werde wohl alt."</p>
+<p>Rose nickte. Aber langsam fühlte sie sich wirklich unwohl. Was, wenn Ted und diese Frau Recht hatten? Wenn sie aus irgendeinem Grund doch schwanger sein sollte? Auch wenn sie nicht wusste, wie das gehen sollte. Wenn Scorpius und sie wirklich ein Baby bekamen? Wie in aller Welt sollten sie das schaffen? Sie war noch mitten in der Ausbildung und Scorpius hatte im Ministerium sehr viel zu tun. Wie sollten sie da noch ein Baby großziehen können? Wie sollte das gehen? Sie waren erst einundzwanzig. Einundzwanzig! Wie sollte das funktionieren?</p>
+<p>"Meine Liebe? Geht es Ihnen gut?"</p>
+<p>Rose schreckte aus ihren Gedanken auf und griff hastig nach ihrem Zauberstab. "Ja. Ja, es geht mir gut. Entschuldigen Sie bitte."</p>
+<p>"Kein Problem. Ich war doch auch mal jung." Die Frau lächelte Rose wissend an und Rose hätte sich am liebsten übergeben.</p>
+<p>
+  <strong>TBC...</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663556">Chapter 2</a>: Doch
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>I've lost all my trust,</em>
+  <br/>
+  <em>Though I've surely tried to turn it around</em>
+</p>
+<p>Rose klopfte an die Tür von dem großen Brauraum des Krankenhauses, in dem alle Tränke entstanden, die im Gebäude gebraucht wurden. Sie öffnete sie und steckte den Kopf in das Zimmer. "Ted?" Sie sah sich um und entdeckte Ted hinter einem großen Kessel mit einer giftgrünen Flüssigkeit, die er konzentriert umrührte. Als er ihre Stimme hörte, sah er auf und lächelte ihr zu.</p>
+<p>"Hey, Rose", hörte sie eine andere Stimme. Sie schaute in die Richtung, aus der sie gekommen war und entdeckte Teds zwei Jahre älteren Kollegen Nate. Seit er sie kannte, versuchte er, mit ihr zu flirten, aber sie ging selten darauf ein.</p>
+<p>"Hi, Nate", erwiderte sie und schaute wieder zu Ted, der seine Hand hochhielt, um ihr zu signalisieren, dass er noch fünf Minuten brauchen würde. Er fing an, gegen den Uhrzeigersinn zu rühren. Sofort wechselte die Farbe zu einem knalligen Orange. Das war bestimmt ein Trank gegen leichte Verbrennungen. Rose hatte gehört, wie sich einige Kollegen darüber unterhalten hatten, dass sie dringend Nachschub brauchten. Ein paar Betrunkene hatten zu viele Feuerwerke in der Winkelgasse losgelassen und so für einige Brandverletzungen gesorgt.</p>
+<p>"Und? Gibt es noch immer diesen unverschämt gut aussehenden Ehemann, den du aus irgend einem Grund nicht für mich verlassen willst, Rose?", fragte Nate grinsend.</p>
+<p>Rose verdrehte die Augen. Diese Andeutungen konnte sie gerade überhaupt nicht gebrauchen, besonders, weil ihr langsam wieder übel wurde von all den verschiedenen Gerüchen, die zu ihr herüberwehten.</p>
+<p>"Ja, den gibt es immer noch, Nate." Sie versuchte, durch den Mund zu atmen, um sich nicht zum dritten Mal heute übergeben zu müssen. Der Gestank, der vorhin von der Wunde eines Patienten ausgeströmt war, war zu viel für sie gewesen. "Ted, der Trank, den du vorhin erwähnt hast ..."</p>
+<p>Ted nickte. "Ich bin gleich fertig. Du kannst draußen auf mich warten." Er schaute auf seine Armbanduhr. Einen Moment später gab es einen kleinen Knall und der Trank nahm seine endgültige Farbe, ein helles Blau, an.</p>
+<p>"Hey, Rose, vielleicht kannst du mir sagen, ob Vic wieder schwanger ist. Ted will mir nichts sagen, obwohl uns allen hier völlig klar ist, was für einen Trank er vorhin gebraut hat." Nate hatte seinen Kessel verlassen und sich neben Rose gestellt. Sie konnte sein Rasierwasser riechen und musste sich die Hand vor den Mund halten. Sie drehte sich auf dem Absatz um und stürzte zur nächsten Toilette.</p>
+<p>"Okay, das hat meine Frage beantwortet.", murmelte Nate. "Dann hab ich wohl endgültig keine Chance mehr bei Rose."</p>
+<p>"Du hattest noch nie eine Chance bei Rose, du Idiot.", murmelte Ted augenverdrehend und nahm sich Feder und Pergament, um eine Notiz für die nächste Schicht zu schreiben. Der Trank würde noch eine halbe Stunde brauchen, bis er fertig war und er hatte eigentlich schon seit zehn Minuten frei. Aber der Trank für Rose hatte ihn etwas Zeit gekostet.</p>
+<p>"Ich hab immer gehofft, dass Malfoy irgendwelchen Scheiß baut und sie die Schnauze voll von ihm hat. Er war immerhin ein Jahr lang in Amerika, das war doch die Gelegenheit."</p>
+<p>Ted schaute überrascht von seinem Pergament auf. Er hatte nie geglaubt, dass Nate jemals ehrliches Interesse an Rose gehabt hatte. Er war fast zehn Jahre älter als sie und ein ziemlicher Playboy, der viele Mädchen wollte. Seine Flirterei mit Rose hatte Ted immer für einen Scherz gehalten. Aber vielleicht hatte er sich getäuscht.</p>
+<p>"Scorpius liebt Rose. Und sie liebt ihn. Das wird keiner von beiden aufs Spiel setzen. Der Unterschied zwischen deinen Beziehungen und der von den beiden ist, dass sie nicht gleich davon laufen, wenn es irgendwelche Probleme gibt. Glaub mir, Nate, du hattest nie eine Chance und du wirst nie eine haben." Niemand würde bei den beiden je eine Chance haben.</p>
+<p>Nate nickte und ging wieder zu seinem Kessel zurück. "Ich weiß, Mann. Aber wenn sie jetzt auch noch ein Baby von ihm bekommt, dann hab ich nicht mal mehr die Illusion, dass sie ihn irgendwann für mich verlassen würde."</p>
+<p>"Woher willst du denn wissen, dass sie schwanger ist?", fragte Ted unbehaglich. Rose wollte es selbst nicht wahrhaben und ihr war es sicher nicht recht, wenn Nate davon wusste. Er war eine größere Klatschtante als manche von Vics Cousinen, und das wollte schon was heißen.</p>
+<p>"Ach komm schon, ich bin doch nicht bescheuert, Lupin", lachte Nate. Seine schlechte Laune schien wohl nur von sehr kurzer Dauer gewesen sein. "Rose hat noch nie kotzen müssen, wenn sie das Chaos hier gerochen hat. Und du hast einen Trank zum Feststellen einer Schwangerschaft gebraut. Ich bitte dich, selbst der Idiot Humphrey würde zwei und zwei zusammen zählen können."</p>
+<p>Ted seufzte. Das letzte, was er gewollt hatte, war, dass Nate auf das Ganze aufmerksam wurde. Er hatte vor seinen Kollegen nicht verbergen können, dass er den Trank braute, aber der einzige, der seine Nase in Teds Angelegenheiten stecken wollte, war Nate, und der war mit einem halbherzigen Schulterzucken auf seine Frage, ob Teds Jungs ihr Ziel bei Victoire wieder erreicht hatten, zufrieden. Es war einfach nur Pech, dass er Rose gerade so gesehen hatte und er hoffte inständig, dass es ihr jetzt nicht zum Verhängnis werden würde.</p>
+<p>"Es ist noch gar nichts sicher", sagte Ted vorsichtig und sah, wie Nate seine Augen verdrehte. "Wahrscheinlich ist sie gar nicht schwanger."</p>
+<p>Nate lachte. "Ach komm, wen willst du damit verarschen? Natürlich ist sie schwanger.", erwiderte er. "Das ist doch offensichtlich."</p>
+<p>Ted seufzte erneut. "Nate, niemand weiß davon. Ich hab sie heute nur zufällig so gesehen, sonst hätte sie mir gar nichts gesagt, ganz besonders, weil sie davon überzeugt ist, dass sie nicht schwanger ist. Sie ist völlig fertig. Also bitte, sag nichts zu niemandem. Für sie ist das alles schon schwer genug, auch ohne dass das ganze Krankenhaus über sie spricht."</p>
+<p>"Für wen hälst du mich? Ich hab gesehen, wie sie drauf war. Und ich sag bestimmt niemandem etwas." Ted schaute ihn mit hochgezogenen Augenbrauen an. "Versprochen!" Nate hielt die Hände hoch. "Ach komm, so schlimm bin ich nicht."</p>
+<p>"Wirklich nicht?"</p>
+<p>"Okay, vielleicht schon. Aber ich hab's versprochen und ich weiß, dass eure ganze Familie mich verfolgen wird, wenn irgendwas rauskommt. Doch ich sag dir eins: so, wie Rose sich verhält, werde ich nicht der einzige sein, der zwei und zwei zusammen zählen wird. Also wenn irgendwas in irgendeiner Zeitung stehen wird, dann werden sie es nicht von mir wissen. Mehr kann ich nicht versprechen."</p>
+<p>Ted ging zu dem Regal, in dem er den Trank abgestellt hatte. "Okay, ich glaube dir. Aber nur, falls du es vergessen haben solltest: Roses Dad ist ein Auror und ihre Mum hat Serienkiller nach Askaban gebracht. Ganz zu schweigen von ihrem Onkel, der einen der bösesten Zauberer aller Zeiten umgebracht hat. Und das mit siebzehn. Seit der Zeit hat er viel Übung bekommen."</p>
+<p>Nate lachte. "Du sagst mir doch ständig, dass das ganz normale Leute sind, so wie du und ich." Es stimmte. Als Nate erfahren hatte, dass Ted das Patenkind von Harry Potter war, hatte er ihm monatelang in den Ohren gelegen, weil er wissen wollte, wie der berühmteste Zauberer Englands war und keine Ruhe gegeben, bis er ihn kennen gelernt hatte.</p>
+<p>"Das stimmt auch. Aber täusch dich nur nicht. Wenn es um ihre Familie geht, dann verstehen sie keinen Spaß."</p>
+<p>"Ich hab's kapiert, Lupin, wirklich." Nate notierte etwas auf einem Pergament und nahm dann ein Alraunenblatt zur Hand. "Ich werde nichts sagen." Er warf das Blatt in den Trank und trat einen Schritt zurück. Einen Moment später stieg Rauch aus dem Kessel auf. Nate nickte zufrieden. Ted zog seinen orangefarbenen Umhang aus und hängte ihn an den Nagel über dem sein Name stand. Er öffnete die Tür. "Ach, Lupin?" Ted drehte sich um. "Sag Rose herzlichen Glückwunsch, ja?" Ted nickte und ließ die Tür hinter sich ins Schloss fallen.</p>
+<p>"Bei den Eltern wird das Kind sicher verdammt gut aussehen", murmelte Nate kopfschüttelnd.</p>
+<p>/-/</p>
+<p>Rose lehnte sich erschöpft gegen die Wand neben der Damentoilette. Sie fühlte sich hundeelend und wollte nur noch nach Hause. Und das schlimmste war, dass sie ihrer Vorgesetzten gerade auf der Toilette begegnet war und die mitbekommen hatte, wie sie sich die Seele aus dem Leib kotzte. Jetzt hatte sie die nächsten drei Tage frei bekommen, um sich zu erholen und obwohl sie sich darüber freute, dass sie sich ausruhen konnte, waren es doch drei Tage, die sie verpasste und die bestimmt wichtig sein würden für die große Prüfung in zwei Wochen.</p>
+<p>"Entschuldige, dass du warten musstest, Rose." Ted war gerade aus dem Brauraum gekommen. Sie beobachtete, wie sein Haar in sekundenschnelle mindestens fünf Zentimeter länger wurde und von braun zu blau wechselte. Als kleines Mädchen hatte sie es immer geliebt, seinem Haar und Gesicht zuzuschauen, wenn es sich veränderte. An manchen Tagen hatte sie sich gewünscht, dass sie es auch tun könnte, dann hätte sie sofort ihr buschiges Haar verschwinden und so schönes glattes glänzendes rotes Haar wachsen lassen, wie Lily es hatte. Aber man konnte nicht alles im Leben haben und Rose tat ihr bestes, damit sie damit zufrieden war und deshalb ließ sie es nur bis auf die Schultern wachsen, damit die Buschigkeit nicht so auffiel.</p>
+<p>"Kein Problem. Es muss ja nicht jeder mitkriegen, wie ich mich übergebe." Sie spürte, wie ihr Tränen in die Augen stiegen und sie wischte sie unwirsch weg. Aber es half nichts, die nächsten Tränen flossen ihr bereits über die Wangen und bevor sie es wirklich begreifen konnte, schluchzte sie hemmungslos und klammerte sich an Ted fest, der sie umarmte.</p>
+<p>"Ich kann nicht schwanger sein, Ted.", murmelte sie, nachdem sie sich langsam wieder beruhigt hatte. "Ich weiß nicht, wie das möglich sein soll."</p>
+<p>Sie hatte alles richtig gemacht. Sie hatte den Trank richtig gebraut und sie hatte ihn regelmäßig geschluckt und in den letzten vier Jahren hatte das immer sehr gut funktioniert. Was in aller Welt konnte schief gelaufen sein?</p>
+<p>"Lass und doch erst den Test machen und dann weiter reden. Vielleicht bist du ja wirklich nicht schwanger.", versuchte Ted sie aufzumuntern. Er zog sie in die nächste Besenkammer und stellte einen großen Eimer auf den Kopf, damit sie sich setzen konnte. Das gleiche machte er für sich und nachdem beide saßen, öffnete er das Fläschchen mit dem Trank.</p>
+<p>"Und jetzt?" Sie wischte sich mit ihrem Ärmel über das Gesicht und starrte den Trank an. "Was muss ich jetzt machen?"</p>
+<p>"Reinspucken."</p>
+<p>"Was?" Rose schaute ihn überrascht an und rümpfte die Nase. "Ernsthaft?"</p>
+<p>Ted lachte. "Was, hättest du lieber den Trank gehabt, der dein Blut braucht? Ich dachte, der hier wäre einfacher. Besonders, wenn dir von Blut im Moment schlecht wird."</p>
+<p>Rose schüttelte den Kopf. "Nein, nein, ist schon okay." Spucke war wirklich viel besser als Blut. Sie beugte sich vor, schloss die Augen und tat, was sie tun musste, um Gewissheit zu bekommen. Sie öffnete die Augen wieder und schaute auf den farblosen Trank. "Und jetzt?"</p>
+<p>"Jetzt müssen wir eine Minute warten. Wenn du schwanger bist, dann wird der Trank Rosa. Wenn nicht, dann wird er Pechschwarz."</p>
+<p>"Okay" Rose fuhr sich durch die Haare und atmete tief durch. "Ich verstehe trotzdem nicht, wie es möglich sein könnte. Der Trank hat bis jetzt immer gewirkt. Ich hab immer darauf geachtet, dass die Zutaten in Ordnung waren, ich hab nie irgendwas genommen, das eine Zutat außer Kraft setzt ..."</p>
+<p>Ted schnappte nach Luft. "O-oh"</p>
+<p>"Was?" Rose schaute ihn misstrauisch an. Die Farbe war aus seinem Gesicht gewichen. "Ted, was ist los? Was ist?"</p>
+<p>Er kratzte sich am Kopf. "Ich glaube, ich weiß, warum der Trank nicht gewirkt hat.", murmelte er.</p>
+<p>"WAS?" Rose atmete tief durch. "Wieso weißt du, warum der Trank nicht gewirkt hat? Und warum zum Teufel hat er nicht gewirkt?"</p>
+<p>"Naja ... du hast doch vor ungefähr zwei Monaten den Trank gegen Grippe bekommen, den ich Scorpius gegeben habe, oder?" Rose nickte misstrauisch. "In dem Trank war Eisenwurz drin."</p>
+<p>"Oh nein. Oh nein, oh nein, oh nein, oh nein." Rose stand auf und begann in der kleinen Kammer auf und ab zu gehen. Eisenwurz setzte die Wirkung von Löffelkraut außer Kraft, einer der wichtigsten Zutaten in dem verdammten Verhütungstrank. Also war es gar nicht unmöglich, dass sie schwanger war. Mindestens eine Woche lang hatte sie ungeschützt mit Scorpius geschlafen und sie war eine Weasley. Weasleys wurden wahrscheinlich sofort schwanger, wenn sie einmal nicht verhüteten und Sex hatten. Weasleys waren fruchtbarer als alle Tiere, die es auf der Welt gab. Scorpius' Spermien hatten es wahrscheinlich gar nicht erwarten können, zu ihrem Ei zu kommen. Und ihr Ei war ihnen wahrscheinlich sogar noch entgegen geschwommen, wenn nicht sogar überall in ihrem Eileiter Hinweisschilder waren, wo es zu finden war.</p>
+<p>Sie schloss die Augen und atmete tief durch. Es musste trotzdem nicht bedeuten, dass sie schwanger war. Viele schliefen ungeschützt mit ihren Freunden und wurden nicht sofort schwanger. Sie war einigen Hexen begegnet, die es seit Jahren versuchten und nicht schwanger wurden, obwohl sie gesundheitlich alle völlig in Ordnung waren. Es war nur eine Woche gewesen. Eine verdammte Woche. Mehr nicht. Und wahrscheinlich hatte sie gar nicht ihren Eisprung gehabt. Wie groß standen schon die Chancen? Nein, sie war bestimmt nicht schwanger.</p>
+<p>"Rose?"</p>
+<p>Rose schreckte aus ihren Gedanken auf und schaute zu Ted. Er hielt die Flasche hoch. Der Trank war Knallpink.</p>
+<p>
+  <strong>TBC ...</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663569">Chapter 3</a>: Allein
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    
+<p></p><div class="xcontrast">
+  <p></p>
+  <div>
+    <p></p>
+    <div>
+      <p><em>I'm here on the edge again</em><br/> <em>I wish I could let it go</em></p>
+      <p>"Scorpius?" Rose schaute sich in ihrer leeren Wohnung um und knipste das Licht an. Es war nach acht Uhr. Eigentlich war Scorpius meistens schon um sechs Uhr fertig mit der Arbeit und manchmal hatte er sogar gekocht, wenn er nicht gerade mit Al etwas trinken ging. Aber Al war noch in Ägypten auf einer Ausgrabungsstätte und würde erst in ein paar Tagen wieder nach England kommen. Also wo zum Teufel war Scorpius jetzt?</p>
+      <p>Sie hatte die letzte halbe Stunde damit verbracht, sich die Augen auszuheulen und von Ted trösten zu lassen. Und jetzt, wo sie sich wenigstens ein bisschen beruhigt hatte und unbedingt ihren Ehemann brauchte, war der nicht da. Wo war er? Sie war schwanger und er war nicht da.</p>
+      <p>Rose schluckte. Sie stellte ihre Tasche mit ein paar medizinischen Fachbüchern, die sie zum Lernen mitgebracht hatte, an die Wand und ging zum Kühlschrank. Es war noch etwas chinesisches Essen vom Vorabend da. Sie nahm die Box heraus, stellte sie in die Mikrowelle und wartete.</p>
+      <p>Vorsichtig legte sie eine Hand auf ihren flachen Bauch. Sie schaute an sich herunter und schluckte. Es kam ihr unwirklich vor, dass ein Baby darin sein sollte. Ein menschliches Wesen, dessen Herz schlug und das sich bewegte und das in sieben Monaten auf die Welt kommen würde. Und das dann völlig von Scorpius und ihr abhängig sein würde.</p>
+      <p>Wie sollten sie das bloß schaffen? Ihre Ausbildung war erst in anderthalb Jahren beendet. Scorpius war noch dabei, sich im Ministerium einen Namen zu machen. Sie hatten keine Zeit für ein Baby. Und sie hatten auch keine Energie für ein Baby. Sie brauchten alle ihre Energie für ihre Berufe. Außerdem war sie erst einundzwanzig. Sie war noch nicht reif für ein Kind. Sie fühlte sich noch nicht erwachsen genug dafür. Sicher, Scorpius und sie hatten schon über Kinder gesprochen, aber sie hatten sich darauf geeinigt, damit noch zu warten, bis sie mit der Ausbildung fertig war und ein paar Jahre als Heilerin gearbeitet hatte. Also frühestens mit Ende zwanzig. Dann wäre sie vielleicht bereit für ein Kind gewesen. Aber jetzt? Jetzt war der schlechteste Zeitpunkt für so etwas.</p>
+      <p>Die Mikrowelle klingelte. Rose nahm die Box heraus. Aber sie hatte gar keinen Hunger mehr. Also stellte sie sie wieder zurück in den Kühlschrank und ging ins Wohnzimmer. Von Scorpius war immer noch keine Spur zu sehen, aber dafür hörte sie, wie etwas an die Fensterscheibe klopfte. Sie öffnete das Fenster und es kam eine Ministeriumseule hereingeflogen. Sie landete auf dem Fensterbrett und streckte Rose ihr Bein entgegen. Rose machte den Zettel los, strich der Eule kurz über den Kopf und scheuchte sie dann wieder zum Fenster hinaus. Sie faltete das Pergament auseinander. Sie konnte Scorpius' vertraute Handschrift lesen.</p>
+      <p>
+        <em>Muss mich leider noch um ein Problem mit der Polizei kümmern. Wird wahrscheinlich sehr spät werden. Warte nicht. Ich liebe dich. Scorpius.</em>
+      </p>
+      <p>Rose seufzte. Normalerweise störte es sie nicht, wenn er später kam, aber heute brauchte sie ihn unbedingt. Und er war nicht da. Er war einfach nicht da. Wie sollte das denn erst werden, wenn das Baby da war? Wie sollten sie die Zeit finden, die es brauchte? Das war doch völlig unmöglich. Eine Träne rollte ihre Wange herunter und tropfte auf das Pergament. Rose zerknüllte es in ihrer Hand und warf es gegen die Wand.</p>
+      <p>Sie ging ins Badezimmer, zog sich aus und stellte sich unter die Dusche. Sie schloss die Augen und ließ das warme Wasser über ihren Körper fließen. Sie liebte diese Duschen. Deshalb war ihre Wasserrechnung auch immer so hoch. Aber darauf wollte sie einfach nicht verzichten. Wenn es ihr als Kind schlecht ging oder sie krank war, dann hatte ihr Dad sie immer unter die Dusche gestellt und wenn sie fertig war, dann hatte er sie in ein riesiges flauschiges Handtuch eingewickelt, abgetrocknet und ganz fest umarmt. Danach war immer alles besser gewesen.</p>
+      <p>Genau das brauchte sie jetzt. Sie brauchte ihren Vater, der sie umarmte und ihr versicherte, dass alles wieder gut werden würde. Dass es ihr wieder besser gehen würde.</p>
+      <p>Aber ihr Dad war nicht hier. Und sie war erwachsen. Sie war verheiratet und schwanger und erwachsener konnte man gar nicht sein. Trotzdem fühlte sie sich wie ein verängstigtes kleines Mädchen, das alle Welt im Stich gelassen hatte.</p>
+      <p>/-/</p>
+      <p>"Rose, hey, was machst du denn hier?", rief Victoire Lupin überrascht. Sie hatte ein schwarzes Top an, auf dem ein Drache abgebildet war und eine kurze Schlafanzughose. Ihr langes blondes Haar war zu einem Pferdeschwanz zusammengebunden und Rose konnte einige Essensreste darin entdecken. Trotzdem sah sie wunderschön aus.</p>
+      <p>Sie trug die zweijährige Nymphadora auf dem Arm, die einen abgenutzten Stoffniffler mit ihrer kleinen Hand umklammerte. Sie lächelte Rose mit ihren Zähnchen an. Ihr Haar war zu zwei Pferdeschwänzen an den Seiten gebunden und im Moment giftgrün.</p>
+      <p>Rose brachte mühevoll ein Lächeln zu Stande. Sie streckte die Hand aus und strich dem kleinen Mädchen über die Wange. Schon wieder spürte sie, wie Tränen in ihre Augen traten.</p>
+      <p>"Entschuldige, dass ich hier so unangemeldet reinplatze, Vic. Aber ich hab heute frei und ich hab euch schon lange nicht mehr gesehen, deshalb dachte ich, dass ich einfach mal vorbeischaue."</p>
+      <p>Victoire nickte, lächelte ihr zu und trat zur Seite, damit Rose eintreten konnte. "Ted hast du leider verpasst. Seine Schicht hat vor einer halben Stunde angefangen."</p>
+      <p>"Ich weiß"</p>
+      <p>Rose folgte Victoire in die große Küche. Victoire setzte ihre Tochter in den Hochstuhl und gab ihr ein Malbuch und ein paar Stifte, bevor sie sich wieder Rose zuwandte. "Entschuldige das ganze Chaos hier, Rose, aber Dora hat letzte Nacht wieder einen Zahn bekommen und so ein Theater gemacht, dass wir kaum schlafen konnten. Ich hab die ganze Küche auf den Kopf gestellt, um irgendwas zu finden, das ihr helfen könnte, aber es hat nichts funktioniert. Nicht mal Alkohol auf ihrem Zahnfleisch, und das hat bis jetzt immer geklappt.", erklärte Victoire entschuldigend und schwang ihren Zauberstab, damit das Geschirr anfing, sich selbst zu spülen.</p>
+      <p>Rose schaute zu Dora, die fröhlich vor sich hinmalte. "Die Kleine sieht dafür aber ziemlich munter aus."</p>
+      <p>"Die Kleine hat ja auch bis vor einer halben Stunde geschlafen.", erwiderte Victoire augenverdrehend und machte sich an der Kaffeemaschine zu schaffen. "Willst du auch einen Kaffee, Rose?"</p>
+      <p>Rose nickte. "Hast du vielleicht einen koffeinfreien für mich?", fügte sie dann schnell hinzu, weil sie sich daran erinnerte, dass Koffein für eine Schwangere nicht das Beste war. Sie wusste zwar immer noch nicht, was sie machen sollte, aber trotzdem wollte sie ihrem Kind nicht schaden. Sie zog einen Stuhl zu sich und setzte sich darauf.</p>
+      <p>"Seit wann trinkst du denn koffeinfreien Kaffee?", fragte Victoire verwirrt. "Du lebst doch von Kaffee, seit du für deine ZAGs gelernt hast. Onkel Ron sagt immer, dass Kaffee durch deine Venen fließt und kein Blut." Sie lachte und Rose stimmte halbherzig mit ein. Sie zuckte mit den Schultern. Victoire stellte sich auf ihre Zehenspitzen und fing an, einen der oberen Schränke zu durchsuchen. "Vielleicht hab ich hier noch was von dem Zeug, das ich während der Schwangerschaft getrunken habe."</p>
+      <p>Rose zuckte zusammen und schüttelte dem Kopf. "Ich geb mich auch mit Kürbissaft zufrieden."</p>
+      <p>Victoire nickte. "Gut, denn ich weiß nicht, wie viele Tiere es sich in der Dose schon bequem gemacht haben. Ich war so froh, als ich mit dem Stillen aufgehört habe. Dann konnte ich endlich wieder das richtige Zeug trinken. Das koffeinfreie ist wirklich nur ein schwacher Abklatsch. Aber für den kleinen Engel hab ich es gerne getan." Victoire beugte sich vor und küsste ihre Tochter auf die Haare, bevor sie zum Kühlschrank ging und einen Krug Kürbissaft herausholte. Sie stellte ihn auf den Tisch, holte ein Glas, auf dem sich kleine Babyniffler bewegten, aus dem Schrank und stellte es auf den Tisch. Sie goss es bis zum Rand voll mit Saft und reichte es Rose.</p>
+      <p>Die schaute es sich lachend an. "Das ist ja wirklich süß."</p>
+      <p>"Dora liebt Niffler. Sie trinkt nur aus einem Glas mit diesen Viechern drauf. Sie isst von keinem Teller, auf dem kein Niffler abgebildet ist und sie fast kein Besteck an, das nicht diese Form hat. Es ist schrecklich mit ihr." Sie lächelte das Mädchen an und setzte sich Rose gegenüber. "Ich wünschte mir manchmal, dass mein Großvater ihr zur Geburt keinen Stoffniffler geschenkt hätte. Hast du eine Ahnung, wie schwer es war, Bettwäsche mit diesen Tieren zu finden? Ich musste sie aus Spanien liefern lassen. Ich hoffe nur, dass sie die Tiere nie als echte Haustiere haben möchte. Das würde das Haus nicht überleben."</p>
+      <p>Rose lachte. "Weißt du, ich kann verstehen, dass sie so ist. Ich meine, das sind wirklich süße Tiere. Und ich weiß noch, dass ich als Kind verrückt nach meiner Stoffeule war. Vor zwei Jahren ist ihr der Kopf abgefallen und kein Zauber hat das wieder hingekriegt. Ich hab geheult wie ein Baby, als ich sie weggeschmissen hab.", erinnerte sich Rose.</p>
+      <p>"Ich kann es ja auch verstehen. Aber es war doch sehr viel einfacher, als Mum und Dad diesen ganzen Stress hatten und nicht wir."</p>
+      <p>"Allerdings", murmelte Rose und bemerkte, dass sie eine Hand auf ihren Bauch gelegt hatte. Verwirrt schaute sie darauf.</p>
+      <p>Victoire schnippte mit ihrem Zauberstab und einen Moment später kam eine volle Kaffeetasse zu ihr geflogen. "Ich weiß wirklich nicht, wie Muggel das alles hinkriegen. Wenn ich nicht zaubern könnte, dann würden wir hier im Dreck versinken und Ted würde nur Arbeitsumhänge mit Babysabber zur Arbeit anziehen können." Sie beugte sich vor und nahm Dora einen Stift aus der Hand, weil sie ihn in den Mund gesteckt hatte.</p>
+      <p>"Wie geht es Ted eigentlich?", fragte Rose vorsichtig. Sie war sich nicht sicher, ob er Victoire gestern etwas davon erzählt hatte. Aber wahrscheinlich hätte sie ihr schon längst etwas gesagt, wenn das der Fall gewesen wäre.</p>
+      <p>"Ganz gut. Er muss zur Zeit viel arbeiten und dann versucht er mir auch immer Dora abzunehmen, damit ich ein bisschen Ruhe hab. Er hat es wirklich nicht einfach und bekommt ziemlich wenig Schlaf, aber er sagt immer, als er angefangen hat, in der Zaubertränkeabteilung zu arbeiten, hat er noch viel weniger Schlaf bekommen. Und diese kleine Prinzessin ist es wert, nicht wahr, mein Schatz?" Sie warf ihr einen liebevollen Blick zu und trank einen Schluck Kaffee.</p>
+      <p>Rose schluckte. Sie war sich nicht sicher, ob sie das wirklich hören wollte. Wie wahnsinnig anstrengend es war, ein Baby zu haben, aber wie fantastisch es auch sein konnte.</p>
+      <p>"Und du hast wirklich frei, Rose? Ich dachte, dass du bald irgendeinen großen Test hast und deshalb so viel Zeit wie möglich im Krankenhaus verbringen willst. Ted hat vor zwei Monaten erzählt, wie deprimiert du warst, weil du zu krank warst, um ins Krankenhaus zu gehen und so vielleicht wichtige Sachen verpasst hast."</p>
+      <p>Rose seufzte. Sie erinnerte sich daran, wie krank sie gewesen war. Zu krank, um sich auf irgendetwas zu konzentrieren. Und dann war Scorpius mit dem Trank von Ted nach Hause gekommen und sie hatte ihn so dankbar geschluckt. Innerhalb von ein paar Stunden war alles so viel besser gewesen. Sie hatte sich so viel besser gefühlt. Sie hatte sich so gefühlt, als könnte sie alles schaffen. Und Scorpius hatte nie attraktiver ausgesehen. Hätte sie diesen verdammten Trank doch nur nie genommen.</p>
+      <p>"Mir ging es gestern ziemlich schlecht, deshalb hat meine Vorgesetze mir gesagt, dass ich ein paar Tage frei nehmen und mich erholen soll."</p>
+      <p>"Und dann kommst du hierher? Du solltest zu Hause im Bett liegen und dich ausruhen.", sagte Victoire besorgt und musterte Rose prüfend. Diese senkte den Blick, ergriff das Glas, um etwas zu tun zu haben und trank einen großen Schluck.</p>
+      <p>"Es geht schon wieder.", widersprach sie.</p>
+      <p>"Trotzdem", wandte Victoire ein. "Es wundert mich, dass Scorpius dich nicht ans Bett gefesselt hat, um sicherzugehen, dass du dich ausruhst."</p>
+      <p>Rose seufzte. "Er war gestern Abend nicht da, als ich nach Hause gekommen bin. Er musste noch irgendwas erledigen. Und als ich heute morgen aufgewacht bin, war er schon weg. Das Problem war anscheinend ziemlich groß und sie haben ihn gebraucht." Sie blinzelte einige Tränen weg. Sie hatte ihn auch gebraucht. Sie brauchte ihn immer noch. Und er war nicht da. Er war einfach nicht da.</p>
+      <p>"Rose, was ist denn los?", fragte Victoire verwirrt. Sie ergriff Roses Hand und drückte sie.</p>
+      <p>Rose zuckte mit den Schultern und wischte sich die Tränen weg. Aber jetzt, wo sie damit angefangen hatte zu weinen, konnte sie nicht mehr aufhören.</p>
+      <p>"Habt ihr euch gestritten? Oder habt ihr sonst irgendein Problem?" Rose schüttelte den Kopf und versuchte die Tränen zu stoppen. Victoire schnippte erneut mit dem Zauberstab und eine Box Taschentücher kam durch das Zimmer geflogen. Victoire hielt sie Rose hin und sie nahm sich dankbar ein paar.</p>
+      <p>"Was ist denn? Was ist los? Ist irgendwas mit der Arbeit?" Rose schluchzte, konnte aber keine Antwort geben. Aus dem Augenwinkel nahm sie verschwommen wahr, wie Dora ihre Stifte hingelegt hatte und sie neugierig beobachtete. "Was ist, Rose?"</p>
+      <p>Sie nahm sich noch mehr Taschentücher und wischte weitere Tränen weg. "Ich bin schwanger, Vic", schluchzte sie und putzte sich dann lautstark die Nase.</p>
+      <p>Victoire schaute sie mit offenem Mund an. "Entschuldige bitte ... ich muss dich falsch verstanden haben ... hast du gerade gesagt, dass du schwanger bist?"</p>
+      <p>Rose nickte langsam und bemühte sich, nicht schon wieder in Tränen auszubrechen, nachdem sie es gerade geschafft hatte, sie aufzuhalten. "Ja, hab ich."</p>
+      <p>"Aber ... aber wie?", fragte Victoire perplex und nahm nicht wahr, wie Dora wieder einen Stift in den Mund nahm. "Du bist doch noch mitten in der Ausbildung ... war das geplant?"</p>
+      <p>Rose schüttelte den Kopf. "Nein, das war es nicht. Es war überhaupt nicht geplant. Das war alles nur ein riesengroßer Unfall. Der Trank gegen die Grippe, den Ted mir vor zwei Monaten geschickt hat, hat den Verhütungstrank, den ich nehme, außer Kraft gesetzt. Es ist nicht der Standardtrank, deshalb ist es ihm gar nicht in den Sinn gekommen, Scorpius zu warnen. Und ich hab das auch nicht in Erwägung gezogen. Und dann ging es mir wieder so gut und ich hatte plötzlich wieder so viel Energie und ich hab Scorpius davor so wenig gesehen und er hat sich so süß um mich gekümmert ... ich hab nie so sehr mit ihm schlafen wollen wie damals. Ich hab noch nie so große Sehnsucht nach ihm gehabt. Vielleicht war das ja, weil der Trank nicht mehr gewirkt und meine Hormone in Aufruhr gebracht hat ... keine Ahnung. Auf jeden Fall hatten wir an dem Tag mehr Sex als jemals zuvor." Sie seufzte. "Es war wahrscheinlich ganz unmöglich, nicht schwanger zu werden. Ich bin immerhin eine Weasley."</p>
+      <p>Victoire nickte. "Ich weiß, was du meinst. Als Ted und ich uns dazu entschlossen haben, ein Baby zu bekommen und ich den Trank nicht mehr genommen hab, da hab ich ihn bei jeder sich bietenden Gelegenheit praktisch angesprungen." Rose sah, wie sie rot wurde. "Es ist mir richtig peinlich, wenn ich daran zurückdenke, was ich alles mit ihm gemacht habe." Victoire grinste Rose schüchtern an und diese musste lachen.</p>
+      <p>"Ich will das gar nicht wissen. Ted ist sowas wie ein großer Bruder für mich. Ich will ihn mir gar nicht als ein sexuelles Wesen vorstellen."</p>
+      <p>Victoire lachte. "Glaub mir, bevor ich siebzehn war, hab ich genauso gedacht. Und dann war er plötzlich ziemlich scharf." Sie schüttelte den Kopf und warf einen vorsichtigen Blick auf ihre Tochter. Rose war froh, dass sie erst zwei war und hoffentlich noch nichts von dem ganzen Gerede verstand. "Deshalb ist Ted gestern also so spät gekommen.", wechselte sie dann plötzlich das Thema.</p>
+      <p>"Ja. Er hat mich gestern überredet, einen Test zu machen, weil er dachte, dass meine Probleme Anzeichen für eine Schwangerschaft sein könnten. Ich wollte es nicht glauben. Ich meine, ich hab die Zeichen schon viel früher bemerkt, aber ich hab dem Trank vertraut und deshalb wollte ich es nicht wahrhaben ..." Sie seufzte und trank einen weiteren Schluck.</p>
+      <p>Victoire stand auf, ging um den Tisch herum, setzte sich neben Rose und umarmte sie. "Es wird alles gut, Rose. Es wird alles gut. Wir sind für dich da."</p>
+      <p>Rose nickte. "Ich hoffe es."</p>
+      <p>Victoire löste sich wieder von Rose. Sie strich ihr über die Haare. "Was sagt Scorpius denn dazu, dass er Daddy wird?"</p>
+      <p>Rose schloss die Augen. "Ich hab dir doch gesagt, dass ich ihn gestern Abend nicht mehr gesehen habe. Und heute Morgen auch nicht." Sie wollte nicht zugeben, wie sehr es sie verletzte, dass sie Scorpius noch nicht gesehen hatte, nachdem sie von dem Baby erfahren hatte. Sie brauchte ihn so dringend und zum ersten Mal in ihrem Leben war er nicht da, wenn sie ihn brauchte. Das war ein wahnsinnig schlechtes Omen, davon war sie überzeugt.</p>
+      <p>Victoire seufzte. "Ach Rose, das wird schon wieder. Vertrau mir. Ich weiß noch, wie ich mich damals gefühlt habe. Es gab Momente, in denen ich mich schrecklich einsam gefühlt habe. Aber es ist immer besser geworden."</p>
+      <p>"Ich weiß nicht, ob es besser wird, Vic", murmelte Rose und öffnete die Augen wieder. "Es fühlt sich im Moment nicht so an, als ob es besser werden würde. Du wolltest das Baby. Ted und du, ihr habt euch dafür entschieden, eines zu bekommen. Dieses Baby ist ein Unfall. Ich will noch keine Kinder. Ich bin noch viel zu jung für Kinder. Und ich hab keine Zeit für Kinder. Scorpius und ich wollten erst Kinder, wenn wir Ende zwanzig sind. Wenn wir uns dafür bereit fühlen. Aber ich fühle mich nicht bereit für Kinder. Ich kann noch keine Mum sein. Das geht einfach noch nicht, Vic. Und ich glaube auch nicht, dass ich das schaffen kann. Und Scorpius ist auch nicht da, damit ich mit ihm reden kann. Was, wenn das immer so sein wird? Ich kann das nicht, ich kann das einfach nicht." Sie schluckte. Sie schämte sich, das laut zuzugeben, aber sie konnte nicht anders.</p>
+      <p>Victoire schaute sie traurig an. "Ich weiß nicht, was ich dir sagen soll, Rosie. Ich weiß, dass das alles beängstigend sein kann. Ich weiß, dass es schwierig ist, dass es viel Kraft kostet und man an seine Grenzen gebracht wird. Aber ich würde Dora für nichts in der Welt wieder hergeben. Sie ist das größte Geschenk in meinem Leben und auch wenn ich den Schlafmangel verfluche und die Tatsache, dass ich kaum noch Zeit für mich habe und noch weniger für Ted und mich, ist sie trotzdem das Beste, was mir je passiert ist und ich liebe sie über alles."</p>
+      <p>Victoire warf Dora einen kurzen Blick zu und lächelte. "Ich kann dir nicht sagen, wie du dich entscheiden sollst und wie du fühlen sollst. Du bist die Einzige, die das weiß. Aber eins kann ich dir raten: Du musst ganz dringend mit Scorpius sprechen. Du musst ihm sagen, was los ist und du musst wissen, wie er darüber denkt. Er ist der Vater. Es ist auch sein Kind. Es ist auch seine Entscheidung."</p>
+      <p>"Ich weiß", erwiderte Rose und ihre Stimme brach. "Ich will ja auch. Aber er ist einfach nicht da. Ich hab mich noch nie so alleine gefühlt wie gestern Abend, Vic." Sie schluckte. Sie strich sich die Haare aus dem Gesicht und atmete tief durch. Dann straffte sie ihre Schultern und richtete sich wieder auf. "Es tut mir Leid, dass ich meine Probleme bei dir ablade. Aber alle meine Freunde arbeiten, Al ist in Ägypten, ich kann darüber noch nicht mit meinen Eltern sprechen und du und Molly seid die einzigen, die wegen eines Babys Zuhause sind. Und ich dachte, dass Ted es dir vielleicht schon gesagt hätte."</p>
+      <p>"Das ist doch völlig in Ordnung, Rose. Ich bin für euch da. Und Ted auch. Genau wie Onkel Ron und Tante Hermine."</p>
+      <p>"Aber die sind nicht objektiv. Und ich hab jemanden gebraucht, der zumindest versucht, es zu sein."</p>
+      <p>Victoire nickte. "Ich verstehe. Es tut mir Leid, dass ich dir nicht helfen konnte. Ich weiß nicht, was ich in deiner Situation tun würde. Ich weiß es nicht. Aber ich weiß, dass ihr die richtige Entscheidung treffen werdet. Egal ob für das Kind oder dagegen."</p>
+      <p>Rose schaute sie zweifelnd an.</p>
+      <p>"Aber eins kann ich dir versprechen: Es wird dir besser gehen, wenn du mit Scorpius gesprochen hast. Und es wird nicht mehr alles so schrecklich aussehen."</p>
+      <p>
+        <strong>TBC...</strong>
+      </p>
+    </div>
+  </div>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663595">Chapter 4</a>: Zusammen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>All my agony fades away</em>
+  <br/>
+  <em>When you hold me in your embrace</em>
+</p>
+<p>Rose lehnte sich zurück und rieb sich müde über die Augen. Sie hatte versucht zu lernen, nachdem sie von Victoire nach Hause gekommen war, aber sie schaffte es nicht, sich zu konzentrieren. Sie las die Worte, aber sie gelangten einfach nicht in ihren Kopf. Die Seite über den Schrumpffluch hatte sie jetzt schon zehn Mal gelesen, aber sie wusste immer noch nicht, was über ihn geschrieben wurde.</p>
+<p>Wenn sie so weiter machte, dann konnte sie ihre Ausbildung gleich hinschmeißen. Die Prüfung in zwei Wochen würde sie so auf keinen Fall bestehen. Und die war entscheidend dafür, weitermachen zu können. Sonst würde sie noch ein Jahr länger brauchen, bis sie eine ausgebildete Heilerin sein würde.</p>
+<p>Sie atmete durch, richtete sich wieder auf und zog das Buch zu sich. Sie hatte ihren Lernplatz vom Küchentisch auf ihr Ehebett verlegt, weil es dort bequemer war. Aber vielleicht war sie gerade deshalb so unkonzentriert.</p>
+<p>Sie las die Seite ein weiteres Mal durch, aber es war zwecklos. Sie würde diese Fakten heute nicht mehr in ihren Kopf kriegen. Dafür war er einfach viel zu voll. Ob sie es wollte oder nicht, alle ihre Gedanken kreisten um diesen Zellhaufen in ihrer Gebärmutter, der mittlerweile ein schlagendes Herz hatte und sich bewegen konnte. Auch nach ihrem Gespräch mit Victoire wusste sie noch nicht, was sie machen sollte. Sie hatte den Stress gesehen, dem Victoire den ganzen Tag ausgesetzt war. Sie konnte nicht bestimmen, wie der Tag verlief, Dora tat es. Und dabei war die Kleine schon zwei Jahre alt und Victoire hatte viel Zeit gehabt, sich an das Leben mit Kind zu gewöhnen und trotzdem eine richtige Routine zu entwickeln. Sie arbeitete sogar wieder im Ministerium, auch wenn sie nur ein paar wenige Gespräche per Kamin mit ein paar französischen Kollegen übernahm. Ihrem Charme konnte eben niemand widerstehen.</p>
+<p>Sie starrte auf ihre Schlafzimmertür und wünschte sich, dass Scorpius endlich nach Hause kam. Und anscheinend wurden ihre Wünsche endlich erhört, denn einen Moment später ging die Tür tatsächlich auf.</p>
+<p>Scorpius trug schwarze Jeans und ein blaues Hemd, das sie vor ein paar Wochen im Ausverkauf erstanden hatte, weil sie sich sicher war, dass es ihm sehr gut stehen würde. Und sie hatte Recht gehabt. Seine blonden Haare wurden langsam etwas zu lang und einige Strähnen fielen ihm in die Augen. Aber ihn schien es noch nicht zu stören. Er trug seinen Umhang über dem Arm und ging zu ihrem Kleiderschrank, ohne dass er Rose bemerkte. Er öffnete die Tür und hängte ihn ordentlich auf einen Kleiderbügel. Er war der ordentliche von ihnen beiden und musste immer hinter ihr herräumen. Obwohl sie mittlerweile versuchte, ihre Sachen immer selbst aufzuräumen, damit sie sie wiederfand.</p>
+<p>Er drehte sich um und zuckte zusammen, als er sie auf dem Bett sah.</p>
+<p>"Beim Merlin, Rose, hast du mich erschreckt", rief er und legte seine Hand auf die Brust. Er warf einen Blick auf die Uhr auf dem Nachttisch. "Was machst du überhaupt schon hier? Ich dachte, dass du bis sieben arbeiten musst."</p>
+<p>Rose schaute ebenfalls auf die Uhr. Es war fünf Uhr. Kein Wunder, dass er sich erschreckt hatte. Um diese Uhrzeit war sie sonst nie zu Hause. Sie zuckte mit den Schultern. "Heute nicht."</p>
+<p>Er schaute sie verwirrt an und nickte. "Okay. Ich wollte Spaghetti zum Abendessen machen. Hast du was dagegen?" Zu ihrer Überraschung hatte er sich als sehr guter Koch entpuppt und wenn er früher fertig war im Ministerium, dann kaufte er oft noch irgendwelche Zutaten für ein Essen, das sich schnell zubereiten ließ und wenn sie dann nach Hause kam, duftete es meistens sehr verführerisch. Er war wirklich fantastisch.</p>
+<p>Sie schüttelte den Kopf. "Nein, natürlich nicht." Vielleicht sollte sie warten, bis er das Essen gekocht hatte und sie am Tisch saßen und gegessen hatten, bevor sie ihm sagte, dass ihr Leben sich vielleicht für immer verändern würde. Aber das würde bedeuten, dass sie noch über eine Stunde auf dieses dämliche Buch starren und sich Gedanken machen würde und sie konnte das einfach nicht mehr.</p>
+<p>"Warte!", rief sie und sprang auf.</p>
+<p>Scorpius, der schon fast wieder zur Tür heraus war, drehte sich gerade noch rechtzeitig um, um sie aufzufangen, bevor sie auf den Boden fiel. "Rose, was ist denn los?", fragte er und schaute sie besorgt an.</p>
+<p>Sie hielt sich an ihm fest und richtete sich wieder auf. "Ich bin nur zu schnell aufgestanden. Mir war etwas schwindelig.", murmelte sie, aber die Sorge um sie stand ihm deutlich ins Gesicht geschrieben.</p>
+<p>"Rose, was ist los?"</p>
+<p>Sie überlegte einen Moment lang, ob sie ihm nicht sagen sollte, dass alles in Ordnung war, nur damit er sich keine Sorgen mehr machte. Aber es war nicht alles in Ordnung und sie hatte sich doch gerade erst dazu entschieden, es ihm sofort zu sagen.</p>
+<p>"Ich bin schwanger", sagte sie schnell, bevor sie der Mut doch verließ. Sie hatte sich den ganzen Tag lang gewünscht, dass er endlich auftauchte und diese Sorge mit ihm teilen konnte, aber jetzt, wo er endlich da war, war es doch nicht so einfach wie sie gedacht hatte, ihm diese Hiobsbotschaft zu verkünden.</p>
+<p>Er starrte sie einen sehr langen Moment einfach nur an und blinzelte schließlich verwirrt. Er räusperte sich. "Ich ... was hast du gerade gesagt, Rose?"</p>
+<p>Sie schaute ihn an und versuchte zu erraten, was er gerade dachte, aber sein Gesicht war eine undurchdringbare Maske. Es war das erste Mal in ihrem Leben, dass sie überhaupt keine Ahnung hatte, was in ihm vorging.</p>
+<p>Sie schluckte. "Ich ... ich bin schwanger.", sagte sie etwas langsamer.</p>
+<p>Er riss seine Augen auf und schüttelte den Kopf. "Du bist schwanger?", fragte er tonlos und sie nickte. "Wir bekommen ein Baby?" Sie nickte erneut. Er starrte sie immer noch an und ließ sich schließlich auf ihr Bett fallen. Er verzog das Gesicht und zog ihr Buch unter sich hervor. Er warf es hinter sich und schüttelte erneut den Kopf. "Wir bekommen ein Baby ..."</p>
+<p>Rose fuhr sich durch ihre Haare und schloss kurz die Augen. Sie hatte es geschafft, Scorpius den Schock seines Lebens zu versetzen, wie es aussah.</p>
+<p>"Scorpius ...", fing sie an, obwohl sie nicht wusste, was sie überhaupt sagen sollte.</p>
+<p>"Wie ist das möglich, Rose? Wir haben doch immer verhütet ... du bist eine der besten Brauerinnen, die ich kenne ..."</p>
+<p>Sie setzte sich im Schneidersitz neben ihn und er nahm ihre Hand. Wärme durchströmte sie. Victoire hatte Recht gehabt. Auch wenn sie immer noch nicht wusste, wie sie sich entscheiden sollte, sie fühlte sich zumindest besser. Sie war nicht mehr allein mit der Entscheidung.</p>
+<p>"Der Trank gegen Grippe, den du mir vor zwei Monaten gebracht hast, hat den Verhütungstrank außer Kraft gesetzt. Ted hat nicht gewusst, dass ich nicht den Standardtrank schlucke und dich deshalb nicht gewarnt." Sie zuckte mit den Schultern.</p>
+<p>Scorpius stöhnte auf. "Ich hätte ihm das sagen sollen. Er hat es nicht wissen können ... Verdammt."</p>
+<p>Rose schüttelte den Kopf. "Es ist nicht deine Schuld. Er hätte auch nachfragen können. Oder ich. Aber darum geht es nicht. Es ist egal, was schief gelaufen ist. Ich meine, das können wir jetzt sowieso nicht mehr ändern. Wichtig ist nur das Ergebnis."</p>
+<p>Er schluckte. "Ja, das Ergebnis ..." Er atmete tief durch. "Ich ... ich ... was willst du, Rose?"</p>
+<p>Sie wusste nicht, wie es passiert war, aber einen Moment später war sie in Tränen ausgebrochen und noch einen Moment später hatte Scorpius sie fest in seine Arme geschlossen. Sie klammerte sich an ihn und sog begierig seinen Geruch ein. Das hatte sie gebraucht. Das hatte sie so sehr gebraucht. Sie wusste zwar immer noch nicht, was sie machen würden, aber sie fühlte sich nicht mehr allein und seine starken Arme hatten die Wirkung, die sie immer hatten. Sie fühlte sich sicher. Sie fühlte sich geborgen. Und sie fühlte sich, als ob sie alles schaffen könnte. Auch wenn es dieses Mal längst nicht so einfach war.</p>
+<p>"Ganz ruhig, Rose", murmelte er beruhigend und sie spürte, wie er sie zärtlich auf die Haare küsste. "Es wird alles gut."</p>
+<p>"Aber wie?", flüsterte sie zwischen ein paar Schluchzern. "Wie soll alles gut werden, Scorpius? Ich weiß nicht mal, ob ich das Baby will. Ich will meine Ausbildung nicht abbrechen und ich fühle mich noch überhaupt nicht bereit dazu, Mutter zu werden. Wie soll da alles gut werden?"</p>
+<p>Sie hatte sich zwar etwas beruhigt, aber die Verzweiflung war wieder da.</p>
+<p>"Du willst abtreiben?", flüsterte Scorpius und schaute sie mit einer Mischung aus Entsetzen und Verständnis an. Sie zuckte zusammen, als er das sagte. Sie hatte zwar darüber nachgedacht, aber er war der erste, der dieses Wort laut ausgesprochen hatte. Es klang furchteinflößender als sie gedacht hatte.</p>
+<p>"Ich weiß es nicht.", sagte sie und ihre Stimme brach. Sie schniefte und wischte sich mit ihrem Ärmel über die Augen. "Ich weiß es nicht. Ich weiß nur, dass ich meine Ausbildung nicht aufgeben möchte. Ich hab so hart dafür gearbeitet, Heilerin zu werden und jetzt bin ich kurz davor und soll es nicht schaffen? Das kann ich einfach nicht." Das war das einzige, was sie sicher wusste. Alles andere lag völlig im Dunkeln. Aber sie wollte eine Heilerin sein.</p>
+<p>"Und wenn wir ... wenn wir das Baby behalten, dann geht das nicht?", fragte er unsicher, hob seine Hand und fuhr ihr damit über die Wange, um einige nachträgliche Tränen abzuwischen.</p>
+<p>Sie zuckte mit den Schultern. "Meine Großmutter wollte Heilerin werden, wusstest du das?", fragte sie unvermittelt. Er schüttelte überrascht den Kopf. "Sie hatte auch die Noten dafür und hat schon im Mungos angefangen. Aber dann hat sie meinen Grandpa geheiratet und in der Hochzeitsnacht den Verhütungsspruch vergessen." Damals waren die Tränke noch nicht weit verbreitet und außerdem auch ziemlich teuer gewesen, deshalb waren die Sprüche sehr viel beliebter gewesen. "Und dann wurde sie schwanger und sie haben sich dazu entschlossen, das Baby zu bekommen und eine Familie zu gründen und sie hat ihre Ausbildung abgebrochen. Sie ist nie eine Heilerin geworden." Sie seufzte. "Ich hab sie mal gefragt, ob sie es bereut, sich ihren Traum nie erfüllt zu haben und sie hat gesagt, dass sie mit ihrer Entscheidung immer glücklich war und uns alle um nichts in der Welt missen möchte.</p>
+<p>Aber ich kann das nicht. Ich kann diesen Traum nicht einfach opfern. Das geht nicht. Ich wollte das schon, seit ich ein kleines Mädchen war. Du weißt, wie sehr ich das wollte."</p>
+<p>Scorpius nickte. Er hielt immer noch ihre Hand und zeichnete abwesend mit seinem Daumen kleine Kreise auf ihren Handrücken. "Ich weiß, Rose. Aber du musst diesen Traum nicht unweigerlich aufgeben."</p>
+<p>"Ich weiß." Sie lächelte ihn schwach an. "Was willst du? Es ist auch dein Kind. Es ist auch deine Entscheidung."</p>
+<p>"Ernsthaft, Rose?" Scorpius fuhr sich unbehaglich durch die Haare. "Ich hab keine Ahnung. Ich fühle mich gerade ziemlich überfahren. Ich hab keine Ahnung, was ich denken soll. Ich meine, wir wollten Kinder. Wir haben darüber gesprochen, irgendwann welche zu bekommen."</p>
+<p>"Ja, irgendwann.", bestätigte sie. Keiner von beiden hatte damit gerechnet, dass irgendwann so bald kommen würde.</p>
+<p>"Aber ich hab gedacht, dass wir davor darüber sprechen könnten. Dass wir uns beide dafür bereit fühlen." Er lachte freudlos. "Und ich hab gedacht, dass wir erst viel Sex haben würden, bevor es klappt." Rose lächelte kurz. Darauf hatte sie auch gehofft.</p>
+<p>"Ich kann dir noch nicht sagen, was ich will, Rose. Ich weiß nicht, was ich will."</p>
+<p>"Das ist in Ordnung.", sagte sie schnell. "Ich weiß es ja auch noch nicht."</p>
+<p>"Aber du hast gehofft, dass ich es weiß", erwiderte er mit einem schiefen Lächeln. Rose schaute ertappt nach unten. Es wäre schön gewesen, wenn er eine eindeutige Position bezogen hätte. Das hätte es ihr vielleicht leichter gemacht, zu wissen, wo sie selbst stand.</p>
+<p>"Vielleicht", sagte sie. Sie schaute wieder hoch. "Ich hab Angst, Scorpius", flüsterte sie.</p>
+<p>"Ich auch", gab er zu. Er zog sie zu sich und küsste sie. Es war kein stürmischer oder leidenschaftlicher Kuss, es war ein liebevoller zärtlicher Kuss, der ihr aber trotzdem durch Mark und Bein ging. "Aber egal, wofür wir uns entscheiden, wir schaffen das, Rose. Wir schaffen das."</p>
+<p>Sie nickte. Tränen standen schon wieder in ihren Augen. Solange sie ihn hatte, war alles gut.</p>
+<p>
+  <strong>TBC...</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663626">Chapter 5</a>: Und jetzt?
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>Give me something I can believe</em>
+</p>
+<p>Scorpius schaute auf das Mondlicht, das durch ihr Fenster hereindrang und als breiter Strich an der Decke zu sehen war. Es war mittlerweile ein Uhr morgens, aber er hatte es nicht geschafft, einzuschlafen. Er hörte Roses gleichmäßigen Atmen und war froh, dass sie damit keine Probleme gehabt hatte. Aber sie war emotional so aufgewühlt und mitgenommen und heute Abend war bestimmt nicht das erste Mal gewesen, dass sie an diesem Tag geweint hatte. Das musste seinen Tribut fordern.</p>
+<p>Nachdem sie sich etwas gefasst hatten, hatte Scorpius die geplanten Spaghetti gekocht und sie hatten sie bei Kerzenlicht gegessen. Sie hatten nicht mehr über das Baby gesprochen. Er hatte ihr erzählt, warum er am vorigen Abend so spät gekommen und am Morgen so früh hatte gehen müssen.</p>
+<p>Ein paar Idioten hatten sich in einer Muggelbar betrunken und angefangen herumzuzaubern. Und leider waren die anderen Besucher der Bar nicht betrunken genug gewesen, um sich davon zu überzeugen, dass die herumfliegenden Tische und Stühle nur Einbildung waren. Irgendjemand hatte die Polizei gerufen und die hatten versucht, die Schuldigen zu verhaften, aber die hatten anscheinend nicht begriffen, in was für eine Lage sie sich gebracht hatten und einfach mal die Ordnungshüter der Muggel in Schweine verwandelt. Irgendeiner von den Betrunkenen hatte dann aber doch die Geistesgegenwart gehabt, dem Ministerium eine Nachricht zukommen zu lassen und so hatte Scorpius gestern mit einem Kollegen die halbe Nacht auf einem Polizeirevier zugebracht. Und der Papierkram am nächsten Morgen war gewaltig gewesen, weshalb sie so früh wie möglich hatten beginnen wollen.</p>
+<p>Aber trotz all der Scherereien, die er wegen dieser Deppen gehabt hatte, war er trotzdem beeindruckt davon, dass sie auch in diesem betrunkenen Zustand noch zu so schwieriger Magie im Stande gewesen waren und Menschen in Tiere hatten verwandeln können. Das hätte er mit so viel Promille sicher nicht mehr hingekriegt.</p>
+<p>Seufzend drehte er sich zur Seite und konnte jetzt Roses schlafendes Gesicht im Mondlicht betrachten. Sie sah so friedlich und jung aus, nicht so sorgenvoll und verängstigt und traurig wie vor ein paar Stunden.</p>
+<p>Vorsichtig streckte er seine Hand aus und strich ihr ein paar Strähnen aus der Stirn.</p>
+<p>Er liebte sie. Er wusste nicht, wann er damit angefangen hatte, sie zu lieben. Er wusste nur, dass er eines Tages in Zauberkunst gesessen und gesehen hatte, wie sie mit Al zusammen hereingekommen und über etwas gelacht hatte und dass er es plötzlich gewusst hatte. Er hatte sich an dem Tag nur sehr schwer konzentrieren können. Deshalb war er wirklich dankbar dafür, dass er und Al ein paar Wochen vorher aus Versehen ein kleines Feuer in ihrem Schlafsaal entfacht hatten (bis heute wusste keiner von ihnen, wie sie das geschafft hatten), weshalb sie verzweifelt versucht hatten, den <em>Aguamenti</em>-Zauber anzuwenden, um bloß keine Punkte zu verlieren. Sie hatten es nach ein paar Versuchen auch tatsächlich geschafft und deshalb hatte er die ganze Stunde damit verbringen können, Rose anzustarren und sich zu fragen, wann er sich in sie verliebt hatte und warum zum Teufel ihm das nicht schon viel früher klar geworden war.</p>
+<p>Und noch dankbarer war er gewesen, als Rose nach dem Unterricht zu ihm gekommen war und ihn darum gebeten hatte, ihr zu zeigen, wie der Spruch funktionierte, da sie ihn einfach nicht hinkriegte. Natürlich hatte er sich dazu bereit erklärt, auch wenn sie mehrere Nachmittage gebraucht hatte, um ihn zu meistern. Aber das war auch kein Wunder, da sie an dem ersten Nachmittag überhaupt nicht dazu gekommen waren, den Spruch zu üben und ihre Zeit lieber damit verbracht hatten, herumzuknutschen.</p>
+<p>Und jetzt bekamen sie ein Baby. Vielleicht bekamen sie ein Baby.</p>
+<p>Scorpius hatte nie gedacht, dass er eine Abtreibung jemals in Erwägung ziehen würde. Aber er hatte auch immer gedacht, dass er erst mit dreißig ein Kind bekommen würde und dass er sich dann bewusst dafür entschieden hatte. Er hatte nie geglaubt, dass er mit einundzwanzig davon überrumpelt werden würde. Er hatte auch nie geglaubt, dass er Rose jemals so verzweifelt erleben würde. Sie hatte immer gewusst, was sie wollte, egal ob es dabei um ihre Karriere, ihn oder ein neues Paar Schuhe ging. Aber sie war so ratlos wie er.</p>
+<p>Er schaute noch eine Weile auf seine wunderschöne schlafende Frau. Sie murmelte etwas unverständliches und drehte sich auf die andere Seite.</p>
+<p>Seufzend drehte er sich wieder auf den Rücken und schloss die Augen. Aber so sehr er es auch versuchte, er konnte einfach nicht einschlafen. Schließlich gab er es auf und stand auf. Er schlich leise aus dem Schlafzimmer und schloss die Tür hinter sich. Er wollte Rose nicht wecken. Sie hatte ihren Schlaf dingend nötig.</p>
+<p>Aber er hatte keine Ahnung, was er jetzt machen sollte. Er hatte große Lust, sich zu betrinken, doch das stärkste, was sie in der Wohnung hatten, war Butterbier, und er wollte jetzt nicht in die Winkelgasse und dort in irgendeine Bar gehen. Er wollte mit Al zu sprechen, aber der war noch in Ägypten ... oder nicht? Sein bester Freund hatte jetzt irgendwann zurück sein wollen, aber Scorpius wusste nicht, ob er es schon war oder nicht. Als Pläne hatten sich letzte Woche, als sie zum letzten Mal miteinander gesprochen hatten, dauernd geändert, weil noch mehr Sachen an der Ausgrabungsstelle geklärt werden mussten als erwartet.</p>
+<p>Aber er konnte es zumindest versuchen. Scorpius ergriff eine Feder und ein Stück Pergament und schrieb eine kurze Nachricht für Rose, damit sie wusste, wo er war, falls sie wider Erwarten aufwachen sollte und war kurz darauf disappariert.</p>
+<p>Eine Sekunde später tauchte er in Als Wohnung wieder auf und hörte, wie irgendetwas aus Glas herunterfiel und zerbrach. Scorpius erblickte Albus Potter, der ihn mit offenem Mund anstarrte. Scherben lagen zu seinen Füßen.</p>
+<p>"Scorpius ...", sagte Al sehr überrascht und schüttelte den Kopf. "Was, in Merlins Namen, machst du um halb zwei in meiner Wohnung?"</p>
+<p>"Ähm ..." Scorpius kratzte sich am Kopf. "Hallo sagen?"</p>
+<p>"Um diese Zeit? Musst du nicht morgen früh im Ministerium sein?", fragte Al immer noch ziemlich perplex und ließ sich auf einen Stuhl fallen. Er nahm seinen Zauberstab vom Tisch, deutete auf die Scherben und ließ dann ein repariertes Glas auf den Tisch schweben.</p>
+<p>"Schon. Aber ich wollte einfach mal vorbei kommen. Ich meine, wir haben uns seit über einem halben Jahr nicht mehr gesehen.", erwiderte Scorpius.</p>
+<p>Al nickte. Trotzdem schien er sich noch nicht ganz von der Überraschung erholt zu haben, ihn so plötzlich zu sehen. Dennoch stand er auf, ging zu seinem besten Freund und umarmte ihn. "Ich weiß, es kommt zwar gerade nicht so rüber, aber ich freu mich, dich zu sehen. Aber was machst du wirklich hier? Noch dazu in den Klamotten. Hat Rose dich rausgeschmissen?"</p>
+<p>Scorpius warf einen Blick auf die Pyjamahose und das schwarze T-Shirt, in dem er normalerweise schlief. Vielleicht war sein Auftauchen wirklich etwas merkwürdig. "Nein, Rose schläft. Sie weiß gar nicht, dass ich hier bin."</p>
+<p>"Und woher wusstest du, dass ich hier bin? Ich hab niemandem gesagt, dass ich heute Abend wieder komme. Alle rechnen mit übermorgen.", erwiderte Al. Deshalb war er also so überrascht über Scorpius' Auftauchen gewesen.</p>
+<p>"Ich wusste es nicht. Aber ich hab es einfach auf gut Glück versucht." Scorpius ließ sich auf einen Stuhl sinken. "Hast du zufällig Feuerwhisky oder irgendwas anderes starkes da?", fragte er dann. Vielleicht kam er ja so zu Alkohol.</p>
+<p>Al nickte, wedelte erneut mit seinem Zauberstab und fing im nächsten Moment eine Flasche Feuerwhiskey auf, die durch das Zimmer auf ihn zugeschossen kam, gefolgt von einem weiteren Glas, das er Scorpius reichte. Er schenkte erst ihm ein und dann sich selbst.</p>
+<p>"Also, Scorp, was ist los?", wollte Al dann wissen und schaute Scorpius forschend an.</p>
+<p>Der seufzte und trank erst einmal einen sehr großen Schluck aus seinem Glas. Er erschauderte. Al hatte wirklich keinen billigen Fusel. Fantastisch. Genau, was er gebraucht hatte. Er schlug die Augen wieder auf und sah, dass Al ihn immer noch erwartungsvoll anschaute. "Rose ist schwanger." Er trank erneut und verschluckte sich, als er hörte, wie wieder etwas zerbrach.</p>
+<p>Al hatte sein Glas ein weiteres Mal fallen lassen und starrte Scorpius mit offenem Mund an. Scorpius hörte auf zu husten, hob sein Glas und prostete Al zu. "Cheers."</p>
+<p>/-/</p>
+<p>"Und was wollt ihr jetzt machen?", fragte Al ihn eine halbe Stunde später, nachdem ihm Scorpius von dem Gespräch mit Rose erzählt und den ersten Schock überwunden hatte. "Bist du schon zu irgendeinem Entschluss gekommen?"</p>
+<p>Er schüttelte den Kopf. "Ich wünschte, es wäre so, aber ich hab immer noch keine Ahnung. Ich meine, ich wollte immer eine Familie mit Rose, aber doch nicht so früh. Ich fühle mich noch nicht erwachsen genug für ein Kind."</p>
+<p>"Ihr seid verheiratet, Scorp", wandte Al ein. "Also wenn das nicht erwachsen ist ..."</p>
+<p>Er nickte. "Ich weiß. Aber das ist nicht anders als mit ihr zusammen zu sein. Abgesehen davon, dass sie Malfoy heißt und ich sie jedem als meine Frau vorstellen kann. Doch wir haben schon vorher zusammen gewohnt und wir wussten schon lange, dass wir zusammen gehören. Aber ein Kind, Al, das ist doch etwas ganz anderes. Das ist ein Mensch, für den du verantwortlich bist. Ein Mensch, der Tag und Nacht auf dich angewiesen ist, für den du sorgen und Zeit und Geld haben musst. Ich fühle mich noch nicht alt genug für so eine Verantwortung. Ich meine, was ist, wenn wir es vermasseln? Außerdem will Rose ihre Ausbildung nicht aufgeben und sie hat Recht, sie hat viel zu hart gearbeitet, um jetzt alles hinzuschmeißen."</p>
+<p>Al seufzte und griff nach dem Feuerwhisky, um sich nachzuschenken. Die Flasche war leer. Er rief eine weitere herbei und öffnete sie. "Sie muss nicht alles hinschmeißen. Falls ihr euch dazu entscheidet, das Baby zu bekommen, dann kann sie doch noch ein paar Monate lang weiter machen, bis sie in den Mutterschutz geht oder wie das heißt. Dann kann sie das Kind bekommen, ein paar Monate Zuhause bleiben und danach wieder einsteigen, wo sie ausgestiegen ist. So schwer sollte das doch nicht sein. Und du kannst deine Stunden im Ministerium herunterschrauben oder den Papierkram mit nach Hause nehmen oder das Baby ins Ministerium, wenn Rose im Mungos ist. Du hast doch einen flexiblen Zeitplan, wenn es nicht irgendwelche Notfälle oder Konferenzen gibt. Und wenn ihr beide arbeitet, dann habt ihr immer noch Onkel Ron und Tante Hermine oder deine Eltern. Die nehmen das Kind sicher gerne. Und wenn die nicht können, dann würden meine Eltern es sicher auch mal nehmen. Und schlimmstenfalls kannst du es immer noch bei Grandma Molly abladen, die kann gar nicht genug von ihren Urenkeln kriegen. Allerdings würde ich da vorsichtig sein, weil ihr es dann vielleicht erst wieder in ein paar Jahren zu Gesicht bekommen werdet."</p>
+<p>Scorpius dachte darüber nach, was Al gesagt hatte. Es klang eigentlich ganz einfach. Aber er hatte genug gesunden Menschenverstand, um zu wissen, dass es nicht so einfach war. Ein Baby war eine Heidenarbeit. Er hatte gesehen, wie fertig Victoire und Ted nach der Geburt von Dora gewesen waren und auch, wie viel es Molly und ihrem Mann Justin abverlangte, sich um den kleinen Jeremy zu kümmern. Und diese beiden waren die organisiertesten Menschen, die er kannte. Er wusste, dass es machbar war. Er war sich nur nicht sicher, ob Rose und er dazu bereit waren, sich wirklich in dieses Abenteuer zu stürzen. Und ob sie es schaffen würden, ohne blutige Nase wieder herauszukommen.</p>
+<p>"Al, ich weiß nicht ..."</p>
+<p>"Scorpius, ich weiß, dass ihr das nicht immer so seht, aber ihr seid ein Paar, das alles schaffen kann. Ihr habt es geschafft, alle Vorurteile, die die Weasleys und Malfoys haben, zu überwinden. Du hast es geschafft, aus einer Weasley eine Malfoy zu machen. Und sie ist nicht nur irgendeine Weasley, sie ist die Tochter von Ron und Hermine Weasley. Ich muss dich wohl nicht daran erinnern, dass Tante Hermine deinen Dad irgendwann verprügelt hat."</p>
+<p>Scorpius musste unwillkürlich grinsen. "Sie hat ihn nicht verprügelt. Nicht richtig zumindest."</p>
+<p>"Wie auch immer", winkte Al ab. "Unsere Großväter haben sich auf jeden Fall in Florish &amp; Blotts verprügelt, das kannst auch du nicht abstreiten."</p>
+<p>"Würde ich nie wagen", erwiderte Scorpius und hob abwehrend die Hände hoch.</p>
+<p>"Und trotzdem sind all diese Personen bei eurer Hochzeit aufgetaucht und haben sich für euch gefreut. Zumindest die meisten. Ihr habt ein Jahr lang eine Fernbeziehung geführt und auch das habt ihr perfekt hingekriegt. Und jetzt bekommt ihr ein Kind, das halb-Malfoy und halb-Weasley ist. Eigentlich ist es schon ein Wunder, dass diese Gene überhaupt kompatibel sind, wenn du es dir recht überlegst."</p>
+<p>"Du meinst also, wir sollten das Baby bekommen."</p>
+<p>"Ich meine, dass ihr schon so viel geschafft habt, dass ihr das auch hinkiegen werdet. Auch wenn es nicht so einfach sein wird, wie ihr es gerne hättet. Und ich glaube, dass ihr es irgendwann bereuen würdet, wenn ihr dieses Kind nicht bekommt."</p>
+<p>Scorpius seufzte und trank noch einen Schluck. Er wünschte, dass er so zuversichtlich sein könnte wie Al. Obwohl er sich fragte, ob Al auch so zuversichtlich wäre, wenn er an seiner Stelle sein würde.</p>
+<p>"Glaubst du wirklich, du würdest damit zurecht kommen, wenn du zulassen würdest, dass irgendjemand euer Kind umbringt?", fragte Al schließlich.</p>
+<p>Scorpius zuckte zusammen. Wenn er das so hörte, dann war die Antwort einfach: Er würde nicht damit zurecht kommen.</p>
+<p>
+  <strong>TBC...</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663637">Chapter 6</a>: Unentschlossenheit
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>
+  <em>I want to believe that this is for real</em>
+  <br/>
+  <em>Save me from my fear</em>
+</p>
+<p>Etwas später schlich sich Scorpius wieder in sein Schlafzimmer und legte sich leise ins Bett. Er drehte sich auf die Seite. Rose lag mit dem Rücken zu ihm. Er rutschte näher an sie heran und legte einen Arm um sie. Er küsste sie auf den Hinterkopf und spürte, wie sie sich an ihn kuschelte. Seine Hand ruhte auf ihrem Bauch.</p>
+<p>"Ich liebe dich", flüsterte er ihr zu.</p>
+<p>/-/</p>
+<p>"Ich hab mich entschieden", sagte Scorpius schließlich am nächsten Morgen beim Frühstück, nachdem er tief durchgeatmet hatte.</p>
+<p>Rose ließ überrascht ihre Gabel fallen, mit der sie ihren Pfannkuchen gerade in kleinere Stücke geteilt hatte. "Du hast dich entschieden?" Wie hatte er sich so schnell entscheiden können? Sie wusste einen Tag länger als er von dem Baby und er wusste bereits, was er wollte?</p>
+<p>Er nickte. "Ich konnte gestern Nacht nicht schlafen und hab noch bei Al vorbeigeschaut."</p>
+<p>"Al ist schon wieder da?", fragte sie überrascht. Sie hatte gedacht, dass er erst irgendwann nächste Woche wiederkommen würde. Wieso hatte er ihr nicht gesagt, dass er schon wieder da war? Wollte er sie nicht sehen? Er war monatelang auf einem anderen Kontinent gewesen und wollte sie jetzt nicht sehen? Der konnte was erleben, wenn sie ihn in die Finger bekam ...</p>
+<p>"Er ist irgendwann gestern Abend wieder gekommen", erwiderte Scorpius und spießte etwas Pfannkuchen mit seiner Gabel auf. "Es ging dann wohl doch alles schneller an der Ausgrabungsstätte und er konnte einen früheren Portschlüssel nehmen. Ich wusste nicht, ob er da ist oder nicht, aber ich musste mit jemandem reden und ich dachte, dass ein Versuch nicht schaden könnte ..." Er zuckte mit den Schultern und schaute sie kleinlaut an. "Bitte bring Al nicht um."</p>
+<p>Rose schaute ihn überrascht an. Woher hatte er gewusst ...?</p>
+<p>"Ich kenne diesen Blick, Rose.", sagte er, als ob es das offensichtlichste von der Welt wäre.</p>
+<p>"Was denn für einen Blick?", fragte sie unschuldig. Sie wusste nicht, dass sie einen Blick hatte.</p>
+<p>"Der Blick, mit dem dein Dad mich angesehen hat, als du zu ihm gesagt hast: 'Das ist Scorpius Malfoy, mein Freund'." Er erschauderte. "Oder der Blick, mit dem er mich angesehen hat, als du ihm gesagt hast, dass wir zusammen ziehen wollen. Oder der Blick, mit dem er mich angesehen hat, als er dich bei unserer Hochzeit zum Altar geführt hat. Glaub mir, Rose, dieser Blick ist der beängstigendste Blick, den ich kenne. Hätte ich einen Mord begangen und würde von deinem Dad verhört werden und er würde mich mit dem Blick ansehen, dann würde ich alles gestehen. Ich würde sogar Morde gestehen, die ich gar nicht begangen habe."</p>
+<p>Rose schüttelte lächelnd den Kopf. "Du bist unmöglich."</p>
+<p>"Das bin ich nicht", widersprach Scorpius. Ron Weasley konnte ein sehr einschüchternder Mann sein, wenn er wollte. Und bei ihm schien er immer zu wollen. Scorpius wollte sich gar nicht vorstellen, wie er ihn ansehen würde, wenn herauskam, dass er Rose geschwängert hatte.</p>
+<p>Rose verdrehte die Augen. "Also? Wofür hast du dich entschieden?", kam sie auf das ursprüngliche Thema zurück. Normalerweise liebte sich das Geplänkel zwischen ihnen, aber im Moment war das hier sehr viel wichtiger. Er ging schließlich um ihre Zukunft.</p>
+<p>"Ich ..." Er legte die Gabel auf den Teller, atmete tief durch und schaute sie entschlossen an. "Ich will das Baby behalten."</p>
+<p>Rose zog überrascht die Augenbrauen hoch. Sie wusste nicht, was sie erwartet hatte. Sie wusste nicht, ob sie sich so überrascht gefühlt hätte, wenn er ihr das Gegenteil gesagt hätte. "Du willst es behalten?"</p>
+<p>Er nickte. "Ich will es behalten. Ich weiß, dass das eine Heidenarbeit sein wird, dass es dir viel abverlangen wird und mir auch, aber wir können das schaffen. Ich weiß, dass wir das können."</p>
+<p>"Aber ... aber was ist mit meiner Ausbildung? Mit der ganzen Arbeit, die ich schon investiert habe?", fragte sie gekränkt. Sie wollte nicht alles aufgeben.</p>
+<p>"Das wird nicht umsonst sein, Rose. Du könntest für ein paar Monate unterbrechen und wenn das Baby dann ein paar Monate alt ist, dann kannst du wieder einsteigen. Und ich kümmere mich dann um das Baby. Ich arbeite weniger oder Zuhause oder ich nehme es mit ins Ministerium. Ich weiß noch nicht, wie das laufen soll, aber da wird sich bestimmt eine Lösung finden. Das Ministerium ist sehr familiär eingestellt. Es wird doch bestimmt möglich sein, dass keiner von uns seine Karriere opfern muss und wir trotzdem das Baby bekommen können." Al hatte Recht gehabt. Das war eine wunderbare Lösung und er wusste, dass es funktionieren würde. Es <em>musste</em> einfach funktionieren.</p>
+<p>Sie seufzte und stützte ihren Kopf auf ihre Hand. "Du willst das also wirklich durchziehen? Obwohl wir monatelang nicht richtig schlafen können und keine Zeit mehr füreinander haben werden und höchstwahrscheinlich völlig überfordert sein werden?", fragte sie zweifelnd. Sie war ganz und gar nicht überzeugt davon. Sie sprachen hier immerhin von einem Baby und nicht von einem Haustier, das sie schlimmstenfalls bei jemand anderem lassen konnten, wenn sie damit nicht zurecht kommen würden.</p>
+<p>Er nickte. Er beugte sich vor und nahm ihre Hand. "Weißt du noch, wie ich daran gezweifelt habe, dass wir eine Fernbeziehung hinkriegen werden und ich Angst hatte, dich zu verlieren?"</p>
+<p>Sie nickte. Wie hätte sie das jemals vergessen können? "Natürlich. Und das war völliger Schwachsinn. Wir haben das mit Links geschafft." Das war vielleicht etwas übertrieben, denn so einfach war es nicht gewesen, aber sie hatten es nichtsdestotrotz gemeistert.</p>
+<p>"Ich hab Angst gehabt vor dem, was passieren könnte und du warst so wahnsinnig zuversichtlich. Du hast mich überzeugt und du hattest Recht. Jetzt ist es eben anders herum. Du hast Angst und ich bin zuversichtlich."</p>
+<p>"Wirklich?"</p>
+<p>"Ja." Sie schaute ihn schief an. "Ich hab immer noch Angst, daran wird sich so schnell auch nichts ändern. Aber nicht genug Angst, um ein unschuldiges Menschenleben zu opfern." Rose zuckte zusammen. Wenn er das so sagte, dann klang es noch schlimmer als wenn von einer Abtreibung gesprochen wurde.</p>
+<p>"Aber ich will dich zu nichts überreden, mit dem du nicht einverstanden bist. Wenn wir das wirklich durchziehen, dann müssen wir es beide wollen. Anders wird das nicht funktionieren. Also wenn du dich dazu entschließt, das Baby doch abzutreiben, dann werde ich hinter dir stehen und dich unterstützen. Egal, was kommt, Rose, wir stehen das zusammen durch." Er lächelte sie aufmunternd an.</p>
+<p>Rose schluckte und schaute auf ihren Teller. Der Pfannkuchen war zwar in kleine Stücke geteilt, aber sie hatte kein einziges davon gegessen. Sie wusste immer noch nicht, ob sie wirklich dazu bereit war, sich für etwas zu entscheiden, das ihr ganzes Leben für immer auf den Kopf stellen würde. Diese Entscheidung würden sie nie wieder rückgängig machen können. Dieses Kind würde für den Rest ihres Lebens da sein. Alles andere konnte man ändern. Wenn man nicht mehr verheiratet sein wollte, konnte man sich scheiden lassen. Wenn man nicht mehr in seinem Beruf arbeiten wollte, dann konnte man sich einen anderen suchen. Aber eine Mum würde sie ihr Leben lang sein. Dieses Baby würde sie ihr ganzes Leben lang brauchen, so wie sie ihre Eltern ihr ganzes Leben lang brauchen würde. Diese Entscheidung würde alles verändern.</p>
+<p>"Ich weiß nicht", flüsterte sie schließlich. Sie blickte auf und sah in Scorpius' verständnisvolle Augen. Sie stand auf, ging um den Esstisch herum und setzte sich auf seinen Schoß. Er schlang seine Arme um sie und sie lehnte den Kopf auf seine Schulter. "Ich weiß es nicht."</p>
+<p>Er küsste sie auf die Wange und strich ihr eine Strähne hinter das Ohr. "Das ist schon in Ordnung, Rose", murmelte er. "Du wirst es wissen."</p>
+<p>/-/</p>
+<p>"AL! Was zum Teufel hast du meinem Mann heute Nacht gesagt?", rief Rose eine Stunde später, als sie aus Albus Potters Kamin gestolpert und sich an der Wand festgehalten hatte, um nicht umzufallen.</p>
+<p>"Rose?" Al kam aus seinem Schlafzimmer und schaute sie verwirrt an. Er rieb sich die Augen und machte sich nicht die Mühe, ein Gähnen zu unterdrücken. "Warum musst du so schreien?"</p>
+<p>"Was hast du Scorpius gesagt? Was hast du ihm gesagt?" Sie zog ihren Zauberstab und schaute ihn wutentbrannt an. Warum genau sie <em>so</em> wütend war, wusste sie selbst nicht.</p>
+<p>Al schaute sie immer noch verwirrt an. "Was?" Er beäugte sie, schien aber nicht sonderlich beeindruckt zu sein.</p>
+<p>"Warum in aller Welt hat mir Scorpius heute ganz zuversichtlich und souverän verkündet, dass er das Baby behalten will? Warum ist er nicht ausgeflippt oder panisch? Warum ist er so verdammt ruhig und sicher, dass wir das hinkriegen? Wir werden das nicht hinkriegen, Al, wir werden das auf keinen Fall hinkriegen! Das wird doch nie funktionieren. Ich weiß gar nicht, warum er denkt, dass das klappen könnte, dass wir wirklich Eltern werden könnten, vernünftige, gute Eltern, die verantwortungsbewusste Entscheidungen treffen können und wissen, was sie tun! Wie soll das gehen, Al? Bei unserem Glück werden wir das Kind aus Versehen beim Baden ertränken oder es wird aus dem Bett fallen oder ..." Sie hatte sich mittlerweile beinahe heiser geschrien und atmete schwer, während Al ihr beruhigend seine Hände auf die Schultern gelegt hatte.</p>
+<p>"Bist du fertig?", fragte er schließlich und sie nickte. Er schob sie zu seinem Sofa und bedeutete ihr, sich zu setzen. Er nahm ihr ihren Zauberstab aus der Hand, machte eine kurze Handbewegung und reichte ihr einen Moment später ein Glas Wasser, das aus der Küche zu ihnen geschwebt war.</p>
+<p>"Danke", murmelte Rose und trank einen Schluck. Sie schloss erschöpft die Augen und lehnte sich zurück. Sie hatte keine Ahnung, wo dieser Ausbruch hergekommen war, aber sie fühlte sich komischerweise sehr viel besser, nachdem sie das alles gesagt hatte.</p>
+<p>"Alles okay?", fragte Al und ließ sich neben sie fallen.</p>
+<p>Sie zuckte mit den Schultern. "Ich bin schwanger. Also glaube ich nicht, dass alles okay ist. Aber abgesehen davon, sicher. Alles perfekt.", erwiderte sie und öffnete ihre Augen wieder.</p>
+<p>Al verdrehte die Augen. "Bist du wirklich sauer auf Scorpius? Oder hast du nur Angst?"</p>
+<p>"Natürlich habe ich Angst!", rief sie. "Wie kann man denn bei so einer Hiobsbotschaft keine Angst haben?"</p>
+<p>"Du weißt, dass Scorpius auch Angst hat?", versicherte er sich. Sie nickte. Sie wusste, dass er Angst hatte, er hatte es ihr schließlich erst vor einer Stunde gesagt. Aber sie schien so viel mehr Angst zu haben als er und das machte ihr noch mehr Angst. Sie war sonst immer die Mutige. Sie war diejenige, die die Spinnen tötete, vor denen ihr Dad und Hugo immer so eine Angst hatten. Sie war diejenige, die die wenigste Panik vor den ZAGs und UTZen gehabt hatte. Und jetzt hatte sie so viel Angst wie noch nie in ihrem Leben und sie hatte absolut keine Ahnung, wie sie damit umgehen sollte. Sie wünschte sich, dass sie einfach verschwinden würde, aber das würde sie wohl nur, wenn dieses Baby auch verschwand.</p>
+<p>"Scorpius hat gesagt, dass du dir nicht sicher bist, was du willst.", sagte Al schließlich und riss sie so aus seinen Gedanken.</p>
+<p>Rose nickte zögerlich.</p>
+<p>"Und so wie es gerade geklungen hat, möchtest du dieses Baby nicht bekommen. Also willst du abtreiben.", fuhr er fort.</p>
+<p>Sie seufzte. "Ich weiß nicht. Ich weiß es einfach nicht. Es gibt Momente, wenn Scorpius zum Beispiel so sicher ist, dass wir es hinkriegen, da denke ich, dass ich es bekommen will. Aber dann gibt es andere Momente, in denen ich daran denke, was für eine Arbeit meine Ausbildung ist, da denke ich, dass ich das unmöglich mit einem Baby schaffen kann." Sie schaute ihn unglücklich an. So zwiegespalten wie heute morgen am Küchentisch hatte sie sich noch nie gefühlt. Als sie erkannt hatte, dass es wirklich an ihr lag, über Leben und Tod ihres Kindes zu entscheiden.</p>
+<p>Al kramte ein Taschentuch aus seiner Hosentasche. Rose musterte es erst vorsichtig, bevor sie sich damit die Nase putzte.</p>
+<p>Sie saßen eine Weile still auf dem Sofa und schauten auf Als Couchtisch, auf dem ein paar Quidditchmagazine lagen, die fast ein Jahr alt waren und eine Vase mit völlig verwelkten Blumen stand, die wahrscheinlich Tante Ginny irgendwann vorbeigebracht hatte. Rose ließ den Blick durch sein kleines Wohnzimmer schweifen. Es war sehr viel sauberer und aufgeräumter, als sie es gewohnt war, aber wahrscheinlich hatten Lily oder Tante Ginny hier aufgeräumt, nachdem Al nach Ägypten gegangen war. Sie hassten Unordnung und die Vorstellung, dass Al bei seiner Rückkehr einen halben Zoo mit irgendwelchen Krabbeltieren vorfinden würde, war wirklich nicht sehr verlockend.</p>
+<p>"Rose, wenn ich ganz ehrlich sein soll", begann Al schließlich zögerlich. Rose sah ihn an. Er biss sich auf die Lippe und schien sich nicht sicher, ob er wirklich weitersprechen sollte. "Ich glaube nicht, dass du es fertig bringen wirst, euer Baby abzutreiben." Rose schluckte. "Ich kann mir vorstellen, dass das alles wahnsinnig beängstigend sein muss und du nicht daran glaubst, dass ihr es wirklich schaffen könnt, aber ich glaube trotzdem nicht, dass du dich auf diese Liege legen und dabei zusehen kannst, wie irgendjemand mit einem Zauberspruch euer Baby umbringt. Du wolltest Heilerin werden, um Leben zu retten. Und ich bezweifle, dass du wirklich dazu bereit bist, das Leben von Scorpius' und deinem Kind dafür zu opfern, das weiterhin tun zu können." Sie spürte, wie ein paar Tränen über ihre Wangen liefen. "Ich weiß, dass es schwierig sein wird für euch, aber es ist nicht unmöglich. Ihr habt so viel geschafft, das werdet ihr auch hinkriegen."</p>
+<p>Rose schloss die Augen. Wie konnten sie alle davon überzeugt sein? Wie konnten sie sich alle so sicher sein, dass sie das alles schaffen würden? Dass sie eine gute Mutter und trotzdem noch Heilerin werden konnte? Woher wussten sie das? Und warum wusste sie das nicht?</p>
+<p>Sie öffnete die Augen langsam wieder. "Al -"</p>
+<p>"Merlin sei Dank ist jemand da!"</p>
+<p>Albus und Rose fuhren erschrocken herum. In Als Kamin waren Flammen aufgelodert und sie konnten das müde und angespannt wirkende Gesicht ihrer Cousine Molly, der Tochter von Percy und Audrey, erkennen. Sie hatte einen erleichterten Ausdruck in ihren Augen.</p>
+<p>"Molly!", rief Al überrascht und sprang auf. Er kniete sich vor den Kamin. "Woher weißt du, dass ich schon wieder da bin?" Er schaute vorwurfsvoll zu Rose, aber die zuckte nur mit den Schultern. Sie bezweifelte sehr, dass Scorpius ausgerechnet Molly heute morgen gesagt hatte, dass Al schon wieder zurück war aus Ägypten. Und Al hatte es sicher niemandem gesagt, da er, wie es Rose schien, erst ein paar Tage Ruhe haben wollte, bevor die ganze Familie auf der Matte stand und ihn Zuhause wieder willkommen hieß.</p>
+<p>"Ich wusste es nicht, Al.", erwiderte Molly. "Ich hab einfach die ganze Familie abgeklappert in der Hoffnung, jemanden zu finden, der Zuhause ist. Du bist der erste, bei dem ich Glück habe." Sie atmete tief durch.</p>
+<p>"Okay, und warum hast du damit deinen Vormittag verschwendet?" Alle Cousinen und Cousins von Rose und Al hatten bereits eigene Wohnungen oder waren noch in Hogwarts. Das machte schon allein neun verschiedene Wohnungen für diese Generation, ganz zu schweigen von den ganzen Elternhäusern.</p>
+<p>"Tante Hermine hat mir eine dringende Eule geschickt. Ich muss unbedingt ins Ministerium und mich um eine Mandantin von mir zu kümmern. Sie ist vor zwei Jahren von ihrem Mann übel zusammengeschlagen und vergewaltigt worden und ich hab dabei geholfen, ihn nach Askaban zu bringen und danach eine Anti-Aggressions-Therapie angeregt. Jetzt ist er draußen und wieder ohne ärztliche Aufsicht, da der Therapeut der Meinung war, er mache Fortschritte. Heute Nacht hat der Mann seine Frau aufgetrieben und beinahe totgeprügelt, bevor er angefangen hat, sie mit irgendwelchen Zaubern zu belegen. Ich muss dringend dabei helfen, den Mann wieder in Untersuchungshaft zu kriegen, bevor er nochmal versucht, seine Frau zu verletzen. Besonders, weil die Frau nur mich will und niemand anderen. Ich hab damals ewig gebraucht, ihr Vertrauen zu gewinnen.", erklärte Molly rasch.</p>
+<p>Al und Rose nickten und schauten sich betroffen an. Das war eine wirklich scheußliche Geschichte.</p>
+<p>"Und weshalb bist du hier und nicht im Ministerium?", fragte Al verwirrt.</p>
+<p>"Das war alles sehr kurzfristig. Ich bin eigentlich noch im Mutterschutz. Er war geplant, dass ich erst wieder nächsten Monat angfange und erstmal nur kleinere Fälle übernehme, damit ich Jeremy vielleicht sogar mitnehmen kann zur Arbeit.", erwiderte Molly. Rose schluckte. Sie konnte sich sehr gut vorstellen, worauf das hinauslaufen würde und sie fragte sich, was das Schicksal eigentlich gegen sie hatte. "Aber ich werde den Teufel tun und meinen einjährigen Sohn mitnehmen, wenn ich es mit so einem Kaliber von Mann aufnehmen muss.", sagte sie entschlossen. "Ich hab es bei Mum und Dad versucht, aber die sind nicht da. Genauso wenig wie alle anderen, bei denen ich es versucht habe."</p>
+<p>"Ist Victoire denn nicht da?", fragte Rose schnell. Sie war die einzige andere Mutter in dieser Generation, sie war doch die Geeigneteste von allen, wenn es darum ging, auf Jeremy aufzupassen.</p>
+<p>"Nein", erwiderte Molly kopfschüttelnd. Ein verzweifelter Ausdruck trat in ihre Augen. "Sie war die erste, bei der ich es nach Mum und Dad versucht habe. Bitte, Rose, könnt ihr Jeremy nicht heute nehmen? Für morgen und die nächsten Tage kümmere ich mich um was anderes, aber das war so kurzfristig, dass ich einfach keine Möglichkeit habe, ihn irgendwo unterzubringen."</p>
+<p>Al zuckte mit den Schultern und schaute fragend zu Rose. Sie biss sich auf die Lippe. Das letzte, was sie wollte, war jetzt mit einem Baby konfrontiert zu werden, wo sie sich eigentlich davon überzeugen wollte, dass es besser war für sie und ihre Karriere, ihr Kind nicht zu behalten. Und jetzt sollte sie auf Mollys Sohn aufpassen? Auf Mollys süßen, niedlichen, lieben, aber auch anstrengenden Sohn? Wirklich?</p>
+<p>"Bitte", sagte Molly flehentlich. Rose hatte ein Gefühl, dass sie es sogar fertig bringen würde zu weinen. "Er ist wirklich nicht anstrengend."</p>
+<p>Rose schloss die Augen und atmete tief durch. "Na schön", seufzte sie schließlich besiegt. Sie konnte die verzweifelte Molly schließlich schlecht im Stich lassen.</p>
+<p>Ein erleichtertes Lächeln breitete sich auf Mollys Gesicht aus. "Oh danke. Danke, danke, danke, danke, danke.", rief sie. Ihr Kopf war einen Moment später verschwunden.</p>
+<p>Rose stöhnte gequält auf. "Wer auch immer dafür zuständig war, ich schwöre dir, der hat das absichtlich gemacht." Sie lehnte sich an Als Sofalehne und schloss die Augen. Wenn sie sich nur stark genug konzentrierte, dann würde Molly vielleicht wie durch Zauberhand in den nächsten zehn Sekunden einen anderen Babysitter finden.</p>
+<p>"Wer auch immer dafür zuständig war, wollte nur, dass du das Baby behältst", erwiderte Al und sie konnte hören, dass er grinste. Unauffällig tastete sie nach ihrem Zauberstab und versuchte zu entscheiden, mit welchem Fluch sie ihn belegen sollte. Einer, der richtig weh tat und ihn leiden ließ ...</p>
+<p>"Halt die Klappe", murmelte sie. Sie öffnete die Augen wieder. Al kniete mittlerweile nicht mehr vor dem Kamin, sondern war aufgestanden und zur Seite getreten, damit Molly ins Wohnzimmer gelangen konnte. Die war mittlerweile angekommen und stieg umständlich über den Kaminrost. Sie hatte eine große Tasche über der Schulter und ihren Sohn auf dem Arm, der friedlich an seinem Daumen nuckelte und versuchte, Molly an den Haaren zu ziehen.</p>
+<p>"Ich danke euch beiden tausend Mal", sagte sie und übergab Al die große Tasche, die er in die Hand nahm und gleich darauf stöhnend auf den Boden fallen ließ. Rose war mittlerweile aufgestanden und nahm Jeremy auf den Arm, der sie glücklich angrinste. Sie konnte seine beiden weißen Zähnchen sehen und musste unwillkürlich lächeln. Er war wirklich süß. "Ich weiß gar nicht, wie ich euch danken soll.", sprach Molly weiter. Sie beugte sich vor, wischte dem Jungen die Asche aus seinen dunklen Haaren und gab ihm einen Kuss auf die Stirn. "Wenn einer von euch irgendwann ein Kind hat, dann werde ich so oft darauf aufpassen, wie es geht", versicherte sie ihnen.</p>
+<p>Al schaute sie grinsend an, als ob er "Na siehst du!" sagen wollte und Rose warf ihm einen finsteren Blick zu.</p>
+<p>"Alles, was er braucht, ist in der Tasche. Seine Windeln und sein Fläschchen und seine Kuscheltiere. Er hat vor einer Weile angefangen zu krabbeln, also könnt ihr ihn einfach auf den Boden setzen. Aber passt auf, denn er kann ziemlich schnell sein, wenn er will. Außerdem bekommt er gerade seine ersten Zähne, deshalb ist er vielleicht etwas quengelig, aber ich hab einen Beißring in der Tasche, wenn ihr ihm den gebt, dann dürfte das eigentlich kein Problem sein. Und wenn er einschlafen sollte, dann legt ihn einfach auf den Sessel. Passt nur auf, dass er nicht runterfällt, er ist ein ziemlich unruhiger Schläfer. Und wenn -"</p>
+<p>Al hatte ihr nickend zugehört. Jetzt hatte er seiner Cousine die Hände auf die Schultern gelegt und schob sie sanft in Richtung Kamin. "Mach dir keine Sorgen, Molly, wir kriegen das schon hin. Du solltest dich lieber beeilen und dich um deinen Fall kümmern. Wir sind da, wenn du ihn wieder abholst. Viel Erfolg und bis später."</p>
+<p>Molly nickte, schien etwas sagen zu wollen, überlegte es sich dann aber anders und war, nachdem sie ihrem Sohn noch einen letzten liebevollen Blick zugeworfen hatte, disappariert.</p>
+<p>Rose setzte sich wieder auf das Sofa und nahm den kleinen Kerl auf den Schoß. Sie fuhr ihm durch die Haare und beugte sich rasch etwas zurück, als er sich vorbeugte und seine kleinen Hände nach ihren Haaren ausstreckte.</p>
+<p>"Worauf habe ich mich da nur eingelassen?", murmelte sie kopfschüttelnd, während sie beobachtete, wie Al sich damit abmühte, die große Tasche auf seinen Esstisch zu hieven.</p>
+<p>
+  <strong>TBC...</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8142823/chapters/18663659">Chapter 7</a>: Entschlossenheit
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p><em>All my agony fades away</em><br/> <em>When you hold me in your embrace</em></p>
+<p>"Alles okay?" Rose betrat Als Wohnzimmer wieder. Al stand neben seinem Sessel und schaute auf den schlafenden Jeremy, den er vorsichtig in die Babydecke gewickelt hatte, die in der Tasche gewesen war. Er hatte den Sessel mit allen Kissen ausgestopft, die er finden konnte, um sicher zu gehen, dass er auch nicht herunter fiel.</p>
+<p>"Super", bestätigte Al und schaute sie zufrieden grinsend an.</p>
+<p>So pflegeleicht, wie Molly ihn beschrieben hatte, war ihr Sohn nämlich überhaupt nicht. Das Wohnzimmer sah aus wie ein Schlachtfeld, überall lag Spielzeug herum, die Vase mit den völlig vertrockneten Blumen lag zerbrochen auf dem Boden und auf der Tischdecke des Sofatisches war ein riesengroßer Fleck Babybrei, da Jeremy das Essen, das Molly eingepackt hatte, anscheinend überhaupt nicht geschmeckt hatte.</p>
+<p>Rose fühlte sich völlig gerädert. Sie hatte immer gedacht, dass ihre Arbeit im Krankenhaus unglaublich anstrengend war, aber das war nichts im Vergleich dazu, sich um ein einjähriges Kind zu kümmern. Um dem Ganzen auch noch die Krone aufzusetzen, war ihr so schlecht geworden, als sie die Windel gewechselt hatten, dass sie fast auf Als Teppich gekotzt hätte.</p>
+<p>"Er ist schon süß, oder?", fragte Al verträumt und betrachtete Jeremy wie hypnotisiert.</p>
+<p>"Er ist schrecklich anstrengend.", murmelte Rose erschöpft und ließ sich auf das Sofa fallen. Sie schloss die Augen und genoss die Stille, die sie schon seit einigen Stunden nicht mehr gehört hatte.</p>
+<p>"Rose ...", erwiderte Al. Sie spürte, wie er sich neben sie setzte und konnte sich regelrecht vorstellen, wie er die Augen verdrehte. "Du kannst das bestreiten, wie du willst, ich weiß trotzdem, dass es dir Spaß gemacht hat, dich um den Kleinen zu kümmern."</p>
+<p>"Heute vielleicht", sagte sie nachgiebig. "Aber auf Dauer ... du hast doch gesehen, wie anstrengend das ist. Glaubst du wirklich, wir könnten das durchziehen? Das ist doch glatter Selbstmord." Es war schon so anstrengend genug, mit einem Baby hätten sie wirklich keine ruhige Minute mehr. Keine einzige.</p>
+<p>"Rose ...", fing Al an, aber sie setzte sich schnell auf, öffnete die Augen wieder und unterbrach ihn.</p>
+<p>"Bitte, Al, ich will jetzt nicht darüber nachdenken. Können wir das Thema wechseln?" Sie überlegte, worüber sie sprechen konnten. Bei ihrer Familie gab es momentan wenig aufregendes, worüber man sich wirklich unterhalten konnte. Aber dann fiel ihr etwas ein, über das Al bestimmt liebend gerne sprechen wollte. "Wie geht es Tia?"</p>
+<p>Seine Augen leuchteten auf und es breitete sich ein großes Grinsen auf seinem Gesicht aus. "Es geht ihr sehr gut.", sagte er sofort. Al hatte Tia vor ein paar Monaten in einer Bar in Kairo kennen gelernt und seitdem jede freie Minute mit ihr verbracht. Seit er sie kannte, waren die Briefe, die er Rose und Scorpius schickte, mindestens dreimal so lang wie vorher und mittlerweile kannten sie Tias ganze Lebensgeschichte. Schon bevor Rose gesehen hatte, wie sich Al verhielt, nachdem er ihren Namen gehört hatte, war sie sich sicher gewesen, dass ihr Cousin sich diesmal wirklich ernsthaft verliebt hatte.</p>
+<p>"Sie kommt in zwei Monaten hierhier."</p>
+<p>"Und wohnt sie bei dir?", wollte Rose wissen. Als Wohnung war nicht sonderlich groß, aber zwei Leute würden bestimmt hier rein passen.</p>
+<p>Al schüttelte den Kopf. "Wir haben zwar darüber gesprochen, aber sie möchte etwas eigenes. Wir wissen nicht, wo das mit uns hinführt und wir kennen uns noch nicht sehr lange. Außerdem haben wir nur in einer sehr abnormalen Situation miteinander Zeit verbracht, nie im Alltag. Wir wissen gar nicht, ob es funktionieren würde oder ob wir uns an die Gurgel gehen." Er zuckte mit den Schultern und Rose hatte den Eindruck, dass ihm das wahrscheinlich herzlich egal war. "Wir werden sehen, wie es läuft, wenn sie hier ist. Vielleicht klappt es ja wirklich nicht."</p>
+<p>Sie legte den Kopf schief. "Aber das glaubst du nicht", sagte sie lächelnd.</p>
+<p>"Ich hoffe es zumindest.", gab Al zu. "Sie ist wirklich toll. Sie ist süß, sie ist schlau, sie ist witzig und ich fühle mich einfach wohl, wenn ich mit ihr zusammen bin. Egal, wie stressig es auf der Ausgrabungsstätte war, egal, wie nervig Ben oder Hazel waren, egal, wie heiß es war und wie müde ich war, wenn ich sie gesehen hab, wenn sie mich angelächelt hat, dann war alles in Ordnung."</p>
+<p>Rose nickte. Sie kannte dieses Gefühl. Es war das schönste auf der Welt. "Es ist also was Ernstes?"</p>
+<p>Al schien krampfhaft zu versuchen, sein Lächeln zu unterdrücken. Rose lachte. Sie konnte sich gar nicht mehr daran erinnern, wann sie Al zum letzten Mal so gesehen hatte. So glücklich und zufrieden. Vielleicht sogar noch nie.</p>
+<p>"Wir haben noch nicht wirklich darüber gesprochen", sagte er schließlich. "Aber ich glaube schon." Rose quietschte und umarmte ihn. Al schaute sie überrascht an. So mädchenhafte Reaktionen waren eigentlich nicht ihr Ding. "Wir werden sehen, wie es sein wird, wenn sie erst in England ist. Wenn wir uns nicht nur ein paar Tage im Monat sehen können, sondern regelmäßig."</p>
+<p>"Das wird schon, Al, das wird schon. Du hast doch gesagt, dass sie keine Ahnung hatte, wer Onkel Harry war und es ihr völlig egal ist, dass die ganze Familie hier berühmt ist." Al hatte immer große Probleme damit gehabt, dass viele sich nur für ihn interessiert hatten, weil sein Nachname Potter und der Vorname seines Vaters Harry war.</p>
+<p>Al nickte. "Das stimmt. Aber ich glaube, bei ihr hätte es mich auch nicht gestört, wenn mein Dad der Grund gewesen wäre, warum sie mich angesprochen hat."</p>
+<p>"Das kannst du aber nur sagen, weil du weißt, dass es nie der Fall sein wird.", erwiderte Rose spitzfindig und er nickte.</p>
+<p>"Wahrscheinlich hast du Recht. Aber es ist egal. Es ist ihr egal und ich hoffe, dass es ihr auch egal sein wird, wenn die Presse irgendwann auf sie aufmerksam wird.", sagte Al hoffnungsvoll. Falls das wirklich etwas Ernstes zwischen Al und Tia sein sollte, dann war klar, dass die Presse früher oder später Wind von der Beziehung kriegen würde. Vorerst jedoch müssten die beiden sicher sein. Besonders, wenn Rose sich dafür entscheiden sollte, das Baby zu bekommen. Sie wollte sich gar nicht ausmalen, wie sich die Medien auf eine Schwangerschaft stürzen würden. Sie konnte sich noch daran erinnern, wie monatelang spekuliert worden war, ob nicht eine Schwangerschaft der Grund für die frühe Hochzeit von Scorpius und ihr war. Und das ärgerliche war, dass sich wahrscheinlich kaum jemand dafür interessiert hätte, wenn sie irgendjemand anderen als einen Malfoy geheiratet hätte.</p>
+<p>"Es wird schon, Al."</p>
+<p>Er nickte zuversichtlich. "Ich hatte noch nie ein so gutes Gefühl bei einer Frau. Sie könnte wirklich die Richtige sein."</p>
+<p>Rose lehnte sich an ihn und schloss die Augen. Sie wünschte ihrem Cousin wirklich, dass sie die Richtige war. Er hatte schon die eine oder andere Beziehung gehabt, und obwohl seine Freundinnen eigentlich alle ganz nett waren, war noch keine dabei gewesen, von der Rose überzeugt gewesen war, dass sie Al auf Dauer wirklich glücklich machen konnte. Sie konnte es gar nicht erwarten, diese Tia endlich kennen zu lernen, die sein Herz im Sturm erobert zu haben schien. Er hatte es verdient, glücklich zu sein.</p>
+<p>"Hey, ihr beiden!"</p>
+<p>Al und Rose schreckten auf. Sie hatten gar nicht bemerkt, wie Molly im Wohnzimmer erschienen war. Sie trug einen offiziell aussehenden Umhang. Darunter trug sie einen dunkelblauen Rock und eine weiße Bluse, ihre bevorzugte Kleidung für die Arbeit im Ministerium. Sie musste sich noch umgezogen haben, bevor sie ins Ministerium gegangen war, denn sie hatte eine alte Jeans und ein verwaschenes knallbuntes Top getragen, als sie Jeremy hier abgesetzt hatte. Ihre Haare hatte sie in einem losen Pferdeschwanz getragen, während sie jetzt zu einem ordentlichen Knoten aufgesteckt waren, durch den sie älter, aber auch sehr viel strenger wirkte.</p>
+<p>Sie ließ ihren Blick kurz über das verwüstete Wohnzimmer schweifen und schaute Al entschuldigend an, bevor sie an ihrem schlafenden Kind hängen blieb. Sofort erschien ein Lächeln auf ihrem Gesicht und die strenge Wirkung ihrer Frisur war verschwunden. Sie beugte sich runter und überschüttete das Gesicht ihres Sohnes mit Küssen. Der Kleine regte sich und schlug kurz darauf die Augen auf. Er grinste seine Mutter an und brabbelte etwas unverständliches, bevor er die Arme ausstreckte. Molly hob ihn ohne Rücksicht auf ihre Kleidung hoch und drückte ihn an sich.</p>
+<p>"Ich hab dich so vermisst, Jer", flüsterte sie ihm zu, bevor sie ihm noch einen großen Kuss auf die Stirn drückte. "Du hast keine Ahnung, wie sehr ich dich vermisst habe."</p>
+<p>Rose schluckte. Die Liebe, die Molly für Jeremy empfand, war praktisch greifbar. Vorsichtig legte sie eine Hand auf ihren Bauch und schaute nach unten. Würde sie ihr Baby auch so lieben können wie Molly Jeremy?</p>
+<p>"Ich bin euch wirklich dankbar", sagte Molly und zog ihren Zauberstab aus der Tasche ihres Umhangs. Sie machte ein paar Handbewegung und murmelte ein paar Beschwörungen. In Windeseile flogen alle Sachen, die Jeremy gehörten, in die große Tasche auf dem Esstisch und alle anderen Sachen, die im Laufe des Tages ihren angestammten Platz verloren hatten, fanden ihn wieder. Innerhalb von einer Minute sah das Wohnzimmer aus wie zu dem Zeitpunkt, an dem Rose bei Al erschienen war.</p>
+<p>Rose hatte fasziniert zugeschaut. Sie hatte zwar auch ein paar Haushaltszauber drauf, war aber längst nicht so gut wie Molly. Sie konnte sich daran erinnern, dass Onkel Harry ihr einmal erzählt hatte, dass Teds Mum sie nur sehr schlecht geschafft hatte und dass diese Art von Zaubersprüchen nicht jeder Hexe und jedem Zauberer in die Wiege gelegt worden waren.</p>
+<p>Al und sie standen auf und umarmten Molly so gut es ging, da sie Jeremy auf dem Arm hatte. Sie ging zum Tisch und hängte sich die Tasche über die Schulter. "Ich kann euch wirklich nicht genug danken", sagte sie noch einmal und lächelte sie an.</p>
+<p>Al winkte ab. "Jetzt hör schon auf. Wir haben das gerne gemacht. Ich bin nur froh, dass du das Chaos hier hast aufräumen können, sonst hätte ich ewig gebraucht, bis das hier wieder halbwegs zivilisiert aussieht."</p>
+<p>Rose unterdrückte ein Lachen. Al hätte das Chaos nie im Leben aufgeräumt, außer Tante Ginny würde ihn mit erhobenem Zauberstab dazu zwingen.</p>
+<p>"Vor Jeremys Geburt hätte ich damit sehr viel größere Probleme gehabt", erwiderte sie lachend. "Aber wenn ich die Sprüche nicht hingekriegt hätte, dann würden wir mittlerweile vor lauter Chaos unser Bett nicht mehr finden." Sie zwinkerte den beiden zu, bevor sie etwas Flohpulver in die Flammen warf und einen Moment später verschwunden war.</p>
+<p>Rose und Al ließen sich stöhnend auf die Couch fallen und waren sich nicht sicher, ob sie jemals wieder die Kraft haben würden, aufzustehen. Zumindest nicht in den nächsten zehn Minuten.</p>
+<p>/-/</p>
+<p>Rose stieg vorsichtig aus ihrem Kamin. Ihr war schwindelig. Aber immerhin war ihr nicht so schwindelig, als wenn sie appariert wäre. Sie fragte sich, ob das allen schwangeren Hexen so ging. Man konnte in dem Zustand ja kaum noch irgendwo hin kommen.</p>
+<p>"Hey, Rose", hörte sie Scorpius' Stimme. Er war gerade aus dem Badezimmer gekommen und trug nichts anderes als ein Handtuch um seine Hüften. Ihr Blick wanderte von dem Handtuch nach oben. Sie musste schlucken, als sie seinen muskulösen Oberkörper sah und sie musste sich tatsächlich an der Wand abstützen, weil sie das Gefühl hatte, dass ihre Beine sie nicht tragen konnten. Es war wirklich kein Wunder, dass sie schwanger war, wenn ihr Ehemann so einen heißen Körper hatte.</p>
+<p>Er hatte sie besorgt beobachtet und durchquerte schnell das Wohnzimmer, um zu ihr zu gelangen. "Ist alles in Ordnung?", wollte er wissen und schaute ihr prüfend ins Gesicht.</p>
+<p>Rose atmete tief durch, bevor sie die Wand losließ, ihre Arme um seinen Nacken schlang und ihn küsste, als ob es kein Morgen gäbe. Sie vergrub ihre Hände in seinen nassen Haaren und sog begierig den männlichen Geruch seines Duschgels ein. Sie war froh, dass ihr davon nicht schlecht wurde.</p>
+<p>Sie wusste selbst nicht, warum sie plötzlich so angetörnt war - vor fünf Minuten war das letzte, was sie gewollt hatte, Sex gewesen - aber jetzt gab es plötzlich nichts mehr, was sie lieber wollte als das.</p>
+<p>Ohne den Kuss zu unterbrechen schob sie ihn in Richtung Schlafzimmer. Ihre Hand fuhr über seinen Oberkörper und sie begann, sein Handtuch zu lösen, als er den Kuss unterbrach und ihre Hände aufhielt, bevor sie es geschafft hatten.</p>
+<p>"Rose, was ...", fragte er und schaute sie verwirrt an. Sie konnte sehen, dass er immer noch besorgt um sie war, aber sie konnte auch sein Verlangen in seinen dunklen Augen erkennen.</p>
+<p>Sie schüttelte nur den Kopf und küsste ihn erneut.</p>
+<p>/-/</p>
+<p>"Was war das denn?", fragte Scorpius etwas später schwer atmend. Sie lag auf seiner Brust und lauschte seinem beschleunigten Herzschlag. Sie spürte immer eine große Befriedigung dabei, weil sie wusste, dass sie der Grund dafür war, dass es so schnell schlug. Er strich ihr über die Haare und sie lächelte zufrieden.</p>
+<p>"Ich hab keine Ahnung", murmelte sie. "Ich weiß auch nicht, was in mich gefahren ist." Sie lächelte kleinlaut. "Aber du standest plötzlich da nur mit diesem Handtuch und du hast so scharf ausgesehen und ich weiß auch nicht ..."</p>
+<p>Er lachte und strich ihr über ihre außer Kontrolle geratenen Haare. "Ich werde mich ganz sicher nicht beschweren, Rose." Er drückte ihr einen Kuss auf die Stirn und sie kuschelte sich mit geschlossenen Augen an ihn. Sie liebte diese Momente, diese Vertrautheit, nachdem sie sich so nahe gewesen waren wie nur menschenmöglich.</p>
+<p>"Also, wo warst du heute?", fragte er, während sie dabei zuhörte, wie sein Herzschlag wieder langsamer wurde und zu einem normalen Tempo zurückfand. "Ich dachte, du ruhst dich aus oder lernst oder sowas."</p>
+<p>"Ich war bei Al.", erwiderte sie.</p>
+<p>Er machte ein unverständliches Geräusch.</p>
+<p>"Und ich hab mich entschieden."</p>
+<p>"Ach ja?" Seine Überraschung war unverkennbar.</p>
+<p>"Ja", erwiderte sie. Es war nicht leicht gewesen, aber nach dem Tag mit Jeremy wusste sie genau, was sie wollte. "Weißt du, als ich bei Al war, hat Molly uns angefleht, auf Jeremy aufzupassen, weil sie dringend ins Ministerium musste."</p>
+<p>"Okay", sagte er vorsichtig. Er schien keine Ahnung zu haben, was für eine Entscheidung sie getroffen hatte.</p>
+<p>"Al und ich haben dann versucht, auf ihn aufzupassen. Es war eine Katastrophe. Er hat erstmal eine halbe Stunde lang nach Molly gerufen und geweint und er hat um sich getreten und wir hatten keine Ahnung, wie wir ihn ruhig stellen konnten." Da Al kurz nach Jeremys Geburt nach Ägypten gegangen war, hatte er nie auf Jeremy aufgepasst und war für das Kind deshalb praktisch ein Fremder. Was sie betraf, war es auch nicht besser, da sie wegen ihrer Ausbildung kaum jemals die Zeit gehabt hatte, bei Molly vorbeizuschauen und Jeremy näher kennen zu lernen. Hätten ihre Eltern sie als kleines Kind bei so fremden Leuten abgeladen, hätte sie bestimmt auch gebrüllt und um sich geschlagen.</p>
+<p>"Dann hat er plötzlich aufgehört und angefangen, auf dem Boden herumzukrabbeln. Du willst gar nicht wissen, was er alles heruntergeworfen hat." Rose schloss die Augen und erschauderte bei der Erinnerung. "Und als wir ihn füttern mussten ... sagen wir mal so, es war mehr Essen in unseren Haaren und auf unseren Klamotten als in seinem Mund. Vom Wickeln und dem Kurzschluss in der Steckdose möchte ich gar nicht erst anfangen." Sie hatte immer gedacht, nach dem ganzen Schrecken, den sie im Mungos zu Gesicht bekam, konnte sie nichts mehr schocken. Sie hatte sich getäuscht.</p>
+<p>"Also möchtest du unser Kind nicht behalten", sagte Scorpius schließlich, nachdem er vergebens darauf gewartet hatte, dass sie noch etwas sagte. Er klang traurig.</p>
+<p>Sie öffnete ihre Augen und richtete sich soweit auf, dass sie ihn ansehen konnte. Sie schüttelte langsam den Kopf. "Nein. Nein, ich will es behalten."</p>
+<p>Seine Augen weiteten sich vor Überraschung und er starrte sie mit halb offenem Mund an. "Du willst ...", fragte er völlig überrascht. "Aber das klang alles so schrecklich ... und du wolltest doch nicht ... du ... warum?"</p>
+<p>Sie lächelte ihn an, beugte sich vor und drückte ihm einen Kuss auf die Lippen. "Es war schrecklich anstrengend und Al und ich waren am Ende völlig hinüber ... aber er sah aus wie ein kleiner Engel, als er geschlafen hat. Und Molly hat sich auf ihn gestürzt und beinahe erdrückt, als sie wieder gekommen ist. Du konntest richtig spüren, wie sie ihn geliebt und vermisst hat. Und da hab ich mich gefragt, ob ich unser Baby auch so lieben könnte wie Molly ihren Jeremy. Und dann wurde mir klar, dass ich das schon tue. Und dass ich unmöglich zulassen kann, dass es jemand tötet." Sie strich sich ein paar Haare aus dem Gesicht. "Ich weiß, dass es eine Wahnsinnsarbeit sein wird, besonders, weil ich meine Ausbildung auf jeden Fall zu Ende bringen will, aber es ist nicht unmöglich."</p>
+<p>Scorpius schüttelte den Kopf. Rose beobachtete glücklich, wie sich ein strahlendes Lächeln auf seinem Gesicht ausbreitete. Es war die richtige Entscheidung. Das spürte sie.</p>
+<p>Er hob seine Hand und strich ihr zärtlich über die Wange. "Du hast mir damals dabei geholfen, meinen Traum wahr werden zu lassen, als du mich dazu gezwungen hast, nach Amerika zu gehen, obwohl ich mir Sorgen um unsere Beziehung gemacht habe." Unbegründet, wie sich gezeigt hatte. "Jetzt bin ich dran, dir dabei zu helfen, deinen Traum zu erfüllen. Und er wird in Erfüllung gehen, Rose, das verspreche ich dir. Wir werden eine Familie sein und du <em>wirst</em> eine Heilerin werden. Die beste, die es gibt."</p>
+<p>Sie grinste. Und obwohl sie sich nicht sicher war, ob sie wirklich die beste sein würde, war es ein gutes Gefühl zu hören, dass er an sie glaubte. Und er hatte Recht. Sie würden es schaffen, davon war sie überzeugt.</p>
+<p>"Daran habe ich keinen Zweifel.", flüsterte sie, bevor sie in einem weiteren Kuss versanken. Sie würden sich ihre Träume erfüllen. Und sie würden eine Familie sein.</p>
+<p>
+  <strong>Ende</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/21628885">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 9 of the <a href="/series/555904">10 kleine Dinge - Universum</a> series</span><span class="divider"> </span><a class="next" href="/works/35443366">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="jkrPrPFMcSqwMJvK8nIU8he1_1yIRWLYA7Lzd0VpFXZdHAqOJH2s13LDdeSSwKKHfdyrnKix72XWhymK6ODSQg"/>
+          <input value="8142823" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/AnelimS2">AnelimS2</a>, <a href="/users/UAW3430">UAW3430</a>, and <a href="/users/Lalelilolu">Lalelilolu</a>
+             as well as 
+          2 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_8142823">
+  <form class="new_comment" id="comment_for_8142823" action="/works/8142823/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="taTrBXL5w0JuSdzx8hTAi6ISCyo6QfqhXydH0bXn1B5m8i4np8gev6y6Mt-Spnb-yHtf6hq1dxyKEp0sGG4TKg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_8142823">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_8142823" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_8142823=new LiveValidation('comment_name_for_8142823',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_8142823.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_8142823">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_8142823" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_8142823=new LiveValidation('comment_email_for_8142823',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_8142823.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_8142823" class="landmark">Comment</label>
+        <textarea id="comment_content_for_8142823" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_8142823" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_8142823_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_8142823">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_8142823=new LiveValidation('comment_content_for_8142823',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_8142823.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_8142823.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_8142823" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/8142823/hit_count.json")})</script>
+
+
+  </body>
+</html>

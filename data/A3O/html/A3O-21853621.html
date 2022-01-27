@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":103,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Die Ritter der Tafelrunde - Jessica_Graves - Fantastic Beasts and Where to Find Them (Movies) [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="esrsrg3zhJysZznOUlecl3_KlN4deR_wNMazMdCfFladMCoB7RVrmpuYGUWMSmXyl7J0cq4c-QvG3A5gF7VvuQ"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="C5ihkhsbzRsZYRZYPvU1VvEM8_zR8P9cqeartdmqt8_sYmc9-_0iHS6eNtPg6MwzGXQTUGKVGadb_BbkHoDOIA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: arthur merlin words&gt;1000 sort:hits</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/21853621/chapters/52156360">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=21853621">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/21853621/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/21853621/Die%20Ritter%20der.azw3?updated_at=1602779135">AZW3</a></li>
+          <li><a href="/downloads/21853621/Die%20Ritter%20der.epub?updated_at=1602779135">EPUB</a></li>
+          <li><a href="/downloads/21853621/Die%20Ritter%20der.mobi?updated_at=1602779135">MOBI</a></li>
+          <li><a href="/downloads/21853621/Die%20Ritter%20der.pdf?updated_at=1602779135">PDF</a></li>
+          <li><a href="/downloads/21853621/Die%20Ritter%20der.html?updated_at=1602779135">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Fantastic%20Beasts%20and%20Where%20to%20Find%20Them%20(Movies)/works">Fantastic Beasts and Where to Find Them (Movies)</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Credence%20Barebone*s*Original%20Percival%20Graves/works">Credence Barebone/Original Percival Graves</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Credence%20Barebone/works">Credence Barebone</a></li><li><a class="tag" href="/tags/Original%20Percival%20Graves/works">Original Percival Graves</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/actor!Credence/works">actor!Credence</a></li><li><a class="tag" href="/tags/artus%20und%20die%20ritter%20der%20tafelrunde/works">artus und die ritter der tafelrunde</a></li><li><a class="tag" href="/tags/Crossdressing/works">Crossdressing</a></li><li><a class="tag" href="/tags/actor!Percival/works">actor!Percival</a></li><li><a class="tag" href="/tags/Broadway/works">Broadway</a></li><li><a class="tag" href="/tags/Alternate%20Universe%20-%20Modern%20Setting/works">Alternate Universe - Modern Setting</a></li><li><a class="tag" href="/tags/Alternate%20Universe/works">Alternate Universe</a></li><li><a class="tag" href="/tags/Lancelot%20-%20Freeform/works">Lancelot - Freeform</a></li><li><a class="tag" href="/tags/Guinevere%20-%20Freeform/works">Guinevere - Freeform</a></li><li><a class="tag" href="/tags/artus/works">artus</a></li><li><a class="tag" href="/tags/Rivalry/works">Rivalry</a></li><li><a class="tag" href="/tags/Grumpy%20Percival/works">Grumpy Percival</a></li><li><a class="tag" href="/tags/envy%20-%20Freeform/works">envy - Freeform</a></li><li><a class="tag" href="/tags/Costumes/works">Costumes</a></li><li><a class="tag" href="/tags/Knight/works">Knight</a></li><li><a class="tag" href="/tags/GRADENCE%20-%20Freeform/works">GRADENCE - Freeform</a></li><li><a class="tag" href="/tags/Emotional%20Hurt*s*Comfort/works">Emotional Hurt/Comfort</a></li><li><a class="tag" href="/tags/Hurt/works">Hurt</a></li><li><a class="tag" href="/tags/Hurt%20No%20Comfort/works">Hurt No Comfort</a></li><li><a class="tag" href="/tags/No%20obscurus/works">No obscurus</a></li><li><a class="tag" href="/tags/Alternate%20Universe%20-%20No%20Powers/works">Alternate Universe - No Powers</a></li><li><a class="tag" href="/tags/No%20Smut/works">No Smut</a></li><li><a class="tag" href="/tags/mean!Percival/works">mean!Percival</a></li><li><a class="tag" href="/tags/Arguing/works">Arguing</a></li><li><a class="tag" href="/tags/Age%20Difference/works">Age Difference</a></li><li><a class="tag" href="/tags/Christmas%20Party/works">Christmas Party</a></li><li><a class="tag" href="/tags/Christmas%20Fluff/works">Christmas Fluff</a></li><li><a class="tag" href="/tags/Drunken%20Confessions/works">Drunken Confessions</a></li><li><a class="tag" href="/tags/Love%20Confessions/works">Love Confessions</a></li><li><a class="tag" href="/tags/Groupies/works">Groupies</a></li><li><a class="tag" href="/tags/Puppy%20Love/works">Puppy Love</a></li><li><a class="tag" href="/tags/Adorable/works">Adorable</a></li><li><a class="tag" href="/tags/Hero%20Worship/works">Hero Worship</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/21832372">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 14 of the <a href="/series/1558429">Fantastic Beasts Adventskalender 2019</a> series</span><span class="divider"> </span><a class="next" href="/works/21871927">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2019-12-19</dd><dt class="status">Completed:</dt><dd class="status">2020-02-07</dd><dt class="words">Words:</dt><dd class="words">12589</dd><dt class="chapters">Chapters:</dt><dd class="chapters">2/2</dd><dt class="comments">Comments:</dt><dd class="comments">2</dd><dt class="kudos">Kudos:</dt><dd class="kudos">4</dd><dt class="hits">Hits:</dt><dd class="hits">76</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Die Ritter der Tafelrunde
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Jessica_Graves/pseuds/Jessica_Graves">Jessica_Graves</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Percival ist ein erfolgreicher Schauspieler in einem renommierten Theater. Er spielt den Lancelot in der Geschichte um König Artus und erfreut sich dabei größter Beliebtheit. Sein Ruhm und sein Ansehen geraten ins Taumeln, als ein junger Schauspieler die Rolle des jungen Artus übernimmt und droht, Percival die Position des bekanntesten Schauspielers des Stücks streitig zu machen.</p>
+            </blockquote>
+        </div>
+
+        <div class="notes module" role="complementary">
+  <h3 class="heading">Notes:</h3>
+
+
+
+
+
+    <blockquote class="userstuff">
+      <p>Beitrag für den 19. Dezember meines Fantastic Beasts Adventskalenders 2019</p><p>Diese Fanfiktion ist aus einem der Prompts für meinen Adventskalender entstanden.  Und ich muss ehrlich sagen, dass mir die Idee unheimlich gut gefällt und mir diese Geschichte richtig ans Herz gewachsen ist. Ich bin fast versucht, eine längere Story daraus zu machen, aber für Credence und Percival wäre das wohl doch zu ... alternate universe...<br/>Nichtsdestotrotz: Eine meiner Lieblingsgeschichten, die aus den Prompts entstanden sind. Daher wünsche ich euch viel Spaß beim Lesen ;)<br/>Dieses Mal sogar mit Songtexten einiger Mittelalter-Lieder, die ich währenddessen gehört habe, für die Stimmung. Ich kann euch nur empfehlen, mal reinzuhören.</p><p>Prompt: „Weißt du was? Vergiss es!“, Königreich, ein Foto in schwarz-weiß, das so ausgenudelt ist, dass es ausfranzt und Stücke fehlen<br/>Setting: Alternative Universe - Reale Welt, heutige Zeit, ohne Magie<br/>Warnungen: keine</p>
+    </blockquote>
+
+</div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21853621/chapters/52156360">Chapter 1</a>: Sir Lancelot, Ritter der Tafelrunde
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>***************************************</p><p> </p><p>“Ach, was ist mit mir geschehen<br/>
+Seit mein Auge dich gesehen<br/>
+Alle Zeit verfluch ich jede volle Stunde</p><p>Sag, warum bin ich so allein bei Tag und bei Nacht<br/>
+Such den einen, der mich befreit<br/>
+Mich verehrt aus seinem tiefsten Herzensgrunde<br/>
+Und mit Minne mich begehrt zu jeder Stunde”</p><p>Minne Duett – Faun, Subway to Sally</p><p> </p><p>***************************************</p><p>Percival zog sich die Rüstung aus.<br/>
+“Gute Arbeit”, hörte er jemanden hinter sich sagen und wandte sich nur halb herum.<br/>
+“Du auch”, antwortete er, während er von weiter weg noch das ferne Rauschen des Applauses hörte.<br/>
+Er war ein wenig erschöpft. Es war ein langer Tag gewesen, mit drei Aufführungen und die letzte hatte erst jetzt, kurz nach Mitternacht, geendet. Nun, wenigstens konnte er sich nicht über die Bezahlung beschweren.<br/>
+Mit einem letzten Blick durch den Backstage Bereich verschwand er in seiner Garderobe. An der Tür stand groß sein Name. Das war schon seit einigen Jahren sein Raum und er war recht stolz darauf, es so weit gebracht zu haben.<br/>
+Percival stellte sein Kostüm an den ihm angestammten Platz und zog sich dann seine eigene Kleidung an. Er würde erst zu Hause duschen.<br/>
+Als er seine Ankleide wieder verließ, war kaum noch jemand da. Alle brannten darauf, nun endlich nach Hause zu kommen.<br/>
+Andererseits, dachte er bei sich, während er in seinen schicken Sportwagen stieg und vom Hof fuhr, durften sie sich nicht beschweren. Die Show lief gut. Seit Jahre schon. Percival war vorher schon eine kleine Berühmtheit gewesen aber dieses Theaterstück hatte ihm zu noch größerem Ruhm verholfen. Nicht zuletzt, weil sein Name das Indiz für die ideale Besetzung gewesen war, auch, wenn er nicht den berühmten Parzival spielte.<br/>
+Mittlerweile war er eher genervt davon, wenn jemand ihn darauf hinwies. Er hatte schon jeden Spruch darüber gehört und über jeden Witz höflich gelacht.<br/>
+Es war sein Job. Und mit etwas Glück würde er noch sehr lang in dieser Rolle bleiben, die ihn mittlerweile in eine sehr komfortable Lage brachte. Er kannte den Text im Schlaf, wusste jede Geste und jede Regung seines Gesichts gekonnt einzusetzen und ruhte sich allmählich auf dem, was er tagtäglich tat, aus. Es war einfach zu angenehm, nach all den Jahren der befristeten Verträge und verzweifelten Vorsprechen, endlich an einem Ort angekommen zu sein, an dem etwas wie vertraute Gewohnheit eintrat.<br/>
+Zufrieden parkte Percival seinen Wagen in der Garage und fuhr dann mit dem Fahrstuhl in die Penthousewohnung.<br/>
+Er würde diesen Abend noch entspannt ausklingen lassen und sich dann auf den morgigen Tag freuen, der versprach, ebenso in ereignislosem Wohlklang zu verlaufen, wie die letzten.  </p><p>Dass Percival sich in seinen Erwartungen geirrt hatte, wurde ihm erst klar, als er am nächsten Tag zur frühen Mittagszeit im Meeting mit den anderen Schauspielern, den Produzenten, Drehbuchautoren und Regisseuren saß und man große Veränderungen ankündigte. Veränderungen, die beinhalteten, dass der derzeitige Schauspieler des jungen Artus die Runde verließ, um sich anderen Projekten außerhalb des Theaters zu widmen. Man sei glücklich, einen Nachfolger gefunden zu haben, der die Rolle nicht nur annehmen, sondern auch neuen Ruhm bringen würde.<br/>
+Percival biss die Zähne zusammen, als besagter Nachfolger den Raum betrat.<br/>
+Er hatte bisher nur von ihm gehört, aber er hatte nicht geglaubt, dass er ihm tatsächlich auf seinem eigenen Revier über den Weg laufen würde.<br/>
+Es war ein Junge, gerade dreiundzwanzig geworden und überaus talentiert, so sagte man. Er hätte die Schauspielschule mit Bravour abgeschlossen und schon währenddessen die eine oder andere bedeutende Rolle gespielt, etwa den viel umkämpften Hamlet oder Romeo in Romeo und Julia.<br/>
+Ein Überflieger, wie er im Buche stand. Eine Konkurrenz, die Percival und sein Image des Prestigeträgers bedrohte.<br/>
+Sein Name war Credence. Er war von eher zierlicher Statur, mit beinahe femininen Gesichtszügen, die wohl hübsch wirken konnten, wenn man diese Art Aussehen mochte. Percival beruhigte sich mit dem Gedanken, dass seine (weiblichen) Fans ihn wegen seines offensichtlich maskulinen Auftretens schätzten und dass seine Rolle des Lancelot ihm wegen der damit verknüpften Liebesgeschichte seit jeher die Sympathien sicherte. Sie würden nicht überlaufen zu einem, der ihr Sohn sein konnte. Einem, den man auch in ein Frauenkostüm stecken könne, wenn man es wöllte und der darin vermutlich sogar eine gute Figur machte.<br/>
+Percival schloss sich missmutig den Glückwünschen an, mit denen seine Kollegen den Neuen willkommen hießen und war dann, als das Meeting vorbei war, froh, dass er Abstand gewinnen konnte. Er verschanzte sich in seiner Garderobe und versuchte, sich einzureden, dass es keinen Grund zur Beunruhigung gab. Aber frisches Blut bedeutete immer Ärger, vor allem, wenn ihm solch ein Ruf voraus ging. Percival wusste, wovon er sprach: Er selbst war lange Zeit dieses frische Blut gewesen. Und er hatte skrupellos dafür gesorgt, dass die Leute gehen mussten, deren Rollen er hatte haben wollen.<br/>
+Nun wäre er in der Besetzung von ‘Artus und die Ritter der Tafelrunde’ nicht mehr der einzige feste Stargast. Und der Junge hatte auch noch die Hauptrolle ergattert!<br/>
+Zugegeben, sie passte besser auf sein jugendliches Aussehen, da er den jungen Artus spielen würde, der nach der Pause wegen des Zeitsprungs üblicherweise von einem älteren Schauspieler abgelöst wurde. Aber Percival fühlte sich in seinem Ruhm bedroht. Er machte sich keine Sorgen um seine Rolle, vielmehr um das Rampenlicht, das er zu teilen nicht bereit war.  </p><p>In den nächsten Tagen hatten sie, je nach Programm, mal mehr und mal weniger Vorführungen des Stücks. Wenn sie freie Zeitfenster hatten, probten sie. Der vorherige Schauspieler des jungen Artus und sein älterer Kollege, der den gesetzteren Artus spielte, nahmen Credence unter ihre Fittiche und übten mit ihm, aber auch die anderen probten die Dialoge und spielten sie mit ihm durch.<br/>
+Percival konnte dem neuen Stern am Theaterhimmel nicht für ewig aus dem Weg gehen. Und als sie das erste Mal eine Szene gemeinsam übten, musste er zähneknirschend anerkennen, dass Credence in dem, was er tat, tatsächlich überragend war. Er hatte irgendwie gehofft, dass sein Ruf größer war als das, was er vorführen würde. Es war eine leise Hoffnung gewesen, an die er sich geklammert hatte. Nun aber gestand er Credence etwas wie Talent zu – und das verbesserte seine Laune nicht gerade. Percival hatte sich noch nie so alt gefühlt. Oder so ersetzbar. Wie lange würde es dauern, bis man ihn gegen eine jüngere Version austauschte? Gegen jemanden, der noch besser war? Noch kreativer, ausdrucksstärker, leistungsfähiger und mit mehr Charisma?<br/>
+Percival war wütend, weil Neid und Selbstzweifeln ihm die Stimmung verdarben. Seine Tage waren zuvor so entspannt und einfach gewesen und nun musste er um sein Ansehen und seine Zukunft als erfolgreicher Schauspieler fürchten.<br/>
+Es half ihm nicht sonderlich, als Credence ihm nach einer erfolgreichen Probe unter vier Augen erzählte, dass er hin und wieder eine von Percivals Aufführungen gesehen hatte, als er ein Kind war. Dass er nur so gut war, weil er gemerkt hatte, dass er auch dort oben stehen wollte, wo Percival stand. Wo all die anderen standen, die Menschen mit ihren Geschichten begeisterten.<br/>
+Im Gegenteil, es führte nur dazu, dass sich Percival NOCH älter fühlte. Und sich noch mehr sorgte, dass andere ihm ebenfalls nach seiner Rolle oder seinem Platz auf der Bühne trachteten.<br/>
+Eigentlich hätte sich Percival freuen sollen, dass er mit seinen Fähigkeiten so viele junge Menschen erreichte und man ihm nacheiferte. Aber das hier war zu viel des Guten und aus seinem ehemaligen Zuschauer war nun sein härtester Konkurrent um die Aufmerksamkeit des Publikums geworden. Wenn auch nicht sofort, aber doch auf absehbare Zeit. Und Percival fürchtete sich davor.</p><p>Credence trat noch nicht mit dem Ensemble auf. Der andere junge Artus hatte zum Ende des Jahres gekündigt. Bis dahin waren es noch zwei Monate. Zwei Monate, in denen sich Credence mehr und mehr einfand und seine Leistung während der Proben sogar noch steigerte. Jeder sprach in den höchsten Tönen von ihm. Die Presse, die seinen Werdegang bereits beobachtet hatte, erhoffte sich von seinem Start einen weiteren Aufschwung des Theaterstücks. Alle waren guter Dinge. Nun, alle bis auf Percival.</p><p>Die Euphorie wurde eines Tages herb gedämpft durch die Krankmeldung der Schauspielerin, die Guinevere spielte. Sie hatte eine Mandelentzündung, brachte kein einziges Wort heraus, war für das Stück aber überaus entscheidend. Guinevere war die Ehefrau von König Artus. Ihre Zweitbesetzung fiel ebenfalls aus und außer den beiden konnte niemand die Texte.<br/>
+Zumindest dachte man das.<br/>
+Bis Credence sich während des Krisenmeetings zu Wort meldete und verkündete, dass er auch ihre Dialoge auswendig könne.<br/>
+Im ersten Moment herrschte Überraschung und Verwirrung, doch dann, aus Mangel an Alternativen, steckte man ihn in das Kostüm der Guinevere und begann das Probetraining.<br/>
+Obwohl eine Menge daran hing, dass Credence seine Sache gut machte, hoffte Percival inständig, dass er sich zu weit aus dem Fenster gelehnt hatte und sich bis auf die Knochen blamierte. Eine Gelegenheit zu haben, ihn geschwächt zu sehen, kam Percival gerade recht. Er vergaß in seinem Neid und seiner Missgunst schon fast, dass es auch für ihn ein herber Schlag wäre, wenn es ihnen nicht gelang, das Stück heute aufzuführen. Und die nächsten Tage. Die echte Guinevere war ernsthaft krank. Es könnte Wochen dauern, bis sie wieder auf den Beinen war und ein Ersatz wäre nicht so schnell beschafft.<br/>
+Zu Percivals Enttäuschung war das nicht notwendig.<br/>
+Credence beherrschte die Zeilen aus dem Effeff und die Begeisterung der Gruppe gab ihnen neuen Mut. Er übte mit dem jungen König Artus. Später mit dem Älteren. Und dann kam die Reihe an Percival, dem die Aufgabe zuteilwurde, sich als Lancelot in die Königin zu verlieben und mit ihr Ehebruch zu begehen. Danach würde er sie gegen den König verteidigen, zwei Ritter der Tafelrunde töten, Guinevere vor dem Scheiterhaufen bewahren und mit ihr in den Sonnenuntergang reiten. Es war kitschig genug, damit Percival bei jedem Auftritt die Herzen nur so zuflogen und bisher war ihm das mehr als recht gewesen.<br/>
+Was er in den ersten Tagen bereits vermutet hatte, bestätigte sich nun, da er ihm in dieser Aufmachung gegenüberstand: Credence hatte feminine Züge. Das Kleid schmeichelte seiner schlanken Taille, das Makeup und die Frisur ließen ihn weiblich aussehen und beinahe würde Percival bemerken, dass er sehr hübsch war. Aber nur beinahe.<br/>
+Stattdessen nahm er grummelnd zur Kenntnis, dass Credence auch in ihren gemeinsamen Szenen jedes Wort richtig sprach und das sogar mit Gefühl. Mit so viel Gefühl, dass selbst Percival gerührt war von den Liebesbekundungen. Es wurmte ihn, wie überzeugend seine junge Konkurrenz war. Gab es eigentlich irgendetwas, das er nicht konnte?<br/>
+Percival bemühte sich, die Szenen zu Ende zu bringen und genoss es mehr, als er zugegeben hätte. Credences Fähigkeiten und seine einnehmende Art hatten eine Wirkung auf ihn, die er sich niemals eingestanden hätte. Jeder mochte den Jungen, jeder wollte in seiner Nähe sein. Percival weigerte sich entschieden, in die gleiche Begeisterung zu verfallen.</p><p>Es war unnötig zu sagen, dass das Publikum Credence liebte. Sein erster Auftritt in diesem Stück hätte erst in einigen Wochen sein sollen und doch stand er nun in einer Rolle, die nicht für ihn vorgesehen gewesen war, auf der Bühne und verkörperte Königin Guinevere, als wäre er für diese Rolle geboren. Natürlich war der Schauspielerwechsel vorher angekündigt worden, um Verwirrungen im Publikum zu vermeiden. Und sie nahmen ihn so wohlwollend und entgegenkommend auf, dass kein Zweifel daran aufkam, dass Credences natürliche Ausstrahlung sie ab der ersten Sekunde in ihren Bann geschlagen hatte.<br/>
+Auch Percival wurde geblendet von Credences positiver Aura. Es war, als hätte er in den Proben nur auf Sparflamme gespielt. Wenn das überhaupt möglich war, war er nun noch eindrucksvoller. Als er Percival in seiner Rolle ansprach, bekam Percival mehr und mehr das Gefühl, die wahre Guinevere würde zu ihm sprechen. Würde an seinen Lancelot appellieren. Er fühlte ein Ziehen in seiner Brust, fühlte die Chemie, die sich zwischen ihnen aufbaute und die Spannung, die entstand. Er spürte, dass die Bühne und das Publikum, die Atmosphäre, die Stimmung und das Bühnenlicht etwas mit ihnen machten. Plötzlich gab es nur noch sie beide auf dieser Bühne. Plötzlich war da nur noch die Königin, die er mehr begehrte als alles andere auf der Welt. So sehr, dass er keine Strafe fürchtete und bereit war, sie seinem König zu stehlen. Er nahm sie mit sich, weit weg von Artus, durchlebte mit ihr all die schmachtenden Szenen unglücklicher Liebe, die zueinanderstrebte und gewann sie am Ende ganz für sich. Der Triumph schmeckte ihm ungleich süßer. Und als das Publikum nach der letzten Szene in tosenden Beifall verfiel und die Standing Ovations begannen, erwachte Percival erst langsam wieder aus der Trance, die ihn bis dahin in ihren Bann geschlagen hatte.<br/>
+Er stand neben Credence, der einen eleganten Knicks vollführte und verbeugte sich, während die anderen Schauspieler neben sie traten, ehe sie sich gemeinsam noch einmal verbeugten. Dann noch einmal. Und schließlich ebbte der Beifall ab.<br/>
+Percival verließ mit den anderen die Bühne und versuchte noch zu begreifen, was er da eben erlebt hatte. Er wurde nicht schlau daraus.<br/>
+Alles, was danach geschah, nahm er kaum war, ging geistesabwesend in seine Garderobe, zog sich um und fuhr nach Hause.<br/>
+Was war das gewesen? Woher war diese endlose Energie gekommen, diese Faszination, diese ehrlichen, aufrichtigen Gefühle? Fast hätte er glauben können, tatsächlich etwas gespürt zu haben. Schwach wehrte er sich gegen diese Vorstellung. Das war absurd.</p><p>Er bekam das Bild von Credence als Königin Guinevere den ganzen Abend lang nicht aus dem Kopf und auch in der Nacht beschäftigte es ihn so sehr, dass ihm träumte, er würde ihn vor seinem Ehemann retten und mit ihm durchbrennen. Ganz so, als hätte sich all das tatsächlich so zugetragen und sei nicht nur eine Sage, deren Hergang er jeden Abend einem Publikum vorführte. Im Traum fühlte er erneut tiefe Gefühle der Verbundenheit für dieses zierliche Geschöpf. Das Wissen um eine vertrauensvolle Partnerschaft und der Wunsch, gemeinsam allen Gefahren zu trotzen, schwangen noch in seiner Brust, als er am nächsten Morgen erwachte.<br/>
+Den ganzen Tag über wurde er diese Gefühle nicht los und weil Credence auch heute Guinevere spielte, vertieften sie sich sogar noch.<br/>
+Percival sprach wenig mit Credence, beschränkte sich auf das Nötigste, wie er es schon zuvor gehandhabt hatte und war zugleich so verwirrt von seinem eigenen inneren Chaos, dass er nicht bei der Sache war. Wieder und wieder kam er während der Probe aus dem Text und am Ende hatte er einen Blackout, der ihn all seine Szenen vergessen ließ. Man schickte ihn in eine Pause, schob es auf den Stress der letzten Tage und er verließ das Theater einige Stunden vor der ersten Aufführung.<br/>
+Um die Ecke gab es ein kleines Café, das sich ‘Theatercafé’ nannte. Er war selten hier, weil er für gewöhnlich keine Pausen benötigte, aber nun wusste er nicht, wo er sich sonst die Zeit vertreiben sollte.<br/>
+Percival bestellte sich einen Kaffee, setzte sich in einen der gemütlichen Sessel an einem kleinen runden Tisch und starrte in die Tasse, ohne sie richtig zu sehen.<br/>
+Vielleicht hatten seine Kollegen recht. Vielleicht war er einfach überarbeitet und deshalb so aufgewühlt. Es konnte ja wohl kaum daran liegen, dass dieser Jungspund aufgetaucht war. Percival war besser als das. Auch Credence würde ihm nicht das Wasser reichen können, egal, wie sehr ihm sein Ruf vorauseilte. Früher oder später würde seine anfängliche Euphorie verebben, so wie es bei allen war und dann würde er Fehler machen... und irgendwann würde sich wieder alles um Percival drehen. Percival redete sich das ein, doch zugleich fürchtete er, dass er damit falsch lag. Der Junge hatte Talent, dagegen konnte er nichts sagen, und vielleicht war das tatsächlich Percivals Untergang? Was sollte er tun, wenn sich das Publikum von ihm abwandte? Wenn seine Berühmtheit hinter der von Credence zurückblieb? Wenn Credences Aufstieg mit diesem Stück seinen Untergang bedeutete?<br/>
+Er nahm einen Schluck Kaffee und bereute es augenblicklich, weil das Gebräu ihm die Zunge verbrannte. Der kurze Schmerz riss ihn aus seinem Gedankenkarussell – gerade rechtzeitig, um Credence durch die Tür kommen zu sehen. Der junge Mann erspähte ihn und anstatt sich mit dem Kauf eines Getränks aufzuhalten, kam er zu ihm und stellte sich an den freien Sessel neben Percival.<br/>
+“Darf ich?”, fragte er.<br/>
+Percival presste die Lippen aufeinander. Der Junge hatte ihm gerade noch gefehlt. Er hatte schon genug Chaos gebracht. Hatte Percival nicht einmal hier seine Ruhe? Er gab ein unbestimmtes Brummen von sich und zuckte mit den Schultern.<br/>
+Credence, der es als Zustimmung zu nehmen schien, ließ sich in den freien Sessel sinken.<br/>
+“Viel Stress in letzter Zeit?”, begann er rücksichtsvoll das Gespräch.<br/>
+Percival zog die Augenbrauen zusammen. “Nein”, knurrte er, ohne Credence eines Blickes zu würdigen. Er schaute weiter in seinen Kaffee.<br/>
+Credence schwieg einen Moment und Percival ahnte, dass sein Ton ihn abgeschreckt hatte. Das sollte Percival nur recht sein. Es hatte ihm gerade noch gefehlt, dass ihn derjenige in einem schwachen Moment erlebte, der der Grund für seinen Untergang sein würde.<br/>
+“Was ist es dann?”, hakte Credence leise nach, als würde er mit einem verwundeten Kätzchen sprechen. Percival hasste es, wie sanft er mit ihm sprach. War er bereits so alt und senil, dass man ihn als geschwächt und schützenswert einschätzte? Percival war immer stolz auf seine Stärke gewesen.<br/>
+Er schüttelte den Kopf. “Ich glaube, es wird Zeit, dass die echte Guinevere wiederkommt”, murrte er nur. Mit ihr hatte er nie das Gefühl, den Boden unter den Füßen zu verlieren oder dass er den Weitblick in einer Situation verlor. Diese Fokussierung auf einen einzigen Menschen strengte ihn an. Mit Credence zu spielen, war kräftezehrend.<br/>
+Seine Worte hatten die gewünschte Wirkung. Credence zog sich ein wenig zurück, offensichtlich getroffen. “Ich... Entschuldige, wenn ich...” Dann hielt er inne und straffte die Schultern. “Ich versuche nur, das Beste daraus zu machen. Würde ich die Rolle nicht spielen, könnten wir nicht auftreten.”<br/>
+Percival schnaubte bitter. “Ja...”, sagte er gedehnt, “... aber es ist natürlich nicht dasselbe, wie es mit einer Frau zu spielen, oder? Ich verstehe wirklich nicht, was man sich dabei gedacht hat. Das Publikum muss uns für vollkommen verrückt halten.” Er wusste, wie hässlich er sich verhielt, aber es war ihm gleich. Je mehr Zeit er mit Credence verbrachte, desto mehr geriet seine Welt aus den Fugen und er mochte das nicht. Er wollte sie wieder so geordnet, wie sie vorher gewesen war.<br/>
+Credence schien seine Worte persönlich zu nehmen. “Geschlechterrollen zu wechseln ist heutzutage kein Problem mehr”, erwiderte er mit zitternder Stimme, als müsste er sich verteidigen – obwohl Percival sehr wohl bewusst war, dass er nichts falsch gemacht hatte. Er hatte ihnen allen aus der Patsche geholfen. “Ich finde, es fügt einen interessanten Twist hinzu, der durchaus modern ist”, fügte er tapfer hinzu.<br/>
+Percival zuckte mit den Schultern. “So war das Stück aber nicht gedacht”, brummte er missmutig und er wusste, dass er sich kleinlich auf Details stürzte, die nichts zu Sache taten. Er war nur so unheimlich frustriert darüber, wie alles lief seit einiger Zeit. Seit Credence hier war. Percival gab ihm die Schuld für sein Gefühlschaos. Wer sonst sollte der Auslöser sein?<br/>
+“Es war eigentlich überhaupt nicht angedacht, dass wir Artus austauschen”, knurrte er feindselig, “Du bist nur hier, weil unser aktueller Artus Junior gekündigt hat.”<br/>
+Credence schwieg. Aus den Augenwinkeln konnte Percival sehen, dass seine Schultern bebten. Er bekam ein schlechtes Gewissen, weil er sich so garstig verhielt, doch seine Wut darauf, wie sehr sich sein eigenes Blatt gewendet hatte, übertünchte es.<br/>
+“Stört es dich so sehr, dass ich hier bin?”, fragte Credence und seine Stimme brach.<br/>
+Percival zwang sich, sich davon nicht erweichen zu lassen. “Ich kann mir meine Kollegen nicht aussuchen”, sagte er kühl.<br/>
+“Also geht es nicht um Guinevere?”, hakte Credence leise nach, “Du hast ein Problem mit MIR?”<br/>
+Percival zuckte mit den Schultern. “Sieht so aus”, sagte er in einem eklig selbstgefälligen Ton.<br/>
+Dass er so kalt war, schien Credence zuzusetzen. Percival verbot sich jegliches Mitleid, auch, als Credence in fassungslosem Ton fragte: “Was habe ich dir getan? Ich... ich verhalte mich dir gegenüber genauso wie allen anderen. Habe ich etwas Falsches gesagt? Oder irgendetwas getan, das dir nicht gefällt?”<br/>
+Percival schwieg. Er konnte nichts vorweisen, das seinen Unmut rechtfertigte, außer seinen eigenen Neid. Aber er würde den Teufel tun und Credence unter die Nase binden, dass er sich von ihm bedroht fühlte.<br/>
+“Kannst du mir nicht wenigstens sagen, was es ist?”, fragte Credence leise.<br/>
+Percival seufzte und besah sich seine Fingernägel. “Ich wüsste nicht, was das bringen soll.”<br/>
+Auf seine Worte stieß Credence mit einem fassungslosen Schnauben die Luft aus. “Weißt du, in all den Jahren, die ich dir beim Spielen zugesehen habe, habe ich dich nicht für so ein überhebliches Arschloch gehalten”, sagte er bitter.<br/>
+“Was weißt du schon von mir?”, fauchte Percival kalt, “Du kennst mich nicht.”<br/>
+“Ich kenne dich besser, als du denkst!”, platzte es aus Credence heraus und seine Worte waren so überraschend, dass Percival endlich den Kopf hob und ihn verwundert ansah. Credences Wangen waren rot angelaufen. Er wirkte ganz so, als hätte er das eigentlich nicht sagen wollen.<br/>
+Percival zwang sich, die Tränen nicht zu sehen, in denen seine Augen schwammen. Er hob spöttisch eine Augenbraue. “Was, bist du in Wahrheit ein Stalker?”<br/>
+“Das bin ich nicht!”, insistierte Credence entrüstet, doch das Rot seiner Wangen vertiefte sich. “Ich habe nur ein paar deiner Vorführungen gesehen.”<br/>
+“So und jetzt bist du nur hierhergekommen, um mir mein Leben schwerzumachen?”, fragte Percival unbarmherzig, “Ist das ein langgehegter Groll aus deiner Kindheit?”<br/>
+“Ich habe dir gesagt, dass du der Grund warst, weshalb ich schauspielern wollte”, erwiderte Credence.<br/>
+Percival schüttelte ungläubig den Kopf. Das war ihm neu. Er hatte geglaubt, er sei nur einer von vielen gewesen. Er gab sich Mühe, sich von der Aussage nicht aus dem Konzept bringen zu lassen. “Und deshalb glaubst du, mich zu kennen?”, fragte er und nutzte die Schwäche, die Credence ihm eben gestanden hatte, zu seinem Vorteil und für den nächsten verbalen Schlag: “Besessenheit ist nicht gesund, mein Junge.”<br/>
+Er konnte in Credences Augen sehen, dass er ihn dort verletzt hatte, wo es wehtat. “Weißt du was?”, sagte er bitter und stand auf, “Vergiss es! Ich hatte mich erkundigen wollen, wie es dir geht, aber offensichtlich kommst du ja allein bestens zurecht. Entschuldige, dass ich dich belästigt habe.”<br/>
+Er lief zur Tür und eine Sekunde später war er verschwunden.<br/>
+Percival schaute ihm hinterher, mit einem seltsamen Gefühl in der Brust, einer Mischung aus schlechtem Gewissen, Ekel vor sich selbst und Mitleid. Aber auch Zorn auf Credence und die Umstände. Er trank einen großen Schluck Kaffee, versuchte, sich zu beruhigen und schaute wieder hinunter zur Tischplatte.<br/>
+Aus den Augenwinkeln zog etwas seine Aufmerksamkeit auf sich: Ein Foto lag vor Percivals Füßen. Es musste Credence aus der Hosentasche oder dem Mantel gefallen sein, als er davon gestürmt war.<br/>
+Percival zögerte, doch dann hob er es auf. Es war schwarz-weiß und zeigte Percival in seinen Anfängen. Er trug ein Kostüm. Seine erste große Rolle. Er erinnerte sich daran. Das, was er für ein Foto gehalten hatte, war eigentlich eine Autogrammkarte. Er hatte darauf unterschrieben, vor vielen Jahren. Credence musste es lange mit sich herumgetragen haben. Die Ränder waren ausgefranzt und eingerissen und es wies so viele Knicke auf, dass Percivals junges Gesicht einige seltsame Falten hatte.<br/>
+Das Bild zu sehen, machte Percival sonderbar betroffen. Er hatte bis eben nicht gewusst, dass er allein der Auslöser gewesen war, dass Credence nun spielte. Verwirrt wusste er nicht, wie er diese Information einordnen sollte. Er wusste nur, dass er allen Grund hatte, Credence zu fürchten. Allein schon, weil er Talent erkannte, wenn er es sah. Aber welches Recht hatte er, dem Jungen seinen Ruhm verweigern zu wollen? Percival hatte seine Chancen stets genutzt und wären einige Leute nicht wohlwollend mit ihm umgesprungen, wäre er nun nicht dort, wo er heute war. Er sollte dasselbe tun, seinen jungen Kollegen unterstützen und sich nicht aufführen, als wäre dort oben nur Platz für einen einzigen berühmten Schauspieler.<br/>
+Percival leerte seinen Kaffee und steckte das Foto ein. Er würde es Credence zurückgeben. Und er würde sich für sein Verhalten von eben entschuldigen, obwohl es ihn noch immer Überwindung kostete, den Platz im Rampenlicht abzutreten. Und sei es auch nur ein wenig.<br/>
+Percival blieb noch eine Weile in dem Café sitzen und sammelte sich. Er konnte seinen Text in- und auswendig. Ein weiterer Blackout würde ihm nicht unterlaufen, nun, da er sich all seinen Frust von der Seele geredet (oder eher, ihn Credence entgegengeschleudert) hatte.<br/>
+Doch als die Zeit reif war, sich in sein Kostüm zu zwängen und sich in die Maske zu begeben, stand er auf und verließ das Café.  </p><p>Percival war innerlich angespannt, als er an diesem Abend spielte. Lancelot ging ihm nicht so leicht von der Hand wie üblich. Dass Credence nur wegen ihm Schauspieler geworden war und Percival sich zum Dank von seiner hässlichsten Seite gezeigt hatte, setzte ihm mehr zu, als er erwartet hatte.<br/>
+Auch Credence schien in seinem Glanz getrübt. Es war kein Vergleich zu ihren vorherigen Auftritten, bei denen sich die Chemie zwischen ihnen so stark aufgebaut hatte, dass das Publikum jeder noch so kleinen Regung gefolgt war und große Gefühle gespürt hatte.<br/>
+Heute war es vielmehr ein gegenseitiges Herantasten, stets unter Wahrung eines respektvollen Abstands. Besonders in den intimen Szenen, in denen Percival einen Kniefall vollführte und Guineveres Hand küsste oder sie in seinen Armen trug und auf ein Pferd hob, wollte der Funke zwischen ihnen nicht überspringen. Zwar fühlte sich Percival auf der Bühne wieder so wie vor Credences Auftritten mit ihm, aber es fühlte sich seltsam an. Als hätte jemand die Gefühle abgestellt. So sehr er es auch versuchte, er konnte sie nicht so gut heraufbeschwören wie sonst. Er glaubte sie sich selbst nicht.</p><p>Das Feedback folgte im Theater immer sofort. Heute war der Beifall deutlich verhaltener.<br/>
+Es drückte Percivals ohnehin bereits angeschlagene Stimmung noch weiter.<br/>
+Niemand sagte etwas zu ihm, als er den Weg zu seiner Garderobe einschlug. Wahrscheinlich waren sie froh, dass alles nach Plan gelaufen war und er sich keinen textlichen Patzer geleistet hatte wie in der Probe.<br/>
+Er ging in seinen Raum. Als er zu seinem Tisch herantrat, sah er die Autogrammkarte dort liegen, die er fast schon wieder vergessen hatte. Da gab es noch etwas zu erledigen. Er griff nach der Karte, anstatt sich die Zeit zu nehmen, sich umzuziehen, und verließ seine Garderobe. Am anderen Ende des Flurs war Credences abgetrennter Bereich.<br/>
+Er klopfte und als von drinnen ein ‘Herein’ ertönte, öffnete Percival und trat ein. Erst, als er die Tür schon hinter sich geschlossen hatte, sah er, dass Credence sich gerade das Kleid öffnete. Die Perücke mit den langen braunen Locken saß noch auf seinem Kopf. Sie flossen ihm über die Schultern und umschmeichelten sein feminines Gesicht. Im Spiegel begegneten sich ihre Blicke. Credence verharrte in der Bewegung. “P-Percival”, sagte er mit kratziger Stimme, ehe er sich räusperte. Es war offensichtlich, dass er nicht mit ihm gerechnet hatte. Seine Augen flackerten nervös, schon fast erschreckt, als fürchtete er eine Wiederholung des hässlichen Gesprächs.<br/>
+Percival hob die Hände in einer Geste der Friedfertigkeit. “Ich möchte nicht lange stören”, sagte er ruhig und versuchte, zu ignorieren, wie Credences Kleid ihm bereits über die Schultern glitt. Zwar rührte er sich nicht, doch die Schwerkraft hatte ihren Tribut gefordert. Es sank ihm bis zur Hüfte und entblößte seine zierliche Gestalt, während die langen Stoffbahnen bis zu den Füßen flossen.<br/>
+Percival fühlte sich sonderbar, als würde er jemanden in einem intimen Moment beobachten. Zögernd trat er einen Schritt vor. “Du hast vorhin im Café etwas verloren”, sagte er und legte das Foto neben Credence auf den Schminktisch, an dessen Spiegel die Lampen so warm leuchteten, dass sie Credences helle Haut in goldenes Licht hüllten. Percival fühlte seinen Mund trocken werden, obwohl er sich Mühe gab, nicht hinzusehen.<br/>
+Credences Augen weiteten sich, als er das Bild erkannte. Seine Wangen wurden wieder so rot wie vorhin. Percival konnte es sogar trotz des Make-Ups erkennen, das sein Gesicht noch heller gefärbt hatte. “D-Danke”, murmelte er leise.<br/>
+Percival trat einen Schritt zurück. “Keine Ursache”, sagte er und in dem betretenen Schweigen, das zwischen ihnen eintrat, fuhr er tapfer fort: “Credence ich möchte mich entschuldigen. Ich habe mich vorhin nicht sehr freundlich verhalten und du hast es nicht verdient, dass jemand so mit dir spricht. Du leistest großartige Arbeit. Jeder hier weiß das. Wir können sehr froh sein, dass du da bist.”<br/>
+Es kostete ihn große Überwindung, all das zuzugeben. Damit gestand er ein, dass er nicht die einzige talentierte, berühmte Person in diesem Theater war. Das war neu für ihn.<br/>
+Seine Worte wurden mit einem schüchternen Lächeln belohnt.<br/>
+“Danke”, wiederholte Credence.<br/>
+“Und es...”, begann Percival, der schon bei der Tür angekommen war, aber sichergehen wollte, dass Credence sich wegen ihm nicht unwillkommen hier fühlte, “...es ehrt mich, dass du mich als dein Vorbild ausgewählt hast. Es ist gut, Vorbilder zu haben. Man glaubt dann stärker an das, was man erreichen will.” Er nickte Credence noch einmal zu, der still geworden war und zu Boden blickte. Percival ahnte, dass er seine Besucherzeit sehr überstrapazierte. Credence hatte genauso einen langen Tag gehabt, wie er selbst, war müde und erschöpft und stand in einem Kleid hier, das er offensichtlich gern ausziehen würde. “Also”, sagte er und drückte die Klinke hinunter, “Gute Arbeit und bis... bis später dann.”<br/>
+“Bis später”, hörte er Credence antworten, dann schloss sich zwischen ihnen die Tür und Percival, der bemerkte, dass sein Herz nervös schneller schlug, atmete tief durch. Vielleicht war er wirklich gestresst. In letzter Zeit fühlte er sich weniger selbstsicher, weniger von sich überzeugt. Das musste wohl an seinen Nerven zehren.<br/>
+Er beschloss, das Gespräch nicht zu bewerten oder sich zu fragen, ob seine Entschuldigung angenommen worden war. Er konnte sich auch später noch den Kopf über solche Dinge zerbrechen.<br/>
+Stattdessen ging Percival in seine Garderobe, entkleidete sich, zog sich seine eigenen Sachen an und verschwand, müde und abgekämpft, aus dem Theater.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/21853621/chapters/54007255">Chapter 2</a>: Unverhofft kommt oft
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+        <div id="summary" class="summary module">
+          <h3 class="heading">Summary:</h3>
+          <blockquote class="userstuff">
+            <p>Percival freundet sich gerade mit dem Gedanken an, Credence eine Chance zu geben, als dieser ihn mit einer überraschenden Information erneut aus dem Gleichgewicht bringt.</p>
+          </blockquote>
+        </div>
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/21853621#chapter_2_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Zwei weitere Wochen lang spielten sie das Stück in dieser Besetzung. Credence, der Percival seine harschen Worte glücklicherweise verziehen hatte, gewann seine überwältigende Ausstrahlung zurück und das Publikum liebte ihn dafür. Doch nicht nur ihn.<br/>
+Aus der Presse erfuhr Percival, dass die Liebesgeschichte zwischen ihnen so glaubhaft wirkte, dass man jedem dringend empfahl, sich das Stück anzusehen, um große Gefühle zu empfinden. Die Schwulen-Szene wurde auf sie aufmerksam, feierte sie für den mutigen Schritt, die weibliche Hauptrolle mit einem Mann zu besetzen und befeuerte die positive Presse weiter.<br/>
+Percival musste zugeben, dass es ihm gefiel, mit Credence gemeinsam im Rampenlicht zu stehen. Der Ruhm, den Credence brachte, färbte auf ihn ab, statt, wie er befürchtet hatte, ihm zu schaden. Er schwamm auf der Welle des Erfolgs mit, den ihre Zusammenarbeit dem Theater brachte. Und zugleich genoss er seine Arbeit wieder mehr und mehr. Was die Presse und das Publikum bemerkten, war für ihn selbst nicht mehr von der Hand zu weisen: Sie hatten eine großartige Chemie. Nun, da sie einmal eingespielt waren, war es beinahe, als würden sie sich telepathisch austauschen. Sie waren so aufeinander eingestellt, dass der eine sich bewegte, sobald der andere es tat und sie stets aufeinander zu und um einander herumspielten. Percival konnte sich nicht erinnern, jemals mit jemandem derart auf einer Wellenlänge gewesen zu sein und war in der dritten Woche fast enttäuscht, weil die echte Guinevere wiederkam, vollkommen genesen und bereit, ihre Rolle wieder auszufüllen.<br/>
+Es passte in den Zeitplan. In der kommenden Woche würde der derzeitige junge Artus das Theater verlassen und Credence würde in diese Rolle schlüpfen.<br/>
+Und doch musste Percival feststellen, dass er diesen Tagen hinterher trauerte, in denen eine enge Partnerschaft sie verbunden hatte. Die Liebesgeschichte hatte von dem tiefen Vertrauen und der Zuneigung gelebt, die sie verkörpert hatten. Für die eigentliche Schauspielerin der Guinevere empfand er zwar ebenfalls eine kollegiale Verbundenheit, doch sie kam nicht an das heran, was Credence und er hatten: Echte Freundschaft, die ihm das Gefühl gegeben hatte, den Anderen so gut zu kennen, dass er an jeder noch so kleinen Regung erkannte, wie sein Gegenüber sich fühlte und was er tun wollte.<br/>
+Nichtsdestotrotz hatte sich die Stimmung seit ihrem gemeinsamen Erfolg insgesamt verbessert. Nun, da Guinevere zurück war, probte das Team noch enthusiastischer. Dass Credence und Percival sich so gut verstanden, war nicht unbemerkt geblieben und es stimmte die anderen Schauspieler zuversichtlich, dass sie auch in dieser Konstellation die Massen anlocken würden.  </p><p>Trotzdem war es ungewohnt, Credence zur Generalprobe der neuen Besetzung im anderen Kostüm auf die Bühne kommen zu sehen.<br/>
+“Wo ist Euer Kleid, mein König?”, rief Percival neckend zu ihm herüber, während er sein Schwert an der Hüfte befestigte.<br/>
+Credence, der lässig über die Bühne zu ihm herüber schlenderte, antwortete lächelnd:  “Ich gab es meiner Frau. Euer Kleidungsstil sagt mir mehr zu.”<br/>
+Percival schenkte ihm ein schiefes Grinsen. “Schwere Rüstungen und Helme? Mylord, mit Verlaub, seid Ihr nicht zu zierlich für derlei Gewandungen? Ein Edelmann sollte das Kämpfen seinen Männern überlassen.” Er warf sich in die Brust, während er am runden Tisch stehen blieb, den sie in der Mitte der Bühne aufgestellt hatten.<br/>
+“Unterschätzt mich nicht, werter Lancelot”, flötete Credence, dem der Schalk aus den Augen funkelte, “Ich zog einst Excalibur aus dem Stein, meine übermenschliche Kraft würde Euch erschrecken.”<br/>
+Percival lachte. “So geht das Gerücht”, antwortete er, während hinter Credence Merlin auf die Bühne kam, mit langem Bart und wehendem Mantel. Er nickte ihm zu und verschwand von der Bühne. Für die ersten Szenen wäre er nicht vonnöten.</p><p>Es war unnötig, zu erwähnen, dass Credence auch als junger Artus überzeugte. Die Generalprobe verlief so gut, dass Percival sich fragte, warum sie überhaupt eine abgehalten hatten. Credence musste nicht üben. Ihm lagen die Rollen im Blut. Er spielte sie, als hätte er sie selbst erlebt. Es war eine Freude, ihm zuzusehen und Percival fühlte den eifersüchtigen Stich nun immer seltener. Er selbst hatte seinen Ruhm nicht eingebüßt, wie er befürchtet hatte. Eher im Gegenteil, seine Anwesenheit verhalf dem Theater und Percival zu neuem Ruhm. Credence seinen Erfolg zu neiden, war also offensichtlich nicht angebracht.<br/>
+Der Abend endete nach der erfolgreichen Aufführung mit tosendem Applaus und als sie sich schließlich umzogen, hatte Percival das befriedigende Gefühl, dass alles gut war.<br/>
+Er fühlte sich nicht mehr so ausgelaugt und abgekämpft wie noch vor einigen Wochen, als ihm die Veränderung zugesetzt hatte. In der Tat war er so fit, dass er sich sogar auf die Weihnachtsfeier freute, die Ende der Woche anstand.</p><p>Sie hatten an diesem Tag die Spätvorstellung ausfallen lassen und am kommenden Tag hätten sie frei. So war also am Tag der Weihnachtsfeier genug Zeit vorhanden, die man zum Feiern nutzen konnte. Und feiern wollten sie! Sie hatten es sich verdient, nach den Wochen voller Herausforderungen, die sie derart großartig gemeistert hatten.<br/>
+Als sie gemeinsam auf der Bühne saßen - der Einfachheit halber hatten sie die Weihnachtsfeier dieses Jahr ins Theater verlegt - stießen sie gemeinsam auf ihren jungen Zuwachs an und Credence ließ mit roten Wangen die Lobpreisungen über sich ergehen, während er an seinem Glühwein nippte. Es gab Würstchen und Kartoffelsalat, einen kleinen Braten, Weihnachtspudding, Lebkuchen, Spekulatius und Weihnachtspunsch. Heute würde niemand hungrig nach Hause gehen und ganz sicher auch nicht nüchtern.<br/>
+Nachdem die erste Aufregung der Party verflogen war, fanden sich die Kollegen in den typischen Grüppchen zusammen. Einige tanzten auf der Bühne zur Musik aus dem kleinen Radio, das sie aufgestellt hatten. Andere unterhielten sich vor der 2D-Attappe des Weihnachtsbaumes, den sie aus den Requisiten geholt und behelfsmäßig platziert hatten. Es war nicht schick, aber es war natürlich. Es hatte einen aufrichtigen Charme, den Percival zwar selbst nicht gewählt hätte, der ihm aber durchaus gefiel. Er bemerkte nach dem zweiten Glühwein und einem langen Gespräch mit ihrem Direktor, in dem dieser von seinen großen Plänen für das Theater erzählte, dass Credence allein in einer Ecke auf ein paar römischen Pappmaché-Stufen saß und vor sich hinstarrte, ein leeres Glühweinglas in der Hand.<br/>
+Percival füllte sein eigenes und ein weiteres Glas und schlenderte zu ihm hinüber. Als Credence den Kopf zu ihm hob, hielt er ihm ein Glas hin. Credence nahm es an und Percival setzte sich neben ihn.<br/>
+“Wieso sitzt du hier so allein in der Ecke?”, fragte er und trank einen Schluck Glühwein, der ihn weiter aufwärmte. Das Theater zu heizen, wäre zu teuer gewesen, also hatten sie darauf verzichtet. Mehr Alkohol war die Lösung.<br/>
+Credence zuckte mit den Schultern. “Ich bin nicht so der Typ für lauten Trubel”, antwortete er und schaute in sein Glas voll dunkelroter Flüssigkeit.<br/>
+Percival gluckste leise. “Und da bist du Schauspieler geworden?”, fragte er mit einem freundlichen Lachen.<br/>
+Credence warf ihm von der Seite ein schiefes Lächeln zu. “Ich bin Schauspieler geworden, weil ich gern in Rollen schlüpfe”, sagte er, “und wegen...” Sein Satz verlor sich, während er Percival unentwegt anschaute. Dann wandte er den Blick ab.<br/>
+“Wegen?”, hakte Percival milde interessiert nach.<br/>
+Credence schüttelte den Kopf. “Ist egal”, behauptete er und trank seinen Glühwein.<br/>
+Percival kam nicht umhin, zu bemerken, dass er weiterhin betrübt wirkte, wo er doch sonst so gutgelaunt und fröhlich war. Er beschloss, ihn in ein Gespräch zu verwickeln, weil er das Gefühl nicht loswurde, dass Credence heute einsam war.  </p><p>Sein Vorhaben ging glücklicherweise auf. Credence stieg dankbar in das Gespräch ein und ehe sie es sich versahen, sprachen sie über Gott und die Welt, während der Abend verging und sich ihre Gläser immer wieder leerten und füllten.<br/>
+Irgendwann, Percival hatte gerade seinen fünften Glühwein geholt, ließ er sich mit einem ungeschickten Plumpsen wieder neben Credence nieder. “Jedenfalls”, hob er an und er bemerkte am Rande, dass seine Zunge schwerfällig geworden war. “Jedenfalls hast du mir als Guinevere besser gefallen.”<br/>
+Credence neben ihm kicherte. “Du Lügner”, sagte er, die Wangen rot vom Alkohol. Seine Worte kamen ihm ebenso undeutlich über die Lippen.<br/>
+“Es ist wahr!”, beharrte Percival mit einem leichten Lallen, “Das Kleid stand dir viel besser als...” Er machte eine unauffällige Kopfbewegung zur Guinevere-Schauspielerin. Allerdings nicht ganz so unauffällig, denn sie geriet sehr übertrieben und er bemerkte, wie sehr es sich drehte, wenn er den Kopf zu schnell bewegte.<br/>
+Credence kicherte erneut. “Du bist ein furchtbarer Schar-Schar...” Er stolperte über das Wort.<br/>
+“Charmeur?”, hakte Percival lachend nach.<br/>
+“Scharmör”, wiederholte Credence nuschelnd und nickte schwankend.<br/>
+“Ich sage... sage nur die Wahrheit”, insistierte Percival und rutschte näher an Credence heran. “Es... es fehlt mir, dich zwei-drei Mal am Tag zu retten...” Er gluckste. “...und dich deinem Mann zu stehlen.”<br/>
+Credence versteifte sich ein wenig neben ihm, dann lehnte er sich gegen die Schulter, die Percival ihm bot. “Percival, ich... ich muss dir was... was sagen.”<br/>
+“Ich weiß, du bist nicht Guine-Guinevere", sagte Percival mit einem durch den Alkohol übertriebenen Nicken.<br/>
+“Nein, nicht das.. Was... was anderes”, stammelte Credence, der sein Glas abstellte und begann, seine Finger ineinander zu verknoten.<br/>
+Percival, der noch immer das Bild von Credence vor sich sah, als Königin Guinevere, war ganz in seinen eigenen Gedanken gefangen. “Hab ich dir eigentlich schon gesagt, dass dir Kleider wirklich gut stehen?”, sagte er, aber er sagte es mehr zu sich selbst als zu Credence. Es war eine ausgesprochene Bestätigung seiner Gedanken.<br/>
+“Percival, hör... hör mir mal zu”, versuchte Credence, seine Aufmerksamkeit zu bekommen.<br/>
+Percival, der in einen Redefluss gekommen war, in dem er sich ausdrücken wollte, redete weiter vor sich hin. “Ich hab das anfangs ja nicht gedacht, aber als ich dich dann in dem Kostüm sah, da...”<br/>
+“Percival, ich versuche dir zu sagen...”, kam Credences Stimme von irgendwo neben ihm, aber ihn ließen seine eigenen Gedanken nicht los.<br/>
+“... und vor allem mit der Frisur”, fuhr er fort und schaute Credence an. “Das lange Haar sah wirklich gut aus an dir. Das habe ich noch nie gesehen, dass es bei einem Mann...”<br/>
+“Percival, ich steh’ auf dich!”, fuhr Credence ihm dazwischen, lauter als vorher.<br/>
+Percival blinzelte. Es zog ihn aus seinen eigenen Gedanken in diese Realität, in der die Musik im Hintergrund plötzlich wieder ‘Last Christmas’ dudelte, um sie herum der Trubel der ausgelassenen Weihnachtsstimmung herrschte und er sich Credence gegenüberfand, der dunkelrote Wangen hatte und in dessen Augen Tränen glitzerten. Sein Blick war sonderbar verzweifelt.<br/>
+“W-Was?”, stammelte Percival, der sich nicht sicher war, ob er tatsächlich gehört hatte, was Credence gesagt hatte oder ob er sich in seinem Alkoholrausch seltsame Sachen ausdachte. Er schüttelte den Kopf, um ihn klar zu bekommen. Ohne Erfolg. “Entschuldige, ich...”, murmelte er und fuhr sich mit der Hand über die Stirn, “I-ich glaube, ich habe mich verhört, ich... Ich muss mehr getrunken haben, als ich dachte.” Es kam ihm abwegig vor, dass Credence tatsächlich DAS gesagt hatte. Er sollte wirklich aufhören für heute, sich ein Taxi nehmen und nach Hause fahren. Wenn der Glühwein ihm schon so den Kopf vernebelte, dass er von Credence in Frauenkleidung direkt zu angeblichen Liebesgeständnissen umschwang... Vermutlich war ihm Guinevere zu Kopf gestiegen. Er verwechselte die Realität mit Lancelots Liebesgeschichte.<br/>
+“Ich denke, es... es ist besser, wenn ich gehe”, murmelte Percival verwirrt, stellte seinen Glühwein ab und versuchte, sich zu erheben. Er sackte zurück, weil seine Beine ihn beim ersten Versuch nicht tragen wollen.<br/>
+“P-Percival...”, stammelte Credence. Er wirkte unglücklich.<br/>
+Percival verstand nicht, wieso. Vielleicht hatte er, während er diesen sonderbaren Tagtraum gehabt hatte, etwas Dummes getan? Hoffentlich hatte er ihn nicht erneut beleidigt.<br/>
+“Das, was... was ich gehört habe, kannst du unmöglich gesagt haben”, murmelte Percival, wie zu sich selbst, “Schließlich wäre das vollkommen absurd, es überhaupt in Betracht zu ziehen, dass du... dass du... also nicht Guinevere, sondern du...Weil du...”, stammelte er, während er versuchte, irgendwie seine Gedanken zu sortieren. Er fühlte sich verwirrt.<br/>
+Credence liefen die Tränen über die Wangen. “Jetzt sei endlich still”, verlangte er und presste Percival die Hand auf den Mund. Percival sah ihn an. Es schmerzte ihn, Credence weinen zu sehen. Aber die Hand half immerhin, damit er sich auf ihn konzentrieren konnte und seine eigenen lauten Gedanken für einen Moment innehielten.<br/>
+“Ich bin verliebt in dich, Percival”, sagte Credence leise, “Schon seit Ewigkeiten. Sch-schon seit ich dich früher auf den Bühnen sah. Deinetwegen weiß ich, dass ich schwul bin.” Credence stieß in einem leidenden Seufzer die Luft aus und sank weiter in sich zusammen. Er sah wirklich unglücklich aus. “Ich habe noch nie jemanden... jemanden so sehr gewollt, wie dich”, murmelte er mit schwerer Zunge, während ihm weitere Tränen liefen. Mit dem freien Handrücken wischte er sich die Wangen trocken. “Und als du dann... Als du dann...” Er schniefte und ein Hicksen entwich ihm. “...so gemeine Sachen zu mir gesagt hast und mir deutlich machtest, dass du... dass du mich hier nicht haben willst, da... da...”<br/>
+Ein Schluchzen entrang sich seiner Kehle. Ungehindert liefen ihm die Tränen über die Wangen. Credence ließ den Kopf sinken und unternahm einen weiteren verzweifelten Versuch, sich das Gesicht zu trocknen, aber mittlerweile war seine Hand zu nass.<br/>
+Percival beobachtete, wie er einige Sekunden brauchte, um sich wieder zu sammeln. Dann atmete er tief durch und schaute wieder auf. “Tut mir leid”, flüsterte er, “Ich... ich will unsere Freundschaft nicht... nicht ruinieren. Aber...” Er hickste erneut und der Blick, mit dem er Percival bedachte, war traurig, sehnsüchtig und entschuldigend. “Aber ich wollte, dass du es weißt.”<br/>
+Langsam ließ er die Hand sinken, die eben noch an Percivals Mund gelegen hatte.<br/>
+Sprachlos sah Percival ihn an. Der Schock hatte ihn ein wenig ausgenüchtert und seine Gedanken waren nun klarer, während er Credence ansah, der wie ein Häufchen Elend vor ihm saß, ihm nicht in die Augen sehen konnte und stattdessen auf seine Hände starrte, die er in seinem Schoß unentwegt ineinander verflocht.<br/>
+Percival hatte noch nie ein derart trauriges Liebesgeständnis bekommen. Die bisherigen waren eher von Fans gekommen und die waren alle schmachtend bis hin zu fanatisch gewesen. Aber das hier...<br/>
+Das war sonderbar.<br/>
+Nicht nur, weil Credence sich ihm so verwundbar zeigte und sich so vollkommen vor ihm aufgeblättert hatte. Auch, weil das Wissen um seine Gefühle ganz andere Dinge mit Percival anstellte. Er konnte es nicht so recht einordnen. Bisher hatte er sich in dieser Richtung keine Gedanken gemacht. Sicher, dass Credence attraktiv war, konnte er ihm neidlos zugestehen. Dass er ihn mochte und sie gut miteinander auskamen, nach ihrem holprigen Start, würde er ohne weiteres unterschreiben. Sie hatten diese besondere Verbindung, die sie zu etwas wie besten Freunden machte. Oder vielleicht sogar zu mehr?<br/>
+Percival konnte es im Augenblick nicht sagen. Er wusste nur, dass er Credence nicht länger so unglücklich sehen wollte. Nicht hier, vor den Augen aller anderen, mitten auf der Weihnachtsfeier. Es war egal, wie er selbst empfand - darüber könnte er sich später Gedanken machen. Wichtig war, dass Credence sich ihm geöffnet hatte und dass Percival es ihm schuldig war, nach allem, was sie gemeinsam erlebt hatten, ihm ein guter Freund zu sein.<br/>
+Er nahm eine seiner Hände. “Komm”, sagte er entschieden und als Credence unsicher aufblickte, schenkte er dem Jungen ein sanftes Lächeln, “Lass uns irgendwo hingehen, wo es ruhiger ist.”<br/>
+Credence schluckte sichtbar, errötete tiefer und nickte zögerlich.<br/>
+Percival kam auf die Füße - nicht so sicher, wie sonst – , zog Credence mit sich und lief, Credences Hand in seiner, von der Bühne hinunter. Die anderen achteten nicht auf sie. Sie waren alle zu sehr mit ihrer Feier beschäftigt. Das kam Percival gerade recht.<br/>
+Er führte Credence zu seiner Garderobe, öffnete und ließ ihm den Vortritt.<br/>
+Credence trat beinahe ehrfürchtig ein, während Percival hinter ihnen die Tür schloss. Sein Blick wanderte in jede Ecke, über jedes noch so kleine Detail. “Ich habe mich immer gefragt...”, sagte er, als er sich zu Percival herumdrehte, “... wie es wohl bei dir aussieht.”<br/>
+Percival schmunzelte über diese Faszination. Credence war also doch ein fanatischer Fan. Er musste zugeben, dass diese Erkenntnis seinem Ego schmeichelte. Ihn so begeistert zu sehen, war auf jeden Fall besser als die Tränen. Bescheiden zuckte er mit den Schultern. “Es ist nichts Besonderes”, sagte er, während er Credence dabei zusah, wie dieser zu seinem Schminktisch ging und sich die kleinen Dinge darauf ansah. Es war in der Tat nichts Besonderes. Die gleichen Utensilien, die sie alle hatten.<br/>
+Credence warf einen flüchtigen Blick in den großen Spiegel und wischte sich über die geröteten Augen, dann setzte er seine Erkundungstour fort, während Percival aus der Minibar zwei kleine Flaschen Wasser nahm. Er ging zur Couch, setzte sich und öffnete die Flaschen. Credence aber blieb vor dem Regal stehen, auf dem Percivals Preise standen und seine Augen wurden groß, als er jeden einzelnen genauer in Augenschein nahm.<br/>
+Percival hatte lange keinen Groupie mehr im Backstage Bereich empfangen (zu behaupten, er hätte es nie getan, wäre gelogen gewesen) und er wusste, dass Credence alles andere war, als das. Er war ein Kollege und ein Freund. Trotzdem hing eine seltsame Stimmung zwischen ihnen in der Luft, während Percival ihm dabei zusah, wie er bewundernd den Blick schweifen ließ.<br/>
+“Du bist so erfolgreich”, hauchte Credence in Richtung der Preise.<br/>
+Percival schmunzelte. “Da wirst du auch noch hinkommen”, gestand er ihm zu, “Wenn nicht sogar noch weiter.”<br/>
+Mit großen Augen wandte sich Credence ab und schaute Percival an. Er schüttelte den Kopf. “Meinst... meinst du wirklich?”, fragte er ungläubig und auf Percivals einladende Handbewegung lief er auf das Sofa zu.<br/>
+Percivals Schmunzeln wurde breiter. “Natürlich”, sagte er überzeugt und reichte ihm eine der Wasserflaschen. Sie taten beide gut daran, ein wenig auszunüchtern. “Ich habe dich spielen sehen, erinnerst du dich?”, neckte er ihn und fuhr dann ernster fort: “Und du bist großartig.”<br/>
+Credence senkte den Blick. “Danke”, nuschelte er in seine Wasserflasche.<br/>
+Percival beobachtete ihn versonnen. Credence war wirklich hübsch. Er wusste, dass er das vorher schon bemerkt hatte, aber nun schien es besonders hervorzustechen. Und das, obwohl sein Gesicht ein wenig verquollen war. Aber das tat seiner Attraktivität keinen Abbruch. Im Gegenteil, nach den Tränen glänzten seine Augen wie nach einem Gewitterregen und seine Lippen wirkten noch roter und voller als zuvor. Percival war immer froh gewesen, dass er Guinevere nicht küssen musste, aber nun bedauerte er es beinahe, dass ein derartiger Moment im Stück nicht vorgesehen war. Er fragte sich, wie Credences Lippen schmeckten.<br/>
+“W-wird jetzt... wird jetzt zwischen uns alles anders?”, fragte Credence leise in das Schweigen hinein. Er klang besorgt.<br/>
+“Wahrscheinlich”, sagte Percival schlicht. Seine Worte zielten vielmehr auf die neuen Möglichkeiten ab, die er bis vorhin noch nicht in Betracht gezogen hatte. Möglichkeiten, die er nun, da sie offen vor ihm lagen, nicht ausschloss. Was Credence angedeutet hatte, hatte neues Interesse in Percival entfacht und er bemerkte, dass er neugierig war, auf das, was da kommen konnte.<br/>
+Doch seine Antwort schien Credence zu erschrecken. “Wieso?”, fragte er verzweifelt und suchte panisch Percivals Blick. “Ich... ich möchte nicht, dass es... Bitte denke nicht schlecht von mir.”<br/>
+Percival schüttelte ruhig den Kopf. “Das tue ich nicht.”<br/>
+“Du wirst dich abwenden”, jammerte Credence leise, während neue Tränen ihm in die Augen stiegen und er betrübt vor sich auf den Tisch starrte. “Ich bin abstoßend.”<br/>
+“Was?”, fragte Percival irritiert, “Wie kommst du nur auf sowas?”<br/>
+Credence zuckte mit den Schultern. “Das... das ist die gewöhnliche Reaktion, nachdem ich... sowas beichte.”<br/>
+Percival runzelte die Stirn. Abstoßend war die letzte Beschreibung, die er für Credence verwenden würde. “Ich will dich nie wieder so über dich selbst reden hören”, sagte er streng.<br/>
+“Aber... es ist wahr”, murmelte Credence deprimiert. Eine einsame Träne lief ihm über die Wange.<br/>
+Percival beugte sich zu ihm vor und wischte sie ihm vom Gesicht. “Credence, ich möchte, dass du mir sehr genau zuhörst”, sagte er sanft aber eindringlich. Er gab sich alle Mühe, sich zu konzentrieren, denn das, was er zu sagen hatte, musste ihm auch betrunken über die Lippen kommen. “Es ist nichts falsch daran, Gefühle zu haben. Nimm Guinevere als Beispiel, sie hatte Gefühle für jemanden, mit dem sie nicht verheiratet war und sie wurde dadurch nicht abstoßend. Im Gegenteil, es machte aus ihr eine mutige Frau, die sich tapfer und stolz gegen die Hindernisse stellte, die die Welt ihr entgegenwarf.”<br/>
+Credence gab ein abfälliges Schnauben von sich. “Aber ich bin nicht Guinevere”, murrte er, “So gern ich es auch wäre.”<br/>
+Percival schmunzelte. Ihm kam eine Idee, die Credence aufheitern konnte. Percival gedachte, ihn auf andere Gedanken zu bringen. Auf schönere Gedanken. “Verzeiht mir, Mylady, mein dreistes Verhalten und werft mich in Ketten, sollten meine Worte Euch in Eurer Ehre kränken”, begann er leise die Worte der Schlüsselszene, die als Auftakt der Liebesgeschichte galten. Als Credence ihm einen irritierten Blick zuwarf, der zugleich überrascht als auch ablehnend wirkte, ganz so, als fürchtete er, Percival würde sich über ihn lustig machen, fuhr Percival unbeirrt fort: “... , doch kann ich nicht leugnen Euer Antlitz strahlenden Schein, der mich blendet stärker als das Licht der Sonne, und kann nicht länger schweigen über die berauschende Qual, in die Ihr mein Herz ab jenem Tage stießet, am dem Ihr in mein Leben tratet.”<br/>
+Schweigen folgte seinen Worten. Credence sah Percival an. Percival konnte seinen Blick nicht deuten. Eine Vielzahl unterschiedlicher Emotionen huschte durcheinander: Angst, Entrüstung, Sorge, Trauer, Sehnsucht, Wut und Verzweiflung.<br/>
+Geduldig wartete Percival darauf, dass Credence einstieg und hoffte zugleich, dass er ihn nicht falsch verstand. Dass er nicht glaubte, Percival würde ihn verspotten. Denn nichts lag ihm ferner als das. Er wollte lediglich Guinevere nutzen, um Credence ein wenig aus seinen trüben Gedanken zu ziehen. In eine Rolle, in der er mit sich zufrieden sein konnte und sich nicht wegen seiner Gefühle schämte.<br/>
+“Große Worte sprecht Ihr, Lancelot”, sagte Credence schließlich leise und mit brüchiger Stimme, “...doch solltet Ihr sie leiser sprechen. Denn wisset, dass der König nicht weit sei und erzürnt wäre er, wenn er seinen Freund die Treue auf diese Weise brechen würde hören.”<br/>
+Sein Blick flackerte nervös. Als würde er sich fürchten vor dem Ungewissen, in das Percival ihn führte. Es bestärkte Percival in seinem Entschluss, Lancelots Worte noch wärmer und emotionaler werden zu lassen. “Dass Ihr mich warnet vor der Gefahr, machet die Aussicht auf den Gewinn süßer als den Morgentau, der von den Sonnenstrahlen würde liebkoset, oh holde Königin der Königinnen”, sagte er, ohne den Blickkontakt zu unterbrechen, und gab seiner Stimme einen schmachtenden Klang. Er meinte, Credence erschaudern zu sehen, doch der Jüngere hielt den Blick ebenso tapfer aufrecht. Percival fuhr mit einem kleinen Schmunzeln fort: “Aber wisset, dass meine Treue Euch gebühret und stets die Eure war, da Ihr es seid, die mein Herz belebt und deren bezaubernde Lippen mich um einen Kuss anzuflehen scheinen, den zu geben ich mich nicht verwehren kann.”<br/>
+Credence errötete und schlug die Augen nieder, weil er bemerkte, dass Percival den Text geändert hatte. Nicht ein Kuss war es gewesen, den Lancelot ursprünglich gefordert hatte, sondern ein Lächeln und ein Pfand ihrer Zuneigung. Guinevere hätte ihm eines ihrer Tücher geschenkt.<br/>
+Doch nicht dieses Mal.<br/>
+Percival hielt den Atem an, während er darauf wartete, ob Credence antwortete.<br/>
+Dann, nachdem weitere Momente in Schweigen vergangen waren, hob er den Kopf und blickte Percival tapfer entgegen. “So küsstet mich, Lancelot, wenn Ihr es denn ehrlich meinet”, hauchte er und fuhr noch, während Percival sich vorbeugte, mit dem eigentlichen Text fort: “Aber bedenket meinen nahenden Gemahl, den ich bereits in der Ferne...”<br/>
+Er kam nicht weiter. Percivals Lippen hatten sich auf seine gelegt und jedes weitere Geräusch erstickt. Credence gab einen überraschten Laut von sich, während Percival bemerkte, wie weich er sich anfühlte. Und wie süß er schmeckte. Mit einem salzigen Hauch von all den Tränen und einer würzigen Note, die er dem Glühwein zusprach.<br/>
+Percival spürte Wärme in seinem Magen aufsteigen, während er die Augen schloss und in den Kuss hineinfühlte. Er wollte sich gar nicht wieder lösen. Vielleicht machte der Alkohol das Erlebnis viel intensiver, als es eigentlich war, doch er konnte nicht aufhören. Stattdessen legte er Credence eine Hand auf die Wange und vertiefte den Kuss. Credences Lippen berauschten ihn. Er schob die Zunge vor und ließ sie über Credences Unterlippe streichen.<br/>
+Credence erbebte fühlbar und als Percival die Augen öffnete, um seine Reaktion zu beobachten, sah er zu seiner Bestürzung, dass Credence wieder weinte. Er löste den Kuss und ließ Credence los.<br/>
+“Was...”, begann er betroffen, während Credence sich die Augen trocknete. Da hatte er sich wohl zu weit vorgewagt. “Entschuldige, war das... war das zu viel?”<br/>
+Credence schwieg. Er presste die Lippen aufeinander, den Blick aufs Sofa gerichtet, und schüttelte schwach den Kopf. “Nein”, hauchte er mit brüchiger Stimme, “Es... es ist nur so... plötzlich.”<br/>
+Percival sagte nichts darauf. Er wusste nicht, was er antworten sollte. Seine Annäherung war nicht besonders durchdacht oder geplant gewesen, sie war vielmehr spontan entstanden. Percival hatte der Kuss gefallen, aber vielleicht hatte er damit Credences Gefühle verletzt. Immerhin war der Junge angeblich schon jahrelang in ihn verliebt und nun küsste ihn Percival aus einer Laune heraus.<br/>
+Aber andererseits, wer konnte es ihm verübeln? Credence war perfekt, sah anziehend aus, war klug und gebildet und darüber hinaus überaus talentiert. Wenn jemand wie er sich für einen interessierte, konnte man schnell den Boden unter den Füßen verlieren.<br/>
+“Entschuldige”, sagte Percival also noch einmal sanft, beugte sich vor und half Credence dabei, die Tränen von den Wangen zu wischen. Als sie versiegt waren, legte er eine Hand unter Credences Kinn und hob es an. Credences Blick war zu verführerisch, um ihn nicht erneut zu küssen. Sehnsüchtig, verzweifelt, verlangend und unsicher. Percival konnte nicht anders. Er senkte den Kopf erneut und küsste Credence, der bei der Berührung überrascht aufkeuchte.<br/>
+Percival bemerkte, dass er bereits süchtig nach diesen Lippen war. Sie waren so weich und voll und schmiegten sich so perfekt an seine. Funken sprangen über, wenn sie sich küssten. Wie hatte er darauf nur all die letzten Wochen verzichten können? Gierig danach, mehr von diesem Gefühl und Credences Geschmack zu erhaschen, intensivierte Percival hungrig den Kuss, schob abermals seine Zunge vor und plünderte damit Credences Mundhöhle.<br/>
+Er fühlte Hände, die sich auf seine Brust legten und wollte gerade zufrieden aufseufzen, als er bemerkte, dass sie ihn fortschoben und Credence den Kopf zurückzog. "Nicht, ich...”, keuchte er atemlos, mit hinreißend geröteten Wangen und einem fiebrigen Glanz in den Augen. “Wir-wir sind beide angetrunken. Ich denke, nicht, dass wir...”<br/>
+Percival schenkte ihm ein verführerisches Lächeln, überging den milden Widerstand, weil Alkohol und Erregung ihn in einen angenehmen Rausch versetzten, legte einen Arm um Credences Taille und schob ihn näher, um ihn erneut zu küssen.<br/>
+Credence hatte Mühe, sich aus der halben Umarmung freizukämpfen, doch er schien verbissen. Er stieß Percival hart gegen die Brust und als dieser ihn überrascht losließ, funkelte er ihn entrüstet an. “Percival, hör auf”, verlangte er und nutzte die Gelegenheit, in der Percival verblüfft versuchte, zu verstehen, dass er fortgestoßen worden war, um Abstand zwischen sie zu bringen. Er kam auf die zittrigen Beine und lief durch die Garderobe, während er sich mit den Händen durch die Haare fuhr. “Wenn wir morgen aufwachen, will ich nicht, dass wir... dass wir bereuen, was... Vielleicht würdest du all das im nüchternen Zustand gar nicht wollen.”<br/>
+Percival beobachtete ihn mit erhobenen Augenbrauen. Er wusste nicht, ob der Rausch aus ihm sprach, aber seine körperliche Erregung ließ in ihm keinen Zweifel aufkommen. “Komm hierher zurück und ich zeige dir, dass ich es will”, knurrte er.<br/>
+Credence warf ihm einen fassungslosen Blick zu. “Du kannst ein schrecklicher Schürzenjäger sein!”, sagte er anklagend.<br/>
+Seine Worte führten dazu, dass Percival die Stirn runzelte und die Arme vor der Brust verschränkte, während seine Erregung abflaute. “Willst du mir jetzt sagen, ich wäre zu schnell?”<br/>
+“Nun... JA!”, echauffierte sich Credence.<br/>
+“Dann klär mich auf”, verlangte Percival, “Ich dachte, du wärst mir verfallen?”<br/>
+Seine Wortwahl war vielleicht nicht die diplomatischste gewesen. Sie weckte den Widerstand in Credence erneut. “Ach, so einfach war es für dich, ja?”, fauchte er.<br/>
+Percival, der nicht verstand, woher diese aggressive Stimmung auf einmal kam, sagte einen Moment nichts, ehe er fragte: “Credence, was willst du von mir?”<br/>
+Credence wirkte ertappt, als hätte er erkannt, dass er es selbst nicht weiß. “Ich... ich will...” Er seufzte und stieß dann kraftlos die Luft aus. “Versprich mir einfach, dass du... versprich mir, dass wir Freunde bleiben.”<br/>
+Percival hob eine Augenbraue. “Versprochen”, sagte er.<br/>
+“Bitte, ich... ich könnte es nicht ertragen, wenn du nicht mehr mit mir sprichst”, insistierte Credence, als würde das erste Versprechen nichts zählen.<br/>
+Percival nickte ernst. “In Ordnung.”<br/>
+Credence erwiderte das Nicken. Er wirkte erleichtert aber auch traurig. Noch immer.<br/>
+“Kommst du jetzt wieder hierher?”, fragte Percival sanft, der nicht verstand, was Credence so aufwühlte.<br/>
+Auf seine Frage antwortete Credence mit einem entschuldigenden Lächeln. “Ich denke, das ist keine gute Idee”, sagte er leise, “Wir … wir sollten schlafen und vielleicht... nüchtern noch einmal darüber reden.”<br/>
+Percival schwieg. Er hätte gern eine Alternative vorgeschlagen, die mehr Küsse und eventuell sogar nackte Haut beinhaltete, aber Credences Vorschlag war erwachsen und vernünftig und er wollte es nicht übertreiben. Also nickte er. “Ist gut”, sagte er.<br/>
+Credence wirkte verletzt - oder bedauernd? - aber er sagte nichts mehr darauf. Stattdessen ging er zur Tür und verabschiedete sich mit einem entschuldigenden Lächeln und einem “Gute Nacht, Percival.”<br/>
+“Gute Nacht”, antwortete Percival tonlos.<br/>
+Dann fiel die Tür mit einem leisen Klicken ins Schloss.</p><p>Percival gab Credence am nächsten Morgen, als er unter der kalten Dusche stand, die ihn wecken sollte, schließlich Recht. Den ganzen Abend über hatte sein trunkener Geist versucht, dagegen zu argumentieren, aber Credence hatte alles richtig gemacht. Er war vorsichtig und bedacht vorgegangen trotz seines Geständnisses und hatte sie beide vor einem Erwachen voller Reue bewahrt.<br/>
+Percival war sich nicht sicher, ob er tatsächlich bereut hätte, was geschehen wäre. Andererseits hatte sich der Gedanke, dass Credence und er mehr sein könnten als Freunde oder Kollegen, noch nicht lange in ihm gefestigt und nun, da er einen freien Tag hatte, nutzte er die Zeit, um in sich zu gehen und sich zu fragen, ob er mehr wollte.<br/>
+Er fand keine eindeutige Antwort darauf. Die Entscheidung fühlte sich groß und bedeutend an. Percival war schon lange mit niemandem mehr zusammen gewesen und er ahnte, dass Credence mehr wollte als eine Nacht oder sachliche Verabredungen für Sex. Er hatte schließlich von Liebe gesprochen, hatte Percival sein Herz geöffnet. Percival glaubte nicht, dass Credence sich mit weniger als einer Beziehung zufriedengeben würde und der Gedanke setzte ihn unter Druck. Vor einigen Monaten noch hatte Percival darüber nachgedacht, wie er seinen Konkurrenten zum Teufel schicken konnte... und nun waren sie drauf und dran, das nächste Powerpärchen der Schauspielszene zu werden.<br/>
+Percival war sich nicht sicher, ob er das konnte. Er war nicht gut in Beziehungen – sonst wäre er vermutlich seit Jahren verheiratet.<br/>
+Aber was er wusste, war, dass er Credences Lippen nicht aus seinen Erinnerungen verbannen konnte. Und das war schon mal mehr, als er gestern um diese Zeit erwartet hatte.  </p><p>Als er tags darauf zur Arbeit erschien, hatte er sich bereits vorgenommen, das Thema vorerst ruhen zu lassen und sich so zu verhalten, als sei zwischen ihnen nichts vorgefallen. Und als er Credence über den Weg lief, bemerkte er, dass dieser den gleichen Vorsatz gefasst hatte. Sie saßen gemeinsam im morgendlichen Meeting und tauschten höflichen Smalltalk aus. Sie unterhielten sich, während sie einige Szenen durchspielten und nichts ließ darauf schließen, dass ihre letzte Unterhaltung emotionaler und intimer gewesen war, als es sich für Kollegen gehörte.<br/>
+Percival ahnte, dass es von außen nicht sichtbar war, was sich in seinem Kopf abspielte und was zweifelsohne auch Credence beschäftigte. Er wusste, dass außer ihm niemand bemerkte, dass Credence ihm verstohlene Blicke zuwarf. Oder dass es da eine Distanz zwischen ihnen gab, ein vorsichtiges und betont höfliches Miteinander. Das, was sie in den letzten Wochen an Nähe und Vertrauen aufgebaut hatten, war nun milde getrübt, als hätte sich eine feine Glaswand zwischen sie geschoben. Kaum wahrnehmbar und doch fühlbar.<br/>
+Percival versuchte, darüber nicht nachzudenken. Dank Credence mussten sie nun nicht peinlich berührt oder beschämt sein, wenn sie miteinander sprachen – immerhin hätte der Abend schlimmer ausgehen können (was auch immer ‘schlimmer’ bedeuten mochte). Dass es nicht spurlos an ihnen vorbei ging, war abzusehen gewesen. Sie würden einfach Zeit brauchen. Eine Gelegenheit, darüber zu sprechen, wie Credence es an jenem Abend angedeutet hatte, bekamen sie nicht und Percival, der sich noch nicht sicher war, was genau er eigentlich sagen wollte, war froh darum.<br/>
+Während ihres Auftrittes störte diese leichte Distanz nicht, war sogar angebracht, wenn man bedachte, dass Credence nun den jungen König spielte und Percival seinen treuen Ritter. Und so bemerkte Percival über den Tag hinweg nur den Wunsch, ihm ein wenig näher zu sein. Die Distanz zu durchbrechen und dort anzusetzen, wo sie aufgehört hatten, an jenem Abend, an dem sie ehrlich gewesen waren und sich nicht hinter höflichem Abstand versteckt hatten. Als sie eine Möglichkeit gefunden hatten, offen miteinander zu sprechen.<br/>
+Es war kein Schmerz, keine Entbehrung, die er fühlte. Vielmehr erinnerte es ihn an ein nervendes Ziehen, das ihn plagte und das er nicht stillen konnte. Es reizte ihn den Tag über und auch die kommenden Tage – war nicht so recht greifbar, weil es zu unscheinbar wirkte und war doch allgegenwärtig.<br/>
+Überdies wurde er das Gefühl nicht los, dass Credences Stimmung seit der Weihnachtsfeier ein wenig getrübt war. Er lächelte und lachte mit den anderen, aber es lag eine Traurigkeit in seinem Blick, wenn er meinte, dass niemand es sah. Percival wollte gern zu ihm gehen, ihm sagen, dass es keinen Grund zur Trauer gab und dass er ihn aufheitern würde. Doch die Gelegenheit war selten günstig und der Moment schien nie passend.  </p><p>Eine Woche verging, in der sie den Anschein wahrten, dass es zwischen ihnen keine Probleme gab und Percival doch fühlte, wie sich Credence ihm entzog. Ihre Verbindung war nicht mehr so stark wie einst. Er wusste nicht mehr, was Credence dachte. Das wurmte ihn.<br/>
+Der Tag, an dem er sich vornahm, Credence um ein Gespräch zu bitten – egal, wie es ausgehen möge - war der Tag, an dem sie erneut Änderungen an dem Theaterstück vornahmen.<br/>
+Percival war der erste, der davon erfuhr.<br/>
+Umfragen hatten ergeben, dass das Publikum sich die Chemie zurückwünschte, die Lancelot und Guinevere ausgestrahlt hatten, als Credence die Königin gespielt hatte. Das überraschte Percival nicht. Alle wussten, wie talentiert Credence war und dass er große Gefühle weit besser transportieren konnte als viele seiner Kollegen. Doch er war als Artus eingesetzt worden und konnte diese Rolle nicht ausfüllen.<br/>
+Man gedachte daher, die Chemie auf anderem Wege zurück zu holen: Mit eindeutigeren Gesten auf der Bühne.<br/>
+Percival gab sich verstehend, als man ihm die Änderungen eröffnete und merkte sogar an, dass man den Text entsprechend umschreiben könnte. Es hinterließ einen sonderbaren Beigeschmack, aber Percival schob den Gedanken fort und las sich die neue Szene mehrmals durch, ehe sie mit der Probe begannen. Er konzentrierte sich auf seine Rolle, sprach die Worte, bezirzte die Schauspielerin der Guinevere und kam schließlich zu der Stelle, in der er sich selbst sagen hörte: “...da Ihr es seid, die mein Herz belebt und deren bezaubernde Lippen mich um einen Kuss anzuflehen scheinen, den zu geben ich mich nicht verwehren kann.”<br/>
+“So küsstet mich, Lancelot, wenn Ihr es denn ehrlich meinet”, antwortete Guinevere schmachtend und er kam der Aufforderung nach, wie es seine Rolle von ihm erforderte. Der Kuss war bei weitem nicht so gut wie der, den er mit Credence getauscht hatte. Percival bezweifelte, dass Küsse, für die man bezahlt wurde, sich so gut anfühlten, wie ehrliche Zuneigungsbekundungen. Es war lange her, dass er jemanden küssen MUSSTE. Er hatte die Rolle des Lancelot schon so lange inne und sie hatten das Skript nie in diese Richtung geändert. Es war ungewohnt. Aber für das Publikum würde es reichen, da war er sich sicher.<br/>
+Die weiteren Szenen verliefen ebenso reibungslos und als die Probe endete, hatten sie noch zwei Stunden bis zur Aufführung. Percival, der wusste, dass das nicht viel Zeit war, um sich vorzubereiten, lief eilig in seine Garderobe, um sich sein Kostüm anzuziehen.<br/>
+Er war gerade damit fertig, sich die Konturen seines Gesichts noch kantiger zu schminken und seine Augen zu betonen, als es an der Tür klopfte. Nicht mal mehr eine Stunde und sie würden auftreten.<br/>
+Percival wollte eben antworten, da platzten bereits zwei Assistenten hinein.<br/>
+“Ehm, hallo”, sagte Percival überrascht, schaute von seinem Spiegel auf und wandte sich zu den beiden um. Es war selten, dass man in sein Zimmer stürmte, als wäre er ein Niemand.<br/>
+“Lancelot, wir brauchen deine Hilfe”, sprudelte es aus der einen heraus. Es war üblich, sich mit ihren Rollennamen anzusprechen. Percival war froh, dass sie aufgehört hatten, ihn mit dem Schauspieler zu verwechseln, der Parzival spielte.<br/>
+“Er kommt nicht raus”, sagte die andere Assistentin, bevor Percival nachfragen konnte, wie er helfen konnte.<br/>
+“Wer kommt ni-...?”, fragte Percival, doch sie unterbrachen ihn.<br/>
+“Er ist noch nicht einmal angezogen”, sagte die erste Assistentin panisch, “In vierzig Minuten geht es los und er trägt noch nicht einmal sein Kostüm!”<br/>
+“Wir haben versucht, mit ihm zu reden, aber er hat die Tür verriegelt”, bestätigte die andere.<br/>
+“... und ruft durch die Tür, dass er nicht spielen will”, setzte die erste hinzu.<br/>
+Sie sahen ihn flehend an. “Kannst du bitte mit ihm reden?”, fragte die erste.<br/>
+“Auf dich hört er sicher!”, betonte die zweite.<br/>
+Percival erhob sich und trat auf die beiden jungen Frauen zu, die Hände beschwichtigend gehoben. “Ganz langsam”, sagte er, weil er in der Geschwindigkeit nicht alles verstanden hatte, “Nicht alles auf einmal. Von wem redet ihr?”<br/>
+“König Artus”, sagte die erste.<br/>
+“der jüngere”, fügte die zweite hinzu.<br/>
+“Credence?”, fragte Percival ungläubig.<br/>
+Die beiden nickten verzweifelt. “Wir haben keine Zeit mehr”, jammerte die erste, “Wenn er nicht bald mit seinem Kostüm beginnt, werden wir nicht pünktlich starten können.”<br/>
+“Das würde den gesamten Plan nach hinten werfen”, prognostizierte die zweite unheilvoll, “Dann würde auch die folgende Veranstaltung später beginnen. Und die Aufführung danach ebenfalls.”<br/>
+“Und wenn er gar nicht spielt...”, setzte die erste hinzu und sie sahen Percival mit vor Panik geweiteten Augen an.<br/>
+Percival konnte förmlich hören, wie sie innerlich schrien. “Ruhig”, sagte er behutsam, “Atmet tief durch. Ich spreche mit ihm.”<br/>
+Er hatte sich sein nächstes Gespräch mit Credence eigentlich anders vorgestellt. Aber nun musste er sich erst einmal darum kümmern, dass sie pünktlich die Aufführung beginnen konnten. Unter den dankbaren Rufen der beiden Assistentinnen verließ Percival seine Garderobe, ging den Gang entlang, der zu dieser Zeit stets von hektisch umhereilenden Mitarbeitern gefüllt war, und blieb dann am Ende des Ganges vor Credences Tür stehen.<br/>
+Er klopfte. “Credence?”, rief er über den Trubel hinweg, der im Gang herrschte, “Darf ich hineinkommen?”<br/>
+Percival hörte keine Antwort. Probeweise drückte er die Klinke hinunter. Die Tür war tatsächlich verschlossen.<br/>
+“Credence, ich weiß, dass du da drin bist”, behauptete Percival, als sich auch nach einiger Zeit nichts rührte. Die Mädchen waren immerhin davon überzeugt gewesen. “Lass uns reden. Bitte.”<br/>
+“Verschwinde”, hörte er Credence von der anderen Seite der Tür rufen.<br/>
+Percival seufzte. “Hör zu, Credence, was auch immer es ist, was dich davon abhält, aufzutreten, wir können darüber reden”, rief er gegen die Tür, “Egal, was es ist, ich bin mir sicher, ich habe das Gleiche auch schon durchgemacht. Blackouts und Lampenfieber treffen jeden. Das ist kein Grund zu verzweifeln.”<br/>
+Seine Worte wurden von Schweigen gestraft. Doch dann klickte das Schloss und Credence öffnete. Er schaute Percival düster entgegen. Seine Augen waren rot umrandet und seine Nase schien wund gerieben. Er sah aus wie jemand, dessen Katze gestorben war.<br/>
+Der Anblick stimmte Percival betroffen. Er empfand Mitleid für ihn. “Lässt du mich hinein?”, fragte er.<br/>
+Credence trat in den Raum hinein und ließ die Tür offen. “Du verschwindest ja doch nicht.”<br/>
+Percival gab ihm Recht. Immerhin konnten sie nicht behaupten, sich nicht gut zu kennen, wenn Credence das schon erkannt hatte. Er folgte ihm hinein, schloss die Tür hinter sich und schaute dem Jungen dabei zu, wie er sich auf sein Sofa setzte, das von benutzten Taschentüchern übersäht war. Er hüllte sich in eine große Kuscheldecke, als könnte er sich damit von der Welt abschotten.<br/>
+Percival setzte sich auf den Hocker, der neben dem Schminktisch stand und sah Credence aufmerksam an. “Also, was ist los?”, fragte er geradeheraus. Je schneller sie Credence wieder auf die Spur brachten, desto besser.<br/>
+Credence zuckte mit den Schultern. “Ich denke, ich werde kündigen”, murmelte er tonlos.<br/>
+Überrascht hob Percival die Augenbrauen. “Warum?”, fragte er.<br/>
+“Weil ich nicht mit Leuten zusammenarbeite kann, die nur auf ihren eigenen Vorteil bedacht sind”, sagte Credence bitter und warf Percival einen so verletzten Blick zu, dass Percival das sonderbare Gefühl beschlich, dass das hier eine persönliche Sache zwischen ihnen beiden war.<br/>
+“Wie bitte?”, fragte er irritiert, “Meinst du mich?”<br/>
+Credence lächelte traurig. “Wen denn sonst? Oder siehst du hier noch jemanden, der private Szenen nutzt, um die Öffentlichkeit damit aufzugeilen und den Ruhm dafür einzutreiben?”<br/>
+Seine Worte verwirrten Percival mehr und mehr. “Worum geht es hier?”, fragte er, weil er gar keine Verbindung zu dem aufbauen konnte, was Credence sagte.<br/>
+Der Junge schüttelte betrübt den Kopf. “Ich weiß nicht...”, begann er und holte dann Luft, als müsste er sich überwinden, ehe er hastig weitersprach: “...welches Spiel du spielst und ob das irgendeine Masche von dir ist, aber das, was wir...” Seine Stimme bebte und brach einen Moment. Er räusperte sich. “...was wir hatten...”, fuhr er tapfer fort, “...einfach zu nutzen, um Lancelot damit auszustaffieren und die Geschichte interessanter zu machen, ist so unverschämt, dass ich mich frage, wie ich mich nur so in dir täuschen konnte.”<br/>
+Percival fühlte, dass die Worte ihn verletzten. Nun, vermutlich waren sie dazu auch gedacht. Aber er bemerkte, dass Credence das alles falsch verstanden hatte. “Der Kuss auf der Bühne war nicht meine Idee gewesen”, sagte er.<br/>
+Als Credence ungläubig den Kopf schüttelte, beugte sich Percival auf seinem Hocker vor und beharrte: “Es ist die Wahrheit. Man hat das Skript geändert, weil es zu wenig Intensität hatte. Es ist Zufall, dass sie ein paar Tage später auf die Idee kamen. Ich habe sie nicht darauf gestoßen.”<br/>
+Der zweite verletzte Blick traf ihn. “Es waren deine Worte”, sagte Credence mit erstickter Stimme, “Und meine. Was fällt dir ein, etwas, das wir privat gesagt haben, für das Stück zu verwenden?”<br/>
+Percival schwieg betroffen. So langsam verstand er, warum Credence so aufgebracht war. “Das war ein Fehler”, gestand er leise ein, “Das hätte ich nicht tun dürfen.” Er atmete tief durch und lehnte sich zurück. Im entschuldigenden Ton erklärte er: “Die Texte, die sie für den Moment hatten, haben nicht gepasst. Ich dachte, wenn ich es entsprechend anpasse, dann wirkt es glaubhafter.”<br/>
+Credence schwieg. Er schien Percivals Sicht der Dinge auf ihren Wahrheitsgehalt abzuwägen. “Waren sie den ernst gemeint?”, fragte er schließlich zaghaft.<br/>
+Percival bedachte ihn mit einem sanften Blick. “Nur, als ich sie das erste Mal sprach”, sagte er.<br/>
+Seine Worte schafften es immerhin, Credence erröten zu lassen. Er wich Percivals Blick aus. “Ich... ich habe über den Abend nachgedacht”, sagte er leise, “Aber ich wusste nicht, ob ich... was ich...” Seine Worte verloren sich und hilfesuchend schaute er zu Percival auf.<br/>
+Der nickte verständnisvoll. “Ging mir auch so”, sagte er und wies dann auf das Sofa. “Darf ich mich neben dich setzen?”<br/>
+Credence nickte. Er rutschte ein wenig zur Seite, um Percival Platz zu machen und sammelte Taschentücher ein, damit er sich setzen konnte.<br/>
+Percival ließ sich auf dem Sofa nieder. “Ich bin mir nicht sicher, was du von mir erwartest”, sagte er langsam, denn nun schien trotz des Zeitmangels aus irgendeinem Grund der richtige Moment zu sein, um über all das zwischen ihnen zu sprechen.<br/>
+“Nichts”, behauptete Credence flüsternd, doch auf einen ungläubigen Seitenblick Percivals setzte er hinzu: “Aber zumindest will ich nicht, dass irgendetwas davon an die Öffentlichkeit dringt. Die Presse...”<br/>
+“So etwas musst du nicht befürchten”, besänftigte Percival seine Sorgen, auch, wenn es ihn schmerzte, dass Credence ihm solche Dinge zutraute. “Ich bin lang genug im Showbusiness, um zu wissen, was man ihnen besser nicht sagen sollte.”<br/>
+Credence nickte.<br/>
+Stille senkte sich über sie, doch Percival war noch nicht bereit, das Thema fallen zu lassen.<br/>
+“Ich weiß, du warst betrunken”, sagte er langsam, “Aber du sagtest, dass du dich in mich verliebt hast. Wie viel ist da dran?”<br/>
+Bei dieser Frage liefen sogar Credences Ohren rot an. Er duckte sich, als könne er sich zwischen seinen Schultern verstecken. “Ich muss wirklich weniger trinken”, murmelte er.<br/>
+Aber weil Percival darauf nicht einging, antwortete er schließlich: “Es ist wahr.” Zögernd hob er den Kopf, als fürchtete er, von Percival ausgelacht oder verurteilt zu werden. “Ich komme nicht dagegen an. Ich war es schon, bevor wir uns kennenlernten. Und es wurde schlimmer, seit ich dich kenne.”<br/>
+Für Percival hörte es sich so an, als wäre Credence der festen Überzeugung, dass seine Gefühle keine Zukunft hatten. Er erinnerte sich, dass es auch bei der Weihnachtsfeier so gewesen war. Credence hatte sich entschuldigt und geweint. Er hatte von Anfang an keine Hoffnung gehabt. Das stimmte Percival traurig. Vor allem, da es Grund zur Hoffnung gab. “Weißt du”, sagte er und wählte seine nächsten Worte mit Bedacht, “Du hast mir zwar einige Jahre voraus, was das Kennen und Beobachten des Anderen angeht, doch mir gefiel der Abend. Ich weiß nicht, wo das Ganze noch hinführen kann, aber ... wollen wir es nicht versuchen?”<br/>
+Credences Augen weiteten sich ungläubig. “Es versuchen?”, wiederholte er, “Was versuchen?”<br/>
+“Uns kennenlernen”, sagte Percival, der über die Verblüffung schmunzeln musste, “Du weißt schon, auf diese Art. Sehen, wohin es führt.”<br/>
+“O-okay”, stammelte Credence atemlos. Er schien mit vielem gerechnet zu haben, aber nicht damit.<br/>
+“Was machst du zu Weihnachten?”, fragte Percival.<br/>
+Credences Gesicht glühte. “Ich... Ich hab Zeit”, hauchte er.<br/>
+“Großartig”, antwortete Percival mit einem charmanten Lächeln, “Was hältst du von einem Date?”<br/>
+Credences Schlucken war schon fast hörbar. Er nickte fahrig.<br/>
+“Das freut mich”, sagte Percival, der es bezaubernd fand, dass es Credence die Sprache verschlagen hatte wie einem Fan, der seinem größten Idol gegenübersaß. Er erhob sich und klatschte in die Hände. “Was meint Ihr, Mylord, wollt Ihr Euch nicht in Eure königlichen Gewänder kleiden?”<br/>
+Credence nickte. Sein Bewusstsein schien sich verabschiedet zu haben.<br/>
+Aber Percival war guter Dinge. Bis zum Auftritt wäre er vermutlich so mit Endorphinen angereichert, dass sie zur Aufführung aus ihm herausbrachen und das Publikum ansteckten. Und alles, was danach kam, würde in Wohlgefallen und später in Zweisamkeit enden.<br/>
+Percival freute sich darauf.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_2_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/21832372">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 14 of the <a href="/series/1558429">Fantastic Beasts Adventskalender 2019</a> series</span><span class="divider"> </span><a class="next" href="/works/21871927">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="k9cKRMSkF1V4xHbOiAV1kAyJxoEo_YRCowszml90w9l0LczrJEL4U087VkVWGIz15PEmLZuYYrlREY7LmF66Ng"/>
+          <input value="21853621" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=21853621">Comments (2)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/inthedarknessmind">inthedarknessmind</a> and <a href="/users/lileaf">lileaf</a>
+             as well as 
+          2 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_21853621">
+  <form class="new_comment" id="comment_for_21853621" action="/works/21853621/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="vPa0Jhu1XJxiMdeNDlxZdM_sfPUm_Ymn1V6Kiyn41P1bDHKJ-1OzmlXO9wbQQaARJ5ScWZWYb1wnRDfa7tKtEg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_21853621">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_21853621" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_21853621=new LiveValidation('comment_name_for_21853621',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_21853621.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_21853621">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_21853621" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_21853621=new LiveValidation('comment_email_for_21853621',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_21853621.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_21853621" class="landmark">Comment</label>
+        <textarea id="comment_content_for_21853621" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_21853621" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_21853621_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_21853621">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_21853621=new LiveValidation('comment_content_for_21853621',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_21853621.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_21853621.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_21853621" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/21853621/hit_count.json")})</script>
+
+
+  </body>
+</html>

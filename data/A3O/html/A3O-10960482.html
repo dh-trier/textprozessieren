@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":197,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Die Gartenparty - Duece - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="DhuZGLFV03sKegRCD42w1asozgoZZEzXZNOvXqHnDoA4tS-C9SP8YxcI1eaAzCCQ2V88IFkYf3J6Y0HsMuO14A"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="zGKvBe4C4NVqVqAZl4irUG2z9z7WrNklqxtTbrHZunX6zBmfqnTPzXckcb0YyTsVH8QFFJbQ6oC1q73cIt0BFQ"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: words:100</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/10960482/chapters/24397911">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a href="#comments">Comments</a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/10960482/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/10960482/Die%20Gartenparty.azw3?updated_at=1507540935">AZW3</a></li>
+          <li><a href="/downloads/10960482/Die%20Gartenparty.epub?updated_at=1507540935">EPUB</a></li>
+          <li><a href="/downloads/10960482/Die%20Gartenparty.mobi?updated_at=1507540935">MOBI</a></li>
+          <li><a href="/downloads/10960482/Die%20Gartenparty.pdf?updated_at=1507540935">PDF</a></li>
+          <li><a href="/downloads/10960482/Die%20Gartenparty.html?updated_at=1507540935">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Harry%20Potter/works">Hermione Granger/Harry Potter</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger/works">Hermione Granger</a></li><li><a class="tag" href="/tags/Harry%20Potter/works">Harry Potter</a></li><li><a class="tag" href="/tags/Teddy%20Lupin/works">Teddy Lupin</a></li><li><a class="tag" href="/tags/Mrs%20Granger%20(Harry%20Potter)/works">Mrs Granger (Harry Potter)</a></li><li><a class="tag" href="/tags/Mr%20Granger%20(Harry%20Potter)/works">Mr Granger (Harry Potter)</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Family/works">Family</a></li><li><a class="tag" href="/tags/Romance/works">Romance</a></li><li><a class="tag" href="/tags/Humor/works">Humor</a></li><li><a class="tag" href="/tags/Alternate%20Universe/works">Alternate Universe</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2017-05-21</dd><dt class="status">Completed:</dt><dd class="status">2017-10-09</dd><dt class="words">Words:</dt><dd class="words">19509</dd><dt class="chapters">Chapters:</dt><dd class="chapters">13/13</dd><dt class="kudos">Kudos:</dt><dd class="kudos">18</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/10960482/bookmarks">1</a></dd><dt class="hits">Hits:</dt><dd class="hits">515</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Die Gartenparty
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/Duece/pseuds/Duece">Duece</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Hermiones Eltern sind dies Jahr die jenigen, die die Gartenparty der Nachbarschaft ausrichten dürfen. Doch bis dahin kann noch viel passieren. (AU)</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/24397911">Chapter 1</a>: Der Anfang
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Hermione betrat wie fast jeden Sonntagmorgen, das Haus ihrer Eltern. Seit dem sie mit Hogwarts fertig war, hatte sich dieses Ritual eingebürgert. Ihre Eltern hatten ihr zwar verziehen, das sie bevor der Krieg ausgebrochen war mithilfe ihrer Magie ihr Gedächtnis so verändert hatte, dass sie ihre Tochter vergessen hatten, aber es gab noch immer eine Lücke.<br/>
+Harry, hatte sie darauf hingewiesen, dass es etwa damit zu tun haben könnte, das sie fast dreiviertel eines Jahres weg war und wenn sie dann zuhause war ihren Eltern nicht zeigen konnte was sie gelernt hatte.<br/>
+So hatte er diese Sonntagsfrühstücke vorgeschlagen.</p>
+<p>Anfangs waren Hermione und ihre Eltern Heather und Tom, nicht wirklich überzeugt, dass dies helfen würde. Die ersten male war Harry mit anwesende gewesen, um im Notfall als unparteiische Seite einschreiten zu können. Doch dies hatte er nie gemacht, auch wenn es nötig gewesen wäre.<br/>
+Doch dadurch das er nicht eingeschritten war, hatte er beide Seiten dazu gebracht mit einander zu reden. Dies führte dazu, dass diese Sonntagmorgen Frühstückstreffen eine neue Familientradition im Hause Granger wurden. Natürlich war Harry immer eingeladen.</p>
+<p>„Mom, Dad! Ich bin da.“ Rief sie in das Innere ihres Elternhauses.<br/>
+„In der Küche.“ Antwortete ihre Mutter fast direkt.<br/>
+Hermione zog sich ihre Schuhe aus, stellte sie auf die Seite und machte sich auf den Weg in das Innere des Hauses.<br/>
+„Wo ist Dad?“ wollte Hermione wissen, als sie ihre Mutter umarmte.<br/>
+„Er ist zum Becker gegangen beziehungsweise mit seinem Fahrrad gefahren.“ Antwortete Heather und gab ihrer Tochter einen Kuss auf die Wange.<br/>
+„Wie hast du ich dazu bekommen? Dad fährt doch ungerne mit dem Rad.“<br/>
+„Ich habe damit nichts zu tun. Harry war mittwochs her, zusammen mit Teddy. Die beiden hatten sich neue Fahrräder gekauft und Teddy hat sein neues Rad mit Stolz jedem präsentiert. Dein Vater wie er nun mal ist, hat sich von dem kleinen Breitquatschen lassen, so dass sie zusammen eine Runde um den Block gefahren sind. Lange Geschichte kurzer Sinn: Teddy hat deinem Vater aufschwatzen können, das sie öfters zusammenfahren. Dein Vater will wieder etwas in Form dafür kommen.“ Erläuterte ihre Mutter.</p>
+<p>Hermione fing umgehend an wie wild zu lachen.<br/>
+„Ein sieben Jähriger Junge, hat es geschafft, das Dad Fahrrad fährt? Ich glaube es nicht.“ Prustete Hermione los.<br/>
+„Was soll ich denn da sagen? Ich bin seine Frau und er hat es nur wiederwillig gemacht.“ Entgegnete ihre Mutter.<br/>
+„Weist du Mom, das kannst du Dad jetzt bis ans Ende aller Tage vorhalten.“ Meinte Hermione nur grinsend.<br/>
+„Das weiß ich, das weiß ich.“</p>
+<p>Die beiden Frauen unter hielten sich noch ein wenig, während sie angefangen hatten den Frühstückstisch auf der Gartenterrasse zu decken. Da beiden wussten, dass sie heute keine weiteren Gäste hatten, deckten sie nur für drei Personen. </p>
+<p>Sie hatten alles gedeckt, als sie mitbekamen, wie jemand die Auffahrt des Hauses hinauffuhr.<br/>
+„Geh mal deinen Vater begrüßen, ich mache den Rest.“ Meint ihre Mutter mit einem Lächeln auf dem Gesicht.<br/>
+So ging Hermione zur Vordertür und wartete, bis sie hörte das ihr Vater davorstand und öffnete diese.<br/>
+„Morgen Daddy!“ sagte Hermione und umarmte ihren Vater sofort.<br/>
+Dieser überrascht von dieser Aktion, stellte sich unbeholfen dabei an die Umarmung zu erwidern.<br/>
+„Morgen mein Schatz. Ich wusste nicht das du so früh kommen würdest.“ Sagte ihr Vater, als er sich endlich aus der Umarmung befreien konnte.<br/>
+„Mir war heute danach.“ Antwortete Hermione ihrem Vater und zusammen gingen sie in die Küche.</p>
+<p>~~~~~~~~~</p>
+<p>Die drei saßen gemeinsam auf der Gartenterrasse und unterhielten sich darüber was die Woche so geschehen war.<br/>
+„Nun ja, außer den beiden hatte ich eine Ruhige Woche im Ministerium.“ Kam es von Hermione.<br/>
+„Das kann ich mir gut vorstellen Hermione. Ich weiß nicht wie du es dort aushält. Entweder du hast nichts zu tun oder alles kommt auf einmal.“ Meinte ihre Mutter.<br/>
+„Ich weiß Mom. Das wurde ich auch schon von anderen gefragt. Sogar von Harry, der als einziger nicht arbeitet.“ Erwiderte Sie ihrer Mutter.<br/>
+„Wenn ich ehrlich bin Hermione bin ich etwas verwundert darüber, dass du nicht genauso wie Harry deine A-Level gesessen hast.“ Warf ihr Vater ein.<br/>
+„Bitte nicht schon wieder das Thema Mom Dad. Ich bin stolz darauf, auf dass was ich geschafft habe. Ich habe eine gute Position im Ministerium viele Freunde und spaß am Leben.“ Meinte Hermione leicht verärgert.<br/>
+„Schatz, das soll keine Kritik sein. Wir sind stolz auf dich was immer du auch machst, aber sei doch mal ehrlich. Du hast früher Wissen verschlungen wie andere Süßigkeiten.“ Sagte ihre Mutter.<br/>
+„Lag wohl daran, dass ich nicht so viel Süßes wie Wissen bekommen habe. Lag wohl daran das ich die Tochter von Zahnärzten bin.“ Meinte Hermione nur und Streckte ihren Eltern ihre Zunge raus.<br/>
+„Haha.“ Machten ihre Eltern nur, während ihre Mutter ihr die Zunge ebenfalls rausstreckte.</p>
+<p>„Aber mal was anderes Hermione. In vier Wochen ist das jährliche Nachbarschaftsgrillen und wir wurden gebeten es in unserem Garten auszurichten.“ Fing Heather an, wurde aber von ihrer Tochter unterbrochen.<br/>
+„Das ist doch wunderbar. Dieses Grillen ist doch der Höhepunkt eines jeden Sommers hier in der Straße.“<br/>
+„Wissen wir Schatz, wir leben nun schon seit fast 27 Jahren in dieser Straße. Auf jeden Fall wurden wir gefragt, da wir mit einen der größeren Gärten hier haben und die Unbebaute Fläche hinter unserem Garten herläuft. Wir haben schon in der Gemeindeverwaltung angefragt, ob wir die Fläche mit nutzen können, was man uns erlaubt hat. Doch würden wir uns freuen, wen du auch kommen würdest. Es wäre der 16. Juli. Das ist ein Samstag.“ Wollte ihr Vater wissen.<br/>
+„Natürlich werde ich kommen.“</p>
+<p>Die drei Granger saßen noch weiter zwei Stunden, unter anderem auch über da Date, welches Hermione am Nächsten Samstag hatte, auch wenn sie nicht sagte mit wem.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/24653115">Chapter 2</a>: Eine Woche später
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war eine Woche später, als die Grangers zusammen mit Harry in ihrem Garten saßen und Kaffee und Kuchen zu sich nahmen. Während die Erwachsenen miteinander redeten, Spielte Teddy, der auch eingeladen war mit dem Nachbarsjungen Fußball.<br/>Die beiden Jungen spielten sich den Ball immer wieder zu und liefen dabei durch den Garten.<br/>„Habe ich fast vergessen Harry. Ich würde dich gerne zum Grillen in drei Wochen einladen.“ Sprach Tom Granger während er den beiden Jungen zusah.<br/>Harry der ihm gegenüber saß, folgte seinem Blick und verfolgte seinen Patensohn.<br/>„Danke für die Einladung Tom, aber ich muss leider ablehnen. Andromeda hat mich gebeten auf Teddy aufzupassen, da sie zusammen mit ein paar ihrer Freundinnen in die Oper gehen wollte.“ Antwortete Harry.<br/>„Natürlich kann der kleine mitkommen. Es kommen genug andere Kinder aus der Nachbarschaft, also ist er nicht alleine.“ Warf Heather ein, die neben ihrem Mann saß.<br/>„Wenn euch der kleine nichts ausmacht kommen wir natürlich. Soll ich denn dann auch was mitbringen oder macht ihr alles?“ kam es von Harry.<br/>„Brot! Mach dein Spezial Brot, das was du immer machst.“ Kam es sofort von Hermione. <br/>„Kann ich gerne machen Hermione, doch deine Mom muss es auch möchten.“ Erwiderte Harry.<br/>„Wenn meine Tochter sich dies wünscht, kann ich es ihr wohl kaum abschlagen.“ Meinte Heather.<br/>„Allerdings, brachen wir genug für etwa vierzig bis fünfzig Personen. Bis du dir sicher, dass du das hinbekommst Harry? Ich will nicht, das du dich jetzt gezwungen fühlst das zu machen.“ Wollte Sie von Harry wissen.<br/>„Heather, ich habe im Moment genug Zeit. Ich habe keine Vorlesungen und es stehen auch keine Prüfungen an. Von daher werde ich gerne mein, wie es Hermione, nennt spezielles Brot machen.“<br/>Hermione umarmte Harry, als sie dies hörte.<br/>Die Erwachsenen saßen noch länger beisammen und sahen den beiden Jungen weiter zu.</p>
+<p>~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+<p>Am nächsten Tag saßen Harry und Hermione in einem Café in der Nähe von Harry Haus und verbrachten den Nachmittag zusammen. Sie hatten beschlossen, nach dem sie ihren Kaffee zu sich genommen hatten nach Folkestone zu apperien und gemütlich an der der Küste spazieren zu gehen. So kam es, das zwei Figuren in den Bäumen bei der Küste auftauchten.<br/>„Es ist schön hier.“ Sagte Hermione und hackte ihren Arm bei Harry ein.<br/>„Ich weiß. Deshalb sind wir ja hier.“ Antwortete Harry ihr und führt sie in Richtung Strand.<br/>„Habe ich dir eigentlich schon gedankt?“ wollte Sie von Ihm wissen während sie ihren Kopf auf seine Schulter legte.<br/>„Gedankt? Wofür?“ fragte er sie verwundert.<br/>„Für gestern und heute. Ich weiß, dass du Gestern andere Pläne mit Teddy gehabt hast.“ Sagte Hermione.<br/>„Ich weiß nicht wo von due Redest? Teddy und ich hatten vor gestern zukommen, das war so mit deinen Eltern abgesprochen, schon vor Wochen.“ Erwiderte Harry.<br/>„Das mag ja sein Harry, aber das heute nicht. Seien wir doch ehrlich. Du hast mir von Anfang an gesagt das ich es sein lassen soll, er wäre nichts für mich. Es könnte nur in einem Desaster enden. Das hat man dann ja auch am Samstag gesehen, das Date war schlimm.“ erklärte sie, während sie auf das Meer hinausblickte.<br/>„Hermione.“ Sagte Harry, löste sich von ihr und setzte sich auf die Brüstung vor ihnen, so das er mit dem Rücken zum Wasser saß.<br/>„Hermione.“ Wiederholte er, sah sie aber noch immer nicht direkt an.<br/>„Was ich sagte oder gesagt habe ist doch unwichtig. DU dachtest es könnte klappen. Ich habe dir nur gesagt, dass ich ihn nicht mag und es vermutlich nicht zwischen euch nicht funktionieren kann.“ Fuhr er fort.<br/>„Und bevor du mir dazwischen sprichst, las mich ausreden und dir aus meiner Sicht sagen, warum es nicht mit euch geklappt hätte. Versprich es mir.“ <br/>Beim letzten Satz, sah er sie, seitdem sie hier angekommen waren, zum ersten Mal direkt an.<br/>„Harry, ich…“ fing sie zögerlich an, wurde aber fast sofort unterbrochen.<br/>„Versprich es mir.“ Bate Harry sie mit fester Stimme, mit einem Befehles Unterton.<br/>Als sie zu ihm aufblickte, sah sie direkt in seine grünen Augen.<br/>`So grün, wie ein Avada Kedavra´ schoss es ihr durch den Kopf, bevor sie ihm Antwortete.<br/>„ich verspreche es.“ Sagte sie mir fast flüsternder Stimme.</p>
+<p>„Gut.“ Meinte er.<br/>„Also zuerst und es mag sich aus meinem Mund falsch anhören: Er war ein Muggle, du hättest nie mit ihm über das Reden können was du am Tag gemacht hast. Und bevor du sagt was Anderes sagt. Das Geheimhaltungsabkommen ist das sehr deutlich. Du hättest es ihm erst Erzählen dürfen, wenn ihr Verlobt gewesen währt. Diese Änderung ist hinzugefügt worden, nachdem bekannt wurde, dass Tom ein Halbblut war.<br/>Zweitens: Du hast kaum noch Verbindungen in die Nichtmagische Welt. Abgesehen von deinen Eltern, ein paar Freundinnen und mir gibt es dort niemanden. Es wäre für dich auf die Dauer schwierig geworden ein Leben in beiden Welten zu führen. Ich habe mitbekommen, wie sich sein Blick auf dich geändert hat, als du ihm erzählt hast, dass du kein A-Level hast und als Bürofachkraft arbeitest. Den Blick habe ich schon bei vielen gesehen, vor allem bei Männern die eine Frau dominieren wollen.“<br/>Harry fuhr sich mit der Hand durch sein Gesicht und sah zu Hermione hinab, sie sich mit ihren Unterarmen auf die Brüstung gelehnt hatte.<br/>„Seien wir auch ehrlich in Hinsicht auf deine Arbeitszeiten und deine Haltung zur Arbeit. Du gehst morgens in dein Büro im der Abteilung für Zauberwesen und arbeitest dort bis in den frühen Abend, gehst dann nach Hause und Arbeitest dann weiter. Das ist auch einer der Gründe, warum Ron und du euch getrennt habt. Du nimmst dir nicht viel Zeit für andere, das hat sich zwar in den letzten beiden Jahren etwas geändert, aber besser ist es noch immer nicht. Weißt du wie schwer es manchmal ist dich zu Hause anzutreffen? Es kommt mir vor, als ob man, wenn man dich treffen möchte am besten schon vier Wochen vorher Bescheid sagt sollte. Einfach vorbei schauen ist nicht und wenn man doch Glück hat bist du am Arbeiten. Ich kann verstehen, dass dein Job viel Zeit in Anspruch nimmt. Hey ich bin Student und auch bei mir gibt es mal so Zeiten, aber trotzdem finde ich Zeit für meine Freunde und vor allem Teddy.“</p>
+<p>Keiner von beiden sagte für eigne Zeit etwas, als sie verarbeiteten was. Harry wusste das was er gerade gesagt hatte seine Hermione schwer getroffen haben musste, aber wusste er auch das es gesagt werden musste.<br/>Langsam stieg Harry von der Brüstung herab und zog Hermione in eine Umarmung.<br/>„Es tut mir leid.“ flüsterte er ihr ins Ohr.<br/>Sich gegenseitig umarmend standen die beiden Freunde noch lange dar, bevor sie sich voneinander lösten.<br/>„Komm las uns gehen. Ich kenne ein gutes Restaurant am Hafen.“ Sagte Harry und hackte Hermione bei sich ein.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/24868626">Chapter 3</a>: Einkauf
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war der 02.07.2005, es waren noch vierzehn Tage, bis die Gartenparty bei den Grangers steigen sollte. Hermione und ihre Eltern, waren an diesem Samstag in die Stadt gefahren, um die noch fehlenden Sachen zu kaufen bzw. zu bestellen.<br/>„Mom und ich werden uns um die Getränke kümmern, währen du dich um das Fleisch kümmern darfst Daddy.“ Meinte Hermione, als sie von der Rückbank des Mercedes ihres Vaters steigt.<br/>„Von mir aus.“ Antwortete dieser und schloss den Wagen ab.<br/>„Wir treffen uns dann in einer Stunde bei Millies, essen eine Kleinigkeit und machen dann weiter?“ wollte ihre Mutter von den beiden wissen, was diese die beiden anderen mit einen fast identischen Schulterzucken beantwortete.<br/>„Na dann los. Hermione, kommst du?“ meinte ihre Mutter und machte Anstalten den Parkplatz zu verlassen.<br/>„Komme.“ rief Hermione ihr hinterher.</p>
+<p>Zusammen streiften die beiden Frauen durch die Straßen und blickten immer mal wieder links und rechts in die Schaufenster der Geschäfte.<br/>„Wann haben wir das eigentlich das letzte Mal zusammen gemacht?“ wollte ihre Mutter wissen, die neben ihr ging.<br/>„Ich denke, das Jahr in dem ich euch weggeschickt habe.“ Antwortete Hermione etwas traurig.<br/>„Ja, das kann sein. Da warst du nicht gerade mal 17 Jahre. Ich habe das vermisst.“ Meinte Ihre Mutter.<br/>„Ich auch Mom.“<br/>Keiner der beiden Frauen wollte diesen Moment mit weiteren Worten zerstören, o gingen sie weiter in Richtung ihres Getränkehändlers.<br/>Dort angekommen, machten sich die beiden Frauen sofort daran die Gänge nach allem was sie bestellen würden abzusuchen.<br/>Als sie nach zwanzig Minuten suchen und Notieren fertig waren, trafen sie sich wieder und gingen ihre beiden Listen gemeinsam durch.<br/>„Ich wusste gar nicht, dass es mittlerweile so viele Sorten von allem gibt. Zuhause habe ich noch gesagt, das dauert nicht lange.“ Scherzte Hermione, während sie die Liste ihrer Mutter las.<br/>„Naja, du bist halt zu neunzig Prozent nicht hier.“ Meinte Heather nur.<br/>Hermione atmete mehr mals ein und aus, bevor sie sich zu ihrer Mutter drehte.<br/>„Mom, ich muss dir was sagen, wenn wir hier Fertig sind.“ Meinte sie nur, bevor sie verschwand und einen Angestellten suchte.<br/>Heather sah ihrer Tochter nur verwundert hinterher und bemerkte so nicht, das sie zusammen mit einem Angestellten wiedergekommen war.<br/>„Ma´am, ihre Tochter meinte sie würden gerne etwas bestellen?“ fragte dieser, was sie aus ihrer Starre holte.<br/>„Entschuldigen sie ich war gerade wo anders. Aber ja, ich würde gerne eine Bestellung Aufgeben.“ Antwortete Heather dem jungen Mann.<br/>„Wir veranstalten in vierzehn Tagen eine Gartenparty in unserer Straße und würden uns gerne die Getränke liefern lassen, zu sammeln mit Tischen und Stühlen für sechzig bis achtzig Gäste.“ Fing Heather an, während ihre Tochter neben ihr stand und einfach nur zuhörte.<br/>„Das können wir gerne machen Ma´am. Wenn sie wollten können wir noch mal durch die Gänge gehen und sie sagen mir wie viel sie von allem brauchen.“ Meinte der junge Mann nur und geleitete Heather in die Gänge.<br/>„Ich warte draußen auf dich.“ Meinte Hermione und verließ den Laden wieder, da sie ja alles mit ihrer Mutter besprochen hatte.<br/>~~~~~~~~~~~~~~</p>
+<p>Vor dem Laden, setzte sie sich auf einer der Bänke, an denen sie eben vorbeigegangen war und genoss die Sonne, die Hell am Himmel stand. Während sie auf ihre Mutter wartete fing sie an die Leute die an diesem Samstag ihren Einkauf verrichteten zu beobachten. Sie sah Ehepaar mit und ohne Kinder, Teenager und ein altes Ehepaar, das zusammen mit einem jungen Mädchen, jünger als Teddy vor einem Spiel Zeug lasen standen.<br/>„Wohl die Enkelin.“ Murmelte Hermione vor sich hin, während sie das Mädchen dabei beobachte, wie es auf eine der Puppen im Schaufenster deutete. Der Mann beugte sich zu ihr hinunter, sprach mit ihr und deutete dann ebenfalls auf die Puppe. Das Mädchen nickte und war sich dem Mann freudestrahlend um den Hals.<br/>Sie bemerkte gar nicht, dass ihr eine einzelne träne das Gesicht hinunterlief. Erst als die Träne an ihrem Mundwinkel ankam bemerkte sie sie und wischte sie mit ihrem Hemdärmel weg.<br/>„Das wirst du auch haben Hermione.“ Flüsterte sie zu sich selbst.<br/>Sie wand den Blick von dem Mädchen ab und sah stattdessen in das Schaufenster auf der Gegenüberliegenden Seite der Straße. Dort sah sie ein Sommerkleid, welches ihr die Sprache verschlug.<br/>Es war ein einfaches Bordeauxrotes Sommerkleid, mit Ärmeln, die bis etwa zu den Ellenbogen ging, einen klassischen Rundhals-Ausschnitt und einem Rock, der bis etwa zur Mitte ihre Oberschenkel gehen würde.<br/>Sie stand auf, überquerte die Straße und stand nun vor dem Schaufenster und sah sich das Kleid weiter an.<br/>„Es würde dir stehen.“ Erklang die Stimme ihrer Mutter plötzlich neben ihr, was sie zusammenschrecken und nach ihrem Zauberstab greifen ließ.<br/>„Mutter, du kannst mich doch nicht so einfach Erschrecken.“ Tadelte Hermione ihre Mutter.<br/>„Ich hätte fast Nach meinem du weißt schon gegriffen.“ Fuhr sie fort, doch ihre Mutter beachtete sie nicht, sondern sah das Kleid an.<br/>„Ich kaufe es dir.“ Sagte die nur, bevor sie Hermione am Handgelenk packte und in den Laden zog.</p>
+<p>Im Laden probierte Hermione das Kleid wiederwillig an, auch wenn sie es einfach nur schön fand. Sie musste von ihrer Mom und der Verkäuferin gezwungen werden es an zu Probieren.<br/>„Ist ihre Tochter immer so?“ fragte die Verkäuferin Heather leise, als Hermione wieder in der Umkleidekabine verschwunden war um sich umzuziehen.<br/>„Ja, sie war schon immer so. Sie geht nicht gerne Kleiderkaufen und dann nur was sie wirklich braucht.“ Antwortete Heather.<br/>„Das ist mal was Anderes. Meine Tochter ist, wenn sie Kleidung kauft, DAS Vorurteil schlecht hin. Sie findet immer etwas und kauft es dann.“ Meinte die Verkäuferin schmunzelt, was beide Frauen leicht zum lachen brachte.<br/>Als sich Hermione nach fünf Minuten endlich umgezogen hatte, schnappte ihre Mutter ihr das Kleid aus der Hand und ging zur Kasse zum Bezahlen.<br/>In diesem Moment wusste Hermione dass sie verloren hatte, also ging sie ihrer Mutter hinterher.</p>
+<p>~~~~~~~~~~~~~~</p>
+<p>Während seine beiden Frauen sich um die Getränke gekümmerten, war Tom zu seinem Lieblings Metzger gegangen und hatte bei ihm das Benötigte Fleisch bestellte, da er zusammen mit Heather beschlossen hatte das Fleisch selber einzulegen und zu Marieniren bastelte er so, dass er es den Freitag vor der Party gegen Mittag abholen konnte. Neben Würstchen hatte er, Schein, Rind Lamm und Hänschen bestellt. Das Einzige was ihm noch fehlte, war der Fisch, aber da würde er einfach einen seiner Freude fragen, der ein Leitender Angestellter bei Londoner Fischmarkt war, ob er morgens vorbeikommen könnte um sich frischen Fisch zu besorgen.</p>
+<p>So kam es, dass er zehn Minuten vor der Vereinbarten Zeit im Millies saß und auf seine beiden Frauen wartete. Während er wartet bestellte er sich eine Hausgemachte Limonade. Immer wieder wanderte sein Blick zu seiner Armbanduhr und wunderte sich, wo seien Frauen blieben, denn sie waren schon zwanzig Minuten über der vereinbarten Zeit und er hatte schon zweie zweite Limonade fast leer.<br/>„Da sind sie ja endlich.“ Meinte er, als er seine Frau durch die großen Fenster des Restaurants sah. Er winkte seiner Frau zu, um zu zeigen wo er saß, was sie auch schnell sah.<br/>„Habt ihr alles bekommen?“ fragte er seine Frau, die sich zusammen mit Hermione ihm gegenüber an den Tisch gesetzt hatte.<br/>„Natürlich. Wir haben sogar noch ein Sommerkleid für deine Tochter gekauft.“ Antwortete Heather auf die Frage ihres Mannes und lächelte ihn an.<br/>„Deshalb seid ihr spät dran. Frauen und Shoppen. Wenigstens waren es keine Schuhe.“ Kommentierte er die Antwort seiner Frau.</p>
+<p>Hermione hatte die Unterhaltung ihrer Eltern nur grob mitbekommen, denn sie hatte sich, nach dem sie sich gesetzte hatte sofort die Karte genommen und durchstöberte diese.<br/>„Ich weiß was ich haben möchte sagte sie.“ Meinte sie nur und hielt ihrer Mutter die Karte hin.<br/>Es dauerte nicht lange, bis alle der kleinen Gruppe wusste was sie haben möchte und es bei der Bedingung bestellt hatten. Da Hermiones Mutter am Abend noch kochen wollte bestellte jeder nur etwas Leichtes. Hermione und ihre Mutter bestellten sich jeweils einen gemischten Salat und ein Wasserdazu, während ihr Vater sich eine leichte Gerillte Pizza bestellte.<br/>„Ich habe das Fleisch bestellt. Wir können es freitags abholen.“ Meinte Tom, als sie auf ihre Bestellung warteten.<br/>„Das ist gut, dann haben wir genug Zeit um es einzulegen oder zu würzen. Die Getränke kommen ebenfalls am Freitag, das heißt wir haben genug Zeit für alles.“ Meinte nun auch Heather.<br/>„Wen wir Hilfe brauchen, kann ich Harry fragen, ob er vorbei kommen möchte um zu helfen. Er würde bestimmt kommen.“ Meinte Hermione.<br/>„Wenn du fragst bestimmt.“ Murmelte ihre Mutter neben ihr, doch keiner konnte sie verstehen.<br/>„Was hast du gesagt?“ wollte Hermione wissen.<br/>„Nichts mein Schatz.“ Antwortete ihr Mutter direkt, um vom Thema abzulenken.<br/>„Nein ehrlich, was hast du gesagt?“ hackte Hermione erneut nach.<br/>Ihre Mutter kam um eine Antwort herum, da ihre Bestellung gebracht wurde.<br/>„Dann mal guten Appetit.“ Sagte Hermione und fing an ihren Salat zu essen.</p>
+<p>~~~~~~~~~~~~~~</p>
+<p>„Hermione, du wolltest mir heute Mittag etwas sagen.“ sagte Ihre Mutter, als die beiden Frauen im Garten saßen und einen Cocktail tranken.<br/>Hermione nahm einen großen Schluck ihres Cocktails, stellte das Glas neben sich auf den Beistelltisch und Atmete lange aus.<br/>„Ich habe meinen Job gekündigt.“ Mit diesen Worten ließ sie die Bombe platzten, die sie mit sich rumgetragen hatte, seitdem sie am Tag nachdem Harry mit ihr gesprochen hatte im Ministerium war.<br/>Ihre Mutter nahm gerade einen Schluck zu sich, als Hermione die Bombe platzen ließ, was dazu führte, dass sie sich verschluckte. Husten und verstört sah sie ihre Tochter an.<br/>„Du hast was?“ fragte sie, als sie sich vom Verschlucken erholt hatte.<br/>„Du hast richtig gehört Mom. Ich habe meine Stelle beim Ministerium zu Ende nächster Woche gekündigt. Bis dahin habe ich Urlaub.“ Erkläre Hermione.<br/>„Wie kam es zu dieser Wendung? Als wir das letzte Mal dieses Thema hatten, warst du noch zufrieden mit deiner Arbeit. Du sagte das alles so sei wie du es dir gewünscht hattest.“<br/>„Sagen wir es mal so: Jemand hat mit mir Klartext gesprochen und das gesagt was ich nicht sehen oder hören wollte. Er hat mich dazu gebracht alles zu überdenken.“ Erklärte Hermione.<br/>„TOM KOMM SCHNELL. DEINE TOCHTER HAT DIR WAS ZUSAGEN!“</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/25318824">Chapter 4</a>: Ein Tag in London
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war der Mittwoch vor der Gartenparty und während ihre Eltern und ihr Onkel, der montags mit seiner Familie unangekündigt gekommen war, den Garten am Aufräumen waren musste sie mit ihrer Tante und ihren beiden Cousinen und ihrem Cousin in London unterwegs eine Sightseeing-Tour erdulden.<br/>„Hermi, wann sind wir fertig?“ fragte ihre sechsjährige Cousine.<br/>„Die Tour dauert noch eine halbe Stunde, dann sind wir fertig.“ Antwortete sie ihm.<br/>„Mach das es früher fertig ist.“ Meinte Thomas weinerlich, da seine Geschwister ihn nicht weiter beobachteten und seine Mutter dem Tourguide lauschte.<br/>„Das kann ich leider nicht. Aber wie wäre es, wenn wir fertig sind frage ich einen meiner Freunde ob wir uns im St. James Park treffen? Dort kannst du dich austoben.“ Fragte Hermione, während sie den Rest der Gruppe betrachtete.<br/>„Können wir das machen?“ fragte Thomas, wobei man sofort seine Freude hören konnte, die in seiner Stimme mitschwang.<br/>„Ich werde ihn sofort anrufen, wenn wir den Bus verlassen. Vielleicht kann er auch seinen Patensohn mitbringen, dann könnt ihr gemeinsam spielen.“ Meinte Hermione.<br/>Was Hermione nicht mitbekommen hatte war, dass ihre Tante, Charlotte, den letzten Teil des Gespräches mitbekommen hatte.</p>
+<p>„Hermione, ich weiß, dass du keine Lust hast mit uns gleich Shoppen zugehen und Thomas auch nicht mehr unbedingt Lust hat, von daher finde ich dein Angebot sehr nett, wenn man alles bedenkt.“ Während ihre Tante sprach, sah sie mehr mals zu ihren beiden anderen Kindern, Laura, ihre Tochter aus einer Beziehung die sie hatte bevor sie Glenn geheiratet hatte und ihrer er siebzehnjährigen Tochter hinüber.<br/>„Tante Charlotte, das macht mir nichts und wie ich Harry kenne wird er sich auch freuen, wenn er kommen kann. Er mag es nicht nur in seiner Wohnung zu sitzen und nichts zu tun.“ Antwortete Hermione und ging nicht auf ihre Vorgeschichte mit Laura ein.<br/>Charlotte formte mit ihren Lippen ein stilles Danke, bevor sie sich wieder dem Tourguide zu Wand und ihm zuhörte. Hermione unterdessen sah aus dem Fenster und beobachtete die Leute auf der anderen Seite. Es dauerte auch nicht lange bis sie erkannte das sie die Charing Cross Road nahmen um zum Trafalgar Square zu kommen wo die Tour ein Ende finden sollte. So kam es auch, dass sie mehrere seltsam Gekleideten Personen unter den ansonsten „normal“ gekleideten Menschen sah.<br/>„Die lernen es wohl nie.“ Murmelte sie als sie eine der Personen als einen ihrer ehemaligen Kollegen aus dem Ministerium erkannte.</p>
+<p>Sie hatten den Bus verlassen und besprochen wie es weitergehen sollte, als sie sich trennten. Hermione ging zusammen mit Thomas zu einem der Eisverkäufer die hier ihr Lager aufgeschlagen hatten.<br/>„Was hätten sie gerne?“ wurden die beiden von dem Verkäufer empfangen.<br/>Thomas sah von Hermione zum Verkäufer und wieder zurück, als ob er sie um Erlaubnis fragen würde. Hermine grinste ich als Antwort nur an.<br/>„Ich … ich hätte gerne ein Bällchen Vanille und Erdbeere.“ Sprach Thomas, las er wieder zum Verkäufer ansah.<br/>Dieser lächelte ihn an und machte sich sofort daran die Bestellung zu bearbeiten.<br/>„Hier junger Mann.“ Sagte der Verkäufer und hielt Thomas eine Waffel mit zwei großen Kugeln Eis.<br/>Dieser nahm es dankend entgegen und fing sofort an es zu essen.<br/>„Was bekommt die Dame?“ fragte er dann an Hermione gewandt. <br/>„Ich bekomme Stracciatella und Zitrone.“<br/>****~~~****~~~****~~~****~~~****</p>
+<p>Die beiden saßen auf den Stufen am Trafalgar Square auf den Stufen die zur National Gallery führten und genossen ihr Eis, während Hermione versuchte Harry auf seinem Handy zu erreichen.<br/>„Harry, wenn du so freundlich währst mich zurück zurufen wäre ich dir Dankbar.“ Sprach sie auf seinen Anrufbeantworter.<br/>„Erreichst du deinen Freund immer noch nicht?“ fragte Thomas mit eisverschmiertem Gesicht.<br/>„Er geht einfach nicht an sein Handy und zu Hause ist er auch nicht.“ Antwortete Hermione, während sie eine ihrer Servietten nahm und Thomas das Eis aus dem Gesicht wischte.<br/>„Da ich ihn nicht erreiche würde ich sagen, dass wir uns auf den Weg machen.“ Meinte Hermione und stand von der Treppe auf.<br/>Sie hielt ihm die Hand hin, welche er auch nahm und zusammen gingen die beiden in Richtung St. James Park.</p>
+<p>Sie hatten den Park gerade betreten, als Hermiones Handy klingelte.<br/>„Granger?“ fragte sie als sie den Anruf entgegengenommen hatte.<br/>„Hermione, du hast versucht mich zu erreichen?“ erklang Harrys Stimme am anderen Ende der Leitung.<br/>„Ja, das habe ich Harry James. Wo warst du? Es ist doch sonst nicht so schwer dich zu erreichen.“ Nörgelte Hermione verspielt.<br/>„Nun, ich hatte einen Termin in London und da wäre eine Störung nicht sehr gut angekommen. Von daher habe ich erst jetzt gesehen das du angerufen hat. Worum geht es denn?“ erklärte Harry.<br/>„Ich bin zusammen mit meinem kleinem Cousin im St. James Park und wollte fragen ob du und Teddy nicht Lust habt uns zu treffen.“ Antwortete Hermione, während sie mit Thomas den Parkweg entlangschritt.<br/>„Teddy kann heute nicht, er ist bei einem seiner Freunde. Ich allerdings würde gerne kommen und ich bin auch nicht weit weg, nur die Mall runter. Ich kann in fünf Minuten am üblichen Platz sein.“ Meinte Harry nur.<br/>„Das ist ja super, aber warum bist du denn hier in der Nähe?“ fragte Hermione, sie ließ ihn jedoch nicht antworten, da sie eine Erleuchtung hatte.<br/>„Du warst bei ihr. Nicht wahr?“ <br/>„Natürlich. Ich erzähle dir alles wenn es etwas ruhiger ist. Bis gleich.“</p>
+<p>****~~~****~~~****~~~****~~~****</p>
+<p>Während ein Teil der Granger Familie in London unterwegs war, war der andere Teil damit beschäftigt alles für die Gartenparty am Samstag vorzubereiten. Die beiden Brüder Tom und Glenn Granger waren dabei den Rasen im Garten zu mähen wobei sie sich über alles Mögliche unterhielten.<br/>„Wie Läuft e eigentlich mit deiner Praxis?“ wollte Glenn von seinem Bruder wissen.<br/>„Es geht uns nicht schlecht. Wir mussten zwar etwas an unserem Ersparten kratzen als wir uns vergrößert und modernisiert haben, aber ansonsten alles in bester Ordnung.“ Tom musste ja nicht erwähnen, das seine Finanzen nie besser wahren nach dem er Harrys Rat gefolgt war und die Goblins von Gringotts einen Blick auf seine Unterlagen werfen ließ.<br/>Was viele in der Magischen Welt nicht wussten, war das Gringotts auch an einer Bank in der Nichtmagischen Welt beteiligt waren und so ihre Profite noch steigern konnten.<br/>„Das ist doch gut zuhören, immerhin ist das schon immer dein Lebenstraumgewesen.“ Meinte Glenn nur und streckte seinem Bruder die Zunge raus, etwas was die beiden schon seitdem sie kleine Kinder waren machten.<br/>„Was soll ich sagen. Arzt zu sein ist wohl meins.“ Antwortete Tom und fing an zu lachen, als er sich an seine Kindheit erinnerte.<br/>Nach weiteren zehn Minuten waren die beiden Männer fertig und setzten sich in die Stühle die sie sich mitgenommen hatten.<br/>„Aber was anderes, wenn ich fragen darf.“ Fing Glenn an.<br/>„Natürlich darfst du fragte.“ Antwortete Tom direkt.<br/>„Ok. Sei mir aber nicht Böse. Es geht um Hermione. Das letzte was ich von ihr gehört habe ist, das sie einen Job hat, der ihr Spaß macht und das sie eine kleine Nette Wohnung hat. Und jetzt, wenn ich es richtig verstanden habe ist sie Arbeitslos und wohnt wieder bei euch. Was ist hier los.“ Kam es von Glenn.<br/>Tom hatte seinem Bruder genau zugehört, verzog kurz sein Gesicht zu einem kleinen Lächeln, was aber sofort wieder verschwunden war, bevor er Antwortete.<br/>„Ich habe mich schon gefragt wann du diese Frage stellst. Um es einfach zusagen, Hermione hat ihren Job gekündigt, da sie sich dort sonst totgearbeitet hätte. Ihre Gesundheit und ihr soziales Umfeld haben angefangen unter dem enormen Druck zu leiden und einer ihrer Freunde, ihr bester Freund, hat ihr, wie soll ich es am besten sagen? Er hat ihr Mal gehörig den Kopf gewaschen. Er hat sie auf alles angesprochen, ihr quasi die Pistole auf die Brust gesetzt und mit ihr geredet. Sie war ein Frack als sie an diesen Abend bei uns ankam. Am liebsten hätte ich Harry den Kopf abgerissen, als ich sah, wie mein kleines Mädchen aussah. Nun ja Heather und Hermione haben mich davon Abgehalten. Seit diesem Tag kehrt immer mehr von der alten Hermione zurück. Und ihre Wohnung hat sie immer noch, doch im Moment fühlt sie sich hier besser.“<br/>Glenn folgte er Erzählung seines Bruders gespannt. Als dieser fertig war herrschte eine Stille zwischen den beiden Männern, es war eine nachdenkliche Stille.<br/>„Das kann ich alles verstehen. Ich hoffe das sie sich bald fängt, ich kann es nicht ausstehen, wenn es einem meiner Mädels schlecht geht und Hermione gehört dazu. Allerdings muss ich sagen, das man ihr zwar ansieht, dass etwas ist, aber nicht was und wie schlimm es ist.“ Meinte Glenn.<br/>„So schlimm ist es auch wieder nicht und Teddy macht einen guten Job zusammen mit Harry Hermione abzulenken, wenn die beiden hier sind.“ Erklärte Tom, während er seiner Frau durch das Wohnzimmerfenster dabei zusah wie sie im inneren des Hauses putzte.<br/>„Du hast den Namen Harry schon mal benutz, wer ist er?“ wollte Glenn wissen.<br/>„Stimmt ja, du hast Harry ja nie getroffen. Harry ist zusammen mit Hermione zur Schule gegangen. Sie sind beste Freunde, seitdem sie elf Jahre alt waren. Er und sein Patensohn sind im Moment einginge der wenigen mit denen Hermione spricht. Du wirst sie spätestens am Samstag kennen lernen, da ich die beiden Eingeladen habe.</p>
+<p>Die beiden saßen eigne gute Stunde noch in den Stühlen, bis Heather in den Garten kam.<br/>„Glenn, Charlotte hat gerade angerufen. Sie fährt jetzt mit Laura und Zoe in London los und ist etwa in einer, anderthalb Stunden hier. Sie meinte Hermione sein zusammen mit Thomas in den Park gegangen und sie würde mit jemand anderem hierherkommen würde. Ich soll dir außerdem ausrichten, dass sie dich liebt.“ Meinte Heather, bevor sie sich bei Tom auf den Schoss setzte und ihre Arme um seinen Hals legte und ihm einen Kuss auf die Wange gab.<br/>„So. Ihm aus ist alles Sauber. Ich sollte nur eventuell noch mal durch saugen am Samstag. Ansonsten müssen wir nur noch alles aufbauen lassen und das Fleisch machen. Harry hat gesagt, er würde sich noch zusätzlich um Brot kümmern, zusätzlich zu dem was er macht. Kuchen und Nachspießen bringen einige aus der Straße mit von daher ist alles in Ordnung. Dann müsst ihr beiden nur noch die Lichterketten und die Fackel am Freitag aufstellen.</p>
+<p>****~~~****~~~****~~~****~~~****</p>
+<p>Die alte Uhr im Wohnzimmer der Grangers schlug 18:30 und alle Grangers bis auf Hermione saßen im Garten und erzählten sich von ihrem Tag, als sie in der Ferne ein Motoren Geräusch an dem sonst so stillen Abend vernahmen. Das Geräusch wurde Lauter, bis es vor dem Haus zum Stehen kam.<br/>„Danke dafür, dass du uns gefahren hat Harry. Wir sehen uns am Samstag.“ Hörten sie Hermiones Stimme im Garten.<br/>Sie vernahmen keine Antwort, sondern bekamen nur mit wie das Motoren Geräusch Wieder Lauter wurde und sich dann in der Ferne verschwand. <br/>„Hey, wir sind wieder da Leute.“ begrüßte Hermione ihre Familie, mit einem schlafenden Thomas auf dem Arm.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/25537710">Chapter 5</a>: Samstag Morgen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Heute war es endlich soweit, die alljährliche Gartenparty, die der Straßenzug feierte würde heute bei den Grangers steigen. Die Familie hatte sehr viel Arbeit in die diesjährige Party gesteckt und das nicht nur um ihre Nachbarn zu beeindrucken, sondern um sich selber zu zeigen, das sie es noch Konnten. </p>
+<p>Heather war dabei das von ihr eingelegte Fleisch aus dem Keller zu holen und es in die Küche zubringen damit sie es später, wen langsam die Gäste kamen es nicht mehr machen musste. Tom unter dessen brachte mit seinem Bruder Glenn die letzten Teile der Beleuchtung im Garten an, die sie gestern beim aufbau nicht mehr angebracht hatten.</p>
+<p>Charlotte und ihre beiden Töchter waren dabei im Haus Ordnung zu machen, damit mehr Zeit für andere Sachen blieb, wie z.B die noch fehlenden Speisen vorzubereiten. Dies machten Thomas und Hermione in dem sie angefangen hatten Paprika, Gurken und Tomaten in kleine Stücke zuschneiden.</p>
+<p>„Heather, was ich eigentlich gestern schon fragen wollte. Wann müssen wir zum Bäcker gehen um Brot und Brötchen zu holen?“ fragte Charlotte Heather, als sie mit dem Saugen des Wohnzimmers fertig war.<br/>„Das habe ich ganz vergessen euch zusagen, nicht mal Tom weiß es. Harry, ein Freund von Hermione hat auf ihren Wunsch angeboten eines seiner, wie Hermione es nannte „Spezial Brote“ zumachen. Zwei Tage später hat er mich angerufen und gefragt, ob er nicht alles an Brot machen soll. Anfang war ich etwas skeptisch, aber als er mir etwas von einem Brot vorbeigebracht hat, habe ich sofort ja gesagt.“ Erklärte Heather, das sie kein Brot holen mussten.<br/>„Das hört man nicht oft. Ein Mann, der Brot backen kann. Ich nehme an, das er dies nicht oft macht, wenn du erst Probieren musstest.“ Meinte Charlotte.<br/>„Ich wusste, das er Kochen kann, aber vom Backen wusste ich nichts. Warte nur ab, bis er kommt, dann kannst du dir ein eigenes Bild machen.“ Antwortete Heather auf die Aussage von Charlotte und brachte die Schüsse mit Fleisch in die Küche.</p>
+<p>~~~***~~~***~~~***~~~***~~~***~~~</p>
+<p>„Bei Granger, sie sprechen mit Glenn Granger.“ Meldete sich Glenn am Haustelefon seines Bruders.<br/>„Gurten Morgen Mr. Granger. Hier Spricht Harry Potter. Ich wollte fragen, ob ich mit Hermione oder mit Heather sprechen könnte?“ kam Harrys Stimme aus dem Telefon.<br/>„Ich werde sehen, ob einer der beiden kurz Zeit hatt Mr. Potter.“ Meinte Glenn und ging mit dem Schnurlostelefon auf die Suche nach einer der beiden hier Wohnenden Frauen.<br/>„Hermione, hier ist ein Harry Potter für dich oder deine Mutter am Telefon.“ Sagte Glenn, als er in die Küche trat und seine Nichte zusammen mit seinem Sohn Paprika klein schneiden sah.<br/>„Warum Ruft Harry den bitte an?“ fragte Hermione verwundert ihren Onkel.<br/>„Frag ihn doch selber.“ Sagte dieser und hielt ihr den Höret entgegen.</p>
+<p>„Harry?“ fragte Hermione verwundert in den Telefonhörer.<br/>„Hey Hermione, wie geht’s?“ fragte Harry vom anderen Ende der Leitung.<br/>„Gut, ich bin dabei mit Thomas Gemüse zuschneiden.“ Antwortete Hermione während sie Thomas eine neues Paprika Viertel hinlegte.<br/>„Klingt interessant. Warum ich aber anrufe, ich wollte vorbeikommen zum helfen und das Brot zu bringen.“ Meinte Harry leicht amüsiert.<br/>„Ahm, ich muss meinen Dad fragen ob wir noch Hilfe brauchen.“ Meinte Hermione und sah aus dem Fenster um ihren Vater zu suchen.<br/>„Ich warte solange.“ Antwortete Harry.<br/>„Weist du was Harry? Komm einfach vorbei. Selbst wenn du nicht helfen musst kannst du schon kommen.“<br/>„Ich denke ich bin in etwa einer Stunde da.“ Meinte Harry und verabschiedete sich von Hermione.</p>
+<p>Nach dem Harry aufgelegt hatte, gab sie das Telefon grinsend ihrem Onkel wieder.<br/>„Ich werde den anderen sagen, dass wir schon besuch bekommen.“ Sagte er und verschwand aus der Küche.<br/>„Mach das!“ rief Hermione ihm noch hinterher, bevor sie sich wieder daran machte Gemüse zu schneiden.<br/>„Bring er seinen Sohn mit?“ fragte auf einmal Thomas neben ihr, der die ganze Zeit das Gespräch belauscht hatte.<br/>„Teddy ist nicht Harrys Sohn, sondern Patensohn. Ich vermute aber mal eher, er bringt uns die Sachen hilft ein wenig und fährt ihn dann holen, da Teddy noch bei seiner Großmutter lebt.“ Sagte Hermione zu ihrem kleinen Helfer.<br/>„AH.“ Machte Thomas nur wobei sich sein Gesicht etwas Verfinsterte und schnitt seine Paprika weiter.<br/>„Wie wäre es mit einem Deal? Du schneidest die Paprika fertig, gehst dir die Fingerwaschen und ich mache dir im Wohnzimmer einen Film an.“ wollte Hermione von Thomas wissen.</p>
+<p>Das Gesicht des Jungen erhellte sich genau so schnell wie es sich verfinstert hatte und er schnitt wie wild das letzte Stück Paprika.<br/>„Fertig!“ rief er und legte das Messer bei Seite und stand von seinem Stuhl auf um sich die Finger im Bad Waschen zugehen.<br/>Sie sah im nur kopfschüttelnd nach und legte auch ihr Messer beiseite um sich die Finger zu waschen.</p>
+<p>Was keiner der beiden mitbekommen hatte, war das Heather und Tom das Gespräch der beiden Mitbekommen hatten.<br/>„Sie wird eine gute Mutter sein.“ Flüssterte Heather ihrem Mann zu.</p>
+<p>~~~***~~~***~~~***~~~***~~~***~~~</p>
+<p>Nach dem sie Thomas den Fernseher angemacht hatte und sie mit dem Gemüse weiter gemacht hatte war eine gute Stunde vergangen. In dieser Stunde hatte sie fast alles an Gemüse kleingeschnitten, was für die Verschiedenen Salate und zum so essen benötigt wurde. Bis auf ein Paar wenige Sachen hatte sie wirklich alles Verarbeitet und in Schalen getan. <br/>Laura, war nach dem sie zum Putzen verdonnert worden war und ihre Teil gemacht hatte in die Küche gekommen und hatte Hermione kritisiert. Sie meinte, dass die Stücke nicht gleichmäßig waren und man das doch besser machen müsse, denn so konnte man es doch niemanden vorsetzten. Am liebsten hätte Hermione das Messer genommen und es Laura vor die Füße geworfen und ihr den Marsch geblasen. Doch sie wusste, dass es nichts helfen würde und sie wollte auch keine Unruhe in den heutigen Tag bringen. <br/>Sie war so ihn ihre Gedanken vertieft, das sie nicht mitbekam, wie ein Auto in die Einfahrt vor dem Haus fuhr. Auch bekam sie nicht mit, wie jemand kurzdarauf an der Haustür klopfte und ihre Tante und Mutter aufmachten.</p>
+<p>Im Gegensatz zu Hermione hatte Laura mitbekommen, wie ein Auto vor dem Haus hielt. Da sie neugierig war, ging sie zum Fenster in dem Zimmer, welche sie sich mit ihrer Halbschwester teilte und sah in die Einfahrt hinunter.<br/>Sie sah dort einen neuer Range Rover parkte. Von hier konnte sie den Fahrer nicht erkennen, so hoffte sie, das er bald aussteigen würde. Es dauert auch nicht lange, bis ein Mann, der etwas älter als sie war. Er hatte kurzes schwarzes Haar und Trug eine Brille. Er hatte ein blaues Polohemd an und trug eine hellblaue Jeanshose.<br/>Er machte die Tür hinter sich zu und ging zur Eingangstür. Als sie kurz darauf das Klingeln hörte, sprintete sie fast die Treppe hinunter u die Tür für den Mann zu öffnen, doch ihre Mutter und Tante waren vor ihr.<br/>„Mrs Granger und Mrs, Granger.“ Sprach der Mann und hielt den beiden Frauen die Hand hin.</p>
+<p>Sie sah wie ihre Mutter die ihr angebotene Hand nahm und Schüttelte.<br/>„Charlotte, darf ich dir vorstellen, Harry Potter. Harry meine Schwägerin Charlotte Granger.“ Stellte Heather die beiden einander vor.<br/>„Es ist nett sie kennen zu lernen.“ Sprach Harry.<br/>„Nenn mich ruhig Charlotte.“ Sprach sie zu Harry.<br/>„Aber nur wenn sie mich Harry nennen Mrs. Granger.“ Antwortete Harry.<br/>„Abgemacht.“ Meinte Charlott nur und drehte sich zu ihrer Schwägerin, die sie Erstaunt ansah.<br/>„Was?“ wollte sie von Heather wissen.<br/>„Weißt du wie lange es gedauert hat bis Harry mich bei meinen Vornamen genannt hat? Fast ein Jahr.“ Meinte Heather und sah zu Harry, der ihr die Zunge rausstreckte.<br/>Sie wollte darauf etwas erwidern, wurde aber von Laura unterbrochen, die sich zu der kleinen Gruppe gesellt hatte.<br/>„Wie wäre es wenn ihr den Herren hereinkommen lass Mutter.“ Meinte sie und hielt ihrerseits die Hand für Harry hin. <br/>„Mein Name ist Laura Maria-Ann Granger.“ Stellte sie sich höchst Vornehm Harry vor.<br/>„Es ist mir eine Ehre. Harry James Potter.“  Kam es ebenso vornehm von Harry als er ihre Hand ergriff.</p>
+<p>Die drei Frauen führten Harry direkt in den Garten zu den beiden Granger Herren.<br/>„Harry, schön dich zusehen.“ Meinte Tom als er Harry zuwinkte.<br/>„Glenn, das ist Harry.“ Sagte er zu seinem Bruder, der neben ihm saß.<br/>„Endlich habe ich ein Gesicht zu dem Namen. Glenn Granger.“ Sagte Glenn und winkte ebenfalls Harry kurz zu.<br/>„Kann ich nur bestätigen.“ Kam es von Harry, der sich Tom gegenüber an den Tisch gesetzt hatte. <br/>Laura, setzte sich zu Harry Linken, während sich die beiden anderen Frauen neben ihre Männer setzten.<br/>„Alles fertig für später?“ fragte Harry, als er sich im Garten genauer um sah.<br/>„Bis auf ein paar Kleinigkeiten ist alles bereit. Das einzige was fehlt ist Brot und Heather will mir nicht sagen wo wir es herbekommen.“ Beantwortete Tom Harry Frage.<br/>„Das kann ich beantworten. Das Brot liegt bei mir im Kofferraum. Alles frisch gemacht.“ Sagte Harry als ob es nichts Wichtiges sein.<br/>„Du?“ fragte Tom verwundert.<br/>„Harry hat es angeboten und nach dem ich es probiert habe, habe ich sein Angebot angenommen.“ Beantwortete seine Frau die Frage.<br/>„Wo ist eigentlich Hermione?“ fragte Harry, da er seine Freundin noch nicht gesehen hatte.<br/>„Sie steht hinter dir.“ Bekam er seine Antwort von Hermione persönlich.<br/>Er drehte seinen Kopf und sah Hermione dort in einer Kochschürze stehen.<br/>„Morgen Hermione. Wie geht’s?“</p>
+<p>~~~***~~~***~~~***~~~***~~~***~~~</p>
+<p>Eine halbe Stunde später standen alle Momentanten Bewohner des Granger Hauses vor dem Kofferraum von Harry Range Rover um einen Blick auf seine Mitbringsel anzusehen.<br/>„Ladys ans Gentleman, ich präsentiere ihnen …. Das BROT.“ sagte Harry im Still eines Ringrichters beim Boxen.<br/>Das erste was alle warnahmen war der Geruch von frischen Brot, bevor sie mehrere Kisten mit den Verschiedensten Brotarten sahen.<br/>„Harry, das ist doch Zuviel!“ kam es erstaunt von Heather.<br/>„Das ist alles was bestellt wurde.“<br/>„Harry. Harry. Harry.“ Meinte Heather nur und wies den Rest an das Brot ins Haus zu bringen.<br/>„Danke dafür Harry.“ Meinte Tom als er mit einer Kiste mit Muffins ins Haus ging.<br/>„Immer wieder gerne.“ Antwortete Harry, machte die Heckklappe zu und schloss den Range Rover ab.</p>
+<p>Er vergewisserte sich noch mal, dass er alles aus seinem Wagen hatte, bevor auch er wieder das Haus betrat, wo schon Hermione auf ihn wartete.<br/>„Harry konnten wir kurz reden?“ fragte Hermione ihn.</p>
+<p>~~~***~~~***~~~***~~~***~~~***~~~</p>
+<p>„Harry, könntest du bitte…“ sagte Hermione und Harry wusste sofort was sie meinte.<br/>Er drehte sich zur Tür um und lies seinen Zauberstab aus seinem Unterarm Holster schnellen.<br/>„Colloportus. Muffliato.“ Murmelte nüchtern Harry, als auch schon das Schloss der Tür klickte.<br/>„Jetzt können wir.“ Meinte Harry nur und setzte sich auf einen Stuhl der in dem Zimmer stand.<br/>Hermione, die sich sofort nach Betreten des Raumes auf das Bett gesetzt hatte sah zu ihrem Freund hinüber und wusste nicht wie sie anfangen sollte.<br/>„Also, ich weiß, dass meine Eltern dir schon mehrmals gedankt haben. Doch ich will es auch machen. Nicht nur dafür das du uns heute Hilfst, sondern einfach das du hier bist. Mein bester Freund. Ich weiß nicht was ich ohne dich machen würde. Du hast mir und meiner Familie in den letzten Jahren mehr geholfen als wir, als ich erkannt habe. Ohne dich würden Mom, Dad und ich wohl kein Wort mehr miteinander reden. Das ist mir in der letzten Woche klargeworden.“ Sagte Hermione, die während sie am Reden war aufgestanden war und vor Harry hin und her gegangen war.<br/>„Ich weiß, du hättest nichts machen müssen und trotzdem hast du. Hättest du uns nicht gezwungen zu miteinander zu reden, ich weiß nicht was passiert wäre. Ich will es mir auch nicht ausmalen.“ Fuhr sie fort.<br/>„Hermione. Komm her.“ Sagte Harry und stand von seinem Stuhl auf und bereitete seine Arme aus.<br/>Hermione sah ihn nur kurz an, bevor sie sich fast schon in seine Umarmung warf.<br/>Er schlang seine Arme und sie und drückte sie fest an sich.<br/>„Das habe ich doch gerne Getan.“ Flüsterte er ihr ins Ohr, bevor er sie auf die Stirn Küsste.<br/>Hermione sah ihn an und legte ihren Kopf auf seine Schultern.<br/>„Danke.“</p>
+<p>Die beiden Freunde standen noch längere Zeit so im Zimmer, bevor sie sich lösten um den Rest der Familie weiter zu helfen.<br/>Harry kennzelte die beiden Zaubersprüche und öffnete die Tür.</p>
+<p>„Ah, was habt ihr den da getrieben und warum war die Tür geschlossen?“ wurden die beiden von einer sie tadelnd anblickenden Laura von oben herab angesprochen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/26015271">Chapter 6</a>: Die Spiele sind eröffnet
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Her ein neues Kapitel.  Das nächste könnte auch wieder etwas dauern, da ich im Moment Prüfungen schreibe.</p><p>Viel spaß mit dem Kapitel R&amp;R.</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Weißt du Laura, das geht dich rein Garnichts an.“ Meinte Hermione nur zu ihrer Cousine, wobei sie sie mit einem Blick belegte, der sonst nur für Malfoy und seines gleichen reserviert war.<br/>„Natürlich geht es mich etwas an.“ Wiedersprach Laura ihr sofort und wollte nach dem Türgriff greifen, wurde aber von Harry daran gehindert, als er sich neben Hermione stellte.<br/>„Ms. Granger, was Hermione und ich hinter verschlossenen Türen besprechen geht nur uns beide etwas an. Ich rate ihnen deshalb das Thema ruhen zulassen.“ Sprach Harry mit ruhiger leicht drohender Stimme.<br/>Laura wollte etwas erwidern, wurde aber von Harry daran gehindert, las er sie mit dem selben Blick ansah wie Hermione und seine Augenbraue hochzog, was so wirkte wie ein „Versuch es doch!“.<br/>Laura verzog das Gesicht und verschränkte die Arme vor der Brust und sah die beiden an, bevor sie auf dem Absatz kehrtmachte und nach unten verschwand.</p><p>„Ich kann es nicht glauben! ARG.“ Kam es von Hermione während sie die Hände, die sie zu Fäusten geballt hatte in die Luft stieß.<br/>„Dieses Mädchen bringt mich noch zur Weißglut. Das macht sie schon seitdem sie klein war. Sie wusste angeblich immer alles besser und hat mich für alles verantwortlich gemacht.“ Sprach Hermione zu Harry, der ihr zur Beruhigung die Hand auf die Schulter gelegt hatte.<br/>„Komm runter Hermione. Du hast schon schlimmeres erlebet.“ Sagte Harry in einem versuch sie noch weiter zu Beruhigen.<br/>„Natürlich habe ich das, aber da hier ist anders. Es ist Familie.“ Murmelte sie bevor sie sich zu ihm umdrehte.</p><p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p><p>Heather war gerade dabei zusammen mit Glenn das Brot welches Harry mitgebracht hatte zuschneiden und auf Schalen zu verteilen, als ihre nicht sichtlich aufgeregt die Treppe hinunter stürmte.<br/>„Wie kann sie nur so was sagen und für wen hält er sich!“ murmelte sie voller Wut vor sich hin und bekam so gar nicht mit das die beiden Erwachsenen sie gehört hatten.<br/>„Wenn ich es nicht besser wüsste hat meine Tochter soeben jemanden gefunden der ihr die Stirn geboten hat.“ Kommentierte Glenn das Verhalten ihrer Tochter.<br/>„Das kann gut sein. Hermione ist in den letzten Jahren sehr Stur geworden. Wenn ihr jemand nicht passt hat sie auch keine Probleme damit es ihm direkt und unverblümt zu sagen, vor allem in den letzten Wochen.“ Meinte Heather und packte das restliche Brot das vor ihr lag weg.<br/>„Naja, soll sich Charlotte drum kümmern, sie versteht besser was in Kopf einer Teenagerin abläuft.“ Sagte Glenn und sah zur Treppe hinüber und sah wie Harry und Hermione herunterkamen.</p><p>„Sag mal Heather, waren die beiden jemals ein Paar?“ fragte wollte Glenn wissen, als er sah, das Harry seinem Arm um Hermiones Hüfte hatte und sie ihren Kopf bei ihm angelegt hatte.<br/>„Nein. Die beiden waren nie zusammen. Ich denke aber mal es wird nicht lange dauern bis sie zusammen sind.“ Meinte Heather als auch sie die beiden sah.</p><p>Die beiden Erwachsenen räumten alles weg und folgten den beiden hinaus in den Garten, wo sich alle versammelt hatten.<br/>„Wir haben jetzt alles was wir brauchen. Von meiner Seite her ist alles bereit.“ Sprach Heather als sie sich einen Schluck von ihrem Eistee gönnte.<br/>„Wir haben alles lange geplant Schatz, es kann nicht mehr schiefgehen.“ Meinte Tom, als er ihr die Hand auf den Schoss legte.<br/>Die kleine Gruppe saß noch eine Weile in vorkommender ruhe im Garten, was nur durch den Bösen Blick durchbrochen wurde, den Laura Harry und Hermione zuwarf.<br/>Die Stille wurde erst durchbrochen, als Harry verkündete, das er jetzt fahren würde und später wiederkommen würde.</p><p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p><p>„Hast du auch wirklich alles für Teddy?“ fragte Andromeda Harry, der eine Tasche mit Teddys Habseligkeiten in der Hand hielt.<br/>„Ja Andy. Ich habe frische Anziehsachen, seine Badehose und Spielsachen. Es ist j nicht so, dass wir das nicht schon öfters gemacht haben.“ Antwortete Harry Andy mit seinem typischen Lächeln.<br/>„Du kennst mich doch Harry. Ich kann halt nicht anders.“ Meinte Andromeda mit einem Schulterzuckend entschuldigend.<br/>„Teddy, sagt deiner Oma auf Wiedersehen.“ Rief Harry in das Haus.<br/>Sofort hörte man wie sich der kleine Junge den beiden Erwachsenen nährte.<br/>„Wiedersehen Oma.“ Brüllte Teddy und warf sich Andy in die Arme.<br/>„Wir sehen uns morgen Abend wieder mein kleiner Racker.“ Sagte sie und streichelte ihm über den Kopf.<br/>„Harry.“ Sagte sie und sah ihn mit einem Blick an, der tausend Wort sagte.<br/>„Natürlich Andy. Bis morgen.“ Meinte Harry nur und nahm seinen Patensohn an die Hand und ging zu seinem Range Rover.</p><p>„Wann fahren wir den zu Hermie?“ wollte Teddy wissen, als er es sich auf der Rückbank bequem machte.<br/>„Wir fahren erst kurz zu mir, wo ich mich umziehen werde. Dann können wir fahren.“ Antwortete Harry, als er das Auto startete und sich in den Verkehr einfädelte.</p><p>„Du Harry, wer wird denn alles zu Hermies Party kommen?“ wollte Teddy von Harry wissen.<br/>„Nun, die gesamte Nachbarschaft ist eingeladen worden. Genau dafür ist sie ja da und bevor du fragst es sind genug andere Kinder da mit denen du spielen kannst.“ Meinte Harry, der seinen Patensohn durch den Rückspiegel beobachtete.<br/>„Au Ja.“ Sagte dieser und sprang in seinem Sitz auf und ab.<br/>„Und wenn du Hermi fragst spielt sie bestimmt auch mit dir. Vielleicht geht sie, wenn du gaaaaannnnnz lieb fragst sogar mit uns im Pool schwimmen.“ Meinte Harry belustigst, was Teddy dazu verleitete noch aufgebrachter um her zu hüpfen, soweit es der Sicherheitsgurt zuließ.</p><p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p><p>Nach dem Harry seinen Range Rover in der Garage geparkt hatte sprang Teddy sofort auf und rannte in das Haus, wo er sich sofort im Wohnzimmer vor dem Fernseher niederlies und seine Aladin DVD anmachte.<br/>„Mach es dir nicht all zu gemütlich kleiner, ich muss mich nur Umziehen, dann fahren wir wieder.“ Rief Harry, als er die Treppe zu seinem Schlafzimmer hoch ging Teddy zu, was dieser aber nicht wirklich mitbekam.</p><p>Zehn Minuten später kam er die Treppe in einer Jeans, einem Poloshirt und leinfachen Lederschuhen bekleidet die Treppe hinunter. In der Hand hielt er eine Tasche in die er die Anziehsachen von Teddy um ihn gepackt hatte.<br/>„Wenn der Herr so weit ist können wir fahren.“ Meinte Harry nur, als er das Wohnzimmer betrat.</p><p>Es dauerte zehn Minuten bis er es endlich Schaffte Teddy von seinem Film loszueisen.<br/>„Menno.“ Meinte Teddy leicht beleidigt.<br/>„Na na na. Nicht so mein Freund. Du darfst dafür acuh aussuchen mit welchem Auto wir fahren.“ Kam es von Harry, der erneut die Tasche aufgenommen hatte und hinter Teddy stand.<br/>„Denn da.“ Sagte Teddy und deutete auf eines der Autos von Harry.</p><p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p><p>Unterdessen war es schon zwei Uhr und die ersten Gäste trafen langsam bei den Grangers zu Hause ein. Dabei waren es vor allem die Familien mit Kindern, damit diese im Pool der Grangers schwimmen konnten.</p><p>„Hallo Mrs. Cox,wie geht es ihnen?“ fragte Hermione höfflich die Frau der gerade zusammen mit ihren achtjährigen Zwillingen in den Graten betreten hatte.<br/>„Danke Hermione, mit geht es sehr gut.“ Antwortete Mrs Cox und ging an Hermione vorbei zu einer kleinen Gruppe vo Frauen, die schon gekommen waren und an einem der Stehtische standen.</p><p>Hermione konnte sich einen bissigen Kommentar gerade noch verkneifen, denn sie wusste, dass es sonst überall zum Tagesgespräch werden würde. Das wusste sie daher, denn Mrs. Cox und ihre Gruppe von „Freundinnen“ waren die größten Tratschtanten der Umgebung.<br/>„Hermione, spielst du mit mir?“ wurde sie von der Stimme ihres Cousin aus ihren Gedanken geholt.<br/>Sie sah hinunter und sah Thomas vor ihr stehen, die Hand gehoben, als ob er an ihrem Sommerkleid zupfen wollte.<br/>„Wo sind denn deine Schwestern, wollen die nicht mit dir spielen?“ fragte Hermione und hockte sich von Thomas hin.<br/>„Zoe spricht mit den Mädchen die vorhin gekommen waren. Laura meinte nur, ich solle doch dich fragen, da du keinen hast der mit dir reden würde.“ Meinte der Junge.<br/>„Das verstehe ich aber nicht, da doch genug Leute hier sind mit denen du reden kannst.“ Fügte er noch hinzu.</p><p>„Mach dir darüber keine Gedanken kleiner Mann. Allerdings kann ich im Moment auch nicht mit dir spielen, aber dahinten kommen die Bennetts. Die haben einen Sohn in deinem Alter. Der spielt bestimmt mit dir und wenn Harry mit Teddy nachher kommt spielt der ganz bestimmt mit dir.“ Meinte Hermione und zeigte dabei auf eine Kleine Familie, die sie auf der Straße sehen konnten.<br/>„Ok.“ Sagte Thomas freudig und verschwand, damit der zusammen mit Tante Heather die Bennetts empfangen konnte.</p><p>Es dauert auch nicht lange und die beiden Jungen rannten laut lachend durch den Garten, was andere Kinder dazu veranlasste sich den beiden anzuschließen. Bald war der Garten von Kinderlachen erfüllt.</p><p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p><p>Heather Granger hatte beschlossen, da noch nicht allzu viele Gäste dar waren, vorwiegend die mit Kindern, dass sie ihre Gäste persönlich empfangen würde.<br/>So stand sie am Gartentor, welches direkt zu Auffahrt führe und begrüßte die Gäste. Doch nach kurzer Zeit kam Mrs Cox mit ein paar anderen Frauen zu ihr und fing sich an mit ihr zu unterhalten. </p><p>Nun musste Heather zugeben, dass sie mit einigen der Frauen gut befreundet war, doch in einem solchen Rudel, konnte man schon mal was anderes denken. Mrs Cox wollte gerade etwas sagen, als ein älterer Jaguar XJ (Mark I) die Straße hinunterkam und in die Auffahrt der Granger fuhr.<br/>„Wenn hast du denn da eingeladen?“ fragte Mrs Cox leicht hochnäsig, doch Heather würdigte sie keiner Antwort.</p><p>Sie folgte lieber dem Auto, bis sie selber erkannte wer da kam. Der Fahrer stellte das Fahrzeug ab und öffnete die Tür, steig aus und öffnete die hintere Tür, wo ein kleiner Junge heraussprang.<br/>Zusammen gingen die beiden auf die Frauen zu.<br/>„Hallo Heather, da bin ich wieder.“ Sagte der Mann, den alle Frauen lüstern ansahen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/26358276">Chapter 7</a>: Daumen rauf, Daumen runter
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Überarbeitung und Beta: Hedwig93</p></blockquote>
+            <p>
+            (See the end of the chapter for  <a href="/works/10960482#chapter_7_endnotes">more notes</a>.)
+            </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Harry, schön dass du wieder hier bist“, sagte Heather und umarmte ihn freudestrahlend. Harry erwiderte die Umarmung und noch bevor er etwas sagen konnte, erklang eine andere Stimme.<br/>„Hallo Heather. Wo ist der dicke?“, mischte sich Teddy ein, als er neben Harry auftauchte.<br/>„Hey, Ted. Tom ist im Garten, er ist bestimmt erfreut dich zu sehen.“ Meinte sie und umarmte den kleinen herzlich.<br/>Teddy war ganz wild darauf Tom zu sehen und rannte an der Gruppe vorbei in den Garten hinter dem Haus.<br/>„Harry, darf ich Dir vorstellen: Emily Cox, Sofia Mars, Ruby McDougal und Maria Briggs. Damen, Harry James Potter und der junge Mann da eben gerade war Edward Remus Lupin Harrys Patensohn.“ Stellte Heather die Anwesenden einander vor, während Harry den Frauen nacheinander seine Hand hinhielt.</p>
+<p>„Es ist schön Sie kennen zu lernen.“ Sagte Harry und schüttelte Mrs. Cox die Hand.<br/>„Darf ich fragen, woher Heather und Du euch kennt?“ wollte Mrs Brigges wissen, während sie Harry von oben bis unten betrachtete.<br/>„Harry ist ein Freund von Hermione. Sie kennen sich seitdem Sie elf Jahren waren und auf dieselbe Schule gegangen sind“, erklärte Heather.<br/>„Ah, diese ominöse Schule in Schottland“, sagte Mrs McDougal in einem Ton, der unmissverständlich klar machte, dass sie diese Geschichte nicht glaubte.</p>
+<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+<p>„Dicker!“, rief Teddy Lauthals und rannte auf Tom zu.<br/>Von diesem Aufschrei gewarnt drehte Tom sich um und sah nur noch wie jemand kleines auf ihn zu rannte. Aus Erfahrung, bereitete er sich auf den Aufprall vor, der auch kurz darauf erfolgte.<br/>„Allo Dicker!“, rief Teddy und umarmte Tom, so gut es auch nur ging.<br/>„Hey kleiner.“ Tom erwiderte die Umarmung.<br/>„Hab dich vermisst“, sagte Teddy und befreite sich aus der Umarmung und rannte zu Hermione, die gesehen hatte wie Teddy den Garten betreten hatte.</p>
+<p>„Na kleiner Raudi, hat Harry dich mitgebracht?“, fragte Hermione und rubbelte Teddy durch die Haare.<br/>„Ja. Er hat mich bei Oma abgeholt und dann haben wir Aladin geschaut. Und dann, dann durfte ich aussuchen, mit welchem Auto wir kommen. Ja... Ich habe das mit der Katze genommen.“<br/>„Wo ist denn Harry?“, wollte Hermione von dem kleinem wissen.<br/>„Der ist bei deiner Mami. Die reden miteinander“, meinte Teddy, wobei er sie nicht mehr ansah, sondern den spielenden Kindern mit großen Augen zusah, wie sie sich hinterher liefen.<br/>„Wenn du fragst, lassen sie dich bestimmt mitspielen.“ Hermione war seinem Blick gefolgt und lächelte Teddy an. Dieser ließ sich das nicht zwei Mal sagen und verschwand schnell. Hermione sah zu, wie er zu einem Mädchen in einem hellblauen Kleidchen rannte und mit ihr sprach.</p>
+<p>~~~~~~~~~~~~~~~~~~~~</p>
+<p>Harry hatte es geschafft, sich vom Empfangskomitee loszureißen, in dem Moment als zwei ältere Damen mit ihren Ehemännern kamen. Er ging in den Garten und blickte sich um. Er verschaffte sich einen Überblick, wer schon alles dar war und es waren einige. Schnell erkannte er, dass es vorwiegend Familien mit Kindern waren, was ihn beruhigte, da er schon befürchtet hatte, dass niemand für Teddy zum Spielen hier war.</p>
+<p>Eine Zeit lang beobachtete er nur das Treiben im Garten, vor allem Terdy, wie er mit den anderen Kindern spielte. So bekam er nicht mit, das sich Hermione neben ihn gestellt hatte, wobei sie auch keine Anstalten machte sich bemerkbar zu machen.<br/>„Du kannst ruhig was sagen“, meinte Harry, ohne seinen Blick von Teddy zu nehmen.<br/>„Und was? Mir gefällt es so“, sprach Hermione, doch Harry machte keine Anstalten ihr zu antworten.<br/>Sie lehnte sich an seine Schulter und sah nun ebenfalls Teddy hinterher.</p>
+<p>„Wenn ihr zwei wieder bei uns seid, setzt euch zu uns“, rief Hermiones Vater den beiden zu.<br/>„Wir kommen ja schon“, antwortete Hermione, hakte sich bei Harry ungefragt ein und zog ihn mit sich zu ihrem Vater an den Tisch, wo bereits ein Mann mit seiner Frau saßen.<br/>„Ben, Karin, darf ich euch vorstellen, das ist Harry, ein Freund von Hermione aus der Schule. Meine Tochter kennt ihr ja noch“, kam es von Tom, während der Mann Harry seine Hand hinhielt.<br/>„Ladys First!“, meinte Harry, und nahm die Hand von Karin, und schüttelte sie freundlich und wandte sich dann ihrem Mann zu.</p>
+<p>„Sir Benjamin Castle, OBE*. Wir beiden wohnen mit unserer Tochter drei Häuser die Straße runter.“ <br/>Der Mann stellte sich samt seines Titels vor, was Harry nicht wirklich zu beeindrucken schien. Sehr zum Missfallen von Ben. Hermione musste sich beherrschen nicht laut loszulachen, als sie erkannte was Mr. Castle vorhatte. Sie machte sich gefasst auf das, was nun kommen sollte.<br/>„Sir Harry James, Lord Potter GC, OM, KCVO, KBE*. Ich bin ein Schulfreund von Hermione und der Patenonkel von dem Jungen, der Tom eben umarmt hat“, sagte Harry, der erkannt hatte, dass der Mann ihn einschüchtern wollte. <br/>Titel haben häufig diese Wirkung auf Menschen und daher benutzten einige sie nur dafür. Hier konnte aber niemand Harry Potter schlagen, was ihn innerlich lachen ließ.<br/>Nicht zuletzt auch durch das Gesicht von Mr. Castle, der aussah, als hätte er in eine Zitrone gebissen, als er feststellte, dass hier jemand war, der mehr Titel als er selber hatte und dazu noch jünger war.</p>
+<p>Hermione wusste, dass Harry seine Titel nicht gerne benutzte, wenn überhaupt, was einigen in der Magischen Welt bitter aufgestoßen war, bevor er beschlossen hatte seine A-Level zu machen. Schnell drückte sie sich mehr an ihn, um ihm zu zeigen, dass sie bei ihm war, als die beiden Männer sich ansahen.<br/>„Was möchtest du trinken Harry?“, versuchte Tom die Situation zu entschärfen, da er wusste wie Benjamin sein konnte.</p>
+<p>„Ich denke ein kaltes Wasser würde mir im Moment gut tun“, meinte Harry und ließ die Hand des anderen Mannes los.<br/>„Dann komm mit, kaltes Wasser gibt es im Moment nur in der Küche.“ Sagte Tom und stand auf um mit Harry in die Küche zugehen.</p>
+<p>„Was war das gerade?“ wollte Tom mit einem Grinsen im Gesicht wissen, als sie aus der Hörweite der Gäste waren. Er wusste nicht, ob er lachen sollte oder extrem stolz sein.<br/>„Nichts, Mr. Castle und ich haben uns nur beschnuppert, wie man bei einem Hund sagen würde,“ meinte Harry, der ebenfalls am Grinsen war und betrat das Haus zusammen mit Tom.<br/>„Das habe ich schon gesehen. Ich war dabei. Nur zu gern würde ich wissen, was in seinem Kopf jetzt vor geht. Seitdem ich ihn kenne und er seinen Ritterschlag erhalten hat muss er es jedem den er trifft unter die Nase reiben. Und dabei meine ich jeden. Egal, ob es der Müllmann ist oder der Chirurg.“<br/>„Naja, bei mir kann er da lange warten“, kommentierte Harry es nur und ging zum Hängeschrank indem, wie er wusste die Gläser waren.<br/>„DAS habe ich gesehen.“ Tom betonte das erste Wort besonders.<br/>„Bis jetzt habe ich noch nie gesehen, das du alle deine Titel erwähnst, Harry. Ich war immer der Meinung, das wäre nicht so deins?“, wollte Tom nun wissen, während er eine Flasche Wasser aus dem Kühlschrank holte.<br/>„Ist es eigentlich auch nicht, aber in dem Moment kam es mir richtig vor.“ <br/>Harry nahm die Flasche und füllte sein Glas. Die beiden Männer verfielen in ein angenehmes Schweigen.</p>
+<p>~~~~~~~~~~~~~~~</p>
+<p>Natürlich war es den anderen Gästen nicht entgangen, dass Mr Castle, der so viel Wert auf seinen Titel legte, in seine Schranken gewiesen wurde.<br/>„Du hast nicht gesagt, dass Harry ein Lord ist“, beschwerte sich Laura, die sich neben Hermione stellte und Harry suchte.<br/>„Jetzt redest du wieder mit mir?“, fragte Hermione ihre Cousine ungläubig und wandte sich von ihr ab.<br/>Was sie dabei nicht bedacht hatte, waren die Kinder, die wie wild im Garten herumliefen. So bekam sie nicht mit, das Teddy Thomas hinterherlief. Es geschah was geschehen musste, beim Wegdrehen erwischte sie Teddy, der auf ihr landete und Thomas konnte den beiden nicht mehr ausweichen.</p>
+<p>„HERMI!“, schrie Teddy, der auf ihren Bauch landete und Thomas auf ihm.<br/>„Hey Teddy. Wie geht’s?“, sagte her Hermione als sie registriert hatte was passiert war.<br/>„Gut. Du bist weich, ich habe mir nicht weh getan“, antwortete Teddy, als er sich wieder aufrichtete. Die Eltern, die um sie herum saßen, mussten kräftig daran arbeiten bei diesen Worten nicht laut los zu lachen.<br/>„Danke, Teddy. Du bist auch sehr weich. Harry gibt dir wohl zu viel süßes“, lachte Hermione, während sie sich in eine sitzende Position brachte.<br/>„So viel gibt er mir gar nicht. Einen Schokoladen Frosch am Tag“, maulte Teddy.<br/>„Das ist einer mehr als du verdienst. Dafür musst du ab jetzt mit mir Schwimmen gehen oder mit meinem Dad Fahrrad fahren,“ verlangte Hermione und pikste mit ihrem Mittelfinger in den Bauch von Teddy. <br/>Er kicherte und wand sich.</p>
+<p>„Am besten fangen wir sofort an. Geh zu Harry und hol deine Schwimmsachen.“<br/>„SCHWIMMEN!“ riefen die beiden Jungen sofort. <br/>Sie waren voller Eifer dabei und rannten ins Haus, um ihre Sachen zu holen.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_7_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>* OBE = Offizier des Order of the British Empire</p>
+<p>*GC, OM, KCVO, KBE = Georgs-Kreuz; Orden des Merlin; Knight Commander des Royal Victorian Order; Knight Commander des Order of the British Empire</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/26518860">Chapter 8</a>: Wasser überall
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Wie immer ein Danke an Hedwig93 fürs betan</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Harry und Tom wollten gerade wieder in den Garten gehen, als mehrere Kinder in das Haus stürmten, auch Teddy war mit dabei.<br/>
+„Was geht denn hier ab?“, hallte Harrys Stimme über die Kinder hinweg. Sein Patensohn war vor ihm stehen geblieben und schaute ihn mit großen Augen an.<br/>
+„Wir gehen schwimmen. Hermi hat das gesagt. Jetzt müssen wir uns nur umziehen“, freute sich  Teddy, während er seinen Patenonkel mit großer Erwartung ansah.<br/>
+„Ach, soll ich mich etwa auch umziehen gehen?“, fragte er Teddy, der nun ganz aufgeregt mit dem Kopf nickte.<br/>
+„Dann geht schon mal vor, ich komme schnell nach.“<br/>
+Teddy und die anderen Kinder verschwanden in Richtung Bad, um sich nacheinander umzuziehen.<br/>
+„Dann wünsche ich dir nur viel Spaß“, entgegnete Tom und klopfte Harry wohl wissen, was auf diesen zu kam auf die Schulter.<br/>
+„Danke“, sagte er nur und verschwand ebenfalls im Haus.</p><p>Der zurückgebliebene Tom schüttelte nur den Kopf und verließ das Haus in den Garten, wo sein erster Blick auf Mr Castle landete. Offensichtlich hatte der kleine Machtkampf zwischen ihm und Harry für mehr gesorgt als nur für einige Irritationen. Mrs Castle redete eindringlich auf ihren Mann ein, der aussah, als würde er jeden Moment in sich zusammenfallen, was ihm ein lächeln entlockte.<br/>
+‘So geschieht es diesem aufgeblasenen Gockel recht’, dachte Hermiones Vater.</p><p>„Was hast du lustiges gesehen?“, fragte Heather, die zusammen mit Mrs Cox in den Garten gekommen war und sich neben Ihren Mann stellte.<br/>
+„Nichts Besonderes. Ben hat mal wieder seinen Titel benutzt“, meinte Tom zu seiner Frau.<br/>
+„Das ist wirklich nichts Neues, es sei…“, fing sie an, machte dann eine Pause, „Doch nicht etwa bei Harry?“<br/>
+„Doch, exakt bei ihm“, bekräftige Tom ihr gegenüber.<br/>
+Die Situation gefiel Tom richtig gut.<br/>
+„Was soll das denn heißen? Ich kenne niemand anderen der hier Wohnt und ein Sir als Titel hat“, mischte sich Mrs Cox ein.<br/>
+„Harry ist ein Lord des Vereinigten Königreiches“, erklärte  Heather ihr mit beiläufiger Stimme.<br/>
+Mrs Cox Augen leuchteten auf und fingen an Ausschau nach ihrer Tochter zuhalten.<br/>
+‘Das ist die perfekte Gelegenheit für Ruby’, dachte Mrs Cox.<br/>
+„Entschuldigt mich kurz, ich muss kurz zu Ruby“, sagte sie und ging zu ihrer Tochter, die mit ein paar anderen Frauen in ihrem alter redete.</p><p>~~~~~~~~~~~~~~</p><p>Hermione sah den Kindern hinterher, wie sie im Haus verschwanden um sich ihre Schwimmsachen anzuziehen. Da dies etwas dauern würde, beschloss sie schon mal zum Pool zu gehen und alles was man zum Spielen brauchen würde, vorzubereiten. Sie fischte mit einer Stange die verschiedenen Bälle, Matten und die anderen Sachen aus dem Pool und prüfte, ob sie noch genug Luft hatten. War dies nicht so, dann pustete Hermione sie auf. </p><p>„Ah, will Hermione schwimmen gehen. Das du dich überhaupt traust in einem Badeanzug vor andere Menschen zu treten. Man sollte es dir verbieten, du bist doch nur ein hässlicher Fleck“, erklang die Stimme von Laura.<br/>
+Noch einen Wasserball vor dem Gesicht, drehte sich Hermione um und konnte über den Rand des Balles Laura erkennen. Sie stand zusammen mit drei Mädchen in ihrem alter aus der Nachbarschaft vor ihr.<br/>
+„Genau. Außer Büchern kennt sie doch nix. Eine Leseratte gehört nicht an einen Pool, das wäre doch Verschwendung von Wasser“, warf eines der Mädchen ein. Hermione erkannte sie als Sonja McDougal, was sie innerlich die Augen verdrehen ließ.<br/>
+Rein Körperlich, war Sonja ein richtiges Pin-Up Girl, wie es im Buche stand: Lange Beine, schmale Hüften, großer Busen und Haare so blond, dass man meinen konnte es würde sich um einen weiblichen Malfoy handeln. Dieser Vergleich wurde, Hermiones Meinung, noch dadurch verstärkt, dass beide nicht wirklich mit Intelligenz gesegnet waren.<br/>
+Die beiden anderen Mädchen lachten zusammen mit Laura über diese Aussagen.<br/>
+Früher, vor dem Krieg hätten diese Worte sie hart getroffen, doch vieles hatte sich verändert.</p><p>„Ohhh, haben wir einen wunden Punkt bei dir getroffen, Leseratte? Das tut uns aber sooo Leid...NICHT“, kam es höhnisch von Laura, was die anderen dazu brachte in schallendes Gelächter auszubrechen.<br/>
+Das Gelächter hatte zufolge, dass auch die Personen in der Nähe nun zu hörten, was sie vorher nicht taten. Sie waren viel zu sehr mit ihren eigenen Gesprächen beschäftigt.<br/>
+„Wir werden sehen, wem es leid tun wird,“ flüsterte Hermione leise zu sich selber, während sie den ball in den Pool warf und in Richtung Haus verschwand, um sich nun selber umzuziehen.</p><p>~~~~~~~~~~~~~~~</p><p>Von diesem kleinen Streit, oder wie man es auch nennen wollte, bekamen Heather, Tom und Glenn nichts mit. Sie waren dabei zu überlegen, wann sie die Grills anschmeißen sollten.<br/>
+„Ich bin ja immer noch dafür, dass wir jetzt anfangen sollten. Bis die Kohle heiß genug ist und das erste Fleisch gut, ist vergehen bestimmt vierzig bis sechzig Minuten“, stimmte Glenn seinem Bruder zu.<br/>
+„Das kommt gut hin. Harry und ich haben es beim letzten Grillen getestet. Mit dem Holz aus dem Garten hat es etwas mehr als fünfzig Minuten gedauert, bis wir Fleisch drauflegen konnten. Das wäre vor allem perfekt, denn ich denke Hermione und Harry können die Kinder lange genug im Pool halten bis das erste Fleisch fertig ist“, stimmte Tom seinem Bruder zu.<br/>
+„Warum so früh? Es sind doch noch nicht mal alle Gäste da! Ihr könnt doch bestimmt noch etwas Warten?“, meinte nun Heather.<br/>
+„Heather, es ist bald Halb vier. Wenn wir jetzt einen der Drei Grills anmachen, können wir schon mal die Kinder versorgen. Die Erwachsenen können ruhig noch warten“, erklärte Glenn seinen Plan.<br/>
+„Ich würde sogar zwei Anmachen, dann können wir schon mal das Lamm und den Fisch auf niedrigen Temperaturen grillen“, warf Tom ein.<br/>
+„Macht doch was ihr wollt! Macht ihr doch eh immer. Ihr seid mir dafür verantwortlich. Punkt!“, sagte Heather frustriert und stapfte davon zu einer ihrer Freundinnen, die zusammen mit ihrer Lebensgefährtin an einem Tisch am Rand des Gartens saß.</p><p>~~~~~~~~~~~~~~~~</p><p>„Warum sitzt Ihr hier, wo kaum jemand ist?“, wollte Heather von Jasmin und ihrer Lebensgefährtin Kristin wissen.<br/>
+„Naja, auch wenn wir schon fast sechs Jahre hier in der Straße wohnen gibt es doch noch immer einige die sich nicht in unserer nähe wohl fühlen“, kam es etwas zögerlich von Kristin.<br/>
+„Ach, vergesst doch Mrs Cox. Ihr seid meine Gäste, also seid Ihr auch willkommen und außerdem brauche ich noch jemanden der mir Gesellschaft leistet, während mir Mütter erzählen, was ihre Töchter machen und wann und wen sie heiraten. Eben erst habe ich mitbekommen, das Mrs Cox Ihrer Tochter gesagt hat, sie solle sich doch an Harry ranmachen“, berichtete Heather, was den beiden Frauen ein Lachen hervorrief<br/>
+„Da kann diese gewitterhexe aber lange warten. Eher heirate ich einen Mann bevor das Geschieht. Harry hat doch definitiv etwas für deine Tochter übrig, Heather. Das sieht jeder Idiot“, antwortete Jasmin.</p><p>Die drei Frauen unterhielten sich noch ein paar Minuten, wodurch sie nicht mit bekamen, dass Harry und die Kinder wieder in den Garten getreten waren. Fast augenblicklich, waren die Blicke auf Harry gefallen, vor allem die der weiblichen Gäste, denn außer einer bis zu den Knieen reichenden Badeshort hatte er nichts an.</p><p>Hier machten sich die Jahre des Quidditchspielens und das regelmäßige Trainieren seitdem er zur Uni ging, bemerkbar. Sein Oberkörper war durchtrainiert und seine Bauchmuskeln traten hervor. Allerdings musste man auch sagen, dass er noch immer sehr dünn war. Er war nicht länger der kleine schmale Junge, der einst nach Hogwarts gekommen war. Nein. Er hatte sich zu einem gut aussehenden jungen Mann entwickelt.</p><p>Lange konnten ihn die Gäste allerdings nicht betrachten, denn Teddy und ein anderer Junge hatten ihn an den Händen gepackt und zogen ihn lachend in Richtung Pool. Harry spielte mit und wehrte sich ebenfalls lachend gegen seine „Entführung“.<br/>
+„Teddy, wenn ihr mich nicht los lasst, werde ich euch bestrafen!“ sagte Harry lachend, was sein Patensohn damit quittierte, dass er ihm die Zunge rausstreckte.<br/>
+„Ihr habt es nicht anders gewollte“, kam es verschwörerisch von Harry, der stehen geblieben war.</p><p>Die beiden jungen versuchten Harry mit aller Kraft immer wieder in Richtung Pool zu ziehen, doch Harry blieb einfach stehen, bis er plötzlich nachgab und die beiden Jungs anfingen zu fallen . Gekonnt befreite Harry seine Hände und schlang je einen Arm um einen der Jungen. Er hievte sie hoch, sodass er sie über die Schulter legen konnte.<br/>
+Die drei lachten dabei wie wild und sträubten sich. Harry rannte mit ihnen zum Pool und sprang, mit den beiden Jungen noch immer auf dem Arm in den Pool. Sie  tauschte unter und er ließ die beiden los.<br/>
+Als er wieder auftauchte, wurde er sofort von einem Schwall Wasser begrüßt, den ein Mädchen auf ihn zuwarf.<br/>
+„Drei gegen einen ist nicht fair!“, moserte Harry, als auch Teddy und der andere junge anfingen ihn mit Wasser nass zu spritzen.„Hör auf zu jammern Harry. Aber du hast recht, drei gegen einen ist nicht fair. Ich sollte ihnen Helfen dich nass zu machen!“, sagte Hermione, die unbemerkt am Pool erschien war. Sie war nur mit einem Bikini bekleidet und stand am Rand des Pools.<br/>
+Es verschlug ihm die Sprache, als er seine beste Freundin in so wenig Stoff vor ihm stehen sah.<br/>
+Er hätte Hermione unter tausenden, nein, unter allen Frauen der Welt an der Stimme erkannt. Er blickte zu ihr herauf und der Moment schien still zu stehen. ‘Sie ist so unglaublich schön’, dachte Harry.<br/>
+Mehr als ein klein lautes Wow brachte er nicht über seine Lippen, denn Teddy hatte ihm einen Schwall Wasser direkt ins Gesicht gespritzt, was ihn momentan von dieser Göttin vor ihm ablenkte. </p><p>TBC</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-9">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/27709731">Chapter 9</a>: Eine Wahl trefen
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <blockquote class="userstuff"><p>Mit diesem Kapitel melde ich mich aus dem Urlaub zurück. Ich hoffe ich wurde nicht all zu sehr vermisst. Wie immer Danke an meinen Beta Hedwig93. Viel spaß beim lesen...</p></blockquote>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Hermione sah Teddy und Thomas hinterher, wie sie im Haus verschwanden. Sie schaute noch einmal zu Laura und warf ihr ein unschuldiges Lächeln entgegen, bevor auch sie sich daran machte ins Haus zu verschwinden.<br/>„Ich kriege dich noch“, murmelte Laura leise als Reaktion vor sich hin.<br/>„Immer mit der Ruhe. Wir haben Sie zwar seit Jahren nicht mehr gesehen, aber davor haben wir es immer geschafft dieser Leseratte irgendwas anzutun“, kommentierte Sonja die Reaktion von Laura. <br/>Sie hatte alles gehört. Leider war es die Wahrheit.<br/>„Ich bin ihre Cousine und ich habe Sie seit Jahren nicht mehr so gesehen. So Glücklich und zufrieden, wann immer Harry in Ihrer Nähe ist. Ich will, dass Harry mich sieht anstatt Sie!“, teilte sie ihren Wunsch mit.<br/>Keine der anderen drei Jungen Frauen antwortete auf diesen Satz, denn sie alle wollten dasselbe.</p>
+<p>Hermione unterdessen war an ihrem Vater der zusammen mit ihrer Mutter in der Nähe des eingangs zum Haus stand vorbei geschlichen und in ihrem Zimmer verschwunden. Die Kinder hatten sich bereits davor versammelt und warteten auf Harry, der sich im Bad umzog. Teddy hatte ihr freudig zugewinkt, bevor sie in ihrem Zimmer verschwunden war.</p>
+<p>Gezielt ging sie auf ihren Kleiderschrank zu, in dem sich ihre Badesachen befanden. Sie wusste, dass es nicht das Aktuellste der Mode war, aber sie war sich sicher, sie hatte etwas, was Laura und die anderen zum Verstummen bringen würde. Sie öffnete den Schrank und wurde damit belohnt, dass ihr eine Handvoll Kleidungsstücke entgegen viel.<br/>„Ich muss hier mal wieder aufräumen“, dachte sie sich und warf die Kleidungsstücke unachtsam aufs Bett.<br/>Harry hatte sich umgezogen und wollte sich wieder auf den Weg runter machen, als er am Zimmer von Hermione vorbei kam. Ihm fiel auf, dass die Tür einen Spalt offen war und jemand im Zimmer war. Neugierig öffnete er die Tür soweit, dass er seinen Kopf hindurch stecken konnte. Was er sah brachte ihn zum Grinsen. Hermione stand vor ihrem Kleiderschrank und war etwas am suchen. Ihm blieb natürlich nicht die Unordnung auf dem Boden vor und im Kleiderschrank verborgen, was er auch sofort kundtat.<br/>„Also für jemanden der sonst immer 100% auf Ordnung achtet, sieht es aber hier sehr Unordentlich aus.” kommentierte er das Geschehen.<br/>„Ahhh!” schrie Hermione auf, drehte sich um und warf das erstbeste nach dem Störenfried.<br/>Ein pinkes Top landete direkt auf dem Kopf von Harry. Dieser war über diesen `Angriff´ so erstaunt, dass er sich nur das Top vom Kopf zog und die Tür schloss.<br/>So bekam er gar nicht mir, das Hermione Hochrot angelaufen war.<br/>„Das ist doch gerade nicht wirklich passiert”, dachte sich Hermione.  </p>
+<p>Sie ließ ihren Blick über die restlichen Kleidungsstücke im Schrank gleiten, um zusehen, wo in etwa sich ihre Badekleidung befand. Sie fing an weitere Kleidungsstücke aus dem Schrank hinter sich auf das Bett zu werfen, als sie einen ihrer Schwimmanzüge in die Finder bekam.<br/>„Immerhin schon mal einer“, dachte sie und legte ihn neben sich auf den Boden und suchte nun den Rest.</p>
+<p>Es dauerte auch nicht lange bis sie zwei Unvollständige Bikinis und zwei weitere Badeanzüge gefunden hatte. Doch keines der Kleidungsstücke war das was sie suchte. <br/>„Endlich!“, murmelte sie und holte das von ihr gesuchte Kleidungsstück aus dem, Schrank.<br/>Bei diesem Kleidungsstück handelte es sich um einen Schwarzen Bikini, der mit Metallringen an der Hüfte verziert war. <br/>„Das wird reichen“, dachte sich Hermione und nahm den Bikini mit in ihr kleines Badezimmer, das sich an ihr Zimmer anschloss.</p>
+<p>Hermione war nicht die einzige, die beschlossen hatte sich umzuziehen. Einige der Eltern wollten mit ihren Kleinkindern ebenfalls in den Pool, was einen kleinen Stau vor dem Gästebad verursachte. Andere wiederum waren zu sich nach Hause gegangen, um sich umzuziehen, da sie nah genug wohnten. Laura beachtete die kleine Schlange nicht, sondern ging zielstrebig auf die Tür zum Gästezimmer zu, das sie zur zeit mit ihrer Schwester bewohnte..<br/>Sie zog ihren Koffer unter dem Bett hervor und hievte ihn auf das Bett.<br/>„Dir werd ich's zeigen“, murmelte sie vor sich hin, während sie ihren Koffer öffnete und ihren Bikini suchte.</p>
+<p> </p>
+<p>Die jungen Frauen waren alle dabei Ihre Bikinis zu finden und Anziehen, das keiner mitbekam, wie Harry sich umzog.<br/>Dank ihres Vorsprungs war Hermione als erste wieder am Pool und bekam so nicht mit, dass sich Ihre Cousine mit ihrern Freundinnen auf Ruby gestoßen waren. Ruby hatte sich bei sich zuhause umgezogen und als sie wieder im Haus der Grangers angelangt war, trafen die anderen direkt auf sie.</p>
+<p>„Da bist du ja wieder!“, meinte Laura in einem Ton der zeigte, wie gereizt sie war.<br/>Ruby registrierte erst gar nicht, dass sie damit gemeint war, denn vor ihr stand Sonja McDougal im Flur.<br/>„Meinst Du mich?“, fragte Sonja nur verwundert.<br/>„Nein ich meine SIE!“, keifte Laura Sonja an und zeigte hinter sie auf Ruby, die erst jetzt mitbekam, dass sie gemeint war.<br/>„Ich? Was hast du denn dagegen?“, fragte Ruby Laura verwundert.</p>
+<p>„Mach nicht so als ob Du es nicht wüsstest. Ich habe mitbekommen, wie Deine Mutter Dir aufgetragen hat, dass Du dich an meinen Harry ranzumachen“, sprach Laura mit einem bedrohlichen Unterton.<br/>„Ja und? Was dagegen? Soweit ich weiß, ist Lord Potter nicht vergeben. Also von Wegen DEIN Harry Laura“, kam es genauso giftig von Ruby zurück.<br/>Keiner der Beiden bekam mit, wie sich Sonja langsam zurückzog, damit sie nicht in das Kreuzfeuer der beiden jungen Frauen geraten konnte.</p>
+<p>„Es ist aber MEIN Harry!“, fing Laura eine neue Triade an.<br/>„Weder Du noch diese flache Leseratte, die sich meine Cousine schimpft hat eine Chance bei ihm, wenn er mich sieht. Er wird sofort sehen, was er bei mir hat. So was kann keine von euch ihm bieten. Einem Lord gehört nur das Beste. Weder Hermione noch du können ihm das bieten. Also sage ich es nur noch einmal. HALT DICH VON IHM FERN!“, fuhr Laura fort, wobei sie den letzten Satz förmlich Ruby entgegen zischte. Es war in einer Art, die jeden Parselmund stolz gemacht hätte.</p>
+<p>„Das kannst Du vergessen. Ich mache das, was ich will! Weder Du noch sonst jemand kann mich daran hindern“, meinte Ruby darauf nur und ging vorbei an Laura in Richtung Garten. Sie bekam so gar nicht mit, wie sich die Augen von Laura noch mehr verfinsterten als sie eh schon waren.</p>
+<p>Das nächste was Ruby registrierte war ein brennender Schmerz an ihrer Rechten Wange. Wie vom Blitz getroffen, mit weit aufgerissenen Augen sah sie zu Laura hinüber, die sie ansah als ob Sie sie umbringen wollte. Von Lauras Gesicht folgten ihre Blicke dem ausgestreckten Arm, bis zur Hand, die auf ihrer Wange ruhte.</p>
+<p>„Du hast mich geschlagen!“, flüsterte Ruby total perplex und machte einen Schritt zurück, was dazu führte, dass Lauras Hand von ihrer Wange fiel.<br/>Wo eben noch die Hand war machte sich eine röte breit, die ungefähr die Form einer Hand hatte.<br/>„Du hast mich geschlagen!“, wiederholte Ruby lauter, als ob sie erst jetzt verstand was passiert war.<br/>Sie wollte noch etwas sagen, wurde aber von Lauras Zeigefinger direkt vor ihrem Gesicht daran gehindert.<br/>„Ich sag es noch einmal: Lass die finger von meinem Harry. Wenn nicht, gibt es mehr als nur eine Backpfeife. Verstanden?“, knurrte Laura die an, wobei sie mit ihrem Gesicht bis auf wenige Zentimeter an das von Ruby herangekommen war.<br/>Ruby schluckte verängstigt, bevor sie anfing zu nicken.<br/>„Gut“, meinte Laura nur, bevor sie sich umdrehte und in Richtung Garten ging. “Wir verstehen uns also.”</p>
+<p>Sonja hatte all dies beobachtete und sah ihre ehemalige Freundin nur mitleidig an, bevor auch sie in Richtung Garten verschwand.<br/>Ruby versuchte nicht einmal die Tränen zu unterdrücken, die anfingen ihr Gesicht hinunter laufen.<br/>„Nicht einmal Mutter oder Vater haben mich geschlagen“, flüsterte Ruby leise und fing an sich die schmerzende backe zu reiben.<br/>Sie stand nur einige Augenblicke so im Flur der Grangers, bevor die auf dem Absatz kehrt machte und zu ihrem Elternhaus flüchtete.</p>
+<p>Unter dessen waren Laura und Sonja im Garten angekommen und auf dem Weg zum Pool, als sie Hermione aufschreien hörten.</p>
+<p>„HARRY JAMES POTTER, WENN DU MICH NICHT SOFORT RUNTERLÄSST, WERDE ICH DICH VERHEXEN!“<br/>Dieser Aufschrei war gefolgt von einem Geräusch, als ob etwas ins Wasser fällt und dem Gelächter von Kindern und einiger Erwachsener.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-10">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/27802908">Chapter 10</a>: Spielzeit
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Teddy hatte ihn mit dem Schwall Wasser dermaßen abgelenkt, dass er nicht mitbekam, wie Hermione in das Wasser des Pools geglitten war und sich hinter ihn gestellt hatte. Er wollte gerade nach Teddy greifen um ihn spielerisch unter Wasser zu drücken, als ihm die Beine Unterwasser weggezogen wurden. Er landete mit dem Gesicht voran im Wasser und wurde nun anstelle von Teddy unter Wasser gedrückt.<br/>Die Kinder und Erwachsenen, die da Spiel gesehen hatten, fingen an zu lachen. Er kämpfte etwas gegen die Hand auf seinem Rücken an... Prustend und Wasser ausspuckend kam Harry wieder an die Oberfläche und drehte sich um, so dass er sehen konnte wer ihm die Beine weggerissen hatte. Was er sah war Hermione, die sich vor Lachen die Hände vor dem Mund gelegt hatte.<br/>Sein Blick verfinsterte sich als er sie ansah und sein Mund verzog sich zu einem nichts Gutes erahnenden Grinsen verzog.</p>
+<p>„Oh nein, das wagst Du nicht!“ kam es etwas verängstigt von Hermione, als sie sah, wie Harry verschmitzt schaute.<br/>Zur Antwort wurde das breite Grinsen auf seinem Gesicht nur noch breiter.<br/>„Ohoh, Hermi ist Böse!“, rief Teddy belustigt, denn er konnte erahnen, was sein Patenonkel nun mit ihr machen würde. Er würde ihr das selbe antun, wie ihm immer.<br/>Teddy sollte recht behalten, denn Harry war mit zwei großen Schritten bei Hermione angekommen und hatte sie in einer Umarmung gefangen.<br/>„Was sollte das?“, flüsterte Harry Hermione leise ins Ohr, was ihr einen Schauer den Rücken herunter jagte.<br/>„Drdrr... Drei gegen einen ist halt nicht fair. Ich musste doch Teddy und Thomas helfen“, Antwortete Hermione mit zittriger Stimme, was vor allem daran lag, dass Harry sie umarmte und feste an sich drückte.<br/>„Ah ja. Das klingt ja schon ganz nach einer Verschwörung. Und weißt Du, was man mit Verschwörern tut? Man bestraft sie“, sagte Harry lächelnd, wobei er den letzten Satz ihr erneut ins Ohr flüsterte.<br/>Hermione hatte Harrys Antwort noch nicht ganz verarbeitet, als sie merkte, wie er sie mit einem Arm losließ. Erst als sie merkte, dass etwas sich um ihre Beine schlang, registrierte sie, was Harry gesagt hat.<br/>„Oh nein, das wirst Du nicht tun!“, meinte Hermione und versuchte sich von Harry zu befreien, doch dieser war stärker als sie und hielt sie nur fest.<br/>„Oh doch“, Meinte dieser nur, bevor er sie hochhob und wie eine Braut auf den armen trug.</p>
+<p>Entschlossen ging Harry, begleitet vom Lachen der Kinder, in Richtung der Treppe um aus dem Pool zu kommen. Hermione strampelte und versuchte sich auf dem ganzen weg zu befreien, hörte allerdings auf, als Harry die letzte Stufe betraten hatte.<br/>„Das wirst du nicht tun Harry. Du willst mich jetzt runter lassen, ja? Du willst es dir doch nicht mit mir verscherzen?“, fragte Hermione ihn, so leise, dass nur er es verstehen konnte.<br/>„Hermione, ma Chérie, das werden wir ja sehen.“ Antwortete Harry, der mittlerweile auf dem Rasen stand.</p>
+<p>Gemütlich fing er an im Garten herum zu schlendern, denn die Kinder waren ihm aus dem Pool gefolgt. So führte er eine kleine Prozession von zehn Kindern im Alter von Drei bis zehn, Teddy an seiner Seite durch den Garten an. Hermione unterdessen versuchte immer wieder sich aus dem Griff von Harry zu winden, auch wenn sie es mehr als nur genoss von ihm so getragen zu werden. Doch langsam wurde es ihr zu Bund.<br/>„Lass mich runter Harry“, meinte sie zu ihm, was er aber grinsend mit einem Kopfschütteln verneinte. „Lass mich sofort runter Harry!“ wurde Hermione immer lauter, was Harry veranlasste zu stoppen.<br/>„Warum sollte ich?“, fragte er sie noch immer grinsend.<br/>„HARRY JAMES POTTER, WENN DU MICH NICHT SOFORT RUNTERLÄSST, WERDE ICH DICH VERHEXEN!“ schrie Hermione ihn nun förmlich an, was ihn dazu brachte ihr direkt in die Augen zu schauen.<br/>„Dein Wunsch ist mir Befehl“, kommentierte Harry das nur lachend und ließ sie Fallen. Noch bevor sie etwas erwidern konnte, schlug sie auch schon auf dem Wasser auf und ging unter.</p>
+<p>Das brachte alle wieder zum Lachen. Hermione durchbrach die Wasseroberfläche und spuckte das verschluckte Wasser in einem Hohen Bogen wieder aus. Damit sie besser sehen konnte, schob sie sich die nassen Haare aus dem Gesicht. Das ganze Gelächter ließ sie zu Harry hinaufschauen, doch bevor sie ihn anscheine konnte sprang er zu ihr in den Pool und tauchte unter.<br/>Aus Reflex, packte sie seinen Kopf und hinderte ihn daran aufzutauchen.<br/>„Das hast Du jetzt davon Mr. Potter. Wer nicht hören will, muss fühlen!“, meinte sie nur, als sie nach zehn Sekunden Harry Kopf losließ.<br/>„HERMI!“ rief Teddy ihr zu, was sie veranlassten Harry Patensohn zu suchen. <br/>Was sie sah, führte dazu, dass sich ein Warmes Gefühl in ihr ausbreitete. </p>
+<p>Teddy stand zusammen mit den anderen Kindern am Rand des Pools und grinste sie breit an, während er beide Daumen in die Luft hielt.<br/>„Das macht Harry auch immer mit mir, wenn ich nicht brav bin, nur ich kann mich noch nicht so gut wehren, da ich noch zu klein bin“, meinte Teddy.<br/>„Wenn Harry das nochmal mit dir macht, Teddy, dann kommst du zu mir und ich lege Harry über mein Knie und verhau ihm seinen Po“, scherzte Hermione und sah zu Harry hinüber, der noch immer am Grinsen war.<br/>„Wir werden sehen“, meinte er nur und griff nach einem Wasserball, der neben ihm im Wasser trieb.<br/>„Hey, Teddy hast Du lust zu spielen?“, fragte er seinen Patensohn und hielt den Ball in die Höhe.<br/>Teddy quittierte das mit einem Sprung in das Wasser.</p>
+<p>Unterdessen war Laura an den Pool getreten und hatte sie Situation beobachtet. Sie malte sich schon im Geiste aus, wie sie sich an Harry ran machen konnte, ohne dass die Leseratte von Cousine ihr in den Weg kam. Eine passende Situation kam schneller als sie erhofft hatte. Teddy hatte den Wasserball mit so viel Kraft geschlagen, dass er ihn aus dem Pool befördert hatte.<br/>„Gehe schon“, meinte Harry nur und schwang sich aus dem Pool. Das Wasser lief an seinem Körper herunter und zog eine Spur hinter ihm her. Er ging wenige Schritte, um zum Ball zu gelangen.<br/>Sie sah ihre Chance und griff sich den Ball und hielt ihn ihm hin.<br/>„Hier Lord Potter“, sagte sie und hielt sich den Ball direkt vor die Brust.<br/>„Danke“, meinte Harry überrascht, doch lächelte er sie an.</p>
+<p>Die nächsten Zwanzig Minuten verbrachte Laura damit Körperkontakt zu Harry herzustellen. Anfangs machte sie dies noch subtil, aber das half nichts. Sie wurde aber daher immer offensiver. Sie ging sogar so weit, ihn einfach zu Umarmten und sich an ihn zu pressen.<br/>„Wofür war das?“ fragte er sie total verwundert.<br/>„Dafür, dass Du, Du bist Lord Potter“, war ihre Antwort.<br/>Harry wusste nicht was er darauf antworten sollte, wurde dann aber zum Glück von Tom gerettet, der die Kinder zum Essen rief.<br/>„Ihr habt Mr. Granger gehört, es gibt essen, das heißt wir gehen uns jetzt alle abtrocknen und dann ab an den Tisch.“ Sprach Harry zu den Kindern in einem Ton, der keine Widerrede zuließ.</p>
+<p>Grummelnd folgten die Kinder Harrys Aufforderung, da sie doch etwas Hunger hatten. Sie verließen den Pool und griffen sich Handtücher, die Charlotte Granger ihnen hinhielt. Harry verließ als letzter den Pool und griff sich das Handtuch von Teddy und trocknete sich ebenfalls ab. Er grübelte, während er sich ab trocknete darüber nach, was Laura mit ihren Aktionen versuchte zu erreichen, doch ihm fiel nichts ein Als auch er trocken war, folgte er seinem Patensohn zu Tom umzusehen, was schon fertig gegrillt war. So bekam er gar nicht mit, wie Hermione sich Laura geschnappt hatte und in eine nicht genutzte Ecke des Gartens zog.</p>
+<p>„WAS soll das werden, Leseratte, wenn es fertig ist?“, wollte Laura von ihrer Cousine wütend wissen. Sie stemmte die freie Hand in die Seite und wartete auf eine Antwort von Hermione.<br/>„Solange ich rede, hältst du jetzt den Mund, Laura“, sagte Hermione in einem ähnlichen Tonfall, wie Laura.<br/>„Das werde ich ganz bestimmt nicht. Ich muss nicht auf dich Hören. Wir sind nur miteinander verwandt, weil meine Mum Dad geheiratet hat,“ keifte Laura zurück. Sie stemmte nun auch die zweite Hand in die Seite, die Hermione losgelassen hatte. <br/>„Das hier hat nichts damit zu tun, dass wir verwandt sind. Es geht um Harry“, meinte Hermione finster und stemmte ihre Hände gegen ihre Hüfte.<br/>„Dachte ich’s mir doch! Du kannst es nicht ausstehen zu sehen, wie er mich ansieht. So verliebt. Du wünschst dir, Du wärst ich! HA. Du bist eifersüchtig“, kam es triumphierend von Laura.<br/>„Oh ihr Kleingläubigen!“, sprach Hermione. „Laura, wie blöd bist du? Harry hat dich nicht angesehen, weil er dich mag! Er hat dich an gesehen, weil er dich irritierend und aufdringlich findet. Das hat man doch an seiner Körpersprache gesehen, oder bist du so Blind?“, stellte Hermione die Situation richtig.<br/>„Was weißt du schon! Du hattest in deinem ganzen leben doch noch nie einen Freund. Jeder fand dich zu hässlich oder deine verhalten hat sie davon abgehalten, sich mit dir zu beschäftigen. Oder gar dich anzufassen. Niemand will eine Besserwisserin zur Freundin. Und dann noch Dein Aussehen, deine Haare, dein Po und der ganze Rest, einfach nur Hässlich! Du hast doch bei keinem eine Chance!“, versuchte Laura Hermione zu beleidigen.<br/>„Das würde ich nicht sagen, Laura. Ich liebe meine Hermione so wie sie ist“, meldete sich Harry zu Wort. Er war gekommen, um Hermione zum Essen zu holen.<br/>„Hermione ist alles, was ich in einer Frau suche. Schön von innen und von außen”, pfiff Harry, „Da will Mann doch gar nicht mehr haben. Schlau und unwiderstehlich, das genaue Gegenteil von Dir. Du bist nur schön nach außen hin, aber innerlich bist du ein hässlicher Mensch“, sprach Harry und stellte sich neben Hermione. Sie war ganz angespannt. <br/>„War das eine Liebeserklärung?”, fragte sie sich stumm. <br/>„Wie kannst Du so etwas sagen. Ich weiß, dass Du es auch gespürt hast! Unsere Liebe! Da ist etwas zwischen uns!“, keifte Laura nun.<br/>Harry schüttelte nur den Kopf und sah sie mitleidig an.<br/>„Zwischen uns ist nichts Laura. Das bildest du dir nur ein. Da wird auch nie etwas sein. Alles, was du liebst, ist mein Titel, mein Geld und meinen Status“, meinte Harry und drehte sich Hermione zu.<br/>„Sie zu und lerne“, meinte er nur, bevor er sich zu Hermione hinunter beugte.</p>
+<p>Er sah ihr von oben herab, mit seinen smaragdgrünen Augen, tief in ihre braunen Augen und näherte sich ihr langsam. Ihr Blick fiel auf seine sich nähernden Lippen und sie fragte sich,wie sie sich auf den ihren Anfühlen würden. Die Antwort wusste würde sie bald bekommen.<br/>Sie spürte, wie sein Atem ihre Lippen streifte als er ihr näher kam Einen wohltuenden Schauer lief ihr über den Rücken.<br/>„Gleich ist es soweit!“, schrie sie innerlich vor Glück auf. “Er tut es.”<br/>Dann war es endlich soweit und sie spürte die Wärme seiner Lippen auf ihren. In ihrem Bauch explodierten Tausende von Feuerwerken. Seine Lippen fühlten sich trocken und zugleich feucht an. Sie waren viel weicher, als sie gedacht hätte.<br/>Langsam öffneten sich seine Lippen und sie spürte, wie seine Zunge zärtlich über ihre Lippen streichelte. Unbewusst öffnete sie ihren Mund ein Stück und seine Zunge bahnten sich seinen Weg, wo sie von ihrer Aufgehalten wurde. Sie gebot ihm Inne zu halten und zu genießen. Sofort fingen Sie an einen Tango zu Tanzen. Sie wusste einfach nicht mehr, was sie fühlen sollte, denn sie war endlich da, wo sie hingehörte, bei Ihm, in seinen Armen. Angekommen.</p>
+<p>Der Kuss dauerte nicht lange, doch sagte er mehr als jedes Gespräch, was die beiden hätten führen können. Keiner von beiden wollte etwas sagen, um diesen Moment nicht zu zerstören. Sie beide hatten so lange darauf gewartet. So lange, unglaublich lange Zeit war vergangen. </p>
+<p>Ihre Gesichter trennten sich voneinander und sie legte Ihren Kopf auf seine Schulter, während er weiterhin ihren Rücken streichelte. Er streichelte ihren Rücken einfach weiter.<br/>Erst als er aufhörte mit seiner Hand über ihren Rücken zu fahren, sah sie wieder zu ihm hinauf. Was sie sah in seinem Gesicht sah, zeigte ihr, dass alles gut werden würde.<br/>„Harry…“, fing sie an. Sein Zeigefinger auf ihren Lippen hinderte sie aber daran weiter zu sprechen.<br/>Erst sah es für sie so aus als ob er noch etwas sagen wollte, doch er beugte sich erneut zu ihr hinunter und Küsste sie.</p>
+<p>Die beiden wurden erst unterbrochen, als sich jemand Räusperte. Wie vom Blitz getroffen, fuhren die Beiden auseinander und drehten sich zu der Person um. Dort stand Heather Granger, Hermiones Mutter..<br/>„Ich habe Teddy versprochen, ich suche euch beide, da kam mir nicht in den Sinn, dass ich das hier finden würde“ sagte sie trocken und drehte sich um, um zu gehen.<br/>Sie war keine drei Schritte gegangen, als sie sich noch einmal umdrehte.<br/>„Wenn ich euch bitten dürfte zum Essen zu kommen. Es wird sonst kalt. Um euch gegenseitig zu küssen, habt ihr noch den Rest eures gemeinsamen Lebens“, meinte sie nur und ging zu ihrem Mann.</p>
+<p>Hermione und Harry standen noch immer wie angewurzelt an der Stelle wo sie sich geküsst hatten. An Laure verschwendeten beide keinen Gedanken mehr und bekamen nicht mit, wie sie wütend zu den anderen zum Tisch ging.<br/>„Hat meine Mutter das gerade wirklich gesagt?“, wollte Hermione von ihrem Harry wissen.<br/>„Ich glaube... ja, das hat sie“, grinste dieser nur und wollte sie erneut Küssen.<br/>„Hop, los. Heute noch, Ihr zwei!“ hörten sie Heather rufen.<br/>„Ich glaube, wir sollten lieber essen gehen bevor meine Mum noch was anderes anstellt“, meinte Hermione und lächelte sichtlich glücklich. Sie griff nach Harrys Hand. „Komm!“, sprach sie nur und gab ihm einen Kuss auf die Wange. Zusammen gingen sie zu den Anderen.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-11">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/27915624">Chapter 11</a>: Etwas Magie
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Es war kurz vor Mitternacht, als Heather die letzten Gäste verabschiedet hatte. Im Garten der Grangers sah es aus, wie es nach einer solchen Veranstaltung zu erwarten war. Überall standen gebrauchte Gläser herum. Einige davon hatten noch einen Rest ihres Inhalts. Von Bier und Wein bis hin zu Limonade war alles dabei. Da waren die Teller, die herumstanden, das Besteck und vieles mehr. Doch keiner der noch Anwesenden wollte es anders haben, denn es zeigte ihnen, dass der Tag ein Voller Erfolg gewesen war.<br/>„Weißt du Hermione, jetzt wäre etwas Magie nötig, um hier aufzuräumen“, scherzte Heather als sie sich neben ihre Tochter auf Bank setzte.<br/>„Moment ich hole meinen Zauberstab“, scherzte sie zurück und winkte Ihrer Mutter verschwörerisch zu.<br/>„Da ist mehr als Magie nötig, Heather“, mischte sich Charlotte ein, bevor sie einen Schluck Rotwein aus ihrem Glas nahm.<br/>„Wenn du nur wüsstest“, murmelte Hermione leise vor sich hin, wobei sie insgeheim hoffte, dass sie keiner gehört hatte.<br/>„Hast du was gesagt?“, kam es von Ihrer Tante. Sie schaute sie fragend an.<br/>Hermione schüttelte nur den Kopf und griff nun nach ihrem eigenen Drink.</p>
+<p>Sie hatte sich dazu entschieden, da kein Gast mehr da war, sich ein Glas Alkohol zu genehmigen. Es war zwar nur ein Wein, doch es reichte Hermione, da sie eigentlich noch einen klaren Kopf gebrauchen könnte. Sie wusste nämlich nicht, wie die Nacht für sie enden würde und da wäre ein klarer Kopf besser. Sie wollte alles mitbekommen können.<br/>Sie konnte nicht mehr groß darüber nachdenken, als auch die Herren und ihre Cousine Zoe sich zu den drei Frauen setzten.<br/>„Alle weg?“, Fragte Tom seine Frau, nachdem er sich zu ihr hinüber gebeugt hatte und ihr einen Kuss auf die Wange gegeben hatte.<br/>„Alle weg“, antwortete Heather nur und kuschelte sich an Tom.<br/>Ohne groß darüber nachzudenken tat Harry es Tom gleich. Er beugte sich zu Hermione hinunter und gab ihr einen kurzen Kuss auf den Mund. Zoe hatte sich neben Hermione gesetzt, somit blieb Harry nichts anderes übrig, als sich ihr gegenüber zu setzen. </p>
+<p>Die kleine Gruppe saß im Schein der noch brennenden Kerzen, die aufgestellt wurden als es dunkel wurde. Ihrem Tisch und die Gesichter wurden in ein schummriges Licht getaucht und sie genossen die Stille, die nur vom Klirren der Gläser durchbrochen wurde. Sie saßen da und sahen sich den Himmel über ihnen an.<br/>„So geht das nicht!“, durchbrach Hermione die Stille und stand von ihrem Stuhl. Alle sahen Hermione gespannt an, was sie machen würde. Einzig und allein ihre Mutter konnte sich denken was Hermione vorhatte. Sie folgten ihr mit ihren Blicken und leicht Hochgezogenen Augenbrauen, als sie den Tisch umrundete.<br/>„Platz“, sagte sie nur, als sie vor Harry zum Stehen gekommen war.<br/>Dieser Tat wie ihm befohlen und setzte sich so hin, dass sich Hermione auf seinen Schoß setzen konnte. Sie setzte sich so hin, dass sie ihren Kopf auf seine Brust legen konnte, aber alles noch im Blick hatte. Harry legte ihr die Hand auf den Rücken um ihr etwas halt zugeben. Er wollte ihr zeigen, dass er für sie da war, dass er sie liebte. Ihr Vater grunzte nur kurz, als sich seine Blicke mit denen von Harry kreuzten und sich die beiden Männer kurz anstarren.<br/>Heather bemerkte das und stieß ihren Mann mit dem Zeigefinger in die Rippen.<br/>„Was soll das?“, wollte sie von ihm leise wissen.<br/>"Nichts", log Tom und rückte etwas näher zu Heather herüber. Er nahm ihre langen braunen Haare und versteckte sein Gesicht dahinter. Er machte das immer, wenn er seine Gesichtsausdruck verstecken wollte. Man konnte ihm schon immer ansehen, wenn er schwindelte. Heather kannte ihren Mann und schüttelte nur leicht den Kopf. Es war alles gut, also wollte sie ihn dieses Mal damit durchkommen lassen.<br/>"Wie du meinst, Schatz", lächelte sie.</p>
+<p>Sie saßen noch weitere zehn Minuten in fast vorkommender Stille zusammen. Einige würden behaupten, dass solche Stille nie gut sein kann, doch diese Gruppe fand es angenehm. Erst als Zoe ausgiebig gähnte wurde die Stille erneut durchbrochen.<br/>„Ich gehe jetzt schlafen. Gute Nacht!“, sagte sie und verabschiedete sich, aber nicht ohne ihre Mutter und ihren Vater zu drücken. So blieben nur noch Glenn und Charlotte, Tom und Heather sowie Harry und Hermione zurück, da Laura sich schon früher am Abend ins haus zurückgezogen hatte.<br/>„Ich muss mich noch bei dir entschuldigen, Harry“, meinte Heather plötzlich. „Ich weiß, du hast dir den Tag auch anders vorgestellt. Von daher Entschuldigung, dass wir dich mehr oder weniger gezwungen haben, dich um die Kinder zu kümmern.“ Harry lächelte. <br/>„Heather, das hat mir doch überhaupt nichts ausgemacht. Wirklich. Du kennst mich doch, ich kann Teddy schon Sachen schwer abschlagen und wenn mich dann eine ganze Meute von Kinder so ansieht, werde ich weich“ winkte Harry die Sache einfach ab.<br/>„Trotz dem, Harry, danke. Vor allem, da du ja jetzt mit meiner Tochter zusammen bist. Ihr hättet bestimmt was anders tun können“, widersprach Heather ihm.<br/>„Mom, wie war das vorher noch einmal? Was hattest du da gesagt? `Zum Küssen haben wir noch den Rest unseres Lebens´“, meinte nun Hermione, was Harry dazu veranlasste ihr einen Kuss auf den Kopf zu geben.</p>
+<p>Dieser Satz von ihr und seiner Geste lies die beiden anderen Paare lächeln.<br/>„Wenn wir schon beim entschuldigen sind, Harry. Ich glaube ich muss mich für meine Tochter bei dir und Hermione entschuldigen“, gab nun Glenn seinen Senf dazu.<br/>„Ich weiß nicht, was Laura da heute geritten hat. Normalerweise ist sie nicht so, zumindest nicht sooo aufdringlich. Ich weiß, sie ist kein Engel, aber was sie heute hier gemacht hat, das geht überhaupt nicht.“<br/>„Was mich angeht hat sich die Sache erledigt. Ich habe das Mädchen, was ich wollte“, meinte Harry nur breit grinsend.<br/>„Hermione?“, fragte ihr Onkel sie vorsichtig, denn er wusste nicht was sie sagen würde.<br/>„Ich werde ihr nicht so schnell verzeihen, Onkel Glenn. Sie hat mich schwer verletzt. Das heißt aber nicht, dass sie nicht mehr kommen kann, wenn ihr kommt. Sie ist immer noch Teil, dieser, unserer Familie“, sprach Hermione in einem nachdenklichen Ton, der aber auch zugleich zeigte, dass sie meinte, was sie sagte.</p>
+<p>Ohne Vorwarnung fing Charlotte an zu lachen.<br/>„Will noch jemand was sagen, wenn wir schon so tiefgründige Gespräche führen?“, fragte sie zwischen zwei Lachanfällen.<br/>Schnell steckte sie die anderen mit ihrem Lachen an.<br/>„Ich denke, wir sollten jetzt auch alle ins Bett gehen“, sprach Tom, als sich alle wieder gefangen hatten. Immerhin müssen wir morgen hier aufräumen.“<br/>Murmelt stimmten ihm die anderen zu und erhoben sich aus ihren Stühlen und gingen gemeinsam ins Haus.<br/>„Ach Harry, bevor ich’s vergesse, auch wenn ich dich sehr gut kenne und gut leiden kann. Du schläfst heute Nacht auf dem Sofa!“, meinte Tom noch, bevor er hinter Heather die Treppe hinauf zu ihrem Schlafzimmer ging.</p>
+<p>„Das war ja zu erwarten“, murmelte Harry, der Hermione vor sich hatte.<br/>„Du kennst ihn doch, morgen sieht das schon ganz anders aus“, meinte Hermione, bevor sie sich zu ihm umdrehte.<br/>„Das wird sich nie ändern, Hermione. Du bist seine Tochter, seine einzige Tochter. Ich wäre bestimmt genauso“, sprach er leise, wobei er sich leicht zu ihr herunter gebeugt hatte.<br/>„Das werden wir sehen“, antwortete Hermione und küsste ihn.<br/>„Ich liebe dich, Hermione“, flüsterte Harry ihr ins Ohr. Er zog sie näher an sich und drückte fest an seinen Körper. Sie wollten sich nicht voneinander lösen.<br/>„Ich weiß“, hauchte Hermione und trat dann doch einen Schritt zurück.<br/>„Wir sehen uns Morgen“, sagte sie und ging zur Treppe, blieb aber auf der untersten Treppenstufe stehen.<br/>Sie drehte sich noch einmal zu ihm um.<br/>„Ich liebe dich auch, Harry“, sprach sie, bevor sie die Treppe hinaufstieg.</p>
+<p>Eine halbe Stunde später war es still im Haus, da anscheinend alle schliefen. Darauf hatte Harry gewartet. Er stand von der Couch auf, aufder er lag und ging in den Garten.<br/>„Accio Teller“, sprach er so leise, dass man es in dieser stillen Nacht überhören konnte.</p>
+<p>Charlott war die erste die am Morgen aufwachte. Sie zog sich einen Morgenmantel an und ging  nach unten, um sich einen Kaffee zumachen. Sie entdecke Harry auf der Couch. Er lag mit angezogenen Beinen da und schlief noch. Die Decke, die er benutzt hatte, war total verrutscht. So ging sie zu ihm, da die Mutter in ihr nicht zulassen konnte, dass Harry fror und deckte ihn erneut zu. Als sie fertig war, ging sie in die Küche und machte die Kaffeemaschine nun wirklich an. Ihr viel zuerst nichts auf, erst als die ersten Kaffee Düfte durch den Raum zogen, bemerkte sie etwas. Etwas seltsames. Was sie sah ließ ihren Atem stocken. In der Küche, sauber und ordentlich gestapelt, stand das gesamte Geschirr des Vortags sauber gespült in einer Reihe. Teller, Tassen und Gläser fein säuberlich aufgereiht und darauf wartend weggeräumt zu werden. Sie griff nach der Schublade, in der sich das Geschirr befand und hoffte wenigstens noch einen sauberen Löffel zu finden. Doch auch hier erlebte sie eine Überraschung. Das gesamte Besteck von gestern lag sauber und einsortiert in der Schublade. <br/>Sie sah zu dem jungen Mann auf der Couch hin und schüttelte nur den Kopf.<br/>„Du wirst ein guter Ehemann für Hermione sein, Harry“, sprach sie ins Leere und eine gewisse Freude für die beiden keimte in ihr. Die Kaffeemaschine piepste kurz und signalisierte das Ende...</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-12">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/27951465">Chapter 12</a>: Im Geiste
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Die ersten Teller hatte sich Harry schon in die Küche gebracht und war gerade dabei sich die Gläser auf einem Tisch zu sammeln, als er zum Fenster von Hermiones Zimmer hinauf sah in dem gerade das Licht ausgegangen war.<br/>
+ <br/>
+<em>„Was bedeutet das jetzt für uns?“ wollte Hermione von ihm wissen, als sie zusammen mit Harry ihrer Mutter folgte, nach dem sie sie zum Essen geholt hatte.</em><br/>
+<em> „Im besten Fall?“, fragte Harry sie und sie nickte nervös.</em><br/>
+<em> „Im Besten Fall, bleiben wir, wie deine Mutter gesagt hatte, den Rest unseres Lebens zusammen. Im schlechtesten Falle, stellen  wir nach einer gewissen Zeit dann fest, dass es doch nicht klappt“, meinte Harry mit fester Stimme während er sie ansah. Beide wollten den Blickkontakt nicht unterbrechen. Grün traf braun.</em><br/>
+<em> Hermiones Miene verfinsterte sich kurz als Harry sagte, das es nicht klappen könnte, doch im inneren wusste sie, dass dies möglich war. Unwahrscheinlich aber möglich.</em><br/>
+<em> „Siehe Ron“, dachte sie innerlich.</em><br/>
+<em> „Ich denke allerdings, wir sollten uns im Moment keinen Kopf darüber machen“, meinte Harry dann aber. “Wir solltes es lieber genießen”, lächelte er schelmisch und griff nach Hermiones Hand. Er zwang sie stehen zu bleiben und küsste sie erneut. Nur kurz dauerte der Kuss, denn Heather war ebenfalls stehen geblieben und räusperte sich.</em><br/>
+ <br/>
+Harry schüttelte den Kopf, um die Erinnerung an diesen Moment zu verdrängen, damit er weiter aufräumen konnte. Er wusste, dass Heather sich freuen würde, wenn sie morgen nicht mehr viel zu tun hätte.<br/>
+„Accio Korb“, dachte sich Harry innerlich und rief den Wäschekorb zu sich, den er in der Küche vergessen hatte. Mit diesem Korb hatte Harry schon die Teller in die Küche gebracht.<br/>
+Der Korb flog herbei und er griff zielsicher nach oben in die Luft. Seine rechte Hand packte den Henkel des Korbes und stellte ihn auf dem Tisch ab.  Die auf dem  Tisch stehenden Gläser warteten nur darauf eingepackt zu werden.<br/>
+ <br/>
+Hermione unterdessen stand in ihrem Pyjama am Fenster und schaute in den Garten hinunter in dem Harry dabei war aufzuräumen. Sie machte kein Geräusch und beobachtete nur, wie ihre Freund von einer Ecke zur anderen lief und aufräumte.<br/>
+„Das wird Mum bestimmt freuen“, dachte sie sich und sah Harry noch ein wenig zu.<br/>
+ <br/>
+<em>„Was ist das zwischen dir und Harry? Versteh mich nicht falsch, ich habe gehofft, dass ihr euch irgendwann mal küsst, aber das war doch mehr als nur ein Kuss! Der zeigte doch eindeutig, dass ihr mehr füreinander empfindet“, kam es von ihrer Mutter die neben ihr am Tisch saß und sich die Gabel mit einem Stück Bratwurst in den Mund schob.</em><br/>
+<em> „Mum!“ rief Hermione etwas verlegen.</em><br/>
+<em> „Was denn? Ich bin nicht blind, zumindest noch nicht. Ich weiß, was ich gesehen habe“, kicherte Heather nur und aß ein weiteres Stück von ihrer Bratwurst.</em><br/>
+<em> Hermione seufzte und aß ein Stück von ihrem Lamm.</em><br/>
+<em> „ich weiß selber noch nicht, was es war. Ich weiß nur eines. es war richtig“, meinte sie zwischen zwei Bissen.</em><br/>
+<em> „Willst du wissen, was ich denke, Hermione?“, fragte Ihre Mutter sie.</em><br/>
+<em> „Kann ich dich davon abhalten, Mutter?“, wollte Hermione nun im Gegenzug wissen.</em><br/>
+<em> „Natürlich nicht. Ich wollte nur so tun, als ob du es vermeiden kannst. Ich denke, dieser Moment war lange in der Mache. Ich denke sogar, länger als ich es vermute. Und heute war der Moment, in dem alles was ihr für einander empfindet ans Licht kam. Ich weiß, du hast Harry in letzter Zeit schon in einem anderen Licht gesehen und heute wusstest du endlich in welchem. Bei ihm vermute ich das selbe“, meinte Ihre Mutter und sah sie direkt an. “Man konnte schon immer merken, zwischen euch ist etwas besonderes.”</em><br/>
+<em> „Wenn ihr mich kurz entschuldigen würdet, aber ich muss mal wohin“ mischte sich ihr Vater in das Gespräch von Mutter und Tochter ein und stand vom Tisch auf.</em><br/>
+<em> „Er w...wird doch nicht…“, stotterte  Hermione und brach ab. Sie sah ihre Mutter fragend an.</em><br/>
+<em> „Nicht, wenn er weiß, was gut für ihn ist“, meinte sie nur und aß das letzte Stück von ihrer Bratwurst. “Soll ich dir etwas Salat mitbringen?“</em><br/>
+ <br/>
+Sie sah wie Harry mit dem restlichen Geschirr im Haus verschwand und überlegte kurz, ob sie zu ihm hinunter gehen sollte. Sie schob ihre Haare hinter das linke Ohr und drehte sich vom Fenster in Richtung Tür um. Am Ende entschied sie sich doch dagegen, denn sie wusste, sie beide brauchten diese Nacht, um alles zu verarbeiten.<br/>
+Unterdessen war Harry erneut in der Küche und holte seinen Zauberstab aus seinem Holster.<br/>
+Er schwang ihn mehrmals durch die Luft und verzauberte den Raum so, dass kein Geräusch nach draußen drang und niemand der nicht über Magie Bescheid wusste, die Küche betreten kann. Danach schwang er seinen Zauberstab erneut und füllte die Spüle mit Wasser. Der letzte Schwenker ließ das Geschirr anfangen sich selber zu Putzen.<br/>
+ <br/>
+<em>„Du Harry, was haben du und Hermi da eben gemacht?“, wollte Teddy von seinem Patenonkel wissen während er auf seinem Steak herum kaute.</em><br/>
+<em> „Zuerst, man redet nicht mit vollem Mund, haben deine Oma und ich dir das nicht beigebracht? Hermione und ich haben uns geküsst, wenn du es wissen willst“, sprach Harry und sah Teddy an.</em><br/>
+<em> Diese Aussagen hatte bei den Kindern, die bei ihm saßen unterschiedliche Reaktionen. Während die Jungen das Gesicht verzogen und ekelige Geräusche machten, sahen ihn die Mädchen verträumt an.</em><br/>
+<em> „Jetzt habe ich keinen Appetit mehr“, meinte Teddy uns sah seinen Patenonkel nur an.</em><br/>
+<em> „Das ist deine Reaktion darauf?“, fragte dieser ihn nur ungläubig, was ihn die Schultern zucken lies. Einer der anderen Jungen begann zu rufen.</em><br/>
+<em> “Und da K-Ü-S-S-E-N sich Harry und Hermione”, was ihm einen schlag eines der Mädchen einbrachte. Er streckte ihr die Zunge raus und kniff sie in den Oberarm.</em><br/>
+<em> “Bäh, du bist gemein”, rief sie und streckte auch ihre Zunge heraus.</em><br/>
+<em>  </em><br/>
+<em> Harry schüttelte nur den Kopf und nahm sich Teddys Teller, was dieser sofort zu verhindern versuchte.</em><br/>
+<em> „Ich dachte, du hast keinen Hunger mehr?“ fragte Harry ihn.</em><br/>
+<em> „Ich bin noch am wachsen“, protestierte Teddy und fing wieder an zu essen als Harry vom Teller abließ.</em><br/>
+<em> „Mr. Harry, heißt das jetzt, da du und Ms. Hermione heiraten werdet?“ fragte eines der Mädchen am Tisch, was Harry sofort erröten ließ.</em><br/>
+<em> Einer der Jungen eilte Harry zu Hilfe, doch dieser bekam das nicht mit, da er sich Hermione in einem Hochzeitskleid vorstellte. Weiße Spitze über Schulter und Arme und ein kleiner pastellfarbener Strauß in ihrer Hand...</em><br/>
+ <br/>
+Dasselbe Bild war ihm schon am Nachmittag durch den Kopf gegangen und nun tauchte es schon wieder auf. Er musste sich selber gestehen, je öfter er darüber nachdachte, umso mehr sagte es ihm zu. Hermione ganz in weiß. Seine Frau. Mit ihm Verheiratet. Ja, das würde ihm gefallen.<br/>
+ <br/>
+„Noch wach?“, fragte ihn eine Stimme, die ihn aus seinem `Hermione in weiß-Traum´ riss.<br/>
+Er sah sich kurz um bis er fand, wer ihn aus seinem Tagtraum gerissen hatte. Hermione.<br/>
+Hermione war gekommen und hatte einen Morgenmantel an. Einen weißen Morgenmantel.<br/>
+„Natürlich bin ich noch wach. Heute ist einfach so viel passiert“, antwortete Harry und legte seinen Zauberstab wieder zur Seite.<br/>
+„Ja, bei mir dasselbe. Ich war vorhin schon am Überlegen, ob ich zu dir hinunter kommen sollte, doch ich habe mich dagegen entschieden“, meinte Hermione nur und lehnte sich neben Harry an die Arbeitsfläsche.<br/>
+„Und doch bist du hier“, sagte er nun du legte seinen Arm um ihre Schulter.<br/>
+„Und doch bin ich hier“, meinte nun auch sie und legte ihren Kopf an seine Schulter.<br/>
+Keiner der beiden wusste was er sagen sollte, denn beide genossen einfach, dass der andere da war.<br/>
+ <br/>
+<em>Sie hatten Teddy gerade zusammen ins Bett gebracht und waren wieder in den Garten getreten. Sie suchten sich eine Ecke aus, in der sie sich in Ruhe unterhalten konnten. Schnell hatten sie eine Ecke gefunden, allerdings gab es nur einen Stuhl.</em><br/>
+<em> „Was auch immer du jetzt denkst Harry, nein. Setz dich hin“, befahl Hermione ihm, was er auch befolgte. Widerwillig aber er tat es.</em><br/>
+<em> Er setzte sich in den Stuhl und schaute zu was Hermione machen würde. Entgegen seiner Erwartung und mehr im Einklang mit seiner Hoffnung setzte sich Hermine sich auf seine Knie, so dass sie von Angesicht zu Angesicht reden konnten.</em><br/>
+<em> „Sind wir zusammen?“, fragte sie ihn direkt ohne Umschweife, wobei ihr Blick ihn förmlich zu durchbohren schien.</em><br/>
+<em> Harry umschlang ihre Hüften mit seine Armen und zog sie zu sich hinüber. Er sah ihr tief in die Augen und küsste sie innig und lange.</em><br/>
+<em> „Ja“, sagte er als sie sich wieder trennten.</em><br/>
+ <br/>
+ </p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-13">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/10960482/chapters/27994173">Chapter 13</a>: Epilog
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/10960482/chapters/27994173#chapter_13_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Einige Jahre später</p>
+<p>Harry saß höchst konzentriert in seinem Büro und schaute sich die Papiere vor ihm an. Es handelte sich um eine Rede die er geschrieben hatte für eine Veranstaltung seiner alten Universität, vom Schulabbrecher zum Edelrestaurant besitzer. Das mache er nun schon seit fast einer Stunde. Er nahm sich einen Kuli vom Tisch und strich eine Passage des Textes durch und schrieb sich eine Notiz an den Rand. Langsam laß er den Text weiter und machte noch mehrere solcher Änderungen. Hier und da kam eine längere Notiz hinzu. So bekam er nicht mit, wie sich seine Bürotür, die er sowieso einen kleinen Spalt offen gelassen hatte, weiter öffnete. Auch das Geräusch, dass sich etwas über den Boden schleppte, vernahm er nicht. Erst, als er ein zupfen an seiner Hose bemerkte, blickte er von seinen Papieren auf. Verwundert blickte er an sich hinunter und was er sah, ließ ihn lächeln.</p>
+<p>Seine dreizehn Monate alte Tochter, Isabell hatte sich zu ihm gesellt.<br/>
+„Na Isi, ausgeschlafen?“, fragte er sie liebevoll und sah sie an.<br/>
+Isabell sah ihn erst nur komisch an, als ob sie Abwegen würd, was sie auf seine Frage antworten sollte. Anstatt etwas mit ihrem noch geringen Wortschatz zu antworten, fing sie nur an zu lachen, was auch ihren Vater ansteckte.<br/>
+„Komm her“, sagte er und streckte ihr seine Hände entgegen.<br/>
+Ohne groß zu überlegen, ließ sie sich von ihrem Vater unter den Armen greifen und auf seinen Schoß heben.<br/>
+„Willst du mir helfen?“, fragte Harry seine Tochter und setzte sie so hin, dass sie auf seinen Schreibtisch sehen konnte.<br/>
+Sie antwortete in dem sie versuchte nach den Papieren zugreifen, über denen eben noch Harry gebrütet hatte.<br/>
+„Nein, damit nicht“, meinte Harry und schob die Papiere aus der Reichweite von Isabell. „Hiermit kannst du mir helfen“, sagte Harry, zog ein leeres Blatt aus einer seiner Ablage und holte einen Stift.<br/>
+Sofort griff Isabell nach dem Stift und versuchte ihn auf dem Blatt zu bewegen, so wie ihr Vater es ihr gezeigt hatte.</p>
+<p>Als er sah, dass seine Tochter vorerst beschäftigt war blickte Harry auf und sah in Richtung der Tür, wo auch schon Teddy, sein dreizehnjähriger Patensohn stand und ihn mit tiefblauen Haaren an grinste.<br/>
+„Sie war wach und ich dachte, sie will zu dir“, war seine einzige Antwort bevor er aus der Tür verschwand.<br/>
+„Teddy, Teddy“, murmelte Harry nur und sah wieder zu seiner Tochter, die auf dem Papier den Stift hin und her bewegte.</p>
+<p>Die beiden wurden erst wieder durch ein Klopfen an der Tür unterbrochen. Sie sahen von Harrys Schreibtisch auf, um zu schauen, wer sie bei ihrer schweren Arbeit störte.<br/>
+„Na, ihr beiden“, wurden sie von Tom Granger begrüßt.<br/>
+„Hallo Tom“, sagte Harry und nickte ihm zu, während Isabell ihn noch ansah.<br/>
+„loo opapa!“ schrie Isabell vor Freude und winkte ihm Aufgeregt, wobei sie fast Harry mit dem Stift im Gesicht getroffen hätte.<br/>
+„Hey meine kleine“ meinte Tom und streckte ihr die Arme entgegen.<br/>
+Sofort versuchte sie sich von ihrem Vater zu befreien und zu ihrem Opa zu kommen, was ihr schlussendlich auch gelang. Sie spielte eine Weile mit ihrem Opa, bevor sie sich einfach an ihn schmiegte.<br/>
+Dies verschaffe den beiden Männern einen Moment zum Reden.<br/>
+„Was führt dich hierher Tom? Hermione hat heute Vorlesungen, die sie wie sie meint unbedingt  Braucht um vom Professor zur Abschlussprüfung zugelassen zu werden. Sie meinte es wird bestimmt nach 18.00 Uhr“, wollte Harry wissen, während er Tom dabei zusah, wie er seiner Enkelin sanft über den Rücken streichelte.<br/>
+„Nicht viel. Naja doch“, versuchte Tom sein hier sein zu erklären. „Heather und ich wurden gefragt, ob wir die Gartenparty dieses Jahr ausrichten. Du kennst ja Heather. Sie hat sofort zugesagt. Deshalb bin ich hier. Sie hat mich geschickt, um Hermione, Teddy, Isabell und dich einzuladen.“<br/>
+„Das hättest du doch auch über das Telefon machen können“, sagte Harry und sah Tom nun schief an. „Oder ist da mehr?“<br/>
+„Nun ja. Heather hat gesagt, ich soll dich fragen, ob du wieder das Brot machen würdest, wie beim letzten Mal“, meinte Tom.<br/>
+„Telefon!“, war Harrys Antwort darauf.<br/>
+„Ist ja schon in Ordnung. Ich wollte mit Isabell und Teddy in den Park gehen“, verriet Tom nun den wahren Grund warum er hier war.<br/>
+„Geht doch“, sagte Harry lächelnd. „und natürlich werden wir kommen. Auch das Brot mache ich gerne.“ sagte Harry und sah auf das große Bild an seiner Bürowand. Das Bild zeigte ihn und Hermione an ihrem Hochzeitstag. Es war ein schöner sonniger Tag gewesen und das Bild zeigte ihn im grauen Anzug und Hermione trug weiß.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_13_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Zuerst möchte ich mich bei Hedwig93 bedanken, dafür das er als mein Beta mir geholfen hat die Geschichte zu überarbeiten und zu verbessern.<br/>Des Weiteren möchte ich mich bei den Lesern bedanken, die mir ein Review oder ein mail dagelassen haben. Auch möchte ich mich für die ganzen Favoriteneinträge bedanken.</p>
+<p>Dann noch etwas Werbung:</p>
+<p>Vor kurzem hat die die Autorenvereinigung #Laut! Wir sind eine Gruppe von Autoren und Betalesern, die im Bereich Harry Potter Aktiv sind. Wenn ihr mehr erfahren wollt besucht uns im Forum:  #LAut https://forum.fanfiktion.de/t/50809/1</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="vxHWpD4BjCmnQlKrONJHj9vuPmXEmDwJauf-jRhoIJqJv2A-enejMbowgw-3k9fKqZnMT4TkD6x0VxA_i2yb-g"/>
+          <input value="10960482" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/Thereisnocookie">Thereisnocookie</a>, <a href="/users/LadyGravdian">LadyGravdian</a>, <a href="/users/melia2">melia2</a>, <a href="/users/Oliver_Smoak">Oliver_Smoak</a>, <a href="/users/Jaz98">Jaz98</a>, and <a href="/users/Imsoverytired1973">Imsoverytired1973</a>
+             as well as 
+          12 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_10960482">
+  <form class="new_comment" id="comment_for_10960482" action="/works/10960482/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="ssEEJMNgDLgXJVwpXo1oid0FCqbVc48xu7XumGqxYgWEb7K-hxYjoApXjY3RzPjMr3L4jJUPvJSlBQAq-bXZZQ"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_10960482">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_10960482" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_10960482=new LiveValidation('comment_name_for_10960482',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_10960482.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_10960482">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_10960482" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_10960482=new LiveValidation('comment_email_for_10960482',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_10960482.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_10960482" class="landmark">Comment</label>
+        <textarea id="comment_content_for_10960482" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_10960482" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_10960482_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_10960482">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_10960482=new LiveValidation('comment_content_for_10960482',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_10960482.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_10960482.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_10960482" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/10960482/hit_count.json")})</script>
+
+
+  </body>
+</html>

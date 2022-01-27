@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":124,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        What You Want The Most - ChrissiTine - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="4OeWbgpWPnOw6eywcLmuZoDRDELpnetqahOskDvjbFVKoqcjZpLZT4zpE2R3kwnttU0S--J6mymvqI7k487JLg"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="3cKBxx5it2pmZQ0_lsQbaSr_BYOd9fGNinJKpZG21Ot3h7CKcqZQVlpl8uuR7rziH2MbOpYSgc5PyWjRSZtxkA"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: &quot;uchiha sasuke/uzumaki naruto&quot; angst kudos&gt;10</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/8641453/chapters/19817710">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8641453">Comments </a>
+  </li>
+
+
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/8641453/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/8641453/What%20You%20Want%20The%20Most.azw3?updated_at=1480068681">AZW3</a></li>
+          <li><a href="/downloads/8641453/What%20You%20Want%20The%20Most.epub?updated_at=1480068681">EPUB</a></li>
+          <li><a href="/downloads/8641453/What%20You%20Want%20The%20Most.mobi?updated_at=1480068681">MOBI</a></li>
+          <li><a href="/downloads/8641453/What%20You%20Want%20The%20Most.pdf?updated_at=1480068681">PDF</a></li>
+          <li><a href="/downloads/8641453/What%20You%20Want%20The%20Most.html?updated_at=1480068681">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Teen%20And%20Up%20Audiences/works">Teen And Up Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/F*s*M/works">F/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandom:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationships:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Hermione%20Granger*s*Ron%20Weasley/works">Hermione Granger/Ron Weasley</a></li><li><a class="tag" href="/tags/Harry%20Potter*s*Ginny%20Weasley/works">Harry Potter/Ginny Weasley</a></li><li><a class="tag" href="/tags/Audrey%20Weasley*s*Percy%20Weasley/works">Audrey Weasley/Percy Weasley</a></li><li><a class="tag" href="/tags/Arthur%20Weasley*s*Molly%20Weasley/works">Arthur Weasley/Molly Weasley</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Depression/works">Depression</a></li><li><a class="tag" href="/tags/unsuccessful%20attempts%20to%20get%20pregnant/works">unsuccessful attempts to get pregnant</a></li><li><a class="tag" href="/tags/Accident/works">Accident</a></li><li><a class="tag" href="/tags/Pregnancy/works">Pregnancy</a></li><li><a class="tag" href="/tags/Troubled%20Marriage/works">Troubled Marriage</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+      <dt class="series">
+        Series:
+      </dt>
+      <dd class="series">
+        <span class="series"><a class="previous" href="/works/8155888">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 5 of the <a href="/series/555904">10 kleine Dinge - Universum</a> series</span><span class="divider"> </span><a class="next" href="/works/8641516">Next Work &#8594;</a></span>
+      </dd>
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-11-24</dd><dt class="status">Completed:</dt><dd class="status">2016-11-24</dd><dt class="words">Words:</dt><dd class="words">16943</dd><dt class="chapters">Chapters:</dt><dd class="chapters">5/5</dd><dt class="comments">Comments:</dt><dd class="comments">3</dd><dt class="kudos">Kudos:</dt><dd class="kudos">20</dd><dt class="hits">Hits:</dt><dd class="hits">330</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      What You Want The Most
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/ChrissiTine/pseuds/ChrissiTine">ChrissiTine</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Ron und Hermine wünschen sich nichts sehnlicher als ein Baby, aber selbst nach über einem Jahr sind sie immer noch zu zweit. Wie kommen sie damit zurecht und wird ihre Ehe diese Prüfung überstehen?</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8641453/chapters/19817710">Chapter 1</a>: Entmutigt
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="xcontrast">
+  <p></p>
+  <div>
+    <p></p>
+    <div>
+      <p align="center">
+        <em>
+          <strong>
+            <img src="http://ic.pics.livejournal.com/10_kleine_dinge/34875842/330/330_900.jpg" alt="" width="490" height="245"/>
+          </strong>
+        </em>
+      </p>
+      <p>
+        <em>
+          <strong>20. Oktober 2004</strong>
+        </em>
+      </p>
+      <p>"Verdammt!" Hermine strich sich ihre Haare aus dem Gesicht und schaute missmutig auf die pechschwarze Flüssigkeit in dem Glas. Sie ließ sich auf die zugeklappte Toilette sinken und stützte ihren Kopf in die Hände. Sie atmete tief durch und versuchte, die aufsteigenden Tränen zurückzuhalten.</p>
+      <p>Schon wieder nichts. Es war wieder ein Monat vergangen und der Trank war immer noch pechschwarz. Alle Tränke und Zauber und Übungen, die sie ausprobiert hatten, hatten nichts genützt. Sie war immer noch nicht schwanger.</p>
+      <p>"Hermine?" Ron steckte den Kopf zur Badezimmertür herein. "Der Kaffee wird kalt und ..." Sein Blick fiel auf das tränenüberströmte Gesicht seiner Frau und den schwarzen Trank, der neben dem Waschbecken stand und er wusste sofort, was los war. Es war ein Bild, das ihm in den letzten Monaten viel zu vertraut geworden war.</p>
+      <p>Rasch trat er ins Zimmer. Er schloss die Tür hinter sich und war in drei großen Schritten bei seiner Frau. Er kniete sich auf den Boden und schlang die Arme um sie. Hermine vergrub ihr Gesicht in seinem Hemd und fing hemmungslos an zu schluchzen.</p>
+      <p>Gequält schloss Ron die Augen.</p>
+      <p>Er hasste diese Tage. Er hasste die Tage, an denen Hermine den Schwangerschaftstesttrank hervorholte, hineinspuckte und sehnsüchtig darauf wartete, dass sich der klare Trank pink färbte. Aber statt der sehnsüchtig erwarteten hellen leuchtenden Farbe wurde der Trank immer pechschwarz und verschlang all ihre Hoffnungen. Hermine fiel jedes Mal wieder in ein tiefes Loch und Ron konnte sagen und tun, was er wollte, er konnte sie nicht wieder herausholen.</p>
+      <p>"Es tut mir so Leid, mein Schatz", flüsterte er schließlich mit belegter Stimme. Er strich ihr ein paar Haarsträhnen aus dem Gesicht, die durch die Feuchtigkeit ihrer Tränen an ihrer Wange geklebt hatten. Zärtlich küsste er sie auf ihre nassen Wangen.</p>
+      <p>"Ich hab zwei Tage länger gewartet", flüsterte Hermine mit bebender Stimme. "Meine Periode ist immer noch nicht gekommen. Ich hatte so <em>gehofft</em> ..." Sie brach ab und schluckte schwer.</p>
+      <p>Ron seufzte. "Ich weiß."</p>
+      <p>Hermine schniefte. Sie schloss die Augen, um sich wieder unter Kontrolle zu bringen. Ihr Körper bebte, als sie ihre Schluchzer zu unterdrücken versuchte. Ron zog sie wieder in seine Arme und sie ließ ihren Kopf an seiner Schulter ruhen. Ihre Tränen durchweichten sein Hemd. "Warum werde ich nur nicht schwanger?", flüsterte sie verzweifelt. "Wir haben doch alles gemacht, was die Heiler uns gesagt haben. <em>Alles</em>. Und trotzdem ist es umsonst. Immer wieder umsonst."</p>
+      <p>Ron schluckte. Er wusste nicht, was er sagen sollte, um sie zu trösten. Wahrscheinlich gab es gar nichts, was er hätte sagen können. Das einzige, was sie wirklich würde trösten können, war ein Kind, und das war das einzige, was er ihr nicht geben konnte. Wie sehr er sich doch wünschte, dass es anders wäre! Als sie geheiratet hatten, hatte er sich geschworen, dass er ihr jeden Wunsch erfüllen würde, dass er alles tun würde, um sie glücklich zu machen. Besonders, weil er sie während ihrer Schulzeit so oft enttäuscht hatte. Und jetzt musste er dabei zusehen, wie sie mit jedem Monat unglücklicher wurde und er war absolut machtlos, irgendetwas dagegen zu tun. Seine Frau verschwand langsam vor seinen Augen und er war völlig hilflos.</p>
+      <p>Ein paar Minuten hielten sie sich schweigend in den Armen. Dann räusperte Ron sich und stand langsam auf. Er warf einen Blick auf seine Armbanduhr. Es würde sehr knapp werden, wenn sie noch frühstücken wollten.</p>
+      <p>Er streckte seine Hand aus, um Hermine aufzuhelfen. Hermine warf einen langen Blick auf den pechschwarzen Trank, bevor sie Rons Hand ergriff und sich von der Toilette ziehen ließ.</p>
+      <p>"Die Pfannkuchen sind schon fertig. Aber der Kaffee ist wahrscheinlich inzwischen kalt geworden", sagte Ron bedauernd. Er strich mit seinem Daumen über ihren Handrücken. Hermine zuckte mit den Schultern. Sie schaute in den Spiegel und bemerkte, dass ihre Wimperntusche völlig verlaufen war.</p>
+      <p>"Ich komme gleich", flüsterte sie heiser und deutete in den Spiegel. "Ich mach mich nur noch schnell frisch."</p>
+      <p>Ron hatte die Hand schon auf der Klinke, zögerte aber, die Tür aufzumachen. Er wollte seine Frau jetzt ungerne allein lassen. Doch er hatte wohl keine Wahl. Helfen konnte er ihr sowieso nicht. "Beeil dich. Wir müssen bald los." Er ließ die Tür hinter sich zufallen.</p>
+      <p>Hermine stützte sich auf das Waschbecken und betrachtete ihr Gesicht. Unter der Wimperntusche konnte sie die dunklen Ringe unter ihren Augen erkennen. Seit Wochen schlief sie schon schlecht. Ihre Haare hatten ihren Glanz verloren und hingen strähnig herab, obwohl sie das Shampoo mit dem Extraglanz verwendete, das die Buschigkeit eindämmen und ihnen eine leuchtende Farbe verleihen sollte. Ihre Haut war blass und sie entdeckte sogar einen kleinen Pickel.</p>
+      <p>Deprimiert schloss sie die Augen. Sie schaute sich nicht mehr gerne an. Nie sah sie etwas, das ihr gefiel. Sie fühlte sich zunehmend unwohl in dem Körper, der sie im Stich ließ. Sie verstand schon lange nicht mehr, was Ron in ihr sah, wenn er sie voller Liebe und Zärtlichkeit musterte. Sie hatte keine Ahnung, wie er immer noch mit ihr schlafen konnte.</p>
+      <p>Hermine griff zu ihrem Zauberstab und ließ die Wimperntusche verschwinden. Mit einem Schwenk zauberte sie neues Make-Up auf ihr Gesicht. Dann deutete sie auf ihre Haare, die sich zu einem strengen Knoten in ihrem Nacken zusammenbanden. So fiel wenigstens nicht gleich auf, wie schlecht ihre Haare aussahen.</p>
+      <p>Sie atmete tief durch und hoffte, dass sie den Tag überstehen würde. Am liebsten hätte sie sich in ihrem Bett unter der Decke verkrochen und wäre nie wieder aufgestanden. Stattdessen musste sie sich um einen Fall kümmern, um den sie viele ihrer Kollegen beneideten. Vor einem halben Jahr war sie noch überglücklich gewesen, als ihr Vorgesetzter ausgerechnet ihr diesen schweren Fall anvertraut hatte. Es war ein Meilenstein in ihrer Karriere. Sie hatte sich geschworen, den Mann, der seine Frau und seine drei Kinder umgebracht hatte, für den Rest seines Lebens nach Askaban zu bringen. In ein paar Tagen würde die Verhandlung beginnen. Sie sollte voller Energie sein und darauf brennen, vor das Zaubergamot zu treten. Stattdessen gab es nichts, was ihr weniger Spaß machen würde.</p>
+      <p>Sie atmete noch einmal tief durch und ging zur Tür. Doch dann fiel ihr Blick auf den Trank, der noch neben dem Waschbecken stand. Kurzentschlossen griff sie nach dem Glas und schüttete die Flüssigkeit in das Waschbecken. Sie sah zu, wie die schwarze Brühe im Abfluss verschwand. Und ihre ganzen Wünsche und Hoffnungen gleich mit.</p>
+      <p>Dreizehn Monate.</p>
+      <p>Seit dreizehn Monaten sah sie jetzt dabei zu, wie der verdammte Trank sich schwarz färbte und ihr mitteilte, dass sie versagt hatte. Ihre Hand klammerte sich um das Glas und sie fing an zu zittern. Sie wusste nicht mehr, wie lange sie das noch mitmachen konnte. Wie lange sie sich noch so enttäuschen konnte. Wie lange sie Ron noch so enttäuschen konnte.</p>
+      <p>Wutentbrannt warf sie das Glas gegen die Wand und schaute ohne mit der Wimper zu zucken dabei zu, wie es in tausend Stücke zersprang.</p>
+      <p>/-/</p>
+      <p>"Morgen", begrüßte Ron missmutig seinen besten Freund. Harry sah von den Akten auf, die er gerade durchgesehen hatte und musterte Ron stirnrunzelnd. Ron war seit Monaten nicht mehr sonderlich gut gelaunt, aber so deprimiert wie heute hatte Harry ihn schon lange nicht mehr gesehen. Früher war er immer voller Begeisterung im Büro aufgetaucht, immer mit einem Scherz auf den Lippen und bereit dazu, jeden dunklen Zauberer fertig zu machen. Aber in der letzten Zeit hatte Harry dabei zusehen können, wie Rons Gang immer schleppender wurde und das Leuchten in seinen Augen immer schwächer.</p>
+      <p>Harry lehnte sich in seinem Stuhl zurück und schaute Ron mitfühlend an. "Sie ist wieder nicht schwanger, oder?"</p>
+      <p>Ron schüttelte seufzend den Kopf. "Nein. Ist sie nicht." Er schluckte und griff wahllos nach einer der Akten, die aufgeschlagen auf Harrys Tisch lagen. Er überflog die Pergamente, um Harrys mitfühlendem Blick auszuweichen. In Momenten wie diesen war er froh, dass Hermine und er nicht an die große Glocke gehängt hatten, dass sie versuchten, ein Kind zu bekommen. So war er wenigstens vor den bohrenden Fragen seiner Mutter sicher, wann sie endlich eine Familie gründen würden. Obwohl die wahrscheinlich so oder so nicht mehr lange auf sich warten lassen würden. Hermine und er waren bald zu lange verheiratet, um in den Augen seiner Mutter noch kinderlos zu sein. Trotzdem hoffte er, wenigstens noch eine Weile davon verschont zu bleiben.</p>
+      <p>"Wie geht es Hermine?"</p>
+      <p>Ron seufzte erneut. "Wie soll es ihr schon gehen?", erwiderte er patzig. "Sie hat sicher keine Luftsprünge gemacht. Heute Morgen hat sie ein Glas gegen die Wand geworfen. Aber wenigstens schien es ihr danach etwas besser zu gehen."</p>
+      <p>Er hatte natürlich das Zersplittern des Glases gehört. Doch Hermine schien danach gefasster zu sein. Sie hatte sogar ein kleines Lächeln zustande gebracht, als sie ihren Kaffee getrunken und ihm alles Gute für den Tag gewünscht hatte, also hatte er sie nicht darauf angesprochen. Er hatte die Hoffnung, dass der große Fall, an dem sie arbeitete, sie wenigstens etwas von ihrem Kummer ablenken konnte. Als sie ihn vor sechs Monaten bekommen hatte, war sie vor Begeisterung kaum zu halten gewesen. Sie hatte Nächte durchgearbeitet, Zeugenaussagen studiert und Verhandlungsstrategien ausgearbeitet und von nichts anderem gesprochen.</p>
+      <p>"Wollt ihr zu uns zum Essen kommen?", schlug Harry schließlich vor, in der Hoffnung, seine besten Freunde vielleicht etwas ablenken zu können. Als sie alle frisch verheiratet gewesen waren, hatten sie sich häufig zum Essen getroffen, gelacht und geredet und gespielt, und so langsam aber sicher das Grauen des Krieges etwas hinter sich gelassen.</p>
+      <p>Ron schaute entschuldigend von dem Pergament auf. "Ich weiß, du meinst es gut, Harry, aber ich bin mir nicht sicher, ob das wirklich eine gute Idee ist. Ginny -"</p>
+      <p>"Ich versteh schon", unterbrach Harry ihn, bevor Ron sich in eine umständliche Erklärung verstrickte. "Es ist wahrscheinlich nicht gut für Hermines Stimmung, Ginny zu sehen."</p>
+      <p>"Es hat nichts mit euch zu tun", erwiderte Ron sofort. Ginny war Hermines beste Freundin. Daran würde sich nie etwas ändern. "Es ist nur ... Ginnys Bauch zu sehen und ständig daran erinnert zu werden, dass ihr bald habt, was wir nicht haben können ..." Ihm fiel es schon schwer, seine strahlende schwangere Schwester zu sehen, die bei jeder ihrer Begegnungen immer runder geworden war und momentan kein anderes Thema kannte als ihre Schwangerschaft und die bevorstehende Geburt. Er wollte sich nicht vorstellen, wie sehr Hermine dieses Glück quälen musste.</p>
+      <p>Als Harry und Ginny ihnen vor sieben Monaten freudestrahlend verkündet hatten, dass sie ein Baby bekamen, hatten Ron und Hermine sich sehr für sie gefreut. Sie hatten zwar schon seit sechs Monaten versucht, schwanger zu werden, aber zu diesem Zeitpunkt hatten sie keinen Zweifel gehabt, dass es bald klappen würde und sie dann genauso glücklich sein würden wie Harry und Ginny. Aber je größer Ginnys Bauch wurde, desto größer wurde auch ihre Enttäuschung und ihre Frustration, weil ihnen dieses Glück nicht vergönnt war.</p>
+      <p>"Es tut mir Leid", seufzte Harry. Er hatte nicht bedacht, wie schwer es ihnen fallen würde. Er und Ginny vermissten die Zeit mit ihren besten Freunden. Harry hatte gehofft, sich nur einzubilden, dass Ron und Hermine ihnen langsam privat aus dem Weg gingen. Er hatte das auf die viele Arbeit geschoben, mit der sie konfrontiert waren, aber mittlerweile war ihm klar geworden, dass es an dem Baby lag. Nicht, dass er ihnen einen Vorwurf machen konnte. Wenn ihre Rollen vertauscht wären, dann würde er sich wahrscheinlich auch nicht anders fühlen. Er konnte sich noch gut erinnern, wie lange er gebraucht hatte, sich damit abzufinden, dass Ron an seiner Stelle Vertrauensschüler geworden war. Wie würde das erst bei einem Baby sein?</p>
+      <p>Ron winkte ab. "Du kannst nichts dafür, Harry." Er hielt die Akte hoch. "Sollen wir noch mal versuchen, den Typen zu schnappen? Vielleicht ist er jetzt zu Hause. Ich warte auch auf der Feuertreppe, falls er schon wieder auf dem Weg abhauen will." Als sie das letzte Mal versucht hatten, den Kerl zu schnappen, hatten sie zwar daran gedacht, einen Anti-Apparier-Zauber auf die Wohnung zu legen, damit er nicht einfach so verschwinden konnte, aber nicht gewusst, dass es einen Fluchtweg über die Feuertreppe gab. Doch dieses Mal würden sie schlauer sein.</p>
+      <p>Harry zuckte mit den Schultern. "Warum nicht. Besser als der Papierkram ist das allemal."</p>
+      <p>/-/</p>
+      <p>"Merlin, hat das gut getan!", seufzte Ron, als er die Tür zu der Zelle zuschlug, in die Harry und er gerade den Typen verfrachtet hatten, den sie nach einer kleinen Verfolgungsjagd durch seine Wohnung endlich geschnappt hatten. Er lehnte sich gegen die Tür und schloss die Augen. Es hatte gut getan, etwas Dampf abzulassen. Sein Schockzauber war um einiges stärker gewesen als sonst. Vielleicht sollte er anfangen zu joggen. Schaden würde es ihm wahrscheinlich nicht. Er hatte sich auch immer sehr gut gefühlt, wenn er nach dem Quidditchtraining in Hogwarts ausgepowert gewesen war.</p>
+      <p>Harry grinste. So zufrieden hatte er seinen besten Freund schon lange nicht mehr gesehen. "Ich weiß."</p>
+      <p>"Vielleicht sollten wir Hermine mal mit auf Verbrecherjagd nehmen. Um sie abzulenken", überlegte Ron.</p>
+      <p>"Ich dachte, sie ist gerade an diesem riesen Fall dran. Das ganze Ministerium spricht davon", erwiderte Harry stirnrunzelnd. "Ist das nicht Ablenkung genug?"</p>
+      <p>Ron zuckte mit den Schultern. "Ich dachte schon. Aber Hermine ... sie ist so demotiviert. Ich hab sie schon vor weniger wichtigen Gerichtsversammlungen gesehen. Sie hatte sich stapelweise Notizen gemacht, ist in jeder freien Minute die Akten durchgegangen und hat nicht aufgehört, darüber zu reden. Sie hat gesagt, dass das der wichtigste Fall ihrer bisherigen Karriere ist, den sie überhaupt kriegen kann und sie benimmt sich, als wäre das alles nichts. Als wäre alles unwichtig." Er erkannte seine Frau überhaupt nicht mehr wieder. Er stieß sich von der Wand ab und machte sich auf den Weg zum Aufzug, mit Harry im Schlepptau.</p>
+      <p>"Ich weiß nicht, was mit ihr los ist. Ich weiß nicht, was ich für sie tun kann. Diese verdammte Babysache ..." Ron fuhr sich durch die Haare und schaute Harry verzweifelt an. "Wir waren jetzt schon so oft im Mungos und bei Muggelärzten. Wir haben alles getan, was sie uns gesagt haben, geschluckt, was sie uns gegeben haben. Nichts hat funktioniert."</p>
+      <p>"Ich dachte, mit euch ist alles in Ordnung."</p>
+      <p>"Eigentlich schon. Zumindest, soweit sie das bisher feststellen konnten. Aber weil Hermine immer noch nicht schwanger ist, sind die Heiler irgendwann auf den Gedanken gekommen, dass der Cruciatus-Fluch, mit dem Bellatrix Lestrange damals Hermine belegt hat, vielleicht daran Schuld sein könnte."</p>
+      <p>"Was?" Fassungslos blieb Harry stehen. "Davon hast du nie was gesagt." Ron sprach immer sehr ungern über seine Probleme mit Hermine, besonders was die ausbleibende Schwangerschaft anging. Harry hatte kaum eine Ahnung, was in seinem Kopf vorging. Das meiste hatte er sich zusammenreimen müssen. Das hatte er schon immer tun müssen, wenn es um die Beziehung seiner besten Freunde gegangen war. Aber Ron schien mittlerweile an einem Punkt angekommen zu sein, an dem er es nicht mehr schaffte, alles in sich hineinzufressen und selbst mit seinen Problemen fertig zu werden.</p>
+      <p>"Die Heiler haben erst letzten Monat davon angefangen. Du weißt, wie wenig die Fluchschäden des Cruciatus-Fluchs erforscht sind. Auf sowas springen die Fruchtbarkeitstests nicht an. Für die Heiler ist das die einzige Erklärung, warum Hermine noch nicht schwanger ist. Selbst mit Hilfe der Magie. Bei so gesunden Menschen, wie wir sie sind, hat die Magie vorher noch nie versagt." Es war schwer, sich nicht entmutigt zu fühlen, wenn selbst die Fruchtbarkeitsspezialistin mit einer hundertprozentigen Erfolgsquote immer ratloser wurde.</p>
+      <p>Ron schluckte und wandte sich ab. Wenn seine Mutter Bellatrix damals nicht umgebracht hätte ... am liebsten hätte er diese Verrückte mit seinen eigenen Händen erwürgt. Es war schlimm genug, dass Hermines Schreie, die er damals im Malfoy Mannor gehört hatte, ihn immer noch in seinen schlimmsten Albträumen verfolgten. Es war schlimm genug, dass er in diesen Träumen seine Angst, Hermine für immer zu verlieren, dauernd durchleben musste. Es war schlimm genug, dass diese Momente ihn bis an sein Lebensende verfolgen würden. Dass diese Verrückte auch noch dafür verantwortlich war, dass Hermine und er nie eine eigene Familie haben würden, war unerträglich.</p>
+      <p>"Sind die Heiler sicher?", fragte Harry schließlich leise.</p>
+      <p>Ron schüttelte den Kopf. "Nein. Sind sie nicht. Sie vermuten es nur. Aber wir haben schon so viel versucht und nichts hat funktioniert ... Irgendeine Erklärung muss es doch geben." Er hoffte, dass es nicht so war. Dass es einfach nur ein blöder Zufall war, dass Hermine nicht schwanger wurde. Es gab genug andere Paare, die es auch sehr lange versuchen mussten, bis es irgendwann einmal klappte. Vielleicht gehörten sie einfach dazu.</p>
+      <p>Aber er war ein Weasley. Sein Vater hatte sieben Kinder gezeugt. Bill hatte drei. Und nicht lange gebraucht, um sie zu zeugen. Harry und Ginny hatten es auch schnell hingekriegt. Und Percy und Audrey hatten auch keine Probleme gehabt. Nur er hatte diese verdammten Schwierigkeiten. Nur er schaffte es nicht, seine Frau zu schwängern. Wieso musste er immer der Versager in der Familie sein?</p>
+      <p>Wieso war das Leben nur so unfair?</p>
+      <p>
+        <strong>TBC...</strong>
+      </p>
+    </div>
+  </div>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8641453/chapters/19817725">Chapter 2</a>: Babyglück
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Das Haus war stockdunkel, als Ron am Abend schließlich nach Hause kam. Erst dachte er, dass Hermine noch im Ministerium war und Überstunden machte. Das war schließlich schon mehr als einmal vorgekommen. Aber dann entdeckte er ihre Aktentasche im Flur und wusste, dass sie Zuhause war.</p><p>Leise schlich er die Treppe hinauf. Mit seinem Zauberstab ließ er seine kleine Nachttischlampe aufleuchten. Mit einem Schlenker dämpfte er das Licht so, dass er sehen konnte, wo er hintrat, aber Hermine, die friedlich im Bett schlummerte, nicht weckte. Ihre Haare waren offen und über das ganze Kissen verteilt. Ihre Knie waren angewinkelt und sie hatte sich eingerollt wie eine Schnecke.</p><p>Ron ließ sich an der Bettkante nieder und strich seiner Frau zärtlich über die Wange. Die dunklen Ringe, die schon seit Wochen unter ihren Augen waren, waren immer noch zu sehen, aber ansonsten wirkte sie so sorglos und jung, wie sie es schon lange nicht mehr im wachen Zustand gewesen war.</p><p>Sie runzelte leicht die Stirn. Ron beugte sich vor und haute ihr einen Kuss auf die Falten. Einen Moment später waren sie verschwunden. Hermine regte sich und drehte sich auf die andere Seite.</p><p>Ron schluckte. Wenn es für ihn doch nur genauso leicht wäre, ihr ihren Kummer zu nehmen. Oder ihr das Kind zu schenken, das sie so unbedingt haben wollte. Wenn er nur mit dem Finger hätte schnippen können. Wie schön wäre das gewesen.</p><p>Er stand vorsichtig wieder auf. Erschrocken hörte er etwas unter seinem Fuß rascheln. Er beugte sich nach unten und hob ein Pergament auf, das wohl vom Bett gefallen war. Er warf einen Blick darauf und wusste sofort, was es war. Es war ein Kalender, der ihnen im nächsten Monat sagen würde, wann sie Sex haben durften, wie oft und um wie viel Uhr, um die Chancen zu erhöhen, dass Hermine schwanger wurde, und wann sie Sex besser vermeiden sollten. Dieser Kalender hatte ihr Sexleben in den letzten Monaten diktiert und Ron hasste diese roten und schwarzen Kreuze mittlerweile wie die Pest. Er konnte sich nicht mehr daran erinnern, wann er zum letzten Mal einfach so mit seiner Frau geschlafen hatte, nur weil sie beide Lust darauf gehabt hatten. Es drehte sich alles nur noch um ihren Eisprung und den richtigen Zeitpunkt. Anfangs hatte ihm das auch nichts ausgemacht, aber mittlerweile ... Wenn es wenigstens zu irgendetwas geführt hätte.</p><p>Aber der Trank wurde trotz all ihrer Bemühungen pechschwarz.</p><p>/-/</p><p>
+  <em>
+    <strong>17. November</strong>
+  </em>
+</p><p>"Was ist denn das für ein Krach?" Verwirrt schlug Ron die Augen auf. Im Zimmer war es stockdunkel, abgesehen von den Ziffern seines Weckers, die ihm vom Nachttisch entgegenstrahlten. Laut ihnen war es fünf Minuten vor drei.</p><p>"Ron?" Er spürte, wie Hermine sich neben ihm rührte und einen Moment später kniff er die Augen zu. Sie hatte ihre Lampe angeknipst. Das ganze Zimmer wurde in helles Licht getaucht - viel zu hell für seine Augen. Er zog sich die Decke über den Kopf. Er war todmüde. Er war erst kurz vor Mitternacht nach Hause gekommen, weil er einen Verdächtigen hatte beschatten müssen. Bei diesem Unterfangen hatte er sich den Arsch abgefroren und rein gar nichts erreicht. Er hatte geplant, bis mindestens zehn Uhr am nächsten Morgen zu schlafen und nicht um halb drei aus dem Schlaf gerissen zu werden. So hatte er sich das wirklich nicht vorgestellt.</p><p>Und dieser merkwürdige Krach, der ihn aufgeweckt hatte, hatte auch noch nicht aufgehört.</p><p>Er spürte, wie Hermine neben ihm aus dem Bett kroch. Langsam zog er die Decke wieder herunter. Hermine war zum Fenster gegangen, das sie schnell öffnete, um einen Steinkautz hereinzulassen, der mit seinem Schnabel gegen die Scheibe geklopft hatte.</p><p>Ron schloss die Augen wieder. Der verdammte Vogel musste sich im Fenster geirrt haben. Niemand, den er kannte, würde ihnen um diese Uhrzeit eine Eule schicken.</p><p>"Was ist?", fragte er dann alarmiert, weil er hörte, wie Hermine überrascht nach Luft schnappte. Er setzte sich auf. Sie hatte das Pergament vom Fuß des Vogels gelöst und starrte mit Tränen in den Augen darauf. Sofort sprang er auf und trat neben seine Frau. "Was ist los, Hermine? Ist irgendjemandem was passiert?" Hoffentlich war mit seinen Eltern alles in Ordnung. Sie waren beide nicht mehr die Jüngsten. Wenn seine Mutter auf der Treppe gestolpert war und sich irgendwas gebrochen hatte ... "Was ist denn?!", fragte er ungeduldig und angespannt, als Hermine immer noch kein Wort herausbrachte. Er machte Anstalten, ihr den Brief zu entreißen, um selbst lesen zu können, was darin stand.</p><p>"Ginny", begann Hermine mit zitternder Stimme. Ron gefror das Blut in den Adern. Oh nein. Wenn seiner schwangeren kleinen Schwester etwas passiert war … das würde Harry nicht überleben. Und der Rest seiner Familie auch nicht. Sie hatten schon viel zu viel verloren.</p><p>"Ginny hat das Baby bekommen. Ein Junge. Harry schreibt, dass es allen gut geht. Und dass sie ihn James Sirius genannt haben." Sie brach ab und wischte sich mit dem Handrücken über ihr Gesicht. Ron zog sie in seine Arme.</p><p>Ron fiel ein Stein vom Herzen. Ginny ging es gut. Und dem Baby auch. Er wusste, wie sehr sein bester Freund sich darauf gefreut hatte, Vater zu werden und endlich eine eigene, blutsverwandte Familie zu haben. Er wusste, wie sehr Ginny sich auf ihren Sohn gefreut hatte. Die beiden mussten jetzt unbeschreiblich glücklich sein. Und Ron freute sich wirklich für sie. Sie hatten es verdient, glücklich zu sein. Aber – und er schämte sich richtig, als er erkannte, was er sonst noch fühlte, denn dieses Gefühl war ihm mehr als bekannt - er war auch verdammt eifersüchtig. Harry und Ginny hatten etwas, von dem Hermine und er nur träumen konnten. Etwas, das mit jedem Monat unerreichbarer für sie wurde und das sie sich immer verzweifelter wünschten.</p><p>"Das ist so schön für sie", flüsterte Hermine leise. "Ginny ist so glücklich. Und Harry auch."</p><p>Ron nickte. "Das stimmt." Er küsste sie auf ihre Haare und drückte aufmunternd ihre Hand. "Wir sollten wieder ins Bett gehen. Wir haben morgen beide einen anstrengenden Tag vor uns." Für ihn stand am Nachmittag ein Verhör auf dem Plan und Hermine würde in der Verhandlung den dritten und wichtigsten Zeugen verhören müssen. Sie konnten ihren Schlaf gut gebrauchen. "Wir sollten Ginny morgen im Krankenhaus besuchen.", schlug er schließlich vor. Er wusste, dass ein neugeborenes Baby und eine strahlende Mutter zu besuchen das Letzte war, was Hermine wollte, aber sie würden nicht darum herumkommen.</p><p>Hermine zerknüllte den Brief in ihrer Hand und nickte. "Ja. Das sollten wir wohl", stimmte sie ihm tonlos zu und legte sich wieder hin, ohne ihn noch einmal anzusehen.</p><p>/-/</p><p>"Er ist toll, Ginny", murmelte Ron, während er fasziniert seinen neuen Neffen betrachtete. Er war seinem Vater schon jetzt wie aus dem Gesicht geschnitten. Sein Kopf war voller rabenschwarzer Haare, die in alle Richtungen abstanden. Und Ron hätte schwören können, dass er den gleichen nachdenklichen Gesichtsausdruck hatte, den er so häufig bei Harry sehen konnte. Er konnte Ginny überhaupt nicht in ihm erkennen. Aber vielleicht würde sich das noch ändern. Ron war sich nicht sicher, ob es das allerbeste für James war, ein genauer Klon seines Vaters zu sein. Dann würde er nie Ruhe haben, nie unerkannt bleiben.</p><p>"Nicht wahr?", fragte Ginny stolz. Sie hatte sich zurückgelehnt und die Augen geschlossen. Sie war hundemüde. So eine Geburt war viel anstrengender, als sie gedacht hatte. "Er ist absolut perfekt."</p><p>Ron schluckte. "Ja, das ist er." Er fuhr dem Baby über die Wange und beobachtete lächelnd, wie James seine Nase kraus zog. Er lächelte. Ginny hatte das früher immer gemacht. Vielleicht hatte er ja doch etwas von seiner Mutter.</p><p>Ron warf einen kurzen Blick auf seine Frau, die neben ihm stand und auf das Baby in seinen Armen starrte. Tränen standen in ihren Augen, aber sie versuchte um Ginnys Willen, sich zusammenzureißen.</p><p>Ron fragte sich, was seine Kinder wohl von ihm haben würden. Seine Haare oder seine Sommersprossen oder seinen Humor? Vielleicht auch sein Quidditchtalent. Aber vielleicht würden sie auch Hermines buschiges Haar erben und miserabel im Quidditch, aber brillant in allem anderen sein. Doch letzten Endes war es völlig egal, was seine Kinder von ihnen erben würden, solange sie überhaupt existierten.</p><p>Ron schluckte erneut. Er konnte sich nicht vorstellen, dass er seine Kinder niemals würde kennen lernen können. Es ging einfach nicht. Seit er mit Hermine zusammen war, hatte er in ihrer gemeinsamen Zukunft immer Kinder gesehen. Doch mit jedem weiteren Monat wurde es offensichtlicher für ihn, dass er sich wohl damit abfinden musste, dass es sie nie geben würde. Und als er auf das Baby in seinen Armen starrte, hatte er keine Ahnung, wie zum Teufel er das hinkriegen sollte.</p><p>"Ron?" Ginny hatte sich wieder aufgesetzt. Sie hatte den Kopf schief gelegt und musterte ihren Bruder besorgt. "Ist alles in Ordnung?"</p><p>Ron riss seinen Blick von dem Säugling los. Er räusperte sich. "Sicher. Alles bestens." Vorsichtig legte er das Baby Hermine in die Arme. Er warf einen Blick auf seine Armbanduhr. "Es ist spät geworden. Ich muss noch ins Ministerium." Er beugte sich vor und gab Hermine einen flüchtigen Kuss auf die Wange. Dann lächelte er seiner Schwester zu. "Nochmal herzlichen Glückwunsch, Gin. Ihr könnt euch wirklich glücklich schätzen." Er riss die Tür praktisch auf und war einen Moment später aus dem Zimmer verschwunden.</p><p>Ginny schaute kopfschüttelnd auf die Tür, bevor sie sich mit einem fragenden Blick an ihre Schwägerin und beste Freundin wandte. "Was war das denn für ein Auftritt?"</p><p>Hermines Finger krallten sich in die Decke, in die James gewickelt war. "Ich hab keine Ahnung, wovon du sprichst." Sie wollte nicht darüber sprechen. Sie wollte lieber nur dastehen und das Baby in ihrem Armen betrachten. James war so wunderschön. So klein und trotzdem schon so perfekt. Wie sehr sie sich so ein kleines Wesen wünschte! Wie sehr sie sich danach sehnte, auch so ein Kind in ihrem Armen halten zu können. Ein Kind, das zur Hälfte von ihr und zur Hälfte von Ron war. Wie sehr sie sich wünschte, an Ginnys Stelle zu sein, in diesem Krankenbett zu liegen und Besuch von allen Familienmitgliedern zu bekommen, die sie alle zu diesem perfekten Wesen beglückwünschten, das nur durch Ron und sie, durch ihre Liebe, auf der Welt war.</p><p>Am liebsten hätte sie James nie wieder losgelassen.</p><p>Aber dann fing er an zu schreien und sich in ihren Armen zu winden und Hermine wusste, dass sie ihn seiner Mutter zurückgeben musste. Ginny hatte die Arme ausgestreckt und Hermine reichte ihn ihr vorsichtig. Ginny schaute ihren brüllenden Sohn einen Moment liebevoll an und machte sich dann daran, ihn zu stillen.</p><p>Hermine ging leise zur Tür. Sie wollte nicht länger stören. Ginny war sicher erschöpft. Und sie wusste nicht, wie viel sie noch ertragen konnte.</p><p>Aber Ginny hatte andere Pläne. Gerade, als Hermine ihre Hand auf die Klinke gelegt hatte, schaute sie von ihrem Baby auf. "Du willst doch nicht schon gehen, oder?", fragte sie enttäuscht. "Wir haben uns in der letzten Zeit so wenig gesehen. Ich dachte, wir könnten uns noch ein bisschen unterhalten. Oder musst du noch arbeiten?"</p><p>Hermine biss sich auf die Lippe. Es stimmte, sie hatte Ginny in den letzten Monaten kaum gesehen. Sie hatte es nicht fertig gebracht, ihre überglückliche Freundin zu sehen, deren Bauch immer runder geworden war, während ihr Bauch sich überhaupt nicht verändert hatte. Sie hatte nicht verhindern können, immer neidischer auf Ginny zu werden. Ron und sie hatten viel länger versucht, ein Kind zu bekommen, als Harry und Ginny. Ginny hatte ihren Verhütungstrank gerade mal einen Monat nicht mehr genommen, als sie schwanger geworden war. Wenn es bei Hermine und Ron auch so geklappt hätte, dann wäre Hermine schon fast Mutter gewesen, als Harry und Ginny sich überhaupt erst dazu entschlossen hatten, es zu versuchen.</p><p>Und jetzt hatte Ginny ihr Baby und Hermine war noch genau da, wo sie vor vierzehn Monaten auch schon gewesen war. Nichts hatte sich verändert.</p><p>Aber sie hatte ihre beste Freundin auch vermisst. Und sie hatte viel zu oft ihre Arbeit vorgeschoben, wenn Ginny sich mit ihr hatte treffen wollen. Also ließ sie ihre Hand wieder sinken und ließ sich schweren Herzens in einem der Stühle nieder, die um Ginnys Bett herum verteilt waren.</p><p>Ginny musterte sie besorgt. "Du siehst schrecklich erschöpft aus. Wie viel hast du in der letzten Zeit gearbeitet?"</p><p>Hermine zuckte mit den Schultern. Sie wusste es nicht. Der Prozess erforderte sehr viel Arbeit und sie war nie jemand gewesen, der seine Aufgaben schlampig erledigte. Obwohl sie sich in der letzten Zeit sehr dazu zwingen musste. Im Gerichtssaal fühlte sie sich in ihrem Element. Sie war eine gute Anklägerin mit hervorragenden Fähigkeiten und trotz ihrer jungen Jahre hatte sie bereits den Respekt all ihrer Kollegen. Sie war sehr zuversichtlich, dass der mordende Familienvater im nächsten Jahr für immer nach Askaban wandern würde, aber trotz allem fühlte sie nicht die Befriedigung, die sich sonst immer nach einem anstrengenden Verhandlungstag eingestellt hatte. Ihre Arbeit bedeutete ihr längst nicht mehr so viel wie früher.</p><p>Und dabei war sie am Anfang ihre größte Zuflucht gewesen. Ihr Körper hatte nicht geschafft, was sie sich unbedingt von ihm wünschte, aber zumindest bei ihrer Arbeit war sie unschlagbar. Wenigstens dort hatte sie alle Zügel in der Hand. Sie hatte vergessen können, dass sie nicht schwanger wurde. Aber je länger es dauerte, desto häufiger schlich sich ihr Kinderwunsch auch im Ministerium in ihre Gedanken und schließlich war sie irgendwann so davon beherrscht worden, dass alles andere zweitrangig geworden war. Sie wollte nicht, dass es so war, aber sie konnte rein gar nichts dagegen tun.</p><p>"Harry hat mir erzählt, dass der Prozess sehr schwierig ist. Machst du dir deswegen Sorgen?"</p><p>Hermine war einen Moment versucht zu nicken. Es wäre die einfachere Antwort gewesen. Aber sie hatte ihre Freundin noch nie belogen und sie wollte jetzt nicht damit anfangen. Also schüttelte sie schließlich den Kopf. "Nein. Das ist es nicht. Ich bin mir sicher, dass ich gewinnen werde. Der Verteidiger hat keine Chance."</p><p>Ginny runzelte die Stirn. "Und was ist es dann? Irgendwas stimmt doch nicht, das sehe ich dir an. Ist irgendwas mit Ron? Habt ihr euch gestritten? Ist er deshalb so schnell wieder abgehauen?"</p><p>Hermine seufzte. Und schüttelte den Kopf. "Nein. Mit uns ist alles in Ordnung." So in Ordnung, wie es eben sein konnte in Anbetracht ihrer Situation.</p><p>James hatte anscheinend genug getrunken. Ginny knöpfte ihr Nachthemd wieder zu und hob ihn dann an ihre Schulter, damit er sein Bäuerchen machen konnte. Während sie ihm sanft über seinen kleinen Rücken strich, schaute sie Hermine verwirrt an. "Aber was ist denn dann? Was ist los?"</p><p>Hermine schluckte. Sie hatte Ginny nie gesagt, dass sie und Ron ein Baby wollten. Anfangs erschien es ihr keine große Sache zu sein und sie hatte den Rest der Familie damit überraschen wollen, dass sie schwanger war. Sie war sich sicher, dass es nicht lange dauern würde, bis es so weit sein würde. Und dann war Ginny schwanger geworden und Hermine hatte sie nicht mit ihren Problemen belasten wollen.</p><p>"Ron und ich versuchen seit vierzehn Monaten, ein Baby zu bekommen." Sie deutete frustriert auf ihren flachen Bauch. "Wie du siehst, hat es wunderbar geklappt."</p><p>Ginny schaute sie mit offenem Mund an. Sie blinzelte ein paar Mal, bevor sie ihre Stimme wiederfand. "Du ... ihr ... ihr wollt ein Baby? Seit über einem Jahr?" Deprimiert nickte Hermine. "Aber warum hast du nichts gesagt? Warum hast du nicht mit mir gesprochen? Wir haben uns doch immer unsere Probleme erzählt", sagte sie verletzt. James machte sein Bäuerchen und Ginny nahm ihn wieder in ihre Arme.</p><p>Hermine zuckte mit den Schultern. "Ich weiß nicht. Am Anfang war es nichts Besonderes. Ich dachte, es würde nur zwei oder drei Monate dauern, bis ich schwanger werde. Und dann wurdest du schwanger und warst so glücklich und ich wollte deine Freude nicht mit meiner miesen Laune verderben."</p><p>Ginny schüttelte energisch mit dem Kopf. "Du hättest es mir sagen können. Ich wäre doch für dich da gewesen." Sie streckte eine Hand aus und Hermine ergriff sie zögerlich. Ginny drückte sie fest. "Ich <em>bin </em>für dich da."</p><p>Hermine blinzelte ein paar Tränen aus den Augen. Sie lächelte ihre beste Freundin dankbar an. "Das ist lieb von dir, Ginny. Aber du kannst nichts tun. Du kannst mich nicht schwängern." Ginny grinste. "Und James wirst du mir wahrscheinlich auch nicht geben." Ginny warf einen Blick auf ihren schläfrigen Sohn und hielt ihn etwas fester im Arm. Sie schüttelte den Kopf.</p><p>"Tut mir Leid, Hermine. Ihn kriegst du nicht", sagte sie entschlossen.</p><p>Hermine lächelte traurig. Das hatte sie auch nicht ernst gemeint. Zumindest fast nicht.</p><p>"Wart ihr schon bei den Heilern? Haben sie gesagt, ob irgendwas nicht stimmt?", wollte Ginny dann wieder ernst wissen.</p><p>"Ja. Wir haben uns von magischen Spezialisten durchchecken lassen und von Muggelspezialisten und alle haben gesagt, dass es auf den ersten Blick keinen Grund geben sollte, warum ich nicht schwanger werde." Das war das schlimmste daran. Wenn es wenigstens ein Problem geben würde, dass sie lösen könnte. Aber einfach so, ohne Grund … es war schrecklich.</p><p>Ginny hob eine Augenbraue. "Aber?"</p><p>Hermine seufzte. "Als auch die Tränke, die sie uns gegeben haben, nichts gebracht haben, haben die Heiler angefangen zu vermuten, dass vielleicht der Cruciatus-Fluch von Bellatrix dafür verantwortlich ist, dass es nicht funktioniert. Die Nachwirkungen sind noch nicht sehr erforscht. Vielleicht haben sie deshalb nichts entdecken können."</p><p>Ginny schluckte. "Oh Hermine, das tut mir so Leid."</p><p>Hermine wischte sich ein paar Tränen aus den Augenwinkeln. "Glaub mir, mir auch. Die Heiler haben gesagt, dass wir es weiterversuchen sollen und das machen wir auch. Aber ich weiß nicht, wie viel das noch bringen soll." Sie versuchte zwar, es zu verdrängen, aber sie fragte sich immer häufiger, ob sie nicht einfach akzeptieren sollte, dass sie nie schwanger werden würde. Doch wenn sie auf das Baby in Ginnys Armen schaute, dann wusste sie, dass sie es nicht akzeptieren <em>konnte</em>. Sie wollte ein Baby von Ron, mehr als alles andere in ihrem Leben.</p><p>"Was sagt Ron? Wie geht es ihm?"</p><p>Hermine atmete tief durch. Ein liebevolles Lächeln erschien auf ihrem Gesicht. "Er ist wunderbar. Einfach wunderbar." Wieder stiegen ihr Tränen in die Augen. "Aber er möchte so sehr ein Baby. Er wünscht es sich so. Er tut zwar so, als wäre es nicht schlimm, dass ich nicht schwanger werde, aber ich weiß, dass er enttäuscht ist. Ich möchte ihm so gerne ein Kind schenken, aber ich kann nicht." Hermines Stimme brach. "Irgendwann wird es ihm zu viel werden. Irgendwann wird er nicht mehr können. Und dann wird er gehen. Das weiß ich." Er war schon einmal gegangen, als es ihm zu viel geworden war. Damals, als sie auf der Suche nach den Horkruxen gewesen waren. Er war gegangen und hatte sie im Stich gelassen. Er würde es wieder tun. Weil sie nicht genug war. Sie war nicht genug, um ihn zu halten, nicht, wenn sie ihm nicht die Familie geben konnte, die er so sehr wollte. Und sie konnte es ihm noch nicht einmal übel nehmen. An seiner Stelle würde sie sich auch fragen, wie lange sie bei jemandem bleiben konnte, der ihr ihre Wünsche nicht erfüllte.</p><p>"Hermine, nein." Ginny schaute ihre beste Freundin entsetzt an. Sie ließ ihre Hand los, schlug die Decke zurück, stand auf und legte James in sein Bettchen, das neben ihrem Krankenhausbett stand. Dann ging sie zu Hermine und zog sie in ihre Arme. Hermine begann, hemmungslos zu schluchzen. "Ron liebt dich. Er wird dich nicht verlassen, nur weil du keine Kinder kriegen kannst. Er hat jahrelang darauf gewartet, mit dir zusammen zu sein. Er wird das nicht wegwerfen. Niemals."</p><p>"Aber er will Kinder. So sehr", widersprach Hermine mit zitternder Stimme. "Und ich kann nicht ..."</p><p>"Hermine." Ginny löste sich aus der Umarmung und legte ihre Hände auf Hermines Wangen. Sie zwang sie dazu, den Kopf zu heben. "Sieh mich an. Hör mir zu. Ron liebt dich. Mehr als alles andere auf der Welt. Er liebt dich schon sein halbes Leben lang. Du bist ihm wichtiger als alle Kinder, die er mit jemand anderem haben könnte." Sie hatte noch nie zwei Menschen gesehen, abgesehen von ihren eigenen Eltern, die sich so sehr liebten wie Ron und Hermine. Die sich so sehr brauchten. Ohne den anderen wären sie verloren. Aber sie hatte auch noch nie zwei Menschen gesehen, die so unsicher waren, was die Gefühle des anderen betraf. Zu oft schon hatten sie sich wehgetan. Seit sie zusammen waren, seit sie verheiratet waren, waren sie sicherer geworden und hatten angefangen, in ihre Liebe zu vertrauen, aber das bedeutete dennoch nicht, dass die Zweifel verschwunden waren, nicht gut genug für den anderen zu sein. Auch wenn Ginny keine Ahnung hatte, wie Ron und Hermine auch nur im Geringsten davon ausgehen konnten, dass sie nicht der wichtigste Mensch im Leben des anderen waren und befürchteten, einander wieder zu verlieren. „Glaub mir. Ihr habt schon so viel zusammen durchgemacht. Das schafft ihr auch. Da bin ich sicher. Vertrau in euch."</p><p>Hermine schniefte und nickte zögernd. "Ich will ja", murmelte sie. "Aber ich habe Angst." Mit jedem Monat, in dem nichts passierte, wurde ihre Angst größer. Sie konnte nichts dagegen tun. Genau, wie sie nichts dafür tun konnte, dass sie ein Baby bekam. Sie war machtlos.</p><p>/-/</p><p>Erschöpft legte Ron seine Feder hin. Er hatte gerade eine Stunde gebraucht, um eine Festnahme von letzter Woche zusammenzufassen. Er liebte seinen Beruf. Er liebte den Adrenalinrausch, der jedes Mal kam, wenn er jemanden verfolgte oder wenn er versuchte, jemanden zu finden oder auch wenn er jemanden verhören sollte. Wenn er mit Harry besprach, welche Taktik die klügste war, um zu erfahren, was sie wissen mussten. Er liebte diesen Teil seiner Arbeit sehr. Aber auf den dämlichen Papierkram hätte er getrost verzichten können. Es gab sowieso niemanden, der den Scheiß je lesen würde.</p><p>Er hörte ein Klopfen an der Tür und drehte den rollbaren Schreibtischstuhl herum. Hermine stand in der Tür. "Hallo", begrüßte sie ihn leise und deutete auf ihren Schreibtisch. "Was hast du denn hier gemacht?"</p><p>Ron schaute sie entschuldigend an. "Es tut mir Leid. Ich hatte im Ministerium heute keine Zeit mehr, den Bericht zu schreiben. Du warst nicht da und ich dachte nicht, dass es dich stören würde, wenn ich ihn an deinem Schreibtisch schreibe. Ich hab auch nichts verändert, ich schwöre." Der Schreibtisch seiner Frau war überraschend aufgeräumt gewesen. Wenn sie normalerweise an einem Fall arbeitete, dann herrschte das totale Chaos hier, aber vielleicht hatte sie sich auch einfach ein neues System überlegt. Er hatte sich jedenfalls bemüht, nichts zu verändern und nicht gegen die Akten zu stoßen, die sie säuberlich auf der Tischplatte gestapelt hatte.</p><p>Sie schüttelte lächelnd den Kopf. "Das ist doch egal", winkte sie ab. Sie betrat den Raum und warf einen Blick auf sein Pergament. "Bist du fertig geworden?"</p><p>Ron grinste zufrieden. "Gerade eben." Er warf dem Pergament einen bösen Blick zu. "Aber vielleicht sollte ich mir auch so eine Flotte-Schreibe-Feder besorgen." Er hielt seine Hand hoch. "Ich schwöre, ich hab nach einer halben Stunde einen Krampf gekriegt."</p><p>Hermine lachte. "Du übertreibst." Sie legte die Arme um seinen Nacken und ließ sich auf seinem Schoß nieder. Ron schaute sie überrascht an und schlang seine Arme um ihre Taille. "Und ich weiß nicht, ob so eine Feder eine gute Idee ist. Du weißt, was die von Rita Kimmkorn immer angestellt hat. Am Ende verfasst sie noch eine herzergreifende Geschichte über den Todesser, den du gefasst hast."</p><p>"Vielleicht aber auch nicht", widersprach Ron. Bevor er aber noch mehr sagen konnte, hatte Hermine ihre Lippen auf seine gedrückt und ihn stürmisch geküsst. Sie vergrub ihre Hände in seinen Haaren und rückte so nahe wie möglich an ihn heran. Ron was so perplex, dass er einige Momente brauchte, bis er ihren Kuss erwiderte. Er schob seine Hände unter ihre Bluse und fuhr über ihren Rücken. Zufrieden stellte er fest, dass sie eine Gänsehaut bekam.</p><p>Als er aber spürte, wie sie versuchte, sein Hemd aufzuknöpfen, löste er sich von ihr. "Warte", flüsterte er schwer atmend und lehnte seine Stirn gegen ihre.</p><p>Hermine schaute ihn verletzt an. "Was ist? Willst du nicht?"</p><p>Ron lachte atemlos. "Natürlich will ich. Was denkst du denn?" Das konnte sie doch spüren. „Aber dürfen wir überhaupt? Der Kalender ... Ist heute der richtige Zeitpunkt?" Er hasste es, sie an diesen dämlichen Kalender zu erinnern, der ihnen sagte, wann sie Sex haben durften und wann nicht, aber er wollte nicht daran Schuld sein, dass sich ihre Chancen auf ein Baby verringerten. Obwohl das wahrscheinlich das erste Mal seit Monaten sein würde, dass der Sex zwischen ihnen sich wieder normal angefühlt hätte.</p><p>Hermine zuckte mit den Schultern. "Keine Ahnung. Aber das ist auch egal." Sie küsste ihn erneut und löste ohne Widerstand von ihm seine Knöpfe. Schnell schälte er sich aus dem Kleidungsstück. "Ich will dich. Scheiß auf den verdammten Kalender."</p><p>Ron schaute in das Gesicht seiner Frau. Ihre braunen Augen leuchteten voller Leben, ihre Wangen waren gerötet und ihre Lippen geschwollen. Ein paar Haare hatten sich aus ihren Knoten gelöst, den sie jetzt fast täglich trug, und fielen ihr in die Stirn. Ron strich sie hinter ihr linkes Ohr und fuhr dann mit seinem Daumen zärtlich über ihre Wange. "Ich liebe dich", flüsterte er.</p><p>Sie schluckte schwer, bevor sie sich nach vorne lehnte und ihn weniger stürmisch, dafür aber umso intensiver küsste. Sie umarmte ihn so fest, dass ihr ganzer Oberkörper gegen seine nackte Brust gedrückt wurde.</p><p>"Ich liebe dich auch."</p><p>
+  <strong>TBC ...</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8641453/chapters/19817728">Chapter 3</a>: Getrübte Weihnachtsstimmung
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="xcontrast">
+  <p></p>
+  <div>
+    <p></p>
+    <div>
+      <p>
+        <em>
+          <strong>24. Dezember</strong>
+        </em>
+      </p>
+      <p>"Mum, kannst du deine Finger überhaupt noch bewegen nach all den Pullovern, die du gestrickt hast?", fragte Ginny beeindruckt, als sie die vielen Pullover musterte, die ihre Mutter ihnen zu Weihnachten gestrickt hatte. Jedes von Mollys Kindern hatte einen bekommen, alle Ehepartner und alle Enkelkinder. Sogar James, obwohl der gerade mal einen Monat alt war. So einen winzigen Pullover hatte Ginny noch nie gesehen und sie hatte sich sofort bemüht, ihn ihrem widerwilligen Sohn überzuziehen. Auch die vierjährige Victoire trug schon ihren Pullover, genau wie Louis, Victoires kleiner dreijähriger Bruder. Nur seine Zwillingsschwester Dominique hatte Probleme, ihren überzuziehen, obwohl ihre Mutter Fleur ihr Bestes tat, um ihr dabei zu helfen. Die zweijährige Molly war nicht gerade beeindruckt gewesen, aber auch sie hatte ihn widerstandlos angezogen. Am begeistertsten war noch der sechsjährige Teddy gewesen, der seinen Pullover sehr stolz trug und seine Haarfarbe der dunkelgrünen Wolle angepasst hatte.</p>
+      <p>Molly winkte strahlend ab. "Ach Papperlapapp, Ginny, Schatz. Diese Pullover werde ich immer stricken. Für meine ganze Familie. Ich freu mich schon, wenn ich im nächsten Jahr noch einen mehr machen kann." Sie streckte ihre Hand aus und tätschelte den wirklich riesigen Bauch von Percys Frau Audrey. Ginny hätte geschworen, dass Audrey schon weit über dem Geburtstermin war, aber tatsächlich hatte sie noch einen Monat vor sich. Audrey hatte schulterzuckend gemeint, dass die Frauen in ihrer Familie sehr dazu neigten, in die Breite zu gehen. Sie war zum Glück niemand, der sich großartig um seine Figur scherte. Fleur hatte sich da viel mehr beklagt, aber um fair zu sein, bei den Zwillingen war ihr Bauch wirklich gewaltig gewesen. Es war ein Wunder, dass sie wieder so umwerfend schlank geworden war wie vor der Schwangerschaft. Aber als Veela hatte sie da vielleicht einen Vorteil. Ginny jedenfalls hatte immer noch sechs Kilo zu viel auf den Hüften. Aber für James brachte sie dieses Opfer sehr gerne.</p>
+      <p>Sie blickte zu Hermine, die ihren Pullover in der Hand hielt und traurig auf Audreys Bauch starrte. Sie hätte bestimmt alles dafür gegeben, so in die Breite zu gehen wie Audrey. Ginny seufzte. Sie wünschte, sie hätte etwas für ihre beste Freundin tun können. Sie hatte ihr eine sehr teure Feder zu Weihnachten geschenkt, von der sie wusste, dass Hermine sie schon lange hatte haben wollen und eine Aktentasche, die perfekt für sie war. Hermine hatte sich gefreut, aber aufgeheitert hatte es sie nicht. Sie wusste, dass Ron ihr eine wunderschöne Kette gekauft hatte (sie hatte ihm dabei geholfen, sie auszusuchen), aber sie glaubte nicht, dass selbst das Hermine aufmuntern würde. Nichts würde sie wirklich glücklich machen. Außer ein Baby.</p>
+      <p>Ginny schaute zu James, der sich mit dem Pullover schließlich doch abgefunden hatte und jetzt mit großen Augen auf den funkelnden Weihnachtsbaum starrte. Sie fragte sich, wie sie sich wohl fühlen würde, wenn sie nicht sofort schwanger geworden wäre. Harry und sie hatten kurz vor Ende der Saison angefangen, es zu versuchen, weil sie damit gerechnet hatte, dass es drei oder vier Monate dauern würde. Kurz vor ihrem letzten Spiel hatte sich bei einem Routinecheck herausgestellt, dass sie schwanger war. Es hatte gerade mal einen Monat gedauert.</p>
+      <p>Aber wie wäre es, wenn sie es über ein Jahr versucht hätten? Wenn sie jeden Monat enttäuscht werden würde, weil sie wieder nicht schwanger war? Wenn sie sich in ihrem Körper wie in einer Falle fühlen würde, weil er nicht tat, wozu er bestimmt war?</p>
+      <p>Sie konnte es sich nicht vorstellen. Sie drückte James an sich und war froh, dass sie es sich nie würde vorstellen müssen. Sie wünschte nur, dass es irgendetwas gab, was sie für ihre beste Freundin tun konnte. Und für ihren Bruder.</p>
+      <p>Man sah Ron zwar nicht so wie Hermine an, dass er unglücklich war, aber auch in seinen Augen lag eine Traurigkeit, die noch nie vorher dagewesen war.</p>
+      <p>Ihre Gedanken wurden unterbrochen, als Ginnys Mum in die Hände klatschte. "So, und jetzt setzen sich bitte alle Enkelkinder auf das Sofa." Seit Bill und Fleur die Zwillinge Dominique und Louis bekommen hatten, bestand ihre Mutter auf das jährliche weihnachtliche Foto von ihren Enkelkindern. Sie vermutete ganz richtig, dass es im Laufe der Zeit immer mehr werden würden. Stolz hängte sie alle gemachten Fotos im Flur auf.</p>
+      <p>Zu Victoire, Dominique und Louis hatte sich im Jahr darauf Molly gesellt. Und jetzt, zwei Jahre später, kam James dazu, den Ginny vorsichtig in Victoires Arme legte. Sie hoffte, dass ihre Mutter sich beeilen würde. Auch wenn Victoire ihren Sohn gewissenhaft halten würde, war sie doch trotzdem erst vier und Ginny würde wohler sein, wenn er wieder in ihren eigenen Armen liegen würde.</p>
+      <p>Mrs Weasley hätte fast noch die schwangere Audrey auf das Sofa gezerrt, aber Audrey widersprach.</p>
+      <p>"Molly, bitte. Das Baby ist doch noch gar nicht geboren und das Foto ist nur mit den Kindern drauf. Ich wäre da fehl am Platz. Es reicht doch auch, wenn es nächstes Jahr dabei ist." Sie ließ sich wieder auf ihren Stuhl sinken und faltete ihre Hände über dem großen Bauch zusammen.</p>
+      <p>Mrs Weasley nickte überredet. Sie hob die Kamera und mit etwas Hilfe von ihrem Mann schaffte sie es auch, das Foto zu schießen. Sie versuchte immer, sich zu beeilen, weil sie wusste, wie unruhig die Kinder schon nach kurzer Zeit waren. Auch jetzt sprangen die Zwillinge sofort auf, um mit ihren Geschenken weiter zu spielen, während Molly zu Audrey ging und die Arme um sie schlang. Sie legte ihren Kopf auf den Bauch ihrer Mutter. Audrey drückte ihr einen Kuss auf die dunklen Haare und strich ihr dann zärtlich über den Kopf.</p>
+      <p>Ginny hatte sich mittlerweile ihren Sohn wiedergeholt und drückte ihm auch einen Kuss auf die Stirn. Aus den Augenwinkeln konnte sie sehen, wie Hermine schwer schluckte. Ginny seufzte. Wenn sie Hermine doch ein Baby zu Weihnachten hätte schenken können.</p>
+      <p>Mrs Weasley schaute mit einem liebevollen Lächeln auf ihre Familie, die im Wohnzimmer versammelt war. "Es wird schön sein, wenn nächstes Jahr noch ein Baby dazukommt." Sie schaute zu Ron und Hermine, die möglichst unbeteiligt in ihrer Ecke saßen. "Es muss auch nicht das einzige Baby sein. Es ist immer noch Platz für mehr."</p>
+      <p>Ginny sog scharf die Luft ein, als sie sah, wie Hermine Tränen in die Augen stiegen. Ihre Mutter wusste nichts von den Problemen, die ihr jüngster Sohn und seine Frau hatten. Trotzdem sollte sie sich nicht in so eine private Sache einmischen. Aber so war sie eben. Sie mischte sich gerne ein. Und sie war verrückt nach Babys. Ihrer Meinung nach konnte es gar nicht genug in der Familie geben. Und ohne konnte man auch gar nicht glücklich sein, was völliger Schwachsinn war. Mindestens zwei ihrer Teamkolleginnen waren entschlossen, niemals ein Kind zu bekommen und mehr als glücklich damit.</p>
+      <p>Ron hatte eine Hand auf Hermines Schulter gelegt und sich vorgebeugt, um ihr etwas zuzuflüstern. Hermine schüttelte den Kopf. Eine Träne lief ihr über die Wange. Schnell stand sie auf und schlängelte sich zwischen den ganzen Weasleys und dem Geschenkpapier, das auf dem Boden verteilt war, hindruch zur Küche. Sie riss die Küchentür auf und verschwand in der kalten Winternacht.</p>
+      <p>Ron schaute ihr seufzend hinterher und warf seiner Mutter dann einen verärgerten Blick zu. "Vielen Dank, Mum." Er stand ebenfalls auf und folgte seiner Frau.</p>
+      <p>Molly sah verwirrt in die Runde, die Schöpfkelle für ihre Weihnachtsbowle in der Hand. "Was hab ich denn gemacht?"</p>
+      <p>/-/</p>
+      <p>Ron drehte sich suchend im Kreis. Er hatte gehofft, dass Hermine nur etwas frische Luft gebraucht hatte und im Garten des Fuchsbaus saß und traurig in die Sterne schaute. Aber er konnte sie nirgendwo entdecken, was bedeutete, dass sie disappariert war. Wenn er Glück hatte, war sie Zuhause, wenn er Pech hatte, dann war sie irgendwo anders und er hatte keine Chance, sie zu finden. Aber so wie er sie kannte, wollte sie wahrscheinlich gar nicht gefunden werden. Er hätte sowieso nichts tun können, um sie zu trösten. Die Floskeln waren ihm schon vor Monaten ausgegangen.</p>
+      <p>Ron lehnte sich an die Hauswand und warf einen Blick auf die Küchentür. Lautes Lachen drang aus dem Haus. Ron schloss die Augen. Er sollte zurück zu seiner Familie und den Feiertag genießen, den er als kleiner Junge immer so geliebt hatte. Aber die Feiertagsstimmung hatte sich bei ihm bisher nicht einstellen wollen und er bezweifelte, dass sie das noch tun würde. Es war schwer, viel schwerer als er erwartet hatte, seine glücklichen Geschwister mit ihren Kindern zu sehen. Sie hatten alle das perfekte Familienleben, während seine Ehe langsam den Bach herunterging.</p>
+      <p>"Hey, hier bist du!" Ron schlug die Augen wieder auf. George war in den Garten gekommen und hatte sich neben ihn an die Wand gelehnt. "Wo ist Hermine?"</p>
+      <p>Ron zuckte mit den Schultern. "Weg. Keine Ahnung, wo sie hin ist. Vielleicht Zuhause, vielleicht auch nicht." Vielleicht war sie ja zu ihren Eltern gegangen. Obwohl er sich dunkel daran zu erinnern meinte, dass die beiden zu Hermines Großmutter gefahren waren, um mit ihr die Feiertage zu verbringen.</p>
+      <p>"Was hat sie? Hat es irgendwas mit Mums Enkelwunsch zu tun?" George schien ernsthaft besorgt zu sein um seine Schwägerin. "Mum kann manchmal über das Ziel hinausschießen, das weißt du. Ihr dürft das nicht so ernst nehmen, Ron. Wenn ihr noch kein Baby wollt, dann ist das völlig in Ordnung. Mum hat schon genug Enkel, mit denen sie sich beschäftigen kann. Sie kann noch ein paar Jahre auf eure Kinder warten."</p>
+      <p>Ron seufzte. Jetzt war es auch schon egal. "Aber wir wollen ein Baby, George."</p>
+      <p>"Ach ja?" George schaute ihn überrascht an. "Wirklich? Ist Hermine schon schwanger? Wollte sie noch nichts sagen und ist deshalb rausgerannt?"</p>
+      <p>Ron lachte freudlos. Es wäre so verdammt schön gewesen, wenn es wirklich so gewesen wäre. "Sie ist nicht schwanger. Seit fünfzehn verdammten Monaten ist sie nicht schwanger." Er trat gegen einen Schneehaufen und sah zu, wie das Pulver sich in alle Winde verteilte. Scheiße!</p>
+      <p>Georges Mund fiel auf. "Fünfzehn Monate?"</p>
+      <p>Ron fuhr sich seufzend durch die Haare. "Wir versuchen es seit fünfzehn Monaten und bis jetzt hat sich noch absolut nichts getan. Nichts, nada, niente. Und in der Zwischenzeit durften wir dabei zusehen, wie Ginny und Audrey schwanger geworden sind und wie James geboren worden ist und wie das neue Baby geboren wird und wir immer noch dort, wo wir vor fünfzehn Monaten auch schon waren. Und es ist so schwer, George, so schwer dort drin zu sein und dabei zuzusehen, wie glücklich alle mit ihren Kindern sind. Und dann hat Mum auch noch davon angefangen ... Als ob es nicht so schon schlimm genug wäre. Als ob wir nicht so schon unter Druck ständen." Er schluckte und schloss die Augen wieder. George schwieg. Wahrscheinlich wusste er nicht, was er zu diesem Ausbruch sagen sollte. Er hatte schließlich keine Ahnung von alledem gehabt. Und man konnte nicht über alles Witze machen.</p>
+      <p>Aber darum ging es gar nicht.</p>
+      <p>"Ich weiß, dass es nicht einfach ist an den Feiertagen", sagte George schließlich leise. "Das ist es nie." Er klang so depressiv, dass Ron sofort klar war, dass es nicht nur um seinen unerfüllten Kinderwunsch ging.</p>
+      <p>Er nickte. Bei den Familienfesten war Freds Tod besonders schmerzhaft. Obwohl so viele neue Familienmitglieder dazu gekommen waren, fühlte es sich trotzdem so an, als würde er fehlen. Niemand konnte ihn ersetzen. Aber mit der Zeit war es einfacher geworden. Auch wenn niemand ihn je vergessen würde, war es leichter gewesen, mit seinem Tod fertig zu werden. Zumindest für Ron. Für George musste es immer noch schrecklich sein. Niemand war Fred näher gewesen als er. Niemanden hatte sein Tod so schwer getroffen. Ron wusste nicht, wie es war, seinen Zwilling zu verlieren. Aber es war auch so schrecklich genug gewesen, ohne seinen großen Bruder weiterzumachen mit seinem Leben.</p>
+      <p>"Wieso ist Angelina nicht da? Wollte sie nicht kommen?", fragte Ron schließlich, um das Thema zu wechseln. Mit Hermine konnte er zwar mittlerweile über seine Gefühle sprechen, aber nicht mit George. Nicht, wenn es um Fred ging.</p>
+      <p>Aber seit George Angelina Johnson auf Harrys und Ginnys Hochzeit wiedergetroffen hatte, waren sie häufig ausgegangen. Mittlerweile wusste die ganze Familie, dass die beiden zusammen waren und seine Mutter gab schon subtile Hinweise, dass sie auf eine baldige Hochzeit hoffte. Sie würde nie dazu lernen und aufhören, sich einzumischen.</p>
+      <p>George zuckte mit den Schultern. "Keine Ahnung. Ich hab sie nicht eingeladen. Sie ist bei ihren Eltern."</p>
+      <p>"Du hast sie nicht eingeladen?" Jetzt war Ron erstaunt. "Warum nicht?"</p>
+      <p>George seufzte. "Wenn ich sie zu diesem Familienfest einlade ... ich weiß nicht, irgendwie fühlt sich das zu ernst an. Ich will nicht, dass sie sich irgendwelche falschen Hoffnungen macht. Besonders was Mum und ihre 'Andeutungen' angeht." Er verdrehte die Augen.</p>
+      <p>Ron legte den Kopf schief. "Es fühlt sich zu ernst an? Das macht dir Angst? Seid ihr nicht schon seit drei Jahren zusammen?"</p>
+      <p>George winkte ab. "Ich bitte dich. Das ist doch meistens nur Sex zwischen uns. Mehr nicht."</p>
+      <p>"Mehr nicht? Drei Jahre lang nur Sex ist nichts ernstes?"</p>
+      <p>George schüttelte den Kopf. "Nicht für mich. Angelina weiß, dass das auf nichts hinauslaufen wird, dass es nichts Wichtiges ist. Dass ich nicht …"</p>
+      <p>Ron runzelte die Stirn. Er hatte George und Angelina zusammen gesehen. Er hatte mitbekommen, wie sie sich angesehen hatten. Wie sie sich behandelt hatten. Für ihn hatte das sehr ernst ausgesehen. Das waren nicht nur zwei Menschen gewesen, denen es nur um Sex ging. Aber vielleicht war es für George einfacher, sich das einzureden.</p>
+      <p>"Ist es das wirklich?" Ron räusperte sich. "Magst du sie, George? Bist du gern mit dir zusammen?"</p>
+      <p>George atmete tief durch. "Ja."</p>
+      <p>"Ist das Beste an deinem Tag, dass du sie sehen wirst? Dass du Zeit mit ihr verbringen kannst? Schläfst du gern ein, wenn sie in deinen Armen liegt? Möchtest du am liebsten nie aufstehen, wenn sie neben dir liegt, weil es so perfekt ist? Dann solltest du damit aufhören, dir einzureden, dass es nur um Sex geht." George machte den Mund auf, aber er brachte keinen Ton heraus und schloss ihn deshalb wieder. Ron sah ihm an, dass er am liebsten widersprechen würde, aber dass er das nicht konnte, weil er wusste, dass er Recht hatte. Und wenn er George und Angelina helfen konnte … wenigstens eine Beziehung ging dann nicht in die Brüche, wenigstens ein Paar konnte er retten. Wenn er schon Hermine verlor.</p>
+      <p>"Du liebst sie, aber du hast eine Scheißangst, das zuzulassen. Ich weiß, wie das ist. Ich hab mir jahrelang eingeredet, dass mir Hermine nichts bedeutet, dass das nichts Ernstes ist. Und ich hab mehr als einmal kaputt gemacht, was zwischen uns hätte sein können. Und dann hätte ich sie fast für immer verloren, als wir in Malfoy Mannor gefangen waren. Hätten wir Bellatrix Lestrange nicht aufhalten können, dann würde ich sie jetzt bei Nevilles Eltern besuchen können." Ron schloss gequält die Augen. Dieser Tag würde ihn für den Rest seines Lebens verfolgen. Hermines Schreie, die im ganzen Haus zu hören gewesen waren. Die Angst, dass sie zu spät gekommen waren und Bellatrix diese wundervolle starke Frau zerstört hatte, die er mehr liebte als sein Leben. Und obwohl er gedacht hatte, dass sie das alles überstanden hatten, dass es vorbei war, seit seine Mum sie getötet hatte, schaffte Bellatrix es jetzt noch, ihr Leben zu beeinflussen und ihnen alles zu ruinieren.</p>
+      <p>"Jeder Tag ist wertvoll, George. Wenn sie dir wirklich etwas bedeutet, dann lass sie nicht los. Sie wird nicht ewig warten. Irgendwann ist sie weg und dann wirst du dir wünschen, du hättest den Arsch hochgekriegt und sie festgehalten, solange du noch die Möglichkeit dazu gehabt hast." Und er versuchte es doch. Er versuchte, Hermine festzuhalten, aber es wurde immer schwieriger.</p>
+      <p>Die Brüder verfielen wieder in Schweigen. Ron konnte sich nicht daran erinnern, dass sie jemals über Mädchen und Gefühle gesprochen hatten. Aber an den Feiertagen wurden sie mittlerweile immer etwas melancholisch. Wahrscheinlich sollten sie das nur nicht überstrapazieren.</p>
+      <p>"Warum wird Hermine nicht schwanger? Ist irgendwas nicht in Ordnung?", fragte George schließlich.</p>
+      <p>Ron zuckte mit den Schultern. Darüber konnten sie jetzt, nach allem anderen, auch noch sprechen. "Keiner weiß es. Die Heiler vermuten, dass es Nachwirkungen von dem Cruciatus-Fluch sind, mit dem Hermine mal belegt worden ist. Sie können nicht sagen, ob Hermine überhaupt nicht schwanger werden kann oder ob es einfach nur länger dauert oder was sonst los ist. An mir kann es nicht liegen. Die Heiler haben gesagt, dass meine Spermien durch den Atlantik schwimmen könnten."</p>
+      <p>George lachte, bevor sich sein Gesicht wieder verdüsterte. "Diese Lestrange. Es ist schade, dass Mum sie nicht noch hat foltern können, bevor sie sie erledigt hat. Verdient hätte sie es. Sie hat Nevilles Eltern auf dem Gewissen, Sirius, Tonks ... sie hätte fast Ginny getötet. Und jetzt hat sie euch vielleicht noch euer Baby genommen."</p>
+      <p>Ron nickte. Am liebsten hätte er die Frau selbst noch einmal umgebracht. Irgendjemanden musste er dafür verantwortlich machen, dass sein Leben so aus den Fugen geraten war.</p>
+      <p>"Hermine kommt nicht gut damit klar, oder?"</p>
+      <p>Ron schüttelte den Kopf. "Nein. Überhaupt nicht. Anfangs ging es noch. Aber mittlerweile hat sie sich so hineingesteigert ... Es bestimmt alles. Ihre Arbeit macht ihr keinen Spaß mehr. Sie kann Ginny nicht mehr sehen, ohne sich schlecht zu fühlen, weil sie jetzt James hat. Vom Sex ganz zu schweigen."</p>
+      <p>George runzelte die Stirn. "Aber müsste nicht wenigstens das noch gut sein? Ihr tut es doch praktisch andauernd, oder?"</p>
+      <p>Ron lachte humorlos. "Schön wär's. Hermine hat einen Kalender, auf dem steht, wann wir es unbedingt tun sollen und wann wir es lieber lassen sollten. Wenn ich nach Hause komme, weiß ich genau, was mich erwartet." Er seufzte. "Es macht schon lange keinen Spaß mehr. Es geht nur noch um die Schwangerschaft. Es geht um nichts anderes mehr. Wir können es gar nicht mehr genießen, weil wir uns ständig fragen, ob es dieses eine Mal geklappt hat, ob es dieses eine Mal war, bei dem wir endlich unser Baby gezeugt haben. Es geht nicht mehr um uns." Er schluckte. "Direkt nach James' Geburt ... ich dachte, es würde wieder besser werden. Hermine hat fröhlicher gewirkt, aus irgendeinem Grund. Der Sex war fast wieder normal. Aber dann war der Test wieder negativ und das war's dann." Er hatte so gehofft, seine Frau zurückzubekommen, aber er hatte sich getäuscht.</p>
+      <p>Er seufzte schwer. Und sprach dann etwas laut aus, das er sich bisher noch nicht einmal selbst hatte eingestehen wollen. "Ich glaube, ich verliere sie."</p>
+      <p>George schaute ihn fassungslos an. Entschieden schüttelte er den Kopf. "Das tust du nicht! Du kannst sie nicht verlieren. Ihr liebt euch. Ihr gehört zusammen."</p>
+      <p>"Ich weiß. Aber ich weiß nicht, wie lange wir das noch so mitmachen können. Ich weiß nicht, wie lange wir das noch aushalten. Sie zieht sich immer mehr zurück. Sie redet nicht mehr mit mir. Zumindest über nichts Wichtiges. Ich weiß nicht mehr, was in ihrem Kopf vorgeht. Ich kann sie nicht mehr glücklich machen. Ich kann nur dabei zusehen, wie sie jeden Tag unglücklicher wird."</p>
+      <p>"Aber das hat doch nichts mit dir zu tun. Sie liebt dich.", widersprach George.</p>
+      <p>Ron seufzte. Er hasste es, diesen Gedanken laut auszusprechen. Aber in der letzten Zeit war er immer häufiger da gewesen und er konnte ihn nicht mehr ignorieren.</p>
+      <p>"Ich weiß nicht mehr, ob das noch genug ist."</p>
+      <p>/-/</p>
+      <p>Ron kehrte in sein dunkles Haus zurück. Er hatte es nicht mehr über sich gebracht, zurück in den Fuchsbau zu gehen. Er wollte ihnen die gute Laune nicht noch mehr verderben. Und er wollte seiner Mutter auf keinen Fall erklären, was mit Hermine und ihm los war. George hatte angeboten, sich eine Ausrede einfallen zu lassen und Ron hatte dankend angenommen. Er hatte noch gehört, wie George lautstark verkündet hatte, dass Hermine PMS hatte und Victoire unschuldig gefragt hatte, was das denn war, bevor er disappariert war.</p>
+      <p>Deprimiert schaute Ron sich in seinem leeren Wohnzimmer um. In einer Ecke stand ein Weihnachtsbaum, den Hermine und er halbherzig geschmückt hatten. Sie waren beide nicht in der Stimmung für Weihnachten gewesen.</p>
+      <p>Und jetzt war es schon so weit gekommen, dass seine Frau und er Weihnachten nicht mal mehr gemeinsam feierten. Als sie das letzte Mal die Feiertage getrennt verbracht hatten, war er ein totaler Idiot gewesen und hatte sie und Harry im Stich gelassen. Er hatte sich geschworen, dass das nie wieder vorkommen würde. Aber er hatte sich auch geschworen, dass er sie glücklich machen würde. Und er konnte jeden Tag sehen, wie gut das geklappt hatte.</p>
+      <p>Langsam ging er die Treppe hinauf. Er blieb im Flur stehen und schaute auf die beiden verschlossenen Türen, die direkt gegenüber der Treppe waren. Als Hermine und er vor etwas mehr als einem Jahr in das Haus eingezogen waren, hatten sie sich enthusiastisch ausgemalt, wie ihre Kinder einmal in den Zimmern hinter den Türen schlafen würden. Hermine hatte ihm genau beschrieben, wie sie die Wände streichen würde und wohin sie welche Möbel stellen würde. Sie hatten sich gesagt, dass er nicht mehr lange dauern würde, bevor sie damit anfangen würden, die Zimmer einzurichten.</p>
+      <p>Sie sahen noch genauso aus wie an dem Tag, an dem sie eingezogen waren.</p>
+      <p>Seufzend wandte Ron sich ab und ging zu ihrem Schlafzimmer. Er schob die angelehnte Tür mit dem Fuß auf und war erstaunt, als er Hermine sah, die auf ihrem großen Bett lag und aus dem Fenster auf die Schneeflocken starrte, die wild durcheinander wirbelten.</p>
+      <p>"Du bist hier?", fragte er überrascht. Er streckte seine Hand nach dem Lichtschalter aus, ließ sie dann aber wieder sinken. Er wollte Hermines tränenüberströmtes Gesicht nicht sehen, wenn er wusste, dass er nichts dagegen tun konnte.</p>
+      <p>"Ich wollte erst zu Grandma gehen", murmelte Hermine tonlos. "Aber ich wollte ihnen nicht die Stimmung verderben."</p>
+      <p>Ron streifte seine Schuhe ab und ließ sich neben seiner Frau auf dem Bett nieder. Er legte sich hinter sie und schlang einen Arm um sie. Hermine löste sich nicht von ihm. Aber sie rutschte auch nicht näher an ihn heran. Sie bewegte sich überhaupt nicht. Sie starrte nur aus dem Fenster.</p>
+      <p>Ron beugte sich vor und küsste sie auf die Wange. "Ich verspreche dir, dass wir nächstes Jahr zu dritt sein werden. Nächstes Jahr werden wir Weihnachten mit unserem Kind zusammen feiern. Wir werden es in einen von Mums Pullovern quetschen und Angst davor haben, dass Victoire es fallen lassen wird."</p>
+      <p>Wenn er die Augen schloss, konnte er es genau vor sich sehen. Und merkwürdigerweise wusste er, dass es genauso sein würde.</p>
+      <p>Hermine richtete sich auf und schwang ihre Beine über den Bettrand. Sie stand auf und schaute ihn ausdruckslos an. "Nichts für ungut, Ron, aber das hast du mir letztes Jahr auch schon versprochen." Sie hob ihre Hand und wies auf den Raum. "Und ich sehe hier nirgendwo ein Kind."</p>
+      <p>Sie ging schnellen Schrittes aus dem Zimmer und knallte die Tür hinter sich zu.</p>
+      <p>Ron schlug mit seiner Faust auf ein Kissen ein und drehte sich dann seufzend auf den Rücken. Sie hatte Recht. Er hatte es ihr letztes Jahr versprochen. Als er noch zuversichtlich war, dass der Trank jede Minute pink werden würde. Damals hatte sie gelächelt und ihm zugestimmt. Und jetzt?</p>
+      <p>"Frohe Weihnachten, Ron", murmelte er frustriert. "Frohe Weihnachten."</p>
+      <p>
+        <strong>TBC...</strong>
+      </p>
+    </div>
+  </div>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8641453/chapters/19817737">Chapter 4</a>: Aufgegeben
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p></p><div class="xcontrast">
+  <p></p>
+  <div>
+    <p></p>
+    <div>
+      <p>
+        <em>
+          <strong>28. Januar</strong>
+        </em>
+      </p>
+      <p>"Percy hat uns gerade eine Eule geschickt", sagte Ron betont fröhlich, als er das Büro seiner Frau betrat. Hermine hatte sich in ihrem Stuhl zurückgelehnt und las ein Pergament, das bis auf den Boden reichte. Der Fall, an dem sie arbeitete, war kurz vor dem Abschluss und die Zeitungen überschlugen sich mit Lobeshymnen auf Hermine. Es würde nicht mehr lange dauern, bis der Mann in Askaban versauern würde.</p>
+      <p>Ron freute sich über ihren Erfolg, aber er hatte auch Angst, wie es Hermine gehen würde, wenn sie sich nicht mehr durch ihre Arbeit ablenken konnte. Sie war jetzt schon besessen von ihrem Babywunsch. Sie würde völlig durchdrehen.</p>
+      <p>Hermine sah von dem Pergament auf und setzte sich ihre Lesebrille auf den Kopf. Ron liebte diese kleine Brille, die sie seit einer Weile tragen musste. Er fand sie unglaublich sexy.</p>
+      <p>"Audrey hat das Baby bekommen. Ein Mädchen. Sie haben sie Lucy genannt." Percy hatte ein Foto beigelegt, auf dem eine sehr erschöpfte Audrey, ein strahlender Percy und ein schreiendes kleines Baby zu sehen waren. Es hatte einen dunklen Haarschopf, genau wie Molly als kleines Baby. Das Weasley-Erbgut hatte wohl keine Chance gegen Audreys schwarze Haare gehabt. Die Kinder konnten sich glücklich schätzen.</p>
+      <p>"Sie ist fünfzig Zentimeter groß und wiegt 3128 Gramm", las Ron lächelnd vor. "Die Geburt hat siebzehn Stunden gedauert, aber Audrey hat sich tapfer geschlagen. Molly ist ganz begeistert von ihrer kleinen Schwester." Er schluckte. Er konnte Percys Freude praktisch fühlen. Seine ordentliche Schrift war viel krakeliger als sonst. Sein Lächeln war so breit, das es fast gar nicht auf sein Gesicht passte.</p>
+      <p>Ron wusste, wie stolz Percy auf seine Familie war, wie glücklich er darüber war, eine Frau zu haben, die ihn so liebte wie Audrey es tat. Percy hatte so lange Schuldgefühle gehabt, weil er seine Familie im Stich gelassen hatte. Sie alle hatten ihm verziehen, nur er selbst machte sich immer noch Vorwürfe. Audrey hatte ihm dabei geholfen, damit besser klar zu kommen und seit der Geburt von Molly schienen diese Dämonen ihn vollständig verlassen zu haben.</p>
+      <p>Ron freute sich wirklich über das Glück seines Bruders. Aber schon wieder war ein Baby geboren worden und Hermine und er waren nur Zuschauer. Wie oft würden sie noch im Krankenhaus auftauchen und verstecken müssen, wie weh es tat, dass sie das nicht haben konnten? Lucy würde sicher nicht das letzte Baby in der Familie sein. Ginny und Harry hatten ihre Familienplanung bestimmt noch nicht abgeschlossen. Und wenn es zwischen George und Angelina irgendwann wirklich ernst werden würde ... sie würden bestimmt auch irgendwann Kinder wollen. Ron konnte sich nicht vorstellen, dass Hermine und er noch viele Besuche im Krankenhaus überstehen würden.</p>
+      <p>"Er hat auch ein Foto geschickt" Ron reichte Hermine den Schnappschuss, den sie lächelnd studierte. Sie fuhr die Umrisse des Babyköpfchens nach. Tränen traten in ihre Augen, aber dieses Mal bekämpfte sie sie tapfer. Sie hielt ihr ellenlanges Pergament hoch.</p>
+      <p>"Ich muss das noch durcharbeiten bis morgen. Aber wenn du sie heute ohne mich besuchen willst ..." Sie zuckte mit den Schultern und setzte sich ihre Brille wieder auf. Das Foto legte sie auf den Schreibtisch.</p>
+      <p>Ron lehnte sich an die Tischplatte und strich ihr ein paar Haare aus der Stirn. Ausnahmsweise trug sie nicht diesen dämlichen Knoten. Ihre Haare fielen ihr über die Schultern und waren so buschig, wie er sie in Erinnerung hatte. Sie sah jünger aus. Unschuldiger. So wie früher in Hogwarts, als sie bis tief in die Nacht im Gemeinschaftsraum ihre Hausaufgaben gemacht hatte und ihre Haare mit jeder Stunde mehr von allen Seiten abstanden.</p>
+      <p>Es kam ihm so vor, als wäre seine Frau in den letzten Monaten um Jahre gealtert. Ihre Stirn lag dauernd in Falten. Er konnte die Male, die sie in ebendieser Zeit gelacht hatte, an einer Hand abzählen.</p>
+      <p>Hermine war vierundzwanzig. Sie war viel zu jung, um schon so alt zu wirken. Sie sollten jung und unbeschwert und glücklich sein. Sie hatten einen Krieg überlebt. Das hier sollte nicht schlimmer sein.</p>
+      <p>"Ich kann auf dich warten. Wir können morgen zusammen gehen. Vor oder nach der Arbeit. Das ist kein Problem." Er wollte nicht ohne sie gehen. Bisher waren sie immer zusammen ins Krankenhaus gegangen, um den Familienzuwachs kennen zu lernen.</p>
+      <p>Hermine schüttelte den Kopf, ohne die Augen von ihrem Pergament abzuwenden. "Ich weiß nicht, wie lange das morgen dauert. Es könnte spät werden. Du musst wirklich nicht auf mich warten, Ron."</p>
+      <p>Ron schaute seine Frau eine geschlagene Minute sprachlos an, bevor er sich schließlich erhob und ohne ein weiteres Wort das Büro verließ.</p>
+      <p>/-/</p>
+      <p>Ron schaute verwirrt auf den Grundriss, der im Foyer des Muggelkrankenhauses hing. Er versuchte verzweifelt, sich daran zu erinnern, auf welcher Station Audrey beim letzten Mal gelegen hatte. Aber damals war er einfach Hermine gefolgt, ohne groß auf irgendwas zu achten. Die Gänge in dem verdammten Krankenhaus waren schrecklich verwirrend. Das Mungos war so viel übersichtlicher und man konnte jederzeit eines der Porträts fragen, wenn man sich doch verlaufen hatte. Manche halfen einem sogar weiter.</p>
+      <p>Schließlich schaffte er es, eine von den umhereilenden Krankenschwestern anzuhalten und eine Wegbeschreibung zu Audreys Station aus ihr herauszuleiern. Er folgte ihnen und hatte die Station nach zehn Minuten auch tatsächlich gefunden. Von einer weiteren Krankenschwester erfuhr er die Zimmernummer und kaum hatte er die Tür geöffnet, wurde er von seiner eigenen Mutter beinahe erdrückt.</p>
+      <p>"Ron, es ist so schön, dich zu sehen. Seit Weihnachten hast du dich ja nicht mehr bei uns blicken lassen." Molly ließ ihn wieder los und trat einen Schritt zurück, um ihn prüfend zu mustern. Sie fuhr ihm durch die Haare. "Du solltest mal wieder zum Friseur. Und mehr essen solltest du auch. Du bist viel zu dünn geworden."</p>
+      <p>Seine Mutter sagte ständig, dass sie alle viel zu dünn waren, aber dieses Mal hatte sie wahrscheinlich sogar Recht. Der Appetit war ihm längst vergangen.</p>
+      <p>Er lächelte seine Mutter an und beteuerte, dass er zuhause sofort etwas essen würde, bevor er sich an Audrey wandte, die weiß wie ein Laken war und mit halbgeschlossenen Augen auf ihren Schwager und ihre Schwiegermutter schaute. Eine Hand ruhte auf dem Bettchen, das neben ihr stand. Ron konnte einen dunklen Haarschopf unter der Bettdecke erkennen.</p>
+      <p>Er ging zum Bett und küsste Audrey auf die Wange. "Herzlichen Glückwunsch, Audrey" Er beugte sich über das kleine Bett und betrachtete den schlafenden Säugling lächelnd. Schon jetzt runzelte sie die Stirn im Schlaf wie ihr Vater. "Sie ist fantastisch."</p>
+      <p>"Nicht wahr?", fragte Audrey schläfrig. Sie schloss die Augen und einen Moment später war sie eingeschlafen.</p>
+      <p>"Die Arme ist völlig fertig", sagte seine Mutter mitleidig. Sie hatte in einem Stuhl Platz genommen und schaute ihre Schwiegertochter liebevoll an. "Lucy ist stecken geblieben und diese Muggelheiler mussten einen Kaiserschnitt machen." Missbilligend runzelte sie die Stirn. Audrey war ein Muggel ohne magische Fähigkeiten. Auch wenn sie das Baby eines Zauberers bekam, konnte sie nicht ins Mungos gehen. Sie musste in ein normales Muggelkrankenhaus gehen und die hatten leider nicht die Magie auf ihrer Seite. Kein Wunder, dass Audrey so viel erschöpfter wirkte als Ginny nach ihrer Geburt. Aber James war auch nicht steckengeblieben.</p>
+      <p>"Es geht ihr gut, oder?", fragte Ron besorgt.</p>
+      <p>Molly nickte. "Ja. Sie braucht nur Ruhe. Deshalb ist Percy auch mit der kleinen Molly nach Hause gegangen. Arthur und ich haben angeboten, sie noch eine Nacht zu nehmen, aber die Kleine wollte unbedingt ihren Daddy haben. Und ich wollte noch etwas Zeit mit meiner neuen Enkelin verbringen."</p>
+      <p>Ron lachte. Seine Mutter bekam wirklich nicht genug von Babys. Kein Wunder, dass sie sieben davon bekommen hatte.</p>
+      <p>"Wo ist Hermine?", wechselte sie dann das Thema und schaute ihn schon wieder so prüfend an. Sofort verging Ron das Lachen. "Ist sie auf der Toilette? Oder sucht sie nach einer Vase?" Molly deutete auf die Blumen, die Ron schnell im Geschenkeshop des Krankenhauses gekauft hatte, bevor er zugemacht hatte. Sie waren etwas mitgenommen, weil sie zwischen ihm und seiner Mutter eingequetscht worden waren, als sie ihn umarmt hatte.</p>
+      <p>Ron schüttelte den Kopf. "Sie muss noch arbeiten. Sie versucht, morgen vorbei zu kommen."</p>
+      <p>Molly nickte wissend. Sie hob ihren Zauberstab und zeichnete eine Vase in die Luft. Ron fing sie auf, füllte sie mithilfe des Aguamenti-Zaubers mit Wasser und stellte sie auf den Tisch, der schon mit fünf anderen Vasen vollgestellt war.</p>
+      <p>"Habt ihr Probleme?", fragte sie dann unvermittelt.</p>
+      <p>Ron schluckte. Natürlich hatten sie Probleme. Aber er hatte absolut keine Lust, diese Probleme auch noch mit seiner Mutter durchzukauen. Sie konnte nichts tun. Und sie konnte auch nichts sagen, was ein anderer nicht auch schon gesagt hatte.</p>
+      <p>"Was ist los, Ron?" Sie erhob sich aus ihrem Stuhl und legte eine Hand auf den Arm ihres Sohnes. "Ich bin deine Mutter. Du kannst es mir sagen."</p>
+      <p>Er seufzte. Na schön. "Es ist eigentlich nichts schlimmes, Mum. Hermine hat nur in letzter Zeit wahnsinnig viel zu tun mit dem Prozess. Wir haben kaum noch Zeit für uns. Und sie ist sehr gereizt. Aber das wird sicher wieder besser, sobald der Dreckskerl hinter Gittern sitzt."</p>
+      <p>Seine Mutter schaute ihn nicht überzeugt an. Aber als ihr klar wurde, dass Ron nicht mehr dazu sagen würde, entschloss sie sich, die Sache ruhen zu lassen. Er war erwachsen. Er würde es schon schaffen.</p>
+      <p>Sie zog ihn noch einmal in ihre Arme. "Gib nicht auf, mein Junge", flüsterte sie ihm zu. "In einer Ehe scheint nicht immer nur die Sonne. Aber ihr beide seid stark, ihr kriegt alles hin."</p>
+      <p>Ron fühlte sich tatsächlich etwas zuversichtlicher durch die Worte seiner Mutter. Er küsste sie auf die Wange, bevor er sich wieder zum Gehen wandte. Er wollte den Schlaf von Audrey und Lucy nicht stören.</p>
+      <p>"Danke, Mum", sagte er lächelnd.</p>
+      <p>Molly nickte. "Jederzeit, mein Schatz."</p>
+      <p>/-/</p>
+      <p>
+        <em>
+          <strong>20. Februar</strong>
+        </em>
+      </p>
+      <p>"Morgen", murmelte Hermine verschlafen, als sie das Badezimmer betrat. Die Verhandlung hatte gestern bis spät in die Nacht gedauert. Aber am Ende der Woche würde die Entscheidung fallen und dann war endlich alles vorbei. Selbst wenn sie verlieren sollte - was Hermine ernsthaft bezweifelte - hatte dieser Fall ihrer Karriere einen gehörigen Schub verpasst. Eine Beförderung war ihr bereits angeboten worden. Nächste Woche würde sie sie annehmen. Dann würde sie sich um die Gesetze für Hauselfen kümmern können, wie es damals mit fünfzehn schon ihr Ziel gewesen war. Wenigstens dieser Traum würde sich erfüllen.</p>
+      <p>Ron stand mit nichts als einem Handtuch um die Hüften vor dem Spiegel und rasierte sich. Seine Haare waren noch nass vor der Dusche, die sie geweckt hatte. Sie stellte sich hinter ihn und küsste ihn auf die Schulter.</p>
+      <p>Ron zuckte überrascht zusammen und schnitt sich mit dem Rasierer. "Aua! Verdammter Mist, Hermine!" Wütend funkelte er sie durch den Spiegel heraus an, während ein kleines rotes Rinnsal über seine Wange lief.</p>
+      <p>"Entschuldige", sagte Hermine sofort und eilte zum Medizinschrank, der an der Wand hing. Sie öffnete ihn und holte ein kleines Fläschchen heraus, das einen blauen Trank enthielt. Er heilte Schnittwunden. Sie griff nach einem Wattebausch und kippte etwas von dem Trank darauf. Sie stellte sich neben ihren Mann und tupfte sanft seine Wange ab. Die Haut verheilte und das Blut verschwand. "Du bist heute schon früh auf. Musst du weg?" Ron schlief gerne aus und es war gerade erst halb sieben.</p>
+      <p>Er verdrehte die Augen. "Ich hab dir doch erst gestern erzählt, dass wir heute diese Gruppe hochnehmen." In der letzten Zeit hatte es einige merkwürdige Übergriffe auf Muggel in einem kleinen Dorf in den Bergen gegeben. Die Auroren hatten nachgeforscht und herausgefunden, dass ein paar Zauberer Spaß daran gefunden hatten, Muggel zu terrorisieren und zu foltern. Heute wollten die Auroren die Zauberer verhaften.</p>
+      <p>Er seufzte enttäuscht. "War klar, dass du es nicht mehr weißt."</p>
+      <p>Hermine ließ den Wattebausch sinken und schaute ihn stirnrunzelnd an. "Was soll das denn heißen?"</p>
+      <p>Ron beugte sich nach unten und wusch sein Gesicht. Er trocknete sich ab und richtete sich wieder auf. "Das soll heißen, dass es mich nicht wundert, dass du nicht mehr weißt, was ich dir erzählt habe."</p>
+      <p>Hermine schüttelte den Kopf. Sie war völlig überrascht über den wütenden Tonfall in der Stimme ihres Mannes. Sie konnte verstehen, dass er nervös war, schließlich war so ein Einsatz keine Kleinigkeit, aber das musste er doch nicht an ihr auslassen.</p>
+      <p>"Das stimmt doch gar nicht", widersprach sie. "Ich weiß, was du mir erzählt hast. Ihr wollt heute jemanden verhaften." Sie zerbrach sich den Kopf darüber, was er ihr gestern beim Frühstück alles erzählt hatte, aber ihr fiel es nicht mehr ein. Er war so aufgeregt gewesen, weil seine Kollegen endlich jemanden zum Reden gebracht hatten und Fortschritte machten und sie hatte ihm wirklich zugehört. Aber sie konnte sich nicht mehr daran erinnern. Ihr Kopf war so voll mit ihrem eigenen Fall.</p>
+      <p>Ron warf ihr einen durchdringenden Blick zu. Die Enttäuschung stand ihm ins Gesicht geschrieben. "Ich wusste es", murmelte er.</p>
+      <p>Hermine schaute ihn verwirrt an. "Ich verstehe dich nicht. Du weißt, wie viel ich mit dem Fall zu tun habe." Sie nahm das Fläschchen mit dem blauen Trank in die Hand und stellte ihn zurück in den Medizinschrank. Auf dem Pergament, das sie in den Schrank gehängt hatte, leuchtete eine Schrift auf. Sie hatte vergessen, dass es schon wieder Zeit dafür war. Sie nahm einen großen Behälter mit farbloser Flüssigkeit heraus und ein kleines Glas. Sie stellte beides vor sich neben das Waschbecken.</p>
+      <p>Ron hatte bemerkt, was sie aus dem Schrank holte und warf der Flüssigkeit einen bösen Blick zu.</p>
+      <p>"Es ist auch nicht so, als ob du dich noch an alles erinnern könntest, was ich dir erzählt habe.", sagte sie gekränkt. Sie wusste gar nicht mehr, wie oft er schon vergessen hatte, was sie ihm über seine Arbeit erzählt hatte. Sie fand es mehr als unfair, dass er sich so aufführte.</p>
+      <p>Ron verschränkte die Arme vor seiner muskulösen Brust und schaute sie verletzt an. "Der Unterschied ist, dass du dich <em>immer</em> erinnern konntest, Hermine. Ich bin ein Idiot. Ich hör nicht immer zu, wenn ich es sollte. Ich weiß, dass das scheiße von mir ist. Aber du hast <em>immer </em>zugehört. Du hast immer alles gewusst. Und jetzt ..." Er schluckte und wandte sich ab. Er schloss die Augen und stützte sich auf das Waschbecken. Er atmete tief durch.</p>
+      <p>"Ich kann das nicht mehr, Hermine", sagte er mit zitternder Stimme. "Ich kann nicht mehr."</p>
+      <p>"Was kannst du nicht mehr?" Das Blut gefror in ihren Adern. Von dem Klang seiner Stimme wurde ihr schwindelig.</p>
+      <p>Ron öffnete seine Augen wieder und drehte sich um. Er zeigte auf den farblosen Trank. "Das kann ich nicht mehr. Ich kann nicht mehr so weitermachen wie bisher. Diese monatlichen Enttäuschungen? Sex nach Plan? Diese verdammte Besessenheit? Ich kann das nicht mehr."</p>
+      <p>Hermine schaute ihn schockiert an. Wo kam das auf einmal her? Wollte er nicht mehr ...? "Du willst kein Baby mehr?", fragte sie zutiefst verletzt. Sie hatte geglaubt, dass er sich so sehr wie sie ein Kind wünschte.</p>
+      <p>Ron raufte sich die Haare. "Natürlich will ich ein Baby. Du weißt, dass ich das will. Aber ich kann so nicht mehr weitermachen. Unsere Beziehung ist doch nur noch ein Witz. Du sprichst nicht mehr mit mir. Du sagst mir nicht mehr, was mit dir los ist, was in dir vorgeht. Du verkriechst dich hinter deiner Arbeit. Ich komm nicht mehr an dich heran. Du willst nicht mehr zu meiner Familie kommen. Du gehst deiner aus dem Weg. Du gehst <em>mir </em>aus dem Weg. So geht das nicht mehr."</p>
+      <p>Verzweifelt schaute er sie an. Hermine schluckte.</p>
+      <p>"Du willst, dass wir aufhören", sagte sie mit schmerzerfüllter Stimme.</p>
+      <p>Sie würde nie wissen, wie es sich anfühlte, eine Mum zu sein.</p>
+      <p>Ron seufzte. "Wir müssen nicht ganz aufhören. Aber so geht es nicht weiter. Du hast dich völlig verrannt mit deinem Babywunsch. Es gibt kaum noch was anderes in deinem Leben. Ich war vorgestern eine Weile bei der Verhandlung. Du warst gut. Aber du warst nicht mit ganzem Herzen dabei. So wie früher. Und bei uns bist du auch nicht mehr mit ganzem Herzen."</p>
+      <p>Hermine schüttelte vehement den Kopf. "Das stimmt nicht." Tränen stiegen ihr in die Augen. Sie hatte ihn noch nie so resigniert, so mutlos, so hoffnungslos gehört. Jedes seiner Worte versetzte ihr einen Stich ins Herz. Es klang so, als hätte er sie aufgegeben. Sie nahm seine Hand. "Ron, bitte, lass uns darüber reden. Du willst doch auch ein Baby. Wir können bestimmt irgendwas -"</p>
+      <p>Er zog seine Hand zurück und schüttelte den Kopf. "Ich hab dir doch gesagt, dass ich so nicht mehr weitermachen kann. Ich brauche eine Pause."</p>
+      <p>Sie schluckte. "Eine Pause?", flüsterte sie. "Von dem Baby? Oder von uns?"</p>
+      <p>Ron schaute sie lange an. Tränen liefen ihr über die Wangen und sie glaubte, keine Luft mehr zu bekommen. Sie musste sich an dem Waschbecken abstützen, um nicht umzufallen.</p>
+      <p>"Ich weiß es nicht", flüsterte er mit brechender Stimme. Er drehte sich um und ließ die Badezimmertür hinter sich ins Schloss fallen.</p>
+      <p>Hermine brach weinend auf den kalten Fließen zusammen.</p>
+      <p>
+        <strong>TBC...</strong>
+      </p>
+    </div>
+  </div>
+</div>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8641453/chapters/19817749">Chapter 5</a>: Schicksal
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>"Was ist los?", fragte Harry besorgt, als Ron in das Besprechungszimmer kam. Er war eine Viertelstunde zu früh und aschfahl. Er sah eher aus, als gehörte er ins Mungos und nicht auf eine Mission, bei der sie gefährliche Zauberer verhaften mussten.</p><p>Ron ließ sich in einen Stuhl fallen und stützte sein Gesicht in seine Hände. "Es könnte sein, dass Hermine und ich uns getrennt haben."</p><p>Harry ließ die Pergamente fallen, die er in der Hand hielt. Er hatte gewusst, dass es nicht mehr gut lief zwischen seinen besten Freunden. Aber dass es <em>so</em> schlecht um sie stand ... Er hatte so gehofft, dass die beiden sich wieder zusammenraufen würden.</p><p>"Was?!"</p><p>Ron sah auf. "Ich kann so nicht mehr weitermachen. Sie ist völlig verändert. Ihr Babywunsch beherrscht absolut alles."</p><p>"Aber ihr könnt doch bestimmt -"</p><p>Ron zuckte mit den Schultern. "Vielleicht. Vielleicht auch nicht. Aber Fakt ist, dass es <em>so </em>nicht mehr geht, Harry." Ron wandte sich ab. Er wollte nicht mehr darüber sprechen. Er konnte nicht mehr darüber sprechen. Er wollte das alles nur noch vergessen.</p><p>Harry seufzte. "Soll ich dir freigeben? Das heute ist wichtig. Wenn du abgelenkt bist -"</p><p>"Nein!", sagte Ron entschlossen und stand wieder auf. "Ich muss dabei sein. Ich kann nicht wieder nach Hause gehen und über alles nachgrübeln. So ein kleiner Kampf ist genau das, was ich jetzt brauche."</p><p>Harry legte den Kopf schief. Bei diesen Einsätzen mussten sie sich hundertprozentig auf alle verlassen können. Ihr aller Leben stand auf dem Spiel. Aber Ron war jetzt schon seit Jahren ein Auror. Er wusste, was er sich zutrauen konnte und was nicht. Und Harry würde ihm ohne zu zögern sein Leben anvertrauen.</p><p>"Na schön", sagte Harry nickend. Er warf einen Blick auf die Uhr. "Hol die anderen. Wir besprechen noch einmal den Plan und dann legen wir los."</p><p>Mit grimmiger Entschlossenheit nickte Ron.</p><p>/-/</p><p>Hermine brauchte eine Viertelstunde, bis sie die Kraft hatte, wieder vom Boden aufzustehen. Ihre Tränen waren versiegt, aber der Schmerz war immer noch da.</p><p>Ron hatte aufgegeben.</p><p>Er wollte kein Baby mehr. Nicht so, wie sie es wollte. Und dabei hatte er es doch wirklich nicht schwer. Die Heiler hatten ihm einen einzigen Trank gegeben, den er einmal die Woche schlucken musste. Sie hatte zehn verschiedene bekommen, die sie fast alle täglich und fast alle zu unterschiedlichen Zeiten schlucken musste. Sie musste jeden Monat auf der Toilette sitzen und darauf warten, dass dieser blöde Trank sich verfärbte. Anfangs hatte er noch mit ihr gewartet, aber irgendwann hatte er damit aufgehört.</p><p>Er hatte Recht, sie hatte sich verändert. Sie war nur noch ein Schatten ihrer Selbst. Sie konnte sich nicht mehr erinnern, wann sie das letzte Mal wirklich glücklich gewesen war, wann sie das letzte Mal aufgewacht war und sich gefreut hatte, aufzustehen. Ihre Arbeit machte ihr keine Freude mehr, Familientreffen schlugen ihr immer mehr aufs Gemüt, weshalb sie die Weasleys auch seit Weihnachten nicht mehr besucht hatte. Sie hatte Percys Tochter Lucy noch nicht gesehen. Und sie hatte auch kein Bedürfnis, das Baby kennen zu lernen. Ron hatte sich ein paar Mal mit seinem Bruder getroffen, aber er hatte es aufgegeben, sie dazu zu überreden, ihn zu begleiten. Molly hatte ihr einen besorgten Brief geschrieben, aber Hermine hatte ihre Arbeit vorgeschoben. Sie hatte es zweimal über sich gebracht, sich mit Ginny zu treffen, aber der Anblick der glücklichen Mutter hatte ihr so das Herz gebrochen, dass sie sich auch hier wieder hinter ihrer Arbeit versteckt hatte.</p><p>Gequält schloss Hermine die Augen. Ron hatte Recht. So konnte es nicht mehr weitergehen. Ihre Ehe war nur noch eine Farce.</p><p>Sie wollte so sehr ein Baby. Aber sie wollte Ron nicht verlieren. Sie konnte sich ein Leben ohne ihn nicht mehr vorstellen und sie musste um jeden Preis verhindern, dass es soweit kommen würde.</p><p>Es würde anders werden müssen. Sie durfte sich nicht mehr so verrennen. Sie durfte ihr Sexleben nicht mehr von so einem blöden Kalender abhängig machen. Sie durfte sich nicht mehr so vor allen zurückziehen. Sie hatte schon seit Ewigkeiten nicht mehr mit ihren eigenen Eltern gesprochen.</p><p>So konnte es nicht mehr weitergehen.</p><p>Hermine schlug ihre Augen wieder auf und schaute auf die große Flasche, in der sie den Schwangerschaftstesttrank aufbewahrte, den sie gebraut hatte, nachdem sie ihren Verhütungstrank abgesetzt hatte. Sie hatte sich mit der Menge verschätzt und viel zu viel gebraut. Sie hätte nie gedacht, dass sie alles je verbrauchen würde, wollte aber auch nichts davon wegschütten. Sie hatte sich überlegt, dass sie ihn vielleicht irgendwann später nochmal brauchen würde. Wenn sie mit einem zweiten Kind schwanger werden wollte.</p><p>Und jetzt war von dem Trank fast nichts mehr übrig. Er würde nur noch für einen Versuch reichen.</p><p>Hermine nahm die große Flasche in die Hand und überlegte, ob sie ihn in das Glas umfüllen oder einfach wegschütten sollte. Es hatte sowieso nicht geklappt. Sie fühlte sich nicht anders als sonst. Und Ron und sie hatten letzten Monat nur zweimal miteinander geschlafen. Die Arbeit hatte es ihnen nicht erlaubt, sich viel häufiger zu sehen. Und in der Stimmung waren sie beide nicht gewesen, obwohl sie sich etwas anderes eingeredet hatte. Wie hätte sie sonst an das Baby kommen sollen, das sie sich so wünschte?</p><p>Und wenn sie sich schon nicht an den Kalender gehalten hatten, wie sollte sie dann schwanger sein?</p><p>Seufzend schüttete sie die Flüssigkeit dann aber doch in das kleine Glas. Das Zeug war schließlich noch da. Warum sollte sie es verschwenden? Sie beugte sich vor, spuckte hinein und beobachtete dann, wie ihre Spucke sich rasend schnell auflöste. Sie warf einen Blick auf die Uhr. Es dauerte drei Minuten, bis der Trank sich veränderte. Im Buch stand zwar, dass es kein genaues Zeitlimit gab, aber Hermine hatte so viel Zeit damit verbracht, den Trank und die Uhr anzustarren, dass sie wusste, dass es zumindest bei ihr so lange dauerte.</p><p>Aber sie hatte nicht mehr die Kraft, die nächsten drei Minuten in dieses dämliche Glas zu starren. Sie drehte sich um, zog ihren Schlafanzug aus und ging unter die Dusche. Sie drehte das heiße Wasser auf und blieb fünf Minuten einfach nur unter dem entspannenden warmen Wasser stehen. Sie spürte, wie sich ihre Verspannungen im Nacken ein bisschen lösten.</p><p>Wenn Ron heute Abend nach Hause kam, dann würde sie ihm sagen, dass er Recht hatte. Sie würde ihr Verhalten ändern. Sie wusste selbst, dass es so nicht mehr weitergehen konnte. Vielleicht sollten sie zusammen ein paar Tage wegfahren, wenn ihre Verhandlung zu Ende war. Einfach nur sie beide. Es würde ihnen gut tun. Sie könnten sich wieder nur auf sich selbst konzentrieren. Und dann würde sie sich wieder mehr um ihre Eltern und ihre Freundschaft zu Ginny und Harry kümmern. Es würde nach wie vor nicht einfach sein, Zeit mit Ginny und James zu verbringen, aber es gab weiß Gott schlimmeres als das. Sie war James' Patin. Sie musste Zeit mit ihm verbringen. Und sie würde Audrey und Lucy besuchen. Als sie vor ein paar Tagen etwas durch die Stadt geschlendert war, hatte sie einen wunderhübschen Strampelanzug gekauft. Sie hatte ihn für ihr eigenes Baby gewollt, aber Lucy würde ihn bestimmt gut gebrauchen können. Sollte sie irgendwann einmal schwanger werden, würde sie neue Kleidung kaufen können.</p><p>Sie drehte das Wasser ab, wickelte sich in ein flauschiges Handtuch und stieg wieder aus der Dusche. Sie griff nach ihrer Bürste und wischte den beschlagenen Spiegel sauber. Nur zufällig fiel ihr Blick auf den Trank, den sie neben dem Waschbecken hatte stehen lassen.</p><p>Ihre Bürste fiel ihr aus der Hand.</p><p>/-/</p><p>Nervös strich Hermine den schwarzen Stoff ihres Kleides glatt und warf einen weiteren Blick auf die Uhr an der Wand. Es war jetzt schon kurz vor neun. Normalerweise kam Ron irgendwann nach sechs nach Hause. Wenn nicht viel los war, kam er früher, nach einem Einsatz wie dem heutigen konnte es auch später werden. Je nachdem, wie lange es dauerte, die Verdächtigen zu schnappen und wie weit sie mit den ersten Verhören kamen.</p><p>Hermine hatte damit gerechnet und das Essen für acht Uhr vorbereitet. Sie selbst machte einen großen Bogen um jede Küche, weil sie leider absolut kein Talent zum Kochen hatte, aber in ihn der Nähe ihres Hauses gab es einen hervorragenden Italiener, bei dem sie häufig etwas besorgte, wenn Ron keine Zeit zum Kochen hatte. Sie hatte das Essen abgeholt und warm gestellt, den Tisch liebevoll gedeckt, ihre Haare kunstvoll hochgesteckt und Make up aufgetragen.</p><p>Sie konnte sich nicht erinnern, wann sie sich das letzte Mal so gut gefühlt hatte. Wenn Ron endlich kam, würde sie ihm sagen, dass jetzt alles anders werden würde. Sie würden wieder glücklich zusammen sein. Es würde alles gut werden.</p><p>Wenn er nur endlich kommen würde.</p><p>Die Kerzen, die Hermine auf den Tisch gestellt hatte, waren schon fast heruntergebrannt.</p><p>Hermine stand auf und schaute aus dem Küchenfenster. Draußen war es pechschwarz. Keine Spur von Ron.</p><p>Das ungute Gefühl, dass sie schon seit ein paar Stunden hatte, verstärkte sich noch. Vielleicht sollte sie im Ministerium vorbeischauen. Sie hatte heute zu Hause gearbeitet und sich auf die letzten Verhandlungstage vorbereitet, die Ende der Woche stattfinden würden.</p><p>Sie warf noch einen Blick auf die Uhr. Wenn alles in Ordnung war, dann würde Ron sich nur aufregen, dass sie sich wie eine hysterische Kuh aufführte, nur weil er mal etwas zu spät kam.</p><p>Sie würde noch etwas warten. Sie wollte keinen weiteren Streit mehr. Sie wollte sich nur noch mit ihm vertragen. Sie wollte wieder glücklich mit ihm sein.</p><p>Unruhig ging sie ins Wohnzimmer und nahm die Hexenwoche zur Hand, die auf dem Couchtisch herumlag. Ron und sie hatten sie abonniert, um über den Klatsch, der über sie im Umlauf war, informiert zu sein. Das Magazin war voll von Bildern, die Harry, Ginny und James zeigten. Die Medien hatten sich wie ausgehungerte Wölfe auf Ginnys Schwangerschaft gestürzt und jetzt überboten sie sich mit immer neuen Babyfotos. Bei ihrem letzten Treffen hatte Ginny sich zehn Minuten darüber beklagt. Hermine lächelte. Zumindest darum beneidete sie ihre beste Freundin nicht.</p><p>Ron und sie wurden in dem Magazin nicht mit einem einzigen Wort erwähnt. Die Presse war ihren Eheproblemen noch nicht auf die Schliche gekommen. Und wenn alles so lief, wie Hermine es sich vorstellte, dann würde es bald keine Probleme mehr geben, über die man noch hätte berichten können.</p><p>Schließlich hatte sie sich in einen Artikel über eine neue magische Band vertieft. Die Waldnymphen, vier junge Hexen, waren wie aus dem Nichts aufgetaucht und hatten anscheinend ziemlich viel Erfolg. Hermine hatte schon von ihnen gehört, aber nicht sehr auf sie geachtet.</p><p>Sie studierte gerade den Lebenslauf der zweiten Hexe, als es laut an der Tür klopfte und sie aufschrecken ließ. Ein Lächeln erschien auf ihrem Gesicht. Ron! Na Endlich! Es war fast zehn Uhr. Dieses Mal hatte er sie wirklich lange warten lassen.</p><p>Sie eilte zur Haustür, riss sie auf und fast zeitgleich verschwand das Lächeln von ihrem Gesicht. Vor ihr stand nicht Ron.</p><p>"Was machst du hier?", fragte sie mit angsterfüllter Stimme. Harry kam schon lange nicht mehr einfach so bei ihnen vorbei, ohne sich anzumelden. Und wenn es doch einmal vorkam, dann war seine Kleidung nicht voller Blut und er schaute sie auch nicht so gequält und entschuldigend an.</p><p>Ihr wurde schwindelig. Sie musste sich am Türrahmen festhalten. "Was ist los?" Ihre Stimme zitterte. Das konnte nichts Gutes bedeuten.</p><p>Harry streckte seine Hand aus und ergriff ihre. "Hermine, es tut mir so Leid."</p><p>Ihre Augen füllten sich mit Tränen. Sie konnte nicht mehr klar denken. Ron erschien vor ihren Augen. Wie er sie heute Morgen verzweifelt angeschaut hatte und die Tür hinter sich hatte zufallen lassen. Sie hatte sich nicht mehr von ihm verabschiedet. Wenn das die letzten Worte waren, die sie je mit ihrem Mann gesprochen hatte? Sie hatte ihm nicht gesagt, dass sie ihn liebte. Was, wenn er gestorben war, ohne das zu wissen?</p><p>Sie schwankte. Wie sollte sie nur weitermachen, wenn er wirklich gestorben war? Das durfte einfach nicht sein. Wie sollte sie ohne ihn leben?</p><p>Sie zwang sich, Harry durch den Tränenschleier, der vor ihren Augen war, anzuschauen. "Was ist passiert?", presste sie heraus.</p><p>Harry vermied ihren Blick. "Ron ist im Mungos. Bei der Festnahme heute gab es Probleme. Die Zauberer haben uns zu früh gesehen. Sie haben Flüche von links und rechts auf uns herabregnen lassen. Wir haben uns natürlich gewehrt. Irgendwann in dem Rummel hat Ron mich aus dem Weg geschubst. Und dann wurde er mit mindestens fünf Sprüchen getroffen. Wir konnten uns nicht gleich um ihn kümmern. Ich weiß nicht, wie lange es gedauert hat, bis wir endlich alle im Griff hatten. Es tut mir so Leid, Hermine."</p><p>Hermine versuchte, ihre Atmung unter Kontrolle zu bringen und ihr schnell schlagendes Herz zu beruhigen. Ron war nur im Mungos. Er war nicht tot. Es würde alles gut werden.</p><p>"Wie geht es ihm?"</p><p>"Die Heiler haben ihn seit einer Stunde in der Mangel. Ich hätte dich schon früher holen sollen, aber ich wollte auf gute Nachrichten warten." Er seufzte. "Sie sind noch nicht fertig mit ihm gewesen, aber sie sind sich sicher, dass er durchkommen wird. Und sie glauben auch nicht, dass er irgendwelche bleibenden Schäden zurückbehalten wird."</p><p>Hermine schloss erleichtert die Augen und lehnte sich gegen den Türrahmen. Es würde alles gut werden. Ron würde es wieder gut gehen.</p><p>Sie schlug die Augen wieder auf. "Bring mich zu ihm, Harry."</p><p>/-/</p><p>Hermine war froh, dass sie die Geistesgegenwart besessen und ihre hohen Schuhe gegen ein paar Ballerinas eingetauscht hatte, während sie jetzt hinter Harry durch die Gänge des Mungos eilte. In der Empfangshalle hatten sie erfahren, dass Ron mittlerweile in ein Zimmer auf einer der Stationen für Fluchschäden verlegt worden war. Mit ihren Augen suchte sie nach der richtigen Zimmernummer und atmete erleichtert durch, als sie sie endlich gefunden hatte.</p><p>Sie küsste Harry zum Dank auf die Wange. Er war vor dem Zimmer stehen geblieben und hatte sie gebeten, Ron gute Besserung zu wünschen. Er wollte nicht mit hineinkommen.</p><p>"Ginny wartet auf mich. Ich hab ihr eine Nachricht geschickt, damit sie weiß, was los ist, aber ich will sie nicht länger warten lassen.", erklärte er mit einem kleinen Lächeln. Er drückte noch einmal aufmunternd ihre Hand, bevor er disapparierte.</p><p>Hermine atmete noch einmal tief durch, bevor sie das Zimmer betrat. Es war ein großes Zimmer mit sechs Betten. Drei davor waren belegt. Im Bett, das der Tür am nächsten war, lag eine Frau mittleren Alters, die bei jedem Atemzug Federn ausspuckte. Ihr gegenüber lag ein blau angelaufener Mann. Im Bett am Fenster entdeckte sie Ron. Er sah sehr blass aus und sein Gesicht war mit vielen kleinen Schnittwunden übersäht, aber als er sie erblickte, breitete sich ein kleines Lächeln auf seinem Gesicht aus.</p><p>Mit sieben großen Schritten war sie an seiner Seite. Sie ließ sich auf der Bettkante nieder und griff nach seiner Hand. "Mach das nie wieder, hörst du?", flüsterte sie. Tränen waren schon wieder in ihre Augen getreten. "Du hast mir einen riesengroßen Schrecken eingejagt!" Sie umklammerte seine Hand und schaute ihn besorgt an. Die Schnittwunden waren mit irgendeiner gelben Paste bestrichen worden und soweit sie das beurteilen konnte, verheilten sie bereits.</p><p>Er strich mit seinem Daumen über ihren Handrücken. "Es tut mir Leid, Hermine", sagte er mit rauer Stimme. "Es ging alles so schnell. Ich hab Harry noch aus dem Weg geschubst und dann hat mich plötzlich ein blauer Strahl getroffen und mir wurde schwarz vor Augen. Ich bin erst vor einer Weile hier wieder aufgewacht. Aber die Heiler meinen, dass ich über dem Berg bin. Vielleicht kann ich schon morgen wieder nach Hause." Sein Lächeln wurde ein bisschen größer. Er entzog ihr seine Hand und hob sie langsam an, bis sie auf ihrer Wange lag. Sanft strich er ihr die Tränen aus dem Gesicht. "Bitte wein doch nicht. Du weißt, wie ich das hasse."</p><p>Hermine lächelte unter Tränen und legte ihre Hand auf seine. "Es tut mir Leid. Ich hatte nur solche Angst." Die Vorstellung, wirklich ohne ihn leben zu müssen, war schrecklich gewesen. Die Erleichterung, ihn so zu sehen, war unbeschreiblich.</p><p>Stöhnend richtete Ron sich auf und zog sie in seine Arme. Sie klammerte sich an ihn, ließ ihn aber sofort wieder los, als sie sein schmerzverzogenes Gesicht sah. Aber er schüttelte nur den Kopf und schlang seine Arme noch enger um sie. "Schon in Ordnung", flüsterte er. Er küsste sie auf ihre Haare. Ihre Hochsteckfrisur hatte sich mittlerweile aufgelöst und ihr Make-up war völlig verlaufen. Sie hatte sich so viel Mühe gegeben, hübsch für ihn auszusehen und jetzt war alles umsonst gewesen. Aber im Grunde war ihr das völlig egal, solange sie nur in seinen Armen liegen konnte. "Es tut mir so Leid", widerholte er noch einmal. "Was ich heute Morgen alles gesagt habe ... ich hab das nicht so gemeint."</p><p>Hermine schüttelte den Kopf. Sie löste sich soweit aus seiner Umarmung, dass sie ihn anschauen konnte. Sie hob ihre Hand und strich vorsichtig über die verletzte Haut auf seiner Wange. "Du musst dich nicht entschuldigen. Du hattest Recht. Ich war völlig besessen. Aber das wird jetzt anders, das verspreche ich dir." Sie beugte sich vor und küsste ihn sanft auf die Lippen. Ron schien nichts von ihrer Zurückhaltung zu halten und vertiefte den Kuss sofort. Er zog sie näher zu sich und hätte sie am liebsten nie wieder losgelassen. Als sie sich schließlich doch wieder voneinander lösten, schlug sie ihm auf den Arm.</p><p>"Au!", rief er leise und rieb sich die Stelle, an der sie ihn getroffen hatte. "Was soll das denn?", fragte er verwirrt.</p><p>"Was hast du dir dabei gedacht, dich so in Gefahr zu begeben! Du hast mir versprochen, dass du auf dich aufpasst, verdammt noch mal!"</p><p>"Ich hab doch auf mich aufgepasst!", widersprach er. "Ich bin schließlich nicht tot. Aber wenn ich Harry nicht zur Seite geschubst hätte, dann wäre er es vielleicht. Ich weiß nicht, was für ein Fluch das war, mit dem er fast getroffen worden ist, aber der Baum hinter ihm ist durch den Strahl explodiert. Ich hab deshalb vielleicht eine Sekunde nicht aufgepasst, aber die anderen haben dafür gesorgt, dass mir nichts allzu schlimmes passiert."</p><p>Schon wieder standen Tränen in ihren Augen. Harry hatte ihr erzählt, dass einer von ihnen Ron sofort mit einem Schutzzauber belegt hatte, als er zu Boden gegangen war, um ihn vor weiteren Flüchen zu schützen, aber trotzdem hatte Harry Schuldgefühle, weil er Ron nicht sofort ins Krankenhaus hatte bringen können.</p><p>"Harry ist Vater. Ich wollte nicht vor Ginnys Tür stehen und ihr sagen, dass ihr Sohn ein Halbwaise geworden ist. Und es geht mir gut.", versicherte er ihr.</p><p>Hermine schluckte. "Ich verstehe dich. Du wärst nicht du, wenn du das nicht getan hättest." Sie nahm seine Hand und legte sie auf ihren Bauch. "Aber du bist auch nicht alleine. Auf dich warten zu Hause auch Menschen, die dich in einem Stück zurück haben wollen. Deshalb ... bitte, versprich mir, noch vorsichtiger zu sein. Ich will dich nicht verlieren. Ich brauche dich, Ron."</p><p>Ron schaute sie liebevoll an. Er beugte sich vor und küsste sie auf die Stirn. "Ich verspreche es dir."</p><p>Hermine schniefte. Die Tränen liefen ihr mittlerweile wieder über die Wangen. "Gut", sagte sie mit einem Lächeln. "Ich hab nämlich keine Lust, unser Kind alleine großzuziehen."</p><p>Rons Augen wurden groß. Ungläubig schaute er sie an. Sein Blick wanderte von ihrem strahlenden Lächeln zu ihrem Bauch, auf dem seine Hand lag. Langsam wanderte sein Blick wieder nach oben.</p><p>"Ist das dein Ernst?", fragte er vorsichtig, aus Angst, sie falsch verstanden zu haben.</p><p>Hermine biss sich auf die Lippe und nickte. "Ja. Ich bin schwanger. Der Trank ist pink geworden." Sie wäre beinahe umgekippt, als sie gesehen hatte, dass der Trank nicht wie sonst auch pechschwarz geworden war. Ein leuchtendes Pink hatte ihr entgegengestrahlt. "Wir bekommen ein Baby."</p><p>Ohne Rücksicht auf seine Verletzungen zog Ron sie erneut in seine Arme. Er drückte sie noch fester an sich. "Wir bekommen ein Baby", wiederholte er ihre Worte überglücklich. Und ein bisschen ungläubig. Nach all dieser Zeit, nach all ihren Problemen. "Es hat geklappt."</p><p>Sie küsste ihn. "Ja. Endlich." Glücklich kuschelte sie sich an ihn und lauschte seinem schnell schlagenden Herzen.</p><p>
+  <strong>Frohe Weihnachten!</strong>
+</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+    <!--afterword-->
+    <div class="afterword preface group" role="complementary">
+        <!--series links, backwards and forwards-->
+<div id="series" class="series module">
+  <h3 class="heading">Series this work belongs to:</h3>
+  <ul>
+      <li><span class="series"><a class="previous" href="/works/8155888">&#8592; Previous Work</a><span class="divider"> </span><span class="position">Part 5 of the <a href="/series/555904">10 kleine Dinge - Universum</a> series</span><span class="divider"> </span><a class="next" href="/works/8641516">Next Work &#8594;</a></span></li>
+  </ul>
+</div>
+<!--/series links-->
+    </div>
+    <!--/afterword-->
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="4GDxzUjsFaJ6I7CIxSYzCd9zC2AaXpVKHIV0m3NRj1JKJcCAJCjynkYjT1zCDJSC6u8V2RG55QnZPlbvq3wqKQ"/>
+          <input value="8641453" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8641453">Comments (3)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/JuliaJekyll">JuliaJekyll</a>, <a href="/users/AnelimS2">AnelimS2</a>, <a href="/users/Allythegreat1">Allythegreat1</a>, and <a href="/users/Lalelilolu">Lalelilolu</a>
+             as well as 
+          16 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_8641453">
+  <form class="new_comment" id="comment_for_8641453" action="/works/8641453/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="ihSxY7hc5C0kFYh2Y_T1KsD-t-Nb5AANaEi0V8tMwDggUYAu1JgDERgVd6Jk3lKh9WKpWlADcE6t85YjE2FlQw"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_8641453">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_8641453" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_8641453=new LiveValidation('comment_name_for_8641453',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_8641453.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_8641453">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_8641453" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_8641453=new LiveValidation('comment_email_for_8641453',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_8641453.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_8641453" class="landmark">Comment</label>
+        <textarea id="comment_content_for_8641453" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_8641453" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_8641453_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_8641453">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_8641453=new LiveValidation('comment_content_for_8641453',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_8641453.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_8641453.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_8641453" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/8641453/hit_count.json")})</script>
+
+
+  </body>
+</html>

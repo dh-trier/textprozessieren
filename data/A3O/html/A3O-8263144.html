@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"232243a405","applicationID":"129290979","transactionName":"cVtXEUpbWFxdQhkUXEBfSkpLXFtH","queueTime":0,"applicationTime":76,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"232243a405",applicationID:"129290979"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1214.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Einen Sommer Lang - RavenLaurie - Harry Potter - J. K. Rowling [Archive of Our Own]
+    </title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.bTwdqXwSH1.css"/>
+<style media="only screen and (max-width: 62em), handheld">#dashboard{clear:both;float:none;margin:1% 3.5%;max-width:100%;padding:0;width:auto}#dashboard,#dashboard.own{border-bottom:10px solid #900;border-top:10px solid #900;padding:.5em 0;border-radius:.25em}#dashboard ul{border:none;display:inline;padding:0;text-align:left}#dashboard li{display:inline}#dashboard a,#dashboard span{display:inline-block;margin:.25em 0}#dashboard .secondary{background:#eee;padding:.375em 0 .625em;box-shadow:inset 2px 2px 5px #bbb}#dashboard .secondary a{margin:.125em 0}#dashboard .landmark{clear:none;float:left}#main,#main.dashboard{float:none;margin:auto;padding-left:3.5%;padding-right:3.5%;width:auto}.logged-in .splash>.module{width:48.5%}.logged-in .splash > div:nth-of-type(odd) {margin-left:0;margin-right:1.5%}.logged-in .splash > div:nth-of-type(even) {margin-left:1.5%;margin-right:0}form.filters{width:auto;min-width:23%;max-width:24%}.filters fieldset{margin-right:0}form.filters dl{margin-left:.25em;margin-right:.25em}#workskin{margin:auto 1.5%}</style>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 42em), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_narrow.handheld_.css.pagespeed.cf.8L0d7x-op8.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.7_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/11_site_screen_IE7.css" /><![endif]-->
+
+
+
+<!--sandbox for developers	-->
+<style media="screen">#new_work_search fieldset:first-of-type .submit{padding-top:0}.edit_external_author ul ul{margin-left:2.75em}a.resp-sharing-button__link,.resp-sharing-button__icon{display:inline-block}a.resp-sharing-button__link,a.resp-sharing-button__link:hover{text-decoration:none;color:#fff;border:none}.resp-sharing-button{border-radius:5px;transition:25ms ease-out;padding:.5em .75em}.resp-sharing-button__icon svg{width:1em;height:1em;margin-right:.4em;vertical-align:top}.resp-sharing-button__icon{stroke:#fff;fill:none}.resp-sharing-button__icon--solid{fill:#fff;stroke:none}.resp-sharing-button--twitter{background-color:#55acee}.resp-sharing-button--twitter:hover,a:focus .resp-sharing-button--twitter{background-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c}.resp-sharing-button--tumblr:hover,a:focus .resp-sharing-button--tumblr{background-color:#222d3c}.resp-sharing-button--twitter{background-color:#55acee;border-color:#55acee}.resp-sharing-button--twitter:hover,.resp-sharing-button--twitter:active{background-color:#2795e9;border-color:#2795e9}.resp-sharing-button--tumblr{background-color:#35465c;border-color:#35465c}.resp-sharing-button--tumblr:hover,.resp-sharing-button--tumblr:active{background-color:#222d3c;border-color:#222d3c}</style>
+<script src="/javascripts/livevalidation_standalone.js.pagespeed.jm.oB__Z5piTe.js"></script>
+
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="r7UzWBw-KfLo-mFlLRhw8RQuNjQHGbKczJvNoksAe2y6jM19n3C9y0ZaFjpIFiDSSLNq2yjkuwmgsOvNmwo_Kw"/>
+
+    
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#39;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="Archive of Our Own" class="logo" src="/images/ao3_logos/xlogo_42.png.pagespeed.ic.ax-awMa4j4.png"/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a id="login-dropdown" href="/users/login">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form class="new_user" id="new_user_session_small" action="/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="2KnudwaFAEoEQwGPHZ4Zmk_sFO3ORjY6T6q8Klag5hDNkBBShcuUc6rjdtB4kEm5E3FIAuG7P68jgZpFhqqiVw"/>
+	<dl>
+    <dt>
+      <label for="user_session_login_small">User name or email:</label></dt>
+    <dd><input id="user_session_login_small" type="text" name="user[login]"/></dd>
+    <dt><label for="user_session_password_small">Password:</label></dt>
+    <dd><input id="user_session_password_small" type="password" name="user[password]"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_remember_me_small" class="action"><input type="checkbox" name="user[remember_me]" id="user_remember_me_small" value="1"/>Remember Me</label>
+    <input type="submit" name="commit" value="Log In"/>
+  </p>
+</form>
+<ul class="footnote actions">
+  <li><a href="/users/password/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+        <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+        <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+        <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+        <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+        <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+        <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+        <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+        <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+        <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+        <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+        <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works/search">Works</a></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form class="search" id="search" action="/works/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;"/>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input class="text" id="site_search" aria-describedby="site_search_tooltip" type="text" name="work_search[query]"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: katekyou &quot;alternate universe&quot; sort:&gt;words</span>
+      <span class="submit actions"><input type="submit" value="Search" class="button"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-show region" role="main">
+          
+          <div class="flash"></div>
+          <!--page description, messages-->
+<ul class="landmark skip">
+  <li><a name="top">&nbsp;</a></li>
+  <li><a href="#work">Skip header</a></li>
+</ul>
+
+<!--/descriptions-->
+
+<!--subnav-->
+<!--/subnav-->
+
+<!-- BEGIN revealed -->
+<!-- BEGIN work -->
+<!--work description, metadata, notes and messages-->
+    <!-- BEGIN navigation -->
+<h3 class="landmark heading">Actions</h3>
+<ul class="work navigation actions" role="menu">
+
+
+
+    <li class="chapter bychapter"><a href="/works/8263144/chapters/18931810">Chapter by Chapter</a></li>
+
+
+
+  <li class="comments" id="show_comments_link_top">
+      <a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8263144">Comments </a>
+  </li>
+
+
+    <li class="style">
+        <a href="/works/8263144?style=disable&amp;view_full_work=true">Hide Creator&#39;s Style</a>
+    </li>
+
+    <li class="share hidden">
+      <a class=" modal" title="Share Work" aria-controls="#modal" href="/works/8263144/share">Share</a>
+    </li>
+
+
+    <li class="download" aria-haspopup="true">
+      <a href="#">Download</a>
+      <ul class="expandable secondary">
+          <li><a href="/downloads/8263144/Einen%20Sommer%20Lang.azw3?updated_at=1511024133">AZW3</a></li>
+          <li><a href="/downloads/8263144/Einen%20Sommer%20Lang.epub?updated_at=1511024133">EPUB</a></li>
+          <li><a href="/downloads/8263144/Einen%20Sommer%20Lang.mobi?updated_at=1511024133">MOBI</a></li>
+          <li><a href="/downloads/8263144/Einen%20Sommer%20Lang.pdf?updated_at=1511024133">PDF</a></li>
+          <li><a href="/downloads/8263144/Einen%20Sommer%20Lang.html?updated_at=1511024133">HTML</a></li>
+      </ul>
+    </li>
+</ul>
+<!-- END navigation -->
+
+
+<h3 class="landmark heading">Work Header</h3>
+
+<div class="wrapper">
+
+  <dl class="work meta group" role="complementary">
+          <dt class="rating tags">
+
+              Rating:
+          </dt>
+
+          <dd class="rating tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/General%20Audiences/works">General Audiences</a></li>
+            </ul>
+          </dd>
+          <dt class="warning tags">
+
+              <a href="/tos_faq#tags">Archive Warning</a>:
+          </dt>
+
+          <dd class="warning tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/No%20Archive%20Warnings%20Apply/works">No Archive Warnings Apply</a></li>
+            </ul>
+          </dd>
+          <dt class="category tags">
+
+              Category:
+          </dt>
+
+          <dd class="category tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/M*s*M/works">M/M</a></li>
+            </ul>
+          </dd>
+          <dt class="fandom tags">
+
+              Fandoms:
+          </dt>
+
+          <dd class="fandom tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Harry%20Potter%20-%20J*d*%20K*d*%20Rowling/works">Harry Potter - J. K. Rowling</a></li><li><a class="tag" href="/tags/The%20Life%20and%20Lies%20of%20Albus%20Dumbledore%20-%20Rita%20Skeeter/works">The Life and Lies of Albus Dumbledore - Rita Skeeter</a></li>
+            </ul>
+          </dd>
+          <dt class="relationship tags">
+
+              Relationship:
+          </dt>
+
+          <dd class="relationship tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Albus%20Dumbledore*s*Gellert%20Grindelwald/works">Albus Dumbledore/Gellert Grindelwald</a></li>
+            </ul>
+          </dd>
+          <dt class="character tags">
+
+              Characters:
+          </dt>
+
+          <dd class="character tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Albus%20Dumbledore/works">Albus Dumbledore</a></li><li><a class="tag" href="/tags/Gellert%20Grindelwald/works">Gellert Grindelwald</a></li><li><a class="tag" href="/tags/Aberforth%20Dumbledore/works">Aberforth Dumbledore</a></li><li><a class="tag" href="/tags/Ariana%20Dumbledore/works">Ariana Dumbledore</a></li><li><a class="tag" href="/tags/Bathilda%20Bagshot/works">Bathilda Bagshot</a></li><li><a class="tag" href="/tags/Gervaise%20Ollivander/works">Gervaise Ollivander</a></li>
+            </ul>
+          </dd>
+          <dt class="freeform tags">
+
+              Additional Tags:
+          </dt>
+
+          <dd class="freeform tags">
+            <ul class="commas">
+               <li><a class="tag" href="/tags/Young%20Dumbledore/works">Young Dumbledore</a></li><li><a class="tag" href="/tags/First%20Kiss/works">First Kiss</a></li><li><a class="tag" href="/tags/First%20Love/works">First Love</a></li><li><a class="tag" href="/tags/Young%20Gellert%20Grindelwald/works">Young Gellert Grindelwald</a></li><li><a class="tag" href="/tags/Godric&#39;s%20Hollow/works">Godric&#39;s Hollow</a></li>
+            </ul>
+          </dd>
+
+      <dt class="language">
+        Language:
+      </dt>
+      <dd class="language">
+        Deutsch
+      </dd>
+
+
+
+    <dt class="stats">Stats:</dt>
+    <dd class="stats">
+<!-- end of cache -->
+
+      <dl class="stats"><dt class="published">Published:</dt><dd class="published">2016-10-11</dd><dt class="status">Completed:</dt><dd class="status">2016-12-27</dd><dt class="words">Words:</dt><dd class="words">16130</dd><dt class="chapters">Chapters:</dt><dd class="chapters">8/8</dd><dt class="comments">Comments:</dt><dd class="comments">5</dd><dt class="kudos">Kudos:</dt><dd class="kudos">25</dd><dt class="bookmarks">Bookmarks:</dt><dd class="bookmarks"><a href="/works/8263144/bookmarks">5</a></dd><dt class="hits">Hits:</dt><dd class="hits">700</dd></dl>
+      </dd>
+  </dl>
+</div>
+
+
+    <style type="text/css">#workskin .indent{padding:0 5em 0 5em}#workskin .book{margin:0 auto;text-indent:3em}#workskin .dropcap{font-family:Georgia,serif;font-size:3em}#workskin .flashback{font-style:italic}#workskin .caps{font-variant:small-caps}#workskin .spoiler{background:#333;color:#333}#workskin .border{border:1px solid}#workskin .font-serif{font-family:Cambria,Constantia,Palatino,Georgia,serif}#workskin .font-sansserif{font-family:'Lucida Grande',Verdana,Helvetica,Arial,sans-serif}#workskin .font-monospace{font-family:consolas,courier,monospace}#workskin .font-big{font-size:120%}#workskin .font-small{font-size:80%}#workskin .align-right{text-align:right}#workskin .align-center{text-align:center}#workskin .align-justify{text-align:justify}#workskin hr.third{width:33%;margin:auto}#workskin hr.full{width:auto;margin:auto}#workskin .font-red{color:red}#workskin .font-orange{color:#ffa500}#workskin .font-yellow{color:#ff0}#workskin .font-green{color:green}#workskin .font-blue{color:#00f}#workskin .font-purple{color:purple}#workskin .font-white{color:#fff}#workskin .font-black{color:#000}#workskin .font-pink{color:#ffc0cb}#workskin .font-teal{color:#008282}#workskin .font-redbrown{color:#a15000}#workskin .font-cherryred{color:#e00707}#workskin .font-brickred{color:#a10000}#workskin .font-dimorange{color:#f2a400}#workskin .font-murkyyellow{color:#a1a100}#workskin .font-jade{color:#4ac925}#workskin .font-dimgreen{color:#008141}#workskin .font-leafgreen{color:#1f9400}#workskin .font-darkolive{color:#416600}#workskin .font-dimblue{color:#005682}#workskin .font-midblue{color:#0715cd}#workskin .font-mediumskyblue{color:#00d5f2}#workskin .font-darknavy{color:#000056}#workskin .font-lightpurple{color:#f141ef}#workskin .font-midviolet{color:#b536da}#workskin .font-verydarkpurple{color:#2b0057}#workskin .font-darkplum{color:#6a006a}#workskin .font-darkmaroon{color:#77003c}#workskin .font-reallydarkgray{color:#626262}</style>  
+
+  <!-- end cache for work skin -->
+
+<!-- BEGIN section where work skin applies -->
+<div id="workskin">
+  <div class="preface group">
+    <h2 class="title heading">
+      Einen Sommer Lang
+    </h2>
+    <h3 class="byline heading">
+      <a rel="author" href="/users/RavenLaurie/pseuds/RavenLaurie">RavenLaurie</a>
+    </h3>
+
+
+        <div class="summary module" role="complementary">
+          <h3 class="heading">Summary:</h3>
+            <blockquote class="userstuff">
+              <p>Albus Dumbledore hat sein letztes Jahr in Hogwarts abgeschlossen und sitzt seit dem Tod seiner Mutter in Godric's Hollow fest. Die Ankunft von Gellert Grindelwald verändert alles.</p>
+            </blockquote>
+        </div>
+
+
+  </div>
+
+
+<!--/descriptions-->
+
+<!--chapter content-->
+    <div id="chapters" role="article">
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-1">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/18931810">Chapter 1</a>: Kapitel 1
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Kapitel 1</p>
+<p>Es war der Sommer nach meinem letzten Jahr in Hogwarts. Der Sommer, der der Beginn einer Weltreise und eines Lebens voller Entdeckungen sein sollte. Auf eine gewisse Art wurde er das, denn ich lernte, dass ich für eine Weltreise das Dorf in dem ich lebte, nicht einmal verlassen musste. <br/>Es war der Sommer, der dem Tod meiner Mutter folgte. </p>
+<p>Eine Woche nach der Beerdigung meiner Mutter saß ich im Garten unter dem Pflaumenbaum und las die Zeitung. Inzwischen berichtete niemand mehr über Kendra Dumbledore und der Ansturm der Eulen, die Beileidsbriefe brachten, war abgeflaut und man ließ mich in Ruhe. Ich wollte nicht in Ruhe gelassen werden. Meine Forschungskorrespondenzen waren alles, was mir geblieben war, jetzt, da ich in absehbarer Zeit Godric’s Hollow nicht verlassen würde. Doch niemand schrieb mir mehr, sie dachten, ich brauchte Zeit zum Trauern. <br/>„Albus!“, rief eine freundliche Stimme. „Albus, hier drüben!“ <br/>Seufzend erhob ich mich und schlenderte mit der Zeitung unter meinem Arm zum Gartenzaun, von dem die weiße Farbe überall abzublättern begann. Auf der anderen Seite stand Bathilda Bagshot, unsere Nachbarin. Sie musste inzwischen in ihren frühen Vierzigern sein, auch wenn man das nicht vermuten würde. Sie trug ihr dunkles Haar zu einem perfekten Knoten gebunden und hatte eine metallisch schimmernde Brille akkurat auf der Nase. Man sah ihr an, wie gebildet sie war.<br/>„Hallo, Mrs Bagshot“, begrüßte ich sie höflich. „Wie geht es Ihnen?“ <br/>„Oh, gut, gut“, erwiderte sie vergnügt. „Mein Großneffe kommt mich morgen besuchen. Würdet du und dein Bruder uns gern bei Tee und Kuchen Gesellschaft leisten?“ Sie versuchte ihr Mitleid zu kaschieren, was ich ihr hoch anrechnete. Ich nahm ihr Angebot ohne zu zögern an – im Haus fiel mir ohnehin die Decke auf den Kopf und ich hätte viel dafür gegeben, neue Bekanntschaften zu schließen und mich mit Menschen zu unterhalten, die nicht mein Bruder waren. <br/>Der war, wie nicht anders zu erwarten, nicht im Mindesten begeistert von unserer Verabredung zum Tee. <br/>„Du weißt doch, dass wir Ariana nicht alleine lassen können!“, rief er und ließ den Teller, den er gerade spülte, laut scheppernd in die Spüle fallen. „Wieso muss ich dir das eigentlich immer wieder sagen, Albus? Ich dachte du bist der Intelligente von uns.“ <br/>Aberforth war jünger als ich, und seine Wut stachelte ihn gegen alles und jeden auf. Zu behaupten ich hätte ihn im Griff wäre eine bodenlose Lüge. Und ich verstand ihn. Er war plötzlich Waise, mit einer instabilen Schwester und einem älteren Bruder, der nicht verbergen konnte, wie wenig ihm die neue Situation behagte. Es war nicht leicht für ihn. Für mich allerdings auch nicht. <br/>„Es ist doch höchstens eine Stunde“, sagte ich und konnte den flehenden Tonfall nicht aus meiner Stimme verbannen. „Sie wird nicht mal merken, dass wir weg sind, Ab.“ <br/>Aberforth verschränkte die Arme vor der Brust und schüttelte sich eine widerspenstige Haarsträhne aus der Stirn. „Ich bin nicht Schuld wenn sie ausrastet. Da kannst du dich dann drum kümmern.“ <br/>„Werde ich“, sagte ich möglichst ernst. Aber einen kurzen Moment lang war ich glücklich, auch wenn es nur um einen Tee bei unserer Nachbarin ging. <br/>Allerdings war ich nicht darauf vorbereitet, was mich dort erwartete. Als Bathilda uns in ihren Salon führte saß ihr Großneffe bereits am gedeckten Tisch. Er hatte hellblondes Haar, das ihm in sanften Wellen bis fast auf die Schultern fiel, seine wachsamen grünen Augen wanderten von Aberforth zu mir. <br/>„Ihr Lieben, das ist Gellert, mein Neffe.“ <br/>Gellert stand auf und reichte meinem Bruder die Hand. Dann wandte er sich mir zu. Ich war groß und recht dünn, und Gellert befand sich auf Augenhöhe mit mir. Allerdings wirkte er sehnig und stark, nicht zerbrechlich wie ich, auch wenn es mit dem Hemd schwer zu beurteilen war. <br/>„Ich bin Albus“, sagte ich, zu spät, er hatte meine Hand schon wieder losgelassen. Ein leichtes Lächeln spielte um seine Lippen, als er sich wieder setzte. „Und das ist Aberforth, mein Bruder.“ <br/>Aberforth machte ein unbestimmbares Geräusch. <br/>„Freut mich“, sagte Gellert dennoch und es klang aufrichtig. Dabei beachtete er Aberforth allerdings nicht. <br/>Bathilda brachte die Teekanne aus der Küche und ließ sie über den Tisch schweben, um die Tassen zu füllen. <br/>„Gellert“, sagte sie, „du und Albus habt sicher viel zu besprechen. Ihr beide habt gerade erst euren Schulabschluss gemacht.“ <br/>Ich blickte auf und begegnete Gellerts Blick. „Tatsächlich?“, sagte er und erst da bemerkte ich den Akzent, den er hatte. Er klang osteuropäisch, bulgarisch, vielleicht. „Bist du nach Hogwarts gegangen?“ <br/>Ich nickte. „Und du?“ <br/>„Durmstrang.“ <br/>Oh. Ich hatte Gellert auf mein Alter geschätzt, aber wenn er Durmstrang absolviert hatte, musste er älter sein als ich. Er bemerkte meinen abschätzenden Blick und zwinkerte, als niemand hinsah. <br/>Ich nahm mir ein Stück Kuchen und versuchte mich daran zu erinnern, wie man höflich Konversation betrieb. Aberforth würde mir keine Hilfe sein, im Gegenteil. Eines seiner Talente war es, Fremde zu verschrecken. <br/>„Und was verschlägt dich nach Godric’s Hollow?“ Die Frage klang eindringlicher, als ich es gewollt hatte. <br/>„Die Forschung“, antwortete Gellert kryptisch. <br/>„Oh!“, schaltete Aberforth sich unerwartet und spöttisch ein. „Mein Bruder liebt die Forschung. Los Albus, sag ihm welche Preise du gewonnen hast.“  <br/>Ich wurde rot. „Ich …“ <br/>„Woran arbeitest du zurzeit?“, fragte Gellert und klang ehrlich interessiert. <br/>„Ich hab … eine Pause eingelegt“, sagte ich. „Eine notwendige Pause.“ <br/>Gellert lächelte breit. Es war ansteckend. „Vielleicht kannst du mir helfen. Wenn du Lust hast.“ <br/>„Ja!“ Das war zu euphorisch und zu schnell. Reiß dich zusammen Albus. Aber die Wahrheit war, es interessierte mich nicht, woran Gellert arbeitete. Ich brauchte so dringend Ablenkung, dass es mir egal war. <br/>Aberforth verdrehte die Augen, schob sich die letzte Gabel seines Kuchenstücks in den Mund und schaute mich erwartungsvoll an. <br/>„Was denn?“, zischte ich. <br/>Er dachte gar nicht daran, diskret zu sein. „Wir müssen gehen.“ <br/>„Aber – “ <br/>Aberforth stand auf. „Albus.“ <br/>Ich nahm den letzten Schluck aus meiner Tasse und erhob mich ebenfalls. Es blieb keine Zeit, eine neue Verabredung mit Gellert auszumachen, Aberforth zog mich am Ärmel hinter sich her und ich konnte nur hoffen, dass Gellert sein Angebot ernst gemeint hatte. <br/>Ich las gerade mit steigender Frustration den Anfang des Artikels, den ich für Verwandlung Heute schreiben wollte, als Aberforth meinen Namen durch den Flur brüllte. <br/>„Was denn?“, rief ich zurück, bekam jedoch keine Antwort. Seufzend erhob ich mich und öffnete meine Zimmertür. <br/>Gellert stand auf der Türschwelle, Aberforth lehnte an der Wand daneben und wirkte genervt. <br/>„Albus!“, rief Gellert erfreut und winkte mir zu. „Hast du Zeit?“ <br/>Ohne zu fragen wofür ich Zeit haben sollte, eilte ich den Flur entlang zu den beiden. Als ich schon aus der Tür getreten war, blickte ich mich zu Aberforth um. „Ich werde nicht lange weg sein.“ <br/>Er schnaubte. „Ist mir egal, ich komm zurecht.“ Und er schlug uns die Tür vor der Nase zu. <br/>Gellert und ich schritten die Straße entlang, die ins Dorf führte. <br/>„Kann dein Bruder nicht einen Nachmittag lang allein sein?“, fragte Gellert schließlich. „Er ist doch sicher alt genug, oder nicht?“ <br/>„Es ist kompliziert“, antwortete ich mechanisch. Gellert schaute mich neugierig an, beließ es aber dabei. Als ich ihn fragte, wohin er gehen wollte, bat er mich ihm den Friedhof zu zeigen. <br/>„Was willst du denn da?“, fragte ich unbehaglich. Es war erst so wenig Zeit vergangen, seit ich dort gewesen war, um meine Mutter zu beerdigen. So wenig Zeit, dass die Blumen vielleicht noch nicht alle verwelkt waren. <br/>Gellert bemerkte mein Unbehagen dem Anschein nach nicht. „Ich bin hergekommen weil ich auf der Spur eines bestimmten Zauberers bin“, erklärte er und folgte mir eine Seitenstraße entlang. Die Kirche tauchte bereits vor uns auf. „Ich glaube er besaß eines der wertvollsten magischen Artefakte aller Zeiten. Und ich habe herausgefunden, wo er gegen Ende seines Lebens wohnte. Die Frage ist nun, ob er auch hier gestorben ist.“ <br/>„Wie war sein Name?“, fragte ich mit erwachter Neugier. „Und was für ein Artefakt?“ <br/>Gellert grinste schief. „Es ist kompliziert.“ <br/>Ich schaute weg. <br/>„Ach“, machte er und stupste mich in die Seite. „Komm schon. Mein Geheimnis für deins. Ein Handel.“ <br/>Er wirkte ernsthaft und interessiert. „Es muss ein Geheimnis bleiben“, sagte ich dennoch eindringlich. Er nickte und schaute mich mit diesen so lebendigen grünen Augen durchdringend an. „Ich habe eine Schwester“, sagte ich leise. „Ihr Name ist Ariana. Sie kann nicht allzu lang allein bleiben, ihre Kräfte sind sehr … instabil. Sie ist krank, weißt du. Und wenn das Zaubereiministerium davon erfahren würde, sie würden sie für immer im St. Mungo einsperren.“ <br/>Gellert machte ein abfälliges Geräusch. „Alles zum Schutze der Muggel“, meinte er geringschätzig. „Deine Schwester hat Besseres verdient. Niemand sollte so leben müssen.“ <br/>Ich schwieg, doch ich war dankbar für seine Worte. Dankbar dafür, dass er mich nicht bemitleidete, oder Ariana. Er war wütend und das brachte etwas in mir zum Vibrieren. <br/>„Was ist mit deinem Geheimnis?“ <br/>„Kennst du das Märchen von den drei Brüdern? Beedle der Barde?“ <br/>Verwirrt nickte ich. <br/>„Es gibt viele Beweise dafür, dass es die Brüder und die Gegenstände aus dem Märchen wirklich gegeben hat. Du hast bestimmt vom Todesstab gehört, vom Zauberstab des Schicksals, vom Blutigen Ast?“ Seine Augen leuchteten, während er sprach und es war unmöglich, den Blick abzuwenden. „Natürlich hat nicht der Tod den Brüdern die Heiligtümer als Geschenke gegeben, sie haben sie selbst erschaffen. Und ich glaube, ich habe den Bruder, dem der Umhang gehörte, bis hierher verfolgt.“ <br/>Geheimnisvollen Gegenständen aus Kindergeschichten nachzujagen mochte lächerlich klingen, aber nicht so wie er es sagte. Seine Intelligenz war in jedem Wort spürbar, seine Begeisterung entfachte meine eigene. Gellert war für mich wie ein sanfter Windhauch für ein Feuer, das beinahe erloschen war. <br/>„Gab es in der Geschichte nicht auch einen Stein, der die Toten zurückbrachte?“, fragte ich und hielt den Atem an, als wir durch das Tor des Friedhofs schritten. Der Duft nach Blumen in der Sommersonne drohte mich zu ersticken. Sofort und unfreiwillig wanderte mein Blick zu einem hellen Grabstein aus Marmor, zweifellos der neueste auf dem Friedhof. Gellert, aufmerksam wie er war, bemerkte es, ließ mich stehen und schritt über den schmalen Pfad auf den Stein zu. <br/>„Kendra Dumbledore“, las er und blickte mich scharf an. „Ist sie …?“ <br/>„Meine Mutter“, sagte ich ohne ihn anzusehen. „Sie ist vor etwas mehr als einer Woche gestorben.“ <br/>Gellert schwieg lange. „Und ich bringe dich dazu hierherzukommen“, murmelte er dann, mehr zu sich selbst. „Es tut mir leid, Albus, manchmal bin ich so egoistisch dass ich gar nicht merke, was ich eigentlich mache.“ <br/>„Du brauchst dich nicht zu entschuldigen“, erwiderte ich verlegen. „Ich hätte nein sagen können.“ <br/>Er lächelte dankbar, blickte sich um und zog seinen Zauberstab aus der Tasche, als er sichergestellt hatte, dass wir allein waren. Mit einem eleganten Schlenker und einem Flüstern erschien ein Kranz weißer Blüten und schwebte sanft auf die anderen welkenden Blumen herab. <br/>„Lass uns gehen“, sagte ich und überwand mich, ihn am Ärmel zu ziehen. <br/>„Warte.“ Er ging vor dem Grab in die Knie. „Ma’am“, sagte er, „Sie müssen eine großartige Hexe gewesen sein. Sie können stolz sein, auf Ihren Sohn.“ <br/>Auf eine gute Art fassungslos folgte ich ihm zwischen den Reihen der verwitterten Grabsteine entlang. Als er sich über einen davon beugte, hatte ich meine Sprache wiedergefunden. <br/>„Kannst du das lesen?“, fragte er und winkte mich heran. Zusammen studierten wir die kaum lesbare Inschrift. Seine Haare kitzelten mein Kinn. <br/>„Igno – Ignotus Peverell?“, fragte ich und fuhr die Buchstaben mit dem Zeigefinger nach. Gellert tat es mir nach und unsere Hände berührten sich kurz, bevor er sich dem oberen Teil des Grabsteins widmete, in den ein dreieckiges Symbol eingraviert war. <br/>„Was ist das?“, fragte ich neugierig. <br/>„Es ist ihr Zeichen“, antwortete Gellert. „Das Zeichen der Heiligtümer.“ Er holte ein dünnes, ledergebundenes Buch aus der Westentasche und schlug es auf. Ich lehnte mich zu ihm herüber und sah, dass es in Runen geschrieben war. Gellert hatte einen Federkiel heraufbeschworen und malte eine senkrechte Linie neben die Überschrift. „Der Zauberstab“, sagte er. Er malte einen Kreis, der die Linie umgab. „Der Stein der Auferstehung.“ Zuletzt schloss er alles mit einem Dreieck ein. „Und der Umhang der Unsichtbarkeit.“ Es ergab dasselbe Zeichen wie auf Ignotus Peverells Grab.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-2">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/19101745">Chapter 2</a>: Kapitel 2
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Im Laufe der folgenden Woche verwandelte sich mein Zimmer in eine Bibliothek. Es versetzte mich in meine besten Zeiten zurück, in denen ich in den Ferien den Raum kaum verließ und bloß an die Wissenschaft denken konnte. Gellert ging es ähnlich: Er kam nach dem Frühstück zu mir, ließ sich von mir zum Mittagessen zu seiner Tante schleifen, die uns jeden Tag beide einlud (und Aberforth, der aber nie mitkam), und trennte sich nur zum Schlafengehen von mir. <br/>„Ich habe noch nie jemanden getroffen, der sich so von mir anstecken lässt“, sagte Gellert zu mir, nachdem ich ihm eine Seite in Noblesse der Natur: Eine Genealogie der Zauberei gezeigt hatte. „Sieh dir das an. Kaum kenne ich dich, finde ich heraus, dass die Peverell Familie in der männlichen Linie ausgestorben ist. Das ist … das ist fantastisch, Albus.“ <br/>Er strahlte, doch ich schüttelte den Kopf. „Das heißt nur, dass es beinahe unmöglich sein wird, den Umhang zu finden“, gab ich zu bedenken. „Ignotus Peverells Nachfahren tragen nicht mehr seinen Namen und sie könnten wer weiß wo sein. Wir können sie niemals über mehrere Generationen zurückverfolgen, Gellert.“ <br/>„Glaubst du das?“, sagte er, ungetrübt. „Ich glaube du kannst alles schaffen, was du dir vornimmst. Und zusammen schaffen wir das erst recht. Und dass die Familie in der männlichen Linie ausgestorben ist, bedeutet auch, die Geschichte stimmt. Cadmus besaß den Stein der Auferstehung, richtig? Er beging Selbstmord, hatte also wohl keine Nachkommen. Und wir beide wissen nur zu gut, was mit Antioch und dem Zauberstab passiert ist.“ <br/>„Ja“, sagte ich, „aber warum brauchen wir den Umhang? Wenn ich einen so starken Desillusionierungszauber wirken kann, dass ich vollständig unsichtbar bin, dann schaffst du das doch erst recht.“ <br/>Er schwieg kurz, bevor er sagte: „Du schmeichelst mir. Aber ja, du hast Recht. Dafür brauchen wir ihn nicht. Aber sieh mal, in der Geschichte heißt es, nur wer alle drei Heiligtümer besitzt, wird zum Gebieter des Todes.“ <br/>So ging es tagelang. Wir verhalfen einander zu immer wilderen Theorien, schoben uns gegenseitig Bücher zu, und manchmal, da lachten wir einfach. Alles inmitten von tanzendem Staub in einem Sonnenstrahl, auf dem Boden meines Zimmers, umgeben von alten Wälzern und Pergamentrollen. <br/>Es war das Paradies. <br/>Ich hatte bereits mit vielen Zauberern korrespondiert, hatte mit ihnen zusammen Entdeckungen gemacht und Artikel veröffentlicht, aber noch nie hatte ich einen solchen Schlagabtausch gehabt wie mit Gellert Grindelwald. Wir waren nicht nur intellektuell auf einer Augenhöhe, wir waren im selben Alter und das machte eine Menge aus. Ganz davon abgesehen war seine Persönlichkeit so magnetisierend, er war so voller Energie, er beflügelte mich auf eine Art, wie ich sie bisher nicht kannte. <br/>Natürlich konnten wir nicht immer nur arbeiten. Manchmal waren wir uns einig, dass wir eine Pause einlegen und das Haus verlassen mussten. Meistens gingen wir in den Garten, um nie allzu weit weg von unseren Aufzeichnungen zu sein, falls uns eine Idee kam. Und so saßen wir eines Abends Schulter an Schulter unter dem Pflaumenbaum und schauten dabei zu, wie dunkelgraue Gewitterwolken über den Himmel zogen. Ich würde Gellert früh heimschicken müssen, denn Ariana reagierte immer sehr stark auf das Donnergrollen. <br/>„Erzähl mir von Durmstrang“, bat ich Gellert. Ich vermisste es, ihn reden zu hören. Er begeisterte sich für so vieles so sehr. <br/>„Es liegt ganz im Norden von Europa“, begann er, doch seine Stimme klang hohl und weit entfernt. „Im Winter wird es dort nicht hell. Manchmal schneit es so sehr, dass man Lawinen auf den Berghängen beobachten kann. In der dunklen Zeit ist es am schönsten, fand ich immer. Weil Feuer nur für magische Zwecke entzündet werden laufen alle Schüler mit erleuchteten Zauberstäben durch die Gänge. Es fühlte sich an wie Magie in ihrer reinsten und unschuldigsten Form.“ <br/>Ich erzeugte lautlos eine Barriere um uns herum, die uns vor den ersten schweren Regentropfen schützte. „Vermisst du es?“ <br/>„Oh nein“, erwiderte er. „Ich bin froh, weg zu sein und ich werde nie wieder zurückkehren. Sie waren nicht immer einverstanden mit dem, was ich erforscht habe. Ich habe mein Zeichen dort gelassen. Sie werden sich an mich erinnern.“ <br/>„Dein Zeichen?“ <br/>Er hob den Zauberstab und die Regentropfen vor uns sammelten sich in der Luft und bildeten kurz das Symbol der Heiligtümer bevor sie zerflossen. <br/>„Was ist mit dir?“, fragte er und lächelte mich schief an. „Vermisst du Hogwarts?“ <br/>Ich seufzte tief. „Das habe ich. Bis du hier aufgetaucht bist.“ <br/>Gellert legte mir einen Arm um die Schultern und lehnte seinen Kopf gegen meinen. „Ich wette du warst ein Streber.“ <br/>„Du liegst nicht falsch.“ <br/>Er lachte und zog mich enger an sich. „Es gibt nur zwei Dinge, die du tun kannst“, sagte er. „Entweder du beeindruckst sie oder du entsetzt sie. Und manchmal sind die gar nicht so unterschiedlich.“ <br/>„Sie?“ <br/>„Alle“, sagte er. „Die ganze Welt. Du kannst sie dir nehmen wenn du es nur willst.“ <br/>Ich hatte nie die Welt gewollt. Aber hier, jetzt, im Garten mit Gellert an meiner Seite, konnte ich es sehen. Aber ich sah nicht mich allein. <br/>Über unseren Köpfen ertönte das erste Donnergrollen. Ich machte Anstalten aufzustehen, aber Gellert ließ mich nicht los. „Wo willst du hin?“ <br/>„Ich muss gehen. Ariana …“ <br/>Er verzog das Gesicht. „Kann das nicht dein Bruder übernehmen?“ <br/>„Nicht heute.“ <br/>Widerwillig ließ er locker, behielt aber meine Hand in seiner. „Albus. Morgen?“ <br/>„Morgen“, sagte ich und drückte seine Hand. <br/>Als ich in den Keller kam, wo Arianas Zimmer sich befand, war Aberforth schon da. Ariana murmelte vor sich hin, sie saß auf ihrem Bett und hatte die Arme um die Knie geschlungen. <br/>„Wo ist dein Anhängsel?“, fragte Aberforth mit Trotz in der Stimme. <br/>„Bitte“, sagte ich und setzte mich auf einen Stuhl ein paar Meter entfernt von unserer Schwester. „Nicht hier.“ <br/>„Oh als ob sie dich interessiert“, entgegnete Aberforth und nickte zu Ariana herüber. Sie wippte nun vor und zurück und ihre Augen flackerten nervös zwischen Aberforth und mir hin und her. „Wann hast du sie zum letzten Mal gesehen? Letzte Woche? Bevor er kam?“ <br/>Ich wandte den Blick von ihm ab, starrte die Wand an, antwortete nicht. Denn er hatte völlig Recht. Aber immerhin war ich jetzt hier, oder nicht? <br/>„Ich habe Gellert nach Hause geschickt, um hier sein zu können, bei ihr“, sagte ich kühl. „Aber nichts was ich tue reicht je aus, oder?“ <br/>Mein Bruder spuckte ein Lachen aus. „Du tust nichts, Albus, gar nichts. Du sitzt den ganzen Tag mit deinem Freund in deinem Zimmer und redest über – Merlin weiß was ihr da treibt – und glaubst wenn du einmal was machst, was sowieso von dir erwartet wird, sollte man dir danken?“ <br/>„Was wir tun ist wichtig.“ <br/>„Das hier ist wichtig!“, rief er, beruhigte sich aber sofort wieder als Ariana leise wimmerte. „Sie ist wichtig.“ <br/>Ein Donner grollte und Aberforth begann beruhigend auf Ariana einzureden, was es mir ersparte zu antworten. <br/>Wir schwiegen lange und als das Gewitter vorübergezogen war, schälte sich zwar die Tapete von den Wänden und hatte ein paar Brandlöcher, aber ansonsten war nichts passiert. Aberforth warf mir einen verächtlichen Blick zu, bevor er in seinem Zimmer verschwand.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-3">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/19239778">Chapter 3</a>: Kapitel 3
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Ungeduldig mit dem Fuß wippend saß ich in der Küche und wartete auf Gellert. Als es an der Haustür klopfte, stand ich auf um zu öffnen und da stand er. <br/>„Gellert“, sagte ich verwundert, denn er hatte seit dem zweiten oder dritten Tag aufgehört zu klopfen und war einfach hereingekommen, „du brauchst nicht zu klopfen. Das weißt du doch.“ <br/>Er winkte ab. „Sicher, sicher. Aber heute ist das was anderes. Los, komm mit. Wir gehen ein Stück.“ <br/>Neugierig schob ich meinen Zauberstab in meine Westentasche und folgte ihm nach draußen. Der Tag war noch angenehm, aber zur Mittagszeit würde es in der Sonne kaum auszuhalten sein. <br/>Gellert führte mich weiter weg vom Dorf und bald wich er von der befestigten Straße ab auf einen ausgetrampelten Pfad. Ich muss gestehen, ich habe Godric’s Hollow nie sonderlich spannend gefunden und deshalb auch nicht viel erkundet. Aberforth kannte jeden Winkel des Dorfes, ich hingegen war schon immer lieber drinnen bei meinen Büchern gewesen. Gellert vergewisserte sich, dass wir allein waren, dann nahm er meine Hand und zog mich hinter sich her, den immer schmaler werdenden Pfad entlang, durch Brombeersträucher und hüfthohe Fingerhutblumen. <br/>„Gellert, wohin gehen wir?“ <br/>„Hast du schon mal von einer Überraschung gehört?“, erwiderte er belustigt. „Entspann dich, Albus. Es wird dir gefallen.“ <br/>Ich seufzte, entspannte mich aber tatsächlich. Immerhin war ich mit Gellert zusammen, es war also sehr unwahrscheinlich, dass es, was auch immer es sein mochte, mir nicht gefiel. <br/>Bald schon ertönte das angenehme Geräusch von fließendem Wasser und wenig später brachen wir durch das Dickicht auf eine kleine Lichtung, an der ein Bach vorbeifloss. <br/>Gellert drückte meine Finger, ehe er mich losließ, um seinen Zauberstab zu heben. „Repello Muggeltum“, sagte er deutlich und ließ die Stabspitze nach oben zeigen. Als nächstes führte er einen Aufrufezauber aus, aber ich konnte nicht verstehen, was er damit aufrief, denn er sprach seine Muttersprache. Ehe ich fragen konnte, erschienen wie aus dem Nichts eine Picknickdecke und ein Korb. <br/>„Was – wie hast du …?“ <br/>Er lachte. „Hab ich alles letzte Nacht vorbereitet. Los, setz dich.“ <br/>Gehorsam und gleichzeitig verwirrt und geschmeichelt setzte ich mich ihm gegenüber auf die Decke. Er grinste und rutschte näher zu mir heran. <br/>„Alsoooo“, sagte er und zog das Wort in die Länge. „Herzlichen Glückwunsch zum Geburtstag, Albus.“ <br/>Ich wusste, dass ich rot wurde. „Deine Tante hat es dir gesagt.“ <br/>„Natürlich hat sie das. Wie konntest du annehmen sie würde es nicht tun?“ <br/>Wieder seufzte ich tief. „Ich – ich dachte nicht, dass sie das Datum noch weiß.“ <br/>Gellert zerzauste mir mit beiden Händen die Haare und war mir plötzlich so nah, dass unsere Nasen sich fast berührten. Ich hielt den Atem an. „Albus“, sagte er, „sie ist Historikerin, ihr ganzes Leben besteht daraus, sich Daten zu merken, du Pflaume.“ <br/>Er ließ mich los und wir mussten beide lachen. Ich durchsuchte den Picknickkorb und verteilte die Sandwiches auf zwei Teller. Wir schwiegen friedlich, während wir kauten, und schauten dem Bach zu. Und immer wieder schielte ich verstohlen zu Gellert hinüber, nur um zu merken, dass er mich bereits ansah. <br/>„Warum hast du es mir nicht gesagt?“, fragte er, als wir nach dem Essen nebeneinander auf der Decke lagen und in den Himmel hinaufschauten. <br/>„Ich weiß es nicht“, antwortete ich ehrlich. „Ich wollte nicht feiern, schätze ich. Es ist … der erste Geburtstag ohne meine Mutter.“ <br/>„Hmm“, summte er. „Das verstehe ich. Aber ich glaube, du wusstest, ich finde es auch so heraus.“ <br/>Ich drehte mich auf die Seite, um ihn sehen zu können. Ein selbstzufriedenes Grinsen auf den Lippen, tat er, als merkte er es nicht. „Nur weil du so überzeugt von deinem Intellekt bist, muss ich es nicht auch sein“, sagte ich scherzhaft. <br/>Er drehte sich ebenfalls auf die Seite. „Aber du bist es.“ <br/>Als ich sagte „Ja, bin ich“ wirkte er überrascht. <br/>„Weißt du“, begann er nachdenklich und schaute über meinen Kopf hinweg in den Wald. „In Durmstrang gab es diese uralte Tradition. An seinem Geburtstag durfte man sich jemanden zum Duellieren aussuchen. Angeblich war das eine Charakterprüfung, um zu sehen, ob du dir einen ebenbürtigen oder einen schwächeren Gegner aussuchen würdest.“ <br/>„Was für einen Gegner hast du dir genommen?“ <br/>Seine Augen fanden den Weg zurück zu meinen. „Einen von dem ich dachte, er wäre stärker.“ <br/>Ich sah ihn schweigend an und stellte ihn mir im Duell vor. In seiner schwarzen Schuluniform mit den Stiefeln, den Zauberstab erhoben, das blonde Haar zerzaust, schwer atmend und doch mit gekräuselten Lippen. Auf den Zehenspitzen, elegant, anmutig, agil. Er hatte nie ein Duell verloren, das musste er mir nicht sagen. Ob ihm seine Überlegenheit je zu Kopf stieg? <br/>„Jeder kann sehen, wer von uns beiden gewinnen würde“, sagte ich. <br/>Er stimmte mir zu und dann sagten wir beide gleichzeitig „ich“ und mussten wieder lachen. Plötzlich sprang er auf und zog mich am Arm mit sich hoch. <br/>„Gellert –“ <br/>Er schoss einen Zauber auf mich ab und tänzelte lachend davon, als er mich mitten auf die Brust traf. Meine einst graue Weste hatte nun einen leuchtend blauen Fleck. Ich stieß entrüstet Luft aus und zog meinen Zauberstab. Er wollte ein Kinderduell? Konnte er gern haben. Und mit Sicherheit würden meine Farbwechselzauber hübscher sein als seine. Seinem nächsten Zauber wich ich knapp aus und traf ihn auf dem Rücken, als er sich wegzudrehen versuchte. Wir sprangen umeinander herum, schreiend und kreischend und laut lachend wie die Jungen, die wir waren. Er traf mich mit einem Regenbogenfarbwechsel mitten auf dem Hintern, ich schoss ihm einen Sternenhimmel direkt ins Gesicht. Am Ende rannten wir aufeinander zu, keiner wich dem Anderen aus und wir fielen außer Atem zusammen ins Gras. Gellert stützte sich auf den Ellbogen und betrachtete die verschmierte Farbe in meinem Gesicht. Über seine Stirn und eine Wange zog sich ein breiter dunkelblauer Streifen mit winzigen, funkelnden Sternen. Er rückte näher an mich heran, sodass ich seinen Atem auf meinem Gesicht spüren konnte. <br/>„Ich hoffe, wir werden nie herausfinden, wer von uns den anderen schlagen würde“, flüsterte er und ehe ich zustimmen konnte, küsste er mich. <br/>Es war mein erster Kuss und er ließ mich mit geschlossenen Augen und sehr benommen zurück. Gellert war in diesem Gebiet offensichtlich mehr bewandert als ich, denn ich hörte ihn kichern. Er legte eine Hand auf meine Wange und sagte: „Albus, du glühst wie die Brust eines Drachen.“ <br/>Ich konnte nicht viel mehr tun, als ihn hilflos anzulächeln. Er fand die Situation wahnsinnig komisch und konnte es nicht verbergen. Trotz allem schimmerte auch etwas Sorge hindurch – oder tatsächlich Nervosität? <br/>„Hat es dir gefallen?“, fragte er leise. <br/>„Dir ist nicht klar, dass es mir gefallen hat?“, entgegnete ich und zog zaghaft an seinem Haar. Bereitwillig senkte er seine Lippen wieder auf meine und dieses Mal war ich vorbereitet und konnte mehr tun als bloß staunend dazuliegen. Ich konnte spüren wie weich seine Lippen waren und wie gut sie zu meinen zu passen schienen. Ich krallte eine Hand in Gellerts Haar und zog ihn noch näher zu mir, immer noch näher bis keine Luft mehr zwischen uns war. Vorsichtig strich ich mit der Zungenspitze über seine Unterlippe und entlockte ihm ein zufriedenes Geräusch. <br/>„Und ich dachte, du machst das zum ersten Mal“, murmelte er und folgte mit einem Finger meiner Wirbelsäule entlang abwärts. Mein ganzer Körper erschauerte. <br/>„Tue ich auch.“ Meine Stimme klang ganz anders als sonst; rau und atemlos. <br/>Er lachte leise und ich fühlte wie sein Brustkorb vibrierte. „Dann bist du ein Naturtalent. Was habe ich anderes erwartet?“ <br/>„Oh, du hattest Erwartungen?“, sagte ich gleichzeitig spöttisch und zärtlich. <br/>„Mh-hm“, machte er und schob sein Knie zwischen meine Beine. „Und du übertriffst sie alle.“ <br/>Wir machten eine Weile so weiter bis er sich von mir löste und sich aufsetzte. Das Geräusch, das aus meinem Mund kam war alles andere als schmeichelhaft. Aber Gellert grinste bloß wissend. <br/>„Fast hätte ich es vergessen – ich soll dich und Aberforth zum Abendessen einladen. Bathilda kocht dein Lieblingsessen.“ <br/>Überrascht blickte ich auf. „Sie kennt mein Lieblingsessen?“ <br/>Er zuckte die Achseln. „Sie war mit deiner Mutter befreundet, oder nicht?“ <br/>Ich nickte, schwieg aber. Mein Geburtstag hatte nichts Besonderes werden sollen, eigentlich wäre ich liebend gerne darüber hinweggegangen. Nicht, dass ich diesen Ausflug nicht zu würdigen wusste. <br/>„Zieh nicht so ein Gesicht“, mahnte Gellert und rückte wieder näher zu mir heran. „Komm schon, Albus. Sag ja.“ <br/>Ich wandte den Blick ab, doch ein Lächeln stahl sich auf meine Lippen. „Soll das ein Rendez-vous sein, Gellert? Fragst du, ob ich mit dir ausgehe?“ <br/>„Muss ich denn fragen?“ <br/>„Ja“, sagte ich trotzig. „Wenn du willst, dass ich mitgehe.“ <br/>Er nahm mein Gesicht in beide Hände und hielt meinen Blick mit seinem fest. „Geh heute Abend mit mir aus, Albus.“ <br/>Er schloss die Augen und küsste mich wieder und ich verzieh ihm, dass er streng genommen keine Frage gestellt hatte. </p>
+<p>Vor dem Abendessen trennten wir uns, um uns zurechtzumachen, denn wir hatten beide ein Bad nötig. Nicht nur wegen der Farbe. Ich trug ein deutliches Zeichen des Tagesgeschehens in der Nähe meines Schlüsselbeins. Ich hätte es mit einem Zauber beseitigen können, aber unter dem Hemd würde es ohnehin niemand sehen. <br/>Und es gefiel mir. Es war eine Spur, die Gellert auf meiner Haut hinterlassen hatte, und da ich alles andere abwusch, war es eine willkommene Erinnerung an den Morgen. <br/> Aberforth begleitete mich zum Abendessen. Gellert öffnete uns die Haustür und sein Blick fiel auf meinen Bruder, der ungeduldig neben mir stand. <br/>„Hallo Aberforth“, sagte Gellert mit überraschtem Unterton. „Du bist mitgekommen.“ <br/>„Ich war doch eingeladen, oder nicht?“, entgegnete Aberforth ruppig und drängte sich an Gellert vorbei, um Bathilda zu begrüßen. <br/>Gellert und ich schauten einander an. Er trug ein schwarzes Hemd mit hochgeklapptem Kragen, darüber eine ebenfalls schwarze Jacke. Seine leuchtend grünen Augen funkelten noch lebendiger als sonst. In seinem Blick lag Hunger. <br/>„Ich hab dich vermisst“, murmelte er und drückte mir einen kurzen Kuss auf die Lippen. <br/>Wir gesellten uns zu Bathilda und Aberforth und ich versuchte, Gellert nicht andauernd anzusehen. Er gab sich deutlich weniger Mühe, aber es schien niemandem aufzufallen, wie oft er mich wie zufällig berührte. Bathilda hatte drei Gänge vorbereitet und auf meinen verlegenen Hinweis, dass es nicht nötig gewesen wäre, winkte sie nur gutmütig ab. <br/>Über dem Hauptgang beugte sie sich verschwörerisch über den Tisch und ihr Blick wechselte zwischen Gellert und mir hin und her. „Also sagt einmal, ihr beiden, woran arbeitet ihr den ganzen Tag?“ <br/>„Das würde ich auch zu gerne wissen“, fügte Aberforth hinzu und durchlöcherte mich mit Blicken.<br/>Ich nahm schnell mein Wasserglas zur Hand und überließ es Gellert zu antworten. <br/>„Wir recherchieren über eine sehr alte magische Familie“, erklärte Gellert gelassen. „Wir glauben, sie haben drei kraftvolle magische Artefakte erschaffen, die unterschiedlicher nicht sein könnten. Doch wenn man alle drei zusammenbringt arbeiten sie höchst wahrscheinlich auf eine Art und Weise zusammen, die dem Besitzer unfassbare Macht verleiht.“ <br/>Bathilda begann uns mit Fragen zu löchern, während Aberforth Gellert eine ganze Weile lang mit zusammengezogenen Brauen ansah. <br/>Nach dem Dessert drängte Bathilda Gellert und mich dazu, im Garten für ein Foto zu posieren. Sie sagte sie wolle es sich einrahmen. Aberforth machte sich aus dem Staub und Gellert und ich standen peinlich berührt vor der Hecke und gehorchten Bathilda, die uns befahl uns „noch ein bisschen“ enger zusammenzustellen. Gellert verschränkte die Arme hinter seinem Rücken und wirkte allgemein sehr herrschaftlich. Ich versuchte seinen Ausdruck so gut es ging zu imitieren. <br/>„Wunderbar“, verkündete Bathilda dann und lächelte zufrieden. „Gellert, Schatz, hilfst du mir mit dem Geschirr?“ <br/>„Selbstverständlich. Ich verabschiede mich nur kurz von Albus.“ <br/>Er brachte mich zum Gartentor, packte mich an der Hüfte, drückte mich gegen den Zaun und küsste mich stürmisch. <br/>„Gellert“, protestierte ich halbherzig, „was ist wenn sie uns sieht?“ <br/>„Und wenn schon“, raunte er und biss zärtlich auf meine Unterlippe. <br/>Wir hörten erst auf, als Bathilda im Garten nach ihrem Neffen rief. Gellert lachte atemlos, brachte meine Haare in Ordnung und ging mit federnden Schritten ins Haus zurück. Ich blieb reglos stehen, bis er um die Ecke außer Sicht verschwunden war. <br/>An Schlaf war nicht zu denken, also sortierte ich alle unsere Aufzeichnungen und Pergamentrollen und Bücher. Selbst mein Zimmer wirkte ohne seine Anwesenheit leer, dabei kannte ich ihn erst seit ein paar Wochen. Alles an ihm hatte mich so in seinen Bann gezogen und zu erfahren, dass es ihm bei mir nicht anders ging ließ mein Herz schneller schlagen. Nach all den Ferien, die ich mit Aberforth verbracht hatte, der mich verachtete, weil ich mich für etwas Besonderes hielt war es unaussprechlich erfrischend jemanden zu treffen, der mich aus denselben Gründen anziehend fand, aus denen Aberforth sich nichts aus mir machte. <br/>Ein klackerndes Geräusch am Fenster riss mich aus meinen Gedanken. Mit einer Kerze in der Hand ging ich nachsehen – es war Gellerts kleiner Sperlingskauz, der mit dem Schnabel an meine Fensterscheibe klopfte. Ich ließ ihn herein und nahm ihm die kleine Pergamentrolle ab, die er am Bein trug. </p>
+<p>Ich wette, du kannst auch nicht schlafen. Wie lächerlich, jemanden zu vermissen, von dem man sich gerade erst verabschiedet hat. <br/>Gellert</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-4">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/19473886">Chapter 4</a>: Kapitel 4
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>„Hast du es schon immer gewusst?“, fragte ich. Wir befanden uns in meinem Zimmer. Mein Kopf lag in Gellerts Schoß und er ließ eine Feder Stichpunkte über den Stein der Auferstehung auf ein loses Blatt Pergament kritzeln. <br/>Er sprang mühelos auf meinen Gedankenzug auf. „Dass ich keine Mädchen mag? Nicht immer, nein. Aber in der Schule ist es mir bald klar geworden.“ Er legte den Zauberstab beiseite und begann stattdessen mit meinen Haaren zu spielen. „Du warst wohl ziemlich überrascht, hab ich recht?“ <br/>„Ist das so offensichtlich?“ <br/>Er gluckste. „Für mich schon. Aber keine Sorge, ich fand es sehr einnehmend.“ Er verfiel in Schweigen und strich nachdenklich immer wieder durch mein Haar und über die paar Bartstoppeln auf meinem Kinn. „Aber hattest du denn in der Schule nie … na ja, jemanden?“ <br/>„Nein“, sagte ich. „Ich war immer vollauf zufrieden mit der Schularbeit und den außerschulischen Aktivitäten. Und dann kümmerte ich mich um die wenigen Freundschaften, die ich aufgebaut hatte. Für mehr war keine Zeit. Und ich wollte es auch nie.“ <br/>Er grinste verschmitzt. „Bis ich kam.“ <br/>„Bis du kamst.“ Er drückte mir einen Kuss auf die Stirn. „Du hast wohl mehr Erfahrungen gesammelt, vermute ich.“ <br/>„Wie so oft sind deine Vermutungen richtig“, erwiderte Gellert gelassen. „Ich hatte den einen oder anderen festen Freund in Durmstrang. Keiner von ihnen konnte meine Aufmerksamkeit lange beanspruchen. Bei dir mache ich mir da keine Sorgen.“ <br/>Wieder schwiegen wir eine Weile und hingen unseren Gedanken nach. Ich beobachtete Gellert. Er wirkte angespannt. <br/>„Apropos Durmstrang“, begann er schließlich ohne mir in die Augen zu sehen. „Ich muss dir etwas gestehen. Ich bin nicht ganz ehrlich zu dir gewesen und das tut mir leid.“ <br/>So ernst kannte ich ihn gar nicht. Alarmiert setzte ich mich auf und nahm seine Hände in meine. „Es ist in Ordnung, Gellert“, sagte ich beruhigend. „Du kannst mir vertrauen.“ <br/>Er lächelte schwach. „Als wir uns das erste Mal begegnet sind, drüben bei meiner Tante und sie sagte ich käme aus Durmstrang – was hast du da gedacht?“ <br/>Ich erinnerte mich genau, als wäre es gestern gewesen. „Ich dachte, du siehst jünger aus als neunzehn. Aber mir schien es eine gute Erklärung zu sein, dass du deinen Abschluss ein paar Jahre früher gemacht hast.“ <br/>Er schnaubte. „In Durmstrang lassen sie dich deinen Abschluss nicht früher machen. Und ich denke, das weißt du.“ <br/>„Du bist besonders, Gellert, ich dachte sie hätten eine Ausnahme gemacht.“ <br/>Er bekam einen bitteren Zug um den Mund. „Die Wahrheit ist, sie haben mich rausgeworfen. Letztes Jahr. Ich habe nie meinen Abschluss gemacht. Bathilda weiß nichts davon und das soll auch so bleiben, in Ordnung?“ <br/>Ich konnte ihn eine halbe Minute lang nur wortlos anstarren. „Du bist rausgeflogen? Wieso?“ <br/>Er entzog seine Hände den meinen und stand auf, um durchs Zimmer zu tigern. „Hör zu, ich habe Experimente gemacht. Es erschien mir wichtig. Du weißt sicher, dass sie in Durmstrang die dunklen Künste unterrichten und es hatte damit zu tun. Ein paar Schüler sind zu Schaden gekommen – und – ja, ich – weißt du, was ich denke?“ Er schaukelte sich immer weiter auf und gestikulierte wild. „Manchmal, wenn es um das größere Wohl geht, müssen eben Opfer gebracht werden. Findest du nicht?“ <br/>Darüber dachte ich ernsthaft nach. „Doch“, sagte ich schließlich, „ich stimme dir zu. Dabei muss nur immer die Größe des Opfers der des Wohls gerecht werden, verstehst du?“ <br/>„Ja“, seufzte er. „Ich bin nicht stolz darauf, wie es so gekommen ist, Albus. Aber ich würde es wieder tun.“ <br/>Er setzte sich wieder neben mich und lehnte sich an meine Schulter. Ich biss mir auf die Lippe und begann zu sprechen. „Gellert … ich war auch nicht ganz ehrlich zu dir.“ <br/>Er sah mich mit großen Augen an, doch ich mied seinen Blick. „Du kannst mir vertrauen“, wisperte er in mein Ohr. <br/>Ich schloss die Augen. „Es geht um meine Schwester Ariana. Als sie noch sehr jung war – weit entfernt von dem Alter, in dem Kinder auch nur davon träumen, ihre Kräfte zu kontrollieren – wurde sie von drei Muggeln dabei gesehen, wie sie Magie ausübte. Die Jungen griffen sie an und wollten sie dazu bringen, ihnen zu zeigen, wie der Trick funktionierte, was sie natürlich nicht konnte. Sie … sie folterten sie, auf sehr primitive Art und Weise. Sie war danach nie wieder sie selbst.“ <br/>Gellert sagte lange Zeit nichts. Dann atmete er sehr langsam aus. „Das ist abscheulich“, sagte er mit einer Stimme wie ein Gewitter. „Es ist widerlich und grausam. Eine junge Hexe so zu behandeln. Aber das ist noch nicht alles, hab ich Recht?“, fragte er, als ich weiterhin vermied ihn direkt anzusehen. <br/>„Mein Vater“, fuhr ich fort, „machte die Jungen ausfindig und brachte sie um. Er starb in Askaban. Daraufhin zogen wir hierher, um vor dem Skandal zu fliehen.“ <br/>„Gut“, sagte Gellert triumphierend. „Ich hätte dasselbe getan wie dein Vater. Diese Muggel haben nichts Besseres verdient. Ich hätte ihnen dasselbe angetan, wie sie es Ariana angetan haben. Sie hatten noch Glück, finde ich. Ich hätte ihnen niemals die Gnade eines schnellen Todes gewährt. Sie haben das Leben deiner Schwester zerstört. Sie haben selbst auch keins verdient.“ <br/>Ich wusste nicht, was ich sagen sollte. Gellert nahm mein Gesicht in seine Hände und zwang mich, ihn anzusehen. „Albus“, sagte er sehr ernst, „ich verspreche dir, ich werde niemals aufhören, für eine bessere Welt zu kämpfen. Ich werde alles dafür tun, dass eine bessere Welt geschaffen wird, in der deine Schwester das Leben haben könnte, das sie hätte haben sollen. Bis zu dem Tag, an dem ich sterbe.“ <br/>„Gellert …“ <br/>„Nein. Es ist mein Ernst, Albus. Ich danke dir für dein Vertrauen. Bist du noch wütend auf diese Muggel?“ <br/>Ohne nachzudenken nickte ich und es war kathartisch. Ich hatte noch niemals darüber gesprochen, aber Gellert vertraute ich so sehr, dass ich es tat. „Ich hasse sie“, sagte ich mit einer kalten Aufrichtigkeit, die mich selbst überraschte. „Ich sollte nicht hier sein, in diesem Dorf. Ich sollte da draußen sein und Entdeckungen machen und daran arbeiten Zaubereiminister zu werden und stattdessen sitze ich hier fest in einem Leben, das ich nicht will mit einer Schwester, die nicht hierher gehört weil ein paar Muggel sich nicht zusammenreißen konnten wegen etwas, das sie nicht mal ansatzweise in der Lage sind zu begreifen.“ Schwer atmend hielt ich inne. <br/>Gellert schaute mich an und ich glaube, ich hatte ihm zum ersten Mal die Sprache verschlagen. Er sprang auf und zog mich mit sich in Richtung des Bettes. Es war schwierig zu sprechen, mit seinen Lippen auf meinen. <br/>„Es ist schon so spät“, brachte ich mühsam hervor. „Deine Tante wird dich vermissen.“ <br/>Er lachte, warf mich aufs Bett und kletterte über mich. „Sie weiß doch, wo ich bin.“ <br/>„Gellert“, stieß ich atemlos hervor. <br/>„Albus“, sagte er und schob mir ein paar widerspenstige Haarsträhnen aus dem Gesicht. „Ich frage mich eins“, murmelte er. <br/>„Was?“ <br/>„Was sind deine Ziele? Was will jemand wie du, der alles haben könnte, vom Leben?“ <br/>Das war nicht, was ich erwartet hatte. Aber deswegen mochte ich ihn so sehr. „Ich wollte mich immer den Wissenschaften widmen“, antwortete ich und versuchte nicht mehr, die Bitterkeit aus meiner Stimme zu verbannen. „Es gibt noch so viele Gebiete zu erforschen, so viele Dinge zu entdecken. Da draußen muss es Magie geben, die wir noch nicht kennen. Magie, die das Leben von tausenden von Menschen verändern könnte.“ <br/>„Ich bin davon überzeugt, dass es Dinge gibt, die wir uns nicht einmal zu erträumen wagen“, erwiderte er. <br/>„Was ist mit dir, Gellert?“<br/>„Ich? Ich will die Welt zu einem besseren Ort machen, als sie jetzt ist.“ Er beugte sich zu mir herunter und seine Lippen strichen an meinem Kiefer entlang. „Und ich habe einen Plan.“ <br/>Es dauerte einen Moment, bis ich es schaffte zu antworten. Ich versuchte einen möglichst gleichgültigen Gesichtsausdruck zu wahren und darunter litt meine Konzentration. <br/>„Was für einen Plan?“ <br/>Seine Lippen wanderten abwärts zu meinem Hals, während seine Hände mein Hemd aus der Hose zogen und begannen es quälend langsam aufzuknöpfen. „Ich will der Gebieter des Todes werden … stell dir vor …“ <br/>„Mhh.“<br/>Er schob mir das Hemd von den Schultern und verteilte Küsse entlang meines Schlüsselbeins. „Ich bin wegen des Umhangs hergekommen ... aber eigentlich ... der Zauberstab.“<br/>Ich begann sein Hemd aufzuknöpfen und hörte nur mit halbem Ohr zu. <br/>„Wenn wir den Zauberstab hätten, Albus ...“ <br/>Das wir entfachte einen Sturm in meinem Kopf und ich bäumte mich unter ihm auf, warf ihn auf den Rücken und beugte mich über ihn. Er lachte. „Du weißt doch gar nicht, was du tust, Albus.“ <br/>„Du hast wir gesagt.“<br/>Er schaute mich verwirrt an. „Natürlich. Die Welt wird uns zu Füßen liegen, dir und mir.“ <br/>Ich setzte mich auf und sah auf ihn herunter. Wie er da lag, die Augen so lebendig grün gegen das Grau des Kissens, die blonden Haare um seinen Kopf gefächert wie ein zerzauster Heiligenschein und die Arme verfangen in den Hemdsärmeln - es war nicht schwer zu glauben, dass ich einen wahrhaftigen Engel gefangen hatte. Er schien so viel mehr zu sein als bloß ein Junge so wie ich. <br/>„Was denkst du jetzt gerade?“, fragte er. <br/>„Das willst du nicht wissen“, antwortete ich errötend. <br/>Er schlang mir beide Arme um den Hals und wir küssten uns, bis ich mich kaum noch an meinen eigenen Namen erinnern konnte. <br/>„Warum hab ich es dir nicht schon eher gesagt“, sinnierte Gellert. Seine Hände wanderten meinen Körper entlang und ich fand es abermals sehr schwierig, ihm zuzuhören. „Ich dachte mir schon, vor dir Geheimnisse zu haben ist nicht sonderlich intelligent.“ <br/>Er hörte auf mich zu berühren, als ich unter seinen Händen wie zu Stein erstarrte. „Geheimnisse“, wiederholte ich und starrte ihn an, als sich vor mir der Weg in die Zukunft offenbarte. <br/>„Albus, du siehst aus als hättest du einen Geist gesehen. Ist alles in Ordnung?“ <br/>Ich nickte zerstreut und kletterte von ihm herunter, um meinerseits rastlos auf und ab zu laufen. „Geheimnisse.“ <br/>„Albus. Was ist denn?“ <br/>Ich blieb stehen und mir wurde in einem kleinen Teil meines Gehirns bewusst, dass mein Hemd offen war, ich weder Schuhe noch Socken trug und von den Knöpfen meiner Hose wollen wir gar nicht erst anfangen. Aber all das war unwichtig. „Alles, was die Zauberer davon abhält so zu leben wie einst, ist das Geheimhaltungsstatut“, sagte ich und konnte sehen, wie Gellerts Gehirn arbeitete, um meines einzuholen. „Zum Schutze der Muggel und zum Schutz vor ihnen, Gellert. Aber wir brauchen keinen Schutz. In einer Gesellschaft, in der Zauberer und Hexen einander offen und ehrlich zur Seite stehen, können wir uns gegenseitig vor den Muggeln beschützen.“ <br/>Gellert stand ebenfalls auf. „Du hast Recht, Albus.“ Seine Begeisterung war zurückgekehrt. „Wir sind besser als sie, warum leben wir dann versteckt? Warum versteckt sich eine überlegene Rasse vor einer anderen, die niemals eine Bedrohung sein könnte?“ <br/>„Genau“, stimmte ich zu und dachte fieberhaft weiter. Meine Gedanken überschlugen sich. „Das Statut ist international. Es ist schon so lange in Kraft, man kann sagen, es ist bereits wieder veraltet.“ Ich blickte ihm direkt in die Augen. „Wir werden es abschaffen.“ <br/>Er grinste breit. „Wenn wir erst den Zauberstab haben kann ich die Duelle mit unseren Gegnern übernehmen und du wirst Minister und erledigst die Politik.“ <br/>„Einverstanden. Und wenn wir den Stein haben …“ <br/>„Haben wir den Tod selbst auf unserer Seite.“ Er kam zu mir und packte mich an den Schultern. „Verstehst du, Albus? Grindelwald und Dumbledore, Bringer der neuen Ära der Zauberer, Gebieter des Todes. Das werden wir sein.“ <br/>„Es wird nicht leicht“, erinnerte ich ihn. <br/>„Nein“, stimmte er zu, „es werden Opfer gebracht werden müssen.“ <br/>„Für das größere Wohl“, ergänzte ich. <br/>„Für das größere Wohl“, sagte er. <br/>Ich packte ihn am Kragen und presste meine Lippen fest auf seine. <br/>„Wie schaffen wir das Statut ab?“, murmelte Gellert und konnte sich anscheinend nicht entscheiden, ob er lieber den Kuss erwidern oder die Diskussion weiterführen wollte. <br/>„Wir werden Gebieter des Todes sein“, antwortete ich atemlos, meine Lippen an seinem Hals. „Wir bringen sie dazu.“ <br/>Er hob den Kopf, damit ich besser an seinen Hals kam und ich spürte wie er strotzte vor Euphorie. Wir sprachen einige Minuten lang nicht, bis Gellert sich von mir löste, um mir in die Augen zu sehen. <br/>„Was ist?“ <br/>„Albus“, sagte er, plötzlich ernst. „Es wird nicht mehr lange dauern, bis wir den ersten Hinweis für eines der Heiligtümer finden. Was tun wir denn dann? Du kannst Godric’s Hollow nicht für länger als einen halben Tag verlassen.“ <br/>Ich ließ Gellert los und meine Hochstimmung verflog. „Ich weiß es nicht“, sagte ich niedergeschlagen. <br/>Gellert verschränkte meine Hand mit seiner, um mich aufzumuntern. „Was ist mit deinem Bruder? Er könnte auf Ariana achtgeben, und du –“ <br/>Ich schüttelte vehement den Kopf. „Aberforth ist fünfzehn, Gellert. Er muss seine Ausbildung abschließen. Er hat noch nicht einmal seine Zaubergradprüfung abgelegt.“ <br/>„Er macht mir nicht den Eindruck, als ob Bildung für ihn ausnehmend wichtig wäre“, gab Gellert zu bedenken und er hatte Recht. <br/>„Trotzdem“, beharrte ich. „Er muss zurück nach Hogwarts. Er kann entscheiden, ob er seinen UTZ ablegen möchte, wenn er volljährig ist. Aber bis dahin bin ich für ihn verantwortlich, Gellert. Ich kann ihn hier nicht mit Ariana allein lassen.“ <br/>Gellert seufzte tief. „Und wenn er es möchte?“ <br/>„Er ist zu jung.“ Ich schaute ihn an, wie er meinen Blick mied und aus dem Fenster in den dunklen Garten starrte. „Du könntest ohne mich gehen“, sagte ich leise. „Du würdest es ohne mich schaffen, wenn wir einen Hinweis entdecken. Und dann könntest du zurückkommen.“ <br/>Gellert drehte sich sofort zu mir um und war mit zwei großen Schritten bei mir. Er packte mich am Kragen und sagte eindringlich: „Ich werde hier nicht ohne dich weggehen. Wir finden eine Lösung, es ist ja noch Zeit.“ <br/>„Aber-“<br/>Er unterbrach mich mit einem Kuss. „Nein, Albus. Ich verspreche dir, ich verlasse Godric’s Hollow nicht ohne dich.“ <br/>Danach sprachen wir nicht mehr viel und ich brachte Gellert bald zur Haustür. Bathilda bestand darauf, dass Gellert nachts bei ihr im Haus schlief. Er hätte zu mir apparieren können, oder ich zu ihm, aber wir wollten nichts riskieren. Unten im Flur trafen wir auf Aberforth, der beobachtete, wie wir uns verabschiedeten. Gellert warf mir nur einen langen, vielsagenden Blick zu, bevor er sich umdrehte und ging. Ich schloss die Tür hinter ihm und drehte mich zu Aberforth um. <br/>„Ich verstehe nicht, was du an ihm findest“, sagte mein Bruder abfällig. <br/>„Du kennst ihn doch gar nicht.“ <br/>„Das Geburtstagsessen letzte Woche hat gereicht“, meinte er. „Ganz ehrlich, Albus, irgendetwas stimmt nicht mit ihm.“ <br/>„Ach, und was?“, fragte ich angriffslustig. Möglicherweise hätte ich anders reagiert, hätte ich nicht das unbändige Gefühl gehabt, Gellert verteidigen zu müssen. Aggressiv zu werden war nicht meine Art. <br/>„Ich weiß es nicht genau“, entgegnete Aberforth. „Aber etwas an ihm ist seltsam. Wie er über diese magischen Gegenstände gesprochen hat, über die Macht, die sie ihm verleihen würden. Findest du das nicht bedenklich?“ <br/>„Du hast doch keine Ahnung, wovon du da redest“, sagte ich kalt. <br/>„Oh, ich weiß mehr als du denkst“, erwiderte Aberforth mit ebenso wenig Wärme. „Du findest das natürlich in Ordnung, denn du strebst ja auch nach Macht. Und nach einer Welt wo du nicht auf deine Geschwister aufpassen musst, wo du der größte Zauberer der Welt sein kannst, oder, Albus? Ist es das, was ihr den ganzen Tag macht? Redet ihr darüber, wie ihr die Welt erobern könnt?“ <br/>„Das geht dich gar nichts an!“, zischte ich und stürmte die Treppe nach oben. <br/>Auf meiner Fensterbank wartete bereits Gellerts kleiner Kauz auf mich. </p>
+<p>Wie schafft man ein Statut ab? Politik war nie mein Lieblingsthema, verzeih mir meine Unwissenheit.<br/>Gellert</p>
+<p>Ich atmete tief durch und nahm meinen Federkiel zur Hand. Im Licht der Kerze auf meinem Schreibtisch beschrieb ich ihm die Zusammensetzung des Zaubergamots und wie viele der Mitglieder wir überzeugen mussten, um das Statut abzuschaffen. Ich erklärte die Stimmgewalt der Sondermitglieder und wer von ihnen international von Bedeutung war. Am Ende schrieb ich meinen Namen und kritzelte das Zeichen der Heiligtümer des Todes daneben, so wie er es immer tat. <br/>Ab heute war es nicht mehr sein Zeichen. Es war unseres.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-5">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/19640866">Chapter 5</a>: Kapitel 5
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Kapitel 5 </p>
+<p>„Ich habe Aberforth seit ein paar Tagen nicht mehr gesehen“, bemerkte Gellert eines Nachmittags, als wir wieder einmal zwischen Büchern und Pergamentrollen auf meinem Teppich hockten.<br/>
+Ich murmelte etwas Unverständliches, aber Gellert ließ nicht locker.<br/>
+„Er meidet mich“, sagte ich schließlich. „Er mag nicht, was wir tun.“<br/>
+Gellert zog eine Augenbraue hoch.<br/>
+„Die Forschung“, klärte ich ihn auf. „Nicht … das andere.“<br/>
+Er zuckte die Schultern. „Als ob mich seine Meinung interessiert, Albus. Er mag dein Bruder sein, aber er versteht nur wenig von der Welt.“<br/>
+Dem gab es nichts hinzuzufügen. Aberforth hatte kein Wort mit mir gesprochen seit unserer Begegnung im Flur und auch das war bereits eine Woche her. Ich sah ihn wenn überhaupt kurz aus dem Augenwinkel, wenn er sich aus dem Staub machte, um nicht mit mir sprechen zu müssen oder mich auch bloß ansehen.<br/>
+„Es ist mir nur recht“, gab ich zu. „Er lenkt mich höchstens ab und im Moment kann ich das nicht brauchen. Außerdem kümmert er sich um Ariana, so muss ich es nicht tun.“<br/>
+Gellert nickte und warf mir frustriert eine lange Pergamentrolle zu, auf der wir die Liste sämtlicher Besitzer des Elderstabs notiert hatten. Ich war dafür gewesen zuerst zu versuchen den Stein der Auferstehung zu suchen, auch wenn es mir fast unmöglich erschien. Gellert hielt es jedoch für klüger uns zuerst den Elderstab anzueignen, da wir damit den größten Einfluss erwirken könnten und es einfacher sein würde, die anderen beiden Heiligtümer zu finden. Also hatten wir begonnen Geschichtsbücher zu wälzen und die blutige Spur des Stabs durch die Annalen der Zauberergeschichte zu verfolgen.<br/>
+„Ich weiß einfach nicht wie wir herausfinden sollen, wer Barnabas Deverill den Zauberstab abgenommen hat. Falls er ihn überhaupt tatsächlich besaß.“ Gellert verlor allmählich die Geduld.<br/>
+„Barnabas muss ihn gehabt haben“, widersprach ich ruhig. „Er war kein sonderlich großer Zauberer, bis er Anfang des achtzehnten Jahrhunderts plötzlich aus der Versenkung kam und einer der gefürchtetsten Zauberer seines Landes wurde. Das kann nur der Stab gewesen sein, Gellert. Überleg mal.“<br/>
+„Ich tue nichts anderes als zu überlegen“, grummelte er. „Siehst du nicht, wie mein Kopf raucht?“<br/>
+Ich legte die Liste weg und legte Gellert eine Hand aufs Knie. „Wir könnten eine Pause machen, wenn du willst.“<br/>
+Er lächelte schwach. „Wir machen viel zu viele davon in letzter Zeit.“<br/>
+„Du hast dich bisher nie beschwert.“ Ich wollte meine Hand wegnehmen, doch er legte seine darauf und hielt sie fest wo sie war.<br/>
+„Und heute fange ich nicht damit an.“<br/>
+Später saßen wir Schulter an Schulter draußen im Gras und dachten schweigend nach. „Vielleicht können die Bücher uns nicht helfen, weil nach Barnabas tatsächlich jemand den Stab hatte, der nicht damit gemordet hat“, sagte ich nach einer Weile.<br/>
+„Und wie sollen wir ihn dann finden?“<br/>
+„Nun ja. Wir könnten mit jemandem reden, der mehr über Zauberstäbe weiß als wir.“<br/>
+Gellert blickte mich an. „Einem Zauberstabmacher?“<br/>
+Ich nickte. „Wir könnten in die Winkelgasse apparieren und mit Ollivander sprechen. Er ist der angesehenste Zauberstabmacher des Landes. Schon morgen, wenn du möchtest.“<br/>
+Er legte einen Arm um mich und beglückwünschte mich auf seine Art zu einer Idee, die ihm gefiel.<br/>
+Am nächsten Morgen apparierten wir Seite an Seite direkt vor das Zauberstabgeschäft von Gervaise Ollivander. Er war ein Mann mittleren Alters mit strähnigem Haar und vielen Schwielen und Blasen an den Händen von all den verschiedenen Substanzen mit denen er arbeitete. Bekanntheit hatte er vor allem dadurch erlangt, dass man ihm auftragen konnte einen Zauberstab aus Substanzen anzufertigen, zu denen man eine besondere Verbindung hatte. Deshalb gab es beinahe nichts, womit Gervaise noch nichts zu tun gehabt hatte.<br/>
+Wir betraten das Geschäft und Gervaise eilte geschäftig aus dem hinteren Teil des Ladens herbei, wobei er sich fahrig seine Brille auf die Nase schob.<br/>
+„Ach du meine Güte!“, rief er. „Wenn das nicht Albus Dumbledore ist! Erle und Phönixfeder, zwölf Zoll, federnd! Wie geht es Ihnen, mein Sohn?“<br/>
+Es war erstaunlich, wie gut das Gedächtnis dieses Mannes war. „Gut, danke, Mr. Ollivander. Das ist mein guter Freund Gellert Grindelwald, wir würden Ihnen gern ein paar Fragen stellen, wenn Sie Zeit haben.“<br/>
+Gervaise Ollivander nickte begeistert. „Natürlich, natürlich, willkommen, mein junger Freund.“ Er reichte Gellert die Hand und verzog verzückt das Gesicht, als Gellert ihn höflich begrüßte und Gervaise seinen Akzent heraushörte. „Ich dachte doch gleich, dass mir dieses Gesicht nicht bekannt vorkommt“, sagte der Zauberstabmacher verschmitzt. „Sie haben Ihren Zauberstab von Gregorowitsch, nehme ich an?“<br/>
+Gellert nickte und warf mir einen Blick zu, der unfreiwillig beeindruckt wirkte.<br/>
+„Dürfte ich ihn mir einmal ansehen?“, bat Gervaise. „Es interessiert mich immer sehr, wie meine Kollegen ihre Arbeit vollführen. Ach du meine Güte!“, stieß er aus, als Gellert ihm schulterzuckend seinen Zauberstab reichte. Er sah zugegebenermaßen recht ungewöhnlich aus. Er war nicht braun, sondern schimmerte in einem hypnotischen dunkelgrün und sah aus wie eine unnachgiebige Spirale aus Baumrinde mit einigen Dornen. Doch wenn man Gellert damit hatte zaubern sehen, verschwanden alle Zweifel, dass dieser Zauberstab in irgendeiner Weise denen aus Baumholz unterlegen war.<br/>
+„Schwarzdorn“, verkündete Ollivander nachdenklich. „Das sieht man nicht häufig. Ein Zauberstab gemacht für einen Krieger. Fünfzehn Zoll, rigide. Was ist der Kern?“<br/>
+Ich sah wie Gellert ein Grinsen unterdrückte. „Das Haar eines Vampirs.“<br/>
+Ich hielt es zuerst für einen Witz, doch Ollivander ließ den Zauberstab fallen. Gellert streckte gelangweilt die Hand aus und der Stab kehrte von allein zu ihm zurück. „Diese Reaktion bin ich gewöhnt“, sagte er lässig.<br/>
+„Nun“, sagte Ollivander schwer atmend und mit einem Blick als hätte Gellert ihn beinahe zu Tode erschreckt. „Vampirhaar benutze ich nicht. Es steigert meiner Meinung nach viel zu sehr die Affinität zu … Sie wissen schon … den dunklen Künsten.“<br/>
+Gellert spitzte amüsiert die Lippen und sagte nichts.<br/>
+Ich überbrückte das unangenehme Schweigen und brachte den Grund unseres Besuchs zur Sprache. „Mr. Ollivander, haben Sie jemals vom Elderstab gehört?“<br/>
+Ollivander blinzelte verwirrt.<br/>
+„Oder vom Todesstab“, ergänzte Gellert und zählte alle Namen des Zauberstabs auf, die ihm einfielen.<br/>
+„Ja nun“, sagte Ollivaner dann nachdenklich. „Ich denke nicht, dass es sich bei all diesen Zauberstäben um ein und denselben handelt.“<br/>
+Das glaubten viele nicht, wie wir wussten. Dennoch war es ein unumstößlicher Fakt, dass nie zwei Zauberstäbe mit den Eigenschaften des Elderstabs zur selben Zeit in der Geschichte aktiv gewesen waren. Einige Zauberer hielten es für nicht sehr wahrscheinlich, dass ein einziger Zauberstab über Jahrhunderte hinweg durch so viele Hände gegangen war und so viel Blut mit ihm vergossen worden war. Gellert und ich jedoch wussten es besser.<br/>
+„Nun gut“, sagte ich diplomatisch und lächelte gewinnend. „Uns geht es vor allem um den Zauberstab, den Barnabas Deverill benutzte nachdem er ihn von Hereward dem Hinterhältigen im Duell gewonnen hatte.“<br/>
+Ollivander runzelte die Stirn. „Deverill bezeichnete ihn als Zauberstab des Schicksals, wenn ich mich recht erinnere. Er prahlte damit durch ihn unbesiegbar zu sein.“<br/>
+„War er aber nicht“, sagte Gellert eindringlich. „Seine Schreckensherrschaft in der er wahllos Hexen tötete, wurde beendet, nicht wahr?“<br/>
+Der Zauberstabmacher nickte und der Blick den er Gellert zuwarf war beinahe beklommen. „Sie beide sind doch nicht etwa auf der Suche nach diesem Zauberstab?“<br/>
+„Nein“, schaltete ich mich ein und schaute Gellert warnend an. „Es geht allein um die Geschichte. Wir würden bloß gern herausfinden, was mit dem Stab passierte.“<br/>
+Ollivander wirkte nicht überzeugt, doch er schluckte und wandte sich mit einem letzten vorsichtigen Blick von Gellert ab. „Es war so“, sagte er leise zu mir. Gellert musste einen Schritt herantreten, um überhaupt mithören zu können. „Barnabas Deverill wurde ermordet. Es gab einige, die sich dessen rühmten, doch am wahrscheinlichsten ist es, dass der junge Loxias es getan hatte. Deverill war verantwortlich für den Tod von Loxias‘ Schwester. Sie war eine aufstrebende Zaubertrankbrauerin und das fand Deverill nicht angemessen für eine Frau. Loxias suchte Rache und ermordete Deverill, wie man hört auf ebenso hinterhältige Weise, wie vor ihm Hereward seinen eigenen Vater ermordete, um an dem Zauberstab zu kommen.“<br/>
+„Loxias“, murmelte Gellert und Ollivander machte einen Satz, denn er hatte nicht bemerkt, wie nah Gellert von hinten an ihn herangekommen war. „Hast du den Namen schon mal gehört?“<br/>
+Ich schüttelte den Kopf, war aber sicher, dass wir ihn in mindestens einem der Bücher über alte Zaubererfamilien finden würden. Unser Wissensdurst war neu entfacht und wir verabschiedeten uns eilig von Ollivander, um zurück zu mir zu apparieren und uns erneut auf die Aufzeichnungen zu stürzen.<br/>
+Wie ich es erwartet hatte fand Gellert schnell den Namen Loxias in Noblesse der Natur.<br/>
+„Also ist auch sein Name in der männlichen Linie ausgestorben“, sagte Gellert und zeigte mir die Seite.<br/>
+„Was dafür spricht, dass er früh ermordet wurde, nachdem er den Stab hatte“, ergänzte ich und blätterte durch eine Ausgabe von Berühmte Duelle des neunzehnten Jahrhunderts. Ich hatte mich bisher nur mit dem ersten Teil des Buches beschäftigt, doch jetzt, als ich bis zur Mitte des neunzehnten Jahrhunderts vordrang, tauchte Loxias‘ Name hier und dort immer wieder auf. Er hatte nie mit seinem Zauberstab geprahlt und niemals erklärt, dass es der ehemalige Zauberstab von Barnabas Deverill war. Er hatte sein Geld mit Duellen verdient, was erst einmal nichts allzu besonderes war. Dann jedoch verschwand sein Name, nach einer letzten Erwähnung in einem längeren Absatz über ein Doppelduell mit zwei Cousins.<br/>
+„Er wurde geschlagen“, sagte ich aufgeregt. „Er nahm die Herausforderung eines Doppelduells an, er kämpfte gegen zwei Fremde. Ihre Namen stehen hier nicht, aber sie waren nicht von hier.“<br/>
+„Was steht da über sie?“<br/>
+„Fremdländisches Aussehen, Cousins mit merkwürdigen Namen, die klingen wie Spruchformeln. Einer von ihnen entwaffnete Loxias, der andere tötete ihn.“<br/>
+Gellert drückte mir einen Kuss auf die Wange. „Das ist ein Anfang. Es muss mehr geben über diese geheimnisvollen Cousins. Sie werden nicht nur für ein einziges Duell hergekommen sein.“<br/>
+Doch anscheinend waren sie das. In Berühmte Duelle des neunzehnten Jahrhunderts fand ich keine Erwähnung der beiden mehr. Viel interessanter fand ich auch die Frage, wem der Zauberstab gehört hatte, nachdem sie den Vorbesitzer besiegt hatten.<br/>
+„Dem, der Loxias tötete, oder nicht?“, fragte Gellert und ließ sich mit Vergnügen auf diese Diskussion ein.<br/>
+„Ich glaube nicht“, erwiderte ich. „Der andere hatte ihn entwaffnet, also müsste der Zauberstab doch ihm gehören.“<br/>
+„Aber der Stab folgt Stärke vor allem anderen, Albus. Ein Todesfluch ist viel stärker als ein simpler Entwaffnungszauber. Selbst Kinder beherrschen die. Ein Todesfluch dagegen setzt viel mehr Erfahrung und Geschicklichkeit voraus.“<br/>
+„Trotzdem denke ich es spielt eine Rolle, was davon zuerst passiert ist. Wenn der Zauberstab bereits in den Besitz des ersten Cousins übergegangen war, ist es bedeutungslos was danach mit dem zweiten Cousin geschah“, widersprach ich.<br/>
+„Es geht hier um den Todesstab“, sagte Gellert ungeduldig. „Es ist im Namen inbegriffen. Er wechselt seine Besitzer durch den Tod.“<br/>
+Ich schüttelte den Kopf. „Das glaube ich nicht, Gellert.“<br/>
+„Wie auch immer. Wenn die Zeit gekommen ist und wir ihn finden, werde ich nichts riskieren.“<br/>
+Ich musste schlucken. „Gellert, ich will nicht, dass du Menschen umbringst, wenn es nicht absolut notwendig ist.“<br/>
+Er verdrehte die Augen, nickte aber.<br/>
+Ich erwiderte seinen Blick und zum allerersten Mal machte ich mir Sorgen, dass Aberforth’s Behauptungen über Gellert nicht bloß dem Neid oder der Abneigung entsprungen waren. Es war nicht so, dass ich nicht wusste, wozu Gellert von seinen Fähigkeiten her imstande war. Er wollte die Welt erobern, gemeinsam mit mir. Doch was seine emotionale Seite anging, kamen mir Zweifel. Etwas schlummerte hinter diesen grünen Augen. Es blieb nur zu hoffen, dass es kein Monster war.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-6">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/19804651">Chapter 6</a>: Kapitel 6
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8263144#chapter_6_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Als wir nicht in der Lage waren weitere Informationen über die beiden Cousins zu finden, die Loxias den Elderstab abgenommen hatten, beschloss Gellert aus reiner Verzweiflung seine Tante zu fragen. Er konzentrierte sich dabei auf das Duell selbst, nicht auf den Zauberstab, denn wir wollten Bathilda nicht genauso erschrecken wie Ollivander. Und zu meiner großen Erleichterung konnte Gellerts Tante uns tatsächlich weiterhelfen. Sie erinnerte sich an eine große Sensation – zwei begabte junge Zauberer aus Rom, die die Welt bereisten und sich in Duellen mit bekannten Zauberern und Hexen einen Namen machten.<br/>
+„Ihre Namen waren Arcus und Livius!“, verkündete Gellert mit einem strahlenden Lächeln und umarmte mich stürmisch. „Wieder einen Schritt weiter, Albus.“<br/>
+Allmählich langweilte es uns allerdings, nur über Büchern zu hocken und so landeten wir nur umso öfter in den Armen des anderen und sprachen stundenlang über unsere Pläne. Gellert ging darin richtig auf und er gab mir immer das Gefühl, ein Teil seines ursprünglichen Plans zu sein.<br/>
+„Wir werden unbesiegbar sein“, sagte er oft. „Du und ich führen die Zauberer aus der Dunkelheit zurück ins Licht.“<br/>
+Anfangs versuchte ich noch die Spuren von Arcus Claudius und Livius Erucius weiterzuverfolgen, doch alles was ich herausfand war, dass sie sich getrennt hatten. Und da Gellert und ich unterschiedlicher Meinung waren, wer von beiden den Zauberstab gewonnen hatte (Livius hatte Loxias entwaffnet, Arcus ihn getötet), brachte mich das auch nicht sonderlich voran.<br/>
+Gellert verlor dieses Thema betreffend schnell die Geduld – er fand es stimulierender mit mir die Einzelheiten unseres Manifests, wie er es nannte, durchzugehen und auszuarbeiten. Und ich ließ mich nur zu gern darauf ein. Seine Zuversicht war unabänderlich und ihn davon reden zu hören, entfachte immer wieder neue Feuer in mir. Dumbledore und Grindelwald an der Spitze der Welt, Dumbledore und Grindelwald läuteten bei den Zauberern sowohl wie bei den Muggeln eine neue Zeit ein.<br/>
+„Was passiert mit denen, die sich uns in den Weg stellen?“, fragte ich einmal.<br/>
+Gellert blickte auf. „Die, die es wagen, werden es bereuen.“<br/>
+„Ich hatte mit einer präziseren Antwort gerechnet“, kritisierte ich milde.<br/>
+Er grinste. „Du magst doch nicht übers Töten reden – da dachte ich, ich übernehme den Teil für dich.“<br/>
+„Gellert … ich denke, das ist nicht der richtige Weg.“<br/>
+Er seufzte – wir waren anderer Ansicht und das störte ihn. „Ich weiß, du bist nicht nach Durmstrang gegangen so wie ich –“<br/>
+„Das hat damit nichts zu tun, Gellert.“<br/>
+„Was erwartest du denn von mir, Albus?“ Er erhob nie seine Stimme gegen mich, deswegen warf es mich aus der Bahn, dass er es jetzt tat. Aber es war abzusehen gewesen, dass wir auf Meinungsverschiedenheiten stoßen würden. Und immerhin waren wir beide erwachsen und intelligent genug, sie mit Worten beizulegen.<br/>
+„Ich erwarte, dass du nicht wahllos Menschen tötest. Das bringt uns nur mehr Feinde. Wir brauchen für unsere Widersacher einer angemessene Lösung.“<br/>
+Gellert starrte mich an und spielte dabei mit seinem Zauberstab. „Wir stellen sie vor die Wahl“, sagte er schließlich, gespielt desinteressiert. „Sie können sich entscheiden zwischen Duell oder Gefängnis. Wählen sie Duell, werden sie sterben. Es liegt nicht nur bei mir.“<br/>
+Ich fand es immer noch ungerecht, jemandem ein Duell anzubieten, wenn man wusste, dass man unschlagbar war, aber es war ein Fortschritt. Und schließlich hatten wir den Zauberstab ja noch nicht in unserem Besitz. Noch musste Gellert sich bei Duellen ganz auf sein Talent verlassen, es war beachtlich, sicher, aber nicht unfehlbar.<br/>
+„Du bist so abgeneigt gegenüber Gewalt, Albus“, warf er mir vor.<br/>
+„Nein“, widersprach ich, „ich bin abgeneigt, es damit zu übertreiben. Wenn wir zu viel Gewalt einsetzen wird es uns bloß zurückwerfen und nicht voranbringen. Gellert, wir wollen ein Bild erschaffen, das uns als Pioniere zeigt, als Retter und Visionäre. Zerstören wir das mit dem unüberlegten Einsatz von zu viel roher Gewalt, gewinnen wir genau die Sorte Anhänger, die wir nicht wollen.“<br/>
+Darüber dachte er einen Moment nach. „Du sagst also nicht, wir sollen gar keine Gewalt einsetzen“, fasste er zusammen. „Das ist gut. Und es geht ja nicht bloß um Zauberer. Wir haben bisher noch nicht darüber gesprochen, aber wir müssen auch bei den Muggeln unsere Position verdeutlichen. Während wir mit den Zauberern und natürlich auch den Hexen auf einer Stufe stehen, sind die Muggel doch unter uns angeordnet. Wollen wir ihnen das deutlich machen, ist der effektivste Weg die Gewalt. Fürchten sie uns, gehorchen sie schneller.“<br/>
+Ich nickte. „Ganz genau. Allerdings darf es immer noch nicht eskalieren, sonst wird das Statut entweder gar nicht erst abgesetzt oder so schnell wieder in Kraft gesetzt, dass wir nicht mal Elderstab sagen können.“<br/>
+Gellert gab mir einen schnellen Kuss auf die Lippen. „Und ich dachte schon du wärst so zimperlich wie du aussiehst.“<br/>
+Ich grinste. „Sei bloß still oder –“<br/>
+„Oder was?“<br/>
+Ich beugte mich zu ihm vor und hielt ihm spaßeshalber meinen Zauberstab an die Schläfe. „Oder ich bring dich dazu.“ </p>
+<p>„Ich denke“, sagte Gellert ein andermal und kaute gedankenverloren auf einem Federkiel herum, „wenn wir möglichst viele Zauberer auf unsere Seite bringen wollen, müssen wir sagen, wir übernehmen die Kontrolle auch für die Muggel. Wir sind geboren, um zu herrschen, jeder von uns. Die Muggel sind geboren, um beherrscht zu werden. Und wir werden gute Herrscher sein. Wir bringen ihnen Heilung für ihre lächerlichen Krankheiten, wir beenden ihre Hungersnöte und bestrafen ihre Verbrecher. Sie würden beinahe mehr profitieren als wir.“<br/>
+Zwischen all den düsteren Gedanken, die sich in seine Tatenlosigkeit stahlen, war das hier ein wahrer Sonnenstrahl. Ich war so erleichtert, ihn nicht mehr über Tod reden zu hören, dass ich ihn nur ansah und ganz und gar vergaß zu antworten.<br/>
+„Es ist zu ihrem eigenen Wohl, Albus. Verstehst du? Das größere Wohl der Zauberer lässt das der Muggel nicht außer Acht, nicht in unserem Plan.“<br/>
+„Ja“, sagte ich und lächelte breit. „Du hast Recht.“ Er war perplex, als ich ihn küsste, statt zu diskutieren, aber sein Herzschlag verriet mir, er hatte nicht das Geringste einzuwenden.<br/>
+Aber all das war doch kurios. Je näher wir unserem Ziel kamen – auch wenn es momentan mit Schneckentempo voran ging – desto vehementer wiegelte ich ab, wenn Gellert über unseren Aufbruch aus Godric’s Hollow sprechen wollte. Es war für mich leicht, ihn abzulenken, zumindest für eine Weile. Und doch kam das Thema in immer kürzeren Abständen wieder auf. Gellert sah zwar ein, dass ich seine Lösungsvorschläge bei dieser Angelegenheit nicht sonderlich zu schätzen wusste, drängte mich aber dazu selbst eine Lösung zu finden. Auch wenn wir zwei junge Götter zu Anbeginn einer neuen Welt waren und uns damit rühmten jedes Problem lösen zu können, damit angaben, dass es keinen Zauber gab, der zu schwer für uns war, so scheiterte ich an dieser Aufgabe dennoch. Aberforth zu bitten nicht nach Hogwarts zurückzukehren schien die offensichtlichste Lösung zu sein, doch er war viel zu jung, um ganz allein zurückzubleiben und auf unsere instabile Schwester aufzupassen. Wenn Gellert diesen Vorschlag zur Sprache brachte, wie er es manchmal tat, wich ich damit aus, dass ich sagte Aberforth würde allein aus Trotz ablehnen und wieder zur Schule gehen, nur der Genugtuung wegen, die es ihm verschaffte mir einen Wunsch abschlagen zu können. Ich als Familienoberhaupt hätte es ihm befehlen können, statt ihn zu bitten, doch es war dennoch falsch. Es war nicht das, was unsere Eltern gewollt hätten. Eines Nachts besuchte ich sogar das Grab unserer Mutter, doch ich kniete bloß wortlos vor dem hellen Stein und blickte ihn an mit immer größer werdender Wut. Wut darüber, dass sie uns allein gelassen hatte und darüber, dass wir den Stein der Auferstehung noch nicht gefunden hatten. Er hätte meine Eltern von den Toten zurückholen können, sie hätten bei Ariana bleiben können und ich wäre frei.<br/>
+Natürlich war es sinnlos dazusitzen und zu grübeln.<br/>
+Ich musste die Welt verändern, um frei zu sein und genau das würde ich tun. Also kehrte ich in mein Zimmer zurück und setzte einen Brief auf. </p>
+<p>
+  <em>Gellert – </em><br/>
+<em>Deine Überlegung, dass die Herrschaft der Zauberer ZUM WOHL DER MUGGEL ist – das, denke ich, ist der entscheidende Punkt. Ja, es wurde uns Macht verliehen, und ja, diese Macht gibt uns das Recht zu herrschen, aber sie bringt uns auch Verpflichtungen gegenüber den Beherrschten. Wir müssen diesen Punkt unterstreichen, er wird der Grundstein sein, auf dem wir bauen. Wo man sich uns widersetzt, was gewiss der Fall sein wird, muss dies die Basis all unserer Gegenargumente sein. Wir übernehmen die Kontrolle FÜR DAS GRÖSSERE WOHL. Und daraus folgt, dass wir dort, wo wir auf Widerstand stoßen, nur die Gewalt einsetzen dürfen, die notwendig ist, und nicht mehr. (Das war dein Fehler in Durmstrang! Aber ich will mich nicht beklagen, denn wenn man dich nicht rausgeworfen hätte, hätten wir uns nie getroffen.)<br/>
+<em>Albus</em>
+</em></p>
+<p>Es dauerte nicht lange, bis meine Eule mit seiner Antwort im Schnabel zurückkam und leise an mein Fenster klopfte. </p>
+<p>
+  <em>Ich will mich auch nicht beklagen. Ohne dich wäre ich noch ganz am Anfang und jetzt sieh uns an. </em><br/>
+<em>Und ich bin froh, dass du das so siehst. Notwendige Gewalt und all das ist für mich in Ordnung, auch wenn das bedeutet, dass du mich vielleicht hin und wieder zügeln musst, wenn ich eine Grenze überschreite. Wichtig ist auch, den Muggeln muss von Anfang an bewusst sein, dass ihre einzige Möglichkeit Unterwerfung lautet. Sollten sie sich wehren, setzen wir Gewalt ein – für das größere Wohl. Sollte auch nur ein Zauberer oder eine Hexe zu Schaden kommen, weil die Muggel ihren Platz nicht kennen, muss ein Exempel an ihnen statuiert werden. Wir lassen ihnen nicht die Wahl, dennoch können sie über ihr eigenes Schicksal entscheiden.<br/>
+Gellert</em>
+</p>
+<p>Ich steckte den Brief zwischen unsere Aufzeichnungen, denn er enthielt wichtige Punkte für das Manifest, wie ich fand. </p>
+<p>
+  <em>Gellert – wirf mal einen Blick auf die Uhr. Es ist fast schon drei. Warum schläfst du noch nicht?<br/>
+<em>Albus</em>
+</em></p>
+<p>
+  <em>Weil ich dich vermisse<br/>
+<em>Gellert</em>
+</em></p>
+<p>Schmunzelnd überlegte ich eine Antwort, als meine Zimmertür aufging und ein sehr gereizter Aberforth mein Zimmer betrat.<br/>
+„Kannst du mir sagen, warum alle fünf Minuten eine gottverdammte Eule an dein Fenster klopft?“, fragte er mit zusammengekniffenen Augen. Als ich rot wurde, wusste er sofort Bescheid. „Das kann nicht euer Ernst sein“, stöhnte er, „ihr klebt den ganzen Tag zusammen und schreibt euch jetzt mitten in der Nacht Briefe? Was ist so wichtig, dass es nicht bis morgen warten kann?“<br/>
+Geschickt warf ich meinen Federkiel über Gellerts letzten Brief. „Nächtlicher Geistesblitz“, sagte ich und es war nicht einmal unbedingt gelogen.<br/>
+„Bei Merlins Bart, ich schwöre dir, Albus, wenn ich noch einmal eine Eule höre…“ Murmelnd verschwand er aus dem Raum und ich atmete auf. </p>
+<p>
+  <em>Geh schlafen, Gellert.</em><br/>
+<em>Gute Nacht.<br/>
+</em>
+<em>In Liebe, Albus</em>
+</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_6_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Der erste Brief, denn Albus in diesem Kapitel an Gellert schickt, ist aus Harry Potter und die Heiligtümer des Todes übernommen.</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-7">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/20115736">Chapter 7</a>: Kapitel 7
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Nach Tagen des Herumstöberns in Büchern und Pergamenten fand ich schließlich einen kleinen Fetzen Information über einen der beiden Cousins aus Rom. Einer von ihnen hatte eine Hexe aus Irland geheiratet und sich dort niedergelassen. Leider war es derjenige, bei dem ich mir sicher war, dass er den Zauberstab nicht besessen hatte. Eine Familie zu gründen und in Frieden zu leben war auch nicht der Lebensstil, der den Zauberstab anzog. Gellert wollte sich in dem Dorf umsehen, in dem Arcus gelebt hatte und womöglich sogar noch lebte, doch ich konnte ihn überzeugen, dass es doch sehr unwahrscheinlich war, dort den Elderstab zu finden. Es wurde immer frustrierender in Godric’s Hollow herumzusitzen während wir die Welt hätten erforschen können. Ich war hier gebunden durch meine Pflichten als Familienoberhaupt und ich glaubte Gellert hatte das Gefühl ebenfalls gebunden zu sein, durch sein Versprechen an mich. Er hatte gesagt er würde das Dorf nur mit mir an seiner Seite verlassen und jedes Mal, wenn ich ihn von diesem Versprechen erlösen wollte, bekam er eine sture Falte auf der Stirn und wiegelte ab. <br/>Was wir brauchten war eine Gelegenheit um auf andere Gedanken zu kommen und die würde sich uns nicht bieten, solange wir nur in meinem Zimmer hockten und dieselben alten Pergamente und Bücher durchgingen. Das Märchen von den drei Brüdern, das Gellert mir am ersten Tag auf dem Friedhof gezeigt hatte, konnte ich inzwischen auswendig. <br/>Eines Abends beschloss ich Gellert abzuholen und auf einen Spaziergang zu der Lichtung mitzunehmen, die er mir an meinem Geburtstag gezeigt hatte. Ich setzte einen unscheinbaren Gesichtsausdruck auf und klopfte bei Bathilda an der Tür. <br/>„Albus!“, rief sie überrascht – immerhin hatte sie mich erst vor einer Stunde beim Abendessen zu Gesicht bekommen. „Sag bloß du und Gellert habt noch mehr zu bereden?“ <br/>Ich lächelte. „Es ist wahrlich unerschöpflich, Mrs. Bagshot.“ <br/>Sie winkte mich herein und führte mich ins Wohnzimmer. „Sogar nachts schickt ihr euch noch Eulen.“ Sie zwinkerte. „So viel zu besprechen, das ist faszinierend.“ <br/>„Nun ja. Ich habe gedacht, Gellert ist sicher nicht extra hergekommen um den ganzen Tag nur bei mir im Zimmer zu sitzen. Deswegen dachte ich, ich hole ihn für einen Spaziergang ab. Die Sonne ist fast untergegangen, es werden nur wenige Muggel unterwegs sein.“ <br/>Sie nickte begeistert. „Eine sehr schöne Idee, Albus. Gellert nimmt gerade ein Bad, aber sobald er runterkommt gehört er ganz dir.“ <br/>Ich gab mir redlich Mühe nicht rot zu werden. Wie gerne hätte ich ihr erzählt, dass Gellert ohnehin mir gehörte, ganz egal wo er gerade war. Bathilda bot mir einen Platz auf dem Sofa an und brachte mir einen Tee und einen Bilderrahmen. <br/>„Sie haben es sich tatsächlich einrahmen lassen“, sagte ich ein wenig perplex und betrachtete das Foto von Gellert und mir, das uns vor der Hecke in Bathildas Garten zeigte. Mein Blick hing an ihm fest, obwohl das Foto nicht zeigte, wie grün seine Augen tatsächlich waren und wie sein helles Haar im späten Sonnenlicht geleuchtet hatte. Auf dem Bild bewegten wir uns beide ein wenig, verlagerten hin und wieder das Gewicht und warfen einander verstohlene Blicke zu. <br/>„Zwei stattliche junge Männer“, sagte Bathilda voller Wärme und ich stellte hastig das Bild auf den Tisch damit ich mich nicht lächerlich machte. Ich hatte tagsüber genug Zeit, Gellert anzusehen, da musste ich es nicht jetzt auf einem Bild tun, das sowieso niemals einfangen könnte, was für ein Mensch Gellert Grindelwald war. <br/>„Einer stattlicher als der andere“, sagte Gellerts unverkennbare Stimme und ich verschluckte mich an einem Schluck Tee als ich mich umwandte und ihn am Türrahmen lehnen sah. Seine Haare waren feucht und er trug außer einer Hose und einem Handtuch, das er sich über die Schultern gelegt hatte überhaupt nichts. Es war nicht das erste Mal, dass ich ihn ohne Hemd sah, wahrlich nicht, aber selten sah er so aus wie jetzt. Er grinste minimalistisch, spannte die Bauchmuskeln an und fuhr sich mit einer Hand durch die Haare, sodass ein paar Wassertropfen auf seiner Brust landeten und das alles tat er nur um mich vor seiner Tante aus der Fassung zu bringen und – was soll ich sagen – es funktionierte. <br/>„Gellert!“, rügte Bathilda ihn und klopfte mir mütterlich auf den Rücken. „Schleich dich nicht so an, du erschreckst deinen Freund.“ <br/>Gellert lachte und biss sich auf die Unterlippe. Ich stellte die Tasse beiseite, bevor ich ihren Inhalt verschütten konnte und stand auf. „Ich wollte dich auf einen Spaziergang einladen“, sagte ich förmlich und konnte keine Sekunde vergessen, dass Bathilda hinter mir auf dem Sofa saß. „Aber wenn du andere Pläne hast …“ Ich wandte mich schon zum Gehen. <br/>„Nein!“, rief er und ich drehte mich voller Genugtuung wieder zu ihm um. Diesmal hatte ich ihn sichtlich aus der Ruhe gebracht. „Ich ziehe mir ein Hemd an und dann bin ich bereit.“ <br/>Ich zwinkerte ihm zu, weil Bathilda das von hier aus nicht sehen konnte. Gellert schluckte sichtbar. <br/>Ein paar Minuten später kam er wieder die Treppe herunter – zu meinem Bedauern vollständig gekleidet. Seine Haare allerdings waren immer noch nicht trocken. <br/>Wortlos und händchenhaltend gingen wir denselben Weg wie beim letzten Mal. Die Lichtung war still und friedlich und als wir uns ins weiche Gras setzten leuchten Glühwürmchen um uns herum auf. <br/>„Das war eine gute Idee“, sagte Gellert leise und legte seinen Kopf auf meine Schulter. <br/>„Ich habe grundsätzlich gute Ideen“, erwiderte ich zufrieden und strich geistesabwesend durch sein Haar. <br/>„Meine Tante macht sich über mich lustig weil wir so unzertrennlich sind“, erzählte Gellert und ich hörte das Lächeln in seiner Stimme. „Glaubst du, sie vermutet etwas?“ <br/>„Solange wir uns auf ihrem Foto nicht um den Hals fallen, sind wir sicher vor ihr, denke ich.“ <br/>Wir verfielen in einvernehmliches Schweigen. Gellerts Kopf ruhte auf meiner Schulter, mit einer Hand streichelte ich sein Haar, die andere war verschränkt mit seiner. Ich lauschte seinem Atem und dem Geräusch des Bachs, atmete die kühle Nachtluft ein und dachte, ich war womöglich niemals zuvor glücklicher als jetzt. Oder vielleicht war ich am glücklichsten wenn wir diskutierten und er mir widersprach und ich ihm widersprach und keiner von uns darauf achtete höflich zu sein, weil wir das nicht mussten. Weil wir wussten, am Ende der Argumentation würden seine Lippen auf meinen landen. Weil wir wussten, wir würden zusammen die Welt erobern. <br/>„Albus“, wisperte Gellert irgendwann. „Soll ich dir etwas verraten?“ <br/>„Ein Geheimnis?“, fragte ich schmunzelnd. <br/>„Ja.“ <br/>„Ich dachte damit wären wir fertig.“ <br/>Er zog mich fester an sich. „Es ist das letzte, versprochen. Greif in meine Tasche.“ <br/>Neugierig leistete ich ihm Folge und fand einen kleinen Fetzen Pergament in seiner Brusttasche. Im Licht meines Zauberstabs erkannte ich meine eigene Schrift. Es war der letzte Brief, den ich geschrieben hatte, kurz nachdem Aberforth müde und unzufrieden in mein Zimmer gekommen war. <br/>„Du … trägst das seitdem mit dir herum?“, fragte ich mit einem hörbaren Zittern in der Stimme. <br/>Er summte bestätigend. <br/>„Und was ist das Geheimnis?“, überwand ich mich zu fragen. <br/>„Das Geheimnis ist: Ich liebe dich auch.“ <br/>Mein Herz versuchte meine Rippen zu sprengen und ich hörte einen Augenblick lang nichts weiter als sein wildes Klopfen und das Echo von Gellerts Stimme in meinem Kopf. <br/>„Ich habe dir gar nicht gesagt, dass ich dich liebe“, sagte ich schließlich, als ich es schaffte genug Muskelgruppen unter Kontrolle zu bekommen um zu sprechen. <br/>„Das musst du auch nicht“, sagte Gellert und küsste mich. „Ich weiß es auch so.“ <br/>Ich löste mich kurz von ihm und er versuchte mich umzuwerfen, damit er mich küssen konnte ohne dass ich mich dagegen wehren konnte – nicht dass ich das jemals gewollt hätte. „Du hast Recht, Gellert“, murmelte ich und gab nach. „Wie so oft.“ <br/>Er kicherte und verschwendete keine Zeit damit, zu antworten.</p>
+<p>Ein paar Tage später begleitete Aberforth mich zum Mittagessen bei Bathilda und Gellert. Der Zeitpunkt hätte nicht ungünstiger sein können. <br/>Wir aßen alle zufrieden ihren Eintopf, als Bathilda in den Sinn kam nach unserer Recherche zu fragen. <br/>„Wir haben etwas über Arcus in Erfahrung bringen können“, sagte ich ausweichend. <br/>Sie allerdings harkte nach und ich erzählte ihr, dass er sich in Irland niedergelassen hatte. <br/>„Es ging uns allerdings nicht so sehr um die beiden Zauberer“, erklärte Gellert. „Viel mehr interessiert uns der Zauberstab, den einer von ihnen im Duell von Loxias gewonnen hat.“ <br/>Bathilda legte die Stirn in Falten. „Was ist so besonders an dem Zauberstab?“ <br/>Gellert und ich schauten uns an. „Loxias behauptete sein Zauberstab wäre unbesiegbar“, sagte ich vorsichtig. <br/>Kopfschüttelnd schenkte Bathilda sich Wasser nach. „Nun, da lag er offensichtlich falsch, nicht wahr?“ <br/>„Wir glauben, der Zauberstab ist im Duell eins gegen eins nicht zu schlagen“, erwiderte Gellert. „Loxias trat gegen Arcus und Livius gleichzeitig an.“ <br/>Bathilda machte ein etwas missbilligendes Geräusch, als hätte sie mehr von ihrem Neffen erwartete. „Ich habe nie an so etwas wie unbesiegbare Zauberstäbe geglaubt. Natürlich tauchen immer wieder Zauberer auf, die glauben ihrer wäre besonders. Ihr seht ja, wohin das führt. Sicher hat euch Ollivander dasselbe gesagt. Er scheint mir keiner dieser Zauberstabmacher zu sein, die versuchen ihr Geschäft mit Mythen und Legenden anzukurbeln.“ <br/>Aberforth schwieg beharrlich, doch ich sah wie er das Gespräch aufmerksam verfolgte. Ob es ihm behagte oder nicht, war schwer zu sagen. <br/>„Ollivander war in dieser Angelegenheit nicht sonderlich gut informiert“, sagte Gellert geringschätzig. <br/>„Tss“, machte Bathilda. „Denkst du, Gregorowitsch wäre eher geeignet für dieses Thema?“ <br/>Gellert zuckte die Schultern. „Ich habe ihn nie getroffen.“ <br/>„Ist denn dein Zauberstab nicht von ihm?“, fragte ich überrascht. <br/>Gellert nickte. „Gregorowitsch hat sein Geschäft in Deutschland. Ich habe den Zauberstab von einem Händler gekauft, der verschiedene Hersteller in seinem Angebot hatte.“ <br/>Ich wandte mich an Bathilda. „Warum glauben Sie, Gregorowitsch hätte etwas zu dieser Angelegenheit beizutragen?“ <br/>Bathilda winkte ab. „Habt ihr nicht davon gehört? Er behauptet in letzter Zeit er würde daran arbeiten die Eigenschaften eines unschlagbaren Zauberstabs zu kopieren und mehr davon anzufertigen.“ Sie schüttelte wieder den Kopf. „Eine törichte Geschäftsstrategie, wenn ihr mich fragt. Seht euch nur an was mit Arturo Cephalopos geschah. Gegen Ende seiner Karriere begann auch er zu behaupten, er wäre im Besitz eines unbesiegbaren Zauberstabs und würde seine Eigenschaften erforschen. Und was passierte? Jemand überfiel sein Geschäft, wurde nicht fündig, und brannte aus Wut seine Werkstatt und seinen Verkaufsraum mit Dämonsfeuer nieder. Es ruinierte Cephalopos für immer.“ <br/>Gellert und ich bekamen nur die Hälfte mit, da wir beschäftigt waren uns wortlos auszutauschen. <br/>„Gregorowitsch behauptet nun dasselbe?“, fragte Gellert und ich hoffte Bathilda überhörte das verräterische Vibrieren in seiner Stimme. <br/>„Allerdings“, bestätigte sie. „Er hätte das an sich gar nicht nötig. Beinahe alle Schüler von Durmstrang kaufen seine Zauberstäbe, ist es nicht so?“ <br/>Gellert nickte abwesend und ich sah wie es hinter seinen Schläfen arbeitete. Ich schlug meinen Löffel einmal absichtlich laut gegen den Tellerrand, um seine Aufmerksamkeit auf mich zu lenken. Gellert blinzelte ein paar Mal und aß dann mit doppelter Geschwindigkeit weiter. Als unsere Teller leer waren verabschiedeten wir uns so schnell es ging ohne offensichtlich unhöflich zu sein. Ohne uns absprechen zu müssen eilten wir nach nebenan und hoch in mein Zimmer. <br/>„Wo haben wir Aufzeichnungen über Gregorowitsch?“, fragte Gellert und durchwühlte fahrig meine sorgsam angelegten Stapel. <br/>„Warte – hier.“ Ich hielt ihm die Ausgabe einer Zeitschrift über Zauberstabkunde hin, die Interviews mit vielen bekannten Zauberstabmachern enthielt. Behalten hatte ich sie eigentlich wegen Ollivander, aber auch Gregorowitsch war ein Kapitel gewidmet. <br/>Gellert und ich überflogen gemeinsam die Seiten und ich stieß einen leisen Schrei aus, als mein Blick an einem Namen hängen blieb. <br/>„Livius!“, rief Gellert, als er wenig später zu der Stelle kam. Mit großen Augen schaute er mich an. „Weißt du, was das bedeutet?“ <br/>„Livius ging nach dem Duell weiter nach Osten“, begann ich. <br/>„Und traf in Deutschland auf Gregorowitsch“, ergänzte Gellert. <br/>„Er händigte Gregorowitsch den Elderstab aus, um ihn erforschen zu lassen“, sagte ich. <br/>Wir sahen einander an. „Gregorowitsch hat den Elderstab“, sagten wir gleichzeitig.</p>
+  </div>
+  <!--/main-->
+
+
+</div>
+
+<!-- end of cache -->
+
+          <!-- This partial requires local variable 'chapter' -->
+<div class="chapter" id="chapter-8">
+  <!-- chapter management -->
+
+
+  <div class="chapter preface group" role="complementary">
+    <h3 class="title">
+      <a href="/works/8263144/chapters/20645578">Chapter 8</a>: Kapitel 8
+    </h3>
+
+    <!-- only display byline if different from the main byline -->
+
+
+      <div id="notes" class="notes module">
+        <h3 class="heading">Notes:</h3>
+          <p>
+          (See the end of the chapter for  <a href="/works/8263144#chapter_8_endnotes">notes</a>.)
+          </p>
+      </div>
+  </div>
+
+  <!--main content-->
+  <div class="userstuff module" role="article">
+    <h3 class="landmark heading" id="work">Chapter Text</h3>
+    <p>Diese Entdeckung raubte uns beiden den Atem und nahm Gellert außerdem jede Geduld für meine Situation. <br/>„Albus, wir haben keine Zeit mehr“, sagte er mit den Händen auf meinen Schultern. „Wir müssen handeln, bevor Livius es sich anders überlegt.“ <br/>„Ich weiß“, sagte ich. <br/>„Und bevor es Gregorowitsch gelingt den Stab zu kopieren“, fügte er hinzu. <br/>„Ich weiß.“ <br/>„Worauf warten wir dann?“ <br/>Ich machte mich von ihm los. „Du weißt, worauf.“ <br/>„Wir haben keine Zeit mehr“, wiederholte er eindringlich. <br/>„Ich weiß!“, rief ich und raufte mir die Haare. <br/>Ich hatte noch niemals meine Stimme gegen Gellert erhoben und es überraschte ihn wohl sehr, mich schreien zu hören. Er kam zu mir und legte mir einen Arm um die Schultern. <br/>„Albus“, sagte er leise, seine Stimme hatte all ihre Schärfe verloren. „Wir werden eine Lösung finden. Zusammen.“ <br/>Ich drehte mich zu ihm hin und ließ mich von ihm in eine Umarmung ziehen. „Wirklich?“ <br/>„Aber sicher“, sagte er zuversichtlich. „Vielleicht … würde es helfen, wenn ich Ariana treffen könnte.“ <br/>Wieder löste ich mich von ihm. „Das möchtest du?“ <br/>„Selbstverständlich. Sie gehört zu deiner Familie und sie ist nicht zuletzt der Grund, weshalb es sich lohnt, die Welt zu ändern.“ <br/>Bevor ich irgendetwas anderes tat schloss ich Gellert wieder in meine Arme. Der Zeitpunkt war gekommen. Wir hatten nicht bloß einen Anhaltspunkt, sondern wussten bereits, wo sich das erste Heiligtum genau befand. Ich war gelinde gesagt erleichtert, dass Gellert nicht sofort vom Esstisch seiner Tante aus disappariert war. Ich wusste, wie sehr er den Elderstab begehrte. <br/>Als wir beide bereit waren einander loszulassen führte ich ihn nach unten in den Keller, wo sich Arianas Zimmer befand. Noch während ich die Tür aufschloss wurde mir bewusst, dass ich sie seit Wochen nicht mehr besucht hatte. Ich schluckte meine Schuldgefühle runter und ließ Gellert an mir vorbei. <br/>„Hallo Ariana“, sagte er sanft. <br/>Meine Schwester saß auf dem Boden und kämmte einer Puppe das Haar. Sie musterte Gellert kurz, bevor sie sich wieder dem Spielzeug widmete. <br/>„Spricht sie?“, fragte Gellert leise. <br/>„Manchmal.“ <br/>Gellert ging an den Wänden entlang durchs Zimmer und musterte die Brandblasen auf der Tapete, die während des letzten Gewitters entstanden waren. <br/>„Ich schätze, wir könnten sie vielleicht mitnehmen“, überlegte Gellert. <br/>Ich stand noch immer an der Tür und schüttelte nur den Kopf. <br/>„Was ist das Schlimmste, was sie je getan hat?“ <br/>„Sie hat meine Mutter umgebracht.“ <br/>Gellert drehte sich so schnell um, dass er stolperte und sich an der Wand abstützen musste. <br/>„Sie hat was?“ <br/>Ich senkte den Blick und betrachtete einen Riss im Boden. „Ich war nicht hier, also kann ich dir nicht genau sagen was passiert ist. Arianas Kräfte machen sich oft selbstständig wenn sie Angst hat und vermutlich ist meine Mutter ins Kreuzfeuer geraten, sozusagen. Es war keine Absicht von Ariana, aber sie ist trotzdem unberechenbar.“ <br/>Gellert atmete tief durch. „Warum hast du mir nichts davon gesagt?“ <br/>Abgesehen davon, dass ich nicht darüber hatte reden wollen, hatte ich keine besonders gute Antwort. „Die Wunde war noch zu frisch“, murmelte ich und vermied es weiterhin, ihn anzusehen. „Und sie ist es noch.“ <br/>Gellert beobachtete Ariana eine ganze Weile lang schweigend. Er überlegte hin und her, ich konnte es sehen wenn ich mich kurz traute den Blick zu heben und ihn anzusehen. <br/>„Ich denke, wir könnten sie trotzdem mitnehmen“, sagte er schließlich. Ich schaute auf und begegnete seinem Blick. Er wirkte ernsthaft. „Wir beide könnten sie sicher in Schach halten. Und es wäre nicht für lange, bis sie sich nicht mehr verstecken müsste.“ <br/>„Du spinnst ja wohl vollkommen“, ertönte eine laute und unmissverständlich gereizte Stimme hinter uns. Aberforth stand im Türrahmen und schaute Gellert mit so viel Missachtung an, wie ich es noch nie bei ihm gesehen hatte. Als mein Bruder sich an mich richtete, wurde seine Miene noch unversöhnlicher. „Und du Albus, bist du nicht mehr ganz bei Trost? Du kannst nicht durch die Welt reisen mit einer labilen Schwester im Gepäck. Und das weißt du auch ganz genau.“ <br/>„Aberforth-“, begann ich, nicht minder gereizt, doch weiter kam ich nicht. Gellert unterbrach mich und trat einen Schritt auf Aberforth zu. <br/>„Verschwinde hier“, knurrte Gellert und seine grünen Augen schienen Funken zu sprühen. „Du weißt ja nicht, wovon du sprichst.“ <br/>„Oh, das sagt Albus mir auch nur allzu gerne“, entgegnete Aberforth überheblich. „Aber ich bin nicht so dumm wie ihr gerne glauben würdet. Ihr seid hinter diesem Zauberstab her, oder nicht? Was wollt ihr damit tun? Muggel umbringen?“ <br/>„Wenn du es genau wissen willst, ja“, antwortete Gellert giftig. „Wir erschaffen eine neue Welt, damit deine Schwester ein besseres Leben haben kann. Wenn du etwas dagegen hast, dann lass uns doch bitte daran teilhaben.“ <br/>Aberforth schnaubte und sagte zu mir: „Er ist noch verrückter, als ich dachte.“ <br/>Gellert zog seinen Zauberstab und richtete ihn auf Aberforth. „Wenn du ein Problem hast, dann sag es mir ins Gesicht.“ <br/>Aberforth fletschte die Zähne und hob ebenfalls seinen Zauberstab. „Oh ja“, sagte er, „ich habe ein Problem mit dir. Du bist ein Lügner, ein noch besserer als mein Bruder. Und er hat dir sogar geglaubt, oder? Dass du das alles für Ariana tust? Wie nennt ihr es noch gleich? Das größere Wohl?“ Aberforth spuckte vor Gellert auf den Boden. „Dabei tust es um Macht zu erlangen. Du bist lächerlich, ihr beide seid lächerlich und ihr werdet niemals die großen Herrscher eurer neuen Welt sein. Niemals!“ <br/>Gellert umklammerte seinen Zauberstab so fest, dass seine Fingerknöchel weiß hervortraten. „Ich gebe dir eine letzte Chance.“ Gellerts Stimme war hart wie Stahl und kalt wie Eis. Sie hatte nichts mit der Stimme gemeinsam, an die ich so sehr gewöhnt war. Es war erschreckend, ihn so zu sehen. Ich hatte ihn mir vorgestellt, wie er bei Duellen wohl ausgesehen haben mochte, aber dieser zähnefletschende Junge mit den wilden Augen war so weit von meinem Gellert entfernt wie der Mond von der Erde. <br/>„Ich werde nicht gehen!“, höhnte Aberforth. „Und Albus auch nicht, ist dir das nicht klar?“ <br/>Gellert bis die Zähne zusammen und ich sah wie er den Entschluss fasste. <br/>„Nein!“, rief ich, doch es war zu spät. Gellert hatte den ersten Fluch ausgestoßen und ein Lichtstrahl schoss auf meinen Bruder zu, den er nur knapp abblocken konnte. Der Fluch schoss meterweit an Gellert vorbei und schlug in die Wand hinter Arianas Bett ein. Ich zog ebenfalls meinen Zauberstab, war jedoch unfähig mich zu entschließen, auf welche Seite ich mich zu stellen hatte. In meinem Kopf rauschte es statisch, ich konnte keinen klaren Gedanken fassen und die Szene, die sich vor mir eröffnete, brannte sich in diesem Augenblick vollständiger Unentschlossenheit für immer in mein Gedächtnis ein. Aberforth, wie er breitbeinig und grimmig dastand, und den Arm zurückriss um seinem Fluch mehr Kraft zu verleihen. Gellert, wie er mit zusammengebissenen Zähnen und wogendem Brustkorb auswich, die Augen zusammenkniff, und zielte. Ariana, wie sie zwischen den beiden auf dem Boden kauerte, ihre Puppe an sich gedrückt und wie sie mit flackernden und merkwürdig ausdruckslosen Augen zwischen Gellert und Aberforth hin und her blickte. <br/>„Aufhören!“, schrie ich, als ich es endlich über mich brachte. „Ihr macht ihr Angst!“ <br/>Niemand achtete auf mich, nur Ariana blickte mich mit weit aufgerissenen Augen an. <br/>Mein Herz blieb stehen, als Gellert Luft holte und den ersten Unverzeihlichen Fluch ausstieß. <br/>Aberforth stürzte zur Seite weg, doch der Fluch riss ein großes Loch in seinen Ärmel und ließ die Tür hinter ihm aus den Angeln fliegen. <br/>„Gellert, hör auf!“, brüllte ich, doch er schien mich nicht zu hören. Er schoss weiterhin Flüche auf meinen Bruder ab, er schien wie im Rausch zu sein. Ariana kroch quer durch den Raum und kauerte sich in eine Ecke. Sie begann ein hohes Kreischen auszustoßen und Aberforth war kurz abgelenkt. <br/>Gellert nutzte den Augenblick aus und die Zeit stand still, als seine Lippen den Todesfluch aussprachen. Ich erstarrte zur Salzsäule, Aberforth ebenfalls, als der Fluch ein tiefes Loch in die Wand über seinem Kopf schlug und Putz und Tapetenfetzen auf ihn herabregnen ließen. <br/>Für einen Augenblick herrschte Stille, dann begann der Boden bedrohlich zu wackeln. Risse breiteten sich von den Stellen her aus, wo Arianas Hände den Beton berührten. <br/>Aberforth erwiderte den Todesfluch mit einem Sprengfluch, der in einem so kleinen geschlossenen Raum nicht minder tödlich war. <br/>„Tu ihnen nicht weh!“, schrie ich Gellert an, der für mich nicht mehr als einen Blick aus dem Augenwinkel übrig hatte. <br/>Und dann handelte ich endlich. Mein Ziel war es vor allem die Flüche abzublocken, und zumindest einen der beiden außer Gefecht zu setzen, bevor jemand ernsthaft zu Schaden kam. <br/>Meine Schockzauber drangen zu beiden nicht vor, sie wurden entweder von Schildzaubern geblockt oder von stärkeren Flüchen aus der Bahn gedrängt und ich beschloss es mit Reductio zu versuchen, der eine große Reichweite hatte und sowohl meinen Freund als auch meinen Bruder zu Boden gehen lassen konnte, ohne viel Schaden anzurichten. Dabei wollte ich allerdings vermeiden Ariana zu treffen, denn der Fluch konnte sie ernsthaft verletzen, sollte sie unglücklich getroffen werden. <br/>Es kam der Moment in dem Gellert „Avada Kedavra!“ schrie, im selben Moment in dem mein Bruder einen starken Sprengfluch abfeuerte und ich hatte gerade meinen Zauber losgeschickt. Alle drei Lichtblitze trafen sich in der Mitte des Raumes und es ertönte ein ohrenbetäubender Knall und wir alle wurden von den Füßen gerissen. <br/>Ich schlug heftig mit dem Rücken gegen die Wand und Staub und Holzteile des Schrankes oder Bettes regneten auf mich nieder. Hustend befreite ich mich und schaute mich um, den Zauberstab nach wie vor in der Hand. Das Zimmer war nicht wiederzuerkennen. Überall lag Schutt herum, die Tapete wirbelte in Fetzen durch die Luft, in einer Ecke brannte es, wo die Kerze umgekippt war. Gellert hustete ebenfalls und tastete nach seinem Zauberstab, der ihm aus der Hand gerissen worden war. Er hatte einen blutenden Schnitt auf der Wange und ein Auge war zugeschwollen, ansonsten schien es ihm gut zu gehen. <br/>„Nein!“, brüllte Aberforth und es war ein Schrei wie ich ihn noch niemals gehört hatte. Lang gezogen und so erfüllt von Schmerz und Kummer, dass ich meinen Zauberstab fallen ließ und durch den Raum hinkte, wo Aberforth halb lag, halb kniete. Ich fiel ebenfalls auf die Knie, als ich sah, dass er sich über Ariana beugte, die seltsam verdreht und vollkommen reglos im Staub lag und mit offenen Augen an die kahle Decke starrte. Tränen strömten aus Aberforths Augen und hinterließen helle Linien auf seinen von Staub und Schmutz bedeckten Wangen. Er legte den Kopf in den Nacken und schrie aus vollem Halse. Ich hörte davon nichts. In meinem Kopf war alles leer und still bis auf ein Pfeifen, das nicht aufhören wollte. <br/>Hinter mir regte sich etwas und ich drehte mich um, nach Atem ringend und ebenfalls mit Tränen in den Augen. <br/>Gellert hatte seinen Zauberstab aufgehoben und schaute auf Ariana herunter, Panik unmissverständlich in sein Gesicht geschrieben. <br/>„Gellert?“, fragte ich leise und hörte es selbst kaum. <br/>Gellerts Blick wanderte zu mir, bevor er sich abwandte und durch den Raum hinkte, auf die Tür zu. <br/>„Gellert“, sagte ich lauter, doch er drehte sich nicht um. „Gellert! Gellert!“ <br/>Ich schrie seinen Namen, immer und immer wieder, jedes Mal lauter, doch er kam nicht zurück. Er kam nicht zurück. <br/>Aberforth neben mir klammerte sich an Arianas Körper fest und weinte bitterlich. Ich machte Anstalten ihm eine Hand auf die Schulter zu legen, doch er schlug sie weg. Also stand ich auf, fürchterlich zitternd und lief die Treppe hinauf, den staubigen Abdrücken folgend, die Gellert hinterlassen hatte. <br/>Vor dem Haus waren Menschen, keiner von ihnen war blond. <br/>Bathilda gestikulierte wild und redete auf einen Mann in dunkelgrünem Umhang ein. Der Teil meines Gehirns, der wieder zu rationalem Denken im Stande war sagte mir, dass er vom Ministerium für Zauberei kam. <br/>„Sind Sie Aberforth Dumbledore?“, fragte er mich, doch ich achtete nicht auf ihn und blickte mich rastlos um. <br/>„Wo ist Gellert?“, fragte ich Bathilda. <br/>Sie hob hilflos die Arme. „Ich habe einen Knall gehört“, sagte sie, „und kam deshalb aus dem Haus. Er muss disappariert sein, Albus. Was ist denn bloß passiert?“ <br/>Ich drehte mich im Kreis und suchte nach einer Spur von Gellert, denn ganz sicher war er nicht disappariert. Er hatte versprochen nicht ohne mich zu gehen, er würde mich jetzt nicht allein lassen, nicht jetzt. Der Ministeriumsbeamte hielt mich am Arm fest und sah mich eindringlich an. „Uns wurde der Missbrauch von Zauberei von einem Minderjährigen auf diesem Grundstück gemeldet“, sagte er langsam und deutlich. „Wo ist Aberforth Dumbledore?“ <br/>Ein Teil von mir wusste, dass Bathilda die Wahrheit sagte. Dass sie Recht hatte. Gellert war nicht mehr da und er würde nicht zurückkommen. <br/>„Gellert“, flüsterte ich leise und konnte nicht verhindern, dass Tränen über meine Wangen liefen. <br/>„Wie bitte?“, fragte der Mann aus dem Ministerium. „Was ist hier passiert?“ <br/>Ich konnte mich nicht mehr auf den Beinen halten und sank vor den Füßen des Mannes zu Boden. „Ein Unfall“, murmelte ich. „Meine Schwester. Es war ein Unfall.“ <br/>Der Beamte schrieb mich als hoffnungslosen Fall ab und betrat das Haus allein. Bathilda blieb bei mir und redete auf mich ein, stellte vermutlich Fragen, die ich nicht hörte. Ich konnte nur immer wieder daran denken, dass Gellert versprochen hatte nicht ohne mich zu gehen und dass er gegangen war. Er hatte es versprochen. <br/>Er hatte mich verlassen. <br/>Ariana war tot. Sie war tot und ich wusste nicht, wer die meiste Schuld daran hatte. Jeder der Flüche hätte sie umbringen können. Vielleicht hatte ich meine eigene Schwester getötet und sie dann in einer Ecke im Keller liegen lassen, hatte meinen Bruder mit ihr allein gelassen, um dem Geist eines Versprechens nachzujagen, das niemals etwas bedeutet hatte. <br/>Gellert hatte mich verlassen. <br/>Langsam stand ich auf und setzte einen Fuß vor dem anderen in Richtung Haus. Bathilda folgte mir völlig aufgekratzt. Als ich die Kellertreppe erreichte betrat gerade der Ministeriumsbeamte sehr blass die erste Stufe von unten. <br/>„Es tut mir leid“, sagte er fahrig. „Das hier scheint eine Familienangelegenheit zu sein.“ <br/>Er eilte an mir vorbei und drehte sich noch einmal zu mir um, als wolle er etwas sagen, besann sich dann und verließ mit schnellen Schritten das Haus. <br/>Aberforth hatte sich nicht von der Stelle bewegt. Er schrie nicht mehr, wahrscheinlich hatte seine Stimme irgendwann versagt. Seine Wangen und seine Augen waren gerötet und er zitterte am ganzen Leib. Als er mich sah begegnete er mir mit so viel Abneigung wie es in seinem Zustand möglich war. <br/>„Bist du jetzt zufrieden?“, fragte er heiser. <br/>„Nein“, sagte ich so leise, dass ich mir sicher war, dass er es nicht gehört hatte. <br/>„Nein“, wiederholte Aberforth ebenso leise. <br/>Ich stand da, neben einer Bathilda die endlich still war, die die Hände vor den Mund geschlagen hatte und vollständig erstarrt war. Ich wollte sagen, dass es mir leidtat, denn ich wusste, auch wenn nicht mein Fluch Ariana getötet hatte, so war ihr Tod doch meine Schuld. Ich wusste es und doch konnte ich es nicht sagen. <br/>Als ich mich umdrehte und in den Garten zurückkehrte, suchte ich nicht mehr nach Gellert. <br/>Es begann zu regnen und ich setzte mich mit hängendem Kopf ins Gras und ließ das Wasser den Staub und die Tränen wegspülen. <br/>Ich war aus einem Traum aufgewacht, der niemals dazu bestimmt worden war von mir gelebt zu werden. </p>
+<p>Und nichts würde jemals wieder sein wie vorher.</p>
+  </div>
+  <!--/main-->
+
+    <div class="chapter preface group">
+      <div class="end notes module" id="chapter_8_endnotes" role="complementary">
+        <h3 class="heading">Notes:</h3>
+        <blockquote class="userstuff">
+          <p>Danke an alle, die meine Fic gelesen haben und besonderen Dank an alle, die Kudos und Kommentare da gelassen haben :) you're the real MVP</p>
+        </blockquote>
+      </div>
+    </div>
+
+</div>
+
+<!-- end of cache -->
+
+    </div>
+<!--/chapter-->
+
+
+  </div>
+  <!-- END work skin -->
+<!-- END work -->
+
+<!-- BEGIN comment section -->
+<!-- Gets embedded anywhere we need to list comments on a top-level commentable. We need the local variable "commentable" here. -->
+<div id="feedback" class="feedback" role="complementary">
+
+  <h3 class="landmark heading">Actions</h3>
+
+  <ul class="actions" role="navigation">
+      <li><a href="#main">&#8593; Top</a></li>
+
+
+
+
+
+
+      <li>
+        <form id="new_kudo" action="/kudos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="VkSJQYOXjqOma_9SObf8XhlnBhCA6fCzj5LzfEqtBnFDfXdkANkamgjLiA1cuax9Rfpa_68U-SbjudUTmqdCNg"/>
+          <input value="8263144" type="hidden" name="kudo[commentable_id]" id="kudo_commentable_id"/>
+          <input value="Work" type="hidden" name="kudo[commentable_type]" id="kudo_commentable_type"/>
+          <input type="submit" name="commit" value="Kudos ♥" id="kudo_submit"/>
+</form>      </li>
+
+
+
+
+        <li id="show_comments_link"><a data-remote="true" href="/comments/show_comments?view_full_work=true&amp;work_id=8263144">Comments (5)</a></li>
+  </ul>
+
+
+  <div id="kudos_message"></div>
+  
+
+    <h3 class="landmark heading">Kudos</h3>
+<div id="kudos">
+      <p class="kudos">
+          <a href="/users/morningcolor">morningcolor</a>, <a href="/users/Hibiskusbluete">Hibiskusbluete</a>, <a href="/users/Dunkelbunt">Dunkelbunt</a>, <a href="/users/Panfeather">Panfeather</a>, <a href="/users/Lekythos">Lekythos</a>, <a href="/users/Funkenflug">Funkenflug</a>, <a href="/users/Neilo">Neilo</a>, <a href="/users/CinnamonCountess">CinnamonCountess</a>, and <a href="/users/bonener">bonener</a>
+             as well as 
+          16 guests
+         left kudos on this work!
+      </p>
+</div>
+
+
+
+  <h3 class="landmark heading"><a id="comments">Comments</a></h3>
+  
+
+    <div id="add_comment_placeholder" title="top level comment">
+      <div id="add_comment">
+        <!-- expects the local variables comment, commentable, and button_name -->
+<div class="post comment" id="comment_form_for_8263144">
+  <form class="new_comment" id="comment_for_8263144" action="/works/8263144/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="t-l7ack3BqWcq8-31QN9_pyJIWZrQua5IHs9FrqYkzmi0IVMSnmSnDILuOiwDS3dwBR9iUS_7yxMUBt5apLXfg"/>
+    <fieldset>
+      <legend>Post Comment</legend>
+
+
+        <input type="hidden" name="view_full_work" id="view_full_work" value="true" class="text"/>
+
+
+
+
+        <dl>
+          <dt class="landmark">Note:</dt>
+          <dd class="instructions comment_form">All fields are required. Your email address will not be published.</dd>
+          <dt><label for="comment_name_for_8263144">Guest name: </label></dt>
+          <dd>
+            <input id="comment_name_for_8263144" type="text" name="comment[name]"/>
+            <script>var validation_for_comment_name_for_8263144=new LiveValidation('comment_name_for_8263144',{wait:500,onlyOnBlur:false});validation_for_comment_name_for_8263144.add(Validate.Presence,{"failureMessage":"Please enter your name.","validMessage":""});</script>
+          </dd>
+          <dt><label for="comment_email_for_8263144">Guest email: </label></dt>
+          <dd>
+            <input id="comment_email_for_8263144" type="text" name="comment[email]"/>
+            <script>var validation_for_comment_email_for_8263144=new LiveValidation('comment_email_for_8263144',{wait:500,onlyOnBlur:false});validation_for_comment_email_for_8263144.add(Validate.Presence,{"failureMessage":"Please enter your email address.","validMessage":""});</script>
+          </dd>
+        </dl>
+        <p class="footnote">(Plain text with limited HTML <a class="help symbol question modal" title="Html help" aria-controls="#modal" href="/help/html-help.html"><span class="symbol question"><span>?</span></span></a>)</p>
+
+      <p>
+        <label for="comment_content_for_8263144" class="landmark">Comment</label>
+        <textarea id="comment_content_for_8263144" class="comment_form observe_textlength" title="Enter Comment" name="comment[comment_content]">
+</textarea>
+        <input type="hidden" id="controller_name_for_8263144" name="controller_name" value="works"/>
+      </p>
+      <p class="character_counter"><span id="comment_content_for_8263144_counter" class="value" data-maxlength="10000" aria-live="polite" aria-valuemax="10000" aria-valuenow="comment_content_for_8263144">10000</span> characters left</p>
+      <script>var validation_for_comment_content_for_8263144=new LiveValidation('comment_content_for_8263144',{wait:500,onlyOnBlur:false});validation_for_comment_content_for_8263144.add(Validate.Presence,{"failureMessage":"Brevity is the soul of wit, but we need your comment to have text in it.","validMessage":""});validation_for_comment_content_for_8263144.add(Validate.Length,{"maximum":"10000","tooLongMessage":"must be less than 10000 characters long."});</script>
+      <p class="submit actions">
+        <input type="submit" name="commit" value="Comment" id="comment_submit_for_8263144" data-disable-with="Please wait..."/>
+      </p>
+    </fieldset>
+</form></div>
+<div class="clear"></div>
+
+      </div>
+    </div>
+
+  <!-- If we have javascript, here is where the comments will be spiffily inserted -->
+  <!-- If not, and show_comments is true, here is where the comments will be rendered -->
+  <div id="comments_placeholder" style="display:none;">
+  </div>
+
+
+</div>
+<!-- END comments -->
+
+<!-- END comment section -->
+<!-- END revealed -->
+
+
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.312.12">otwarchive v0.9.312.12</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="https://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js+jquery.livequery.min.js+rails.js+application.js+bootstrap,_bootstrap-dropdown.min.js+jquery-shuffle.js+jquery.tokeninput.min.js+jquery.trap.min.js+ao3modal.min.js+js.cookie.min.js+filters.min.js.pagespeed.jc.t2dSZNKMjN.js"></script><script>eval(mod_pagespeed_a8hDjzT3l_);</script>
+<script>eval(mod_pagespeed_1nA1vKz9z4);</script>
+<script>eval(mod_pagespeed_AKC4FLip6q);</script>
+<script>eval(mod_pagespeed_gX7XC77lvT);</script>
+<script>eval(mod_pagespeed_5zo0ZWMy4O);</script>
+<script>eval(mod_pagespeed_eCCgOhjhYQ);</script>
+<script>eval(mod_pagespeed_TU1Ln7LKSh);</script>
+<script>eval(mod_pagespeed_qTpbjsXQwh);</script>
+<script>eval(mod_pagespeed_R5FGw2ySDb);</script>
+<script>eval(mod_pagespeed_rqqFCT3xcT);</script>
+
+<script>eval(mod_pagespeed_Gf_4KFhTvB);</script>
+
+
+  <script>function isSupported(){var item="localStoragePolyfill";try{localStorage.setItem(item,item);localStorage.removeItem(item);return true;}catch(e){return false;}}function acceptTOS(){if(isSupported()){localStorage.setItem("accepted_tos","20180523");}else{Cookies.set("accepted_tos","20180523",{expires:365});}}$j(document).ready(function(){if(localStorage.getItem("accepted_tos")!=="20180523"&&Cookies.get("accepted_tos")!=="20180523"){$j("body").prepend("<div id=\"tos_prompt\" class=\"hidden\">\n  <h2 class=\"heading\">\n    <span>Archive of Our Own<\/span>\n  <\/h2>\n  <div class=\"agreement\">\n    <p class=\"summary\">\n      On Archive of Our Own (AO3), users can make profiles, create works and\n            other Content, post comments, give Kudos, create Collections and \n            Bookmarks, participate in Challenges, import works, and more. Any \n            information you publish in a comment, profile, work, or Content that you \n            post or import onto AO3 including in summaries, notes and tags, \n            will be accessible by the public (unless you limit access to a work only \n            to those with AO3 Accounts), and it will be available to \n            AO3 personnel. Be mindful when sharing personal information, \n            including  your religious or political views, health, racial background, \n            country of origin, sexual identity and/or personal relationships. To \n            learn more, check out our <a href=\"/tos\">Terms of Service<\/a> and <a href=\"/tos#privacy\">Privacy Policy<\/a>.\n    <\/p>\n\n    <p class=\"confirmation\">\n      <input type=\"checkbox\" id=\"tos_agree\" />\n      <label for=\"tos_agree\">I have read &amp; understood the new Terms of Service and Privacy Policy<\/label>\n    <\/p>\n\n      <p class=\"submit\">\n        <button name=\"button\" type=\"button\" disabled=\"disabled\" id=\"accept_tos\">I agree/consent to its terms<\/button>\n      <\/p>\n\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    var container = \$j(\"#tos_prompt\");\n    var outer = \$j(\"#outer\");\n    var button = \$j(\"#accept_tos\");\n\n    setTimeout(showTOSPrompt, 1500);\n\n    function showTOSPrompt() {\n      \$j.when(container.fadeIn(500)).done(function() {\n        outer.addClass(\"hidden\").attr(\"aria-hidden\", \"true\");\n      });\n\n      \$j(\"#tos_agree\").on(\"click\", function() {\n        button.attr(\"disabled\", !this.checked);\n        if (this.checked) {\n          button.on(\"click\", function() {\n            acceptTOS();\n            outer.removeClass(\"hidden\").removeAttr(\"aria-hidden\");\n            \$j.when(container.fadeOut(500)).done(function() {\n              container.remove();\n            });\n          });\n        };\n      }).change();\n    };\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+  <script>$j(document).ready(function(){var permitted_hosts=["104.153.64.122","208.85.241.152","208.85.241.157","archiveofourown.org","download.archiveofourown.org","insecure.archiveofourown.org","secure.archiveofourown.org","www.archiveofourown.com","www.archiveofourown.net","www.archiveofourown.org","insecure-test.archiveofourown.org","test.archiveofourown.org","testdownload.archiveofourown.org"];var current_host=window.location.hostname;if(!permitted_hosts.includes(current_host)&&Cookies.get("proxy_notice")!=="0"&&window.location.protocol!=="file:"){$j("#skiplinks").after("<div id=\"proxy-notice\">\n  <div class=\"userstuff\">\n    <p class=\"important\">Important message:<\/p>\n    <ol>\n      <li>You are using a proxy site that is not part of the Archive of Our Own.<\/li>\n      <li>The entity that set up the proxy site can see what you submit, including your IP address. If you log in through the proxy site, it can see your password.<\/li>\n    <\/ol>\n    <p class=\"important\">重要提示：<\/p>\n    <ol>\n      <li>您使用的是第三方开发的反向代理网站，此网站并非Archive of Our Own - AO3（AO3作品库）原站。<\/li>\n      <li>代理网站的开发者能够获取您上传至该站点的全部内容，包括您的ip地址。如您通过代理登录AO3，对方将获得您的密码。<\/li>\n    <\/ol>\n    <p class=\"submit\"><button class=\"action\" type=\"button\" id=\"proxy-notice-dismiss\">Dismiss Notice<\/button><\/p>\n  <\/div>\n<\/div>\n\n<script>\n//<![CDATA[\n\n  \$j(document).ready(function() {\n    \$j(\"#proxy-notice-dismiss\").on(\"click\", function() {\n      Cookies.set(\"proxy_notice\", \"0\");\n      \$j(\"#proxy-notice\").slideUp();\n    });\n  });\n\n//]]]]><![CDATA[>\n<\/script>");}});</script>
+    <script>$j(document).on("loadedCSRF",function(){$j.post("/works/8263144/hit_count.json")})</script>
+
+
+  </body>
+</html>
