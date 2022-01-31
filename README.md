@@ -1,2 +1,5 @@
 # textprozessieren
-Repository für die Lehrveranstaltung "Programmieren 1: Textprozessieren"
+
+Repository für die Lehrveranstaltung "Programmieren 1: Textprozessieren" (Python). 
+
+
